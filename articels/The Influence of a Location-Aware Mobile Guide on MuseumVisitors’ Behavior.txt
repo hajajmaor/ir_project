@@ -1,0 +1,1926 @@
+© The Author 2013. Published by Oxford University Press on behalf of The British Computer Society. All rights reserved.
+For Permissions, please email: journals.permissions@oup.com
+Advance Access publication on 24 February 2013
+doi:10.1093/iwc/iwt002
+
+The Influence of a Location-Aware
+Mobile Guide on Museum Visitors’
+Behavior
+1 University
+
+of Haifa, Mount Carmel, Haifa 31905, Israel
+2 FBK/irst, Italy
+∗Corresponding author: ylanir@is.haifa.ac.il
+
+Many museums offer their visitors the use of a mobile guide to enhance their visit experience. Novel
+mobile guides have the potential to provide personalized, context-aware, rich content to museum
+visitors. However, they might also affect the way visitors behave and interact. While many studies
+have examined novel features that these guides can provide to enhance the visit experience, few
+have looked into the impact that a mobile guide might have on the actual behavior of the visitors.
+We describe a field study conducted with 403 actual museum visitors, over a period of 10 months
+comparing behaviors of visitors who used a mobile multimedia location-aware guide during their
+visit and that of visitors who did not use any electronic aid. Results indicate that visitors’ behavior
+was altered considerably when using a mobile guide. Visitors using a mobile guide visited the museum
+longer and were attracted to and spent more time at exhibits where they could get information from
+the guide. In addition, we provide empirical evidence of the decoupling effect that a mobile guide
+has on pairs of visitors. Using a mobile guide caused visitors to reduce proximity and to interact
+less with their fellow group members. Finally, we discuss what may be done to reduce this negative
+social effect.
+RESEARCH HIGHLIGHTS
+•
+•
+•
+•
+•
+
+We describe a field study conducted with actual museum visitors.
+We compared behavior of visitors who used a mobile guide with those who did not.
+Using a mobile multimedia guide increased visit time.
+The mobile guide increased holding power and attraction power of marked exhibits
+The use of the guide disrupted social interaction of visitors who came in a group.
+Keywords: mobile museum guide; museum visit behavior; group behavior
+Editorial Board Member: Fabio Paternò
+Received 26 November 2012; Revised 3 December 2012
+
+1.
+
+INTRODUCTION
+
+There is no doubt that mobile technologies highly affect many
+aspects of our daily lives. The use of smart mobile handheld devices has changed the way we communicate, work and
+entertain ourselves. Many people use their personal, hand-held
+devices as a point of contact to communicate with their peers,
+organize their daily activities, as well as get information about
+their surroundings at any place and any time. The ubiquitous
+use of mobile devices also affects the way people visit and tour
+
+locations in their leisure time. Many people use a mobile device
+as a navigational aid to guide them when visiting a new city.
+Furthermore, more and more people also use mobile devices as
+a source to retrieve guidance and interpretational information
+when visiting a new location or a cultural heritage site (Billings,
+2009; Cheverst et al., 2000a). A tourist who is new to a city can
+choose from a wide variety of mobile applications and services
+that provide tourists with various options to help them with their
+visit. Similarly, many cultural heritage sites offer the use of an
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Joel Lanir1∗ , Tsvi Kuflik1 , Eyal Dim1 , Alan J. Wecker1 and Oliviero Stock2
+
+444
+
+Joel Lanir et al.
+a better understanding of how their design decisions affect
+museum and cultural heritage visitors.
+We report on the results of a field study conducted with
+403 actual museum visitors through a period of 10 months.
+We compared two groups of visitors: visitors who used a
+multimedia mobile museum visitors guide as part of their visit
+and visitors who did not. The museum was equipped with a
+positioning system that was used to automatically track and
+time-tag visitor movements and circulation across the museum
+(regardless of their use or lack of use of a mobile guide). Visit
+logs were used to unobtrusively assess participants’ behavior
+in the museum, including the locations visited, time spent in
+each of the locations, and proximity to other visitors and group
+members. Our results indicate that the use of a mobile guide
+significantly altered visitor behavior. We discuss the way that
+individual as well as group circulation in the museum has
+been altered, providing empirical evidence and showing how
+a mobile guide impedes social interaction of small groups of
+visitors. In light of the results, we discuss and suggest possible
+ways to use the technology to enhance social interaction.
+The paper is structured as follows. First, we present related
+work of traditional methods of observations on museum visitor
+behavior, work related to recent mobile guides and studies
+concerned with the group museum visit. Next, we describe
+the museum infrastructure used for the study, including a
+description of the museum, the positioning system and the
+mobile guide. We then describe the methodology of the
+field study followed by its results. Finally, we discuss
+the implications of the results and present our conclusions.
+
+2.
+
+RELATED WORK
+
+We first describe the standard methods used by museum
+practitioners and researchers for measuring visitor behavior as
+well as studies that used automatic instrumented collection of
+these measures. We then present a short survey on existing
+museum guides and the way they are said to affect visitor
+behavior. Finally, we describe the literature pertaining to group
+and social aspects of the museum visit, including technology
+that was especially built to assist small groups in museums.
+2.1.
+
+Measuring museum visitor behavior
+
+Museum practitioners often use ethnographic observations of
+visitor behavior in order to improve their educational exhibits,
+provide better interpretations and better understand the way the
+audience is using the content provided to them (Bollo and Dal
+Pozzolo, 2005). Various museum researchers have used manual
+ethnographic observations to examine issues such as visitor
+circulation (Bitgood, 1992; 2006; Klein, 1993), use of signage
+and labels (McManus, 1989), interaction with exhibits (Yalowitz
+and Bronnenkant, 2009) and social interaction (Leinhardt and
+Knutson, 2004). When tracking and timing visitor circulation,
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+audio or multimedia mobile guide to their visitors to enhance
+their visit experience.
+A mobile museum guide has the potential to highly improve
+the visitor’s experience. It can provide visitors with a wide
+variety of new and important services that can aid the visitor
+during the visit. The visitor can receive personalized adaptive
+information from a vast amount of content that can suit his or her
+personal needs at a particular time. Information can be tailored
+according to the visitor’s learning abilities and preferences
+(Ardissono et al., 2011). While having many potential benefits,
+a mobile guide can also have some disadvantages. It may
+focus the visitor’s attention on the mobile device rather than
+on the museum artifacts. Furthermore, for visitors coming in
+small groups, it might isolate the visitor from his or her peers,
+effectively dissocializing the group (Grinter et al., 2002; Hsi,
+2003).
+Most museums today tend to think that the advantages of a
+mobile guide outweigh the possible drawbacks, and thus, many
+museums offer some types of interpretive electronic guide to
+their visitors, as reflected by the growth in their use (Stephens,
+2010). However, it is yet unclear how and to what extent does the
+use of a mobile guide affect the way people visit the museum.
+Although various studies have focused on introducing novel
+features of mobile guides (Aoki et al., 2002; Stock et al., 2007;
+Vlahakis et al., 2002), or on evaluating the usability (Cheverst
+et al., 2000b; Kjeldskov et al., 2005) or the acceptance and
+satisfaction of visitors using them (Kaasinen, 2005; Petrelli and
+Not, 2005), little comparative quantitative evidence is available
+on how mobile guides actually affect visitors’ behavior. In its
+basic form (not as a navigational aid or as a provider of other
+advanced services), a mobile guide provides interpretation to
+the museum artifacts and collections. Interpretation aids such
+as labels and museum texts have long existed in the museum
+and have extensively been examined in order to provide the
+visitor with the best possible experience, taking into account
+issues such as readability, museum fatigue (Bitgood, 2009)
+and learning effects (McManus, 1989). The basic question that
+we ask is how does this transition from a static, public, labelbased interpretation style to a dynamic, personal, mobile-based
+interpretation style affect the way visitors move around and
+behave in the museum. Given the wealth of research about
+the application of novel technology in cultural heritage, it is
+quite surprising that only a few publications describe studies
+that have examined the basic question of how a mobile guide
+actually affects visitors’ movement patterns, circulation, timing
+or social interaction (although the negative social impact was
+noted by many researchers, such as Angliss, 2006a,b; Proctor
+and Tellis, 2003 and more). Furthermore, no studies that we are
+aware of have directly compared visitors who used a mobile
+guide during their visit with people who did not use a guide. As
+such, this study aims to take a step back from the design of novel
+museum technology and to understand the basic behavioral
+influences that mobile technology bring on to the museum
+and thus provide researchers and mobile guide designers with
+
+Influence of a Location-aware Mobile Guide
+
+(i) Attraction power indicates the relative incidence of
+people who have stopped in front of an object or an
+exhibit during their visit. It is calculated by dividing
+the number of people who stop, by the total number of
+people who have visited the museum or gallery. This
+measure provides us with an initial idea of the power of
+attraction of the exhibit.
+(ii) Holding power measures the average time spent in front
+of an exhibit. It is calculated by summing up the time a
+visitor spent in front of a specific exhibit. This measure
+provides us with an initial idea of the power of an exhibit
+to hold the interest of a visitor.
+Together, these variables effectively capture how thoroughly
+visitors were engaged with an exhibit. While not being a
+complete indicator of using an exhibit, these measures are
+practical, immediately applicable ideas for thinking about how
+visitors use exhibits and help to progress toward the goal of
+thorough use of exhibits by their audience (Serrell, 1997).
+A different direction of museum circulation research has
+looked at classifying visitor movement styles into categories.
+Veron and Levasseur (1983) used ethnographical observations
+to categorize visitor movements into four category styles: an
+ant visitor who tends to follow a specific path and spends a lot
+of time observing most exhibits. A fish who moves around in
+the center of the room and usually avoids looking at exhibits’
+details; the butterfly visitor does not follow a specific path but
+rather is guided by the physical orientation of the exhibits and
+stops frequently to look for more information and, finally, the
+grasshopper visitor seems to have a specific preference for some
+preselected exhibits and spends a lot of time observing them
+while tending to ignore the others. Zancanaro et al. (2007)
+used automatically generated logs of visitor positioning from
+users who used a mobile guide to validate this categorization.
+Sparacino (2003) proposed a different categorization of three
+main categories: the greedy visitor who wants to know and see
+as much as possible, the selective visitor who selects and filters
+certain objects that is of his or her interest and the busy visitor
+who strolls around the museum to get a general impression of the
+exhibition without spending too much time at a certain place.
+The visitor type was determined during the visit itself using
+probabilistic models according to visitors’ tracked behavior and
+was used to present corresponding content. Hatala and Wakkary
+(2005) used the same categorization in order to provide visitors
+with audio-only context-aware information. Finally, Millonig
+
+and Gartner (2011) identified a typology of spatial–temporal
+pedestrian behavior in shopping environments as follows: swift,
+convenient, discerning, utilitarian and hedonistic, which could
+have museum counterparts.
+Social interaction is an important part of the museum visit
+(see Section 2.3). Measuring social interaction in the museum
+has been done in several ways. Visitor conversations with their
+peers can be recorded and later analyzed. The amount of time
+people talk, number of utterances or a more detailed analysis
+of the content of the conversation can indicate the amount of
+visitors’ engagement with their group (Leinhardt and Knutson,
+2004). In addition, post-visit interviews with visitors can include
+questions on group interaction and group behavior. Finally,
+proximity of visitors to the other group members can be used
+as an indicator of group cohesion and social interaction (Dim
+and Kuflik, 2009; McManus, 1988) with more proximity being
+an indicator of a stronger social connection of group members.
+2.2.
+
+Impact of mobile guides on visitors’ behavior
+
+Mobile museum visitor guides have long been available for
+visitors in museums and tourists in cities. In modern times, the
+use of electronic mobile guides in museums in order to enhance
+the user experience is widespread (Ardissono et al., 2011; Tallon
+and Walker, 2008). A survey from 2008 indicates that most
+(66%) of the mobile hand-held guides in use at the time were
+simple audio guides, with a trend in increasing number of guides
+using smart hand-held devices (Tallon and Walker, 2008). With
+the ubiquity and infiltration of smart hand-held devices, this
+trend is likely to continue. An extensive survey of existing
+mobile museum guides can be found in Ardissono et al. (2011).
+Mobile visitor guides have many unique advantages
+over more traditional museum interpretation tools. A major
+advantage of mobile guides is their potential to personalize
+presentation delivery while adapting to the visitor’s needs, thus
+helping the visitor receive the content he or she wishes at the
+right time out of a vast amount of possible content (Ardissono
+et al., 2011). A multimedia mobile guide integrates information
+that is perceived in different modalities. Recent guides include
+dynamic images and videos, in addition to audio commentary.
+Another advantage of a mobile guide is its availability. While a
+human guide may not be available at all times and might
+be expensive to hire for small groups or for individuals, mobile
+guides are available anytime. Furthermore, an electronic guide
+can support a multitude of languages as well as cater the needs of
+different visitors’interaction and learning styles (i.e. people who
+do not like to read but rather listen to explanations) and various
+populations (i.e. people with disabilities). Finally, in addition to
+interpretational content, mobile guides can also provide other
+kind of services, such as navigational support, information on
+events and more.
+Although the advantages of mobile guides are clear, there
+are a few downsides that the use of these guides might cause.
+One of the main claims against using a multimedia guide is
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+museum researchers have measured many variables such as
+the total time in an area, total number of stops, proportion
+of visitors who stop at a specific exhibit, visitor path, ‘down
+time’ (time of nonexhibit related behavior such as talking on
+the phone) and level of engagement with the exhibit (Yalowitz
+and Bronnenkant, 2009). Summarizing these variables while
+focusing on visitor interaction with exhibits, two measures are
+often used in museum studies (Bollo and Dal Pozzolo, 2005;
+Serrell, 1997):
+
+445
+
+446
+
+Joel Lanir et al.
+findings indicate that, in general, visitors using the guide had
+more extensive learning experiences, measured both by direct
+knowledge questions and by subjective responses of visitors’
+perceived learning.
+Finally, several studies focused on observing the behavior
+and later interviewing a small number of visitors. Hsi (2003)
+observed and interviewed 15 visitors who used a novel mobile
+guide in the Exploratorium in San Francisco. Visitors reported
+a need to better integrate the virtual and real-world context (i.e.
+the guide have caused several visitors a disconnection with the
+real-world). Visitors also noted that to some extent the use of
+the mobile devices caused them to feel isolated and less social.
+Bellotti et al. (2002) observed the behavior of 10 individuals.
+They also noted a tendency of the guide to isolate the visitors as
+well as an effect of the guide on visitor’s pace. On the contrary,
+our study is a large-scale deployment study that is based on
+empirical analysis of log data from an indoor positioning system
+rather than subjective observations and interviews to understand
+visitor behavior patterns.
+As presented above, many researchers talk about the
+advantages and disadvantages of mobile guides in various
+settings. However, few of these claims are actually examined
+or backed-up by empirical observations. Claims on the
+advantages of mobile guides (i.e. personalization, adaptation,
+much content) are assumed as given and researchers focus
+on delivering software solutions to support these features.
+Similarly, claims on the disadvantages (i.e. focusing on the
+device rather than the artifacts, isolating visitors) are presumed
+and researchers invest much effort in overcoming these
+problems. Few deployment studies have been employed to
+examine these assumptions and to investigate the effects of a
+mobile guide. Moreover, we are not aware of any study that
+compared the behavior of museum visitors at the same site
+with and without a mobile guide. This study uses empirical
+observations to examine how a mobile guide actually affects
+visitors’ behavior and to compare it with a visit to the same site
+without a guide, thus it is aimed to provide evidence that would
+support or refute some of the above claims.
+
+2.3.
+
+Group museum visit
+
+The social aspects of the visit were shown to contribute
+to learning in the museum as well as to the general visit
+experience (Dierking and Falk, 1994; Leinhardt and Knutson,
+2004; McManus, 1988). Indeed, people often come to museums
+in small groups, mainly with family and friends (Falk, 2009).
+Falk (2009) claims that only 60% of the visitor’s attention
+is spent on looking at the exhibits, while the other 40%
+of the visitor’s attention is directed elsewhere, with much
+of it focused on conversations with other members of the
+individual’s social group. Bitgood and Shettel (1996) posit that
+‘the overwhelming percentage of visitors come in groups—
+usually with families or friends unless they are part of a
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+that it detracts visitors’ attention from real objects and artifacts.
+Visitors, it is claimed, might focus on the device’s screen instead
+of looking at the artifacts (Petrelli and Not, 2005; Tallon and
+Walker, 2008). Although this might be true in some cases, it has
+been shown that dynamic images, in an illustrative genre such
+as in guides, do not take away continuous attention from the real
+thing (Alfaro et al., 2005), and with the correct design, electronic
+information can add rather than detract attention given to the
+artifacts (Gammon and Burch, 2008). Another concern is that
+visitors might mainly be interested in exhibits covered by the
+guide, and thus would be guided to certain areas in the museum
+while neglecting other areas. While this might be true, this is not
+different from other forms of museum interpretations in which
+larger focus on certain exhibits would cause the audience to
+focus there. Finally, the use of headphones might detach the
+visitor from the environment including other visitors or museum
+personnel, isolating visitors from their companions (Grinter
+et al., 2002).
+Given the vast amount of research focusing on applying
+novel mobile technology in museums, as assessed by numerous
+surveys (e.g. Ardissono et al., 2011; Baus et al., 2005;
+Schwinger et al., 2002), it is quite surprising that there are
+relatively few reported studies about the impact of mobile
+technology on the visitor behavior. This is probably due
+to the fact that most works developed and experimented
+with research prototypes that were evaluated in short-term,
+controlled experiments. Usually these prototypes were not
+further developed into deployed systems, and could not be
+used continuously and independently by regular visitors. Hence
+they fall short of exploring the impact of the novel technology
+in realistic settings. Among the works that referred to the
+impact of technology on the visitor behavior, most studies
+report on museum evaluations of a deployed mobile guide,
+usually focusing on user satisfaction and acceptance obtained
+from surveys (e.g. Bird, 2007). For example, Proctor and Tellis
+(2003) report on a large-scale study of 852 visitors using a
+multimedia guide in the Tate Modern. Results focus on a
+qualitative analysis of the user interface, infrastructure and
+visitor’s acceptance of the guide. Bellotti et al. (2002) describe
+a deployment and evaluation of a guide at the Genoa Aquarium.
+In a first study, they used user surveys and interviews of
+151 visitors for general evaluation purposes. They showed a
+general satisfaction and enjoyment from using the guide, as
+well as specific user interface recommendations. Similarly, in
+the Marble museum project (Ciavarella and Paterno, 2004),
+surveys of 35 visitors showed general visitor appreciation
+of the mobile guide. Other studies focused on the impact
+that a mobile guide might have on learning. In a second
+study conducted by Bellotti et al. (2002), results of postvisit recognition tasks of 120 visitors suggest that the tour
+guide supports better knowledge acquisition than without
+the guide. Manning and Sims (2004) surveyed 378 visitors,
+comparing visitors who used and who did not use their iTour
+system focusing on the learning impact of the guide. Their
+
+Influence of a Location-aware Mobile Guide
+
+mobile guides that are intended to be used by more than
+one visitor. Most of the social-related aspects were attributed
+to collaborative listening to audio using the speaker of the
+mobile device. Kenteris et al. (2011) surveyed mobile tourist
+guides, but the survey focused mainly on technology and
+features. They implicitly noted the social aspects by pointing
+out communication services among group members and group
+members locating services offered by several systems, but they
+did not recommend addressing the social aspect of the tours
+any further. Emmanouilidis et al. (2012) defined a taxonomy of
+mobile guides after analyzing a large number of applications.
+In their taxonomy, the social aspect is part of the context, but
+they show only a few systems among the many they surveyed
+that address the social context and note that, in general, context
+awareness is poorly addressed in mobile guides. Specifically,
+they note that even though social interaction has the potential
+to significantly enhance the user experience, it is not a common
+part of current mobile guides and recommend that it should be
+better addressed.
+Among the systems that tried to specifically address the
+social issues, Sotto Voce (Aoki et al., 2002; Grinter et al.,
+2002) enabled visitors to ‘eavesdrop’ to each other and to
+share their mobile guide audio. They claim that audio sharing
+may result in a better social experience (audio sharing is a
+common and simple social activity, as noted by Raptis et al.
+(2005)). Suh et al. (2011) extended the eavesdropping idea
+by enabling synchronization of the audio control. ARCHIE
+(Luyten et al., 2006; Schroyen et al., 2009) aimed at avoiding
+the isolated experience that may accompany the use of mobile
+electronic guides by providing a framework for creating
+collaborative games in the museum for youngsters and voice
+communication for enabling remote interaction for adults. In
+the framework of the project, two prototypes were developed
+and the authors reported on successful implementation where
+students enjoyed the system and learned while playing. Games
+are especially suitable for students, as demonstrated also by
+the UbiCicero museum guide (Ghiani et al., 2009), which
+promotes social interaction among visitors through educational
+games embedded in mobile devices. Interaction takes place both
+explicitly, as in treasure hunts and other cooperative games,
+and implicitly as in individual games with sporadic interaction.
+Similarly, other projects looked at gaming as a possible
+collaborative activity for small groups in museums (Dini et al.,
+2007; Sumi and Mase, 2001). Research has also been conducted
+on technology-based coordinated dramatic storytelling for
+enhancing group interaction in the museum (Callaway et al.,
+2011). As for basic infrastructure, the GUIDE system (Cheverst
+et al., 2000b) as well as PIL (Kuflik et al., 2011a,b),
+InfoTour (Paganelli et al., 2009) and UbiCicero (Ghiani
+et al., 2009) provided limited communication capabilities,
+enabling group members to communicate and interact when
+they are not in close proximity, using the technology to bridge
+physical distance, and to find the whereabouts of their group
+members.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+school group’. He sees the social contact as a significant
+aspect of informal learning settings, and sometimes as the most
+important part of the experience. McManus (1988) describes
+the social context of museum visitors, which involves small
+groups of children, couples and adults. McManus also describes
+the deeper involvement generated by the social intimacy of
+visitor groups that had good social relationships, moved around
+the museum in closed units and were more likely to engage
+in behaviors that would improve their visit experience. The
+contribution of the group to the enhancement of learning
+and visit experience is emphasized by Falk and Dierking
+(2000) and supported by Leinhardt and Knutson (2004) in
+their work on museum conversations. Recent research note
+four main characteristics of the social experience of a museum
+visit: (i) increasing the group-members’ cognitive–emotional
+arousal (by provoking interest, thought, excitement, motivation
+etc.). (ii) Enhancing the level of informal learning gained
+by the group members (the ability to generate, understand,
+remember and use concepts, explanations and models from
+the museum). (iii) Enabling recharging of personal attention
+reserves while the visit goes on. (iv) The ability of group
+members to share and reflect impressions during and after
+the visit (Bell, 2009; Falk, 2009). Group behavior of museum
+visitors has been analyzed, showing that some of the group
+members tend to separate during a museum visit, others may
+walk together but rarely interact, and finally there are groups
+that move together and continuously interact (Dim and Kuflik,
+2009).
+Visitors who visit museums in organized or small groups
+often use the services of a human museum guide. The concept
+of a human tourist guide, as described by Cohen (1985), reveals
+that the human museum guide serves many purposes such as a
+mentor, pathfinder, social mediator, culture broker and leader
+to the museum visitors. Moreover, from the social point of
+view, having one human guide for a group creates opportunity
+for interaction among the group members. Technology has
+the potential of offering some services traditionally offered
+by the human guide, in order to enhance the museum visit
+experience. These include services such as navigation, locationbased services, content management, information delivery,
+themes and narrative presentation, and multiple personalized
+adaptations to the needs of small groups and individual visitors,
+during the museum visit (Dim and Kuflik, 2010; Krüger et al.,
+2007; Stock et al., 2007).
+As shown earlier, the social context seems to be an extremely
+important aspect of the museum visit. However, most existing
+mobile guides at museums today are designed as a oneperson device that supports a personal experience rather than
+a group one. Schwinger et al. (2002) surveyed the state-ofthe-art mobile guide research at that time and recommended
+addressing also the neglected social aspects when developing
+mobile guides. Over the past 10 years, considerable amount
+of research efforts was dedicated to supporting various social
+aspects. Raptis et al. (2005) in another survey, noted several
+
+447
+
+448
+
+Joel Lanir et al.
+
+3. THE MOBILE GUIDE SYSTEM AND THE
+MUSEUM INFRASTRUCTURE
+The study was carried out at the Hecht museum, a
+medium-sized, established archaeological museum located at
+the campus of the University of Haifa. The museum offers a
+number of exhibitions related to the archaeology of the land of
+Israel. Visiting the museum is free of charge, hence visitors also
+come for short visits, and there is a good proportion of people
+who do not visit the whole museum in one single time. The
+participants of the study used a museum visitor guide system
+developed as part of the PIL project (Kuflik et al., 2011b). The
+PIL museum guide allows visitors to move freely around the
+exhibitions while the system identifies the visitor’s location
+and accordingly provides the visitor with relevant information.
+Information is shown in the form of multimedia presentations,
+approximately 1 min in length, consisting of a narrated text
+over a set of selected images enhanced with illustrative graphics
+using different cinematographic techniques such as pan, zoom
+and fade. When the visitor approaches one of the instrumented
+exhibits, she is prompted with a frontal image on the guide.
+Exhibits with available information are highlighted on the image
+(Fig. 1a). After the visitor chooses an exhibit (by pressing on it),
+the system presents a list of available presentations concerning
+the chosen exhibit (Fig. 1b). The presentations are represented
+by questions that aim at initiating a dialogue with the visitor
+based on the content of the presentation, and trigger the visitor
+to think and select the most interesting one to be answered. The
+visitor can then select and view a presentation (Fig. 1c). While
+viewing, the user can pause or stop the presentation at any time.
+As part of the project, the museum was equipped with a radio
+frequency (RF)-based positioning system based on a wireless
+sensor network (WSN). To better understand how we measured
+a visitor’s behavior, we briefly describe the positioning system’s
+
+Figure 2. Positioning system equipment and usage scenario.
+
+components and functionality. For a detailed description, see
+(Kuflik et al., 2011a). Figure 2 shows how the positioning
+system is used and presents its components. The WSN is formed
+by three different kinds of objects: fixed RF tags called Beacons,
+small (matchbox size) mobile wearable RF tags called Blinds
+and RF to TCP Gateways. Beacons and Gateways have the same
+size and are roughly twice the size of a Blind (about a cigarettes’
+box size). The Gateways transfer the data reported by the Blinds
+and Beacons’ status over a local area network to the PIL server.
+Beacons are statically located at entrances and exits, as well as
+near relevant locations of interest in the museum, while Blinds
+are carried by visitors. When a Blind is in proximity of a Beacon
+(determining location) or another Blind (determining proximity
+to another user) that Blind reports this information to the server
+through the nearest Gateway.
+The PIL server parses, filters and enhances the information,
+determining the visitor’s position. The positioning system also
+detects orientation of visitors, using embedded magnetometers,
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Figure 1. The museum guide interface. When the visitor arrives to a point of interest, the system provides the relevant position illustration. After
+choosing an exhibit, a list of questions about the exhibit is presented. The visitor can then choose a question that triggers a multimedia presentation
+related to the exhibit.
+
+Influence of a Location-aware Mobile Guide
+
+449
+
+enabling the assessment where the visitors are facing at any
+given moment. Figure 3 presents a map of the museum with the
+locations of the Beacons. While providing a reasonable indoor
+positioning solution, the system has two major weaknesses.
+First, it only knows when a person is in proximity to a Beacon or
+to another Blind. Thus, it does not detect positioning in transition
+from one Beacon to another. Secondly, the specified accuracy of
+the detection in proximity to each Beacon is between 1.5 to 2 m.
+Thus, when we detect a user being in proximity to a Beacon,
+we can only know that he or she is within a short range of that
+Beacon, without knowing exact position.
+Forty-five locations of interest were covered by Beacons in
+the museum in six exhibition rooms providing visitors carrying
+Blinds with contextual information seen on their museum guide
+as soon as they enter the vicinity of the location. Beacons
+were mainly positioned near important museum artifacts as
+was determined by the museum’s curator, as well as near other
+landmarks such as exists and entrances to rooms.
+
+4.
+4.1.
+
+METHODOLOGY
+Objectives
+
+The study comparatively examined visit behavior patterns of
+museum visitors of two groups. The first group used a mobile
+visitor’s multimedia guide (see Section 3) during a regular
+museum visit while the second group visited the museum
+without a guide. The objectives of the study were to assess
+the way that a visitor’s guide affects museum visitor behavior
+patterns in terms of the way that people visit the museum:
+where do they go, where do they stop and in general, how does
+technology affect the way they visit the museum. In addition, we
+
+also wanted to assess differences in subjective attitudes between
+those who used the guide and those who did not.
+Our main hypotheses before the study were:
+(1) Visitors using the mobile guide will spend more time
+in the museum than visitors who do not use the mobile
+guide. We believe that mobile guide users might extend
+their visit time because of the time it takes to consume
+information.
+(2) Visitors using the mobile guide would spend more time
+in marked exhibits than visitors without the mobile guide
+(i.e. the holding power of marked exhibit will increase
+for people using the mobile guide). We hypothesize that
+the fact that there is more interpretation (in the terms of
+multimedia presentations) in marked exhibits will cause
+visitors to stay longer at these locations.
+(3) The percentage of visitors who visit marked exhibits
+would be higher for those who used the mobile guide
+than for those who did not (i.e. attraction power of the
+marked exhibit would be higher for the mobile guide
+users). Beacons were placed at major exhibits of the
+museum. While for the major museum exhibits, we
+believe that there would be no difference in attraction
+power, attraction power of less-often-visited exhibits
+might increase due to the fact that the visitors using
+the guide go especially there.
+(4) Using the mobile guide will separate groups and cause
+people to be less ‘together’ than without using the
+mobile guide. Previous works have suggested that
+using a mobile guide might isolate visitors from their
+environment as well as from their group members
+(Bellotti et al., 2002; Hsi, 2003). However, this feeling
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Figure 3. Map of the museum. Red dots denote Beacon positions and purple dots denote gateway positions. The small part on the upper right side
+is part of the second floor of the museum that was instrumented as well and connected to the first one by the stairs clearly marked on both parts.
+
+450
+
+Joel Lanir et al.
+
+4.2.
+
+Experimental design
+
+We performed a field study with actual museum visitors. The
+study design was a between-subject design in which we had
+two study groups: visitors who used the mobile guide (described
+above) during their visit and visitors who did not use the mobile
+guide during the visit (but of course could use a paper map of the
+museum and read the labels next to the exhibits). Thus, the main
+variable examined was visit type: with-guide and without-guide.
+4.3.
+
+Procedure
+
+The study was conducted during the period between March
+2011 and January 2012. Visitors to the Hecht museum were
+approached at the entrance of the museum and were invited to
+participate in the study. Participants were randomly assigned
+to one of the two study groups according to days. On certain
+days of the week, all visitors were assigned to the with-guide
+group, while on other days all visitors were assigned to the
+without-guide group. Participants in the with-guide group were
+offered the free use of the mobile museum visitor’s guide. They
+were first given a short explanation on how to use the guide
+and were then asked to visit the museum at their own pace,
+using the guide as they wished. Participants in the without-guide
+group were simply asked to wear a Blind (that reports on their
+movements and proximity—see Section 3) during their visit.
+Upon finishing the visit, participants in both groups were asked
+to fill a short questionnaire regarding their experience. Log files
+with detailed information of the visits behavior patterns were
+recorded.
+4.4.
+
+Measures
+
+For analyzing and evaluating visit behavior, we mainly
+used automatically recorded visit logs. In addition, at the
+
+end of the visit, questionnaires were handed to visitors to
+gather demographic data and to assess visitor satisfaction.
+These tools correspond to measuring visitors’ attitudes
+and measuring visitors’ behaviors, both often measured
+in museum studies (Serrell, 1997). The questionnaire was
+divided into two parts: the first part of the questionnaires
+consisted of general demographic information. The second
+part asked about participants’ attitude toward their museum
+visit experience. Questionnaire items consisted of statements to
+which participants expressed their agreement on a 7-point Likert
+scale to indicate how much they agreed with each statement,
+ranging from strongly disagree (1) to strongly agree (7). Finally,
+we also asked visitors in two open-ended questions to state
+what were the advantages and disadvantages of using the mobile
+guide. Visit logs were used to unobtrusively assess participants’
+behavior in the museum. The locations visited and time spent
+in each of the location were recorded by the positioning
+system. All interactions with the guide including selecting
+and listening to a presentation, stopping a presentation, giving
+feedback to a presentation’s quality, etc., were recorded in the
+museum guide’s server as log events in system logs and later
+analyzed.
+4.5.
+
+Participants
+
+Participants were actual museum visitors. Because we thought
+that a minimum visit time is required to define a museum
+visit, only participants who visited the museum for at least
+15 min were included in the study. A total of 251 visitors
+participated in the with-guide group and a total of 152 visitors
+participated in the without-guide group. The reason for the
+unbalanced proportion is that during a week, we had 3 days
+in which we handed over the guide and 2 days in which we
+asked people to wear Blinds without using the guide.
+In the with-guide group, 10 out of the 251 visitors did not
+fill in the questionnaires at the end (for various reasons, the
+main one being they were in a hurry to go elsewhere). We
+included these visitors in our log analysis because although
+not filling out the questionnaires, their system usage and visit
+behavior is still valid. Therefore, the log analysis of the withguide group included 251 participants, while the questionnaire
+analysis included 241 participants. Out of the 241 participants,
+139 were males and 102 were females. The age of the visitors
+ranged from 7 to 83 years with an average of 43.2 years
+(SD = 18.4). Eighty-seven of the visitors have visited the Hecht
+museum before, and for 154 it was their first visit.
+In the without-guide group, out of the 152 visitors, 8 did
+not fill in the questionnaire. Therefore, the log analysis of
+the without-guide group included 152 participants, while the
+questionnaire analysis included 144 participants. Out of the
+144 participants, 65 were males and 79 were females. The age
+of the visitors ranged from 9 to 81 with an average of 43.4
+(SD = 19.5). Fifty-five of the visitors have visited the Hecht
+museum before, whereas 89 did not.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+of isolation might not have an effect on the proximity
+patterns or affect the way group members circulate as a
+group in the museum. We expect to be able to validate
+these suggestions by measuring proximity of visitors to
+their peers. We hypothesize that people in groups not
+using the guide will be more in proximity to each other
+than people coming in groups who use the guide (i.e. the
+guide will cause a greater physical separation between
+members of the group).
+(5) In general, visitors using the mobile guide would be
+more satisfied with their visit than visitors without a
+mobile guide. Deployments of mobile guides show
+general satisfaction with the use of the guide (Bird,
+2007; Cheverst et al., 2000a). We expect that this
+satisfaction is not only due to the novelty of these guides,
+but that, in general, visitors using the guide would be
+more satisfied with their visit than visitors who did not
+use a mobile guide.
+
+Influence of a Location-aware Mobile Guide
+A t-test examining the differences in age between the two
+groups did not find significant differences, indicating random
+distribution of age between the two study groups.
+
+5.
+
+RESULTS
+
+5.1.
+
+General behavior
+
+In the following analyses, we conducted an analysis of
+covariance (ANCOVA) in order to examine the effect that
+visit type (with or without the guide) had on the total visit
+time, number of location visited and average time in location,
+taking into account the age, gender and previous visit (whether
+participants previously visited the museum or not) of the
+participants.
+5.1.1. Total visit time
+The total time varied with a minimum visit time of 15 min
+and a maximum visit time of 239 min. The average visit time
+for the combined two groups was 59.2 min. Comparing the
+two groups shows that when using the guide visitors visit
+the museum 65 min on average, compared with 49.6 min on
+average for a visit without the guide. A one-way ANCOVA
+was used to assess the total time differences between the two
+groups, taking into account the age, gender and previous visit.
+Results confirmed that participants visiting the museum with a
+mobile visitors guide visited the museum significantly longer
+(M = 65 min; SD = 32.9) than visitors visiting without
+the guide (M = 49.6 min; SD = 29), F (1, 401) = 16.6.
+P < 0.001. No effect was found for age, gender or previous
+visit.
+5.1.2. Number of locations visited
+On average, visitors using the mobile guide visited more
+locations (M = 16.03, SD = 7.3) than visitors without the
+guide (M = 13.98, SD = 8.01). Because this result is likely
+to be influenced by the fact that visitors using the guide spent
+more time at the museum than visitors without the guide, we
+continued and compared the rate of the location visited (and
+indirectly compare the pace of the visitors) in each condition.
+We therefore normalized these results for a 1-h visit. Results
+of the ANCOVA indicate that visitors who used the mobile
+guide visited fewer locations per hour (M = 16.51; SD = 7.4)
+than visitors who did not use the mobile guide (M = 21.37;
+SD = 14.1; F (1, 401) = 23.85, P < 0.001). Interestingly, the
+
+analysis revealed a marginally significant effect for returning
+visitors on the number of location visited, F (1, 401) = 3.64,
+P = 0.057, with returning visitors (M = 17.2; SD = 7.7)
+visiting fewer locations than new visitors (M = 18.7; SD =
+12.2). These results are in conjunction of the results reported in
+Lanir et al. (2011) of the differences in behavior between new
+and returning visitors.
+We conclude that although, in total, visitors with the guide
+visited more locations, their overall pace was slower than
+visitors without the guide.
+5.1.3. Average time in a location
+We calculated the average time a visitor spent in a location.
+Locations were defined as museum exhibits where we had
+a beacon installed on (there were 45 such exhibits, which
+included most major exhibits in the museum). Results indicate
+that visitors who used the mobile guide spent more time in
+these locations (M = 89.9 s, SD = 57.8) than visitors who
+did not use the mobile guide (M = 31.4 s, SD = 24.8),
+F (1, 401) = 132.8, P < 0.001.
+To further examine visitor average time in locations, for the
+with-guide group, we calculated the time visitors spent at a
+location removing the time visitors listened to presentations. We
+hypothesized that the guide might cause visitors to spend extra
+time in marked exhibits, even beyond using the guide, because
+of the stimulation caused by the guide. We found that, on
+average, visitors spent 48.4% of their time at locations listening
+to presentations. After removing the listening-to-presentation
+time, visitors using the guide spent an average of 47.5 s in
+an exhibit (SD = 39.9). A statistical test comparing this
+result with time spent at an exhibit of visitors who did not
+use the guide (M = 31.4 s, SD = 24.8, as stated before)
+showed that this difference was significant, F (1, 401) = 11.3,
+p < 0.001. To further investigate the time spent in a location, we
+aggregated the data according to locations as reported in the next
+section.
+5.2. Analysis per exhibit
+To examine the holding and attracting power of exhibits, we
+aggregated and analyzed the data per exhibit. There were a
+total of 45 instrumented exhibits in the museum for which we
+measured the amount of visitors and the total time spent for
+each exhibit.
+To examine the holding power of exhibits, for each exhibit
+we calculated the average time that visitors spent at that exhibit
+(only for visitors who were detected at the exhibit). A paired
+t-test of the amount of time spent in an exhibit showed that
+visitors who did not use the guide spent less time in an exhibit
+(M = 29.3 s, SD = 20.6) than for those who used the guide
+(M = 80.13 s, SD = 32), t (44) = 16.82, p < 0.001,
+supporting the notion that the guide increases the holding power
+of these exhibits. It is interesting to note the high standard
+deviation of time spent in an exhibit for visitors using the guide
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+We report on the analysis of system usage and user behavior
+in the museum stemming from the log visits data and visitors’
+attitudes as analyzed from the questionnaires. We begin with a
+look at general visit behavior of the two study groups. Next we
+take a deeper analysis from the exhibit point of view. We then
+focus on group analysis, comparing groups that visited the
+museum with and without a mobile guide. Finally, we compare
+subjective visitor attitudes.
+
+451
+
+452
+
+Joel Lanir et al.
+5.3.
+
+Group analysis
+
+5.3.1. Proximity to other group members
+We analyzed interaction within groups of visitors arriving to the
+museum together in order to understand group behavior with
+and without the guide. We compared the amount of time group
+members spent together, in order to see whether the mobile
+guide encourages or inhibits group interaction. Proximity of
+group members was measured by examining each visitor’s
+Blind data on proximity to other Blinds. This information was
+augmented by Beacon data (if two visitors were detected at the
+same Beacon at the same time, we assumed they are in close
+proximity).
+Visitors in different group sizes behave differently. For
+example, while for a group of two, the pair can either be together
+or not, with a group of three visitors, each member can be
+separate, there can be two visitors walking together while the
+third walks separately, or the three visitors can walk together.
+With a group of four, there are even more options. Therefore, we
+separated the following analyses according to the group size. In
+regards to the without-guide groups, each group member wore
+a Blind and was tracked. As for the with-guide groups, each
+of the group members used a mobile guide (and therefore also
+wearing a Blind). In some cases, a group came and only some
+members of the groups used a mobile guide (for example, a pair
+of visitors in which only one person wanted to use a mobile
+guide). We did not include these cases in the analysis, because
+we did not record tracking data for users who did not use the
+mobile guide in this group. Table 1 summarizes the results of
+the group analysis.
+
+Figure 4. Average time in seconds a visitor spent with and without the guide (holding power) in all exhibits sorted according to time spent with
+the guide (left) and in five leading exhibits of the Hecht museum as determined by the museum curator (right).
+
+Figure 5. Percentage of visitors that attended an exhibit (attraction power) with and without the guide in all exhibits sorted according to attraction
+power with the guide (left), and for five leading exhibits in the Hecht museum (right).
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+(M = 106.9), calculated across exhibits. This emphasizes that
+not only did visitors stay longer at exhibits, but also that visitor’s
+behavior with the guide varied quite a lot, with some visitors
+spending much time at locations while others simply passing by.
+Figure 4 shows the holding power with and without the guide
+in all of the exhibits sorted from high to low according to the
+time spent with the guide (left) and the holding power of five
+main exhibits in the museum as determined by the museum’s
+curator (right). We can see that the holding power of most
+exhibits doubled and sometimes more than tripled by using
+the guide.
+To examine the attraction power of each exhibit, we
+calculated the percentage of visitors who visited each exhibit out
+of the total number of visitors for the two groups. We examined
+only instrumented exhibits (see Fig. 3); however, these included
+all major museum highlights as defined by the museum curator.
+A paired t-test of the percentage of visitors attending an exhibit
+showed a significant difference between visitors who did not use
+the guide (M = 27.6, SD = 17.6) and visitors who used the
+guide (M = 33.7, SD = 27.6), t (44) = 6.08, P < 0.001,
+supporting the notion that the guide increases the attraction
+power of these exhibits. Figure 5 presents the attraction power
+of all exhibits sorted from high to low according to attraction
+power with the guide (left) and the attraction power of the five
+main exhibits (right). We see that while the attraction power of
+most exhibits increased, this increase was much more moderate
+compared with the difference in holding time, and in some cases
+(such as the Coins exhibit) there was almost no increase in
+attraction power at all.
+
+453
+
+Influence of a Location-aware Mobile Guide
+Table 1. Percentage of time pairs were in proximity (average of all combinations of
+pairs in the group), and percentage when the entire group members were in proximity
+according to the group size.
+With guide
+n
+41
+3
+6
+
+Pairs (%)
+24.34
+17.6
+15.6
+
+All group (%)
+13.1
+9.2
+
+Figure 6. The percentage of time pairs without the guide (n = 39)
+and with the guide (n = 41) were in proximity to each other. Error
+bars display 95% confidence interval.
+
+We first looked at visitors who came to the museum in pairs.
+We examined a total of 39 pairs who visited the museum without
+the guide and 41 pairs who visited the museum with a guide.
+We measured proximity of the pairs to each other, i.e. how
+much time out of the entire visit was the pair in proximity.
+Results indicate that without the guide pairs of visitors spent
+more time in proximity (M = 41.35%, SD = 23.8) than with
+the guide (M = 24.34%, SD = 18.06), F (1, 78) = 13.029,
+P = 0.001 (Fig. 6). We also measured the amount of times
+each pair separated, where a separation was defined as a pair
+not being in proximity for more than 10 s. Pairs without the
+guide separated slightly less per hour (M = 11.31, SD = 9.8)
+than pairs with the guide (M = 12.6, SD = 6.9); however, this
+difference was not significant, F (1, 78) = 0.484, P = NS.
+Next, we looked at groups of three visitors arriving together.
+There were only three groups of three visitors who visited
+the museum with guides and four groups of three visitors
+who visited the museum without guides. Because of the low
+number of groups, we did not conduct a statistical analysis but
+simply report the descriptive results. For each group of three,
+we measured both the proximity of all three visitors (i.e. when
+all three visitors were in proximity at a given time) and the
+proximity of each pair resulting in three pair-proximity results
+for each group. In the ‘with-guide’ group, all three visitors were
+in proximity 13.1% of the time (n = 3). Looking at pairs,
+visitors in groups of three were in proximity to at least one
+member of their group on an average of 17.6% of the time
+
+n
+39
+4
+3
+
+Pairs (%)
+41.35
+34.4
+37.0
+
+All group (%)
+28.2
+12.4
+
+(n = 9, SD = 11.6). With the ‘no-guide’ group, all three
+visitors were in proximity 28.21% of the time (n = 4). On
+average, visitors were in proximity to at least one member of
+their group 34.4% of the time (n = 12, SD = 15.3).
+Concerning groups of four visitors, there were six such
+groups using the guide and three such groups without the guide.
+For each group, we looked at the proximity of all four members
+at any given time and the proximity of all possible pairs (six pairs
+for each group of four). In the ‘with-guide’ group, all members
+were in proximity 9.2% of the time (n = 6). Looking at pairs,
+visitors in groups of four were in proximity to each member
+of the group on an average of 15.6% of the time (n = 36,
+SD = 11.4). In the ‘without-guide’ group, all members were in
+proximity 12.4% of the time (n = 3) while each member was
+in proximity to each other member of the group on an average
+of 37.03% of the time (n = 18, SD = 30.7).
+Finally, to see whether these patterns change when people
+are engaged with exhibits, we filtered the data and looked only
+at the proximity to other group members when near an exhibit.
+Results are similar to the ones we already reported: when near
+exhibits, without the guide pairs of visitors spent more time
+in proximity to their friends (M = 21.5%, SD = 21.5) than
+with the guide (M = 10.6%, SD = 7.39), F (1, 78) = 6.40,
+P = 0.014.
+Summarizing these results, we see that visitors visiting
+in groups were substantially more together (often twice as
+much!) when not using the guide than when using the guide.
+These results were significant for pairs of visitors, and this
+trend continued for larger group sizes of three and four
+visitors.
+5.3.2. Talking to other group members
+During the study, we managed to upgrade three Blinds with
+embedded microphones that measure noise levels (without
+actually recording conversation for privacy reasons). We were
+interested in comparing the amount of talk between groups of
+visitors using and not using the mobile guide. Because we had
+only three Blinds with microphones, and started measuring
+microphone data at the end of our study, our data includes
+only 17 visitors using the guide and 29 visitors not using the
+guide who came in groups and used one of the Blinds with
+microphones.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Group size
+2
+3
+4
+
+Without guide
+
+454
+
+Joel Lanir et al.
+
+5.4.
+
+Informal observations
+
+During the 10 months of deployment, we have informally
+observed many visitors during their museum visit, both
+individuals and groups, both using the mobile guide and without
+it. We also gathered visitors’ qualitative feedback using openended questions, in order to be able to further understand
+visitor’s opinions and attitudes toward the use of the guide. In
+the post-visit questionnaire, we asked visitors to state what were
+the advantages and disadvantages of using the mobile guide.
+Falk (2009), in his taxonomy of the museum visit experience,
+suggests five visitor identity prototypes. The explorer explores
+the museum because of curiosity or general interest in
+discovering more about the subject matter introduced by the
+museum. The experience seeker, often a tourist, is typically
+motivated by looking for an enjoyable experience, often looking
+for the main attraction the museum. The professional/hobbyist
+is interested in specific topics out of the full collection of the
+museum collection. the recharger is looking for a place of
+atmosphere while the facilitator is interested in facilitating the
+visit for someone else. In our observations, we noticed that,
+at the Hecht museum, visitors arriving alone were mostly of
+the explorer type. These visitors mainly focused their attention
+on the exhibits. Explorers (as well as hobbyists) come to
+the museum mostly to learn, and therefore carefully examine the
+exhibits and the corresponding interpretive aids. Therefore,
+the mobile guide, as it was designed, was a perfect aid for these
+types of visitors. This is reflected by many positive comments in
+the open-ended questions saying that the guide provided more
+information (e.g. ‘the guide adds more information on exhibits
+beyond the text given in the museum labels’). For the experience
+seekers, the guide provided an enhancement of the experience
+(e.g. ‘it makes the visit more interesting and stimulating’),
+as well as a way to receive self-paced interpretation (‘The
+information was available at my own pace’).
+Visitors coming in groups can be categorized into those who
+mostly focus on the exhibits, those who combine both focus
+on exhibits and social interaction between group members and
+those who are mostly engaged in social interaction and use
+the museum as an ambient space for the social interaction (for
+example, a romantic couple who come to the museum mostly
+for the atmosphere). It seems that while the mobile guide was a
+perfect companion for those focusing on the exhibits (in groups
+these were mainly explorers and professionals), it was less
+
+useful for visitors who wanted to combine social aspects in
+their visits (rechargers). Indeed, we noticed that groups and
+individuals of the recharger types often did not choose to use
+the guide, and when they did, either used one device viewing
+it together, or limited the use of the guide. The types of groups
+also differ according to group composition. While some groups
+consisted of two or more adults, many groups consisted of
+family members (i.e. one or more adult with one or more kids).
+For adults with children, the guide seemed very useful. Often,
+the kid took the mobile guide and used it as a way to empower
+themselves: leading the way instead of being led by the adult
+similar to what was reported by Serrell (1997). In other cases,
+the guide acted as an aid for the adults in their facilitator role
+(e.g. ‘It is a thing that extends the visit stay and enhances the
+interest of the kids’), as well as a way to ‘entertain’ the kids
+while allowing the adult to look at the exhibits, transforming
+their role from facilitators to explorers.
+In terms of interaction with the surroundings, our informal
+observations were in par with the results reported above. We
+noticed that visitors coming alone were more detached from
+their surrounding when using the guide, with their focus mostly
+changing between the guide and the exhibits. This is reflected in
+a comment: ‘Sometimes it causes one to listen to the guide rather
+than experience the artifacts’. Furthermore, as was described in
+Section 5.3, we observed that groups of adults often became less
+social and less in contact with each other when using the guide.
+This was reflected in another comment: ‘It isolated me from
+the person I came with’. Nevertheless, most visitors’ comments
+were very positive as one visitor commented: ‘You can visit the
+museum on your own pace. It’s a wonderful way of allowing
+people to go and see what attracts their attention without being
+in an organized group’.
+5.5. Visitor attitudes
+Following the visit, we presented visitors with a set of
+statements and asked them to use a 7-point Likert scale to
+indicate how much they agreed with each statement, ranging
+from strongly disagree (1) to strongly agree (7). Table 2 presents
+these statements as well as visitors’ average responses for both
+groups (with-guide and without-guide) for visitors who came
+alone and for visitors who came in groups. With ranked ordinal
+data and a relatively small sample size, it is recommended to
+use a nonparametric statistical test (Huck et al., 1974). We
+therefore used the Mann–Whitney U nonparametric test to
+examine differences in ranking between the groups (with vs.
+without guide) and to examine differences between visitors
+visiting alone and in groups.
+We first compared between the with-guide and without-guide
+groups on ratings of all visitors. As can be seen in Table 2,
+visitors rated the statements ‘I would like to visit the Hecht
+museum again’, and ‘I was happy with the visit’ slightly higher
+in the with-guide group. However, these differences were not
+significant. Visitors also felt that they learned during the visit
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+We measured the percentage of the time that the microphones
+detected talking. On average, visitors using the guide talked
+less (M = 9.11% of the time, SD = 6.2) than visitors who
+did not use the guide (M = 11.62%, SD = 10.59). However,
+this difference was not significant, F (1, 44) = 0.78, P = NS.
+Looking at the data, and taking into account the high variance
+(i.e. there are group of visitors who talked a lot, and those who
+did not talk at all), we believe that these data indicate a trend
+which would become significant given a larger sample.
+
+Q17
+
+5.98 (1.40)
+6.06 (1.19)
+5.54 (1.37)
+6.22 (1.11)
+6.13 (1.18)
+5.95 (1.20)
+5.59 (1.39)
+6.06 (0.94)
+6.03 (1.36)
+6.03 (1.19)
+5.56 (1.36)**
+6.16 (1.06)
+Bold denotes significant differences
+* denotes significant differences between bisitors visiting alone and visitors visiting in groups
+** denotes differences between the with-guide and without-guide groups
+
+6.26 (1.36)
+6.08 (1.17)*
+6.02 (1.43)
+6.29 (1.04)
+6.18 (1.41)
+5.94 (1.28)
+5.90 (1.46)**
+6.23 (1.22)
+
+6.08 (1.48)
+5.75 (1.40)*
+5.73 (1.49)
+6.15 (1.39)
+
+5.50 (1.56)
+5.53 (1.47)
+5.51 (1.52)
+5.34 (1.76)
+
+I felt that I control where I go to and what I see in
+the museum
+I would like to visit the Hecht museum again
+The visit was fun
+I learned a lot during the visit
+I was happy with the visit to the Hecht museum
+
+5.32 (1.74)
+
+5.30 (1.72)
+
+groups (n = 89)
+alone (n = 51)
+(n = 140)
+(n = 133)
+(n = 242)
+
+groups (n = 107)
+
+Visitors in
+Visiting
+Visiting alone
+Statement
+
+All visitors
+
+Visitors in
+
+All visitors
+
+Without guide
+With guide
+
+455
+
+more with the guide than without the guide. This difference was
+significant (U = 106, P = 0.036). This result makes sense,
+as the mobile guide was very didactic in nature, explaining
+different aspects of each exhibit. It is known that many visitors
+do not like to read long labels (McManus, 1989). These visitors’
+learning ability benefits from a visual-audio mobile guide.
+Comparisons of the other statements (comparing all visitors
+with and without the guide) did not reveal significant results.
+Although not significant, it is interesting to note that people felt
+less in control regarding where to go and what to see with the
+mobile guide compared with without it. This relates to Lanir
+et al. (2011) who showed that proactiveness of a mobile guide
+may reduce the amount of control that a user perceives.
+Next, we compared between the ratings of visitors who
+came to the museum alone and visitors who came to the
+museum in groups for each condition. Looking at the withguide condition, we see that except for the first statement (that
+deals with control as opposed to the other statements that deal
+with user experience), on all other statements, visitors who
+visited alone had higher ratings than visitors who visited in
+groups. Statistical tests using the Mann–Whitney test showed
+a significant difference for the statement ‘The visit was fun’
+(U = 114, P = 0.043), indicating that visitors enjoyed the
+guide more when they were alone rather than being in a group.
+In other cases, there was a marginally significant difference
+for the statement ‘I learned a lot during the visit’ (U = 241,
+P = 0.070), suggesting that visitors using the guide felt they
+learned more when they were alone rather than when they
+were in groups. Tests on all other statements did not yield
+significant results. Looking at the without-guide condition,
+statistical tests did not yield significant results between visitors
+visiting alone and visitors visiting in groups on any of the
+statements.
+
+6.
+
+DISCUSSION
+
+Results clearly indicate that the use of the mobile guide affected
+museum visitor’s behavior.Visitors using the mobile guide spent
+more time in the museum and spent less time in proximity to
+their group members. In addition, both the attraction power and
+the holding power of the marked exhibits increased for visitors
+using the guide. Next, we discuss our major findings.
+6.1.
+
+Impact of technology on the museum visit
+
+6.1.1. Using a mobile guide increased visit time
+The fact that using the mobile guide increased visitors’ time
+in the museum by 31% (a difference which was significant)
+is encouraging for advocates of mobile guides. Although a
+longer visit does not always mean a better visitor experience,
+the time spent in the museum is often deemed an indicator of
+learning (Serrell, 1997; Falk and Dierking, 2000), and spending
+more time in the museum is often a target goal for museum
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Table 2. Visitors’ average ratings (and standard deviation) with and without the guide for all visitors and for visitors who came in groups of several statements. Ratings are
+given on a 7-point Likert scale.
+
+Influence of a Location-aware Mobile Guide
+
+456
+
+Joel Lanir et al.
+
+6.1.2. The mobile guide monopolized visitor’s time
+Results indicate that using a mobile guide increased both the
+attraction power and the holding power of the marked exhibits.
+We saw that the guide has substantially increased the holding
+power, on average by 173%. Although we expected holding
+power to increase when using the guide, we were surprised
+by this large increase. This difference is no doubt due to the
+time spent by visitors listening to the guide’s presentations. We
+believe that the engaging and different modality of interpretation
+method caused visitors to spend much more time in front of
+exhibits that provide multimedia content.
+We also saw that the guide has increased the attraction power
+of the marked exhibit (by an average of 22%). This means that
+out of the total number of visitors, a higher rate of visitors visited
+the marked exhibits using the guide than those who did not use
+the guide. Exhibits with multimedia content were both marked
+by a small sticker near the exhibit, and highlighted on a map in
+the mobile guide. Visitors using the guide were more attracted to
+exhibits in which there was electronic interpretation, and were
+probably looking for these exhibits. It seems that the guide
+contributed toward bringing more people to marked exhibits,
+and once a visitor came to these spots, the guide kept them
+there as indicated by the holding power. Furthermore, we saw
+that even when removing time spent listening to presentations,
+visitors spent more time at the marked exhibits, suggesting
+that the guide caused visitors to be more engaged with the
+exhibits themselves (and not only with the guide). These results
+have strong implications for museum curators and mobile guide
+designers. Introducing a mobile guide to the museum affects
+visitor behavior in a strong way. Visitors using the guide are
+more attracted to exhibits that have electronic interpretation
+
+and spend much more time there. For these visitors, this might
+come in exchange for time spent in other exhibits. Electronically
+enhanced exhibits (that have mobile multimedia interpretation)
+should be therefore carefully chosen in such a way that is insync with the museum’s commercial, educational and overall
+goals.
+
+6.1.3. The use of the guide disrupted the social interaction of
+visitors coming in a group
+A major finding of this study is the evidence shown on the
+effect that using a mobile guide has on groups of visitors.
+While previous evidence on the isolation effect that a guide
+might have were based on ethnographic observations of a small
+number (10–15) of individual visitors (Hsi, 2003; Bellotti et al.,
+2002), or simply noted the risk without providing any support
+(Angliss, 2006a,b), our findings based on empirical analysis of
+a large number of groups leave no doubt regarding this effect
+(as well as quantify it). We have shown that when using the
+guide, small groups of visitors of various sizes arriving together
+spent less time (often half as much) in proximity with each
+other. Visitors in these groups also talked less with each other,
+although the difference in talking was not significant. Since
+proximity to other group members as well as amount of verbal
+communication are used as measures for social interaction
+in the museum (Leinhardt and Knutson, 2004; McManus,
+1988), this provides strong empirical support to the suggestions
+made (Grinter et al., 2002; Kuflik et al., 2011a,b) regarding
+the de-socializing effect that a mobile guide might have on
+groups. These findings are substantiated when looking at the
+subjective results of visitors who used the guide. We see in the
+questionnaire results, that visitors using the guide and visiting
+alone rated the guide higher (on all statements) than visitors
+using the guide who came in groups. Furthermore, users who
+did not use a guide had more fun visiting in groups than visiting
+alone (as suggested in Leinhardt and Knutson, 2004), while
+visitors who used the guide had more fun using it alone rather
+than in a group.
+It seems that using a mobile visitors’ guide might put
+individual visitors in a ‘technological bubble’ making it difficult
+for them to keep track of their companions or family members,
+and converse about what they see (Luyten et al., 2006). This
+might be similar to the way a person listening to music on
+an iPod (e.g. on a bus, or on a subway) is detached from
+the surroundings. There is a paradox here. On the one hand,
+visitors want to use a mobile guide in order to receive richer
+and personalized content that assists them in learning and
+understanding the museum exhibits better. On the other hand,
+we saw that this use decouples the group and forces visitors
+into a ‘technological bubble’ in which visitors are in less social
+contact with their group members. Therefore, while a guide
+provides a better connection to the museum content, this comes
+at the expense of hindering social interaction, which is important
+to the learning process.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+curators (although it can be noted that commercially oriented
+museums may wish for a higher circulation and therefore would
+prefer visitors to move faster through the museum). This is also
+supported by the subjective questionnaire results that indicate
+that visitors who used the guide felt they learned more during the
+visit than visitors who did not use the guide (although there is
+no statistically significant support to indicate that the increased
+learning resulted in an increase in visitor experience in terms of
+satisfaction or ‘fun’).
+An interesting observation is that when using the guide,
+together with an increase in the subjective impression of
+learning there is a slight increase in satisfaction and wish to
+come back to the museum (compared with not using a guide).
+The reason for this increase seems to come from a different
+source than many would expect. The subjective data suggest
+that it is not caused by the fun experienced with using the
+electronic device, but rather the perceived benefit seems to
+come from using a tool perceived as a serious companion (i.e.
+enhancing learning). It is also possible that the limited fun is a
+consequence of isolation, due to limited interaction with others
+stemming from the individual-oriented technology as discussed
+further on.
+
+Influence of a Location-aware Mobile Guide
+6.2.
+
+Increasing social interaction
+
+457
+
+device to the shared screen, similar to the work that has been
+done by Rocchi et al. (2004).
+6.3.
+
+Limitations and reflections
+
+The study has a number of limitations. First, our analysis
+depends on the quality and reliability of our instrumentation (i.e.
+the positioning system). While the positioning system generally
+worked as expected, we did notice that there were some lapses
+in Blind positioning messages arriving to the server (i.e. each
+Blind sends two messages per second, however some messages
+got lost). Similarly, proximity of two Blinds can be missed
+when Blinds are shielded by other visitors or when visitors
+are standing back to back. To ensure that it did not impair the
+positioning analysis, we applied smoothing algorithms (filling
+up gaps in positioning) and redundancy mechanisms (proximity
+of group members were decided both by Blinds detecting other
+Blinds and by simultaneous detection of Blinds by a single
+Beacon). Secondly, our indoor positioning system does not
+provide continuous tracking over the entire museum but rather
+location-based positioning in 45 major exhibits (as determined
+by the museum curator). While RF-based positioning is an
+acceptable solution for museums (Kuflik et al., 2011a,b), we do
+not have information on visitor behavior in other, possibly less
+popular, exhibits. Thirdly, our analysis is based on quantitative
+data gathered through the system logs. However, it is difficult
+to deduce behavioral reasoning from log file analysis by itself.
+In order to understand why people behave in such a way (i.e.
+why visitors were in less proximity to their peers when using the
+guide), these data need to be augmented with qualitative data in
+terms of observations of visitors in the museum and interviews.
+Finally, the results of this study are dependent on the specific
+design and implementation of the mobile guide as well as the
+specific museum used in the study. The time spent using the
+guide depends both on the quality of information provided
+and on the user interface and user experience when using the
+guide. For example, the design of our guide provides a list
+of questions from which the user chooses one or more 1-min
+presentations for viewing (see Fig. 1). From the log data, we
+saw that most visitors saw one or two presentations in a location
+where they interacted with the guide, with few visitors stopping
+a presentation in the middle. This translates to between 60 and
+120 s of using the guide at those locations. Had we designed the
+presentations to be shorter, the holding power of the guide might
+have been smaller. Furthermore, the content presented in the
+presentations was mostly of didactic nature. It contained verbal
+explanations and interpretations of the exhibits in the museum
+augmented by visual images. As such, the visitor, after choosing
+the content, passively views the presentations. Other designs
+of mobile guides might be more interactive, playful or group
+oriented, and thus might enable different types of interaction.
+This brings us to a final important point. The current guide
+was designed in the spirit and as an extension of a classical
+audio museum guide. In a classic audio guide, the visitor
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+There is no doubt about the fact that the use of personal mobile
+technology is increasing dramatically. Particularly, in cultural
+heritage, many sites and museums offer interpretation options
+using either a dedicated mobile guide or information provided
+to the visitors’ personal hand-held device. Given the negative
+social effect as shown here and the emphasis many museum
+researchers put on group experience and group learning for the
+overall visitor experience (Dierking and Falk, 1994; Leinhardt
+and Knutson, 2004; McManus, 1988), it is important to mitigate
+this dilemma. One way is by further investigating ways in which
+technology can enhance rather than reduce group experience.
+Several studies, including Luyten et al. (2006), Dini et al.
+(2007) and Hornecker (2008), have looked into using museum
+technology for groups. Of these, with the exception of games
+(Luyten et al., 2006; Ghiani et al., 2009), few have looked into
+directly using mobile guides for the benefit of groups or support
+of social interaction (Callaway et al., 2011; Cheverst et al.,
+2000b; Grinter et al., 2002; Kuflik et al., 2011a,b). We believe
+that it is important to continue and examine other methods
+that enable both personalized, multimedia content and group
+support in the museum. One such promising direction is the
+use of shared mobile displays. We noticed that, in some cases,
+groups of visitors took only one iPod device and shared its
+view (these groups were not included in this study in order
+to not confound the results). These groups of visitors walked
+together in the museum, and watched the presentations and
+content together using the iPod’s speaker. While this solution
+was not ideal because of the small screen, and the low volume
+of the speaker (and possibly it also bothered other visitors),
+it was still preferred by some groups over using individual
+iPods and thus decoupling the group. A simple enhancement
+of this idea using a larger screen (such as a tablet, or a mobile
+projector), and duplicate earphones (possibly wireless), may
+substantially improve these visitors’ experience. And if offered
+as a possible museum solution, we believe that many visitors
+would prefer this choice. Further research should examine
+whether mobile shared displays in the form of tablets or a
+mobile projector are a viable solution for small groups of people
+in the museum.
+Another possible option is to use navigational support
+and recommendation capabilities in order for the system to
+proactively suggest group-oriented ideas to visitors who split.
+For example, the system can recommend places of mutual
+interest as meeting places and refer visitors to group members
+that expressed interest in exhibits that seem of interest to
+them (an extension of the personal context-aware messages
+mechanism suggested by Kuflik et al. (2011a,b)). Finally, large
+displays located at various locations in the museum can be used
+by small groups to collaboratively view interpretive information
+rather than view it individually, and thus keep the group intact.
+This will entail development of interaction techniques that
+would transfer attention and information from the personal
+
+458
+
+Joel Lanir et al.
+
+7.
+
+CONCLUSIONS
+
+The use of a mobile guide significantly changed the way visitors
+behave in the museum. While some of the changes, such as
+the increased time spent in the museum, can be considered
+beneficial, other changes, such as the increased attention
+of electronically interpreted exhibits, need to be carefully
+considered by museum curators regarding how this change
+will affect the visitor’s entire experience. We have presented
+empirical evidence to support the notion that an electronic
+museum guide detaches the visitor from his or her group. Since
+museum researchers agree that the social aspects of the visit are a
+central part of the museum visit experience, especially for those
+who come in groups, this should indicate for museum curators
+to proceed with caution and provide a challenge for researchers
+and mobile guide designers. Further efforts should be made to
+design mobile interpretation aids that would retain the benefits
+of the mobile guide while keeping, or even increasing, group
+cohesiveness and group communication. Finally, we discussed
+the potential of the technology to encourage group interaction,
+as a way to overcome the isolation caused by the use of
+individual devices and pointed out to various technological
+solutions demonstrating this potential.
+
+Angliss, S. (2006a) Talking sense. Mus. Pract. Mag., 34, 46–47.
+Angliss, S. (2006b) Sound and vision. Mus. Pract. Mag., 34, 51–52.
+Aoki, P.M., Grinter, R.E., Hurst, A., Szymanski, M.H., Thornton, J.D.
+and Woodruff, A. (2002) Sotto Voce: Exploring the Interplay of
+Conversation and Mobile Audio Spaces. In Proc. SIGCHI Conf.
+Hum. Factors Comput. Syst. Changing Our World, Changing
+Ourselves, pp. 431–438. ACM Press, Minneapolis, MN, USA.
+Ardissono, L., Kuflik, T. and Petrelli, D. (2011) Personalization in
+cultural heritage: the road travelled and the one ahead. User Model.
+User-Adapt. Interact., 22, 1–27.
+Baus, J., Cheverst, K. and Kray, C.A (2005) Survey of Mapbased Mobile Guides. In Zipf, A., Meng, L. and Reichenbacher,
+T. (eds), Map Based Mobile Services—Theories, Methods and
+Implementations. Springer, Berlin Heidelberg, Germany.
+Bell, P. (2009) Learning Science in Informal Environments: People,
+Places, and Pursuits. National Academy Press, Washington DC,
+USA.
+Bellotti, F., Berta, C., De Gloria, A. and Margarone, M. (2002) User
+testing a hypermedia tour guide. Pervasive Computing, 1(2), 33–41.
+IEEE Computer Society.
+Billings, S. (2009) Upwardly mobile. Mus. Pract., 46, 30–34.
+Bird, S. (2007) Deploying and Assessing the Impact of Audio Guides at
+the Roman Baths, Bath, UK. In McLoughlin, J., Kaminski, J. and
+Sodagar, B. (eds), Technology Strategy, Management and Socioeconomic Impact, Heritage Management Series, vol. 2, pp. 109–
+121. Archaeolingua, Budapest, Hungary.
+Bitgood, S. (1992) Visitor orientation and circulation: some general
+principles. Visit. Behav., 8, 15–16.
+Bitgood, S. (2006) An analysis of visitor circulation: movement
+patterns and the general value principle. Curator, 49, 463–475.
+Bitgood, S. (2009) When is “Museum fatigue” not fatigue? Curator,
+52, 193–202.
+Bitgood, S. and Shettel, H.H. (1996) An overview of visitor studies.
+J. Mus. Educ., 21, 6–10.
+Bollo, A. and Dal Pozzolo, L. (2005) Analysis of Visitor Behaviour
+Inside the Museum: An Empirical Study. In Proc. 8th Int. Conf.
+Arts and Cultural Management, Montreal.
+Callaway, C., Stock, O., Dekoven, E., Noy, K., Citron, Y. and Dobrin,
+Y. (2011) Mobile Drama in an Instrumented Museum: Inducing
+Group Conversation via Coordinated Narratives. In Proc. 16th Int.
+Conf. Intelligent User Interfaces, pp. 73–82. ACM Press, Palo Alto,
+CA, USA.
+Cheverst, K., Davies, N., Mitchell, K. and Friday, A. (2000a)
+Experiences of Developing and Deploying a Context-aware Tourist
+Guide: The GUIDE Project. In Proc. 6th Annu. Int. Conf. Mobile
+Comput. Netw., pp. 20–31. ACM Press, New York.
+
+REFERENCES
+
+Cheverst, K., Davies, N., Mitchell, K., Friday, A. and Efstratiou, C.
+(2000b) Developing a Context-aware Electronic Tourist Guide:
+Some Issues and Experiences. In Proc. SIGCHI Conf. Hum. Factors
+Comput. Syst., pp. 17–24. ACM Press, The Hague, Netherlands.
+
+Alfaro, I., Nardon, M., Pianesi, F., Stock, O. and Zancanaro, M. (2005)
+Using cinematic techniques on mobile devices for cultural tourism.
+Inf. Technol. Tour., 7, 61–71.
+
+Ciavarella, C. and Paterno, F. (2004) The design of a handheld,
+location-aware guide for indoor environments. Pers. Ubiquitous
+Comput., 8, 82–91.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+arrives at an exhibit, chooses a number that is shown on the
+exhibit which ties the guide to the exhibit and listens to an
+audio interpretation. While the guide used in the current study
+has many advanced aspects such as location-awareness, video
+images, multiple options for each location and other advanced
+services (such as navigation), its basic function (providing
+didactic interpretation) is similar in nature. Both a classic audio
+guide and our guide are mostly designed to accommodate a
+single user. The personal nature of a hand-held device, having
+a small screen and affording input from one person, as well
+as the way it was designed makes it a difficult to use in
+support of a small group of visitors, causing the negative social
+effect reported in this study. We believe that the results of this
+study generalize to most conventional information-per-location
+type of museum mobile guides. The guide was designed to
+provide general, didactic type of information for the 45 major
+locations in the museum, with the content and design written
+and supervised by the museum curator. As such, it is similar
+in nature to most guides available in museums today. However,
+novel artifacts for exploring the museum of different nature,
+which are designed to support small groups such as reported in
+Aoki et al. (2002), Dini et al. (2007) and Callaway et al. (2011),
+might show different results in regards to social interaction.
+
+Influence of a Location-aware Mobile Guide
+Cohen, E. (1985) The tourist guide: the origins, structure and dynamics
+of a role. Ann. Tour. Res., 12, 5–29.
+Dierking, L.D. and Falk, J.H. (1994) Family behavior and learning in
+informal science settings: a review of the research. Sci. Educ., 78,
+57–72.
+Dim, E. and Kuflik, T. (2009) Group Situational Awareness: Being
+Together. In Workshop on Personalization in Mobile and Pervasive
+Computing, in Conjunction with UMAP 2009. Trento, Italy.
+
+Dini, R., Paternò, F. and Santoro, C. (2007) An Environment to Support
+Multi-user Interaction and Cooperation for Improving Museum
+Visits through Games. In Proc. 9th Int. Conf. Hum. Comput. Int.
+Mobile Devices and Services, pp. 515–521. ACM Press, Singapore.
+Emmanouilidis, C., Koutsiamanis, R.-A. and Tasidou, A. (2012)
+Mobile guides: taxonomy of architectures, context awareness,
+technologies and applications. J. Netw. Comput. Appl., 36(1),
+103–125.
+Falk, J.H. (2009) Identity and the Museum Visitor Experience. Left
+Coast Press, Walnut Creek, CA.
+Falk, J.H. and Dierking, L.D. (2000) Learning from Museums: Visitor
+Experiences and the Making of Meaning. Altamira Press, Lanham,
+MD, USA.
+
+Kjeldskov, J., Graham, C., Pedell, S., Vetere, F., Howard, S., Balbo, S.
+and Davies, J. (2005) Evaluating the usability of a mobile guide:
+The influence of location, participants and resources. Behav. Inf.
+Technol., 24, 51–65.
+Klein, H.J. (1993) Tracking visitor circulation in museum settings.
+Environ. Behav., 25, 782.
+Krüger, A., Baus, J., Heckmann, D., Kruppa, M. and Wasinger, R.
+(2007) Adaptive Mobile Guides. In Brusilovsky, P., Kobsa, A. and
+Nejdl, W. (eds), The Adaptive Web, pp. 521–549. Springer, Berlin,
+Heidelberg, New York.
+Kuflik, T., Lanir, J., Dim, E., Wecker, A., Corra, M., Zancanaro, M. and
+Stock, O. (2011a) Indoor Positioning: Challenges and Solutions for
+Indoor Cultural Heritage Sites. In Proc. 15th Int. Conf. Intel. User
+Interfaces, pp. 375–378. ACM Press, Palo Alto, CA, USA.
+Kuflik, T., Stock, O., Zancanaro, M., Gorfinkel, A., Jbara, S., Kats,
+S. and Kashtan, N. (2011b) A visitor’s guide in an active museum:
+Presentations, communications, and reflection. J. Comput. Cultural
+Heritage (JOCCH), 3, 11.
+Lanir, J., Kuflik, T., Wecker, A.J., Stock, O. and Zancanaro, M. (2011)
+Examining proactiveness and choice in a location-aware mobile
+museum guide. Interact. Comput., 23, 513–524.
+Leinhardt, G. and Knutson, K. (2004) Listening in on Museum
+Conversations. Altamira Press, Walnut Creek, CA, USA.
+
+Gammon, B. and Burch, A. (2008) Designing Mobile Digital
+Experiences. In Tallen, L. and Walker, K. (eds), Digital
+Technologies and the Museum Experience: Handheld Guides and
+Other Media, pp. 35–62. Altmira Press, Lanham, MD, USA.
+
+Luyten, K., Van Loon, H., Teunkens, D., Gabriëls, K., Coninx,
+K. and Manshoven, E. (2006) ARCHIE: Disclosing a Museum
+by a Socially-aware Mobile Guide. The E-Volution of IC
+Technology in Cultural Heritage. In Papers from the Joint Event
+CIPA/VAST/EG/EuroMed Event, pp. 221–226.
+
+Ghiani, G., Paterno, F., Santoro, C. and Spano, L.D. (2009) UbiCicero:
+a location-aware, multi-device museum guide. Interact. Comput.,
+21(4), 288–303.
+
+Manning, A. and Sims, G. (2004) The Blanton iTour—An Interactive
+Handheld Museum Guide Experiment. Museums and the Web,
+Charlotte, NC, USA.
+
+Grinter, R.E., Aoki, P.M., Szymanski, M.H., Thornton, J.D., Woodruff,
+A. and Hurst, A. (2002) Revisiting the Visit: Understanding How
+Technology Can Shape the Museum Visit. In Proc. 2002ACM Conf.
+Comput. Supported Cooperative Work, pp. 146–155. ACM Press,
+New Orleans, LA, USA.
+
+McManus, P.M. (1988) Good companions: more on the social
+determination of learning-related behaviour in a science museum.
+Mus. Manag. Curator., 7, 37–44.
+
+Hatala, M. and Wakkary, R. (2005) Ontology-based user modeling
+in an augmented audio reality system for museums. User Model.
+User-Adapt. Interact., 15, 339–380.
+
+Millonig, A. and Gartner, G. (2011) Identifying motion and interest
+patterns of shoppers for developing personalized way finding tools.
+J. Locat. Based Serv., 5, 3–21.
+
+Hornecker, E. (2008) ‘I Don’t Understand it Either, But it is Cool’visitor Interactions with a Multi-touch Table in a Museum.
+In Horizontal Interactive Human Computer Systems, 3rd IEEE
+International Workshop on Tabletop, pp. 113–120. Amsterdam,
+Netherlands.
+
+Paganelli, F., Parlanti, D., Francini, N. and Giuli, D. (2009) A SOABased Mobile Guide to Augment Tourists’ Experiences with UserGenerated Content and Third-Party Services. pp. 435–442, 2009.
+In 4th Int. Conf. Internet and Web Appl. Serv., 2009. Venice, Italy.
+
+McManus, P.M. (1989) Oh, yes, they do: how museum visitors read
+labels and interact with exhibit texts. Curator, 32, 174–189.
+
+Hsi, S. (2003) A study of user experiences mediated by nomadic web
+content in a museum. J. Comput. Assist. Learn., 19, 308–319.
+
+Petrelli, D. and Not, E. (2005) User-centred design of flexible
+hypermedia for a mobile guide: reflections on the hyperaudio
+experience. User Model. User-Adapt. Interact., 15, 303–338.
+
+Huck, S.W., Cormier, W.H. and Bounds, W.G. (1974) Reading
+Statistics and Research. Harper & Row, New York.
+
+Proctor, N. and Tellis, C. (2003) The State of the Art in Museum
+Handhelds in 2003. Museums and the Web, Charlotte, NC, USA.
+
+Kaasinen, E. (2005) User acceptance of location-aware mobile
+guides based on seven field studies. Behav. Inf. Technol., 24,
+37–49.
+
+Raptis, D., Tselios, N. and Avouris, N. (2005) Context-based Design of
+Mobile Applications for Museums: A Survey of Existing Practices.
+In Proc. MobileHCI 2005, Salzburg, Austria, pp. 153–160.
+
+Kenteris, M., Gavalas, D. and Economou, D. (2011) Electronic mobile
+guides: a survey. Pers. Ubiquitous Comput. 15, 97–111.
+
+Rocchi, C., Stock, O., Zancanaro, M., Kruppa, M. and Kruger,
+A. (2004) The Museum Visit: Generating Seamless Personalized
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Dim, E. and Kuflik, T. (2010) Social Signal Processing: Detecting
+Small Group Interaction in Leisure Activity. In Proc. 14th Int. Conf.
+Intel. User Interf., pp. 309–312. Hong Kong, China.
+
+459
+
+460
+
+Joel Lanir et al.
+
+Presentations on Multiple Devices. In Proc. 9th Int. Conf. Intel.
+User Interfaces (IUI’04), pp. 316–318. Funchal, Portugal.
+Schroyen, J. Gabriëls, K., Teunkens, D., Robert, K., Luyten,
+K., Coninx, K. and Manshoven, E. (2009) Beyond Merely
+Information Provisioning: A Museum Handheld Guide Based
+on Social Activities and Playful Learning. Hasselt University,
+Diepenbeek.
+
+Serrell, B. (1997) Paying attention: the duration and allocation of
+visitors’ time in museum exhibitions. Curator, 40, 108–113.
+Sparacino, F. (2003) Sto(ry)chastics: a Bayesian Network Architecture
+for User Modeling and Computational Storytelling for Interactive
+Spaces. In Proc. UbiComp 2003: Ubiquitous Computing, pp. 54–
+72. Seattle, WA, USA.
+
+Sumi, Y. and Mase, K. (2001) AgentSalon: Facilitating Face-toFace Knowledge Exchange through ConversationsAmong Personal
+Agents. In Proc. 5th Int. Conf. Autonomous Agents, pp. 393–400.
+ACM Press, Montreal, QC, Canada.
+Tallon, L. and Walker, K. (2008) Digital Technologies and the
+Museum Experience: Handheld Guides and other Media. Altamira
+Press, Lanham, MD, USA.
+Veron, E. and Levasseur, M. (1983) Ethnographie de l’exposition.
+Centre Georges Pompidou Bibliotheque, public d’Information.
+Paris, France.
+Vlahakis, V., Ioannidis, N., Karigiannis, J., Tsotros, M., Gounaris, M.,
+Stricker, D. and Almeida, L. (2002) Archeoguide: an augmented
+reality guide for archaeological sites. IEEE Comput. Graph. Appl.,
+22, 52–60.
+
+Stephens, S. (2010) The Growth of Mobile Apps. Mus. Pract.
+http://www.museumsassociation.org/museum-practice/apps, last
+accessed date 21 February 2013.
+
+Yalowitz, S.S. and Bronnenkant, K. (2009) Timing and tracking:
+unlocking visitor behavior. Visit. Stud., 12, 47–64.
+
+Stock, O., Zancanaro, M., Busetta, P., Callaway, C., Krüger, A.,
+Kruppa, M., Kuflik, T., Not, E. and Rocchi, C. (2007) Adaptive,
+intelligent presentation of information for the museum visitor in
+PEACH. User Model. User-Adapt. Interact., 17, 257–304.
+
+Zancanaro, M., Kuflik, T., Boger, Z., Goren-Bar, D. and Goldwasser,
+D. (2007) Analyzing Museum Visitors’ Behavior Patterns. In Proc.
+11th Int. Conf. User Model., 2007, pp. 238–246. Springer, Corfu,
+Greece.
+
+Interacting with Computers, Vol. 25 No. 6, 2013
+
+Downloaded from https://academic.oup.com/iwc/article/25/6/443/1126382 by Haifa University Library user on 17 November 2021
+
+Schwinger, W., Grün, Ch., Pröll, B., Retschitzegger, W. and
+Schauerhuber, A. (2002) Context-awareness in Mobile Tourism
+Guides – A Comprehensive Survey. Technical Report, Johannes
+Kepler University Linz, IFS/TK.
+
+Suh, Y., Shin, C., Dow, S., MacIntyre, B. and Woo, W. (2011)
+Enhancing and evaluating users’ social experience with a mobile
+phone guide applied to cultural heritage. Pers. Ubiquit. Comput.,
+15, 649–665.
+
+

@@ -1,0 +1,864 @@
+Modelling Museum Visitors’ Quality of Experience
+Eirini Eleni Tsiropoulou
+
+Athina Thanou
+
+Symeon Papavassiliou
+
+Department of Electrical and Computer
+Engineering and Institute for Systems
+Research
+University of Maryland, College Park,
+MD, USA
+eetsirop@isr.umd.edu
+
+School of Electrical and Computer
+Engineering
+National Technical University of Athens
+Athens, Greece
+athinathanou@central.ntua.gr
+
+School of Electrical and Computer
+Engineering
+National Technical University of Athens
+Athens, Greece
+papavass@mail.ntua.gr
+
+Abstract—This paper introduces a holistic approach in the
+formulation and optimization of museum visitors’ Quality of
+Experience (QoE). The most influential parameters on visitors
+QoE have been identified and quantified via performing an
+empirical study based on a questionnaire answered by experts in
+the field of arts and museums. Individual QoE functions with
+respect to each of the identified parameters have been formulated
+for different museum visitors’ style, towards capturing visitors’
+perceived satisfaction in a formal manner and providing them a
+customized and personalized experience. Visitors’ total QoE
+function is formulated considering the different weight of the
+parameters and optimized in order to determine the optimal
+conditions that maximize museum visitors’ satisfaction. Detailed
+numerical results are provided towards illustrating the
+applicability of the proposed framework under different
+scenarios.
+Keywords—Quality of Experience; modelling and optimization;
+perceived satisfaction; museum visitors’ styles.
+
+I.
+
+INTRODUCTION
+
+The visit of a museum is a dynamic, multi-variable,
+personalized and sensitive experience. Visitors’ perceived
+satisfaction can be affected by numerous factors, such as
+visual, audio, architectural characteristics. The proper
+consideration and formulation of those factors in wellstructured expressions / functions reflecting museum visitors’
+Quality of Experience (QoE) is of high importance in order to
+understand, predict and optimize visitors’ QoE. Visitors’ QoE
+optimization can provide significant benefits in the following
+directions: (a) improve visitors’ satisfaction, (b) engage
+visitors to repeat visiting and recommend their experience to
+others, i.e. word-to-mouth advertisement [1] and (c) provide
+input to museum managers towards fine-tuning museum’s
+services and improve museum’s visibility and brand loyalty.
+User behavior modeling and user satisfaction capturing, in a
+formal and exploitable manner, is critical in designing and
+delivering services where personalization, adaptation and
+recommendation become of paramount importance towards
+providing people more customized, and immersive experience.
+Several research works that have studied museum visitors’
+perceived satisfaction [2], [3], have argued on one hand about
+the absence of a “typical museum visitor” and on the other
+hand about the fact that visitors’ satisfaction can be affected
+either by common or personalized factors. Veron and
+Levasseur [4] identified four visiting styles in a primarily
+978-1-5090-5246-2/16/$31.00 ©2016 IEEE
+
+qualitative research work, based on visitors’ movement in the
+physical space of museum. Zancanaro et. al [5] tried to
+complement Veron’s and Levasseur’s research work by
+providing empirical evidence and a quantitative validation of
+the aforementioned qualitative theory. In [6] museum visitors’
+behavior is studied towards evaluating the impact of
+exhibitions on visitors’ satisfaction. Rojas et. al [7] introduced
+a research work relating visitors’ emotions with the
+corresponding QoE. The majority of these works have mainly
+emphasized on the sociocultural aspect of museum visitors’
+QoE. A first attempt to formulate museum visitors’ QoE in
+mathematical functions was proposed in [8] considering
+visitor’s distance from the exhibit and his / her stop over time
+to the exhibit. Authors’ goal was visitors’ classification in the
+four visiting styles proposed in [4]. Lykourentzou et. al [9]
+further studied the effect of smart routing and intelligent
+recommendations on improving museums visitors’ QoE.
+II.
+
+PAPER CONTRIBUTION & OUTLINE
+
+However, despite the attention that museum visitor’s QoE
+has recently attracted, to the best of our knowledge there is
+still lack of a holistic framework, where the parameters that
+influence and determine visitors’ QoE can be clearly
+identified, quantified, and more importantly formulated in
+different QoE functions with respect to the visiting styles [4]
+towards improving museum visitors’ perceived experience.
+Our research work and study aims exactly at filling this gap.
+Specifically, the basic characteristics, contributions and
+differences of our proposed framework can be summarized as
+follows:
+1. We introduce a modeling based holistic approach
+regarding the formulation and treatment of museums visitors’
+QoE. The main parameters that influence museums visitors’
+QoE have been identified via a detailed questionnaire
+answered by experts in the field of arts and museums, e.g.
+museum directors, gallery organizers, etc. (Section III.A). The
+aforementioned parameters have been related and tailored to
+the four visiting styles proposed in [4] (Section III.B).
+2. Different QoE functions depending on each parameter are
+formulated for each distinct visiting style. The mathematical
+formulation of visitors’ individual QoE functions, showing
+and quantifying the dependence of visitors’ QoE with respect
+to each of the most influential parameters, is one of the main
+novelties in the proposed framework (Section IV). Based on
+such a formulation a wide range of QoE-aware or QoE-driven
+
+International Association of Art-Critics-Greek [13], the
+Acropolis Museum, the National Art Gallery and Alexander
+
+related personalized services may be designed, e.g. smart
+guidance, etc.
+3. Based on the statistical analysis of experts’ questionnaire’s
+answers, different weights have been empirically determined
+for the parameters that mainly influence visitors’ QoE. Thus, a
+holistic museum visitors’ QoE modeling in appropriate
+functions differentiated per visiting style has been performed
+considering simultaneously all the examined parameters, as
+well as their corresponding weights. An optimization problem
+of the total QoE function is formulated and solved determining
+the optimal values of the most influential parameters towards
+maximizing visitor’s QoE (Section V).
+4. A quantitative analysis of the total QoE function is also
+performed under two realistic use case scenarios applying the
+proposed framework and presenting detailed numerical results
+(Section VI).
+Finally, Section VII concludes the paper and discusses
+future directions.
+III.
+
+Fig. 1. Imprortance weight of each QoE parameter
+
+Soutzos Museum, the Museum of Byzantine Culture, etc.
+Overall, fifty (50) detailed evaluations were provided and
+collected by experts, while the study lasted for two months.
+The statistical analysis of the results enabled us to determine
+the weight of each parameter within the overall QoE function,
+as it is presented in Fig. 1.
+
+METHODOLOGY TOWARDS DESIGNING QOE FUNCTIONS
+
+B. Visiting Styles Modelling & Description
+Museum visitors’ QoE is affected based on their preferences
+and habits. Towards studying visitors’ QoE, a common
+strategy is to classify them in clusters. Veron and Levasseur
+[4] have performed an anthropological research and have
+concluded to four types of visiting styles via analyzing
+visitors’ movement in the physical space of a museum.
+Visitors are classified in four animal metaphors clusters: ant,
+fish, grasshopper and butterfly. The animal metaphors stem
+from visitors’ natural movement, which can be translated to
+specific visitors’ preferences and interests.
+The ant visitors are interested to visit all exhibits, thus they
+follow a linear path walking close to exhibits and showing
+interest in the detail. They avoid empty spaces and especially
+room centers. Ant visitors are in favor of having a facilitator
+providing information about the exhibits. On the other hand,
+the fish visitors visit more often the center of the rooms, they
+prefer the non-crowded spaces and they want to have the
+“larger” picture of all the exhibits in the museum’s room.
+Therefore, they avoid going close to the exhibits, they do not
+stop by each exhibit and they do not desire to spend much
+time (i.e. complete presentation) with a facilitator.
+The grasshopper visitors have clear preferences and they
+are interested in specific exhibits that they visit in close
+distance and spend time to observe them, while they do not
+visit the rest of the exhibits. They already know a lot of
+information about the exhibits that they decide to visit. They
+are used to cross empty spaces, e.g. center of the museum
+room, in order to visit the targeted exhibits and they do not
+stop by the exhibits very often. Finally, the butterfly visitors
+are also interested in almost all exhibits in the museum,
+however they spend different time to observe each exhibit.
+Given that they do not have specific interests / priority in
+exhibits, they often change the direction of their movement,
+they move close to the exhibits, they see almost all the
+exhibits in the museum and they have a close look on the
+exhibit’s details. The butterfly visitors have an autonomous
+behavior, thus they have limited interest in following a
+
+A. Questionnaire to Experts
+Towards relating the physical parameters to visitors’
+perceived Quality of Experience, five main parameters have
+been identified as detailed and documented in the literature
+[4], [8] - [10]. In the following, the five main parameters are
+presented and let V and E denote the set of museum visitors
+and exhibits, respectively.
+1. d [m]: distance between exhibit ε ∈ E and visitor v ∈ V ,
+2. d e [m]: distance between two sequential exhibits ε ,ε ′ ∈ E ,
+3. ρ [visitors/m2]: crowd density,
+4. t f [min]: time spent with facilitator providing useful
+information to the visitors about the exhibits,
+5. S [m2]: exhibition size.
+It is noted that the aforementioned parameters do not
+influence visitor’s QoE in the same manner and with equal
+weight. Therefore, we have developed a questionnaire
+addressed to experts (e.g. archeologists, museum and gallery
+directors, etc.) towards determining the importance of each
+parameter, as well as obtaining some critical values of these
+parameters in order to design at a second step the QoE
+functions (Section IV). The questionnaire consists of a set of
+14 questions and has been carefully designed in order to
+quantify the experts’ perception and knowledge [11]. The
+questionnaire was distributed either physically or via Google
+Forms, where the latter provides a user friendly interface. At
+the first part of the questionnaire, the expert was authorized
+and some indicative demographic information was collected in
+order to justify his/her expertise. Afterwards, some more
+visitors’ QoE oriented questions are included, i.e. optimal
+distance between visitor and exhibit and between two
+sequential exhibits, etc. Finally the experts had the option to
+express the importance of each parameter in a five point scale.
+The questionnaire [11] was circulated to several relevant
+associations/forums and individual museums, including the
+International Council of Museums (ICOM) [12], the
+
+78
+
+facilitator and they are strongly affected by the crowd density,
+which influences them to change their visiting path.
+
+C. Crowd Density
+All style visitors’ QoE is decreased when crowd density is
+increased. Specifically, fish visitors’ QoE is more affected by
+increased crowd density, because they are standing in the
+center of the museum room and the increased crowd, blocks
+their visual contact with the exhibits. On the other hand, ant
+visitors have a priori decided to visit all exhibits in the
+museum room, thus the high congestion of visitors does not
+discourage them significantly from visiting the exhibits. Thus,
+visitors’ QoE relation with respect to the crowd density ρ can
+be formulated as in (9) (see Table I).
+
+IV. INDIVIDUAL VISITOR’S QUALITY OF EXPERIENCE
+As described in Section III.A, our initial goal in this work is
+to formulate appropriate QoE functions, and at a second step
+optimize visitor’s total QoE function towards determining the
+optimal values of the influential parameters that maximize
+museum visitors’ perceived satisfaction. In the following,
+individual QoE functions are formulated for each type of
+visiting style considering each of the aforementioned
+parameters in Section III.A. This analysis enables us to better
+express the relations among the influential parameters and
+visitors’ QoE, as well as reveal the main differences of the
+various visiting styles with respect to the QoE. It is noted that
+all the numerical values considered in the following analysis
+are derived from the experts’ answers to the questionnaire [11]
+and are presented in detail later in Table I.
+
+D. Time Spent with Facilitator
+The useful information provided by a facilitator to the
+visitors enables them to have a better understanding of the
+exhibit they observe. Thus, as the time spent with facilitator
+increases, visitors’ perceived experience increases, while their
+QoE is maximized for a specific time interval for ant, butterfly
+and grasshopper visitors, who are more interested in listening
+to more explanatory information in contrast to the fish visitors,
+who are more interested in just observing the exhibit.
+However, for all styles of visitors their QoE decreases if the
+time spent with facilitator exceeds a specific threshold. The
+relation among visitors’ QoE and time spent with facilitator tf
+can be formulated as in equations (10) – (11) (see Table I).
+
+A. Distance between Exhibit and Visitor
+Considering visitors’ perceived QoE with respect to the
+distance d (m) between exhibit ε ∈ E and visitor v ∈ V , it is
+differentiated based on the size (s) of the exhibit ε , i.e. small
+or big. Based on the experts’ answers [11], a small exhibit is
+of dimensions approximately 45 cm x 35 cm, while a big
+exhibit is approximately 1.5m x 1m. The ant (A), butterfly (B)
+and grasshopper (G) visitors’ QoE is analogously improved
+with respect to their distance from the exhibit, while there is a
+specific distance interval where they perceive the maximum
+satisfaction. After that point as they get away from the exhibit
+their QoE decreases, because they cannot observe its details.
+Considering the fish (F) visitors, they are used to stand at the
+center of the room and observe the exhibits without being very
+interested in the details. Thus, their QoE is maximum for
+small values of their distance from the exhibit, while when
+they become more distant from it (for considerably greater
+values than the rest of the three styles of visitors), their QoE
+decreases rapidly, simply because they are not able to have the
+clear picture of the exhibit. The aforementioned observations
+are depicted in the QoE functions (1) – (4), and are presented
+in Table I.
+
+E. Exhibition Size
+The size of an exhibition affects visitors’ QoE. As the
+exhibition’s size increases, visitors’ QoE increases, due to the
+fact that more exhibits are exposed to the visitors. However, if
+exhibition size is relatively large compared to visitors’
+willingness to walk, their QoE decreases because they become
+physically exhausted. Thus, visitors’ QoE with respect to
+exhibition’s size can be formulated as in equation (12).
+
+V. TOTAL QUALITY OF EXPERIENCE MODELING FOR
+MUSEUM’S VISITORS
+In this section, a total QoE function considering the
+individual relations of visitors’ QoE with respect to the
+aforementioned parameters, is formulated. Each parameter
+contributes in a different manner to the overall visitors’ QoE.
+The weight wi ( i = d , d e , ρ , t f , S ) of each parameter within the
+
+B. Distance between Two Sequential Exhibits
+All type of visitors are dissatisfied when exhibits are
+extremely congested, i.e. close distance between sequential
+exhibits, because they are “bombarded” by information. Also,
+visitors’ QoE is decreased when exhibits are sparsely located,
+due to the fact that visitors have the feeling that the exhibition
+is not rich in terms of content, as well as because they have to
+walk a lot in order to observe a satisfactory number of exhibits
+(especially in the case of ant style visitors who visit in a linear
+path all exhibits in the museum’s room). However, there is an
+optimal distance interval between sequential exhibits, where
+visitors perceive exhibits’ reflected information in an optimal
+manner and they are not physically exhausted to visit the
+preferred exhibits. Thus, visitors’ QoE with respect to the
+distance de between two sequential exhibits can be formulated
+as in equations (5) – (8) (see Table I).
+
+overall QoE function is calculated based on experts’ answers
+to the circulated questionnaire, as presented in Section III.A.
+The values of the weights have been normalized,
+thus 0 ≤ wi ≤ 1 . Thus, the visitors’ total QoE function per each
+type of visiting style can be expressed as the normalized
+weighted summation of the individual QoE functions.
+QoEx ( i = d , d e , ρ , t f , S ) =
+ wd QoEx ( d ( s ) ) + wde QoEx ( d e ( s ) ) +
+
+
+
+ wρ QoEx ( ρ ) + wt f QoEx ( t f ) + wS QoEx ( S ) 
+
+
+
+(13)
+
+wd + wde + wρ + wt f + wS
+where QoEx denotes the total QoE of each type of visitor (i.e.
+x=A, B, G, F).
+
+79
+
+TABLE I.
+
+INDIVIDUAL QOE FUNCTIONS & PARAMETERS (EQUATIONS (1) – (12))
+
+No
+
+Equation
+
+Parameters
+Values
+
+(1)
+
+ 1
+d ( s)
+, 0  d ( s ) ≤ d opt1, sm.
+
+ dopt1, sm.
+
+QoE ( d ( s = Small ) ) = 1
+, dopt1, sm.  d ( s )  dopt 2, sm.
+A, B , G
+
+d zeroPo int, sm.
+1
+−
+⋅ d ( s) +
+, d opt 2, sm. ≤ d ( s ) ≤ d zeroPo int, sm.
+ d zeroPo int, sm. − d opt 2, sm.
+d zeroPo int, sm. − d opt 2, sm.
+
+
+d opt1, sm. = 0.5
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+ 1
+d (s)
+,0  d ( s ) ≤ dopt1,big
+
+ dopt1,big
+
+QoE ( d ( s = Big ) ) = 1
+,dopt1,big  d ( s )  dopt 2,big
+A, B , G
+
+d zeroPo int,big
+1
+−
+⋅ d (s) +
+,dopt 2,big ≤ d ( s ) ≤ d zeroPo int,big
+ d zeroPo int,big − d opt 2,big
+d zeroPo int,big − d opt 2,big
+
+
+d opt 2, sm. = 1.5
+d zeroPo int, sm. = 4
+
+d opt1,big = 1.5
+d opt 2,big = 2.5
+d zeroPo int,big = 7
+
+d ( s ) − dopt ,sm , F
+
+
+1
+
+, 0  d ( s ) ≤ dopt , sm, F
+
+QoE ( d ( s = Small ) ) =  QoElow, F 2 
+F
+ d (s)
+,d ( s ) ≥ d opt , sm, F
+ba
+
+QoElow, F = 0.3
+
+d ( s ) − dopt ,big, F
+
+
+1
+
+, 0  d ( s ) ≤ dopt ,big , F
+
+ QoElow, F 
+QoE ( d ( s = Big ) ) = 
+F
+2
+1
+2
+
+d ( s ) ,d opt ,big , F ≤ d ( s ) ≤ d zeroPo int,big , F
+ d ( s )  +
+− d 2
+d opt ,big , F
+ opt ,big , F
+
+d opt ,big, F = 5
+
+1
+2
+
+⋅ de ( s ) ,
+0  d e ( s ) ≤ d e,opt1, sm.
+2
+d
+,
+1,
+.
+e
+opt
+sm
+
+
+QoE ( d e ( s = Small ) ) = 1,
+d e,opt1, sm.  d e ( s )  d e ,opt 2, sm.
+B ,G , F
+
+2
+d ⋅ d e ( s ) + e ⋅ d e ( s ) + f , d e ( s ) ≥ d e,opt 2, sm.
+
+1
+2
+
+⋅ de ( s )
+,0  d e ( s ) ≤ d e, opt1,big
+2
+d
+,
+1,big
+e
+opt
+
+
+QoE ( d e ( s = Big ) ) = 1
+,d e,opt1,big  d e ( s )  d e,opt 2,big
+B ,G , F
+
+2
+, d e ( s ) ≥ d e,opt 2,big
+ g ⋅ de ( s ) + h ⋅ de ( s ) + i
+
+1
+2
+
+⋅ de ( s )
+, 0  d e ( s ) ≤ d e, opt1, sm.
+2
+d
+,
+1,
+.
+e
+opt
+sm
+
+
+QoE ( d e ( s = Small ) ) = 1
+, d e,opt1, sm.  d e ( s )  d e,opt 2, sm.
+A
+
+2
+ j ⋅ d e ( s ) + k ⋅ d e ( s ) + l , d e ( s ) ≥ d e,opt 2, sm.
+
+
+d e , opt1, sm. = 0.5
+
+80
+
+d opt , sm , F = 2.5
+
+a = 0.52, b = 5
+
+d zeroPo int,big , F = 10
+
+d e , opt 2, sm. = 0.7
+
+d = −1.56
+e = 2.19
+f = 0.23
+d e , opt1,big = 1.4
+d e , opt 2,big = 1.7
+
+g = −0.59
+h = 2.01
+i = −0.71
+d e , opt1, sm. = 0.3
+d e , opt 2, sm. = 0.4
+
+j = −2.78
+k = 2.22
+l = 0.56
+
+/
+
+(8)
+
+1
+2
+
+⋅ de ( s )
+, 0  d e ( s ) ≤ d e,opt1,bigA
+d2
+,
+1,bigA
+e
+opt
+
+
+QoE ( d e ( s = Big ) ) = 1
+, d e,opt1,bigA  d e ( s )  d e,opt 2,bigA
+A
+
+2
+m ⋅ d e ( s ) + n ⋅ d e ( s ) + o , d e ( s ) ≥ d e, opt 2,bigA
+
+
+(9)
+
+QoE ( ρ )
+
+(10)
+
+d e , opt1,bigA = 0.9
+d e , opt 2,bigA = 1.2
+
+m = −0.31
+n = 0.74
+o = 0.56
+QoElow− level = 0.2
+
+( QoElow − level ) ρ , Fish
+
+1
+ρ
+
+CrDe
+= QoElow − level B ,G , But . / Gras .
+
+1
+ρ
+CrDe A
+QoE
+, Ant
+−
+low
+level
+
+
+CrDeB ,G = 1.5
+
+CrDeA = 2.5
+
+
+
+2
+,0  t f ≤ t f , opt1
+− p ⋅ t f + q ⋅ t f
+
+QoE ( t f ) = 1
+, t f , opt1  t f  t f , opt 2
+A, B , G
+
+t f ,max
+1
+−
+,t
+⋅t +
+≤ t ≤ t f ,max
+ t f ,max − t f , opt 2 f t f ,max − t f , opt 2 f , opt 2 f
+
+
+p = 0.25, q = 1
+t f , opt1 = 2, t f , opt 2 = 3
+
+t f ,max = 5
+
+(11)
+
+,0  t f  t f ,opt
+t f
+QoE ( t f ) = 
+2
+F
+r ⋅ t f + s ⋅ t f +t ,t f ,opt ≤ t f ≤ t f ,max
+
+t f , opt = 1, t f ,max = 2
+r = 1, t=-s=4
+
+(12)
+
+u ⋅ v S ,0  S ≤ Sopt1
+
+QoE ( S ) = 1
+,Sopt1  S  Sopt 2
+A, B ,G , F
+
+S
+ w ⋅ x ,S ≥ S opt 2
+
+u = 0,19 , v = 1.19
+w = 2.38, x = 0.94
+S opt1 = 9, Sopt 2 = 14
+
+Based on this observation and assuming that the parameters
+which are related to museum deployment (i.e. de and S)
+remain constant, we study two use case scenarios. For
+demonstration purposes only, in both scenarios the size of the
+exhibits is assumed small, however, similar analysis can be
+provided for big exhibits as well.
+In Scenario A, visitors’ total QoE is studied as a function of
+the distance of the visitor from the exhibit for increasing
+crowd density. This scenario mainly reflects museum
+directors’ perspective and interest. On the other hand, in
+Scenario B the visitors’ perspective is considered via studying
+visitors’ total QoE with respect to the crowd density for
+various cases of time spent with facilitator. Based on this
+scenario, the visitors are able to select the most appropriate
+duration of listening to the facilitator given the existing crowd
+density towards optimizing their QoE.
+Scenario A
+Fig. 2 illustrates visitors’ total QoE as a function of the
+distance d of the visitor from the exhibit, as it is formulated in
+equation (13) for different indicative values of crowd density
+(while tf=1.2min, de=0.6m2). Considering the ant, butterfly
+and grasshopper visitors’ total QoE, the results reveal that as
+visitors’ distance from the exhibit increases up to 0.5m, their
+total QoE increases rapidly, while it is maximized for
+distances between 0.5m and 1.5m and if they become more
+distant from the exhibit (i.e. d>1.5m) their satisfaction
+decreases, while for extremely large values of distance, i.e.
+d>4m, their total QoE remains stable at the lowest point. This
+
+Our goal is to determine the optimal conditions (values), i.e.
+d , d e , ρ , t f , S , such that visitors’ overall QoE is maximized.
+
+Therefore, the following optimization problem is formulated
+as a maximization problem.
+max QoEx ( i = d , d e , ρ , t f , S ) 
+d , de , ρ , t f , S 
+s.t. d min  d  d max , d e ,min  d e  d e ,max
+
+(14)
+
+ρ min  ρ  ρ max , t f ,min  t f  t f ,max , S min  S  Smax
+The above optimization problem can be easily solved and
+determine the global maximum ( d * , d e* , ρ * , t f * , S * ) =
+
+arg max QoEx ( i = d , d e , ρ , t f , S ) via multivariable calculus,
+
+i.e. via determining the critical points, calculating the Hessian
+matrix and its determinants. The vector ( d * , d e* , ρ * , t f * , S * )
+reflects the optimal values of d , d e , ρ , t f , S such that visitor’s
+QoE is maximized.
+VI. NUMERICAL RESULTS
+In this section, we provide some numerical results
+illustrating the operational features of the proposed
+framework. As it is observed in Fig. 1, the key parameters that
+significantly influence visitors’ perceived QoE are: (a) the
+distance d [m] between exhibit ε ∈ E and visitor v ∈ V
+(wd=0.635), (b) the crowd density ρ [visitors/m2] (wρ=0.89)
+and (c) the time spent with facilitator tf [min] ( wt f = 0.665 ).
+
+81
+
+observation stems from the fact that as they stand too close to
+the exhibit, they are unable to perceive its whole picture and
+as they become more distant they are not able to observe the
+details. Considering fish visitors, their QoE is relatively low
+when they stand close to the exhibit and increases roughly as
+they move to the center of the room. Similarly, their total QoE
+decreases rapidly for large values of the distance from the
+exhibit.
+Scenario B
+Fig. 3 illustrates visitors’ total QoE as a function of the
+crowd density for different values of the time spent with
+facilitator tf (while d=2.5m, de=0.6m). Fish visitors are
+affected the most because they stand at the center of the room,
+thus even a small obstacle may block them from viewing the
+exhibit. Ant visitors’ total QoE presents a steady decrease
+with respect to the crowd density, thus they are not affected
+that much by the co-existing crowd, due to their willingness to
+wait to approach all exhibits. Butterfly and grasshopper
+visitors are patient and afford the existence of the crowd
+towards observing the exhibit, thus their total QoE decreases
+more smoothly compared to fish visitors’ total QoE with
+respect to the crowd density. Additionally, the results reveal
+that ant, grasshopper and butterfly visitors, in contrast to fish
+style visitors, experience higher levels of total QoE when they
+spend more time with facilitator, due to the fact that they are
+interested to obtain useful information about the exhibit.
+Specifically, ant, grasshopper and butterfly visitors’ total QoE
+is maximized when the time spent with facilitator is 1.5min,
+while the corresponding time for fish visitors is 1min.
+
+Fig. 2. Visitors total QoE as a function of d [m] for different crowd densities
+
+Fig. 3. Visitors total QoE as a function of crowd denisty [visitors/m2] for
+different time spent with facilitator scenarios
+
+References
+[1]
+
+[2]
+
+[3]
+
+VII. CONCLUDING REMARKS
+
+[4]
+
+The main goal of this paper is to identify the most
+influential parameters on museum visitors’ QoE and formulate
+representative QoE functions capturing visitors’ satisfaction.
+An empirical estimation (i.e. questionnaire to experts) of the
+most influential parameters and of some realistic values of
+them, in order to properly formulate the QoE functions, is
+presented. Individual QoE functions with respect to each
+parameter for the four museum visitors’ styles (i.e. fish, ant,
+grasshopper and butterfly) have been formulated in order to
+define the relation of visitors’ perceived satisfaction with
+respect to the most influential parameters. Further, the total
+QoE function with respect to all parameters has been
+introduced considering the weight of each parameter as it was
+empirically derived. The optimization problem of maximizing
+visitors’ total QoE has been formulated and solved, while
+detailed numerical results were provided for two
+representative use case scenarios.
+Our current and future research plans include the execution
+of real experimentation with actual museum visitors in order
+to validate the proposed framework and its applicability under
+realistic conditions. Finally, based on such a framework
+efficient and effective QoE-driven intelligent and personalized
+guidance/routing approaches may be developed.
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+[13]
+
+82
+
+P. Harrison, and R. Shaw, “Consumer satisfaction and postpurchase ntentions: An exploratory study of museum visitors,”
+Intern. Journal of Arts Management, 6(2), pp. 23–33, 2004.
+L. Chittaro, and L. Ieronutti, “A Visual Tool for Tracing Users’
+Behavior in Virtual Environments,” Proceedings of the AVI’04,
+pp. 40-47, 2004.
+P. Wright, “The Quality of Visitors’ Experience in art
+Museums” in P. Vergo, The New Museology, Reaktion Books,
+2006.
+E. Veron, and M. Levasseur, “Ethnographie de l'exposition,”
+Bibliothèque Publique d'Information, Centre Georges
+Pompidou, 1983.
+M. Zancanaro, T. Kuflik, Z. Boger, D. Goren-Bar, D.
+Goldwasser, “Analyzing Museum Visitors’ Behavior Patterns,”
+User Modeling, Lecture Notes in Computer Science, vol. 4511,
+pp 238-246, 2007.
+C. Goulding, “The museum environment and the visitor
+experience,” European Journal of Marketing, vol. 34(3/4), pp.
+261–278, 2000.
+Carmen de Rojas, and C. Camarero, “Visitors’ experience,
+mood and satisfaction in a heritage context: Evidence from an
+interpretation center,” Tourism Management, vol. 29, issue 3,
+pp. 525-537, 2008.
+K. Sookhanaphibarn, and R. Thawonmas, “A Movement Data
+Analysis and Synthesis Tool for Museum Visitors' Behaviors,”
+in Proceedings of the 10th Pacific Rim Conference on
+Multimedia: Advances in Multimedia Information Processing,
+Springer-Verlag, 2009.
+I. Lykourentzou, X. Claude, Y. Naudet, E. Tobias, A. Antoniou,
+G. Lepouras, and C. Vasilakis, “Improving museum visitors'
+Quality of Experience through intelligent recommendations: A
+visiting style-based approach,” 9th International Conference on
+Intelligent Environments, pp. 507 – 518, 2013.
+K. Sookhanaphibarn, and R. Thawonmas, “Visualization and
+Analysis of Visiting Styles in 3D Virtual Museums,” Digital
+Humanities, pp. 1-6, 2010.
+https://docs.google.com/forms/d/1TcSlbPyw6clTpYKEyuWKCK88ltdLSbYLoS677JQjTE/edit?usp=sharing
+(in Greek)
+http://icom.museum/
+http://www.aica-hellas.org/el
+
+

@@ -1,14 +1,14 @@
 """
 methods to do the indexing
 """
-
+from os import listdir
 from typing import List, Dict
 from pickle import loads as load_from_pickle_file
 from pickle import dump as save_to_pickle_file
 from nltk.stem.porter import PorterStemmer
 from position_index_class import PositionalIndex
 INDEX_DIR = "./indexes/"
-ARTICLEs_DIR = "./articles/"
+ARTICLES_DIR = "./articles/"
 
 with open("stopWordPickle", "rb") as stopWordPickle:
     stop_words: List[str] = load_from_pickle_file(stopWordPickle.read())
@@ -32,8 +32,7 @@ def _do_case_folding(text: str) -> str:
     text -- text to fold
     Return: text after case folding
     """
-    # TODO:
-    # 1. remove dots space ? ! " ' `
+    # TODO: 1. remove dots space ? ! " ' `
     return text.lower()
 
 

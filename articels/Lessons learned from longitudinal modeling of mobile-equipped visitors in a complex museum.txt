@@ -1,0 +1,1576 @@
+Neural Computing and Applications (2020) 32:7785–7801
+https://doi.org/10.1007/s00521-019-04099-8
+(0123456789().,-volV)(0123456789().
+,- volV)
+
+HYBRID ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING TECHNOLOGIES
+
+Lessons learned from longitudinal modeling of mobile-equipped
+visitors in a complex museum
+Francesco Piccialli1
+
+•
+
+Yuji Yoshimura2 • Paolo Benedusi3 • Carlo Ratti2 • Salvatore Cuomo4
+
+Received: 3 December 2018 / Accepted: 12 February 2019 / Published online: 27 February 2019
+Ó Springer-Verlag London Ltd., part of Springer Nature 2019
+
+Abstract
+Cultural sites are evolving toward smart environments, including the notion of hyper-connected museums. In this context,
+stakeholders of cultural assets need more advanced and comprehensive ICT systems for monitoring and modeling visitors
+behaviors. In this paper, we discuss the results of a longitudinal research study embracing multiple seasons, in a complex
+cultural structure including outdoor and indoor attractions, multiple floors and multiple routes for visitors. Here, interactive
+mobile devices were used for both offering multimedial context-aware assistance to visitors and monitoring services to
+museum stakeholders. We deeply analyzed the data using an unsupervised classification approach, obtaining a model
+where the number of distinct user profiles and the number of features were considered not trivial as well as not too complex
+for museum stakeholders. We observed that some optimistic expectations about visitor performances were only partially
+met, devising possible explanations in terms of the different user profiles and features of the model. Finally, we also
+compared some outcomes from our interactive system with those obtained in another complex cultural structure using a
+noninvasive monitoring system.
+Keywords User behaviors  User modeling  Unsupervised classification  Data analysis  Data mining  Internet of things
+
+1 Introduction
+& Francesco Piccialli
+francesco.piccialli@unina.it
+Yuji Yoshimura
+yyoshi@mit.edu
+Paolo Benedusi
+paolo.benedusi@databooz.com
+Carlo Ratti
+ratti@mit.edu
+Salvatore Cuomo
+salvatore.cuomo@unina.it
+1
+
+Department of Electrical Engineering and Information
+Technology, University of Naples Federico II, Via Claudio
+21, 80125 Naples, Italy
+
+2
+
+SENSEable City Laboratory, Massachusetts Institute of
+Technology - MIT, 77 Massachusetts Avenue, Cambridge,
+MA 02139, USA
+
+3
+
+Databooz Italia s.r.l., Centro Direzionale Via G.Porzio 4,
+80143 Naples, Italy
+
+4
+
+Department of Mathematics and Applications ‘‘Renato
+Caccioppoli’’, University of Naples Federico II, Via Cinthia,
+80126 Naples, Italy
+
+Visitors of cultural sites represent a peculiar class of users,
+which pose multiple challenges for effective behavior
+modeling; this is becoming more and more important for
+both traditional museums and for technologically aided/
+augmented versions of them. In spite of the widespread
+availability of any kind of fixed and mobile devices, a
+recent survey on international experiences of museums
+observatories [1] revealed that systematic data collection is
+almost exclusively based on ticketing and questionnaires.
+These entail many limitations, including small size of
+samples, reluctance of some people to answering, difficulties in ensuring proper randomization, time and cost of
+interviews and low frequency of global investigations and
+analyses (i.e., 2 times per year) [1]. Indeed, such questionnaires include information which can be gathered or
+inferred, in great part, using technological devices: favorite
+hours and length of the visit, activities performed during
+the visit, preferred information channels used, types of
+materials and information contents which were read or
+listened. For this purpose, noninvasive systems exploit
+devices which can track the presence and movements of
+
+123
+
+7786
+
+visitors without any form of preregistration or explicit
+provisioning of devices for identification and interaction.
+As an alternative, interactive systems offer multiple types
+of sensory experiences and services to the users, using
+devices which also monitor and save information on user
+positions, actions and timings. Each kind of system has its
+own specific merits and limitations, while both allow for
+continuous, massive, automated gathering and monitoring
+of evidences, as well as for very frequent analysis (even
+real time) and longitudinal studies. In this paper, we present a comprehensive user modeling method which can
+embrace noninvasive, interactive and even mixed scenarios, where information gathered from multiple types of
+passive and interactive devices can be combined. We
+experimented this method in a cultural site representing
+multiple options, opportunities and complexity factors
+which can influence and shape user behaviors; these
+include structural complexity (number of floors, rooms,
+open and closed spaces, different routes and means for
+physical movements such as scales or lift), richness/diversity of cultural attractions and technological sophistication of the multimedial interactive devices offered to the
+visitors. At the same time, we strove for a model which
+could be easy to understand and use by museum stakeholders and, more in general, promoters of cultural heritage
+resources, in order to support decisions and check the
+effectiveness of initiatives geared toward the improvement
+of user engagement and the evolution of cultural offerings.
+The rest of the paper is organized as follows: Sect. 2 discusses a summary of related work, Sect. 3 describes the
+technology used for data collection and modeling, Sects. 4
+and 5 present a methodology based on unsupervised techniques and related experimental results, while Sect. 6
+highlights and discusses the main lessons learned from this
+study, and Sect. 7 provides some conclusions and perspectives for further research.
+
+2 Background and related work
+Traditionally, visitor studies in museum have been conducted to analyze visitor‘s behavior and their spatial use,
+based on the interview and observation at most cases [2].
+They largely rely on the paper-and-pencil method, ‘‘timing
+and tracking’’ [3]. The collected information is mapped and
+examined to make a basic knowledge for the management
+(e.g., the number of visitors, their visiting patterns),
+including to measure attracting power, where it attracts the
+visitors and holding power, which is the length of time
+spent looking. Based on manually collected relatively
+small-scale samples, it was proposed to classify the visiting
+style of visitors [4–6]. The recently appearing emerging
+technologies revolutionized the way of collecting the
+
+123
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+behavioral data in museums and enable us to collect more
+finer granular space and time resolution [7]. They are, for
+example, RFIDs [8], bluetooth [9], or the combination of
+other wearable devices (for example, see [10]). The collected data are used to classify visitors into the pre-established visiting types (i.e., the busy, selective and greedy) by
+their path and length of stops [11], to predict the estimated
+viewing times and the exhibited place to be interested for a
+visitor, based on their previous location and viewed time
+[12] and to validate the previously made classifications by
+the quantitative data [13, 14]. They also enable us to
+compare mathematical simulations of visit styles [14] with
+the impacts of multimedial location-aware guides, showing
+that visitors using such guides on their mobile devices tend
+to extend the duration of their visits, while reducing the
+social interactions among members of the same visitor
+group [15]. In this perspective, authors in [16] propose an
+interesting study on how visitors distribute their time
+across artworks in a real case study (the CoBrA Museum of
+Modem Art); the limited number of considered volunteered
+visitors (180) limits the overall considerations and results
+they propose. However, the gathered datasets have often
+been still small-scale samples rather than longitudinal
+neither dynamic nor fine grained. [9, 17] collected the
+large-scale sample in the large-scale art museum (i.e.,
+Louvre museum), showing the underlying patterns of visitors’ behaviors in terms of the path sequence and their
+length of stay in the museum, but they did not classify the
+visiting style in terms of visitors’ attributions nor apply the
+clustering approach for that purpose.
+At the technological level, in the last years, a handful of
+different types of devices were experimented for detecting
+and tracking the presence, flows and other behaviors of
+visitors, including RFIDs, video cameras, sensors placed at
+entry and exit points of rooms, microphones, personal
+mobile devices, smart glasses and other wearable devices
+[18]. This made it possible to compare mathematical simulations of visit styles [14] with the impacts of multimedial
+location-aware guides, showing that visitors using such
+guides on their mobile devices tend to extend the duration
+of their visits, while reducing the social interactions among
+members of the same visitor group [15]. Furthermore,
+authors in [19] discuss a theoretical approach and
+methodology to eye-tracking research and museum-interactive learning experiences. Particularly, promising
+appears the noninvasive systems, which detect and follow
+the media access control (MAC) addresses of personal WiFi and/or bluetooth devices commonly used by visitors,
+including smartphones, earphones, smart swatches, bracelets and similar electronic tags [17, 20]. This paper proposes an unsupervised clustering approach to the largescale dataset of visitors’ behaviors in a complex museum
+environment. In the rest of the paper, we will show the
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+7787
+
+feasibility of the proposed classification approach for visitors’ visiting styles.
+
+3 Data collection and modeling
+In our experiments, we monitored a museum located inside
+a castle named Castel Nuovo (also known as Maschio
+Angioino), where artworks are distributed into multiple
+rooms at multiple levels or floors (see Fig. 1).
+From the Courtyard, visitors can reach the first floor by
+either climbing the stairs or taking the lift, which also
+provides access to the upper floors. Each bubble represents
+an artwork (or group of artworks) for which our smart
+museum equipment collected statistics; in particular, color
+saturation and divergence represent a scale of temperatures
+proportional to the number of visitors. The museum environment is equipped with IoT Beacon sensors; each sensor
+is placed very close to an artwork (or a group of artworks)
+and it emits a bluetooth low energy signal. A mobile
+application named @art, deployed on many tablets, scans
+the environment locating the Beacon sensors in its surrounding area.
+Such tablets (see Fig. 2) provide two kind of services in
+parallel: multimedial assistance to visitors in multiple
+languages and monitoring for museum stakeholders. The
+@art APP is location-aware; in that it identifies the beacons
+in its neighborhoods, and each beacon has a unique identifier and local coordinates, which are whole numbers relative to the museum map. Based on these coordinates and a
+
+Fig. 2 Some pictures of the @art mobile application and the deployed
+bluetooth Beacon sensors within the Maschio Angioino castle
+
+Fig. 1 The Maschio Angioino
+castle map: the bubbles
+represent the artworks position
+
+123
+
+7788
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+proximity algorithm, the APP determines the subset of
+artworks which are closer to the visitor. Then, a list of
+artwork icons and names is shown on the tablet screen, and
+when the visitor selects one item, the APP proposes a set of
+item-specific multimedial resources; the first picture of a
+gallery, a short text and an audio file which starts playing
+by default. The user can change the default language,
+navigate the picture gallery, make the text invisible or
+visible and use the most common commands of audio
+players, i.e., stop, restart and move back and forth the slider
+of the audio track. Each visitor may select the same artwork multiple times, either in sequence or by returning to
+the same artwork after having selected other ones. The APP
+saves records of all user actions in a log file, of which
+Fig. 3 provides an excerpt, while Table 1 provides some
+details on the artwork-related command codes.
+At the beginning of each visit a new log file is issued,
+while at the end it is transferred from the tablet to a central
+file store, where each visit is uniquely identified by a
+progressive, anonymous number. For the objectives of our
+study, we analyzed only artwork-related commands in the
+logs (Table 1), calculating statistics at two basic level of
+aggregation: single artwork selection event and entire visit
+of each person (Table 2)
+
+4 Methodology
+In order to detect and characterize different visitor profiles,
+we analyzed the collected behaviors by using an unsupervised approach which is composed of three steps: (i) a data
+value standardization process, (ii) a principal component
+analysis (PCA) [21] and (iii) a k-means clustering algorithm [22]. For what concern the step (i), in order to
+achieve a standardization of all potential features in the
+collected behavioral data (see Table 2), we mapped the
+values to fit the interval [0,1] by using a simple formula:
+x ! x0 ¼
+
+jx  xmax j
+jxmax  xmin j
+
+ð1Þ
+
+where xmax and xmin are the maximum and the minimum
+value, respectively. Then, regarding the step (ii), we
+
+executed the PCA algorithm on these data. As we can
+observe from the results in Fig. 4, only six features contributed more than the 10% to the composition of the first
+principal component. Starting from this observation, we
+considered only those six features as input for the next step.
+In details, the six features showing an adequate predictive
+potential are: nartw, elapsed, nfullaudio, nactartw, nfloors
+and maxfloors. All the experiment where conducted on the
+R framework [23].
+Finally, focusing our attention on the step (iii), we had
+to consider some key aspects related to the possible optimal
+selection of the k value, as input for the k-means clustering
+algorithm. As it is well known, it is still an open research
+problem, and the notion of optimal should be restated as
+more suitable or recommended with respect to the research
+domain, the available data and the main goals of the Data
+Analysis. For example, an evaluation function f(K) was
+proposed by the authors in [24] to support the selection of
+the k value; unfortunately, this approach entailed several
+onerous re-calculations of a set of equations to find the
+k value with an optimal evaluation. In our case, the k selection problem was supported by an extension of the R
+framework named NBclust package [25]. This useful
+package, given the dataset as input, provides the automated
+calculation of many indexes used for determining the
+number of clusters (the k value) to be selected as input for
+the k-means algorithm.
+In order to exploit these capabilities, and observing
+the strategy in [24], we considered to balance the cost
+and benefits of the k selection strategy depending on the
+observations level of details; in particular, a dataset with
+n objects could be grouped into any number of clusters
+between 1 and n, which would correspond to the lowest
+and the highest levels of detail, respectively. By specifying different values of k, it is possible to compare and
+assess the results in terms of relationships among features and their variability at the intra-cluster and extracluster levels. Furthermore, by defining xi as the (p-dimensional) vector of objects of the cluster Ck and xk its
+centroid, the within-group dispersion matrix can be
+defined as follows:
+
+Fig. 3 An excerpt of a log file generated by the deployed system during a visit. Each line corresponds to a visitor action with an associated
+timestamp
+
+123
+
+Neural Computing and Applications (2020) 32:7785–7801
+Table 1 The list of the artworkrelated commands available on
+the mobile application
+
+Type
+
+7789
+
+Command
+
+Parameter values
+
+Artwork
+
+artwork_selected
+
+Artwork title/id
+
+Audio track
+
+play_button_playing
+
+False, true
+
+Audio track
+
+seektrack_at
+
+position of slider in the audio file
+
+Text guide
+
+text_button
+
+Invisible, visible
+
+Photo
+
+nextpic_photo
+
+No.of photo/picture in the list
+
+Photo
+
+prevpic_photo
+
+No.of photo/picture in the list
+
+Table 2 A summary of the individual visit analyzed variables
+Field
+
+Content
+
+LFilenum
+
+Numeric identifier of the individual visit log.
+
+LANG
+
+Favorite language chosen in the tablet
+
+mintimeArtw
+
+Minimum timestamp of artwork selection in the entire visit
+
+maxtimelog
+
+Timestamp of the last action recorded in the visit log
+
+elapsed
+nartw
+
+Time elapsed from the first artwork selection to the end of the tablet-based visit, measured in minutes
+Distinct count of artworks visited
+
+nactartw
+
+Number of tablet-based actions performed by the visitor on artworks
+
+nfloors
+
+Distinct count of floors/levels of the building where at least one artwork was visited using the tablet
+
+maxfloor
+
+Maximum floor (numeric id) visited
+
+minfloor
+
+Minimum floor (numeric id) visited
+
+nfullaudio
+
+Distinct count of artworks whose audio files were played in full by the visitor
+
+nactaudio_up
+
+No.of actions which explicitly keep active the audio track (seektrack_at, play_button_playing=true)
+
+nactaudio_stop
+
+No.of actions which interrupt listening of the audio track (play_button_playing=false)
+
+Audioinfull
+
+Binary flag; 1= the audio track of the selected artwork was played in full
+
+nactphoto
+
+No.of actions on photos/pictures (nextpic_photo, prevpic_photo)
+
+nacttext_visible
+
+No.of actions with text_button = visible
+
+nacttext_invisible
+
+No.of actions with text_button = invisible
+
+Fig. 4 The principal component
+analysis results
+
+123
+
+7790
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+q X
+X
+Wq ¼
+ðxi  xk ÞT ðxi  xk Þ
+
+Pseudo  T 2 
+
+ð2Þ
+
+
+
+k¼1 iCk
+
+where q 2 ð1; . . .; n  2Þ and n is the number of observation in the data matrix.
+In our case, we have selected p ¼ 6, since each object
+represents an individual visitor considering the six features
+output of the step (ii), while n is the total number of visitors
+stored in the dataset. By using the NBclust package, we
+examined many indexes based on the Wq matrix, focusing
+our attention on the following ones: TraceW, Hartigan,
+Duda, Pseudo  T 2 and Beale, which are defined as
+follows:
+
+ð8Þ
+–
+Wm ðWk þWl Þ
+Wk þWl
+
+beale ¼ F  
+
+ð3Þ
+
+where the trace of an n-by-n square matrix W is defined
+to be the sum of the elements on the main diagonal.
+This iterative approach relies on increasing values of q,
+until the difference between the results of two successive iterations maximizes its value and yields the recommended value of k.
+–
+
+
+hartigan ¼
+
+
+traceðWq Þ
+ 1 ðn  q  1Þ
+traceðWqþ1 Þ
+
+ð4Þ
+
+where the optimal number of clusters is the value of
+q which maximizes the hartigan index;
+–
+duda ¼
+
+Wl þ Wk
+Wm
+
+ð5Þ
+
+S
+where k, l and m are such that: Cm ¼ Ck Cl and the
+optimal number of clusters is the minimum q for which:
+vﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+ﬃ
+u 
+u2 1  8 2
+t
+pp
+2
+ð6Þ
+z
+duda ¼ 1 
+pp
+nm p
+where z is the standard normal score, and the corresponding value of duda is named critValueduda; we
+tested this criterion using various choices for z,
+obtaining the best result from NBClust when the value
+is set to 3.20. Then, we used the critValueduda for the
+optimization of the Pseudo  T 2 index:
+–
+Pseudo  T 2 ¼
+
+Bkl
+Wk þWl
+nk þnl 2
+
+ð7Þ
+
+where Bkl ¼ Wm  Wk  Wl and the optimal number of
+clusters is the smallest q for which:
+
+123
+
+
+
+nm 1
+nm 2
+
+2
+
+2p  1
+
+ð9Þ
+
+where F stands for a statistical test, in which the
+statistic has an F-distribution under the null hypothesis.
+The criterion consists in verifying whether an increase
+ok the k value (i.e., from k  1 to k) entails a significant
+reduction in the internal deviancy of groups, with relevant distances among the group centroids. This iterative approach is based on increasing the values of k. At
+each iteration, it calculates a critical value with a Fisher
+distribution having two degrees of freedom
+Fp; ðNm  2Þp; the minimum value of F for which this
+critical value is greater than a predefined parameter
+(alphaBeale) determines the recommended value for
+k. On our case, we adopted the default parameter value
+(0.10).
+
+–
+TraceW ¼ traceðWÞ;
+
+
+1  criticValueDuda
+ðnk þ nl  2Þ
+criticValueDuda
+
+To further assess the k value selection, we also considered
+the Marriot and Scott indexes [26], both based on the sum
+of squares and cross products (SSCP) matrix. The SSCP
+matrix consists of dependent variable sum of squares or
+variances along the diagonal of the matrix and covariances
+(cross products) on the off-diagonal elements that represent
+the common variance shared between two variables [27]. In
+detail, regarding the SSCP matrix, we have:
+– the total sample matrix is: T ¼ X T X;
+– if
+X ¼ ðZ T ZÞ1 ; and Z is a cluster indicator matrix
+ðn  qÞ with element :
+
+zik ¼
+
+1
+0
+
+i 2 Ck
+altrimenti
+
+then, the between-cluster matrix is B ¼ X T Z T ZX;
+– finally, the within-cluster matrix is: W ¼ T  B
+From this consideration, the indexes can be defined as
+follows:
+–
+marriot ¼ k2 jWj
+
+ð10Þ
+
+This approach aims to evaluate up to which extent it is
+convenient to increase the number of clusters, in terms
+of decreasing intra-cluster variability and increasing
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+7791
+
+inter-cluster distance. This iterative approach relies on
+increasing values of k. At each iteration, it performs a
+k-means clustering and calculates the difference
+between two consecutive values of the marriott index;
+when this difference reaches a maximum, the algorithm
+yields the recommended value of k.
+–
+scott ¼ n  logðjTj=jWjÞ
+
+ð11Þ
+
+The algorithm iterates on increasing values of k; at
+each iteration, it calculates the difference between two
+consecutive values of the scott index; when this difference reaches a maximum, the algorithm yields the
+recommended value of k.
+The results obtained by executing the NBclust package,
+related to the value calculation of the considered indexes,
+suggest us a k value selection as summarized in Table 3.
+manageable to museum stakeholders. The suggested k
+value (number of clusters) can be considered as suitable with our aim to build a model conceived to be not
+simplistic (as it would come from other kinds of indexes
+suggesting k ¼ 2) as well as not too complex, and dealing
+with five clusters of visitors appearing to be manageable
+for the museum stakeholders.
+
+5 Results
+In this section, we summarize the basic characteristics of
+the collected data and then, we present the final results of
+clustering analysis with some considerations.
+
+5.1 Characteristics of the collected data
+In previous experimentations, we offered a promotional
+version of the APP, which anyone could download for free
+into their own smartphones; in addition, we offered to
+visitors a limited number of complimentary APP-equipped
+tablets. However, these experiences were concentrated in
+isolated events, such as an exhibition located in a single
+floor of a monumental building [28], which was monitored
+for a limited time period. Subsequently, various improvements and simplifications were introduced in the @Art 2.0
+version, and we decided to experiment a systematic/routine
+offer of APP-equipped tablets at the entrance of a museum,
+which visitors could rent paying a small charge in addition
+to the museum ticket. Visitors who pay two fees represent
+Table 3 The measured K-means
+indexes and the suggested
+number of clusters
+
+the self-selection a special kind of population, which theoretically should be very motivated and interested in cultural heritage and related technological aids. In practice, it
+was necessary to check and measure to which extent these
+expectations were met, possibly distinguishing whether the
+dominant interest was toward technology or art, or the
+combination of both. We thus performed a longitudinal
+study, analyzing data collected within a semester (May
+16th–October 31st, 2017, a period of time which spans
+over three seasons). The initial number of artworks selected
+for monitoring was 164, but malfunctions of a beacon
+during the months reduced the beacon-monitored artworks
+to 160. In the following, visitors who rent and used the
+tablet are named T_visitors, or even visitors as a shorthand.
+Over the entire period, the number of T_visitors is 4719
+and coincides with the number of log files.
+
+5.2 Clustering results
+We executed a 5-means algorithm in R including the six
+features chosen with the PCA, obtaining the numeric
+cluster profiles shown in Table 4.
+In order to facilitate interpretation and understanding of
+the numbers, we mapped them to nominal scales with
+common labels such as low, medium, high. We had to
+consider the fact that different features have different
+density distributions of values and outliers, so that the same
+numeric value may appear low in the context of one feature, and high in the context of another, as can be understood from the examples shown in Table 6.
+As the values in Table 4 were obtained by mapping the
+original values to the [0,1] interval, in Table 5 we used the
+% symbol to emphasize that they represent percentages
+with respect to the original intervals of values, which have
+different orders of magnitudes and ranges for each feature.
+In the case of nfloors (with possible original values 1, 2, 3,
+4), the value at the 90th percentile equals the standardized
+maximum (1.0), and it is quite far from the standardized
+average (0.60). On the contrary, in the case of elapsed
+(originally a continuum of values up to hundreds of minutes), the value at the 90th percentile (0.33) is very far from
+the standardized maximum (due to a few rare outliers),
+while it is closer to the average (0.21). For such reasons, we
+can say that 0.33 has to be considered low in the context of
+maxfloors and nfloors, while it has to be considered high in
+the context of elapsed. Based on percentiles and averages,
+we defined different thresholds for each feature and used
+
+Marriot
+
+Pseudo  T 2
+
+Beale
+
+TraceW
+
+Hartigan
+
+Duda
+
+Scott
+
+N  of clusters
+
+5
+
+5
+
+5
+
+5
+
+5
+
+5
+
+5
+
+Index value
+
+88,994
+
+2970,232
+
+1032
+
+13507,48
+
+574,4661
+
+34; 0339
+
+0; 1192
+
+123
+
+7792
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+Table 4 The five clusters
+(k ¼ 5) and the related features
+values
+
+cluster
+
+maxfloor
+
+nfloors
+
+nartw
+
+nfullaudio
+
+nactartw
+
+elapsed
+
+population
+
+%pop
+
+1
+
+1.00
+
+0.99
+
+0.33
+
+0.30
+
+0.14
+
+0.33
+
+651
+
+13.80
+
+2
+
+0.02
+
+0.00
+
+0.01
+
+0.01
+
+0.03
+
+0.07
+
+201
+
+4.26
+
+3
+
+1.00
+
+0.90
+
+0.13
+
+0.10
+
+0.07
+
+0.22
+
+1350
+
+28.61
+
+4
+
+0.33
+
+0.33
+
+0.09
+
+0.07
+
+0.07
+
+0.17
+
+2081
+
+44.10
+
+5
+
+0.70
+
+0.62
+
+0.10
+
+0.09
+
+0.07
+
+0.20
+
+436
+
+9.24
+
+4719
+
+100.0
+
+Total
+
+Table 5 An analysis of the
+features percentiles
+
+avg%
+
+90pct%
+
+nfloors
+
+0.60
+
+1.00
+
+nfullaudio
+
+0.11
+
+0.25
+
+Elapsed
+
+0.21
+
+0.33
+
+nacartw
+
+0.08
+
+0.15
+
+them to map the numerical values to the labels of a common nominal scale, as shown in Table 6.
+In this table, clusters are sorted by descending order of
+population, and the corresponding profile nicknames are
+used to synthesize the dominant aspects of each type of
+behavior as follows:
+– Moderate visitors (cl.4) perform limited movements in
+space and limited T-based interactions with artworks,
+with average length of stay in the museum;
+– Wanderers (cl.3) tend to extend their physical movements in most or all floors, performing limited T-based
+interactions, while spending more or less the same time
+of moderate visitors;
+– Strongly engaged visitors (cl.1) tend to cover all floors
+and most artworks, exploiting in full tablet functionalities and devoting much time for such intense visit;
+– Runners (cl.5) tend to cover a respectable number of
+floors, but only skimming a limited number of artworks,
+with corresponding limited T-based interactions
+– Strangers (cl.2) seem some sort of outsiders, which
+behave as if they were out of place (what am I doing
+here?); they in fact tend to stay within the floor(s) at
+lowest levels of the museum, visiting few artworks in a
+short time.
+
+5.3 Insights in clustering results
+The populations of clusters reported as percentages in
+Table 4 are referred to the total number of visitors in the
+entire period of monitoring; as our longitudinal study
+spanned over 5.5 months, we examined how the population
+of each cluster is distributed in each month. According to
+Fig. 5, the overall number of visits per month is quite
+variable, while the breakdown into cluster populations by
+month in Fig. 6 together with Fig. 7 reveals some
+regularities.
+It is evident that the dominance relationships among
+cluster populations in the entire period (see Fig. 6) are
+generally preserved in each month, except for a small
+inversion between two clusters in October. The population
+of moderates (cl. 4) remains the highest in each month,
+followed by wanderers (cl. 3), strongly engaged (cl.1),
+runners (cl.5) and strangers (cl.2), respecting the same
+descending order of clusters in Table 4 until September.
+However, as the overall population incurs relevant
+variations by month, we studied the stacked histogram in
+Fig. 7, where cluster populations are shown as percentages
+of the monthly totals; this allows to observe that the percentages of each cluster skip up and down in different
+months, as well as to observe that the differences between
+the relative ratios of cluster populations have small fluctuations. Only in October, the population of strongly
+engaged visitors (cl.1) falls below that of runners (cl.5), but
+the order of magnitude of the corresponding variations is
+not relevant with respect to the fluctuations affecting each
+cluster in each month; thus, an isolated inversion between
+two clusters having slight differences in their relative
+
+Table 6 The Cluster-profile mappings with a nominal scale
+cluster
+
+Distinct artworks
+selected
+
+T-Actions on artworks
+
+Listening: n. artworks
+audio in full
+
+Time: elapsed in visit
+
+Space: inter-floors
+movement
+
+Profile nickname
+
+4
+
+Low
+
+Low
+
+Low
+
+Medium
+
+Low
+
+Moderate
+
+3
+
+Low
+
+Low
+
+Low
+
+Medium
+
+High
+
+Wanderer
+
+1
+
+High
+
+High
+
+Very high
+
+High
+
+Very high
+
+Strongly engaged
+
+5
+
+Low
+
+Low
+
+Low
+
+Medium
+
+Medium
+
+Runner
+
+2
+
+Very low
+
+Very low
+
+Very low
+
+Very low
+
+Very low
+
+Stranger
+
+123
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+Fig. 5 The overall number of collected visits by month
+
+populations can be considered an occasional phenomenon.
+As clusters are positioned in a space with six dimensions,
+catching and assessing the relevance of specific aspects in
+visitor profiles are not immediate; for this reason, we
+examined projections onto some subspaces with few
+dimensions at a time. For aspects concerning the extent of
+physical movements in the museum, Fig. 8 demonstrates
+that the total number of visits per floor diminishes or
+remains stable as the floor level increases, while Fig. 9
+reports the distribution of nfloors values in the population
+of each cluster.
+It is evident that wanderers (cl.4) tend to visit two distinct floors, and they account for the majority of the total
+population. The value nfloors=4 occurs in almost all visitors of cluster 1 (strongly engaged), and also in a great part
+of cluster 3 (wanderers). A minor but still relevant part of
+
+7793
+
+the same cluster 3 has nfloors=3, and the same happens for
+the majority of visitors in cluster 5 (runners) and very few
+visitors in cluster 1. The elapsed feature of our model
+roughly corresponds to the length of stay in other papers,
+where it is measured using different types of devices [17].
+Investigations in this area include the possible influence of
+the museum entry times; for example, it seems reasonable
+to guess that visitors who enter in the museum in the early
+morning have (or estimate to have) much time to spend,
+thus expecting to observe higher lengths of stay than others, as well as higher propensity for tablet-based interactions. Similar guesses can hold for people initiating their
+visit just after lunch time, while people initiating late in the
+morning or late in the afternoon are expected to have lower
+values in both elapsed and tablet-based interactions. In
+order to check such assumptions, we studied the diagrams
+reported in Figs. 10 and 11.
+In Fig. 10, the x-axis reports Hour1stArtw, which comes
+from the hour in the timestamp of the first T-based artwork
+selection in a visit, while the y-axis reports the number of
+visits which started in each hour band, as a percentage of
+the total population monitored in the entire period. We
+observe that there are up and down fluctuations, with peaks
+around 11:00 and 16:00, with a local minimum around
+lunch time (13:00), while only a minority of people initiated their visit in the last hour before the museums close
+time or just at the opening time. In Fig. 11, we focus on the
+average elapsed by entry hour, both in terms of absolute
+values and as percentage of the grand total average (i.e., the
+overall average on the total population in the entire period
+of monitoring).
+It is evident that starting from h.9:00 the average elapsed
+time tends to diminish as the entry hour increases; the slope
+is generally smooth and becomes steep only when the entry
+time is within the last hour band. This pattern is consistent
+with the results of a previous study conducted at Louvre, a
+very complex and outstanding museum [17], where
+behaviors were detected using a noninvasive system which
+monitored the signals emitted by the personal bluetooth
+devices of the visitors. In that case, it was verified that the
+lengths of stay tend to decrease toward the closing hours of
+the museum; the earlier a visitor enters the museum, the
+longer that visitor tends to stay in the museum; so that the
+time visitors enter can be used to predict visitor‘s lengths of
+stay in the museum. In our case, the interactive multimedial assistance provided by tablets allowed to check and
+confirm such kind of results obtained by noninvasive
+devices, while providing additional value by distinguishing
+among different visitor profiles and many insights on how
+visitors spend their time.
+In Fig. 12, for example, we report a breakdown of the
+entry hour versus average elapsed relationships for each
+
+123
+
+7794
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+Fig. 6 The Cluster population
+size by month
+
+Fig. 7 The percentage of cluster
+population by month
+
+user profile; this reveals that the decrease in elapsed with
+entry hour follows different patterns:
+– only moderate visitors (cl. 4), which account for the
+majority of the overall population, follow a definitely
+decreasing trend in elapsed since h.10:00;
+– strongly engaged visitors (cl. 1) keep their averages
+within a range of high values, fluctuating up and down
+until entry hour 15, with a remarkable decrease trend
+only starting from h.16:00 and after;
+– runners (cl. 5) and wanderers (cl. 3) follow fluctuating
+patterns which appear quite similar to that of strongly
+engaged, but staying within far lower elapsed ranges,
+which keep slightly higher than those of moderates;
+
+123
+
+their elapsed decreases dramatically starting a little
+later than others (h.17:00);
+– strangers (cl. 2) have more erratic fluctuations in
+elapsed, staying in any case at the lowest levels.
+In addition to the length of stay, we studied how visitors
+spend their time, by examining the tablet-based interactions with artworks (T-actions). According to the cluster
+centroids in Table 4, the levels of artwork-related T-interactivity (nactartw) can be combined with different levels
+of elapsed time, depending on the cluster; combinations of
+high values in both elapsed time and T-interactivity occur
+only in visitors of cluster 1 (strongly engaged). At the same
+time, we observe that clusters having increasing values of
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+7795
+
+Fig. 8 The percentage of the
+number of visits by floor
+
+Fig. 9 The number of logged
+visits by cluster: breakdown of
+the number of distinct floors
+visited
+
+nartw (the number of distinct artworks selected) also have
+increasing values of nactartw (the corresponding number of
+actions); in particular, cluster 1 includes visitors having
+high values in both nartw and nactartw simultaneously. In
+order to obtain more insights on such behaviors, we performed drill-down to the level of individual visitors of each
+cluster. For example, in Fig. 13 each dot represents a visitor, labeled with a unique numeric identifier, while the
+color indicates the corresponding cluster. This scatter diagram reports how the T-actions/distinct artworks ratio can
+vary for different values of distinct artworks; logarithmic
+scales are used in both x and y axes, mainly due to the large
+range of values of nactartw. The dotted vertical and horizontal lines represent 90th percentiles of nartw and
+
+nactartw, respectively, while the sloped black line represents a statistical trend line.
+Here, it is evident that although the spread of values of
+this ratio remains relevant among individuals, as nartw
+increases the corresponding nactartw/nartw ratio tends to
+decrease. In addition, the magnitude of the spread of values
+is also different among clusters, and tends to diminish for
+clusters with higher levels of engagement, particularly in
+cluster 1. This means that strongly engaged visitors, for
+visiting many more distinct artworks than others, also
+perform many more T-actions in total, but it is very unlikely that they perform too many actions related to a single
+artwork for all the visited artworks, otherwise this would
+require either extreme lengths of stay or particularly
+
+123
+
+7796
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+Fig. 10 The percentage of
+logged visits by entry hour
+(considering the time of the first
+artwork selection)
+
+Fig. 11 The average visit elapsed times by entry hour
+
+frenetic activity, which can occur for a few outliers. We
+remark that at the individual visit level, a certain degree of
+overlap between clusters is not a surprise, since a diagram
+such as Fig. 13 represents a projection onto a 2D plane
+from a six-dimensional space. This is just another way to
+appreciate that although investigating variables in pairs is
+very useful for highlighting specific trends and
+
+123
+
+relationships, all or most of the six variables identified with
+the PCA remain necessary for characterizing visitor profiles. Interesting insights on the types of activities are
+provided by nfullaudio, which accounts for the cases when
+the visitor let the audio file to be played in full by the APP.
+We can observe that the length of most audio tracks is
+comprised between 1 and 2 min (see Table 7), while
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+7797
+
+Fig. 12 The breakdown of
+elapsed entry hour statistics by
+cluster
+
+Fig. 13 The scatter diagram of individual T-interactivity ratio versus no.of distinct artworks visited
+
+skimming many photos requires very few seconds; hence,
+we could expect that high values of the nfullaudio feature
+characterize visitors who devote to artworks much more
+time than other visitors, and their total elapsed time should
+be higher as well. On the other hand, some visitors might
+find audio tracks annoying (and also consider some human
+
+Table 7 The lengths of audio
+files expressed in minutes
+
+average
+
+90pct%
+
+max
+
+0.73
+
+1.76
+
+5.00
+
+guides boring as well), so that they stop audio although
+they still spend noticeable time for artworks, observing
+
+123
+
+7798
+
+them visually and/or performing a relevant number of other
+types of artwork-related T-actions, such as photo gallery
+navigation and text reading. For this reason, we studied the
+combinations of values of nfullaudio with nactphoto (see
+Fig. 14).
+In Fig. 14, beyond the threshold value of 35 related to
+the nfullaudio feature, we can observe a wide spread of
+combinations between the nactphoto and nfullaudio features, ranging from (nfullaudio low, nactphoto high) to
+(nfullaudio high, nactphoto low); beyond this threshold, the
+nfullaudio feature increases with minimal or no increase in
+nactphoto (bottom-right area of the diagram), except for
+some outliers. In very few cases, the nactphoto feature
+appears dominant with respect to nfullaudio one (high-left
+area of the diagram), while very high values of both
+nfullaudio and nactphoto features can be found almost
+exclusively within the cluster 1 (strongly engaged visitors).
+These observations are consistent with the results obtained
+from the PCA (see Fig. 4); although visitors can play high
+quantities of actions on photos (thus confirming their
+interest on this available option), the contribution of the
+nactphoto feature to the first principal component is by far
+less important than the nfullaudio and nactartw features,
+which includes all types of actions related to artworks
+(artwork selection, photo and text exploration, audio slider
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+seektrack/stop/up). One possible explanation for such
+results is that artworks do not speak, while the primary
+reason of a visit is seeing or touching them (for blind
+persons). Hence, audio files provide a type of experience
+that artworks cannot provide at all, while photos play an
+important but ancillary augmentation of visual experience.
+Photo galleries appear scanned in any visitor profile, while
+only people having a sufficient level of motivation tend to
+listen many audio files in full. This trend can be detected
+since the first room including a relevant number of artworks (e.g., Charles V or Picture Gallery at Level1), hence
+the nfullaudio feature is one of the most suitable candidates
+for early predictions of engagement levels during the visit.
+
+6 Main lessons learned
+Studying a complex cultural setting for a long period of
+time was essential to provide consistent support to the
+representativeness and reliability of findings, which can be
+grouped in three main areas: (i) affordability, meaningfulness and manageability of the user model, (ii) assumptions about users versus user expectations, (iii) comparison
+and synergies between different systems for data collection
+and analysis.
+
+Fig. 14 The scatter diagram of photo gallery actions versus n.of audio files played in full
+
+123
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+1. Affordability, meaningfulness and manageability of the
+user model
+In order to obtain relevant and meaningful visitor
+profiles, adopting an unsupervised approach entails
+benefits and risks, which are generally difficult to
+balance; in particular, this occurs in the case of
+k-means clustering, where the problem of selecting
+optimal values for k is combined to that of selecting a
+reasonable set of features having a convenient predictive power. We mitigated the risks by combining PCA
+for feature selection with a set of multiple mathematical indexes, and by applying them to a large dataset
+collected in a longitudinal study, embracing many
+consecutive months of daily observations. We discovered that these indexes converged to the recommendation of a value for k (5), which also satisfied the human
+need for a non-trivial but limited set of visitor profiles,
+especially for the sake of museum stakeholders and
+other related cultural heritage promoters. Even the
+number of features (6) appeared not excessive to them,
+although it was necessary to carefully map the numeric
+values provided by R to suitable nominal scales for
+making the model easy to understand. In terms of cost,
+the proposed system appeared affordable, since it was
+automated by combining common statistical packages
+and business intelligence tools, which are easily
+available both on desktop and web-cloud (R, MS
+Power BI).
+2. Assumptions about users versus user expectations
+We checked the qualities of the resulting 5  6
+visitor profiles matrix at different levels of detail,
+comparing common assumptions with many types of
+evidences and outcomes provided by this model. A
+population of people paying for both the museum ticket
+and an additional fee for an interactive device raised
+optimistic expectations about their levels of interest
+and performances, while our study demonstrated that
+these were only partially met. Although this sample
+represents the self-selection of visitors who pay more
+for having some services, we ascertained relevant
+diversities of behaviors inside this kind of population;
+in particular, the features of the proposed five user
+profiles resulted very useful to qualify and quantify
+these diversities, revealing that only one profile has a
+strong level of engagement in all aspects of the
+proposed user experience, as well as profile with very
+low performances all aspects. The other intermediate
+profiles have different combinations of performances
+in two or more aspects, which cover direct interest in
+artworks, interest in contextual interactions with multimedial contents, propensity to ample movements in
+the physical space (i.e., inter-floors) and length of stay
+in the museum. In the area of multimedial assistance,
+
+7799
+
+on average, all kinds of multimedial contents (images,
+text and audio files) have respectable frequencies of
+selection, while only the propensity for playing
+artwork-specific audio files results very relevant for
+discriminating among user profiles, and it is one of the
+most suitable candidates to be considered for early
+predictions on individual behaviors. Apart from this
+distinction, the quantity of interactions with the mobile
+multimedial APP has a very wide range of variability
+among visitors, as well as the average quantity of
+T-actions per single artwork, but these indicators are
+not directly correlated to the total elapsed time of visit;
+visitors of some profiles tend to spend longer times
+than others without increasing the quantity of T_actions. This extra time without interactions with the
+APP could include pure observations of artworks,
+pauses for other activities or slow movements between
+rooms and floors which are caught by comparing
+nfloors to elapsed time. The poor-performance profile
+(strangers) could be explained by a combination of
+multiple factors: subjective inconsistencies between
+what people pay and their willingness to exploit it,
+inadequate awareness of the nature of the (smart)
+museum experience and insufficient availability of
+time. Another hypothesis is the case of a large distance
+between the expectations of some people about the
+@art APP and its actual features; in principle, we
+cannot exclude that this kind of APP resulted not
+particularly exciting also for people of other profiles,
+producing a certain impact on their performances.
+3. Comparison and synergies between different systems
+for data collection and analysis
+In order to check the above assumption, it is
+possible to integrate our system with user questionnaires, while improvements in user performances could
+be expected by proposing them more fascinating
+technologies, such as augmented reality and holograms
+in the museum. Even in such perspectives, the results
+obtained in our study can be used as a reference and
+well-defined term of comparison, in order to assess in
+which areas and to which extent improvements will be
+actually achieved. In this respect, we observe that our
+model is suitable for comparisons with results obtained
+using different types of data collection and monitoring
+systems. In particular, we compared our results about
+the elapsed time of visitors with a study on the length
+of stay in a very complex and outstanding museum (the
+Louvre), based on the noninvasive monitoring of
+personal bluetooth devices of visitors [17]. In particular, we ascertained that the time spent for interacting
+with an APP such as @art can influence the absolute
+values of the total length of stay, whose range also
+depends on many characteristics of the specific
+
+123
+
+7800
+
+Neural Computing and Applications (2020) 32:7785–7801
+
+museum (size, quantity of attractions, means and routes
+for physical movements, etc.), but we found that some
+patterns are very similar in both scenarios. In particular, our study confirms that the lengths of stay tend to
+decrease toward the closing hours of the museum, as
+well as that the earlier a visitor enters the museum, the
+longer that visitor tends to stay in the museum. On the
+other hand, the rates of decrease starting from early
+entry times toward late entry times are different in the
+two studies, and the breakdown of diagrams at cluster
+level shows that different user profiles have significant
+differences in multiple aspects: the ranges of length of
+stay, the slope of the lines, the presence and magnitude
+of up and down fluctuations. This level of detail on
+elapsed time was obtained thanks to the functionalities
+of our interactive APP, which was also indispensable
+for investigating how visitors spend their time. For the
+sake of monitoring, we realized that noninvasive
+systems and interactive systems should not be treated
+as mutually exclusive, but rather used in synergic
+ways. A noninvasive system based on widespread
+personal devices catches many visitors who do not rent
+any device offered by the museum, and has no impact
+on their behaviors. An interactive system provided by
+the museum is conceived for impacting the behaviors
+of visitors by purpose, but mainly in terms of quality of
+experience rather than quantity; it catches visitors
+which are attracted by mobile interactive facilities,
+although the actual motivation and levels of engagement may be very variable among individuals. A
+certain area of overlap exists between these two
+systems, in that an interactive system can check and
+confirm some types of patterns observed with a
+noninvasive system, while providing more insights
+and added value on more aspects of visitor behaviors.
+In the perspective of a multi-technology, synergic
+approach, we remark that the proposed six-dimensional
+model is both inclusive and flexible, since it includes
+the features that can be monitored using noninvasive
+systems as well other features which are typical of
+interactive systems.
+
+visitor profiles, which can be the targets of distinct strategies and specific programs for improvement, evolution and
+promotion of museum experiences. The noticeable variability of some features of individual behaviors, which we
+observed also inside each cluster, can also be seen as a
+source of opportunities, since it allows to estimate that
+some individuals within a profile could easily switch to
+another more performance profile, in response to new
+proposals or well-focused improvements and evolutions of
+existing ones. For such purposes, museum stakeholders can
+consider different kinds of initiatives: hosting new types of
+artistic installations and new kinds of exhibitions at the
+museum premises; opening new rooms to visitors; changes
+in the disposition of artworks; improvements in the facilities for visitors movements, provision of internet connectivity, and advances in technological devices for enriching
+the visitor knowledge and interactions with artworks. One
+promising road is the evolution of APPs for offering more
+and more personalized recommendation during the visit.
+However, the objective should not be to maximize interactions with all sorts of technological devices for each
+second of entire visit, otherwise physical visits to museum
+premises could be entirely substituted by remote virtual
+ones. Should brick and mortar museums continue to exist,
+technology must never overwhelm artworks. Future works
+will be focused on (i) improving the k selection strategy,
+(ii) classifying the visitors behavior considering their
+physical movements/path within the space.
+Acknowledgements This work was supported by the OPS-REMIAM
+project [Grant Number PON03PE_00161] and the Cultural Equipment with Transmedial Recommendation Analytics - C.E.T.R.A.
+project [Regione Campania - Bando RIS3 2018 - Fase 2 - Supporto di
+progetti, anche collaborativi, di sviluppo precompetitivo, trasferimento tecnologico da parte delle MPMI campane]
+
+Compliance with ethical standards
+Informed consent Informed consent was obtained from all individual
+participants included in the study.
+Conflict of interest The authors declare that there is no conflict of
+interest.
+
+References
+7 Conclusions and future work
+We experimented a totally unsupervised approach for
+obtaining visitor profiles from a numerous population of
+visitors in a wide period of time, which is not influenced by
+the characteristics of preconceived models coming from
+sociological theories or other qualitative empirical observations. The proposed system has the capability to identify
+and quantify a limited but significant number of different
+
+123
+
+1. Bollo A (2016) Il monitoraggio e la valutazione dei pubblici dei
+musei. Gli Osservatori dei musei nellesperienza internazionale,
+Quaderni della Valorizzazione Nuova Serie, 2, Direzione Generale Valorizzazione-Mibact
+2. Hooper-Greenhill E (2006) Studying visitors. In: Macdonald S
+(ed) Companion to museum studies. Blackwell Publishing,
+Oxford, pp 362–376
+3. Yalowitz SS, Bronnenkant K (2009) Timing and tracking:
+unlocking visitor behavior. Visit Stud 12(1):47–64
+
+Neural Computing and Applications (2020) 32:7785–7801
+4. Veron E, Levasseur M (1989) Ethnographie de l’exposition :
+l’espace, le corps et le sens, Centres Georges Pompidou
+5. Dean D (1994) Museum exhibition theory and practice. Routledge, London (ISBN 978- 020-3039-366)
+6. Serrel B (1996) Exhibit labels: an interpretive approach. Alta
+Mira Press, xv, Walnut Creek, p 261 (ISBN 07-619-9106-9)
+7. Mygind L, Bentsen P (2017) Reviewing automated sensor-based
+visitor tracking studies: beyond traditional observational methods? Visit Stud 20(2):202–217
+8. Kanda T, Shiomi M, Perrin L, Nomura T, Ishiguro H, Hagita N
+(2008) Analysis of people trajectories with ubiquitous sensors in
+a science museum. In: IEEE international conference on robotics
+and automation, 2007. IEEE, pp 48464853
+9. Yoshimura Yuji, Sobolevsky Stanislav, Ratti Carlo, Girardin
+Fabien, Carrascal Juan Pablo, Blat Josep, Sinatra Roberta (2014)
+An analysis of visitors’ behavior in the Louvre museum: a study
+using bluetooth data. Environ Plan B Plan Design
+41(6):1113–1131
+10. Kirchberg V, Martin T (2015) The museum experience: mapping
+the experience of fine art. Curator Mus J 55(2):169–193
+11. Sparacino F (2002) The Museum Wearable: real-time sensordriven understanding of visitors’ nterests for personalized visually-augmented museum experiences. In: Proceedings of Museums and the Web, pp 17–20
+12. Bohnert F, Zukerman I, Berkovskt S, Baldwin T, Sonenberg L
+(2008) Using interest and transition models to predict visitor
+locations in museums. AI Commun 21:195202
+13. Zancanaro M, Kuflik T, Boger Z, Goren-Bar D, Goldwasser D
+(2007) Analyzing museum visitors behavior patterns. In: Proceedings of the 11th International Conference, on User Modeling
+(UM), pp 238246
+14. Sookhanaphibarn K, Thawonmas R (2009) A movement data
+analysis and synthesis tool for museum visitors behaviors, in:
+PCM 2009, in: LNCS, Vol 5879, pp 144–154
+15. Bello-Orgaz JJ, Jung D (2016) Camacho, social big data: recent
+achievements and new challenges. Inf Fusion 28:4559
+16. Martella C, Miraglia A, Frost Jeana, Cattani M, van Steen M
+(2017) Visualizing, clustering, and predicting the behavior of
+museum visitors. Pervasive Mob Comput 38(2):430–443
+
+7801
+17. Yoshimura Y, Krebs A, Ratti C (2017) Non invasive bluetooth
+monitoring of visitors length of stay at the Louvre. IEEE Pervasive Comput 16(2):26–33
+18. Brancati N, Caggianese G, Frucci M, Gallo L, Neroni P (2015)
+Touchless target selection techniques for wearable augmented
+reality systems, Intell Interact Multimedia Syst Serv, pp 1–9
+19. Rainoldi M, Neuhofer B, Joos M (2018) Mobile eyetracking of
+museum learning experiences, information and communication
+technologies in tourism. In: Information and Communication
+Technologies in Tourism, pp 473–485
+20. Abedi N, Bhaskar A, Chung E (2014) Tracking spatio-temporal
+movement of human in terms of space utilization using mediaaccess-control address data. Appl Geogr 51:72–81
+21. Abdi H, Williams LJ (2010) Principal component analysis, wires.
+Comput Stat. https://doi.org/10.1002/wics.101
+22. Hastie T, Tibshirani R, Friedman J (2009) The elements of statistical learning data mining. Springer, Berlin
+23. Chambers JM (2008) Software for data analysis: programming
+with R. Springer, Berlin
+24. Pham DT, Dimov SS, Nguyen CD (2005) Selection of K in
+K-means clustering. Proc Inst Mech Eng Part C J Mech Eng Sci
+1989–1996
+219(1):103–119.
+https://doi.org/10.1243/
+095440605X8298
+25. Charrad M, Ghazzali N, Boiteau V, Niknafs A (2014) NbClust:
+an R package for determining the relevant number of clusters in a
+data set. J Stat Softw 61(6):1–36
+26. Scott AJ, Symons MJ (1971) Clustering methods based on likelihood ratio criteria. Biometrics 27(2):387397
+27. Weinfurt KP (1995) Multivariate analysis of variance. In: Grimm
+LG, Yarnold PR (eds) Reading and understanding multivariate
+statistics. American Psychological Association, Washington
+28. Chianese A, Marulli F, Piccialli F, Benedusi P, Jung JE (2017)
+An associative engines based approach supporting collaborative
+analytics in the internet of cultural things. Future Gener Comput
+Syst 66:187–198
+Publisher’s Note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional affiliations.
+
+123
+
+Neural Computing & Applications is a copyright of Springer, 2020. All Rights Reserved.
+
+

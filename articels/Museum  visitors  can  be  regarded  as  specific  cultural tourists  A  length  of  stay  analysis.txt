@@ -1,0 +1,1533 @@
+C O N T R I B U T I
+
+D I
+
+R I C E R C A
+
+C R E N O S
+
+MUSEUM VISITORS CAN BE REGARDED AS SPECIFIC
+CULTURAL TOURISTS? A LENGTH OF STAY ANALYSIS
+Juan Gabriel Brida
+Marta Meleddu
+Manuela Pulina
+
+WORKING PAPERS
+2011/14
+
+CUEC	  
+
+CENTRO RICERCHE ECONOMICHE NORD SUD
+(CRENOS)
+UNIVERSITÀ DI CAGLIARI
+UNIVERSITÀ DI SASSARI
+
+CRENOS was set up in 1993 with the purpose of organising the joint research
+effort of economists from the two Sardinian universities (Cagliari and Sassari)
+investigating dualism at the international and regional level. CRENoS’ primary
+aim is to improve knowledge on the economic gap between areas and to provide
+useful information for policy intervention. Particular attention is paid to the
+role of institutions, technological progress and diffusion of innovation in the
+process of convergence or divergence between economic areas. To carry out its
+research, CRENoS collaborates with research centres and universities at both
+national and international level. The centre is also active in the field of
+scientific dissemination, organizing conferences and workshops along with other
+activities such as seminars and summer schools.
+CRENoS creates and manages several databases of various socio-economic
+variables on Italy and Sardinia. At the local level, CRENoS promotes and
+participates to projects impacting on the most relevant issues in the Sardinian
+economy,
+such
+as
+tourism,
+environment,
+transports
+and
+macroeconomic
+forecasts.
+www.crenos.it
+info@crenos.it
+
+CRENOS – CAGLIARI
+VIA SAN GIORGIO 12, I-09100 CAGLIARI, ITALIA
+TEL. +39-070-6756406; FAX +39-070- 6756402
+CRENOS - SASSARI
+VIA TORRE TONDA 34, I-07100 SASSARI, ITALIA
+TEL. +39-079-2017301; FAX +39-079-2017312
+
+T i t l e : MUSEUM VISITORS CAN BE REGARDED AS SPECIFIC CULTURAL TOURISTS? A LENGTH OF
+STAY ANALYSIS
+
+ISBN: 978 88 84 67 677 1
+First Edition: July 2011
+
+© CUEC 2011
+Via Is Mirrionis,1
+09123 C a g l i a r i
+T e l . / F a x 070 291201
+www.cuec.it
+
+Museum visitors can be regarded as specific cultural
+tourists? A length of stay analysis
+Juan Gabriel Brida
+Free University of Bolzano
+Marta Meleddu
+University of Sassari and CRENoS
+Manuela Pulina
+Free University of Bolzano, TOMTE, and CRENoS
+♣
+
+♦
+
+•
+
+Abstract
+This paper examines the length of stay of cultural tourists in a mountain destination,
+on the North-East of Italy. A microeconomic perspective of cultural tourism is
+provided, where the interest is to analyse the attitude of visitors regarding culture
+and their overall vacation. To this aim, visitors’ behavior to the South Tyrol's
+Museum of Archaeology in Bolzano (Italy) is analysed through survey data. Unlike
+similar studies, empirically, a zero-truncated negative binomial model is estimated as
+a generalization of a Poisson distribution. The analysis shows which are the main
+determinants that influence length of stay of cultural tourists. Nationality, age,
+employment, income, costs associated with the travel have an impact on length of
+stay. Specifically, variations in such factors correspond to variation in the span of the
+vacation that is also positively affected by the presence of the icemen Ötzi in the
+museum as well as by the presence of other cultural attractions. These findings
+provide an essential tool to manage heritage resources and plan the future tourism
+development around the Ötzi museum.
+Keywords: Length of stay; cultural tourism; museum; zero-truncated negative
+binomial; management implications.
+JEL Classification: C19; D12 ; L83
+Acknowledgements: Our research was supported by the Autonomous Province of
+Bolzano, project “Tourism, growth, development and sustainability. The case of the
+South Tyrolean region”.
+
+Assistant Professor of Tourism Economics at the School of Economics and
+Management, - Free University of Bolzano. E-mail: JuanGabriel.Brida@unibz.it.
+PhD Student at the University of Sassari and CRENoS. E-mail:
+mmeleddu@uniss.it.
+Researcher at Faculty of Economics, TOMTE - Free University of Bolzano, and
+CRENoS. E-mail: Manuela.Pulina@unibz.it.
+♣
+
+♦
+
+•
+
+1
+
+1. Introduction
+From a semantic viewpoint, cultural tourists are those who travel to
+and spend at least 24 hours, and less than a year, in a given destination,
+different from their usual residence, with the primary motivation to
+gather new information and experiences to satisfy cultural needs (see also
+Richards, 1996; 2003). According to the OECD (2009), cultural tourism
+is one of the fastest-growing tourism markets. Nowadays, many
+governments are investing in tangible and intangible cultural assets as a
+means to attain comparative advantages, enhancing and supporting the
+most recent glocalisation phenomenon. Glocalisation is a neologism that
+describes a situation when competition has become global, but
+competiveness still occurs at a local level.
+In this respect, Italy provides an outstanding case study, as the
+country hosts an immense heritage with its city of arts, historical urban
+city centers, archeology and history. Sergardi and Biraghi (2007) estimate
+cultural tourism in Italy grew by 25% between 2004-2006; this growth
+was particularly driven by Western European (51%) and Extra-European
+(22%) demand. Though the cultural tourism length of stay is relatively
+smaller than traditional tourism (i.e. 7.1 nights for the former and 8.9
+nights for the latter), the daily expenditure per capita in euro is the
+highest (i.e. cultural tourism, 105.7; business, 95,7; traditional tourism,
+73.6; others, 62.2). Hence, their study confirms that cultural tourists
+generally have a higher spending propensity than other consumers’
+segments (Europa Inform, 2004).
+This paper explores the factors that influence cultural tourism. To
+this aim, as an economic indicator, length of stay of cultural visitors is
+employed. In the literature, length of stay is in fact considered of a great
+importance since it has a positive correlation with profits derived from
+tourism (Barros et. al., 2010). Within a microeconomic setting, the
+objective of this paper is to provide evidence on the attitude of a
+museum visitors regarding culture and their overall vacation motivation.
+As a case study, visitors’ experience to the South Tyrol's Museum of
+Archaeology in Bolzano (Italy) is analysed. This museum, best known as
+"Ötzi", hosts an Icemen that occupies a central position in the exhibition
+area and is without doubt one of the main attractions. In 1991, an intact
+glacier mummy of more than 5,000 years ago was discovered in the Alps
+(Schnal Valley glacier), together with his accompanying artefacts
+(clothing and equipment). This was an extraordinary finding that
+provided a unique example of a man of the Chalcolithic Period who was
+travelling at high altitudes. Hence, this museum is characterized by
+
+2
+
+authenticity and uniqueness, fundamental characteristics for such type of
+cultural tourism.
+Empirically, a zero-truncated negative binomial model is estimated
+to understand in which manner each variable affects the length of stay,
+taking into account tourists’ heterogeneity. The findings provide useful
+information for the Ötzi museum managers and policy makers of its
+hosting city, giving further insight on how better exploit this ancient
+discovery for the future planning and tourism development of the city.
+Furthermore, the results may be used to help promoting further the
+length of stay of cultural tourists in Bolzano as well as in the whole
+South Tyrol region, provided a deeper understanding on the overall
+socio-economic impact of such a niche tourism activity within the local
+economy.
+The paper is organized as follows. In the following section, an
+updated literature review is provided. In Section 3, the methodological
+framework is highlighted. Section 4 provides a description of the case
+study. In Section 5, a description of the questionnaire is provided.
+Section 6 gives an account of the empirical findings. Concluding
+remarks are presented in the last section.
+2. Literature review
+2.1 Cultural tourism and economic impact
+In the last few decades, cultural tourism has been defined in a
+number of ways (Silbeberg, 1995; Richards, 2003), however all
+definitions converge on the single concept, that is moving people for
+cultural purposes. Tourism and culture are intrinsically connected by
+their capacity to attract people and their role in destination
+competitiveness. Together these two activities produce synergies able to
+promote growth. As OECD (2009) points out, “cultural tourism is one
+of the largest and fastest growing global tourism markets and the cultural
+and creative industries are increasingly being used to promote
+destinations”.
+Richards (2003), further investigating on the concept of cultural
+tourism, makes a parallel between culture and tourism and growth in
+demand and supply. As a matter of fact, cultural tourism is characterized
+by similar push and pull factors comparable to those of tourism activity
+able to stimulate the economy (see Brida and Pulina, 2010). The
+objective of a cultural tourist is to exploit cultural attractions such as
+historical cities, archaeological sites, monuments and museums.
+
+3
+
+According to the Irish Tourist Board (1988) and Richards (1996) these
+kind of travellers are definable as “specific cultural tourists” if, the visit
+in a destination has a specific cultural motivation while are “general
+cultural tourist” if, during their vacation, they also visit a cultural
+attraction though their travel has not being motivated by culture.
+The literature shows that museums play a key role in attracting
+tourists in urban areas contributing to the revitalisation of the city.
+Examples of this kind can be found in Bilbao (Plaza, 2000), Manchester
+(UK) (Evans and Shaw, 2004), Amsterdam and Berlin (Aalst and
+Boogaarts, 2004).
+A great quota of museum visitors may be defined as specific cultural
+tourists. Specifically, cultural tourists are fascinated by the authenticity
+and the uniqueness of cultural attractions. Amongst other cultural
+attractions, museums have been indeed defined as an efficient marketing
+tool for urban tourism (Jensen-Verbeke and Van Rekom, 1996) and as a
+flagship of urban development (Hamnett and Shoval, 2003). Museums
+have a role of as repository of cultural heritage and not replicable public
+good able to produce revenues and other positive spill-over effects (e.g.
+employment).
+In addition, as Tufts and Milne (1999) highlight, museums exert a
+pull attraction to the city from people with different background. It is in
+the destination that consumption activities are combined with personal
+experiences in such a way that cultural attractions, shopping centres and
+other activities offer each other tourism services and experiences. Jolliffe
+and Smith (2001) underline that an essential feature of tourists’
+experiences derive from their contact with the local culture and heritage,
+often as a result of the local museum visitation. The same authors
+highlight how much museums can benefit from tourism though it is also
+true that museums boost tourism. In fact, museums are regarded as a
+part of the tourism system as well as a part of a holiday package.
+During the last decade, the studies on the relationship between
+museum and economic impacts have been increasing due to their
+importance in the host community wealth. Dunlop (2004), via an inputoutput analysis, provides evidence on the effects of museums and
+galleries on the Scottish economy. By employing an autoregressive
+moving average (ARIMA) econometric analysis, Plaza (2006) analyses
+the impact of the Guggenheim Museum of Bilbao (GMB) on tourism
+demand. Carrying out a Delphi analysis in Australia Scott (2006) captures
+perceptions of impact and value from professionals working with
+museums as well as the general public. Plaza (2008) analyses the
+
+4
+
+economic impact of the GMB in the Basque economy. Çela et al. (2009),
+with a qualitative approach, analyse visitor spending and the economic
+impact of heritage sites at the Silos and Smokestacks National Heritage
+Area, in Iowa. Choi et al. (2010) employ a choice modelling analysis to
+evaluate the economic value of the Old Parliament House in Australia,
+currently operating a museum of social and political history.
+The present research aims to contribute to the existing literature in
+this field considering cultural tourism in the city of Bolzano. The South
+Tyrol's Museum of Archaeology, hosting the well-known man of the
+Copper age, and its visitors are especially taken into account to study the
+determinants of the length of stay in South Tyrol. This variable is in fact
+of great importance since its positive correlation with profits derived
+from tourism (Barros et. al., 2010).
+2.2 An overview of length of stay literature
+In the empirical literature, little attention is paid on modelling
+tourism length of stay both from a macroeconomic and a
+microeconomic perspective. Notably, tourist arrivals are the most
+employed variable, whereas length of stay has rarely been adopted as the
+dependent variable. Nevertheless, length of stay can be regarded as a
+better economic indicator for the hospitality sector and public local
+agents. Arguably, longer holidays are more likely to produce higher
+expenditure in tourism goods and services, though the relationship may
+not be linear. This translates into higher revenues for businesses and
+multiplier effects within the local economy. Moreover, length of stay
+provides useful information on the capability of a specific destination to
+attract and maintain tourists’ flows, and it is a useful indicator to
+businesses, investors and local institutions for future planning purposes
+(e.g. Pulina, 2010).
+To the authors’ knowledge, within a microeconomic framework,
+none of the reviewed studies on museums and economic impact takes
+into consideration length of stay of cultural tourists in a destination.
+However, the importance of this variable in tourism has been recently
+established by a strand of the literature that mainly refers to sun and sand
+destinations (e.g. Alegre and Pou, 2006; Gokovali et al., 2007; MartinezGarcia and Raya, 2008; Menezes et al., 2008; Menezes et al. 2010;Barros
+et al., 2010; Barros and Machado, 2010; Alegre et al. 2011). As
+emphasised by Alegre and Pou (2006), length of stay allows to assess the
+effect of tourism on residents’ wealth, that varies according to the time
+
+5
+
+spent by tourists at destination. Besides, according to the vacation
+duration, different activities can be experienced by tourists.
+Within this strand of research, micro-econometric models are mostly
+employed to estimate determinants of length of stay, in contrast with
+previous studies in the field that were mainly descriptive. For example,
+using data referred to the high season from 1993 to 2003, Alegre and
+Pou (2006) estimate a binomial logit model. The authors take into
+consideration microeconomics factors to analyse length of stay in the
+Balearic Islands. Some of the considered variables have a direct influence
+in the length of stay (i.e. size of the family) but others are found as
+indirect determinants (i.e. age, education, occupation). As a further
+example, the study of Gokovali et al. (2007) was the first to apply a
+survival model, since to analyse length of stay the Weibull specification
+was preferred among other models. They examine a sun and sea
+destination in Turkey, as the case study, and investigate how trip
+characteristics and socio-demographics variables affect tourists’ length of
+stay. Following the work by Govokoli et al. (2007), Menezes et al. (2008)
+consider the length of stay of tourist in Azores (Portugal) and analyse
+survey data by means of a Cox proportional hazard model (survival
+model). It emerges that socio-demographics and trip characteristics are
+able to explain length of stay.
+Martinez-Garcia and Raya (2008) consider length of stay of low cost
+tourism in Costa Brava (Catalonia, Spain) using a log-logistics and Cox
+survival models. Employing survey data, they analyse the effect of
+microeconomic determinants such as nationality, age, education,
+occupation and travel characteristics on the length of stay. Barros et al.
+(2008) analyse length of stay of Portuguese tourists in South America. By
+running different survival models, they find that length of stay depends
+positively on factors such as budget, nature and culture, negatively on
+age, ethnicity and importance of security. The authors highlight as length
+of stay is specific to each tourist destination.
+More recently, Barros et al. (2010) examine length of stay of golf
+tourists in Algarve (Portugal) highlighting that tourists’ socio-economic
+characteristics such as age, education, nationality and motivation of the
+trip contribute to increase length of stay. Besides, to investigate length of
+stay determinants of tourists in Madeira Island (Portugal), Barros and
+Machado (2010) use a sample selection survival model. Once more it
+emerges that this variable is strongly dependent on socio-demographic
+characteristics of tourists and in lesser degree on perceived
+characteristics of the destination.
+
+6
+
+Despite this growing interest in survival models, a critique has been
+recently moved by Thrare (2011) who assert that this class of models
+complicate the length of stay analysis. The author empirically shows that
+OLS regression describes length of stay and independent variable as
+empirically well as survival models.
+However, a further strand of research in tourism demand is given by
+count models. As an example, Smith (1988) estimates per trip consumer
+surplus of household in Pennysylvania using a Poisson Model that treats
+visits as a count of "successful" outcomes. Hellerstein (1991) considers
+two count model (Poisson and Negative Binomial) to estimate a country
+level travel cost model in Minnesota controlling for censoring and
+integer nature of trip demand. Equally, Helleström (2006) estimates a
+bivariate mixed Poisson model for Swedish household tourism demand,
+while Menezes et al. (2010) evaluate the determinants of length of stay of
+tourists in the Azores (Portugal) estimating a zero truncated Poisson and
+a zero truncated Negative Binomial Model. A recent application by
+Alegre et al. (2011) analyses the length of stay of tourists in Balearics
+Island (Spain), by estimating a conditional demand function with a latent
+class truncated Poisson. The authors ascertain the existence of two
+tourism segments with different preferences where, socio-economics
+characteristic play a fundamental role. An overall interest in this class of
+models has been shown by the most recent literature since their capacity
+to take into consideration the intrinsic features of the analysed data.
+The present study further contributes to the current debate on
+length of stay with an application of a zero-truncated Negative Binomial
+to ascertain, within a microeconomic framework, its determinants of
+length of stay. To the best of our knowledge, for the first time, tourists’
+heterogeneity is explored in an area with different characteristics from
+the well-researched sea and sun destinations.
+3. The model
+3.1 The theoretical framework
+The present empirical research is underpinned to the consumer
+behaviour theory developed by Lancaster (1966) and Rosen (1974).
+Goods characteristics are the source of consumer’s utility whose final
+aim is its maximization in terms of prices and quantities of
+characteristics. Considering a tourist destination, several elements
+contribute to determine consumer’s choice. Indeed, every destination
+incorporates a bundle of characteristics and perceived features that will
+determine the utility of each consumer.
+
+7
+
+A fundamental role in this sense is played by length of stay in the
+destination that is determined by the tourists according to their budget,
+time constraints and preferences. The tourist chooses to consume goods
+x according to their characteristics, subject to an income constraint M,
+and considering the prices of the purchased good (p(x1, x2, ….,xc)) nd the
+other goods (d), as follows:
+
+Max U(x1, x2, ….,xc)
+
+subject to
+
+p(x1, x2, ….,xc)+d=M
+
+(1)
+
+When booking a vacation the consumer-tourist chooses the typology of
+holiday and the length of stay he/she prefers and can afford. Following
+the framework built by Alegre et al. (2011), the demand function of
+length of stay can be presented in the following form:
+Lj=(xjc, pjc, Y, t, ηi, εj)
+
+(2)
+
+Therefore, the consumer-tourists will stay in a given destination j
+according to destinations characteristics xjc, prices pjc, income Y, time
+allocated to vacation t, individual non observable characteristics ηi and
+destination non observable characteristics εj.. Following Alegre et al.
+(2011), tourist-consumers do not share the same set of factors in their
+utility function and for this reason it is important to account for
+heterogeneity in a way to account for those who may prefer shorter
+stays.
+3.2 The empirical framework
+In the present empirical model, for each individual the exact number of
+nights spent on holiday is assessed, avoiding in this way the right
+censoring problem (observation period ends before the event has taken
+place). This is possible since all tourists are asked about their length of
+stay. The variable cannot assume negative values and ranges from one to
+N, and therefore is zero-truncated. Hence, the distribution includes
+either a Poisson or a Negative Binomial.
+As a first step, the methodological procedure used in this study consists
+of running an initial standard Poisson, as a restriction of the more
+general Negative Binomial distribution, where the distribution is given
+by:
+(3)
+
+8
+
+The parameter l>0 is average and variance of the Poisson distribution; wi
+denotes the other controls (e.g. socio-economic characteristics of
+individual i, perception of the bundle of characteristics of the destination
+and costs). As the Poisson model is non-linear the maximum likelihood
+technique is used.
+In the literature, there appear many extensions of the Poisson model
+according to the characteristics of the empirical data as well as because
+of the stringent condition of the mean equal to the variance as previously
+stated (Greene, 2003). In this specific case, a zero-truncated Negative
+Binomial is empirically preferred to the zero-truncated Poisson. The
+Negative Binomial allows for over-dispersion that occurs when only a
+few individuals had a large number of visits, implying the variance in
+visits is larger than the mean.
+Specifically, in this case, length of stay is at least one night, that is a
+record would not appear in the database if a visitor had not spent at least
+a night out his/her usual place of residence. This model is specified by
+the following equation:
+
+(4)
+where ϑ is an ancillary parameter to be estimated from the data, Γ is the
+gamma function and Fp is the density function of the Poisson
+distribution.
+The estimation is run using maximum likelihood
+(Menezes et al., 2010).
+4. South Tyrol as a cultural destination
+South Tyrol is one of the two autonomous provinces within the
+autonomous region of Trentino-Alto Adige/Sudtirol, located in the
+north-east of Italy. The province, also known with its Italian name, Alto
+Adige, has just above 500.000 inhabitants.
+Bolzano, its provincial capital, counts for approximately 104,000
+inhabitants. The economy is based on tourism, high-quality intensive
+agriculture (including wine, fruit and dairy products), traditional
+handicraft (wood, ceramics) and advanced services. South Tyrol
+combines different cultures that blend Italian and North-European
+architectonic features. Churches, palaces, museums are of most artistic
+value. In the last two decades, the city of Bolzano has experienced a new
+
+9
+
+impulse to the cultural life that brought the openings of numerous
+museums as well as multiple summer and winter events, such as the
+“Christmas Markets”. Hence, the town has also a diversified tourism
+supply, eno-gastronomic holiday in the valleys, mountain holiday and
+cultural holiday, and the well-known cultural events, such as Südtirol Jazz
+Festival and Bolzano Festival. Bolzano has also many art galleries as
+“Galleria Goethe”, “Galleria Civica”, “Galleria Les Chances de l'Art”
+and from 1905 is hosting the first museum of the entire region, the Civic
+Museum of Bolzano. A number of other museums have been opened in
+the last two decades indicating the growing attention towards art and
+culture: in 1985, the “Museion”, a modern and contemporary art
+museum; in 1995, the “Schulmuseum”, a museum of the school, the first
+one of this genre in Italy, based on the Mittel-Europe experience; in
+1997, the Natural Science museum of Alto Adige; in 1998, the South
+Tyrol Museum of Archaeology. It is also has a “nativity scene” (presepio)
+Museum, a Mercantile Museum and the “Dommuseum”(2007). In
+addition, in 2006, the Firmian Castle of Bolzano was devolved as a
+museum centre for the Messner Mountain Museum project. A total of
+eighty museums are currently present in South Tyrol.
+The principal attraction of the area is the Archaeological museum
+situated in Bolzano and opened on March 1998 to host one of the
+world’s best-known and most important mummies, Ötzi the Iceman, a
+well-preserved natural mummy of a man dated from 53 centuries ago.
+The museum is approximately 1200mq and the entire first floor is
+dedicated to the Iceman findings. It has a permanent exhibition on
+South Tyrol’s pre-historical and history, and also hosts temporary
+exhibitions. Since its opening, it had around 250,000 visitors per year.
+From a financial point of view, the museum has revenues from tickets
+sales, merchandising, sponsors and publishing.
+The territory of Bolzano offers mountain holidays but also cultural
+holidays all the year round. It is worthwhile to analyse its tourism
+demand and supply evolution. In 2010, the whole province counted over
+10.000 accommodations among hotels and non-hotel infrastructure, such
+as bed and breakfast, hostels and agro tourist activities. While the latter
+sector grew by 8% between 2000 and 2010, the hotel sector decreased by
+6% (Table 1). In terms of capacity (i.e. number of beds), non-hotel
+infrastructures show a higher increase of 4%. The positive growth of the
+latter sector in the province is confirmed by the outstanding growth in
+the number of arrivals (+36%) and overnight stays (+20%). The Italian
+component, expressed in terms of the number of arrivals, increased by
+
+10
+
+48% and overnight stays by 25%. Foreigners’ flows present a similar
+picture: arrivals increased by 33% and overnights increased by 19%. It is
+interesting to notice as overall, in the last decade, during the springsummer period, arrivals increased by 39% and overnight stays by 21%.
+This good performance may be also due to the increase in the cultural
+supply in the recent years, as previously described. Data on average
+overnight of stays seem to reinforce this hypothesis: in 2000, people
+stayed in South Tyrol on average 5.7 nights, while in 2010 stayed 5.0.
+(Source: Statistics office of the autonomous province of Bolzano,
+ASTAT), possibly showing a pattern for a different holiday type. These
+findings provide some evidence that especially the Italians are changing
+their habits preferring more frequent holidays for shorter period of time.
+Comparing arrival flows in South Tyrol and visitor flows to the museum
+may provide a better insight on the relationship between tourism and the
+Ötzi museum. Data collected from the Statistic Office of the Province of
+Bolzano (ASTAT) and museum visitors data, provided by the museum
+administration, for the time span 2007-2010, allow for a comparison of
+these time series (Figure 1) and their correlation.
+Pearson’s correlation coefficient is equal to +0.999 denoting the positive
+linear relationship between the two series. From Figure 1, it emerges that
+the two flows have similar trend and hence are intrinsically connected.
+Notably, Pearson’s correlation coefficient is equal to 0.790 when using
+museum visitors time series and number of arrivals in the city of
+Bolzano. This outcome seems to suggest that cultural tourists may spend
+their holidays in the province rather than in the city.
+This descriptive investigation offers a clearer picture on the potential
+attractiveness of Bolzano and its province that may also denote the
+positive impact of the South Tyrol Museum of Archaeology on its
+overall tourism activity.
+5. The questionnaire and the sample
+The survey was administered at the Ötzi museum in Bolzano, from June
+to August 2010, via face-to-face interviews on weekdays (except for the
+closing day on Mondays) and on Saturdays and Sundays, at different
+opening hours (between 10.00 am – 6 pm). In a recent survey
+investigation, conducted by Sergardi and Biraghi (2007) for Italian
+cultural tourism, it emerges that, though cultural tourism seasonal
+distribution is very stable during the year (from a minimum of 25% to a
+maximum of 31%), nevertheless, traditional tourism in Italian provinces
+sees the highest shares within June-August (ranging from 36% to 41%).
+
+11
+
+Hence, running the survey within the time span June- August can
+provide better insight on the characteristics of tourists and the factors
+that influence urban cultural tourism.
+The respondents were selected with a quota random sampling procedure
+based on age and gender trying to capture heterogeneous demographics
+features. As opposed to random sampling, quota sampling requires that
+representative respondents are chosen out a subset of individuals within
+a population. Notwithstanding this procedure may lead to bias because
+not everyone gets a chance to be selected, nevertheless, it overcomes the
+potential bias derived from a random sample procedure, as the trial may
+be likely to over-represent specific demographic characteristics, such as
+gender or age. Based on the visitor’s data of the previous year provided
+by the administrative office of the museum, the sample size was
+determined according to a 95% confidence level with a 5% error. It was
+fixed in 350 visitors per month. Finally, 724 complete interviews were
+successfully concluded.
+Among all respondents, 582 of them (80%) declared to have spent at
+least one night in South Tyrol, outside the habitual place of residence.
+Hence, according with the definition of tourist, this portion of
+respondents is considered as cultural tourists.
+The questionnaire contained in total 36 questions, organized in four
+blocks: the first section asked trip information, the next demanded
+information about the city of Bolzano, then information on the visit to
+the museum are collected and, as the last section, a sequence of
+questions on socio-economics characteristics of the visitors. In the
+questions on how important is to visit Bolzano and the museum,
+information, motivation, satisfaction and loyalty a Likert scale was used
+ranging from ‘not important’ to ‘very important’ for the motivation
+factors, from ‘strongly in disagreement’ to ‘strongly in agreement’ for
+assessing tourist’s satisfaction, and from ‘very unlikely’ to ‘very likely’ for
+the loyalty factors.
+Main characteristics of the sample are here analysed in order to give a
+better picture tourists visiting the Archaeological Museum and Bolzano.
+Most of the visitors (64%) came from other European countries rather
+than Italy (25%) (Table 2). Interestingly, comparing these survey data
+with those proposed by the official statistics, the average length of stay
+of the sample (7.8 days) is greater of the traditional tourism average
+length of stay in South Tyrol (5.0 days) and consistent with Sergardi and
+Biraghi (2007) who computed an average length of stay of 7.1 days for
+cultural tourists. This outcome is different from a typical sea and sun
+
+12
+
+destination that denotes a traditional tourism length of stay higher than a
+cultural tourism length of stay (Sergardi and Biraghi computed 8.9 days
+of traditional tourists).
+From Table 2, it emerges that responders are mostly male (56%),
+generally married or de-facto (80%), with a family of 3-4 members
+(51%); those between 41 and 55 years old are more interested in the
+museum visitation (47%) if compared to other age range. Regarding the
+education level, 50% had a college degree or a higher degree. As far as
+income is concerned, 39% of the sample had a middle-high average
+income, while just 3% less than 20.000 euros per year. It is important to
+notice that for 58% of the sample is their first time in Bolzano and for
+89% is their first visit to the Archeological Museum. The great part
+(78%) would equally visit the city even if it were not hosting the Iceman
+Ötzi, that however has the high potentiality to attract tourists considered
+that 89% is willing to visit another city that would host it. Also, 11%
+expressed a strong intention to revisit the museum the following year,
+while 24% had a strong intention to come back to Bolzano and 40%
+would strongly recommend the city to relatives and friends. Besides,
+56% declared that they will very likely advise relatives and friends to visit
+this museum.
+Considering the family unit that spends at least one night out, the
+average expenditure for accommodation is approximately 96 euros per
+night, while 61 euros for food and beverage. On balance, tourists have a
+higher spending propensity in the museum shop, as well as in doing
+shopping in the city, than daily visitors.
+6. Empirical results and discussion
+The econometric estimation is based upon the theoretical framework
+previously specified. The relevant variables included into the model, and
+obtained by the survey data, are described in greater details in the
+Appendix A, Table 1.A.
+The best specification has been identified as a zero-truncated Negative
+Binomial. The estimation is run by using STATA 10 and results are
+reported on coefficients and IRR (incidence rate ratio) obtained taking
+the exponent of the zero-truncated Negative Binomial regression
+coefficient (Table 4).
+The dependent variable, length of stay in South Tyrol, allows for the specific
+restriction, ranging from one to N (i.e. the count variable cannot be
+zero), given the definition of cultural tourism provided previously. The
+goodness-of-fit test in the standard Poisson model (estatgof in Stata 10)
+
+13
+
+suggests that the null hypothesis (i.e. the empirical model fits the data)
+cannot be accepted (i.e. Goodness-of-fit chi2 = 492.79 - Prob >
+chi2(178) = 0.0000). Hence, a negative binomial needs to be estimated.
+Furthermore, comparing the standard negative binomial with the zerotruncated negative binomial the AIC (1140.94; 1131.36, respectively) and
+BIC (1276.87; 1267.29, respectively) information criteria are minimised in
+the latter model. Besides, the Wald test indicates that the overall model
+is well specified at the level of significance of 1%. Hence, there is
+statistical ground to retain the zero-truncated negative binomial as a
+better empirical specification. The model has been estimated correcting
+for robust standard errors, given the relatively low number of
+observations may lead to heteroskedasticity problems in the residuals.
+Taking into account statistically significant coefficients (at least at the
+10% level of significance), among the socio-demographic and economic
+characteristics, ceteris paribus, it emerges that nationality is relevant as an
+explanatory factor in the case of Italians who denote a relatively low
+probability to increase the length of stay. This fact may be due to either
+an overall lower spending capacity or propensity. With regard to age and
+employment status, the findings show a smaller probability to stay for
+the group under the age of 30. This outcome may due to the fact that
+this category of people, on the one hand, has in general less spare time
+and, on the other hand, a lower income level, that does not facilitate of
+longer period of vacation. On the opposite, people aged 60 years or
+more denote a higher probability to stay longer. As far as the income
+range is concerned, the group who has an income up to twenty thousand
+euro presents a higher probability to increase the length of stay in South
+Tyrol.
+One can discriminate between general and specific cultural tourists, by
+taking into account the importance that respondents attribute of visiting:
+Bolzano as a city, Bolzano because it hosts the Ötzi museum, other
+museums in the city, and if the respondent would have visited any other
+city that had hosted the Ötzi museum, if it were not have been located in
+Bolzano. The findings reveal that respondents can be indeed regarded as
+specific cultural tourists, as they are likely to increase their vacation time
+when they attribute a higher importance in visiting Bolzano because it
+hosts the Ötzi museum. Moreover, their vacation duration in South
+Tyrol, would be shorter, if the museum of Ötzi had not been located in
+Bolzano. Though the latter coefficient turns out not to be statistically
+significant, the negative sign in the Know-BZ and the positive sign in
+visit_otmus variable further confirm that the respondents are more likely
+
+14
+
+to be specific cultural tourists. These results are even more meaningful as
+the survey was conducted during the time span June and August,
+revealing that specific cultural tourists, in South Tyrol, do not dislike
+visiting the destination during the tourism high season of the province.
+Turning to the pull and push factors, bad weather, as a pull factor,
+encourages visits to the archaeological museum and longer vacation
+duration in South Tyrol. Besides, travel costs and living costs, as
+supposed theoretically, negatively influence length of stay in the
+province.
+7. Concluding remarks
+In this paper, a microeconomic analysis has been carried out to explore
+the definition of cultural tourist and what are the main determinants of
+their length of stay in a destination. The case study is the South Tyrol's
+Museum of Archaeology in Bolzano (Italy), best known as the Ötzi
+museum.
+The empirical investigation has been underpinned to the consumer
+behaviour theory developed by Lancaster (1966) and Rosen (1974).
+Goods characteristics are assumed to be the source of consumer’s utility
+whose final aim is maximize his/her utility in terms of prices and
+quantities of characteristics of a destination.
+Empirical data were obtained via a survey on 724 visitors at the museum
+from June to August 2010. Overall, evidence has been provided that
+cultural length of stay in a mountain destination with two peak seasons
+(summer and winter) seems higher than length of stay in more traditional
+tourism destinations. Given the specific characteristics of the dependent
+variable (i.e. length of stay), that is a count variable that assumes at least
+the value of one, a zero-truncated Negative Binomial has been estimated,
+as it has outperformed the zero-truncated Poisson model as the nested
+case. As the main objective of this research, there is empirical evidence
+that respondents, who visit the Ötzi museum, are mainly interested in a
+cultural experience and can be regarded as specific tourists.
+Ötzi, and consequentially the Archaeological Museum, is already
+considered as the main attraction of the city of Bolzano, however,
+according to the present research it deserves even more attention from
+local institutions. Local press (Mair, 2010; Vikoler, 2010) reported the
+inadequacy of the existing building hosting Ötzi and the debate around
+the possibility to transfer it in a larger building. So far, a decision has not
+been taken. However, policy makers should closely consider the impact
+
+15
+
+that Ötzi has on tourism and their motivation to extend their vacation to
+visit this unique museum. The empirical analysis has shown the need for
+a long-term development strategy around this museum, that enables to
+attract new tourism flows.
+The contribution of the present study, in applying a novel empirical
+approach into the investigation of length of stay of cultural tourists in a
+mountain destination, can be further tested for and expanded to other
+heritage sites of this kind, providing robustness to the present paper.
+Besides, a future challenge of research in this field will involve a
+systematic investigation on the complementary and substitute effects
+amongst other important museums in the whole region of Trentino Alto
+Adige.
+
+16
+
+References
+Aalst Van, I., & Boogaarts, I. (2004). From museum to mass
+entertainment. The evolution of the role of museums in cities Repeat
+visitation in mature sun and sand holiday destinations. European Urban
+and Regional Studies, 9, 195-209.
+Alegre, J., Mateo, S., & Pou, L. (2011). A latent class approach to
+tourists' length of stay. Tourism Management, 32, 555-563.
+Alegre, J., & Pou, L. (2006). The length of stay in the demand for
+tourism. Tourism Management, 27, 1343-1355.
+Andries van der Ark, L., & Richards, G. (2006). Attractiveness of cultural
+activities in European cities: A latent class approach. Tourism Management,
+27, 1408-1413.
+Ashworth, G., & Page, S. J. (2011). Urban tourism research: Recent
+progress and current paradoxes. Tourism Management, 32, 1-15.
+Barros, C. P., Butler, R., & Correia, A. (2010). The length of stay of golf
+tourism: A survival analysis. Tourism Management, 31, 13-21.
+Barros, C. P., Correia, A., & Crouch, G. (2008). Determinants of the
+length of stay in Latin American tourism destinations. Tourism Analysis,
+13, 329-340.
+Barros, C. P., & Machado, L. P. (2010). The length of stay in tourism.
+Annals of Tourism Research, 37, 692-706.
+Batabyal, A. A., & Beladi, H. (2011) An alternate approach to modeling
+the slack season provision of guided tours to tourists. Tourism Management
+32(6): 1047-1049.
+Bilgic, A., Florkowski, W. J., Yoder, J., & Schreiner, D. F. (2008).
+Estimating fishing and hunting leisure spending shares in the United
+States. Tourism Management, 29, 771-782.
+Board, I. T. (1988). Inventory of cultural tourism resources in the
+member states. In. Brussels European Commission.
+Brida, J. G., & Pulina, M. (2010). A literature review on tourism and
+economic growth. Working Paper, CRENoS, Cagliari & Sassari University,
+10-17.
+Bujosa Bestard, A., & Nadal, J. R. (2007). Modelling environmental
+attitudes toward tourism. Tourism Management, 28, 688-695.
+Campo-Martínez, S., Garau-Vadell, J. B., & Martínez-Ruiz, M. P. (2010).
+Factors influencing repeat visits to a destination: The influence of group
+composition. Tourism Management, 31, 862-870.
+
+17
+
+Çela, A. C., Lankford, S., & Knowles-Lankford, J. (2009). Visitor
+spending and economic impacts of heritage tourism: a case study of the
+Silos and Smokestacks National Heritage Area. Journal of Heritage Tourism,
+43, 245-256.
+Choi, A. S., Ritchie, B. W., Papandrea, F., & Bennett, J. (2010).
+Economic valuation of cultural heritage sites: A choice modeling
+approach. Tourism Management, 31, 213-220.
+Centro
+Studi
+TCI
+(2009).
+Dossier
+Musei
+2009.
+http://static.touring.it/store/document/19_file.pdf.
+[Accessed
+on
+26/04/2011]
+Dunlop, S., Galloway, S., Hamilton, C., & Scullion, A. (2004). The
+economic
+impact
+of
+the
+cultural
+sector
+in
+Scotland.
+http://www.christinehamiltonconsulting.com/documents/Economic%2
+0Impact%20Report.pdf. [Accessed on 26/04/2011].
+Dumont, E. (2007). Pro-active management of the Impact of Cultural
+Tourismupon Urban Resources and Economies. http://kiem.cultureroutes.lu/picture/IMG/pdf/791_long_en.pdf
+[Accessed
+on
+26/04/2011]
+Ercole, E. Il turista culturale urbano : trasformazioni e prospettive.
+http://www.marcianum.it/marcianum/allegati/773/Turismo%20cultura
+le%20urbano.pdf. [Accessed on 26/04/2011]
+Eugenio-Martin, J. L., & Campos-Soria, J. A. (2010). Climate in the
+region of origin and destination choice in outbound tourism demand.
+Tourism Management, 31, 744-753.
+Europa Inform, (2004). The Economic Impact of Historical Cultural tourism –
+Romit
+Project
+–
+Roman
+Itineraries
+http://www.romit.org/en/pubblicazioni.htm. [Accessed 4 March 2011].
+Evans, G., & Shaw, P. (2004). The Contribution of Culture to
+Regeneration in The UK: A Report to the DCMS In. LondonMet.
+Fleischer, A., & Pizam, A. (2002). Tourism constraints among Israeli
+seniors. Annals of Tourism Research, 29, 106-123.
+Gil-Alana, L. A. (2005). Modelling international monthly arrivals using
+seasonal univariate long-memory processes. Tourism Management, 26, 867878.
+Gokovali, U., Bahar, O., & Kozak, M. (2007). Determinants of length of
+stay: A practical use of survival analysis. Tourism Management, 28, 736-746.
+Greene, W. (2003). Econometric Analysis, fifth edition. Prentice Hall, New
+Jersey.
+Hamnett, C., & Shoval, N. (2008). Museums as Flagships of Urban
+Development: Blackwell Publishing Ltd.
+
+18
+
+Hellerstein, D., & Mendelsohn, R. (1993). A Theoretical Foundation for
+Count Data Models. American Journal of Agricultural Economics, 75, 604-611.
+Hellström, J. (2006). A Bivariate Count Data Model for Household
+Tourism Demand. Journal of Applied Econometrics, 21, 213-226.
+Jansen-Verbeke, M., & van Rekom, J. (1996). Scanning museum visitors:
+Urban tourism marketing. Annals of Tourism Research, 23, 364-375.
+Jolliffe L. & Smith R. (2001). Heritage, Tourism and Museums: the case
+of the North Atlantic islands of Skye, Scotland and Prince Edward
+Island, Canada. International Journal of Heritage Studies, 7, 149-172.
+Lancaster, K. J., 1966. A New Approach to Consumer Theory. The
+Journal of Political Economy. 74, 132-157.
+Martínez-Garcia, E., & Raya, J. M. (2008). Length of stay for low-cost
+tourism. Tourism Management, 29, 1064-1075.
+Mair, G. (2010). Im Haus gegenüber. FF Südtiroler Wochenmagazin, 39, 40.
+Menezes, A. G., Moniz, A., & Vieira, J. C. (2008). The determinants of
+length of stay in the Azores. Tourism Economics, 14, 205-222.
+Menezes. G.A., Moniz, A., & Vieira, J. C. (2010). The determinants of
+length of stay in the Azores: A count model approach. CEEApIA WP
+No. 03/2010, 1-28.
+Molera, L., & Pilar Albaladejo, I. (2007). Profiling segments of tourists in
+rural areas of South-Eastern Spain. Tourism Management, 28, 757-767.
+Nicolau, J. L. (2002). Assessing new hotel openings through an event
+study. Tourism Management, 23, 47-54.
+Nicolau, J. L., & Más, F. J. (2006). The influence of distance and prices
+on the choice of tourist destinations: The moderating role of
+motivations. Tourism Management, 27, 982-996.
+Nicolau, J. L., & Más, F. J. (2008). Sequential choice behavior: Going on
+vacation and type of destination. Tourism Management, 29, 1023-1034.
+OECD. (2009). The Impact of Culture on Tourism.
+http://www.em.gov.lv/images/modules/items/OECD_Tourism_Cultu
+re.pdf
+Palmer-Tous, T., Riera-Font, A., & Rosselló-Nadal, J. (2007). Taxing
+tourism: The case of rental cars in Mallorca. Tourism Management, 28, 271279.
+Plaza, B. (2006). The Return on Investment of the Guggenheim Museum
+Bilbao. International Journal of Urban and Regional Research, 30, 452-467.
+Plaza, B. (2008). On Some Challenges and Conditions for the
+Guggenheim Museum Bilbao to be an Effective Economic Re-activator.
+International Journal of Urban and Regional Research, 32, 506-517.
+
+19
+
+Pulina, M. (2010). Modelling and forecasting length of stay. Anatolia, 21,
+305-321.
+Richards, G. (1996). Production and consumption of European cultural
+tourism. Annals of Tourism Research, 23, 261-283.
+Richards, G. (2003). What is Cultural Tourism? In A. Van Maaren
+(Ed.), Erfgoerd voor Toerisme: Nationaal Contact Monumenten.
+Rosen, S., 1974. Hedonic Prices and Implicit Markets: Product
+Differentiation in Pure Competition. The Journal of Political Economy. 82,
+34-55.
+Rulleau, B., Dehez, J., & Point, P. (2011). Recreational value, user
+heterogeneity and site characteristics in contingent valuation. Tourism
+Management
+(in
+press).
+Available
+on
+line
+at:
+doi:10.1016/j.tourman.2011.03.002.
+Schwartz, Z., & Lin, L.-C. (2006). The impact of fees on visitation of
+national parks. Tourism Management, 27, 1386-1396.
+Scott, C. (2006). Museums: impact and value. Cultural Trends, 15, 45-75.
+Sergardi, P., & Biraghi, A. (2007). Il ruolo del turismo culturale e del
+turismo d’affari nell’incoming internazionale dell’Italia. L’Italia ed il
+turismo internazionale. Pragma. TNS Infratest.
+Silberberg, T. (1995). Cultural tourism and business opportunities for
+museums and heritage sites. Tourism Management, 16, 361-365.
+Smith, V. K. (1988). Selection and Recreation Demand. American Journal
+of Agricultural Economics, 70, 29-36.
+Stylianou-Lambert, T. (2011). Gazing from home: Cultural tourism and
+art museums. Annals of Tourism Research, 38, 403-421.
+Swanson, K. K., & Horridge, P. E. (2006). Travel motivations as
+souvenir purchase indicators. Tourism Management, 27, 671-683.
+Thrane, C. (2011). Analyzing tourists' length of stay at destinations with
+survival models: A constructive critique based on a case study. Tourism
+Management
+(in
+press).
+Available
+on
+line
+at:
+doi:10.1016/j.tourman.2011.02.011.
+Tufts, Steven & Simon Milne (1999) Museums A Supply-Side
+Perspective. Annals of Tourism Research, Vol. 26, No. 3, pp. 613-631.
+Vikoler, T. (2010). Ötzi im Stadtmuseum. Neue Südtiroler Tageszeitung, 11.
+Witt, S. F., Sykes, A. M., & Dartus, M. (1995). Forecasting international
+conference attendance. Tourism Management, 16, 559-570.
+
+20
+
+Table 1. Tourism supply and demand growth rates (2000-2009) in South Tyrol
+Supply/demand Hotel Non-hotel Italians Foreigners
+
+Spring-Summer
+(April-October)
+
+Consistency
+Capacity
+Arrivals
+
+-15%
+14%
+17%
+
+33%
+33%
+174%
+
+17%
+
+30%
+
+25%
+
+Overnight stays
+
+-3%
+
+63%
+
+-4%
+
+8%
+
+4%
+
+Source: Calculation on data from Statistics Office of the Autonomous Province of Bolzano
+
+Table 2. Sample characteristics
+Residence
+
+%
+
+Italy
+Europe
+
+24%
+66%
+
+Rest of the World
+
+10%
+
+Length of
+stay in
+South
+Tyrol in
+days
+6.37
+8.73
+5.56
+7.82
+(mean)
+
+Civil Status
+Single/never married
+Married or de-facto
+
+Age
+
+%
+
+>55
+41-55
+
+22%
+47%
+
+26-40
+
+25%
+
+9-25
+Mean
+
+6%
+45
+
+14%
+80% Female
+
+Separate/divorced
+Widow
+
+4% Male
+2%
+Number family components
+1-2
+3% 3-4
+22% 5
+39% >5
+18%
+
+Income (% in category)
+< € 20.000
+€20.000-€40.000
+€40.000-€70.000
+€70.000-€100.000
+
+First visit in South Tyrol (% yes)
+
+18% Education
+Below high school
+High school
+College/ degree or more
+58%
+
+Visit South Tyrol without Iceman (% yes)
+Strong intention to return to South Tyrol
+next year (% yes)
+Strong recommend South Tyrol
+(% yes)
+
+78% Visit other city with Iceman (% yes)
+Strong intention to return to the Iceman
+24% Museum next year (% yes)
+Strong recommend Iceman Museum
+40% (% yes)
+
+>€100.000
+
+Source: Elaboration on sample data
+
+Table 3. Expenditure pattern of Ötzi visitors
+Expenses categories Tourists Day-visitors
+Food and beverage
+(per family unit)
+
+61,52 €
+
+48,33 €
+
+Museum shop
+
+14,46 €
+
+12,98 €
+
+Shopping in town
+Overnight stay
+(per family unit)
+
+69,16 €
+
+48,14 €
+
+96,43 €
+
+-
+
+Source: Elaboration on sample data
+
+21
+
+44%
+56%
+
+36%
+51%
+10%
+3%
+
+19%
+31%
+50%
+89%
+11%
+56%
+
+Table 4. Zero-truncated negative binomial regression results
+VARIABLES
+
+Coefficients
+
+Nationality (reference group
+Germans)
+Italians
+
+-0.603 (0.122)***
+
+USA
+
+-0.326 (0.359)
+
+Ned
+
+-0.019 (0.199)*
+
+IRR§
+
+0.547 (0.066)***
+0.721 (0.259)
+0.980 (0.195)
+
+UK
+
+0.348 (0.352)
+
+1.416 (0.499)
+
+Weu
+
+-0.212 (0.194)
+
+0.808 (0.157)
+
+Eeu
+
+0.093 (0.286)
+
+1.097 (0.314)
+
+Extraeu
+
+-0.271 (0.300)
+
+0.762 (0.229)
+
+Gender (ref. male)
+-0.044 (0.098)
+0.956 (0.094)
+Education
+-0.022 (0.030)
+0.977 (0.029)
+Ncomfam
+0.053 (0.040)
+1.054 (0.042)
+Age (reference group: 46-59 years old)
+Ageunder30
+-0.635 (0.259)**
+0.529 (0.137)**
+Age31-45
+0.017 (0.110)
+1.017 (0.112)
+Age60on
+0.829 (0.268)***
+2.292 (0.616)***
+Employment (reference group employment 2:full time or part-time employee)
+Employment1
+0.085 (0.172)
+1.089 (0.187)
+Employment4
+0.178 (0.283)
+1.195 (0.338)
+Employment5
+-1.928 (0.459)***
+0.145 (0.066)***
+Employment6
+0.437 (0.394)
+1.548 (0.610)
+Employment7
+-0.177 (0.296)
+0.837 (0.248)
+Civil status (reference group status2: married or de facto)
+Status1
+-0.043 (0.245)
+0.957 (0.234)
+Status3
+-0.098 (0.250)
+0.906 (0.226)
+Status4
+0.239 (0.330)
+1.270 (0.419)
+Income (reference group income3: from 40.000 to 70.000 €)
+Income1
+0.508 (0.262)*
+1.663 (0.436)*
+Income2
+-0.230 (0.162)
+0.793 (0.128)
+Income4
+0.177 (0.125)
+1.194 (0.150)
+Income5
+-0.278 (0.187)
+0.757 (0.141)
+Know_BZ
+-0.044 (0.059)
+0.956 (0.056)
+Visit Ötzi
+0.123 (0.063)**
+1.131 (0.071)**
+Visit otmus
+Ötziany
+Learn archaeology of South
+Tyrol
+Curios
+Relax
+Bad weather
+Something different to do
+
+0.131 (0.049)***
+-0.209 (0.207)
+
+1.140 (0.056)***
+0.810 (0.168)
+
+-0.037 (0.039)
+
+0.967 (0.048)
+
+-0.008 (0.040)
+-0.016 (0.0421)
+0.109 (0.048)**
+-0.042 (0.048)
+
+1.008 (0.041)
+0.983 (0.041)
+1.116 (0.054)**
+0.958 (0.046)
+
+Nothing to do
+Advised
+Work or study visit
+Travel cost
+Total accommodation costs
+Total food and beverage costs
+Shopping expenditure in Bolzano
+
+0.020 (0.059)
+-0.015 (0.047)
+0.006 (0.047)
+-0.004 (0.002)*
+-0.0003 (0.000)
+-0.004 (0.001)***
+-0.0005 (0.0007)
+
+1.020 (0.061)
+0.984 (0.046)
+1.006 (0.047)
+0.995 (0.002)*
+1.000 (0.000)
+0.995 (0.000)***
+0.954 (0.189)
+
+Price
+
+-0.046 (0.198)
+
+0.060 (0.158)
+
+Constant
+
+2.566 (1.867)
+
+Pseudo R
+
+2
+
+Wald chi2(42)
+Log pseudolikelihood
+
+0.0744
+
+0.0744
+
+26248.83
+Prob>χ2= 0.000
+
+26248.83
+Prob>χ2= 0.000
+
+-523.6829
+
+-523.6829
+
+AIC
+
+1131.36
+
+1131.36
+
+BIC
+
+1267.29
+
+1267.29
+
+Notes: *** , ** and * indicate statistically significance at the 1%, 5% and 10% level, respectively;
+§ e.g. IRR indicate the exponentiated coefficients= e^b; Robust Standard Errors are in parenthesis.
+
+22
+
+Figure 1. Comparison of arrivals in South Tyrol and museum visitors, 2007-2010
+
+Source: elaboration on ASTAT and Museum data, 2011
+
+23
+
+Appendix A.
+Table 1.A. List of variables
+NAME
+
+DEFINITION
+
+Dependent variable
+Length of stay
+
+Nights spent away from visitor’s actual place of residence
+
+Control variables
+Nationality (reference group Germans)
+USA (reference group Germans)
+Ned (reference group Germans)
+UK (reference group Germans)
+Weu (reference group Germans)
+Eeu (reference group Germans)
+Extraeu (reference group Germans)
+Education
+ncompfam
+AGE (reference category age46-59)
+Ageunder30
+Age3045
+Age60
+Employment (reference group empl2:full
+time or part-time employee)
+Civil status (reference group status2:
+married or de facto)
+Income (reference group income3: from
+40.000 to 70.000 €)
+Know_BZ
+Importance to visit Otzi
+Importance to visit other museums
+Otziany
+Learn archaeology of South Tyrol
+Curiosity
+Relax
+Bad weather
+Something different
+Nothing to do
+Advised
+Work or study visit
+
+This dummy takes the value one if the visitor is Italian, zero otherwise.
+This dummy takes the value one if the visitor is from the USA, zero otherwise.
+This dummy takes the value one if the visitor is from the Netherlands, zero
+otherwise.
+This dummy takes the value one if the visitor is from the UK, zero otherwise.
+This dummy takes the value one if the visitor is from other Western countries, zero
+otherwise.
+This dummy takes the value one if the visitor is from other Eastern countries, zero
+otherwise.
+This dummy takes the value one if the visitor is from other extra European countries
+(i.e. Australia, Japan and New Zealand), zero otherwise.
+This is a discrete variable that takes the value one for the lowest level of education
+(i.e. primary school) up to 7 for the highest level of education (i.e. Ph.D).
+This is a discrete variable that takes into account the number of family members
+Age of the respondent, as a continuous variable
+This dummy takes the value one if the visitor is less than 30 years old, zero
+otherwise.
+This dummy takes the value one if the visitor is between 30 years old and 45 years
+old , zero otherwise.
+This dummy takes the value one if the visitor is 60 years old or older, zero
+otherwise.
+Employment1: autonomous; Employment 3: working occasionally; Employment 4:
+unemployed; Employment 5: retired; Employment 6: student, Employment 7:
+housewife.
+Status1: Single/never married; Status3: Separate/divorced; Status4: Widow.
+Income1: up to 20.000 €; Income 2: from 20.000 to 40.000 €; Income 4: from
+70.000 to 100.000 €; Income 5: more than 100.000 €.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting Bolzano as a
+city.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting Bolzano,
+giving the present of the Archaeological museum.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the city of
+Bolzano, given the presence of museums other than the Archaeological.
+This is a dummy variable that takes 1 if the respondent would have visited any other
+city that had hosted Ötzi, and zero otherwise.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance to Learn archaeology of
+South Tyrol during the visit to the Archaeological Museum.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the museum,
+given the respondent was curious.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance to relaxation during the
+visit to the Archaeological Museum.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the
+Archaeological Museum during bad weather conditions.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance to do something different
+corresponding to Archaeological Museum visitation.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the museum,
+given the respondent has anything else to do.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the museum,
+given the respondent was advised to do so.
+This is a discrete variable that takes values from 1 (not important at all) up to 5
+(very important) for attributing an increasing importance for visiting the museum,
+given the respondent was doing a part of his/her job or a study visit.
+
+24
+
+Travel cost
+Total accommodation costs
+
+Total food and beverage costs
+Shopping expenditure in Bolzano
+Entry fees
+
+This is a continuous variable that accounts for travel expenses and has been
+calculated as (2*cost of single travel)/(npeople*ndays)
+This is a continuous variable that accounts for total accommodation costs, expressed
+in euro, undertaken by the respondent in all official (i.e. hotel, non-hotel – camp
+sites, agrotourism, serviced apartments) and non-official tourism infrastructure such
+as second homes and friends and family.
+This is a continuous variable that accounts for the costs, expressed in euro,
+undertaken by the respondent to purchase food and beverage.
+This is a continuous variable that accounts for the shopping expenditure, expressed
+in euro, undertaken by the respondent.
+This is a continuous variable that accounts for the ticket expenses to get to the
+Archaeological Museum
+
+25
+
+Ultimi Contributi di Ricerca CRENoS
+I Paper sono disponibili in: http://www.crenos.it
+U
+
+U
+
+11/13 E d o a r d o O t r a n t o , “ C l a s s i f i c a t i o n o f V o l a t i l i t y i n
+Presence of Changes in Model Parameters”
+11/12 A l e s s a n d r o F i o r i M a c c i o n i , “ T h e r i s k n e u t r a l v a l u a t i o n
+paradox”
+11/11 L e o n a r d o B e c c h e t t i , V i t t o r i o P e l l i g r a , “ D o n ’ t B e A s h a m e d
+to Say You Didn’t Get Much: Redistributive Effects of
+Information Disclosure in Donations and InequityAversion in Charitable Giving”
+11/10 A l e s s a n d r a C o l o m b e l l i , M a r t a F o d d i , R a f f a e l e P a c i , “ T h e
+knowledge regions in the enlarged Europe”
+11/09 E m a n u e l a
+Marrocu,
+Raffaele
+Paci,
+Stefano
+Usai,
+“Proximity, Networks and Knowledge Production in
+Europe”
+11/08 V i t t o r i o
+Pelligra,
+“Empathy,
+Guilt-Aversion
+and
+Patterns of Reciprocity”
+11/07 C l a u d i o D e t o t t o , E d o a r d o O t r a n t o , “ C y c l e s i n C r i m e a n d
+Economy Revised”
+11/06 J u a n G a b r i e l B r i d a , M a r t a M e l e d d u , M a n u e l a P u l i n a , “ T h e
+attractiveness of a modern and contemporary art
+museum”
+11/05 J u a n G a b r i e l B r i d a , M a r t a M e l e d d u , M a n u e l a P u l i n a , “ A n
+urban icon? The case of the Iceman Ötzi ”
+11/04 S i l v i a B a l i a , R i n a l d o B r a u , “ A C o u n t r y f o r O l d M e n ? A n
+Analysis of the Determinants of Long-Term Home
+Care in Europe”
+11/03 L u c i a n o M a u r o , F r a n c e s c o P i g l i a r u , “ S o c i a l C a p i t a l ,
+Institutions and Growth: Further Lessons from the
+Italian Regional Divide”
+11/02 Juan Gabriel Brida, Claudio Detotto, Manuela Pulina, “How efficient is
+the Italian hospitality sector? A window DEA and truncated-Tobit
+analysis”
+11/01 B e r a r d i n o C e s i , D i m i t r i P a o l i n i , “ U n i v e r s i t y c h o i c e , p e e r
+group and distance”
+10/33 O l i v i e r o A . C a r b o n i , G i u s e p p e M e d d a , “ A N e o c l a s s i c a l
+Growth Model with Public Spending”
+10/32 V i t t o r i o P e l l i g r a , L u c a S t a n c a , “ T o G i v e o r N o t T o G i v e ?
+Equity, Efficiency and Altruistic Behavior in a SurveyBased Experiment”
+10/31 E m a n u e l a M a r r o c u , R a f f a e l e P a c i , “ E d u c a t i o n o r j u s t
+Creativity:
+what
+matters
+most
+for
+economic
+performance?”
+10/30 A d r i a n a D i L i b e r t o , S t e f a n o U s a i , T F P c o n v e r g e n c e
+across European regions: a comparative spatial
+dynamics analysis
+10/29 O l i v i e r o A . C a r b o n i , H e t e r o g e n e i t y i n R & D C o o p e r a t i o n : A n
+Empirical Investigation
+10/28 M a u r i z i o C o n t i , G i o v a n n i S u l i s , “ H u m a n C a p i t a l ,
+Employment Protection and Growth in Europe”
+10/27 J u a n G a b r i e l B r i d a , Manuela Pulina, E u g e n i a R i a ñ o , S a n d r a
+Zapata-Aguirre
+“Investigating
+the
+behavior
+of
+embarking cruisers in a Caribbean homeport: a factor
+and a censured-Tobit analysis”
+10/26 J u a n G a b r i e l B r i d a , Manuela Pulina, E u g e n i a R i a ñ o ,
+“Visitors’ experience in a modern art museum: a
+structural equation model”
+
+Finito di stampare nel mese di Settembre 2011
+Presso studiografico&stampadigitale Copy Right
+Via Torre Tonda 8 – Tel. 079.200395 – Fax 079.4360444
+07100 Sassari
+
+www.crenos.it
+
+

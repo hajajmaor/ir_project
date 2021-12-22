@@ -1,0 +1,672 @@
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+Using Personas to Model Museum Visitors
+Moneerah Almeshari
+
+Computer Science
+University College London
+London, United Kingdom
+moneerah.almeshari.17@ucl.ac.uk
+
+John Dowell
+
+Computer Science
+University College London
+London, United Kingdom
+j.dowell@ucl.ac.uk
+
+Julianne Nyhan
+
+Information Studies
+University College London
+London, United Kingdom
+j.nyhan@ucl.ac.uk
+
+Personalisation relies on a user model which is defined as “a
+data structure that represents user interests, goals and
+behaviours” [9]. Consequently, the quality of the user model has
+a direct impact on the quality of the personalisation.
+The ‘cold start problem’ occurs where the system does not
+have prior information about the user and needs to construct the
+user model from scratch during their first session. This is a
+formidable challenge in settings like museums where visitors are
+mostly first time visitors and their usage is for a relatively short
+session [10]. A promising response to this involves the use of
+initial data to associate a user with a particular user category and
+thereby model the user or infer other facts about their
+preferences and needs [10]. This approach places a user in a
+category based on certain parameters and adapts the UI
+accordingly. A number of adaptive cultural heritage projects
+have used this method such as AVANTI [11], PEACH [12],
+PeVEP [13] and INTRIGUE [14].
+Visitors to museums have been extensively studied and
+several visitor taxonomies have been identified. We refer to such
+a visitor category as a persona, representing “an aggregate of
+target users who share common behavioural characteristics”
+[15]. Personas assist in focusing on some aspects of how a group
+of people think, behave, communicate, what they need to
+achieve and why [16]. A persona represents a particular type of
+interactive product user [16]; very importantly, it identifies the
+particular motivation and goals that determine the characteristic
+interactive behaviour of a persona [16]. Amongst the abundance
+of tools available for interaction design, personas have been
+claimed to be “the most effective and fundamental” [16]. By
+creating a concrete image of the user, designers gain insight into
+the elements a UI should have and how a target user population
+is likely to respond to those elements [16].
+Personas may be reified by presenting them as fictional
+characters with a name, gender, ethnicity, and even the kind of
+car they drive [19]. However Cooper, Reimann [19] persuasively
+argue that personas are fundamentally about motivations and
+goals rather than tasks and demographics. Researchers have
+focused on modelling museum visitors in relation to
+personalisation using complicated features like visiting style and
+simple features like age and location, while neglecting crucial
+dimensions like visit motivation [8]. In this paper we focus on
+the most important factors that determine a persona: motivation,
+behaviour and goals.
+The study exploits Falk’s taxonomy of six types of museum
+visitor (i.e., personas) [17]. This robust taxonomy has been
+
+ABSTRACT
+It is widely agreed that museums and other cultural heritage
+venues should provide visitors with personalised interaction and
+services such as personalised mobile guides, although currently
+most do not. Since museum visitors are typically first-time
+visitors and since their visit is for a relatively short session,
+personalisation should use initial interaction data to associate
+the user with a particular persona and thereby infer other facts
+about the user’s preferences and needs. In this paper we report a
+questionnaire-based study carried out with 105 visitors of a
+Science and Technology Centre to examine the minimal features
+needed to identify visitor personas. We find that museum
+visitors can be clustered by their visit motivation and perceived
+success factors; these clusters are found to correspond both with
+Falk’s visitor categorisation and a prior classification of
+exploration styles. Consequently, these two features can be used
+to reliably identify the visitor persona, and therefore, can be used
+for user modeling.
+
+KEYWORDS
+Museum visitors, personas, user modeling, mobile guides.
+ACM Reference format:
+Moneerah Almeshari, John Dowell and Julianne Nyhan. 2019. Using
+Personas to Model Museum Visitors. In Proceedings of ACM 27th
+Conference on User Modeling, Adaptation and Personalization Adjunct
+(UMAP'19 Adjunct). ACM, Larnaca, Cyprus, ACM, New York, NY, USA, 5
+pages. https://doi.org/10.1145/3314183.3323867
+
+1 Introduction
+A consensus has emerged amongst researchers and
+developers that personalisation is a priority requirement for
+mobile guides (MGs) in museums and cultural heritage sites [16]. Visitors are extremely varied in terms of their motivations,
+goals and needs, knowledge of the venue and their interest in
+knowing and experiencing more [7]. Responding to these
+individual differences requires guides to personalise the user
+interface (UI) and content rather than simply offering the same
+choices to all users [8].
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from Permissions@acm.org.
+UMAP'19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+© 2019 Association for Computing Machinery.
+ACM ISBN 978-1-4503-6711-0/19/06…$15.00
+https://doi.org/10.1145/3314183.3323867
+
+401
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+directly affects the facilitators’ own experience [17]. Experience
+seekers visit because they are conscious of the reputation of the
+venue; they visit more for pleasure than for knowledge [17].
+Professionals/ Hobbyists visit because of particular interests and
+they have clear objectives for their visit [17]. Rechargers visit
+seeking contemplative, spiritual and restorative experiences,
+hoping to relax and recharge their energies [17]. To identify the
+visitor persona, Falk has used interviews and questionnaires. A
+20 element questionnaire suitable for visitors at a zoo and
+aquarium has been used in [22] to study the relationship
+between these identity-related motivations and their visit
+conservation learning.
+
+chosen because it has been widely used and tested in museums
+and Science Centres. Moreover, the individual does not have to
+be physically present in the museum to supply the required
+information, so the process does not necessarily impinge on their
+actual museum visit.
+There are two main aspects to determine when using this
+approach for user modeling. First: what is the minimal set of
+defining features that can reliably be used to distinguish a user’s
+persona and infer information about them? Second: what are the
+common preferences and attributes of those personas and how
+do they guide the personalisation process?
+In this paper we investigate sources and forms of evidence
+needed to model museum visitors as belonging to particular
+persona types based on Falk’s classification [17] using a
+questionnaire. We examine whether the user model generated by
+the questionnaire corresponds with the visitor’s self-assessment
+of their persona type to determine the questionnaire accuracy in
+identifying the visitor persona. In addition, we examine the
+association between different personas and their self-assessed
+exploration style characterised by [18]. Knowing such
+information can assist in modeling visitor personas implicitly.
+
+3 Method
+A face to face questionnaire was deployed over four weeks in
+2018 in Scitech, a visitor centre housing exhibits of science and
+technology in Saudi Arabia. The questionnaire had been
+reviewed by 4 museum curators. Arabic and English versions of
+the questionnaire were created and assessed for accuracy by 2
+Arab specialists of English language. The questionnaire was pilot
+tested with 5 museum visitors before gathering the main data.
+Individuals were invited to complete the questionnaire at the
+end of their visit. The questionnaire asked visitors about their
+demographics and visit. It included a set of multiple-choice
+questions based on the five factors that characterise visitor
+personas in Falk’s description. The five factors are visit
+motivation, visit success criteria, social aspects, knowledge of
+museum content, and number of visits. In addition, the
+questionnaire asked participants to identify their exploration
+style as one of the following [18]:
+a. I see almost all objects and read object labels in detail
+b. I explore and I avoid looking at objects’ information in
+detail
+c. I explore and I stop to see details of some objects that
+attract me
+d. I spent my time visiting specific exhibitions or objects
+"planned before the visit" and ignoring the others
+
+2 Related Work
+Personalisation can be implemented using implicit or explicit
+approaches [10]. In the implicit approach, the user profile is built
+by inference from data about the user’s behaviour including
+their choice. By contrast, the explicit approach builds the user
+profile by asking the user for information either directly or
+indirectly. The direct explicit approach asks users about their
+preferences and needs which, in the indirect approach, are
+inferred from answers to tangential questions about different
+domain. The explicit approach is desirable when a user model
+must be constructed rapidly in environments such as museums
+where time is limited. Antoniou, Katifori [10] used a short
+questionnaire to elicit visitor characteristics, preferences and
+visiting contexts using indirect questions to provide personalised
+interactive storytelling at a museum.
+As discussed earlier, minimal gathered data can be used to
+place the user in a category to infer more facts needed for
+personalisation. Various categorisations of museum visitors
+have been identified based on different constructs. Differences in
+the way museum visitors prefer to learn have been characterised
+with some preferring ‘mind-on’ and hands-on activities, and
+others preferring to explore and reflect [19]. Differences in
+expertise have also been used to differentiate museum visitors
+[20, 21]. In addition, visitors’ behaviour in navigating between
+exhibits within a venue has been categorised as four distinct
+types [18].
+Falk [17] categorised visitors on the basis of their visit
+motivation which is seen as shaping both the expectation and
+experience of the visit. He identifies five visitor personas:
+Explorers,
+Facilitators,
+Experience
+seekers,
+Professionals/Hobbyists; and Rechargers [17]. Explorers visit to
+satisfy their curiosity and have a general interest in the museum
+[17]. Facilitators visit to support other people they care about
+such as kids or companions; the experience of these others
+
+Visitors were then shown five visitor persona descriptions
+(Explorer, etc) and asked to identify themselves with one. This
+self-assessment provides a ground-truth reference for
+determining the questionnaire’s accuracy in identifying a
+visitor’s persona.
+105 visitors participated in the study of whom 66 were
+female, 65 adults, 34 teenagers, 3 seniors and 3 were children. It
+was the first visit to Scitech for 45 participants, 39 participants
+had visited 2 to 4 times previously and 21 had visited 5 times or
+more.
+SPSS was used to analyse the collected data which required
+Chi Square tests as it is entirely categorical. Cramer’s V test was
+used to indicate the strength of the relationship where a
+significant effect was found.
+
+4 Eliciting Visitor Personas
+In the persona self-assessment question, 33 visitors identified
+themselves as Facilitators (31.4%), 29 as Explorers (27.6%), 18 as
+
+402
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+Experience Seekers (17.1%), 13 as Professionals/Hobbyists (12.4%)
+and 12 as Rechargers (11.4%).
+
+4.1 Main Categorisation Factors
+Significant correlations are found between the self-assessed
+persona type and the four factors of: motivation χ2(24, N=105)
+=90.274, p =0.000 < alpha = 0.05; success criteria χ2(20, N=105)
+=79.076, p =0.000; social aspect χ2(28,N=105) =52.277, p =0.01;
+and number of visits χ2(8, N=105) = 23.399, p =0.003. No
+significant difference between visitor types was found in relation
+to knowledge of museum content χ2(16, N=105) = 25.103, p
+=0.068.
+TwoStep clustering was employed to classify respondents
+using the four significant factors, however, it resulted in a poor
+silhouette measure (0.2) for cohesion and separation of the
+clusters. Examining the predictor importance index values, it
+was found that social aspect and number of prior visits were the
+least important factors in the clustering.
+
+Visitor Persona
+
+Correctly
+Assigned
+
+Incorrectly
+Assigned
+
+Facilitator
+
+33
+
+0
+
+Explorer
+
+21
+
+8
+
+Experience Seeker
+
+17
+
+1
+
+Professional/Hobbyist
+
+13
+
+0
+
+Recharger
+
+11
+
+1
+
+Table 1: Accuracy of the clustering method in assigning
+visitor persona; ground truth is visitors’ self-assignment.
+A Chi square test indicated a significant association between
+the self-assessed persona and cluster assigned persona χ2(20,
+N=105) =83.108, p =0.000. 90.5% of self-assessed personas have
+been identified correctly using the questionnaire (Table1). 100%
+of Facilitators and Professional/Hobbyists, 94% of Experience
+Seekers, 92% of Rechargers and 72% of Explorers have been
+assigned to the persona accurately using the clusters produced
+by the two questions. In other words, the persona that a visitor
+associated themselves with reliably coincided with the persona
+type found by clustering their answers to the questionnaire.
+The answers of the two questions of each persona (cluster)
+are mapped in Figure 2. The mapping was based on the
+clustering results where it has assigned each cluster with the
+most common answers to the two factors (Table 2).
+
+Figure 1: TwoStep clustering quality indicator with
+Motivation and Success Criteria
+Re-running the TwoStep clustering with just the two primary
+factors of motivation and success criteria produced 6 clusters
+with a good silhouette measure (0.6) of cohesion and separation
+(Figure 1). The question that elicits visitor motivation is “What
+motivated you to visit Scitech today?”. For success criteria it is
+“Which of the following means that your visit was successful,
+and that you achieved what you aimed for?”
+
+4.2 Persona Identification Accuracy and
+Parameters
+We then needed to establish whether these six clusters
+produced by the algorithm using motivation and success criteria
+factors can be associated with the five visitor personas derived
+from Falk [19] (when additionally considering the Facilitator
+subtypes of Parental Facilitator and Socializer Facilitator).
+Examining the majority class of response in each cluster in
+relation to the two primary factors of Motivation and Success
+Criteria, we found each cluster can indeed be identified uniquely
+with a particular persona.
+
+Figure 2: Assigned visitor personas and their relation to
+the visit motivation and the perceived success criteria
+Figure 2 shows that the same motivation of our visitor
+participant is found with three different personas who all
+indicated “a place to learn and have fun with companions”.
+Explorers and Experience Seekers can come alone to the
+museum, so this answer cannot be used to uniquely identify the
+visitor persona. On the other hand, results indicate that the
+success criterion question alone is able to identify the five visitor
+
+403
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+personas. However, facilitator subtypes cannot be identified
+unless the motivation is also indicated.
+Visitor Persona
+
+Success Criteria
+
+Motivation
+
+Parental Facilitator
+
+%100
+
+%100
+
+Socializer Facilitator
+
+%100
+
+%57
+
+Explorer
+
+%100
+
+%48
+
+Experience Seeker
+
+%53
+
+%71
+
+Professional/Hobbyist
+
+%46
+
+%46
+
+Recharger
+
+%100
+
+%100
+
+Visitor Persona
+
+Ant
+
+Butterfly
+
+Fish
+
+Grasshopper
+
+Parental Facilitator
+
+13
+
+8
+
+1
+
+0
+
+Socializer Facilitator
+
+10
+
+7
+
+3
+
+1
+
+Recharger
+
+0
+
+8
+
+3
+
+0
+
+Professional/Hobbyist
+
+3
+
+9
+
+0
+
+1
+
+Explorer
+
+7
+
+10
+
+3
+
+1
+
+Experience Seeker
+
+4
+
+7
+
+4
+
+2
+
+Table 3: Visitor personas and their self-assessed
+exploration style corresponding to [18] classification
+In addition, table 3 shows that none of the
+Professional/Hobbyist visitors have assessed their exploration
+style as Fish, no Rechargers have assessed themselves as Ant and
+no Rechargers or Parental Facilitators have assessed their
+exploration style as Grasshopper.
+Knowing the exploration style of different visitor personas
+offers the opportunity to generate the user model implicitly by
+recognizing individual visitor’s patterns of viewing exhibits.
+However, since our results are based on self-assessment, they
+would benefit from further validation with observational
+methods.
+
+Table 2: Persona proportions used for the mapping
+presented in figure 2
+Taken together, these results show first, that the
+questionnaire is able to identify museum visitors’ self-assessed
+personas as they relate to Falk’s visitor types: answers to the
+separate questions correlate with participants’ self-assessments.
+Second, clustering answers to the primary questionnaire factors
+produces a set of clusters that correspond with participants’ selfassessments. This means that users of a MG can be asked the
+two questions about their motivation and success criteria and
+the MG will be able to reliably determine their visitor persona
+within the Falk taxonomy of identity-related motivations and
+consequently generate the user model.
+
+6 Discussion
+Personas are a widely used and highly valued technique in
+interface design practice[16]. Our study has used the concept of
+personas to model users into distinct sub-populations of museum
+visitors. We developed a questionnaire for museum visitors that
+can associate individuals with particular personas.
+Our study found that visitors can be clustered into distinct
+types correspond with Falk’s identity related motivation
+categories using two minimal trigger features: motivation and
+visit success factors. We used a set of persona definitions
+produced by Falk’s studies of museum visitors to validate the
+categorisation and we showed that answers to the two questions
+about motivation and perceived success criteria would place
+people in the same category as they would place themselves.
+We explored how different visitor personas assess their
+exploration style based on the classification of [18]. The most
+common exploration style for each persona group of participants
+was either Ant or Butterfly. This was against expectation for
+Professional/Hobbyists who typically are looking for specific
+exhibits and would therefore be more likely to self-identify as
+Grasshoppers. On the other hand, no Rechargers assessed
+themselves as either Ants or Grasshoppers and this is consistent
+with their description and needs. Knowing the exploration style
+of each persona can assist in detecting them automatically using
+their movement patterns to provide adaptive services such as
+adaptive MGs.
+In conclusion, our study indicates that a MG would be able to
+generate a user model from a ‘cold start’ (i.e., with no other
+information) simply by asking the two questions about the user’s
+motivation in visiting the museum and how they would judge
+the success of their visit.
+
+5 Exploration Style
+Participants were asked about their museum exploration style
+to find if it is associated with their visitor persona. They were
+asked to choose between four descriptions of exploration style,
+labelled as Ant, Fish, Butterfly and Grasshopper [18]. Ants are
+visitors who view almost all exhibits and follow a definite path
+close to exhibits; Fish are visitors who avoid detailed exhibit
+information and proximity to exhibits, preferring instead to view
+at a distance from open spaces; Butterflies change direction
+frequently and view most exhibits in detail but for varying times;
+Grasshoppers view specific exhibits only (often planned before
+the visit), spending time looking at them in detail and ignoring
+other exhibits [23].
+A significant association between visitor persona and selfassessed exploration style has been found χ2(15, N=105), p=0.015
+with a moderately strong relationship (V=0.273) > 0.20. Results
+indicate that visitor personas are divided into two groups based
+on their self-identified exploration style. The greatest percentage
+of Facilitators (both parental 59% and socializers 48%) indicated
+that they view almost all objects and read objects details (Ants).
+The other four personas indicated that they explore and stop to
+see details of some objects that attract them (Butterflies),
+including the majority of
+Rechargers
+(79%)
+and
+Professionals/Hobbyists (69%) and the largest percentage of
+Explorers (48%) and Experience Seekers (41%) (Table 3).
+
+404
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+[12] Stock, O., et al., Adaptive, intelligent presentation of
+information for the museum visitor in PEACH. User
+Modeling and User-Adapted Interaction, 2007. 17(3): p.
+257-304.
+[13] Bonis, B., et al., A platform for virtual museums with
+personalized content. Multimedia tools and applications,
+2009. 42(2): p. 139-159.
+[14] Ardissono, L., et al., Intrigue: personalized
+recommenation of tourist attractions for desktop and
+hand held devices. Applied artificial intelligence, 2003.
+17(8-9): p. 687-714.
+[15] Miaskiewicz, T. and K.A. Kozar, Personas and usercentered dsign: How can personas benefit product design
+processes? Design Studies, 2011. 32(5): p. 417-430.
+[16] Cooper, A., et al., About face: the essentials of
+interaction design. 2014: John Wiley & Sons.
+[17] Falk, J.H., Identity and the museum visitor experience.
+2016: Routedge.
+[18] Véron, E. and M. Levasseur, Ethnographie de l'expositio:
+l'espace, le corps et le sens. 1989: Centre Georges
+Pompidou, Bibliothèque publique d'information.
+[19] Luyten, K., et al. ARCHIE: disclosing a museum by a
+socially-aware mobile guide. in 7th International
+Symposium on Virtual Reality, Archaeology and
+Cultural Heritage. 2006.
+[20] Walsh, D., P. Clough, and J. Foster, User Categories for
+Digital Cultural Heritage. 2016.
+[21] Falk, J.H. and L.D. Dierking, Learning from museums:
+Visitor experiences and the making of meaning. 2000:
+Altamira Press.
+[22] Falk, J.H., J. Heimlich, and K. Bronnenkant, Using
+identity‐related visit motivations as a tool for
+understanding adult zoo and aquarium visitors'
+meaning‐making. Curator: The Museum Journal, 2008.
+51(1): p. 55-79.
+[23] Zancanaro, M., et al. Analyzing museum visitors’
+behavior patterns. in International Conference on User
+2007.
+Modeling.
+https://www.researchgate.net/profile/Zvi_Boger/public
+ation/221260782_Analyzing_Museum_Visitors'_Behavi
+or_Patterns/links/0fcfd505758b80066e000000.pdf:
+Springer.
+
+REFERENCES
+[1]
+[2]
+
+[3]
+[4]
+[5]
+
+[6]
+
+[7]
+[8]
+
+[9]
+[10]
+
+[11]
+
+Kabassi, K., Personalisation systems for cultural
+tourism, in Multimedia services in intelligent
+environments. 2013, Springer. p. 101-111.
+Ardissono, L., T. Kuflik, and D. Petrelli, Personalization
+in cultural heritage: the road travelled and the one
+ahead. User modeling and user-adapted interaction,
+2012. 22(1-2): p. 73-99.
+Fidas, C.A. and N.M. Avouris. Personalization of mobile
+applications in cultural heritage environments. in IISA.
+2015.
+Goren-Bar, D., et al., I like it–An Affective Interface for
+a Multimodal Museum Guide. Proceedings of Intelligent
+User Interfaces IUI’05, 2005.
+Not, E. and D. Petrelli. Balancing Adaptivity and
+Customisation. in International Conference on User
+Modeling, Adaptation, and Personalization. 2014.
+Springer.
+Fosh, L., et al. Gifting as a Novel Mechanism for
+Personalized Museum and Gallery Interpretation. in
+International Conference on User Modeling, Adaptation,
+and Personalization. 2015. Springer.
+Falk, J.H. and L.D. Dierking, The museum experience
+revisited. 2016: Routledge.
+Emmanouilidis, C., R.-A. Koutsiamanis, and A. Tasidou,
+Mobile guides: Taxonomy of architectures, context
+awareness, technologies and applications. Journal of
+network and computer applications, 2013. 36(1): p. 103125.
+Frias-Martinez, E., et al., Automated user modeling for
+personalized digital libraries. International Journal of
+Information Management, 2006. 26(3): p. 234-248.
+Antoniou, A., et al. Capturing the visitor profile for a
+personalized mobile museum experience: an indirect
+approach. in UMAP (Extended Proceedings). 2016.
+Halifax, Canada.
+Fink, J., A. Kobsa, and A. Nill, Adaptable and adaptive
+information provision for all users, including disabled
+and elderly people. New review of Hypermedia and
+Multimedia, 1998. 4(1): p. 163-188.
+
+405
+
+

@@ -1,0 +1,457 @@
+Early Detection of Museum Visitors Identities by Using a
+Museum Triage
+Eyal Dim and Tsvi Kuflik
+
+The University of Haifa, Mount Carmel, Haifa 31905, Israel
+dimeyal@bezeqint.net, tsvikak@is.haifa.ac.il
+
+Abstract. The visitor to a museum may start the visit with an identity that depends on various short-term and long-term personal characteristics of the visitor, the museum itself and the visit context. Falk [2009] posits that the visitor's identity would be one of the following: explorer, attraction-seeker, professional/hobbyist, recharger, or facilitator. Each one of the identities fits a
+different behavior in the museum. Early detection of a visitor's identity at the
+beginning of the visit would enable better adaptation to the visitor's needs,
+and as a result improve the museum visit experience. We present the museum
+triage concept and its demonstration that are focusing on achieving this goal.
+Keywords: user modeling, social signal processing, context awareness, dynamic contextualization, museum visitor identity.
+
+1
+
+Introduction
+
+It is well accepted among the user modeling community, that a person has different
+needs in different contexts [Byun and Chevest, 2001]. Some of the User Model (UM)
+data has lifelong persistency (e.g., birth date), while other data is instantaneous, and
+depends on the current context (e.g., the user's current blood pressure). In the case of a
+museum visit, the UM may include a combination of short term, long term and medium term attributes. A user may have short term interests encountering a serendipitous
+exhibit, long term interest based on personal preferences (such as preferring archeology museums over art museums), or medium term interests based on the visit context
+(e.g., a tourist at a new city, or going with a group of friends to a museum that fits
+all). Therefore, the adaptation to museum-visitor's needs requires identification of
+such contextual aspects through dynamic contextualization [Zhu et al., 2006]. The
+context detection may help in the identification of the visitor's identity, as presented
+by Falk [2009] (see related work below). An instrumented museum may enable to
+detect such context, enabling a smart visitor's guide system to provide a valuable personalized service throughout the visit (as well as to continuously adapt to it) [Kuflik
+et al., 2010]. Examples of such response may be suggesting interesting exhibits to a
+bored visitor, or not disturbing a visitor immersed in the exploration of exhibits.
+There are two separate context detection problems. First, there is the bootstrap period where data about the new visitor needs to be learned and an initial UM is built.
+adfa, p. 1, 2012.
+© Springer-Verlag Berlin Heidelberg 2012
+
+Second, assuming that a UM already exists at the onset of the visit (as suggested by
+[Kuflik and Poteriaykina, 2009], there is a need for rapid identification of deviation of
+the UM in the current context from the long-term profile. Therefore, it seems that
+there is a need for special attention to the "start of visit area" in the museum. This
+space of the visitor's first encounter with the museum may be used as an area of intensive data collection about the user. The collected data may enable the enhancement of
+visit experience during the rest of the visit. We called this concept the triage, following the hospital triage, where physicians decide on the course of patient treatment. In
+a museum triage, a smart environment may decide on the best way to enhance the
+visitors' experience by using evidence based UM. Although the triage concept is presented for the museum case, it may apply to other environments such as shopping
+malls or conference halls. The triage concept may give an answer both to the bootstrap problem and to the dynamic contextualization needed for adjusting the UM to
+the current context. It is a paradigm that enables proactive UM updates at an obvious
+change point – the entrance to a new place.
+
+2
+
+Related Work
+
+Falk [2009] suggested the Identity-related Museum Visit Experience Model. It contains a typology of five visitor-identity prototypes: (i) The "Explorer" who visits the
+museum because of curiosity or general interest in discovering more about the subject
+matter introduced by the museum. (ii) The "Experience Seeker", often a tourist, is
+typically motivated by looking for the main attraction the museum is known to offer.
+(iii) The "Professional / Hobbyist" who is interested in specific topics out of the full
+collection of the museum visit. (iv) The "Recharger" who comes to the museum to
+reflect, to rejuvenate or to relax and absorb the atmosphere. Finally, (v) the "Facilitator" who visits the museum in order to satisfy the needs and desires of someone they
+care about rather than just herself or himself. The identities suggested by Falk are a
+lumping of more detailed identities, proposed by other researchers, as described in
+[Falk, 2009]. Falk suggests a Museum Visitor Experience Model that takes into account the museum and the visitor as well as other factors. The visitor has a personal
+context (visitor's traits), physical context (external conditions in the museum) and
+socio-cultural context (companions, the right way to behave, etc.). These have impact
+on the visitor's identity and perception of the museum. The visitor enters the museum
+with particular personal identity relevant to this specific visit and to the perception of
+the museum affordances. This has impact on his behavior in the museum, hence, if
+detected, it may be used by a system for enhancing the museum visit experience. The
+triage in our case is used to detect some of the traits of identities described above, and
+enable a museum visitors' guide system to better adapt to the specific visitor.
+
+3
+
+The Hecht-Museum Triage
+
+The triage has been set up at the Hecht museum1, an established archaeological museum located at the University of Haifa campus. The museum offers a number of exhibitions related to the archaeology of the land of Israel going back to 4500 BCE. As
+part of the PIL museum visitor's guide project [Kuflik et al., 2010], the museum is
+equipped with a wireless sensor network of Radio Frequency (RF) based indoor positioning system. It has three different types of components: small (matchbox size)
+mobile wearable RF tags called Blinds (Figure 1a) stationary RF tags called Beacons
+(Figure 1b), and RF to TCP Gateways. Beacons are statically located at entrances and
+exits, as well as near relevant locations of interest in the museum, having limited area
+coverage for proximity sensing (Figure 1c). The Blind sensors are carried by museum
+visitors. Each Blind sensor transmits a unique identification (ID). The Blind sensors
+measure the following time tagged signals: proximity to Beacons (detecting location
+in the museum); proximity to other Blinds (detecting social proximity among visitors); compass data (measuring visitor's orientation); voice level (detecting whether a
+visitor is speaking or not, without recording of the visitor's conversation for privacy
+reasons); and acceleration data through accelerometers. The Gateways transfer data
+reported by the Blinds and Beacons over a local area network to the PIL's server.
+Beacons are placed in areas of interest, where visitors may view multimedia presentations about exhibits. In general, the distance between adjacent beacons is about 3-4
+meters.
+The idea of the triage is to collect as much information as possible at the very beginning of the visit. Therefore, to gain better positioning within the triage, we populated it with additional sensors (stationary Blinds near exhibits, in this case, that
+measured proximity to visitors, while visitors' Blinds also measured proximity to the
+stationary ones). Figure 2 presents the museum layout at the top while the triage area
+(in pink) is enlarged at the bottom. While providing a reasonable indoor positioning
+solution, the system has two major weaknesses. First, it only knows when a person
+wearing a Blind is in proximity to a Beacon or another Blind. Thus, it does not detect
+positioning in transition from one Beacon or stationary Blind to another. Second, the
+specified detection range in proximity to each Beacon or Blind is two meters. Thus,
+when we detect a user being in proximity to a Beacon we can only know that he is
+within two meters of that Beacon, without knowing the exact position.
+As we see in figure 2, the entrance leads to the triage, which is shaped as a corridor about 14 meters long and 4 meters wide. There are exhibits along both sides of the
+triage. Three Beacons and ten stationary Blinds were located in the triage. The corridor shape of the Hecht Museum triage gives additional information: it has four main
+directions that enable distinction between visitor's interest in exhibits on one side of
+the corridor or the other, or just walking through the corridor. Time is an important
+measure, as it helps measuring the attraction power and the holding power of exhibits.
+In this case, we are interested in the visitors’ behavior, hence the time-tagged data is
+used for assessing the visitor identity. For example: a professional visitor going to a
+1
+
+http://mushecht.haifa.ac.il/Default_eng.aspx
+
+specific archeological point of interest in the internal part of the museum is expected
+to go faster through the triage, while an explorer is expected to stay longer near some
+exhibits and examine them. Another typical example is when a group of three visitors
+split, where one of the visitors is walking around, turning back and forth, expressing
+little interest in the exhibits, while the others have an explorer identity going together
+slowly, watching exhibits and discussing them.
+
+(a)
+
+(c)
+(b)
+Fig. 1. Positioning system equipment and usage scenario.
+
+1st Floor
+2nd Floor
+Triage
+
+Legend:
+
+Beacon
+
+Entrance
+
+Blind
+
+Gateway
+
+Fig. 2. The Instrumented Hecht Museum map and the enlarged triage map
+We have gathered data of about 200 visitors, most of them came in small groups
+of 2-6 people. Groups are explicitly identified at the museum counter, by entering the
+group members' Blind sensor IDs. The visitors were videotaped, and the videos were
+used as a reference to identify their behavior and identity. We also collected demo-
+
+graphic data through questionnaires. Behavioral patterns have been collected (data
+logs) and are currently being analyzed. The focus of the analysis is on finding simple
+evidence that would lead to revealing part of the museum visitor identities while the
+visitors are walking through the triage.
+
+4
+
+A Museum Triage Analysis Example
+
+Peter Jane and Mary (pseudonym) came together as a group to visit the museum. Peter, a 26 years old male student was walking together with Jane a 78 years old woman. They were walking patiently through the triage, paying attention to exhibits for
+quite a long time, and having a conversation. It looked like they had a lot of interest in
+what the exhibits at the triage had to offer. They seemed to fit the explorer identity
+described by Falk [2009], but also had social interest in each other. The third group
+member, Mary, a 25 years old female student was going purposeless in the triage,
+showing little interest in the museum exhibits. She was wondering around and
+yawned from time to time. She seemed bored. She seemed to fit a special type of
+visitors, those who did not want to come to the museum, but came because of the
+others in the social group, and did not like the idea. The walk through the triage took
+the group 812 seconds (13.5 minutes), about 17% of their total visit duration of 4,769
+seconds (79.5 minutes). The analysis of the data collected during the triage, as well as
+during the whole visit, is presented in Figure 3. The figure presents the trigae start
+time as a dotted blue vertical line, the triage end time as a dashed green vertical line,
+and the visit end time as a solid red vertical line as well as the measurements' graphs
+discussed below.
+We wanted to identify the differences between the two types of group members by
+measuring their within-group behavior. To achieve that, we measured the following
+data (presented in Figure 3). The X-axis of the figure is the time measured in tenth of
+a second units. The Y-axes are different for each subplot as follows: (A) Detection of
+proximity between each pair of visitors (Figure 3A). (B) Detection whether both
+group members in each pair were in proximity to the same stationary Blind located
+near exhibits in the triage (Figure 3B). (C) Identifying each pair of visitors as being at
+the same location in the museum, as detected by proximity to Beacons in the museum
+(Figure 3C). (D) Detecting voice activity of each group member (Figure 3D). Finally,
+(E) Capturing the average orientation from visit start until any moment of the visit
+(Figure 3E). This was done by using the 'sinus of the orientation' to compensate for
+the cyclic nature of orientation (360̊ to 0̊), then summing the sinus value from the visit
+start, and dividing it by the number of measurements (n) to get an average, normalizing the differences in number of measurements among group members. This was done
+from the beginning of the visit until each tenth of a second of the visit. The motivation
+for this measure is the assumption that there would be a better positive correlation of
+sin(orientation) between two people that walk together and look at the same exhibits.
+The measurements are anonymous, therefore they relate to visitor 1, visitor 2 and
+visitor 3. The sensors' logs, compared with the videos taken and the demographic
+data, show that the person carrying the Blind of visitor 1 was Peter and that Blinds of
+
+visitors 2 and 3 were carried by Jane and Mary respectively. The results presented in
+this example are valid only for this specific group and only for the Hecht Museum
+visit.
+Triage Start Triage End
+
+Visit End
+
+Fig. 3. Detecting group behavior
+( Top three plots: '+': visitor 1&2; '*': visitor 1&3; 'o': visitor 2&3.
+Two bottom plots: '+': visitor 1; '*': visitor 2; 'o': visitor 3; 'x': random)
+All the measurements during the triage visit support the observation of the three
+visitors. Jane and Peter were far more coordinated in their museum and social behavior than each one of them was in regards to Mary. Column 3 in Table 1 shows these
+results for the triage visit duration. The proximity metric (Figure 3A, first metric in
+
+Table 1) shows that Jane and Peter were detected together much more than each one
+of them was detected together with Mary. The additional Blinds located near exhibits
+in the triage (Figure 3B, Table 1 second metric) show that Jane and Peter shared more
+time near the same exhibits. The next metric, detecting whether each pair of group
+members are at the same location in the triage (Figure 3C, Table 1 third metric) shows
+the same. Jane and Peter stayed together in specific locations longer than Mary did
+with any one of them. One can also observe the contribution of the additoinal blinds
+in the triage to better resolution in comparison to the location gained by the Beacons
+from the comparison of Table 1 metrics 2 and 3. From the voice detection sensor
+(Figure 3D, fourth metric in Table 1) it is clear that both Jane and Peter talked much
+more than Mary, suggesting that they were involved in conversation. As for the
+average(sin(orientation)) metric (Figure 3E) , the graphs of Jane and Peter correlate,
+while Mary's graph deviates. These are also compared to a graph of
+average(sin(orientation)) for random assignment of orientation (magenta 'x'), which
+stays around the value of zero as expected. Pearson's product-moment correlation for
+this measure supports this interpretation: as presented for each pair of visitors by the
+fifth metric in Table 1.
+Metric
+Proximity
+(% of the time)
+Being at the same triage
+exhibit position
+(% of the time)
+Being at the same
+Beacon position
+(% of the time)
+Voice detection
+(% of the time)
+
+Visitor /
+Combination
+Visitor 1&2
+Visitor 1&3
+Visitor 2&3
+Visitor 1&2
+Visitor 1&3
+Visitor 2&3
+Visitor 1&2
+Visitor 1&3
+Visitor 2&3
+Visitor 1
+Visitor 2
+Visitor 3
+Visitor 1&2
+
+Pseudonym
+
+Triage
+
+Peter&Jane
+Peter&Mary
+Jane&Mary
+Peter&Jane
+Peter&Mary
+Jane&Mary
+Peter&Jane
+Peter&Mary
+Jane&Mary
+Peter
+Jane
+Mary
+Peter&Jane
+
+90
+3.2
+0.8
+25
+0.3
+0.3
+16.2
+2.6
+2.3
+9.9
+9
+1.1
++0.7
+
+Average(sin(orientation))
+Visitor 1&3 Peter&Mary
+-0.23
+Pearson correlation "r"
+Visitor 2&3
+Jane&Mary
+-0.2
+Table 1. Measuring museum group visit behavior
+
+Rest of Total
+the visit visit
+22.6
+32.2
+13
+12
+1.9
+1.9
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+9.4
+10.6
+0.7
+1
+0.8
+1
+7
+7.3
+6
+6.3
+1.6
+1.5
++0.2
++0.33
+-0.27
+
+-0.26
+
+-0.18
+
+-0.16
+
+Another question is how coherent are the triage results in comparison with the rest
+of the visit results. The coherency is required to verify whether the triage results
+predict the behavior during the rest of the visit. The results (Table 1 columns 4 and 5)
+show a decrease in the difference between the coordinated pair (Jane and Peter) and
+the other pairs, where Mary takes part. Still, it is a significant difference that shows
+some level of coherency of the visitors' identity detected at the triage to their identity
+during the rest of the museum visit. The causes for these differences are left to future
+
+research. They may be caused by reasons such as the difference in the physical layout
+between the triage (a corridor) and the rest of the museum (open space), musuem
+fatigue or other social or personal causes.
+Triage Start Triage End
+
+Visit End
+
+Fig. 4. Detecting interest in exhibits ( '+': visitor 1; '*': visitor 2; 'o': visitor 3)
+Visitor /
+cCombination
+Visitor 1
+Being near a museum
+Beacon
+Visitor 2
+(% of the time)
+Visitor 3
+Visitor 1
+Being near a triage Blind
+Visitor 2
+(% of the time)
+Visitor 3
+Visitor 1
+Having orientation
+towards a triage exhibit
+Visitor 2
+(% of the time)
+Visitor 3
+Metric
+
+Pseudonym
+
+Triage
+
+Peter
+Jane
+Mary
+Peter
+Jane
+Mary
+Peter
+Jane
+Mary
+
+26.4
+30.6
+4.6
+53.8
+32.3
+1.9
+59.5
+52.5
+9.5
+
+Rest of Total
+the visit visit
+42.5
+39.8
+41.5
+39.6
+5.2
+5.1
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+N/A
+
+Table 2. Measuring interest in exhibits
+The above discussion relates to the social behavior of the group members, but how
+can we show that Mary was less interested in exhibits? She could have separated from
+the group, but still could have been interested in exhibits. Figure 4 shows that Mary
+was less interested in the exhibits in the trigae, in comparison to the other group
+members. There are three metrics in Figure 4: the top one presents if the visitor was
+detected near a beacon; the middle one checks if the visitor was detected near a triage
+
+stationary blind; and the bottom one shows whether the visitor was oriented towards
+an exhibit in the triage. Figure 4 as well as Table 2 (structured as Table 1) present the
+detection results for each of the three metrics, and show that Mary spent little time
+near museum exhibits, supporting the conclusion that she was not paying attention to
+the museum exhibits from the beginning of his visit. As for coherency, it cannot be
+analyzed, because two of the metrics are relevant only in the triage, and the one
+relating to Beacons' detection depends on the Beacons' distribution in the musuem (a
+person can be outside Beacons' detection and still watch an exhibit, which is not
+detected by the Beacons).
+The measured data may be used to assess the social behavior of the group of
+visitors. A UM could have been used to identify Mary's state of mind, and a smart
+visitor's guide may have been used to enhance Mary's visit experience.The UM could
+identify the correlation between Jane and Peter, the time they spent by exhibits, and
+let them enjoy the visit without interfering.
+
+5
+
+Summary
+
+The triage concept relates to an area close to the entrance of a facility, equipped with
+sensors that enable massive data collection. The data collected either refines an existing long term UM or builds a new, local UM if there is no access to the visitor's UM.
+This concept has been demonstrated in a museum environment to reveal the museumvisitors' identity. The updated UM is expected to enable adaptation and personalization of services available in a specific facility, not necessarily limited to the museum.
+
+Acknowledgements
+The work was supported by the Israeli Science Foundation (ISF) grant 226/2010 and
+by the collaboration project between the Caesarea-Rothschild Institute at the University of Haifa and FBK/irst and FIRB project RBIN045PXH
+
+References
+1. Byun, H. E. , and Cheverst, K.: Exploiting user models and context-awareness to support
+personal daily activities. In: UM2001 Workshop on User Modeling for Context-Aware
+Applications, Sonthofen, ( 2001).
+2. Falk, J. H.: Identity and the Museum Visitor Experience. Left Coast Press Inc., Walnut
+Creek, CA (2009).
+3. Kuflik, T. and Poteriaykina, K.: User Model on a Key. In: Proceedings of Hypertext 2009,
+Torino, Italy, June 29th-July 1st 2009 pp. 371-372 (2009).
+4. Kuflik, T,, Stock, O., Zancanaro, M,, Gorfinkel, A,, Jbara, S., Kats, S., Sheidin, J. and
+Kashtan, N.: A Visitor’s Guide in an “Active Museum”: Presentations, Communications,
+and Reflection. In: Journal on Computing and Cultural Heritage, Vol. 3(3), ACM, Pages:
+1-25, (2011).
+
+5. Zhu, W., Owen, C.B., Li, H., and Lee, J.H.: Design of the PromoPad: an Automated Augmented Reality Shopping Assistant. In: the 12th Americas Conference on Information Systems, Acapulco, Mexico, (2006).
+
+

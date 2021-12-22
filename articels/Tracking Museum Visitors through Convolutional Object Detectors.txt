@@ -1,0 +1,439 @@
+Session 7: Workshop on Personalized Access
+to Cultural Heritage: PATCH'20
+
+UMAP ’20 Adjunct, July 14–17, 2020, Genoa, Italy
+
+Tracking Museum Visitors
+through Convolutional Object Detectors
+Mauro Mezzini
+
+Carla Limongelli
+
+Department of Education
+Roma Tre University
+mauro.mezzini@uniroma3.it
+
+Department of Engineering
+Roma Tre University
+carla.limongelli@uniroma3.it
+
+Giuseppe Sansonetti
+
+Carlo De Medio
+
+Department of Engineering
+Roma Tre University
+gsansone@dia.uniroma3.it
+
+Department of Engineering
+Roma Tre University
+carlo.demedio@uniroma3.it
+
+ABSTRACT
+
+1
+
+Tracking museum visitors may provide useful insights about them,
+thus enabling curators and personnel to better manage the flows
+and the arrangement of the museum’s works and to develop a
+recommender system as well. Tracking of visits in a museum environment is an expensive task if performed without automatic
+tracking systems. For this reason, many automatic tracking systems are proposed in the research literature. However, some of them
+are expensive (e.g., systems based on light detection and ranging
+(LIDAR) technology), or require active collaboration from visitors
+(e.g., systems based on wearable devices). In this work, we propose a
+deep learning object detection approach to the problem of tracking
+visitors. The proposed system can accurately detect specific objects
+in videos, thus allowing for the careful measurement of the spatial
+and temporal movements of a visitor in a museum scenario. The
+system requires only off-the-shelf inexpensive devices and deep
+learning models for object detection and recognition.
+
+Thanks to web-based technologies, personalization can play an
+increasingly crucial role in many application scenarios, such as
+e-learning and cultural heritage (CH) services. Personalized learning and personalized tourist tours are two widely studied issues,
+which have recently received great attention from the scientific
+community (e.g., see [1, 2]). Both students and visitors explore a
+knowledge domain: students sift through learning objects, whereas
+visitors sift through museum artworks. Moreover, sifting is optimal
+when the domain is sufficiently flexible and supports users’ needs
+and requirements, namely, when the system can tailor its material
+to each individual. In this contribution, we focus the attention on
+the enhancement of the visitors’ experience during a museum visit
+by providing a personalized visit. The visitor’s satisfaction depends
+on the acquisition of new skills and insights, especially for those
+who belong to disadvantaged social categories such as strangers
+or low-instructed people. The general satisfaction depends also on
+a pleasant visit that avoids crowded points. The realization of this
+objective needs to gather information from the visitors without boring them with too many information requests. Data of interest are
+the number of visitors, time and duration of their visits. Personal
+data such as age, gender, education, and profession are necessary
+to convey important information for understanding the cultural
+offer. It is also important to know how long each visitor dedicates
+to visit each artwork [3]. This information should be collected systematically and accurately to provide aggregate data (mean and
+maximum values, frequencies, etc.) for a defined time. The knowledge of the number of visits, their duration, and their routes can
+also reveal which artworks in the museum are points of attraction
+and which are ignored or shortly observed [16]. Exploiting this
+information, it is possible to offer the right insights to people interested in a given artwork or to stimulate the attention to a less
+popular one, by also providing related material (e.g., books, images,
+and videos) in a personalized form [17]. This work proposes a first
+step in the aforementioned project that consists of an automatic
+detection system for museum visits based on image detection and
+identification techniques through convolutional neural networks
+(CNNs). This system is robust and accurate in data collection and,
+at the same time, presents itself as economically advantageous and
+more accurate than some state-of-the-art automatic systems. The
+main contributions of this paper are thus the following:
+
+CCS CONCEPTS
+• Human-centered computing → Accessibility systems and
+tools; Social tagging systems; • Information systems → Spatialtemporal systems.
+
+KEYWORDS
+Visitors tracking; Deep learning; Machine learning; Object detection;
+ACM Reference Format:
+Mauro Mezzini, Carla Limongelli, Giuseppe Sansonetti, and Carlo De Medio.
+2020. Tracking Museum Visitors through Convolutional Object Detectors. In
+Adjunct Proceedings of the 28th ACM Conference on User Modeling, Adaptation
+and Personalization (UMAP ’20 Adjunct), July 14–17, 2020, Genoa, Italy. ACM,
+New York, NY, USA, 4 pages. https://doi.org/10.1145/3386392.3399282
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from permissions@acm.org.
+UMAP ’20 Adjunct, July 14–17, 2020, Genoa, Italy
+© 2020 Association for Computing Machinery.
+ACM ISBN 978-1-4503-7950-2/20/07. . . $15.00
+https://doi.org/10.1145/3386392.3399282
+
+352
+
+INTRODUCTION
+
+Session 7: Workshop on Personalized Access
+to Cultural Heritage: PATCH'20
+
+UMAP ’20 Adjunct, July 14–17, 2020, Genoa, Italy
+
+(1) describe a system that relies on deep learning technologies
+and low-cost tools to monitor visitors in a museum scenario;
+(2) analyze and discuss its characteristics and compare them
+with those of systems proposed in the literature for similar
+purposes;
+(3) propose developments and enhancements to implement recommender systems able to make the visitor’s experience
+even more pleasant.
+
+visitor is not asked to wear anything and a network of light detection and ranging (LIDAR) devices is used to detect visitors [14]. In
+this case, collaboration is not necessary for the visitor. However, in
+addition to being particularly more expensive than other systems
+proposed, in some cases, this system cannot distinguish the individual visitor from the others, with the consequent loss of accuracy
+of the data collected. Differently, the method proposed in this work
+- in addition to not being invasive - allows for the acquisition of
+a huge amount of information that can be processed to provide a
+personalized interaction with each visitor.
+
+The paper is structured as follows. In Section 2, we review the
+State of the Art by describing some approaches proposed to improve the visitor’s experience. Section 3 describes the advanced
+approach and its scientific basis. In Section 4, we illustrate the experimental settings and discuss the preliminary results obtained.
+Finally, Section 5 reports our conclusions and some possible future
+developments to enhance the current system prototype.
+
+2
+
+3
+
+PROPOSED METHOD
+
+In this paper, we propose a tracking method based on deep learning tools for object detection and recognition. Recent advances in
+the field of image classification and object recognition make these
+tools very effective and efficient to recognize predefined objects.
+In particular, CNN models [6, 8] easily attain accuracy values near
+to 100% on the training set. Thanks to this, it is possible to train
+such models to recognize an arbitrary object with a confidence
+that is near to the certainty. Based on the above observations, we
+developed the following idea for tracking museum visitors. A CNN
+model is trained for recognizing two specific objects: a badge, like
+that used in conferences (see Fig. 1), and visitors’ faces (see Fig. 2).
+At the beginning, the visitor of a museum is invited to wear the
+
+RELATED WORK
+
+Over the past twenty years, many systems have been developed
+that focus on user modeling and adaptive techniques to support
+visitors and increase their motivations and interests in CH tours.
+The relevance of personalization in cultural visits has been studied
+in several works (see, for instance, [9, 18]). In [13], the authors surveyed museum visitors to discover the different users’ features and
+the related useful adaptive functions that could be implemented to
+improve their visiting experience. This study revealed that, beyond
+the interests and knowledge of the individual visitor, it is important to classify users into stereotypes including visitors on their
+first visit, frequent visitors, families, schools, and adults, as well
+as interaction preferences with the system (automatic/interactive).
+Based on these characteristics, the main interests of stereotypes
+have been identified. For example, a frequent visitor may expect a
+broad and detailed description of the works, a family with children
+may prefer curiosities about the works, or a visitor on her first
+experience may want to get a general idea behind artworks, therefore with a broad spectrum, but not very detailed. All this involves
+classifying the users’ preferences (and, therefore, the actions to
+be implemented) based on their category of belonging. However,
+these associations are arbitrary, but they can be taken as starting
+points that are gradually adapted to the visitors’ behavior. Many
+tools have been proposed to analyze the visitor’s behavior and interact with her, from the first Personal Digital Assistant [19] to the
+use of the mobile eye-tracker which involves wearing glasses with
+both a camera and viewer and eye detection [12]. In the research
+literature, there exist several works for tracing visitors and their
+visits to a museum. In some of them, the visitor is proposed to
+wear or otherwise carry with her a more or less intelligent electronic device. This device is capable of emitting signals (Bluetooth
+or radio-frequency identification (RFID)) which are then picked up
+by receiving control units suitably positioned inside the museum.
+The latter can, therefore, detect and record the spatial position of
+the apparatus and consequently of the visitor who wears it [7]. In
+this case, the visitors must always lend themself to collaborate and
+bring the equipment with them. All these tools are invasive and do
+not allow the visitor to have a direct approach to the works, thus
+altering the emotional impact of the observer. In other cases, the
+
+Figure 1: The badge used in the experiments.
+
+Figure 2: The objects recognized in a video frame.
+badge on which a CNN model is trained. This model, as confirmed
+by the experiments described in Section 4, can recognize the badge
+very easily and accurately. To this aim, it is required that cameras
+
+353
+
+Session 7: Workshop on Personalized Access
+to Cultural Heritage: PATCH'20
+
+UMAP ’20 Adjunct, July 14–17, 2020, Genoa, Italy
+
+are installed inside the museum environment. In our case, simple,
+inexpensive, and off-the-shelf cameras are sufficient. These cameras
+should be strategically placed inside the museum premises in a way
+that the badge worn by the active visitor is always visible by at least
+one camera. A simple assumption is to install one camera on every
+side of every room, at a height that minimizes the possibility that
+another visitor put herself in front of the active visitor wearing the
+badge thus making it not visible from the camera. Since the cameras
+are inexpensive, the use of more cameras concerning the simple
+aforementioned assumption should not result in a substantial increase in the installation cost. Once the recorded (or online, if more
+computing resources are available) video is acquired by cameras, it
+is given in input to the model to detect the visitor’s badge and face
+inside each video-frame.
+The detection process consists in estimating, for a maximum
+prefixed number 𝑅 of rectangles or boxes and inside each videoframe, a measure 0 < 𝑝 ≤ 1 and a class 𝑐 of the box. The value 𝑝 is
+called score and is associated with the class 𝑐. In our case, the number
+of possible values of 𝑐 is two because we trained the model in order
+to recognize only two possible classes: badge and face. The output of
+the detection process consists in a set of 𝑅 triples (𝑐𝑖 , 𝑝𝑖 , b𝑖 ) where
+𝑐𝑖 is the class, 𝑝𝑖 its score, and b𝑖 a 4-dimensional vector containing
+the coordinates of the upper left and the lower right vertices of
+the box where the object 𝑐𝑖 is detected, with 0 ≤ 𝑖 ≤ 𝑅. Hereafter,
+the vector b𝑖 will be referred to as the bounding box of the object
+of class 𝑐𝑖 and we will denote the coordinates of the upper left
+and lower right corners of the bounding box by (b𝑖 (𝑦1 ), b𝑖 (𝑥 1 ))
+and (b𝑖 (𝑦2 ), (b𝑖 (𝑥 2 )), respectively. If the value of 𝑝 for a class 𝑐
+is higher than a prefixed threshold 𝜎 (in our experimental tests,
+we empirically set 𝜎 = 0.6), we assume that the object of class 𝑐 is
+detected inside the video-frame. The value of 𝜎 is a hyper-parameter
+of the system. For high values of the 𝜎 parameter, we can have a
+high number of false negatives, while, for low values, we can have
+a high number of false positives.
+We compute the spatial position of the visitor from the detected
+bounding boxes as follows. First of all, we have to calibrate the
+camera and compute the angular amplitude 𝛼 of each pixel of the
+camera. This can be done by placing an object of unit length at a
+unit distance from the camera (see Fig. 3(a)). If we define a constant
+𝛾 = 2 arctan (0.5), then we have 𝛼 = 𝛾/𝑚 where 𝑚 is the number of
+pixels of the unit length object inside the video-frame (see Fig. 3(b)).
+Knowing the angular amplitude of the pixel and the real dimensions
+
+compute the distance ℓ of the badge from the camera, which can
+be done as follows (see Fig. 4(a)):
+𝐻
+(1)
+ℓ=
+ 𝛼𝑚 𝑦 
+2 tan
+2
+where 𝑚 𝑦 = |b(𝑦1 ) − b(𝑦2 )| is the number of pixels of the height
+of the badge bounding box in the video-frame (see Fig. 4(b)).
+
+Figure 4: Computing the badge distance from the camera.
+In Equation 1, we can also replace the term 𝑚 𝑦 with the term
+𝑚𝑥 = |b(𝑥 1 ) −b(𝑥 2 )|. As above, we can compute the angle 𝛽 that the
+badge forms with the vertical centerline of the video-frame. Thus,
+the pair (ℓ, 𝛽) corresponds to the polar coordinates of the badge
+in the camera reference. The visitor position inside the museum
+can be obtained adding the values of the camera coordinates in
+the museum reference. Knowing the video frame rate, we can also
+determine the exact time and duration of the museum visit.
+
+4 EXPERIMENTS AND DISCUSSION
+Experimental settings
+In our experimental tests, we used the deep learning application
+program interface (API) for object detection and recognition proposed in [5]. We manually built a dataset of 600 images with size
+640x480 pixels: we used 500 images for training and 100 images for
+testing. The images of the dataset were similar to the one reported
+in Figure 2. In other terms, every image of the dataset contained at
+most two people and the badge shown in Figure 1. The preparation
+of the training and testing datasets required to label each image
+and to draw a bounding box around each object to be recognized.
+Although the badge was sufficient to exactly detect the visitor, we
+chose to include also her face because we may use it to evaluate
+her emotions during the visit. This can be done, for example, by
+using the system described in [11]. The software detection API
+offers several pre-trained models with different performance. They
+are all trained using 90 different classes. We experimented with
+the following detectors: Faster R-CNN [15] and Single Shot MultiBox Detector [10]. For the first one, we tried two core networks:
+Inception-v2 [20] and ResNet-101 [4]. We managed to have a model
+capable of correctly recognizing the two classes through only Faster
+R-CNN (with ResNet101 backbone). The reason for this was likely
+due to the small size of the training set. Using an Invidia QUADRO
+P2000 GPU, the frame rate required to process a video was about
+4 frames per second. Both objects were correctly recognized with
+an accuracy value of near 0.98. While we expected a high accuracy
+value in detecting the badge since it appeared in the images of the
+
+Figure 3: Computing the angular amplitude of a pixel.
+of the badge (i.e., 𝐿=10.4cm and 𝐻 =14.0cm), it is straightforward to
+
+354
+
+Session 7: Workshop on Personalized Access
+to Cultural Heritage: PATCH'20
+
+UMAP ’20 Adjunct, July 14–17, 2020, Genoa, Italy
+
+REFERENCES
+
+training set, we also found significant results in detecting faces.
+This occurred although the training set consisted of only two different faces. We believe that this ability to generalize was since we
+employed a pre-trained model. In support of this, we tried to train
+the model from scratch but in that case, the system was unable to
+correctly classify the two objects, probably due to the small number
+of images in the training set. Several recorded videos are available
+on the web page1 .
+
+[1] Liliana Ardissono, Tsvi Kuflik, and Daniela Petrelli. 2012. Personalization in
+Cultural Heritage: The Road Travelled and the One Ahead. User Modeling and
+User-Adapted Interaction 22 (05 2012), 73–99.
+[2] Hendrik Drachsler, Katrien Verbert, Olga C. Santos, and Nikos Manouselis. 2015.
+Panorama of Recommender Systems to Support Learning. In Recommender
+Systems Handbook. 421–451.
+[3] Alessandro Fogli and Giuseppe Sansonetti. 2019. Exploiting Semantics for
+Context-Aware Itinerary Recommendation. Personal and Ubiquitous Computing
+23, 2 (April 2019), 215–231.
+[4] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Deep Residual Learning for Image
+Recognition. In 2016 IEEE Conference on Computer Vision and Pattern Recognition.
+770–778.
+[5] J. Huang, V. Rathod, C. Sun, M. Zhu, A. Korattikara, A. Fathi, I. Fischer, Z. Wojna,
+Y. Song, S. Guadarrama, and K. Murphy. 2017. Speed/Accuracy Trade-Offs for
+Modern Convolutional Object Detectors. In 2017 IEEE Conference on Computer
+Vision and Pattern Recognition. 3296–3297.
+[6] Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton. 2012. ImageNet Classification with Deep Convolutional Neural Networks. In Proceedings of the 25th
+International Conference on Neural Information Processing Systems - Volume 1
+(NIPS’12). Curran Associates Inc., Red Hook, NY, USA, 1097–1105.
+[7] Joel Lanir, Tsvi Kuflik, Julia Sheidin, Nisan Yavin, Kate Leiderman, and Michael
+Segal. 2017. Visualizing Museum Visitors’ Behavior: Where Do They Go and
+What Do They Do There? Personal Ubiquitous Comput. 21, 2 (April 2017), 313–326.
+[8] Yann LeCun, Yoshua Bengio, and Geoffrey Hinton. 2015. Deep Learning. Nature
+521, 7553 (2015), 436–444.
+[9] Carla Limongelli, Filippo Sciarrone, Marco Temperini, and Giulia Vaste. 2012. The
+use of e-learning methodologies and technologies for generating personalised
+tours in cultural heritage environments. Int. J. of Tourism Anthropology 2 (01
+2012), 53–70.
+[10] Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott E. Reed,
+Cheng-Yang Fu, and Alexander C. Berg. 2016. SSD: Single Shot MultiBox Detector.
+In Computer Vision - ECCV 2016 - 14th European Conference, Amsterdam, The
+Netherlands, October 11-14, 2016, Proceedings, Part I (Lecture Notes in Computer
+Science), Vol. 9905. Springer, 21–37.
+[11] Daniel McDuff, Abdelrahman Mahmoud, Mohammad Mavadati, May Amr, Jay
+Turcot, and Rana el Kaliouby. 2016. AFFDEX SDK: A Cross-Platform RealTime Multi-Face Expression Recognition Toolkit. In Proceedings of the 2016 CHI
+Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA
+’16). Association for Computing Machinery, New York, NY, USA, 3723–3726.
+[12] Moayad Mokatren, Tsvi Kuflik, and Ilan Shimshoni. 2016. Listen to What You
+Look at: Combining an Audio Guide with a Mobile Eye Tracker on the Go. In
+Proceedings of the 10th International Workshop on Artificial Intelligence for Cultural
+Heritage co-located with the 15th International Conference of the Italian Association
+for Artificial Intelligence (AI*IA 2016), Genoa, Italy, November 28, 2016. 2–9.
+[13] Daniela Petrelli and Elena Not. 2005. User-centred design of flexible hypermedia
+for a mobile guide: reflections on the hyperaudio experience. User Modeling and
+User-Adapted Interaction 15, 3-4 (2005), 303.
+[14] M. G. Rashed, R. Suzuki, T. Yonezawa, A. Lam, Y. Kobayashi, and Y. Kuno. 2016.
+Tracking Visitors in a Real Museum for Behavioral Analysis. In 2016 Joint 8th
+International Conference on Soft Computing and Intelligent Systems (SCIS) and
+17th International Symposium on Advanced Intelligent Systems (ISIS). 80–85.
+[15] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. In Advances
+in Neural Information Processing Systems 28, C. Cortes, N. D. Lawrence, D. D. Lee,
+M. Sugiyama, and R. Garnett (Eds.). Curran Associates, Inc., 91–99.
+[16] Giuseppe Sansonetti. 2019. Point of Interest Recommendation Based on Social
+and Linked Open Data. Personal and Ubiquitous Computing 23, 2 (April 2019),
+199–214.
+[17] Giuseppe Sansonetti, Fabio Gasparetti, and Alessandro Micarelli. 2019. CrossDomain Recommendation for Enhancing Cultural Heritage Experience. In Adjunct Publication of the 27th Conference on User Modeling, Adaptation and Personalization (UMAP’19 Adjunct). Association for Computing Machinery, New York,
+NY, USA, 413–415.
+[18] Giuseppe Sansonetti, Fabio Gasparetti, Alessandro Micarelli, Federica Cena, and
+Cristina Gena. 2019. Enhancing Cultural Recommendations through Social and
+Linked Open Data. User Modeling and User-Adapted Interaction 29, 1 (March
+2019), 121–159.
+[19] Oliviero Stock, Massimo Zancanaro, Paolo Busetta, Charles Callaway, Antonio
+Krüger, Michael Kruppa, Tsvi Kuflik, Elena Not, and Cesare Rocchi. 2007. Adaptive, intelligent presentation of information for the museum visitor in PEACH.
+User Modeling and User-Adapted Interaction 17, 3 (July 2007), 257–304.
+[20] C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna. 2016. Rethinking the
+Inception Architecture for Computer Vision. In 2016 IEEE Conference on Computer
+Vision and Pattern Recognition. 2818–2826.
+
+Discussion
+The first noteworthy aspect of the proposed system is that the cost
+of badges, like the one shown in Figure 1, is so low that they are
+often given for free to participants of events such as congresses and
+conferences. Furthermore, the cameras required for implementing
+the system are off-the-shelf or phone cameras. From these observations, we understand that the cost of our entire system for tracking
+museum visitors can be extremely low, certainly lower, for example,
+than that of the system proposed in [14] where the cost of a single
+LIDAR scanner can be in the order of thousands of dollars. Moreover, based on the authors’ experience, wearing a badge during
+a social event requires a minimal collaborative effort on the part
+of the visitor. Once the badge is worn, the visitor often tends to
+completely forget about it during the event. Using cameras and
+detecting faces can also enable us to analyze the visitors’ emotions
+and moods. This could provide added value in recommending to
+users visits more and more suited to their interests and moods. To
+the best of our knowledge, in the literature there exist no systems
+for tracking visitors that can also capture their emotions and take
+advantage of them in the recommendation process. Another key
+aspect of our system is that its accuracy in estimating the visitor’s
+position can be pushed on the order of 10−2 meter. So this aspect
+also makes our system competitive with those in the State of the
+Art.
+
+5
+
+CONCLUSIONS AND FUTURE WORKS
+
+In this paper, we have described a tracking system that relies on
+deep learning technologies to monitor visitors and their behavior.
+The system leverages inexpensive badges and off-the-shelf cameras,
+which makes it economically viable. This aspect, together with the
+minimum collaborative effort required to the visitor and the excellent performance in terms of accuracy, make the proposed approach
+advantageous compared to several state-of-the-art systems.
+The analysis of the visitor’s tracks in a museum can represent
+the starting point for implementing recommender systems (RSs).
+They could allow museum curators and personnel to adapt the
+visits based on visitors and their behavior. Such RSs could also
+take the visitors’ emotions into account to further personalize their
+suggestions. The next step of our research activities will be to build
+a training set including different types of badges and more faces to
+make the system more and more robust and accurate. Preliminary
+results of tests performed using distinct badges were encouraging,
+but further experimental trials are needed to understand the possible limitations of our approach. Finally, we plan to test our system
+in a real museum scenario.
+1 http://host.uniroma3.it/docenti/mezzini/inclusive_memory.html
+
+(Accessed: May 14,
+
+2020)
+
+355
+
+

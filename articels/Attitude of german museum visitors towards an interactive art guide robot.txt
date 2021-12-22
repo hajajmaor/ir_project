@@ -1,0 +1,257 @@
+Attitude of German Museum Visitors Towards
+an Interactive Art Guide Robot
+Karola Pitsch
+
+Sebastian Wrede
+
+Jens-Christian Seele
+
+Luise Süssenbach
+
+Research Institute for Cognition and Robotics (CoR-Lab) & Applied Informatics, Bielefeld University, Germany
+
+{karola.pitsch,
+
+sebastian.wrede,
+
+jens-christian.seele,
+
+luise.suessenbach}@uni-bielefeld.de
+
+As a testbed for real-world experimentation on HRI and dynamic
+interaction models, this paper presents an autonomous robot
+system acting as guide in a German arts museum. The visitors’
+evaluation of this system is analyzed using a questionnaire and
+reveals issues for subsequent analysis of the real-time interaction.
+
+In this paper, we present initial results from a study deploying a
+NAO humanoid robot as an autonomous guide in a German arts
+museum. While our main interest lies in the detailed microanalysis of the real-time interaction between robot and user, this
+paper presents initial findings from a questionnaire asking visitors
+who interacted with NAO about their attitudes towards the robot.
+
+Categories and Subject Descriptors
+
+2. THE ART GUIDE ROBOT
+
+ABSTRACT
+
+H.5.2 [Information interfaces
+Interfaces – Interaction styles.
+
+and
+
+presentation]:
+
+The interactive art guide robot provides a testbed for real-world
+experimentation on human-robot-interaction. The NAO humanoid
+robot yields an ideal platform for HRI experiments due to its
+intrinsic safety, motion skills, rich onboard sensors and human
+friendly design. We extended the platform’s original skills
+towards a semi-autonomous interactive system along three lines:
+(i) external 3D perception of humans, (ii) behavior arbitration and
+(iii) logging of state and perception data for offline analysis.
+
+User
+
+General Terms
+Performance, Design, Experimentation, Human Factors.
+
+Keywords
+Human-Robot-Interaction, Multimodal Interaction, Contingency,
+Museum, Guide Robot, User attitudes, Conversation Analysis.
+
+For realizing 3D perception of humans (i) we used a VICON
+motion-capture system to track position and orientation of visitors
+due to the platform’s limited stereo vision capabilities. From this
+data, lines of sight between participants and robot can be
+calculated and used as input for behavior arbitration. A set of 8
+infrared cameras was installed at the ceiling of the room (6 x 5
+m). Participants wore a hat with a 3D VICON rigid body at its
+top.
+
+1. INTRODUCTION
+Human interactional conduct is highly dynamic and, to some
+extent, not foreseeable. If we aim at designing robot systems that
+should engage in spontaneous social interaction with untrained
+human users in real world scenarios, we need to develop dynamic
+interaction models that are able to deal with this variability and to
+produce appropriate contingent and reactive moves. This raises
+new challenges for both technical modeling and for systematically
+describing authentic human interactional conduct. In this line, [1]
+have shown that the robot’s ability to produce contingent,
+responsive interaction with the user in the “opening phase” of a
+spontaneously occurring interaction (robot acting as guide in a
+Japanese museum) effects the visitors’ further conduct towards
+the system (duration, responsiveness, social rituals).
+
+Behavior arbitration (ii) was realized with a hybrid reactive
+behavior-based architecture, informed by the dual dynamics
+approach. Different behavior states and their associated dependent
+behaviors are chosen autonomously by the system based on
+behavior activation values. These values are bound to the
+perceptual cues of distance to visitors and their line of sight to the
+robot.
+The assumption that visitors take differently long to walk towards
+the robot and be in a position to start listening to an explanation
+[1] resulted in an implementation of two circular interaction zones
+around the robot [2], an 'outer-circle' and an 'inner-circle'. The
+different state activation values depended on a localization inside
+one radius. So, participants entering the outer-circle activated a
+state associated with behaviors in which the robot tries to gain the
+attention of participants while visitors in the inner-circle activated
+a complex behavior for the interactive explanation of exhibits.
+
+This data also reveals that users approach a system at different
+speeds; stop mid-way to inspect another painting before
+continuing or changing their original path; during the
+interaction, visitors not exclusively gaze at the guide, but also
+re-orient to follow the robot’s pointing gestures or talk to
+another visitor. In order to deal with these situations, the system
+needs to carefully monitor the user’s conduct and interpret it
+using insights about human interactional conduct. In particular,
+it needs (i) to derive information about the visitors’ state of
+participation (Goffman) and current focus of interest by
+monitoring their head orientation; and (ii) monitor the visitors’
+changing conduct in physical space.
+
+For modeling the interaction sequences, we used Aldebaran’s
+Choregraphe tool. All other parts are written in Python. To
+integrate NAO with 3D perception and arbitration and to achieve
+synchronized data recording (iii) of motion capture data and robot
+states offboard, we used an event-based middleware for software
+integration of interactive cognitive robots [3].
+
+Copyright is held by the author/owner(s).
+HRI’11, March 6–9, 2011, Lausanne, Switzerland.
+ACM 978-1-4503-0561-7/11/03.
+
+227
+
+(OneWayAnova, F(1, 95) = 3.53, p < .05, one-sided) and found it
+more positive in condition 1a (M = 2.70) than in 1b (M = 2.39),
+although this difference was not significant. Considering
+individual items, participants judged the robot significantly more
+available-for-communication in condition 1 (M = 2.89) than in 2
+(M = 2.24) (OneWayAnova, F(1, 142) = 10.31, p < .01).
+
+3. EXPERIMENT
+In 06/2010, we conducted a field trial with the robot system in a
+German arts museum (Kunsthalle Bielefeld). The NAO robot was
+placed on a table in front of a painting and interacted
+autonomously with visitors who happened to pass by during their
+regular visit. The robot’s actions followed three phases: (1)
+Opening the interaction, i.e. enter in contact with the visitors,
+greet and ask whether they would like some information about the
+painting; (2) Presenting the painting by using pre-defined verbal
+utterances, head and body gestures; (3) Closing the interaction, by
+thanking for their attention and wishing a nice further visit.
+
+For the visitors’ media experience, traditional information sources
+(human guide, leaflets, audio guide) are significantly preferred
+over novel electronic displays (paired t-tests, all ps < .001).
+
+5. DISCUSSION
+The visitors’ judgment of the robot as unobtrusive meets well our
+aim to design a system that blends into the visitors’ activities: to
+be at their disposal if required, but not disturbing. Their consideration of its systematicity/reactivity to be ‘average’ could be due
+to both the use of only very basic interactional-reactive resources
+(line of sight, distance) as well as a high latency of the system in
+switching behaviors. Our future goal is to develop a system that
+can engage in reactive, contingent interaction. The visitors’ judgement as being ‘only’ average with regard to positivity needs to be
+considered in context: Cross-cultural studies on user attitudes
+have shown Germans to have lowest ratings in likeability,
+engage-ment, trust and satisfaction with regard to sociable robots
+[4]. In this sense, an ‘average’ rating seems an acceptable result.
+Further-more, positivity correlates with the visitors’ age and
+computer skills and goes along with a general preference for
+traditional (vs. more recent) information technologies in a
+museum. Looking a few years ahead, with the general public
+being increasingly used to novel forms of technology, some
+reasons for negative attitudes can be expected to vanish (while
+others might come up).
+
+Special interest was given to the opening phase and the ways in
+which the robot would display its availability, enter in contact
+with the visitor(s) and signal recognition of mutual awareness:
+Condition 1 (Re-actively waiting for interaction
+partner): NAO stands immobile with its head facing the entry.
+Once a visitor steps into the robot’s ‘outer circle’, NAO directs
+its head to the visitor and lights its eyes. Once he/she enters the
+‘inner circle’, NAO greets the visitor (“guten tag” + head nod),
+and then begins to offer information on the painting.
+Condition 2 (Pro-actively looking for interaction
+partner): NAO constantly moves its head with lit eyes slowly
+to randomly chosen positions as if actively searching for an
+interaction partner. Once a visitor enters the robot’s ‘outer
+circle’, NAO fixes its orientation on that person.
+Two sub-distinctions were realized for both conditions in the
+opening phase: When the system detected a visitor’s direct line
+of sight, the robot’s eyes were set (a) to shortly flash vs. (b) to
+be continuously illuminated. We wanted to explore whether
+visitors might understand the simple means of ‘flashing eyes’ as
+a useful display of the robot indicating his recognition of a state
+of mutual awareness between robot und visitor.
+
+For the interactional conditions, visitors seem to recognize a
+significant difference between the ‘flashing eyes’ and
+‘continuously lit’ version in condition 1, but not in condition 2.
+Particularly interesting is the result that visitors don’t judge the
+robot version as most available-for-communication that searches
+pro-actively for an interaction partner, but rather its re-active
+counterpart. These results invite for detailed qualitative sequential
+analysis of the concrete multimodal interaction between visitor
+and robot: Which aspects of the interactional conduct are relevant
+for these effects? On a methodological level, the visitors’ direct
+evaluation provides a valuable heuristic for starting the in-depth
+analysis of the video and motion-capture data.
+
+The robot system was running onsite for one week. About 180
+HRI-events were recorded (video, motion-capture, robot states)
+and 177 questionnaires gathered (39% male, 61% female; 8 to 86
+years (mean: 40.90)). For the interaction conditions the following
+number of questionnaires was valid: 1a: 85, 1b: 27, 2a: 40, 2b: 25.
+
+4. QUESTIONNAIRE: INITIAL RESULTS
+The questionnaire asked the participants to judge their experience
+with novel technologies and museum media and to evaluate their
+interaction with the robot on a Likert scale ranging from 1 to 5.
+Overall, visitors judged the system as highly unobtrusive, while
+ratings for positivity and systematicity/reactivity1 range on the
+positive side close to the mean. The perception of the robot’s
+positivity is linked to an effect of age and computer experience: It
+was considered significantly more positive with decreasing age
+(Pearson’s correlation, r(148) = -.19, p < .05) and increasing
+computer experience (Pearson’s correlation, r(147) = .23, p <
+.01).
+
+6. ACKNOWLEDGMENTS
+Our thanks go to the Kunsthalle Bielefeld, the CoR-Lab and the
+German Aerospace Centre for financial and technical support.
+
+7. REFERENCES
+[1] K. Pitsch, H. Kuzuoka et al. 2009. “The first five seconds”.
+Contingent stepwise entry into an interaction as a means to
+secure sustained engagement. IEEE ROMAN 2009, 985-991.
+[2] P. Holthaus, I. Lütkebohle et al. 2010. “Can I Help You?” – A
+Spatial Attention System for a Receptionist Robot. IEEE ICSR
+2010, 325-334.
+[3] J. Fritsch and S. Wrede 2007. An Integration Framework for
+Developing Interactive Robots. Software Engineering for
+Experimental Robotics, D. Brugali, ed., Berlin, 291-305.
+[4] D. Li, et al. 2010. A Cross-cultural Study: Effect of Robot
+Appearance and Task. Int J Soc Robot 2, 175-186.
+
+With regard to the interactional conditions, visitors judged the
+robot as displaying more systematic/reactive interactional conduct
+1
+
+Scale “intrusive” (intrusive, annoying, disruptive – Cronbachs  = 0.86,
+M = 4.09, SD = 1.07); Scale “systematic/reactive” (recognizes, reactive,
+systematic conduct, by chance (recoded)) – Cronbachs  = 0.63, M =
+2.79, SD = 1.03); Scale “positive” (friendly, available, motivating –
+Cronbachs  = 0.61, M = 2.53, SD = .98).
+
+228
+
+

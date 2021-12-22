@@ -1,0 +1,389 @@
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+A Museum Visitors Classification Based On Behavioral and
+Demographic Features
+Moayad Mokatren
+
+Veronika Bogina
+
+University of Haifa
+Haifa, Israel
+moayad.mokatren@gmail.com
+
+University of Haifa
+Haifa, Israel
+sveron@gmail.com
+
+Alan Wecker
+
+Tsvi Kuflik
+
+University of Haifa
+Haifa, Israel
+ajwecker@gmail.com
+
+University of Haifa
+Haifa, Israel
+tsvikak@is.haifa.ac.il
+other side, personalization is challenging in the cultural heritage
+setting, since most people do not tend to visit museums frequently.
+According to Ardissono et al. [5] new trends in technologies
+together with the research in cultural heritage about museum visitors, have opened new directions in personalization research. This
+can contribute to improving data visualization, finding users with
+similar interests and preferences, user’s collaboration and content
+adaptation. Understanding who visits the museum, their behaviors
+and the goal of the visit can play an important role in the design of
+museums’ mobile guide that enhances the visit experience.
+When two different people enter the museum for the first time,
+should they follow the same path through the museum? Are they interested in the same exhibits? Should they get the same explanation
+about the exhibits or the same explanation regarding recommendation they got from the system? If the museum visitors’ type could
+be known before they enter the museum, their museum visit experience (and post visit) might be richer given the limited time they
+have in the museum.
+Our exploratory study aims to understand the museum visitors’
+types according to their demographic data and behavioral signals
+during their visit. Such findings can enhance the museum visit experience by adapting the delivered content to the visitors according
+to their model/personality. Furthermore, the findings can help to
+mitigate museum visit fatigue (where one gets tired when walking
+around a specific museum) as well as explain both the users’ behaviors and the recommendations that interactive museum guide
+systems provide to the visitor.
+In the paper, we first review some related work, then we explain
+what research methods were used in our research. After that results
+are presented and explained, and finally we discuss contributions,
+limitations and ideas for future work.
+
+ABSTRACT
+This paper describes an exploratory study that attempts to classify
+museum visitors by taking into consideration indoor behavior and
+demographic features. We discuss different approaches of using
+such data for improving the user experience in the museum. Moreover, we try to explain user’s behavior by creating different user
+groups using a novel data set. Our findings indicate that knowing
+user age, education and her museum visits frequency, together with
+the current visit signals (total standing time and listening to a mobile guide time) can be used for visitors classification that might be
+useful in designing new intelligent user interfaces that can improve
+the visitor’s indoor experience.
+
+CCS CONCEPTS
+• Human-centered computing → User models;
+
+KEYWORDS
+User Modeling, Clustering, Cultural Heritage, Museum Interactions
+ACM Reference Format:
+Moayad Mokatren, Veronika Bogina, Alan Wecker, and Tsvi Kuflik. 2019.
+A Museum Visitors Classification Based On Behavioral and Demographic
+Features. In 27th Conference on User Modeling, Adaptation and Personalization
+Adjunct (UMAP’19 Adjunct), June 9–12, 2019, Larnaca, Cyprus. ACM, New
+York, NY, USA, Article 4, 4 pages. https://doi.org/10.1145/3314183.3323864
+
+1
+
+INTRODUCTION AND MOTIVATION
+
+Over the last two decades, personalization has been a vougish area
+of research in cultural heritage [5]. On one side, with the hype of
+the Internet of Things and wireless technology, researchers had
+abundant access to data, this allowed visitors to improve the prior,
+post and during-the-visit experience [13]. People have different
+interests, knowledge, goals and preferences in their visit. On the
+
+2
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from permissions@acm.org.
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+© 2019 Association for Computing Machinery.
+ACM ISBN 978-1-4503-6711-0/19/06. . . $15.00
+https://doi.org/10.1145/3314183.3323864
+
+RELATED WORK
+
+Understanding museum visitors, their behaviors and the goal of
+the visit can play a crucial role in the design of museums’ mobile
+guide that enhances the visit experience. For example according to
+[7], the visitors’ social context has an impact on their museum visit
+experience and knowing the social context may allow a system to
+provide socially aware services to the visitors (though social data
+is outside the context of the data reviewed).
+
+383
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+2.1
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+3
+
+Visitors Types
+
+Museum visitors can be classified by various characteristics: groups
+they belong to [10]; their style of looking at the exhibits and moving
+in the museum [6, 14, 15]; a combination of demographic features
+(age), context and user’s expertise [12]; and their experience [9].
+Falk and Dierking [9] and Falk [8] tried to understand the visitor
+and the whole visit experience as well as post-visit experience. They
+initially proposed the idea of visitor "identity" and identified five,
+distinct, identity-related categories: (1) Explorers - Visitors who
+are curiosity driven with a generic interest in the content of the
+museum; (2) Facilitators - Visitors who are socially motivated; (3)
+Professional/Hobbyists - Visitors who feel a close tie between the
+museum content and their professional or hobbyist passions;(4) Experience Seekers - Visitors who are motivated to visit because they
+perceive the museum as an important destination and (5) Rechargers - Visitors who are primarily seeking to have a contemplative,
+spiritual and/or restorative experience. These have been enhanced
+with addition identities such as pilgrims and affinity seekers.
+Prior to [9], ethno methodologists [15] proposed four types of
+museum visiting styles. Starting from ethnographic observations of
+the behavior of a number of visitors in several museums, they found
+that visitors’ movements may be compared to the behavior of four
+typical animals, and they proposed using this strategy as a way of
+classifying the style of a visitor. They suggest that the ANT visitor
+tends to follow a specific path and spends a lot of time observing
+almost all the exhibits; the FISH visitor spends most of the time
+moving around the center of the room and usually avoids looking at
+exhibits’ details; the BUTTERFLY visitor does not follow a specific
+path but rather is guided by the physical orientation of the exhibits
+and stops frequently to look for more information (but not deeply);
+and, the GRASSHOPPER visitor seems to have a specific preference
+for some pre-selected exhibits and spends time observing them
+while tending to ignore the others.
+Zancanaro et al. [16] and later Kuflik et al. [11] tried to identify
+and predict the user type, according to the Veron and Levasseur’s
+model, on the initial observations of a user during the museum
+visit. They used Recurrent Artificial Neural Network (ANN) and KMeans methods in their conducted experiment to classify museum
+visitors to different types. They found that they can predict, with
+high accuracy, in the early stages of the visit a BUTTERFLY and
+GRASSHOPPER type behavior, while FISH and ANT type prediction
+improve with the visit, it is not easy to predict them from the
+beginning, taking time to catch patterns in their sequence of actions
+with exhibits.
+Dean [6] identifies three types of visitors, according to their
+interests in the exhibits. The first type is characterized by people
+that move quickly in the museum, without showing interest in the
+exhibits. The second one contains people that show interest in the
+specific exhibits that attract them. And the last and minor one, are
+visitors who thoroughly examine exhibitions and pay attention to
+every label and detail.
+The novelty of our study, beyond the current state of the art, is
+in classification of visitors using their behavior during the museum
+visit, considering not only users’ behavioral signals during the visit,
+but also their demographic related features, which, to the best of
+our knowledge, has not been examined before.
+
+RESEARCH METHOD
+
+In order to understand the museum visitors’ behaviors and their
+visiting style, we used quantitative and qualitative data collected
+before and during museum visits. The study was conducted at the
+University’s Archaeological museum. To collect the data, 47 visitors
+(18 males and 29 females) were recruited as participants. Their age
+ranged from 19 to 70 (mean=42, median=40, SD=17).
+
+3.1
+
+Features
+
+The participants filled in a personal questionnaire before the visit
+and then used a museum mobile guide that identified the location
+of the visitor using Bluetooth Low Energy (BLE) beacons whenever they were in proximity to an exhibit, providing us with their
+location at any time of their visit. From such data together with
+the interaction with the mobile guide we can derive the following
+features:
+• Demographic related features
+– Museum visitor’s age.
+– Visitor’s gender (Male/Female) (boolean variable).
+– Education level (no education, high school, bachelor, master, PhD) (categorical variable).
+• Museum visit related features
+– Number of visits a year to museums or archaeological sites
+(never, once a year, between 2 and 5, between 6 and 10,
+more than 10) (categorical variable).
+– Whether this is the first visit to this museum or not (boolean
+variable).
+– Number of visited exhibits (without duplicates).
+– Listening time - how much time user spends on listening
+explanations about the exhibit on the mobile guide.
+– Standing time - how much time user stands near the exhibit.
+
+3.2
+
+Method
+
+We aimed to identify groups of similar visitors, based on their
+behavior and personal characteristics. For that purpose we represented the visitors by a 8-feature vectors (described above) and
+applied KMeans clustering for identifying similar groups, with several different K values. KMeans[3] is an unsupervised method for
+classifying data. Basically, if each visitor is represented by the vector of features, the goal is to find the closest mean cluster, where k
+indicates the number of clusters. In our experiment we tried various
+values of K=2,3,4,5 and found that with K=3 we could see three
+interesting groups, which as a result of our manual analysis of the
+different groups, we were able to explain.
+
+4
+
+RESULTS
+
+After running K-Means with three clusters (K=3), and assuming
+that all the members in each cluster/group share similar behaviors,
+we had to identify each cluster/group identity and try to explain its
+visiting style. For that purpose we used charts to check relations
+between different variables. We checked all the possible pairs and
+in this paper we will refer only to charts with interesting relations.
+For simplicity let’s recognize each group using its visualization
+color: blue, orange and green.
+
+384
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+Figure 1: Has master vs total listen time in minutes.
+
+Figure 4: Has master vs visit duration in minutes.
+
+Figure 2: Age vs start hour (.5 is after 30 minutes past).
+
+Figure 5: Visit once a year vs visit duration in minutes.
+
+Figure 3: Start hour vs visit duration in minutes.
+
+Figure 6: Visit duration (minutes) vs total listen time (minutes).
+
+From Figure 1 we can conclude that the green visitors are the
+ones that obtained Master degree. According to Figure 2 the blue
+visitors, younger than other visitors, tend to start their visit at
+later hours than other groups. From Figure 3 it is clear that the
+orange visitors, that do not have graduate degree, tend to spend less
+time in the museum. Also they visit around noon time - probably
+students that enter the museum during the lunch break - these
+visitors can possibly be an audience to engaging activities. The
+green visitors which are characterized by having a graduate degree
+may be a target for personalized delivery of content, according to
+their preferences and behavior, given the diversity of the group.
+
+From Figure 5 we can learn that the "oranges" visit museum once
+a year. But still, according to Figure 7, they succeeded in reaching
+many exhibits, wandering around, without listening to the museum
+guide system (Figure 6). In addition, we have used non-parametric
+Kruskal-Wallis[2] test (since our data is mostly categorical, and also
+continuous data is not in Normal distribution) to check a difference
+between the three visitors’ groups according to features that were
+used. In case of statistically significant difference, we have applied
+post-hoc Dunn’s test [1] to examine a correlation between the
+groups and to understand which group is different. Results can be
+seen in Table 1 with the medians of features and with statistically
+
+385
+
+Personalized access to Cultural Heritage (PATCH 2019) Workshop
+
+UMAP’19 Adjunct, June 9–12, 2019, Larnaca, Cyprus
+
+the fact that most people visit museum only once. In such cases by
+only knowing demographic features it would be interesting to see
+whether they also follow some pattern that can contribute for users
+classification and improving their experience, but this is a topic for
+future work.
+
+6
+
+For us, as researchers, it is important to understand a user’s behavior, in order to be able to explain back an interaction with the
+system (mobile museum guide, recommendations for exhibits, and
+personalized explanations about the exhibits). We believe that understanding behavioral signals during the visit together with the
+previous knowledge about the visitor, mainly age, education and
+frequency of visiting museums can contribute deeply.
+It would be interesting to perform the same study in a bigger
+museum with a more heterogeneous population and see what such
+signals can tell us about users. Furthermore, use such classification for providing "personalized" - ( i.e. based upon the classification group) - explanations about the exhibits in the museum and
+check for differences in the on-site experience between the different groups. In addition, we would like to ask participants to fill
+in a personality questionnaire in order to try and find correlation
+between our classifications, Veron and Levasseur’s model, and the
+Big Five personality traits.
+
+Figure 7: Visit duration (minutes) vs number of visited exhibits.
+
+Table 1: Statistically significant features in clusters
+
+significant differences. The group that was not correlated with the
+others after applying post-hoc, is marked in the relevant group color.
+The Green group visitors are different in their age (older than the
+others), education (graduated) and their previous visit experience.
+The Blue group visitors have the lowest level of education among
+the groups. While the Orange ones: the middle level of education,
+though their standing and listening to the mobile guide times are
+significantly lower than the other groups times. We can conclude
+that knowing age, education and number of museum visits even
+before the museum visit can contribute to identifying users’ type
+and to improve their experience.
+
+5
+
+CONCLUSIONS AND FUTURE WORK
+
+ACKNOWLEDGEMENT
+This research was supported by THE ISRAEL SCIENCE FOUNDATION (grant No. 262/2017)
+
+REFERENCES
+[1] 2019. Dunn’s Test. https://www.pydoc.io/pypi/scikit-posthocs-0.3.7/autoapi/
+_posthocs/index.html. (2019). [Online; accessed 10-Jan-2019].
+[2] 2019. Kruskal-Wallis Test. https://docs.scipy.org/doc/scipy/reference/generated/
+scipy.stats.kruskal.html. (2019). [Online; accessed 10-Jan-2019].
+[3] 2019. sklearn.cluster.KMeans. http://scikit-learn.org/stable/modules/generated/
+sklearn.cluster.KMeans.html/. (2019). [Online; accessed 10-Jan-2019].
+[4] 2019. The Ant and the Grasshopper. https://en.wikipedia.org/w/index.php?title=
+The_Ant_and_the_Grasshopper. (2019). [Online; accessed 10-Jan-2019].
+[5] Liliana Ardissono, Tsvi Kuflik, and Daniela Petrelli. 2012. Personalization in
+cultural heritage: the road travelled and the one ahead. User modeling and
+user-adapted interaction 22, 1-2 (2012), 73–99.
+[6] David Dean. 2002. Museum exhibition: Theory and practice. Routledge.
+[7] Eyal Dim and Tsvi Kuflik. 2015. Automatic detection of social behavior of museum
+visitor pairs. ACM Transactions on Interactive Intelligent Systems (TiiS) 4, 4 (2015),
+17.
+[8] John H Falk. 2016. Identity and the museum visitor experience. Routledge.
+[9] John H Falk and Lynn D Dierking. 2000. Learning from museums: Visitor experiences and the making of meaning. Altamira Press.
+[10] Eilean Hooper-Greenhill. 1999. Education, communication and interpretation:
+towards a critical pedagogy in museums. The educational role of the museum 2
+(1999), 3–27.
+[11] Tsvi Kuflik, Zvi Boger, and Massimo Zancanaro. 2012. Analysis and prediction
+of museum visitors’ behavioral pattern types. (2012), 161–176.
+[12] Lukáš Najbrt and Jana Kapounová. 2014. Categorization of museum visitors as
+part of system for personalized museum tour. International Journal of Information
+and Communication Technologies in Education 3, 1 (2014), 17–27.
+[13] Francesco Piccialli and Angelo Chianese. 2017. The internet of things supporting
+context-aware computing: a cultural heritage case study. Mobile Networks and
+Applications 22, 2 (2017), 332–343.
+[14] Beverly Serrell. 2015. Exhibit labels: An interpretive approach. Rowman & Littlefield.
+[15] Eliséo Véron and Martine Levasseur. 1989. Ethnographie de l’exposition: l’espace, le
+corps et le sens. Centre Georges Pompidou, Bibliothèque publique d’information.
+[16] Massimo Zancanaro, Tsvi Kuflik, Zvi Boger, Dina Goren-Bar, and Dan Goldwasser.
+2007. Analyzing museum visitors’ behavior patterns. In International Conference
+on User Modeling. Springer, 238–246.
+
+DISCUSSION AND LIMITATIONS
+
+In this study we attempted to classify museum visitors by using a
+combination of demographic features and behavioral signals during
+the museum visit and explain this classification. We identified 3
+groups of visitors. Similar to the work of Dean [6], and studies
+of Zancanaro et al. [16] and Kuflik et al. [11] where from the duration perspective, no significant statistical difference was found
+between FISH and GRASSHOPPER types. While scrutinizing the
+definition of this types, the differentiation of these types can be
+pretty vague: both of them avoid details of most of the exhibits,
+moving around in different trajectories. Other types are more easily
+separated. Even Aesop’s Fables talk about significant difference
+between GRASSHOPPER and the ANT[4]. After statistical analysis
+we identified few features according to which three clusters are
+different: age, education, number of museum visits, standing and listening times. We used a data set that is available to the community
+upon request from the authors.
+There are three main limitations in our study. First of all the
+number of participants is not large - 47 persons participated in
+the study. Another limitations is biased data, most of the participants, are students at University. Another limitation is related to
+
+386
+
+

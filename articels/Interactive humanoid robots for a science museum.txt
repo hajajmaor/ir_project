@@ -1,0 +1,1003 @@
+Interactive Humanoid Robots for a Science Museum
+Masahiro Shiomi1,2 Takayuki Kanda2 Hiroshi Ishiguro1,2 Norihiro Hagita2
+1 Osaka University
+Osaka 565-0871
+Japan
+
+2 ATR IRC Laboratories
+Kyoto 619-0288
+Japan
+
+m-shiomi@atr.jp kanda@atr.jp ishiguro@atr.jp hagita@atr.jp
+society. Many robots have already been applied to various fields
+in daily environments. Table 1 gives an overview of the previous
+works. There are mainly two kinds of fields: closed and open. The
+difference between a closed and an open environment lies in the
+people who are interacting. In a closed environment, such as an
+elementary school or an office, robots interact with a limited
+group of people [2-5]. On the contrary, we chose to work in an
+open environment because we expect that many people, in a widerange of ages, will interact with robots. In line with this prospect,
+we have been developing a science museum guide robot that we
+believe to be a promising application.
+
+ABSTRACT
+This paper reports on a field trial with interactive humanoid
+robots at a science museum where visitors are supposed to study
+and develop an interest in science. In the trial, each visitor wore
+an RFID tag while looking around the museum’s exhibits.
+Information obtained from the RFID tags was used to direct the
+robots' interaction with the visitors. The robots autonomously
+interacted with visitors via gestures and utterances resembling the
+free play of children [1]. In addition, they performed exhibitguiding by moving around several exhibits and explaining the
+exhibits based on sensor information. The robots were highly
+evaluated by visitors during the two-month trial. Moreover, we
+conducted an experiment in the field trial to compare the detailed
+effects of exhibit-guiding and free-play interaction under three
+operating conditions. This revealed that the combination of the
+free-play interaction and exhibit-guiding positively affected
+visitors’ experiences at the science museum.
+
+There is a double benefit in choosing a science museum as the
+experiment field. On the one hand, visitors are going to have the
+opportunity to interact with the robots and experience the
+advanced technologies by which they are made, which is the
+fundamental purpose of a science museum. Thus, we can easily
+deploy our research to a real environment.
+On the other hand, in a science museum we are naturally targeting
+people who are interested in science and are unlikely to miss the
+chance to interact with our robots; thus this field is one of the best
+choices for collecting feedback and examining the interaction
+between people and the communication robot in various tasks.
+The need for extensive and accurate feedback goes back to our
+belief that interaction with humans through tasks is one of the
+communication robot’s essential roles. This feedback is vital for
+developing the ability for the robots to act appropriately in a daily
+living environment.
+
+Categories and Subject Descriptors
+H.5.2 [Information Interfaces and Presentation]: User
+Interfaces – Interaction styles, I.2.9 [Artificial Intelligence]:
+Robotics
+
+General Terms: Design, Experimentation, Human Factors
+Keywords: Commutation robot, Field trial, Human-robot
+interaction, Science museum robot
+
+Some robots have already been developed [7, 8] that include
+functions like robust navigation and direction-giving in an open
+environment. However, the interactions of those robots are of the
+master-slave type (giving commands to the robot), which is quite
+different from the peer-type interaction we are expecting, i.e., as
+humans, pet animals, and AIBO [2] are capable of. We are
+attempting to emphasize the importance of this type of interaction.
+People think of their peers as “equals” when communicating with
+them. Thus we believe that achieving such a peer-type interaction
+between humans and robots makes the communication between
+them more natural and human-like. We can also expect that such
+an interaction will reduce the psychological distance between
+humans and robots. Moreover, particularly for the visitors of the
+science museum, it will help to stimulate their interest in science.
+
+1. INTRODUCTION
+The development of robots is entering a new stage where the
+focus is placed on interaction with people in their daily
+environments. The concept of the communication robot is rapidly
+emerging. The communication robot will act as a peer providing
+mental, communicational, and physical support. Such interactive
+tasks are of importance for allowing robots to take a part in human
+
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies are not
+made or distributed for profit or commercial advantage and that copies bear
+this notice and the full citation on the first page. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific
+permission and/or a fee.
+HRI'06, March 2–4, 2006, Salt Lake City, Utah, USA.
+Copyright 2006 ACM 1-59593-294-1/06/0003...$5.00.
+
+Our approach to these field experiments is unique: the robots use
+environmental sensors to work in a complex, crowded
+environment that would otherwise make simple functions such as
+person identification very difficult. We covered the experimental
+field at a science museum with cameras and wireless tag readers
+(RFID). The robot retrieves its coordinates from these ubiquitous
+
+305
+
+TABLE 1 Various field experiments with interactive robots
+People
+Environment
+
+Closed
+
+Open
+
+Function
+
+Interaction
+
+Location
+
+Purpose
+
+Home
+
+Entertainment [2]
+
+o
+
+x
+
+x
+
+x
+
+-
+
+o
+
+Hospital
+
+Mental care [3]
+
+o
+
+x
+
+x
+
+x
+
+-
+
+o
+
+School
+
+Language education [4]
+
+x
+
+o
+
+x
+
+o
+
+-
+
+o
+
+Office
+
+Guiding [5]
+
+x
+
+o
+
+o
+
+x
+
+o
+
+-
+
+Lobby
+
+Interaction [6]
+
+o
+
+o
+
+x
+
+x
+
+-
+
+o
+
+Guidance & navigation [7,8]
+
+o
+
+o
+
+o
+
+x
+
+o
+
+-
+
+Interaction & guidance [This paper]
+
+o
+
+o
+
+o
+
+o
+
+-
+
+o
+
+Museum
+
+Wide age With many
+Navigation
+range
+people
+
+Peer type
+
+The following sections describe the details of the Osaka Science
+Museum environment, the humanoid robots, and the sensors.
+
+sensors. It is able to identify visitors and call them by their names
+by detecting their RFID tags. This approach enables the robots to
+provide more pertinent information in their interaction, such as
+recommendations based on the visitor’s movement history. We
+are exploring the potential of communication robots in various
+fields with this approach.
+This article reports on an experiment in which a system using
+many ubiquitous sensors and humanoid robots -- Robovies -guided the visitors of a science museum. In this setting the
+Robovies interacted with the visitors and showed them around to
+exhibits according to information from ubiquitous sensors, such
+as the visitors' positions and movement histories. During the twomonth experiment, visitors enjoyed interacting with the robots and
+highly appreciated them.
+
+2.1 Science museum environment
+Seventy-five exhibits were positioned on the fourth floor of the
+Osaka Science Museum. Figure 1 shows a map of the fourth floor
+of the museum, around which people walk in a counterclockwise
+direction.
+Typically, visitors go through the following steps:
+1) If a visitor decides to register as part of our project, such
+personal data as name, birthday, and age (under 20 or not) is
+gathered at the reception desk (Fig. 1, point A). The system binds
+that data to the ID of an RFID tag and automatically produces a
+synthetic voice for the visitor’s name. The visitor receives a tag at
+the reception desk.
+
+2. SYSTEM CONFIGURATION
+We used four humanoid robots for interaction with visitors in
+guidance and giving explanations. The robots behaved as follows:
+- One robot served as a guide to the exhibits.
+- Two stationary robots explained the exhibits.
+- As visitors prepared to leave, one robot greeted them by name,
+asked them to return their RFID tags, and said goodbye.
+In addition, we installed many sensors to record the movements
+and positions of visitors via their RFID tags on the fourth floor of
+the Osaka Science Museum. The interaction data between robots
+and visitors were recorded on a central database.
+
+Figure 1.
+
+Person
+Master slave
+identification
+
+2) When the visitor strolls around the fourth floor wearing the
+RFID tag, the RFID tag readers detect its signal and the system
+records the information at regular time intervals of about 1.5 sec.
+3) Four robots are placed at positions B, C, and D on the fourth
+floor, as shown in Fig. 1. After finishing, visitors return their tags
+at the exit point (Fig. 1, point E).
+
+Map of the fourth floor of the Osaka Science Museum
+
+306
+
+these shortcomings by installing many RFID tag readers in the
+environment.
+
+2.2 Humanoid robots
+1) Robovie:
+Figure 2 shows “Robovie,” an interactive humanoid robot
+characterized by its human-like physical expressions and its
+various sensors. The reason we used humanoid robots is because a
+human-like body is useful to naturally control the attention of
+humans [9]. The human-like body consists of a head, a pair of
+eyes, and two arms. When combined, these parts can generate the
+complex body movements required for communication. We
+decided on a robot height of 120 cm to decrease the risk of
+scaring children. The diameter was 40 cm. The robot has two 4*2
+DOFs (degrees of freedom) in its arms, 3 DOFs in its head, and a
+mobile platform. It can synthesize and produce a voice via a
+speaker. We also attached an RFID tag reader to Robovie [4] that
+enables it to identify the individuals around it. Two of the four
+robots used in this experiment were Robovies.
+
+To achieve approximate distance estimation, we set the RFID tag
+readers to have eight levels of sensitivity. Detection areas,
+however, are affected by the position of the RFID tag readers and
+reflections due to walls. Therefore, we measured each detection
+area prior to the experiment. We then attached the tag readers in
+positions two meters above the floor, and to successfully detect
+the tags we had to set the reader sensitivity level to at least five.
+
+2) Robovie-M:
+
+We placed an infrared LED on top of a Robovie and attached
+infrared cameras to the ceiling to determine the robot’s correct
+position. The system produces binary images from the infrared
+cameras and detects bright areas. It calculates absolute
+coordinates with a reference to the weighted center of the
+detection area and sends them to the database.
+
+Fig 1 shows an example of the positioning of tag readers. We
+placed them around particular exhibits, so that the system could
+detect whether visitors approached them. Moreover, since a tag
+reader’s detection field has a torus shape, the system can estimate
+the tag position by superposing the circles calculated from the
+reader outputs (Figure 5).
+2) Infrared cameras:
+
+Figure 3 shows a “Robovie-M” humanoid robot characterized by
+its human-like physical expressions. We decided on a height of 29
+cm for this robot. Robovie-M has 22 DOFs and can perform twolegged locomotion, bow its head, and do a handstand. We used a
+personal computer and a pair of speakers to enable it to speak,
+since it was originally unequipped for that.
+
+Infrared camera positions are shown in Fig. 1. The distance
+between the floor and the ceiling is about 4 m. The width and
+height of images from an infrared camera is 320 and 240 pixels,
+respectively. One pixel represents about 1 cm2 of area.
+
+The two other robots in this experiment were Robovie-Ms.
+
+3) Video cameras:
+The video camera positions are also shown in Fig. 1. The output
+images of each video camera are recorded by a PC and used to
+analyze the data generated by the experiment.
+
+Figure 2. Robovie
+
+2.3
+
+Figure 3. Robovie-M
+
+Embedded sensors in an environment:
+
+On the fourth floor of the Osaka Science Museum, we installed 20
+RFID tag readers (Spider-IIIA, RF-CODE), which included the
+two equipped on the Robovies, three infrared sensors, and four
+video cameras. All sensor data were sent to a central server
+database through an Ethernet network.
+
+Figure 4. The ubiquitous sensors
+
+In the following sections, we describe each type of sensor used.
+1) RFID tag readers:
+We used an active type of RFID tag. This technology enables easy
+identification of individuals: detection is unaffected by the
+occurrence of occlusions, the detection area is wide, and the
+distance between the tag reader and an RFID tag can be roughly
+estimated. Such benefits are suitable for large environments.
+However, drawbacks include low accuracy over long distances
+and the inability to detect exact positions. We compensated for
+
+Figure 5. Detection fields of the RFID tag
+
+307
+
+The robot can guide people to four kinds of exhibits by randomly
+determining the target. Figure 7 shows an example of this
+behavior. When bringing visitors to the telescope, the robot says,
+“I am taking you to an exhibit, please follow me!” (a), and
+approaches the telescope (b, c). It suggests that the person look
+through it and then talks about its inventor (d).
+
+3. ROBOT BEHAVIORS
+In this section, we introduce the roles and behaviors of the robots.
+For friendly interaction with visitors, robots need information
+about them. For example, children’s interest increases when the
+machines call them by name [4]. Moreover, human interactions
+are characterized by a shared memory of events.
+
+4) Guiding people to exhibits: Using information from RFID tags
+
+It is difficult for the robots themselves to acquire this information
+about visitors, such as their names and memories. However,
+sensors enable them to capture this data through, for example, an
+Ethernet network. That way the robots can act more intelligently
+and overcome the limitations of their features. In addition, in this
+system we use Robovies as sensors because they contain an RFID
+tag readers. In effect, they became not only interactive robots but
+also part of the sensor system.
+
+The RFID tags’ data are also used for interaction. We used the
+amount of time that visitors spent near an exhibit can use to judge
+whether visitors tried an exhibits. For example, when an RFIDtagged visitor has stayed around the “magnetic power” exhibit
+longer than a predefined time, the system assumes that the visitor
+has already tried it. Thus, the robot says, “Yamada-san, thank you
+for trying ‘magnetic power.’ What did you think of it?” If the
+system assumes that the visitor has not tried it, the robot will ask,
+"Yamada-san, you didn't try ‘magnetic power.’ It’s really fun, why
+don’t you give it a try?”
+
+3.1 Locomotive robot
+We used a Robovie for the locomotive robot that moved around in
+parts of the environment, interacted with visitors, and guided them
+to exhibits.
+1) Interaction with humans: Childlike interaction
+The robot can engage in such childlike behavior as handshaking,
+hugging, and the game of “rock, paper, and scissors.” Moreover, it
+has such reactive behaviors as avoidance and gazing at a touched
+part of its body, as well as such patient behavior as solitary
+playing and moving back and forth. Figure 6 shows interaction
+scenes between Robovies and visitors.
+
+(a) Robovie shakes hands
+
+(b) A child touching Robovie
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+Figure 7. Robovie guiding visitors to the telescope
+
+3.2 Robots that talk with each other
+Two stationary robots (Robovie and Robovie-M) casually talk
+about the exhibits as humans do with accurate timing because they
+are synchronized with each other using an Ethernet network. The
+topic itself is intelligently determined by data from RFID tags. By
+knowing the previous visiting course of a visitor, the robots can
+try to interest the visitor in an exhibit he or she overlooked by
+starting a conversation on that exhibit.
+(c) Robovie saying goodbye
+
+(d) Robovie hugging children
+
+Figure 8 shows robots talking. The flow and an example of
+dialogue are given below:
+
+Figure 6. Scenes of interaction between visitors and Robovies
+2) Interaction with humans: Using information from RFID tags
+
+(1) Robovie-M explains an exhibit.
+
+The robot can detect RFID tag signals around itself by using its
+RFID tag reader, which allows it to obtain personal data on
+visitors using RFID tag IDs. It can greet visitors by name or wish
+them a happy birthday, and so on. In addition, the system records
+the time that visitors spend on the fourth floor of the Osaka
+Science Museum. The robot can behave according to that time.
+
+(2) Robovie asks Robovie-M a question about it. For example,
+“Who made it?”
+
+3) Guiding people to exhibits: Human guidance
+
+(Robovie): “That’s incredible! How does it do that?”
+
+(3) Robovie-M answers the question and expounds on its answer.
+(Robovie-M): “That chair can float, even if a person is sitting on
+it.”
+
+308
+
+- I had fun because the robots called me by name.
+- We felt close to the robots.
+
+(Robovie-M): “By magnetic power.”
+(Robovie): “I wonder if I can sit on that…”
+
+The results revealed that visitors held favorable impressions
+toward the presence of the robots. Moreover, visitors described
+their favorite robot behavior, such as hugging, the calling out of
+names, and so on. Such behaviors are basic elements of human
+society.
+
+(Robovie-M): “I doubt it.”
+
+The freely described opinions of visitors were analyzed and
+revealed that visitors’ opinions of the robots differed according to
+age [10]. For example, younger respondents did not necessarily
+like the robots more than elder respondents.
+(a) Two robots talking
+
+(b) Two robots talking to visitors
+
+5
+4
+
+Figure 8. Scenes of robots talking to each other
+
+3
+
+3.3 A robot bidding farewell
+
+2
+
+This robot is positioned near the exit and, after requesting data
+from their RFID tags, says goodbye to the departing visitors. It
+also reorients visitors on the tour who are lost by examining the
+visitor’s movement history and time spent on the fourth floor of
+the Osaka Science Museum, which was recorded by the system. If
+visitors walk clockwise, they will immediately see this robot at the
+beginning and will be pointed in the right direction by the robot.
+Figure 9 shows a scene with this robot.
+
+(a) The visitor talking to the robot
+Figure 9.
+
+1
+res
+inte
+
+ting
+
+n
+fr ie
+
+dly
+
+e
+ts
+tion
+ctiv
+obo
+rac
+effe
+re r
+nte
+u
+i
+t
+r
+u
+f
+fo
+for
+iety
+iety
+anx
+anx
+
+Figure 10. Results of returned questionnaires
+
+(b) The robot telling the way
+
+Figure 11.
+
+Gender of visitors
+
+Figure 12.
+
+Age of visitors
+
+The robot bidding farewell
+
+4. EXPERIMENT
+4.1 A two-month exhibition
+We performed experiments to investigate the impressions made by
+robots on visitors to the fourth floor of the Osaka Science
+Museum during a two-month period. As they departed the fourth
+floor, we asked visitors to complete a questionnaire by ranking
+five factors on a scale of 1-to-5, where 5 is the most positive.
+They were also encouraged to give other opinions on the robots.
+By the end of the two-month period, the number of visitors had
+reached 91,107, the number of subjects who wore RFID tags was
+11,927 and the number of returned questionnaires was 2,891.
+Figure 10 shows the results. It indicates that most visitors had a
+good impression of the robots and they did not feel anxiety about
+robots in the future. Figure 11 and 12 display the age and gender
+of subjects who wore RFID tags and returned questionnaires.
+These results indicate that most questionnaires were returned by
+woman and visitors in their 30’s and 40’s. We think that this trend
+happened because only adults were asked to fill in the
+questionnaires, and the typical visitor group was a mother
+accompanying her child.) Most opinions were:
+
+4.2 Experiments on the behavior of robots
+We performed experiments in which we examined the behavior of
+robots under three operating conditions during one week. We
+randomly exchanged conditions between the morning and the
+afternoon. The subjects were the visitors who had RFID tags and
+played with the robots. After their interaction ended, we asked
+them to fill out a questionnaire in which they rated three items on
+a scale of 1-to-7, where 7 is the most positive.
+The items were “Presence of the robots” (What did you think
+about the presence of robots in the science museum?),
+“Usefulness as a guide” (What was the degree of the robots’
+usefulness for easily looking around the exhibits?), and
+
+- We had a really good time.
+
+309
+
+“Experience of science & technology” (How much did the robots
+increase your interest in science and technology?). The subjects
+were also encouraged to provide other opinions about the robots
+as well. The three operating conditions were the following:
+
+7
+
+1) Interaction
+
+6
+
+Robots behaved according to predefined functions. Each robot
+engaged in basic interaction, as described in Section 3.1.1. No
+guide function was performed
+
+5
+Score
+
+*
+
+* : p<0.05
+Interaction
+
+Guide
+
+4
+3
+
+2) Guidance
+
+2
+
+The role of the robots was limited to guiding and giving
+explanations. Each robot only behaved as described in Section
+3.1.3.
+
+1
+Presence of Usefulness Experience
+the robots as a guide of science &
+technology
+
+Interaction,
+guidance
+and using
+RFID
+
+3) Interaction, guidance and using RFID tags
+Figure 13. Results for the three operating conditions
+
+In this operating condition the robots not only combined the
+previous two operating conditions but also used data from the
+RFID tags. Each robot preformed every kind of behavior
+introduced in Section 3.1.
+
+5. DISCUSSION
+5.1 Contributions to HRI research
+More than ninety thousand people visited the exhibition, more
+than ten thousand people interacted with the robots and wore
+RFID tags, and about three thousand people returned
+questionnaires. The results showed that most visitors evaluated
+the robots highly.
+
+It is difficult to compare the conditions of "using RFID" and "not
+using RFID". For example, in the “Guide” condition, using
+information on the RFID tag necessitates that the robot behave
+interactively, such as calling someone by name. Also, it is difficult
+to compare the effects of each behavior in the crowded situations.
+Thus, we use this operating condition for comparing the
+importance of the information on the RFID tags between the
+above conditions.
+
+In the "Interaction, guide, and using RFID" condition,
+"Experience of science & technology" showed a significant
+difference. Human-guide-like guiding with childlike free-play
+interaction attracted the interest of visitors more than simply
+guiding.
+
+4.3 Results of robots’ behavior
+About 100 questionnaires were returned for each operating
+condition. Figure 13 shows the results and their averages, which
+are mostly above 6. There was a significant difference for the
+following item: “Experience of science & technology,” as to
+whether the robot was in the “Interaction, guidance and using
+RFID” operating condition or in another condition (p<.05).
+
+We believe that free-play interaction and human-guide-like
+guiding improve the visitors' interest in science technology
+because the visitors played actively with the robots and with the
+exhibits via the interaction of the robots.
+In addition to these findings, we believe that this trial
+demonstrated the positive possibility of using interactive robots in
+open environments, which is one of the most important
+contributions of this work. Human-robot interaction was
+considered only as a kind of entertainment when research on
+interactive robots started. Our perspective (and that of many other
+researchers) is very different. We believe that robots will be part
+of the fundamental infrastructure of our society and will support a
+wide range of our daily activities. We believe that it is important
+to demonstrate possible applications of interactive robots, such as
+those in [4, 6], and this work particularly demonstrated the
+possibility for use in an open environment where both the novelty
+and interactivity of the robots were appreciated.
+
+A comparison of the three conditions’ results based on analysis of
+variance revealed no significant differences between the two items
+of “Presence of the robots” and “Usefulness as a guide.”
+Concerning this last item, here are examples of some of the most
+remarkable feedback:
+- Children developed an interest in other exhibits after being led
+to them or having them explained by a robot.
+- Children were amused by the robot’s reactions to being touched
+and became interested in new exhibited items when following it.
+These opinions indicate that interest in science is developed by
+possible interaction with robots. Other feedback opinions attest to
+the good impressions that robots made on subjects.
+
+5.2 The system components
+Generally, it is not so easy to evaluate large-scale systems used in
+a field trial. It sometimes forces us to show easily-comparable
+results, such as the questionnaire answers, as the result of the field
+trial. However, it does not always demonstrate the essential
+meaning of the trial, particularly for a system in its earlier phase.
+In our research, many system components were integrated in the
+whole system, but the questionnaire answers, such as “most of the
+visitors were happy about the robots,” do not tell us anything
+about how each system component contributed to the system and
+how we can further investigate human-robot interaction.
+
+On the other hand, robots sometimes could not interact well with
+visitors. For example, some children were afraid to interact with
+robots and some visitors did not care about the robots' actions.
+Moreover, visitors' opinions included some negative impressions
+such as "we couldn't talk to the robots because the speech ability
+of the robots was not good". These show that the interaction
+ability of the robots was not good enough for an open
+environment.
+
+310
+
+One implication is that showing a robots’ conversation can attract
+people and convey information to them, even though its
+interactivity is very low. Such examples are also shown in our
+other work [11, 12]. Currently, robots’ interactivity is actually
+quite low because of their limited sensing ability, particularly in a
+daily environment. This forces an interactive robot to use limited
+sensor information, such as only tactile sensors without speech
+recognition.
+
+Here, we discuss how each of the system components
+contributed to the whole system, and how visitors interacted with
+them by introducing interesting scenes of visitors’ interaction as a
+case study.
+Locomotive robot
+• Often there were many adults and children crowded around
+the robot. In crowded situations, mainly a few children
+simultaneously interacted with the robot in turn.
+• Similar to Robovie’s free-play interaction in a laboratory [1],
+children shook hands, played the paper-rock-scissors game,
+hugged, and so forth. Sometimes they imitated the robot’s body
+movements, such as the robot’s exercising.
+• When the robot started to move to a different place (in front of
+an exhibit), some children followed the robot to the destination.
+• After the robot explained about a telescope exhibit, one child
+went to use the telescope. When he came back around the robot,
+another child used the telescope.
+• Its name-calling behavior attracted many visitors. They tried
+to show the RFID tags embedded in the nameplates to the robot.
+Often, when one visitor did this, several other visitors began
+showing the robots their nameplates, too, as if they were
+competing to have their names called.
+• When the robot called a child’s name, the child and his/her
+mother smiled and were satisfied with it, while other children
+again tried to show their nameplates. Such a scene was often
+observed. Sometimes, a child and his/her parent waited more than
+ten minutes to have their name called by the robot. (The robot
+called one of the visitors’ names around the robot, which is highly
+affected by the radio strength. Some tags’ radio strength seems to
+have been weaker than the others’.)
+• A visitor reported that when the robot moved to him, he
+thought that it was aware of him, which made him happy.
+
+Robot bidding farewell
+• There were two types of typical visitors’ behavior. One is just
+to watch the robot’s behavior.
+• The other is, again, to expect to have their name called. In this
+case, the visitors often showed their name to the robots.
+• Many children listened to the robot’s utterances, such as
+“Yamada-kun, thank you for visiting today. Please return the
+nameplate to the exit booth over there.” After that, they
+immediately returned the nameplates to the exit booth.
+The cost of Robovie-M is far cheaper than that of Robovie-II.
+Although its functionality is very limited, such as its small size,
+no embedded speech functions (we placed a speaker nearby), and
+no sensors (an RFID reader was also placed nearby), it entertained
+many visitors. We believe that this indicates the effectiveness of
+ubiquitous sensors. The simple robot was endowed with
+ubiquitous sensors, giving it a more attractive interaction
+capability. Particularly, the effectiveness of the name-calling
+behavior was again demonstrated, as seen in the children’s
+behavior of returning their RFID tags.
+RFID tags and tag readers
+As shown in the scenes of interaction with the robots, the
+application of RFID technology largely promoted the humanrobot interaction, particularly with regard to the name-calling
+behavior. However, the information obtained from the distributed
+RFID tag readers made a relatively small contribution to the
+system. Robots talked to the visitors about their exhibit-visiting
+experience, such as “You did not see the telescope exhibit, did
+you? It is very interesting. Please try it,” based on the information
+from the RFID reader network, but it seemed to be less attractive
+and impressive to the visitors. This was also pointed out in our
+previous work [13]. (At that time, we thought it was due to the
+small environment.) Perhaps, robots are too novel for visitors, so
+they highly appreciate their experience of interacting with the
+robots while less attention is paid to the detailed services that they
+offer.
+
+We believe that there are many implications in these observations.
+In particular, it reminds us of the importance of making a robot
+move around. It enables the robot to attract people to interact with
+it. Moreover, as shown in the scene where children followed the
+locomotive robot, it drew their attention to the exhibit, although
+the exhibit (a telescope) was relatively not so attractive. (There are
+many attractive exhibits to move and operate to gain an
+understanding of science, such as a pulley and a lever.) We
+demonstrated that robots can provide visitors with the opportunity
+to play with and study science through exhibits they might have
+otherwise missed.
+Another interesting aspect was that it might moderate an overly
+crowded situation where people gathered around the robot due to
+its novelty. As shown in the above scene, the robot’s locomotion
+triggers people who are very interested in it to follow it while
+others may not.
+
+Other ubiquitous sensors
+Regarding the ubiquitous sensors other than the RFID tags, their
+role was limited. The infrared camera supplied the exact position
+of the robot, which was very helpful in the crowded environment.
+We believe that there will be much information from ubiquitous
+sensors available for human-robot interaction, which should be
+included in our future work. (We conducted further research on
+this, which is under submission to this HRI conference [14]).
+
+Robots that talk to each other
+• There were two types of typical visitors’ behavior. One is just
+to listen to the robots’ talk. For example, after listening to it, the
+visitors talked about the exhibit that was explained to them, and
+sometimes visited the exhibit.
+• The other is to expect to have their name called. In this case,
+the visitors paid rather less attention to the robots’ talk, and
+instead showed their name to the robots, which is similar to the
+actions observed around the locomotive robot. Often the visitor
+left the front of the robot just after his/her name was called.
+
+5.3 Needs for social abilities in the robots
+Although we demonstrated our robots in an open field as an early
+application of interactive robots, our robots were basically
+designed to interact with a few people who are already interested
+in interacting with robots. Here, we discuss the need for social
+abilities in the robots for open environments, which our robots
+currently lack, by showing several scenes of interaction.
+
+311
+
+• When the robot started to explain about an exhibit, visitors
+were sometimes too busy to try to evoke reactions from the robot,
+such as by touching the robot, and failed to follow the context.
+This resulted in the failure of the explanation: visitors continued
+to play with the robot while it spoke about an exhibit, and it did
+not react to the visitors.
+• The robot tried to draw the attention of a child by calling his
+name, “Play with me, Yamada-kun.” At that time there were a
+crowd of visitors who wore nameplates. All of the others got
+interested in having their name called, such as by showing their
+nameplate to the robot, and no longer listened to the robot’s
+utterances except for the name-calling behavior.
+• Children found the robot’s exercise behavior and hugging
+behavior entertaining; however, when there were only adults
+around the robot, these behaviors made them hesitate to interact
+with it. Interestingly, when a mother was in front of the robot with
+her children, she enjoyed its hugging behavior.
+
+8. REFERENCES
+[1] Ishiguro, H., Imai, M., Maeda, T., Kanda, T., and Nakatsu,
+R. Robovie: an interactive humanoid robot, Int. J. Industrial
+Robot, Vol. 28, No. 6, pp.498-503, 2001.
+[2] Fujita, M. “AIBO: Toward the era of digital creatures,” Int.
+J. Robot. Res., vol. 20, no. 10, pp. 781–794, 2001.
+[3] Shibata, T. “An overview of human interactive robots for
+psychological enrichment”, The proceedings of IEEE
+November 2004
+[4] Kanda, T., Hirano, T., Eaton, D., and Ishiguro, H.
+“Interactive Robots as Social Partners and Peer Tutors for
+Children: A Field Trial,” Journal of Human Computer
+Interaction, Vol. 19, No. 1-2, pp. 61-84, 2004.
+[5] Asoh, H., Hayamizu, S., Hara, I., Motomura, Y., Akaho, S.,
+and Matsui, T. “Socially Embedded Learning of the OfficeConversant Mobile Robot Jijo-2,” Int. Joint Conf. on
+Artificial Intelligence (IJCAI), 1997.
+
+We believe that these scenes demonstrate the needs of further
+study and development of the robot’s social abilities. The first
+scene reminds us of the importance of drawing people’s attention
+to an appropriate target, such as the robot itself, or the target
+object it is talking about, depending on the situation. However,
+the second scene warns us against drawing an individual's
+attention in a crowded situation, although it is powerful to use
+one’s name for that purpose. As shown in the second scene,
+although the name-calling behavior was attractive and powerful
+for drawing the attention of a visitor, it sometimes disturbed the
+social-attention of the visitors. In addition, from the third scene,
+we can learn the importance of paying careful attention to
+people’s attributes, including but not limited to their adult-child
+and group membership. (We have implemented many minor
+issues on this, such as calling children’s names prior to adults’ in
+name-calling behavior but it seems not enough).
+
+6.
+
+[6] Gockley, R., Bruce, A., Forlizzi, L., Michalowski, M.,
+Mundell, A., Rosenthal S., Sellner, B., Simmons, R., Snipes,
+K., Schultz, Alan C., and Wang. J. “Designing Robots for
+Long-Term Social Interaction,” IROS2005. pp 2199-2204
+[7] Burgard, W., Cremers, A. B, Fox, D., Hähnel, D., Lakemeyer,
+G., Schulz, D., Steiner, W., and Thrun, S. “The Interactive
+Museum Tour-Guide Robot,” Proc. National Conference on
+Artificial Intelligence (AAAI), 1998.
+[8] Siegwart, R., and et al. “Robox at Expo.02: A Large Scale
+Installation of Personal Robots”. Robotics and Autonomous
+Systems, 42, 203-222, 2003
+[9] Imai, M., Ono T., Ishiguro, H.. Physical Relation and Expression: Joint Attention for Human-Robot Interaction,
+Proceedings of the 10th IEEE International Workshop on
+Robot and Human Communication (RO-MAN2001), pp.512517, 2001
+
+CONCLUSION
+
+We have developed an interactive robot system that combines
+autonomous robots and ubiquitous sensors. The system guided
+visitors through a science museum with human-like interaction,
+such as calling their names in a free-play behavior and explaining
+exhibits with voice and gestures. In a two-month exhibition,
+91,107 people visited the Osaka Science Museum, 11,927 of
+whom wore RFID tags to participate in the field trial. The results
+from questionnaires revealed that almost all visitors evaluated
+these robots highly. Furthermore, we investigated the influence of
+the free-play interaction and guidance of the robots. As a result,
+we found that the robots that performed childlike free-play
+interaction and guided visitors were the best in attracting attention
+to scientific explanations.
+
+[10] Nomura, T., Tasaki, T., Kanda, T., Shiomi, M., Ishiguro, H.,
+and Hagita, N. Questionnaire-Based Research on Opinions
+of Visitors for Communication Robots at an Exhibition in
+Japan, International Conference on Human-Computer
+Interaction (Interact 2005), 2005.
+[11] Kanda, T., Ishiguro, H., Ono, T., Imai, M., and Mase, K.
+``Multi-robot Cooperation for Human-Robot
+Communication,'' IEEE International Workshop on Robot
+and Human Communication (ROMAN2002), pp.271-276,
+2002.
+[12] Hayashi, K., Kanda, T., Miyashita, T., Ishiguro, H., and
+Hagita, N. Robot Manzai - Robots' conversation as a passive
+social medium-, IEEE International Conference on
+Humanoid Robots (Humanoids2005), 2005.
+
+7. ACKNOWLEDGMENT
+We wish to thank the staff at the Osaka Science Museum for their
+kind cooperation. We also wish to thank the following ATR
+members for their helpful suggestions and cooperation: Tatsuya
+Nomura, Hideaki Terauchi, Takugo Tasaki, Daniel Eaton,
+Toshihiko Shibata, Koutarou Hayashi, Masaaki Kakio, Taichi
+Tajika, and Fumitaka Yamaoka. This research was supported by
+the Ministry of Internal Affairs and Communications of Japan.
+
+[13] Koide, Y., Kanda, T., Sumi, Y., Kogure, K., and Ishiguro, H.
+An Approach to Integrating an Interactive Guide Robot with
+Ubiquitous Sensors, IROS2004, pp.2500-2505, 2004.
+[14] Nabe, S., Kanda, T., Hiraki, K., Ishiguto, H. Kogure, K.,
+Hagita, N.Analysis of Human Behavior in an Open Field to
+Improve Communication Robots , HRI2006,(to appear)
+
+312
+
+

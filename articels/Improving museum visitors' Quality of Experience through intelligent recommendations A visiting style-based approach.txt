@@ -1,0 +1,839 @@
+Workshop Proceedings of the 9th International Conference on Intelligent Environments
+J.A. Botía and D. Charitos (Eds.)
+© 2013 The Author(s).
+This article is published online with Open Access by IOS Press and distributed under the terms
+of the Creative Commons Attribution Non-Commercial License.
+doi:10.3233/978-1-61499-286-8-507
+
+507
+
+Improving museum visitors’ Quality of
+Experience through intelligent
+recommendations: A visiting style-based
+approach
+Ioanna LYKOURENTZOUa,1, Xavier CLAUDEa, Yannick NAUDETa,
+Eric TOBIASa, Angeliki ANTONIOUb ,George LEPOURASb and Costas Vasilakisb
+a
+Centre de Recherche Public Henri Tudor, Luxembourg
+b
+University of Peloponnese, Greece
+
+Abstract This paper investigates the effect that smart routing and
+recommendations can have on improving the Quality of Experience of museum
+visitors. The novelty of our approach consists of taking into account not only user
+interests but also their visiting styles, as well as modeling the museum not as a
+sterile space but as a location where crowds meet and interact, impacting each
+visitor’s Quality of Experience. The investigation is done by an empirical study on
+data gathered by a custom-made simulator tailored for the museum user routing
+problem. Results are promising and future potential and directions are discussed.
+Keywords. Intelligent recommendations, Quality of Experience, agent-based
+modeling, visiting styles, crowd simulation
+
+1. Introduction
+Museums; places people visit for learning, socialization and entertainment purposes.
+Visitors want to leave the museum having purposefully spent their time there. In
+parallel, museums typically have a variety of items on exhibition. What each visitor is
+interested in seeing varies and it can be related to their interests, learning targets,
+available time, as well as on other factors such as the size of the museum.
+A problem often faced by museum visitors is that they often do not fully profit
+from their visiting experience. That is, in the course of their visit, visitors may lose
+time viewing items that do not interest them and miss those that do, due to time
+restrictions or simply to the tiredness that inevitably occurs during visits.
+Missing important exhibits and viewing items that the visitor is not so much
+interested in may significantly lower visitor’s experience. Therefore, a need exists to
+improve the Quality of Experience (QoE) of museum visitors through intelligent
+recommendations that will route visitors inside the museum towards exhibits of interest,
+while, in parallel, minimizing the visitors’ walking time within the museum. Such an
+approach would contribute towards shifting the museum from a static exhibition space
+to what we may call an Intelligent Environment, designed to assist and improve the
+overall experience of the visitor. Finally, it is also very important to examine the
+1
+
+Corresponding Author.
+
+508
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+routing and recommendations given in the context of the museum, i.e. taking into
+account the particularities of the behavior of museum visitors, which are different than
+a generic crowd’s behaviour.
+1.1The Experimedia BLUE project
+Experimedia BLUE2, is a research project funded by the European Commission, to
+examine the above. Specifically, in Experimedia BLUE we are interested in
+augmenting museum visitor experience by designing intelligent recommendation
+algorithms that will offer a personalized visit to museum visitors according to their
+interests, the type of visitor that they are, but also to their personality. The
+experimentation setting of the project is the FHW3 museum, a technological museum
+situated in Athens, Greece.
+Briefly, the idea is as follows: visitors can play a Facebook game, prior to their
+visit, which allows us to identify, with different degrees of accuracy, their interests on
+the museum exhibition items and themes. During their visit, we provide visitors with
+handheld devices that allow us to deliver recommendations over which item to visit
+next, but also to monitor the visitors’ movement within the physical space of the
+museum, thus detecting their visiting style. Visiting style is an important factor
+reflecting people’s behavior when they are inside a museum and its detection can allow
+us to calibrate the recommendation algorithms specifically for the museum’s context.
+After the visit, people can share their experiences through social media. Given that
+different museum visitors are expected to have different levels of interest for the
+exhibits, different walking patterns and visiting styles, and spend varying amounts of
+time on exhibitions, the first thing that we wish to explore in the BLUE project, prior to
+any experimentation with real users, is the degree to which intelligent
+recommendations can improve the visitors’ QoE, considering all the parameters above.
+1.2 Our contribution
+In this paper we investigate the potential and limitations that intelligent
+recommendations have on the QoE of museum visitors, when designed to optimize the
+latter for interesting exhibit identification and walking time minimization. We design a
+smart recommendation algorithm and examine its expected performance for different
+levels of noise in the estimation of user interests. Most importantly, given that museum
+visitors are divided into visiting styles, we also examine the effect that such intelligent
+recommendations have on each visiting style, in order to identify possible approaches,
+and their context, for further QoE improvements, for the specific problem of museum
+visit augmentation.
+The difference of the BLUE approach with current approaches that use intelligent
+recommendations to route crowds is that typically these focus on non-museum
+applications such as building evacuation plans. The approaches that focus on museums
+usually treat them as generic physical spaces and do not take into account the visiting
+styles of the visitors to optimize user routing. In addition the works on optimizing user
+routing inside museums(indicatively [12]) usually report few quantitative results, while
+they do not examine factors such as noise in visitor interest estimation.
+The rest of this paper is organized as follows: Section 2 presents the related
+literature and positions the present work within it. Section 3 presents the modeling of
+2
+3
+
+Experimedia BLUE project, http://www.experimedia.eu/2012/10/01/blue/
+Foundation of the Hellenic World (FHW) museum, http://www.ime.gr/fhw/index.php?lg=2
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+509
+
+the elements (museum, visitors, visiting styles, and recommendation algorithms)
+developed and used. Section 4 presents the experimental evaluation. Finally, section 5
+discusses the obtained results, presents future work and concludes the paper.
+
+2. Related Literature
+2.1 Indoor localisation systems and location-based services
+With the rise of GPS [6], localisation services have become very popular and seen a
+multitude of services, making good use of localisation systems, made readily available
+[14]. However, there is an inverse relation between the availability of the service and
+the need for the service as the structures we build create a shadow that cannot be
+penetrated by current GPS technology. Indoor localisation technologies have been
+developed to remedy the situation. They come in two categories: the first relies on the
+installation of an additional infrastructure [4; 9] while the second category aims at
+exploiting existing infrastructures [1; 16]. Indoor locations have since seen tailored
+services being developed [7]. In the scenario investigated in this paper, as well as in the
+BLUE project, indoor localisation technologies are to be used to capture museum
+visitor’s positions, track their movement through a museum, and issue
+recommendations on their optimal path through the museum based on the visitors’
+personal preferences and interests.
+2.2 Scenario-based user routing optimisation
+In contrast to outdoor localisation systems which benefit from a very homogenous
+setting roads and paths are well defined and delimited clearly; indoor localisation is a
+bit trickier. Only part of the navigable space, notably corridors, is clearly defined.
+Therefore, indoor maps need to be enhanced, for example semantic information[5], to
+increase routing and navigation accuracy and flexibility. This will in turn enable indoor
+scenarios to take into account more diverse mobility types and develop specialised
+scenarios, e.g. for individuals with reduced mobility [8]. Due to its GPS-based scenario
+legacy, localisation systems focus on mobility scenarios given by physical mobility
+types and offer standard optimisation options (e.g. fastest, shortest) but do not account
+for individual’s preferences, in regard to experience, to navigate spaces. However,
+Quality of Experience (QoE) is paramount when the objective is to experience an
+environment rather than merely navigating it.
+Enhancing experiences through the use of technology is often proposed by using
+readily available, familiar, and easy to use devices. For example, the works of Andolina
+et al. [2] and Tesoriero et al. [15] make use of mobile devices to optimize cultural
+heritage visitor’s experience by improvements to presentation, interaction, and
+integration. Unfortunately, they leave the potential for QoE improvement by interestoptimized visitor routing untapped. The work of van Hage et al. [3] approaches this
+problem by proposing to detect user preferences and compute a personalized visit,
+optimized by walking distance and the art objects that each visitor perceives as
+interesting. Roes et al. [11; 12] build upon the previous work by maintaining a dynamic
+user model and enriching the available palette of experiences by going online. However,
+the above works do not specify important elements such as the interest estimation
+accuracy and the effect that this has on the performance of the routing algorithm, nor
+do they take into account visitor’s personalities, through their visiting styles, for the
+development of the recommendation and routing strategy. We think the latter are
+
+510
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+especially crucial, and complementary to interests, for providing relevant
+recommendations especially tailored for museum visitors.
+In this paper we examine the effect that intelligent recommendations have on the
+Quality of Experience of museum visitors, for differentiated conditions of the involved
+visitor population (i.e. behavioral/movement patterns of the visitors, differentiated
+interests and crowd tolerance limits), and different noise levels of the input interest
+estimation algorithm.
+
+3. Methodology
+We use agent-based modeling to model the behaviour of the visitors inside the
+museum, as well as the museum’s physical space. Below we describe the modeling
+performed, as well as the recommendation algorithm to be examined.
+3.1 Basic Element Modeling
+Museum
+The museum is modeled as a set of  exhibits ݁௜ ൌ ሾ݁ଵ ǡ ݁ଶ ǡ ǥ ǡ ݁௡ ሿ . Each exhibit
+represents one exhibit inside the museum. Each exhibit ୧ is modelled to have a:
+x Maximum crowd capacity ୧ , which corresponds to the maximum number of
+people that can simultaneously visit the exhibit ୧ . For example, in the case of
+a painting, M would mean the maximum number of people that can gather
+around and see the exhibit, while in the case of an exhibit that is a videoprojection room, M would mean the maximum number of seats available.
+Each exhibit also belongs to one museum room. Therefore exhibits can either be
+co-located in the same room or they can be located in different rooms. Each exhibit is
+“connected”, i.e. accessible via walking, to all the exhibits of the same room. Also, in
+this specific modeling, each room has one exhibit connected to the museum entrance,
+as this is the case for FHW (all exhibition rooms are accessible directly from the
+entrance without the need to pass from other rooms first). A room may be connected,
+always through exactly one exhibit, to another room. To model the above, we define:
+x An ȁȁ ൈ ȁȁexhibit positioning matrix  ൌ ሾଵଵ ǡ ǥ ǡ ȁ୉ȁȁ୉ȁ ሿ. Each element୧୩ of
+the positioning matrix P can be defined as follows:
+ʹǡ ୧ ୩   
+୧୩ ൌ ൝
+ͳǡ ୧ ୩
+Ͳǡ ݄
+
+(1)
+
+x Anȁȁ ൈ ȁȁexhibit distance matrix ൌ ሾଵଵ ǡ ǥ ǡ ȁ୉ȁȁ୉ȁ ሿ. Each element ୧୩ of
+the positioning matrix D can be defined as follows:
+െͳǡ୧୩ ൌ Ͳ
+ǡ
+
+ൌ
+ͳǡ
+(2),
+୧୩ ൌ ൝
+୧୩
+୫୧୬ ൑  ൑ ୫ୟ୶
+ୖ ǡ ୧୩ ൌ ʹǡୖ୫୧୬ ൑ ୖ ൑ ୖ୫ୟ୶
+where  is the distance of exhibits within the same room, and ୖ is the distance
+between rooms, which is taken as the distance between the two exhibits connectingthe
+rooms. Finally, for each room we also define inside each room a pseudo-exhibit, which
+serves as the room’s center and will be used for the modeling of the movement of
+certain visitor types (detailed in section 3.2).
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+511
+
+The positioning matrix is used to find the connections between items of the same
+room and between rooms and the distance matrix is used to calculate the path distances.
+These two matrices can be given, if we want to experiment on a specific museum
+setting, or they can be generated using the following four parameters: 1) min and max
+exhibits distances for the exhibits of the same room, 2) min and max room distances 3)
+number of total rooms in museum and 4) number of exhibits per room. The simulation
+described here use the above 4 parameters to generate museum settings.
+Visitor
+Visitors are modeled to arrive to the museum with an inter-arrival rateρ, randomly
+distributed between two time parameters: ρ୫୧୬ ൑ ρ ൑ ρ୫ୟ୶ .
+Each visitor j has the following characteristics:
+x Interest per Exhibit ୣ౟ౠ , Ͳ ൑ ୣ౟ౠ ൑ ͳ , where ୣ౟ౠ is a Real number and the
+bounds 0 and 1 mean respectively no interest or perfect interest for exhibit i.
+x Crowd Tolerance ୧୨ . The number of other people that the visitor can handle
+around exhibit i, without a decrease of his satisfaction from the visit. It is
+modeled per exhibit, as a percentage of the maximum crowd capacity of the
+latter, i.e.: ‫ܥ‬௜௝ ൌ ‫݌‬௜௝ ȉ ‫ܯ‬௜ , where ‫ܯ‬௜ is the maximum capacity of exhibit ݅.
+x Maximum available Time ୨ , in minutes. The time that the user can spend
+inside the museum. The simulator starts counting the moment the visitor
+enters. Once it is over, the visitor exits the museum.
+x Walking speed ୨ , simulated in meters/second. Will be used to calculate the
+time needed to go to an exhibit, in the QoE function.
+x Time spent per Exhibit  ୣ౟ౠ . We assume that the time each user will spend
+seeing each exhibit is a function of their interest for that exhibit:
+ ୣ౟ౠ ൌ ݂ሺ ୣ౟ౠ ሻ
+, where݂is defined separately for each visitor type, and described in detail in
+section 3.2. Regarding time, each visitor also has a ݉ܽ‫ ݁݉݅ܶݐܾ݄݅݅ݔܧݔ‬and
+݉݅݊‫ ݁݉݅ܶݐܾ݄݅݅ݔܧ‬correspond respectively to the overall maximum and
+minimum times that the user can spend on one exhibit.
+x QoE. Each user has a Quality of Experience metric. This measures how
+satisfied the user is from his visit inside the museum. We can intuitively
+assume that for each item the user visits, his QoE is proportional to the user’s
+interest on the item, and inversely proportional to the time it took him to reach
+the exhibit. Therefore, for a user that is currently at exhibit ୩ and he is going
+to exhibit ୧ , we model ୣ౟ౠ as follows:
+ୣ౟ౠ ൌ ଵ ȉ
+
+ୣ౟ౠ
+
+൅ ଶ ȉ ൬ͳൗ ൰
+୧୨
+
+, whereͲ ൑ ଵ ǡ ଶ ൑ ͳ are calibration weights and୧୨ ൌ 
+
+(3)
+ୢ౟ౡ
+ୗౠ
+
+and ୧୩
+
+is the distance between the current exhibit ୩ and exhibit ୧ . For the
+
+512
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+simulations,
+
+ୣ౟ౠ
+
+and ൬ͳൗ ൰ are also normalised in the [0,1] range.
+୧୨
+
+Finally, the total Quality of Experience୨ at the end of the visitor's visit is:
+୨ ൌ σ୬୧ୀଵ ୣ౟ౠ
+
+(4)
+
+3.2 Visiting styles modeling
+Apart from the above basic characteristics, each museum visitor belongs to one of 4
+distinct visiting styles described using animal metaphors (ant, butterfly, fish or
+grasshopper).Each visiting style corresponds to a specific movement pattern of the
+visitor inside the physical space of the museum. Including the visiting styles into the
+modeling renders the simulations more tailored to the specific context of museum visit
+applications and further supports its reliability in supporting decision-making based on
+the simulation results. For the modeling of the visiting styles we use two literature
+studies. The first, the work of Veron and Levasseur [10] describes visiting styles from a
+behavioral perspective. The second, work of Sookhanaphibarn and Thawonmas [13], is
+among the few who perform a mathematical modeling of each visiting style, limited
+however only to one exhibition room and using x, y coordinates instead of a graphbased model that we employ. In the following we extend the aforementioned modeling
+to fit the graph-based model that we use.
+Ant
+Ant visitors move linearly, visiting almost all exhibits, showing interest in the detail,
+avoiding empty spaces and following a clear path and the curator’s suggestions. In
+modeling terms, the ant visitor visits the exhibits of each room sequentially, choosing
+the each time closest not-visited exhibit until all exhibits of the room have been visited.
+The ant’s interest ୣ౟ౠ , with ݅ the exhibit and ݆ the visitor, is given by a normal
+distribution, in the [0,10] range and mean equal to 5. Also, the ant has very low interest
+for room centers, meaning that Ant visitors do not frequently pass from these points but
+they rather visit exhibits in a linear fashion. The time spent per exhibit is ‫ݐ‬௘೔ೕ ൌ
+಴
+ିఘ൬ ೔ ൰
+
+݂ ቀ‫ܫ‬௘೔ೕ ቁ ൌ  ‫ܫ‬௘೔ೕ ȉ ݁ ಾ೔ , where݆ is the visitor,‫ܥ‬௜ is the current crowd around the exhibit
+i, ‫ܯ‬௜ is the maximum crowd capacity of the exhibit and ߩ is a weighted constant used
+as defined in [13].
+Fish
+Fish visitors move in the center of rooms, seeking to see the “larger” picture, not
+approaching most exhibits and not stopping very frequently. Their interest ୣ౟ౠ is
+modeled the same as that of ants, with the difference that a Fish visitor has also very
+high interest for room centers. This means that Fish visitors will spend a lot of their
+time and pass often from room centers and then, visit certain exhibits according to their
+interest. Fish also are modeled to return to the center after each exhibit visit and after
+exiting a room, they choose not to visit the centers of rooms that they have visited, to
+avoid eternal loops in their movement pattern (induced by their high interest for centers
+rather than for any other exhibit in each room). The time spent per exhibit for the Fish
+is  ୣ౟ౠ ൌ ݂ ቀ
+
+ୣ౟ౠ ቁ ൌ 
+
+ి
+ି஡ቆଵି൬ ౟ ൰ቇ
+౉
+
+ୣ౟ౠ ȉ 
+
+౟
+
+, where ݅ǡ ݆ǡ ߩǡ ‫ܥ‬௜ ǡ ‫ܯ‬௜ are defined as in the previous.
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+513
+
+Grasshopper
+Grasshopper visitors are persons of particular interests, they only approach certain
+exhibits, cross empty spaces and spend a significant amount of time in front of items of
+interest. To model those exhibits that are of interest for the Grasshopper, we use a Beta
+PDF distribution with ߛ ൌ ͳ and ߚ ൌ ͷ, as in [13]. Then applying a threshold ‫ܮ‬, we
+select the exhibits that the Grasshopper will be interested in. For these exhibits, we
+model an interest ୣ౟ౠ , given by a Gaussian distribution but with a mean very close to 1,
+to model the very high interest that the Grasshopper has on these exhibits. For the rest
+of the exhibits, the Grasshopper has 0 interest. The time that the Grasshopper spends
+per exhibit is also affected by the above-selected exhibits as follows:
+಴
+ିఘ൬ ೔ ൰
+
+‫ ܫ‬ȉ ݁ ಾ೔ ǡ ݂݅‫ܫ‬௘೔ೕ ൐ ‫ܮ‬
+(5)
+‫ݐ‬௘೔ೕ ൌ ቐ ௘೔ೕ
+Ͳǡ ݂݅‫ܫ‬௘೔ೕ ൏ ‫ܮ‬
+, where L is the threshold on the Beta distribution, and the rest of the parameters
+are defined as in the previous.
+Butterfly
+Butterfly visitors move nonlinearly, they do not follow the curator’s suggestions, they
+often change the direction of their movement, approach exhibits, are interested in the
+detail and are affected by environmental affordances, such as the accessibility of the
+exhibit. The Butterfly visitor is modeled to also present a selective exhibit probability,
+like the case of the Grasshopper, but on the inverse, i.e. a Butterfly is interested in most
+of the exhibits. To model the exhibits of interest for the Butterfly we use a Beta PDF
+distribution with ߛ ൌ ͷ and ߚ ൌ ͳ, as in [13]. Again placing a threshold ‫ܮ‬, low this
+time, we define the exhibits that the Butterfly has interest in. The exhibits underneath
+this threshold present a 0 interest for the Butterfly. For the selected exhibits we use a
+Gaussian distribution with mean equal to 7. The time that the Butterfly spends per
+exhibit is defined to be similar to that of the ant for those exhibits with ‫ܫ‬௘೔ೕ ൐ ‫ܮ‬and 0
+otherwise.
+3.3 Modeled Systems
+We model two systems implementing two kinds of visitor behaviour in the museum:
+x Simple visit. Visitors enter the museum and select exhibits to see, according to
+their visiting style. For each visitor, if the exhibit he/she selects has reached its
+maximum crowd capacity‫ܯ‬௜ , or it has more visitors than the crowd tolerance
+limit of the specific visitor, then he/she moves to another exhibit. For going
+from one exhibit to the other, visitors always take the shortest path. The
+resulting simulated system, with its 4 subsystems (one for each visiting style)
+is referred to as the “no recommendation” system and serves as the
+benchmark.
+x Recommendation-based visit. Visitors in this system are given exhibit
+recommendations, through a recommendation algorithm (described later on).
+In case the algorithm recommends them an exhibit for which their estimated
+interest is above 7 (in a scale of 10): ୣ౟ౠ ൐ ͹ , then they follow the
+recommendation. Otherwise they behave like in the random system, i.e. they
+randomly select an exhibit. It should be noted that the algorithms makes its
+
+514
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+recommendations based on the estimated interest of the user, which is
+modeled as the real interest of the user plus noise. The noise, which basically
+models the approximation error that the algorithm will have in reality, is set
+by the "noise "parameter of the simulator, as a range between two numbers,
+each in the scale of [0,10], since interest is also measured in this scale. Then
+before each recommendation, the algorithm selects a random number in the
+range set for the noise and adds/subtracts it from the real user interest. This
+estimated value is the one used for the recommendation decisions of the
+algorithm. Example: Assume we set noise to be in the [1,2] range and a user
+with real interest 7/10. This means that the best possible approximation of this
+user's interest is 7S1 and the worst possible is 7S2. Therefore the algorithm
+estimates the user's interest as a random number in the [5,6] or in the [8,9]
+ranges. The recommendation algorithm used in the specific paper is as
+follows:
+o
+
+“Smart” algorithm. The algorithm optimizes for the QoE function, as
+given in eq. (4). This is the classical content-based recommendation
+scheme where the recommender takes into account user interests and
+walking time to try to maximize the user satisfaction.
+
+4. Experimental evaluation
+In the following we present certain preliminary results, derived from simulating an
+environment that features the modeling presented above. The modeling parameters
+chosen for the specific experimental evaluation, and for the purposes of the BLUE
+project, are illustrated in Table 1.
+Table 1. The parameters used in the scenario evaluation
+Parameter
+General Parameters
+Runs per result
+Noise input to recommender
+Total simulation time
+Visitor parameters
+Maximum available Time
+Walking speed
+Time spent per Exhibit
+Visitor inter-arrival rate
+Crowd tolerance
+Museum parameters
+Exhibit distance (in the same room)
+Room distance
+Exhibit crowd limit
+Number of rooms
+Exhibits per room
+
+Value
+20
+0-10/10
+18,000 units
+[1800, 5400]
+[0.83,1.83]
+[60,500]
+120
+[0.7, 1]
+[2,5]
+[100,500]
+[4,10]
+5
+6
+
+4.1Results
+First we measure the QoE between the simple and smart systems, for different levels of
+recommendation noise (i.e. the error between an ideal recommendation and the one
+actually provided by the system). This first scenario answers the basic question of
+whether a QoE-based recommendation increases the QoE of the visitors and, if so, by
+how much. The recommendation algorithm being deployed in the FHW museum will
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+515
+
+inevitably have an approximation error (regarding its estimation of user interest per
+exhibit). Therefore, this scenario mirrors the QoE improvements that we expect when
+accounting for the algorithm’s approximation error.
+As we can see in Figure 1, the recommendation noise directly affects the level of
+visitor QoE, for all 4 types of visitors, since it affects the accuracy of the
+recommendation algorithm. In other words, the more inaccurate the algorithm’s
+estimations, the lower its final average visitor QoE, This is expected as QoE is
+computed from the fulfillment of user interests. The very high levels of noise, for
+example above7, of the Figure correspond to the “worst case scenario” accuracy error
+that may be encountered for visitors that have not used the Facebook game and,
+therefore, their profiles are unknown to the algorithm when they first enter the museum.
+As they gradually move and respond to recommendations, we can expect that the
+recommendation algorithm’s accuracy error will drop. However, in both cases (for high
+and low noise) we observe that the visitor’s QoE is higher than the previously
+established baseline, where visitors move based only on their visiting type without any
+recommendations.
+Other interesting results can be observed when examining the gain in QoE for each
+visiting style on its own. As we have observed, the type of visitor that can be expected
+to receive the highest improvement of experience is the Fish (Fig. 1a), followed by the
+Ant (Fig. 1b). Butterfly type visitors (Fig.1d) and Grasshoppers in particular (Fig. 1c),
+only show a slight, to almost no improvement in QoE when a recommendation
+algorithm is used. This can be explained by the fact that Fish, typically moving in the
+center of the exhibition rooms, may accidentally “miss” many exhibition items. Hence,
+directing them towards specific items of interest significantly improves their overall
+QoE. The same goes for Ants and Butterflies, although to a lesser extent, as these
+visitors show, inherently, a more uniform distribution of interest for items inside the
+museum. Finally Grasshoppers, being visitors that have a very high interest in very
+specific exhibits, will visit these exhibits regardless of the external conditions of the
+museum space (e.g. other visitors) or interest-based recommendations.
+QoE  Fish
+
+QoE  Ant
+
+0,6
+
+0,6
+
+0,55
+
+0,55
+0,5
+QoE
+
+QoE
+
+0,5
+0,45
+
+0,45
+
+0,4
+
+0,4
+
+0,35
+
+0,35
+
+0,3
+
+0,3
+0
+
+5
+Noise
+no recommendation
+
+10
+smart
+
+0
+
+2
+
+4
+
+Noise
+
+no recomendation
+
+6
+
+8
+smart
+
+10
+
+516
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+QoE  Butterfly
+0,48
+
+0,52
+
+0,46
+0,44
+QoE
+
+QoE
+
+QoE  Grasshoper
+0,53
+
+0,51
+
+0,42
+0,4
+
+0,5
+
+0,38
+0,36
+
+0,49
+
+0,34
+0
+
+2
+
+4
+
+6
+
+Noise
+
+8
+
+no recommendation
+
+0
+
+10
+
+2
+
+4
+
+Noise
+
+6
+
+8
+
+no recommendation
+
+smart
+
+10
+
+smart
+
+Figure 1. Quality of Experience achieved with and without recommendations
+
+Figure 2 depicts the number of missed exhibits for different ranges of noise in the
+recommendation algorithm’s estimations. Missed exhibits are those that the visitor is
+very interested in (internal interest > 7 on a scale of10) but that he does not see because
+they are not recommended by the algorithm due to high estimation noise. As expected,
+the higher the noise, the higher the number of lost exhibits. However, we also observe
+that, at all noise levels, the recommendation-based system does not result in a
+significantly lower number of missed exhibits, thus the loss of QoE for visitors, even at
+high levels of approximation error, is acceptable.
+Analyzing the results per visitor type we witness the same pattern as before,, i.e.
+that Fish are expected to benefit the most from the recommendation of exhibits by the
+smart algorithm, while Grasshoppers benefit the least. Ants and Butterflies innately
+miss very few exhibits, with Ants seeming to benefit the most, among the two visiting
+styles.
+
+Lost Exhibits  Ant
+Average Lost Exhibits
+
+Average lost exhibits
+
+Lost Exhibits  Fish
+7
+6
+5
+4
+3
+2
+1
+
+0,8
+0,6
+0,4
+0,2
+0
+
+0
+
+5
+
+10
+
+Noise
+no recommendation
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Noise
+smart
+
+no recommendation
+
+smart
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+Lost Exhibits  Butterfly
+0,12
+
+0,01
+
+Average Lost Exhibits
+
+Average Lost Exhibits
+
+Lost Exhibits  Grasshoper
+
+517
+
+0,008
+0,006
+0,004
+0,002
+0
+
+0,1
+0,08
+0,06
+0,04
+0,02
+0
+
+0
+
+2
+
+4
+
+6
+Noise
+
+no recommendation
+
+8
+
+10
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Noise
+smart
+
+no recommendation
+
+smart
+
+Figure 2. Average number of missed exhibits with and without recommendations
+
+5. Discussion, Future Work and Conclusion
+In this paper we examine the effect that intelligent recommendations (designed to
+improve QoE and reduce walking time) have on the QoE of visitors belonging to the 4
+prevalent behavioral and movement patterns that literature gives us for museum visitors.
+To do so, we model in detail the museum setting, the behavioral and movement
+patterns of museum visitors, including their visiting styles, as well as the
+recommendation algorithm. We then examine, through simulation evaluation, the effect
+of the algorithm on the QoE on the visitors. Experimental results show that Fish is the
+type of visitors that can benefit the most, since their QoE considerably improves after
+receiving interest-based routing recommendations. Ants and Butterflies can also be
+helped although not as extensively as the Fish. The Grasshopper is the type expected to
+profit the least from such an algorithm, mainly because Grasshoppers know a priori
+which exhibits they would like to see, regardless of interest estimation or distance. The
+noise in the estimation of visitor interests was found to play an important role in the
+efficiency of visitor routing, further supporting the need for accurate a priori interest
+estimations like the one we use in the BLUE project through the Facebook game
+visitors can play before visiting. Noise, however, even at very high levels, was not
+found to worsen QoE when compared to giving no recommendations. This is positive,
+as it can provide more flexibility in experimentation with various recommendation
+strategies.
+Having a good base for the modeling and simulation of the 4 different visitor’s
+types, in the future we would like to develop and examine recommendation algorithms
+that are tailored and adapted to each style separately. Perhaps in this way we may
+achieve further improvement on visiting types like the Butterfly or the Grasshopper
+that seem to experience a low benefit from the generic interest-based recommendation
+algorithm used in this paper. Another interesting data point would be to measure the
+QoE not per visitor but per exhibit to examine the distribution of user “satisfaction”
+with each exhibit. This could allow museum curators to optimize their exhibitions by
+potentially re-arranging exhibit items within the physical space of the museum,
+according to the visitor types that the museum most often hosts. We also plan to
+examine visitors’ response to recommendations when museums of different size and
+exhibit density are concerned. Furthermore, we intend to extend the present work to
+
+518
+
+I. Lykourentzou et al. / Improving Museum Visitors’ QoE Through Intelligent Recommendations
+
+mixed crowd scenarios (populations of different visiting styles, or populations where
+some visitors receive recommendations and others do not), as well as on visitor groups
+(such as families of school classes) rather only on individual visitors. Validation with
+real users in a selected museum scenario is also envisaged.
+Finally, it would be interesting to observe the effect that crowd congestion has on
+the QoE of the different visiting styles. We are currently examining the algorithm’s
+response in relation to different congestion levels inside the museum, in order to come
+up with intelligent routing algorithms that optimize the visitors’ QoE for congestion as
+well.
+Acknowledgements
+Research carried out in the context of this paper has been partially funded by the
+Experimedia project (Experiments in live social and networked media experiences)
+within the European Seventh Framework Program (ICT-2011.1.6). The work of I.
+Lykourentzou in this paper is supported by the National Research Fund, Luxembourg,
+and co-funded under the Marie Curie Actions of the European Commission (FP7COFUND).
+
+References
+[1] Mobile Indoor Localization, Microsoft Research, http://research.microsoft.com/en-us/projects/indoorloc/,
+Retrieved: May 3, 2013.
+[2] S. Andolina, D. Pirrone, G. Russo, S. Sorce, and A. Gentile, Exploitation of Mobile Access to ContextBased Information in Cultural Heritage Fruition, in: Broadband, Wireless Computing, Communication
+and Applications (BWCCA), 2012 Seventh International Conference on, 2012, pp. 322-328.
+[3] L. Aroyo, G. Antoniou, E. Hyv¶nen, A. Teije, H. Stuckenschmidt, L. Cabral, T. Tudorache, W. Hage, N.
+Stash, and Y. Wang, Finding Your Way through the Rijksmuseum with an Adaptive Mobile Museum
+Guide, in: The Semantic Web: Research and Applications, Springer Berlin Heidelberg, 2010, pp. 46-59.
+[4] P. Bahl and V.N. Padmanabhan, RADAR: an in-building RF-based user location and tracking system, in:
+INFOCOM 2000. Nineteenth Annual Joint Conference of the IEEE Computer and Communications
+Societies. Proceedings. IEEE, 2000, pp. 775-784 vol.772.
+[5] M. Goetz and A. Zipf, Formal definition of a user-adaptive and length-optimal routing graph for complex
+indoor environments, Geo-spatial Information Science14 (2011), 119-128.
+[6] B.L. Hofmann-Wellenhof, H.; Collins, J., Global Positioning System. Theory and practice, Springer,
+Wien (Austria), 1993.
+[7] H. Karimi, Indoor Navigation, in: Universal Navigation on Smartphones, Springer US, 2011, pp. 59-73.
+[8] H.A. Karimi and M. Ghafourian, Indoor Routing for Individuals with Special Needs and Preferences,
+Transactions in GIS14 (2010), 299-329.
+[9] C. Kee, D. Yun, H. Jun, B. Parkinson, and S. Pullen, Centimeter-accuracy indoor navigation using GPSlike pseudolites, GPS WORLD (2001).
+[10] E.V.a.M. Levasseur, Ethnographie de l'exposition: l'espace, le corps et le sens, in, Centre Georges
+Pompidou, Paris: Bibliothèque Publique d'Information, 1989.
+[11] I. Roes, Personalized Museum Tour with Real-Time Adaptation on a Mobile Device with Multi-Point
+Touch Interface, Mater Thesis, Eindhoven University of Technology, 2010.
+[12] I. Roes, N. Stash, Y. Wang, and L. Aroyo, A personalized walk through the museum: the CHIP
+interactive tour guide, in: CHI '09 Extended Abstracts on Human Factors in Computing Systems, ACM,
+Boston, MA, USA, 2009.
+[13] K. Sookhanaphibarn and R. Thawonmas, A Movement Data Analysis and Synthesis Tool for Museum
+Visitors' Behaviors, in: Proceedings of the 10th Pacific Rim Conference on Multimedia: Advances in
+Multimedia Information Processing, Springer-Verlag, Bangkok, Thailand, 2009.
+[14] S. Sukkarieh, E.M. Nebot, and H.F. Durrant-Whyte, A high integrity IMU/GPS navigation loop for
+autonomous land vehicle applications, Robotics and Automation, IEEE Transactions on15 (1999), 572578.
+[15] R. Tesoriero, J.A. Gallud, M. Lozano, and V.M.R. Penichet, Enhancing visitors' experience in art
+museums using mobile technologies, Information Systems Frontiers (2012), 1-25.
+[16] A. Varshavsky, E. de Lara, J. Hightower, A. LaMarca, and V. Otsason, GSM indoor localization,
+Pervasive and Mobile Computing3 (2007), 698-720.
+
+

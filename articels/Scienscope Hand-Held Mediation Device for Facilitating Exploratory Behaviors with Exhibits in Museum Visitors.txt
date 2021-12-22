@@ -1,0 +1,874 @@
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+Scienscope: Hand-Held Mediation Device for
+Facilitating Exploratory Behaviors with Exhibits in Museum Visitors
+HyeonBeom Yi
+Dept. of Industrial Design KAIST,
+Yuseong-gu, Daejeon, South Korea
+hyeonbeom@kaist.ac.kr
+
+Jaehoon Pyun
+Dept. of Industrial Design KAIST,
+Yuseong-gu, Daejeon, South Korea
+jhp960918@kaist.ac.kr
+
+ABSTRACT
+Many museums have begun to use mobile devices to
+provide interactive content to visitors. However, such
+devices can also easily distract visitors, drawing their
+attention away from the exhibits. In this pictorial,
+we show the steps in designing Scienscope—a
+hand-held mediation device that can be used as
+a stethoscope to explore additional information
+hidden within exhibits at close range. As Scienscope
+hovers on authentic objects, it provides digital
+content and audio-haptic feedback, reinforcing the
+visitors’ exploratory behaviors. After interviewing
+museum experts and bodystorming the museum
+space, we followed an iterative design process using
+low-fi prototyping to explore the users’ experience.
+Three application scenarios were devised to show
+how Scienscope can be used for different types of
+exhibits. We discussed how visitors respond to and
+explore hidden information about exhibits at close
+range, which can be helpful for museum curators
+and designers.
+Permission to make digital or hard copies of all or part of this work for personal
+or classroom use is granted without fee provided that copies are not made or
+distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page. Copyrights for components of this work owned
+by others than ACM must be honored. Abstracting with credit is permitted. To
+copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from Permissions@
+acm.org.
+DIS ‘20, July 6–10, 2020, Eindhoven, Netherlands
+© 2020 Association for Computing Machinery.
+ACM ISBN 978-1-4503-6974-9/20/07…$15.00
+https://doi.org/10.1145/3357236.3395581
+
+Chaeeun Lee
+Dept. of Industrial Design KAIST,
+Yuseong-gu, Daejeon, South Korea
+chann@kaist.ac.kr
+
+Authors Keywords
+Visiting experience; museum; interactive mediation
+device; interactive exhibition
+
+CSS Concepts
+• Human-centered computing~Interaction
+design~Interaction design process and
+methods~Contextual design
+
+INTRODUCTION
+
+Since the 1990s, museums have been using
+interactive technologies to improve simple oneway information delivery, such as fixed texts and
+images [11]. Motivating visitors to engage with
+exhibits is important to avoid causing fatigue and
+losing interest in exhibits [5]. The museums provide
+mediation devices such as audio guides, kiosks,
+smartphones, and tablets that motivate visitors to
+induce exploratory behavior [16] with additional
+exhibit information [8]. Mobile devices with RFID
+[7, 9], AR features [4, 22] are now widely utilized
+to increase the interactivity of exhibits, enriching
+the exhibition experience [2, 6] by stimulating
+interest and encouraging learning [3, 21].
+However, applying mobile technologies in museums
+can also have negative consequences. The “lure
+of the screen” issue is a well-known problem
+wherein the display distracts visitors’ attentional
+focus from the exhibit. It decreases engagement
+with the exhibits [19] and motivation to explore
+the exhibits. Wessel and Mayr [20] suggested a
+
+Woohun Lee
+Dept. of Industrial Design KAIST,
+Yuseong-gu, Daejeon, South Korea
+woohun.lee@kaist.ac.kr
+
+possible solution for this challenge involving mobile
+devices called “magic lenses” which can contain
+real-world objects and virtual information at the
+same time. By providing additional information with
+exhibits in a single display, it enhances attention
+to the exhibits itself. In reality, many museums
+provide mobile augmented reality (AR) applications
+to overlay virtual information on real exhibits in a
+single display as proposed in the “magic window”
+[2, 4, 22]. Additionally, physical form factors can be
+used to induce user’s natural behavior to observe
+the exhibits by enclosing the mobile device with the
+exhibition’s theme [17] or borrowing the appearance
+of observing tools such as a magnifying glass [18].
+These strategies do not completely solve the “lure
+of the screen” issue, because all the interactions
+take place in a distance from exhibits.
+This pictorial presents the design process of a handheld mediation device called “Scienscope”, which
+facilitates the exploratory behavior of visitors by
+enabling interaction with museum exhibits in a close
+range. After conducting interviews with experts and
+bodystorming in the museum space, we devised a
+device that provides additional information to users
+while minimizing distraction from the exhibits. The
+user can move Scienscope over the surface of the
+exhibit and manipulate the joystick to view a variety
+of additional information, thereby enhancing their
+understanding of the exhibit.
+
+709
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+EXPERT INTERVIEW
+We conducted interviews with museum experts to
+find out how museum visitors enjoy the exhibits
+and how new interactive technologies are accepted.
+We interviewed exhibition curators from three
+museums—Geological Museum (C1), Seodaemun
+Museum of Natural History (C2), and National Science
+Museum (C3) —which exhibit abundant natural
+science content. The curators interviewed in this
+study were not only in charge of exhibition planning
+and installation, but also they had a good grasp of
+actual visitors’ behavior through observations over
+years. They were interviewed for one and a half
+hours each, while guiding us through the museums.
+We were able to look over the actual exhibits and
+therefore take more practical case-based responses.
+
+““We cannot use long texts, it’s really
+hard to decide where to highlight for
+visitors… That, that one (a rotating
+trilobite model) for attracting the
+viewers to see even more.” – C1
+“That one (Biotite which can be
+torn into slices) is most popular
+for children. They prefer to touch
+things themselves with their
+hands. Even some adults do.” – C2
+
+“
+Visitors usually glimpse
+each exhibit for a moment
+The curators’ biggest concern was that visitors have
+very short attention spans. Visitors usually glimpse
+the exhibits for a moment and then pass through.
+According to research, museum visitors spend less
+than one minute on each exhibit [1]. The museums’
+primary goal is to make visitors see and explore
+the exhibits enough to understand the underlying
+themes, but this is also the most challenging goal.
+C1 and C3 said that most visitors stay longer in
+exhibits that are easy to identify at a glance (e.g.
+dinosaur bones and fossils). Therefore, they always
+think about how to deliver information related to
+the other exhibits. Museums attempt to attract
+more attention to the exhibit by allowing visitors to
+navigate mobile devices. This, however, introduces
+the “lure of the screen” issue discussed earlier, which
+hinders visitors’ commitment to exhibits.
+
+Tangible objects
+rather than information on display
+It is well known that visitors prefer physical objects or
+tangible interactive installations over digital content
+on display screens [11]. The curators we interviewed
+confirmed this trend.
+
+Different needs and interests of visitors
+
+Visitors prefer hands-on experiences overviewing
+texts and images. In particular, young children are
+more interested in exhibits with which they can
+interact using their bodies. Tangible samples (e.g.
+fossil replicas and mineral crystals) are more popular
+among visitors than smartphone-based content with
+a lot of information. For this reason, museums provide
+samples that visitors can touch and observe directly
+with observing tools such as magnifying glasses,
+microscopes, and telescopes. It seems that exhibits
+that provide multi-modal sensory engagement are
+more attractive to visitors.
+
+There are no “general” visitors or “general” museums
+[15]. Each visitor has different needs and interests.
+In the three museums we visited, the main visitors
+are young children and their parents. Nevertheless,
+all the curators mentioned that many experts and
+adults also visit these museums. For this reason,
+museums must consider various age groups,
+specialties, and areas of interest to design sufficiently
+nuanced exhibits. Curators said that a single device
+should be able to target multiple types of visitors at
+the same time. C2 said it would be best to have a
+guide that is optimized for every individual visitor.
+
+710
+
+Encounters in Cultural Public Places
+
+BODYSTORMING IN THE MUSEUM
+The expert interviews produced three major
+results: the visitors’ short interest in exhibits,
+their preference for tangible objects, and the
+different needs on information. We could discover
+that some touchable exhibits and observing tools
+(ex. magnifier, microscope, etc.) were placed in
+museums for satisfying visitors’ preference for
+tangible interaction. We assumed that if visitors
+were able to search for hidden information through
+the behavioral metaphor of those observing
+tools, their short interest in the exhibits can be
+extended. To test this initial idea, we conducted
+a bodystorming [10] activity for imaging how
+additional information could be provided to
+visitors with a new mediation device borrowing the
+observing behavior.
+While conducting the interviews, we found that
+the Geological Museum possesses plenty of
+touchable exhibits and but also contains additional
+information in panels that are not immediately
+interesting enough. Therefore, we chose the
+Geological Museum to conduct the bodystorming.
+We prepared magnifying glasses, monocles,
+binoculars, and stethoscopes which are the
+observing tools that we could see while visiting
+museums. The activity was conducted for one and
+a half hours. While observing diverse exhibits with
+those tools, we imagined new interactions that
+can be triggered by observing behaviors and how
+additional information can be popped up. For each
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+idea, we took a picture with a Polaroid camera and
+noted which observing tool was used and how it
+could provide additional information. A total of 42
+ideas were generated, and we clustered those into
+groups in the lab setting.
+
+AFFINITY DIAGRAMMING IN THE LAB
+Based on the expert interviews and the ideation
+process in the museum, we clarified the three
+design features by clustering the 42 ideas in the
+lab. In this process, we focused on what kinds
+of interactions the new mediation device should
+provide for museum visitors.
+Exploring the surface of exhibits with
+augmented information
+Most of our ideas were generated from the
+stethoscope and magnifying glass, which enabled
+us to explore the surface of objects. For example,
+when a user hovers the device like a magnifying
+glass over the surface of a rock sample, the device
+could provide a digital image of crystal inside of a
+rock. When the user moves the device horizontally
+over the surface of the exhibit, the digital image
+could also follow the movement, giving the user
+the impression that they can see through the rock
+sample. They can provide visitors with a physical
+exploratory experience.
+
+Multi-Layered Information
+Our ideas suggested not only lateral surface
+exploration but also depth (perpendicular to the
+surface) exploration. For example, when a visitor
+zooms into the rock’s surface, the device could
+display continuous images from low-magnification
+surface texture to high-magnification molecular
+structure. On the other hand, when the device
+recognizes a dinosaur fossil, visitors could find
+more information related to the dinosaur’s habitat
+or food. By providing multi-layered information and
+allowing visitors to navigate based on the depth of
+information they need, museums can satisfy the
+various interests of different types of visitors.
+Multi-Modal Feedback
+Some ideas from the bodystorming session
+addressed visitors’ expectations for multi-modal
+feedback. In particular, the ideas that used the
+stethoscope addressed expectations about audiohaptic feedback. For example, one idea involved
+playing a roaring sound from a fossil sample. When
+the device recognizes a dinosaur fossil, it provides
+not only the roaring sound but also a vibration.
+The sound can be felt from the exhibit’s surface.
+As Pursey and Lomas [14] opined, exhibits with
+multi-modal sensations can appeal to visitors. We
+expect that adding a mediation device’s multimodal feedback to hands-on experience can
+engage visitors with exhibits.
+
+711
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+SCIENSCOPE: CONCEPT DEVELOPMENT
+
+For objects in showcases, additional information is
+often provided on the panel, display, or window,
+making it difficult for visitors to concentrate on the
+exhibits. We expect that the alignment of attentional focus and objects in showcases can strengthen
+the physical relationship between information and
+exhibits. For example, when a visitor places Scienscope on the glass over the teeth of a dinosaur’s
+mandible bone, it displays a magnified image of the
+teeth surface. A corresponding audio guide can be
+provided for interpretation. This interaction technique can make visitors feel like they are closely
+examining the objects that they cannot touch.
+
+Instant VR view mode
+
+Scienscope can also provide physical and cognitive depth to information. Visitors can selectively
+find more information while hovering Scienscope
+over the surface of exhibits or showcases. For example, visitors can see through deeper levels of a
+rock sample’s internal structure, or open pop-up
+information windows to search for more detailed
+information, such as the composition or molecular
+structures of minerals. This multi-layered information could then reinforce visitor engagement with
+the exhibit.
+
+Scienscope can display hidden information while it
+is moving along the surface of exhibits (e.g. objects, replicas, scale models, and panels). For the
+touchable objects, Scienscope can function as a
+magnifier, providing see-through or magnified images and blurring the boundary between exhibits
+and virtual images. It can also play a related informational video to interpret the exhibit.
+
+Magnifying surface of exhibits in
+showcase
+
+Providing deeper level of information
+
+See-through metaphor
+
+Based on the three design features from the previous session – exploring the surface of exhibits,
+multi-layered information, and the need for multimodal feedback – we derived the concept of a mediation device called Scienscope. It used the behavioral metaphor of a magnifier and a stethoscope so
+that exhibits could be viewed up-close. Scienscope
+can show information layers while hovering on the
+surface of exhibits, and also can engage visitors
+with multi-modal output.
+
+In sum, Scienscope can be used on the surface of
+exhibits to allow museum visitors to explore hidden information related to the exhibition. However,
+we can also bring Scienscope to the eye (monoscopically). In this position, the device provides an
+immersive VR view through which visitors can explore hidden information related to the exhibit in a
+spacious virtual environment. The transition to VR
+view should be simple and swift.
+
+712
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+Starting with the Expert
+Interview as a formative
+study, we choose to conduct
+Bodystorming for generating
+many ideas of a new mediation device. Through the Affinity Diagramming, we narrow downed the ideas into
+three design features. The
+concept of Scienscope developed based on the design
+features.
+
+STORYBOARDING
+We conducted storyboarding
+to identify the flow of detailed functions according to
+the user tasks, and to structure the ideas for organizing
+the required functions to be
+developed.
+
+713
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+PROTOTYPING SCIENSCOPE
+
+We designed Scienscope to be small enough and attached a good grip to it. Thus, it is easy to hold and
+manipulate. Since two-hand operation is quite burdensome and can restrict hands-on experience in the
+museum, the main body of Scienscope and the grip
+were integrated into a single-bodied aluminum case
+so that vibrotactile haptic sensations are effectively
+transferred to the user’s hand. Through an iterative
+process of low-fi prototyping and testing, the size and
+shape of the handgrips were determined. The screen
+was masked with a circular shape to look like the lens
+of the observing tools. Finally, all the components,
+including the smartphone, sensors, interface board,
+earphone, and aluminum enclosure, were assembled.
+Initial study models
+
+Final prototype
+
+Smartphones already have good audio-visual displays
+and computing power, and so we utilized a smartphone with a smaller form factor to implement Scienscope concept. We developed a sensor module for
+object identification and surface tracking, and we integrated a haptic engine and a Fresnel lens cap to
+provide a richer sensory experience. We also built an
+interface board that communicates with the smartphone: it delivers sensor inputs to the phone and
+renders audio-haptic signals from the phone to the
+actuators.
+
+Form-giving process
+
+714
+
+Encounters in Cultural Public Places
+
+HARDWARE FEATURES
+
+Navigation in the information space
+Scienscope is a means to explore hidden information on museum exhibits.
+The information should be grouped
+and layered carefully so that people
+are inspired to look for information with curiosity. An input device
+is needed for users to navigate the
+information space. We tested input
+device candidates and finally chose
+a thumb-slide joystick (COM- 09426)
+because it has a small footprint and
+provides good tactile feedback for
+manipulation.
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+Instant monocular VR
+Scienscope has a small circular display. We developed a detachable VR viewer, which is tapered-cylinder-shaped and
+equipped with a Fresnel lens (f = 45mm, Ø = 40mm). The
+viewer can easily be attached to Scienscope thanks to the
+embedded neodymium magnets when needed. It provides a
+monocular VR view so that users can check related information and pay attention to surroundings at the same time. An
+easy transition to the normal view prevents undesirable distractions from the real exhibits.
+
+Audio & Haptic feedback
+Scienscope can provide audio and haptic
+feedback. For instance, if we can hear a
+heartbeat sound, we can feel the vibration from the heart as well. To convert
+the sound signal into a haptic signal, we
+developed an application rendering the
+result via the haptic engine (IP6bm-001).
+Audio information can be transmitted to a
+user via an earphone. Vibro-tactile haptic
+information can be felt while holding Scienscope.
+
+Object identification and surface tracking
+Scienscope should be able to identify an
+exhibit and detect its own position on the
+surface so that it can display related digital information. We utilized RFID tags and
+a reader module (LSMSJZNCFMF-198) for
+object identification, and a combination of
+displacement sensor (Pixart PAT9125ELTKIT) and infrared proximity sensor (STMicroelectronics VL6180) for surface
+tracking.
+
+715
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+Inside the
+human body
+
+APPLICATION 01
+
+Panels are the most common way of
+communicating information in many
+museums. In this application, visitors can
+explore the human cardiovascular system
+using Scienscope by hovering over the
+panel. Once Scienscope reads the RFID tags
+in the blue stickers on the panel, visitors
+can see through the cardiovascular system
+on the display and observe blood vessels
+all over the body. In addition, audiohaptic feedback from the heartbeat, which
+becomes stronger or weaker depending on
+the distance from the heart, provides a more
+realistic exhibition experience.
+
+RFID Tag
+
+Into the cardiovascular system
+Moving Scienscope over the human body
+panel, visitors can see the cardiovascular
+system, which is invisible with the naked
+eye. Putting Scienscope onto one of the tags
+of the panel enables visitors to see through
+the surface to the blood vessels in the area
+beneath Scienscope. Scienscope then uses
+distance sensors and mouse sensors to identify
+relative position changes from the tags on the
+panel. The combined effect is that visitors can
+intuitively look into the cardiovascular system.
+Using joystick on the device, visitors also can
+zoom in-out the contents.
+Multi- modal heartbeat
+Scienscope enables visitors to experience
+exhibits in a more immersive way with multimodal channels. This application provides
+heart-beating animation with audio-haptic
+feedback. Visitors can listen to and feel the
+lively heart beating through the sound effect
+and vibrations of Scienscope. This feedback
+adds a more spatial sense of reality by
+providing stronger feedback as it gets closer
+to the heart.
+
+Zoom in and out
+
+716
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+APPLICATION 02
+Anmiation of engine
+operating mechanism
+
+How does
+the engine work
+Augmenting virtual images on an exhibit is
+useful for conveying complex concepts [21].
+This application shows an animation of the
+internal mechanism of a four-stroke engine.
+When you place Scienscope on the object,
+the device plays the animation at the same
+size and rate as the real engine model. This
+helps visitors to understand concepts that
+are difficult to explain with text or image
+materials. Projecting content onto real objects
+makes visitors feel as though they are seeing
+through objects, as with the “magic lens.”
+Furthermore, audio-haptic feedback allows
+visitors to feel the vibration of the engine
+working.
+
+Visualize the mechanism
+When the visitor takes Scienscope onto
+the tag on the four-stroke engine system,
+Scienscope will play the internal mechanism
+animation, which exactly matches the size and
+position of the exhibit. As the video is directly
+proportional to the scale model, it gives the
+visitor a feeling of peering inside the object.
+In addition, through the combination of video,
+audio-haptic feedback, and audio guides, all
+synchronized with the physical movement of
+the exhibit, it is possible to deliver complex
+conceptual information more effectively.
+More than a simple video
+With Scienscope’s multi-modal feedback,
+exhibit types such as scale model or replica
+can be more realistic. In the case of this
+application, take Scienscope onto the small
+automaton engine model, then sound and
+vibration of the engine come over through
+the device.
+
+717
+
+Encounters in Cultural Public Places
+
+APPLICATION 03
+
+Historical feature
+When Scienscope is placed in proximity
+to an RFID tag attached on a showcase
+near the bell tower, the bell-ringing video
+is played with audio-haptic feedback,
+explaining the historical background of
+the bell, its socio-cultural meaning, and
+how and why it was used.
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+Exploring
+historical architecture
+In this application, there is a famous historical building
+model (the Cathedral of Notre Dame) inside a showcase,
+and tags are attached on each side. Each tag allows visitors
+to enjoy different perspectives on the contents in various
+ways—VR content, video, further text/image explanation.
+As such, visitors walking around the showcase can learn
+about various aspects of the topic (history, art, society/
+culture, etc.) through each of the tags. Furthermore, they
+can explore more detailed information using the joystick.
+
+Original exterior
+Scienscope can also show when
+and how the building was built
+and how it originally looked in
+the Middle Ages. Through audio
+guides and videos, Scienscope
+visually shows the environment
+in which the cathedral was
+originally built.
+
+Pop-up detailed information
+
+Internal structure
+When placed near the RFID
+tag by the façade of the model
+of
+the
+Cathedral
+of
+Notre
+Dame, Scienscope explains the
+architectural style, stained glass,
+and artwork used in the building
+with augmented VR content. The
+interior structure can be viewed
+freely over 360 degrees from the
+vantage point of a person standing
+at the tagged location.
+
+718
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+PRELIMINARY STUDY
+
+Motivating exploratory behavior
+
+We held a short, three-day exhibition at the Geological Museum. Total of 33 groups of visitors have come
+and used Scienscope. (24 groups of children and
+parents; mean age of children: 8.5yr, SD: 2.6 and
+9 groups of adults; mean age: 24.8, SD: 9.5) While
+conducting the exhibition, we observed visitors’ behavior and responses. After their viewing, we asked
+questions through an interview lasting between 10
+and 15 minutes. The interview consists of questions,
+what content was most enjoyable, which moment was
+the most memorable, and whether they felt curious
+after viewing the exhibit through Scienscope.
+
+Many children visited our exhibition with their
+parents or instructors. Most of them wanted
+to carry and use Scienscope themselves, even
+before they received an explanation about
+how to use it. Children showed the greatest
+interest in the “Inside the human body” exhibit, as they used Scienscope to watch, listen
+to, and feel the beating heart as blood was delivered through the blood vessels. In this way,
+Scienscope enriched the experience of the exhibition through multi-sensory feedback.
+
+I want to do it
+myself!
+
+Gothic architectures
+are,,,, aha!
+
+Different age groups,
+different understanding levels
+The use of Scienscope varied greatly depending on
+the age group—all were interested in exploring the
+hidden information through Scienscope regardless of
+age groups, but they showed differences in understanding the contents. Once Scienscope started showing the content, the younger were the visitors, the
+more passively they enjoyed it, having more interest
+in the content itself. On the other hand, older or more
+knowledgeable groups attempted to manipulate the
+joystick or interact with Scienscope in other ways to
+explore the contents in more detail.
+
+Stimulating curiosity in exhibits
+When visitors used Scienscope during the exhibition, they tried to explore areas other than those
+that we had prepared. Scienscope is designed to
+be intuitive for anyone to use easily, allowing visitors to minimize the perceptual gap between the
+exhibits and digital content on the display. Because of this feature, in the process of discovering
+the contents hidden in the exhibits with Scienscope, the visitors attempted to explore other exhibits based on their own expectations, naturally
+formed due to previous experience, of how and
+what type of contents could be hidden.
+
+719
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+DISCUSSION
+
+Hiding information to stimulate curiosity
+
+CONCLUSION
+
+In this section, we discuss issues deriving from the
+design process and from the feedback gathered from
+real visitors in the Geological Museum.
+
+Visitors could enjoy exploring the exhibits from different angles to find the small secret tags and their
+hidden stories. During the exhibitions with hidden
+tags in the Geological Museum, the visitors felt curious about what contents will be in the other tags
+so that they kept searching for the next tag. The
+visitors compared this engagement experience to a
+treasure hunt inside the exhibit and gave us positive
+feedback. Although we didn’t conduct a quantitative
+evaluation, it seems that curiosity was the motivation of the exploratory behaviors of visitors that we
+observed. In future work, more specific research will
+be needed to uncover how the information can be
+hidden, the extent of curiosity, and the impact on the
+museum experience.
+
+This pictorial describes the design process of a mediation device for exploring museum exhibits at a
+very close range, which serves to induce exploratory
+behavior in visitors. Following expert interviews and
+bodystorming, we designed Scienscope to use metaphors embodied in observing tools to provide additional information while visitors explore the surface of
+exhibits. We hid additional information in RFID tags,
+stimulating visitors’ curiosity and encouraging them
+to discover the tags while exploring the exhibits. Consequently, we observed that visitors with Scienscope
+explored exhibits more actively and extensively. Scienscope is the result of an iterative design process
+starting from the expert interview and bodystorming and reflecting location-based contextual factors.
+Understanding how we hid the information into the
+exhibits and stimulated the visitors’ curiosity can be
+helpful for exhibition curators and designers who want
+to deliver diverse information in an interactive way.
+
+New interaction techniques using a mediation
+device at close distances with exhibits
+Previous research has focused on augmented reality technologies that can be used at a distance from
+exhibits [12, 13, 18]. In this pictorial, we were able
+to see the possibility of novel interaction design by
+narrowing the distance between the mediation device
+and exhibits. It helped visitors keep their attentional
+focus on exhibits by providing additional information
+based on the visitors’ exploration of the exhibits’ surfaces, thereby solving the “lure of the screen” issue.
+Also, this interaction technique seems to be more
+effective than traditional display tactics in interpreting how the exhibits and additional information are
+related physically. The metaphors regarding observing tools, such as magnifying and seeing through
+objects, give visitors an intuitive understanding of
+how information is related to display objects. For example, application 1 used a see-through metaphor,
+thereby visitors can understand where the veins and
+the heart are within the body.
+Although we only implemented simple in-depth explorations, the interactions blurred the boundary between real and digital information and engage visitors so that they enjoy the exhibits. In this research,
+a slide joystick was used as the interface for in-depth
+exploration. We believe that there are more possibilities for designing interactions at close distances
+by combining other interfaces like touch-based input,
+voice commands, etc.
+
+Multi-layered information for different visitors
+To satisfy a variety of visitors, sufficient information
+should be prepared with a proper system for the visitors to search information [20]. During the exhibition, visitors could perform not only surface exploration but also in-depth exploration for more diverse
+interpretations of the exhibits. We could observe that
+adults used the zoom in-out and information pop-up
+functions actively, while children only tended to use
+surface tracking.
+It is difficult to conclude that this difference would be
+the same between all adults and children; it seems
+that individual visitors’ needs on information or expertise made the difference. Scienscope provided
+relatively simple content, but visitors from different
+age groups enjoyed interactions in the desired information layer. Thus, if more layers of information are
+designed in the content, it is expected to satisfy multiple types of visitors. At the same time, the complexity of the content should be designed with caution.
+
+REFERENCES
+[1]
+Beer, V. 1987. Great Expectations: Do
+Museums Know What Visitors Are Doing? Curator: The Museum Journal. 30, 3 (1987), 206–215.
+DOI:https://doi.org/10.1111/j.2151-6952.1987.
+tb00664.x.
+[2]
+Bekele, M.K. et al. 2018. A Survey of
+Augmented, Virtual, and Mixed Reality for Cultural
+Heritage. 11, 2 (2018).
+[3]
+Cahill, C. et al. 2011. Mobile learning in
+museums: How mobile supports for learning influence student behavior. Proceedings of IDC 2011 10th International Conference on Interaction Design
+and Children. (2011), 21–28. DOI:https://doi.
+org/10.1145/1999030.1999033.
+[4]
+Challenor, J. and Ma, M. 2019. A Review of
+Augmented Reality Applications for History Educa-
+
+720
+
+Encounters in Cultural Public Places
+
+DIS ’20, July 6–10, 2020, Eindhoven, Netherlands
+
+tion and Heritage Visualisation. Multimodal Technologies and Interaction. 3, 2 (2019), 39. DOI:https://
+doi.org/10.3390/mti3020039.
+
+[11]
+Petrelli, D. and O’Brien, S. 2018. Phone
+vs. Tangible in Museums. CHI’18. (2018), 1–12.
+DOI:https://doi.org/10.1145/3173574.3173686.
+
+[5]
+Davey, G. 2005. What is Museum Fatique?
+Visitor Studies Today!. 8, 3 (2005), 17–21.
+
+[12]
+Pittarello, F. 2019. Designing AR enhanced
+art exhibitions. (2019), 1–5. DOI:https://doi.
+org/10.1145/3351995.3352052.
+
+[6]
+Ghouaiel, N. et al. 2017. Mobile Augmented
+Reality in Museums : Towards Enhancing Visitor ’ s
+Learning Experience. February (2017). DOI:https://
+doi.org/10.20870/IJVR.2017.17.1.2885.
+[7]
+Hsi, S. 2014. RFID enhances visitors’ museum experience at the Exploratorium. May (2014).
+DOI:https://doi.org/10.1145/1081992.1082021.
+[8]
+Jarrier, E. et al. 2019. Impact of Mediation
+devices on the Museum Visit Experience and on Visitors ’ Behavioural Intentions. (2019).
+[9]
+Kim, H.S. et al. 2009. Improvement of
+Jeju national museum service using Mobile RFID.
+ACM International Conference Proceeding Series. 403, (2009), 1066–1071. DOI:https://doi.
+org/10.1145/1655925.1656118.
+[10]
+Oulasvirta, A. et al. 2003. Understanding
+contexts by being there: Case studies in bodystorming. Personal and Ubiquitous Computing. 7, 2 (2003),
+125–134. DOI:https://doi.org/10.1007/s00779-0030238-7.
+
+[13]
+Pollalis, C. et al. 2018. ARtLens: Enhancing
+museum visitors’ engagement with African art. DIS
+2018 - Companion Publication of the 2018 Designing
+Interactive Systems Conference. (2018), 195–200.
+DOI:https://doi.org/10.1145/3197391.3205435.
+[14]
+Pursey, T. and Lomas, D. 2018. Tate Sensorium: an experiment in multisensory immersive design. The Senses and Society. 13, (2018), 354–366.
+DOI:https://doi.org/10.1080/17458927.2018.151602
+6.
+[15]
+Roederer, C. and Filser, M. 2018. Revisiting the museum experience. Qualitative Market
+Research. 21, 4 (2018), 567–587. DOI:https://doi.
+org/10.1108/QMR-01-2017-0002.
+[16]
+Van Schijndel, T.J.P. et al. 2010. The exploratory behavior scale: Assessing young visitors’
+hands-on behavior in science museums. Science
+Education. 94, 5 (2010), 794–809. DOI:https://doi.
+org/10.1002/sce.20394.
+
+[17]
+Schofield, G. et al. 2018. Viking VR: Designing a virtual reality experience for a museum. DIS
+2018 - Proceedings of the 2018 Designing Interactive
+Systems Conference. (2018), 805–816. DOI:https://
+doi.org/10.1145/3196709.3196714.
+[18]
+Steiner, D. 2005. The loupe. Shenandoah. 55, 1 (2005), 136. DOI:https://doi.
+org/10.1145/3363817.
+[19]
+Walter, T. 1996. From museum to morgue?
+Electronic guides in Roman Bath. Tourism Management. 17, 4 (1996), 241–245. DOI:https://doi.
+org/10.1016/0261-5177(96)00015-5.
+[20]
+Wessel, D. and Mayr, E. 2007. Potentials and
+Challenges of Mobile Media in Museums. International Journal of Interactive Mobile Technologies. 1, 1
+(2007), 1–8.
+[21]
+Yoon, S.A. and Wang, J. 2014. Making the
+Invisible Visible in Science Museums Through Augmented Reality Devices. February (2014), 49–55.
+[22]
+Yovcheva, Z. et al. 2012. Overview of smartphone augmented reality applications for tourism.
+e-Review of Tourism Research. 10, 2 (2012), 63–66.
+
+721
+
+

@@ -1,0 +1,801 @@
+DOI: 10.1111/cgf.12382
+Eurographics Conference on Visualization (EuroVis) 2014
+H. Carr, P. Rheingans, and H. Schumann
+(Guest Editors)
+
+Volume 33 (2014), Number 3
+
+Visualizing Proximity-Based Spatiotemporal Behavior of
+Museum Visitors using Tangram Diagrams
+J. Lanir1 P. Bak2 and T. Kuflik1
+1 University
+2 IBM
+
+of Haifa, Israel
+Research, Haifa Lab, Israel
+
+Abstract
+For museum curators it is imperative to learn, analyze, and understand the behavior patterns of the visitors in their
+museum. Recent developments in the field of indoor positioning systems make the acquisition and availability of
+visitor behavior data more attainable. However, the analysis of such data remains a challenge due to its noisiness,
+complexity and sheer size. The current paper applies information visualization techniques to analyze this data
+and make it more accessible to museum curators and personnel. We first provide a detailed description of the
+application domain including an analysis of the curators’ information needs and a description of how a dataset
+on visitors’ spatiotemporal behavior could be acquired. In order to address the curators’ needs, we designed a
+visualization to encode and convey the information based on a newly adjusted visual glyph that we call Tangram
+Diagrams. We thereby focus on the adaptability of the technique to a particular domain, rather than on the novelty
+aspects of the technique itself. We have evaluated our design decisions empirically, and conducted an expert study
+to describe the insights gained and the value of the information obtained from the visualization. The contribution
+of this work is twofold. First, we apply information visualization to the museum domain and discuss how it extends
+to general indoor spatiotemporal behavior analysis. Second, we show how a visual glyph metaphor can be applied
+in different ways and contexts to efficiently encode multi-faceted information.
+Categories and Subject Descriptors (according to ACM CCS): Design Tools and Techniques [D.2.2]: UI—;
+
+1. Motivation
+Indoor location sensing systems have become very popular
+in recent years. These systems provide automatic tracking
+information of objects in various environments. Examples of
+applications using such systems are the detection of medical
+personnel or equipment in the hospital, detection of products in a warehouse, tracking of crowd movements in various locations and more [LDBL07]. The simplest and most
+popular way to provide such information is based on proximity to well-known and predefined positions. A mobile target
+is detected by sensors that are placed throughout the environment in known locations. When a stationary sensor detects a mobile target, the target is considered to be located at
+that position. Learning about people’s behavior in such environments is a great challenge. Data is episodic rather than
+continuous, sensor data may be noisy and unreliable, and
+it is difficult to aggregate information and derive insights.
+Research in recent years have addressed this problem and
+more applications have been made available by industrial
+vendors. Even though the collection, storage, and real time
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John
+Wiley & Sons Ltd. Published by John Wiley & Sons Ltd.
+
+monitoring of indoor environments data is progressing, large
+improvements are required to analyze such data and draw insights about individual and crowd behavior.
+
+The current paper addresses a particular application domain in which the understanding of indoor behavior is
+greatly appreciated – the analysis of museum visitors’ behavior. We apply information visualization to proximitybased spatiotemporal data of museum visitors to aid data
+analysis and pattern discovery. We present past works relating to our application and domain problem, and show
+that a comprehensive solution is indeed needed. We further demonstrate that visual glyphs can be adjusted to answer a multiplicity of tasks and data sources. Our design
+decisions are founded in experimental evaluation and expert interviews, and were thereby iteratively improved and
+adjusted. Finally, we raise points for improvements, discuss
+shortcomings of our method and suggest further research for
+other domains and problem spaces.
+
+262
+
+Lanir, J. / Tangram Diagrams
+
+2. Related Work
+Analysis of human movement patterns has mostly focused
+on the urban and geographic environment using information
+taken from GPS and other location based devices. A comprehensive taxonomy of movement data is provided by Dodge
+et al. [DWL08]. Andrienko et al. [AAB∗ 11] developed a
+conceptual framework for tasks and methods involved in the
+analysis of movement, which can be distinguished by the
+type of information targeted and by the level of analysis.
+Lately, indoor spatial information systems have drawn attention due to the increase use of wireless sensor networks.
+The applicability of geographic movement data analysis and
+visualization to indoor analysis is not trivial, due to the
+different type of data collected and the complexity of the
+environment and tasks involved. A newly published book
+[AAB∗ 13] provides a comprehensive picture of techniques
+and approaches in the field. For example, Space Time Cubes
+have been widely investigated in the past to visualize spatial and temporal information simultaneously [Kra03]. However, techniques and methods for continuous movement, can
+hardly be applied to multidimensional low resolution sensor
+data that only indicate the discrete positioning.
+One way to get indoor data in order to learn about indoor human behavior patterns is by using automatic analysis
+of video data or motion sensors [IWSK07]. Zhou and colleagues investigate human indoor behavior focusing on the
+feature extraction level from videos, also showing the extracted information visually [ZCC∗ 08]. Gong et al. analyze
+the actual motion trajectories of indoor visitors as part of a
+human semantic behavioral analysis [GNS02]. Finally, Girgensohn et al. also use analysis of video data to examine
+traffic flow and patterns of indoor activity in order to provide
+a better arrangement and staff-allocation to retail establishments [GSW08]. Analyzing sensor logs for behavior analysis, Growth Ring Maps [BMJK09] assessed spatiotemporal
+patterns with the help of dense pixel displays.
+Overall, our work contributes to the growing knowledge
+in the field of visual analytics of indoor spatiotemporal behavior, by investigating proximity-based sensor information,
+showing the details of behavioral patterns such as space,
+time and circulation for point-based sensor data. As such,
+it provides a novel visual assessment of indoor movement
+behavior as a comprehensive application solution.
+3. Museum Application Domain
+3.1. Analyzing museum visitor behavior
+There is a wealth of research analyzing museum visitor behavior stemming from the need of museum practitioners to
+improve their exhibits, provide better interpretations, and
+better understand the way the audience is experiencing the
+exhibits and content provided to them [BDP05]. Various museum researchers have used manual ethnographic observations to examine issues such as visitor circulation [Bit06],
+use of signage and labels [McM89], interaction with exhibits
+[YB09] and social interaction [LK04]. Manually tracking
+and timing visitor behavior using unobtrusive observations,
+
+museum researchers have measured variables such as the total time in an area, total number of stops, proportion of visitors who stop at a specific exhibit, visitor path, time of nonexhibit related behavior and level of engagement with the
+exhibit [YB09, Kle93]. Summarizing these variables while
+focusing on visitor interaction with exhibits, two measures
+are often used in museum studies [BDP05, Ser97]. Together
+these variables effectively capture how thoroughly visitors
+were engaged with an exhibit:
+• Attraction power indicates the relative incidence of people who have stopped in front of an exhibit during their
+visit. It is calculated by dividing the number of people
+who stop, by the total number of people who have visited
+the museum. This measure provides us with an initial idea
+of the power of attraction of the exhibit.
+• Holding power measures the average time spent in front
+of an exhibit. It is calculated by summing up the time a
+visitor spent in front of a specific exhibit. This measure
+provides us with an initial idea of the power of an exhibit
+to hold the interest of a visitor.
+Another measure that is of much interest to museum practitioners is visitor circulation. The way visitors go around at
+the museum determines what they see, what they focus their
+attention on, and ultimately determines what they learn and
+affects their overall experience [Bit06]. Thus, curators take
+much care in investigating the different paths available at
+their museum.
+Lately, automatic tracking and positioning technologies
+make it easier to gather large quantities of data on the way
+visitors behave and interact. Zancanaro et al. [ZKB∗ 07] used
+automatically generated logs of visitor positioning to categorize visitor behavior. Lanir et al. [LKD∗ 13] found differences between the behavior of visitors who used a mobile guide in their visit with those who did. Kanda et al.,
+[KSP∗ 07] used spatial clustering to show visiting patterns
+and estimate visitor trajectories. While these studies examined specific aspects of the visit behavior, there is no research that we are aware of that used automatic tracking for
+an open-ended visual analysis of museum visitor behavior.
+3.2. Data Acquisition and Preprocessing
+Data was recorded of visitors visiting the Hecht museum, a
+medium-sized established archaeological museum located at
+the University of Haifa campus. Visitors of the museum are
+offered a mobile guide system developed as part of the PIL
+project [KSZ∗ 11]. The mobile museum guide allows visitors to move freely around the exhibitions while the system
+identifies their location and accordingly provides the visitor with relevant information. When a visitor arrives at a
+point of interest, marked by a sticker, he or she is automatically prompted with a list of questions related to the exhibit. Once the visitor selects a question of interest, a oneminute multimedia presentation is played, providing an answer to that question (see [LKD∗ 13] for more information).
+In order to identify the visitor’s location, the museum was
+equipped with a Radio Frequency (RF) based positioning
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+Lanir, J. / Tangram Diagrams
+
+system based on a wireless sensor network (WSN). Forty
+five fixed RF tags (Beacons) were statically located at entrances and exits, as well as near relevant locations of interest in the museum, while small mobile wearable RF tags
+(Blinds) are worn by visitors. When a Blind is in proximity of a Beacon (determining position) that Blind reports this
+information to the server. Blinds transmit information to the
+server twice every second. While providing a reasonable indoor positioning solution, the system’s major weakness is
+that it only knows when a person is in proximity to a Beacon, not being able to detect positioning in transition from
+one Beacon to another. Thus, the system privides sporadic
+rather than continous movement data.
+Log data of two corpora were gathered for analysis. The
+first corpus included data of 423 visitors (194 females) using
+the mobile guide during their visit. Participants were regular
+museum visitors who were offered a free use of the mobile
+guide. Average age of visitors was 43.2 years (SD = 18.4).
+The second corpus included data of 144 visitors (79 female)
+who did not use the guide during the visit. These visitors
+were asked to wear a Blind (to enable us to track their behavior), and visit the museum as they wished. Average age
+of this group was 43.4 (SD = 19.5).
+Positioning messages from visitors’ Blinds were saved in
+a database and later preprocessed and cleaned. In RFIDbased systems, information is often missing or unreliable.
+However, it is possible to use the high correlation between
+messages both in time and space to clean the data through
+spatial and temporal aggregation [JAF∗ 06]. In our case, we
+temporarily aggregated reading of the Blind data by running
+a sliding window average on the data stream, defining a visitor as detected in a certain poairion only when a certain
+amount of messages were above a threshold A. Similarly,
+a user was defined as leaving a position when the number
+of messages that were not in that position (empty or another
+position) were below a predefined threshold B. Obviously, A
+is bigger than B and both depend on the value of the size of
+the sliding window. The values of the thresholds were determined according to experimentations. This provided us with
+a list of time intervals of locations for each visitor starting
+from the beginning of the visit.
+4. Tangram Diagrams
+We followed Munzner’s nested model for visualization design [Mun09] in which we first characterized the problem
+domain, abstracted the data types, and then designed the specific encodings for each problem type. In this section, we
+describe the abstraction and metaphor we chose for our application and visual mapping of relevant attributes, including an empirical experiment conducted to address design
+decisions. From an application perspective, it is beneficial
+to use similar visual metaphors in order to reduce learning
+time and increase familiarity with the visualization. As our
+approach is application driven, we have applied the data attributes to our visualization properties based on the information requirement of the users’ tasks. In the following secc 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+263
+
+Figure 1: Design space of a Tangram Diagram.
+tions, we analyze the specific user requirements and show
+how we adjusted the metaphor to address each information
+need of the application area.
+4.1. Tangram Diagram Visualization Properties
+The metaphor is made out of simple geometric of shape,
+which can be triangular, rectangular or circular. We have
+selected the triangular shape for our purposes, for the simple reason that its pointy nature makes it slightly more intuitive to express direction orientation and flow. The geometric shape resembles a Tangram game, leading us to the name
+Tangram Diagram, as schematically shown in Figure 1.
+The diagram consists of several distinct features: the color
+of the triangle, orientation, ratio of inner and outer triangles,
+and its size. In addition, the two planes can be used for further encoding. Color can be mapped to different types of attributes such as sequential, or categorical, as suggested by
+ColorBrewer [HB03]. Throughout the work we have used
+colors in the suggested systematic manner. Orientation can
+be exploited to express physical direction. Size can be associated with any continuous sequential attribute, which can be
+mapped to the area of the triangle. Important here are Tufte’s
+comments that area ratio should reflect the data ratio, in order to avoid perceptual biases [TGM83, BKC∗ 13]. Finally
+the ratio of the inner and outer triangles can be mapped to
+any cumulative or relative value. Furthermore, as can be seen
+in Figure 1, two planes could be positioned one against each
+other on its diagonals enabling easy comparison of the two
+shapes. The major advantage of Tangram diagram is in its
+ability to represent ratio information, as a function of tradeoff between two independent, though related properties.
+After experimenting with several designs of Tangram diagrams to encode various types of data, we experienced some
+confusion and inability of users to accurately judge the ratio between the inner and outer triangles. It is suggested
+to use area to encode size of the geometry for comparison [TGM83]. However, people perceive differences in lines
+better than areas [CM84]. In our case the triangles overlap,
+and share a part of their hypotenuse. We therefore hypothesized that people’s perception of the ratio between the tri-
+
+264
+
+Lanir, J. / Tangram Diagrams
+
+(a) Area
+
+(b) Side
+
+(c) Average
+
+Figure 2: Visual encoding of the ratio between inner and
+outer triangles - area, side, and their average (60% for all).
+angles might depend more on the 1D comparison of the hypotenuse of the triangle than on the 2D area comparison.
+4.2. Experiment
+To inform our design of how to map a ratio variable to the ratio between triangles of the Tangram diagram, we conducted
+an empirical experiment. The users’ task can be phrased as:
+what is the relative value of the inner triangle in comparison to the outer triangle? We considered two options for
+encoding the ratio: (1) the Area S of the triangles; (2) the
+hypotenuse (or Side) of the triangle. Because there was a
+substantial difference between the two representations, we
+decided to encode a third ratio: (3) Average, which is calculated by the average value of 1 and 2. For the experiment,
+we produced images for these three different ratio-encoding
+types (Figure 2), with four levels of ratio values resulting in
+12 combinations.
+We employed a 3 (type) x 4 (ratio) between-subject design
+to compare the perception of people of the Tangram glyphs.
+The two independent variable were: type which included the
+three aforementioned ratio-encoding types: Area, Side, and
+Average, and ratio which included four levels of ratio: 20,
+40, 60 and 80%. 14 participants (8 male) took part in the experiment. Participants were mostly students at a local university. Participants were randomaly shown all 12 glyphs
+(printed on paper) one at a time, and were asked for each
+of them to estimate the ratio (in percentage number from 0
+to 100) of the inner and outer triangles.
+For analysis, we compared the absolute value of the difference between each estimation and its corresponding ratio value as a measurement of the difference between the
+perceived and actual ratio value. We conducted a 2-way repeated measure ANOVA on these results to compare between the types. Results indicate that Average had the least
+difference between the perceived and actual ratio value (M =
+8.05, SD = .79) followed by Side (M = 11.8, SD = .76) and
+Area (M = 16.4, SD = 1.4). These differences were significant, F(2, 13) = 15.1, p < .001. Post-hoc analysis using the
+Bonferroni adjustment indicated that all pair comparisons
+were significant.
+Because the Tangram diagram also includes triangles on
+different planes (see Figure 1), we repeated the experiment
+this time with the two triangles opposite each other (yet still
+
+sharing the hypotenuse). We recruited 14 different participants (4 male), and used the same procedure and analysis. Results indicate that in this case as well, Average had
+the least difference between the perceived and actual ratio
+value (M = 8.92, SD = .98), with Side (M = 14.3, SD = .62)
+and Area (M = 14.8, SD = 1.5) following. These differences
+were significant, F(2, 13) = 9.84, p < .001. Post-hoc analysis indicated that Average was better than Area and Side. No
+significant difference between Area and Side was found.
+Our conclusion from this experiment is that out of the
+three examined methods, the average method type best reflected the perceived and actual ratio of the two triangles.
+Therefore we used the Average method type in the rest of
+our visualizations.
+5. Applying Visualization to Museum Visiting Patterns
+We applied a user-centered design (UCD) process in the design and implementation of our solution. We began by conducting extended interviews with various museum personnel
+in a number of museums in order to better understand the
+museum domain and the information needs of the museum
+personnel. Interviewees were conducted with the museum
+director and five other curator and personnel from the Hecht
+museum (on which data we applied our visualizations). We
+also interviewed curators from two other major museums.
+Finally, we interviewed the CEO of a leading provider of
+museum mobile guide solutions with clients in many museums worldwide. Interviews were recorded and then later
+analyzed. After the initial interviews, we iterated on our design ideas with the museum personnel, receiving feedback
+throughout the design process until we reached our final designs. Finally, we evaluated our final design with all the people from the initial requirement interviews.
+During our initial interviews, the following task areas of
+visitor behavior analysis have been uncovered:
+1. General engagement of the visitors at the exhibit and
+room level. All interviewees agreed that one of the most
+important tasks is to understand general visitor engagement patterns including holding and attracting power.
+2. Circulation and general movement patterns of visitors between rooms. Especially in museums with various movement options, curators were interested to learn what paths
+visitors took.
+3. Temporal analysis of individuals and small groups. Curators were interested in analyzing individual visits, examining the order of exhibits visited, time spent in each
+exhibit, and small group patterns.
+In the following subsections we describe each of the three
+areas, listing the information requirements, the design of the
+visualization, and the implementation on the museum data
+for each area.
+5.1. Visiting Engagement
+As described in Section 3.1, visitor engagement is often
+measured as the trade-off between holding and attracting
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+Lanir, J. / Tangram Diagrams
+
+(a)
+
+(b)
+
+(c)
+
+Figure 3: Tangram Diagram showing visiting engagement
+with schematic patterns.
+power, which are two independent variables contributing together to the concept of engagement. Hence, we summarized
+the following information requirements: (1 )What is the engagement of visitors by exhibit and how do different exhibits
+relate to each other? (2) How does the usage of the mobile
+guide affect the engagement of the visitors at every exhibit?
+(3) What are the different engagement patterns of exhibits
+expressed by the differences of holding-to-attraction ratio?
+Consequently, the following attributes of the engagement
+needed to be addressed: the holding and attraction power of
+each exhibit as well as the relation between holding and attracting power, together with each exhibit’s physical location, and whether a visitor used a mobile guide during the
+visit.
+Design: Figure 3 shows a schematic image of the representation of one location. We suggest to use color to first
+encode the difference between visitors having or not having
+a guide by differences in color hue, and second to encode the
+differences between holding power and attraction power of
+a location by color intensity; the holding power is encoded
+by the size of the outer triangle, while the attraction power
+(which is a ratio) is encoded by the relative size of the inner triangle. Since the usage of guides is a binary variable,
+it can be encoded by the two sides of the planes (similar
+to [OHR∗ 09]). Schematic results of such a glyph representation could reveal a large number of possible patterns. Figure 3 demonstrates the expressive power of the Tangram diagram. The first pattern, Figure 3(a), shows a prevailing location - a location with high holding power and medium to
+high attracting power. This is probably a popular and busy
+exhibit, since many of the visitors go there and stay for a
+long period of time. The second pattern, Figure 3(b), is described as a must-have-seen location. It shows medium to
+high holding power and maximum attracting power. This is
+probably a major exhibit where everyone who visits the museum must go. Finally, the third pattern shown in Figure 3(c),
+is described as a specialists exhibit. This is an exhibit which
+attracts very few people, probably only ones with special interest, and holds them for a long period of time.
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+265
+
+Implementation: We employed this representation on the
+museum visitor data and positioned each Tangram glyph at
+the given location of the corresponding exhibit on the museum map. Results shown in Figure 4, present general visitor engagement at the various museum exhibits. Results reveal several interesting points. First, we can easily see several exhibits with high holding power. Not surprisingly, two
+of these are in the main attraction area of the museum - a
+2000 year old ship extracted from the sea bottom and then
+reconstructed (annotated e and f in Figure 4). It is also clear
+that visitors spent much time at the first few exhibits (a, b,
+c which are located at the museum entrance hall) with visitor’s attention span quickly getting shorter. Second, we notice several exhibits with a high attracting power. Most people stop and look at the first exhibit (a), as well as the next
+exhibits at the entrance hall (b and c). Other high attraction
+points are point (d) which is the major junction of the museum, and (e) which is the main point to observe the ancient
+ship. The high attracting power at point (e) reflects the fact
+that most visitors arriving at the museum indeed go and see
+its prominent attraction. On the other hand, it seems that very
+few visitors go up to the second floor (g), with most exhibits
+on the second floor showing a very low attraction power.
+Third, it is easy to see the effect that the mobile guide had
+on visitor engagement. In most locations, the holding power
+is larger for visitors who used the mobile guide compared to
+those who did not use the guide.
+5.2. Visiting Circulation
+Understanding visiting circulation in indoor environments is
+a critical and fundamental task of curators, organizers, and
+rescue or security personnel. The following information requirements were summarized from our requirement elicitations: (1) Describe the back-and-forth transitions between
+rooms in terms of number of visitors and the overall visitor
+circulation behavior. (2) Distinguish between overall transitions and the transition behavior of visitors the first time they
+leave a room.
+To efficiently and accurately conduct these tasks, we
+aggregated the amount of visitors transiting between two
+rooms, separating between overall transitions and first-time
+transitions. Overall transitions are the total number of transitions from one room to another, while first-time transitions
+describe the first time visitors made any transitions leaving
+from a parcicular room. This was of interest for the curators,
+because they wanted to see where visitors first go to after
+being in a certain location.
+Design: A schematic demonstration of the visual encoding is shown in Figure 5. We have used color hue to encode
+the difference between first-time and non-first time transitions. We separated the glyph along the diagonal to show direction of movement as pointing triangles. Finally, we have
+mapped the amount of visitors of a transition to the size of
+the triangles. Using the Tangram diagram for representing
+circulation patterns can reveal a lot of interesting information about the directional changes, visitor flows and first-
+
+266
+
+Lanir, J. / Tangram Diagrams
+
+Figure 4: Engagement at different locations is shown on a Tangram Diagram. Engagement is expressed by the holding power
+(low-intensity triangles) and the relative value of attracting power (high-intensity triangles). Hue is mapped on the usage of
+guides (using is blue, and not using is orange).
+
+time visiting behavior. Figure 5(a) shows more visitors going
+from right to left, but equal flows between the two locations
+for first-time visitors. This indicates equal corossing over on
+first-time, yet a clear preference left when returning to the
+right side. Figure 5(b) shows a clear preference of all visitors
+to one direction, with no visitors going in the opposite direction. This migh indicate a designed obstacle or pathway for
+those coming from one direction. Finally, the third pattern
+Figure 5(c), shows a clear distinction in transition directions
+for first-time and returning visitors.
+
+(a)
+
+(b)
+
+(c)
+
+Figure 5: Tangram Diagram showing visiting circulation
+with schematic patterns.
+
+Implementation: Figure 6 presents general visitor circulation applied to visitor data at the museum. Each main museum room is depicited on the map using a number. It is
+clear that the first Tangram glyph located between room 1
+(entrance hall) and room 2 (main junction) is bigger than the
+other Tangram glyphs in the diagram. This is because it includes all museum visitors rather than a subset of visitors.
+Because this is the only place to enter and leave the museum, all visitors have to pass between rooms 1 and 2. For
+the same reason, the two directions are equal: any person
+entering the museum also has to leave it. The direction of
+first-time visitors is clearly shown in the Tangram glyph going from room 1 to room 2. A similar pattern can be seen in
+the Tangram glyph connecting between location 2 and room
+9, since room 9 is on the second floor and the only way to
+reach it is through location 2.
+Location 2 is the main junction of the museum that visitors arrive after they pass through the entrance hall. It is
+interesting to view the circulation from and to this point as
+described later in the evaluation section. It is also interesting to note the path of visitors arriving to room 6. Passing
+through the door near the main junction, visitors can go left
+to room 7, or right to room 6. We see that most visitors go
+first to room 7 and only then go to room 6. This can be explained either by the fact that room 7 is visually appealing
+causing visitors to go there, or by assuming that visitors are
+being methodological and trying to cover the entire part of
+the museum. Finally, looking at the paths to room 8, which
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+267
+
+Lanir, J. / Tangram Diagrams
+
+holds the main attraction of the museum, we see two major
+paths: 1-2-7-6-8 and 1-2-3-4-5-8. These two paths can form
+a circle (1-2-7-6-8-5-4-3-2-1). It seems that many visitors
+follow this circle in either direction. This is supported by the
+high first-time values seen going away from room 8 (from 8
+to 5 and from 8 to 6).
+(a)
+
+(b)
+
+Figure 7: Tangram Diagram for temporal analysis and
+schematic patterns. (b) two consecutive exhibits with same
+durations with low guide usage
+Figure 6: Visitor circulation between rooms are shown using
+Tangram Diagrams. Differences between first time visitors
+and directional differences are clearly shown by the different
+glyphs.
+
+5.3. Individual and small group temporal analysis
+The temporal investigation of a single visitor’s behavior is
+essential in understanding what happens in the museum. Furthermore, people often come to the museum in small groups
+mainly with family and friends. The visiting experience is
+largely affected by people’s social interaction, shared experience and joined interests [FD92]. Thus, following the
+interviews, we defined the following list to summarize the
+tasks for the temporal investigation: (1) Understand individual temporal visiting behavior in terms of location sequence
+and time spent at locations. (2) Understand group dynamics in terms of joint and disjoint attendance at exhibits and
+rooms. (3) Understand the effect of mobile guide usage on
+individual and group visit patterns.
+Design: We adjusted the Tangram diagrams to cope with
+these new tasks. The information requested by the curators
+should reveal the timeline of the visit including duration
+spent at the level of both exhibits and rooms. Thus, a visit
+to an exhibit was encoded by a Tangram glyph (see Figure 7) and we chose to position the Tangrams on a vertical
+time-axis in a parallel manner for each individual separately
+to allow comparison of individual behavior between group
+members. For each glyph, The outer rectangle was mapped
+to the overall duration at the particular exhibit such that the
+length of the rectangle corresponds to the duration, whereas
+the width of the rectangle is fixed to a constant pixel length.
+This mapping provides a linear relation between temporal
+duration and the height of the rectangle. The time using a
+guide in a certain exhibit is mapped relative to the overall
+duration at that exhibit using color intensity (pale vs. intensive color of the same hue), similar to the way we encoded
+relative information in the previous sections. The opposite
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+inner triangle can be mapped to any sequential variable. In
+our case, we did not need any more mappings so our results
+only show innter rectangles. Finally, the number of exhibits
+exceeds the number of distinguishable colors, and therefore
+this information can only be annotated in textual form as
+a label. However, rooms (to which exhibits belong to) are
+mapped to a qualitative color palette.
+The above encoding is schematically represented in Figure 7. Possible patterns are shown on the right side of the
+image. Pattern (a) represents two consecutive exhibits with
+different duration and relative long usage of guides. Pattern
+(b) represents equal visiting duration of two exhibits with
+limited guide usage in both.
+Implementation: Figure 8 presents the implementation
+of this schema for four groups of visitors: one single visitor
+(labeled 1 in the figure), two pairs (2 and 3) and a group of
+three visitors arriving together (4). There are many insights
+that can be produced from this visualization. Looking at an
+individual visitor, for example visitor 1, it is easy to see the
+temporal patterns of the visit including sequence of rooms,
+time spent at various rooms, and the fact that the visitor did
+not return to any rooms during the visit. It is also clear that
+the mobile guide was heavily used during this current visit.
+In terms of group dynamics, we can see that groups 3 and 4,
+mostly kept together being at the same rooms during the entire visit. Group 2 on the other hand, parted at the beginning
+of their visit, just after the first room, returning together only
+at the end of the visit. Looking more closely at group 3 we
+see a very interesting group dynamic. We can see that there
+is a clear leading pattern of visitor B. We see that visitor 3A
+and visitor 3B moved together through the museum rooms,
+however, visitor 3B entered each room (other than the ancient ship - depicted in pink) slightly earlier than 3A. This
+suggests that 3B lead the visit with 3A following along. Finally, we can learn many things looking at guide usage. We
+can see that visitor 1 used the guide a lot and everywhere.
+Looking at group 3, we see that mostly 3A used the guide
+
+268
+
+Lanir, J. / Tangram Diagrams
+
+during the visit, while 3B only used it at the beginning, probably trying it once and then deciding not to use it. We see the
+same pattern with visitor 2B using the guide at the start of the
+visit and then getting tired of it. This pattern might be part
+of what museum practitioners call museum fatigue which refer to the mental exhaustion and decreased attention across
+successive exhibit viewing [Bit09].
+
+Figure 8: Individual and Group Temporal Analysis using
+Tangram Diagrams. Patterns of dynamic behavior at different exhibits are shown by the glyphs and temporal flow. Colors encode different areas in the museum.
+
+6. Evaluation
+We performed an expert evaluation to examine the usefulness and effectiveness of our visualizations. Since our claim
+is on creating a comprehensive domain specific solution
+rather than outperforming specific alternative solutions in a
+particular aspect of the problem space, we chose to evaluate
+our work by empirical studies to assess the visual attributes
+
+of the proposed Tangram Diagrams (Section 4.2), and in addition to conduct an expert evaluation with our target users.
+Finally, we reflect on our design decisions and discuss advantages and disadvantages (Section 7).
+We presented the three visualizations to the museum personnel who took part in our initial extended interviews. For
+each figure, the details of the visualization were first explained using the schematic images. Each participant was
+then asked to comment on the visualization and explain what
+insights (if any) can be drawn from it. Finally, for each visualization, participants were asked to comment on how easy
+it is to understand, how interesting is the data gained from it,
+how much insight it provided and on its general effectiveness
+for the tasks at hand.
+In general, participants were enthusiastic about being able
+to visually explore the behavior of visitors in their museum, and commented that this provided them with information and insights that were highly interesting and valuable
+and previously not available. The museum director generally
+commented that these are great tools for her to both substantiate hypotheses she has and to gain new insights and ideas
+about how visitors behave in the museum. A few participants
+commented on the lack of information for locations that did
+not have sensors near them. In addition, a few participants
+commented that it would have been interesting to add demographic distributions according to age, gender and other
+parameters to these visualizations. Nevertheless, all participants pointed out that the visualizations provided them with
+new understandings and insights of the way visitors experience the museum, and a few asked to be given the visualization to show to their peers.
+Regarding visiting engagement (Figure 4), most participants were quickly able to understand the visualization after the initial explanation. For two participants, it took more
+time to understand how the attracting power was depicted.
+All participants were surprised to see how and to which extent the use of the mobile guide increased the holding power
+compared to visitors not using the electronic guide. Another
+clear insight that was commented by all participants is the
+low attraction power in the second floor (marked by "g" in
+Figure 4). This actually sparked a long conversation at the
+museum office about why people do not go up to the second
+floor and what can be done about it. The museum director
+commented: "I learn from this that unfortunately, most visitors miss one of the biggest and most interesting collections
+in the world of ancient stamps. We have to find ways to direct
+visitors to the second floor to view this exquisite collection".
+Other comments mostly had to do with insights concerning
+specific exhibits.
+Regarding visiting circulation (Figure 6), the visualization
+seemed to be less intuitive and was a bit more difficult to
+learn. Nevertheless, after a few explanations all participants
+managed to understand all the mappings. The museum director has told us that in their museum, they took the approach
+of large open spaces with no intended directional guidance
+within or between them, so the visitor is encouraged to freely
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+Lanir, J. / Tangram Diagrams
+
+269
+
+wander around the museum exhibitions. Thus, the museum
+head was very interested in seeing which paths the visitors
+took. She told us, that the left wing (rooms 6, 7 and 8) is
+newer and more visually attractive, and she was wondering
+whether people go there first, and whether many people still
+go to the old wing (rooms 3 and 4). She was very pleased to
+find out from the visualization that from the main museum
+junction (point 2), there is a more or less equal distribution
+of people between the two museum wings. Generally speaking, participants commented that the visualization gave them
+a nice view of the flow of visitors from one room to another,
+and the ability to understand the direction and amount of
+visitor flow. Some participants showed interest in seeing the
+same diagram on a sensor level. That is, for a single room, to
+be able to view the circulation of visitors between exhibits.
+Finally, we presented several individual temporal visualizations to participants (such as in Figure 8, and more).
+The visualizations shown to participants were augmented
+with exhibit name labels for exhibits with long duration (not
+shown in the figure). All participants were able to easily understand the visualizations. This might be because of their
+previous familiarity with timelines or with the fact that they
+got accustomed to the Tangram metaphor. Participants really
+enjoyed looking at these representations, and were very interested in finding specific patters of visitor behaviors. For
+example, they looked at a specific path and speculated why
+a visitor might go from one exhibit to another and then from
+one room to another. Participants were also interested in
+looking into group behavior patterns and in guide usage patterns. They commented that this visualization was the most
+interesting one to explore as it provided varied behavioral
+data. As one participant commented: "While the other images only showed general visitor patterns, here I can examine things on an individual level". All participants expressed
+the wish to receive more such visualizations of all visitors.
+
+ception was influenced by both the 2D (area) and 1D (line)
+comparisons. Still, we believe that a more thorough examination of the perception of overlapping shapes need to be
+addressed empirically. There are other visual attributes as
+well, that need to be discussed for a comprehensive problem
+space; length or even textual or digital information presentation. These have not been fully considered in our approach
+and need to be addressed in future work.
+We used an adaptation of the same glyph for consistency
+over all our solutions. By using the same metaphor for a
+multiplicity of tasks we hoped to accommodate users’ cognitive metaphoric capacity for learning and remembering, as
+discussed by Maquire et al [MRSS∗ 12]. Nevertheless, we
+believe that under other conditions, this requirement can be
+relaxed, and better results might be achieved when applied
+to other application fields. Our goal was to provide a comprehensive application solution. Thus, a comparison of the
+suggested visual design to other techniques was not in scope
+of the current paper, but should be addressed and empirically
+evaluated in future research.
+There are several limitations to the Tangram glyphs. The
+major weakness of the glyphs are that they are not immediately obvious to interpret and thus there might be a learning
+curve when using them. In our evaluation, we observed that
+it took some time for the curators to understand the encoding and make use of the visualizations. However, all participtants were eventually able to comprehend their meaning and produce insights. Another limitation of the glyphs is
+that they are not scalable. While being able to encode multidimensional data, the number of variables that can be encoded is limited. Regarding the positioning of the glyphs on
+the map, an interactive solution can address possible visual
+clutter using filtering and semantic zooming.
+
+7. Reflections on Design Decisions
+Cleveland and McGill [CM84] defined and ordered several
+elementary perceptual tasks used to extract quantitative information. They showed that judging areas is less accurate
+than judging length. Other studies have also shown that area
+may not be the best choice for representing numbers for
+comparisons. People’s relative judgment of areas is usually
+proportional not to the actual physical size of the areas, but
+rather to the area to a power less than one (typically around
+0.8 for circles or squares [CHM82]). This stands in contrast to the perception of lines which is approximately linear [Teg65, Spe04] Furthermore, in area (or size), the accuracy of judgment is limited as it is not an associative variable,
+and the layout, shape, orientation and position of objects to
+be compared might influence viewers’ ability of judgment
+[Ber83, BKC∗ 13]. In our case, it was important to judge the
+ratio between two triangles overlapping on their hypotenuse.
+We thus used an empirical evaluation to decide how this ratio is perceived and how it should be encoded. The results of
+our user study showed that in this specific case, user’s per-
+
+8. Conclusions
+The current paper addresses the museum visitor application
+domain. We show how information visualization techniques
+can be applied to data on museum visitors, revealing behavioral patterns of interest to museum curators. Our major contribution is in the analysis of this particular application field;
+we have evaluated and formalized the task requirements by
+the curators, conducted a visualization design and applied
+it efficiently to create a solution. A secondary contribution
+of this work is in showing the multi-faceted exploitation of
+a visual metaphor to a number of application specific tasks
+and information types.
+We believe that such problems on a practical level exist in
+other indoor domains, such as resource allocation in harbors
+and airports, malls and hospitals. For example, hospital room
+occupancy rate versus time spent in the hospital could be
+addressed directly with our approach. Future research will
+need to explore the domain independence of the method by
+abstracting the tasks and problems solved and assesssing its
+advantages and disadvantages with a general purpose tool.
+
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+270
+
+Lanir, J. / Tangram Diagrams
+
+References
+[AAB∗ 11] A NDRIENKO G., A NDRIENKO N., BAK P., K EIM D.,
+K ISILEVICH S., W ROBEL S.: A conceptual framework and taxonomy of techniques for analyzing movement. Journal of Visual
+Languages and Computing 22, 3 (2011), 213–232. 2
+[AAB∗ 13] A NDRIENKO G., A NDRIENKO N., BAK P., K EIM D.,
+W ROBEL S.: Visual analytics of movement. Springer, 2013. 2
+[BDP05] B OLLO A., DAL P OZZOLO L.: Analysis of visitor behaviour inside the museum: An empirical study. In Proceedings
+of the 8th International Conference on Arts and Cultural Management, Montreal (2005). 2
+[Ber83] B ERTIN J.: Semiology of graphics: diagrams, networks,
+maps. 9
+
+[Kra03] K RAAK M.-J.: The space-time cube revisited from a
+geovisualization perspective. In Proc. 21st International Cartographic Conference (2003), pp. 1988–1996. 2
+[KSP∗ 07] K ANDA T., S HIOMI M., P ERRIN L., N OMURA T.,
+I SHIGURO H., H AGITA N.: Analysis of people trajectories with
+ubiquitous sensors in a science museum. In Robotics and Automation, 2007 IEEE International Conference on (2007), IEEE,
+pp. 4846–4853. 2
+[KSZ∗ 11] K UFLIK T., S TOCK O., Z ANCANARO M.,
+G ORFINKEL A., J BARA S., K ATS S., S HEIDIN J., K ASH TAN N.: A visitor’s guide in an active museum: Presentations,
+communications, and reflection. Journal on Computing and
+Cultural Heritage (JOCCH) 3, 3 (2011), 11. 2
+
+[Bit06] B ITGOOD S.: An analysis of visitor circulation: Movement patterns and the general value principle. Curator: The Museum Journal 49, 4 (2006), 463–475. 2
+
+[LDBL07] L IU H., DARABI H., BANERJEE P., L IU J.: Survey of
+wireless indoor positioning techniques and systems. IEEE Transactions on Systems, Man, and Cybernetics, Part C: Applications
+and Reviews 37, 6 (2007), 1067–1080. 1
+
+[Bit09] B ITGOOD S.: Museum fatigue: A critical review. Visitor
+Studies 12, 2 (2009), 93–111. 8
+
+[LK04] L EINHARDT G., K NUTSON K.: Listening in on museum
+conversations. Altamira Press, 2004. 2
+
+[BKC∗ 13] B ORGO R., K EHRER J., C HUNG D., M AGUIRE E.,
+L ARAMEE R., H AUSER H., WARD M., C HEN M.: Glyph-based
+visualization: Foundations, design guidelines, techniques and applications. 3, 9
+
+[LKD∗ 13] L ANIR J., K UFLIK T., D IM E., W ECKER A. J.,
+S TOCK O.: The influence of a location-aware mobile guide on
+museum visitors’ behavior. Interacting with Computers (2013).
+2
+
+[BMJK09] BAK P., M ANSMANN F., JANETZKO H., K EIM
+D. A.: Spatiotemporal Analysis of Sensor Logs using Growth
+Ring Maps. IEEE Transactions on Visualization and Computer
+Graphics (TVCG) 15, 6 (2009), 913–920. 2
+[CHM82] C LEVELAND W. S., H ARRIS C. S., M C G ILL R.:
+Judgments of circle sizes on statistical maps. Journal of the
+American Statistical Association 77, 379 (1982), 541–547. 9
+[CM84] C LEVELAND W. S., M C G ILL R.: Graphical perception:
+Theory, experimentation, and application to the development of
+graphical methods. Journal of the American Statistical Association 79, 387 (1984), 531–554. 3, 9
+[DWL08] D ODGE S., W EIBEL R., L AUTENSCHÜTZ A.: Towards a taxonomy of movement patterns. Information visualization 7, 3-4 (2008), 240. 2
+[FD92] FALK J. J. H., D IERKING L. D.: The museum experience. Howells House, 1992. 7
+[GNS02] G ONG S., N G J., S HERRAH J.: On the semantics of
+visual behaviour, structured events and trajectories of human action. Image and Vision Computing 20, 12 (2002), 873 – 888. 2
+[GSW08] G IRGENSOHN A., S HIPMAN F., W ILCOX L.: Determining activity patterns in retail spaces through video analysis. In
+Proceedings of the 16th ACM international conference on Multimedia (2008), ACM, pp. 889–892. 2
+
+[McM89] M C M ANUS P. M.: Oh, yes, they do: How museum
+visitors read labels and interact with exhibit texts. Curator: The
+Museum Journal 32, 3 (1989), 174–189. 2
+[MRSS∗ 12] M AGUIRE E., ROCCA -S ERRA P., S ANSONE S.-A.,
+DAVIES J., C HEN M.: Taxonomy-based glyph design - with a
+case study on visualizing workflows of biological experiments.
+IEEE Transactions on Visualization and Computer Graphics 18,
+12 (2012), 2603–2612. 9
+[Mun09] M UNZNER T.: A nested model for visualization design and validation. Visualization and Computer Graphics, IEEE
+Transactions on 15, 6 (2009), 921–928. 3
+[OHR∗ 09] O ELKE D., H AO M., ROHRDANTZ C., K EIM D. A.,
+DAYAL U., H AUG L.-E., JANETZKO H.: Visual opinion analysis
+of customer feedback data. In Visual Analytics Science and Technology, 2009. VAST 2009. IEEE Symposium on (2009), IEEE,
+pp. 187–194. 5
+[Ser97] S ERRELL B.: Paying attention: The duration and allocation of visitors’ time in museum exhibitions. Curator 40 (1997),
+108–125. 2
+[Spe04] S PENCE I.: The apparent and effective dimensionality of
+representations of objects. Human Factors: The Journal of the
+Human Factors and Ergonomics Society 46, 4 (2004), 738–747.
+9
+[Teg65] T EGHTSOONIAN M.: The judgment of size. The American journal of psychology (1965), 392–402. 9
+
+[HB03] H ARROWER M., B REWER C.: Colorbrewer. org: an online tool for selecting colour schemes for maps. Cartographic
+Journal, The 40, 1 (2003), 27–37. 3
+
+[TGM83] T UFTE E. R., G RAVES -M ORRIS P.: The visual display
+of quantitative information, vol. 31. Graphics press Cheshire, CT,
+1983. 3
+
+[IWSK07] I VANOV Y. A., W REN C. R., S OROKIN A., K AUR I.:
+Visualizing the history of living spaces. IEEE Transactions on
+Visualization and Computer Graphics 13, 6 (2007), 1153–1160.
+2
+
+[YB09] YALOWITZ S. S., B RONNENKANT K.: Timing and
+tracking: Unlocking visitor behavior. Visitor Studies 12, 1 (2009),
+47–64. 2
+
+[JAF∗ 06] J EFFERY S. R., A LONSO G., F RANKLIN M. J., H ONG
+W., W IDOM J.: A pipelined framework for online cleaning of
+sensor data streams. In Data Engineering, 2006. ICDE’06. Proceedings of the 22nd International Conference on (2006), IEEE,
+pp. 140–140. 3
+[Kle93] K LEIN H.-J.: Tracking visitor circulation in museum settings. Environment and Behavior 25, 6 (1993), 782–800. 2
+
+[ZCC∗ 08] Z HOU Z., C HEN X., C HUNG Y.-C., H E Z., H AN
+T. X., K ELLER J. M.: Activity analysis, summarization, and visualization for indoor human activity monitoring. IEEE Transactions on Circuits and Systems for Video Technology 18, 11 (2008),
+1489–1498. 2
+[ZKB∗ 07] Z ANCANARO M., K UFLIK T., B OGER Z., G OREN BAR D., G OLDWASSER D.: Analyzing museum visitors’ behavior patterns. User Modeling 2007 (2007), 238–246. 2
+
+c 2014 The Author(s)
+Computer Graphics Forum c 2014 The Eurographics Association and John Wiley & Sons Ltd.
+
+
