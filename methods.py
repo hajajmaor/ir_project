@@ -1,11 +1,13 @@
 """
 methods to do the indexing
+https://www.nltk.org/api/nltk.tokenize.html
 """
 from os import listdir
 from typing import List, Dict
 from pickle import loads as load_from_pickle_file
 from pickle import dump as save_to_pickle_file
 from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
 from position_index_class import PositionalIndex
 INDEX_DIR = "./indexes/"
 ARTICLES_DIR = "./articles/"
