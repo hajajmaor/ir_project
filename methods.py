@@ -19,16 +19,6 @@ with open("stop_words_english.txt", "r") as file:
     stop_words = file.read().split("\n")
 
 
-def _is_stop_word(word: str) -> bool:
-    """sumary_line: check if the word is a stop word
-
-    Keyword arguments:
-    word -- word to test
-    Return: true/false if the word is a stop word
-    """
-    return word in stop_words
-
-
 def do_case_folding(text: str) -> str:
     """sumary_line: do case folding
 
@@ -52,7 +42,7 @@ def remove_stop_words(text: str) -> str:
     """
     # text = do_case_folding(text)
     text = text.split(" ")
-    text = [word for word in text if not _is_stop_word(word)]
+    text = [word for word in text if word not in stop_words]
     text = " ".join(text)
     return text
 
