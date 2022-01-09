@@ -26,13 +26,14 @@ def do_case_folding(text: str) -> str:
     text -- text to fold
     Return: text after case folding
     """
-    # TODO: 1. remove dots space ? ! " ' `
     text = text.replace(".", "")
     text = text.replace("?", "")
     text = text.replace("!", "")
     text = text.replace("\"", "")
     text = text.replace("'", "")
     text = text.replace("`", "")
+    text = text.replace("’", "")
+
     return text.lower()
 
 
