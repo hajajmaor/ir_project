@@ -15,9 +15,8 @@ from nltk.stem.porter import PorterStemmer
 INDEX_DIR = "./indexes/"
 ARTICLES_DIR = "./articels"
 
-with open("stopWordPickle", "rb") as stopWordPickle:
-    stop_words: List[str] = load_from_pickle_file(stopWordPickle.read())
-del stopWordPickle
+with open("stop_words_english.txt", "r") as file:
+    stop_words = file.read().split("\n")
 
 
 def _is_stop_word(word: str) -> bool:
@@ -30,7 +29,7 @@ def _is_stop_word(word: str) -> bool:
     return word in stop_words
 
 
-def _do_case_folding(text: str) -> str:
+def do_case_folding(text: str) -> str:
     """sumary_line: do case folding
 
     Keyword arguments:
@@ -38,21 +37,27 @@ def _do_case_folding(text: str) -> str:
     Return: text after case folding
     """
     # TODO: 1. remove dots space ? ! " ' `
+    text = text.replace(".", "")
+    text = text.replace("?", "")
+    text = text.replace("!", "")
+    text = text.replace("\"", "")
+    text = text.replace("'", "")
+    text = text.replace("`", "")
     return text.lower()
 
 
-def _remove_stop_words(text: str) -> str:
+def remove_stop_words(text: str) -> str:
     """
     remove stop words from the text
     """
-    text = _do_case_folding(text)
+    # text = do_case_folding(text)
     text = text.split(" ")
     text = [word for word in text if not _is_stop_word(word)]
     text = " ".join(text)
     return text
 
 
-def _preform_stemming_using_porter(text: str) -> str:
+def preform_stemming_using_porter(text: str) -> str:
     """
     preform stemming using porter
     """
@@ -142,9 +147,9 @@ def process_document(doc_path: str) -> Dict[str, int]:
     """
     with open(doc_path, "r", encoding="utf-8") as file:
         text = file.read()
-    doc_processed = _remove_stop_words(text)
-    doc_processed = _do_case_folding(doc_processed)
-    doc_processed = _preform_stemming_using_porter(doc_processed)
+    doc_processed = remove_stop_words(text)
+    doc_processed = do_case_folding(doc_processed)
+    doc_processed = preform_stemming_using_porter(doc_processed)
     result: Dict[str, int] = {}
     for word in re_split(f"[{punctuation}\n ]", doc_processed):
         if word not in result:
