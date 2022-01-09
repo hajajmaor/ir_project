@@ -26,13 +26,13 @@ def do_case_folding(text: str) -> str:
     text -- text to fold
     Return: text after case folding
     """
-    text = text.replace(".", "")
-    text = text.replace("?", "")
-    text = text.replace("!", "")
-    text = text.replace("\"", "")
-    text = text.replace("'", "")
-    text = text.replace("`", "")
-    text = text.replace("’", "")
+    text = text.replace(".", " ")
+    text = text.replace("?", " ")
+    text = text.replace("!", " ")
+    text = text.replace("\"", " ")
+    text = text.replace("'", " ")
+    text = text.replace("`", " ")
+    text = text.replace("’", " ")
 
     return text.lower()
 
