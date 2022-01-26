@@ -1,0 +1,704 @@
+      2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+
+      Finding objects using UWB or BLE localization
+            technology: A museum-like use case
+
+                                                        A.R. Jiménez, F. Seco
+                                          Centre for Automation and Robotics (CAR)
+                                   Consejo Superior de Investigaciones Cientı́ficas (CSIC)-UPM
+                           Ctra. Campo Real km 0.2, 28500 La Poveda, Arganda del Rey, Madrid, Spain
+                                        e-mail: {antonio.jimenez, fernando.seco}@csic.es
+                                              web: http://www.car.upm-csic.es/lopsi
+
+    Abstract—Some location-aware use cases imply that a person        change its position from to time to time when new exhibitions
+desires to find an object relative to his position. This is the       are deployed. The user also in outdoor spaces could want to
+case of museum visits or any indoors/outdoors activity where          find objects of interest in parks or exposition gardens. For these
+the objects of interest are not geo-referenced or even can move       use cases, we as users do not need an absolute localization, but
+with time. For these use cases, a user does not need an absolute      a relative information that can be the range to the object and
+localization, but a relative information consisting of the range
+to the object and the heading angle between that object and the
+                                                                      the horizontal heading angle from our field of view perspective.
+user’s moving direction. In this paper we study two different radio       Different technologies are available for range and heading
+technologies for finding an object of interest: Ultra-Wide-Band       estimation. For example vision, ultrasonic or radio frequency
+(UWB) and Bluetooth Low Energy (BLE). Range and orientation           radars with array antennas in order to infer the range and
+estimation performance is studied when using just the distance        heading to a particular object. In our case, we are interested in
+or the Received-Signal-Strength (RSS) provided by UWB and
+BLE systems, respectively. Both approaches are combined with
+                                                                      simple, small and cheap devices already available in gadgets
+Pedestrian Dead-reckoning (PDR) estimation in order to analyze        such as a mobile phone. Under these requirements the spec-
+the benefits that PDR information provides. For completeness we       trum of technologies focus on two main approaches: UWB
+compare the cases where only one tag is fixed to the object to        and BLE. With these systems we can conceive a use case
+locate (the simpler and more flexible case) with the more ideal       solution where a tag is attached to each object of interest and
+case where several geo-referenced objects of interest, each one       a common smartphone is used for BLE or UWB range-related
+with a tag, jointly cooperate to improve the relative location to     information reading.
+one of the objects of interest (in both cases the user carries a
+mobile phone with BLE 4.0 or UWB radio). The UWB ranging                  UWB radio technology [5], [6], can obtain a ranging
+radio, not common in most smartphones, but very accurate, is          performance of 0.2 m in Line-of-Sight (LOS) cases and a
+used as our reference to define the best achievable performance       maximum ranging capability of more than 100 m. UWB
+goal, in order to compare with BLE RSS-based performance.             can penetrate walls in buildings and can resolve individual
+We demonstrate that the common BLE low ranging-accuracy               multipath components due to its large bandwidth. However
+technology combined with smartphone-based PDR estimation is           in Non-Line-of-Sight (NLOS) scenarios UWB performance
+capable, after some initial user’s walking, of finding with decent    deteriorates [7]. The NLOS effect causes a deterioration
+range and heading accuracy the objects of interest in a museum-
+                                                                      of range measurements with larger dispersion and in-excess
+like set-up.
+                                                                      ranges (outliers) that could be larger than one meter in typical
+   Keywords—UWB, BLE, Distance Measurement, localization,             usage. Also, the maximum measurable range can be reduced to
+Finding objects, Estimote, Bespoon.                                   less than 10-15 meters in apartment type spaces. In any case,
+                                                                      UWB is the most accurate ranging system available today for
+                      I.   I NTRODUCTION                              indoor scenarios or spaces with multiple reflectors or obstacles.
+                                                                      Several commercial system exists even some of them on-chip
+    Some location-aware use cases imply that a person desires
+                                                                      integrated into mobile phones.
+to find an object relative to their position. When the absolute
+object’s position is known and the user’s location is also                BLE is another radio technology, that is very popular
+known, using a GNSS receiver or any indoor localization               nowadays since the iBeacon standard definition [8], [9]. These
+approach [1], [2], [3], the problem is straight forward. However      tags broadcast at regular intervals their identification code,
+there are situations when the object to locate is not geo-            as well as other parameters of interest (motion, temperature,
+referenced or its position can change frequently. Additionally        pressure, etc.). The range estimate is deduced from the received
+we can be in a site where no location system is available or          signal strength (RSS) using path loss models. The point-to-
+accurate enough to guide the user to the object of interest. In       point ranging performance using BLE is low, and similar to
+these situations, if the user is only interested in approaching       the achievable using WiFi or RFID beaconing, i.e. about 1-2
+a specific object, then a relative infrastructure-less person-to-     meters at short ranges (lower than 5 m), but range can not
+object localization is a desired technology. Typical use cases of     be accurately estimated for larger distances or when persons
+these situations occur in museums, where a person is interested       or blocking objects attenuate the radio signal. Nevertheless,
+in finding a particular famous painting or sculpture within a         when using several BLE tags as beacons in cooperation, the
+big hall or building [4]. The museum objects of interest can          localization performance can be between 2-5 meters in larger
+
+978–1–5090–6299–7/17$31.00 
+                           c 2017 IEEE
+      2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+
+areas [10]. Finding an object using point-to-point BLE ranging
+is a challenge, and other sources of information, such as the
+motion of the user could be beneficial.
+    The motion of a person carrying a mobile phone can be de-
+duced by processing the inertial sensors contained (accelerom-
+eters and gyroscopes). Solutions that mainly rely on dead-
+reckoning methods using inertial sensors are called Pedestrian
+Dead Reckoning (PDR) [11], [12], [13], and we think are of
+great interest for the use cases we are interest in. In fact the                                  a) Bespoon
+orientation of the object respect to the user location can not
+be estimated in point-to-point ranging if the user motion is
+unknown.
+    In this paper we propose to perform a novel study using two
+different radio technologies for range or proximity estimation:
+Ultra-Wide-Band (UWB) and Bluetooth Low Energy (BLE),
+analyzing system’s performance in ranging and orientation of
+the object with respect to the user’s pose. Both approaches
+will be optionally combined with Pedestrian Dead-reckoning
+(PDR) estimation in order to see the benefits that it can
+provide. For completeness we compare the cases where only                                        b) Estimote
+one tag is fixed to the object to locate, and the user carries
+a mobile phone with BLE 4.0 or UWB radio, and the more             Fig. 1. Tags used for object finding in the museum-like use case. a) UWB tag
+                                                                   from the Frech company BeSpoon, b) BLE tag from the Estimote company.
+ideal case where several objects of interest, each one with a
+tag, jointly cooperate to improve the relative location to one
+of the objects of interest. The UWB positioning system, not        which define a maximum emission power and bandwidth limit:
+common in most smartphones but very accurate, is used as our       an absolute -10 dB bandwidth greater than 500 MHz or a
+reference to define the best achievable performance goal, in       relative bandwidth greater than 20%. The IEEE 802.15.4a
+order to compare with BLE RSS-based ranging performance.           (last version IEEE 802.15.4-2011) specifies two physical layers
+We will demonstrate that the common BLE low ranging-               using ultra-wideband (UWB) and chirp spread spectrum (CSS).
+accuracy technology combined with smartphone-based PDR             The UWB layer has three frequency ranges: below 1 GHz,
+estimation, and after some initial user movement, is capable       between 3.2 and 4.8 GHz, and between 5.9 and 10.2 GHz.
+of finding the objects of interest in a museum-like set-ups with   Companies like BeSpoon use the 802.15.4a impulse radio
+decent range and heading accuracy.                                 standard specification to define its physical layer.
+    This paper presents a description of the main features and         BeSpoon is a French start-up company which has de-
+specifications of UWB and BLE ranging systems in section II,       veloped a miniature IR-UWB system. They were the first
+the experimental ranging performance of UWB and BLE is             manufacturer to demonstrate that UWB technology can be
+analyzed in section III. The join range and heading estimation     successfully integrated into a smartphone. The SpoonPhone,
+performance is analyzed in section IV. Finally, in the last        consisting in a phone with the UWB radio and several UWB
+section, we give some conclusions and future work.                 tags (Fig. 1a) is a prototype that was sold for research and
+                                                                   evaluation purposes. This device is no longer available; Now
+               II.   UWB AND BLE SYSTEMS                           they changed the sale strategy and their products are sold as
+    This section presents the basics of UWB and BLE tech-          general purpose modular kits (UM100). Both Spoonphone and
+nology and shows the main features of the two commercially-        the new modules offer the possibility to achieve good precision
+available systems used in this paper: Bespoon and Estimote         (down to 10 cm), ranging (up to 880 m in Line of Sight)
+(Fig. 1).                                                          and receiver sensitivity (down to -118 dBm). They use UWB
+                                                                   channel 2 (3.99 GHz).
+A. UWB technology and Bespoon features                                 The SpoonPhone’s UWB radio can be activated as any
+                                                                   WiFi or Bluetooth radio in a phone, i.e. by switching “on” the
+    Ultrawideband (UWB) technology was originally used for         corresponding tab in the Android-based configuration menu .
+communication but also has a great potential for accurate          The UWB antenna is also used for WiFi communication, and
+ranging and localization [14]. This radio technology consists      it is located top-left when looking at he phone’s screen. An
+of emitting very short pulses (Gaussian pulses and their           SDK API is made available to programmers so as to access in
+derivatives, usually called monopulses), that is why it is also    real-time to the ranging data from the phone to the different
+known as Impulse Radio or IR-UWB. Therefore, as its name           miniature tags. The average rate of range measurements is 2.5
+reveals, they use a large wide bandwidth, which has the            Hz.
+advantage of allowing to resolve any individual multipath
+components from its direct path. The time of arrival of the
+                                                                   B. BLE technology and Estimote Features
+received signal can be estimated with high accuracy if the
+LOS arriving path can be detected. In order to not interfere         Bluetooth 4.0, also known as Bluetooth Smart or Bluetooth
+with other equipment, they follow some FCC regulations,            Low Energy (BLE), is a radio comunication protocol that is
+      2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+
+specially designed for the internet of things. BLE is a totally                   2                                    1              2             3
+
+different implementation from earlier Bluetooth versions (1.0,                   1.5                     15   16       17        18        19       20   21
+
+
+
+
+                                                                   Y (meters)
+2.0 and 3.0), which were devoted to audio or data streaming,                      1             Route2
+and as a wireless sustitution of RS-232 comunications. BLE                              start            14   13       12        11        10       9    8
+                                                                                 0.5                                                                             Tags
+main purpose is to achieve device discovery and connectivity                      0             Route1                                                           Route1
+                                                                                                         1    2        3         4         5        6    7       Route2
+with low battery consumption even at the cost of lower                                  start
+                                                                                                                                                                 Calibration
+                                                                                −0.5                               6            5               4
+comunications speeds. BLE use UHF radio waves in the ISM                               −2       −1       0        1         2          3            4        5   6             7
+                                                                                                                            X (meters)
+band from 2.4 to 2.485 GHz, and it allocates in that band
+40 channels, each 2 MHz wide. The BLE protocol uses very                                                                    a)
+short duration messages for advertisement. This beaconing for
+discovery can also include some payload with other relevant
+information such as sensor reading (temperature, pressure,
+humidity, etc.). This approach allow the implementation of a
+network of BLE motes deployed to monitor and inform about
+the status of the environment.
+    BLE has several advantages over WiFi-based beaconing.
+When using a phone to register the WiFi signals by passive
+scanning, the duration while the phone is waiting at the Service
+Set Identifier (SSID) can be as large as 4 seconds, so scanning
+rate could be below 0.25 Hz. Wifi also buffers the readings
+and are provided in a single bunch with no AP differentiating
+timestamps. BLE allows advertisement rates upto 10 Hz, and
+the Received Signal Strength (RSS) is obtained in real time                                                                 b)
+without any buffering. Additionally BLE tags last several
+months with small batteries, and the phone reading broadcast
+messages consumes less energy than in a WiFi scan. Finally,
+BLE tags can be easily deployed since they are small and
+battery-powered.
+    BLE uses 3 channels for advertising in quick sequence.
+These channels are nominated 37, 38 and 39 but are widely
+spaced at 2402 MHz, 2426 MHz and 2480 MHz. This diversity
+is employed for minimizing interference with common WiFi
+deployments. A problem that could occur at BLE reception
+is that only the RSS value is registered, but not the channel
+on which it was received (only available for iOS 7 or above).
+Depending on the final channel used for RSS registration some
+important fading can occur with drops of 30 dB in very close
+positions [10]. This challenge should be taken into account by
+temporal filtering of the signals.
+   The Estimote tags used are model: “Long Range Location
+Beacons” (Fig. 1b). Tags have a lifetime of 5 years, a max-
+imum range of 200 m (in free space), use iBeacon and Ed-
+dystone protocols, and include 5 sensors (3-axis acceleration,
+Temperature, Ambient light sensor, Magnetometer sensor),
+NFC, GPIO (for controlling or reading external sensors) and
+1Mb EEPROM. We configured them with a transmission                                                                          c)
+power of -12 dBm, and an update rate of 5 Hz.
+                                                                   Fig. 2.      Experimental localization set-up at main CAR-CSIC building
+               III.   R ANGING PERFORMANCE                         corridor: a) Details of the tag distribution, calibrations points and different user
+                                                                   trajectories. b) Distribution of 6 pictures along the corridor with 1 BLE and
+    In the following subsection we present the scenarios where     1 UWB tag in each one. c) Detail of how two different phones: SpoonPhone
+                                                                   with UWB (right) and Samsung Galaxy S4 with BLE (left) are positioned
+we deployed the UWB and BLE equipment, as in a museum-             with a tripod on calibration points.
+like set-up, and the ranging performance that we obtained after
+moving the mobile phone to different known locations:
+
+A. Test set-ups
+                                                                   This set-up is quite small with a user’s visualization area of
+    We tested the system in a set-up with a total of six           about 2.5 by 5 meters (12.5 square meters). A layout and a
+paintings (poster panels) along a corridor, three paintings        picture of this set-up is shown in Fig. 2. Each painting has one
+at two opposing walls. The corridor width is 2.5 meters.           Bespoon-UWB tag stick to it, and another Estimote-BLE tag
+Approximately the lateral separation is 1.35 m center to center.   close to the UWB one.
+      2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+                                                                                                                              BeSpoon range test (Corridor). Max detected distance=4.52
+B. UWB ranging performance                                                                                             5
+
+
+    This subsection aims to assess the performance in point-                                                          4.5
+
+to-point ranging, both in the UWB case (we already know it                                                             4
+should be quite good [15]), but specially in the BLE case where
+                                                                                                                      3.5
+range is estimated indirectly from noisy RSS measurements.
+
+
+
+
+                                                                                              measured distance (m)
+For the initial calibration and raw ranging tests both phones                                                          3
+(SpoonPhone with UWB and Samsung Galaxy S4 with BLE)
+                                                                                                                      2.5
+are positioned on a tripod at the same height as the tags in
+paintings, keeping tags and phones on the same horizontal 2D                                                           2
+
+plane (see Fig. 2b). We define 21 points on the floor of the                                                          1.5
+corridor in a 7 by 3 m grid (black marks in Fig. 2a and b); these
+points are our ground-truth positions that allow us to estimate                                                        1
+
+the true range between each tag and the mobile phones. This                                                           0.5
+                                                                                                                                                                                    experiment
+measurement procedure is not ideal but guarantees an accuracy                                                                                                                       ideal
+                                                                                                                       0
+of about 2-3 cm, enough to analyze expected ranging errors                                                              0             1              2             3            4                5
+
+of about ±10 cm in the best of the cases. The acquisition                                                                                           real distance (m)
+
+
+of UWB range data and BLE RSS data was done in parallel                                                                                                a)
+                                                                                                      BeSpoon range test (Corridor). Mean=0.047. StdDev=0.138. RMSE=0.145. Valid=107%
+but recorded individually at each phone with an independent                             700
+
+logfile recording app.
+                                                                                        600
+    Taking the UWB range information we plotted the rela-
+tionship among the real and measured distances (see Fig.3a).                            500
+Even under this scenario that is mainly LOS, due the presence
+of some people during the recording phase to make it more
+                                                                          occurrences
+
+
+                                                                                        400
+realistic, it can be seen that the measured ranges are not
+ideal and differ in ±0.4 meters from their straight LOS                                 300
+path. The ranging error (measured range minus true range)
+is shown in detail in Fig.3b as a histogram with the number                             200
+of occurrences for different range errors. There is a low-sigma
+Gaussian distribution (±0.14 m) around zero error. Results are                          100
+in consonance with expected results for UWB [16].
+                                                                                         0
+                                                                                         −1                            −0.8    −0.6       −0.4   −0.2     0        0.2    0.4           0.6   0.8    1
+                                                                                                                                                   measured error (m)
+C. BLE ranging performance                                                                                                                             b)
+    The same study than in last subsection but now for BLE is       Fig. 3. Real versus measured distances using the UWB Bespoon system: a)
+presented here. In fact the experimentation was the same, but       Represented in comparison with ideal relationship (black line); b) histogram
+the data in this case is conformed with RSS signals captured        of range errors.
+with the BLE radio of a Samsung Galaxy S4 phone. The first
+thing we did was to represent the decay of the RSS signals
+with distance. In Fig. 4a we present the signal strength with           The ideal distance dideal obtained by inverting the path
+respect to the real distance in an histogram representation. This   loss model (eq. 1) without taking into account RSS noise and
+data is fitted using a Simplex function minimization procedure      dispersion is:
+[17] to a classical path-loss model:
+                                                                                                                                                                 RSS0 −RSS
+                                                                                       dideal = d0 · 10 10·p ,                  (2)
+                                                 
+                                             d
+           RSS = RSS0 − 10 · p · log10                + v,   (1)    however this direct solution, according to the non-linearity of
+                                             d0                     the path-loss model, is biased for real noisy RSS measurements
+                                                                    (with dispersion σRSS ). The unbiased estimate of d is given by
+                                                                    [19]:
+    where RSS is the received power in decibels, RSS0 is a
+mean RSS value obtained at the reference distance d0 = 1m,                                                                                                        σRSS ln 10 2
+d is the distance between emitter and receiver, p is the path                                                                 d = dideal exp−0.5(                    10p    )
+                                                                                                                                                                                    .                    (3)
+loss exponent, and v is a Gaussian random variable with zero
+mean and standard deviation σRSS that accounts for the random           Even with bias correction, when observing the non-linearity
+effect of shadowing [18].                                           of the path loss model and the important dispersion of RSS
+                                                                    values (Fig. 4b), it is expected to have a very noisy non-
+    The experimental RSS data in Fig. 4a is fitted to the path-
+                                                                    gaussian range estimation with increasing dispersion at low
+loss model (eq. 1) and the result presented in Fig. 4b. We found
+a path loss exponent for the corridor case of p = 1.8 (lower
+                                                                    RSS signals.
+than 2 due to the narrowness of the corridor). The RSS0 value           When we represent the real distance vs. the re-estimated
+at a 1 meter distance is -70 dB, and the mean RSS standard          range values, computed from the RSS values and the path-
+deviation, σRSS , is about 5 dB.                                    loss model, we obtain the relationship shown in Fig. 5a. The
+             2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+                                                             range: 0−0.5 m                                                                                                           Estimote range test (Corridor). Max detected distance=31.27
+      0.4                                                                                                                                                                      5
+      0.2
+        0                                                    range: 0.5−1 m
+      0.4                                                                                                                                                                     4.5
+      0.2
+        0                                                    range: 1−1.5 m
+      0.2                                                                                                                                                                      4
+      0.1
+        0                                                    range: 1.5−2 m
+      0.4                                                                                                                                                                     3.5
+      0.2
+
+
+
+
+                                                                                                                                                      measured distance (m)
+        0                                                    range: 2−2.5 m                                                                                                    3
+      0.4
+      0.2
+        0                                                    range: 2.5−3 m                                                                                                   2.5
+      0.2
+      0.1
+        0                                                    range: 3−3.5 m                                                                                                    2
+      0.4
+      0.2
+        0                                                    range: 3.5−4 m                                                                                                   1.5
+      0.4
+      0.2
+        0                                                    range: 4−4.5 m                                                                                                    1
+      0.4
+      0.2
+        0                                                    range: 4.5−5 m                                                                                                   0.5
+                                                                                                                                                                                                                                            experiment
+      0.5
+                                                                                                                                                                                                                                            ideal
+          0                                                                                                                                                                    0
+                       −97   −94    −91   −88   −85    −82       −79 −76 −73       −70     −67   −64   −61     −58                                                              0                1           2             3            4                5
+                                                                  RSS (dB)                                                                                                                                  real distance (m)
+
+
+                                                                  a)                                                                                                                                           a)
+                                            Range−Attenuation Model. Test:Estimote−Corridor                                                                                   Estimote range test (Corridor). Mean=0.69. StdDev=2.79. RMSE=2.88. Valid=97.1%
+                                          Path loss=1.8 RSS (1 m)=−70.1dB. Mean σ : 5.31 dB                                                    1200
+                                                             0                           RSS
+                 −55
+                                                                                                        mean
+                                                                                                        mean+1.6σ
+                 −60                                                                                    mean−1.6σ                              1000
+                                                                                                        model
+
+                 −65
+                                                                                                                                               800
+                                                                                                                                 occurrences
+
+
+                 −70
+
+                                                                                                                                               600
+      RSS (dB)
+
+
+
+
+                 −75
+
+
+                                                                                                                                               400
+                 −80
+
+
+                 −85
+                                                                                                                                               200
+
+
+                 −90
+                                                                                                                                                 0
+                                                                                                                                                                −5                           0              5               10                15               20
+                 −95                                                                                                                                                                                       measured error (m)
+                    0         0.5         1      1.5         2       2.5       3          3.5     4          4.5     5
+                                                              Distance (meters)
+                                                                                                                                                                                                               b)
+                                                                  b)
+                                                                                                                         Fig. 5. Real versus estimated distances using the BLE RSS-based Estimote
+Fig. 4. Calibration of BLE RSS-based Estimote system: a) Histogram with                                                  system: a) Dispersion is large compared to ideal distance (black line); b)
+experimental RSS values (in dBm), for different real ranges; b) Experimental                                             Histogram of range errors, which can be more than 5 meters in many cases.
+data vs real distance represented by its mean and 1.6 standard deviation. A
+path loss model is fitted (red line) to experimental data (path loss exponent
+1.8 and RSS0 for d0 =1m is -70 dBm)
+                                                                                                                                                      IV.                           R ANGE AND H EADING E STIMATION
+                                                                                                                             This section explains the different methods used for relative
+                                                                                                                         orientation determination between a person and an object of
+horizontal quantization is due to the relatively low diversity                                                           interest. We analyze its performance using separate Cumulative
+of total ground-truth ranges (21 points x 6 tags: 126 different                                                          Distribution Functions (CDF) of range and angle.
+ranges). The vertical quantization, which is also exponentially
+growing, is due to the fact that the captured RSS values are                                                             A. Different Case Studies
+integers, so according to the path loss model, one dB change in
+the strong -60 dB signals represents a few centimeters change                                                                We assume that each object to locate (painting, sculp-
+(typical at close range), but one dB change in the range of                                                              ture,etc.) has an emitting tag stuck to it with a unique identi-
+-90dB can be as large as 0.5 m.                                                                                          fication code. The user carries a mobile phone with BLE 4.0
+                                                                                                                         or UWB radio capacity. All our use cases will consist of a
+                                                                                                                         total of 6 objects (6 tags in total) and the goal is to determine
+    For a better visualization of the range error we present                                                             the relative location of each of the objects with respect to the
+in Fig. 5b a histogram of range errors (with a gaussian blue                                                             users pose. We will study 2 different configurations for finding
+plot as reference). It can be seen the non-gaussian distribution                                                         each object:
+of errors and that there are range errors even larger than
+10 meters (caused by very weak RSS values). Therefore a                                                                      •                   Cooperative trilateration-based finding. In this case
+very challenging situation is to try to estimate range from                                                                                      we assume that we know the localization of all objects
+BLE data, specially when working with isolated point-to-point                                                                                    (absolute position or at least the realive localization
+RSS data (i.e. not under the typical joint multi beacon-based                                                                                    among them), so it is possible to jointly estimate
+positioning).                                                                                                                                    the user’s position by trilateration and from that
+           2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+                                      Trilateration -based Finding
+                                                                                               Finding Estimote Tag #6. Radar−like View. TimeStamp:49.238 seconds
+
+     User’s Phone                                             Tags
+                       Measurement                                                        25           Aproximate Tag Location Ground−Truth
+                                                              position
+                       Models              Trilateration      database                                 Particle Filter−based Tag Location (Estimate & Uncertainty)
+                                           Particle                                                    Gaussian Tag Location (Estimate & 2σ Uncertainty)
+                                           Filter                                         20
+            BLE         RSS model                                           Range
+                                           (6Tags case)       Absolute
+                                                              Position                    15
+                                                              to Relative
+           UWB         Range model                                          Angle
+                                                                                          10
+
+
+                                          Finding                           Range          5
+          Acc,Gyr       PDR
+                                          Particle
+                                          Filter                                                                                Y
+                     Motion model                                                          0                                    X
+                                          (1Tag case)                       Angle
+                                                                                                                              Phone
+                                                                                          −5
+
+                                       Individual Finding                                                                           Tag6
+                                                                                         −10                                        10 m
+
+Fig. 6.     Scheme with the two fundamental finding algorithms implemented.
+                                                                                         −15
+
+                                                                                         −20                                            20 m
+             information deduce the range and heading to each of
+                                                                                                Distance: 10.2 meters          Orientation: Behind you (−161º)
+             the individual tags. This is the most ideal case, since                     −25
+             it assumes that all the cooperative objects are geo-                                   −20         −10             0           10            20
+             referenced with accuracy and their state is maintained
+             along time.                                                            Fig. 7.      Example of relative localization using a particle filter for the
+                                                                                    “1Tag+PDR” (or “Individual finding” assisted by PDR) in the most chal-
+    •        Individual finding. In this case, we do not rely in                    lenging case of BLE RSS-based estimation. The Radar-like view shows the
+             any cooperation, we just use the information available                 particles in blue, the ground-truth in yellow, the finding results: distance and
+                                                                                    orientation.
+             from the tag attached to the object of interest. This is
+             the more versatile situation and can adapt to objects
+             that move with time or does not require a geo-                         heading change observed from the PDR attitude-and-heading-
+             reference maintenance. In fact this is the use case more               reference-system (AHRS).
+             challenging, in principle less reliable, and the one we
+             are more interested in for its novelty and applicability.                  The 1Tag case, is a special relative localization approach
+                                                                                    that is implemented using a particle filter and a Bayesian
+    As we are also testing the influence of adding PDR infor-                       approach. In this case the particle filter used 3 states, only
+mation to the estimation processes for each of the two different                    the 3D position of the object respect to the phone’s main
+configurations: “Cooperative trilateration-based finding” and                       axis. The measurement model is the same that in the previous
+“Individual finding”, then we finally have 4 case studies. For                      case but contributes in a less informative way to the position
+convenience we will denominate them as: 6Tags, 6Tags+PDR,                           determination since only two actors are involve in the process,
+1Tag, 1Tag+PDR. Where the “6Tags” label is used for the                             the phone and the object’s tag. So Particle weighting is done by
+“Trilateration-based finding” and the “1Tag” label is used                          circumferences centered always on the phone’s place (a ring-
+for “Individual finding”. Since we also use two different                           like shape distribution). This estimation process is only able
+technologies: UWB and BLE, then will will finally study a                           to deduce the range to the object but never the orientation to
+total of 8 configurations, as we will present in next subsections.                  that object. The only way to estimate the object’s orientation
+                                                                                    is by adding PDR information. In this case, the particles can
+B. Range and Heading Algorithms                                                     be moved backwards when a user step is detected, and can be
+                                                                                    rotated respect to the phone position when PDR detect a turn.
+     There are two fundamental algorithms developed for the                         After a succession of several RSS (or ranges) measurements
+two main configurations “Trilateration-based finding” and “In-                      and several steps detected with some turns, it is when the
+dividual finding” (or 6Tags and 1Tag approaches, respectively).                     object’s orientation with respect to the user can be deduced.
+In both cases we implemented the estimation using a particle                        This is the more challenging case, when using BLE instead of
+filter and a location engine. See Fig. 6 for a block diagram of                     UWB, since measurement modes are very inaccurate and PDR
+these algorithms.                                                                   detection at a phone is not so reliable as foot-mounted PDR.
+    The 6Tags case, is a typical trilateration algorithm using a                        A representative vision of the particles distribution, object’s
+Bayesian estimation with a measurement model that depends                           estimation and ground-truth data, for the 1Tag+PDR or “Indi-
+on the technology used. If UWB distance measurements are                            vidual finding” case, is shown in Fig. 7. After some walking
+processed then a combined LOS+NLOS model is used as in                              and one turn, the initial ring-like particle distribution converges
+[16]. If RSS measurements are received from the BLE system,                         to a more clustered distribution, and it is then possible to
+then a generic path loss model is used with the parameters                          estimate the object’s location with respect to the phones’s pose.
+deduced in last section. The particle filter uses 4 states, 3                       In this case the object is behind the user at a distance of 10
+for 3D position and one for absolute heading of the person                          meters.
+(his phone in fact). When the PDR information is used the
+the movement model is improved by displacing the particles                             Different experiments, with different trajectories around the
+the amount measured with a stride length estimator, and the                         paintings area were performed. For these cases, and in order
+      2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+                                                                                                                                        Cumulative Distribution Function (CDF)
+to ease the PDR estimation, zig-zag and “s”-like trajectories                                                        100
+
+are performed. Any trajectory with 90 or 180 degrees turn are
+                                                                                                                      90
+good for achieving angular information when PDR is active.
+Walking straight all the time does not give information for the                                                       80
+
+
+
+
+                                                                          Percentage with error lower than abscisa
+particles filter cloud to converge. So our trajectories contain                                                       70
+turns to make the estimation feasible.
+                                                                                                                      60
+
+    The ground-truth position or Range/heading ground-truth
+                                                                                                                      50
+is obtained in our case from PDR estimations when we give
+the known initial position and the correct orientation. This is a                                                     40
+
+very practical way to obtain the ground-truth, not too precise,                                                       30
+since is subject to a discrepancy between the foot motion
+                                                                                                                      20
+and the actual phone movement, but enough to observe the                                                                                                                               UWB:6Tags
+performance limitations and achievements from the cases we                                                            10                                                               UWB:6Tags+PDR
+                                                                                                                                                                                       UWB:1Tag
+want to explore.                                                                                                                                                                       UWB:1Tag+PDR
+                                                                                                                       0
+                                                                                                                        0   0.5   1     1.5          2        2.5        3      3.5        4   4.5     5
+                                                                                                                                                         Range Error (m)
+
+C. UWB Range and Heading Performance                                                                                                                        a)
+                                                                                                                                       Cumulative Distribution Function (CDF)
+    Here we will show the performance of the more ideal                                                              100
+
+UWB case (Bespoon) for the 4 configurations described above:                                                          90
+6Tags, 6Tags+PDR, 1Tag, 1Tag+PDR, all preceded with label
+“UWB” since we are in that case. Since two independent                                                                80
+
+
+
+                                                                          Percentage with error lower than abscisa
+estimations are required for relative finding: range and heading,                                                     70
+then the results are presented in two separate CDF, one for
+                                                                                                                      60
+range, and another for angle. In Fig. 8 we present these results.
+                                                                                                                      50
+    From Fig. 8a we can see that the range estimation is better
+                                                                                                                      40
+for the “Trilateration-based finding” (6Tags cases) than for
+the “Individual finding” (1 Tag cases). This is logical since                                                         30
+
+more information is used. The contribution of PDR information
+                                                                                                                      20
+is irrelevant and no improvement is achieved. This is again                                                                                                                            UWB:6Tags
+                                                                                                                      10                                                               UWB:6Tags+PDR
+consequence of the high quality of UWB ranging process, and                                                                                                                            UWB:1Tag
+                                                                                                                                                                                       UWB:1Tag+PDR
+PDR does not add any value to UWB system.                                                                              0
+                                                                                                                        0    10   20          30        40         50      60         70       80      90
+                                                                                                                                                   Angular Error (degrees)
+    From Fig. 8b we can see that the angular estimation is not
+so ideal even for the 6Tags case; in this case the contribution of                                                                                          b)
+PDR helps somehow for a better orientation determination. On         Fig. 8. Cumulative Distribution Functions for the UWB-Bespoon technology:
+the other side we see that the 1Tag case is unable, as expected,     a) Distance CDF; b) Angular CDF.
+to determine any kind of orientation, however using 1Tag+PDR
+is possible to obtain a decent orientation estimation, after
+some walking. In fact in our experiments 40% of the time             PDR information angular estimation improves significantly
+the orientation was lost (particles in ring-like shape) but after    (less than 30 degrees error in 80% of the cases). As expected
+some walking the orientation was deduced with less than 30           the orientation estimation from the challenging 1Tag case
+degrees error in 80% of the cases. The time were the estimation      with BLE data is problematic. However after a long period
+was lost is included in the CDF.                                     where the particles have not clusterized yet (70% of the
+                                                                     experimentation time), the angular estimation is good with
+D. BLE Range and Heading Performance                                 error below 30% in 80% of the cases, similar to the UWB
+                                                                     case. This result demonstrate that using Estimote RSS based
+   This subsection will analyze the same situations as the last      technology combined with PDR, even for objects tagged with
+one, but in this case using BLE technology (Estimote tags). In       no geo-referentiation, it is possible to find the object of interest
+Fig. 9 we present these results.                                     after walking a while around the undiscovered object.
+    From Fig. 9a we see a good performance in range estima-
+tion when using 6Tags, and even better range estimation with                                                                           V.          C ONCLUSIONS
+PDR. The results in range for the BLE:6Tags+PDR are almost
+                                                                         We have presented an experimental evaluation of different
+as good as for the UWB case, which is a good achievement.
+                                                                     approaches for finding an object of interest respect to the pose
+When using only 1Tag the performance in range estimation is
+                                                                     of a user’s phone. The range and orientation is computed from
+not very accurate (about 3 meters error in 60% of the cases)
+                                                                     two approaches: 1) a cooperative trilateration method where
+and no significant improvement is obtained from PDR in these
+                                                                     several geo-referenced tags jointly cooperate providing tag-to-
+cases (4 m error in 90% of the case for the PDR case). This
+                                                                     phone ranges, and 2) a novel an much more challenging use
+is due to the poor measurement models of BLE technology
+                                                                     case where only one unreferenced individual tag is transmitting
+when no RSS redundancy exists.
+                                                                     range information. These two approaches are complemented
+   From Fig. 9b we deduce that Orientation is more difficult         with PDR information to analyze its contribution and benefits.
+to deduce, even for the 6Tags case, however when adding              The case of two different technologies are analysed: UWB
+                                                2017 Int. Conference on Indoor Positioning and Indoor Navigation (IPIN), 18-21 September 2017, Sapporo, Japan
+
+                                                                   Cumulative Distribution Function (CDF)
+                                                100                                                                                        (MINECO/FEDER)), REPNIN (TEC2015-71426-REDT)
+                                                                                                                                           and SmartLoc (CSIC-PIE Ref.201450E011).
+                                                 90
+
+
+                                                 80
+                                                                                                                                                                          R EFERENCES
+     Percentage with error lower than abscisa
+
+
+
+
+                                                 70
+                                                                                                                                            [1]   R. Mautz, Indoor Positioning Technologies. PhD thesis, ETH Zurich,
+                                                 60
+                                                                                                                                                  2012.
+                                                                                                                                            [2]   Y. Gu, A. Lo, and I. Niemegeers, “A Survey of Indoor Positioning Sys-
+                                                 50                                                                                               tems for Wireless Personal Networks,” IEEE Communications Surveys
+                                                                                                                                                  and Tutorials, vol. 11, no. 1, pp. 13–32, 2009.
+                                                 40
+                                                                                                                                            [3]   J. Hightower and G. Borriello, “Location Systems for Ubiquitous
+                                                 30                                                                                               Computing,” Computer, vol. 34, no. 8, pp. 57 – 66, 2001.
+                                                 20
+                                                                                                                                            [4]   Z. He, B. Cui, W. Zhou, and S. Yokoi, “A proposal of interaction
+                                                                                                                      BLE:6Tags                   system between visitor and collection in museum hall by iBeacon,” 10th
+                                                 10                                                                   BLE:6Tags+PDR               International Conference on Computer Science and Education, ICCSE
+                                                                                                                      BLE:1Tag
+                                                                                                                      BLE:1Tag+PDR                2015, no. Iccse, pp. 427–430, 2015.
+                                                  0
+                                                   0   0.5   1     1.5          2        2.5        3      3.5        4     4.5       5     [5]   J. Tiemann, F. Schweikowski, and C. Wietfeld, “Design of an UWB
+                                                                                    Range Error (m)
+                                                                                                                                                  Indoor-Positioning System for UAV Navigation in GNSS-Denied En-
+                                                                                       a)                                                         vironments,” in International Conference on Indoor Positioning and
+                                                                   Cumulative Distribution Function (CDF)                                         Indoor Navigation (IPIN), pp. 1–7, 2015.
+                                                100
+                                                                                                                                            [6]   I. Guvenc, C. C. Chong, and F. Watanabe, “NLOS identification and
+                                                 90                                                                                               mitigation for UWB localization systems,” IEEE Wireless Communica-
+                                                                                                                                                  tions and Networking Conference, WCNC, pp. 1573–1578, 2007.
+                                                 80
+     Percentage with error lower than abscisa
+
+
+
+
+                                                                                                                                            [7]   S. Maranò, W. M. Gifford, H. Wymeersch, and M. Z. Win, “NLOS iden-
+                                                 70                                                                                               tification and mitigation for localization based on UWB experimental
+                                                                                                                                                  data,” IEEE Journal on Selected Areas in Communications, vol. 28,
+                                                 60
+                                                                                                                                                  no. 7, pp. 1026–1035, 2010.
+                                                 50                                                                                         [8]   M. Kouhne and J. Sieck, “Location-Based Services with iBeacon
+                                                                                                                                                  Technology,” Proceedings - 2nd International Conference on Artificial
+                                                 40
+                                                                                                                                                  Intelligence, Modelling, and Simulation, AIMS 2014, pp. 315–321,
+                                                 30
+                                                                                                                                                  2014.
+                                                                                                                                            [9]   D. E. Grzechca, P. Pelczar, and L. Chruszczyk, “Analysis of Object
+                                                 20                                                                                               Location Accuracy for iBeacon Technology based on the RSSI Path
+                                                                                                                      BLE:6Tags
+                                                 10                                                                   BLE:6Tags+PDR               Loss Model and Fingerprint Map,” International Journal of Electronics
+                                                                                                                      BLE:1Tag                    and Telecommunications, vol. 62, no. 4, pp. 371–378, 2016.
+                                                                                                                      BLE:1Tag+PDR
+                                                  0                                                                                        [10]   R. Faragher and R. Harle, “Location fingerprinting with bluetooth low
+                                                   0    10   20          30        40         50      60         70        80         90
+                                                                              Angular Error (degrees)                                             energy beacons,” IEEE Journal on Selected Areas in Communications,
+                                                                                       b)                                                         vol. 33, no. 11, 2015.
+                                                                                                                                           [11]   E. Foxlin, “Pedestrian tracking with shoe-mounted inertial sensors,”
+Fig. 9. Cumulative Distribution Functions for the BLE-Estimote technology:                                                                        IEEE Computer Graphics and Applications, vol. 25, no. 6, pp. 38–46,
+a) Distance CDF; b) Angular CDF.                                                                                                                  2005.
+                                                                                                                                           [12]   A. R. Jiménez, F. Seco, J. C. Prieto, and J. Guevara, “Indoor Pedestrian
+                                                                                                                                                  Navigation using an INS/EKF framework for Yaw Drift Reduction and
+and BLE, using commercially available devices (Bespoon and                                                                                        a Foot-mounted IMU,” in WPNC 2010: 7th Workshop on Positioning,
+                                                                                                                                                  Navigation and Communication, (Dresden), pp. 135 – 143, 2010.
+Estimote, respectively). After this analysis, we demonstrate
+                                                                                                                                           [13]   R. Harle, “A Survey of Indoor Inertial Positioning Systems for Pedes-
+that the common BLE low ranging-accuracy technology com-                                                                                          trians,” IEEE Communications Surveys and Tutorials, vol. 15 (3),
+bined with smartphone-based PDR estimation is capable, after                                                                                      no. December 2012, pp. 1281–1293, 2013.
+some initial user’s walking, of finding with decent range and                                                                              [14]   L. M. M. Ghavami and R.Kohno, UltraWideband: Signals and systems
+heading accuracy the objects of interest in a museum-like set-                                                                                    in communication engineering. John Wiley & Sons, 2004.
+up, but also valid for outdoors applications for finding objects                                                                           [15]   A. R. Jimenez and F. Seco, “Comparing Decawave and Bespoon
+of interest.                                                                                                                                      UWB location systems: indoor / outdoor performance analysis,” in 6
+                                                                                                                                                  Int. Conference on Indoor Positioning and Indoor Navigation (IPIN),
+    Future research will include the experimentation in larger                                                                                    no. October, pp. 4–7, 2016.
+spaces, in more realistic scenarios like museums and botanic                                                                               [16]   A. Jimenez and F. Seco, “Comparing Ubisense, Bespoon and Decawave
+parks. The convergence time versus the traveled trajectory will                                                                                   UWB location systems: indoor performance analysis,” IEEE Transac-
+be studied. The detection rate, or confusion matrices when                                                                                        tions on Instrumentation and Measurement, no. 99, pp. 1–12, 2017.
+trying to use this estimation to receive augmented information                                                                             [17]   J. Nelder, R. Mead, B. J. a. Nelder, and R. Mead, “A simplex method for
+                                                                                                                                                  function minimization,” Computer Journal, vol. 7, pp. 308–313, 1965.
+from a particular object and not from the ones close to it, will
+                                                                                                                                           [18]   S. Mazuelas, A. Bahillo, R. M. Lorenzo, P. Fernandez, F. a. Lago,
+be another future work to implement. These future studies can                                                                                     E. Garcia, J. Blas, and E. J. Abril, “Robust Indoor Positioning Provided
+open the potential to other fine-grained finding in museums or                                                                                    by Real-Time RSSI Values in Unmodified WLAN Networks,” IEEE
+spaces with a higher density of objects that we could want to                                                                                     Journal of Selected Topics in Signal Processing, vol. 3, pp. 821–831,
+discern.                                                                                                                                          oct 2009.
+                                                                                                                                           [19]   G. Zanca, F. Zorzi, A. Zanella, M. Zorzi, and M. Max, “Experimental
+                                                                                                                                                  comparison of RSSI-based localization algorithms for indoor wireless
+                                                                  ACKNOWLEDGMENT                                                                  sensor networks,” in Proceedings of the workshop on Real-world
+                                                                                                                                                  wireless sensor networks, (Glasgow), pp. 1–5, 2008.
+   The authors thank the financial support received
+from   projects:  TARSIUS    (TIN2015-71564-C4-2-R
+

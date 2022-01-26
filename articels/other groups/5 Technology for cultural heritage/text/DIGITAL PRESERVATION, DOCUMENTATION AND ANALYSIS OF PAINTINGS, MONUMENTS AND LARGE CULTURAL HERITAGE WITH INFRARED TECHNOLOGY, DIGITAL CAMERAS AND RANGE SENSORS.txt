@@ -1,0 +1,520 @@
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+
+DIGITAL PRESERVATION, DOCUMENTATION AND ANALYSIS OF PAINTINGS,
+MONUMENTS AND LARGE CULTURAL HERITAGE WITH INFRARED
+TECHNOLOGY, DIGITAL CAMERAS AND RANGE SENSORS
+A. Rizzi a, F. Voltolini a, S. Girardi a, L. Gonzo a, F. Remondino b
+a
+
+Fondazione B.Kessler-IRST, Trento, Italy (rizziale, fvoltolini, girardi, lgonzo)@itc.it
+b
+Institute of Geodesy and Photogrammetry – ETH Zurich, Switzerland
+fabio@geod.baug.ethz.ch
+
+KEY WORDS: Photogrammetry, Range Sensors, Documentation, Infrared, Integration, Cultural Heritage
+
+ABSTRACT:
+The digital documentation and 3D modelling of Cultural Heritage monument and sites is receiving great attention in the last years.
+There is a large variety of technologies for 3D surveying purposes and generally a technique is chosen according to the project
+requirements, operator experience, budget and location constraints. Digital images and range sensors (laser scanner or stripe
+projection systems) are generally the most used technologies used to virtually reconstruct the whole geometry of the studied
+heritage. The combination of the two recording methods has demonstrated to be an efficient way of 3D modeling as no technique by
+itself is able to provide accurate 3D results in all the applications and in short time. Other data are becoming nowadays pretty
+common and important for a more deep documentation and investigation of heritages, i.e. image data coming from the light
+spectrum outside the visible range. In this work, we present how we derive geometric 3D models of heritage structures by means of
+close-range photogrammetry or range sensors while extra information acquired with infrared cameras are used for texture mapping
+purposes and other studies. Data obtained from all those instruments are registered and fused together for documentation reasons,
+historical studies, restoration plans and visualization purposes.
+
+1. INTRODUCTION
+Nowadays the digital documentation and 3D modelling of
+Cultural Heritage monument and sites is receiving much more
+attention. On the technology side we currently have at our
+disposal a vast array of relevant and efficient data acquisition
+tools: high-resolution satellite images, large format digital aerial
+cameras, hyperspectral sensors with hundreds of channels,
+interferometric radar, range sensors, thermal cameras, model
+helicopters, panoramic cameras and a large number of diverse
+customer still video cameras and camcorders. The correct
+selection, combination and integration of these techniques
+requires great experience and the need to combine them comes
+from the complexity of some heritage structures and the lack of
+a single method capable of providing satisfactory results in all
+measuring conditions.
+The available technologies and methodologies for digital
+recording of heritage sites and objects are really promising and
+the whole heritage community is trying to adapt these
+approaches for fastest, detailed and easy 3D documentations.
+Indeed we have to face that our cultural heritage is constantly
+under threat and danger. Architectonical structures and heritage
+sites are threatened by pollution (air pollution, acid rain, birds,
+etc), tourists, wars as well as environmental disasters like
+earthquakes or floods or climatic changes. On the other hand
+hidden cultural heritage (under the earth’s surface or those
+partially visible above ground) are affected by agriculture
+(vineyards, olive cultivation, erosion processes), change of
+agricultural regimes due to economical change, mining, gravel
+extraction, contraction of infrastructures (roads, railways),
+industrial areas and those factors lead to its constant
+destruction. Therefore 3D modelling could be extremely
+powerful to improve identification, monitoring, conservation
+and restoration. At the landscape scales, digital 3D modelling
+and data analysis allow site managers and archaeologists to
+
+conserve and protect as well as integrate, without breaks,
+different archaeological features and physical context to better
+document the area. At the monuments/sites scale, 3D can give
+accurate measurements and objective documentation as well as
+a new view under a different point of view. At the artefact
+scale, 3D modelling allows to reproduce accurate
+digital/physical replica of every piece that can be studied,
+measured, showed, etc. as well as data for general public use,
+virtual restoration and conservation.
+In this work we report about the use and integration of infrared
+thermography data, consumer digital camera images and range
+data, for the documentation of complex architectures and
+heritages. The goal is to explain the different techniques, their
+integration and the used methodology for the digital recording
+purpose.
+The innovation in our approach consists in the combination of
+data coming from different measuring sources and with
+different resolutions (in geometry and texture) into a single
+textured 3D model representing the structure of interest, which
+can be analyzed and easily used by restorers.
+
+2. 3D MODELLING TECHNIQUES
+In this section we report the main 3D modelling techniques
+used in the heritage field, i.e. image-base and range-based
+modelling approaches, the most employed in the digital
+documentation and preservation of cultural heritages.
+In the choice of the modelling techniques to be adopted,
+different factors have to be considered, as for example the
+required level of detail, occlusions, time and space for data
+acquisitions etc. It’s impossible to give a general rule and
+decide which technique has to be used in a certain situation and
+with which instrument. For sure, so far, the integration of the
+
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+different techniques is leading to the best results, in terms of
+accuracy, time and details.
+2.1 Image-Based Modelling (IBM)
+Image data are probably the most complete source for digital
+documentation and 3D modelling. Indeed, geometry and texture
+information can be derived at the same time, using cheap
+sensors and fast procedures. Generally the image measurement
+phase is regarded as the most tedious part leading non-expert to
+consider this modelling approach as inappropriate, time
+consuming and, with the advent of range sensors, as out-ofdate. Between IBM methods, photogrammetry is a highly
+accurate and flexible approach, suited for different scales and
+used to derive metric and reliable information of a scene from a
+set of images [Remondino and El-Hakim, 2006]. Images
+acquired in the visible domain are generally employed, even if
+IR or UV data could also be employed. Old images, stored in
+databases or archives, may be also used to document lost
+objects [Grün et al., 2004].
+Semi-automatic image-based modelling techniques are
+particularly suitable for 3D reconstruction of buildings and
+man-made objects that contain generic geometrical shapes as
+for example parallel lines, planes and right angles. Generally at
+least two images are required, even if it is possible to calculate
+3D data using a single image using geometrical constraints and
+image invariants. With the advent of automated procedures and
+fully digital products in the 90’s, photogrammetry has become
+easier to use, cheaper and a wide range of commercial software
+is available. Photogrammetric packages allow, after the
+(manual) markerless tie point measurement and bundle
+adjustment phase, to obtain sensor calibration and orientation
+data, three-dimensional object point coordinates from multiimage networks, as well as wireframe or textured 3D models.
+In order to obtain accurate and correct results, the employed
+cameras have to be calibrated [Remondino and Fraser, 2006]. It
+is generally better first to calibrate the internal camera
+parameters with a given setting, using the most appropriate
+image network, and then recover the object geometry using
+those calibration parameters at the same camera setting.
+The latest developments, in particular related to surface
+measurement and reconstruction, are increasing the automation
+[El-Hakim, 2006; Remondino and Zhang, 2006] and the trend is
+to create automatic and user friendly tools that site managers,
+archaeologists, restorers, conservators and the whole heritage
+community could use instead of expensive and cumbersome
+range sensors.
+2.1.1 IR Thermography
+Infrared (IR) thermography has been recently extensively used
+for the documentation of cultural heritage, in particular for art
+work studies [Pelagotti et al., 2007] and for monitoring and
+conservation of historical buildings [Moropoulo et al., 2001].
+IR thermography transforms the thermal energy, emitted by an
+object in the infrared band of the electromagnetic spectrum, into
+a visible image.
+Thermography represents a great potentiality to be exploited in
+many fields, but this simple technique is still not diffuse
+because of a lack of adequate knowledge and its expensive
+equipments. By utilizing a thermal imaging system, it is
+possible to detect and display the normally invisible infrared
+radiation (‘heat’) emitted by an object. This infrared energy is
+converted to a real-time visible light image, which is displayed
+on a monitor. Depending upon the type of thermal imager,
+measurement of object temperature is also possible.
+
+In particular, this non-destructive technique is used for the
+assessment of various traditional–historical materials and
+structures before and after they had been conserved, restored or
+repaired. Non-destructive testing and evaluation are performed
+on the materials and structures in order to assess the physicochemical behaviour of conservation treatments such as stone
+cleaning, stone consolidation, as well as to disclose any
+substrate features, such as tesserae on plastered mosaic
+surfaces, to detect buried defects and inhomogeneity, to monitor
+hidden structure and moisture content, to analyze corrosions
+and to check the quality of welding and reinforcements
+elements. Hidden structure identification, adhesion of frescoes
+checking, cracks mapping and air flows studies are among the
+most important applications for conservators and restorers.
+Modern IR imagers resolve surface temperature differences of
+0.1ºC or less. With this high sensitivity, they can evaluate
+subtle thermal phenomena, which are only revealed in the form
+of slight temperature gradients.
+An example of painting analysis in terminal range is shown in
+Figure 1. In this case, the IR image is able to show the structure
+of the painting’s frame while in other IR ranges, the preparatory
+drawing of the painter could also be detected [Pelagotti et al.,
+2007]. Figure 2 shows the materials employed for the
+consolidation of a textured wall. Similarly, we could detect the
+compositions of buildings façades or reveal stoppings and
+paddings.
+
+Figure 1. The visible and the thermographic image of a painting.
+
+Figure 2. An internal wall with frescos in the Buonconsiglio Castle
+of Trento (Italy) and its appearance in IR thermography.
+
+Infrared thermography can be used both as qualitative and
+quantitative tool. Some applications do not require obtaining
+exact surface temperatures. For example, to identify hidden
+structure or adhesion of frescoes, it is sufficient to acquire
+thermal signatures. This method of qualitative visual inspection
+is based on image interpretation. On the other hand, quantitative
+analysis requires a rectification of the thermal images to
+provide correct length or surface measures.
+The wavelength, e.g. the distance between successive peaks in
+the oscillations of the electric and magnetic field, can vary over
+a wide range representing a different phenomenon including
+radio transmissions, microwaves, infrared, visible and
+ultraviolet light, x-rays and gamma rays (Figure 3). The IR
+portion of the electromagnetic spectrum includes wavelengths
+from ca 0.78 μm to ca 1000 μm. Therefore this radiation has
+wavelengths just a little longer than those of visible light and
+cannot be seen with the unaided eye.
+
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+
+Figure 3. Electromagnetic spectrum.
+
+The infrared spectrum has a number of technological uses
+including target acquisition and tracking by the military, remote
+temperature sensing, short-ranged wireless communication,
+spectroscopy, weather forecasting and astronomy.
+The sensors able to record infrared radiations are usually
+designed only to collect radiations within a specific bandwidth.
+Indeed the infrared band is pretty wide and often subdivided
+into smaller sections that relieve different features.
+Short IR wavelength, also referred as near-IR, contains
+wavelengths near the visible range (0.78 μm to ca 1.5 μm).
+Images acquired in this range are well suitable for high
+temperature subjects and are often used to image lasers, such as
+in the development of LIDAR systems. In particular, IR
+reflectography in the range between 0,8 and 2 μm allows the
+analysis of many materials which compose the pictorial layers
+[Fontana at al., 2005]. Most of the materials which compose the
+painting’s layer are in fact at least partially transparent to the IR
+radiation, therefore IR imaging generally allows to see features
+underneath the layers visible by human eye and to visualize
+under-drawings or pentimenti of the artist (Figure 4). This is
+very useful information to decide whether a painting is the
+prime version by the original artist or a copy, and whether it has
+been altered by restoration work.
+Figure 5. A visible (above) and thermography (below) image of
+frescoed vaults. The IR analysis shows a very hot area (probably a pipe,
+here highlighted by the contour) passing onto the frescos and producing
+damages.
+
+Figure 4. A typical painting cross-section, with its different layers and
+the wavebands that can be used to investigate them.
+
+Longer wavelengths (>8 μm) of the IR band are instead referred
+as far-IR. In this part of the spectrum it is possible to see the
+environment with or without visible illumination. The amount
+of radiation emitted by an object increases with temperature,
+therefore thermography allows to see variations in temperature.
+All objects above 0 degrees Kelvin emit thermal infrared
+energy, so thermal imagers can passively see all objects
+temperatures. Infrared thermography cameras produce images
+of invisible infrared or heat radiation and provide precise noncontact temperature measurement capabilities. Furthermore, it
+is possible to check the structure of buildings and to find the
+defects on one ore more parts of a structure.
+Thermography with far-IR (up to ca 15 μm) is used to detect
+insulation abnormalities in walls and roofs. In addition to this,
+it’s possible to find and to determinate air leakage through
+exterior walls and roofs, thermal irregularities (Figure 5), water
+penetration and moisture accumulation. The moisture in
+heritage materials can destroy structural integrity and nurture
+mould. An infrared camera instantly shows what is wet and
+what is dry.
+
+Nevertheless performing correct measurements in long wave IR
+images presents some difficulties because the value of energy
+captured by the camera is affected by material’s characteristics
+(like emissivity) and ambient conditions (presence of sunlight,
+ambient temperature, moisture, distance of object, etc).
+A conventional material that is transparent to near infrared, yet
+opaque to long-wave IR, is common glass.
+2.1.2 UV
+On the other side of visible spectrum there is UV (Ultraviolet)
+radiation. It is an electromagnetic radiation with a wavelength
+shorter than 0.4 μm but longer than soft X-rays (10-2 μm). It is
+possible to subdivide into near UV (0.4–0.32 μm), far UV
+(0.32–0.1 μm) and deep UV (<0.1 μm).
+In artwork studies, near UV images are mostly used to identify
+different varnishes and over-paintings, in particular with
+induced visible fluorescence imaging systems. When UV light
+is shined onto an object, the result is the emission of photons in
+the visible region of the spectrum. This phenomenon, called
+fluorescence, occurs when light photons of high energy are
+absorbed and re-emitted in the visible wavelengths regions
+[Lettner et al., 2007]. Indeed, photons in the UV region of the
+spectrum are absorbed by the painting varnish and this effect,
+imaged with dedicated image systems, allow to characterize the
+used material, evaluate the artwork conservation state or
+
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+localize retouches and previous restorations [Fontana et al.,
+2005; Pelagotti at al., 2006; Pelagotti et al., 2007]. In a painting
+the aged varnishes have different fluorescence properties than
+new varnishes and some modern pigments have a different
+fluorescence emission than traditional pigments, even if the
+look alike under visible light. And fluorescence of oil paintings
+under ultraviolet light shows if any restoration has been done.
+Not only the paintings can be analyzed with UV but also other
+objects like porcelain, ceramic and paper art showing their
+hypothetical repairs and cracks.
+2.2 Range-Based Modelling (RBM)
+Range-based approaches are often complementary or combined
+to image-based ones [El-Hakim et al. 2004; Voltolini et al.,
+2007]. By using range sensors, we can generally perform
+detailed 3D models, with fast acquisition but often large editing
+efforts. While the recording devices are still expensive,
+important progress has been made in recent years towards an
+efficient processing and analysis of the range data.
+The use of active sensors has become a very common source of
+documentation data in recent years, in particular for non-expert
+users, as they provide range data of surfaces in high resolution
+and generally with high accuracy.
+Like photogrammetry, active sensors are suitable for different
+scales. Range-based systems [Blais, 2004] are mainly based on
+two principles: triangulation and time delay. Triangulationbased systems work on short distance (between 0.1 and 500 cm)
+and can reach very high accuracy and resolution. The high
+accuracy in the 3D measurements is essential for 3D
+documentation of very detailed object as sculptures, paintings,
+low reliefs and other complex small objects. Time delay active
+sensors are instead employed for large objects, as for example
+architectures, rooms, walls and archaeological sites. These
+sensors work on longer distances (i.e. 2 – 1000 m) but are less
+accurate than triangulation systems. Other types of active
+sensors are conoscopic systems that have better precision than
+triangulation ones (few microns) but a smaller field of view. For
+these reasons they are generally used for planar object, as for
+example paintings and small coins.
+In addition to the geometric information acquired with active
+sensors, digital images have to be used (and generally
+
+separately acquired) for the texture mapping purpose to get a
+photo-realistic 3D model [Bernardini and Rushmeier, 2002; ElHakim at al., 2003].
+
+3. DATA INTEGRATION
+When multiple data sources are used and a unique final product
+must be delivered, all the information should be integrated to
+provide also better interpretation. The combination of the
+different models, generated with different data sources and
+techniques, is a key step in the 3D modelling process.
+In this section we present the combination of data coming from
+the different measuring sources reported before and having
+different resolutions (in geometry and texture). The goal is to
+produce a single textured 3D model representing the structure
+of interest, which can be analyzed and easily used by restorers.
+3.1 Integration of 3D data
+Even though photogrammetry is acquiring a growing important
+role in the digital cultural heritage documentation and
+preservation fields and dense surface measurements can also be
+realized using images [El-Hakim, 2006; Remondino and Zhang,
+2006], range sensors are nowadays the most used instruments
+for detailed and complex structures. But, according to our
+experience and as also reported in many scientific publications,
+in many cases, it is necessary to combine range data with data
+obtained by means of image-based modelling.
+The models created by means of image-based modelling are
+assembled together and then registered into the same reference
+system with those generated using range sensors. The
+registration can be done either with common points or with
+surveyed control points, or both.
+An example of integration between data from different sources
+is shown in Figure 6. This is an internal courtyard of the
+Buonconsiglio Castle (Trento, Italy) where the main structures
+(columns, arches and capitals) have been modelled through
+image-based modelling while the ceiling by means of a
+terrestrial laser scanner. The two models have been then merged
+by using some common control points.
+
+Figure 6: The internal courtyard of the Buonconsiglio castle in Trento (Italy) with the frescoed ‘Romanino loggia’. The wireframe model after the
+integration of range and image models and different views of the final textured 3D model of the interior and exterior parts.
+
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+3.2 Integration 3D - Infrared
+Multi spectral imaging techniques become a powerful tool in
+the scientific analysis and documentation of objects, since
+images in different wavelengths provide information that
+human eye cannot see. Applied in the spectral range from UV,
+visible up to IR, these techniques provide 3D model with both
+spatial and spectral information. Merging these data gives an
+additional dimension to the results and spectral information are
+presented together with 3D and visible ones.
+
+a)
+
+more accurate measures and 3D results. We used special targets
+and a dedicated testfield has been realized (Figure 7a).
+Furthermore, in order to obtain clear targets in the IR spectrum,
+some tests on the emissivity of different materials have been
+done (Figure 7b).
+Once the precise interior parameters of the IR camera have been
+recovered, in order to register IR and visible images, some
+features are detected on the photographs and with a bundle
+adjustment the two image sets are aligned.
+In Figure 8 a textured detail of the castle’s courtyard shown in
+Figure 6 is reported. Through this 3D textured model it is
+possible to analyse deeper the structure and the frescoes as the
+IR data, registered onto the 3D geometry, provide for useful
+quantitative analysis.
+
+b)
+Figure 7. Testfield for infrared camera (a), Emissivity tests (b).
+
+In our case studies, we integrated visible image coming from
+high resolution SRL digital camera with range data coming
+from TLS and infrared data acquired with a FLIR P640 thermal
+camera. The IR thermal camera works in the range between 7,5
+and 13 μm, provide for 640x480 pixel images with a pixel of 25
+μm. As for visible camera, the infrared one must be calibrated
+by means of photogrammetric bundle adjustment to provide for
+
+Figure 8. A detail of the internal courtyard, reconstructed using
+digital visible images and afterwards textured using also IR data, to
+allow quantitative considerations and documentations.
+
+Figure 9. Palazzo Barbieri in Verona, Italy. The reconstructed 3D model of the exterior walls, visualized with the visible and infrared texture.
+
+A second case study, shown in Figure 9, regards the 3Dinfrared model of Palazzo Barbieri, a historical building located
+in Verona, Italy. The 3D geometry was obtained using 29
+images acquired using a SRL Kodak DCS Pro with 13 Mega
+pixel. On the other hand, to produce the infrared 3D model, 150
+IR images acquired with the FLIR P640 thermal camera have
+been used. The final goal is to measure correctly the surface
+temperature of the historic building, nowadays used as city hall.
+To correctly evaluate the thermal behaviour of the structure it is
+necessary to know (i) emissivity, calculated knowing the
+surface temperature of some reference object points, (ii)
+distance from the object, (iii) atmospheric temperature, (iv)
+relative humidity, (v) internal temperature, (vi) wind speed.
+
+4. CONCLUSIONS
+In this contribution we reported the use and integration of actual
+digital surveying techniques for the documentation,
+conservation and restoration of heritages. Even if
+photogrammetry by itself is nowadays able to provide for
+dense, detailed and accurate 3D models at different scale, we
+believe that the use and integration of data coming from
+
+multiple sources provide for better results and more complete
+studies and documentations. Digital images acquired in the
+visible spectrum and range data are generally used to recover
+the 3D geometry and texture while for more deep analysis and
+studies, IR and UV data must be also used. The integration
+procedure is very useful for conservators and restorers as they
+have at their disposal a complete set of information spanning
+the different characteristics of the object under investigation
+and maybe including also other data coming e.g. from other
+chemical / physical analysis.
+
+5. REFERENCES
+Bernardini, F., Rushmeier, H., 2002: The 3D Model Acquisition
+Pipeline. Computer Graphics Forum, 21(2), pp. 149-172
+Blais, F., 2004: Review of 20 years of range sensor
+development. Electronic Imaging, 13(1), pp. 232-240
+El-Hakim, S., 2006: A sequential approach to capture fine
+geometric details from images. In: The International Archives
+
+XXI International CIPA Symposium, 01-06 October 2007, Athens, Greece
+of Photogrammetry, Remote Sensing and Spatial Information
+Sciences, Dresden, Germany, Vol. XXXVI , Part 5, pp. 97-102
+El-Hakim, S.F., Beraldin, J.A., Picard, M. and Godin, G., 2004:
+Detailed 3D reconstruction of large-scale heritage sites with
+integrated techniques. IEEE Computer Graphics and
+Application, 24(3), pp. 21-29
+El-Hakim, S.F., Gonzo, L., Picard, M., Girardi, S., Simoni, A.,
+Paquet, E., Viktor, H., Brenner C., 2003: Visualisation of
+highly textured surfaces. 4th Int. Symp. VAST2003, pp. 231240, Brighton, UK
+Fontana, R., Gambino, M.C., Greco, M., Marras, L., Pampaloni,
+E., Pelagotti, A., Pezzati, L., Poggi, P., 2005: Two-dimensional
+imaging and three-dimensional sensing data acquisition and
+mutual registration for painting conservation. Videometrics
+VIII, Vol. 5665-08, San Jose (CA), USA
+Grün, A., Remondino, F. and Zhang, L., 2004:
+Photogrammetric Reconstruction of the Great Buddha of
+Bamiyan, Afghanistan. Photogrammetric Record, 19(107), pp.
+177-199
+Lettner, M., Diem, M., Sablatnig, R., Kammerer, P. and Miklas,
+H., 2007: Registration of Multispectral Manuscript Images as
+Prerequisite for Computer Aided Script Description. CVWW07:
+12th Computer Vision Winter Workshop, St. Lambrecht,
+Austria
+Moropoulo, A., Avdelidis, N., Koui, M., Delegou, E., Tsiourva,
+T., 2001: Infrared thermographic assessment of materials and
+techniques for the protection of cultural heritage. Multispectral
+and Hyperspectral Image Acquisition and Processing, SPIE
+Vol. 4548
+Pelagotti, A., Pezzati, L., Piva, A., Del Mastio, A., 2006:
+Multispectral UV Fluorescence Analysis of Painted Surfaces.
+Proceedings of 14th European Signal Processing Conference
+EUSIPCO 2006, Firenze, Italy
+Pelagotti, A., Del Mastio, A., Razionale, A., 2007: Active and
+passive sensors for art works analysis and investigations.
+Videometrics IX, Proc. SPIE-IS&T Electronic Imaging, Vol.
+6491
+Remondino, F., El-Hakim, S., 2006: Image-based 3D
+modelling: a review. Photogrammetric Record, Vol. 21(115),
+pp. 269-291
+Remondino, F., Fraser, C., 2006: Digital Camera Calibration
+Methods: Considerations and Comparisons. In: The
+International Archives of Photogrammetry, Remote Sensing and
+Spatial Information Sciences, Dresden, Germany, Vol. XXXVI,
+Part 5, pp. 266-272
+Remondino, F., Zhang, L., 2006: Surface reconstruction
+algorithms for detailed close-range object modeling. In:
+International Archives of Photogrammetry, Remote Sensing and
+Spatial Information Sciences, Bonn, Germany, Vol. XXXVI,
+Part 3, pp. 117-123
+Voltolini, F., Remondino, F., Pontin, M., Gonzo, L., 2006:
+Experiences and considerations in image-based-modeling of
+complex architectures. In: The International Archives of
+Photogrammetry, Remote Sensing and Spatial Information
+Sciences, Dresden, Germany, Vol. XXXVI, Part 5, pp. 309-314
+
+Voltolini, F., El-Hakim, S., Remondino, F., Girardi, S., Rizzi,
+A., Pontin, M., and Gonzo, L., 2007: Digital Documentation of
+complex architectures by integration of multiple techniques –
+The case study of Valer Castle. Videometrics IX, Proc. SPIEIS&T Electronic Imaging, Vol. 6491, San Jose (CA), USA
+
+ACKNOWLEDGMENTS
+The authors would like to thank the Castello del Buonconsiglio
+in Trento and Municipality of Verona for providing unrestricted
+access to the rooms for data acquisition.
+
+

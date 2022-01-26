@@ -1,0 +1,480 @@
+International Journal of Information and Education Technology, Vol. 9, No. 8, August 2019
+
+Augmented Reality Enhanced Ubiquitous-Learning in
+Museum
+Yi-Hsien Lin, Shu-Hsuan Chang, Tien-Chi Huang, Yu-Ting Lin, and Yu-Jie Chen
+
+Abstract—Museums are ideal informal learning environments.
+This study develops an augmented reality (AR) system (APP and
+management platform) for visitors to actively explore learning
+resources in museum. There are three main parts of the system,
+public mode (for adults), child mode (for elementary or high
+school students), and backend management platform (for
+museum manager). To arouse visitors’ motivation, this study
+adopts problem-based learning (PBL) as main theory base of the
+system. Along with iBeacon indoor positioning technology, the
+AR (augmented reality) is adopted to display questions (inspire
+visitors thinking and interaction) nearby the exhibition items. In
+this sense, the learning may actually happen in museums.
+Index Terms—Augmented reality, learning in museum,
+problem-based learning, iBeacon, indoor positioning.
+
+I. INTRODUCTION
+Museums are ideal informal learning environments. This
+type of informal education occurs outside of the school, where
+learners fulfill their learning objectives through their own
+interest in learning and systematically acquire information.
+In the words of Francis Bacon, “Tell me and I forget. Teach
+me and I may remember. Involve me and I learn.”, which
+notes the importance of interaction in learning process.
+Although learning resources available through museums
+abound, the traditional one-to-many guidance could lead to
+visitors overlook the educational value and meaning of the
+exhibitions. On the others hand, museum once argue that the
+method of “allowing the works to speak for themselves” is
+only meaningful for experts with prior knowledge or an
+understanding of related concepts [1]. Furthermore, in
+traditional museums, museum guides are paired with groups
+of many visitors, meaning that visitors may be restricted by
+spatial factors, making it difficult to fully appreciate exhibited
+works. Despite the fact that each visitor is now able to visit
+exhibitions at their own pace as a result of various
+technologies maturing over the past several years, such as the
+development of personal audio guide devices, the one-way
+explanations of museum content do not allow them to reflect
+
+on and derive inspiration from the tour. In other words,
+museum guides should help to communicate museum
+information, and interactivity helps learners understand that
+information.
+For this reason, this study aims to build a problem-based
+augmented reality (AR) learning platform to help museums
+receive visitors of all ages in order to improve the educational
+value of museums. In this AR platform, a problem-based
+learning (PBL) strategy is adopted, which uses real-world
+situations or problems to guide visitors’ thinking [2]. In this
+process, the platform emphasizes to visitors the importance of
+defining problems and establishing hypotheses, as well as
+collecting and analyzing information to improve their critical
+and reflective learning abilities. Based on the above, the use
+of problems to trigger the publics’ active reflection can also
+generate educational value for museums. AR technology uses
+handheld screens to augment the learning information
+presented in real environments, thereby providing learning
+interactivity. By combining these two strategies, visitors are
+encouraged to actively reflect and interact with one another.
+Regarding technology, AR and iBeacon indoor positioning
+sensor technologies comprise the technological system
+proposed in this study. PBL environments serve as the main
+axis of the system, allowing for the establishment of a more
+ideal museum learning environment.
+In this environment, problems for visitors of different age
+groups can be established, enabling them to actively think
+about problems related to specific exhibition works or items
+and gain feedback from reflection. The discussion platform
+guides visitors to understand the ideas of other people and to
+debate with one another. This allows visitors to view works
+from different perspectives, providing a greater variety of
+paths to obtain information related to an exhibited work.
+Through the process of interacting with an exhibited work,
+examining opinions or responses different from one’s own,
+and conducting mutual debates, visitors comprehend
+knowledge, learn, and think.
+
+II. LITERATURE REVIEW
+A. Museum Guides
+The primary objective of museum guides is to
+communicate the meaning of exhibition items and provide a
+wealth of information to guide the public to understand
+exhibition items on cognitive and emotional levels, thereby
+achieving the goals of social education. This paper jointly
+addresses traditional tour guide methods, which can be
+categorized as staff guides and non-staff guides, as shown in
+Table I.
+
+Manuscript received January 13, 2019; revised May 24, 2019.
+Yi-Hsien Lin is with the Lukan Senior High School, Taiwan (e-mail:
+yslin@mail.lksh.chc.edu.tw).
+Shu-Hsuan Chang is with the Department of Industrial Education and
+Technology. She is also with e-Learning Center, National Changhua
+University of Education (NCUE), Taiwan (e-mail: shc@cc.ncue.edu.tw).
+Tien-Chi Huang is with the Department of Information Management,
+National Taichung University of Science and Technology, Taiwan (e-mail:
+tchuang@nutc.edu.tw).
+Yu-Ting Lin and Yu-Jie Chen are with National Taichung University of
+Science and Technology, Taiwan (e-mail: abc850927@gmail.com,
+yujiemilk@gmail.com).
+
+doi: 10.18178/ijiet.2019.9.8.1263
+
+543
+
+International Journal of Information and Education Technology, Vol. 9, No. 8, August 2019
+TABLE I: ANALYSIS OF TOUR GUIDE METHODS [3]
+Staff Guides
+Ordinary Guides
+(Fixed)
+Exhibition Room
+Presentation (Topical)
+Q&A Service
+(Q&A Reception Desk)
+Expert Guides
+(On-Site Expert
+Presentations)
+
+Pros: Guides present information in a
+detailed and clear manner, and
+can engage in real-world
+interaction with visitors.
+Cons: When there are too many
+visitors,
+guides
+cannot
+individually satisfy the needs
+of each visitor, and fixed
+presentation sites make it
+difficult to see exhibition
+items.
+Non-Staff Guides
+
+Description Card
+
+Folding Brochure
+
+Multimedia Guides
+(Audio Guides)
+
+Fig. 1. Operation of the iBeacon indoor positioning sensing technology.
+
+Pros: Clear and simple explanation of
+content, easy to read.
+Cons: During busy hours, description
+cards are difficult to view.
+Pros: Wealth of guiding information.
+Cons: High printing costs, easily
+results in wasted resources.
+Pros: Multimedia is attractive to
+visitors and generates interest
+in exhibition items.
+Cons: Not very interactive with
+visitors, vibrant audiovisual
+elements can distract visitor
+attention from exhibition
+items.
+
+B. Application of AR and Indoor Positioning Sensor
+Technology in Educational Environments
+AR is a way of integrating the real world and virtual objects,
+and a technology that can instantaneously generate 3-D
+interactions. Using a camera, algorithms are executed on the
+captured image, which allows the user to use their sensory
+perceptions to directly or indirectly view virtual objects
+projected onto the real world and to immediately interact with
+these objects.
+Regarding the educational elements of AR technologies,
+AR has been applied to a variety of educational curricula,
+making them more dynamic or improving learning outcomes.
+[4], [5] According to the effects of these on learning
+performance, AR teaching methods provide students a sense
+of curiosity, promote their sustained attentiveness, and can
+effectively increase student motivation, enhancing learning
+performance. The above research confirms that when applied
+to learning, AR can improve students’ motivations for
+learning and increase their levels of participation and
+attentiveness during the learning process.
+Thus, this study introduces AR technology into museums
+and allows users to search for specific icons in exhibition halls
+and scan these in order to be provided with information from
+the system. During the process of museum visits,
+human-machine interaction is used to elevate visitor curiosity
+and interest in exhibition items and stimulate visitors’
+motivations for learning, thereby achieving learning efficacy.
+Regarding the indoor positioning technology used in this
+study, iBeacon is a signal transmitter that allows nearby
+electronic devices to sense and accurately position using
+low-power Bluetooth technology [6]. When the smartphone
+app’s Bluetooth wireless signal enters the scope of coverage
+of the transmitter signal, the app automatically receives the
+tag information. This operation is shown in Fig. 1.
+544
+
+The University of Oklahoma has used iBeacon technology
+to create virtual tours, allowing students to conveniently
+search for books and manuscripts in the university’s special
+collections and encouraging them to discover new knowledge.
+In educational games, the iBeacon Treasure Hunt game uses
+positioning to emit signals. Each signal gives students a clue
+to help them advance to the next level, enabling them to use
+their self-guiding ability to receive rewards.
+Therefore, we use iBeacon’s push notification function to
+allow museum visitors to use iBeacon to sense the location of
+their mobile device and provide information related to
+exhibition items. In this way, visitors can use their mobile
+devices to immediately receive text, images, and dedicated
+multimedia information related to the exhibition item,
+improving their understanding of the item or enabling them to
+search for new information related to their questions or
+reflections on it.
+C. Problem-Based Learning
+PBL was first defined by Barrows and Tamblyn (1980) as
+follows: “Learning comes from the process by which
+problems are understood and resolved, and problems are
+established before learning begins.” PBL is an educational
+method that disrupts traditional educational methods centered
+on students, and aims to use real-world problems to guide
+students in active learning [2]. It uses problems to encourage
+students to use their prior knowledge and search for
+information, so that they can think, understand problems, and
+propose problem resolution methods. In this way, PBL can
+generate deeper learning impressions in students and
+strengthen their knowledge and understanding.
+Scholars have applied PBL in educational strategies and
+experimental research. These studies used group experiments
+(where each group contained four students) in which some
+groups used PBL methods. Through data analysis and
+interviews, this research confirmed that PBL effectively
+promotes the learning process and improves “problem solving
+skills” and other related skills. As such, PBL methods are
+helpful for improving problem solving and extending thought.
+[2]
+There are various PBL models. This study refers to the
+five-step learning process proposed by Barrow (1985), the
+pioneer of PBL. It further combines this with detailed steps of
+user operation for comparison, and summarizes a museum
+PBL mode map to clarify the operational state of the system
+represented by each step, as shown in Fig. 2.
+
+International Journal of Information and Education Technology, Vol. 9, No. 8, August 2019
+
+functions on the main screen to execute operations. First, the
+AR guide can be used to view information related to the
+exhibition site in addition to basic methods of operation. Next,
+AR is used (Fig. 4) to respond to problems, primarily by
+scanning specific AR codes at the exhibition site to transmit
+information. When a user successfully scans the correct AR
+code, AR is used to display problems on the user’s screen,
+accompanied by 3-D GIFs. Next, users brainstorm based on
+the problem presented in the AR response. By design, the
+problem serves as a starting point and has no standard
+response, meaning that the responses are stored on the
+discussion board according to their corresponding topic (Fig.
+5) and can be viewed and reflected upon by all users. This is
+distinct from ordinary methods of viewing exhibitions, and
+users can search for problems to reflect on. This method is
+compatible with the process of PBL.
+
+Fig. 2. Museum PBL mode map.
+
+This study enables museum visitors to use their mobile
+devices during their visit to activate their learning motivation.
+When the system is used, it is first divided into two modes.
+The first mode aims to enhance interest in the museum and
+uses exploration to allow visitors to receive tips and solve
+problems. The second mode aims to encourage visitors to
+engage in thinking so that they can solve problems and to view
+different opinions on discussion boards. PBL environments
+prevent museum learners from passively receiving
+information and instructions in a unidirectional manner,
+causing them to acquire and link new knowledge with prior
+knowledge through their own learning process.
+
+Fig. 3. System technology framework.
+
+III. SYSTEM FRAMEWORK AND TECHNOLOGY APPLICATIONS
+A. System Planning
+The system used in this study was developed for an
+Android mobile device. The system can be delineated into the
+mobile application end and server end. The system server uses
+XAMPP technology to establish a platform and integrates a
+MySQL database to store new user information. Furthermore,
+it uses a PHP backend program as a communication language
+between the front end of the system and database, thereby
+providing an exhibition site management platform that
+exhibition site managers can use to remotely alter digital
+exhibition content at any time according to the needs of the
+exhibition. The mobile application end of the system is
+produced with the Unity game engine tool, and embeds
+Vuforia SDK AR technology to strengthen the interactivity
+between exhibition items and visitors, helping visitors
+integrate among the exhibition item learning environment and
+rooting the system in learning effectiveness. Furthermore,
+websocket technology is used to instantly transmit
+information to the database for system analysis and
+maintenance.
+The system is subdivided into three parts: the Android
+smartphone guide platform, exhibition manager platform, and
+system database server. The overall system divisions are
+shown in Fig. 3.
+
+Fig. 4. AR Response (Public mode).
+
+Fig. 5. Discussion Board (Public mode) .
+
+C. Child Mode
+The design style for this mode employs an adventurous
+method of presentation, and is well suited for children. First,
+users can use the map feature to understand the scope of the
+exhibition site, topic items, and to view tip locations. When
+users successfully scan the correct QR code, they are shown a
+congratulatory window, and the progress bar at the top of the
+screen indicates that the user has advanced one space. The
+
+B. Public Mode
+In the public mode, AR technology and integration of an
+active PBL environment enable users to select from three
+545
+
+International Journal of Information and Education Technology, Vol. 9, No. 8, August 2019
+
+discovered topics are saved in the application’s record
+function, where users can view, respond to, and reflect on the
+topic based on the surrounding exhibition area. Correct
+responses to each topic presented in this mode can be found at
+the exhibition site and exhibition items. If the user responds
+successfully, their progress bar advances one space (two
+topics are used in this example, which can be altered
+according to the needs of the exhibition). In addition, the tip
+function is primarily integrated with the iBeacon sensor
+technology. If the user cannot scan the correct response, they
+can approach a tip marker on the map to receive a tip. This
+helps users scan the correct response.
+
+offices, museum visits, or topical exhibitions. In this way, the
+system can improve off-campus teaching, enable students to
+acquire more information and knowledge, and contribute
+towards achieving teaching outcomes. Using smart handheld
+devices and a virtual reality integrated field-based learning
+system, we hope to create new standards for informal
+education.
+ACKNOWLEDGMENT
+Financial support on this work from the Ministry of Science
+and Technology, Taiwan (MOST 106-2511-S-025 -003
+-MY3)
+
+D. Backend Management Platform
+The backend management platform is an auxiliary
+application system constructed for the use of museum staff. It
+provides functions for visitors to conduct follow-up analysis,
+a data visualization interface, text placement analysis, and a
+PBL problem database. The backend management platform
+makes it convenient for museum staff to manage topics or
+make revisions, or to view the status of topic responses. For
+example, museum staff can use the platform to find and delete
+responses that are indecent or unsuitable for the topic, and to
+maintain the accuracy of discussion board content. Staff can
+also use the platform to determine the number of registered
+users and their age range. As such, museum staff need only
+use the backend management platform to update and maintain
+application content, allowing them to conveniently achieve
+their objectives and greatly reducing maintenance costs.
+
+REFERENCES
+[1]
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+IV. CONCLUSIONS
+With the rapid development of technology, a wide variety
+of objects have been integrated with technology. We observed
+this in the field of informal education, in which we discovered
+many problems. Therefore, the system developed in this study
+combines AR and location sensing technology to establish a
+PBL environment, and uses information technology to assist
+learning in the field of informal education.
+PBL is the main axis around which this system is developed.
+Based on this, a universal system for informal education
+environments is established on Android mobile devices.
+Museum staff can use the web end of the system to easily alter
+content presented in the app, and users can use their
+smartphones to directly connect with and learn in the informal
+education environment. The adult and child modes designed
+for this system generate different learning experiences
+according to learners’ individual needs, activating learner
+interest, and utilize interesting problems and tips or other
+users’ views to integrate the user with the informal education
+environment and allow them to explore and interact with the
+site. This system aims to provide users with a greater number
+and breadth of perspectives through the process of learning in
+informal education environments.
+In the future, this system can be applied to many informal
+education fields and accompany learning environments
+generated by the system to improve the learning outcomes of
+individuals within the learning environment. Furthermore, it
+is hoped that the system can be introduced to schools’
+off-campus teaching methods, such as trips to corporate
+546
+
+R. Burnham and E. Kai-Kee, “Teaching in the art museum:
+Interpretation as experience,” Getty Publications, 2011.
+M. J. Duncan, M. Smith, and K. Cook, “Implementing online problem
+based learning (PBL) in postgraduates new to both online learning and
+PBL: An example from strength and conditioning,” Journal of
+Hospitality, Leisure, Sport & Tourism Education, vol. 12, pp. 79-84,
+2013.
+J. D. Wineman and J. Peponis, “Constructing spatial meaning: Spatial
+affordances in museum design,” Environment and Behavior, vol. 42,
+no. 1, pp.86-109, 2010.
+J. Kysela and P. Štorková, “Using augmented reality as a medium for
+teaching history and tourism,” Procedia-Social and Behavioral
+Sciences, vol. 174, pp. 926-931, 2015.
+D. Nincarean, M. B. Alia, N. D. A. Halim, and M. H. A. Rahman,
+“Mobile augmented reality: The potential for education,”
+Procedia-Social and Behavioral Sciences, vol. 103, pp. 657-664,
+2013.
+C. Swedberg, “Beacons guide and inform University of Oklahoma
+students,” IOT Journal, 2015.
+
+Copyright © 2019 by the authors. This is an open access article distributed
+under the Creative Commons Attribution License which permits unrestricted
+use, distribution, and reproduction in any medium, provided the original
+work is properly cited (CC BY 4.0).
+Yi-Hsien Lin is currently a president of National
+Lukan Senior High School in Changhua and a Ph.D.
+candidate of NCUE, Taiwan. His research interests
+include internet ethics and educational technology.
+
+Shu-Hsuan Chang is currently a professor of the
+Department of Industrial Education and Technology as
+well as the director of E-Learning Center, National
+Changhua University of Education (NCUE), Taiwan.
+She received the B.S. and M.S. degrees in industrial
+engineering from National Chiao-Tung University,
+Taiwan, and the Ph.D. degree in the Department of
+Industrial Education and Technology from NCUE,
+Taiwan. Her research interests include engineering & technological
+education, technology management, innovation management, and
+photonics.
+Tien-Chi Huang is an associate professor in the
+Department of Information Management at National
+Taichung University of Science and Technology,
+Taiwan. His current research interests include
+e-learning, m-learning, u-learning, teaching material
+design, and evaluation. Dr. Huang’s research is
+published or is forthcoming in Computers and
+Education, Journal of Educational Technology &
+Society, Telematics and Informatics, Information Fusion, The Electronic
+Library, Multimedia Systems, Personal and Ubiquitous Computing, Expert
+Systems with Applications, International Education Studies, and a number
+of national and international conference proceedings.
+
+International Journal of Information and Education Technology, Vol. 9, No. 8, August 2019
+Yu-Ting Lin received her bachelor's degree in 2018
+from National Taichung University of Science and
+Technology. After graduation, she is a programmer and
+web designer.
+
+Yu-Jie Chen received a bachelor's degree in 2018 from
+National Taichung University of Science and
+Technology. Currently she is a Master's Student and her
+research interests are VR/AR in education.
+
+547
+
+

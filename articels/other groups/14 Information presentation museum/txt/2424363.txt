@@ -1,0 +1,468 @@
+Interactive user modeling for personalized access to museum
+collections : the Rijksmuseum case study
+
+Citation for published version (APA):
+
+Wang, Y., Aroyo, L. M., Stash, N., & Rutledge, L. W. (2007). Interactive user 
+modeling for personalized access
+to museum collections : the Rijksmuseum case study. In C. Conati, K. F. McCoy, 
+& G. Paliouras (Eds.),
+Proceedings of the 11th International Conference on User Modeling 2007 (UM 
+2007) 25-29 June 2007, Corfu,
+Greece  (pp. 385-389). (Lecture Notes in Computer Science; Vol. 4511). 
+Springer. https://doi.org/10.1007/978-3-
+540-73078-1_50
+
+DOI:
+
+10.1007/978-3-540-73078-1_50
+
+Document status and date:
+
+Published: 01/01/2007
+
+Document Version:
+
+Publisher’s PDF, also known as Version of Record (includes final page, issue 
+and volume numbers)
+
+Please check the document version of this publication:
+
+• A submitted manuscript is the version of the article upon submission and 
+before peer-review. There can be
+important differences between the submitted version and the official published 
+version of record. People
+interested in the research are advised to contact the author for the final 
+version of the publication, or visit the
+DOI to the publisher's website.
+
+• The final author version and the galley proof are versions of the publication 
+after peer review.
+
+• The final published version features the final layout of the paper including 
+the volume, issue and page
+numbers.
+
+Link to publication
+
+General rights
+
+Copyright and moral rights for the publications made accessible in the public 
+portal are retained by the authors and/or other copyright owners
+and it is a condition of accessing publications that users recognise and abide 
+by the legal requirements associated with these rights.
+
+• Users may download and print one copy of any publication from the public 
+portal for the purpose of private study or research.
+
+• You may not further distribute the material or use it for any profit-making 
+activity or commercial gain
+
+• You may freely distribute the URL identifying the publication in the public 
+portal.
+
+If the publication is distributed under the terms of Article 25fa of the Dutch 
+Copyright Act, indicated by the “Taverne” license above, please
+follow below link for the End User Agreement:
+
+www.tue.nl/taverne
+
+Take down policy
+
+If you believe that this document breaches copyright please contact us at:
+
+openaccess@tue.nl
+
+providing details and we will investigate your claim.
+
+Download date: 24. דצמ. 2021
+
+
+Interactive User Modeling for Personalized Access to
+Museum Collections: The Rijksmuseum Case Study
+
+Yiwen Wang¹, Lora M. Aroyo², Natalia Stash¹, and Lloyd Rutledge³
+
+¹ Eindhoven University of Technology, The Netherlands
+
+{y.wang,n.v.stash}@tue.nl
+
+² Free University Amsterdam, The Netherlands
+
+l.m.aroyo@cs.vu.nl
+
+3 Telematica Institute, Enschede, The Netherlands
+CWI Amsterdam, The Netherlands
+Lloyd.Rutledge@cwi.nl
+
+Abstract. In this paper we present an approach for personalized access to
+museum collections. We use a RDF/OWL specification of the Rijksmuseum
+Amsterdam collections as a driver for an interactive dialog. The user gives
+his/her judgment on the artefacts, indicating likes or dislikes. The elicited 
+user
+model is further used for generating recommendations of artefacts and topics. In
+this way we support exploration and discovery of information in museum
+collections. A user study provided insights in characteristics of our target 
+user
+group, and showed how novice and expert users employ their background
+knowledge and implicit interest in order to elicit their art preference in the
+museum collections.
+
+Keywords: CHIP (Cultural Heritage Information Presentation), user study,
+adaptive system, personalization, RDF/OWL, recommendations, user modeling.
+
+1 Introduction
+
+The CHIP¹ project is part of the Dutch Science Foundation funded program CATCH
+for Continuous Access to Cultural Heritage. Since early 2005 the CHIP research 
+team
+has been working at the Rijksmuseum Amsterdam and interviewed curators and
+collection managers in order to perform detailed analysis of the museum domain,
+target users and museum web applications. As a result of this extensive domain 
+and
+context analysis requirements were obtained for the development of several low-
+fidelity prototypes [1]. The prototypes focused on eliciting information from 
+domain
+experts about novel personalization functions for the visitors on the museum 
+web site.
+We proposed an approach based on an interactive semantics-driven dialog for
+eliciting user knowledge, inspired from previous work on the adaptive learning
+content management system SWALE [2].
+
+¹ CHIP project: http://www.chip-project.org
+
+C. Conati, K. McCoy, and G. Paliouras (Eds.): UM 2007, LNAI 4511, pp. 385–389, 
+2007.
+
+© Springer-Verlag Berlin Heidelberg 2007
+
+
+In this paper, we present the results of a user study with real users 
+evaluating our
+first functional prototype. The results show that novices need support in
+externalizing their implicit art preferences and thus profit from the CHIP 
+adaptive
+dialog. The experts, on the other hand, have prior knowledge and use the 
+interactive
+dialog in order to discover new insights and semantic relationships in 
+particular
+collections. The ultimate goal for our research is to realize ‘the Virtual New
+Rijksmuseum” where different types of users can easily find their ways in the
+Rijksmuseum and access information which is tailored to their needs, personal
+interests and competency level.
+
+2 Personalization in Museum Collections
+
+In the last few years, dedicated recommender systems have gained popularity and
+become more and more established practice in online commerce, like purchasing of
+books, music, and organizing a travel. Museums also direct their efforts to 
+provide
+personalized services to the general audience via their websites. There are 
+various
+examples of museum websites attempting to meet the needs of individual users. A 
+key
+problem here is the semantic vocabulary gap between the experts-created 
+descriptions
+and the implicit and often not domain-related art preferences of end users. 
+Moreover,
+museum collections maintain multiple perspectives for their information 
+disclosure.
+These challenges lend themselves well to the application of recommender 
+technology
+as explored in this work. Our goal is to bridge the vocabulary gap and provide 
+a user-
+driven approach for eliciting user’s preferences and characteristics, and 
+recommend
+known/new information from the collection in a coherent and comprehensive way.
+Studies show that understanding is stimulated when the systems use concepts 
+familiar
+to the user (considering interests and knowledge level) [3]. In this paper, we 
+capitalize
+on the non-obtrusive collection of users data as part of an active interaction 
+with the
+museum collection (versus filling in static isolated preference forms).
+
+3 Cultural Heritage Information Presentation
+
+
+Fig. 1. CHIP interactive user modeling interface
+
+We developed an interactive quiz to
+help users find artefacts and topics of
+their interests in the Rijksmuseum
+collection. Figure 1 gives a snapshot
+of its user interface. On the top-left
+artefacts to rate are presented as an
+interactive dialog. The ratings are
+stored in a user profile (top-right) and
+are used to filter the relevant artefacts
+(bottom-right) and topics (bottom-
+left).  Each  recommendation  is
+accompanied  with  an  explanation
+(‘why?’ option). The demo collects
+
+
+feedback  about  the  recommended  items  by  allowing  users  to  rate  also
+recommendations. In this way the system gradually builds the user profile to be 
+used
+for personalized tours generation. The user profile we build is an extended 
+overlay of
+the CHIP domain model depicted in Figure 2. It contains topics and artefacts of
+interest assessed in a five-star scale (respectively -1, -0.5, 0, 0.5 1), where 
+1 is
+maximum interest, -1 is maximum distaste and 0 is neutral. The topics are 
+grouped in
+four main categories, i.e. artist, theme, period-location and style.
+
+The rich semantic modeling of the domain with mappings to common vocabularies
+(Getty vocabularies² and Iconclass thesaurus³) and use of open standards (e.g. 
+VRA,
+SKOS and OWL/RDF), allows us to maintain a light-weight user profile and 
+efficiently
+perform the reasoning over the domain model. This allows for a dynamic and 
+run-time
+calculation of the user’s interest, as well as a high-level of serendipity of 
+the suggested
+items and explanations. We also store the skipped (not rated, but presented 
+items), in
+order to optimize the presentation sequence. We use XSLT to convert the XML of 
+the
+Rijksmuseum database into the RDF scheme we developed. Much of this
+transformation derives from the taxonomical merging resulting in two types of 
+new
+
+triples: (1) equivalence - identifies
+concepts across taxonomies that are
+the same; (2) narrower and broader
+terms - defines local extensions
+within hierarchical taxonomies.
+
+Figure 2 shows our current
+RDF data model, representing
+these  vocabularies/thesauruses.
+The initial RDF representation was
+provided by the E-Culture project
+(for Getty) [4] and the STITCH
+
+
+Fig. 2. CHIP RDF data model
+
+project (for IconClass) [5].
+
+4 User Study at the Rijksmuseum Amsterdam
+
+Based on our first recommender prototype, we did a first formative user study 
+with two-
+fold focus: (1) to test with real users the effectiveness of the demo with 
+respect to novices
+and experts; and (2) to gain insight in characteristics of the target group in 
+order to elicit
+
+requirements  for  the  user
+
+
+Step1    Step2    Step3    Step4    Step5
+
+modeling scheme and approach.
+The rationale of this study ⁴ is
+
+
+Qb   Pre-test
+
+properties
+
+Test
+
+topics
+
+Post-test
+
+properties
+
+Qu
+
+illustrated in Figure 3. It contains
+
+five steps: Step 2–4 focus on
+testing the effectiveness of CHIP
+demo. Step 1 and 5 are two
+
+
+Comparision I  Comparision II
+
+Fig. 3. Rationale of the user study
+
+additional questionnaires about
+users’ background and usability
+issues of the CHIP demo.
+
+² Getty vocabularies: 
+http://www.getty.edu/research/conducting_research/vocabularies/
+
+³ Iconclass thesauru: http://www.iconclass.nl/libertas/ic?style=index.xsl
+
+⁴ CHIP user study: http://www.chip-project.org:8091/demoUserStudy/
+
+
+To test the demo, we designed a novel method to compare the process of rating 
+and
+recommendation of experts and novices while using the demo. We claim that the
+CHIP recommender helps novices to elicit art preferences from their implicit
+knowledge/interest in museum collections. To test it, we let users rate their 
+interest in
+art-related properties before and after using the demo. Here, it is called 
+‘pre-test’,
+‘test’ and ‘post-test’, which refer to step 2 to 4 in Figure 3. In consultation 
+with the
+Rijksmuseum domain experts, the demo used a selected data source which covered 
+37
+properties from 4 popular artefacts. These properties are randomly divided into 
+two
+questionnaires, pre-test and post-test, in a non-overlapping way. Users assess 
+each
+property on a five-degree scale from ‘not interested at all’ to ‘very 
+interested'. The
+main idea was to measure whether the properties generated as recommended topics
+from the demo match the properties positively rated by the users in the 
+pre-test and
+post-test questionnaires. This measure of discrepance is expressed in 
+Comparision I
+and Comparision II, see buttom Figure 3.
+
+To gain insight in our target users, we designed two additional questionnaires, 
+one
+about the users’ background (e.g. age, education, interest in art, etc.) and 
+another
+about usability issues of the demo, see Qb and Qu in step 1 and 5 in Figure 3.
+
+In total 39 users participated in this study that was held in a period of two 
+weeks in
+August 2006 at the Rijksmuseum Amsterdam. 33 users were randomly selected from
+the actual visitors of the museum. In addition, we also asked 6 employees (no 
+domain
+experts) of the Rijksmuseum to take part in the study.
+
+5 Results and Analysis of the User Study
+
+In the questionnaires, we collected user characteristics (e.g. age, gender, 
+profession)
+and comments on the demo usability. Some dominant factors appeared as
+characteristics of the users:
+
+-  Small group with 2-4 persons and a male took the leading role (67%)
+
+-  Mid-age people in 30-60 years old and well educated (62%)
+
+-  No prior knowledge about the Rijksmuseum collections (62%)
+
+-  Visit the museum for education (98%) and strong interest in art (92%)
+
+-  Recommendations are useful (82%) and explanations is helpful (57%)
+
+These findings guide our subsequent user-centered design of personalized 
+adaptive
+systems: (1) consider community/social aspects in the user model, (2) enable
+collaborative tasks among users, (3) not explicitly test user’s pre-knowledge, 
+and (4)
+no   need to motivate users but focus on providing art education in a pleasant 
+way.
+
+To distinguish within these 39 participants between novices and experts, we
+roughly defined an expert-value as a weighted sum of five factors: prior 
+knowledge of
+the Rijksmuseum collection (v1), visiting frequency of Rijksmuseum (v2) and 
+other
+museums (v3), interest in art (v4) and history (v5), calculated by:
+
+expert-value = V1*0.5 + (V2+V3)*0.15 + (V4+V5)*0.1
+
+If the user’s expert-value is higher than a particular threshold (2.5), then 
+she will
+be idenitfied as an expert, otherwise as a novice. However, there is no sharp
+distinction between them. To establish the correspondence of properties 
+collected
+from pre/post-test (Pp) and the actual test (Tp), we use a valuation function V 
+to
+obtain values in the range of -1, 0 and 1, that we can compare (when both 
+values have
+
+
+a similar sign there is a positive correspondence), as expressed in the 
+formula: Cp =
+V(Pp)*V(Tp). For a particular user, we derive a combined positive 
+correspondence,
+over all properties P, by applying: ΣC = ΣCp. At this point, we do not consider
+negative correspondences, as they seemed not to contain valuable information. By
+using this interpretation model, all data from the pre/post-test and test were 
+processed.
+
+In Figure 4 (left
+part), we show the
+comparison of ΣC
+based  on two groups:
+novices and experts.
+A significant increase,
+1.18, was found for
+novices when relating
+Comparison I and II.
+
+
+Fig. 4. ΣC in Comparison I and II according to user expert-value
+
+Besides, we found a
+very slight increase,
+
+0.23, for the experts. Secondly, when we plot the difference of ΣC between
+comparison I and II on a continuous range of the expert-value, we may observe 
+(right
+part, Figure 4), ignoring extreme values, a convergence as expert level 
+increases.
+These results confirmed our hypothesis that the novices indeed profit from using
+demo to elicit their art preferences in the Rijksmuseum collections.
+
+6 Conclusion
+
+In this paper we have presented a user study of the CHIP demo, indicating that
+personalized adaptive systems have the potential to benefit users in various 
+contexts.
+It is well integrated in the tasks users expect to perform on a museum website, 
+and in
+the same time gathers necessary data about the users in order to provide 
+personalized
+information access and presentation. It is geared towards user’s 
+characteristics and
+behaviors, and it can make the active interaction more effective and fruitful.
+
+References
+
+1. Rutledge, L., Aroyo, L., Stash, N.: Determining User Interests About Museum 
+Collections.
+In: Proceedings of WWW’06 International Conference (poster) (2006)
+
+2. Denaux, R., Dimitrova, D., Aroyo, L.: Integrating Open User Modeling and 
+Learning Content
+Management for the Semantic Web. In: Proceedings of User Modeling Conference 
+(2005)
+
+3. Bowen, J., Filippini-Fantoni, S.: Personalization and the web from a museum 
+perspective.
+In: Proceedings of Museums on the Web Conference (2004)
+
+4. Schreiber, G., Amin, A., van Assem, M., de Boer, V., Hardman, L., 
+Hildebrand, M.,
+Hollink, L., Huang, Z., van Kersen, J., de Niet, M., Omelayenko, B., van 
+Ossenbruggen, J.,
+Siebes, R., Taekema, J., Wielemaker, J., Wielinga, B.: MultimediaN E-Culture
+demonstrator. In: Cruz, I., Decker, S., Allemang, D., Preist, C., Schwabe, D., 
+Mika, P.,
+Uschold, M., Aroyo, L. (eds.) ISWC 2006. LNCS, vol. 4273, Springer, Heidelberg 
+(2006)
+
+5. van Gendt, M., Isaac, A., van der Meij, L., Schloback, S.: Semantic Web 
+Techniques for
+Multiple Views on Heterogeneous Collections: A Case Study. In: Gonzalo, J., 
+Thanos, C.,
+Verdejo, M.F., Carrasco, R.C. (eds.) ECDL 2006. LNCS, vol. 4172, Springer, 
+Heidelberg
+(2006)
+

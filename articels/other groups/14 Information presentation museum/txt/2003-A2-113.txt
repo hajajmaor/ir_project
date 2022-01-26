@@ -1,0 +1,381 @@
+Supporting Access to Museum Information for Mobile Visitors
+
+Carmine Ciavarella, Fabio Paternò
+
+ISTI-CNR
+
+Via G.Moruzzi, 1 – 56100 Pisa - Italy
+
+{c.ciavarella, f.paterno}@cnuce.cnr.it
+
+Abstract
+
+A number of applications can benefit from the use of mobile devices. An example 
+is the museum
+application domain where a wide variety of users want to access information 
+regarding the works
+of art while freely moving about. In this paper we discuss the possible design 
+choices when
+developing interactive mobile applications supporting this type of user and 
+show which have been
+adopted in a specific case study and why.
+
+1  Introduction
+
+Nowadays mobile devices have powerful computing capabilities. This opens up new 
+scenarios in
+which users can interact with them in many environments. Intelligent devices 
+can be located
+anywhere to support users in their daily activities and accompany them in their 
+movements.
+
+The new services enabled by this technological evolution should take into 
+account user
+movements and, consequently, the change of the application context of use (see 
+for example,
+(Butz, Baus, & Kruger, 2000), and (Cheverst, Davies, Mitchell, Friday & 
+Efstratiou, 2000)). By
+context of use, we mean not only the surrounding environment, but also the 
+available interaction
+devices and the tasks that the user intends to accomplish. Knowledge of the 
+context of use is
+fundamental to designing usable services. In this paper we discuss the design 
+of a location-aware,
+context dependent museum application. Most of the solutions adopted can be 
+applied in other
+context-dependent in-door applications where the user position cannot be 
+tracked through GPS or
+similar technologies.
+
+Several researchers have considered the museum domain. It is characterised by 
+mobile users
+without a precise goal and with the need of information dependent on the 
+current context. In our
+case we have addressed this problem and then experimented the results in a real 
+museum (the
+Marble Museum), which also provides us with the opportunity to receive feedback 
+from real users.
+We have developed a new version of an interactive mobile application where in 
+designing how to
+provide users with access to the museum information we have also considered the 
+issues related to
+the user location. A number of projects have been carried out to address such 
+issues. The aim of
+GUIDE (Cheverst, Davies, Mitchell, Friday & Efstratiou, 2000) is to investigate 
+the provision of
+context-sensitive mobile multimedia support for city visitors. It is based on 
+the wireless networks,
+located   in Lancaster: information about positioning is transmitted from 
+strategically positioned
+base stations. This system applies out-door technologies that cannot be 
+proposed for in-door
+environments like museums.
+
+Museums are an interesting application domain for interactive mobile devices. 
+Museum visitors
+can be assisted in various manners. One possibility is the use of audio guides: 
+visitors can use a
+vocal output device. They can select the work of interest by entering its code 
+through a numeric
+keypad. Audio guides are precursors of electronic guides. They are useful but 
+do not support the
+visual channel. Using devices, like PDAs, that support both audio description 
+and images, can
+solve this problem. In addition, another issue can be addressed: user 
+orientation. One approach is
+
+
+suggested by the IrReal project (Butz, Baus, and Kruger, 2000): they have built 
+a navigation
+system using infrared transmitters. These transmitters, placed at strategically 
+important points
+throughout a building, are useful to provide directions or other localised 
+dynamic information
+stored in computers linked to them. This approach is not wholly suitable for 
+museums where
+visitors have specific requirements. Also, this solution is expensive and 
+difficult to install because
+of the need for a computer for each beacon.
+
+In location-aware systems the information regarding works or sections is 
+selected depending on
+the user’s position and length of stay in that position. This information is 
+used to understand what
+the user's interests are. This approach has been used for the Hippie system 
+(Oppermann & Specht,
+2000) within the HIPS project. The authors have also considered how to 
+effectively present
+information to the user while taking into account the user model (interests and 
+preferences of
+users). This project also addresses the problem of how to adapt the user 
+interface to the user
+model. The model can be modified either directly by the user at the beginning 
+of the session or by
+the system's taking into account the history of user interactions and the 
+choices performed by the
+user. The suggested information can be accessed through links to the 
+descriptions of the works
+that best correspond to the current user model. When accepted the suggestions 
+are used to update
+the user model. One potential limitation of this approach is that often the 
+user's position alone is
+not enough to indicate interest in the closest work of art; external reasons, 
+such as a crowd
+preventing movements, can be the reason for a user's stopping. Thus, the risk 
+is that the system
+wrongly identifies the user interests and determines the corresponding user 
+model.
+
+One solution to such limitations of location-aware systems has been proposed 
+for visiting “Filoli”,
+a Georgian Revival house (Aoki & Woodruff, 2000). In this case the application 
+provides the
+users with an image of the current room with the works of interest highlighted 
+by red borders.
+Then, the user can select the object of interest with a pen, which activates an 
+audio comment or a
+video. It is possible to change the viewpoint of the room's representation by 
+selecting one of the
+device's buttons. In this case, one possible limitation is the use of pictures 
+to represent the room
+content duplicating the information that the user is already seeing, with the 
+risk of requiring
+multiple interactions to identify the selectable elements of interest. In 
+addition, this solution is
+valid only for those museums where the elements of interest are arranged along 
+each wall, while it
+becomes difficult to follow in cases where they are spread throughout the room.
+
+In the next section we discuss about the solutions adopted in our case to 
+better support the user
+during the museum visit.
+
+2  The Design of the Context-dependent Support
+
+In this section we focus our discussion on how we have chosen to determine the 
+user location, and
+how we take into account the context in which the interaction takes place and 
+the techniques used
+to support user orientation.
+
+2.1  Location-awareness
+
+The identification of the user position in an in-door environment can be 
+performed at two different
+levels of granularity: one is the possibility of identifying the exact 
+position, thus, in the case of a
+museum, the system can identify the closest work of art; in the other case the 
+system is able to
+identify in which room of the building the user is located. The first case can 
+be useful to try to
+identify what works of art are more interesting for the user based on the 
+assumption that the
+duration of the time when the user is close to a work of art is proportional to 
+the interest for it.
+However, this can be a wrong hypothesis because there may be many reasons why a 
+user stops
+somewhere (it could be because of other visitors or some obstacles). Thus, 
+wrong deductions may
+negatively influence the application in determining the user interests. This is 
+one of the reasons for
+our choice of the second criterion.
+
+
+In order to determine the user position we have installed infrareds emitters at 
+each ingress to a new
+room (see an example in Figure 1). Such emitters have been made ad hoc for our 
+application. They
+transmit a unique identifier through IrDA protocol. When the user gets in a new 
+room the emitters
+sends the identifier to the PDA, then the application detects it and changes 
+presentation
+accordingly.
+
+Figure 1: The Context of Use in the Application.
+
+The angle covered by the infrared emitter is 90°. The signal transmitted by the 
+emitter is
+composed of eight characters. Initially we used only three characters, thus the 
+string sent by the
+emitters had the following type ‘001@@@@@’. However, after first experiments we 
+realised that
+this solution needed to be improved because the infrareds can bounce over 
+surfaces: if the signal
+that reaches the infrared port of the PDA do not respect the spectrum of the 
+IrDA protocol then
+they can be interpreted wrongly: we can obtain three character strings with 
+wrong content because
+the identifier provided is different from that associated to the room where the 
+user is entering.
+Thus, we have extended the string transmitted by the emitters by adding three 
+characters that are
+used as they were “parity bits”. The algorithm is simple: each number is 
+associated with an
+alphabetical character: “0” is associated with “A”, “1” is associated with “B”, 
+etc. Each time a
+new string is detected, the application checks that the part of the string 
+composed of numerical
+characters corresponds to that composed of alphabetical characters. For example 
+a legal string is
+“001AAB@@”. Thus, the application can correctly determine the room where the 
+user is entered.
+The emitters are realised by stand-alone technology: they are made in such a 
+way to transmit a
+signal (composed of eight characters) per second. They only need the power to 
+work. Thus, our
+system is quite easy to install.
+
+2.2  Context-dependency
+
+The application provides information regarding the works of art in the museum 
+taking into
+account the user position for this purpose. In the user interface we have 
+introduced elements that
+support the access to the information and elements that support the user 
+orientation. When the user
+accesses a new section, then the surrounding environment changes. This event is 
+explicitly
+highlighted by the application to the user.
+
+
+Figure 2: Automatic detection of the user position.
+
+When entering in a new section is detected, the application shows where it is 
+located in the
+museum map (see for example, Figure 2, left part) and generates a specific 
+sound highlighting the
+event in order to attract the user attention. Then, as soon as the screen is 
+touched the section map
+is shown (see for example, Figure 2, right part). It indicates the position of 
+the works of art in the
+map. Different types of icons are used in order to indicate the types of works 
+located in the room,
+in addition to their position. Indeed in the museum several types of works are 
+contained, thus
+different icons have been used to represent each of them. An alternative 
+solution would have been
+to include the pictures of the works itself. However, the limited resolution of 
+the PDA (240x320)
+makes this solution impossible.
+
+To ease user orientation in the museum some specific design choices have been 
+made. The first
+one is to orient the section maps on the PDA screen in such a way to reflect 
+the same view as
+when the visitor enters physically in them. In addition, some reference points 
+are highlighted in
+the map: way in, way out and location of the infrared emitters. In addition to 
+such reference points,
+we have introduced some techniques that allow users to navigate in the 
+application and access
+information of interest. In particular, the user can access general information 
+regarding the
+museum and the thematic sections through specific commands. We have also 
+introduced the
+possibility of going back to the last previous presentation accessed through a 
+back button similar
+to  that provided by Web browsers.
+
+The actual design of our system is the result of the evaluation test that took 
+place in Marble
+Museum of Carrara last year. It involved 95 users: they filled a questionnaire, 
+answering questions
+about various aspects of the application (Ciavarella & Paternò, 2002).
+
+2.3  Information presentation
+
+We have identified three information levels to support. For each of them the 
+information is
+provided in a specific manner:
+
+•  Museum level, this is the most general level, overall information is 
+provided, including its
+history.
+
+
+•  Section/subsection level, information specific to the current 
+section is provided. Such
+information can be useful to prepare the user regarding what can be found in 
+the current
+section/subsection in order to better decide whether or not to visit it and how 
+long. The
+biggest sections have been divided into subsections in order to provide a more 
+refined
+description of their content.
+
+•  Work level, at this level the specific information regarding a work 
+of art is provided,
+including those regarding the author, when available, the production year and 
+the
+material. The next figure is an example of an artwork presentation.
+
+In presenting the information the multimedia features of the PDA have been 
+exploited: colour
+screen, audio file, videos allows the application to provide multimedia 
+information implemented
+in standard formats without loosing resolution and saving memory space. The 
+audio presentations
+(in Italian and English) are pre-recorded MP3 audio files. Each work is 
+presented through a
+140x140 Jpeg picture and a number of MPEG videos provide information related to 
+the content of
+the museum but not visible in the museum (for example, historical videos or 
+videos showing how
+marble quarrying is currently performed).
+
+3  Conclusions
+
+The increasing availability of mobile devices with powerful capabilities 
+enables new use scenarios
+characterised by moving users needing access to information relevant to what he 
+can currently
+observe. The museum field is characterised by visitors who freely move needing 
+context-
+dependent information without a precisely defined goal. Thus, there is a need 
+for context-
+dependent information, which should be provided without disorienting the user.
+
+We have presented a work where an interactive system has been designed in order 
+to support
+mobile visitors while accessing museum information. It exploits the multimedia 
+capabilities of the
+PDA platform available (Ipaq Compaq with 1 Gigabyte flash memory) and uses 
+specific infrared
+emitters to identify the room where the user is located. Thus, we have obtained 
+a low-cost and
+easy to install solution that can be adopted in other similar applications. It 
+has recently been made
+available for all the Marble Museum visitors. We plan to gather user feedback 
+through a new
+round of questionnaires and interviews.
+
+4  References
+
+Aoki, P. M., & Woodruff, A. (2000), Improving Electronic Guidebook Interfaces 
+Using a Task-
+Oriented Design Approach, 3rd Conf. on Designing Interactive Systems, Aug. 
+2000, pp. 319-325,
+ACM Press.
+
+Butz, A., Baus, J., & Kruger , A., (2000), Augmenting buildings with infrared 
+information. In
+Proceedings of the International Symposium on Augmented Reality ISAR 2000 pages 
+93-96.
+IEEE Computer Society Press.
+
+Cheverst, K., Davies, N., Mitchell, K., Friday A. & Efstratiou , C., (2000), 
+Developing a Context-
+aware Electronic Tourist Guide: Some Issues and Experiences, Proceedings of CHI 
+2000,
+Netherlands, April 2000, pp 17-24, ACM Press.
+
+Ciavarella C., & Paternò, F., (2002), Design of Handheld Interactive Support, 
+in Pre-Proceedings
+of the DSV-IS ’02, Rostock, Germany
+
+Oppermann, R. & Specht, M., (2000), A Context-Sensitive Nomadic Exhibition 
+Guide,
+Proceedings Symposium on Handheld and Ubiquitous Computing, pp.127-142, LNCS 
+1927,
+Springer Verlag.
+

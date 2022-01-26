@@ -1,0 +1,603 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/311488985
+
+Towards Using Mobile, Head-Worn Displays in Cultural Heritage: User
+Requirements and a Research Agenda
+Conference Paper · March 2016
+DOI: 10.1145/2856767.2856802
+
+CITATIONS
+
+READS
+
+30
+
+236
+
+3 authors, including:
+Tsvi Kuflik
+
+Joel Lanir
+
+University of Haifa
+
+University of Haifa
+
+257 PUBLICATIONS 3,420 CITATIONS
+
+78 PUBLICATIONS 943 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+MultiPresenter View project
+
+Visual Analytics of Multifaceted Streaming News Data View project
+
+All content following this page was uploaded by Joel Lanir on 12 April 2018.
+
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+IUI 2016 • Wearable and Mobile IUI 2
+
+March 7–10, 2016, Sonoma, CA, USA
+
+Towards Using Mobile, Head-Worn Displays in Cultural
+Heritage: User Requirements and a Research Agenda
+Natalia Vainstein
+The University of Haifa
+Haifa, Israel
+tsvikak@is.haifa.ac.il
+
+Tsvi Kuflik
+The University of Haifa
+Haifa, Israel
+ylanir@is.haifa.ac.il
+
+ABSTRACT
+
+Joel Lanir
+The University of Haifa
+Haifa, Israel
+nataliashtepa@gmail.com
+
+utilization of HWD technologies allows providing a
+wearable AR display without the necessity to hold the guide
+and to look at it and without distracting the user from the
+real object. In recent years, large numbers of relatively lowcost, see-through smart glasses are appearing. Mirza and
+Sarayeddine [13] reviewed state of the art see-through
+technologies and the key challenges these technologies face
+in order to develop a platform that will enable affordable
+HWDs for the consumer market. Their focus is on seethrough technologies for wearable AR displays. Form
+factor, cost, ease of use, and display performance are
+reported as major challenges for consumer adoption of AR
+HWDs. A comparison of the various technologies and how
+they relate to these aspects found out that "Of the various
+waveguide technologies discussed, the reflective type
+seems to be the most promising for large scale consumer
+deployment. The main advantages are the lower cost,
+plastic substrate, and lack of color issues. Optical
+technologies are finally emerging that will enable consumer
+oriented wearable AR display products to become a reality
+in the near future".
+
+Augmented reality (AR) technology has the potential to
+enrich our daily lives in many aspects. One of them is the
+museum visit experience. Nowadays, state of the art mobile
+museum visitor guides provide us with rich personalized,
+context aware information. However, these systems have
+one major drawback – they force the visitor to hold the
+guide and to look at its screen. The utilization of smartglasses technology allows providing a wearable AR display
+without the necessity to hold the guide and to look at it and
+without distracting the user from the real object. This paper
+describes initial steps towards the implementation of a
+head-worn display (HWD) museum visitor guide – the
+results of users' requirements elicitation process, the
+implementation of a first research prototype and initial
+insights gathered during the process.
+Author Keywords
+
+Augmented reality; Head-worn display; Museum visitors'
+guide.
+ACM Classification Keywords
+
+H.1.2 [User/Machine Systems]: Human factors,
+H.5.1 [Multimedia Information Systems] Artificial,
+augmented, and virtual realities, H.5.2 [User Interfaces]
+User centered design
+
+This study focus on exploring the potential of HWD to
+enhance the museum visit experience. HWD are not new in
+the area of CH and museum guides [17]. Still, to date, few
+prototype implementations in museums have been
+demonstrated ([3] and [15] are two examples), and even
+fewer actual HWD guides exist in actual museums. We
+follow a user centered design in the development of a HWD
+museum guide. Thus, we first aim to fully understand user
+requirements for such a guide. We present the opinions of
+potential users about the needs and usefulness of a HWD
+museum guide, trying to understand also the reasoning and
+general guidelines that stem from these requirements. These
+requirements drive the development of a smart glasses
+museum visitors' guide prototype which later will be
+evaluated in a museum setting, with the ultimate goal of
+improving the overall museum visit experience.
+
+INTRODUCTION
+
+Wearable technologies have the potential to enrich our daily
+lives in many aspects. One of them is the museum visit
+experience. Nowadays, state of the art mobile museum
+visitor guides enable museums and other cultural heritage
+(CH) sites to move away from short textual labels allowing
+minimal information near exhibits and providing visitors
+with rich, personalized, context-aware multimedia
+presentations [1,8]. However, these systems have one major
+drawback – they force the visitor to hold the guide and to
+focus on its display (or they provide only audio). The
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies are
+not made or distributed for profit or commercial advantage and that copies
+bear this notice and the full citation on the first page. Copyrights for
+components of this work owned by others than ACM must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to
+post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from Permissions@acm.org.
+IUI'16, March 07-10, 2016, Sonoma, CA, USA
+© 2016 ACM. ISBN 978-1-4503-4137-0/16/03…$15.00
+DOI: http://dx.doi.org/10.1145/2856767.2856802
+
+The rest of this paper is organized as follows: first we
+introduce some related work; next we present the
+requirements elicitation and analysis study, followed by a
+description of an initial prototype that was developed and
+lessons learned in the process. Finally, we describe the
+future evaluation of the system, planned to take place in a
+realistic setting.
+
+327
+
+IUI 2016 • Wearable and Mobile IUI 2
+
+March 7–10, 2016, Sonoma, CA, USA
+
+BACKGROUND AND RELATED WORK
+
+of time the visitors spent focusing on the paintings.
+Banowosari et al. [3] briefly presented a design concept of
+an AR application using smart-glasses for the Indonesia
+Wayang Museum, suggesting some guidelines for
+presentation preparation and interaction.
+
+The museum is a unique area for experimentation with
+novel, mobile technology, as described in [1]. AR and VR
+were already experimented in museums more than twenty
+years ago [16], however, only in recent years, with the
+appearance of commercial small, light-weight wearable
+devices, the potential of HWDs in museums has started to
+materialize. Past studies were carried out to evaluate the
+potential contribution of HWDs and AR to the field of CH.
+Damala et al. [7] experimented with an AR-based museum
+guide, using a portable computer, (without a HWD) and
+found out that "AR assisted interfaces can indeed
+successfully facilitate visitors intuitively switch their focus
+and attention from the physical to the digital space and vice
+versa, even in the complex context of the museum space."
+Schiele et al. [14] describes a wearable VR device, which
+includes image recognition capability. By looking at real
+objects, the users received a VR presentation of animations
+and sound. Most of the users gave a positive feedback to the
+system. Mase et al. [12] presented the Meta Museum
+concept and the VisTa system which uses a VR HMD
+system that visualizes the evolution of an ancient village in
+Japan. The authors noted that they plan also to produce a
+see-through (AR) system, but no further details were
+provided. An application of a HWD as a museum guide was
+developed and demonstrated by Sparacino et al. [15] at the
+museum wearable project, where smart glasses were part of
+a mobile, personalized and context aware museum visitors
+guide system. The system was made by a lightweight CPU
+hosted inside a small shoulder pack and a small, lightweight
+HWD which was called then private-eye display. The
+display was a commercial monocular, VGA-resolution,
+color, clip-on screen attached to a pair of sturdy
+headphones. The system provided personalized information
+by using position and time information for inferring users'
+interests and assigning the user to one of three different
+types (that determines the information provided to the
+visitor). The exhibit objects were augmented with video,
+images and text, displayed around the object of the interest.
+Vlahakis et al. [17] presented three implementations of a
+visitor guide for an archeological site, two of them were
+handheld devices and one was a Laptop with an HMD and
+earphone devices that had also an AR display. The system
+included descriptions, navigation information, and
+personalization of a visitor’s tour in the archeological site.
+Visitors of the Olympia site in Greece tested the guide.
+They praised the guide for realism, but indicated that during
+walking they felt uncomfortable to wear it. Recently, Chang
+et al. [6], described a mobile guide system (not HMD
+based) that integrates art appreciation instruction with AR
+that was designed as an auxiliary tool for painting
+appreciation. The learning performance of three groups of
+visiting participants was explored: AR-guided, audioguided, and nonguided. The results showed that compared
+to the audio- and nonguided participants, the AR guide
+effectively enhanced visitors’ learning effectiveness,
+promoted their flow experience, and extended the amount
+
+On a different aspect, Alce et al. [2] explored the
+applicability of the Wizard of Oz method for eliciting users'
+feedback about the use of simulated smart glasses with AR
+capability in the scenario of a city tour and found it to be a
+useful tool for that purpose. However, they focused mainly
+on the classical usability aspects of their simulated system.
+As we can see, most HWD studies in CH focused on
+exploring and demonstrating the potential of AR and
+HWDs to enrich and enhance the museum visit experience.
+However, only few of them went beyond demonstration and
+collection of users' feedback to the specific application or
+tried to study and address users' needs. In this study,
+somewhat similar to [2, 3] we focus on users and
+understanding their requirements from smart-glasses based
+museum visitors' guide.
+USER REQUIREMENTS FOR GLASSES-BASED GUIDE
+
+Given our focus on understanding visitors' needs first, a
+qualitative study was carried out to understand the
+requirements of potential users for a smart-glasses museum
+guide. The study involved 17 participants (ages 19-57), who
+have visited a museum at least once. Data was collected by
+semi-structured interviews, where for each question the
+participant was asked to explain the reason for the answer.
+Before the interviews, participants wore and experimented
+with a Vuzix M100 smart glasses device to understand the
+potential for such a device at the museum. Users'
+requirements were elicited from the transcripts of the
+interviews. During the interviews, 94% (16 out of 17) of the
+participants answered that they think that a HWD museum
+guide will be useful and they will be glad to use it.
+During the interview the participants indicated requirements
+with features that they would prefer to have in the guide
+and features that they would prefer not to have in the guide.
+After a qualitative analysis of the interview results, we
+assembled together several topics for requirements. These
+topics are discussed next (Given the fact that users provided
+several requirements in different categories, the numbers do
+not add up to 17).
+System proactiveness
+
+An important feature of a HWD mobile guide is its ability
+to provide continuous information related to its
+surrounding. However, in a context-aware system, the
+question is whether the system should keep the user in
+control, only responding to user requests, or should the
+system take initiative and propose information and services.
+Most participants (11 out of 17) preferred to keep the user
+in control, where the user decides when to receive
+information. Five participants preferred a proactive system
+in which the system anticipates what the user is doing and
+provides information accordingly. Three of them asked for
+
+328
+
+IUI 2016 • Wearable and Mobile IUI 2
+
+March 7–10, 2016, Sonoma, CA, USA
+
+a location (gaze) aware system. Three participants asked to
+be able to set up the mode of operation (proactive/passive).
+This preference for control over proactiveness is in sync
+with user preferences with a handheld mobile guide [11].
+
+(6), and one participant mentioned that data should not be
+saved after the visit.
+Additional features
+
+Users seem to be aware of classical functions and
+limitations of mobile devices at the museum. They asked
+for indoor navigation support (8), recommendations (6),
+group interaction (1), addressing different audiences, e.g.
+children (1) translation capabilities (1) and presenting
+battery status (1). In addition, some users expressed the
+need for multilingual guide (2) and the need for operating
+instructions in the users' language (1).
+
+Interaction with the device
+
+There are many options for how to interact with
+information when using a HWD. Users' interaction
+preferences for a HWD mobile guide varied greatly. There
+were 12 requests to control the glasses with an
+accompanied mobile device, 8 requests for using physical
+touch on the side of the glasses (through buttons or slide
+gestures), 5 requests for voice commands and 6 requests for
+mid-air hand gestures. It is interesting to note that 8
+participants objected to voice commands, mostly because of
+the quiet environment of the museum, and the request for
+privacy.
+
+User preference about content presentation
+
+Two users found the ability to control the size of the virtual
+image using the glasses an important option (2). Other
+requests were that text size should be readable (3), audio
+volume should be adjustable (1), the user should be able to
+select the type of media presented (2), fast forward it (2),
+stop it (2), and that the guide should proactively stop
+presentation when the user moves away (3).
+
+Device characteristics
+
+A large group of requirements related to the device's
+characteristics. The users wanted a light weight device (17),
+and the ability to adjust/remove the display (11). Some
+users preferred a display for both eyes located at the center
+of the glasses (7) while others preferred a one eye, top
+display similar to Google glass or the Vusix M100 (6). It is
+interesting to note that even aesthetics of the device was
+commented as important by one user.
+
+Training
+
+One participant explicitly asked that “At the beginning of
+the visit the user should receive training”. According to the
+participant, no matter which type of interaction this device
+uses, thorough training should take place.
+PROTOTYPE DEVELOPMENT
+
+Information delivery
+
+We developed the first prototype of a HWD imagerecognition guide. It enables the user to easily receive
+information about exhibits of interest. For this prototype,
+four artworks at the Hecht museum1 were used for initial
+experimentation.
+
+When asked about what type of information they would like
+to receive, visitors expressed a wide variety of preferences
+towards different types of media. This included text (6),
+Audio (14), video (11), and images (11). This demonstrates
+the need for a variety of media options. Having information
+registered to the real-world position of the museum objects
+(i.e., see-through AR), was also important (13). It is
+interesting to note that a large number of users objected to
+text (10) as they said it is not easy to read with the glasses.
+Some objected to video (4) as it distracts the visitor from
+the museum and some (4) objected to audio.
+
+Architecture and system
+
+The system includes two parts (see Figure 1): a client and a
+server. The client is an Android application, which is
+installed on a Vuzix M100 smart glasses. The server
+includes server implementation and an image recognition
+function. The image recognition is implemented using
+Speeded-Up Robust Features (SURF) algorithm [4]. C++
+Open CV libraries were used for development. In addition
+we added a decision rule for images similarity, based on the
+similarity found between the image taken by the user and a
+set of exhibits images taken from different angles.
+
+Personalization and privacy
+
+Most users want to be able to choose from multiple content
+items (13), yet they still expect personalization (10), and
+acknowledge that the system should monitor them for that
+(12). Some also agree that the system would collect
+information about them from external sources (4). Others
+asked to be in control of data collection (2). The users
+expected the system to implicitly recognize their interest
+(like when standing a long time in front of an exhibit) and
+accordingly extend its explanations (3), or provide users
+with the ability to explicitly do that (6). However, some
+users objected to the need to choose content (4), and some
+objected to any need for filling up any form for
+personalization (6). There was some objection to
+monitoring (4) and data collection from external sources
+
+For receiving information about a specific exhibit, the user
+should press a button on the smart glasses. At this point, the
+Android application takes a picture from the user’s
+viewpoint and transfers it to the server that performs image
+recognition. Once the object of interest is identified, the
+server sends appropriate complementary information to the
+Android application for presentation (Figure 1 illustrates
+the process).
+1
+
+329
+
+http://mushecht.haifa.ac.il/
+
+IUI 2016 • Wearable and Mobile IUI 2
+
+March 7–10, 2016, Sonoma, CA, USA
+
+of developing a research prototype highly demanding (as it
+is with more traditional mobile guides). It is worth noting
+that in general, research prototypes intended to be evaluated
+in realistic setting, need to be of high quality and sometimes
+become systems used by visitors on a daily basis, which is a
+major benefit, as can be seen in [9,10,11].
+It is important to note that in this study, we refer to
+requirements that are relevant nowadays. Today people do
+not use smart-glasses as they use smart-phones. This fact
+can influence the proposed requirements, as in the future,
+some of the results may change in accordance with the
+progress of the technology.
+This work describes the first steps of our research. For
+better understanding of the usefulness of the new
+technology, we will compare a handheld museum guide
+with a HWD guide. The different modalities of presenting
+and interacting with information can influence the ease of
+use and general experience of the visitor. Potential users
+might be accustomed to handheld devices, and there might
+be issues with acceptability of a new technology. On the
+other hand, the HWD affords handless interaction and
+promises a less mediated, and possibly more engaging
+experience.
+
+Figure 1: System architecture
+Lessons learned
+
+Lessons learned from the HWD museum guide prototype
+implementation include:
+1. The reference images should be with minimum
+background and frames of the pictures. The backgrounds
+and frames of the pictures can be similar for different
+exhibits. This similarity inserts noise to the image
+recognition process.
+
+CONCLUSIONS AND FUTURE WORK
+
+2. For better image recognition, it is important to use
+reference images with similar quality to the pictures that
+the user takes in real time. It is important to note that
+image processing utilities, can change the image quality.
+
+We presented potential user requirements for a HWD
+museum-guide. The requirements seem to be challenging.
+As they are diverse and sometime contradicting. Hence,
+addressing them all requires developing a very flexible and
+configurable system. Following the requirements
+definitions, an initial research prototype was developed.
+There are works, which compare different algorithms,
+including SURF, for recognition of museum objects [5]. In
+the next step, we are going to extend the prototype
+implementation to object recognition for supplying users’
+requirements. Then, the prototype will be evaluated and
+improved in an iterative manner, following a user centered
+design process until a satisfactory system will be available.
+The next step will be comparing the use of HWD with a
+more conventional museum visitor's guide at a real
+museum. Two versions of a museum visitors guide system
+will be used. One is an existing handheld, personalized,
+context aware museum visitors' guide system that has been
+developed and deployed in the museum, while the second
+will be the same system, adapted to enable users' interaction
+through the mobile glasses. In the user studies, with regular
+museum visitors, the following aspects will be evaluated:
+usability, the overall visit experience and the impact of the
+systems on group interaction when the visitor comes with a
+group of friends – a common scenario. Data will be
+collected in two complementary ways: by system logs that
+will enable to analyze visitors' movements through the
+museum, time spent at POIs and information viewed, and
+by questionnaires and interviews.
+
+3. Taking pictures with a particular device and a particular
+application causes all pictures to be of the same image
+dimensions. For exhibits with nonstandard dimensions,
+this fact makes it difficult to capture this exhibit in order
+to store it in the database.
+4. Taking pictures with extreme angles can worsen the
+results of the image recognition.
+DISCUSSION
+
+Considering the requirements, it is clear that users are well
+aware of the potential of mobile technologies and use their
+current experience when considering a smart glasses based
+museum visitors guide. They are looking for a product with
+rich functionality – that will provide both information and
+navigational support (which are two main types of support
+needed by visitors to CH sites). Most users prefer to remain
+in control, deciding when and where information should be
+presented, although proactiveness is preferred by a
+minority. In addition, users want personalization and are
+aware that it requires monitoring their behavior, and to
+some extent, giving up their privacy. Moreover, usability in
+general seems highly important and with this respect, the
+need to cater to a wider variety of users, with different
+preferences with respect to types of media and ways of
+interaction is brought up. It is clear that users will be
+looking for a high quality product, as they are used
+nowadays to high quality smartphones, which make the task
+
+330
+
+IUI 2016 • Wearable and Mobile IUI 2
+
+March 7–10, 2016, Sonoma, CA, USA
+
+REFERENCES
+
+9. Kuflik, T., Stock, O., Zancanaro, M., Gorfinkel, A.,
+Jbara, S., Kats, S. & Kashtan, N. (2011). A visitor's
+guide in an active museum: Presentations,
+communications, and reflection. Journal on Computing
+and Cultural Heritage (JOCCH), 3(3), 11.
+10. Lanir J., Kuflik T. ,Dim E. ,Wecker A. J. , Stock O.
+(2013). The Influence of a Location-Aware Mobile
+Guide on Museum Visitors’ Behavior. Interacting with
+Computers, vol. 25, no. 6, p. 443–460.
+11. Lanir J., Kuflik T., Wecker A. J., Stock O., Zancanaro
+M. (2011). Examining proactiveness and choice in a
+location-aware mobile museum guide,. Interacting with
+Computers, vol. 23, no. 5, p. 513–524.
+12. Mase K., Kadobayashi R., Nakatsu R. (1996). MetaMuseum: A Supportive Augmented-Reality
+Environment for Knowledge Sharing," in In ATR
+Workshop on Social Agents: Humans and Machines,
+Kyoto, Japan.
+13. Mirza K. and Sarayeddine K. (2012). Key challenges to
+affordable see through wearable displays: The missing
+link for mobile AR mass deployment. Optivent S.A,
+Rennes, France.
+14. Schiele B., Jebara T. and Oliver N. (2001). SensoryAugmented Computing: Wearing the Museum’s Guide.
+IEEE Micro, vol. 21, no. 3, pp. 44 - 52.
+15. Sparacino F. (2002). The Museum Wearable: real-time
+sensor-driven understanding of visitors’ interests for
+personalized visually-augmented museum experiences.
+in Museums and the Web , Boston.
+16. Styliani, S., Fotis, L., Kostas, K., & Petros, P. (2009).
+Virtual museums, a survey and some issues for
+consideration. Journal of cultural Heritage, 10(4), 520528.
+17. Vlahakis V., Ioannidis N., Karigiannis J., Tsotros M.,
+Gounaris M., Stricker D., Gleue T., Daehne P. and
+Almeida, L. (2002). Archeoguide: An Augmented
+Reality Guide for Archaeological Sites. IEEE Computer
+Graphics and Applications, vol. 22, no. 5, pp. 52-60.
+
+1. Ardissono, L., Kuflik, T., & Petrelli, D. (2012).
+Personalization in cultural heritage: the road travelled
+and the one ahead. User modeling and user-adapted
+interaction, 22(1-2), 73-99.
+2. Alce G., Wallergård M. and Hermodsson K. (2015)
+WozARd: A Wizard of Oz Method for Wearable
+Augmented. Advances in Human-Computer Interaction,
+vol. 2015, p. 10.
+3. Banowosari L. Y., Rahmah M., Rizky G. A. and Fuady
+M. A. R. (2013). Design Concept of Augmented Reality
+Application with Glasses for Indonesia Wayang
+Museum. International Journal of Advances in
+Engineering & Technology, vol. 6, no. 4, pp. 1564-1570.
+4. Bay H., Ess A., Tuytelaars T. and Gool L.V. (2008).
+Speeded-Up Robust Features (SURF), Computer Vision
+and Image Understanding, vol. 110, no. 3, pp. 346–359.
+5. Bay H., Fasel B. and Gool L. V. (2006). Interactive
+museum guide: Fast and robust recognition of museum
+objects. Proceedings of the first international workshop
+on mobile vision.
+6. Chang, K. E., Chang, C. T., Hou, H. T., Sung, Y. T.,
+Chao, H. L., & Lee, C. M. (2014). Development and
+behavioral pattern analysis of a mobile guide system
+with augmented reality for painting appreciation
+instruction in an art museum. Computers & Education,
+71, 185-197.
+7. Damala A., Cubaud P., Bationo A., Houlier P., Marchal
+I. (2008). Bridging the gap between the digital and the
+physical: design and evaluation of a mobile augmented
+reality guide for the museum visit. in DIMEA '08
+Proceedings of the 3rd international conference on
+Digital Interactive Media in Entertainment and Arts,
+New York.
+8. Kraemer, H., & Kanter, N. (2014). Use and re-use of
+data how Collection Management Systems, Transmedia
+and Augmented Reality impact the future of museum. In
+Virtual Systems & Multimedia (VSMM), 2014
+International Conference on (pp. 214-216). IEEE.
+
+331
+View publication stats
+
+

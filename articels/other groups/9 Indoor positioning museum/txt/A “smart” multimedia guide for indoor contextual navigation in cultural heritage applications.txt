@@ -1,0 +1,803 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/263813268
+
+06851448
+Data · July 2014
+
+CITATIONS
+
+READS
+
+0
+
+123
+
+4 authors:
+A. Chianese
+
+Fiammetta Marulli
+
+University of Naples Federico II
+
+Università degli Studi della Campania "Luigi Vanvitelli
+
+41 PUBLICATIONS 515 CITATIONS
+
+59 PUBLICATIONS 494 CITATIONS
+
+SEE PROFILE
+
+SEE PROFILE
+
+Vincenzo Moscato
+
+Francesco Piccialli
+
+University of Naples Federico II
+
+University of Naples Federico II
+
+203 PUBLICATIONS 2,445 CITATIONS
+
+152 PUBLICATIONS 2,030 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Video and image retrieval View project
+
+ph.D Thesis View project
+
+All content following this page was uploaded by Francesco Piccialli on 11 July 2014.
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+Workshop: Location-based services for Indoor Smart Environments
+
+A “smart” multimedia guide for indoor contextual
+navigation in Cultural Heritage applications
+A. Chianese, F. Marulli, V. Moscato and F. Piccialli
+Department of electrical engineering and information technologies
+University of Naples “Federico II”, Italy
+Email: {angchian, fiammetta.marulli, vmoscato, francesco.piccialli}@unina.it
+
+Abstract—In this paper, we present an ongoing project
+developed within DATABENC, a high technology district for
+Cultural Heritage management. In particular, the project aims
+at exploiting several location-based services and technologies to
+realize a smart multimedia guide system able to detect user
+position and make objects of a museum exhibition able to “talk”
+during tourists’ visit and capable of automatically telling their
+story using multimedia facilities. Moreover, we have deployed in
+the museum rooms a particular Wireless Sensor Network (WSN)
+that, using Bluetooth technology, is able to sense the surrounding
+area for detecting user devices’ presence. Once a device has been
+detected, the related MAC address is retrieved and multimedia
+contents of the closest museum artworks are delivered to user
+using proper multimedia delivery techniques to facilitate and
+make more stimulating the visit. As case of study, we show an
+example of ”talking” museum as a smart multimedia guide of
+sculptures’ art exhibition within the Maschio Angioino castle, in
+Naples (Italy).
+
+I.
+
+I NTRODUCTION
+
+In the recent context of smart cities, the smartness requirements call for new intelligent services able to provide useful
+information on the base of users location and preferences, as
+well as, on the context usually captured by means a set of
+sensors. An interesting technology for these environments is
+by now known as Location-Based Services (LBS) that refers
+to a class of applications integrating geographic location with
+the general notion of services. In particular, indoor space is
+becoming the main and attractive scene for designing novel
+LBSs in ubiquitous and pervasive computing: indoor LBSs
+need not only fundamental geo-information, but also special
+location information interacted with users and surroundings to
+understand physical world.
+One of the fields that can take great advantages of such
+technologies is the Cultural Heritage one. Indeed, it represents
+a worldwide resource of inestimable value and such a value
+gains more and more importance when embedded into the
+digital ecosystem of a smart city, where persons (citizens,
+tourists, etc.) and objects (buildings, rooms, artefacts, etc.)
+equipped with appropriate devices (GPS, smart-phone, video
+cameras, sensors, RFID and QR Code tags, etc.) constitute a
+particular social network in which all the mentioned entities,
+and more, can communicate. Exchanged and produced data
+can be opportunely exploited by a set of applications in order
+to make the system “smart”, and from a more general point
+of view, the social network can be seen as composed of a set
+of Single Smart Spaces - S 3 (indoor museums, archeological
+sites, old town center, etc...), each needing particular ICT
+
+978-1-4799-4043-1/13/$31.00 ©2013 IEEE
+
+infrastructures and services that transform the physical spaces
+into useful smart environments [1]. In such a context, one of
+the most important issue is to design location-based services
+that can assist tourists in the contextual navigation of an indoor
+S 3 , for example automatically delivering to users multimedia
+contents related to the museum artworks on the base of
+their positions. In this paper, we describe an ongoing project
+developed within DATABENC 1 , a High Technology District
+for Cultural Heritage management recently funded by Regione
+Campania - Italy. In particular, the project aims at exploiting
+several location-based services technologies to realize a smart
+guide able to detect user position and make objects of a
+museum exhibition able to “talk” during tourists’ visit and
+capable of automatically telling their story using multimedia
+facilities. In particular, we have deployed a particular Wireless
+Sensor Network (WSN) that, using Bluetooth technology, is
+able to sense the surrounding area for detecting user devices’
+presence. Once a device has been detected, the related MAC
+address is retrieved and a multimedia story of the closest
+museum objects is delivered to user using proper multimedia
+delivery techniques to facilitate and make more stimulating the
+visit. Finally, we show an example of ”talking” museum as a
+smart multimedia guide of sculptures’ art exhibition within the
+Maschio Angioino castle, in Naples - Italy.
+The paper is organized as follows: Section II illustrates
+a motivating example, while Section III describes the architecture of the realized system. Section IV outlines the main
+features of the developed smart guide. Section V consists of
+a brief literature overview of technologies similar to those
+provided by our platform Section VI provides a case study with
+some implementation details and several preliminary experimental results. Finally, Section VII reports some conclusions
+and the possible future work.
+II.
+
+M OTIVATING E XAMPLE
+
+To better understand motivations behind our work, it is important to analyze the kind of relation that exists between
+the exhibition and the visitors of a museum: the purpose of
+the visitor is to see and learn more and not to explicitly
+use the technology. For these reasons and to better appraise
+and promote the museum heritage, it should be preferable to
+provide exhibition objects with the capability of telling their
+story, rather than to wait that users require in first person
+(through multimedia guides) more information about an object,
+as per usual in the majority of smart museum scenarios. As
+1 www.databenc.it
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+motivating example, we can consider the case of a tourist
+visiting an art exhibition within Maschio Angioino castle, in
+Naples (Italy). The cultural environment offers, by a WIFI
+connection, a web-based access to a multimedia collection
+containing: digital reproductions of sculptures by Francesco
+Jerace and other minor artists, educational videos, audio
+guides, textual and hypermedia documents with description of
+authors and sculptures. In order to make the user’s experience
+more interesting and stimulating, the access to information
+should be automatically delivered and customized based on
+the specific profile of a visitor, which includes learning needs,
+level of expertise and personal preferences, on user effective
+location in the museum, on the sculpture “similarity” and on
+information about the context in terms of number of persons
+for each room, room fitness, network performances, etc.
+
+•
+
+Each user device is equipped with a Multimedia
+Guide App (MGA) that allows the fruition of multimedia contents. When a user downloads the App,
+a questionnaire is preliminarily submitted in order to
+capture the his/her profile (e.g. favourite artworks,
+artists, subjects, and kind of multimedia) and the
+device features. When a user starts a visit within the
+museum, a registration phase is also necessary to map
+the device MAC address with the related IP address.
+
+We can image a situation in which the tourist is walking
+within a given exhibition room through several sculptures and
+when he’s particularly close to one of them, its mobile device
+is detected by the sensor placed on such a sculpture. Once
+the tourist mobile device has been detected thanks to the
+WSN technology, the sculpture begin to talk about itself, its
+sculptor, its story and its status using multimedia facilities and
+considering user preferences (e.g. only text and images data).
+In this way, a “static” art exhibition is able to transform itself
+into a “dynamic” one and the talking artworks surround the
+visitor in a place that is now “animated.”
+III.
+
+S YSTEM A RCHITECTURE
+
+Figure 1 describes a functional overview of the proposed
+systems supporting a Talking Museum. At a glance, the system
+can be seen as composed by the following main components.
+•
+
+A Wireless Sensor Network (WSN) is constituted by
+a set of wireless sensors, each one deployed near a museum artefact (e.g. sculpture) and communicating with
+the base station through the Zigbee protocol. Such
+a component aims at scanning, using the Bluetooth
+protocol, the areas surrounding sensors in order to
+detect possible users that could be interested in the
+observed object. When a device is recognized, the
+related MAC address is sent to the base station that
+forwards the information to the Gateway Server.
+
+•
+
+The Gateway Server (GS) hosts a set of daemon
+processes able to filter and gather information coming
+from the WSN: each process manages the communication with a given sensor. When information about the
+presence of a user device near an object is notified on
+the related stream, the GS a send request for contents
+to the Multimedia Content Server. All information
+about communication between users and artefacts are
+properly stored in dedicated logs.
+
+•
+
+Fig. 1: System Overview.
+
+The Multimedia Content Server (MCS) accepts a
+request for contents from the GS, builds a multimedia
+story in according to user preferences and delivers all
+the information to the related user mobile App. The
+MCS manages a multimedia repository and exploits
+proper multimedia delivery techniques to propose to
+users other object of interest arranged in the shape of
+multimedia stories.
+
+IV.
+
+A MULTIMEDIA SMART GUIDE
+
+In order to construct a set of smart services supporting
+the Talking Museum metaphor, we exploit indoor localization
+based services, semantic annotation and low level features
+analysis techniques. The proposed approach, described in the
+following subsections, relies on WSNs and Bluetooth communication infrastructures and technologies to determine users
+location and context and combines two types of knowledge:
+general knowledge about users’ and artworks locations (points
+of interests) and specialized knowledge about a particular
+domain, composed by users’ preferences and artworks related
+contents and resources. To deliver efficiently selected information to a visitor on his mobile device, we also take into account
+the constraints of a mobile device and the limited period of
+attention of that user.
+A. From localization to the artwork animation
+Our approach is composed of five steps as shown in figure
+2. When a visitor logs in the system, starting the smart
+
+Fig. 2: The artowrk Animation Process.
+guide application, his mobile device is detected by the WSN
+deployed in the museum area. A handshake phase is engaged
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+to acquire the visitors mobile device MAC address and to
+map it over an IP address belonging to the wireless network
+domain. Logged user preferences and location information
+will be employed during the contents tailoring and delivering
+phases. At a glance, localization data processing relies on the
+following main set of tables, kept in the MCS subsystem:
+1)
+
+2)
+3)
+
+DEVICE ADDRESS Table: it holds a triple containing association pairs linking physical MAC address
+of users devices and the assigned IP address over
+the wireless network system and a time to live field
+(TTL), used to avoid an IP addresses wasting if
+users devices are inactive after an elapsed timeout:
+<MAC ADDR, IP ADDR, TIME TO LIVE>
+SENSOR ARTWORK Table: it holds the associations between Bluetooth sensors and related artworks:
+<SENSOR ID, ARTWORK ID>;
+USER PROFILE MAC ADDRESS Table: it holds
+the associations between user’s mobile devices
+physical MAC address and logged user’s profile:
+<USER PROFILE ID, MAC ADDRESS>
+
+and can be described as follows. The GS receives a new
+mobile device presence notification by the underlying WSN
+and gathers such information to the MCS, that updates the
+association DEVICE ADDRESS table, adding a new entry
+related to the new device and setting the TTL field. According
+to the same logic, when a device is no longer active in the
+museum area (e.g. visitor shuts down the app, leaves the
+museum area or the fixed timeout is elapsed) the assigned
+IP address is released. After the end of the new device
+registration phase, users localization phase is ready to start
+as soon as user will cross an artwork surrounding area. When
+Bluetooth sensors placed on the artworks notify the presence
+of the users device to the GS, it gathers a new request to
+the MCS and the actual talking process starts. A exampling
+structure of the request forwarded during this phase follows:
+< sender sensor id, request timestamp,
+user device M AC Address >.
+The MCS so provides to:
+1)
+2)
+3)
+
+identify the artwork related to the request sender
+sensor, querying the SENSOR ARTWORK table;
+retrieve the IP address assigned to the user’s device during the handshake phase, querying the DEVICE ADDRESS table;
+retrieve the user’s profile by querying the association
+table USER PROFILE MAC ADDRESS table;
+
+In conclusion, given an artwork ready to talk to the users,
+the contents of its telling story are selected analyzing the
+matching features among user preferences, expressed by a set
+of information enclosed in the user profile and by a set of
+information related to the all multimedia contents available in
+the MCS. The detailed contents matching and tailoring process
+are described in the next sections.
+B. Contents personalization process
+The majority of approaches to contents tailoring in the multimedia realm generally exploits high level metadata, often
+extracted in automatic or semi-automatic way from low level
+features. These approaches suffer from several drawbacks: (i)
+
+it is not always possible to extract in automatic and effective
+way useful high level information from multimedia features,
+(ii) for some kinds of multimedia data there is not a precise
+correlation between high and low level information, (iii) there
+is not always available explicit and useful information about
+user preferences and feedbacks.
+Our approach tries to avoid such drawbacks: (i) analyzing in
+a separate way low and high level information, (ii) exploiting
+system logs to implicitly determine information about a user,
+(iii) considering as relevant content for the selection the
+features of the object that a user is currently watching together
+with other context information. Therefore, we try to merge
+in a unique strategy some aspects of multimedia information
+retrieval with the basic theory of modern adaptation systems.
+The basic idea behind our proposal is that when a user is
+located in the surrounding area of a museum artworks, the
+system is able to: (i) capture this event; (ii) extract the set of
+available multimedia objects related to that artwork; (iii) filter
+only the set of candidate multimedia matching user preferences
+[8]; (pre-filtering strategy); (iv) arranges such objects in apposite visiting paths considering other context information such
+environmental conditions (post-filtering strategy).
+C. Data and retrieval model
+Our data and retrieval models, inspired by the Windsurf
+ones [2], is composed of a database O of M multimedia
+resources, O = {O1 , ..OM }, such as images, videos, and
+documents, where each resource O is characterized of mo
+elements, O = {o1 , ..omo } representing, regions of an image,
+shots of a video, and parts of a document, respectively. Each
+element o is described by way of low level features F that
+represent, in an appropriate way, the content of o (e.g., the
+color distribution of image’s regions). As for the retrieval
+model, given a query object Q = {Q1 , ..Qm } composed of m
+elements, and an element distance function δ, measuring the
+dissimilarity of a given pair of elements (using their features),
+we want to determine the top - k objects in O that are the
+most similar with respect to Q. Similarity between objects is
+numerically assessed by way of a object distance function dF
+that combines together the single element distances into an
+overall value. Consequently, resource Oa is considered better
+than Ob for the query Qi if d(Q, Oa ) < d(Q; Ob ) holds [3].
+The computation of the object distance dF is obtained by
+combining three basic ingredients: (i) the element distance
+δ, (ii) the set of constraints that specify how the component
+elements of the query Q have to be matched to the component elements of another (database) object O, and (iii) the
+aggregation function that combines distance values between
+matched elements into an overall object distance value (e.g., a
+simple average of distance values between matched elements).
+The efficient resolution of queries over features is ensured by a
+employing indices built on top of elements (e.g., image regions,
+and video shots) based on the M-tree metric index [4]. In order
+to enrich data representation, objects are annotated with high
+level (semantic) descriptors S (e.g., labels describing what a
+video shot is related to). Such descriptors are in the form
+of keywords (or tags) and are semi-automatically assigned to
+objects by means of a multimedia annotator that, starting from
+a training set of pre-annotated objects, is able to predict sets
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+of good” tags able to effectively characterize the content of
+new untagged objects [6].
+We define the universe of tags T as the union of all possible
+semantic descriptors to be associated to objects in O, and the
+membership relation R ⊆ OxT that indicates that an object O
+has assigned a tag in T . The annotation process is modelled as
+a nearest neighbors (NN) problem on object elements and turn
+into a set of graph-based problems. First, we try to discover
+affinities between tags and an unlabelled object, which is done
+using a Random Walk with Restart algorithm on a graph that
+models current annotations as well as elements’ similarities.
+Then, we compute pairwise tag correlations. Again, this relies
+on the analysis of links in a (second-order) graph. Finally,
+we combine the results of the two steps to derive a set of
+terms which are both semantically correlated each other and
+affine to the new object. This final step amounts to solve
+an instance of the Maximum Weight Clique Problem on a
+small graph. Note that, while for objects of type image tags
+are directly associated to images, when annotating videos,
+we are able to predict tags not only for shots but even for
+videos, by opportunely propagate tags at the shot level to
+the video level [5]. Given a user-provided set of tags, as
+query semantic concepts, objects are selected by the query
+processor by applying a co-occurrence-based distance function
+dS on T . The search provides the set of objects (i.e., images,
+videos/shots, documents) that share at least one tag with the
+input set. Both low level features and semantic descriptors
+concur to determine the multimedia relatedness d(Oi , Oj )
+among two objects. In details, if Oi and Oj are of the same
+type (e.g., we are comparing two images), we define their
+global distance as the average between the contribution given
+by low level features and the one provided by semantics, that
+is: d(OI , Oj ) = dF (OI , Oj ) + dS (OI , Oj ) = 2; on the other
+hand, if we are comparing objects of different type (e.g., a
+document with a video), their multimedia relatedness equals
+to their semantic distance only, dF (OI , Oj ) = dS (OI , Oj )
+D. Contents tailoring strategy
+When a user is near to a cultural POI, the adaptation system
+has to be able to: (i) determine a set of candidate objects for the
+telling process on the base of user needs and preferences (prefiltering stage); (ii) dinamically arranges the selected objects in
+apposite visiting paths considering other context information
+such as environmental conditions (post-filtering stage).
+Prefiltering stage: Each object subject to recommendation
+may be represented in different and heterogeneous feature
+spaces. For instance, the picture of a artwork may be described
+by annotations concerning its history , the materials it has
+been built with, low-level image features, experts’ descriptions,
+visitors’ descriptions and reviews, and so on. Each of these sets
+of features contributes to the characterization of the objects to
+different extents. Hence, it is important to consider congruently
+each type of descriptor during the recommendation process.
+The first step consists in clustering together ”similar” objects,
+where the similarity should consider all (or subsets of) the
+different spaces of features. To this purpose, we employ highorder star-structured co-clustering techniques [8] to address the
+problem of heterogeneous data prefiltering. In this context, the
+same set of objects is represented in different feature spaces.
+Such data represent objects of a certain type, connected to
+
+other types of data, the features, so that the overall data schema
+forms a star structure of inter-relationships. This task consists
+in clustering simultaneously the set of objects and the set of
+values in the different feature spaces. In this way we obtain
+a partition of the objects influenced by each of the feature
+spaces and at the same time a partition of each feature space.
+The prefiltering stage leverages the clustering results to select
+a set of candidate objects by using the user’s profile, which
+is modeled as sets of descriptors in the same spaces as the
+objects’ descriptors.
+ 1
+M
+Let O =
+be a set of M multimedia objects
+ 1O , ..O
+N
+and F = F , ..F
+a set of N feature spaces. A dataset
+can be viewed under the different views given by the different
+feature spaces Fk . Therefore, the view k is associated with
+each feature space Fk . Given a star-structured dataset SD over
+O and F , the goal of the star-structured
+data co−clustering is
+
+to find a set
+partitions Y = Y 1 , ..Y N over the feature
+ of
+set F = F 1 , ..F N and a partition X of the object set
+O by optimizing a certain objective function. To solve the
+high−order star−structured co−clustering problem, several algorithms have been proposed based on different approaches. In
+this work, we adopt a parameter−less iterative algorithm that
+maximizes the Goodman-Kruskal τ , a statistical measure of
+association that automatically identifies a congruent number of
+high-quality co−clusters [7]. In our recommendation
+problem,
+
+a user is represented as a set of vectors U = U 1 , ..U N in
+the same N feature spaces describing the objects. Each vector
+uk is updated each time the user visits (or re−visit) an object
+by considering the object features in each space at the instant
+of the visit. To provide a first candidate list of objects to be
+delivered, we measure the cosine distance of each user vectors
+associated to the k−th space, with the centroids of each object
+clusters in the k−th space. For each space, the most similar
+c
+}
+object cluster is chosen leading to N clusters {X1c , ..., XN
+of candidate objects. Then, two different strategies can be
+adopted to provide the pre-filtered list of candidate objects Oc
+: (i) set-union strategy − the objects belonging
+to the union
+S
+of all clusters are retained, i.e., Oc = k Xkc , (ii) threshold
+strategy − the objects that appears in at least ths clusters
+(ths ∈ {1, ..N })are retained.
+The first strategy is suitable when user’s vectors are associated to very small clusters (e.g., because the user likes
+very uncommon objects). In any other situation, the second
+strategy is the most appropriate. As a final step, objects already
+visited/liked/browsed by the user are filtered out. Notice that,
+thanks to this approach, users are not described by set of
+objects, but by sets of features that characterize the objects
+they visit, like or browse.
+Post-filtering stage. Finally, the list of suggested items,
+which are selected as interesting by users, is organized in
+apposite visiting paths (considering the distances from user
+location): they are not fixed and are arranged on the base of
+environmental situations.
+E. Contents delivery
+After the mobile device has received the adapted contents,
+the results have to be presented to the user. From this moment,
+the user can use three levels of refinement: (i) pointing to a
+specific content among those ones presented in the delivered
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+list; (ii) select facets of resources relevant to the current
+location and heading, where cultural related facets are location,
+event, artwork and people, and (iii) select subfacets of the
+selected facet, e.g. painting, photograph, artist.
+V.
+
+R ELATED WORKS
+
+The definition and implementation of LBS able to support users in indoor environments like an art exhibition or
+a museum is an active and multidisciplinary research field.
+A current trend is to try to improve the cultural heritage
+experiences by adopting new technologies that support the
+use of mobile devices (smartphone, tablets, etc..).Since smartphones and wireless Internet connection became ubiquitous
+in the last years, location based indoor interaction supported
+via the WiFi, WSN or Bluetooth identification became a
+standard methodology for mobile phone usage, especially in
+the Cultural Heritage context, where it is important to localize
+a visitor with respect to physical objects. In this scenario,
+several works have been proposed aiming at experiment the
+most promising technology to localize users and to delivery to
+them the most suitable customized contents.
+The authors of [9] proposed a network based ticket reservation system which is a localization-based smartphone application with augmented reality. The authors of [10] introduced
+Personalized Location-based Traveler Recommender System
+that provides personalized tourism information to its users.
+As the cities are filled with huge buildings and numerous
+large stores are open underground, most of the people spend
+most of their time indoors. Therefore, LBS should be available
+not only outdoor but also indoor. Developing outdoor LBS is
+much easier than developing indoor LBS (ILBS) because of
+GPS (Global Positioning System) and Map providers (Google,
+for example). Since we cannot use GPS or the map in ILBS
+development, researches on indoor positioning and floor map
+(or drawing) provide service [11], [12] are actively being
+performed. Another point of view to build a location based
+smart guide in a museum is to target not just a single user
+but also a group visiting it. The Sotto voce [13] system is
+designed specifically with this goal providing a communication mechanism to support interaction. Finally, [1] reports an
+example of location-aware mobile devices that offer innovative
+experiences to end users. According to users localization,
+in an indoor scenario, sometimes the accuracy is not so
+important while in many cases is more important a system
+able to recognize boundaries and positioning a person through
+a symbolic location (e.g. in the main hall or in the first room).
+Several methods have been proposed to solve the problem
+using different media like infrared beacons [14] or radio
+signals from wireless LAN [15], [16] RFID technology [17] to
+detect user location. These location based applications create
+situations where users can experiment real-virtual contiguity
+(the real experience and the digital experience are overlapped)
+and enhanced reality (the mobile device strengthens the quality
+of the real experience).
+VI.
+
+A CASE OF STUDY
+
+The aim of these experiments is to implement and test a
+smart multimedia guide system through Wifi and Bluetooth
+based mobile devices that will guide and assist the visitors,
+by exploiting their position within the art exhibitions and
+
+museums. As depicted in Section II, we use as real case
+study an art exhibition within the Maschio Angioino castle,
+in Naples (Italy). The multimedia collection is constituted
+by about 4500 images, texts and audio files about sculptures
+of Francesco Jerace and other minor artists. Moreover, we
+developed, implemented and tested the MGA on the Samsung
+Galaxy S3 Android phone. Figure 3 shows snapshots of our
+mobile App.
+
+Fig. 3: From left to right: A multimedia story proposed to a
+visitor in the sculpture surrounding area, a list of proposed
+images, a proposed textual narrative of a sculpture.
+A. Implementation Details
+In the following, we report some implementation details
+concerning the developed prototype.
+The WSN component have been realized and tested using
+the Waspmote and Meshlium models of products offered by
+Libelium2 (using Bluetooth devices of Class 1 and 2), but at
+the moment we have not terminated yet the deployment of the
+WSN within Maschio Angioino rooms. Such platforms allow
+to detect, as an example, iPhone and Android devices but more
+generally any device which works with WiFi or Bluetooth
+interfaces. Users’ devices could be detected without the need
+of being connected to an specific Access Point, enabling the
+detection of any device which comes into the coverage area
+of a Meshlium base station, but, in the proposed approach, a
+set of Waspmote sensors nodes are employed to perform the
+indoor localization task. Our choice can be further motivated
+considering that such devices allow to control the Bluetooth
+inquiry area with seven different power levels in order to set
+different coverage zones from 5 to 50m that can be decreased
+to obtain higher level of precision in detecting users’ devices in
+the artworks surrounding area. distance of any detected device
+is calculated exploiting the RSSI value, received during the
+inquiry process slog with the MAC address of the Bluetooth
+device. RSSI values usually go from -40dBm (nearest nodes)
+to -90dBm (farthest ones). Furthermore, Bluetooth, WiFi and
+ZigBee radios are able to coexist without causing interferences
+with each other because, even if WiFi, ZigBee and Bluetooth
+work in the 2.4GHz frequency band (2.400 - 2.480MHz),
+however, the Bluetooth radio integrated in Meshlium device
+uses an algorithm called Adaptive Frequency Hopping (AFH)
+which improves the common algorithm used by Bluetooth
+(FHSS) and enables the Bluetooth radio to dynamically identify channels already in use by ZigBee and WiFi devices and
+2 http://www.libelium.com/
+
+2013 International Conference on Indoor Positioning and Indoor Navigation, 28-31th October 2013
+TABLE I: Comparison between our system and no facilities
+Task Class
+Q1
+Q1
+Q2
+Q2
+Q3
+Q4
+
+Strategy
+Without any help
+Our System
+Without any help
+Our System
+Without any help
+Our System
+
+ta (min)
+6
+4
+8
+6
+16
+10
+
+nr
+4
+2
+5
+3
+6
+4
+
+to avoid them. The GS component has been implemented by
+several JAVA libraries exploiting multi-threading facilities. In
+addition, communication logs have been stored into a proper
+repository managed by by the Nosql DBMS Cassandra. The
+MCS component exploits ad-hoc JAVA libraries to build the
+multimedia story of a sculpture on the top of the multimedia
+collection managed by PostgreSQL DBMS and on the base of
+user preferences appositely captured and modeled as described
+in Section IV. Finally, a user can interact with our system using
+at the moment an Android MGA. The presentation logic is
+based on apposite widgets. The client requests are elaborated
+by JAVA Servlets and the results are sent to the client in form
+of XML data.
+
+the Internet of Things technologies in order to make objects
+of a museum exhibition able to talk during users visit and
+capable of automatically telling their story using multimedia
+facilities. In particular we customized the system for an indoor
+museum, providing to tourists personalized contetnts. Then,
+we investigated the effectiveness of the proposed approach in
+the considered scenario, based on several parameters. Experimental results showed that our approach is quite promising
+and encourages further research. Future work will be devoted
+to finish the deploy of the entire system in the next months
+and collect more complete and interesting experimental results
+about the real advantages of the proposed technology w.r.t to
+oher approaches, also considering the related cost and benefits.
+R EFERENCES
+[1]
+
+[2]
+[3]
+
+[4]
+
+B. Preliminary Experiments
+Location-based and recommender systems are generally
+complex applications that are based on a combination of several models, algorithms and heuristics. Recently, researchers
+began examining issues related to users subjective opinions
+and developing additional criteria to evaluate these systems.
+In order to evaluate the impact of the system on the users
+we have conducted the following experiments. We asked a
+group of about 25 people (all medium experts in art) to visit
+a virtual reproduction of the exhibit (8 rooms containing the
+collection of sculptures) obtained by the Unity 3D framework
+and complete several browsing tasks (15 tasks per user) of
+different complexity (i.e. Low Complexity tasks - Q1, Medium
+Complexity tasks - Q2, High Complexity tasks - Q3) without
+the help of our system. After this test, we asked them to
+browse once again the same collection with the assistance
+of our recommender system and complete other 15 different
+tasks of the same complexity. Each task consists in exploring a
+certain number of sculptures satisfying several constraints. The
+complexity of a task depends on several factors: the number
+of objects to explore, the type of desired features (either low
+or high-level), and the number of constraints (genre, author,
+subject). A simple strategy has been used to evaluate the
+results of this experiment: empirical measurements of access
+complexity in terms of number of virtual rooms and time. In
+particular, we measured the following parameters: (i) Access
+Time (ta ) - the average time spent by the users to visit all
+the objects for a given class of tasks; (ii) Number of Rooms
+(nr ) - the average number of visited virtual rooms necessary to
+visit all the requested objects for a given class of tasks. Table
+1 reports the average values of ta and nr , for both without
+and with the help of our system, for each of the four task
+complexity levels defined earlier.
+VII.
+
+C ONCLUSION
+
+In this paper we proposed a novel location-based services
+platform for the Cultural Heritage domain. The system exploits
+
+View publication stats
+
+[5]
+[6]
+[7]
+
+[8]
+[9]
+
+[10]
+
+[11]
+[12]
+[13]
+
+[14]
+
+[15]
+[16]
+
+[17]
+
+F. Amato, A. Chianese, V. Moscato, A. Picariello, G. Sperli SNOPS: a
+smart environment for cultural heritage applications Proc. of the 12th
+Int. Workshops on Web Information and Data Manag., pp. 49-56, (2012).
+Bartolini, I., Ciaccia, P., Patella, M. Query processing issues in regionbased image databases, Knowl. Inf. Syst. 25(2), pp. 389-420 (2010)
+Ilyas, I.F., Beskales, G., Soliman, M.A. A survey of top-k query processing techniques in relational database systems, ACM Comput. Surv. 40
+(4) (2008)
+Ciaccia, P., Patella, M., Zezula, P. M-tree: An efficient access method for
+similarity search in metric spaces, Proc. of VLDB, pp. 426-435 (1997)
+Bartolini, I., Patella, M., Romani, C. SHIATSU: tagging and retrieving
+videos without worries, Multimed. Tools Appl. 63(2), pp. 357-385 (2013)
+Bartolini, I., Ciaccia, P. Imagination: exploiting link analysis for accurate
+image annotation In: Proc. of AMR 2007, pp.32-44, Springer (2007)
+Ienco, D., Robardet, C., Pensa, R.G., Meo, R. Parameter-less coclustering for star-structured heterogeneous data Data Min. Knowl.
+Discov. 26(2), pp. 217-254 (2013)
+M. Fleuren User Profiling Techniques: a comparative study in the context
+of e-commerce websites, Bachelors Thesis, 2012, Utrecht University
+Kang, S.K. , Kang, H.K. , Kim, J.E. , Lee, H. , Lee, J.B. A study on the
+mobile communication network with smart phone for building of location
+based real time reservation system, IJMUE, 7 (2), pp 17-36 (2012)
+Husain, W., Dih, L.Y. A framework of a Personalized Location-based
+traveler recommendation system in mobile application, Intern. J. of
+Multimedia and Ubiquitous Engineering, 7 (3), pp. 11-18 (2012)
+Chon, J., Cha, H. LifeMap: A smartphone-based context provider for
+location-based services, IEEE Perv. Comput., 10 (2), pp. 58-67 (2011)
+Gyeyoung L., Jaegeol Y. A Review of the Techniques for Indoor
+Location based Service, Int. J. of Grid and Dist. Comp., 5 (1), (2012)
+Aoki, P.M., Grinter, R.E., Hurst, A., Szymanski, M.H., Thornton, J.D.,
+Woodruff, A. Sotto Voce: Exploring the interplay of conversation and
+mobile audio spaces, Proc. on Human Factors in Comp. Sys., 4 (1), pp.
+431-438 (2002)
+Moreno, M.V., Zamora, M.A., Santa, J., Skarmeta, A.F. An indoor
+localization mechanism based on RFID and IR data in ambient intelligent
+environments, Proceedings - 6th Int. Conf. on Innovative Mobile and
+Internet Services in Ubiquitous Computing, IMIS 2012, pp. 805-810.
+P. Barsocchi, F. Potorti ,P. Nepa Device-Free Indoor Localization for
+AAL Applications, MobiHealth 2012, pp 361-368
+Barsocchi, P., Chessa, S., Ferro, E., Furfari, F., Potorti, F. Context driven
+enhancement of RSS-based localization systems, Proceedings - IEEE
+Symposium on Computers and Communications, pp. 463-468 (2012)
+Ye, A., Ling, Y., Xu, L., Yang, X. An improved RFID-based localization
+algorithm for wireless sensor networks IJDSN (2013)
+
+

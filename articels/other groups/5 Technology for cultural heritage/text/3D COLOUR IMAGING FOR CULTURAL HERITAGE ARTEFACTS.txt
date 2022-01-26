@@ -1,0 +1,642 @@
+International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. XXXVIII, Part 5
+Commission V Symposium, Newcastle upon Tyne, UK. 2010
+
+3D COLOUR IMAGING FOR CULTURAL HERITAGE ARTEFACTS
+M. Hess *, S. Robson
+
+Department of Civil, Environmental and Geomatic Engineering, University College London, Gower Street, London,
+WC1E 6BT UK – m.hess@ucl.ac.uk, srobson@cege.ucl.ac.uk
+Commission V, WG V/2
+KEY WORDS: 3D documentation, 3D laser scanning, close range photogrammetry, cultural heritage, digital documentation,
+heritage conservation, museum object
+ABSTRACT:
+This paper will discuss work in progress for the metric 3D recording and colour imaging of museum objects and the opportunities it
+opens up to broaden scientific knowledge about these artefacts. The following recording technologies will be discussed and
+compared with regard to imaging complex objects: phase-shift laser scanning, handheld laser scanning, high-resolution 3D colour
+laser scanning, PTM and photogrammetry. The evaluation criteria will include resolution, accuracy, noise, colour fidelity, mobility of
+the sensor, and data processing chain. The paper will explore the possibilities of integration of 3D image analysis with the daily work
+in a museum, tailored to conservation and curation. To plan and predict results, a decision tree will be delineated suggesting one or
+more techniques to answer specific curatorial or conservation questions. Integration with other imaging techniques for cultural
+artefacts, including IR and UV photography, microscopic imaging and SEM surface recording will also be considered.
+Available imaging technology will be discussed keeping in mind the UK museum framework; the research focus lies on the
+evaluation of diverse recording technologies while producing quantitative and qualitative evidence of geometry, surface and damage.
+The approach will therefore develop a bridge between conservation analysis methods and engineering metrology, by closely
+analyzing the possibilities and limitations of imaging technologies, with the goal to lead to a comprehensive knowledge about
+cultural heritage artefacts.
+(Arnold & Geser 2008). New ways of exploiting 3D imaging
+and replica in a museum context were discussed by (LaPensée
+et al. 2006). A user-friendly, rapid workflow for automatic 3D
+colour scan acquisition and robust 3D reconstruction was
+designed together with the conservators to solve the assembly
+task of thousands of fresco fragments by (B. J. Brown et al.
+2008). Another excellent example of synergetic effects of
+multidisciplinary documentation of a museum object, including
+high-resolution 3D, is the „Mona Lisa‟ project at the Louvre
+(Mohen et al. 2006).
+
+1. INTRODUCTION
+3D images are recognized by museum specialists for opening
+up new technological possibilities for research, exhibition
+display and education. Traditional documentation techniques
+(sketches, to-scale hand and isometric drawings, text,
+photographs) have been translated into modern digital
+techniques. ICT (information communication technologies) and
+E-Science in Arts and Humanities research towards the pursuit
+of a common infrastructure; „digital humanities‟ help to mediate
+the outcome to the interested public.
+
+From an engineering point of view guidelines for optical noncontact measurement are maturing (VDI/VCI 2643, BSI PD
+6461-1995, ISO/DIS 10360-8). Engineering metrology can
+provide a framework in which different sensors can be
+examined and compared, but the work towards an accepted
+terminology and methodology is still ongoing (Beraldin et al.
+2007).
+
+Nevertheless, 3D digital surrogates, or 3D high-resolution
+colour representations of digitized museum objects, have not
+yet been assigned a standardized procedure in museums and
+collections; they have not yet been integrated in the
+conservation laboratory workflow or most computer-based
+collection management systems.
+Administrative factors such as high cost and data management
+in museums are a key obstacle for the development of a best
+practice for handling 3D digital images of museum objects
+(Cooper et al. 2006). Limited financial resources restrict the
+possibilities of most museums to take part in technological
+research. At the same time museums seek to provide better
+service for conservation, scholarly study and public display
+(Evans 2006, p.552).
+In the eye of some cultural heritage professionals the legacy and
+importance of the 2D record is stronger than the new
+technologies; 3D imaging still ranges under the label of
+„expensive and time intensive methods‟ with uncertain outcome
+and low efficacy versus conventional documentation and
+assessment methods.
+
+For a 3D record of a museum object to be convincing for the
+cultural heritage end user as a „valuable 3D asset‟ it must show
+quantifiable evidence of geometric and colorimetric fidelity;
+such a high-quality dataset contributes to a comprehensive
+documentation and essentially to object understanding and
+accessibility.
+Research at UCL seeks to enable and empower CH specialists
+to actively participate, give precise specifications of the
+digitizing process for the creation of digital surrogates and
+digital assets which are fit for purpose and augment
+understanding about the value of their artefacts.
+The outcome of this research aims to leverage a broad
+knowledge base and promote the technology transfer necessary
+to enable CH specialists to have their voice in the decision
+making process.
+To this end, this paper describes the current recording
+technologies at UCL, and how user testing, and recording
+sensor comparisons are leading to an end user oriented decision
+tree.
+
+The need for infrastructure developments, a new understanding
+and new standardized ways of communication, and the design
+of feasible practical approaches for cultural heritage (CH)
+professionals was highly stressed by the EPOCH project
+288
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. 34, Part XXX
+International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. XXXVIII, Part 5
+Commission V Symposium, Newcastle upon Tyne, UK. 2010
+The scan head is a laser triangulation system that emits a laser
+line. The system measures the two-dimensional projection of
+the laser line on an object, using a CCD camera to calculate a
+2D profile. The width and depth of field is 50mm, the accuracy
+(best fit sphere) is 15 m RMS, at a stand-off (distance to the
+object) of about 100mm. The 6DOF tracking of the KCMM
+combined with the 2D profile deliver a scan line ordered 3D
+point cloud. The quality of the data depends on the object‟s
+surface and can be adapted by varying laser brightness and
+software filtering parameters according to the object properties.
+After alignment of the single scans and post-processing, the
+resulting polygon mesh can be textured with photographs taken
+on-site.
+
+2. 3D IMAGING TECHNOLOGY AT UCL
+UCL currently owns a range of active and passive measurement
+technologies, including a scanner developed specifically for
+imaging cultural heritage artefacts.
+2.1 3D laser scanning instrumentation/ active methods
+resolu- accu- range
+Scanner
+tion
+racy
+[max in
+model
+points/sec [mm] [mm] m]
+object size
+Arius3D
+0.01 to 0.8m,
+Foundation
+small to medium
+Model 150
+size museum obColour Scan3000
+0.1
+0.025
+0.08
+jects
+ner (CMM)
+Arius Rover
+0.01 to 0.4m,
+100 portable
+small museum
+laser scanner
+3000
+0.1 0.025
+0.08 objects
+(Tripod)
+0.15 to 12m,
+medium size obMetris K-Scan
+19200
+0.4
+0.25
+7.5 ject, furniture
+UCL type
+
+Faro Photon
+120 with colour option
+(Nikon D300)
+
+976,000
+
+2
+
++/-2
+
+mobility
+record type
+
+none
+
+3D colour laser
+scanning, triangulation scanner
+
+3D colour laser
+scanning, trianmobile gulation scanner
+3D laser scantrans- ning, Triangulat
+portable ion sanner
+3D laser scanning with cali0.3 to 100m,
+Highly brated digital
+bigger museum mobile, camera as colobjects, interiors, on site our opexteriors, archi- retion, phase shift
+120 tecture
+cording laser scanner
+
+Figure 2 The Metris K-Scan was used in a Norwegian-British
+collaboration to record the 12m long Solomon Island war canoe
+at the British Museum. Metric survey and virtual reconstruction
+was paired up with anthropological considerations about the
+digital repatriation of the 3D virtual object back to the Solomon
+Island source community.
+
+Table 1 Available 3D laser scanning technologies at UCL.
+The Arius3D Foundation Model 150 and the Arius 3D Rover
+100 are both 3D colour laser scanners for small to medium
+sized museum objects. The Foundation Model is a scan head
+fixed to a CMM in a temperature and humidity-conditioned
+room, whereas the Rover is portable. Both are used to create
+detailed object „fingerprints‟ of a range of artefact types and
+deliver 3D coloured point data at a sampling interval of 0.1mm
+(~250 dots per inch) at an accuracy of the order of 0.025mm
+over the surface of an object. The scanner collects 3D geometry
+information through the use of a laser triangulation system,
+whilst colour is simultaneously collected by analysis of the
+reflected light from three RGB lasers. These capabilities confer
+the researcher the ability to produce 3D models which have a
+level of geometric and colour standardization that easily surpass
+any other available museum recording process.
+Both scanners are used at UCL to produce detailed 3D coloured
+images for research and multimedia outputs.
+
+A FARO Photon 120 laser scanner is used to document larger
+objects, building interiors and exteriors. Through a vertically
+spinning mirror and simultaneously horizontally rotating scan
+head 3D measurements around the sensor position are collected
+(angle 155º – vertical, 360º -horizontal). 3D position of a point
+in space is calculated by comparing the phase shift in the
+reflected laser light to a standard phase. The point cloud can be
+overlaid with colour information captured with a calibrated
+Nikon D300s camera.
+
+Figure 3 The Virtual Flaxman Gallery project of UCL
+Museums and Collections will discover changes in the
+decorative scheme since its inauguration in 1849, and will
+integrate high-resolution scans of single relief casts.
+Figure 1 Digital image of a Sepik Yam Mask from UCL
+Ethnographic Collections and object handling in the scanner
+room by the curator. The mask was scanned as part of the UCL
+E-Curator project.
+For museum objects up to a size of 10 metres a Metris K-Scan
+system has been deployed. It consists of a handheld scan head
+and a mobile CMM (K610 camera bar) with three synchronised
+linear camera units. A number of infrared LEDs built into the
+handheld scan head housing are imaged and accurately tracked
+by the Metris Optical CMM via triangulation. Tracking of the
+scanner head delivers scan head position and orientation
+(6DOF) in real time enabling the operator to freely walk around
+and efficiently acquire surface scans of the measurement object
+in a tracked field of about 6 x 6 x 3 metres.
+
+Figure 4 The UCL Grant Museum of Zoology was fully
+documented by 3D colour laser scan before its move to a new
+location. Panoramic photographs applied on the high-resolution
+scans allow the identification of the single specimens.
+2.2 Image based methods/ passive recording methods
+Digital close range photogrammetry is a robust and
+established non-contact optical method for the documentation
+of museum artefacts. The equipment consisting of a digital SLR
+289
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. 34, Part XXX
+International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. XXXVIII, Part 5
+Commission V Symposium, Newcastle upon Tyne, UK. 2010
+camera (Nikon D700) and lighting equipment is easily
+transportable to museum and fragile objects. It is capable of
+delivering high-resolution colour images ideal for the
+documentation of current condition and damages on the surface
+of the artefact enabling the visualisation of details of the order
+of 50 m.
+A workflow has been developed that allows 3D colour
+documentation of small to medium sized objects by multi-photo
+bundle adjustment with the help of pre-produced calibrated
+boards with coded targets. A calibrated Nikon D300 or D700 is
+used to produce images from a systematic range of viewpoints.
+The images are processed in VMS (Vision Measurement
+System (Shortis & Stuart Robson 2001) and Socetset (BAE
+Systems). The final model can be output as pointcloud or TIN
+(Triangulated irregular network in a number of formats: vrml
+and ply being preferred).
+
+2.3 Integration of other imaging technologies
+Optical imaging methods are executed in the visible light
+spectrum between about 380 nm to 760 nm, but the inclusion of
+images can bring to light new insights about museum artefacts.
+In conservation other image based investigation and analysis
+techniques are used to answer questions about the object. The
+following methods are described in detail in (Mohen et al. 2006,
+p.78ff): raking light photography (visible light spectrum), UV
+(ultraviolet) photography (20 to 400nm), IR (infrared)
+photography record (750 to 105nm), radiography, Xray
+fluorescence spectrometry, RAMAN spectrometry, multispectral imaging. Further technologies are used to deliver
+detailed sub-millimetre images including confocal microscopy
+and SEM (scanning electron microscope). Material analyses are
+often executed with sensors that deliver spectra of samples, e. g.
+FT-IR (Fourier transformed spectroscopy).
+3. 3D IMAGING REQUIREMENTS FOR A MUSEUM
+END USER
+3.1 UK Museum framework and conservation ethics
+One of the main concerns of conservators is the obligation to
+conduct a careful and thorough documentation and recording of
+an object as part of a collection, before and after a preservation
+and conservation treatment (ICOM 2006, sec.2,20). The Codes
+of Ethics call for written and pictorial records (ECCO 2004)
+and for the application highest possible standards of as part of
+the diagnostic examination and recording of an object. This
+does not only entail a photographic overview of objects, but
+extends to other forms of imaging, for example textual
+description or microscopic documentation.
+The UK Museum Documentation Standard is SPECTRUM
+(1996) and forms the basis of work undertaken within UCL
+Museums and Collections.
+
+Figure 5 Image acquisition pipeline of a Petrie Museum object,
+a fragile cartonnage mask (UC45849). The images show: coded
+targets, calibration object, photogrammetry in progress, network
+geometry in VMS, output results as texture mapped TIN.
+Due to the high resolution and colour fidelity these 3D images
+are very convincing to conservators and curators even though
+the underlying geometry might not be as detailed as a 3D scan
+sampled from an active technique. This type of image enables
+the detailed inspection of damage and condition, being able to
+mimic the use of a low magnification hand lens.
+
+CH professionals require the documentation of provenance of
+the object itself, conservation treatment, condition and the
+„digital provenance‟, for example detailed information about the
+imaging technology used. Curators and conservators are
+generally most interested in the source or „primary data‟, e.g.
+direct measurement with a high level of fidelity, rather than
+„secondary
+data‟
+(approximation
+by
+triangulation,
+reconstruction, multimedia output).
+All steps and decisions from recording, post-processing to the
+„digital born data‟ and final model should be tracked according
+to the London Charter with „scholarly rigour‟ (Beacham et al.
+2006).
+
+A Polynomial Texture Map (PTM) is generated from the
+mathematical synthesis of multiple digital photographs of an
+object taken from a stationary camera position (Malzbender et
+al. 2001). PTM is used at UCL for small to medium-sized nearflat objects.
+A calibrated camera is fixed on top of the acrylic dome
+structure (1030mm diameter) with a series of 64 separately
+controlled electronic flashes; the object is placed underneath the
+dome and the suitable lens chosen to fill the frame. A series of
+images is taken with known lighting directions. All photographs
+contain different highlights and shadows. A viewpoint-specific,
+per-pixel reflectance function computes a model that enables
+interactive lighting by the viewer.
+The outcome of PTM recording is a 2D high-resolution
+interactive image especially useful for the viewing of shape,
+reliefs or writings on objects. Additional filters such as specular
+enhancement, diffuse gain and light direction extrapolation can
+be helpful for the interpretation. Ongoing research by Lindsay
+MacDonald “Quantifiable colour from laser scanning and PTM
+imaging” will further explore the technical limitations.
+
+3.2 User interface testing and evaluation criteria
+Within the E-Curator project for 3D colour scans for remote
+object identification and assessment (2007-08) first user testing
+on a newly developed prototype was executed.
+The prototype consists of a web-based interface where a 3D
+image is presented paired up with metadata relevant to
+collections management and 3D recording (S. Robson et al.
+2008). The prototype was used to explore central data storage,
+and online viewing of the 3D models without the need for
+specialist software.
+
+Figure 6 Toy car image with
+illumination of one tier of
+flashes. Ford Sunliner UCL
+Pathology Collection,
+Reg.No.315678
+
+User testing was executed throughout varied disciplines. 20
+cultural heritage specialists, 13 of whom were either curators or
+conservators, were interviewed in a semi-structured process
+whilst browsing their 3D objects on the E-Curator prototype
+interface. In a brainstorming session further requirements for
+290
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. 34, Part XXX
+International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. XXXVIII, Part 5
+Commission V Symposium, Newcastle upon Tyne, UK. 2010
+improved handling and viewing towards the aim of assessment
+of museum objects were collected.
+
+The development of a decision tree for cultural heritage
+professionals largely depends on the analysis of taxonomies
+and terminologies used by those disciplines involved.
+(conservators, curators, engineers, computer graphics) to
+guarantee a common semantics.
+
+Although the project used the best available technology and has
+produced object records that provide significant new
+information over and above photographs used in current
+museum practice, it became clear that for 3D colour scans to be
+of real use to the museum and conservation specialists a higher
+specification is needed. This involves higher resolution, better
+rendition of colour, reflectivity and texture. Another
+requirement is the ability to combine several different types of
+image data in order to allow for more detailed examination and
+comparison of discrete areas of interest. The issues of accuracy
+and reliability of 3D records came forth during the processing
+and editing of the captured data and demonstrated the
+importance of track-recording the changes made. To make a 3D
+model a convincing and efficient knowledge base, we need to
+carefully meet the requirements identified, especially geometry
+and colour.
+Despite the lack of previous experience of dealing with scan
+data and metadata, curators and conservators intuitively
+navigating the 3D model and were very ready to engage with
+the potential of the technology and keen to see it developed
+further.
+Further development, based on user interface design and
+iterative local and remote user testing, will be conducted to
+improve the functionality of the existing E-Curator prototype.
+
+Decision making science, for example an analytical hierarchy
+process, will help to develop an interface for the input of criteria
+on the side of the CH professional.
+A decision tree will be developed to plan and predict results in
+order to suggest one or more imaging methods to answer
+specific questions. Beginning with a conservation question
+about a specific object with its very own „fingerprint‟ the
+interface would let the museum professional define a
+documentation goal (see Table 2). After certain criteria are
+input, based on the classification of imaging sensors, the entries
+are evaluated and in the end recommendations for imaging
+tactics are made. Iterative user testing and constant sensor
+information updating will enable the improvement of the
+decision tree.
+object
+objective(s)
+
+criteria
+choices
+
+The next section of this paper describes work in progress to
+build upon this interdisciplinary collaboration in order to
+progress best practice in the 3D colour recording of museum
+artefacts.
+
+surface features, material, size, condition
+conservation question, digital documentation, exact metric
+measurement/ object geometry, identify/ quantify damage,
+monitoring/ comparison, multimedia representation, replica
+sensor portability, resolution, colour (fidelity) metric accuracy,
+data output
+combination of one or more imaging sensors: active and
+passive measurement methods, conservation science analyses,
+conservation imaging
+
+Table 2 Decision making process based on object information,
+objectives and criteria
+The final objective of this ongoing research is the development
+of a best practice guideline so that CH professionals can
+specify their aims, turn to the right technologies, and understand
+and evaluate them with regard to their museum documentation
+tasks. Definitions for viewing and lighting conditions with a
+calibrated monitor for a persuasive and informative presentation
+of a 3D surrogate of a museum object will be investigated.
+
+3.3 Methods and evidence to generate best practice
+To assess 3D imaging of museum objects from an engineering
+point of view comparative imaging will produce numerical
+evidence (same museum object and /or calibration objects,
+different sensors). The following parameters will be taken into
+account: resolution, accuracy, noise, colour fidelity, data
+processing chain, while producing quantitative and
+qualitative evidence of geometry. Non-contact nominal/actual
+value comparison, Hausdorff distance filtering, volume
+measurements of data sets will be undertaken and results plotted
+into a comparison graph. These tests will help to compile a
+classification of sensors with their capabilities.
+(Beraldin 2009) and (Remondino 2007) have suggested
+methods to produce scientific evaluation of sensor resolution
+and accuracy.
+
+4. CONCLUSIONS
+The driving process in 3D colour museum object recording is to
+leverage the right communication and technology transfer
+between imaging technologist and CH professional, as well the
+development of convincing and feasible best-practice
+recommendations to ensure high-quality models, optimal
+presentations and viewing conditions. A series of very detailed
+recommendations have already been delivered by the EPOCH
+Research Agenda (Arnold & Geser 2008).
+
+To test colour fidelity of the sensors a full scale or small scale
+Gretag Macbeth Chart is used as standard. It consists of 24
+scientifically prepared coloured squares, with a lambertian
+surface, including bright white and dark black. A comparison
+will be produced to evaluate the colour recording consistency of
+differing imaging methods.
+
+Systematic errors of recording systems, for example intrinsic
+uncertainty (Beraldin 2009, sec.3.1) and range artefacts (F Blais
+et al. 2008, p.4) must be clearly explained to the end user to
+avoid erroneous interpretation of imaging results.
+Clear definitions of deliverables and specifications for a
+museum object record and 3D model need to be agreed upon
+before recording starts. The scope of recording needs to be clear
+from the onset to assure that choice of sensors, settings and
+subsequent processing will be successful.
+
+Recommendations for a defined post-processing chain from
+3D scan to final model will be given to ensure geometric
+consistency.
+
+Strikingly the common answer for the exigencies of a highly
+convincing 3D object was geometry, but much more critically –
+high-fidelity colour information. To bring both criteria for a
+high-quality 3D surrogate together in a metric manner whilst
+presenting them in a user-friendly environment, would not
+surprisingly have great impact on the museum community.
+
+A wealth of current projects will be used to inform a user
+survey of conservators and curators in order to collect
+information about the use of 3D digital images in museums and
+collections and their current implementation in the daily
+workflow.
+
+291
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. 34, Part XXX
+International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Vol. XXXVIII, Part 5
+Commission V Symposium, Newcastle upon Tyne, UK. 2010
+LaPensée, A.A., Cooper, M.J. & Parsons, J.B., 2006.
+Applications in the field of cultural heritage using “off-theshelf” 3D laser scanning technology in novel ways. In M.
+Ioannides, ed. The e-volution of Information Communication
+Technology in Cultural Heritage. Where Hi-Tech Touches the
+Past: Risks and Challenges for the 21st Century. Joint event
+CIPA / VAST / EG / EuroMed 2006. Nicosia, Cyprus:
+EPOCH.
+
+REFERENCES
+Arnold, D. & Geser, G., 2008. EPOCH Research Agenda for
+the Application of ICT to Cultural Heritage (Full report - May
+2008), Budapest, Hungary: ARCHAEOLINGA. Available at:
+http://public-repository.epochnet.org/publications/RES_AGENDA/final_res.pdf [Accessed
+December 1, 2009].
+Beacham, R., Dennard, H. & Niccolucci, F., 2006. An
+Introduction
+to
+the
+London
+Charter.
+In
+CIPA/VAST/EG/EuroMed, The e-volution of Information
+Communication Technology in Cultural Heritage: where hi-tech
+touches the past: risks and challenges for the 21st century.
+Budapest: Archaeolingua.
+
+Malzbender, T., Gelb, D. & Wolters, H., 2001. Polynomial
+Texture
+Maps.
+Available
+at:
+http://www.hpl.hp.com/research/ptm/papers/ptm.pdf.
+
+Beraldin, J., 2009. Basic Theory on Surface Measurement.
+Uncertainty of 3D Imaging Systems. In IS&T - ThreeDimensional Imaging Metrology Conferenc. IS&T - ThreeDimensional Imaging Metrology Conferenc. San Jose, CA,
+USA.
+
+Remondino, F., 2007. Detailed image-based 3D geometric
+reconstruction of heritage objects. In DGPF Tagungsband.
+Trinational Conference of SGPBF, DGPF.
+Muttenz,
+Switzerland,
+pp.
+483-492.
+Available
+at:
+http://www.photogrammetry.ethz.ch/general/persons/fabio_publ
+.html.
+
+Mohen, J. et al., 2006. "Mona Lisa": Inside the Painting, Harry
+N. Abrams, Inc.
+
+Beraldin, J. et al., 2007. Traceable 3D Imaging Metrology:
+Evaluation
+of
+3D
+Digitizing
+Techniques
+in
+a
+Dedicated Metrology Laboratory. In Proceedings of the 8th
+Conference on Optical 3-D Measurement Techniques. Zurich,
+Switzerland.
+
+Robson, S. et al., 2008. Traceable storage and transmission of
+3D colour scan data sets. In M. Ioannides & A. Addison, eds.
+Proceedings of the 14th International Conference on Virtual
+Systems and Multimedia (full papers volume). CIPA, dedicated
+to Digital Heritage.
+Limassol, Cyprus: Archaeoloingua/
+Budapest, pp. 93-99.
+
+Blais, F. et al., 2008. 3D Imaging from Theory to Practice: The
+Mona Lisa Story. In NRC 50400, National Canadian Research
+Council. SPIE Symposium on Optical Engineering &
+Applications 2008. Available at: http://nparc.cisti-icist.nrccnrc.gc.ca/npsi/ctrl?action=shwart&index=an&req=8913617&l
+ang=en [Accessed July 13, 2009].
+
+Shortis, M. & Robson, S., 2001. Vision Measurement System VMS. Available at: http://www.geomsoft.com/VMS/ [Accessed
+February 12, 2010].
+
+Brown, B.J. et al., 2008. A System for High-Volume
+Acquisition
+and
+Matching
+of
+Fresco
+Fragments:
+Reassembling Theran Wall Paintings. In ACM Transactions on
+Graphics (Proc. SIGGRAPH 2008). Los Angeles. Available at:
+http://web4.cs.ucl.ac.uk/staff/t.weyrich/projects/thera/theraacquisition.pdf.
+Cooper, M.J., LaPensée, A.A. & Parsons, J.B., 2006. The Use
+of Laser Scanning and Rapid Manufacturing Techniques for
+Museum Exhibitions. In M. Ioannides, ed. The e-volution of
+Information Communication Technology in Cultural Heritage.
+Where Hi-Tech Touches the Past: Risks and Challenges for the
+21st Century. joint event CIPA / VAST / EG / EuroMed 2006.
+Nicosia, Cyprus: EPOCH.
+ECCO, 2004. Professional Guidelines: Code of Ethics,
+European
+Confederation
+of
+Conservator-Restorers'
+Organizations.,
+Available
+at:
+http://www.wipo.int/export/sites/www/tk/en/folklore/creative_h
+eritage/docs/ecco_guidelines.pdf [Accessed July 9, 2008].
+Evans, T., 2006. Research Policy and Directions. In L. W.
+MacDonald, ed. Digital Heritage: Applying Digital Imaging to
+Cultural Heritage. Oxford: Butterworth-Heinemann, pp. 549574.
+ICOM, 2006. Statues and Code of Professional Ethics
+International Council for Museums, first published 1996,
+Available at: http://icom.museum/ethics.html#intro [Accessed
+July 9, 2008].
+
+292
+
+

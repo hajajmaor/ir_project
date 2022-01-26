@@ -1,0 +1,252 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224085458
+
+
+
+3D WLAN Indoor Positioning in Multi-Storey Buildings
+
+Conference Paper · October 2009
+DOI: 10.1109/IDAACS.2009.5342893 · Source: IEEE Xplore
+
+
+
+
+CITATIONS                                                                                              READS
+
+20                                                                                                     222
+
+
+4 authors, including:
+
+             Uwe Grossmann
+             University of Applied Science and Arts Dortmund
+             50 PUBLICATIONS 366 CITATIONS
+
+                SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+
+              Smart Service Power View project
+
+
+
+              Indoor Positioning View project
+
+
+
+
+ All content following this page was uploaded by Uwe Grossmann on 07 May 2017.
+
+ The user has requested enhancement of the downloaded file.
+IEEE International Workshop on Intelligent Data Acquisition and Advanced Computing Systems: Technology and Applications
+21-23 September 2009, Rende (Cosenza), Italy
+
+
+
+
+    3D WLAN Indoor Positioning In Multi-Storey Buildings
+                                      Gansemer, S.; Hakobyan, S.; Püschel, S.; Großmann, U.1
+    1
+        University of Applied Sciences and Arts Dortmund, Emil-Figge-Str. 44, 44227 Dortmund, {sebastian.gansemer;
+         syuzanna.hakobyan; steffen.pueschel; uwe.grossmann}@fh-dortmund.de, http://www.mbms.fh-dortmund.de
+
+   Abstract - Many scenarios for indoor positioning require                      RSSI pattern recognition together with an attempt to
+position estimation not only in two dimensions but in the                        include the user’s history (boundary conditions like
+third dimension as well. This paper presents the expansion of                    allowed paths and speed). Determination of the current
+two two-dimensional WLAN fingerprinting localization                             two-dimensional position is possible depending on the
+algorithms based on received signal strength indication
+(RSSI) to the third dimension. The third dimension is
+                                                                                 environment with an accuracy of 1-5 m. The system is
+regarded discretely as the floor level. Both algorithms were                     able to determine the discrete third dimension (floor level)
+evaluated in two different test beds. Evaluation results will                    as well.
+be presented and discussed.                                                         Positioning in three-dimensional environments is
+                                                                                 frequently investigated using other technologies than
+ Keywords – 3D-Positioning, Isolines, Euclidean Distance,                        WLAN or combined technologies.
+WLAN, Indoor, Localization, RSSI                                                    One approach to get a relatively good accuracy in
+                                                                                 positioning as well as accurate continuous information
+                                                                                 about the current position on the z-axis is shown in.
+                         I.   INTRODUCTION
+                                                                                 Woodman and Harle ([10]) use a foot-mounted inertial
+  Positioning techniques are necessary for location based                        sensor combined with WLAN based RSSI algorithms.
+services in indoor environments, e.g. for autonomous                                Mandal et al. ([6]) developed the system 3D beep using
+robots or for digital museum guides. Different algorithms                        audible sound signals emitted by batches. The client
+are used ([1], [4], [8]). By now positioning in wireless                         sensors receive these signals using microphones. The
+networks is mainly used in two-dimensional                                       calculation of the actual three-dimensional position is
+environments. Using positioning systems in three-                                carried out on a central location server which is connected
+dimensional indoor environments based on wireless local                          to the clients by WLAN. The system reaches an accuracy
+area networks (WLAN) needs a reliable estimation of the                          below 3 feet in 95% of cases in a three-dimensional one-
+vertical position. This paper describes an expansion of                          room environment. However one major concern is the
+two-dimensional algorithms by the third dimension for use                        audible signals which may be annoying to the users.
+of WLAN positioning systems in multi-storey buildings.                              Hightower et al. ([3]) developed a three-dimensional
+These algorithms were evaluated in two different test                            localization system using radio frequency signals from
+beds, a museum building and a university building.                               long range RFID tags. The concept is based on the
+                                                                                 physical model of signal strength attenuation over
+                       II.    RELATED WORK                                       distance. Using trilateration the mean estimation error
+   Ladd et al. ([5]) used a notebook for determining the                         amounts to 3m.
+two-dimensional position by measuring the received                                  An Ultra Wide Band (UWB) approach for three-
+signal strength indication (RSSI) of several access points.                      dimensional positioning is published by Schwarzer et al.
+The algorithm is based on fingerprints and Bayesian                              ([7]). They calculated a mean estimation error of 45cm in
+inference. Teuber et al. ([9]) again used fingerprinting and                     a classroom environment.
+the method of minimal Euclidian distance together with                                          III.    ALGORITHMS AND TESTBED
+Fuzzy logic post processing. Their test bed was an empty
+airport hangar. Accuracy of two-dimensional positioning                                      A. Isolines Algorithm
+was 4.47 m using Euclidian distance alone. With Fuzzy                               One algorithm for WLAN positioning in two-
+logic post processing the accuracy improved to 3 m.                              dimensional environments is the Isolines Algorithm ([2]).
+   A two-dimensional positioning system for industrial                           The Isolines Algorithm is an approach based on
+automation with automatic calibration was developed by                           fingerprinting. Tuples of RSSI values from Access Points
+Ivanov ([4]). This system is able to perform automatic                           (AP) are measured at calibration points within an initial
+measurement and model calibration so as to no manual                             calibration phase. A line of constant RSSI values is called
+measurements are necessary. The Ekahau Positioning                               an isoline.
+Engine (EPE) is a software commercially available using                             Below x and y refers to the two-dimensional
+RSSI based WLAN indoor positioning. According to the                             coordinates of the position while z refers to the discrete
+manufacturer's instructions ([1]) the engine combines                            vertical coordinate, e.g. the floor level number.
+  To use the Isolines Algorithm in multistory buildings a        this algorithm is published in ([2]).
+network of triangles with the calibration points as nodes           For comparison of received RSSI-tuples out of
+using Delaunay-Triangulation is built for every floor.           positioning phase and RSSI-tuples out of calibration phase
+  During positioning phase a mobile device measures              the Euclidean distance is used as similarity measure. The
+tuples of RSSI-values from the access points within reach.       estimated position is given by the calibration point with
+These RSSI-values are transferred to the location server         the smallest Euclidean distance between its RSSI-tuple
+where the position is calculated.                                and the current RSSI-tuple.
+  For every two-dimensional triangulation the RSSI-
+                                                                              C. Test bed
+values are used to calculate isolines for every triangle
+using bilinear interpolation (see figure 1). Thereafter for         For evaluation a series of measurements in two
+every triangle the number of isolines contained is               different environments were carried out. The first test bed
+                                                                 was located in the exhibition area of a small museum, the
+calculated. The triangles are ranked by this number in
+descending order (see table 1).                                  second test bed inside a university building.
+                                                                    The museum has an exhibition space of approx. 2000m2
+      Figure 1: Interpolated isolines of two access points       spread over two floors. In total eight WLAN Access
+                                                                 Points were installed within the museum, four in each
+                                                                 floor. For calibration 44 calibration points were selected.
+                                                                 The edge length of the resulting triangles generated by
+                                                                 triangulation ranges between 5m and 13m.
+                                                                    Within the university building test bed four floors with
+                                                                 15 existing WLAN Access Points were used for
+                                                                 evaluation. The measurements in calibration phase were
+                                                                 carried out at 143 calibration points. The distance between
+                                                                 adjoining nodes was approx. 2m. Only public areas were
+                                                                 used for calibration (e.g. corridors, lecture rooms, library).
+                                                                    Both test beds had inhomogeneous grids leading to
+                                                                 different triangle sizes.
+                                                                    For both test beds a Windows Mobile PDA was used
+                                                                 for measurements carried out by a person. At all
+                                                                 calibration points the RSSI-values were measured in four
+                                                                 direction (0°, 90°, 180°, 270°) to allow for the influence of
+   For level estimation all triangles with maximum               the human body.
+number of containing isolines are used. The vertical z-             After calibration phase measurements were carried out
+position is given by the number of the floor containing a        at randomly chosen positions with known coordinates, 26
+maximal amount of triangles with maximum number of               positions in the museum test bed and 30 positions in the
+isolines.                                                        university test bed.
+
+          Table 1: Level estimation with isolines algorithm
+                                                                                         IV.     RESULTS
+     Triangle ID       Number of Isolines       Level (z-pos.)      In Table 2 the percentage of correct z-position
+     20                7                        2                estimations for both algorithms is shown.
+     22                7                        2
+     25                7                        3                      Table 2: Percentage of correct vertical-position estimations
+     10                6                        2
+                                                                       Test bed                       University     Museum
+     15                6                        2
+     33                5                        2                      Method of Isolines             86.67%         96.84%
+     6                 5                        1                      Euclidean Distance             93.33%         100%
+
+   Table 1 shows a ranking of triangles by number of               Within the university test bed the floor level (z-
+containing isolines. In this case considering all triangles      position) could be estimated correctly in 86.67% of cases
+with seven isolines the algorithm would set z to two.            for Isolines Algorithm and 93.33% of cases for Euclidean
+   Knowing the z-value the x and y coordinates can be            Distance Algorithm. The results in museum test bed
+determined using the two-dimensional Isolines Algorithm          reached 96.84% with Isolines Algorithm and 100% with
+([2]). The x and y coordinates are given by the arithmetic       Euclidean Distance Algorithm.
+mean of the mass centers of triangles from floor z with
+maximum number of isolines.
+           B. Euclidean Distance
+  Another fingerprinting algorithm for localization is
+defined by using the Euclidean distance. An application of
+  Figure 2: Estimation errors of two-dimensional positioning –
+                                                                 room have shown that Isolines Algorithm performs better
+                       university test bed                       than Euclidean Distance Algorithm ([2]). Furthermore,
+                                                                 these measurements have shown significantly better
+                                                                 results for two-dimensional estimation errors. The
+                                                                 difference to the current results may be due to the more
+                                                                 inhomogeneous grids with inhomogeneous triangle sizes
+                                                                 and triangle shapes having larger edge lengths.
+                                                                    More detailed analysis of the results show that many of
+                                                                 the incorrect level estimations happen at measurement
+                                                                 points within peripheral areas. This effect may be due to
+                                                                 the smaller amount of access points in reach within these
+                                                                 areas.
+                                                                    To decrease the effect of incorrect estimation of z-
+                                                                 coordinate (floor number) additional boundary conditions
+                                                                 could be implemented, e.g. a denial of floor number
+                                                                 change, if the previous two-dimensional position
+   Figure 2 and figure 3 show the location estimation
+                                                                 estimation is not located within a staircase.
+errors of two-dimensional positioning, figure 1 for the
+university test bed and figure 2 for the museum test bed.                               VI.   CONCLUSIONS
+There are two graphs printed in each figure. The graphs
+show the cumulative distribution of estimation errors for          This paper shows that the discrete vertical position can
+Isolines Algorithm and Euclidean Distance Algorithm.             be estimated with a reasonable reliability using WLAN
+The abscissa refers to the two-dimensional location              localization algorithms. Exemplary boundary conditions
+estimation error while the ordinate refers to the cumulated      could be to allow level changes only in areas where level
+probability.                                                     changes are possible (e.g. staircases). By now the
+   For university test bed (figure 1) results show that about    described algorithms are able to estimate z as a discrete
+90% of location estimation error values lie below 5m for         variable which is appropriate for most scenarios. However
+Euclidean Distance Algorithm and 8.2m for Isolines               there are some scenarios where a continuous z-estimation
+Algorithm. 50% of location estimation errors show values         would be necessary (e.g. for positioning in staircases).
+below 2.2m for Euclidian Distance Algorithm and 4.2m             This topic will be covered during future work.
+for the Isolines Algorithm.                                                      VII.     ACKNOWLEDGEMENT
+  Figure 3: Estimation errors of two-dimensional positioning –      This work was supported by an internal research grant
+                        museum test bed                          of University of Applied Sciences and Arts Dortmund.
+                                                                 The authors also like thank Mr. Hanswalter Dobbelmann,
+                                                                 director of the museum “Umspannwerk Recklinghausen –
+                                                                 Museum Strom und Leben” at Recklinghausen and his
+                                                                 colleagues for their kind cooperation and for providing the
+                                                                 museum available as test bed.
+                                                                                     VIII.    REFERENCES
+                                                                 [1]   Ekahau; "Ekahau positioning engine 2.0; 802.11 based wireless
+                                                                       LAN positioning system"; An Ekahau Technology Document,
+                                                                       2002
+                                                                 [2]   Großmann, U., Schauch, M. & Hakobyan, S. (2007). The accuracy
+                                                                       of algorithms for WLAN indoor positioning and the standardization
+                                                                       of signal reception for different mobile devices. International
+                                                                       Journal of Computing, Vol. 6, Issue 1 (2007), 103-109.
+   Results for museum test bed (figure 2) show that 90%          [3]   Hightower, J.; Borriello, G.; Want, R. (2000): SpotON: An Indoor
+                                                                       3D Location Sensing Technology Based on RF Signal Strength,
+of estimation error values are less than 8.2m for Euclidean            UW CSE Technical Report #2000-02-02, Washington, 2000.
+Distance Algorithm and less than 9.2m for Isolines               [4]   Ivanov, S.; Nett, E.; Schemmer, S.: “Automatic WLAN
+Algorithm. 50% of estimation error values of Euclidian                 Localization for Industrial Automation”. In: Proceedings of
+Distance Algorithm show values below 3m and below                      Wireless Factory Communication Systems 2008, Dresden, p.93-96
+                                                                 [5]   Ladd A. M., K. E. Bekris, A. Rudys, L. E. Kavraki, D. S. Wallach.
+5.2m for the Isolines Algorithm.                                       “Robotics-based location sensing using wireless Ethernet”.
+                                                                       Wireless Networks, vol 11, no 1-2, 2005, p. 189– 204.
+                     V.   DISCUSSION                             [6]   Mandal, A. et Al. (2005): Beep: 3D Indoor Positioning Using
+                                                                       Audible Sound, In: Consumer Communications and Networking
+   From the results above it can be seen that Euclidean                Conference (CCNE) 2005, pp. 348-353.
+Distance Algorithm performs significantly better in both
+test scenarios. Earlier measurements in an empty seminar
+   [7]  Schwarz, V.; Huber, A.; Tüchler, M. (2005): Accuracy of a
+        Commercial UWB 3D Location/Tracking System and its Impact on
+        LT Application Scenarios, IEEE International Conference on Ultra
+        Wideband, 2005.
+   [8] Sieck, J.; Fiedler, A. (2007): Wireless Museum Information
+        Systems, In: Proceedings of the 4th IEEE Workshop on Intelligent
+        Data Acquisition and Advanced Computing Systems (IDAACS),
+        Dortmund 2007.
+   [9] Teuber A., Eissfeller B. “WLAN indoor positioning based on
+        Euclidean distances and fuzzy logic”. in Kamakya K, Jobmann K.,
+        Kuchenbecker, H.-P. (eds). 3rd Workshop on Positioning,
+        Navigation and Communication (WPNC'06), Hannover, 16.3.06, p
+        159-168.
+   [10] Woodman, O.; Harle, R. “Pedestrian Localisation for Indoor
+        Enviroments”, Proceedings of UbiComp 2008 conference, pp. 114-
+        122, Seoul, 2008.
+
+
+
+
+View publication stats
+

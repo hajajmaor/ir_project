@@ -1,0 +1,528 @@
+The iMuse Virtual Museum: towards a cultural
+education platform
+
+Athanasios Fevgas, Nikolaos Fraggogiannis, Panagiota Tsompanopoulou, and 
+Panayiotis Bozanis
+
+Department of Electrical & Computer Engineering
+University of Thessaly
+
+Volos, Greece
+
+e-mails: {fevgas, nfragog, yota, pbozanis}@inf.uth.gr
+
+
+Abstract—In the recent years, there is an extremely growing
+interest for the digitalization of museums through the utilization
+of Information and Communication Technologies (ICTs). A
+virtual museum platform, named iMuse is presented in this
+paper. The platform aims to enhance museum visits, assist
+visitors navigate inside the museum and to provide access to
+multimedia content using the recent advances in Web, RFIDs
+and communication technologies. In more detail, the iMuse
+Virtual Museum is based on three components: Mobile Tour,
+Virtual Presenter and Virtual Wing. The iMuse Mobile Tour
+application consists of a tour guide system. It utilizes UHF RFID
+technology to enrich museum visiting experience, through free
+style tours, pre-defined tours, interactive educational games and
+a group support service. The iMuse Virtual Presenter application
+is a web platform for delivering multimedia presentation to
+groups of visitors. Its objective is to enhance cultural knowledge
+discovery by increasing access to museums' digital information,
+using rich media content (text, images, video and sound). The
+iMuse Virtual Wing comprise a user-aware virtual museum
+environment that creates and presents a virtual representation of
+the museum, providing multimedia content through specialized
+filtering methods. iMuse platform is successfully utilized to
+enhance  educational  programs  and  improve  cultural
+understanding by connecting presentations with interactive
+games  and guided tours.
+
+Keywords—museum mobile guides, mobile applications,
+cultural presentations, web presentation systems, RFID location
+based services, cultural education, interactive games
+
+I.  INTRODUCTION
+
+Museums encounter several problems of introducing the
+visitors the actual wealth of exhibits in their possession, i.e. to
+present the environment where these exhibits are discovered,
+and describe how they were utilized during their ages.
+Moreover, many important artifacts are not accessible by the
+visitors due lack of space. Thus, the very nature of a museum,
+due to its inextricable relationship with the respective site(s) of
+excavations and its daily interaction with visitors, offers great
+challenges for scientists of both information technology &
+communications area along with archaeologists/historians.
+
+Nowadays many museums exploit ICT to ameliorate
+visitor experience. At the same time, research efforts aim to
+introduce new digital guides that utilize the latest advances in
+software and hardware. The vast majority of the proposed
+systems are intended for individuals or small groups like
+families. The lack of systems that enhance the educational
+
+aspect of a museum motivated us to propose iMuse tour guide
+system. iMuse aims to open up new horizons, with respect to
+better registering, studying, and ultimately, utilizing the
+exhibits. It pursues to become more audience-centered while it
+provides access to usable authoritative information as the
+audience wishes, depending on its interests.
+
+To achieve the above goals iMuse system introduces three
+different applications for museum visitors: i) Mobile Tour
+(MT), a tour guide system based on a handheld device, ii)
+Virtual Wing (VW) [1], a user-aware virtual museum
+environment running in info kiosks and iii) Virtual Presenter
+(VP),  a web platform for composing and delivering multimedia
+presentations.
+
+Visitors have disparate needs and expectations concerning
+knowledge discovery during a museum tour. However,
+introducing a class of pre-childhood students to the everyday
+life  of the prehistoric man has completely different demands
+compared to exploring the exhibitions by history enthusiasts.
+Thus, the support of various visitor types was considered as a
+major demand for iMuse. Our efforts aim to provide museum
+curators with tools for organizing and presenting cultural
+content according to each visitor specific needs. Several other
+requirements were taken into account in the system design and
+development, like support of multimedia and multilingual
+content.
+
+iMuse is deployed in Archeological museum of Volos,
+Greece. Currently, cultural content is formed for adults,
+children and experts/enthusiasts, in Greek, English and French.
+Descriptions applied to kids are additionaly edited by an
+archeologist specialized in educational programs, while those
+applied to experts include more detailed information (e.g.,
+bibliographic references, related artifacts, etc.).
+
+This paper intends to substantiate the educational aspects of
+iMuse, through Virtual Presenter and Mobile Tour systems.
+Through iMuse, a cultural topic or a historical event can be the
+subject of a VP slideshow presentation, an educational game
+and a pre-defined tour in the MT. Students and visitors after
+attending  the  particular  presentation,  can  play  the
+corresponding game and/or follow the tour to stimulate their
+cultural understanding. Therefore our approach provides a
+straightforward learning procedure to visitors and educators.
+
+The rest of the paper includes related work in Section II.
+Sections III and IV present Mobile Tour and Virtual Presenter
+in detail. The architecture of iMuse platform and the
+
+
+development procedure are described in V. Finally, Section VI
+concludes the paper and presents our future plans.
+
+II.  RELATED WORK
+
+and orientation. The system can be utilized for both navigation
+and information services.
+
+III. IMUSE MOBILE TOUR
+
+
+Museums explore different ways to present their content
+
+The iMuse Mobile Tour
+
+[5] is a personalized mobile
+
+
+and stimulate audience interest. Various systems incorporate
+multimedia and projection technologies to create impressive
+presentations¹ and stereoscopic reconstructions². These
+approaches use custom designed multimedia content which is
+composed and produced by experts and thus it is difficult to be
+updated.
+
+Web based office suites, like Google Docs³, Zoho⁴,
+Microsoft Office Web Apps⁵ and open source Feng Office⁶
+provide full featured presentation editors under saas (software
+as a service) model. These systems enable online creation,
+management and sharing of presentations.
+
+However, there are no systems, in our knowledge, for
+
+museum guide that provides full multimedia, multi-audience
+and multilingual experience to museum visitors. The guide
+relies on a mobile UHF RFID reader. The particular device is a
+lightweight handheld touch screen computer, which exploits
+RFID technology to recognize and distinguish the Museum
+exhibits with high accuracy. RFID tags, attached to museum
+showcases, provide access to exhibits’ multimedia information
+in  the data repository. Information comprises text and vocal
+descriptions, photos and videos from related artifacts and/or
+excavation sites.
+
+The operation of the iMuse Mobile Tour guide is based on
+handheld's integrated pistol grip. The visitor should level at the
+
+
+dynamic  composition  of  multimedia  presentations  for
+educational purposes. This motivated us to propose Virtual
+Presenter (VP), a web-based cultural presentation composer.
+VP is enabled to create template presentations by retrieving
+exhibit information from museum’s database.
+
+The extremely growth of mobile device industry arises new
+opportunities for dissemination of cultural content in museums.
+
+tag position and pull handheld's trigger in order to acquire
+exhibit information (Fig. 1). The guide supports free style
+tours, pre and self-defined tours, and educational games. The
+games urge to activities that users should accomplish by
+locating the relative showcase and scan it with the RFID
+reader. These activities are composed by an archaeologist that
+specializes to educational programs. The device can be used
+also  by a group of visitors. The tourist guide or a member of
+
+
+Several approaches have been proposed involving either
+visitors’ personal smartphones or special devices owned by
+museums. Most of the research efforts seek to exploit sensors
+incorporated to the handhelds.
+
+RFID technology has been successfully applied to provide
+tour guide services in museums. LF and HF RFIDs have been
+utilized in mobile guide applications [2][3][4]. However, issues
+related to imposed architectural interventions in the exhibition
+led to the adoption of UHF RFID technology in [5], because of
+the short reading range of LF and HF RFIDs.
+
+A Wi-Fi based positioning system with accuracy less than
+1m is presented in [6]. The system supports automatic delivery
+of multimedia content and messaging services. A similar
+platform [7] utilizes special designed Wi-Fi sensors to deliver
+personalized cultural content on visitor’s personal mobile. The
+proposed system is able to detect artworks close to the user
+with accuracy over 91%.
+
+Digital guides on visitors’ smartphones are becoming
+
+the group uses the reader to access exhibits information while
+
+the rest of the group receive the particular information in their
+smartphones due to a context aware service presented in [11].
+
+IV. IMUSE VIRTUAL PRESENTER
+
+The iMuse Virtual Presenter (VP) (Fig. 2) is a web platform
+for delivering multimedia presentations to groups of visitors.
+An initial design of VP presented in [11]. Its main objective is
+to increase access to museum’s digital content, and enhance the
+education aspect of the museum, using rich multimedia content
+(text, images, video and sound) embedded in presentations.
+Presentations can be accessed either inside the museum, in a
+special projection room (on-site) or remotely via web (on-line),
+e.g., in schools during a preparation class prior to a museum
+visit. VP enables the dynamic creation of presentations as well
+as the combination of existing presentations for the
+
+popular due to its increasing capabilities from the view of
+
+screen size and resolution, processing power and sensors. The
+overwhelming majority of modern devices incorporate NCF
+(Near Field Communication) technology, an extension to the
+HF RFID standard. Interactive mobile guides based on NFC
+have been presented in [8][9]. A vision based approach for
+indoor positioning is proposed in [10]. Authors utilize phone’s
+camera and special designed markers to compute its position
+
+
+¹ http://www.realstudios.co.uk/exhibitions/voyagers/
+
+² http://www.chateau-nantes.fr/en/castle/the_nantes_museum/multimedia/
+
+³ https://www.google.com
+
+⁴ https://www.zoho.com
+
+⁵ https://office.com
+
+6 https://www.fengoffice.com
+
+Fig. 1 iMuse Mobile Tour
+
+
+museum database. Photos and videos, from excavation sites,
+are also imported to the slide, if available.
+
+The Presentation Editor is a presentation utility with
+
+
+Fig. 2 Virtual Presenter
+
+composition  of  new  ones  considering  audiences’
+characteristics.
+
+The system supports three different access levels: for
+museum curators, guides or instructors and visitors, by
+enforcing corresponding user roles. Curators are able to create,
+edit and show presentations, utilizing information stored in
+museum’s database. Instructors and tour guides are allowed to
+compose their presentations by selecting and combining slides
+from existing presentations. They do not have direct access to
+the exhibit's detailed information, but only to presentations
+already edited by the archaeologists. Finally, visitors attend
+presentations that are created by the two other groups. The
+three user types are supported under the demand of museum
+
+presentation editing and viewing features. It enables removal or
+reordering of slides, change of layout and contents, import of
+photos or videos, persist of changes to the database and present
+to the audience.
+
+B. Presentation Synthesis
+
+Presentation Synthesis role enables instructors or tour
+guides to compose their presentations by combining slides
+from already edited presentations. Thus, modified versions of
+Presentation Creator and Presentation Editor are utilized.
+
+The Presentation Creator provides search functionality for
+presentations created by archaeologists based on criteria like
+thematic entity, era, class, excavation site and museum’s hall.
+The results are presented in a thumbnail viewer component,
+containing the first slide of each presentation and its title. Any
+presentation can be select for preview and used as template for
+a new one.
+
+The  limited  Presentation  Editor  does  not  provide
+functionality to modify the contents or the style of the slides.
+Only, insertion of new, removal, reordering and saving slides
+are permitted. New slides are first located by a search utility
+(that hooks Presentation Creator) and then dragged and
+dropped to the presentation.
+
+C. Presentation Projection
+
+Presentation Projection role is assigned to everyone that
+wants to access stored presentations. Presenter is a tool that is
+
+
+curators, for controlling access to museum’s intellectual
+
+property.
+
+A. Presentation Authoring
+
+Presentation Authoring role is assigned to museum
+archaeologists and is enabled by two tools: Presentation
+Creator and Presentation Editor. It organizes exhibit’s data,
+connected semantically to each other into the form of
+presentations and provides access to museum knowledge
+according to the audience profile. Each presentation consists of
+a number of slides and each slide contains exhibit’s
+information. Exhibits can be either artifacts or collections of
+artifacts organized in showcases.
+
+The  Presentation  Creator  is  a  utility  for  editing
+presentations using content from Museum's exhibit database
+based on audience profile. It provides search functionality for
+
+used to locate presentations of interest and supports two
+different modes of presentation, the normal view and the
+panoramic view. The two modes that can be alternated during a
+presentation. In normal view, slides are presented one after the
+other like in traditional presentation tools. In panoramic view,
+slides are accessed through a 360 degrees panorama of the
+museum, with the referenced exhibits highlighted as depicted
+in Fig. 3.
+
+V.  SYSTEM ARCHITECTURE
+
+
+exhibits based on criteria like thematic
+excavation site and museum lounges for
+
+entity, era, class,
+a given audience.
+
+
+Results are displayed as thumbnails in a circular photo gallery
+(Exhibit Browser). Each exhibit can be previewed and inserted
+as slide to a new or existing presentation. Slide generation
+process is fully automated. The new slide contains detailed
+exhibit information like, description, dimensions, weight,
+excavation site, era and bibliography, retrieved from the
+
+Fig. 3 Virtual Presenter – Panoramic View
+
+
+
+Fig. 4 Virtual Presenter Architecture
+
+iMuse Mobile Tour architecture was exhaustively described
+in [11], therefore in this document we focus in Virtual
+Presenter. VP follows client – server paradigm as depicted in
+Fig.  4.  The server side application is composed by five
+services which are designed under a modified Model View
+Controller architecture. The Control module implements data
+access and business logic, while View module deals with data
+representation.
+
+The Request & Access Control service is a single entry
+point for the server application. It receives client requests and
+dispatches them to the appropriate services, controlling user
+access level and applying the appropriate user role.
+
+The Profile Control receives specified audience settings
+(e.g., language, age, level of interest) and line them up to other
+services.
+
+The Exhibit Information service, provides data and
+metadata about exhibits. Data may be text, images, vocal
+messages and videos, while metadata specify which types of
+multimedia are available for particular exhibits.
+
+Presentation service implements all required processes in
+order to maintain and store presentations.
+
+Slide service manages slide operations and enables
+presentation composers to copy slides from one presentation to
+one other.
+
+The client side consists of five modules, and actually
+implements the user interface of VP. Presentation Browser,
+Slide Browser and Exhibit Browser services enable searching
+and selecting functionality for presentations, slides and exhibits
+respectively. Searching functionality ensure straightforward
+access to database data fulfilling various criteria (thematic
+entity, era, class, excavation sites, museum lounges and
+audience profile) defined by the user.
+
+Projection module maintains user interface for exploring
+and displaying available presentations, in normal or panoramic
+view, according to audience’s preferences.
+
+The iMuse Virtual Museum is developed by using open
+source technologies. The application server and the data
+storage reside to a central server running Linux. The data
+storage is hosted by MySQL database management system.
+The application server is developed using PHP and runs on
+Apache web server. The VP is a web-based application,
+developed using AJAX technologies (JavaScript, XML, CSS,
+XHTML, DOM, etc.) to support asynchronous communication
+with the server. An open source slideshow editor named
+Slimey⁷, was used as basis for the implementation of
+presentation editing functionality. Slimey uses SLIM file
+format for storing presentations. SLIM slideshows are
+composed using HTML, CSS and JavaScript.
+
+VI. CONCLUTION
+
+In this paper we presented a web platform for the
+generation of presentations on cultural heritage. These
+presentations may include images, texts, videos and audio and
+can be attended by tourist groups or students either on-site in a
+special projection room or remotely during visit preparation. A
+synopsis of iMuse Mobile Tour functionality has also been
+provided.
+
+iMuse platform is successfully utilized in Archeological
+Museum of Volos to enhance educational programs and
+improve cultural understanding by connecting presentations
+with interactive games and guided tours. The platform was
+tested and evaluated by museum staff, visitors, students and
+educators. Evaluation results for iMuse Mobile tour were
+presented in [12]. Virtual Presenter was initially evaluated by
+six members of Museum’s staff. This evaluation aimed to track
+software bugs and highlight flaws in user interface and
+
+7 http://www.fengoffice.com/web/wiki/doku.php/documents
+
+
+functionality. The feedback was utilized to improve the system
+and fix some bugs. Afterwards, the system was evaluated by
+visitors, educators and students of Primary Education
+Department of the University of Thessaly, during two 1-day
+workshops. Workshop participants, after demonstrations and
+self-practice with Virtual Presenter had to complete
+questionnaires by using a scale from 1 to 5. The testers
+evaluated Virtual Presenter as easy to use software, even by
+inexperienced users (Mean=4.3) and reported searching
+criteria,  for locating presentations of interest, as sufficient
+(Mean=4.7). Already, prepared, by Museum’s archeologists,
+presentations in the system fall within their expectations
+(Mean=4.4) and improved their cultural understanding
+(Mean=4.4). Most of the participants declared their intention to
+propose  Virtual  Presenter  to  their  family/colleagues
+(Mean=4.2). Finally, the majority of educators suggested to
+Museum’s curators to enable online access of Virtual
+Presenter, and pointed out that multilingual support may
+benefit students of immigrant families.
+
+The excessive growth of smartphone market arises new
+opportunities  for  dissemination  of  cultural  information.
+Modern mobiles are challenging platforms for museum
+applications due to their increasing CPU power, large screen
+size and resolution and incorporated sensors. We believe that
+sensing technologies, like Near Field Communications (NFC),
+will  play  important  role  in  development  of  museum
+applications. Our future work includes the exploitation of these
+characteristics for localization services and automated cultural
+content delivery in visitor’s personal smartphones.
+
+REFERENCES
+
+[1]  C. Zigkolis, V. Koutsonikola, D. Chatzakou, S. Karagiannidis, M.
+Giatsoglou, A. Kosmatopoulos, and A. Vakali, “Towards a User-Aware
+Virtual Museum”, Games and Virtual Worlds for Serious Applications
+(VS-GAMES), 2011 Third International Conference on , pp. 228-235, 4-
+6 May 2011.
+
+[2]  N. Linge , D. Bates , K. Booth , D. Parsons, L. Heatley, P. Webb, R.
+Holgate, “Realising the potential of multimedia visitor guides: practical
+experiences of developing mi-Guide”, Museum Management and
+Curatorship, 27:1, pp. 67-82, 2012.
+
+[3] Y, Huang, S. Wang, F. E. Sandnes, “RFID-Based Guide Gives Museum
+Visitors More Freedom”, IT Professional , vol.13, no.2, pp. 25-29,
+March-April 2011.
+
+[4]  J. Schwieren, G.Vossen, “Implementing Physical Hyperlinks for Mobile
+Applications Using RFID Tags”, 11th Int. Database Engineering and
+Applications Symposium, pp. 154-162, 6-8 Sept. 2007
+
+[5]  A. Fevgas, P. Tsompanopoulou, A. Tsiovoulos, G. Drasidis, and P.
+Bozanis, “Utilizing UHF RFIDs to Enhance Museum Visiting
+Experience”, Proc. 14th Panhellenic Conference in Informatics, pp. 16-
+20, Sept 10-12, 2010.
+
+[6] M. Paschou, E. Sakkopoulos, A. Tsakalidis, G. Tzimas, E. Viennas,
+“Intelligent Mobile Recommendations for Exhibitions using Indoor
+Location Services”, in Tsihrintzis, G.A., Virvou, M., Jain, L. (eds),
+Multimedia Services in Intelligent Environments - Recommendation
+Services, vo. 4, 1st Edition, Springer Verlag, 2012.
+
+[7]  A. Chianese, F. Marulli, V. Moscato, F. Piccialli, “SmARTweet: A
+Location-Based Smart Application for Exhibits and Museums”, Int.
+Conf. on Signal-Image Technology & Internet-Based Systems (SITIS),
+2013 International Conference, pp. 408-415, 2-5 Dec. 2013.
+
+[8]  U. B. Ceipidor, C. M. Medaglia, V. Volpi, A. Moroni, S. Sposato, M.
+Carboni, A. Caridi, “NFC technology applied to touristic-cultural field:
+A case study on an Italian museum”, Near Field Communication (NFC),
+5th International Workshop on , pp.1-6, 2013.
+
+[9] P.C. Garrido, I.L. Ruiz, M.A. Gomez-Nieto, “Support for Visually
+Impaired through Mobile and NFC Technology”, IT Revolutions,
+LNICST 82, pp. 116–126, 2012.
+
+[10] C. Barberis, A. Bottino, G. Malnati, P. Montuschi, “Experiencing Indoor
+Navigation on Mobile Devices”, IT Professional , vol.16, no.1, pp.50-57,
+Jan.-Feb. 2014.
+
+[11] A. Fevgas, P. Tsompanopoulou, and P. Bozanis, “iMuse Mobile Tour: A
+Personalized Multimedia Museum Guide Opens to Groups”, 16th IEEE
+symposium on Computers and Communications, pp. 971-975, 2011.
+
+[12] S. Bibi, P. Tsompanopoulou, A. Fevgas, N. Fraggogiannis, A. Martini,
+
+A. Zaharis, P. Bozanis, “A Platform for Delivering Multimedia
+Presentations on Cultural Heritage”, Proc. 14th Panhellenic Conference
+in Informatics, pp. 175-179, Sept 10-12, 2010.
+

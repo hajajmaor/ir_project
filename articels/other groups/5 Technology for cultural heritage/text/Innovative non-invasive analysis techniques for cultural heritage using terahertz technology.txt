@@ -1,0 +1,297 @@
+C. R. Physique 11 (2010) 519–526
+
+Contents lists available at ScienceDirect
+
+Comptes Rendus Physique
+www.sciencedirect.com
+
+Terahertz electronic and optoelectronic components and systems
+
+Innovative non-invasive analysis techniques for cultural heritage using
+terahertz technology
+Techniques innovantes d’analyse non invasive du patrimoine culturel basées sur les
+technologies térahertz
+Kaori Fukunaga ∗ , I. Hosako
+National Institute of Information and Communications Technology, Tokyo, Japan
+
+a r t i c l e
+
+i n f o
+
+a b s t r a c t
+
+Article history:
+Available online 8 July 2010
+
+Terahertz (THz) spectroscopy and THz imaging techniques are expected to have great
+potential for carrying out the non-invasive analysis of artworks. THz waves can penetrate opaque materials and they can perform three-dimensional material mapping nondestructively by spectroscopic imaging. Several attempts have been made to analyse artworks. Clear results, such as imaging of hidden art by using model paintings, have been
+obtained by many institutions. We succeeded to observe the ﬁrst ever non-invasive crosssectional image of a tempera masterpiece by Giotto. These results prove that THz technology can yield useful information in art conservation science.
+© 2010 Académie des sciences. Published by Elsevier Masson SAS. All rights reserved.
+
+Keywords:
+Terahertz
+Cultural heritage
+Nondestructive test
+Mots-clés :
+Térahertz
+Patrimoine culturel
+Essai non destructive
+
+r é s u m é
+La spectroscopie et l’imagerie dans le domaine térahertz présentent un grand potentiel
+pour l’analyse non invasive des œuvres d’art. Les ondes électromagnétiques térahertz traversent les matériaux opaques et ainsi peuvent être employées pour réaliser une cartographie à trois dimensions des œuvres d’art, cartographie non destructive et fournissant des
+informations spectrales. Plusieurs travaux d’analyse des œuvres d’art ont été publiés par
+différents instituts, mettant par exemple en évidence des images cachées sous les peintures. Nous avons réussi à obtenir la première image non invasive d’un chef d’œuvre de
+Giotto, résolue suivant l’épaisseur de la couche de peinture. Ces résultats démontrent les
+performances de la technologie térahertz dédiée à l’étude des œuvres d’art.
+© 2010 Académie des sciences. Published by Elsevier Masson SAS. All rights reserved.
+
+1. Introduction
+Most ancient masterpieces of art have been subjected to restoration to recover their condition and beauty from deterioration due to inevitable natural effects, such as ultraviolet exposure, or damage by human activities. Restoration is like
+performing a medical operation. The observation and analysis of materials and techniques are essential to plan the restoration, such as choosing the right materials to clean, repaint if needed, and varnish. The materials include those used in
+previous ‘interventions’ in addition to the original materials. Restoration projects are often lead by historians, and useful
+
+*
+
+Corresponding author.
+E-mail address: kaori@nict.go.jp (K. Fukunaga).
+
+1631-0705/$ – see front matter
+doi:10.1016/j.crhy.2010.05.004
+
+© 2010
+
+Académie des sciences. Published by Elsevier Masson SAS. All rights reserved.
+
+520
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+background information can be obtained from literature, such as contract documents between clients and artists, purchase
+orders for pigments and gold, and comments from critics. In order to provide further evidence and the current conditions
+to help a conservator, various scientiﬁc analyses are used [1,2]. Photographic examinations, including using infrared, infrared
+false colours, and ultraviolet (UV), are carried out as regular examinations. For museum collections and other great masterpieces, more precise analyses are often performed. X-ray transmission images provide useful information on the metals
+used in an artwork, such as the nails connecting the wood panels of tempera paintings. Elemental analysis by X-ray ﬂuorescence is now widely used to identify inorganic pigments, and ﬁbre optics reﬂectance spectra (FORS) are used for the
+non-destructive identiﬁcation of pigments [3].
+When it is possible to obtain a sample from an artwork, organic materials such as varnish and binders can be analysed
+by employing common techniques such as Fourier transform infrared (FTIR) spectroscopy and electron probe micro analysis
+(EPMA). However, the number of samples that can be extracted from an artwork is restricted, and it is not possible to carry
+out such destructive tests in many cases. Cross-section images are informative for conservators since they directly present
+the layer structure of the artwork; the support, preparation, and paint, reveals the technique in addition, if repainted layers
+are found; the conservator must decide whether the additional layers should be removed or not.
+For pigment analysis, there are many well-established techniques, such as infrared, Raman spectroscopy, and X-ray ﬂuorescence; and there is a large research group, the Infrared and Raman Users Group (http://www.irug.org), that organises the
+spectral database of art materials. Terahertz (THz) spectroscopy also shows ﬁngerprint-like spectra which should provide
+additional information to those obtained in the infrared bands. Unlike infrared spectroscopy that observes intramolecular
+behaviour, the spectra in the THz region depend on intermolecular behaviour; in other words, the structure of molecules
+determines the spectra. Because of this, crystal polymorphs are easily distinguished in the THz region, which are rather
+diﬃcult to be distinguished in the mid-infrared region because the atoms that form each molecule are the same.
+The biggest advantage is that THz waves can penetrate into opaque materials, reaching the preparation layers. THz pulses
+used in time domain reﬂection imaging act as the probe and propagate through an artwork to obtain its internal structure
+without requiring the sampling of the specimen. Such information cannot be obtained by other well-established methods
+such as X-ray observation. In addition, the energy of THz waves is suﬃciently low to be considered as perfectly non-invasive
+in practice.
+It is highly expected that THz waves can produce a 3D material map. The THz technology is progressing rapidly, and
+has been applied to various research ﬁelds [4,5]. We believe that THz spectroscopy and imaging techniques can become an
+essential tool for the analysis of artworks in the near future.
+This article introduces two aspects concerning the application of THz technology to cultural heritage science. One is THz
+spectroscopy to analyse art materials as an extension of mid-infrared range spectroscopy, and the other is imaging, including
+THz tomography, which can provide non-invasive cross-sectional and three-dimensional images of artworks.
+2. THz spectroscopy for material analysis
+The transmission and reﬂection spectra of gas, liquid, and solid specimens in the THz region can be obtained by conventional Fourier transform spectroscopy systems with the far-infrared option (FT-THz). Most commercially available systems
+cover the frequency range from 0.5–15 THz. The ﬁngerprint-like absorption spectra of substances appear in the THz frequency region, such as those observed in the mid-infrared bands, and the spectral features are considered to depend on the
+molecular and intermolecular behaviour of the substances.
+There is a long history of the use of far-infrared (THz) analysis of semiconductors and inorganic materials in fundamental
+physics research [6–8], although most of the optical properties such as phonon absorptions were observed using highly
+pure substances at low temperatures. The spectra of several inorganic pigments in the THz region, including most of the
+important pigments in historic paintings, such as cinnabar (HgS) and orpiment (As2 S3 ) [9], were observed in 1969 by using
+the very ﬁrst FT-THz system.
+Unlike in the mid-infrared, the spectral database in the THz frequency region is not commercially available. NICT and
+RIKEN have developed an online spectral database (http://www.thzdb.org) in 2008, and will encourage participation around
+the globe.
+Although element analysis by X-ray ﬂuorescence can provide essential information about inorganic pigments, THz spectroscopy can easily distinguish pigments that have almost the same colour and include the same mineral elements, because
+the spectra depend on the molecular behaviour.
+Fig. 1(a) shows examples of the transmission spectra of copper-based pigments. It would be rather diﬃcult for X-ray
+ﬂuorescence to distinguish these pigments without sampling. On the other hand, they can be easily distinguished in the
+THz region, on the basis of spectral features. Fig. 1(b) shows the transmission spectra of several binders [10]. In general,
+binders are chemically active when compared to inorganic pigments, and hence, it is important to identify binders in order
+to examine the ageing of the artworks. Oil and natural resins are transparent and Venetian turpentine has the characteristics
+of oil and resin. The spectra of Beva, which is the ﬁrst synthetic resin designed for art conservation, include the spectral
+features of polyvinyl acetate (PVAc) and a natural resin. Further quantitative investigation is required to validate the possibility of using THz spectroscopy to distinguish between binders and paints, and the investigation has been started [11].
+There are materials that do not have particular features in spectra in the THz region. For example, earth pigments such
+as sinopia are usually very dull, and organic dyes are almost transparent in the THz region, as shown in Fig. 2. However,
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+521
+
+Fig. 1. Examples of THz spectra in transmission mode of (a) inorganic pigments, (b) binders.
+
+Fig. 2. THz transmission spectra of earth pigments and organic dyes.
+
+additional numerical analysis, such as chemometrics, could be used for extracting particular features in broad spectra, since
+it has been applied to spectra in the near-infrared region.
+Reﬂection spectra are practically very useful for the analysis of actual artworks; most artworks cannot be removed from
+the support and only limited types of artwork can be allowed to be measured in the transmission mode. Fig. 3 shows the
+reﬂection spectra of lead white, calcite, cinnabar, and sinopia. Although the reﬂection spectra can be affected by the surface
+conditions, these specimens were painted by ﬁne pigments (less than 20 μm in diameter), and the condition is similar to
+the real artworks.
+3. Material mapping based on spectroscopy
+There have been various attempts to apply THz spectroscopy and imaging for the preservation of cultural heritage, which
+includes artwork analysis and material mapping by using the model specimens of frescoes, oil on canvas paintings, and
+parchments [12–16]. As an example of non-destructive material analysis, THz spectra from the surface of an oil painting
+were compared with X-ray ﬂuorescence, and it was suggested that THz can distinguish materials [12]. THz false colour
+
+522
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+Fig. 3. THz reﬂection spectra of lead white, calcite, cinnabar, and sinopia.
+
+Fig. 4. Reﬂection images of two white and two red tiles obtained by Picometrix T-Ray 4000(R) [17].
+
+Fig. 5. Water absorption monitoring by the THz real-time imaging system.
+
+mapping based on the spectral database, including more than 200 spectra, was proposed by using a model painting specimen [13]. Jackson et al. applied THz imaging in mural painting and determined the difference in reﬂection depending on
+pigments [14].
+By using the THz-TDS imaging system (Picometrix T-Ray 4000) [17], we have observed the image of tiles painted with
+two white and two red pigments of which the reﬂection spectra are shown in Fig. 3. The frequency range was around 0.5
+to 1.5 THz, and the power integration of the reﬂection signal was described in grey scale; highest in white and lowest in
+black. As shown in Fig. 4, the area painted with the reﬂective pigments in the frequency range of the system, such as lead
+white and cinnabar, appeared in white and the other two were dark. It proves that THz imaging can indicate the difference
+in the material in the area painted in the same colour.
+Here, when a real-time observation is required, such as for the drying process during the conservation, the THz camera
+developed by NEC and NICT would be extremely useful [18]. Since it operates at a single frequency emitted by a quantum
+cascade laser, the results detected by a bolometer array sensor are a map of the level of transmission or reﬂection at the
+given frequency. Fig. 5 shows the transmission imaging of a piece of paper with water at its bottom; and is displayed
+in grey scale, where the highest transmission is in white and the lowest is in black. Since water absorbs THz waves, the
+transmission of the paper decreases along with water absorption from the bottom. THz real-time imaging makes it possible
+to observe such transient phenomena, at 60 frames per second, if required. Multi-frequency sources are desirable to perform
+material mapping more precisely.
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+523
+
+Fig. 6. Model of a typical painting and the use of various analysis methods, and layer structure observation by using THz pulse.
+
+Fig. 7. Surface deterioration observation of an oil painting on another old oil painting on canvas and the non-destructive cross-section image by THz-TDS
+imaging.
+
+4. Imaging of internal structure
+As described in the introduction, the biggest advantage of using THz for conservation science is that the time domain
+imaging uses the THz pulse. It can provide non-destructive cross-section image that helps conservators to understand the
+techniques and repainted layer in the previous conservation. In particular, mapping (area information) of the layer of interest
+in a multi-layer structure cannot be obtained by other existing methods.
+Fig. 6 presents a model of a painting and a comparison of observation methods. UV is useful for examining varnish,
+whereas infrared can reveal the underdrawing. X-rays pass through most non-metal materials. THz can be used to analyse
+the materials slightly below the layers of the paint, such as preparation layers. According to conservators, information in the
+preparation layers is important in understanding artworks. THz waves are perfectly non-invasive and provide a cross-section
+image, reaching to the preparation layer, without direct contact.
+A.J.L. Adam et al. conﬁrmed that the drawing layer was recognised from the back side of a model oil painting on
+canvas by avoiding the scattering of signals due to the surface irregular roughness [19]; carbon black drawings on layers of
+papyrus were clearly observed [20]. Letters written using pencils (graphite-based composite) on layers in a block note were
+successfully observed by some institutions with the help of THz tomography and THz tomosynthesis [21–24].
+We have applied THz imaging to observe practical specimens. In the case of modern oil painting or traditional Japanese
+artworks, the main problem is the formation of cracks on the surface. Fig. 7 shows an example of surface deterioration
+observation of an oil painting on another old oil painting on canvas. Although the separation of a paint layer is not easily
+visible from the surface, the non-destructive cross-section image, shown in Fig. 7(b), clearly indicates the air gap. When
+we perform mapping of the layer of interest by time domain imaging, it is very important to extract the proper information from the reﬂection signals. Fig. 8 shows the difference of images formed by using different parts of the same output
+signal. Fig. 8(a) is based on the ﬁrst peak that shows the material mapping of the surface, inﬂuenced by the surface roughness. Fig. 8(b) is drawn by the maximum value, i.e., the reﬂection from the internal interface, such as that between the
+painting layer and air. Thus, it is essential to view signals in the time domain, when THz TDS reﬂection imaging is performed.
+THz tomography makes it possible to see through an object such as a sculpture. Fig. 9 shows a paper made traditional toy
+painted and lacquered, and its THz imaging result observed by the new THz 3D imaging system by Advantest Corporation,
+which was developed in collaboration with Prof. Kawase of Nagoya University. THz tomography revealed that there is a
+stone inside the toy which maintains the stability of the toy. This technique will be extremely useful to examine such art
+objects since there are many sculptures that have hidden objects inside them, for example, a piece of holy object inside the
+wooden Buddha.
+
+524
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+Fig. 8. THz area imaging of the layer of interest, (a) surface, (b) interface between the new and old paintings.
+
+Fig. 9. A paper-made toy and its THz imaging, (a) a photograph of a Beko, (b) THz 3D image of a Beko (Courtesy: Advantest Co.).
+
+Fig. 10. Observation of crack in the panel of San Benedetto.
+
+5. Case study (Polittico di Badia)
+We had the opportunity to analyse a real masterpiece at the Galleria degli Uﬃzi. The Polittico di Badia, by Giotto di
+Bondone, is a tempera painted on wood panels. It was an altarpiece of the Badia Fiorentina church, and is now in the
+permanent collection of the Uﬃzi.
+The Polittico di Badia underwent conservation from last year until February this year, and in December we spent three
+days carrying out THz observations at the Uﬃzi Gallery. We measured the areas shown by using Picometrix T-Ray 4000.
+THz images are shown in grey scale, and high values for either transmission or reﬂection are shown in white.
+Fig. 10 shows an example of non-invasive cross-section images along the broken line in the panel of San Benedetto.
+There was a visible crack, but its depth could not be measured from the surface. The THz cross-section image revealed that
+the preparation layer at this crack had been completely lost and that only the surface layer of paint was added previously.
+Fig. 11 shows an image of the area marked as a square, slightly beneath the surface of the panel of Madonna col
+Bambino. Since the reﬂection from the gold is very strong, the shape of the gold foil is visible even when it is under the
+paint. This is very useful for conservators because they can pay closer attention to that area when they are cleaning the
+painting. The area information obtained by THz imaging is not limited near the surface. The pulse is reﬂected from each
+layer, as shown in the cross-section image in Fig. 12. By extracting each pulse, information over an area of the layer of
+interest can be obtained non-destructively. This information cannot be obtained from other existing methods. For example,
+tool marks were clearly observed on the surface of the wood support (Fig. 12, bottom image), and we conﬁrmed that there
+was a canvas between the two gesso layers, because the image obtained at the interface between the two layers has a
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+525
+
+Fig. 11. Gold foil detection under painted area in the panel of Madonna col Bambino.
+
+Fig. 12. THz imaging of the Polittico di Badia. From the top, image of canvas, cross-section, and wood support surface.
+
+regular pattern (Fig. 12, top image) that indicates the material used is cloth. THz imaging added the scientiﬁc evidence that
+Giotto followed the medieval manner. This technique used two gesso layers, and the motif resembled a human being. This
+fact revealed that Polittico di Badia is a milestone work from the medieval to the Renaissance era. The results prove that
+the THz analysis provides valuable information for both historians and conservators [25].
+6. Conclusions
+THz spectroscopy and imaging have attracted considerable interest in the ﬁeld of art conservation and research as an
+innovative and non-invasive analysis technique. It is clear that transmission and reﬂection imaging can distinguish between pigments, and the images can provide information about the painting and materials originally used by the artist and
+those used in subsequent restoration works. We carried out the ﬁrst ever THz imaging of the real tempera masterpiece
+by Giotto and conﬁrmed that THz spectroscopy and the imaging technique can provide useful information to art historians and conservators for investigating the history of an artwork. We conclude that the non-invasive observation method of
+THz spectroscopy imaging should be considered as a complementary technique to classical photographic analyses that use
+frequency regions ranging from X-rays to the mid-infrared.
+Acknowledgements
+The author would like to thank the staff of Uﬃzi Gallery and Dr. M. Picollo of IFAC-CNR for giving the opportunity to
+work on Polittico di Badia by Giotto, and Prof. Y. Ogawa, Prof. K. Kawase, Dr. N. Oda, and Dr. Irl Duling for their discussions
+on THz imaging, and the staff of Advantest Corp. for allowing to use a THz tomography image.
+
+526
+
+K. Fukunaga, I. Hosako / C. R. Physique 11 (2010) 519–526
+
+References
+[1] D. Pinna, et al., Scientiﬁc Examination for the Investigation of Paintings. A Handbook for Conservator-Restorers, Centro Di, Firenze, 2009.
+[2] M.R. Derrick, et al., Infrared Spectroscopy in Conservation Science, The Getty Conservation Institute, Los Angeles, 1999.
+[3] M. Picollo, S. Porcinai, Non destructive spectroscopic investigation on artworks, in: Recent Research Developments in Applied Spectroscopy, vol. 2,
+1999, pp. 125–135.
+[4] D.M. Mittleman, Sensing with Terahertz Radiation, Springer, Berlin, 2003.
+[5] M. Tonouchi, Cutting edge terahertz technology, Nature Photonics 1 (2007) 97–105.
+[6] E.D. Palik, Handbook of Optical Constants of Solids, Academic Press, New York, 1997.
+[7] Otfried Madelug, Landolt–Bernstein Semiconductors: Data Handbook, Springer, 2003.
+[8] Richard A. Nyquist, Ronald O. Kagel, Infrared Spectra of Inorganic Compounds (3800–45 cm−1 ), Academic Press, New York, 1971.
+[9] C. Karr Jr., J.J. Kovach, Far-infrared spectroscopy of minerals and inorganics, Applied Spectroscopy 23 (1969) 219–223.
+[10] I. Hosako, et al., At the dawn of a new era in terahertz technology, Proceedings of IEEE 95 (2007) 1611–1623.
+[11] J.-M. Manceau, et al., Terahertz time domain spectroscopy for the analysis of cultural heritage related materials, Applied Physics B 90 (2008) 365–368.
+[12] W. Köhler, et al., Non-destructive investigation of paintings with THz-radiation, in: Proceedings of European Conference of Non-Destructive Testing,
+2006, No. P181.
+[13] K. Fukunaga, et al., Terahertz spectroscopy for art conservation, IEICE Electronics Express 4 (2007) 258–263.
+[14] J.B. Jackson, et al., Terahertz imaging for non-destructive evaluation of mural paintings, Optics Communications 281 (2008) 527–532.
+[15] K. Fukunaga, et al., Application of terahertz spectroscopy for character recognition in a medieval manuscript, IEICE Electronics Express 5 (2008) 223–
+228.
+[16] G.P. Gallerano, et al., THz-ARTE: non-invasive terahertz diagnostics for art conservation, in: Proc. IRMMW-THz, 2008, No. T2G2.
+[17] D. Zimdars, et al., Security and non destructive evaluation application of high speed time domain terahertz imaging, in: Proc. Lasers and Electro-Optics,
+2006, No. CMLL1.
+[18] N. Oda, et al., Detection of terahertz radiation from quantum cascade laser, using vanadium oxide microbolometer focal plane arrays, Proc. SPIE (2008)
+6940.
+[19] A.J.L. Adam, et al., Terahertz imaging of hidden paint layers on canvas, Optics Express 17 (2009) 3407–3416.
+[20] J. Labaune, et al., Papyrus imaging with terahertz time domain spectroscopy, in: Proc. European Materials Research Society 2009 Meeting, 2009.
+[21] S. Wang, X.-C. Zhang, Pulsed terahertz tomography, J. Phys. D: Appl. Phys. 37 (4) (2004) R1–R36.
+[22] J. Takayanagi, et al., High-resolution time-of-ﬂight terahertz tomography using a femtosecond ﬁber laser, Optics Express 17 (2009) 7533–7539.
+[23] N. Sunaguchi, et al., Depth-resolving THz imaging with tomosynthesis, Optics Express 17 (2009) 9558–9570.
+[24] E. Abraham, et al., Broadband terahertz imaging of documents written with lead pencils, Optics Communications 282 (2009) 3104–3107.
+[25] K. Fukunaga, et al., Terahertz imaging systems: A non-invasive technique for the analysis of paintings, Proc. SPIE (2009), No. 7391D.
+
+

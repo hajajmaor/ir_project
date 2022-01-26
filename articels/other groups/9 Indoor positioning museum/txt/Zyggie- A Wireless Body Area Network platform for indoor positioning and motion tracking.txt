@@ -1,0 +1,477 @@
+Zyggie: A Wireless Body Area Network platform for
+indoor positioning and motion tracking
+Antoine Courtay, Mickaël Le Gentil, Olivier Berder, Arnaud Carer, Pascal
+Scalart, Olivier Sentieys
+
+To cite this version:
+Antoine Courtay, Mickaël Le Gentil, Olivier Berder, Arnaud Carer, Pascal Scalart, et al.. Zyggie: A
+Wireless Body Area Network platform for indoor positioning and motion tracking. ISCAS 2018 - IEEE
+International Symposium on Circuits and Systems, May 2018, Florence, Italy. pp.1-5, �10.1109/ISCAS.2018.8351278�. �hal-01804927�
+
+HAL Id: hal-01804927
+https://hal.archives-ouvertes.fr/hal-01804927
+Submitted on 5 Jun 2018
+
+HAL is a multi-disciplinary open access
+archive for the deposit and dissemination of scientific research documents, whether they are published or not. The documents may come from
+teaching and research institutions in France or
+abroad, or from public or private research centers.
+
+L’archive ouverte pluridisciplinaire HAL, est
+destinée au dépôt et à la diffusion de documents
+scientifiques de niveau recherche, publiés ou non,
+émanant des établissements d’enseignement et de
+recherche français ou étrangers, des laboratoires
+publics ou privés.
+
+Zyggie: A Wireless Body Area Network platform
+for indoor positioning and motion tracking
+Antoine Courtay, Mickaël Le Gentil, Olivier Berder, Arnaud Carer, Pascal Scalart, Olivier Sentieys
+University of Rennes 1 - IRISA
+Email: firstname.lastname@irisa.fr
+
+Abstract—Nowadays, there is a high demand for human
+and/or objects monitoring/localizing in the context of applications
+like Building Information Modeling (BIM), automated drone
+missions, contextual visits of museum or sports monitoring for
+instance. While for outdoor positioning accurate and robust
+solutions (i.e. GPS) exist for many years, indoor positioning is
+still very challenging. There is also a need of gesture/motion
+tracking systems that could replace video solutions. We propose
+in this paper a hardware/software platform named Zyggie that
+combines both Ultra Wide Band (UWB) technology and Received
+Signal Strength Indicator (RSSI) for low power accurate indoor
+positioning and Inertial Measurement Unit (IMU) utilization
+for motion tracking. Very few industrial/academic existing solutions can simultaneously perform indoor positioning and motion
+tracking and none of them can do both under low power,
+low cost and compacity constraints addressed by our platform.
+As Zyggie has the capability to estimate distances w.r.t other
+platforms in the environment and quaternions (which represents
+the attitude/orientation) users can test/enhance state of the art
+algorithms for positioning and motion tracking applications.
+
+I. I NTRODUCTION
+Knowing the posture/location of a person in its environment
+becomes an important issue for applications providing services
+based on these criteria. Many solutions have been proposed
+going from satellite based techniques (i.e. GPS), video tracking
+or radio-electrical waves combining. Some of them use optical
+signals such as infrared, laser or video tracking approaches,
+some use radio signal information (Time Of Flight (TOF) or
+RSSI) and others, data provided by IMU. To choose the adequate component for the platform design and obtain the best
+trade-off for considered applications, a comparison in terms
+of accuracy, deployment facility, size, power consumption and
+price has to be done.
+As both indoor positioning and motion tracking need low cost,
+portable and low power systems which can be deployed in
+minutes, radio and IMU are the best candidates. The main
+contribution of this paper is a platform named Zyggie that
+combines hardware components such as UWB chip for TOF
+distances measurement, 2.4 GHz transceiver for RSSI sensing
+and an IMU for motion estimations.
+Several Zyggie platforms are used to form a Wireless Sensor
+Network (WSN) which medium access has to be scheduled.
+To do so a custom Time Division Multiple Access Medium
+Access Control (TDMA MAC) has been developed to get the
+best trade-off between consumption and performance.
+Another contribution is the data processing chain which is
+composed of some filtering and calibration phases to format
+
+data for positioning and motion tracking algorithms. Two GUIs
+have been developed for the this purpose. First a Matlab one
+for testing/validating algorithms, then an Android tablet one
+for displaying on a 3D avatar the results in real-time.
+The rest of this paper is organized as follows. Section II
+summarizes state of the art platforms that propose either
+positioning and/or motion tracking capabilities. Section III
+introduces the hardware of our new developed platform named
+Zyggie. Data exchanges provided by Zyggie are then explained
+in Section IV using a custom TDMA MAC protocol. In
+Section V output data from Zyggie are used to evaluate
+positioning and motion tracking applications (section V-A &
+V-B). Finally, conclusions are drawn and future works are
+commented in Section VI.
+II. R ELATED WORK
+Table I lists most relevant solutions for either indoor positioning and/or motion tracking applications. These solutions
+are compared in terms of:
+• Indoor Positioning and/or Motion Tracking capabilities,
+• Accuracy of measurements,
+• Deployment which represents the system setup facility
+and the flexibility toward the application,
+• Size of wearable devices (if needed) and/or the associated
+system infrastructure,
+• Power consumption,
+• Price of the system.
+Vicon system [1] is known as a reference in motion tracking
+applications due to its millimeter accuracy. Several infrared
+cameras are used to track retroreflective markers. This opticalpassive solution allows a long period of use but leads to
+significant computation resources and power needs.
+Kinect [2] is a low cost general public markerless solution
+that embeds infrared and RGB cameras. Depth matrix coupled
+with image analysis enable the system to track in 3D space the
+attitude of a person. As Kinect has a unique camera viewpoint,
+it can lead in some cases to an information loss (i.e. arm
+hidden by the user).
+Unlike video tracking solutions Xsens is only based on IMU.
+High quality hardware and complex processing algorithms
+needed for motion tracking applications lead to a good accuracy but high power consumption.
+ShotTracker [3] is a basket system monitoring which allows
+the positioning of players and the ball in addition to scoring
+capability. This solution, based on UWB technology, is only
+
+dedicated to the previously mentioned application due to the
+fact that the system is fixed to the building.
+Bluetooth Low Energy (BLE), ZigBee or other Radio Frequency (RF) technologies [4]–[9] can use received signal
+power to get distance information between network’s nodes.
+Obtaining this RSSI is not consuming but is inaccurate (more
+or less 2.5 m) due to its environment perturbations’ sensitivity.
+This makes it not suitable for some of the applications.
+The global view of Table I highlights the lack of a mobile,
+low cost, low power system with reasonable accuracy for both
+targeted applications. This lack is filled with Zyggie platform,
+detailed in Section III.
+
+we can cite BeSpoon, DecaWave [11], Blinksight and Alereon.
+As DecaWave chips are the most open for experimentation
+(frequency band, datarate, transmitting power programming),
+they were chosen for our prototype (see Section III-B).
+B. Zyggie Node architecture
+
+Technology
+
+Indoor Positioning
+
+Motion Tracking
+
+Accuracy
+
+Deployment
+
+Size
+
+Power
+
+Price
+
+TABLE I
+I NDOOR POSITIONING AND MOTION TRACKING SOLUTIONS COMPARISON
+
+Video w/ marker [1]
+Video w/o marker [2]
+IMU [10]
+UWB [3]
+RSSI [4]–[8]
+UWB / IMU / RSSI
+
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+
+Yes
+Yes
+Yes
+No
+No
+Yes
+
++++
+++
+++
+--+
+
+--+
+-++
+
+--+++
++
++
+++
+++
+
+---+
++++
+++
+
+--+++
+++
+++
+
+III. T HE Zyggie P LATFORM
+A. UWB Technology
+UWB systems allow to emit low power and ultra-short
+duration pulses and provide applications with following advantages:
+• High precision TOF ranging at centimeter level,
+• Low electromagnetic pollution and reduced interference
+to other systems,
+• Small size and low power consumption.
+TOF computation is explained as following: a message is sent
+from the emitter to the receiver and after some processing
+time the receiver replies back. The TOF from the emitter to
+the receiver is the difference between the time that the emitter
+received the response from the receiver and the emission time
+divided by 2, by taking care of the response time of the
+receiver. Thus, we can compute the distance d depending on
+TOF with the following formula
+
+
+Tre − Tem − Tr
+d = T OF.c =
+.c ,
+(1)
+2
+where Tem is the emission time, Tre the response reception
+time, Tr the response delay of the receiver, and c the celerity
+which is assumed to be the same as the light in air. Due to
+some drifts on the emitter and receiver frequencies/clocks, an
+error is present on the measurements. In order to minimize
+this error this scheme can be repeated twice.
+There are only few vendors of UWB chipsets among which
+
+Fig. 1. Zyggie WSN Hardware illustration.
+
+The Zyggie node is a Wireless Sensor Node with UWB radio
+capabilities that was developed in our lab. Its architecture is
+represented on Fig. 1 and composed of:
+• A Silicon Labs EFM32 ARM CortexM4 micro-controller
+which is the Master Control Unit (MCU) of the node and
+also controls the UWB radio chip,
+• An ATMEGA2564RFR2 which drives the 2.4 GHz radio
+for data exchanges and network synchronization,
+• A DecaWave DW1000 UWB radio chip [11] for TOF
+measurements,
+• An InvenSense IMU for acceleration, angular speed and
+magnetic field captures.
+Our node is ultra compact (37 mm by 63 mm) and only
+weights 32 g (including battery) which makes it a real good
+candidate for all applications where weight and size are critical. Some experiments with UWB radio enabled at full speed
+were done leading to a battery life time of around 5 hours
+which is enough for sportsman or in building applications.
+IV. Zyggie MAC P ROTOCOL
+The network is composed of identical hardware Zyggie
+nodes. One of them is the central node (coordinator) connected
+to a computer/tablet, the others are on-body nodes and, if
+necessary, off-body fixed nodes for positioning. Coordinator
+aggregates data from all Zyggie nodes (Zi with i ∈ [1, N ] and
+N the number of nodes) to process and plot them on GUI
+
+Fig. 2. Custom TDMA MAC
+
+presented in Section V-B. A custom TDMA MAC protocol
+allocates time slots to each node to allow it sending its sensed
+data. All nodes have to sense movement data like IMU information or system absolute orientation, RF messages energy
+called RSSI and distance estimation with TOF measurements.
+Our MAC is based on the IEEE 802.15.4 communication protocol with a beacon-enable network. The coordinator broadcasts periodically a beacon frame to synchronize nodes and
+share network information. As shown on Fig. 2, a full mesh
+communication is started to get RSSI information. In its RSSI
+time slot, each node sends a short broadcast frame (orange TX
+slots) that others will listen (red RX slots) to get a complete
+RSSI matrix. As the IMU measurement step starts (purple
+time slot), the MCU gets data (red IMU Processing slots) and
+optionally performs an Extended Kalman Filtering (EKF) to
+produce a quaternion. Each node in its time slot (Data frame
+time slot) sends these data via the 2.4 GHz radio transceiver to
+the coordinator. During this star communication phase, nodes
+also process TOF ranging measurements. First, the UWB chip
+has to be awaken (green Awaking slot), then it can wait to be
+used (yellow Idle slots) and finally it does its ranging (orange
+& Red TX/RX slots) before returning to sleep. In the example
+of Fig. 2 the node 2 is selected to do ranging toward others,
+therefore a distances’ vector can be sent to the coordinator at
+its next Data frame. A sequence of selected ranging nodes
+has to be programmed to get a full distances matrix after
+N beacons. Previously defined phases are scheduled to get
+the best trade-off between consumption and performance, that
+is the reason why transceivers spend a minimum time into
+receiving mode. On the other hand, an adaptive data-rate is
+implemented depending on the number of nodes, to deal with
+the processing and communication time.
+V. P ROOF OF CONCEPT
+As previously said, our platform can output data that can be
+used by users to test algorithms in the context of positioning
+and motion tracking. To be user friendly, we have also developed a GUI modeling an avatar in 3D space to visualize the
+
+results. These two aspects are now going to be explained in
+more details.
+A. Algorithms performance evaluation
+Algorithms take part of the processing chain as shown in
+Fig. 3. On the chain at the top of the figure, UWB distances
+allow to deal with positioning application. On the chain at
+the bottom of the figure, computed information coming from
+IMU (i.e. quaternions) and UWB distances allow to deal with
+motion tracking application. For both applications, it exists
+state of the art algorithms (coloured boxes at the end of
+the chains) but users can also develop and/or optimize these
+algorithms. Blocks involved in these chains are now going to
+be presented.
+
+Fig. 3. Zyggie data processing chain
+
+1) Positioning: As we are able to obtain a measured
+distance between two nodes the next step is to compute
+several distances between a mobile node and some fixed nodes
+named anchors. The process chain starts with some corrections
+depending on antenna delays and hardware design. Then as
+TOF measurements can be noisy, some filtering is done to
+remove aberrant values. Finally, to obtain the coordinates of
+the mobile a localization algorithm is used (blue Positioning
+box in the chain) among we can cite centroid, trilateration,
+multilateration, Gauss-Newton [12]–[14] and so on. Users can
+
+also test their algorithms with data provided by Zyggie (i.e.
+UWB distances and/or RSSI).
+For instance, we experimented 2D positioning of a walking
+man using Zyggie with a custom low computation noise-aware
+algorithm based on trilateration. For this experimentation, data
+were acquired in a room of nearly 243 m2 (26.4 m length by
+9.2 m width). The ideal trajectory was marked on the floor
+and one step by second (around 3 km/h) was done following
+this trajectory. In order to test our algorithm a six anchors
+configuration is used. Fig. 4 represents the computed trajectory
+by our algorithm in red and the ideal one in green.
+
+nions and/or RSSI and/or UWB distances) provided by Zyggie
+(orange Motion Tracking box in the chain).
+B. Graphical User Interface
+These algorithms were implemented into two GUIs for
+different needs. First of all, Matlab was used to make acquisitions and work on raw data. It allows us to display in
+real-time raw data like RSSI and UWB distances table and
+accelerometer, gyroscope and magnetometer graphics. Other
+features are available for posture and movement recognition
+with Principal Component Analysis (PCA) classification algorithm [16]. Targeted applications are in medicine for functional
+rehabilitation of a patient or in Human-Machine interaction
+with gesture.
+Then, an Android tablet application was developed for demonstrations to show the system ability in a mobile context.
+Features like IEEE 802.15.4 channel scanning at 2.4 GHz and
+3D avatar tracking were added. Positioning algorithms were
+also included to update avatar position in a 3D environment
+as displayed on Fig. 5.
+
+Fig. 4. Results for indoor walking context
+
+2) Motion tracking: First, we implemented the proprietary
+InvenSense EKF on the 32bits MCU in the Zyggie platform to
+send less information via RF. This data fusion algorithm converts raw IMU data (i.e. acceleration, rotation and magnitude)
+into quaternions to represent absolute system orientation on 3
+axes. Then, user needs to do 2 specific postures for Initial and
+North calibrations (the first two boxes in the bottom chain of
+Fig. 3). Classical ”T” and ”I” postures were chosen to measure
+arm movements and calibrate user’s posture. When arms are
+raised to form a ”T”, all quaternions are saved to achieve the
+computation of
+,
+qinitjoint = qrawjoint .q0−1
+joint
+
+(2)
+
+where joint represents the joint name associated to a node,
+qinitjoint the initialized output orientation, qrawjoint the measured orientation and q0joint the initial quaternion equals to
+−1
+qraw
+only during the first calibration posture. After the
+joint
+second posture done, we select one arm node (i.e. left forearm)
+to resolve the System (3) and find the qnorth quaternion.
+(
+−1
+qT = qnorth
+.qT .qnorth
+,
+(3)
+−1
+qI = qnorth .qinitLF .qnorth
+where qT is the quaternion to form the ”T” pose, qI the wanted
+quaternion to form the ”I” pose and qinitLF the measured and
+initialized quaternion for the ”I” pose.
+This system is in the form of the Wahba’s problem therefore
+a solution can be found with Singular Value Decomposition
+(SVD) as described in [15]. Solutions can be found with
+the other arm nodes to get a single quaternion, therefore
+reducing the measuring noise due to both the sensor and user
+approximate posture.
+Finally, depending on the targeted application, user’s movement or posture can be processed easily with data (i.e. quater-
+
+Fig. 5. Android application: blue dots are the anchors for positioning and the
+tennis player is also equipped with nodes for motion tracking.
+
+VI. C ONCLUSION
+We have proposed in this paper a new low power, low
+cost hardware/software platform named Zyggie for indoor
+positioning and motion tracking applications. Zyggie combines
+UWB technology for accurate indoor positioning and IMU
+for motion tracking; RSSI metrics can also be inputted for
+both applications. Our prototype has been validated in real
+use cases (indoor human tracking). An Android application
+has also been developed for real-time visualization on a tablet.
+Finally Zyggie offers the opportunity for users to test their own
+developed algorithms in the Matlab environment.
+ACKNOWLEDGMENTS
+This work has been conducted in the context of the Cominlabs Labex BoWI project [17] funded by the ”Investissement
+d’avenir” program.
+
+R EFERENCES
+[1] “Vicon system.” [Online]. Available: https://www.vicon.com/
+[2] Z. Zhang, “Microsoft kinect sensor and its effect,” IEEE MultiMedia,
+vol. 19, no. 2, pp. 4–10, Feb 2012.
+[3] B. C. Ianni, D. D. Ross, C. A. Kahler, and D. A. Danknick, “Basketball
+shot-tracking system,” Sep. 8 2015, uS Patent 9,129,153.
+[4] N. L. Dortz, F. Gain, and P. Zetterberg, “Wifi fingerprint indoor positioning system using probability distribution comparison,” in the IEEE
+International Conference on Acoustics, Speech and Signal Processing
+(ICASSP), March 2012, pp. 2301–2304.
+[5] M. Shchekotov, “Indoor localization methods based on wi-fi lateration
+and signal strength data collection,” in the 17th Conference of Open
+Innovations Association (FRUCT), April 2015, pp. 186–191.
+[6] Y. Wang, Q. Yang, G. Zhang, and P. Zhang, “Indoor positioning system
+using euclidean distance correction algorithm with bluetooth low energy
+beacon,” in the International Conference on Internet of Things and
+Applications (IOTA), Jan 2016, pp. 243–247.
+[7] S. Fang, C. Wang, T. Huang, C. Yang, and Y. Chen, “An enhanced
+zigbee indoor positioning system with an ensemble approach,” IEEE
+Communications Letters, vol. 16, no. 4, pp. 564–567, April 2012.
+[8] L. Luoh, “Zigbee-based intelligent indoor positioning system soft computing,” Soft Computing, vol. 18, no. 3, pp. 443–456, 2014.
+[9] A. Aulery, C. Roland, J.-P. Diguet, Z. Zheng, O. Sentieys, and P. Scalart,
+“Radio signature based posture recognition using wbsn,” in the 14th
+
+[10]
+[11]
+[12]
+
+[13]
+
+[14]
+[15]
+[16]
+
+[17]
+
+International Conference on Information Processing in Sensor Networks
+(IPSN), 2015, pp. 322–323.
+D. Roetenberg, H. Luinge, and P. Slycke, “Xsens mvn: full 6dof
+human motion tracking using miniature inertial sensors,” Xsens Motion
+Technologies BV, Tech. Rep, 2009.
+“Decawave uwb chipset.” [Online]. Available: http://www.decawave.
+com/products/dw1000
+J. Blumenthal, R. Grossmann, F. Golatowski, and D. Timmermann,
+“Weighted centroid localization in zigbee-based sensor networks,” in
+IEEE International Symposium on Intelligent Signal Processing (WISP),
+Oct 2007, pp. 1–6.
+T. He, C. Huang, B. M. Blum, J. A. Stankovic, and T. Abdelzaher,
+“Range-free localization schemes for large scale sensor networks,” in
+the 9th International Conference on Mobile Computing and Networking
+(MobiCom). ACM, 2003, pp. 81–95.
+J. Nocedal and S. Wright, Numerical Optimization: 10.3 Algorithms for
+Nonlinear Least-Squares Problems. Springer New York, 2006.
+D. M. Bates, M. J. Lindstrom, G. Wahba, and B. S. Yandell, “Gcvpack
+routines for generalized cross validation,” Communications in Statistics
+- Simulation and Computation, vol. 16, no. 1, pp. 263–297, 1987.
+A. Aulery, J. P. Diguet, C. Roland, and O. Sentieys, “Low-complexity
+energy proportional posture/gesture recognition based on wbsn,” in
+the 12th International Conference on Wearable and Implantable Body
+Sensor Networks (BSN), June 2015, pp. 1–6.
+“Cominlabs labex bowi project: Body world interaction.” [Online].
+Available: http://www.bowi.cominlabs.ueb.eu
+
+

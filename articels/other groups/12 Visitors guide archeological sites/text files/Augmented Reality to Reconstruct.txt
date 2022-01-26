@@ -1,0 +1,668 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/344477011
+
+Augmented Reality to Reconstruct Sri Lankan Cultural Heritage in Prime
+State: HeladivaAR
+Thesis · October 2020
+DOI: 10.13140/RG.2.2.11936.81926
+
+CITATIONS
+
+READS
+
+2
+
+457
+
+Some of the authors of this publication are also working on these related projects:
+
+Defining Urban Sprawl in the Sri Lankan Context: With Special Reference to the Colombo Metropolitan Region View project
+
+All content following this page was uploaded by Niru Raj on 05 October 2020.
+The user has requested enhancement of the downloaded file.
+
+Symposium on Statistical & Computational Modelling with Applications - 2016
+
+Augmented Reality to Reconstruct
+Sri Lankan Cultural Heritage in Prime State:
+HeladivaAR
+G.D.D.M. Galmangoda, P.Y.S. Gajanayake, K.P. Indika, N.R. Rajapaksha and Y. Jayaweera
+Faculty of Computing
+Sri Lanka Institute of Information Technology
+Sri Lanka
+
+of tourists visit these places and the number
+increases rapidly.
+
+Abstract— Sri Lanka is one of the few countries in
+the world with a great history and cultural heritage
+which has been a spotlight in the tourism industry.
+These places attract many of the local as well as
+foreign visitors because of their historical value.
+They try to create an imaginary picture of how it
+could have been all those years back which could be
+a false image or a much less correct image than the
+actual image. Which is why this project is unique in
+the way it represents the ancient historical sites of
+Sri Lanka as they were at the time where they were
+in full structure. “HeladivaAR” is mobile phone
+application offers personalized augmented reality
+tours of archaeological sites. It uses image
+processing, 3D modeling, tracker identification
+using Android platform, historical books and views
+from historians and augmented reality techniques to
+enhance information presentation, reconstruct
+ruined sites, as it was on top of the existing ruins. By
+means of Augmented Reality, the real scene is
+enhanced by multimedia personalized interactive
+information to increase the experience of the user,
+who can retrieve this information by a user-friendly
+interface through their mobile phone. In education,
+virtual heritage becomes a platform for learning,
+motivating and understanding of certain events and
+historical elements for the students and researchers.
+This application provides a better understanding of
+Sri Lankan cultural heritage and lets users gain
+interactive knowledge on archeological facts of
+ancient kingdoms.
+
+Unfortunately, the remaining heritage in Sri
+Lanka is mostly in ruins. The constructions and
+other artifacts were destroyed, decayed or buried
+throughout a long period of time. Even though
+these places are not in their prime state the ruins
+are of great value and people want to learn and
+discover about these ruins about how they were in
+their glorious days.
+“HeladivaAR” is an application that has the
+ability to show a reconstructed 3D model of these
+ancient ruins as they were in their prime state. With
+the use of Augmented Reality (AR) technology,
+this application uses the mobile phone camera to
+identify and track the remaining ruins of the place
+and reconstructs the 3D model on it and displays
+on the application interface.
+The rest of the paper is organized as follows.
+Section II includes an analysis of the existing
+applications which is similar to this project.
+Section III includes the methodology followed by
+the research team in carrying out this research.
+Section IV contains the results of the application
+after testing it on site. Section V contains achieved
+goals, limitations discovered when testing and
+future works of “HeladivaAR”.
+II.
+
+Keywords; Augmented Reality, Image Processing, 3D
+modelling, Sri Lankan heritage
+
+I.
+
+BACKGROUND
+
+This section presents the major work in
+literature that has been published which are related
+to Augmented Reality and 3D reconstruction of
+archeological sites.
+
+INTRODUCTION
+
+A. Archeoguide: An Augmented Reality Guide
+for Archaeological Sites
+Archeoguide uses outdoor tracking, mobile
+computing, 3D visualization, and augmented
+reality techniques to enhance information
+presentation, reconstruct ruined sites, and simulate
+ancient life [1].
+
+Sri Lanka is having a rich heritage with
+artifacts, ancient palaces, kingdoms, statues,
+pagodas etc. This heritage has been protected for
+over hundreds of years with the careful
+observation and preservation of various
+archeologists as well as Department of Archeology
+in Sri Lanka. This precious heritage is one of the
+many reasons for the gain of attention to the
+country from the world. An overwhelming amount
+
+40
+
+Symposium on Statistical & Computational Modelling with Applications - 2016
+
+experience archeological sites as they were at the
+beginning.
+
+B. Mixing virtual and real scenes in the site of
+ancient Pompeii
+In this project, video-see-through HMD is used
+to capture the real scene. After that, this scene was
+blended by precise real-time registration and 3D
+modeling of realistic complete simulation of
+virtual humans and plants in a real-time
+storytelling scenario based on the environment [2].
+
+Previous researches based on augmented
+reality and archaeology were developed to use in
+laptops and they were not user friendly. Some of
+the researches were prototypes and never built
+because of the cost. “HeladivaAR” has been
+developed for Android platform and even a nontechnical person can easily get used of the
+application. Earlier researchers were developed
+using advanced mathematical algorithms such as
+Furrier and Laplace transformations. Because of
+the complexity of the mathematical algorithms
+most off the applications could not give the real
+time preview of the scene also the output was in
+low quality. In previous developments, users have
+to ware separate devices such as HMDs’ (Head
+Mounted Displays) to get the experience of the
+scene. The initial cost of development of the
+previous systems was very high because of the
+external devices used to create the link between the
+server and the user. In “HeladivaAR” users do not
+want to wear a separate device. The user has to
+only use their mobile phone. Also, the
+development cost of the system is low.
+Polonnaruva Royal Palace was used as a stepping
+stone in order to expand this application
+throughout Sri Lanka also providing additional
+information has not been addressed in the similar
+researches, but included and implemented in this
+application. The comparison is further elaborated
+in Table I.
+
+C. Meta-Museum: A Supportive AugmentedReality Environment for Knowledge Sharing
+The Meta-Museum is a newly coined concept
+which seeks to enhance people's knowledge
+exploration experience in museums. The MetaMuseum blends virtual reality and artificial
+intelligence technologies with conventional
+museums to maximize the utilization of a
+museum's archives and knowledge base and to
+provide an interactive, exciting and educational
+experience for visitors [3].
+D. The House of Olbrich — An Augmented
+Reality tour through architectural history
+In this research, they present an iPhone
+Augmented Reality (AR) app that visualizes the
+compelling history of Darmstadt's unique
+Jugendstil (Art Nouveau) quarter with video-see
+through Augmented Reality [4].
+E. Virtual and augmented reality for cultural
+computing and heritage: a case study of
+virtual exploration of underwater
+archaeological sites
+The paper presents different issues dealing
+with both the preservation of cultural heritage
+using virtual reality (VR) and augmented reality
+(AR) technologies in a cultural context [5].
+
+III.
+
+METHODOLOGY
+
+The development of “HeladivaAR” followed
+the Prototype Methodology which allowed the
+research team to create portions of the solution to
+demonstrate functionality and make needed
+refinements before developing the final solution.
+This helped in ensuring the final application was
+consistent with expected outcomes.
+
+F. A review on augmented reality for virtual
+heritage system
+This paper will present an overview of
+augmented reality in Virtual Heritage system and
+also consists of the explanation of techniques to
+reconstruct the historical sites [6].
+
+A. Planning
+As the initial step, the research team conducted
+a feasibility study on locations to be selected as the
+most suitable place to apply the research solution.
+In this study, constraints such as the scale of the
+location, weather conditions, availability of the
+building structures, etc. were considered. After this
+study few places such as Thiwanka Pilimaya
+(Polonnaruwa), Yapahuwa Kingdom, Watadagaya
+(Polonnaruwa),
+Royal Palace of King
+Parakramabahu (Polonnaruwa). Out of these
+Royal Palace of King Parakramabahu was selected
+as an ideal place to conduct this research.
+
+G. A Framework for Mixed Reality Application
+Development: A Case Study on Yapahuwa
+Archaeological Site
+This paper presents a framework for
+augmented reality and virtual reality mixed
+application. The researchers have reconstructed
+the Yapahuwa Kingdom and created a framework
+to display it through AR and VR using gyroscope
+controller, GPS controller, Google Cardboard
+Visualizer, normal visualizer and custom modules
+for multiplatform support. [7]
+
+B. Analysis
+After selecting the suitable place as the Royal
+Palace of King Parakramabahu, the research team
+carried out a thorough analysis of this place by
+collecting data from various sources. The initial
+step was gathering information from history books
+
+H. Comparison
+With the increase of computational speed and
+advancement of specific computer technology,
+virtual and augmented reality mobile applications
+become feasible in multidisciplinary areas.
+“HeladivaAR” application lets the users
+
+41
+
+Symposium on Statistical & Computational Modelling with Applications - 2016
+
+such as Mahavamsa. With this, the research team
+was able to get a brief idea of the place and the
+background and history of the place. This analysis
+included gathering information from travel guides
+that are presented to tourists and other visitors as
+well as official documents from Department of
+TABLE I.
+
+Projects
+Archeoguide:
+An Augmented
+Reality Guide
+for
+Archaeological
+Sites
+Mixing virtual
+and real scenes
+in the site of
+ancient Pompeii
+Meta-Museum:
+A Supportive
+AugmentedReality
+Environment
+for Knowledge
+Sharing
+The House of
+Olbrich — An
+Augmented
+Reality tour
+through
+architectural
+history
+Virtual and
+augmented
+reality for
+cultural
+computing and
+heritage: a case
+study of virtual
+exploration of
+underwater
+archaeological
+sites
+A review on
+augmented
+reality for
+virtual heritage
+system
+A Framework
+for Mixed
+Reality
+Application
+Development:
+A Case Study
+on Yapahuwa
+Archaeological
+Site
+Heladiva :
+Augmented
+Reality
+application to
+view Sri
+Lankan cultural
+heritage in
+prime state
+
+Archeology of Sri Lanka. The next step was
+visiting the actual place. After visiting the place
+full photographic documentation was conducted.
+Also, the Polonnaruwa museum was also included
+in this analysis and most important information
+was gathered as a result of this analysis.
+C. Design
+In this stage the research team prepared what
+should be the basic functionalities of the
+application and the interfaces were been sketched
+in order to use as a reference when implementing
+the actual interfaces. HeladivaAR android
+application was designed to give a better user
+experience
+when
+providing
+the
+given
+functionalities. These interfaces include – splash
+screen (Figure 1), main interface, Augmented
+Reality interface (Figure 2), 3D interface (Figure
+3), information interface (Figure 4), settings
+interface (Figure 5) and the side button panel
+(Figure 6).
+
+COMPARISON TABLE
+
+Smart
+phone
+Application
+
+Display
+Additional
+Information
+
+Interactive
+3D
+Models
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+V
+
+X
+
+V
+
+V
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+V
+
+X
+
+V
+
+V
+
+V
+
+V
+
+Figure 1. Splash Screen
+
+Figure 2. Augmented
+Reality Interface’
+
+Figure 3. Information
+Interface
+
+Figure 4. 3D Interface
+
+Figure 5. Settings
+
+Figure 6. Sidebar Buttons
+
+D. Implementation
+After the previous stages have been completed
+all the resources to implement the system has been
+set. Each requirement has been addressed and
+implemented as components.
+
+42
+
+Symposium on Statistical & Computational Modelling with Applications - 2016
+
+were implemented worked as expected. Below are
+the screenshots of the working functionalities of
+the application.
+
+Figure 8. Main Interface
+
+Figure 7. 3D Model (Polonnaruva Royal Palace)
+
+The 3D model was constructed using Autodesk
+Maya by referencing the physical model displayed
+at the Polonnaruwa Museum as well as by
+referencing history books and drone-captured
+image data of the remains of the Royal Palace of
+King Parkramabahu. The first version of the model
+only contained basic material and very low detail.
+The second version had advanced material but
+lacked a few details. The third and final version of
+the 3D model has advanced material and high level
+of detail and an accurate representation of the
+Royal Palace in the prime state.
+
+Figure 10. 3D Interface
+
+V.
+
+
+
+3D view feature
+
+
+
+Information displays feature
+
+CONCLUSION
+
+“HeladivaAR” application was tested on the
+actual site and the main goal was achieved. The
+application was run on an Android mobile phone
+and once the AR interface was loaded the 3D
+model constructed by the research team was
+displayed with the camera footage. The
+information interface displayed information about
+the Royal Palace and contained a video tour of the
+ruins. The 3D interface was touch gesture
+compatible and we could use zoom the 3D model
+with two fingers and could rotate the 3D model.
+
+E. Testing
+As the final stage of the development, the
+research team visited Polonnaruwa Royal Palace
+to conduct a testing procedure for the implemented
+application. The functionalities that were tested are
+as follows:
+Augmented Reality feature
+
+Figure 11. Information
+Interface
+
+The goal of this research was to implement an
+Android application that allows users to use their
+mobile phone cameras and visualize how the
+ruined ancient heritage in Sri Lanka used to be in
+their glory days. As the stepping stone,
+Polonnaruwa Royal Palace was selected to be
+digitally reconstructed. Additionally, highly
+accurate information about the selected place
+would be displayed in the application.
+
+The mobile interfaces were created with the
+use of Unity3D. The 3D model was integrated into
+the 3D interface as proposed. The augmented
+reality interface and the tracking procedure was
+created with the use of Qualcomm Vuforia
+architecture. The images of the existing ruins of
+the Royal Palace were used as 3D image trackers
+and using Vuforia it was made trackable. Then the
+3D model was placed within the field of view of
+the the augmented reality camera inside the
+interface. All the relevant functions were written in
+C# and embedded into Unity gameobjects.
+
+
+
+Figure 9. AR Interface
+
+In the Augmented Reality interface, the model
+was slightly glitched due to the environment
+disruptions such as people walking, dust and
+overexposure because of sunlight. Due to these
+reasons, the application could not place the 3D
+model over the tracker at some points. But this was
+
+This was majorly white box testing and the
+research team thoroughly analyzed these functions
+and their performance.
+In the black box testing, the application was
+run on an Android mobile phone and shown to the
+visitors at Polonnaruwa Royal Palace. The visitors
+were satisfied with the outcome because it was a
+new experience for them and they commented that
+they always wanted to know how these ancient
+sites were before they became ruins.
+IV.
+
+RESULTS
+
+The initial results of the application were the
+interfaces as shown below. The functionalities that
+
+Figure 12. Viewing Guide
+
+43
+
+Symposium on Statistical & Computational Modelling with Applications - 2016
+
+an expected outcome and it was almost
+unnoticeable. In the Royal Palace, the main
+viewpoint was the front side of the ruins. The sides
+and the back were heavily covered with trees but
+people could go within the ruins. Therefore we
+identified optimum viewing positions for the
+“HeladivaAR” application to achieve the most
+accurate result. Figure 12 displays the viewing
+guide.
+
+REFERENCES
+[1]
+
+[2]
+
+[3]
+
+The camera of the mobile phone is the main
+component to be considered in the AR feature.
+Higher the quality of the camera, higher the
+accuracy of the tracking procedure.
+
+[4]
+
+In the 3D interface, the automatic rotation of
+the 3D model was added and it could not be
+stopped even when zooming. This was
+inconvenient when thoroughly trying to examine
+the 3D model.
+
+[5]
+
+There are several limitations of this software.
+HeladivaAR is an android based augmented reality
+application then it can’t be used other operating
+systems such as Windows, IOS based operating
+systems. Developed application is not the desktop
+application and preferred rendered quality is based
+on the mobile device. This application is optimized
+for Android 3.0 or above. Below versions would
+experience rendering problems when running.
+This is an offline application and additionally,
+databases and everything should be downloaded
+and taking more data to compare other applications
+which are except rich applications. To get the view
+of the model every angle is not giving the correct
+100% accurate output is one of the limitations of
+this application. The current accuracy levels of the
+HeladivaAR is as follows.
+
+[6]
+
+[7]
+
+3D Model Accuracy – 65% (in relation to
+historical books and existing predicted models)
+Augmented Reality Accuracy – 40%
+(according to tests done in sunny and low light
+weather + tests done within 180 degree curve in the
+front end of the ruins + tests done using Samsung
+Galaxy S5, HTC One M8 and Sony Xperia Z2
+cameras)
+As the main objectives of the system have been
+achieved, “HeladivaAR” can be improved in many
+ways. Virtual Reality (VR) tour of the Royal
+Palace has already been implemented and it will be
+part of the main application in future. Users can
+wear a VR headset and take a tour inside the 3D
+constructed Royal Palace for the maximum user
+experience. The AR feature will be implemented
+to other ancient cultural sites in Sri Lanka. The AR
+feature will be available in any viewable direction
+in the future implementations to reduce the
+viewing limitations of the current application.
+Research on ruins will be conducted
+accompanying more sources to get the best
+possible 3D reconstruction.
+
+44
+
+View publication stats
+
+Gleue et al, “Design and Implementation of a mobile
+device for outdoor augmented reality in the archeoguide
+project”, in Proc. 2001 Conf. Virtual reality, archeology,
+and cultural heritage, ACM, 2001, pp.161-168.
+G.Papagiannakis et al, “LIFEPLUS: Revival of life in
+ancient Pompeii. In: Virtual Systems and Multimedia”,
+in Proc. VSMM 2002, 2002.
+Mase et al, “Meta-museum: a supportive augmentedreality environment for knowledge sharing”, in ATR
+workshop on social agents: humans and machines, 1996,
+pp: 107-110.
+Keli et al, “The House of Olbrich-An augmented reality
+tour through architectural history”, in Mixed and
+Augmented Reality - Arts, Media, and Humanities
+(ISMAR-AMH), 2011 IEEE International Symposium
+On, 2011 © IEEE. doi: 10.1109/ISMARAMH.2011.6093651.
+Haydar et al,”Virtual and augmented reality for cultural
+computing and heritage: a case study of virtual
+exploration of underwater archaeological sites
+(preprint)”, in Virtual Reality (2011)15: 311-327, 2010
+© Springer-Verlag London Limited 2010. doi:
+10.1007/s10055-010-0176-4.
+N.Mourkoussis et al, “Virtual and Augmented Reality
+Applied to Educational and Cultural Heritage Domains.
+Business information Systems”, in Proc. of Business
+Applications of Virtual Reality, Workshop, United
+Kingdom, 2002.
+A. Jayawardena and I. Perera, "A Framework for Mixed
+Reality Application Development: A Case Study on
+Yapahuwa Archaeological Site", in International
+Conference on Advances in ICT for Emerging Regions,
+Negombo, Sri Lanka, 2016.
+
+

@@ -1,0 +1,2431 @@
+           electronics
+Article
+Indoor Localization System Based on Bluetooth Low
+Energy for Museum Applications
+Romeo Giuliano 1, * , Gian Carlo Cardarilli 2 , Carlo Cesarini 1 , Luca Di Nunzio 2, *,
+Francesca Fallucchi 1 , Rocco Fazzolari 2 , Franco Mazzenga 3 , Marco Re 2 and
+Alessandro Vizzarri 3
+ 1    Department of Innovation & Information Engineering, Guglielmo Marconi University, via Plinio 44,
+      00193 Rome, Italy; carlo.cesarini@gmail.com (C.C.); f.fallucchi@unimarconi.it (F.F.)
+ 2    Department of Electronics Engineering, University of Rome “Tor Vergata”, Via del Politecnico 1, 00133 Rome,
+      Italy; g.cardarilli@uniroma2.it (G.C.C.); rocco.fazzolari@uniroma2.it (R.F.); marco.re@uniroma2.it (M.R.)
+ 3    Department of Enterprise Engineering “Mario Lucertini”, University of Rome “Tor Vergata”, Via del
+      Politecnico 1, 00133 Rome, Italy; mazzenga@ing.uniroma2.it (F.M.); alessandro.vizzarri@uniroma2.it (A.V.)
+ *    Correspondence: r.giuliano@unimarconi.it (R.G.); di.nunzio@ing.uniroma2.it (L.D.N.)
+                                                                                                        
+ Received: 22 May 2020; Accepted: 23 June 2020; Published: 26 June 2020                                 
+
+ Abstract: In the last few years, indoor localization has attracted researchers and commercial developers.
+ Indeed, the availability of systems, techniques and algorithms for localization allows the improvement
+ of existing communication applications and services by adding position information. Some examples
+ can be found in the managing of people and/or robots for internal logistics in very large warehouses
+ (e.g., Amazon warehouses, etc.). In this paper, we study and develop a system allowing the accurate
+ indoor localization of people visiting a museum or any other cultural institution. We assume visitors
+ are equipped with a Bluetooth Low Energy (BLE) device (commonly found in modern smartphones
+ or in a small chipset), periodically transmitting packets, which are received by geolocalized BLE
+ receivers inside the museum area. Collected packets are provided to the locator server to estimate the
+ positions of the visitors inside the museum. The position estimation is based on a feed-forward neural
+ network trained by a measurement campaign in the considered environment and on a non-linear
+ least square algorithm. We also provide a strategy for deploying the BLE receivers in a given area.
+ The performance results obtained from measurements show an achievable position estimate accuracy
+ below 1 m.
+
+ Keywords: bluetooth low energy; indoor localization system; received signal strength indicator;
+ neural network
+
+
+
+1. Introduction
+     Accurate estimation and tracking of the positions of people, objects or animals enables the
+provisioning of several advanced services such as the automatic execution of task(s) triggered by
+events consisting for example of a person passing a specific position in the area, commercial or
+recreational applications requiring location information inside a specific area, etc. [1]. In the last
+few years, the possibility of realizing advanced communication applications and services supported
+by position information have favored and encouraged the development of systems for the indoor
+localization of people and objects. In parallel, the evolution of these systems has been constantly
+supported by the technological advancements of internet of things (IoT) [2] technologies specifically
+conceived for low-cost short-range radio transmission such as Bluetooth [3] and its variants and radio
+frequency identification (RFID) technologies [4].
+     The design of localization systems based on short range radio technologies is not a trivial task.
+In fact, radio signal propagation inside buildings is influenced by several factors, such as construction
+
+
+Electronics 2020, 9, 1055; doi:10.3390/electronics9061055                        www.mdpi.com/journal/electronics
+Electronics 2020, 9, 1055                                                                            2 of 20
+
+
+
+materials, objects in the area, the presence of people, etc. All these factors can influence the quality of
+the received signal, thus rendering indoor localization very complex and expensive when it is directly
+based on the measurements of physical parameters of the received signals from the person/object to be
+localized. Unlike for outdoor navigation, which is mainly based on global navigation satellite system
+(GNSS) technologies (e.g., the Global Positioning System, GPS), to date indoor positioning systems have
+not yet been defined or standardized. The lack of standardization is mainly due to the very different
+characteristics of the areas to be served by the indoor localization system. As a consequence, this
+localization system is often specifically designed for the area, making use of heterogeneous, diversified,
+and very often customized position calculation techniques and processes.
+      In the last years, the use of machine learning (ML) algorithms has been proposed in several
+applications such as health [5,6], communication [7,8], energy [9,10], etc. This has been possible thanks
+to two main reasons: (i) the availability of big data introduced by the internet, and (ii) the increasing
+computational capability of circuits and microprocessors. ML also plays an important role in IoT
+systems. Nowadays, in many applications, the data acquired by IoT nodes are transmitted over the
+internet and processed on remote servers provided by ML algorithms. Thus, these servers can analyze
+and interpret the data and provide predictions of the system behavior.
+      Unfortunately, this strategy requires the transmission of all the data collected by the sensors.
+This aspect is in many cases a big limitation. For example, consider all those cases in which the
+transmission of this data requires non-negligible data rates. In these cases, in order to ensure the
+correct transmission of all data, it is not possible to use low power wireless technologies, thus limiting
+the battery life of the sensor nodes. Moreover, having ML in IoT sensors allows the reduction of the
+computational load of the remote server, since part of the computation is performed locally.
+      In the future, thanks to a mix of new technologies and design methodologies that allow the
+processing of data more and more efficiently both in terms of computational power and power
+consumption [11–13], it is possible to imagine that ML algorithms will be moved closer and closer
+towards the nodes’ sensors in order to process data locally and transmit only a small amount of
+information to the internet with consequent energy savings and longer battery life.
+      In this paper we focus on the localization problem for a typical museum environment.
+The availability of position information from the visitors in the museum can be used by the museum
+operator to advance communication services aiming at improving the overall “cultural experience”.
+In particular, position information can be helpful for the museum operator to design art exhibitions,
+to define personalized itineraries in accordance with visitor preferences, permanent, or temporary
+installations, and to take care of the collections. All these activities can be based on the analysis of
+visitor flows, for example, by observing the number of visitors stopping in front of a given artwork or
+the amount of time spent in some areas inside the museum. In addition, the estimates of the positions
+of visitors can be exploited to facilitate/improve their interaction with the museum artworks in real
+time, for example, by means of augmented reality providing information on the artwork they are
+observing at a given moment. In the latter application case, each visitor is equipped with a smart device
+(e.g., his/her smartphone or tablet) including a device to communicate with the indoor localization
+system and able to interact with museum indoor applications providing, for example, additional
+information on the observed/enjoyed masterpiece/artwork [14]. The localization system presented in
+this paper can be deployed in environments other than the museum, such as shopping malls, large
+offices, indoor parking, and train stations or airports.
+      The considered system exploits Bluetooth Low Energy (BLE) technology to collect data transmitted
+by the device owned by each visitor. The main advantages of BLE are large chipset availability on
+the market and on modern smartphones/tablets, ease of programming, and low energy consumption.
+The resulting BLE-based localization system is low-cost when compared to other indoor positioning
+techniques such as those based on (non-standard) RFID devices. In the considered localization system,
+BLE signals emitted by the visitor’s transmitters are received by the BLE devices installed in the
+museum area. These devices can measure the received signal strength indicator (RSSI) and the
+Electronics 2020, 9, 1055                                                                            3 of 20
+
+
+
+signal-to-noise ratio (SNR) of each received signal and can extract the identity of the BLE transmitter by
+retrieving the associated message. The measured RSSI and SNR and the corresponding BLE message
+are then passed to a central server in the museum. The locator entity in the server processes the
+received data and messages to extract the position of the visitor in the museum. The localization
+algorithm of each visitor is based on the minimization of an objective function including the pathloss
+measurements obtained from the associated RSSIs and SNRs. The optimal solution to the minimization
+problem corresponding to the estimated position of the visitor is obtained by applying a non-linear
+least square (NLS) algorithm. At the end of this paper, we also analyze the problem of the deployment
+of the BLE receiver in a given area. Results show that a BLE transmitter can be localized with an
+accuracy lower than 1 m (i.e., the Euclidean distance between the true and estimated position is lower
+than 1 m) when the BLE receiver is properly deployed in the area.
+      Due to difficulties in estimating the wireless channel by modeling its behavior in indoor
+environment through classical power law trends, we performed a measurement campaign in a
+typical museum space, used to train a neural network. This allowed us to avoid the fingerprinting
+of the entire area, which is time-consuming and loses accuracy in the next phase when people are
+present in the environment. Moreover, it allowed us to take into account the physical characteristics of
+the environment (e.g., materials, reflection, diffraction), which is usually difficult to model. After the
+neural network training, the BLE receiver can better estimate the distances based on the RSSI and SNR
+measurements collected during visitor movement around the artworks.
+      Here, we report the main contributions of this paper to the topic of localization in indoor
+environments:
+
+•     The preparation phase (performed offline) is based on a non-invasive measurement campaign in
+      the considered space where people are going to be localized. The offline phase in most papers can
+      be long and costly (see below) [15,16]. In our case it consisted of collecting RSSI values between
+      the receiver and the transmitter in a few positions in the area, with the aim of gaining knowledge
+      of the propagation environment and the involved mechanisms (e.g., scattering and reflections);
+•     Unlike some works in the literature (such as [17–20]; see Related Works section) where the distance
+      estimation was expressed by evaluation of the radio frequency signal attenuation and its related
+      pathloss model (i.e., model-based positioning), we introduced a neural network trained by the
+      measurements collected in the preparation phase. This allowed us to overcome the problem of
+      estimating the distance based on propagation distance and radio signal strength, which may give
+      very complex results in indoor environments;
+•     We analyzed different deployment strategies in the considered area by evaluating the positioning
+      errors in terms of the deployed scenarios. Differently from [21], in this analysis we gained an
+      indication of how many receivers should be deployed, and where;
+•     Finally, unlike other methods proposed in the literature such as fingerprinting (such as in [22,23]),
+      we performed an analysis where possible human obstruction could occur during the normal
+      phase. This is important since other studies have failed in position estimation because their RSSI
+      collection was done without any human presence, which means results are different when people
+      obstruct the RF signal.
+
+     The paper is organized as follows. In Section 2, related works on this topic are discussed.
+In Section 3, the principal scheme of the system architecture is detailed. In Section 4, the testbed for the
+measurement campaign is described and the neural network adopted for the distance estimation is
+detailed. In Section 5, the localization procedure and the corresponding localization algorithm are
+explained. In Section 6, the performance results of the considered localization system are reported in
+terms of the achievable accuracy with the density of BLE receivers in the area installed by the museum
+operator. Finally, conclusions are drawn.
+Electronics 2020, 9, 1055                                                                            4 of 20
+
+
+
+2. Related Works
+     Indoor positioning is a well-studied topic in the current literature [1,24]. The proposed localization
+systems have been based on different strategies/algorithms for deriving positioning information.
+Some of them have presented limitations in terms of deployed infrastructure, precise environmental
+characterization, and the costs of the equipment. As an example, positioning methods based on a
+pathloss fingerprint dataset of the area as in [22] require lengthy preparation for the collection of
+fingerprints. This can be difficult to achieve especially when the area under consideration is very large
+such as museum spaces, making the proposed system independent from the size of the environment.
+Moreover, the relationship between the RSSI and the estimated channel model is difficult to obtain due
+to multipath, reflections and scattering mechanisms occurring in the area.
+     Other systems have used the direction of the signal (angle of arrival, AoA) or time of arrival
+of the signal (time of arrival, ToA) [25] for the localization. For this purpose, the use of antenna
+arrays is mandatory, especially for AoA measurements. Furthermore, ToA adoption requires time
+synchronization between the transmitting and receiving devices. This leads to an increase in the
+complexity and costs of the localization system. In addition, non-line of sight (NLoS) propagation
+conditions lead to a worsening of accuracy for the position estimate. Other positioning systems have
+been based on recursive optimization procedures for the position estimate [26] leading to a delay in
+the calculation.
+     BLE-based localization systems were illustrated in [27]. Unlike the system presented in this paper,
+they did not consider in detail the important aspect concerning the transfer of information from the
+BLE receivers to the centralized server. In the system presented in the present paper the asynchronous
+protocol Message Queue Telemetry Transport (MQTT) [28] was used. It allows message distribution to
+be performed very quickly, while minimizing traffic over the network. This results in more efficient
+communication, reduced response times and allows improvement of the tracking feature. Furthermore,
+the proposed system allows the estimation of the distance between the receiver and transmitter based
+on the neural network and the direct application of the localization algorithm, making the whole
+process simpler and faster. Finally, the adoption of BLE technology allows the localization or tracking
+of not only high performing devices such as smartphones but also low-cost IoT devices, maintaining
+reliability and accuracy without requiring particular hardware components or specific and costly
+synchronization functionalities.
+     In [23], the authors proposed using recurrent neural networks for wireless fidelity (Wi-Fi)
+fingerprinting based on RSSI for indoor localization. Their effort was limited to corridors and the
+neural network estimation was not accurate in the presence of other people, due to the fact that
+fingerprinting is collected without people. To reduce the time-consuming procedure of performing
+fingerprinting in an area, the authors in [29] proposed training a long short-term memory recurrent
+neural network but limiting the algorithm to the considered trajectories of people. In [30] the authors
+proposed a technique to detect the presence of a human body blocking the RSSI reception in a dynamic
+environment. The authors applied an artificial neural network for the compensation of RSSI values. In
+contrast, in [30], we considered not just one single person obstructing the RSSI, but an entire group
+of visitors. In [17] the authors presented a localization method based on the classical power-law
+behavior of RSSI. This paper did not consider the effect of obstacles in the relationship between RSSI
+and distance. In addition, this method was realized for an outdoor environment; [18] is affected by the
+same limitation. The method proposed in the paper did not estimate the real channel function of the
+environment and it was tailored to a specific environment. The parameters used for distance estimation
+were correlated with a specific room and are not easy to generalize. The method proposed in [15]
+presented two limitations: the training procedure is very long, and it is not clear how the localization
+method would perform in the presence of other people in the same room. The method proposed in [31]
+needed the localized person to be equipped with a smartphone since their algorithm exploited the
+fusion of sensors embedded in the mobile device. This limits the applicability of the localization due to
+vendor-dependent sensors. The work proposed in [32] seems to be very interesting but the authors did
+Electronics 2020, 9, 1055                                                                                                5 of 20
+Electronics 2020, 9, 1055                                                                                                5 of 20
+
+not provideThe
+presented).    information     in terms
+                    localization          of accuracy
+                                   technique              (thein
+                                                  presented      error      meters was
+                                                                   [21],insimilarly            presented).
+                                                                                          not required
+                                                                                      to [31],            theThe
+                                                                                                              use localization
+                                                                                                                    of Android
+technique    presented     in  [21], similarly     to [31],   required    the  use   of Android
+smartphones or tablets. Another limitation of this work is that the authors did not analyze        smartphones       or tablets.
+                                                                                                                             any
+Another limitation
+deployment      strategy    this
+                        offor  the  BLEisaccess
+                                  work     that the     authors
+                                                    points.        didthe
+                                                              In [19]        analyze
+                                                                         notauthors      any deployment
+                                                                                       presented              strategy
+                                                                                                   a localization        for the
+                                                                                                                     procedure
+BLE access
+based   on thepoints.              theauthors
+                        In [19]ofthe
+                 estimation             channel   presented
+                                                     model by   a localization
+                                                                   classical power procedure    baseda on
+                                                                                        laws. Such          the estimation
+                                                                                                        technique     provides of
+the channel    model   by   classical power     laws.   Such    a technique    provides    accuracy
+accuracy in the order of 5–20 m for technologies such as Wi-Fi at 2.4 GHz and at 5 GHz, and BLE at    in the  order   of 5–20  m
+for technologies
+2.4 GHz. This level  suchof    Wi-Fi at 2.4
+                           asaccuracy    and  GHzthatand
+                                                       in at  5 GHz,
+                                                           [33]   are not                  with This
+                                                                             BLE at 2.4 GHz.
+                                                                       andcompatible                   level ofscenario.
+                                                                                                  a museum       accuracy Theand
+that in [33]  are  not compatible     with   a museum        scenario.   The   approach    proposed
+approach proposed in [16] implies a very complex and slow training phase. It requires 5000 samples     in  [16] implies   a very
+complex
+every      minslow
+       4.5 and    with training    phase.
+                        the necessity    of Itmany
+                                               requires     5000 samples
+                                                      receiving               everyIn
+                                                                    BLE devices.          min with
+                                                                                      4.5addition,    the anecessity
+                                                                                                    such     system hasof many
+                                                                                                                            been
+receiving
+tested  on BLE    devices.
+            a narrow          In addition,
+                         corridor             such a system
+                                    characterized      by reduced has been   tested
+                                                                       position       on a narrow
+                                                                                    uncertainty.   Incorridor
+                                                                                                      addition,  characterized
+                                                                                                                   the authors
+by reduced
+did           position
+     not analyze          uncertainty.
+                     performance         theaddition,
+                                      in In    presencethe   of authors
+                                                                more than  didone
+                                                                               not analyze
+                                                                                     person in performance     in the presence
+                                                                                                 the environment.       Finally,
+     workthan
+of more
+the              one person
+             proposed            in the
+                           in [20]   wasenvironment.
+                                           based on theFinally,  powerthe    work
+                                                                           law   andproposed
+                                                                                       the authorsin [20]
+                                                                                                       didwasnot based
+                                                                                                                  analyzeon the
+power   law  and    the authors    did  not  analyze
+performance in the presence of human obstacles.          the  performance       in the  presence   of human     obstacles.
+
+   System Architecture
+3. System
+3.        Architecture
+    Figure 11 reports
+    Figure    reports the environment of
+                      the environment    the proposed
+                                      of the proposed BLE-based localization system
+                                                                             system and
+                                                      BLE-based localization            its possible
+                                                                                    and its possible
+deployment   in a museum   [34].
+deployment in a museum [34].
+
+
+
+
+                       Figure 1.
+                       Figure    Typical museum
+                              1. Typical museum environment
+                                                environment with
+                                                            with the localization of
+                                                                 the localization    devices.
+                                                                                  of devices.
+
+                                                               components is
+      The architecture of the proposed system highlighting its components    depicted in
+                                                                          is depicted    Figure 2.
+                                                                                      in Figure 2.
+Electronics 2020, 9, 1055                                                                                                                              6 of 20
+Electronics2020,
+Electronics        9,1055
+             2020,9,  1055                                                                                                                               of20
+                                                                                                                                                       66of 20
+
+
+
+
+                                 Figure 2.
+                                 Figure    Principal scheme
+                                        2.Principal   scheme of
+                                                             of the
+                                                                 the considered  localization system.
+                                                                     considered localization   system.
+                                 Figure 2. Principal scheme  of the  considered localization  system.
+
+        We assume
+       We    assume that    that  the object/person          to be localized and              (possibly)       tracked       is equipped
+                                                                                                                            is                   with    aa BLE
+       We    assume         that thethe object/person
+                                          object/persontotobebelocalized localized      andand (possibly)
+                                                                                                   (possibly)   tracked
+                                                                                                                    tracked      equipped
+                                                                                                                                  is equipped     withwith  BLE a
+device.
+ device.    This
+            This      transmits
+                       transmits       BLE
+                                        BLE    frames
+                                                frames      at
+                                                             at  regular
+                                                                 regular       time
+                                                                                time     intervals.
+                                                                                          intervals.       AA  number
+                                                                                                                number        of
+                                                                                                                               of   BLE
+                                                                                                                                    BLE      receivers
+                                                                                                                                              receivers      are
+                                                                                                                                                              are
+BLE device. This transmits BLE frames at regular time intervals. A number of BLE receivers are
+ (intelligently) installed
+(intelligently)        installed by        the museum
+                                      by the                   authority in
+                                                museum authority                in the
+                                                                                     the visiting
+                                                                                           visiting areaarea and       they measure
+                                                                                                                and they       measure the           RSSI and
+                                                                                                                                               the RSSI      and
+(intelligently)       installed       by  the  museum         authority        in   the   visiting     area    and    they    measure         the   RSSI    and
+the
+ the SNR
+      SNR    of
+             of   the
+                   the   received
+                         received      signals
+                                        signals   and
+                                                   and    extract
+                                                           extract  the
+                                                                     the    associated
+                                                                            associated         BLE
+                                                                                               BLE    messages.
+                                                                                                       messages.       Depending
+                                                                                                                        Depending         on
+                                                                                                                                           on    the
+                                                                                                                                                  the specific
+                                                                                                                                                      specific
+the SNR of the received signals and extract the associated BLE messages. Depending on the specific
+ position of
+position          the
+                   the BLE
+              of the      BLE    receiver,
+                                 receiver, the
+                          BLE receiver,        the    RSSI
+                                                the RSSI      and
+                                                       RSSI and      the
+                                                               and the       identity
+                                                                      the identity
+                                                                              identity (ID) (ID)
+                                                                                             (ID) ofof   the
+                                                                                                     of the    visitor
+                                                                                                          the visitor
+                                                                                                                visitor inin   the
+                                                                                                                                the BLE
+                                                                                                                           in the    BLE       message
+                                                                                                                                                message are
+                                                                                                                                      BLE message            are
+                                                                                                                                                              are
+position     of
+transmitted
+ transmitted to    to   a centralized
+                    to aa centralized
+                           centralizedserver server
+                                             serverusingusing    Ethernet
+                                                                 Ethernetand/or
+                                                        usingEthernet           and/or
+                                                                                 and/orWi-FiWi-Fi     links.
+                                                                                                       links.
+                                                                                             Wi-Filinks.
+transmitted
+       In
+        In our
+            our    practical
+                    practical      implementation,
+                                    implementation,           each
+                                                              each    BLE
+                                                                      BLE       receiver
+                                                                                receiver       is
+                                                                                                is equipped
+                                                                                                    equipped        with
+                                                                                                                    with aaa MQTTMQTT
+                                                                                                                                 MQTT client,client,    which
+                                                                                                                                                         which
+                                                                                                                                              client, which
+       In our practical implementation, each BLE receiver is equipped with
+provides
+ provides the the     MQTT
+               the MQTT
+                      MQTT brokerbroker
+                                  broker withwith
+                                             with thethe   collected
+                                                      the collected       data.
+                                                            collected data.data. The The    broker
+                                                                                      The broker        forwards
+                                                                                                         forwards data
+                                                                                             broker forwards            data
+                                                                                                                         data toto  the
+                                                                                                                                 to the   central
+                                                                                                                                     the central       server,
+                                                                                                                                                        server,
+                                                                                                                                           central server,
+provides
+where
+ wheretheythey
+           theyare  are   first
+                    arefirst
+                           first  stored
+                                   stored    and then        processed         so to to discard       outliers.      As shown
+                                                                                                                     As                in
+                                                                                                                                        in the
+                                                                                                                                             the following
+where                          stored    andandthenthen      processed
+                                                        processed      so toso   discard discard
+                                                                                              outliers.outliers.
+                                                                                                            As shown       shown
+                                                                                                                            in the following        following
+                                                                                                                                                      section,
+section,
+ section,   RSSI and         SNR data        can be
+                                            can         used to
+                                                       used     to estimate        path loss        and the
+                                                                                                   and           visitor’s position.
+                                                                                                           the visitor’s
+RSSI          SNRand
+        andRSSI         dataSNRcan data
+                                      be used      beestimate
+                                                  to               estimate
+                                                                    path losspath    and loss
+                                                                                            the visitor’s        position.    position.
+       The   BLE
+        The BLE       transmitter
+              BLEtransmitter             typically
+                       transmittertypically             operates
+                                          typicallyoperates
+                                                         operatesininthe
+                                                                     in   the    advertising
+                                                                                 advertisingmode
+                                                                           theadvertising            mode
+                                                                                                      modetoto to  transmit
+                                                                                                                    transmit      information.
+                                                                                                                                   information.         Figure
+                                                                                                                                                        Figure
+       The                                                                                                       transmit       information.         Figure     3
+33 reports
+   reports    the
+               the   BLE
+                      BLE    advertising
+                              advertising      Protocol
+                                                Protocol      Data
+                                                              Data    Unit
+                                                                      Unit     (PDU)
+                                                                                (PDU)      indicated
+                                                                                            indicated       in
+                                                                                                             in the
+                                                                                                                 the  Bluetooth
+                                                                                                                      Bluetooth        standard
+                                                                                                                                       standard       [35].
+                                                                                                                                                       [35].  In
+                                                                                                                                                               In
+reports the BLE advertising Protocol Data Unit (PDU) indicated in the Bluetooth standard [35].
+the   same
+      same
+ thethe        figure
+                figure     we also       indicate the         packet formats             corresponding to               three popular
+                                                                                                                       three                     advertising
+In       same       figurewe   wealsoalsoindicate
+                                            indicatethe        packet formats
+                                                          thepacket                       corresponding to
+                                                                           formats corresponding                   to three       popular advertising
+                                                                                                                                 popular         advertising
+applications         currently
+                     currently available
+ applications currently              available
+                                     available in  in   the
+                                                    in the   market
+                                                              market [36]
+                                                         the market       [36]    i.e.,
+                                                                           [36] i.e.,    Apple’s
+                                                                                         Apple’s iBeacon,
+                                                                                   i.e., Apple’s       iBeacon,
+                                                                                                        iBeacon, the the   AltBeacon
+                                                                                                                             AltBeacon open
+                                                                                                                      the AltBeacon           open     format
+                                                                                                                                                        format
+                                                                                                                                                open format
+applications
+from
+ from   Radius
+         Radius      Networks,
+                      Networks,        and
+                                        and   Google’s
+                                              Google’s       Eddystone.
+                                                              Eddystone.         In
+                                                                                  In  this
+                                                                                       this   work,
+                                                                                              work,     we
+                                                                                                         we   have
+                                                                                                               have    considered
+                                                                                                                        considered        the
+                                                                                                                                           the    Eddystone
+                                                                                                                                                   Eddystone
+from Radius Networks, and Google’s Eddystone. In this work, we have considered the Eddystone UID
+ UIDformat.
+UID    format.      This consists        ofaaunique
+                                         of                code, which         can be beused        toidentify
+                                                                                                   to               visitors      orspecific
+                                                                                                                                 or                categories
+format.     This Thisconsistsconsists
+                                  of a unique  unique
+                                                    code,code,
+                                                             which whichcan can be used    used        identify
+                                                                                              to identify           visitors
+                                                                                                               visitors              specific
+                                                                                                                            or specific            categories
+                                                                                                                                              categories       of
+of
+ of objects/people.
+     objects/people.          The
+                               The    Eddystone
+                                       Eddystone        format
+                                                         format    defines
+                                                                    defines       four
+                                                                                   four    types
+                                                                                            types     of
+                                                                                                      of   frames:
+                                                                                                            frames:     unique
+                                                                                                                         unique      ID
+                                                                                                                                      ID   (UID)
+                                                                                                                                            (UID)     frames,
+                                                                                                                                                       frames,
+objects/people. The Eddystone format defines four types of frames: unique ID (UID) frames, ephemeral
+ephemeral
+ ephemeral        ID (EID)
+                 ID     (EID)   frames, URL          frames, and        telemetry          (TLM) frames.
+                                                                                          (TLM)
+ID  (EID) frames,                   frames,URL
+                           URLframes,          andframes,
+                                                       telemetry  and(TLM)
+                                                                         telemetryframes.             frames.
+
+
+
+
+                                       Figure 3.
+                                       Figure             AltBeacon and Eddystone
+                                                 iBeacon, AltBeacon                      [17].
+                                                                        Eddystone frames [17].
+                                              3.iBeacon,
+                                       Figure 3.                    and Eddystoneframes
+                                                 iBeacon, AltBeaconand             frames [17].
+Electronics 2020, 9, 1055                                                                                             7 of 20
+Electronics 2020, 9, 1055                                                                                             7 of 20
+
+
+4. Propagation Model Estimation in the Considered Environment
+
+       In order
+      In  orderto   evaluatethe
+                 toevaluate  theeffectiveness
+                                  effectivenessofofthe
+                                                     theproposed
+                                                          proposedsystem
+                                                                     system    providing
+                                                                            inin providingthethe
+                                                                                               localization
+                                                                                                 localizationservice in
+                                                                                                               service
+ainmuseum,
+    a museum, we developed    a testbed
+                    we developed         to characterize
+                                      a testbed             the antenna
+                                                  to characterize     thebehavior      the considered
+                                                                            antennainbehavior     in theenvironment
+                                                                                                           considered
+and   to perform
+ environment        a measurement
+                  and to perform a campaign
+                                       measurement  for the            of the
+                                                             trainingfor
+                                                         campaign               neural network.
+                                                                           the training             In particular,
+                                                                                         of the neural    network.we In
+considered
+ particular, wereceivers equipped
+                   considered         with equipped
+                                receivers   two differentwith types
+                                                                two of antennas:
+                                                                     different      an integrated
+                                                                                 types  of antennas: antenna   and an
+                                                                                                       an integrated
+external   antenna
+ antenna and          with a gain
+                 an external antenna     dBi. aIngain
+                                    of 5with      thisofsection,       describe
+                                                                   wethis
+                                                           5 dBi. In                wetestbed
+                                                                                  the
+                                                                           section,     describesetup,  the radiation
+                                                                                                   the testbed  setup,
+pattern           two receiving
+          of the pattern
+ the radiation                   antennas,
+                         of the two          andantennas,
+                                      receiving   the neuraland  network   definition.
+                                                                    the neural   network definition.
+
+4.1. Testbed Setup
+4.1. Testbed Setup
+     In the
+     In        testbed we
+         the testbed         used two
+                         we used    two devices:
+                                         devices: the
+                                                  the ESP32-WROOM-32D
+                                                      ESP32-WROOM-32D equipped            with an
+                                                                              equipped with      an integrated
+                                                                                                     integrated
+antenna   andthe
+antenna and           ESP32-WROOM-32U
+                 theESP32-WROOM-32U            equipped
+                                            equipped      with
+                                                       with     an external
+                                                            an external      antenna
+                                                                        antenna  of 5 dBofgain
+                                                                                           5 dB   gain [37,38].
+                                                                                               [37,38].  ESP32-
+ESP32-WROOM-32D           and  ESP32-WROOM-32U        are generic Wi-Fi +  Bluetooth
+WROOM-32D and ESP32-WROOM-32U are generic Wi-Fi + Bluetooth + BLE microcontroller      + BLE  microcontroller
+modules that
+modules          target aa wide
+           that target           variety of
+                           wide variety  of applications,
+                                            applications, ranging
+                                                          ranging from   low-power sensor
+                                                                   from low-power            networks to
+                                                                                      sensor networks     to the
+                                                                                                             the
+most  demanding      tasks,  such  as voice encoding,  music streaming   and  MP3  decoding.
+most demanding tasks, such as voice encoding, music streaming and MP3 decoding. Thanks to the   Thanks    to the
+dual mode,
+dual           each receiver
+      mode, each               is allowed
+                     receiver is           to receive
+                                  allowed to  receive packets
+                                                      packets on
+                                                              on the  BLE link
+                                                                  the BLE       and transmit
+                                                                           link and             them over
+                                                                                     transmit them     over the
+                                                                                                             the
+Wi-Fi link,
+Wi-Fi         reportedin
+       link, reported       Figure4a.
+                         inFigure   4a.
+
+
+
+
+                                                                                 (b)
+
+
+                                              (a)
+                                                                     transmitter.
+                                         Figure 4. (a) Receiver; (b) transmitter.
+
+     The transmitter beacon was a “BlueUp mini”, which is Google-certified and compliant              compliant with the
+     standard, reported in Figure
+BLE standard,                        Figure 4b.4b. It is very small in size (40       mm ×
+                                                                                 (40 mm     × 40 mm × × 15 mm) and it is
+equipped with
+equipped            an nRF51822
+              with an                 Nordic chip.
+                        nRF51822 Nordic         chip. The management software allows the definition of different
+configurationssuch
+configurations      suchas    transmissioninterval,
+                          astransmission         interval,transmission
+                                                            transmissionpower,
+                                                                            power,andandframe
+                                                                                           frame  format.The
+                                                                                                format.    Thebattery
+                                                                                                               battery has
+                                                                                                                         hasa
+long lifelife
+a long     (from   6 months
+               (from   6 monthsto 5to years).        For testbed
+                                                For the
+                                         5 years).                we adopted
+                                                          the testbed  we adoptedthe following   setup: setup:
+                                                                                                         Eddystone
+                                                                                        the following                 frame
+                                                                                                                Eddystone
+UID
+frameformat,     a transmission
+        UID format,                  time interval
+                         a transmission                        ms,
+                                                       of 500 of
+                                              time interval        and
+                                                                 500 ms,   transmission
+                                                                        a and               powerpower
+                                                                                 a transmission     (TxPower)    of -4 dBm.
+                                                                                                          (TxPower)     of -4
+The
+dBm.packet     contained
+       The packet           the information
+                       contained                   necessary
+                                     the information           to measure
+                                                           necessary         the RSSI.
+                                                                     to measure      the RSSI.
+     Both receivers were programmedprogrammed to acquire          the advertising
+                                                         acquire the                                       transmitted by
+                                                                       advertising packets via BLE transmitted
+enabled beacons. For         the transmission
+                        For the    transmission from from the receivers to the central server we used the MQTT       MQTT
+protocol [28]
+protocol          on the
+            [28] on   the Wi-Fi
+                           Wi-Fi link.
+                                    link. MQTT is aa simple        and light
+                                                           simple and           communication protocol based on the
+                                                                        light communication                              the
+publish/subscribe paradigm;
+publish/subscribe       paradigm; itit is    asynchronous and
+                                          is asynchronous      and therefore
+                                                                   therefore suitable     for data
+                                                                                suitable for  data transmission between
+    devices. The broker receives data in JavaScript
+IoT devices.                                                      Object Notation
+                                                      JavaScript Object                (JSON) format.
+                                                                          Notation (JSON)       format.
+     The data were        stored in
+                   were stored              relational SQL
+                                     in aa relational    SQL Server
+                                                               Server database,
+                                                                      database, which        simplified the
+                                                                                     which simplified         analysis and
+                                                                                                         the analysis   and
+processing     operations    on  the   received
+processing operations on the received RSSI values. RSSI  values.
+     In Figure
+     In   Figure5 5we  wereport
+                            report     setup
+                                  thethe       of the
+                                            setup   of testbed  used to
+                                                        the testbed  usedcharacterize    the antenna
+                                                                              to characterize         of the two
+                                                                                                 the antenna    ofreceivers
+                                                                                                                   the two
+(Figure
+receivers      and to5a)
+          5a)(Figure       and tothe
+                        perform          measurement
+                                     perform               campaign campaign
+                                                                      (Figure 5b).
+                                                  the measurement                   (Figure 5b).
+Electronics 2020, 9, 1055                                                                                          8 of 20
+Electronics 2020, 9, 1055                                                                                          8 of 20
+
+
+
+
+                       (a)
+                                                                                 (b)
+      Figure 5.          usedfor
+                Testbed used
+             5. Testbed        forthe  measurementcampaign
+                                   themeasurement     campaignand
+                                                               and forfor
+                                                                        thethe
+                                                                             characterization of the
+                                                                               characterization      antennas:
+                                                                                                 of the        (a)
+                                                                                                        antennas:
+      BLEBLE
+      (a) receiver;     equipment
+                    (b) (b)
+              receiver;                 pathloss
+                                    for for
+                            equipment            measurements
+                                            pathloss            as aas
+                                                     measurements    function   of the
+                                                                        a function     distance
+                                                                                    of the       d. d.
+                                                                                           distance
+
+     Measurement Campaign
+4.2. Measurement
+4.2.                Campaign
+     In order
+     In order to    characterize the
+                to characterize   the radiation   pattern of
+                                      radiation pattern       the receiving
+                                                           of the              antennas and
+                                                                                         and to
+                                                                   receiving antennas         to collect
+                                                                                                   collect proper
+                                                                                                           proper
+indications  for training  the  neural network,   we  placed  the transmitter   in the center of  the
+indications for training the neural network, we placed the transmitter in the center of the consideredconsidered
+environment. Then,
+environment.     Then,we     positioned
+                         wepositioned   thethe receivers
+                                            receivers    (one
+                                                      (one        at time)
+                                                           a atatime)       in directions
+                                                                               four directions
+                                                                       in four            (namely(namely
+                                                                                                     north,north,
+                                                                                                            west,
+west, south,   and  east with  respect  to the transmitter)  and  at different  distances from   the
+south, and east with respect to the transmitter) and at different distances from the transmitter. The transmitter.
+The  positions
+positions       ofreceivers
+           of the            and and
+                   the receivers       the transmitter
+                                  the transmitter       are showed
+                                                   are showed         in Figure
+                                                                             6. 6.
+                                                                 in Figure
+
+
+
+
+         Figure 6.
+         Figure    Environment and
+                6. Environment     positions used
+                               and positions used to
+                                                  to characterize
+                                                     characterize the radiation pattern
+                                                                  the radiation         of the
+                                                                                pattern of     antennas.
+                                                                                           the antennas.
+
+             measurementwas
+      Each measurement           was    based
+                                     based  on on
+                                                the the  transmission
+                                                    transmission             150Eddystone
+                                                                    of 150ofUID   UID Eddystone        For eachFor
+                                                                                            frames. frames.          each
+                                                                                                                received
+frame, theframe,
+received             the RSSI
+            RSSI value      wasvalue
+                                  storedwas   stored
+                                          in the       in theThese
+                                                 database.     database.
+                                                                     valuesThese
+                                                                             werevalues
+                                                                                   raw andwere  raw and
+                                                                                                      to beneeded
+                                                                                            needed                  to be
+                                                                                                            processed   to
+processed    to  limit  the  fluctuations   accounting     for the variability of the  wireless channel.
+limit the fluctuations accounting for the variability of the wireless channel. This filtering process was  This filtering
+based onwas
+process    twobased          two the
+                   steps.onFirst,  steps. First,were
+                                                 the values
+                                       values         averaged.      averaged.
+                                                               wereThen,  valuesThen,   valuesthe
+                                                                                  exceeding     exceeding
+                                                                                                   average the  average
+                                                                                                             plus/minus
+the standardthe
+plus/minus           standard
+                  deviation      deviation
+                               were           wereand
+                                      identified    identified   andsince
+                                                        discarded,    discarded,   since
+                                                                            they are     they are outliers
+                                                                                                   considered
+                                                                                      considered             [39].outliers
+                                                                                                                    Other
+[39]. Other   filtering   strategies   can be  considered    [40]. A measurement      sample  set is
+filtering strategies can be considered [40]. A measurement sample set is reported in Figure 7a, whilereported  in  Figure
+7a,     7b Figure
+     while
+Figure      reports7b  itsreports   its probability
+                           probability                density(PDF).
+                                          density function      function (PDF).
+ Electronics 2020, 9, 1055                                                                                                                                                             9 of 20
+Electronics 2020, 9, 1055                                                                                                                                                             9 of 20
+ Electronics 2020, 9, 1055                                                                                                                                                             9 of 20
+
+
+
+
+                                  (a)                                                                                                                     (b)
+       Figure 7. Measurement                                                          (b)(b) probability density
+                              (a)example at 5 m: (a) RSSI values for 200 received frames;
+       function (PDF) of received RSSI.
+       Figure7.7.Measurement
+      Figure     Measurementexample           m:(a)
+                                exampleatat55m:      RSSIvalues
+                                                 (a)RSSI  valuesfor  200received
+                                                                         receivedframes;
+                                                                 for200                   (b)probability
+                                                                                  frames;(b)              density
+                                                                                              probabilitydensity
+       function(PDF)
+      Radiation
+ 4.3. function       ofofreceived
+                 (PDF)
+                   Diagramreceived  RSSI.
+                              Evaluation
+                                   RSSI.
+
+       The procedure
+  4.3.Radiation
+4.3.   Radiation    Diagramfor
+                  Diagram        the measurement campaign to evaluate the radiation pattern of the two
+                             Evaluation
+                              Evaluation
+ considered
+      The       antennas    is reported      as follows:
+              procedurefor
+        Theprocedure        forthe     measurementcampaign
+                                  themeasurement             campaigntotoevaluate
+                                                                              evaluatethe      radiationpattern
+                                                                                         theradiation       patternofofthethetwo
+                                                                                                                               two
+ 1.    The receiver
+considered
+  considered   antennas
+                antennaswasisplaced
+                          is  reported
+                                reportedat aas
+                                           as distance
+                                                follows:of 1 m north with respect to the transmitter.
+                                              follows:
+ 2. 150 RSSI values were acquired at 0°, 90°, 180°, and 270° by rotating the receiver on its position
+1.1. The     receiverwas
+        Thereceiver           placedatataadistance
+                        wasplaced             distanceof    of11m    northwith
+                                                                 mnorth          respecttotothe
+                                                                           withrespect         thetransmitter.
+                                                                                                   transmitter.
+       in the directions north-east-south-west.                Thus, a total
+                                                   ◦ , 90◦ , 180               of 600 values were acquired in the north
+2.2. 150150RSSI     valueswere
+            RSSIvalues       were acquired
+                                     acquired at 0at   0°, 90°, ◦180°,  270◦270°
+                                                                  , andand    by rotating  the receiver
+                                                                                   by rotating            on its position
+                                                                                                  the receiver              in the
+                                                                                                                  on its position
+       direction.
+       directions    north-east-south-west.
+        in the directions     north-east-south-west.Thus, a total
+                                                               Thus,ofa600   values
+                                                                         total of 600 were  acquired
+                                                                                        values    were in  the north
+                                                                                                        acquired    in direction.
+                                                                                                                        the north
+ 3. Point 2 was repeated in the east, south, and west directions with respect to the transmitter.
+3.      direction.
+       Point  2 was repeated in the east, south, and west directions with respect to the transmitter.
+        Point 2atwas
+  3. Then,         a distance
+                       repeated of 1inm,
+                                       the2400   RSSI
+                                             east,            andwere
+                                                         values
+                                                    south,          westacquired
+                                                                          directions   total.respect
+                                                                                    in with   Points (1)   to (3)
+                                                                                                      to the       were repeated
+                                                                                                               transmitter.
+ at distances from 2 m to 5 m. After the acquisition phase, the values were then filtered, thus excluding
+      Then,   at  a distance   of  1 m,  2400   RSSI    values   were   acquired   in total.  Points (1)  to (3) were  repeated
+        Then, at
+atoutliers,        a distance   ofm.1 m,  2400   RSSI    values were     acquired   in total.  Points              were
+                                                                                                      (1) to (3)thus     repeated
+            i.e., values greater than the average (at a given distance and for a given direction) plus the
+    distances  from   2 m  to  5      After   the   acquisition     phase, the  values   were   then filtered,        excluding
+                 from 2 m to 5 m.
+  at distances values                  Afterthethe   acquisition     phase,distance
+                                                                            the values   were    then filtered,   thus excluding
+ standardi.e.,
+outliers,     deviationgreater
+                           and lower than  than    the average
+                                                 average              minus the standard
+                                                              (at a given              and   fordeviation
+                                                                                                 a given     in the considered
+                                                                                                           direction)   plus the
+  outliers, i.e.,  values greater     than   the   average     (at  a given  distance   and   for a given    direction)   plus the
+ position.deviation and lower than the average minus the standard deviation in the considered position.
+standard
+  standard    deviation    and     lower   than     the   average     minus   the  standard     deviation    in  the  considered
+       Theresults
+      The    resultsofofthe   receiverwith
+                         thereceiver      withthe       internalantenna
+                                                  theinternal                arereported
+                                                                                  reportedininFigure
+                                                                    antennaare                           8a,batatdistances
+                                                                                                 Figure8a,b        distancesofof22
+  position.
+ and55m,
+and          respectively.
+         m,respectively.
+        The results of the receiver with the internal antenna are reported in Figure 8a,b at distances of 2
+  and 5 m, respectively.                             120
+                                                           105     90
+                                                                     -50 dB
+                                                                              75
+                                                                                    60                                          120
+                                                                                                                                      105     90
+                                                                                                                                                -60 dB
+                                                                                                                                                         75
+                                                                                                                                                               60
+
+                                               135                                        45                              135                                        45
+
+                                                                   -60 dB                                                                      -65 dB
+                                         150                                                    30                  150
+                                                                                                                                      105      90    75
+                                                                                                                                                                           30
+
+                                                                                                                                120             -60 dB         60
+                                                                                                                                             -70 dB
+                                    165
+                                                                  -70 dB
+                                                                                                     15
+                                                                                                               165        135                                        45         15
+
+                                                                                                                                               -65 dB
+                                                                                                              180   150                     -75 dB                         30 0
+                                   180                           -80 dB                               0
+                                                                                                                                              -70 dB
+                                                                                                               165
+                                                                                                               195                                                               15
+                                                                                                                                                                                345
+                                    195                                                              345
+
+                                                                                                              180210                        -75 dB                         330   0
+                                         210                                                    330
+                                                                                                               195        225                                        315        345
+                                               225                                        315                                   240                            300
+                                                                                                                                      255                285
+                                                     240                            300                            210
+                                                                                                           RSSI 5 meter                      270                           330
+                             RSSI 2 meter                  255    270         285
+                                                                                                                          225                                        315
+
+
+                                                                                                           RSSI 5 meter
+                                                                                                                                240
+                                                                                                                                        (b)270
+                                                                                                                                      255                285
+                                                                                                                                                               300
+
+
+
+                                                            (a)
+                                                                                                                                        (b)
+                              Figure8.8.Receiver
+                             Figure      Receiver
+                                          (a)     withinternal
+                                                 with  internalantenna  at:(a)
+                                                                antennaat:          (b)55m.
+                                                                                 m;(b)
+                                                                            (a)22m;      m.
+
+     Theresults
+    The    resultsofofthe   Figure with
+                       thereceiver
+                           receiver8.with
+                                     Receiver
+                                          the
+                                        the   with internal
+                                              external
+                                            external antennaantenna
+                                                       antenna areareat: (a) 2 m;
+                                                                      reported
+                                                                   reported       (b)Figure
+                                                                                  in  5 m.9a,b
+                                                                               in Figure     9a,b at distances
+                                                                                                            of 2ofm2
+                                                                                               at distances
+    5 m,5 respectively.
+ m and
+and       m, respectively.
+      The results of the receiver with the external antenna are reported in Figure 9a,b at distances of 2
+ m and 5 m, respectively.
+            2020,9,9,1055
+Electronics2020,      1055                                                                                                                                                                  of20
+                                                                                                                                                                                          10of 20
+  Electronics 2020,
+Electronics         9, 1055                                                                                                                                                              1010 of 20
+
+
+                                                                                                                                            105     90        75
+                                                           105     90         75
+                                                                                                                                      120                           60
+                                                     120             -45 dB         60
+                                                                                                                                135                  -60 dB               45
+                                               135                                        45
+                                                                   -55 dB                                                 150                                                  30
+                                         150                                                    30
+                                                                                                                                                   -70 dB
+                                                                  -65 dB                                             165                                                            15
+                                    165                                                              15
+
+                                                                                                                    180                           -80 dB                            0
+                                   180                           -75 dB                               0
+
+                                                                                                                     195                                                            15
+                                    195                                                              345
+
+                                                                                                                          210                                                  0
+                                         210                                                    330
+                                                                                                                                225                                       0
+                                               225                                        315
+                                                                                                                                      240                           330
+                                                     240                            300                    RSSI 5 meter                     255               300
+                                                                                                                                                   270
+                               RSSI 2 meter                255    270         285
+
+
+
+                                                                                                                                            (b)
+                                                                                                                                             (b)
+                                                            (a)
+                                                             (a)
+                               Figure 9. Receiver with external antenna at: (a) 2 m; (b) 5 m.
+                                Figure
+                              Figure 9. 9.Receiver  withexternal
+                                           Receiverwith   externalantenna
+                                                                   antenna                     (b)5 5m.m.
+                                                                          at:at:(a)(a)2 2m;m;(b)
+
+       With
+        Withreference
+      With   reference
+               referenceto    the
+                         totothe   radiation
+                               theradiation    diagram,
+                                    radiationdiagram,         identified
+                                                diagram,identified
+                                                               identifiedforfor   both
+                                                                              forboth   receivers,
+                                                                                         receivers,itititcan
+                                                                                   bothreceivers,         can   be
+                                                                                                            canbe  noted
+                                                                                                                 benoted    that
+                                                                                                                             thatthe
+                                                                                                                     notedthat    the
+                                                                                                                                    the
+ receiver
+  receiver with integrated antenna, under a certain distance, maintained omnidirectional radiation,
+receiver   with
+          with    integrated
+                integrated       antenna,
+                              antenna,      under
+                                         under   a     a  certain
+                                                    certain         distance,
+                                                               distance,          maintained
+                                                                           maintained          omnidirectional
+                                                                                          omnidirectional                radiation,
+                                                                                                                 radiation,   while
+ while
+  while
+the     the
+         thereceiver
+    receiver  receiver with
+                        withexternal
+              with external     antennaantenna
+                                external   antenna
+                                          had          hadagain
+                                                     had
+                                                a higher      ahigher
+                                                                higher
+                                                                   with  gain
+                                                                          gain   withaanarrower
+                                                                                with
+                                                                           a narrower    radiationradiation
+                                                                                         narrower      radiation
+                                                                                                      beam          beam
+                                                                                                                     beam
+                                                                                                                offering   offering
+                                                                                                                             offering
+                                                                                                                          excellent
+ excellent
+coverage    coverage
+                  beam with
+             coverage
+  excellentwith        with    beam
+                        widthbeam     width
+                                       width
+                                  of +60  ◦    of
+                                            to −60 +60°
+                                                of +60°
+                                                     ◦    to
+                                                        in the−60°
+                                                           to −60°  in  the
+                                                                      in the north/south
+                                                                north/south  north/south    direction.
+                                                                                  direction. direction.
+       As
+      As   anexample,
+          an
+        Asan    example,in
+               example,     inFigure
+                           in   Figure10
+                                Figure   10we
+                                         10   wereport
+                                             we    reportthe
+                                                  report      theresults
+                                                             the  results
+                                                                   results     measures
+                                                                           ofofof
+                                                                                measures
+                                                                                   measuresranging
+                                                                                            ranging
+                                                                                              ranging    from
+                                                                                                           from  11mm
+                                                                                                              from   1tom
+                                                                                                                        to33to
+                                                                                                                             m.
+                                                                                                                              m.3The
+                                                                                                                                   The
+                                                                                                                                   m.
+ correlation
+  correlation
+The           between
+     correlationbetween  the
+                   between     average
+                          thetheaverage  received
+                                          received
+                                    average          RSSI
+                                              received RSSI  and
+                                                           RSSIand the
+                                                                  and    measured
+                                                                     thethe
+                                                                          measured
+                                                                             measured direction
+                                                                                       directioncan
+                                                                                                  cancan
+                                                                                          direction      be   highlighted.
+                                                                                                           be be
+                                                                                                               highlighted.
+                                                                                                                  highlighted.In
+                                                                                                                               Inthis
+                                                                                                                                   this
+                                                                                                                                   In
+ case,
+  case, we used the receiver with the internal antenna.
+this   we
+     case, used
+           we     the
+                used  receiver
+                      the         with
+                           receiver     the
+                                      with   internal
+                                             the         antenna.
+                                                  internal     antenna.
+
+
+
+
+                                           Figure     Correlation between
+                                                  10. Correlation
+                                           Figure10.                       RSSI and
+                                                                   between RSSI and direction.
+                                                                                    direction.
+                                             Figure 10. Correlation between RSSI and direction.
+4.4. Neural Network for Distance Estimation
+  4.4.Neural
+ 4.4.   NeuralNetworkNetwork      Distance
+                              forfor       Estimation
+                                     Distance  Estimation
+       In the following, we report the theoretical equations aiming to describe the physical behavior of
+        InInthe   following,
+             the following,      we  report
+                                  we report  thetheoretical
+                                            the   theoretical   equations
+                                                                  equations     aiming      describe
+                                                                                  aimingtotoIndescribethe physical    behavior ofof
+the communication             system    between  the  transmitter      and receivers.           order tothe  physical
+                                                                                                          estimate  thebehavior
+                                                                                                                         distance
+ the
+  the communication
+        communication          system
+                                system  between
+                                         between  the
+                                                   the transmitter
+                                                        transmitter    and
+                                                                         and    receivers.
+                                                                                  receivers.InInorder
+                                                                                                 order totoestimate
+                                                                                                            estimate the
+                                                                                                                      thedistance
+                                                                                                                          distance
+between them, we express pathloss as a function of the measured RSSI and SNR, whose Equations                                 are
+ between
+  between     them,
+                them,   wewe  express
+                               express  pathloss
+                                         pathlossasasaafunction
+                                                         function   of
+                                                                     of the
+                                                                          the  measured
+                                                                                 measured   RSSI
+                                                                                             RSSI  and
+                                                                                                    and SNR,
+                                                                                                          SNR, whose
+                                                                                                                whose  Equations
+                                                                                                                        Equations
+reported in (1) and (2), respectively:
+  arereported
+ are    reportedinin(1)       and(2),
+                          (1)and   (2),respectively:
+                                        respectively: RSSI = P + N
+                                                                     R                                                         (1)
+                                                           RSSI    = P
+                                                            RSSI = PPRR+ +   N                                                (1)
+                                                                                                                                (1)
+                                                                            (dN )
+                                                       SNR(d) =                                                                (2)
+                                                                          N𝑅𝑅 (𝑑𝑑)
+                                                                          𝑃𝑃
+                                                          𝑆𝑆𝑆𝑆𝑆𝑆(𝑑𝑑)==
+                                                                                                                              (2)
+                                                                                                                                (2)
+where N is the received noise power of the receiver and𝑁𝑁PR is the received power. Its expression is
+  whereNN
+ where
+reported             thereceived
+             inisis(3):
+                    the               noisepower
+                          receivednoise     powerofofthe      receiverand
+                                                        thereceiver        andPPR Risisthe   receivedpower.
+                                                                                        thereceived              Itsexpression
+                                                                                                         power.Its   expressionisis
+ reported                                                           P  G     G
+  reportedinin(3):   (3):                              PR (d) = T T R                                                          (3)
+                                                                      L(d)
+                                                                      𝑃𝑃𝑇𝑇 𝐺𝐺𝑇𝑇 𝐺𝐺𝑅𝑅
+                                                          𝑃𝑃𝑅𝑅 (𝑑𝑑)==                                                         (3)
+                                                                                                                                (3)
+                                                                         𝐿𝐿(𝑑𝑑)
+Electronics 2020, 9, 1055                                                                                                     11 of 20
+
+Electronics 2020, 9, 1055                                                                                                     11 of 20
+ where PT is the transmitting power, and GT and GR are the gain of the transmitter and receiver
+ antennas, respectively. By evaluating N in (2) and substituting it into (1), after some algebra we can
+ explicitPTthe
+where            pathloss
+             is the          L(d): power, and GT and GR are the gain of the transmitter and receiver antennas,
+                     transmitting
+respectively. By evaluating N in (2) and substituting it into (1),                1 after some algebra we can explicit the
+pathloss L(d):                                        =              ∙  1  +                                                      (4)
+                                                                                        !
+                                                         P GT GR                  1
+       Due to the very short distances             ) = T the
+                                              L(dbetween             · 1 +transmitter and the receivers in the museum
+                                                                    BLE                                                             (4)
+                                                         RSSI(d)              SNR(d)
+ we can assume that RSSI is equal to the received power, i.e., SNR is high, and that noise power is
+       Due to the very short distances between the BLE transmitter and the receivers in the museum we
+ negligible.
+can assume                      equal
+                 that RSSIofis the
+       The modeling                    to the received
+                                     pathloss             power, of
+                                                 as a function      i.e.,the
+                                                                          SNR    is high, between
+                                                                               distance    and that noise        power is negligible.
+                                                                                                         the transmitter     and the
+       The   modeling    of
+ receiver is difficult to obtain even when a massive measurement campaign is provided. Thisreceiver
+                             the  pathloss  as  a function    of  the  distance    between    the   transmitter      and the   is due
+ todifficult
+is   the fact to obtain
+                  that theeven   whenbehavior
+                              signal                 measurement
+                                        a massive follows               campaign
+                                                                reflection,                      and This
+                                                                                      is provided.
+                                                                                 diffraction                   is due to
+                                                                                                         scattering      the fact that
+                                                                                                                       mechanisms,
+the   signal behavior
+ especially                          reflection, diffraction
+                           followsenvironment.
+                in an indoor                            Moreover, and ascattering
+                                                                            completemechanisms,
+                                                                                          campaign especially              an indoor
+                                                                                                           should beinperformed
+ extensively inMoreover,
+environment.                                    campaign
+                                  a completewhere
+                      each environment                   the should               system extensively
+                                                                         be performed
+                                                               localization                 is deployed.      in each  environment
+                                                                                                                  To overcome      the
+where     the localization    system   is deployed.     To overcome       the  difficulties  in  environment
+ difficulties in environment characterization, we performed a relatively fast measurement campaign                  characterization,
+we   performed
+ in the  museuma spaces.
+                      relativelyAsfast           below,campaign
+                                        measurement
+                                    explained                           in the museum
+                                                           this is different                 spaces. As
+                                                                                 from performing              explained
+                                                                                                          a very          below, this
+                                                                                                                    time-consuming
+is  different from
+ measurement           performing
+                    campaign           a very
+                                  in the  whole time-consuming
+                                                   museum (or inmeasurement
+                                                                         the generic area  campaign
+                                                                                               where the    in the   whole museum
+                                                                                                                localization  service
+(or  in  the  generic   area   where    the localization     service    is  provided).
+ is provided). Our measurements are based on a limited test, which are then used to train  Our    measurements              based
+                                                                                                                       arethe       on
+                                                                                                                               neural
+   limited with
+anetwork,     test, which     are  then   used  to  train  the  neural      network,     with   the   aim
+                    the aim of characterizing the environment where the localization system is deployed.     of  characterizing    the
+environment
+       We performedwhere the                    system is deployed.
+                                 localization according
+                            measurements                     to the scheme reported in Figure 11. Starting from the
+       We   performed      measurements        according
+ reference distance d0 equal to 1 m, we collected            toframes
+                                                                 the scheme       reported
+                                                                           at 17 points.   The    Figure
+                                                                                              in first       11. Starting
+                                                                                                         6 points           from the
+                                                                                                                     were spaced    by
+reference     distance   d 0 equal   to 1  m, we   collected   frames      at 17  points.  The
+ 0.5 m, while the rest of the points were at a distance of 1 m from each other. As previously, we first  6  points   were  spaced   by
+0.5  m,  while    the rest of  the  points  were  at  a distance    of 1  m   from  each   other.
+ collected 150 RSSI values for each distance. For each distance, we rotated the receiver in four    As    previously,   we  collected
+150   RSSI values
+ directions:    north,forwest,    distance.
+                           each south    andFor    each
+                                               east,  withdistance,
+                                                             respectwe  to rotated    the receiver
+                                                                             the transmitter.           in four
+                                                                                                   Again,          directions:
+                                                                                                              in this          north,
+                                                                                                                       case, outliers
+west,   south and east, with respect to the transmitter. Again, in this case, outliers were discarded.
+ were discarded.
+
+
+
+
+                             Figure 11. Measurement campaign for neural network training.
+
+                     of the
+     For the fitting of the distance
+                            distance estimation
+                                     estimation function,
+                                                 function, we used    two-layer feed-forward
+                                                              used aa two-layer feed-forward neural
+network:                                   layer. The hidden layer was composed of ten neurons with
+network: one hidden layer and one output layer.
+a sigmoid activation function. The output layer consisted of a single neuron with a linear activation
+Electronics 2020, 9, 1055                                                                                            12 of 20
+ Electronics 2020, 9, 1055                                                                                            12 of 20
+
+
+ function. The
+function.    The neural    networkwas
+                  neuralnetwork            beentrained
+                                      wasbeen     trainedwith     thescaled
+                                                                       scaledconjugate
+                                                            withthe                           gradientbackpropagation
+                                                                                 conjugategradient       backpropagation
+ algorithm. The training
+algorithm.          training of    theneural
+                                ofthe           networkwas
+                                       neuralnetwork        wasperformed
+                                                                  performed       providing
+                                                                               byby  providing  thethe
+                                                                                                     RSSI  received
+                                                                                                        RSSI   receivedby by
+                                                                                                                          the
+ single   beacon  as  the input   vector and   the  distance   between    the  transmitter    and
+the single beacon as the input vector and the distance between the transmitter and the beacon as a  the beacon    as a target
+           Both the
+ vector.vector.
+target            Bothtraining    and the
+                        the training   anddesign     of theofneural
+                                             the design              network
+                                                              the neural          werewere
+                                                                            network       performed
+                                                                                               performedin MATLAB.
+                                                                                                              in MATLAB. The
+ resulting
+The          neural
+      resulting       network
+                 neural  network      converted
+                                 waswas  converted into thethe
+                                                      into   C++  language
+                                                                C++  language  using   thethe
+                                                                                   using    MATLAB
+                                                                                               MATLAB    coder,  in in
+                                                                                                            coder,   order to
+                                                                                                                       order
+ be  implemented      in the  receiver
+to be implemented in the receiver board.board.
+        Figure12
+       Figure   12reports
+                   reportsthe     outputof
+                             theoutput       theneural
+                                          ofthe   neuralnetwork
+                                                           networkforforreceivers
+                                                                           receiverswith      bothexternal
+                                                                                        withboth               andinternal
+                                                                                                     externaland     internal
+ antennas.    In the   same   figure,  RSSI   measurements      and   their   average    are  reported
+antennas. In the same figure, RSSI measurements and their average are reported as a function of distance. as  a function   of
+       to localDue
+ distance.
+Due                  to local mechanisms
+                propagation      propagation(e.g.,    multipath,(e.g.,
+                                                 mechanisms                multipath,
+                                                                   reflections,            reflections,
+                                                                                   scattering,            scattering, etc.)
+                                                                                                 etc.) characterizing    the
+ characterizing
+environment,     thethe   environment,
+                      relationship         theRSSI
+                                     between     relationship    between
+                                                      and the distance         RSSI and
+                                                                           between           the distance
+                                                                                       the transmitter    andbetween      the
+                                                                                                               the receiver
+ transmitter    and the  receiver   can be difficult  to estimate  and   it is often  far from   the
+can be difficult to estimate and it is often far from the monotonic behavior of the typical power-law monotonic    behavior
+ of the typicalmodels.
+propagation      power-law      propagation
+                          The neural    networkmodels.   The
+                                                  tries to fit neural
+                                                               as much network     trieswith
+                                                                          as possible           as much
+                                                                                         to fitthe         as possible
+                                                                                                    behavior            with
+                                                                                                               of the radio
+ the behavior
+signal           of the radio
+         in the considered       signal in thebased
+                              environment       considered
+                                                      on the environment        based on the RSSI measurements.
+                                                               RSSI measurements.
+
+
+
+
+       Figure12.
+      Figure   12. Neural networkfitting
+                   Neuralnetwork            andRSSI
+                                    fittingand       measurementsfor
+                                                RSSImeasurements      receiverwith
+                                                                              withexternal
+                                                                  forreceiver               (left)and
+                                                                                   external(left)      internal
+                                                                                                   andinternal
+               antennasas
+       (right)antennas
+      (right)                 functionofofthe
+                         asaafunction          distance.
+                                           thedistance.
+
+     LocalizationProcedure
+5.5. Localization Procedure
+        Inthis
+       In       section,we
+           thissection,        providethe
+                           weprovide          description of
+                                          thedescription     of the
+                                                                 the localization    procedure proposed
+                                                                      localization procedure       proposed in    this paper.
+                                                                                                               in this  paper.
+    was based
+ItItwas   based onon the   preliminaryphase
+                      the preliminary      phasefor     thedistance
+                                                   forthe    distance    estimation
+                                                                       estimation      in the
+                                                                                    in the      considered
+                                                                                             considered       environment
+                                                                                                          environment     and
+and   the  characterization     of  the transmitter    and   receiver    antennas.    The   procedure
+ the characterization of the transmitter and receiver antennas. The procedure was based on the           was  based    on the
+ receptionof
+reception        threeor
+              ofthree   ormore
+                            moreBLE      receiversplaced
+                                   BLEreceivers     placedin  inthe
+                                                                  theroom
+                                                                       roomto     bemonitored,
+                                                                               tobe                i.e.,where
+                                                                                     monitored,i.e.,    wheretransmitters
+                                                                                                                transmitters
+ needed to be localized in the museum in order to provide a greater user experience to visitorsas
+needed    to  be localized   in  the museum     in order   to  provide    a  greater  user  experience   to visitors   aswell
+                                                                                                                          well
+ as to improve the museum management. When the server is able to collect data from more thanthree
+as  to improve    the  museum      management.      When    the   server   is able to collect  data  from  more   than   three
+ receiversbecause
+receivers    becausethe      distanceand
+                        thedistance          thepropagation
+                                        andthe   propagationconditions
+                                                                   conditionsallow
+                                                                                 allowit,   thelocalizer
+                                                                                        it,the             shouldselect
+                                                                                                localizershould     selectthe
+                                                                                                                           the
+best   receivers   for the  localization.   This  is necessary      since   we  observed    that  an  increase
+ best receivers for the localization. This is necessary since we observed that an increase in receivers         in receivers
+ introduceshigher
+introduces               noiseininthe
+               highernoise              estimationphase.
+                                   theestimation     phase.
+        Thefollowing
+       The                reportsthe
+             followingreports           localizationprocedure:
+                                    thelocalization    procedure:
+     The transmitter
+1.1. The                starts to
+          transmitter starts       transmit frames
+                                to transmit   frames with the set transmission power and the set frequency.   frequency.
+     Thisvalue
+     This  valueisisfixed (and
+                      fixed  (andknown
+                                     known by the
+                                               by localizer)    in theinenvironment
+                                                   the localizer)                       where the
+                                                                           the environment         localization
+                                                                                               where             service
+                                                                                                        the localization
+     is provided.
+     service is provided.
+     For each receiver
+2.2. For       receiver in    theroom
+                           inthe   roomthatthatreceives
+                                                 receivesframes
+                                                             frames (i.e.,      distance
+                                                                           thethe
+                                                                       (i.e.,            between
+                                                                                   distance betweenthe the
+                                                                                                        transmitter   and
+                                                                                                            transmitter
+     the receiver
+     and             is such
+          the receiver                thethe
+                               thatthat
+                         is such           SNRSNR is isabove
+                                                        abovethe thethreshold),        collects NXX == 5 frames (i.e.,
+                                                                      threshold),itit collects                    (i.e., aa
+     measurement set).
+     measurement      set).
+     For each
+3.3. For        measurement set,
+          each measurement              the receiver
+                                  set, the   receiver filters
+                                                         filters the
+                                                                  the data
+                                                                       data and    theneural
+                                                                              and the           networkestimates
+                                                                                        neuralnetwork     estimates thethe
+               between the
+     distance between
+     distance                  transmitter and
+                          the transmitter           the receiver.
+                                              and the    receiver.
+4.4. The  receiver sends
+     The receiver           the pair
+                     sends the   pair of
+                                       of estimated
+                                          estimateddistances
+                                                        distancesto     theserver.
+                                                                    tothe     server.
+ 5. The localizer in the server sorts the array with the estimated distances and selects the three
+     shortest distances.
+Electronics 2020, 9, 1055                                                                       13 of 20
+
+
+
+5.    The localizer in the server sorts the array with the estimated distances and selects the three
+Electronics 2020, 9, 1055                                                                     13 of 20
+      shortest distances.
+6.    The localizer applies the NLS algorithm to these distances and estimates the position of
+6.    The localizer applies the NLS algorithm to these distances and estimates the position of the
+      the transmitter.
+      transmitter.
+      The complete
+     The           formulation of
+          complete formulation    the NLS
+                               of the NLS algorithm
+                                          algorithm is
+                                                    is in
+                                                       in [41]. Figure 13
+                                                          [41]. Figure    reports aa flowchart
+                                                                       13 reports              of the
+                                                                                     flowchart of the
+localization procedure.
+localization procedure.
+
+
+
+
+                             Figure 13. Flow chart of localization procedure.
+                             Figure 13.                            procedure.
+
+6. Experimental
+6. Experimental Setup
+                Setup
+6.1. Performance Evaluation of the Distance Estimator
+6.1. Performance Evaluation of the Distance Estimator
+     In order to evaluate the position and the number of BLE receivers to be deployed in the
+      In order to evaluate the position and the number of BLE receivers to be deployed in the
+considered area to be monitored, it is necessary to analyze the errors in real distance with respect to
+considered area to be monitored, it is necessary to analyze the errors in real distance with respect to
+the estimated distance between the transmitter and the receiver evaluated according to the neural
+the estimated distance between the transmitter and the receiver evaluated according to the neural
+networks. In Figure 14, we report the distance error between the real position in Figure 11 and the
+networks. In Figure 14, we report the distance error between the real position in Figure 11 and the
+neural network-estimated position. The error was less than 2 m for a distance of 9 m for receivers
+neural network-estimated position. The error was less than 2 m for a distance of 9 m for receivers
+with both internal and external antennas. For higher distances the error increased to 4 m for the
+with both internal and external antennas. For higher distances the error increased to 4 m for the
+external antenna receiver and to 6 m for the internal antenna receiver. In the same figure, we also
+external antenna receiver and to 6 m for the internal antenna receiver. In the same figure, we also
+reported the distance error obtained using the theoretical pathloss model in (4) L(d) = 49 + 19.9 +
+reported the distance error obtained using the theoretical pathloss model in (4) L(d) = 49 + 19.9 +
+Log10 (d) where the parameters of the classical power-law behavior have been estimated according to
+Log10(d) where the parameters of the classical power-law behavior have been estimated according to
+the measurement campaign.
+the measurement campaign.
+Electronics 2020, 9, 1055                                                                                      14 of 20
+ Electronics 2020, 9, 1055                                                                                      14 of 20
+
+
+
+
+       Figure14.
+      Figure        Errorinin
+                14.Error    distance estimation
+                               distance         for for
+                                        estimation  external/internal antenna
+                                                         external/internal     receivers
+                                                                           antenna       for neural
+                                                                                    receivers       network
+                                                                                               for neural   (solid
+                                                                                                          network
+      line) and  theoretical  pathloss model  (dashed   line).
+       (solid line) and theoretical pathloss model (dashed line).
+
+6.2. Deployment of BLE Receivers and Accuracy Evaluation of the Localization Procedure
+ 6.2. Deployment of BLE Receivers and Accuracy Evaluation of the Localization Procedure
+      In this section we analyze the localization accuracy of the procedure. Furthermore, we also
+       In this section we analyze the localization accuracy of the procedure. Furthermore, we also
+investigate the position and the number of BLE receivers to be deployed in the considered museum
+ investigate the position and the number of BLE receivers to be deployed in the considered museum
+rooms. In Table 1, we described the scenarios involved in accuracy evaluation. In the experiment, we
+ rooms. In Table 1, we described the scenarios involved in accuracy evaluation. In the experiment, we
+varied the number and position of the BLE receivers in the area. Figure 15 reports the position of the
+ varied the number and position of the BLE receivers in the area. Figure 15 reports the position of the
+BLE receivers. All receivers were placed at a height of approximately 1.5 m from the ground.
+ BLE receivers. All receivers were placed at a height of approximately 1.5 m from the ground.
+                                   Table 1. Definition of the considered scenarios.
+                                    Table 1. Definition of the considered scenarios.
+      Scenario                   Receiver Position                                 Receiver Type
+    Scenario                 Receiver Position                           Receiver Type
+     Scenario11
+   Scenario         BLEBLE receivers
+                       receivers      located
+                                  located        positionsA
+                                            ininpositions  A    Four
+                                                             Four              with external
+                                                                     receiverswith
+                                                                   receivers        external antenna
+                                                                                               antenna
+     Scenario22
+   Scenario         BLEBLE receivers
+                       receivers            ininpositions
+                                      located
+                                  located        positionsAA    Four receivers with  internal antenna
+                                                             Four receivers with internal antenna
+     Scenario33
+   Scenario             receivers
+                    BLEBLE         located
+                            receivers       ininpositions
+                                      located    positionsBB Four    receiverswith
+                                                                   receivers
+                                                                Four           with external   antenna
+                                                                                    external antenna
+     Scenario44
+   Scenario             receivers
+                    BLEBLE         located
+                            receivers       ininpositions
+                                      located    positionsBB Four    receiverswith
+                                                                   receivers
+                                                                Four           with internal  antenna
+                                                                                     internal antenna
+                                                        Two   receivers  with internal   antenna  (dashed)
+                                                           Two receivers with internal antenna (dashed)
+    Scenario55 BLEBLE
+   Scenario       receivers  located
+                      receivers             positionsA
+                                       ininpositions
+                                 located              A
+                                                         TwoTwo  receiverswith
+                                                               receivers   withexternal             (solid)
+                                                                                          antenna(solid)
+                                                                                external antenna
+                                                        Two   receivers  with internal   antenna  (dashed)
+                                                           Two receivers with internal antenna (dashed)
+    Scenario66 BLEBLE
+   Scenario        receivers  located
+                       receivers            positionsBB
+                                       ininpositions
+                                 located
+                                                         TwoTwo  receiverswith
+                                                               receivers   withexternal             (solid)
+                                                                                          antenna(solid)
+                                                                                external antenna
+                                                        Five    receiverswith
+                                                             receivers
+                                                           Five                internal antenna
+                                                                          withinternal            (dashed)
+                                                                                         antenna (dashed)
+    Scenario77 BLEBLE
+   Scenario            receivers
+                  receivers      located
+                              located  ininpositions
+                                            positionsCC
+                                                            Four
+                                                         Four              withexternal
+                                                                 receiverswith
+                                                               receivers                  antenna(solid)
+                                                                                external antenna    (solid)
+
+     To evaluate the accuracy of the position procedure we selected eight possible positions (Xreal,
+Yreal) of the transmitter in the area reported in Table 2. The NLS algorithm solves non-linear problems
+given a number of receivers greater than or equal to three in known positions. It is therefore required
+that the array with the distance estimate is composed of at least three elements. Theoretically, if the
+distance array is composed of only three elements (no fewer), the trilateration algorithm provides even
+in this case a distance estimate, but with reduced accuracy.
+
+
+
+
+          Figure 15. Positions of the BLE receivers in the scenarios considered for localization procedure.
+                                                                  Two receivers with internal antenna (dashed)
+  Scenario 5         BLE receivers located in positions A
+                                                                   Two receivers with external antenna (solid)
+                                                                  Two receivers with internal antenna (dashed)
+  Scenario 6         BLE receivers located in positions B
+                                                                   Two receivers with external antenna (solid)
+Electronics 2020, 9, 1055                                         Five receivers with internal antenna (dashed)
+                                                                                                           15 of 20
+  Scenario 7         BLE receivers located in positions C
+                                                                   Four receivers with external antenna (solid)
+
+
+
+
+                       Positions of
+            Figure 15. Positions    the BLE
+                                 of the     receivers in the scenarios considered for localization procedure.
+                                        BLE receivers
+
+      Table 2. Errors in position estimate according to the considered deployment strategies: average and
+      standard deviation of the error for each scenario are in bold.
+
+                                     Scen. 1     Scen. 2     Scen. 3     Scen. 4     Scen. 5     Scen. 6     Scen. 7
+    Test nr       Xreal      Yreal   Error (m)   Error (m)   Error (m)   Error (m)   Error (m)   Error (m)   Error (m)
+        1            1           7     5.75        1.73        2.63        0.71        4.07        1.79        1.00
+        2            2           2     5.51        3.74        1.95        4.14        1.77        1.82        0.41
+        3            2           8     4.91        2.74        2.73        1.70        4.63        2.40        0.37
+        4            3           2     0.81        4.07        3.74        2.93        0.40        3.28        0.70
+        5            3           3     5.76        1.97        0.35        1.49        0.67        1.35        1.21
+        6            3           4     4.78        1.19        2.01        1.66        1.20        1.10        1.00
+        7            4           6     0.94        1.17        2.95        2.11        1.96        0.95        1.53
+        8            4           8     0.64        3.14        3.89        1.54        2.27        3.24        0.45
+        9            1           4     1.63        1.49        3.12        1.07        0.56        1.93        1.13
+       10            2           5     3.96        1.35        3.42        1.78        1.12        1.21        0.64
+       11            2           7     5.16        2.57        2.65        2.69        4.37        2.21        0.89
+       12            3           9     5.83        3.79        2.41        1.34        3.56        3.08        0.90
+       13            4           3     4.83        2.14        3.25        1.37        0.78        1.09        1.44
+       14            5           8     0.78        3.25        2.78        2.82        1.78        2.99        0.42
+       15            5           4     2.20        2.35        0.78        3.47        2.45        1.43        0.57
+              Avg. error (m)           3.57        2.45        2.58        2.05        2.11        1.99        0.84
+            Error Std Dev. (m)         2.11        0.98        0.99        0.96        1.43        0.83        0.38
+
+
+     Table 2 also reports the results of the position estimations from the localizer (Xestimated,
+Yestimated) for the considered deployment scenarios described in Table 1.
+     The average accuracy was between 2 and 3.6 m in cases where only four receivers were deployed
+in the museum room according to the strategies in Figure 15. In order to improve the accuracy of the
+position of the visitor in a room of the museum we increased the number of BLE receivers according to
+scenario 7. In the event, it provided a reduced estimation error of 84 cm. In this configuration, the
+external antenna receivers guaranteed, in accordance with the radiation diagram, good coverage in
+the north-south direction even beyond 4 m, while those with an integrated antenna compensated for
+the lack of coverage in the narrowest corners of the radiation beam, although with a limited range of
+action of approximately 4 m. Table 2 also reports the average error and its standard deviation for each
+considered scenario.
+     Figure 16 reports the cumulative distribution function (CDF) of the errors in position estimation for
+the considered scenarios. It allows easy visualization of the non-overcome error for a given percentage
+in order to assess the reliability of the localization system in the scenarios. For example, in scenario 5
+the localization system guaranteed an error lower than 4.35 m in 90% of the cases, while it guaranteed
+an error lower than 1.45 m in 90% of the cases in scenario 7.
+ Electronics 2020, 9, 1055                                                                                                           16 of 20
+
+
+
+
+Electronics  2020,9,9,1055
+ Electronics2020,      1055                                                                                                        1616ofof2020
+
+
+
+
+       Figure 16. Cumulative distribution function (CDF) of the errors for the different scenarios of Figure
+       15.
+
+      Due to the introduction of greater errors in cases of considering more than three receivers (i.e.,
+ the closest), Figure 17 reports the error in the position estimate when all receivers are considered in
+      Figure16.
+     Figure        Cumulativedistribution
+               16.Cumulative   distributionfunction  (CDF)
+                                              function     of of
+                                                              thethe
+                                                       (CDF)      errors for for
+                                                                     errors       different
+                                                                             the the        scenarios
+                                                                                      different       of Figure
+                                                                                                scenarios        15.
+                                                                                                           of Figure
+ the NLS algorithm.
+      15.
+      The toresults
+     Due             show thatofan
+              the introduction         increase
+                                    greater        ininthe
+                                              errors       considered
+                                                        cases             receivers
+                                                              of considering     more (and     then receivers
+                                                                                        than three   in the estimated
+                                                                                                                (i.e., the
+ distances)
+closest),    provides
+          Figure        greater  errors  in  the position  estimate.   This   means    that  the distance   estimate     for
+      Due             reports the error
+            to the17introduction          in theerrors
+                                   of greater     position  estimate
+                                                        in cases       when all receivers
+                                                                  of considering      more than arethree
+                                                                                                    considered
+                                                                                                          receiversin the
+                                                                                                                       (i.e.,
+ receivers
+NLS         far from the transmitter has high errors that reduce the accuracy of the procedure.
+     algorithm.
+ the closest),  Figure 17 reports the error in the position estimate when all receivers are considered in
+ the NLS algorithm.
+      The results show that an increase in the considered receivers (and then in the estimated
+ distances) provides greater errors in the position estimate. This means that the distance estimate for
+ receivers far from the transmitter has high errors that reduce the accuracy of the procedure.
+
+
+
+
+                                      17.Relationship
+                              Figure
+                               Figure17.              betweennumber
+                                         Relationshipbetween        ofreceivers
+                                                             numberof            anderror.
+                                                                       receiversand  error.
+
+       As aresults
+      The               show that
+               final result,          an increasethe
+                                we considered           factconsidered
+                                                    in the                   receivers
+                                                               that in museums        the(and
+                                                                                            one orthen
+                                                                                                     two inbest
+                                                                                                             the estimated      distances)
+                                                                                                                  receivers (according
+provides     greater     errors  in  the  position  estimate.      This  means    that   the  distance
+ to the ordering obtained without humans in the room) can be obstructed by the presence of visitors.        estimate   for  receivers     far
+from   the transmitter
+ To take      into account    hasanyhighpossible
+                                          errors that    reduceobstruction,
+                                                     human          the accuracywe   of the    procedure.
+                                                                                          assumed        the RSSI received by the
+      As   a  final   result,  weFigure  17. Relationship
+                                    considered    the  fact   between
+                                                              that  in   number ofthe
+                                                                        museums        receivers
+                                                                                           one   orand
+                                                                                                    two   error. receivers
+                                                                                                            bestthus           (according
+ obstructed receivers to be considered under the SNR threshold (worst                                 case),          not allowing        the
+ localizer to exploit its measurement sets. To evaluate these cases, we repeated the estimates To
+to the  ordering      obtained      without  humans      in  the  room)    can  be obstructed       by   the  presence     of  visitors.    by
+take            final result,
+        As aaccount
+      into                any   we considered
+                                possible    human  the   fact that inwe
+                                                      obstruction,       museums
+                                                                             assumed  thetheoneRSSI
+                                                                                                  or two     best receivers
+                                                                                                       received     by   the    (according
+                                                                                                                               obstructed
+ eliminating one or two distance estimates provided by the best receivers. In case of one obstructed
+ to the ordering
+receivers                obtained withoutthe    humans       in the room)     can be    obstructed   notby    the presence      of visitors.
+ receiver to      be considered
+              (i.e.,   33%, since under             SNR threshold
+                                       the NLS algorithm                  (worst
+                                                                     considers      case),
+                                                                                  the    bestthusthree     allowing
+                                                                                                           estimates),  thewelocalizer
+                                                                                                                                 supposed  to
+ To take
+exploit   its  into    account sets.
+               measurement          any Topossible
+                                             evaluate human
+                                                         these    obstruction,
+                                                                  cases,  we       we assumed
+                                                                               repeated     the           the RSSI
+                                                                                                  estimates     by     received one
+                                                                                                                   eliminating       by theor
+ eliminating one of the three best receivers and adding the fourth best receiver for the position
+ obstructed
+two  distance     receivers
+                    estimates   toprovided
+                                    be considered  theunder
+                                               bywhich  best     the SNR threshold
+                                                                receivers.    In case    of (worst     case), thus
+                                                                                             one obstructed           not allowing
+                                                                                                                   receiver                the
+ estimate,     according      to the   order in             they   performed.      We averaged         this procedure        for(i.e.,
+                                                                                                                                  the 33%,
+                                                                                                                                        three
+ localizer
+since          to  exploit     its  measurement       sets.    To   evaluate    these    cases,    we    repeated     the   estimates       by
+ best the    NLS algorithm
+       receivers       and for the  considers
+                                       fifteen the  best three
+                                                transmitter         estimates),
+                                                                 positions        we supposed
+                                                                              reported      in Tableeliminating
+                                                                                                          2. We alsoone       of the three
+                                                                                                                          considered      the
+ eliminating one
+best                 andoradding
+                             two distance      estimates      provided      by the   best receivers.        In case of to onetheobstructed
+ casereceivers
+       of obstruction       of twothe      fourth
+                                      of the  threebest
+                                                     best receiver
+                                                             receivers     the
+                                                                       forcorresponding
+                                                                                position       to 66%. according
+                                                                                            estimate,      In this case,    we    order in
+                                                                                                                                 needed     to
+ receiver
+which          (i.e.,  33%,    since   the   NLS    algorithm        considers    the    best    three     estimates),     we    supposed
+         they     performed.        We  averaged     this   procedure       for
+ consider the fifth best receiver for the position algorithm. We considered scenario 7 and the fifteen
+                                                                                the  three    best   receivers     and    for  the   results
+ eliminatingpositions
+transmitter        one of reported
+                              the three best Tablereceivers      and    adding the       fourth     best receiver      for the     position
+ are reported       in Table 3. In theinobstructed   2. We    also
+                                                           cases,    considered
+                                                                    the            the case
+                                                                         error increased           obstruction
+                                                                                                of about
+                                                                                               to            1.6 m of
+                                                                                                                    andtwo       the
+                                                                                                                           1.8ofm.     three
+ estimate,      according     to   the order   in which
+best receivers corresponding to 66%. In this case, we needed to consider the fifth best receiver forthree
+                                                            they   performed.      We    averaged       this  procedure       for the    the
+ best receivers
+position    algorithm. and We      the fifteen scenario
+                             for considered     transmitter      positions
+                                                             7 and             reported
+                                                                      the results            in Table
+                                                                                   are reported       in 2.   We 3.also
+                                                                                                           Table          considered
+                                                                                                                     In the    obstructed  the
+ case of
+cases,  theobstruction
+              error increased             the three
+                             of twotoofabout            andreceivers
+                                                1.6 mbest      1.8 m. corresponding to 66%. In this case, we needed to
+ consider the fifth best receiver for the position algorithm. We considered scenario 7 and the results
+ are reported in Table 3. In the obstructed cases, the error increased to about 1.6 m and 1.8 m.
+ Electronics 2020, 9, 1055                                                                                          17 of 20
+
+Electronics 2020,3.9,Errors
+        Table                                                                                          17 of 20
+                     1055 in position estimate when one (33%) or two (66%) obstructions of the best three
+         receivers occur for scenario 7: average and standard deviation of the error for each scenario are in
+         bold.
+        Table 3. Errors in position estimate when one (33%) or two (66%) obstructions of the best three receivers
+                                                                           Error
+                                                                      Avg. for
+        occur for scenario 7: average and standard deviation of the error                         Avg.
+                                                                                 33%scenario are in
+                                                                               each                    Error 66%
+                                                                                                    bold.
+  Nr.     Xreal    Yreal     Xestimated    Yestimated     Error (m)
+                                                                          Obstruction (m)             Obstruction (m)
+   1          1       7         1.83 Xestimated 7.56         1.00                    Avg. Error 33%    Avg. 2.47
+                                                                                                            Error 66%
+        Nr.       Xreal     Yreal                       Yestimated    Error (m) 2.54
+   2          2       2         2.04            2.41         0.41               0.86Obstruction (m)   Obstruction
+                                                                                                            1.57 (m)
+   3     1    2     18        7 2.21       1.83 7.7        7.56
+                                                             0.37       1.00   2.65      2.54              2.47
+                                                                                                           2.49
+   4     2    3     22        2 2.74       2.04 2.65       2.41
+                                                             0.70       0.41   2.62      0.86              1.57
+                                                                                                           2.29
+   5     3    3     23        8 1.96       2.21 3.62        7.7
+                                                             1.21       0.37   1.81      2.65              2.49
+                                                                                                           1.80
+         4          3         2            2.74            2.65         0.70             2.62              2.29
+   6          3       4         3.53            3.15         1.00              0.60                        0.91
+         5          3         3            1.96            3.62         1.21             1.81              1.80
+   7          4       6         2.72            6.83         1.53              0.66                        1.27
+         6          3         4            3.53            3.15         1.00             0.60              0.91
+   8     7    4     4 8       6 4.26       2.72 8.37         0.45
+                                                           6.83         1.53   0.83      0.66              1.79
+                                                                                                           1.27
+   9     8    1     44        8 1.78       4.26 4.82         1.13
+                                                           8.37         0.45   2.01      0.83              2.31
+                                                                                                           1.79
+   10    9    2     15        4 2.12       1.78 5.63         0.64
+                                                           4.82         1.13   1.19      2.01              1.34
+                                                                                                           2.31
+   11    10   2     27        5 2.28       2.12 7.85         0.89
+                                                           5.63         0.64   1.58      1.19              1.76
+                                                                                                           1.34
+   12    11   3     29        7 2.82       2.28 8.12       7.85
+                                                             0.90       0.89   2.09      1.58              1.76
+                                                                                                           1.92
+   13    12   4     33        9 2.6        2.82 2.67       8.12
+                                                             1.44       0.90   2.76      2.09              1.92
+                                                                                                           2.97
+   14    13   5     48        3 4.69        2.6 8.29       2.67
+                                                             0.42       1.44   0.58      2.76              2.97
+                                                                                                           1.09
+         14         5         8            4.69            8.29         0.42             0.58              1.09
+   15         5       4         5.12            4.56         0.57              0.97                        1.66
+         15         5         4            5.12            4.56         0.57             0.97              1.66
+                      Avg. error  (m)
+                               Avg. error (m)                0.84       0.84   1.58      1.58              1.84
+                                                                                                           1.84
+                              Dev.Std
+                    Error StdError  (m)Dev. (m)              0.38       0.38   0.82      0.82              0.58
+                                                                                                           0.58
+
+
+      In Figure 18 we report the CDF of the errors in position estimation for scenario 7 when human
+     In Figure 18 we report the CDF of the errors in position estimation for scenario 7 when human
+ obstruction is considered. In both cases (33% and 66%), the localization system was able to guarantee
+obstruction is considered. In both cases (33% and 66%), the localization system was able to guarantee
+ an error lower than about 2.5 m in 90% of cases.
+an error lower than about 2.5 m in 90% of cases.
+
+
+
+
+                                18.CDF
+                        Figure
+                         Figure18.  CDFof
+                                        ofthe  errorsinincase
+                                           theerrors      caseofofhuman              forscenario
+                                                                         obstructionfor
+                                                                   humanobstruction      scenario7.7.
+
+7.7.Conclusions
+    Conclusions
+       Thepositioning
+      The                    peopleindoors
+            positioningofofpeople    indoorsisisan
+                                                 animportant
+                                                    importanttopic
+                                                                 topicwhen      seekingtotoprovide
+                                                                       whenseeking                       completeuser
+                                                                                            provideaacomplete       user
+experience   in some   environments    such as   museums.     In this paper   we  proposed
+ experience in some environments such as museums. In this paper we proposed a complete        a complete    system   for
+                                                                                                                 system
+the indoor   localization   of people.  According     to the  considered    system   architecture,   the
+ for the indoor localization of people. According to the considered system architecture, the transmitter   transmitter
+ andthe
+and        receiversadopt
+      thereceivers     adoptBLE     technology.Then,
+                               BLEtechnology.     Then,thethecollected
+                                                               collected data
+                                                                          data are   sentto
+                                                                                 aresent         datastore
+                                                                                           toaadata           viaWi-Fi
+                                                                                                       storevia    Wi-Fi
+exploiting  the  MQTT     protocol.  Data are then  filtered/ordered    and   a localizer  estimates
+ exploiting the MQTT protocol. Data are then filtered/ordered and a localizer estimates the position   the  position  of
+the transmitter   by  the NLS   algorithm. To   characterize   the environment,     we  performed
+ of the transmitter by the NLS algorithm. To characterize the environment, we performed a             a measurement
+campaign
+ measurementwhose                used to
+                     data werewhose
+                  campaign               train
+                                       data          usednetwork.
+                                                a neural
+                                             were           to train We           network.the
+                                                                           also modeled
+                                                                      a neural                Wereceiver   antennas.the
+                                                                                                   also modeled
+      Moreover,
+ receiver antennas.we   considered   some  deployment       strategies  for  the  receivers  in  the museum       room.
+The accuracy
+       Moreover,of the
+                    weposition        somewas
+                                 estimate
+                         considered             in the order
+                                            deployment         of 2 m but
+                                                             strategies  forcould  be improved
+                                                                              the receivers        to lower
+                                                                                              in the  museum  thanroom.
+                                                                                                                    1m
+when   the number    of  BLE  receivers was  increased.   Finally,  we also   evaluated   the  impact
+ The accuracy of the position estimate was in the order of 2 m but could be improved to lower than 1    of obstruction
+caused by the presence of many visitors in the museum.
+Electronics 2020, 9, 1055                                                                                       18 of 20
+
+
+
+     As a future improvement of this work, a finer analysis of human obstruction can be considered;
+for example, by trying to estimate the presence of a person through another neural network. This
+neural network could be used to dynamically measure the RSSI. When a human obstruction is detected
+the receiver can thus be properly used in the position estimate instead of discarded.
+
+Author Contributions: Conceptualization, R.G. and F.M.; methodology, R.G., L.D.N., and F.F.; software, C.C.,
+A.V., and L.D.N.; validation, R.G., L.D.N., and R.F.; formal analysis, F.M. and G.C.C.; investigation, R.G., G.C.C.,
+and M.R.; resources, C.C. and F.F.; data curation, M.R. and R.F.; writing—original draft preparation, C.C.;
+writing—review and editing, R.G., M.R., and L.D.N.; visualization, R.F. and A.V.; supervision, R.G. and G.C.C.;
+funding acquisition, G.C.C. and F.F. All authors have read and agreed to the published version of the manuscript.
+Funding: This research received no external funding.
+Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.    Zafari, F.; Gkelias, A.; Leung, K.K. A Survey of Indoor Localization Systems and Technologies. IEEE Commun.
+      Surv. Tutor. 2019, 21, 2568–2599. [CrossRef]
+2.    Raza, U.; Kulkarni, P.; Sooriyabandara, M. Low Power Wide Area Networks: An Overview. IEEE Commun.
+      Surv. Tutor. 2017, 19, 855–873. [CrossRef]
+3.    Darroudi, S.M.; Gomez, C. Bluetooth Low Energy Mesh Networks: A Survey. Sensors 2017, 17, 1467.
+      [CrossRef] [PubMed]
+4.    Aggarwal, C.; Han, J. A survey of RFID data processing. In Managing and Mining Sensor Data; Springer
+      Science: New York, NY, USA, 2013; pp. 349–382. ISBN 9781461463092.
+5.    Ferroni, P.; Zanzotto, F.M.; Riondino, S.; Scarpato, N.; Guadagni, F.; Roselli, M. Breast cancer prognosis using
+      a machine learning approach. Cancers 2019, 11, 328. [CrossRef]
+6.    Ferroni, P.; Zanzotto, F.M.; Scarpato, N.; Riondino, S.; Guadagni, F.; Roselli, M. Validation of a machine
+      learning approach for venous thromboembolism risk prediction in oncology. Dis. Markers 2017, 2017, 1–7.
+      [CrossRef]
+7.    Matta, M.; Cardarilli, G.C.; Di Nunzio, L.; Fazzolari, R.; Giardino, D.; Nannarelli, A.; Re, M.; Spanò, S.
+      A reinforcement learning based QAM/PSK symbol synchronizer. IEEE Access 2019, 7, 124147–124157.
+      [CrossRef]
+8.    Beritelli, F.; Capizzi, G.; Lo Sciuto, G.; Napoli, C.; Woźniak, M. A novel training method to preserve
+      generalization of RBPNN classifiers applied to ECG signals diagnosis. Neural Netw. 2018, 108, 331–338.
+      [CrossRef]
+9.    Beritelli, F.; Capizzi, G.; Lo Sciuto, G.; Napoli, C.; Scaglione, F. Rainfall Estimation Based on the Intensity of
+      the Received Signal in a LTE/4G Mobile Terminal by Using a Probabilistic Neural Network. IEEE Access 2018,
+      6, 30865–30873. [CrossRef]
+10.   Luna-Perejón, F.; Domínguez-Morales, M.; Gutiérrez-Galán, D.; Civit-Balcells, A. Low-Power Embedded
+      System for Gait Classification Using Neural Networks. J. Low Power Electron. Appl. 2020, 10, 14. [CrossRef]
+11.   Spanò, S.; Cardarilli, G.C.; Di Nunzio, L.; Fazzolari, R.; Giardino, D.; Nannarelli, A.; Matta, M.; Re, M. An
+      Efficient Hardware Implementation of Reinforcement Learning: The Q-Learning Algorithm. IEEE Access
+      2019, 7, 186340–186351.
+12.   Losh, M.; Llamocca, D. A low-power spike-like neural network design. Electron. Switz. 2019, 8, 1479.
+      [CrossRef]
+13.   Cardarilli, G.C.; Di Nunzio, L.; Fazzolari, R.; Nannarelli, A.; Re, M.; Spano, S. N-Dimensional Approximation
+      of Euclidean Distance. IEEE Trans. Circuits Syst. Express Briefs 2020, 67, 565–569. [CrossRef]
+14.   Giuliano, R.; Mazzenga, F.; Petracca, M.; Vatalaro, F. Application of Radio Frequency Identification for
+      Museum Environment. In Proceedings of the Workshops on Enabling Technologies: Infrastructure for
+      Collaborative Enterprises, Hammamet, Tunisia, 17–20 June 2013; pp. 190–195.
+15.   Danis, F.S.; Cemgil, A.T. Model-Based Localization and Tracking Using Bluetooth Low-Energy Beacons.
+      Sensors 2017, 17, 2484. [CrossRef] [PubMed]
+16.   Sthapit, P.; Gang, H.; Pyun, J. Bluetooth Based Indoor Positioning Using Machine Learning Algorithms. In
+      Proceedings of the IEEE International Conference on Consumer Electronics, Asia (ICCE-Asia), Jeju, Korea,
+      24–26 June 2018; pp. 206–212. [CrossRef]
+Electronics 2020, 9, 1055                                                                                    19 of 20
+
+
+
+17.   Nurminen, H.; Dashti, M.; Piché, R. A Survey on Wireless Transmitter Localization Using Signal Strength
+      Measurements. Wirel. Commun. Mobile Comput. 2017. [CrossRef]
+18.   Chiou, S.-Y.; Liao, Z.-Y. Design and Implementation of Beacon-Based Positioning. J. Inf. Sci. Eng. 2020, 36,
+      643–658. [CrossRef]
+19.   Lohan, E.-S.; Talvitie, J.; Figueiredo De Silva, P.; Nurminen, H.; Ali-Löytty, S.; Piche, R. Received Signal
+      Strength models for WLAN and BLE-based indoor positioning in multi-floor buildings. In Proceedings of
+      the International Conference on Localization and GNSS (ICL-GNSS), Gothenburg, Sweden, 22–24 June 2015.
+      [CrossRef]
+20.   Zuo, Z.; Liu, L.; Zhang, L.; Fang, Y. Indoor Positioning Based on Bluetooth Low-Energy Beacons Adopting
+      Graph Optimization. Sensors 2018, 18, 3736. [CrossRef]
+21.   Kriz, P.; Maly, F.; Kozel, T. Improving Indoor Localization Using Bluetooth Low Energy Beacons. Mobile Inf.
+      Syst. 2016, 11. [CrossRef]
+22.   Ishida, S.; Takashima, Y.; Tagashira, S.; Fukuda, A. Proposal of Separate Channel Fingerprinting Using
+      Bluetooth Low Energy. In Proceedings of the 5th IIAI International Congress on Advanced Applied
+      Informatics (IIAI-AAI), Kumamoto, Japan, 10–14 July 2016; pp. 230–233.
+23.   Hoang, M.T.; Yuen, B.; Dong, X.; Lu, T.; Westendorp, R.; Reddy, K. Recurrent Neural Networks for Accurate
+      RSSI Indoor Localization. IEEE Internet Things J. 2019, 6, 10639–10651. [CrossRef]
+24.   Mackin, C. Exploration for Range Based Indoor Localization Technologies and Algorithms; Technical Report No.
+      UCB/EECS-2018-109; Electrical Engineering and Computer Sciences University of California: Berkeley, CA,
+      USA, August 2018; Available online: http://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-109.
+      html (accessed on 9 August 2018).
+25.   Gu, Y.; Lo, A.; Niemegeers, I. A survey of indoor positioning systems for wireless personal networks. IEEE
+      Commun. Surv. Tutor. 2009, 11, 13–32. [CrossRef]
+26.   Yang, J.; Li, Y.; Cheng, W. An improved geometric algorithm for indoor localization. Int. J. Distrib. Sens.
+      Netw. 2018, 14, 1–13. [CrossRef]
+27.   Mussina, A.; Aubakirov, S. RSSI Based Bluetooth Low Energy Indoor Positioning. In Proceedings of the
+      IEEE 12th International Conference on Application of Information and Communication Technologies (AICT),
+      Almaty, Kazakhstan, 17–19 October 2018; pp. 1–4.
+28.   Hillar, C.C. MQTT Essentials—A Lightweight IoT Protocol; Packet Publishing: Birmingham, UK, 2017.
+29.   Xu, B.; Zhu, X.; Zhu, H. An Efficient Indoor Localization Method Based on the Long Short-Term Memory
+      Recurrent Neuron Network. IEEE Access 2019, 7, 123912–123921. [CrossRef]
+30.   Naghdi, S.; O’Keefe, K. Detecting and Correcting for Human Obstacles in BLE Trilateration Using Artificial
+      Intelligence. Sens. Basel 2020, 20, 1350. [CrossRef] [PubMed]
+31.   Dinh, T.T.; Duong, N.; Sandrasegaran, K. Smartphone-based Indoor Positioning Using BLE iBeacon and
+      Reliable Lightweight Fingerprint Map. IEEE Sens. J. 2020. [CrossRef]
+32.   Iqbal, Z.; Luo, D.; Henry, P.; Kazemifar, S.; Rozario, T.; Yan, Y.; Westover, K.; Lu, W.; Nguyen, D.; Long, T.;
+      et al. Accurate real time localization tracking in a clinical environment using Bluetooth Low Energy and
+      deep learning. PLoS ONE 2018, 13, e0205392. [CrossRef] [PubMed]
+33.   Mazan, F.; Kovarova, A. A Study of Devising Neural Network Based Indoor Localization Using Beacons:
+      First Results. Comput. Inf. Syst. J. 2015, 19, 15–20.
+34.   Tsitsipa, V.; Achillias, G.; Parthenios, P. Using big data to design user-centric museums. From visitors loyal
+      to museums to museums loyal to users. In Proceedings of the Education and Research in Computer Aided
+      Architectural Design in europe (eCAADe), Łódź, Poland, 19–21 September 2018.
+35.   Bluetooth Smart or Version 4.0+ of the Bluetooth Specification. Available online: bluetooth.com (accessed on
+      10 March 2017).
+36.   Hernández-Rojas, D.L.; Fernández-Caramés, T.M.; Fraga-Lamas, P.; Escudero, C.J. Design and Practical
+      Evaluation of a Family of Lightweight Protocols for Heterogeneous Sensing through BLE Beacons in IoT
+      Telemetry Applications. Sensors 2018, 18, 57. [CrossRef]
+37.   Espressif Systems, ESP32-WROOM-32D & ESP32-WROOM-32U Datasheet v1.9.                                Available
+      online: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_
+      datasheet_en.pdf. (accessed on 9 June 2020).
+38.   SR Passives,         Wi-Fi—Ant 410-1.                Available online:         https://www.tme.eu/Document/
+      c80a7d27e7324afe40b4ab4d29f42817/WIFI-ANT410-1.pdf (accessed on 9 June 2020).
+Electronics 2020, 9, 1055                                                                                    20 of 20
+
+
+
+39.   Goldoni, E.; Savioli, A.; Risi, M.; Gamba, P. Experimental analysis of RSSI-based indoor localization with
+      IEEE 802.15.4. In Proceedings of the European Wireless Conference (EW), Lucca, Italy, 12–15 April 2010;
+      pp. 71–77.
+40.   Capizzi, G.; Coco, S.; Lo Sciuto, G.; Napoli, C. A New Iterative FIR Filter Design Approach Using a Gaussian
+      Approximation. IEEE Signal. Process. Lett. 2018, 25, 1615–1619. [CrossRef]
+41.   Murphy, W.S.; Hereman, W. Determination of a Position in Three Dimensions Using Trilateration and Approximated
+      Distances; Technical Report MCS-95-07; Colorado School of Mines: Golden, CO, USA, October 1995; pp. 1–19.
+      Available online: https://inside.mines.edu/~{}whereman/papers/Murphy-Hereman-Trilateration-MCS-07-
+      1995.pdf (accessed on 9 June 2020).
+
+                            © 2020 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+                            article distributed under the terms and conditions of the Creative Commons Attribution
+                            (CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+

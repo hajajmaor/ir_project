@@ -1,0 +1,569 @@
+Archeologia e Calcolatori
+28.2, 2017, 405-420
+
+ENGAGING VISITORS OF ARCHAEOLOGICAL SITES THROUGH
+“EMOTIVE” STORYTELLING EXPERIENCES:
+A PILOT AT THE ANCIENT AGORA OF ATHENS
+1. Introduction
+Storytelling applies to nearly everything we do. Everybody uses stories,
+from educators to marketers and from politicians to journalists (Tsene et al.
+2014), to inform, persuade, entertain, motivate or inspire. The cultural heritage
+sector also uses storytelling, yet it tends to be used narrowly, as a method to
+communicate to the public the findings and research conducted by the domain
+experts of a cultural site or collection. Museums, for instance, “tell stories”
+through the informed selection and meaningful display of artefacts and the use
+of explanatory visual and narrative motifs in their exhibits and in the spaces
+between exhibits (Roussou 2004). This interpretative process is at the heart of
+the museum as an unassailable institutional authority (Phillips 1997; Walsh
+1997). Nevertheless, storytelling as applied by museums has for the most part
+been limited to descriptive, scholarly prose. The meaning of many cultural heritage collections and sites is typically communicated in situ in didactic fashion.
+We believe that museums raise significant new challenges for interactive storytelling research, in how they support forms of story that can help
+visitors to engage with the cultural content, whether physical (on-site visits)
+or digital (online). In this paper, we describe the creation of a prototype
+mobile storytelling experience that attempts to explore a more emotive kind
+of storytelling in cultural contexts, specifically archeological sites. Research
+that attempts to push on the boundaries of narrative constructs has begun to
+recognise the promise of evocative digital experiences for heritage locations,
+including fragmentary sites.
+2. Digital storytelling in cultural contexts
+The adoption of a more explicit storytelling approach to exhibition
+design is considered to contribute to making collections even more accessible
+and engaging for different kinds of audiences: it creates a relaxed environment
+that raises self-confidence (Johnsson 2006); establishes a universal way of
+communication; and because it invites the audience to fill in the blanks with
+their own experiences, it helps to set emotional connections, which are deeper
+than intellectual understanding (Bedford 2001; Springer et al. 2004).
+Digital storytelling for cultural applications draws from the rich history of
+research in interactive storytelling for digital media. In general terms, previous
+405
+
+M. Roussou, F. Ripanti, K. Servi
+
+research can be divided into plot based approaches and character-based systems. Plot based approaches to interactive storytelling are primarily concerned
+with the importance of narrative structure, and their main focus is that of
+ensuring that a certain level of coherence and dramatic tension is provided in
+an interactive story, much as it is in more traditional storytelling media, e.g.
+Universe (Lebowitz 1984), Agent Stories (Brooks 1996). Character-based
+systems (Cavazza, Charles, Mead 2002; Balet et al. 2008), provide a narrative with structural elements that are supposed to emerge (Mateas, Stern
+2005; Kriegel, Aylett 2008) from characters’ personalities and functions
+within the story rather than being imposed by a pre-authored plot.
+While such approaches have been successfully applied to games, films,
+multimedia and other similar forms of interactive digital media, their potential
+to enhance storytelling in museums is less developed. The online GIZA3D 1
+Project offers a storytelling structure to its multimedia-rich 3D world. However, the stories are linear, non-interactive narratives, while the 3D graphics
+aesthetics use a “cartoonish” representational quality, a shortcoming that
+can be problematic for interpretation in cultural and educational contexts.
+Several on-site digital storytelling approaches use mobile devices to
+engage the visitor in more interactive or adaptive experiences. The PEACH
+Project automatically produced video clips on the visitor’s device and used
+a life-like character as a presenter (Damiano et al. 2008). In Ghosts in the
+Garden (Poole 2015), present-day visitors, using a special “Georgian Listening Device”, roamed around a historical garden in Bath, UK to discover
+the “ghosts” of characters based on real people from the Gardens’ heyday.
+The CHESS Project, an EU-funded research project that ran between 2011
+and 2014, explored the development of stories that were designed to be plotbased yet interactive, personalized and adaptive (Pujol et al. 2013; Vayanou
+et al. 2014). For example, in one of the CHESS stories implemented for the
+Acropolis Museum in Athens, the character, Theseus, asks the visitor to collect
+virtual “powers” (from exhibits in the museum’s Archaic gallery) in order to
+help him confront King Minos’ soldiers after exiting the labyrinth. In another story for the same museum, the character, Melesso, talks about her life,
+inspired by the exhibits in the gallery. The story’s ending culminates with the
+viewing of the real object, an offering that the once real Melesso made to the
+goddess Athena. The aim of these story plots, as with other such projects, was
+to motivate visitors in finding meaningful and personal connections with the
+objects (Alelis, Bobrowicz, Ang 2013). These examples require the visitor’s
+physical presence on the site, and are for the most part single-user. Narrative
+variations have been investigated by Callaway, Stock, Dekoven (2014) in
+1
+
+406
+
+GIZA3D, Dassault Systèmes, http://giza3d.3ds.com/en-stories.html (accessed: 01/08/2017).
+
+A pilot at the Ancient Agora of Athens
+
+the context of a drama-based mobile museum storytelling guide in order to
+promote interaction between users.
+In the following sections, we explore key elements in shaping a visitor’s
+experience as observed during the evaluation of the CHESS prototypes, and
+we describe the design and prototype development of an interactive mobile
+storytelling experience for visitors of the archeological site of the Ancient
+Agora in Athens, Greece.
+3. What makes up an engaging visitor experience?
+Schell (2005) defines a successful entertainment experience as such
+when the right combination of a visitor’s levels of interest (the desire and will
+which enables us to focus attention), empathy (the ability to put one’s self
+in the place of another), and imagination (the ability to fantasize alternate
+realities), is triggered and maintained throughout the experience (Schell
+2005). Storytelling is undoubtedly the best vehicle to trigger these abilities in
+the visitor experiencing a digital environment of cultural content.
+In our attempt to answer the question “How do we engage an audience?”
+we performed a series of studies with the mobile prototypes during the CHESS
+project’s evaluation activities. The studies showed that various different factors
+comprise an effective and engaging visitor experience, including: storytelling;
+interactivity; activities that helped bridge real space and objects with the digital
+content; impressive technologies such as augmented reality; and support for
+more social experiences, i.e. that can be shared between visitors on-site and/
+or before or after the visit (Katifori et al. 2016).
+Visitors were particularly enthusiastic about the story structuring of
+the experience, especially instances of storytelling that were humorous, that
+provoked curiosity or that revealed unexpected elements of the content. One
+of the key observations from CHESS was that visitors wanted the stories to be
+emotionally resonant. Storytelling can be a powerful tool but not all stories are
+effective in communicating the messages they set out to convey and to grasp
+and hold their audience’s attention. «Why do some stories make us dream
+while others make us drowsy?» asks Goodman (2015), who then goes on to
+argue that «the secret ingredient behind all successful stories is a four-letter
+word – and no, it’s not plot. While narrative structure is undoubtedly important, the true test of any story is how it makes your audience feel». Storytelling
+becomes an even more powerful tool when it taps into our emotions.
+Motivated by this premise, the EU-funded H2020 research project titled
+EMOTIVE 2, which kicked-off in November 2016 and will run for 3 years,
+aims at developing methods and tools that can support the cultural and
+2
+
+http://www.emotiveproject.eu/ (accessed: 01/08/2017).
+
+407
+
+M. Roussou, F. Ripanti, K. Servi
+
+creative industries in designing and developing digital experiences which draw
+on the power of “emotive storytelling”. Specifically, EMOTIVE proposes to
+research and design:
+– a plot-based approach that resonates with people, i.e. stories that are emotively engaging, spanning different genres (romance, comedy, mystery, etc.);
+– stories that are (more) non-linear, (more) personalised, (more) adaptive,
+i.e. aspects that were not covered in CHESS and other projects, while at the
+same time accounting for multiple users interacting with the story and collaborating to advance it;
+– stories that are persistent, combining hybrid story spaces (visitors continuing
+online and on-site) for users who would like to access content before, during
+or after a visit to a cultural space.
+As a starting point in exploring the role of emotions in storytelling and
+user experience, we considered adopting an agile development approach to
+create a first prototype in order to test out some of the above ideas. The prototype, implemented as an interactive mobile application for visitors on-site
+the Ancient Agora, is described below.
+4. The Digital storytelling prototype at the Ancient Agora of
+Athens
+The prototype storytelling experience was created and evaluated in late
+2016 by a multidisciplinary team of archeologists, interaction designers and
+computer scientists. The objective of the prototype was to explore if and how
+visitors could be involved in an emotional journey to the past, going back in
+time to experience facets of life set in the Ancient Agora. Visitors walk around
+the site and listen to stories explicitly authored with the objective of striking
+emotional chords. We believe that well-known archaeological sites such as
+the Ancient Agora have a high dramatic potential that can help to humanize
+what is difficult to understand. Thus, the emotional aspect became central to
+this project: starting from a sentimental involvement, visitors are expected
+to approach the ancient ruins in a different manner and to become curious
+about their purpose, use, and significance.
+4.1 The site
+The archaeological site of the Ancient Agora of Athens is the best-known
+example of an ancient Greek agora, located to the NW of the Acropolis and
+bounded in the S by the hill of the Areopagus and in the west by the Agoraios Kolonos hill, also called Market Hill. The site is being excavated by the
+408
+
+A pilot at the Ancient Agora of Athens
+
+American School of Classical Studies in Athens 3 since 1931. After the initial
+phase of excavation, in the 1950s, the Hellenistic Stoa of Attalos on the eastern
+side of the Agora was reconstructed, and today it serves as a museum and as
+storage and office space for the excavation team.
+4.2 Stories
+Under the title 1001 stories of the Ancient Agora, our team explored the
+idea of several independent stories offered under a unifying theme; that of a
+developing love story between Ian, an American archaeologist, and a mysterious young Greek woman named Eleni. Of the 1001 envisioned stories, two
+have been created for this prototype, the story of a grave and the story of the
+post-Herulian wall. The themes of these two stories were chosen to represent
+powerful concepts with which people relate to, such as life, death, love, and
+war. Stories of life or loss have the power to provoke existential reflection,
+sympathy and even empathy. Stories of tension and triumph ignite our inner
+fire because struggle is part of human nature (Gallo 2016).
+Every story conveys something new about the Agora, its monuments,
+the historical characters who lived there and the recent discoveries carried
+out by the archaeologists. Every story can be experienced through different
+perspectives, and the visitor can choose one or more. In this way, the story of
+a monument is told, for instance, by characters with a particular affinity with
+the historical and archaeological context (e.g. a person that really existed,
+such as the Athenian historian Dexippus) and characters capable of touching
+different audiences (e.g. a child or an archaeologist of the 1960s as narrators).
+Ian and Eleni. On his first day at the Agora excavation, Ian, an American
+archaeologist of the 1930s, meets Eleni, a young local woman who (inexplicably) knows many stories about the Ancient Agora. Ian is intrigued and
+invites Eleni to meet him later at the site: So night after night, Eleni and Ian
+meet at the ancient Agora and she always has a special story to tell… says the
+narrator. Romance ensues but at the end of the story Ian becomes suspicious
+and presses Eleni to tell him how she knows all of the details pertaining to the
+Ancient Agora. Eleni can only reveal the truth, that she is a ghost from the past.
+The story of Ian and Eleni serves as an “umbrella” to encompass a variety
+of different stories about the Agora. The first two stories developed for this
+prototype are described below.
+The story of the grave. The main topic of this story is a mysterious grave,
+found by archaeologists in the 1960s. The excavations revealed some atypical
+goods inside the grave, dating back to 850 BC. The objects found are now
+exhibited in a glass case in the museum that is situated inside the archaeological
+3
+
+http://www.ascsa.edu.gr/ (accessed: 01/08/2017).
+
+409
+
+M. Roussou, F. Ripanti, K. Servi
+
+Fig. 1 – Screenshots from the mobile application depicting the
+characters narrating the stories in the Ancient Agora prototype
+experience.
+
+site. The characters of the story span three different time periods, 850 BC
+(death of a prominent woman), 1967 AD (archaeologists discover the grave),
+and 2004 AD (researchers find out that the dead woman was pregnant). The
+visitor learns the truth about the grave from the characters “living” in 2004.
+The following excerpts illustrate the narration style:
+850 BC
+Narrator: Glauke was looking, eyes wide open, at her older sister. Herse was so
+beautiful, wearing her golden earrings adorned with pomegranates. It reminded
+Glauke of the day she married that handsome, noble stranger with whom she
+spent so many happy years. Herse was lucky, she had a very happy marriage.
+Her house was full of everything. And her husband was gentle and kind. The
+only thing that shadowed her happiness was that the gods did not bless her with
+children. Glauke would catch her, very often, starring at her kids, 3 boys and 2
+girls, with love mingled with pain. And when Glauke yelled at them, every time
+they would disturb the neighbors with their shouts, Herse would always interfere: «Do not berate them, they are just kids!» and would then hug them tightly.
+«Glauke!». Her husband’s voice dissolved the bitter-sweet memories. Glauke
+felt her eyes fill with tears. Her sister, sweet Herse. Shortly, her body would be
+laying on top of wooden planks set on fire, and turn into ashes. Who could
+410
+
+A pilot at the Ancient Agora of Athens
+
+Fig. 2 – Screenshots from the story of the grave depicting one of
+the main heroines of the story, Herse (left), and an interactive quiz
+requiring visitor input (right).
+
+imagine such a disaster? Who could expect that instead of happiness she would
+meet death?
+Glauke joined hands with her younger daughter and, following her husband
+and the rest of the family, made her way towards the burial site. The whole
+community was here, for the last farewell to Herse. The animals for the funerary
+feast, 70 kilos almost, were already roasted. The gifts she would take with her
+were gathered: a splendid necklace made of glass beads, seals and that beautiful
+pyxis made of clay, with the five conical pinnacles, to hold her belongings. An
+abundance of gifts, not just for her sister but for the creature too. The one that
+bears no name. The one that lead her to death.
+1967 AD
+[Sound of digging. A transistor playing a 1967 hit, “L’amour est bleu”.]
+Yiorghis (worker): Hey, boss! Come here to see what we’ve found!
+Robert (archaeologist): I am coming! And turn off this transistor radio! It’s
+driving me crazy!
+Yiorghis: Ok, boss! Look!
+Robert: Oh, my god! An intact geometric tomb!
+Yiorghis: And what about this box?
+Robert: Oh! This is a beautiful pyxis!
+411
+
+M. Roussou, F. Ripanti, K. Servi
+
+Yiorghis: Pyxis?
+Robert: A box, used by women to store their jewelry or their cosmetics. […]
+Although, this is definitely strange… This kind of cinerary urn was used, as far
+as I know, only for men…
+[…]
+Can you imagine why a woman was buried in such an unusual vase?
+1. Because she was an aristocrat.
+2. It was not unusual after all. Archeologists, in the future, discovered more of
+these vases used in women’s tombs.
+3. Because her death was connected to that of another human being.
+[3] Yes, the woman in tomb H 16:6, the “rich Athenian lady” as she is usually
+called, died 8 months pregnant or after she gave birth to a premature fetus. For
+many years archaeologists were wondering why her cremated remains were put
+in a funerary vase destined exclusively for men.
+
+The story of the post-Herulian Wall. The second story is inspired by the
+late Roman wall erected near the most known building of the Ancient Agora,
+the Stoa of Attalos. The story concerns a lesser-known event about the history
+of Athens, the sack of the city by the Herules (a Germanic tribe) in 267 AD.
+Three characters offer three different perspectives of the event as related to
+the Ancient Agora. Excerpts from these sub-stories are provided below:
+Introduction to the story
+Narrator: Directives, clamors, and noises of weapons. In the faint morning
+light, the barbarians were outside the gates of Athens. After crossing the Pontus Euxinus and the whole of Greece, the Herules finally smelled the scent of
+plunder. The Athenians had to fight to save their own city. The city walls were
+solid; the emperor Valerianus had reinforced them 15 years earlier, and they
+would have resisted.
+[…]
+Demetrios
+Demetrios managed to run away after the barbarians had invaded the city.
+He climbed up to hide in a leafy tree near the temple of Hephaestus. He was
+paralyzed by fear for the danger he had narrowly escaped from! Demetrios was
+a boy – taller and stronger than his peers, but still a boy. Given the scarcity of
+men able to fight, the adults had asked him to help defend the city, but this was
+his very first time in war.
+When the barbarians managed to break the defensive line, one of them, with
+a long blond beard and a horrible helmet, attacked Demetrios savagely with a
+heavy sword and by shouting incomprehensible words at the top of his voice.
+Demetrios screamed out in fear and ran away. «A coward, I’m a coward! But
+better a coward than a dead man».
+[…]
+412
+
+A pilot at the Ancient Agora of Athens
+
+Dexippus
+Dexippus: I freed my city from the enemy. An endeavor worthy of being described
+in one of my next works. I could write that Dexippus, an Athenian politician
+and historian, devotee of Herodotus and Thucydides, made the history of his
+city defeating the enemy with no help from Rome. We were just two thousand
+in the forest and we managed to defeat the barbarians with a series of ambushes.
+What a great day for the Athenians!
+The Athenian pride grew inside his heart while he was walking along the Panathenaic Way with his young friend Demetrios.
+Demetrios: I agree, it was a fantastic endeavor but… don’t misunderstand me: a
+huge part of our city is still in ruins. I was here, in the Agora, when the barbarians entered the city. I saw them with my own eyes destroying our monuments.
+Look at what remains of the Stoa of Attalos: are we going to restore it?
+[…]
+Ciriaco (Fig. 3)
+Athens, 7th April 1436
+Piero: I got to Athens. I saw huge walls destroyed by time and, both in the city
+and in the nearby country, marble buildings of extraordinary beauty, houses,
+temples and numerous statues made by very important artists, and great columns, but all these things were only a huge mass of ruins.
+
+Fig. 3 – A screenshot from one of the stories of
+the post-Herulian Wall depicting the characters
+of Ciriaco and Piero and their dialogue.
+
+413
+
+M. Roussou, F. Ripanti, K. Servi
+
+Yesterday I read his diary. If he knew, I would’ve gotten in serious trouble.
+I’ve been reading it almost every day during this long journey from Ancona. I
+know it’s wrong, but I admire Ciriaco immensely and wish to learn as much as
+I can from him. He writes mainly about his life. So different from mine; I mean,
+I like to travel, to see beautiful places, and yes, to also meet beautiful women,
+of course. However, Ciriaco is not as interested as I am in these kinds of things.
+[…]
+Ciriaco: Piero, what do you want? Why do you interrupt me?
+Piero: I finished the task you assigned to me. Which drawing do you prefer?
+[Both drawings displayed on the screen]
+Ciriaco: Uhm, I like the details in the second… I think you should do another
+one, you can do better, definitely!
+Piero (mumbling): Every time the same story. Every time a different mistake.
+I must have patience!
+[…]
+
+4.3 Implementation
+The stories were implemented using an on-line story prototyping tool
+created by a team of researchers and developers at the Department of Informatics and Telecommunications of the National and Kapodistrian University
+of Athens and the ATHENA Research Center. The tool was used by the authors to compile audio, video, text and images into a branching storytelling
+experience. The resulting multimedia production is exported into a mobile
+application which can be experienced on any commercially available Android
+smartphone (Fig. 4). All voices are studio-recorded.
+
+Fig. 4 – Visitors handling the mobile phone with the prototype experience created for the Ancient
+Agora of Athens.
+
+414
+
+A pilot at the Ancient Agora of Athens
+
+5. Evaluation
+In order to evaluate this prototype, we invited users to experience the
+stories on-site the Ancient Agora in December 2016. The goals of this preliminary study were:
+– to record user requirements in relation to emotive digital storytelling;
+– to address usability and practical issues;
+– to assess whether the user experience flows; and
+– to determine the potential of the stories in striking an emotional chord.
+5.1 Participants
+Seven users, three female and four male, participated in the study. Participants’ ages ranged from 20 to 55 years old and included two archaeologists,
+computer science students and researchers, and an architect/exhibit designer.
+Two of the participants had visited the Ancient Agora before and knew the
+site quite well while the others had either never been to it before or had not
+visited it in recent years.
+5.2 Procedure
+The participants were met by the evaluators at the entrance of the archaeological site. An introduction to the goals of the study was given to every
+
+Fig. 5 – A pair of friends experiencing together the stories near the
+temple of Hephaistus, during the evaluation of the prototype at the
+Ancient Agora.
+
+415
+
+M. Roussou, F. Ripanti, K. Servi
+
+Fig. 6 – Visitors while participating in the study and observed/interviewed by the researchers.
+
+participant as well as consent forms for audio/video recording them. A mobile
+device with headphones was provided to each. No other instructions were
+given, since the goal was also to evaluate the application’s usability. Two of
+the users chose to share the same device (Fig. 5), while the rest preferred an
+individual experience (Fig. 6).
+While experiencing the story, participants were shadowed by the evaluators who recorded their path and reactions. Each session lasted from 20
+to 40 minutes. After the experience, each visitor was interviewed, based on
+a predefined set of questions; a focus group discussion followed to collect
+further comments.
+5.3 Preliminary observations
+The themes that emerged from analyzing the interviews were numerous,
+e.g. issues concerning geolocalization; interactivity and making choices; the use
+of the screen; sound vs. text; photos vs. sketches; narration vs. dialogue; story
+style, structure, length and characters; fiction vs. facts; humour; connection
+to the cultural site; and emotive aspects.
+416
+
+A pilot at the Ancient Agora of Athens
+
+Participants’ impressions from this first evaluation of the 1001 stories in
+the Ancient Agora prototype were, generally, positive. Despite the unusually
+cold weather on the day of the evaluation, the participants enjoyed walking
+around in the Agora: «The whole idea of walking around as someone’s telling
+you not about what you are seeing but a story is very powerful». All visitors
+experienced the story they chose from beginning to end, while some chose
+to experience both stories: «It’s like being a time traveller and going back to
+the period you choose to visit». In particular, users were enthusiastic about
+the potential of the stories and the power of emotions to convey meaning
+through them. Among the strengths of the experience, according to the users,
+was the possibility to choose different perspectives; the little-known aspects of
+history that were revealed in such a dramatic way; the media content displayed
+on the screen, especially the historical photos of the American School; and
+the possibility of moving from one place to another at will («It’s a narrative
+where you’re free to look around and you have these punctuated moments
+where it mentions a building and you’re, like, oh I’m here in the story!»).
+However, some participants wanted clear directions on each story’s starting
+point and where to stand.
+In terms of shortcomings, although the interface was generally considered easy to use and intuitive, visitors had difficulty navigating inside the
+site due to the absence of an appropriate map or geolocation service. Some
+users felt burdened by the cognitive load caused when interacting with the
+application and listening to the audio at the same time, and suggested that
+they would’ve liked to press “start”, put the phone in their pocket and walk
+in the Agora listening to the stories, without being distracted by the screen
+and interactive activities. Others preferred the more active approach. One
+participant wanted other/more themes: «I’d like to learn more about society
+in Antiquity, to feel the aura of being here in the times of Kimon, Perikles,
+Plato or Socrates. In fact, I would’ve liked Kimon to give me the tour». All
+in all, we gathered many suggestions for improvement and proposals for
+features to be implemented.
+6. Future work
+Overall, the main concept at the base of the storytelling approach seemed
+to work. Storytelling and emotions seem to provoke the visitors’ curiosity
+and engagement with the site. Future work on this research will include the
+continuation of the authoring of stories by incorporating emotional triggers.
+We also plan to perform further studies, following an appropriate methodology to analyze the observations, interviews, focus group discussions, and
+other methods for obtaining results that can guide the iterative design and
+development of evocative experiences.
+417
+
+M. Roussou, F. Ripanti, K. Servi
+
+We are just at the beginnings of unravelling many promising design
+possibilities as we approach emotions and experiences more explicitly in our
+design processes. This preliminary study provides us with the basis needed
+to continue researching and developing emotive storytelling that can connect
+visitors to the cultural content and enhance their experience.
+Acknowledgements
+The authors wish to thank all colleagues who have contributed their creative talent and
+technological expertise to the development of the work presented throughout this paper.
+Special mention is due to Vassilis Kourtis, Ektor Vrettakis, Dr Akrivi Katifori, Giulia
+Osti, Katerina Roussou, Andreas Chlepas, and Stephen Mc Gillivray; to Bruce Hartzler
+for creative comments and access to the Ancient Agora of Athens; to the users who participated in the evaluation; and to all partners of the EMOTIVE H2020 project, http://
+www.emotiveproject.eu/. EMOTIVE has received funding from the Horizon 2020 EU
+Framework Programme for Research and Innovation under grant agreement no. 727188.
+Maria Roussou
+National and Kapodistrian University of Athens
+Department of Informatics and Telecommunications
+mroussou@di.uoa.gr
+
+Francesco Ripanti
+Università di Pisa
+Dipartimento di Civiltà e Forme del Sapere
+francesco.ripanti@fileli.unipi.it
+
+Katerina Servi
+National and Kapodistrian University of Athens
+katservi@gmail.com
+REFERENCES
+Alelis G., Bobrowicz A., Ang C.S. 2013, Exhibiting Emotion: Capturing visitors’ emotional
+responses to museum artefacts, in A. Marcus (ed.), International Conference of Design,
+User Experience, and Usability (DUXU): User Experience in Novel Technological Environments - HCII 2013. Part of the Lecture Notes in Computer Science Book Series
+(LNCS, volume 8014), Berlin-Heidelberg, Springer-Verlag, 429-438.
+Balet O., Duysens J., Compdaer J., Gobbetti E., Scopigno R. 2008, The CRIMSON
+Project - Simulating populations in massive urban environments, in 8th World Congress
+on Computational Mechanics (WCCM8) (Venice 2008) (http://vcg.isti.cnr.it/Publications/2008/BDCGS08; accessed: 20/06/2017).
+Bedford L. 2001, Storytelling: The real work of museums, «Curator. The Museum Journal»,
+44, 1, 27-34 (http://doi.wiley.com/10.1111/j.2151-6952.2001.tb00027.x; accessed:
+01/08/2017).
+Brooks K.M. 1996, Do story agents use rocking chairs? The theory and implementation of
+one model for computational narrative, in Proceedings of the Fourth ACM international
+conference on Multimedia (MM96) (Boston 1996), New York, ACM Press, 317-328
+(http://portal.acm.org/citation.cfm?doid=244130.244233; accessed: 20/06/2017).
+
+418
+
+A pilot at the Ancient Agora of Athens
+
+Callaway C., Stock O., Dekoven E. 2014, Experiments with mobile drama in an instrumented
+museum for inducing conversation in small groups, «ACM Transactions on Interactive
+Intelligent Systems», 4, 1, 1-39 (http://dl.acm.org/citation.cfm?doid=2602757.2584250;
+accessed: 20/06/2017).
+Cavazza M.O., Charles F., Mead S.J. 2002, Character-based interactive storytelling, «IEEE
+Intelligent Systems», 17, 4, 17-24 (http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.
+htm?arnumber=1024747; accessed: 01/08/ 2017).
+Damiano R., Gena C., Lombardo V., Nunnari F., Pizzo A. 2008, A stroll with Carletto:
+Adaptation in drama-based tours with virtual characters, «User Modelling and User-Adapted Interaction», 18, 5, 417-453.
+Gallo C. 2016, The Storyteller’s Secret: From TED Speakers to Business Legends. Why Some
+Ideas Catch On and Others Don’t, New York, St. Martin’s Press.
+Goodman A. 2015, The four-letter word behind all successful stories, «Free-range thinking»,
+November 2015 (www.thegoodmancenter.com; accessed: 20/06/2017).
+Johnsson E. 2006, Telling Tales. A Guide to Developing Effective Storytelling Programmes
+for Museums (C. Adler ed.), London, London Museums Hub, Museum of London
+(available at: http://www.museumoflondon.org.uk/files/4413/7468/3728/Telling-Tales.
+pdf; accessed: 20/06/2017).
+Katifori A. et al. 2016, Cultivating mobile-mediated social interaction in the museum: Towards group-based digital storytelling experiences, in MW2016: Museums and the Web
+2016 (Los Angeles 2016) (available at: http://mw2016.museumsandtheweb.com/paper/
+cultivating-mobile-mediated-social-interaction-in-the-museum-towards-group-baseddigital-storytelling-experiences/).
+Kriegel M., Aylett R. 2008, Emergent narrative as a novel framework for massively collaborative authoring, in H. Prendinger, J. Lester, M. Ishizuka (eds.), Intelligent
+Virtual Agents. Proceedings of the 8th IVA 2008 International Workshop (Tokyo 2008),
+Berlin-Heidelberg, Springer, 73-80.
+Lebowitz M. 1984, Creating characters in a storytelling Universe, «Poetics», 13, 171-194.
+Mateas M., Stern A. 2005, Structuring content in the façade interactive drama architecture,
+in M. Young, J. Laird (eds.), Proceedings of the First Artificial Intelligence and Interactive Digital Entertainment Conference (AIIDE) (Marina del Rey 2005), Menlo Park
+(CA), American Association for Artificial Intelligence Press (available at: http://www.
+interactivestory.net/papers/MateasSternAIIDE05.pdf).
+Phillips D. 1997, Exhibiting Authenticity, Manchester-New York, Manchester University Press.
+Poole S. 2015, “Ghosts in the Garden”: Locative gameplay and historical interpretation from
+below, in Challenge the past / diversify the future (Gothenborg 2015), Gothenborg, University of Gothenborg, 93-96 (available at: http://old.react-hub.org.uk/heritagesandbox/
+projects/2012/ghosts-in-the-garden/).
+Pujol L., Roussou M., Poulou S., Balet O., Vayanou M., Ioannidis Y. 2013, Personalizing
+interactive digital storytelling in archaeological museums: The CHESS project, in G.
+Earl, T. Sly, A. Chrysanthi, P. Murrieta-Flores, C. Papadopoulos, I. Romanowska, D. Wheatley (eds.), Archaeology in the Digital Era. Papers from the 40th Annual
+Conference of Computer Applications and Quantitative Methods in Archaeology (CAA)
+(Southampton 2012), Amsterdam, Amsterdam University Press, 77-90 (available at: dare.
+uva.nl/cgi/arno/show.cgi?fid=545855).
+Roussou M. 2004, Learning by doing and learning through play, «Computers in Entertainment»,
+2, 1, 10 (http://portal.acm.org/citation.cfm?doid=973801.973818; accessed: 01/08/2017).
+Schell J. 2005, Understanding Entertainment: Story and gameplay are one, «ACM Computers
+in Entertainment», 3, 1, 835-843.
+Springer J., Kajder S., Borst Brazas J. 2004, Digital Storytelling at the National Gallery
+of Art, in D. Bearman, J. Trant (eds.), Museums and the Web 2004, Arlington (VA),
+Archives & Museum Informatics (available at: http://www.museumsandtheweb.com/
+mw2004/papers/springer/springer.html).
+
+419
+
+M. Roussou, F. Ripanti, K. Servi
+
+Tsene L., Saridaki M., Roinioti E., Chrisanthopoulou Ch., Tsakarestou B. 2014, Playful
+Transmedia Storytelling: The case of Petite Pousette, in International Digital Storytelling
+Conference: Digital Storytelling in Times of Crisis (Athens 2014), Athens, 1-10.
+Vayanou M., Karvounis M., Katifori A., Kyriakidi M., Roussou M., Ioannidis Y. 2014,
+The CHESS Project: Adaptive personalized storytelling experiences in museums, in I.
+Cantador, M. Chi, R. Farzan, R. Jäschke (eds.), The 22nd Conference on User Modelling, Adaptation and personalization. UMAP 2014 Extended Proceedings (Aalborg
+2014) (http://ceur-ws.org/Vol-1181/pros2014_paper_04.pdf; accessed: 20/06/2017).
+Walsh P. 1997, The Web and the unassailable voice, «Archives & Museum Informatics», 11,
+2, 77-85.
+ABSTRACT
+The use of interactive storytelling by museums and heritage sites lends to the creation of
+experiences that support visitors in engaging emotionally with the objects on display. Finding
+ways to connect to the cultural content is even more important for visitors of archaeological
+sites due to the often fragmentary nature of the exhibits, which can leave them wondering what
+was once there and how it relates to them. In this paper, we describe the creation of a prototype
+mobile storytelling experience that attempts to explore a more emotive kind of storytelling in
+cultural contexts. The prototype was evaluated in a preliminary study that took place at the
+archaeological site of the Ancient Agora of Athens. The observations provide insights for the
+design of future iterations of such emotive storytelling experiences.
+
+420
+
+

@@ -1,0 +1,304 @@
+Combining Composition Technologies and EUD
+to Enhance Visitors' Experience at Cultural Heritage Sites
+Carmelo Ardito1, Maria F. Costabile1, Giuseppe Desolda1,
+Rosa Lanzilotti1, Maristella Matera2
+1
+
+Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro
+Via Orabona, 4 – 70125 Bari, Italy
+{carmelo.ardito, maria.costabile, giuseppe.desolda,
+rosa.lanzilotti}@uniba.it
+2
+Dipartimento di Elettronica, Informazione e Bioingegneria, Politecnico di Milano
+Piazza Leonardo da Vinci, 32 – 20134 Milano, Italy
+matera@elet.polimi.it
+
+Abstract. This paper illustrates our approach to enhance the visit experience of
+archeological parks. It exploits composition technologies, End-User Development and participatory design approaches, in order to allow different stakeholders to create, use and share Personal Information Spaces. Heterogeneous content
+can be combined and manipulated to satisfy different information needs, thus
+enabling personalized visits to Cultural Heritage sites.
+Keywords: End-User Development, User-driven Service Composition, Personal
+Information Space.
+
+1
+
+Introduction and Motivation
+
+Italy is one of the countries in the world with a rich patrimony of historical sites and
+cultural heritage. People are becoming increasingly aware of the importance of preserving and enhancing the value of cultural heritage, acknowledging these aspects as
+ways to help people to construct their cultural identities [1, 2].
+Undoubtedly, information and communication technologies have a great potential
+“to enhance personal experience in cultural heritage sites”. Therefore, for several
+years, we have been involved in projects related to Cultural Heritage (CH). The aim is
+to kindle people’s interest in knowing more about history through guided analyses of
+the remains of ancient settlements, enhanced through the adoption of different types
+of tools. Our overall goal, as Human-Computer Interaction (HCI) researchers, is to
+contribute to fostering a wider appreciation of archaeology by offering tools able to
+inspire the general public and to increase awareness of the importance of CH. This is
+a highly complex challenge, which involves a wide variety of factors: who is going to
+use the tools, how the tools will be used, where the tools will be used. To cope with
+this challenge, experts from different disciplines have to share their knowledge, skills,
+practices and tools, in order to capitalize on the expertise and creativity that all such
+experts, and even end users, can bring in the design of the new tools.
+
+In Italy, school pupils constitute a large proportion of the visitors to archaeological
+sites. They perform such visits with their teachers, as part of their school curricula.
+Thus, we have primarily worked to create educational games on different devices,
+which support school pupils learning about ancient history through their active involvement during visits to such sites and follow-up activities at school [3, 4, 5]. These
+games have been developed by setting up multidisciplinary teams that included experts in the CH domain, e.g., archaeologists, historians, directors and employees of
+archaeological parks, experts in technology and science, e.g., software developers and
+HCI experts, school teachers, as well as end users, i.e., children and other types of
+visitors. The discussions with the stakeholders involved in the multidisciplinary teams
+and various field studies provided inspiration about new ways of using current technology to support the work of the professional guides in organizing and conducting
+the visits, with the aim of enhancing the overall visitors’ experience. To better inform
+the design of new applications, we carried out a contextual inquiry; the collected data
+were particularly useful to elicit important requirements, which we reported in [6]
+through a usage scenario. That scenario is revisited in this paper in order to describe
+further requirements about the use of composition technologies to enhance the personal experience of different stakeholders accessing CH sites.
+Recently, we have developed a platform that, according to End-User Development
+(EUD) and participatory design approaches [7, 8, 9], supports end users, not technology skilled, to create personalized visits to CH sites. End users become both information consumers and producers, and they are actively involved in the management
+of CH information. The platform indeed implements a new composition paradigm to
+allow end users to extract contents from heterogeneous (personal or third-parties)
+sources, and compose Personal Information Spaces (PISs) that satisfy their situational
+information needs and can be ubiquitously executed on different devices. The platform provides people with the means to integrate data, services and tools, enabling
+them to play an active role in solving their every-day problems. The platform is general and is flexible enough to be adopted in different contexts of use [10, 11, 12]. In
+this paper, we show how it can be used to support the work of professional guides
+when accompanying visitors to archaeological parks and how guides and visitors can
+collaborate among them to create new visit experiences.
+With respect to what we described in [6], we have refined our initial prototypes
+and improved their execution on multiple devices. In November 2012, we have also
+performed a field study to understand potentials and limitations of the composition
+and use of PISs by real users. The study is described in [13]; it involved 2 professional guides and 28 visitors at the archaeological park of Egnathia in Southern Italy. One
+of the results of study revealed the guides’ need to communicate, both synchronously
+and asynchronously, with their peers during the PIS composition, for example, to ask
+advice about new services that can provide material they are not able to find through
+the services they have access to. Guides would also like to share their PISs with visitors to allow them to view and possibly add contents. Thus, we are currently extending our prototypes to support collaboration, to enable PIS co-creation by a group of
+end users and PIS sharing among different groups of stakeholders. The new prototypes will be discussed at the workshop. In this paper, in order to briefly describe our
+
+approach, we illustrate the scenario for PISs co-creation, usage and sharing (Section
+2). We then describe the platform architecture (Section 3) and conclude the paper by
+indicating some future work (Section 4).
+
+2
+
+A Scenario of PISs Co-Creation, Usage and Sharing
+
+The scenario illustrated in this section is articulated in 4 steps, which show how different people use a PIS to: a) be actively involved in the management of CH information; b) collaborate among them to take part to the enrichment and access to cultural heritage information, c) share information with others. The first step is already
+supported by our platform prototype described in [6], while the development of functionality supporting the other steps is in part recently accomplished work and in part
+still on-going work.
+Step 1. Content retrieval from heterogeneous sources and PIS composition
+Giuseppe, the main persona of our scenario, is a professional guide who accompanies
+people during visits to various archaeological parks in Apulia. Giuseppe is organizing
+the visit for a group of Italian tourists to the archaeological park of Egnazia. When he
+was informed about the visit by the booking office, Giuseppe also received information about the visitors, e.g., their profiles, the time that they want to spend for the
+visit and previous experience in other archaeological parks. The visitors, i.e., a group
+of 10 adults, are keen of Messapian history. They have planned about three hours for
+the visit. They previously visited the Messapian archaeological parks of Vaste and
+Roca. Now, they want to visit Egnazia, even if it doesn’t present many remains of
+Messapi due the preeminence of the remains of the successive Roman Age.
+Giuseppe decides to set up a “virtual” visit to show to people the Messapian remains of Egnazia by using the large multi-touch display, installed at the Egnazia museum, and his own tablet device. Thus, Giuseppe using his personal PC opens his own
+workspace in the Web platform that allows him to gather and organize in advance
+multimedia contents to be shown during the visit. Giuseppe starts composing his PIS
+by collecting the material he finds through the platform’s web services, i.e., 3D reconstructions from Google Sketchup, photos of other archaeological parks from FlickR,
+videos of excavation campaigns from Youtube. Giuseppe adds and geo-localizes interesting content on virtual map of the Egnazia park.
+During the composition Giuseppe would like to add new content, but he does not
+find services, among those provided by the platform, what might satisfy his needs.
+Since he knows that Andrea is more experienced about the Messapian history of
+Egnazia, Giuseppe asks his help. Andrea accesses the platform and looks at the list of
+services: he chooses some services and annotates them to specify the reasons for his
+choice and to give some suggestions to Giuseppe. Andrea shares the annotation with
+Giuseppe. At this point, Giuseppe has more elements to choose useful services, selects some of them and adds them to his PIS.
+
+Step 2. Pervasive, multi-device access to PISs
+The day after, the visit to the archaeological park begins with a briefing in front of a
+multi-touch display. Giuseppe puts his badge on the display and the system recognizes him and shows the PIS he created the day before. Giuseppe starts his narration
+interacting with the multimedia contents showed on the multi-touch display: every
+time he wants to show details of a specific content, he taps the icon on the virtual map
+where he had placed the multimedia material. After the initial explanation in front of
+the multi-touch display, the visit continues in the archaeological park, where the visitors can view the ruins of the ancient buildings. Giuseppe invites visitors holding a 3G
+smartphone to download an app to visualize multimedia contents Giuseppe could
+possibly share with them. During the tour park, Giuseppe interacts with his PIS
+showed on his personal tablet.
+Step 3. Continuous dynamic PIS evolution
+During the discussion with the group, a visitor suggests to Giuseppe a web site that
+tells about a legend of a man, who landed in Roca and came to Egnazia by travelling
+across the Messapian region. Giuseppe decides to search this Web site, finds it, and
+mashes the page up into his PIS. Giuseppe has noticed that, among the search results,
+there is a video about similarities and differences of Messapian archaeological parks.
+He selects it and the video is showed on the tablet. The video appears very interesting
+and stimulates a discussion between Giuseppe and the group of visitors. At the end of
+the video, Giuseppe decides to further modify his PIS by inserting the retrieved video.
+Giuseppe invites those tourists, who have previously downloaded the app, to look at
+the video on their device. In this way, Giuseppe can illustrate details about the video.
+Step 4. PIS sharing and reuse
+Cloe is a teacher, who was in the group that was accompanied by Giuseppe to visit the
+Egnazia archaeological park. She has to illustrate to her students the Aeneid epic poem. Since she remembers the legend that Giuseppe told her in Egnazia, she decides to
+use the interactive whiteboard to show the web site to the students in order to discuss
+the various hypotheses about Aeneas’s wanderings. Thus, through the interactive
+whiteboard, she accesses the public area of Giuseppe’s PIS and looks at the material
+used during the Egnazia park visit. Cloe shows the web page, and invites the students
+to investigate if that legend and the Aeneid poem can be correlated. During the lesson,
+her students can use their tablet or smartphones to search evidences in the Web. If
+they find interesting information they can add them to the PIS that Cloe had previously shared with them. The students can continue the search at home, and can update
+Cloe’s PIS. The day after, Cloe uses again the interactive whiteboard to discuss with
+the students the new multimedia material.
+
+3
+
+Platform Organization
+
+A platform, based on a general-purpose mashup environment [10, 11, 12], has been
+developed to allow people, who are not technology skilled, to retrieve contents from
+
+heterogeneous sources and use them to compose PISs in order to satisfy their needs in
+specific situations. The platform is flexible enough to be adopted in different contexts
+of use and ubiquitously executed on different devices. We briefly describe here the
+main components of its architecture, shown in Figure 1; with respect to what we reported in [6], to which the reader may refer for more details, the architecture includes
+new modules enabling PIS sharing and annotations
+
+Fig. 1. Architecture of the platform for PIS composition, sharing and annotation.
+
+The platform exploits a “lightweight” paradigm for the integration of heterogeneous resources, mainly adopting visual mechanisms through which end users, without
+any need to program or adopt complicated design notations, can express desiderata
+about the orchestration of different services. The accessible services have to be registered and described into the platform by means of Service Descriptors. Each descriptor specifies properties that the platform has to know for querying that service.
+Service registration is needed to prevent end users from dealing with technical properties when accessing a service. Different levels of service specification are possible:
+service descriptors can include only basic information, such as the service URI and
+the values of some parameters to build up simple queries, or they can specify multiple
+properties for more sophisticated service invocations. Service descriptors can be created by inserting the service properties into visual forms – no scripting or XML coding is needed; the registration module then translates the inserted data into XML-
+
+based descriptors. Therefore, even unskilled users would be able to add new services
+into the platform, provided that they know the basic required information. More complete descriptors, supporting sophisticated queries, could be instead created by technical users, e.g., platform administrators. Indeed, our platform especially suites metadesign scenarios, where different users with different skills cooperate to the creation
+of the composition environment for the end-user productivity.
+Based on the registered services, end users, by means of a Web composition environment and through visual mechanisms suitable to their background and domain,
+compose contents, functions and visualizations. Figure 2 reports the customization of
+the composition environment for the guides of the archeological park of Egnathia [6].
+The workspace composition proposes a map-based visual template to allow the guide
+to associate the content retrieved through services to specific locations of the park.
+The content is visually presented in different resource windows, each one associated
+to a specific service. The users select content items from such windows and, through
+drag&drop actions, associate them to points on the map. The result of such composition actions is immediately shown to the user, who can thus realize how the final application will work, and iteratively modify it, adding or dropping service items, until
+the desired version of the composite application is reached.
+
+Fig. 2. The customization of the composition environment for supporting the activity of the
+professional guides at the archeological park of Egnathia [6].
+
+This is only one example of visual composition that the platform is able to support,
+which mainly addresses the integration between the map-based service and all the
+other services providing contents. The platform indeed enables different kinds of
+integration (e.g., synchronization of different UI components [10] or combination of
+contents coming from different sources into an integrated data set [12]), which can
+then be properly exploited into the customized composition environments, depending
+on the emerging needs of the addressed user community. Also, the possibility to adopt
+specific visual templates, as the basis for the PIS composition, permits the definition
+
+of metaphors and composition actions that are meaningful for the target end-user
+community.
+The visual composition actions performed by end users lead to the automatic creation of XML-based composition schemas, stored in the Composition Schema Repository. Some execution engines, developed for different client devices (e.g., Web
+browsers, large interactive displays, different types of mobile devices), interpret the
+created schema and dynamically generate the corresponding PIS. In particular, a
+Schema Interpreter parses the composition schema and then invokes the UI (User
+Interface) Controller that, based on the UI Template selected by the user during the
+PIS composition (e.g., the map template for the park of Egnathia park), dynamically
+generates the PIS user interface. The UI controller also invokes the Data Manager
+module, which in turn, based on the specification in the composition schema, queries
+the involved remote services through the Service Controller. The Data Manager is
+also in charge of storing (and managing the access to) possible user personal data
+stored in local repositories. The UI controller finally manages the rendering of the
+retrieved data through the visual elements of the adopted UI Template.
+To accommodate the new requirements for sharing and communication emerged in
+the field study with professional guides and visitors, the platform has been extended
+to support the multi-user access to shared resources, and to facilitate the management
+and storage of annotations. The resulting annotation approach [14] allows the users to
+communicate with other stakeholders by adding comments on the different elements
+characterizing a PIS, namely the available services and the queries defined over them,
+specific content items retrieved through services, and the visual templates adopted for
+content visualization. The aim is to enrich the PIS with further information to be
+shared with others without corrupting the original resources.
+To create annotations, the user visually selects the object to be annotated and adds
+the corresponding comment [14]. The Annotation Controller is in charge of interpreting the user annotation actions, identifying the annotation location and establishing
+whether it is related to services internal to the PIS composition, to services generally
+available in the platform -- and not necessarily included in a specific PIS -- or to specific content items or UI elements. The Annotation Controller communicates with the
+different modules managing the different levels the annotations can refer to. For example, when a user annotates a photo, the Annotation Controller retrieves the photo
+URI from the result set managed by the Data Manager (e.g., a Flickr result set with
+photos and their metadata), associates with this URI the note inserted by the user, and
+stores the created annotation to the Annotation Repository. The latter is used to store
+all the produced annotations and their associations with the original annotated PIS
+documents.
+In order to contextualize the annotation within the specific situation of use in
+which it was created, the Annotation Controller receives a state representation from
+the different modules. The state representation makes it possible to present the annotations during later executions of the PIS, by reconstructing the original context where
+the annotation was created. For example, when an element of the UI is annotated, a
+set of properties of the template the UI is based on are also stored, such as the type of
+the template (e.g., a map) and the notable widgets that characterize the template (i.e.,
+
+markers showing points on a map). Similarly, when the annotation refers to a service
+or to the service result set, the service settings and the specific query that was executed when the annotation was created are stored.
+
+4
+
+Conclusions
+
+This paper has illustrated our approach to enhance the visit experience of archeological parks. Its distinguishing feature is the exploitation of composition technologies
+that allow different stakeholders to create, use and share Personal Information Spaces
+where heterogeneous content can be combined and manipulated to satisfy different
+information needs. The paper has in particular outlined how the use of composition
+technologies, adequately customized to the needs of CH stakeholders, leads to a personalized user experience while visiting CH sites, and to take advantage of that experience in different places and times, e.g., even after the visit and outside the archeological park, in a continuum where searching, composing and sharing increase the
+users’ motivations to get actively involved and improve their knowledge.
+It is worth remarking that several platforms, based on mashup technologies, have
+been proposed in last years, with the aim of being more oriented to end-users. However, they were not as successful as expected because they were based on composition
+languages that revealed inadequate for end users [15, 16, 17]. The adoption of a composition paradigm suitable for end users is instead a key goal of our approach to PIS
+composition.
+Preliminary results of field studies that we are conducting with real users have
+helped us assessing the validity of the approach in the specific CH domain, especially
+in supporting the work of professional guides. However, we believe that the approach
+can be easily transposed to take advantage of other forms of cultural expression, for
+example in innovative contexts of “smart” urban cultural initiatives.
+The field studies have also highlighted some desiderata of end users related to the
+possibility to collaborate with their peers and with the different stakeholders. For this
+reason, our current work is devoted to extending the composition approach to support
+further collaborative features to enable end users to co-create, also in live sessions,
+their artifacts.
+
+Acknowledgements
+This work is partially supported by MIUR and MISE under grants VINCENTE and
+LOGIN, respectively. The authors are grateful to Paolo Bottoni, Matteo Picozzi and
+Antonio Piccinno for their collaboration to part of the research work here described.
+
+References
+1. Merriman, T.: Public archaeology. Routledge, London, UK (2004)
+
+2. Copeland, T.: Presenting archaeology to the public. In: Merriman, T. (ed.) Public archaeology, pp. 132-144. Routledge, London, UK (2004)
+3. Costabile, M.F., De Angeli, A., Lanzilotti, R., Ardito, C., Buono, P., Pederson, T.: Explore!
+Possibilities and challenges of mobile learning. In: 26th annual SIGCHI conference on
+Human factors in computing systems, CHI'08, pp. 145-154. ACM, New York, NY, USA
+(2008)
+4. Ardito, C., Costabile, M.F., De Angeli, A., Lanzilotti, R.: Enriching exploration of archaeological parks with mobile technology. ACM Transaction on Computer-Human Interaction
+19, 1-30 (2012)
+5. Ardito, C., Costabile, M.F., Lanzilotti, R., Desolda, G.: Integrating traditional learning and
+games on large displays: an experimental study. Educational Technology & Society 16, 4456 (2013)
+6. Ardito, C., Costabile, M.F., Desolda, G., Matera, M., Piccinno, A., Picozzi, M.: Composition of situational interactive spaces by end users: a case for cultural heritage. In: 7th Nordic Conference on Human-Computer Interaction: Making Sense Through Design, NordiCHI '12, pp. 79-88. ACM, New York, NY, USA (2012)
+7. Schuler, D., Namioka, A.: Participatory design: principles and practices. Lawrence Erlbaum
+Associates, Inc. (1993)
+8. Sutcliffe, A., Mehandjiev, N.: End-user development (Introduction to special issue), Commun. ACM 47, 31-32 (2004)
+9. Lieberman, H., Paternò, F., Wulf, V. (Eds.): End user development, Springer, Dordrecht,
+The Netherlands, (2006)
+10. Cappiello, C., Matera, M., Picozzi, M., Sprega, G., Barbagallo, D., Francalanci, C.:
+DashMash: a mashup environment for end user development. In: Auer, S., Díaz, O., Papadopoulos, G. (eds.) Web Engineering, vol. LNCS 6757, pp. 152-166. Springer Berlin Heidelberg (2011)
+11. Cappiello, C., Matera, M., Picozzi, M., Caio, A., Guevara, M.T.: MobiMash: end user
+development for mobile mashups. In: 21st International Conference Companion on World
+Wide Web, WWW '12 Companion, pp. 473-474. ACM, New York, NY, USA (2012)
+12. Cappiello, C., Matera, M., Picozzi, M.: End user development of mobile mashups, In: 15th
+International Conference on Human-Computer Interaction, HCII '13, Springer Verlag, in
+print
+13. Ardito, C., Costabile, M.F., Desolda, G., Lanzilotti, R., Matera, M., Picozzi, M.: Personal
+information spaces in the context of visits to archaeological parks. Submitted for publication
+14. Ardito, C., Bottoni, P., Costabile, M.F., Desolda, G., Matera, M., Piccinno, A., Picozzi, M.:
+Enabling end users to create, annotate and share personal information spaces, End-user development – IS-EUD 2013, LNCS, Springer, Berlin / Heidelberg, in print
+15. Latzina, M., Beringer, J.: Transformative user experience: beyond packaged design, Interactions 19, 30-33 (2012)
+16. Fischer, G., Giaccardi, E., Ye Y., Sutcliffe, A., Mehandjiev, N.: Meta-design: a manifesto
+for end-user development, Commun. ACM 47, 33-37 (2004)
+17. Costabile, M.F., Fogli, D., Mussio, P., Piccinno, A.: Visual interactive systems for end-user
+development: a model-based design methodology, IEEE T. Syst. Man Cy. A 37, 1029-1046
+(2007)
+
+

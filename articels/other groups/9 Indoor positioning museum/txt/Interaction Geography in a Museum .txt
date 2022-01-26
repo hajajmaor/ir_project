@@ -1,0 +1,609 @@
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+Interaction Geography in a Museum
+Ben Rydal Shapiro
+
+Rogers P. Hall
+
+Space, Learning & Mobility Lab
+
+Space, Learning & Mobility Lab
+
+Vanderbilt University
+
+Vanderbilt University
+
+Nashville, TN 37203, USA
+
+Nashville, TN 37203, USA
+
+benrydal@gmail.com
+
+r.hall@vanderbilt.edu
+
+Abstract
+This paper outlines our use of space-time visualization
+as part of an emerging approach to studying human
+interaction and mobility in interior spaces that we call
+“interaction geography”. We describe how we have used
+this approach in a museum setting. Findings and
+discussion show how interaction geography draws from
+space-time visualization research to advance
+professional design practice in a museum. We conclude
+by discussing limitations and the need for future
+research to further develop this early work.
+
+Author Keywords
+Interaction geography; space-time visualization; time
+geography; design research; interaction analysis;
+interaction design; museum studies
+Permission to make digital or hard copies of part or all of this work for
+personal or classroom use is granted without fee provided that copies are
+not made or distributed for profit or commercial advantage and that
+copies bear this notice and the full citation on the first page. Copyrights
+for third-party components of this work must be honored. For all other
+uses, contact the Owner/Author.
+Copyright is held by the owner/author(s).
+CHI'17 Extended Abstracts, May 06-11, 2017, Denver, CO, USA
+ACM 978-1-4503-4656-6/17/05.
+http://dx.doi.org/10.1145/3027063.3053146
+
+ACM Classification Keywords
+H.5.m. Information Interfaces and Presentation (e.g.,
+HCI): Miscellaneous; I.3.6 Methodology and
+Techniques; J.4 Social and Behavioral Sciences; J.5
+Arts and Humanities
+
+Introduction
+This paper outlines our use of space-time visualization
+as part of an emerging approach to studying human
+interaction and mobility in interior spaces that we call
+interaction geography. We describe how we have used
+this approach in a museum setting using empirical data
+collected during IRB approved research funded by the
+National Science Foundation at a nationally renowned
+museum located in the mid-South region of the United
+States [33, 34, 35]. This data includes 1) 22 case
+studies of complete museum visits that captured
+continuous, multi-perspective audio/video records of
+visitor mobility and interaction and 2) audio/video and
+post-surveys from professional development and design
+sessions with museum professionals.
+We begin by reviewing relevant work in space-time
+visualization research and museum studies. We then
+illustrate how interaction geography and specifically, a
+dynamic visualization environment we have developed
+and call the Interaction Geography Slicer (IGS), draws
+from space-time visualization research to describe
+museum visitor’s interaction and mobility in museum
+gallery spaces. Subsequently, we show how we have
+used interaction geography and the Interaction
+Geography Slicer (IGS) in one professional design and
+
+2076
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+development session with museum curators, educators,
+archivists and designers. We conclude by discussing
+limitations and the need for future research to further
+develop this early work.
+
+Relevant Work
+Two bodies of research concerning space-time
+visualization and museum studies inform this work. We
+describe these in order.
+Space-time visualization is an established area of
+research and design [1, 2, 7, 9, 24]. Moreover, it is a
+rapidly growing area of research due to new technologies
+[10, 12, 18, 20], new forms of urban mobility [26, 27],
+open data resources [13] and the increasing need to
+gain insights and reveal patterns from complex data [2,
+11, 25]. We draw from space-time visualization research
+concerning time geography [15] and the use and
+advancement of the space-time cube and space-time
+cube operations such as space flattening [5, 21].
+Moreover, we also draw from the visualization and
+analysis of movement [3, 4, 6], the use of flow maps by
+expert and non-expert audiences [27, 28, 31] and early
+attempts to visualize movement and interaction in
+interior environments [14, 17, 38].
+With respect to museum studies, our work is informed
+by two particular trends along with methods used in
+museum studies. The first trend is that museums and
+archival collections are redefining their mission, from
+curating and conserving collections to engaging the
+public in conversations about the meaning of archival
+material in relation to broader societal themes [30]. The
+second trend is that studies of visitor behavior are
+shifting away from understanding gallery exhibits as a
+
+fixed curriculum that visitors succeed or fail at
+understanding, and towards a view of visitor learning as
+an “enacted curriculum” [23]. Likewise, we draw from
+methods of conversation, interaction and mobility
+analysis used in museum studies [16, 18, 29, 36, 37] as
+well as design based research methods that provide
+empirically driven ways to build, test and refine designs
+in educational settings [8].
+
+Interaction Geography Slicer (IGS)
+Figure 1 shows a museum gallery space that features
+exhibits of renowned American Roots, Bluegrass and
+Country musicians (e.g. Hank Williams, Bill Monroe,
+Maybelle Carter, Earl Scruggs, Crystal Gayle).
+
+Figure 1: A Museum Gallery Space
+
+Figure 2 is a snapshot from a dynamic visualization
+environment we have developed and call the
+Interaction Geography Slicer (IGS) to support multimodal analysis of interaction and mobility that moves
+continuously through space and over time. The figure
+shows the simultaneous movement and conversation of
+a family of five whom we call the “Bluegrass Family” (a
+mother, her two young sons, their sister and her
+fiancé) in the museum gallery space shown in Figure 1.
+
+2077
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+Figure 2: Snapshot from
+Interaction Geography Slicer
+(IGS). A family’s movement
+and conversation in a museum
+gallery is shown across a “floor
+plan display” and “timeline
+display”. Color designates
+individual family members:
+
+The top half shows movement
+and the bottom half shows
+conversation. The Y-axis on the
+timeline display corresponds to
+the vertical dimension of the
+floor plan display. Movement
+line pattern corresponds to the
+horizontal dimension of the
+floor plan display. Conversation
+organizes transcribed talk
+colored by speaker in space
+and time and groups topically
+related talk into conversation
+“boxes”. Thicker boxes on the
+floor plan display show
+repeated conversations in the
+same area of space. Software
+is written and will be made
+available by Ben Rydal Shapiro
+using JavaScript & p5.js.
+Source: Copyright © by Ben
+Rydal Shapiro. Reprinted by
+permission.
+
+2078
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+Figure 2 shows how the IGS applies widely used techniques
+of space-time visualization particularly concerning the
+space-time cube [15, 21], space flattening [5] and the
+visualization of movement [3, 4, 25] to study the sequential
+and spatial organization of movement and conversation. For
+instance, in the previous figure we highlight the efforts of a
+6-year-old boy Blake (the blue movement path moving up
+and down on the timeline display) to lead another family
+member Adhir (the straight orange movement path on the
+timeline display) on a tour of other exhibits in the gallery
+space. We also note how their intertwined paths at minutes
+5-6 indicate that Blake is finally successful.
+
+interaction [32]. Lastly, Figure 3 below illustrates the kinds
+of comparative analysis that can be explored using the IGS.
+Namely, the figure compares the mobility of four different
+families/groups including the Bluegrass Family in three
+different museum gallery spaces. All displayed information is
+set to the same spatial and temporal scales. The Taylor
+Swift Family did not visit the Hall of Fame Rotunda Gallery
+space and thus we substituted a floor plan of the entire
+museum.
+
+Figure 2 also hints at a larger set of possibilities to
+dynamically use space-time visualization to study museum
+visitor’s interaction and mobility made possible by the IGS.
+For example, the figure provides some illustration of how
+users can select and read conversation. The conversation
+that is shown (e.g. selected by a user) in Figure 2 is a
+conversation between Adhir and his fiancé Lily about the
+painful life of Hank Williams that reveals why Adhir stood in
+silent “reverence” for five minutes at Hank William’s exhibit.
+We cannot devote adequate attention in this paper to the
+full and still emerging possibilities of the IGS. However, it is
+important to note that the IGS supports the visualization
+and analysis of five streams of audio and video collected in
+this example from small cameras worn by each member of
+the family as part of this research. Moreover, the IGS
+supports floor plan or map rotation, which allows users to
+study whether interpretations in one floor plan view hold up
+over changes in orientation and scale in other floor plan
+views. Likewise, it supports multiple 3D space-time
+visualization views. In addition, many of the decisions that
+inform the design of the IGS aim to make space-time
+visualization more useful to new audiences that are
+particularly concerned with people’s conversation and
+
+Figure 3: Small multiples of family mobility from Interaction
+Geography Slicer (IGS). Source: Copyright © by Ben Rydal Shapiro.
+Reprinted by permission.
+
+Using Interaction Geography to Advance
+Professional Design Practice
+Figure 4 below introduces our use of interaction geography
+and the IGS during one professional design and
+development session with museum professionals. Our
+analysis of video records and post surveys from multiple
+sessions in this museum including the one shown above
+illustrates three primary contributions of methods (e.g. the
+IGS) and concepts (e.g. “engagement contours” [33]) of
+interaction geography.
+
+2079
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+Figure 4: The bottom left image
+of the figure shows a group of
+museum curators, educators,
+archivists and designers using the
+Interaction Geography Slicer
+(IGS) to study how their visitors
+engage with exhibits in museum
+gallery spaces. Different visitor
+groups and gallery spaces can be
+selected and compared. The large
+top image provides a detailed
+view of what they are looking at,
+which is the movement of one
+family in one museum gallery
+space. The bottom right image
+displays video (from a camera
+worn by family member Lily)
+selected by a museum curator at
+a point in space and time when
+the family is gathered together at
+an exhibit dedicated to Maybelle
+Carter. Software is written and
+will be made available by Ben
+Rydal Shapiro using JavaScript &
+p5.js. Source: Copyright © by
+Ben Rydal Shapiro. Reprinted by
+permission.
+
+2080
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+Contribution 1: We found methods and concepts of
+interaction geography allowed museum professionals to
+“see” their visitors in very new ways and challenged
+idealized models of museum visitors as relatively passive
+consumers of intended design. For example, prior to our
+work many museum curators, educators and designers at
+this museum viewed young children’s rapid movements in
+museum gallery spaces as childish behavior that
+prevented real engagement and learning. The previous
+figure captures the moment when they are vividly
+confronted by Blake’s rapid movement (e.g. running back
+and forth) to lead Adhir on a tour of other exhibits. Though
+initially shocking, this moment created what we
+understood as a shift in the perspective of museum
+professionals to see young children’s rapid movements
+and family’s “interaction geographies” as very intentional
+and opportunities for design.
+
+Acknowledgements
+This work is made possible by
+the National Science
+Foundation and wonderful,
+ongoing collaborations with our
+museum partners.
+
+Contribution 2: We found methods and concepts of
+interaction geography provide ways for museum
+professionals to ask questions currently important to
+museum studies and to ask new types of questions. For
+example, in our design sessions museum professionals used
+interaction geography as an approach to study how adults
+coordinate young children’s attention and observation not
+only at single exhibits as is typically the case [23, 30] but
+also, at times, repeatedly across multiple exhibits and
+gallery spaces. Moreover, we found interaction geography
+offers ways to ask new questions such as how young
+children manage their families as interpretive resources in
+museum gallery spaces [33]. We feel these possibilities
+advanced professional design practice in this museum.
+Contribution 3: We found that methods and concepts of
+interaction geography could provide a powerful means to
+support evidence-based design decisions in this museum
+and to do so collaboratively across multiple museum
+
+departments. For example, museum professionals indicated
+how this work could provide a much needed way to not only
+learn about their visitors but also to gather evidence on
+visitor activity that could inform future, more expansive and
+equitable design decisions. Likewise, museum professionals
+indicated that the visual and interactive nature of our work
+could provide ways for different museum departments to
+work together in new ways.
+
+Conclusion & Future Work
+This paper outlined our use of space-time visualization as
+part of an emerging approach to studying human
+interaction and mobility in interior spaces that we call
+interaction geography. Many more studies are needed to
+address inherent limitations in this early work, which
+draws from one exploratory study. Future research should
+further refine and generalize the visualization techniques,
+software and concepts introduced in this paper across
+different types of interior spaces and also conduct
+additional user test cases to study how people understand
+and use interaction geography and the IGS.
+
+References
+1.
+
+2.
+
+3.
+
+4.
+
+Wolfgang Aigner, Silvia Miksch, Heidrun Schumann,
+and Christian Tominski. 2011. Visualization of timeoriented data. Springer, Berlin, Germany.
+Natalia Andrienko and Gennady Andrienko. 2005.
+Exploratory Analysis of Spatial and Temporal Data: A
+Systematic Approach. Springer-Verlag New York, Inc.,
+Sankt Augustin, Germany.
+Natalia Andrienko and Gennady Andrienko. 2013.
+Visual analytics of movement: an overview of
+methods, tools and procedures. Information
+Visualization 12, 1 (Jan. 2013), 3-24. DOI:
+http://dx.doi.org/10.1177/1473871612457601
+G. Andrienko, N. Andrienko, P. Bak, D. Keim, S.
+Kisilevich, and S. Wrobel. 2011. A conceptual
+framework and taxonomy of techniques for analyzing
+
+2081
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+movement. J. Vis. Lang. Comput. 22, 3 (June 2011),
+213-232. DOI:
+http://dx.doi.org/10.1016/j.jvlc.2011.02.003
+5. Benjamin Bach, Pierre Dragicevic, Daniel Archambault,
+Christophe Hurter, and Carpendale Sheelagh. 2014. A
+Review of Temporal Data Visualizations Based on
+Space-Time Cube Operations. In Eurographics
+Conference on Visualization. Eurographics, IEEE,
+Swansea, Wales, UK.
+6. Kevin Buchin, Arthur van Goethem, Michael Hoffmann,
+Marc J. van Kreveld, and Bettina Speckmann. 2014.
+Travel-Time Maps: Linear Cartograms with Fixed
+Vertex Locations. In Proc. GIScience. Springer, Berlin,
+Heidelberg, 18–33.
+7. Luca Chittaro, Roberto Ranon, and Lucio Ieronutti.
+2006. VU-Flow: A Visualization Tool for Analyzing
+Navigation in Virtual Environments. IEEE Transactions
+on Visualization and Computer Graphics 12, 6
+(November 2006), 1475-1485. DOI:
+http://dx.doi.org/10.1109/TVCG.2006.109
+8. P. Cobb, J. Confrey, A. diSessa, R. Lehrer & L.
+Schauble. 2003. Design experiments in educational
+research. Educational Researcher. 32(1), 9.
+9. J. A. Dykes and D. M. Mountain. 2003. Seeking
+structure in records of spatio-temporal behaviour:
+visualization issues, efforts and applications. Comput.
+Stat. Data Anal. 43, 4 (August 2003), 581-603. DOI:
+http://dx.doi.org/10.1016/S0167-9473(02)00294-3
+10. Niklas Elmqvist, Andrew Vande Moere, Hans-Christian
+Jetter, Daniel Cernea, Harald Reiterer, and T. J.
+Jankun-Kelly. 2011. Fluid interaction for information
+visualization. Information Visualization 10, 4 (Oct.
+2011), 327-340. DOI:
+http://dx.doi.org/10.1177/1473871611413180
+11. Benjamin J. Fry. 2004. Computational Information
+Design. Ph.D. Dissertation. Massachusetts Institute of
+Technology.
+12. Michael Goodchild. 2009. NeoGeography and the
+nature of geographic expertise. J. Locat. Based Serv.
+
+13.
+
+14.
+
+15.
+16.
+
+17.
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+3, 2 (June 2009), 82-96. DOI:
+http://dx.doi.org/10.1080/17489720902950374
+M. Graham. 2010. Neogeography and the palimpsests
+of place: Web 2.0 and the construction of a virtual
+earth. Tijdschrift voor economische en sociale
+geografie, 101(4), 422-436.
+Y. Gu. A. Lo, & I. Niemegeers. 2009. A survey of
+indoor positioning systems for wireless personal
+networks. IEEE Communications surveys & tutorials,
+11(1), 13-32.
+Torsten Hagerstrand. 1970. What about people in regional
+science? Papers in Regional Science, 24, 1: 6-21.
+R. Hall and R. Stevens. 2016. Interaction analysis
+approaches to knowledge in use. In diSessa, A.A.,
+Levin, Mariana, & Brown, N.J.S. (Eds.), Knowledge
+and Interaction: A Synthetic Agenda for the Learning
+Sciences. NY: Routledge.
+W. Q. Huang, C. Ding, S. Y. Wang, X. Jing, Y. J. Luo,
+Y.F. Zhang, & Z. J. Zhang. 2014. An efficient
+visualization method of RFID indoor positioning data.
+IEEE 2nd International Conference on Systems &
+Informatics (pp. 497-504).
+Brigitte Jordan and Austin Henderson. 1995.
+Interaction analysis: Foundations and practice. The
+journal of the learning sciences, 4,1: 39-103.
+J. Kahn, R. Hall and A. Pearman. 2016. Telling the city
+with big data. Symposium paper at the Annual
+Meetings of the American Educational Research
+Association, Washington, D.C.
+Robert Kosara and Jock Mackinlay. 2013. Storytelling:
+The Next Step for Visualization. Computer 46, 5 (May
+2013), 44-50. DOI:
+http://dx.doi.org/10.1109/MC.2013.36
+M.J. Kraak. 2003. The Space-Time Cube revisited from
+a Geovisualization Perspective. In Proceedings of the
+21st International Cartographic Conf., 1988–1996.
+Jean Lave, Michael Murtaugh and Olivia de la Rocha.
+1984. The dialectic of arithmetic in grocery shopping.
+In Everyday cognition: Its development in social
+
+2082
+
+Late-Breaking Work
+
+CHI 2017, May 6-11, 2017, Denver, CO, USA
+
+23.
+
+24.
+
+25.
+26.
+
+27.
+
+28.
+
+29.
+
+30.
+
+31.
+
+context, B. Rogoff & J.Lave (eds.). Cambridge, MA:
+Harvard University Press. 67-94.
+M. Louw & K. Crowley. 2013. New Ways of Looking &
+Learning in Natural History Museums: The Use of
+Gigapixel Imaging to Bring Science & Publics Together.
+Curator: The Museum Journal 56(1): 87-104.
+Alan M. MacEachren, Mark Gahegan, William Pike,
+Isaac Brewer, Guoray Cai, Eugene Lengerich, and
+Frank Hardisty. 2004. Geovisualization for Knowledge
+Construction and Decision Support. IEEE Comput.
+Graph. Appl. 24, 1 (January 2004), 13-17.DOI:
+http://dx.doi.org/10.1109/MCG.2004.1255801
+Tamara Munzner. 2014. Visualization Analysis and
+Design. CRC Press.
+T. Nagel, J. Klerkx, A. Vande Moere, E. Duval.
+Unfolding – A Library for Interactive Maps. SouthCHI
+2013, July 01-03, Maribor, Slovenia. Human Factors in
+Computing and Informatics, Lecture Notes in
+Computer Science, vol. 7946, pp. 497-513, Springer.
+Till Nagel, Erik Duval, and Andrew Vande Moere.
+2012. Interactive exploration of geospatial network
+visualization. In CHI '12 Extended Abstracts on
+Human Factors in Computing Systems (CHI EA '12).
+ACM, New York, NY, USA, 557-572. DOI:
+http://dx.doi.org/10.1145/2212776.2212830
+T. Nagel, L. Pschetz, M. Stefaner, M. Halkia, B. Müller.
+2009. mæve - An Interactive Tabletop Installation for
+Exploring Background Information in Exhibitions. In
+International Conference on Human-Computer
+Interaction (pp. 483-491). Springer Berlin Heidelberg.
+J. Peponis, C. Zimring, and Y. K. Choi. 1990. Finding
+the Building in Wayfinding. Environment and Behavior
+22 (5): 555–590. DOI:
+http://dx.doi.org/10.1177/0013916590225001
+L. Schauble, G. Leinhardt, and Laura Martin. 1997. A
+framework for organizing a cumulative research
+agenda in informal learning contexts. Journal of
+Museum Education 22: 3-7.
+R. Scheepens, C. Hurter, H. Van De Wetering, & J.J.
+Van Wijk. 2016. Visualization, selection, and analysis
+
+32.
+33.
+
+34.
+
+35.
+
+36.
+
+37.
+
+38.
+
+of traffic flows. IEEE transactions on visualization and
+computer graphics, 22(1), 379-388.
+R. Scollon, & S. W. Scollon. 2003. Discourses in place:
+Language in the material world. Routledge.
+Ben R. Shapiro and Rogers Hall. 2017. Making
+Engagement Visible: The Use of Mondrian Transcripts
+in a Museum. In CSCL’17: Proceedings of the 12th
+International Conference for Computer Supported
+Collaborative Learning, Philadelphia, PA: International
+Society of the Learning Sciences.
+Ben R. Shapiro and Rogers Hall. 2016. How young
+children manage their families as interpretive
+resources in cultural heritage museums. Symposium
+paper at the Annual Meetings of the Jean Piaget
+Society, Chicago, IL.
+Ben R. Shapiro. 2017. Using Space Time Visualization
+in Learning Environment Design. In Proceedings of the
+2017 CHI Conference Extended Abstracts on Human
+Factors in Computing Systems (CHI EA '17). ACM,
+Denver, CO, USA. DOI:
+http://dx.doi.org/10.1145/3027063.3048422
+Katie H. Taylor and Rogers Hall. 2013. Countermapping the neighborhood on bicycles: Mobilizing
+youth to reimagine the city. Technology, Knowledge
+and Learning, 18, 1-2: 65-93.
+K. Tzortzi 2007. Museum building design and
+exhibition layout. In Proceedings of the 6th
+International Space Syntax Symposium, Istanbul,
+Turkey (pp. 12-15).
+Mani Williams, Jane Burry, Asha Rao, and Nathan
+Williams. 2015. A system for tracking and visualizing
+social interactions in a collaborative work
+environment. In Proceedings of the Symposium on
+Simulation for Architecture & Urban Design (SimAUD
+'15), Holly Samuelson, Shajay Bhooshan, and Rhys
+Goldstein (Eds.). Society for Computer Simulation
+International, San Diego, CA, USA, 1-4.
+
+2083
+
+

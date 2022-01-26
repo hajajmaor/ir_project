@@ -1,0 +1,1144 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/311314532
+
+Mobile Augmented Reality Guides in Cultural Heritage
+Conference Paper · January 2016
+DOI: 10.4108/eai.30-11-2016.2266954
+
+CITATIONS
+
+READS
+
+32
+
+2,378
+
+5 authors, including:
+Damianos Gavalas
+
+Vlasios Kasapakis
+
+University of the Aegean
+
+University of the Aegean
+
+203 PUBLICATIONS 4,075 CITATIONS
+
+54 PUBLICATIONS 510 CITATIONS
+
+SEE PROFILE
+
+SEE PROFILE
+
+Grammati Pantziou
+
+Christos Zaroliagis
+
+University of West Attica
+
+University of Patras
+
+168 PUBLICATIONS 2,971 CITATIONS
+
+179 PUBLICATIONS 2,444 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Social Interaction in Virtual Reality Environments View project
+
+Aminess View project
+
+All content following this page was uploaded by Damianos Gavalas on 26 December 2016.
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+Mobile Augmented Reality Guides in Cultural Heritage
+Panagiotis Galatis
+School of Science & Technology
+Hellenic Open University
+Patras, Greece
+
+galatisp@gmail.com
+
+Damianos Gavalas
+
+Vlasios Kasapakis
+
+Department of Cultural Technology
+Department of Cultural Technology
+and Communication, University of the and Communication, University of the
+Aegean, Mytilene, Greece
+Aegean, Mytilene, Greece
+&
+&
+CTI, Patras, Greece
+CTI, Patras, Greece
+
+dgavalas@aegean.gr
+
+v.kasapakis@aegean.gr
+
+Grammati Pantziou
+
+Christos Zaroliagis
+
+Department of Informatics, Technological Educational
+Institution of Athens, Athens, Greece
+&
+CTI, Patras, Greece
+
+Department of Computer Engineering & Informatics,
+University of Patras, Patras, Greece
+&
+CTI, Patras, Greece
+
+pantziou@teiath.gr
+
+zaro@ceid.upatras.gr
+
+ABSTRACT
+
+1. INTRODUCTION
+
+Mobile augmented reality (MAR) technology creates
+unprecedented possibilities for delivering engaging, immersive
+experiences to the visitors of cultural heritage sites. Despite the
+proliferation of available prototypes, the relevant literature still
+lacks studies investigating the way that users interact with MAR
+interfaces as well as identifying major usability problems and
+technology acceptance factors. Herein, we present KnossosAR, a
+MAR guide implemented for the archaeological site of Knossos (in
+Crete, Greece) which serves as a testbed for pursuing the
+abovementioned research objectives while also comparing the
+(dis)advantages of MAR vs. map-based mobile interfaces in
+outdoor cultural heritage sites. Among other technical
+contributions, KnossosAR addresses the occlusion problem, which
+is commonly encountered in location-based AR applications; that
+is, it employs an efficient method for estimating the field of view
+(FoV) of the user in order to handle situations wherein a point of
+interest is occluded by a physical obstacle (e.g. building). We have
+conducted field trials which provide preliminary evidence of the
+efficiency, effectiveness and utility of KnossosAR (including the
+incorporated FoV estimation approach).
+
+The diffusion of smartphones and tablets has paved the way for a
+multitude of mobile augmented reality (MAR) applications in
+cultural heritage, most of which are museum guides, visually
+augmenting physical exhibits with background or interpretive
+information [1, 13]. Several among the known storytelling-driven
+projects, which use AR to convey the history of a place in the
+context of a guided tour, are mainly implemented for the outdoors
+[1, 2, 16]; those use the device’s GPS receiver and inertial sensors,
+typically, to superimpose virtual objects on the physical
+environment framed by the camera’s display. For instance, the
+mobile device may be used to display AR views of a building, to
+receive additional location-based information, or to listen to audio
+and 3D-enhanced narrations [6, 25].
+
+CCS Concepts
+• Software and its engineering➝Software creation and
+management • Information systems➝Information systems
+applications • Human-centered computing➝Human computer
+interaction (HCI) • Human-centered computing➝Ubiquitous
+and mobile computing.
+
+Keywords
+Augmented reality; mobile guide; cultural heritage; archaeological
+site; Knossos; occlusion; user evaluation.
+
+Despite the proliferation of the available prototypes, the relevant
+literature still lacks studies about usability and technology
+acceptance factors as regards the effective use of MAR technology
+in outdoor cultural heritage applications. Our main focus is on
+comparing the MAR interface in location-based guides against
+alternative options like map-based or audio interfaces. The research
+questions addressed in this article are: (a) whether the MAR
+paradigm indeed involves a more natural and intuitive interface
+than that of conventional two-dimensional maps; (b) what is the
+actual quality of experience perceived by mobile users; (c) what are
+the most desired characteristics of MAR and map-based paradigms,
+i.e. what makes a practical, intuitive, and stimulating user interface.
+To address our research objectives, we have implemented
+KnossosAR as a case study. This is an outdoor MAR guide for the
+Unesco world heritage site of Knossos, the largest Bronze Age
+archaeological site on Crete (Greece) which is considered as the
+oldest city in Europe.
+On the course of the iterative development process pursued for
+KnossosAR, we have encountered a critical usability problem dealt
+with in numerous AR applications. This is the partial or full
+occlusion of points of interest (POIs) by physical obstacles (e.g.
+buildings). Those POIs are treated indiscriminately by mobile
+location-based AR frameworks, regardless of whether they are
+actually within the field of view (FoV) of the user or not. However,
+displaying occluded objects (e.g. overlaying a marker or any sort of
+interpretive information about a hidden POI) often results in
+misconceptions and wrong pursuance of tasks amongst users [19,
+
+22] thereby compromising the clarity and explicitness of AR
+applications. Practically, the occlusion problem has been addressed
+so far only in indoor environments. Although not being part of our
+original research plans, occlusion handling represented a major
+design consideration for KnossosAR. Namely, the feedback
+received on early prototypes of KnossosAR (by the members of a
+focus group) revealed the need for real-time FoV estimation in
+MAR applications developed for outdoor archaeological sites.
+KnossosAR has undergone field trials which provided preliminary
+evidence of its efficiency, effectiveness and utility (including the
+incorporated FoV estimation approach).
+The remainder of this article is structured as follows: Section 2
+presents previous research related to our work. Section 3 discusses
+the design and implementation details of KnossosAR. Section 4
+introduces the FoV estimation method incorporated in KnossosAR.
+Section 5 discusses our main user evaluation findings. Finally,
+Section 6 concludes our work.
+
+2. RELATED WORK
+Recent developments in mobile computing (such as the wide
+penetration of mobile devices equipped with camera, GPS receiver
+and inertial sensors) shaped a favorable technology landscape for
+MAR applications. MAR services provide a novel interface to the
+ubiquitous digital information in the physical world, hence serving
+in great variety of application contexts [5].
+Among others, MAR technology opens up unprecedented
+possibilities to cultural organizations and institutions like museums
+and archaeological societies/services which do not necessarily need
+to invest in buying dedicated hardware infrastructure, but rather
+take advantage of devices own by visitors. As a result, the MARbased guides developed for cultural heritage sites have proliferated
+in the recent years. So far, the majority of relevant prototyped
+applications are tailored to indoor environments employing
+computer vision [13] or some sort of fiducial markers [7, 8] to
+recognize exhibits.
+However, the literature specifically focusing on outdoor MAR
+without the use of bulky or cumbersome wearables [4, 23] is still
+scarce. Moving a MAR application outdoors is particularly
+challenging, especially when considering archaeological sites and
+excavations where interactive storytelling and environmental
+context could play a significant role in the user’s experience. Such
+a system would require an intuitive human-computer interface
+based on metaphors, hotspots, logical clues, delivered on mobile
+device screens. The users would interact with augmented
+information of the excavated objects and would be able to compare
+artifacts over different historical periods [1].
+Along this line, Mohammed-Ammin, et al. [16] presented a MAR
+tour guide for visitors of the archaeological site of Arbela, Iraq. The
+guide presents the complex and multifaceted history of the site,
+including superimposed 3D models of buried layers left by
+successive civilizations which inhabited the area. The user’s
+location and nearby geo-tagged content is shown through a twodimensional map interface.
+Ardito et al. [2] presented a MAR system designed to support
+young students in learning history in the archaeological site of
+Egnathia, in the Apulia region, Italy. The proposed system employs
+a gamification approach to stimulate students in acquiring historical
+notions, thereby making the archaeological visit more effective and
+exciting.
+Angelopoulou et al. [1] presented a multi-user MAR educational
+iOS application for the archaeological site of Sutton Hoo (UK),
+offering interpretive information for a group of Anglo-Saxon burial
+
+mounds. The site combines indoor and outdoor POIs that need to
+be connected. The AR tour is delivered in the form of a teamoriented puzzle game. A number of teams of children visitors are
+cast into the role of investigators trying to solve a number of
+puzzles that involve finding specific exhibits from the excavation
+site.
+The aforementioned projects have demonstrated the potential of
+MAR technology as a means for delivering stimulating experiences
+to the visitors of archaeological sites. Nevertheless, thorough
+investigation is still needed to understand the way that users interact
+with MAR interfaces, address usability problems and identify
+technology acceptance factors. Even more so to compare the
+relevant (dis)advantages of MAR vs. map-based mobile interfaces
+in outdoor cultural heritage sites.
+
+3. KNOSSOSAR: ITERATIVE DESIGN
+PROCESS
+The primary purpose of KnossosAR is to utilize MAR technology
+to support guided tours of secondary school students (either alone
+or in groups) while on educational visit on outdoor archaeological
+sites. In particular, the educational and learning objectives for
+students supported by KnossosAR have been specified in
+consultation with educators and archaeologists, as follows:
+
+
+Become acquainted with the palace of Knossos (architecture,
+decoration, art of pottery and frescoes) and compare its
+complexity with that of the Minotaurous maze.
+
+Acquire basic knowledge about the Minoan Crete, its
+sovereignty in the sea and the spread of the Minoan civilization
+through trade.
+
+Become acquainted with characteristic elements of life in the
+Minoan Crete: occupations, housing, food, clothing and
+toilette.
+
+Comprehend the causes that led to the destruction of the
+Minoan civilization.
+Contemporary theories of learning suggest that the above listed
+educational objectives should be pursued through approaching the
+historical context revealed in Knossos experientially [14]. Namely,
+KnossosAR could serve as a technological assistant to locate POIs
+in the archaeological site and derive contextual interpretive
+information via various media.
+Requirements
+analysis
+•Identification of user
+groups
+•Interviews with
+involved stakeholders
+•Take into account user
+acceptance criteria
+•Determination of
+functional and non‐
+functional requirements
+
+Official user
+trials
+•Questionnaire
+editing
+•Selection of
+evaluators
+•Trial executions
+•Compilation of
+questionnaire and
+interviews
+
+Application
+design
+
+Prototype
+implementation
+
+•Content selection
+•Content authoring
+•Use cases
+•Selection of mobile
+AR platform
+•User interface
+design (mockups)
+
+Prototype
+finalization
+•Bug fixing
+•Application
+enhancements: audio
+announcements, dual
+AR/map view, hiding
+of POIs occluded by
+physical obstacles
+
+Testing
+•Lab tests
+•Beta version
+testing
+•Evaluation by
+focus groups
+
+Figure 1. Illustration of KnossosAR development cycle.
+
+Through using the application, students should be able to build
+sufficient knowledge background by undertaking the role of
+explorer, based on the principles of discovery and exploratory
+learning. Collaborative and cooperative learning should also be
+encouraged so as to capitalize on one another’s resources and
+abilities and enable the development of social skills. Finally, the
+application should cater for the emotional development of students.
+Dominant emotions are expected to be the tension resulting from
+the action, the joy of discovery, the fulfillment of achievement.
+KnossosAR has been developed following an iterative software
+development cycle (see Figure 1): requirements analysis; design;
+prototype implementation; testing; prototype finalization; official
+user evaluation.
+
+3.1 Requirements analysis
+The requirements analysis of KnossosAR adopted the Volere
+methodology [17]. The application requirements have been elicited
+by involved stakeholders (archaeologists experts in Knossos,
+professional guides and curators from local cultural heritage
+institutions, educators, students). Our requirements analysis also
+consolidated ‘good practices’ derived from similar MAR projects
+and general principles for usability design [3, 9]. The main
+functional and non-functional requirements identified for
+KnossosAR are as follows:
+
+
+
+
+
+
+
+
+
+
+The application should support the autonomous tour guidance
+of users in the archaeological site; users should be able to
+follow their own explorative routes with their preferred pace
+and be able to retrieve information about POIs/landmarks
+under a variety of augmentation forms, including textual
+descriptions, audio narrations, images and 3D graphics.
+The application design should make no assumptions on any
+kind of supportive infrastructure (e.g. WiFi installation,
+attachment of fiducial markers on POIs); hence, it should be
+developed upon a sensor-based AR framework and be able to
+function as a standalone application so as not to be sensitive to
+network disconnections and avoid roaming charges.
+User input should be rare and limited.
+The application should offer an intuitive interface so as not to
+distract the user from his/her main visiting purpose, namely the
+experiential exploration of the archeological site.
+The application should support educational objectives as to
+motivating students to discover information about specific
+elements of the site.
+The guided tour should be offered in a playful manner (i.e.
+incorporate gamification elements) aiming at increasing the
+user commitment and engagement in the exploration of the site.
+The application design should be easy to replicate and port to
+other cultural heritage sites.
+
+3.2 Application design
+
+The application content has been dictated by archeologists and
+educators based on the rationale of selecting a set of POIs regarded
+as being most important while also serving the learning objectives
+of educational visits, as discussed earlier. Those POIs are:
+
+
+The Throne Room with the famous alabaster throne and
+frescoes, where it is speculated that King Minos met with the
+priesthood.
+
+1
+
+https://github.com/phishman3579/android-augment-reality-framework
+
+2
+
+Some of the focus group members argued that the display of AR markers
+based on proximity would be sound in a city guide wherein, for instance,
+the user would like to know the restaurants located up to a certain
+distance from his/her current location. Nevertheless, this is undesirable
+
+
+
+The Stepped Portico (covered stairway) leading to the palace
+complex.
+
+The South Entrance, where the plaster relief “Prince of lilies”
+or “Priest-king Relief” has been discovered.
+
+The royal apartments where one can admire the natural
+lighting system and air conditioning of premises and frescoes
+like that of dolphins and sea urchins in the queen’s room.
+
+The compartments with the giant storage jars, used in trade
+shipment with other peoples in the Middle East, Egypt and the
+Aegean.
+
+The Sewer System, leading rainwater away from the palace
+complex. In the same area there are signs of the great
+destruction of the palace.
+Upon the selection of POIs, we then proceeded to content
+authoring: text (POI description) authoring, recording of audio
+clips (narration of textual description), editing of photographs,
+videos, etc.
+The application design phase also involved the specification of a
+number of use case scenarios. Namely, the detailed formal (UML)
+definition of the interactions between the involved actors and the
+application components to achieve specific goals (tasks).
+Based on the use case diagrams we then derived the UI mockups
+which exposed the basic functionality of the envisioned application
+and served as a tool to solicit early feedback from archeologists and
+educators as well as from the end users (students). This feedback
+has been take into account so as to adjust several UI and interaction
+elements prior to prototyping the application.
+
+3.3 Iterative prototyping and testing
+KnossosAR has been developed as a standalone application for the
+Android platform. The Android Augmented Reality Framework1
+has been chosen to support the projection of AR views as it also
+facilitates the implementation of several desired features such as a
+visual metaphor of a ‘radar’ used to display the location of POIs
+(represented by dots) relatively to the user’s location and direction.
+The development of KnossosAR comprised iterative prototyping
+and testing phases. The output of each prototyping phase has
+undergone extensive ‘lab’ tests as well as evaluation by focus
+groups. The focus group comprised a team of three technologically
+literate individuals who provided analytical feedback as regards
+spotted software bugs as well as usability flaws and missing
+functionality.
+The first prototyping phase comprised the implementation of a fully
+functional prototype. The interpretive information edited for the
+selected POIs (see Section 3.2) has been incorporated into the AR
+framework. In addition to the AR view, a standard map view has
+been developed to offer users an alternative means for locating
+POIs (the map view indicates both the current location of the user
+and POI locations by color-coded markers). The most important
+remarks and suggestions for improvements highlighted by the focus
+group members during the first testing phase have been:
+
+
+At some points, the AR view included markers for POIs hidden
+from certain viewpoints as this has been the default function of
+the AR framework. This often resulted in confusion and
+misconception, therefore, it has been suggested to allow hiding
+markers associated with occluded POIs2.
+
+in the functional context of KnossosAR where the main purpose of the
+user is to recognize POIs as s/he walks around the archaeological site.
+
+
+
+While the application has been configured to automatically
+display visual indications about annotated POIs when the user
+came close to them, this often remained unnoticed as the users
+typically walked around the site only occasionally checking
+their device’s screen.
+
+Figure 3. Ground plan of Knossos with color indication of
+POIs (yellow), buildings obstructing the users’ view (red) and
+ruins of zero height, hence, not regarded as obstacles (blue).
+(a)
+
+In order to implement audio announcements we have adopted
+methods commonly practiced in acoustic spaces [20]. Upon
+approaching a POI the user listens to a short audio message
+announcing the POI’s identity (title). As a result, the users are
+disengaged from continuously looking up their device’s screen.
+Thus, they are left to focus on the actual exploration of the
+archeological site and pursue a more relaxed visit style. In addition
+to receiving audio notification, a popup panel provides the user
+access to POI-relevant information (textual description, audio
+narration, slide show) (see Figure 4). This panel also appears when
+the user taps on a marker in the AR view.
+
+(b)
+
+Figure 2. (a) Displaying and (b) hiding an AR marker
+associated with an occluded POI.
+Based on the elicited feedback, the original prototype has been
+adapted as follows:
+
+
+The markers corresponding to occluded POIs have been
+hidden. Essentially, this has been realized through the
+incorporation of the FoV determination technique presented in
+Section 4. To compensate for the hidden information, we have
+opted to implement a third view (further to the AR and the map
+views): a dual view which comprises a split screen combining
+the AR and map views. This allows users to have a broader
+perception if the site; namely, to locate POIs (in the map section
+of the screen) which could otherwise remain unspotted due to
+being out of the user’s FoV, thus, hidden in the AR view.
+
+On the event of approaching a POI in less than 5 m distance,
+the user is optionally notified via an audio announcement
+and/or device’s vibration.
+The hiding of AR markers associated with occluded POIs is
+demonstrated in Figure 2. Figure 3 illustrates the ground plan of
+Knossos designating POIs and obstacles.
+
+(a)
+
+(b)
+
+Figure 4. (a) Popup panel providing access to interpretive
+information relevant to a POI; (b) slide show.
+
+Last, the dual AR/map view of KnossosAR is shown in Figure 5.
+
+Figure 5. The dual view which combines the AR and map
+views.
+
+4. FIELD OF VIEW DETERMINATION
+Höllerer et al. [10] have recognized the problem of POIs occluded
+by physical obstacles (such as buildings) and argued that AR
+projections should be appropriately adjusted to convey correct
+depth information. The literature dealing with the occlusion
+problem in AR mainly considers the occlusion of virtual objects by
+real ones. Along this line, several works have focused on providing
+depth perception through employing computer vision methods,
+such as edge-based tracking [15, 21, 24] or marker-based tracking
+[12]. These approaches either require (offline) registration of the
+physical environment (therefore, they cannot be easily relocated
+elsewhere) or involve computationally hard image-processing
+tasks.
+However, typical outdoor AR applications entail far stricter
+requirements: real-time performance; anytime/anywhere execution
+(hence, support for consuming open geodata, especially
+topography/building data); suitability for executing on average
+mobile equipment. Moreover, many applications would benefit
+from accurately estimating the user’s FoV, which is a problem more
+generic than occlusion estimation: FoV refers to the whole area
+being within the user’s view in the 2D or 3D space, while occlusion
+detection refers to testing the Line of Sight (LoS) condition
+between the user and a specific point. Unlike existing methods, our
+focus has been on methods for determining LoS/FoV while also
+satisfying the above listed requirements of outdoor AR
+applications.
+To address the aforementioned issues, we prototyped an efficient
+geolocative raycasting method which allows to detect buildings in
+location-based AR applications, thereby reliably resolving the
+object occlusion issue. Our method is inspired by the raycasting
+technique utilized in video games to estimate the visibility of virtual
+objects. Raycasting refers to the act of casting imaginary light
+beams (rays) from a source location (typically the point of view of
+the character or object controlled by the player) and recording the
+objects hit by the rays [18]. Herein, we extend this idea in outdoor
+AR applications wherein, unlike video games, the virtual space is
+integrated with the physical one, which is not pre-registered and
+occlusion is typically caused by surrounding buildings. Our
+geolocative raycasting technique, titled Ray-Polygon Intersection
+(RPI), suggests a portable scheme which may be incorporated in
+any outdoor AR application and be utilized at any urban setting,
+provided that sufficient topographical data exist.
+3
+
+Bearing refers to the angle of a moving object’s direction from the North.
+
+It is noted that, in addition to the device’s exact location, RPI
+requires the calculation of the device’s orientation (bearing3) based
+on measurements taken from the accelerometer and magnetometer
+sensors of the device. Thereafter, the bearing is set as the center of
+the player’s FoV. The precise estimation of the player’s FoV (i.e.
+the exact 2D polygon which delimits the player’s sight) may then
+be undertaken by the approach discussed in the sequel.
+Our FoV determination approach employs an efficient, geometric
+ray intersection method. Initially, building polygons are
+deconstructed to pairs of vertices, each referring to a polygon side
+(line segment). We then generate a sequence of ray segments
+degrees far from each other) from the
+(consecutive rays are
+leftmost to the rightmost FoV’s angle (
+and
+,
+respectively) considering the current bearing of the device as the
+bisector of the FoV’s angle. The edges of each ray segment are set
+far
+to the device’s location and the ray’s endmost point being
+(maximum FoV distance). To determine FoV we then calculate the
+intersection points among each ray segment and the building
+polygon side lines. For each ray segment, the intersection point
+which is nearest to the device is regarded as the furthest FoV point
+along this particular ray. It is noted that, since no open geodata have
+been available for the archaeological site of Knossos, the building
+(polygon) coordinates in KnossosAR (both for the POIs and the
+buildings that may possibly occlude POIs) have been manually
+edited.
+
+Figure 6. FoV determination utilizing the ray intersection
+approach.
+Figure 6 demonstrates our method through a simplified scenario
+which involves five rays and a building polygon. The green circles
+denote the endmost points of the five ray segments while the red
+circles denote the intersection points of the rays with the building
+polygon sides. The yellow-shadowed area (ABCDEF) represents
+the estimated FoV polygon. Note that the accuracy of FoV
+estimation depends on the density of rays (i.e. their in-between
+angle). For instance, the triangle CC1C2 is erroneously considered
+to be within the player’s FoV (the triangle’s area would be smaller
+if rays were denser).
+In KnossosAR, the intersection points among blocked rays and
+their nearest polygons (or the endmost points of the non-blocked
+ray segments) are saved in a vector; utilizing the Google Maps
+Android API library, the application easily inspects whether a
+particular location lies inside the FoV’s polygon. When considering
+polygon-shaped POIs, those are regarded as non-occluded when
+any of their vertices lies within the user’s estimated FoV.
+It is noted that a detailed description of our RPI algorithm appears
+in [11].
+
+5. FIELD TRIALS
+Elementary and secondary education schools often organize
+educational visits to cultural institutions and heritage sites.
+However, stimulating and retaining the interest of students often
+proves a rather hard exercise. Archaeological sites are especially
+challenging in the sense that students are guided around ruins of
+ancient settlements that hardly reflect their original appearance and
+purpose. The utility of MAR applications in answering ‘how did it
+used to look like’ questions and engaging users in the educational
+process appears as a reasonable hypothesis. However, evidence is
+missing as user acceptance studies of MAR applications with
+cultural heritage resources are rare [9].
+Along this line, KnossosAR has been tested on site, through
+‘formal’ field trials. The objectives of the field trials have not only
+been to test the innovative functional elements of the application
+(such as our occlusion handling method), but also to offer insights
+on the way that similar applications are actually used and how the
+AR views compare to alternative visualization means, such as the
+map and the dual AR/map views.
+(c)
+
+Figure 7. Field trials: (a) Briefing of participants; (b)
+browsing interpretive information about a POI; confirmation
+of the ‘discovery’ of 4 (out of 6) POIs.
+
+(a)
+
+(b)
+
+KnossosAR has been evaluated by 16 students (12 male, 4 female)
+17-19 years old (average 17.6), in the context of an educational visit
+in the archaeological site of Knossos4. The participants have tested
+the application in four groups (of four individuals each) in order to
+facilitate their live observation by the developers. The testing
+sessions have been executed using tablet devices supplied by the
+development team. Most (68.8%) of the students had visited the
+archaeological site in the past, either privately or in the context of
+an educational (school) visit. All of them have been experienced
+mobile application users and familiar with mobile interactive map
+interfaces. 62.5% have been aware of the existence of electronic
+guides in museums and cultural heritage sites; however, only
+12.5% had actually used one in the past. Notably, none of them has
+been aware of the capabilities and usage of the AR applications.
+Initially, the students have been briefed by the developers about the
+main functional elements of KnossosAR. Students have been then
+invited to participate in a ‘treasure hunting’-like game wherein the
+objective has been to ‘discover’ (i.e. approach) the 6 selected POIs
+(see Section 3.2) in a 30 min session. Upon the completion of the
+evaluation session, the participants have been requested to fill in a
+questionnaire so as to convey their overall quality of experience and
+document any remarks. Finally, a semi-structured interview
+followed in order to offer participants the opportunity to clarify any
+issues and suggest further improvements. Figure 7 shows snapshots
+from the KnossosAR field trials.
+The questionnaire comprised two sections. The first section
+(seeTable 1) aimed at eliciting the perceived value and quality of
+experience of the participants about the application as a whole as
+well as its individual functional elements. The participants
+experienced no difficulty to get acquainted with the usage of the
+application (S1). The incorporation of the AR views and the
+gamification of the guided tour increased the fun element (S2). The
+interpretive information consumed though the application allowed
+participants to acquire new knowledge about then archaeological
+
+4
+
+A video recorded during the field trials is available from:
+https://www.youtube.com/watch?v=RnohY2JdkzI
+
+site (S3), while the visualization of the POIs assisted in locating
+important points which otherwise would likely remain unnoticed
+(S4). The occlusion handling technique (participants have been
+informed during the briefing session that AR markers associated
+with non-visible POIs would be hidden) has been positively
+valuated (S5). Besides, some participants argued that they could
+receive hints about the existence of occluded POIs through
+inspecting the ‘radar’; this displayed visual indications of all ‘inrange’ POIs regardless of their visibility. The participants have
+found useful most of the means provided for locating POIs within
+the archaeological site (S6). Among them, the AR markers and the
+audio messages announcing proximity to POIs have been most
+highly appreciated. As regards the means for consuming
+interpretive information, audio narration and images/photographs
+have been the most commonly used (S7); reading textual
+information has been less popular as it was claimed to distract the
+user’s attention from looking at the POI itself. The overall valuation
+of KnossosAR has been positive with respect to the perceived
+quality of experience (S8). When prompted to characterize the AR
+interface of the application in one sentence, the verbalization has
+been around the concepts of entertainment and innovation (e.g.
+‘fun’, ‘interesting’, ‘original’, ‘groundbreaking’) as well as
+usefulness (e.g. ‘helpful’, ‘nice to have’).
+Table 1. Overall valuation of KnossosAR using a likert scale:
+1-5 (1:Not at all, 5: Very much).
+Statement
+
+Median Average
+
+S1
+
+The application has been easy to
+use.
+
+5
+
+4.6
+
+S2
+
+The application has been pleasant
+to use.
+
+5
+
+4.4
+
+The usage of the application
+allowed me to acquire knowledge
+S3
+about then archaeological site
+(that I would miss otherwise).
+
+4
+
+4.1
+
+The application assisted me to
+locate points of interest within
+S4
+the archeological site (that I
+would miss otherwise).
+
+5
+
+4.8
+
+I have appreciated the hiding of
+S5 AR markers representing POIs
+out of my field of view.
+
+4
+
+3.9
+
+The following application elements assisted me in
+S6
+locating points of interest within the archaeological site:
+a
+
+Floating (AR) markers
+
+5
+
+4.4
+
+b
+
+Radar
+
+3
+
+3.5
+
+c
+
+Interactive map (including visual
+indication of the user’s current
+location)
+
+4
+
+3.8
+
+d
+
+Audio (POI proximity)
+announcement
+
+5
+
+4.8
+
+The following application elements assisted me in
+S7 eliciting interpretive information about points of
+interest:
+a
+
+Audio narration
+
+4
+
+4.3
+
+b
+
+Textual information
+
+3
+
+2.9
+
+c
+
+Photographs
+
+The overall quality of experience
+S8 with the usage of the mobile
+guide has been positive.
+
+4
+
+4
+
+4
+
+4.2
+
+The next section of the questionnaire (see Table 2) aimed at
+comparing the AR against the map and the dual AR/map interfaces
+with respect to several criteria. Notably, half of the participants
+indicated preference on the map environment as regards the ease of
+use (Q1) (mainly due to their higher level of familiarity with alike
+interfaces) with a 37.5% favoring the AR environment; the dual
+environment has been the less preferred option as it required more
+cognitive effort in order to synthesize the visual information
+projected in the two screen parts. Participants appeared bifurcated
+as regards the fun element of application usage among the AR and
+the dual AR/map environments (Q2). However, their preference on
+the AR view could be regarded somewhat biased due to the fact that
+it has been new to all users. The participants found the AR markers
+more functional and conspicuous than map markers (Q3) with some
+arguing that the former have been more informative (as they
+additionally included the POI title and distance info) and
+discernible (due to being more sizeable and not overlapping among
+them). On the other hand, the participants indicated slight
+preference on the map environment as regards the ease in
+interacting with (tapping on) the markers (Q4) with some stressing
+out their ‘stability’ as opposed to the floating MAR markers whose
+positioning has been very sensitive to devices’ orientation changes
+(yet, some opposite views highlighted the significant overlap often
+noticed in the map interface which required the adjustment of the
+zoom level in order to distinguish individual markers). The dual
+AR/map interface has been favored by the majority of respondents
+as regards to the ease in locating and reaching nearby POIs (Q5) as
+it combined the best of the two ‘worlds’: the intuitive orienteering
+offered by AR (as it directly conveys the direction towards a POI)
+and the broader view (and layout) of the archeological site offered
+by the map interface which illustrated all POIs (regardless of their
+visibility) without requiring any rotation (it has been commented
+that the radar of the AR environment did not compensate that
+deficiency). However, it should be noted that the dual environment
+may be less practical in smartphone devices, due to their lower
+screen resolution.
+Table 2. Direct comparison among the three supported
+information visualization environments.
+AR
+(including
+the radar)
+
+Map
+
+Dual
+(AR/map)
+env/ment
+
+Which environment
+Q1 did you find easier to
+use?
+
+37.5%
+
+50%
+
+12.5%
+
+Which environment
+Q2 did you find more
+pleasant to use?
+
+50%
+
+0%
+
+50%
+
+Which environment’s
+Q3 markers did you find
+more conspicuous?
+
+75%
+
+25%
+
+N/A
+
+Which environment’s
+markers did you find
+Q4
+most easy to tap on?
+(AR or map markers)
+
+43.7%
+
+56.3%
+
+N/A
+
+Question
+
+Which environment
+did you find more
+Q5 helpful to locate and
+reach nearby points
+of interest?
+
+25%
+
+12.5%
+
+62.5%
+
+In the semi-structured interview held in the end of the testing
+sessions, the participants have made several suggestions for further
+improvements, such as:
+
+
+
+
+
+Incorporation of richer interpretive information: 3D
+reconstruction of selected ancient ruins; provision of
+information about the archaeological site as a whole further to
+the ‘fragmented’ information about POIs.
+Use of visual clues (e.g. special color codes) to denote already
+visited POIs.
+Alternative ways to handle hidden POIs (i.e. those being out of
+the user’s FoV): use of transparency for AR markers associated
+with hidden POIs; provision of audio hints about hidden POIs.
+
+6. CONCLUSION
+This article introduced KnossosAR, an outdoor MAR guide
+implemented for the Unesco world heritage archaeological site of
+Knossos (in Crete, Greece). KnossosAR seamlessly integrates AR
+projections of interpretive information in a non-linear storytelling
+context. The application has served as a testbed to pursue our main
+research objective; namely, to reveal usability problems and
+identify technology acceptance factors with respect to the usage of
+MAR technology as well as to compare MAR vs. map-based
+mobile interfaces in outdoor cultural heritage sites.
+Unlike existing outdoor AR applications, KnossosAR addresses the
+occlusion problem by appropriately handling occluded
+POIs/landmarks (commonly dealt with in location-based AR
+applications) as suggested by members of a focus group who
+evaluated an early version of our prototype. This is achieved
+through employing a geolocative raycasting technique which
+enables real-time detection of surrounding buildings and adapts AR
+content accordingly.
+The execution of user evaluation trials confirmed the perceived
+usefulness, ease of use and enjoyment of KnossosAR. Our
+evaluation findings largely match the conclusions of similar user
+acceptance studies [9]. The combination of the physical objects
+with the virtual information triggered the curiosity and stimulated
+the interest of students to physically explore the archaeological site.
+The use of MAR technology exposed students to an alternative
+interaction style, which they easily mastered. Initial mistrust, gave
+its place to a sense of accomplishment when they succeed in
+locating the ‘hidden’ POIs.
+
+7. ACKNOWLEDGMENTS
+This work has been supported by the CIP-ICT-PSP-2013-2017
+Programme under grant agreement no. 621133 (HoPE - “Holistic
+Personal public Eco-mobility”).
+
+8. REFERENCES
+[1]
+
+[2]
+
+A. Angelopoulou, D. Economou, V. Bouki, A. Psarrou, L. Jin, C.
+Pritchard, F. Kolyda, "Mobile augmented reality for cultural heritage",
+Proceedings of the 4th International Conference on Mobile Wireless
+Middleware, Operating Systems, and Applications, pp. 15-22, 2011.
+C. Ardito, P. Buono, M.F. Costabile, R. Lanzilotti, T. Pederson,
+"Mobile games to foster the learning of history at archaeological
+sites", Proceedings of the Symposium on Visual Languages and
+Human-Centric Computing, pp. 81-86, 2007.
+
+[3]
+
+M. Billinghurst, A. Duenser, "Augmented reality in the classroom",
+Computer, 45, pp. 56-63, 2012.
+
+[4]
+
+G. Caggianese, P. Neroni, L. Gallo, "Natural interaction and wearable
+augmented reality for the enjoyment of the cultural heritage in outdoor
+conditions", Proceedings of the International Conference on
+Augmented and Virtual Reality, pp. 267-282, 2014.
+
+[5]
+
+J. Carmigniani, B. Furht, M. Anisetti, P. Ceravolo, E. Damiani, M.
+Ivkovic, "Augmented reality technologies, systems and applications",
+Multimedia Tools and Applications, 5, pp. 341-377, 2011.
+
+[6]
+
+G. Casella, M. Coelho, "Augmented heritage: situating augmented
+reality mobile apps in cultural heritage communication", Proceedings
+of the International Conference on Information Systems and Design
+of Communication, pp. 138-140, 2013.
+
+[7]
+
+T. Chatzidimitris, E. Kavakli, M. Economou, D. Gavalas, "Mobile
+Augmented Reality edutainment applications for cultural institutions",
+Proceedings of the 4th International Conference on Information,
+Intelligence, Systems and Applications, pp. 1-4, 2013.
+
+[8]
+
+L. Greci, "An Augmented Reality Guide for Religious Museum",
+Proceedings of the 3rd International Conference on Augmented
+Reality, Virtual Reality and Computer Graphics, pp. 280-289, 2016.
+
+[9]
+
+A. C. Haugstvedt, J. Krogstie, "Mobile augmented reality for cultural
+heritage: A technology acceptance study", Proceedings of the
+International Symposium on Mixed and Augmented Reality, pp. 247255, 2012.
+
+[10] T. Höllerer, S. Feiner, D. Hallaway, B. Bell, M. Lanzagorta, D.
+Brown, S. Julier, Y. Baillot, L. Rosenblum, "User interface
+management techniques for collaborative mobile augmented reality",
+Computers & Graphics, 25, pp. 799-810, 2001.
+[11] V. Kasapakis, D. Gavalas, "Occlusion handling in outdoors
+augmented reality games", Multimedia Tools and Applications, in
+press.
+[12] H. Kato, M. Billinghurst, I. Poupyrev, K. Imamoto, K. Tachibana,
+"Virtual object manipulation on a table-top AR environment",
+Proceedings of the International Symposium on Augmented Reality,
+pp. 111-119, 2000.
+[13] J. Keil, L. Pujol, M. Roussou, T. Engelke, M. Schmitt, U. Bockholt, S.
+Eleftheratou, "A digital look at physical museum exhibits: Designing
+personalized stories with handheld Augmented Reality in museums",
+Proceedings of the Digital Heritage International Congress, pp. 685688, 2013.
+[14] D.A. Kolb, R.E. Boyatzis, C. Mainemelis, "Experiential learning
+theory: Previous research and new directions", Perspectives on
+thinking, learning, and cognitive styles, 1, pp. 227-247, 2001.
+[15] V. Lepetit, L. Vacchetti, D. Thalmann, P. Fua, "Fully automated and
+stable registration for augmented reality applications", Proceedings of
+the 2nd International Symposium on Mixed and Augmented Reality,
+pp. 93, 2003.
+[16] R.K. Mohammed-Amin, R.M. Levy, J.E. Boyd, "Mobile augmented
+reality for interpretation of archaeological sites", Proceedings of the
+2nd International Workshop on Personalized access to cultural
+heritage, pp. 11-14, 2012.
+[17] S. Robertson, J. Robertson, "Mastering the requirements process:
+Getting requirements right", Addison-wesley, 2012.
+[18]J. Schroeder, "AndEngine for Android game development cookbook",
+Packt Publishing Ltd, 2013.
+[19] M.M. Shah, H. Arshad, R. Sulaiman, "Occlusion in augmented
+reality", Proceedings of the 8th International Conference on
+Information Science and Digital Content Technology, pp. 372-378,
+2012.
+
+[20] U.P. Svensson, "Modelling acoustic spaces for audio virtual reality",
+Proceedings of the 1st Benelux Workshop on Model based Processing
+and Coding of Audio, pp. 109-116, 2002.
+[21] G. Takacs, V. Chandrasekhar, N. Gelfand, Y. Xiong, W.-C. Chen, T.
+Bismpigiannis, R. Grzeszczuk, K. Pulli, B. Girod, "Outdoors
+augmented reality on mobile phone using loxel-based visual feature
+organization", Proceedings of the 1st International Conference on
+Multimedia information retrieval, pp. 427-434, 2008.
+[22] Y. Tian, Y. Long, D. Xia, H. Yao, J. Zhang, "Handling occlusions in
+augmented reality based on 3D reconstruction method,"
+Neurocomputing, 156, pp. 96-104, 2015.
+[23] V. Vlahakis, N. Ioannidis, J. Karigiannis, M. Tsotros, M. Gounaris, D.
+Stricker, T. Gleue, P. Daehne, L. Almeida, "Archeoguide: an
+
+View publication stats
+
+augmented reality guide for archaeological sites", Computer Graphics
+and Applications, 22, pp. 52-60, 2002.
+[24] D. Wagner, G. Reitmayr, A. Mulloni, T. Drummond, D. Schmalstieg,
+"Real-time detection and tracking for augmented reality on mobile
+phones", Transactions on Visualization and Computer Graphics, 16,
+pp. 355-368, 2010.
+[25] Y. Xu, N. Stojanovic, L. Stojanovic, A. Cabrera, T. Schuchert, "An
+approach for using complex event processing for adaptive augmented
+reality in cultural heritage domain: experience report", Proceedings
+of the 6th International Conference on Distributed Event-Based
+Systems, pp. 139-148, 2012.
+
+

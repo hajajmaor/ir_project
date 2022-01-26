@@ -1,0 +1,880 @@
+Lepouras, G., Charitos, D., Vassilakis, C., Charisi, A., Halatsi, L. (2001). 
+“Building a VR museum in a
+museum”, in Richir, S., Richard, P., Taravel, B. (eds.), Proc. 2001 VRIC Laval 
+Virtual International
+Conference, 16-18 May 2001, Laval, France, ISBN: 5343545
+
+VRIC,Virtual Reality International Conference, Laval Virtual 2001, May 16-18
+
+Building a VR-Museum in a Museum
+
+George Lepouras, Dimitrios Charitos, Costas Vassilakis, Anna Charissi, Leda 
+Halatsi
+Human-Computer Interaction and Virtual Reality Research Group, Department of 
+Informatics,
+
+University of Athens, Ktiria Pliroforikis, Panepistimioupolis, Ilisia, Athens 
+15771, Greece, vr-lab@di.uoa.gr
+
+Keywords: Virtual Reality, virtual museum, exhibit digitisation, virtual 
+architecture
+
+Abstract: Past years have seen the exploitation of multimedia techniques and 
+lately the introduction of virtual
+reality methods to create new forms of presentation for museums' exhibitions. 
+Virtual Reality can offer a num-
+ber of advantages to museums, offering a way to overcome some common problems 
+like the lack of space or the
+need of visitors to interact with the exhibits. A broad categorisation of 
+virtual museums reveals that they vary
+from fully immersive cave systems to simple multimedia presentations. In our 
+approach to develop a virtual
+reality museum we have designed a virtual environment (VE) where guests can 
+visit a total of ten different mu-
+seums. The processes of digitisation, architectural design and exhibit 
+presentation are outlined and points of
+particular importance are explained. Exhibits from the real world museums have 
+been digitised and integrated
+in  the VE. The system has been implemented in two versions: one fully 
+immersive and one with a stereo display.
+
+
+1  Introduction
+
+Museums, in general, host exhibitions in order to
+disseminate their message to the public. Within the
+museum's environment the form of exhibited ob-
+jects' manifests the museum's message. Museum
+exhibitions and individual objects provide two
+kinds of information: scientific and cultural. Ex-
+perience has shown that this information can be
+communicated more effectively by complementing
+plain exhibit presentation with additional media
+and by targeting other senses too [1, 2]. Research
+effort has been put on exploiting technological
+advancements to the museums' benefit. The term
+Virtual Museum was coined by Tsichritzis and
+Gibbs in their 1991 paper [3] where they describe
+the concept of a virtual museum and the technolo-
+gies needed to realise it.
+
+In an earlier paper [4], we addressed the general
+issues concerning the development of a Virtual
+Museum, accessible either through the Web or
+locally. The present paper focuses on the devel-
+opment of a locally executed virtual reality envi-
+ronment to be offered to visitors of the N. P.
+
+1
+
+Foundation Museum of Cycladic Art . This work
+
+is accomplished in the framework of the "Virtual
+
+2
+
+Museums" project . Ten museums participate in
+
+this project and provide 2D and 3D content to be
+digitised and included within the virtual museum.
+The first section of the paper discusses the possi-
+ble advantages from incorporating a Virtual Mu-
+seum presentation within the context of a real mu-
+seum. The second section attempts to broadly
+categorise cases of virtual museums that have been
+implemented within real-world museums. Finally,
+the third section presents our approach to design-
+ing and implementing the locally executed Virtual
+Reality Museum.
+
+Recent years have witnessed the introduction of
+new forms of presentation in museums' exhibi-
+tions. Multimedia techniques have been widely
+used for enhancing users' experience and attracting
+more visitors to museums, as well as for providing
+a new means for communicating their content and
+consequently information. Nowadays, most mod-
+ern museums offer multimedia info-kiosks, where
+visitors can get information regarding the mu-
+seum's collections, special exhibitions, and other
+cultural activities. In some cases there is an option
+for a multimedia tour of the museum, where the
+visitor may 'preview' the museum content. 3D
+graphics and simulation technologies also offers
+
+
+1 The museum’s web address is http://www.cycladic-
+m.gr/
+
+2 The “Virtual Museums” project is sponsored by the
+Greek General Secretariat of Research and Tech-
+nology within the EPET II Framework.
+
+
+the possibility of reconstructing lost or partially
+preserved objects and enabling visitors to experi-
+ence an approximation of the original artefact (that
+being an ancient statue, a dinosaur or even a lost
+city). Additionally, the emergence of the World
+Wide Web provided the infrastructure for making
+museums available to a global level, since an on-
+line exhibition is accessible from almost anywhere
+in the world at any time.
+
+2  The need for a VR system within
+the museum environment
+
+Multimedia, 3D graphics and virtual reality (VR)
+technologies encourage the adoption of more so-
+phisticated interactive techniques, for the digital
+presentation of museum content. It is however
+understood that a virtual museum is not necessar-
+ily limited into being a simulation of a real, exist-
+ing museum. Although, these technologies have
+mostly been used for creating an enhanced, on-line
+version of an original museum, they can also be
+utilised for augmenting the visitor's experience
+within the real museum environment.
+
+To this end, there are a number of reasons, which
+justify the installation of a virtual environment
+(VE) system within a museum:
+
+Lack of space: Most museums display a fraction
+of the exhibits that they own, since exhibition
+space is always limited. Some objects may be too
+fragile or valuable to be exhibited. Stored objects
+can be effectively displayed by means of a VR
+presentation within the museum.
+
+Vivid presentation: Although a simple multime-
+dia presentation can also be used for displaying
+stored content, a VE system affords the museum
+visitor a more vivid and realistic experience. Ex-
+hibits can be interactively observed from different
+viewpoints or even manipulated. Haptic feedback
+technology may also enable visitors to touch and
+feel valuable objects, or may let people with vision
+problems sense an exhibit. It has to be stressed
+however, that the nature and individual character-
+istics of an exhibit (painting, photography, 3D
+object, etc) largely dictate the ideal technology
+that should be used for displaying it in a digital
+form.
+
+Virtual Heritage visualisation: a VE system af-
+fords visitors the possibility to view a simulation
+of important objects, buildings or environments,
+which have been constructed at a much earlier
+point in time; these environments may either:
+
+•  no longer exist today
+
+•  be somehow damaged and in need of recon-
+struction or
+
+•  can not be easily experienced, either because
+they exist at a remote site or because their
+condition does not allow for their interior to
+be navigated.
+
+Visualization of hazardous sites: a VE system is
+a secure way of providing the experience of visit-
+ing an environment, which may be too difficult or
+too dangerous to physically visit (e.g. inside a vol-
+cano or on the mountains of Mars).
+
+Mobile exhibition: the digitised content of a mu-
+seum may be experienced in a realistic manner via
+a mobile VE system, which can be easily trans-
+ported to any exhibition site or remote location.
+This fact may give a chance to a wider audience to
+view important exhibitions without having to
+travel far.
+
+Navigational aid: Some museums are quite vast
+and, in some cases, visitors may only be interested
+in certain exhibits, which exist at certain points
+within the museum. Instead of physically travers-
+ing the distances amongst these objects, visitors
+may view the desired exhibits from within the VR-
+equipped system. This is particularly important for
+visitors with accessibility problems. Aiding the
+exhibition design process: a VE system may be
+used:
+
+•  during the iterative design process of a certain
+exhibition environment, as a means of evaluat-
+ing  the design, or
+
+•  after the completion of the design, as a means
+of communicating the result.
+
+3  Overview of existing Virtual Mu-
+seum systems
+
+Up to this day, a number of museums have
+adopted VR techniques, mainly for offering an
+enhanced presentation to the visitor. In this section
+an overview and a broad categorisation of these
+systems along with supporting technologies is
+presented. The term VR is by definition used for
+describing an interactive 3D graphics system.
+However a quick review of several Virtual Muse-
+ums, implemented so far, reveals that this term is
+also being used for describing an electronic mu-
+seum, the content of which has been partly digi-
+tised and presented with the help of hypermedia or
+3D graphics technologies.
+
+An overview of a large number of “Virtual” Mu-
+seums shows that the technologies employed, vary
+widely from fully immersive cave systems to sim-
+ple multimedia presentations. An attempt to cate-
+gorise these systems, according to the quality of
+the afforded experience (degree of immersion,
+type and resolution of display, etc.) is presented
+below:
+
+High End Systems: The most compelling direct
+experience is afforded by fully-immersive or pro-
+jection-based VE systems. These systems use cut-
+ting-edge technology and their cost is very high,
+therefore the number of such installations world-
+wide is limited. Examples of such systems are: the
+Cave (e.g. Foundation of Hellenic World, Athens)
+
+
+[5], fully-immersive systems that utilise HMDs for
+display and 3D interaction and tracking devices
+for navigation and interaction (e.g. Char Davies’
+art installations: “Osmose” and “Ephemere”) [6,
+7]. Finally, the Dome-projection system used at
+the Hayden Planetarium (visualization of space via
+a three-dimensional map on a dome) could be also
+considered as belonging to this category [8].
+
+Mid-Range Systems: These systems can be found
+installed locally in museums due to their relatively
+high cost. However, they are more affordable and
+portable and thus appear to be a more effective
+solution as a display or evaluation tool. These are
+mainly desktop VR systems, using a standard
+high-resolution or stereo monitor and in some
+cases shutter glasses. Interaction and navigation
+within the virtual environment occurs by means of
+trackballs, joysticks or 3D input devices (e.g. To-
+kyo National Museum [9], The Getty Museum
+[10]).
+
+Lower End Systems: The majority of Virtual
+Museums can be accessed via the Internet by eve-
+ryone who owns a low cost PC. These could either
+be systems for interactively viewing individual 3D
+objects (VRML based, Cult3D, etc.), pseudo-3D
+systems for displaying interactively controlled
+panoramic views (IPIX, QTVR) or mechanisms
+for viewing static stereo images of 3d models. The
+most common approach is the use of multimedia
+for presenting information about the museum’s
+exhibits, but this cannot be considered a virtual
+reality system In any case. Typical examples of
+these systems can be found at the web site of the
+Tower of Pisa [11], the museum of Louvre [12]
+and the Hermitage Museum [13].
+
+4.    The design of the virtual mu-
+seum
+
+3.1  Museums' requirement analysis
+
+The design of the virtual museum followed a task
+analysis methodology; specifically that proposed
+by Parent [14]. For each of the 10 museums a pro-
+file of its users was drawn, where attributes such
+as their language and their profession (i.e. student,
+researcher, etc.) were recorded. Additionally, an
+outline  of  the  museums  characteristics  was
+sketched describing the museum's aim, special
+needs, existing infrastructure, etc. Finally a task
+analysis profile was composed, which included
+issues such as the rationale for the virtual envi-
+ronment, the activities it would support and the
+requirements for storage and retrieval. Conse-
+quently, design requirements for participants and
+for the target application were identified. These
+requirements determined the way in which content
+organisation and categorisation took place and
+
+generally how the creative phase of the design
+evolved.
+
+3.2  Exhibit digitisation
+
+Depending on the exhibit and the requirements set,
+a number of techniques were used for the exhibits'
+digitisation and the creation of 2D and 3D objects.
+The creation of 3D objects followed one these
+three techniques:
+
+•  3D photography
+
+•  3D scanning
+
+•  3D modelling
+
+3D photography was the easier and most straight-
+forward of the three methods. The object was first
+captured by the camera as a set of photographs,
+which were then imported in a proprietary soft-
+ware and stitched together. Finally a three dimen-
+sional description of the object including the im-
+ages mapped on its surfaces was deducted and
+exported in a format compatible with VR software.
+This method was not the best in terms of quality,
+but was more convenient for capturing objects
+when 3D scanning techniques could not be used
+(due to their surface qualities or size) or were dif-
+ficult to model.
+
+3D scanning was used in most objects where qual-
+ity and detail of the representation was essential
+and where their surface properties allowed for
+laser scanning. For example, almost all of the an-
+cient objects were scanned via this method, since
+the need for a precise reproduction of the original
+artefact could not be fulfilled by the other two
+methods.
+
+Finally, when the original object mainly com-
+prised of geometrical forms, it was feasible to pro-
+duce a precise 3D representation by means of ex-
+isting 3D modelling tools (as in the case of a tele-
+scope or a machine). These methods allowed for
+creating hierarchical models, which afford more
+flexible manipulation of individual smaller com-
+ponents that the object comprised of. For example,
+a model of a machine may help a participant visu-
+alise the way that it works and afford certain
+modifications on its operation.
+
+In parallel with the digitisation of exhibits the ar-
+chitectural design of the virtual museum was car-
+ried out.
+
+3.3  4.3   Architectural design
+
+The museum message is communicated by an exhi-
+bition to individual participants through museum
+exhibits. Messages may be directly communicated
+via the content of exhibits but they are also influ-
+enced by:
+
+•  the way that exhibits are individually posi-
+tioned
+
+•  the relation of each exhibit to the general or-
+ganisation of the exhibition.
+
+
+Therefore, the spatial organisation of exhibits
+within the virtual museum has a significant effect
+on the message communicated to participants via
+this exhibition.
+
+It can be suggested that environmental characteris-
+tics of the virtual museum, such as lighting, posi-
+tioning and orientation of exhibits and physical
+structure of exhibition spaces, may determine the
+behaviour of museum visitors when navigating or
+viewing an exhibition within a museum and their
+will to view certain exhibits [15]. It is therefore
+understood that the environmental design of the
+museum significantly affects the message commu-
+nicated to visitors as well as their behaviour within
+the virtual museum and consequently the degree to
+which target and user requirements are accommo-
+dated.
+
+All aspects of the virtual museum experience have
+been organised so as to add to the participant’s
+knowledge acquisition and entertainment. It has to
+be stressed, however, that the design of the “vir-
+tual” exhibitions in the ten museums participating
+in this project mainly focuses on the educational
+aspect of the museum experience, rather than the
+aesthetic one.
+
+Additionally, emphasis has been given on the
+functionality of the environment regarding user
+navigation and content presentation. The design of
+space within the museum has attempted to aid the
+participant into navigating within the VE, while
+maintaining a sense of orientation provided by
+appropriately designed environmental information.
+The utilisation of architectural knowledge has
+proved invaluable in enhancing the participant’s
+environmental knowledge and in directing partici-
+pant attention towards certain points or messages
+within the exhibition space.
+
+Regarding the level of realism that characterises
+the environmental elements of the virtual museum,
+this paper argues that while the use of realistic
+metaphorical representations may allow for trans-
+fer   of knowledge and skills involved in everyday
+activities, the use of realistic environmental ele-
+ments limits the potential of VEs for creating
+novel forms, environments and situations. There-
+fore, the designed museum maintains certain ge-
+neric environmental elements of the real world and
+attempts to investigate non-realistic forms and
+elements which are thought to improve the effec-
+tiveness and impact of the exhibition. In certain
+cases, however, a simplified simulation of a realis-
+tic setting has been considered as a more appropri-
+ate approach and has been adopted accordingly
+(e.g., the museum of Zoology).
+
+A number of other issues, which have dictated the
+design of environmental elements within the virtual
+museum and which relate to the inherent character-
+istics of space in virtual environments [15], are re-
+ferred to here:
+
+•  Space in a VE may be discontinuous A partici-
+pant can teleport from one position within a VE
+to a remote position within the same VE when
+traversing between these two positions is not
+considered essential for the needs of the par-
+ticular application. For example, traversing
+within certain paths in the museum environ-
+ment is considered essential for the purpose of
+enhancing the generation of cognitive maps of
+this environment by participants. In the mean-
+time, movement within these paths is aided by
+an automatic escalator-like function which rids
+participants of the effort to manoeuvre via a
+narrow longitudinal space.
+
+•  Physical laws do not necessarily apply to VEs.
+The law of gravity is considered limiting and
+not essential for dictating navigation of partici-
+pants within the virtual museum. Indeed the
+lack of gravity and consequent fly-through na-
+vigation mode is seen as more appropriate for a
+VE that expands in three dimensions. On the
+contrary, the materiality of most objects is
+stressed by the use of collision detection on
+them. This property is considered essential for
+the purpose of clearly bounding and thus defin-
+ing the museum environment and making the
+overall experience more effective and consis-
+tent.
+
+•  Since gravity has not been implemented, the
+sense of vertical/horizontal in this VE depends
+on environmental cues, which may enhance the
+sense of orientation [16]. Such cues have been
+carefully integrated in the environmental de-
+sign (red horizon, textual signs, etc.)
+
+Figure 1: View of the overall VR museums' com-
+plex
+
+The 10 museums that the designed VE consists of,
+have been organised into 4 categories according to
+their content:
+
+•  Human-centred  museums  (Anthropology,
+Forensic Science, Hygiene)
+
+•  Historical/archaeological  museums  (Gou-
+ladris Museum of Cycladic Art, Archaeologi-
+cal Museum of the Department of Philosophy
+
+- University of Athens, Museum of History of
+the Athens University)
+
+
+•  Museums of the Earth (Mineralogy, Geology)
+
+•  Museums of the Flora and Fauna (Botanical,
+Zoology)
+
+The spatial design of the museum has been dic-
+tated by these categories as well as categorisation
+of exhibits within each individual museum accord-
+ing to the requirements provided by museum or-
+ganisers as well as their selection of particular
+exhibits for display. The spatial organisation of
+each exhibition is also determined by the way ac-
+tivities are organised within each museum and this
+fact depends on the aim and objectives of each
+individual exhibition.
+
+Several factors determine the form of each spatial
+entity within the museum :
+
+•  The nature, size, and number of exhibits it
+includes.
+
+•  The specific needs for each exhibit category.
+
+•  The way that the museum spaces are inter-
+connected with the overall museum complex
+and its sub-domains.
+
+•  The 3D navigation technique used in the VE.
+
+•  The method of viewing a set of exhibits.
+
+navigating participant to each of the museums. As
+participants look up towards the museum complex
+from within the entrance hall, which has a semi-
+transparent top surface, they are able to view the
+structure of the whole museum and be aware of
+what to expect as they make their way into this
+structure.
+
+Navigation between the entrance halls and foyer is
+performed via paths, which have a longitudinal cy-
+lindrical shape and a square section. Repetitive
+frame-objects are positioned along these paths for
+enhancing the sense of movement and providing a
+feedback on the distance traversed while moving
+along the path [17].
+
+Figure 3: View of museum complex from within
+the entrance hall
+
+
+Figure 2: A museum foyer
+
+The overall museum complex expands in three
+dimensions, the depth of the hierarchical structure
+of the complex corresponding to the dimension of
+“height”. The structure of the museum mainly
+comprises of three different types of foyer, which
+accommodate the distribution of movement within
+the museum complex:
+
+1. entrance hall
+
+2. museum-category foyer and
+
+3. museum foyer.
+
+The participant enters the overall museum complex
+at a hall, which has a centralised form. Since the
+application is initially designed for a limited num-
+ber  of participants (1-2) this hall as well as all foyer
+spaces are not very large but simply serve as a
+spaces for distributing movement towards each of
+the 4 categories of museums. Each category corre-
+sponds to a foyer, which further distributes the
+
+The use of teleportation has been adopted at
+“higher” levels of the museum structure, for reduc-
+ing movement and facilitating navigation within the
+VE. This is also considered essential for affording
+the inclusion of more exhibition halls in the future,
+without the necessity of significantly changing the
+spatial design of each museum.
+
+Figure 4: View from a transitional space towards
+path exhibition halls
+
+
+Figure 5: View along a path exhibition hall
+
+At the individual museum level, participants enter
+each museum’s foyer and may navigate to a number
+of transitional spaces from where they have a
+choice of paths or halls to follow in order to view
+parts of the exhibition. Each path or hall corre-
+sponds to a group of exhibits. At the end of these
+paths and halls there is a portal which teleports par-
+ticipants back to the transitional space where they
+can make their next navigational decision through
+the museum content.
+
+3.4  Exhibit presentation
+
+The museum message is communicated via the ex-
+hibition and its exhibits to individual museum visi-
+tors. It is understood that this message is perceived
+by visitors in a subjective manner, according to
+their interests, knowledge and imagination. A num-
+ber of issues regarding the presentation of exhibits
+may have an impact on messages communicated to
+museum's visitors:
+
+•  the content of each individual exhibit,
+
+•  the manner in which the exhibit captures the
+visitor's attention,
+
+•  the position of the exhibit within the exhibi-
+tion.
+
+For example, one can present a set of ancient tools
+by concentrating on the tools' usage (religious,
+cooking, hunting, etc.), on the manufacturing pro-
+cedure, on the medium they have been constructed
+from (clay, stone, metal), on the chronological era
+they belong, etc. Depending on the message that
+we want to send to the visitors, we will present the
+exhibits in a different manner. In the previous ex-
+ample, we can group together tools with the same
+usage, to focus on this characteristic, we can put
+spotlights or we can isolate certain exhibits to
+draw attention on them. Adding explanations, in
+the form of text or narration can enhance the user's
+experience and provide necessary informational
+cues.
+
+Depending on the museum's nature/characteristics
+different approaches have been explored in pre-
+
+senting exhibits. In some cases presentation may
+have attempted to resemble real world museums,
+in a sense that a neutral spatial context is provided
+wherein significant objects are exhibited. How-
+ever, visitors are able to perform tasks that they
+would not be able to carry out in the real museum.
+They can move or rotate objects in order to inspect
+them. In some cases we have to exploit virtual
+reality technology in order to construct an interac-
+tively experienced diorama for presenting the
+original exhibits more vividly.
+
+Museums such as the Human-Centred ones or the
+museums of the Flora and Fauna contain exhibits
+that are better presented in an environment that
+looks like their natural surroundings. For example,
+one of the exhibits of the zoology museum was a
+penguin.
+
+Figure 6: Photograph of a penguin model
+
+In the original exhibition the penguin was pre-
+sented as one object rather than an animal in its
+natural surroundings. The visitor had to visualise
+(using knowledge acquired from other sources, i.e.
+documentaries, school books, museum guides) the
+penguin living in its natural environment. This
+limitation of the real world museum could be
+overcome in the virtual reality museum by creat-
+ing  a diorama. In this exhibition the visitor enters a
+hall where the penguin is presented on an iceberg.
+The visitor can view the penguin, while the sound
+of waves splashing against the iceberg is heard.
+
+
+Since the requirements differ among the ten muse-
+ums, a number of different versions of the system
+have been created. These versions differ in terms
+of the peripherals supported:
+
+•  In the lower-end desktop version of the sys-
+tem, a monitor accompanied by a pair of
+shutter glasses are used as devices providing
+stereo display and a Magellan Space Mouse
+is used as a 6-DOF input device. This version
+is expected to be installed in museums, where
+peripherals have to be able to withstand fre-
+quent, everyday use by visitors.
+
+•  In the high-end version, users wear a Head
+Mounted Display and a Cyberglove, mounted
+with trackers, which monitor their move-
+ments/gestures. This is a version intended for
+researchers, since these peripherals are more
+fragile and frequent, not careful use can eas-
+ily damage them.
+
+
+Figure 7: Diorama reproduction of the penguin
+model
+
+Although in the current version of the virtual envi-
+ronment visitors cannot really interact with the
+penguin, as they would with a real world animal,
+the experience is yet more vivid than the one af-
+forded by the original exhibition.
+
+3.5  System implementation
+
+The implementation phase of the virtual environ-
+ment progressed in parallel for some time with the
+design and construction of the architectural aspect
+and the digitisation of the exhibits. Once the lay-
+out of a museum's hall or foyer was sketched, the
+model was constructed by means of 3D modelling
+techniques and iterative design was applied till the
+environment matched the requirements. Conse-
+quently exhibits were added to the rooms and
+presentation modifications took place. Finally,
+behaviours and actions were programmed for sup-
+porting :
+
+•   appropriate navigation modes within the
+VE
+
+•   affording certain modes of interactive ma-
+nipulation of exhibits.
+
+To aid the process of manipulating the objects and
+their various versions (low, medium or high reso-
+lution, 2d or 3d) a database was created where all
+museum resources were stored.
+
+4  Concluding remarks
+
+New technology offers a great opportunity for
+museums to make their exhibitions available to
+more people in ways that was not feasible before.
+Although a virtual exhibition cannot replace or
+diminish the value of experiencing the original
+exhibits, there are cases where it can enhance the
+visitors' experience and draw new guests to muse-
+ums.
+
+In our approach ten museums with exhibits that
+vary from archaeological to geological and from
+hygiene to forensic have been combined within the
+context of a virtual environment. Such a system
+offers the visitor the possibility to view a selection
+of each museum's collections without having to
+travel. It is important to stress the significance of
+using a VE system as a means of exhibiting the
+content of a museum in another remote exhibition
+space, since it may afford a larger number of peo-
+ple the possibility of experiencing important exhi-
+bitions without having to travel far and may also
+lead to important collaborations amongst museums
+worldwide and consequently to enhancing the
+communication of knowledge and culture interna-
+tionally.
+
+While designing and implementing such a system,
+a great effort should be put on the spatial aspect of
+the VE, since this has a significant impact on the
+message communicated to visitors and on their
+behaviour within the VE.
+
+Finally, we should emphasize the significance of
+virtual reality techniques in helping museums'
+guests visualise exhibits in a manner that is not
+possible in a real museum.
+
+We are currently investigating different methods
+for presenting exhibits to virtual museum guests.
+In particular, we are looking into creating fully
+interactive dioramas, where exhibits will have
+
+
+self-awareness and guests will be able to interact
+with them.
+
+5  Acknowledgements
+
+Special thanks to Ms A. Katifori for her efforts
+during the development of the VE and to Mr D.
+Georgakis for his work in exhibit digitisation
+
+6  References
+
+[1] Wickens, C., Sandry, D., Vidulich, M., "Com-
+patibility and Resource Competition between Mo-
+dalities of Input, Central Processing and Output",
+Human Factors, 25(2), pages 227-248, 1983.
+
+[2] Burdea, G., Richard P., Coiffet P., "Multimodal
+Virtual Reality: Input-Output Devices, System In-
+tegration, and Human Factors", International
+Journal of Human-Computer Interaction 1996 v.8
+n.1 p.5-24
+
+[3] Tsichritzis, D., Gibbs, S., "Virtual Museums
+and Virtual Realities", Proceedings of the Interna-
+tional Conference on Hypermedia and Interactivity
+in Museums, Pittsburgh, 1991.
+
+[4] Charitos D., Lepouras, G., Vassilakis, C., Kati-
+fori, V., Halatsi, L., (2000), "A Method for Design-
+ing and Implementing Virtual Museums", UK VR-
+SIG 2000, Proceedings of the seventh UK VR-SIG
+Conference, Glasgow.
+
+[5] The Foundation of the Hellenic World presents
+a virtual reconstruction of ancient Miletus. For
+more    information:    http://www.ime.gr
+http://www.sgi.com/features/1999/oct/hellenic/
+index.html
+
+[6] Museum of Contemporary Art, Montreal, Can-
+ada: An immersive interactive virtual reality envi-
+ronment installation (Osmose) with 3d computer
+graphics and interactive 3d sound. For more in-
+formation:  http://www.immersence.com/  im-
+mersence_home.htm
+
+[7] The National Gallery of Canada in Ottawa:
+Immersive virtual reality exhibition of an artist.
+More information at: http://www.sgi.com/ fea-
+tures/1998/oct/ephemere/index.html
+
+[8] Hayden Planetarium: The largest real-time
+immersive visualization system, with three dimen-
+sional map of the galaxy and spatial sound system
+presented in a dome. http://www.sgi.com/ fea-
+tures/2000/jan/haydn/index.html
+
+[9] Tokyo National Museum: Recreation of the
+Toshodai-ji  temple  as  a  large-scale,  high-
+resolution      virtual      environment.
+http://www.sgi.com/features/2000/april/toppan/ind
+ex.html
+
+[10] Getty Museum (Forum of Trajan): A virtual
+reconstruction  of  the  destroyed  forum.
+
+http://www.sgi.com/ features/1998/apr/trajan/
+
+[11] The Tower of Pisa: Panoramic photos viewed
+by QuickTime VR. Accessible at
+
+http://www.compart-multimedia.com/virtuale/
+
+[12] Louvre Museum: Museum rooms viewed
+with QTVR. Accessible at http://www.louvre.fr
+
+[13] Hermitage Museum: A Virtual Tour using the
+IBM HotMedia Java applet in order to view pano-
+ramic photos of the Museum’s interior. Accessi-
+ble at http://www.hermitage.ru
+
+[14] Parent, A. (1999), "A virtual environment
+task-analysis tool for the creation of virtual art
+exhibits", Presence, Vol.8, No3, June 1999, ΜΙΤ
+Press, Cambridge MA, pp. 355-365.
+
+[15] Sarini, Μ. & Strapparava, C. (1998) "Building
+a User Model for a Museum Exploration and In-
+formation-Providing Adaptive System", Proceed-
+ings of the 2nd Workshop on Adaptive Hypertext
+and Hypermedia, HYPERTEXT'98, Pittsburgh,
+USA, June 20-24, 1998.
+
+[16] Charitos, D. (1998), "The Architectural As-
+pect of Designing Space in Virtual Environments",
+PhD Thesis, Department of Architecture, Univer-
+sity of Strathclyde, Glasgow, UK.
+
+[17] Charitos, D. & Bridges, A.H. (1997), "On
+Architectural Design of Virtual Environments",
+Design Studies, Vol. 18, No 2, Elsevier Science
+Ltd., pp.143-154.
+

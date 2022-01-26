@@ -1,0 +1,745 @@
+3D Virtual environments as effective learning
+contexts for cultural heritage
+Ambienti 3D come contesti efficaci per
+l’apprendimento del patrimonio culturale
+Michela Mortara* and Chiara Eva Catalano
+Institute for Applied Mathematics and Information Technologies “Enrico Magenes”, National Research
+Council, Genova, Italy, michela@ge.imati.cnr.it*, chiara.catalano@ge.imati.cnr.it
+*corresponding author
+HOW TO CITE Mortara, M., & Catalano, C. E. (2018). 3D virtual environments as effective learning
+contexts for cultural heritage. Italian Journal of Educational Technology, 26(2), 5-21.
+doi: 10.17471/2499-4324/1026
+ABSTRACT 3D technology can be a valid support to cultural heritage not only for visual presentation
+and documentation, but also for communication and educational purposes. In this paper, we will discuss
+the potential of 3D virtual environments as effective learning contexts for Cultural Heritage. This
+encompasses various disciplines such as history, art, and languages, and includes both tangible and
+intangible content like myths, beliefs and social values. We will analyse virtual and augmented reality
+and innovative interfaces, highlighting their affordances for successfully triggering learning experiences.
+A number of digital environments and serious games will be also analysed with respect to their potential
+for supporting immersion, presence and motivation. In the literature, these factors are considered key in
+raising learner interest, making 3D worlds a direct and engaging setting for informal learning in Cultural
+Heritage.
+KEY-WORDS 3D environments; Augmented and Virtual reality; Serious games; Immersion; Presence.
+SOMMARIO Le tecnologie 3D possono essere un valido supporto per il Patrimonio Culturale non solo
+per la presentazione visiva e la documentazione, ma anche per la fruizione e l’apprendimento. In questo
+articolo, si discute il potenziale degli ambienti virtuali 3D come contesti di apprendimento efficaci per i
+Beni Culturali, validi per discipline diverse (storia, arte, lingua) e per contenuto sia di tipo tangibile sia
+intangibile (miti, credenze, valori sociali). Analizzeremo la realtà virtuale e aumentata, e le interfacce
+innovative, evidenziando le caratteristiche in grado di produrre un’esperienza didattica soddisfacente.
+Discuteremo, inoltre, alcuni ambienti digitali e i serious game relativamente alla capacità di supportare
+immersione, presenza e motivazione. Nella letteratura, questi fattori sono considerati cruciali per suscitare
+interesse in coloro che apprendono; dunque, i mondi 3D possono essere considerati come ambienti
+naturali e coinvolgenti per l’apprendimento informale nei Beni Culturali.
+PAROLE CHIAVE Ambienti 3D; Realtà virtuale e aumentata; Serious games; Immersione; Presenza.
+
+5
+
+Michela Mortara and Chiara Eva Catalano
+
+1. INTRODUCTION
+
+Computational geometry, shape modelling and computer graphics are disciplines involving the modelling,
+representation and rendering of digital shapes. 3D media are currently at the forefront of digital content:
+they have crossed the borders of entertainment and have been adopted in many different fields and for a
+wide range of purposes.
+In the specific field of Cultural Heritage (CH), 3D technologies offer various benefits, including digital
+preservation, conservation, documentation, archaeological research, and presentation to the public (see for
+example Catalano, Repetto, & Spagnuolo, 2017).
+In the CH domain, digitization was initially adopted as an innovative approach to present and consume
+cultural resources, but nowadays it also allows preservation of artefacts that are endangered by environmental conditions, conflicts or simply the passage of time. In the last few years, there has been an improvement not only in the quality of 3D acquired models, but also in the variety of objects that can be minutely
+scanned. Current methodologies and tools allow us to digitize objects ranging from a small coin to a whole
+archaeological site spanning acres, using the technology that best suits the specific case at hand, such as
+laser scanning, time-of-flight or photogrammetry (Menna et al., 2016). Indeed, nowadays technologies are
+fairly common and streamlined in the cultural domain, allowing museums, among others, to start digitizing
+their artefacts. There are also initiatives for the digital preservation of sites, such as CyArk, a non-profit
+organization with the mission of using new technologies to create a free, 3D online library of the world’s
+cultural heritage sites1.
+Furthermore, 3D is no longer limited to visualization, but can also play a role in monitoring the conservation status of an artefact and also in archaeological research, thanks to the adoption of shape analysis
+techniques (e.g., Torrente, Biasotti, & Falcidieno, 2018; Biasotti, Cerri, Falcidieno, & Spagnuolo, 2015),
+which allow non-invasive digital examinations and measurements.
+
+		
+
+(a)						
+
+(b)		
+
+(c)
+
+Figure 1. (a) Digitization of a statue by laser scanning; (b) surface curvature analysis of a digital asset; (c)
+automatic identification of eyes and extraction of parameters defining their shape.
+
+Within the applications of 3D analysis in CH, conservators can find it beneficial to perform a virtual restoration of the digital model, either because the real counterpart is damaged, or due to missing pieces, which
+may be missing or held in different collections. Indeed, virtual reconstructions of artefacts and environments can be used to communicate CH to the public, allowing us to experience the past as if it were real,
+and thus as a form of learning in non-formal and informal contexts.
+For many events of the past, like historic battles, no physical relics remain, only ancient textual descrip1
+
+http://www.cyark.org/
+
+6
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+tions. In these cases, recreation of the environment where the event took place can make a concrete contribution to developing public knowledge of the past in a more accessible way.
+In addition, even if an artefact is well preserved, a digital approach can be valuable for recreating its original context: looking at a single preserved column on display in a museum cannot equal the sensation of
+strolling among the hundreds of columns of an ancient Greek temple.
+The reconstruction, however, can go even further, not only showing the physical context of the artefact - the
+physical surroundings and landscape - but also providing a vivid sense to its overall cultural background
+and the society that produced it. Such cultural background is mainly immaterial heritage, and can include
+language, customs, traditions, spiritual beliefs, and rules of behaviour in a society.
+Virtual environments (VE) have the potential to provide holistic experiences that may include sounds (spoken language, traditional music) and aesthetic elements, bringing to life folkloristic and religious events.
+Virtual reconstructions can also concern real, existing locations of architectural, artistic or natural value,
+helping users to remotely appreciate and learn about that site, or even motivate them to engage in a real
+experience.
+In addition, in the CH context, we must not forget the affective component of getting in touch with works
+of arts, dramatic events of the past, socio-economic conditions of different cultures, or understanding the
+precarious and endangered conditions of our heritage. Even if the primary learning goal in CH applications
+is usually in the cognitive domain, affective outcomes like empathy are also fundamental aspects of the
+learning experience (Bachen, Hernandez-Ramos, Raphael, & Waldron, 2016).
+This paper presents an extensive discussion of recent technologies for creating 3D environments for communicating CH. In particular, we concentrate on 3D digital environments where the public can perceive and
+actively engage with the cultural content, can learn about tangible and intangible heritage, and be affectively moved by the experience. Clearly, accurate and immersive 3D recreations of the past are not the only
+factors that facilitate learning in non-formal and informal contexts. Another, just to mention one example,
+is the centrality of the learner: her personality, needs, learning style, relationships with educators and peers,
+etc. This cannot be underrated, and the design of any educational experience must be pedagogically-driven
+to be fully successful. Nevertheless, here we wish to focus on the potential of new technologies that are
+pervading and affecting many aspects of our lives, learning included.
+The paper is organized as follows. In Section 2, we define the concepts of immersion, presence and motivation in 3D worlds as vehicles for non-formal and informal learning. In Section 3 we present examples of
+specific 3D applications for CH that are capable of creating learning environments in which users are not
+simply instructed, but become active learners by feeling “inside” the scene. Section 4 discusses the main
+features that make the presented 3D applications a fertile setting for learning. Section 5 concludes the paper.
+
+2. IMMERSION, PRESENCE, MOTIVATION
+
+As the real world we live in is perceived in three dimensions, studies suggest that this multidimensional
+representation of virtual objects and environments is best suited to making us feel part of the digital world,
+as if it were real. This aspect is identified in many psychological studies as presence, a cognitive construct
+believed to be strictly related to immersion and to lead ultimately to involvement and interest in learning
+(e.g, Mestre & Fuchs, 2016 and references therein).
+Indeed, the creation of a VE for learning CH needs to reproduce a historically accurate and credible world,
+where users can experience a genuine sense of being there. As it will be further illustrated in the following,
+inducing such a sense of presence in the virtual world requires a realistic, sensory-rich digital environment,
+one that provides an immersive experience that is appealing for users to explore. Obviously, immersion
+7
+
+Michela Mortara and Chiara Eva Catalano
+
+relates strongly to technology: the more a system delivers faithful displays (in all sensory modalities) and
+tracking, the more “immersive” it is likely to be (Slater & Wilbur, 1997).
+Other crucial aspects in the CH learning experience are motivation, user engagement and identification
+(Mortara et al., 2014). Games and game mechanics in particular can be used as means to trigger motivation.
+Indeed, a VE with game mechanics becomes «an environment where content and gameplay enhance knowledge and skill acquisition, and where game activity involve problem solving spaces and challenges that
+provide players/learners with a sense of achievement» (Qian & Clark, 2016, p. 3). Serious games – games
+that are not designed primarily for entertainment – are able to engage the player in the experience, motivate
+learning, and encourage task persistence. In particular, as it will be further illustrated in the following, roleplay games set in a VE offer active, situated learning enhanced by identification.
+In the following sub-sections, the notions of immersion, presence and motivation are further presented.
+
+2.1. Immersion
+
+«The primary characteristic distinguishing Virtual Environments (VEs) from other means of displaying
+information is the focus on immersion» (Mestre & Fuchs, 2006, p. 1). Immersion in VEs is related to the
+substitution of real sensorial stimuli with synthetic ones. The wider the range of perceptions and the higher
+the extent to which a real sensation is replaced by a synthetic one, the more immersed a user will feel. For a
+3D environment, the first replaced sense is sight: the user sees a reconstructed, digital world that represents
+the real one. Including sounds, haptic feedback, vibrations, etc. increases the feeling of immersion.
+According to Tamborini & Skalski (2006), vividness and interactivity of the VE maximize immersion and
+involvement.
+A VE is vivid when the technology succeeds in creating a realistic and sensory rich environment (Steuer, 1992).
+On the realism side, graphics have reached extraordinary levels, building on amazing advances in graphics
+libraries, game engines and graphic cards. However, the CH sector requires much more than mere realism;
+it also calls for historical accuracy. All aspects of content, including narrative, dialogue, etc., must be supervised by domain experts, who guarantee the validity of the reconstruction. Realism is increased by adding
+digitised replicas of real artefacts and even entire geographic areas in the VE (Lercari, Forte & Onsurez,
+2013). A realistic design should also include intangible legacies, such as folkloristic music or ceremonial
+movements possibly acquired by motion capture (Papagiannakis, Foni, & Magnenat-Thalmann, 2003).
+Realism also depends on other factors, for instance the presence of people in the environment and their
+credible behaviour. A wonderful reconstruction of ancient Rome will not fully work if the city, capital of
+the ancient world, was deserted, without the liveness that characterised its roads, markets, forii and temples.
+Here, crowd simulation algorithms or, more generally, Artificial Intelligence approaches come into play
+(Gutierrez, Frischer, Cerezo, Gomez, & Seron, 2007).
+Concerning sensory richness, a variety of technologies and devices are available that can determine different experiences. With respect to vision, the range spans from desktop screens, to widescreens, caves and
+domes with holographic glasses, Augmented Reality (AR) devices and Virtual Reality (VR) helmets. While
+AR maintains the roots of the experience in the real world, and augments it with digital content, VR devices
+(Google Cardboard, Oculus Rift, HTC Vive, and many others) exclude the user’s visual perception of the
+real world, actually proposing digital content in place of (visually) perceived reality. Head-mounted devices
+typically include speakers for sound and basic tracking facilities for interaction. The sense of touch can
+be reproduced by haptic feedback, typically through vibrations or even haptic gloves. More sophisticated
+systems can add effects like wind, temperature changes and, to some extent, smells2.
+2
+
+http://feelreal.com/
+
+8
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+As far as interactivity is concerned, this concept refers to the user’s control over the environment, namely
+the ability to influence its form and content (Steuer, 1992). The basic action allowing interaction with the
+VE is navigation, i.e. moving inside the scene at will. For immersion, it is extremely important that the
+interaction produces the precise effect that the user expects, i.e., stimuli from the VE must be consistent
+with the user’ sense of body position and movement (proprioception). Tracking devices vary in terms of
+affordability, invasiveness and precision They include: leap motion, to track hand gestures; motion detection systems like Kinect for whole body movements, which are cheap and robust but with limited precision;
+tethered vs untethered systems, etc.).
+
+2.2. Presence
+
+While immersion is an effect of technology, presence is “a psychological, perceptual and cognitive consequence of immersion” (Mestre & Fuchs, 2016), the psychological perception of “being in” the VE that the
+user is immersed in (Steuer, 1992; Sheridan, 1992; Heeter, 1992; Draper, Kaber, & Usher, 1998). The concepts of immersion and presence are indeed very similar, and several authors do not distinguish them, but
+rather identify them under the umbrella terms “immersive presence” (Lombard & Ditton, 1997) or “spatial
+presence” (Tamborini & Skalski, 2006). Similarly, there are different definitions of presence, which, however, concur to delineate the intuitive concept. For instance, Lombard and Ditton (1997) describe presence
+as “the perception of non-mediation”, a psychological state in which the person’s subjective experience is
+driven by some form of media technology with little awareness of the manner in which technology shapes
+this perception (Tamborini & Skalski, 2006). The literature presents several conceptualizations of the presence construct (Lombard & Ditton, 1997; Biocca, Inoue, Lee, Polinsky, & Tang, 2002; Heeter, 1992; Lee,
+2004). However, most schemes agree on three dimensions of presence: spatial presence, social presence
+and self-presence. Up to now, the first of these - spatial presence – is the one investigated most thoroughly,
+and it is usually intended as the sense of being physically present in the VE (Ijsselsteijn, de Ridder, Freeman, & Avons, 2000) or experiencing virtual objects as if they were real (Lee, 2004).
+Nonetheless, Wirth et al. (2007) conceptualize presence as a cognitive experience, where people build their
+mental models of the VE from the spatial cues they perceive and their memories. Therefore, «although
+technology might help open the door to spatial presence, the essence of spatial presence lies in the perceiver» (Tamborini & Skalski, 2006, p. 228). As such, presence can be experienced even when the immersive
+quality of the technology is low.
+But what can generate presence, and what does presence imply for learning?
+As anticipated, according to several authors immersion and involvement are considered the essence of presence. On the one hand, we have already seen how immersion is considered a consequence of technology,
+when it is able to deceive perception with a set of coherent stimuli. On the other hand, involvement is generated by focussed attention, that is, in turn, a result of «the meaningfulness produced by an environment
+form and content» (Tamborini & Skalski, 2006).
+
+2.3. Motivation
+
+In VEs, the ability of individual users to apply their own mental models to the environment allows them to
+make sense of the environment, even forming their own opinions and testing their own choices inside the
+world. This influence is particularly evident when the VE is the setting of a serious game, where compelling narratives, consistent with users’ experience, generate flow and involvement (Slater & Wilbur, 1997).
+Moreover, presence and realism in game based learning improve players’ concentration, allowing them to
+learn actively rather than passively (Konijn & Bijvank, 2009); they can also influence motivation to continue playing and interest in relevant learning outcomes (Moreno & Mayer, 2002).
+9
+
+Michela Mortara and Chiara Eva Catalano
+
+Game mechanics are the constructs, rules, winning conditions and styles designed for interacting with a
+game: some examples are the rolling of dice, the sequence of turns, the collection of points, and the management of resources. Moreover, game mechanics define how many players play contemporarily (single
+player or multiplayer); if multiplayer, the game can be cooperative or competitive, and so on.
+Clearly, selecting and combining game mechanics leads to very different games and game genres (e.g., trivia, puzzle, action) but what is particularly important in our context is the category of role-play mechanics.
+Role-playing is a game genre where players assume the roles of characters in a fictional setting and players’
+effectiveness in in-game actions is determined by how well they act out the role of the assumed characters. Players take responsibility for acting out these roles within a narrative, typically through a process of
+structured decision-making or character development. Actions taken succeed or fail according to a formal
+system of rules and guidelines (Tychsen, Hitchens, Brolund, & Kavakli, 2006; Grouling, 2010).
+Research suggests that Role-Playing Games (RPGs) induce an active state of learning, which can enable
+students to retain more knowledge over time (Semb & Ellis, 1994).
+Another mechanism for facilitating involvement and learning through VEs is through identification with a
+character, avatar or role (Cohen, 2001). Identification can be defined as «an imaginative process through
+which an audience member assumes the identity, goals, and perspective of the character» (Cohen, 2006)
+and can enhance a number of educational outcomes, including greater attention to and retention of messages associated with those characters. More than other media, RPG games are particularly well suited to
+promoting identification, because they allow a player to direct the actions, choose the attributes, pursue the
+goal, and experience the feelings of a character who represents the player (Happ, Melzer & Steffgen, 2013;
+Klimmt, Hefner & Vorderer, 2009).
+The outcome of the recent research in (Bachen et al., 2016) shows there is a strong relation between presence, flow and identification. These can produce two key outcomes: empathy, i.e., «an other-oriented emotional response elicited by and congruent with the perceived welfare of someone else» (Batson, Ahmad &
+Lisher, 2009) and interest in learning, which is, in turn, a predictor of the learning outcome.
+
+3. EXAMPLES OF 3D APPLICATIONS FOR CH
+
+Users can interact within virtual environments, and actively construct new knowledge by building on their
+mental schemes, creating a personalised experience. Games and game mechanics that support identification
+with a character or a situation can amplify the experience, ultimately generating learning interest, cognitive
+impact, empathy, and retention. However, results do not always meet expectations. Often, due to limited
+production budget, time or available expertise, poor design or simply low target, the created VE does not
+fully reach its educational potential.
+In this section, we introduce examples of VE applications for CH, selected among the most recent and illustrative, grouped according to their nature or main deployment style, namely desktop applications, museum
+installations, virtual or augmented visits and serious games. Some of them can be deployed in more than
+one modality (e.g., as a desktop application and a virtual or augmented visit). We have limited description to
+a couple of examples for each category, choosing the most representative or the most innovative solutions
+with respect to the vividness of the world, the interaction paradigm, and game mechanics, if any. Finally, the
+features potentially contributing to the educational potential of each solution will be discussed in Section 4.
+
+3.1. Desktop applications
+
+Characterized by a low-tech setting, these applications are typically played at home, on personal computers,
+exploring online content. Browser plugins for 3D have made 3D manipulation possible on the web for a few
+10
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+years now. Producers and providers of these resources are mainly government bodies, museums and scientific societies, who produce these applications for educational and promotional purposes. Since these contents are consumed over the network, the 3D experience can be severely affected by bandwidth limitations.
+
+3.1.1. Reconstruction of Caerphilly Castle
+
+Cadw, the Welsh Government’s historic environment service, has reproduced some of Wale’s most iconic
+monuments using 3D graphics3. An example is the virtual reconstruction of Caerphilly Castle as it was in
+the early 1300; the castle’s peculiarity was its multiple rings of defensive walls. In the reconstruction, fallen
+structures and missing sections rise from the ground as the viewer approaches. The 3D is nicely rendered
+but the content is deployed as a non-interactive fly-through animation: the viewpoint follows a pre-established trajectory that takes the viewer around the site, providing a limited experience of walking on the
+drawbridges and under the stone archways through the walls. The animation is accompanied by an epic
+musical soundtrack that emphasizes the fiery atmosphere of the fortress. Only the building is represented;
+there are no people in the scene.
+The content represents a valuable learning resource which is easily accessible online. It can motivate the
+viewer to discover more and hopefully to visit the real location, although the virtual experience is limited
+and cannot be considered immersive. Indeed, while the environment is recreated in a vivid manner, with
+accurate modelling and photorealistic rendering, realism is limited since there are no human characters to
+make the scene lively. Furthermore, there is no interactivity nor narrative to induce identification.
+
+3.1.2. White Bastion Fortress
+
+The digital reconstruction of the White Bastion fortress in Sarajevo4 depicts the fortress structure as it
+appeared in the medieval, Ottoman and Austro-Hungarian periods. As in the previous case, the contents
+are accessible online through a web site; 3D scenes can be explored and objects therein can be inspected
+thanks to the Unity plugin. Interestingly, the 3D models employed derive from the digitization of real artefacts held in the Museum of Sarajevo, augmenting the authenticity of the virtual environment. Moreover,
+this is complemented with storytelling elements: the application provides ten stories, in the form of videos
+interpreted by actors in historical costumes, presenting the context and purpose of the setting and objects.
+Indeed, the application is defined as a “4D interactive multimedia presentation” (Rizvic, Okanovic, Prazina,
+& Sadzak, 2016).
+This application is richer than the previous one in content in that the user can compare the architectural
+differences over time. The environment is vivid: beside the fortress itself, the surrounding hills with trees
+and the inner court with grass and flowers are depicted. Still, the fortress is not inhabited. Interactivity is
+limited to navigation in the inner court only; the building interiors are inaccessible. Some objects are presented on a table in the court and can be inspected. As mentioned, they are highly accurate since they were
+generated from scanning. Sensory stimuli include music. Identification is fostered by storytelling. A user
+evaluation study showed a positive feeling of immersion in the past and the effectiveness of the product as
+a CH learning environment (Rizvic, Okanovic, Prazina, & Sadzak, 2016).
+
+3.2. Museum Installations
+
+Among the variety of available VR museum installations, we mention here one specific example that has a
+
+3
+4
+
+http://cadw.gov.wales/learning/resources/cgireconstructions/?lang=en
+http://h.etf.unsa.ba/bijelatabija/
+
+11
+
+Michela Mortara and Chiara Eva Catalano
+
+high level of accuracy: “Giotto in 3D: esperienza virtuale tra i personaggi delle storie francescane”5. This
+was developed for the Assisi Municipality and displayed at Palazzo del Monte Frumentario during the exhibition “I colori di Giotto”6, in 2010 (Pietroni & Rufa, 2012).
+We refer specifically to the work “Conferma della regola”, which Giotto painted in the Basilica Superiore di
+Assisi in the late XIII century. The 3D reconstruction of the scene is based on the original perspective set by
+the artist, and reflects the original colours, contrast, textures, with extremely high precision and detail. The
+reconstructed 3D scene is projected onto a 5x4 meter wall and features animated characters, who report on
+the dialogue between St. Francis and Pope Innocence III, who approved St. Francis’ code in 1209.
+Visitors moving in an area of 6x4 meters in front of the wall are able to interact with the scene. A low-cost
+tracking system, consisting of an infrared camera attached to the ceiling, follows the visitor when entering
+the active area. The visitor’s movements determine a change in the scene’s perspective, creating the feeling
+of being inside the scene, among the characters.
+Although interaction is limited to a narrow area of scene navigation, the application is very immersive:
+in fact, interaction happens without any tangible interface device, like a mouse, joystick, or dialogue
+windows, and is therefore natural and transparent to the user. The animated characters make the scene
+lively. The viewpoint changes coherently with movements, as a non-mediated experience. The visitor
+becomes an active element of the scene and comes directly into touch with the artist’s message with a
+high sense of presence. Choir music in the background adds a multisensory level to the experience and
+makes it realistic.
+
+3.3. Virtual Visits
+
+Virtual visits, namely VR tours of remote sites, are becoming more and more popular, especially for tourist
+promotion of sites like the Domus Aurea7 in Rome. The majority of virtual tours are accessible through
+the web, not much differently from applications described in Section 3.1, and with the same bandwidth
+limitations.
+Many museums and cultural sites now offer such opportunities. The British Museum, for instance, has lately
+released an interactive tour of the Egyptian Galleries based on high-resolution 360-degree photography that
+can be experienced directly within Facebook. The visitor can move to predefined locations; some artefacts
+can be further inspected via a pop-up text card beside the interactive 3D model. Expert audio commentary
+from the curators is also available. Deployment on a major social network optimises the tour’s availability;
+however, interaction is limited, since movements occur instantly between pre-defined landmarks and 3D
+models can be rotated only around one axis. It is impossible to zoom in to see details.
+Beside these desktop applications, there are also Virtual Reality tours that provide immersive experiences
+through stereoscopic devices. The advent of low-cost VR displays like Google Cardboard has led to an
+increase in VR apps for smartphones, such as Sites in VR8. Other VR settings are offered on site, e.g., to
+provide an immersive reconstruction of the original appearance of an artefact. Indeed, virtual visits are the
+experiences that can benefit most from the technological layer, with solutions varying from a personal lowcost device to virtual reality theatres.
+An example of the latter is “Tholos”, a dome-shaped Virtual Reality “Theatre” of Hellenic Cosmos placed
+5
+
+Giotto in 3D: virtual experience among the characters of S. Francesco’s narratives. https://vimeo.com/76964014
+
+6
+
+Giotto’s colours.
+
+7
+
+https://www.youtube.com/watch?v=OTXtJ7mMa3A
+
+8
+
+https://play.google.com/store/apps/details?id=air.com.ercangigi.sitesin3d
+
+12
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+at the Foundation of the Hellenic World, in Athens9. The system generates a full stereoscopic projection on
+the whole screen with the use of 12 projectors. These project onto the semi-circular, concave surface of the
+screen, a solution which, enhanced by the use of stereoscopic glasses, creates a powerful 3-dimensional
+sensation.
+The available shows are: “Hagia Sophia”, “A Walk Through Ancient Olympia”, “A Walk Through Ancient
+Miletus” and “Interactive Tour at the Ancient Agora of Athens”. These all present a photorealistic reconstruction of the sites, buildings and monuments based on the surviving ruins and elements. Liveliness is
+added with the representation of people moving around the place. The “Tholos” is thus very powerful in
+providing a feeling of immersion in virtual space. Since many visitors share the experience at the same time
+(the capacity is 130 people), there is no room for personalization, but interaction is still possible to a limited
+extent. Since the rendering is not predetermined but rather produced in real time, with immediate response,
+the public can interact with the space at certain landmarks, choosing the preferable direction by pushing one
+of four different buttons on their seats. The most popular selection at any given time determines the flow of
+the experience in the virtual space.
+
+3.4. Augmented visits
+
+Augmented visits are real on-site experiences augmented with virtual content. Most Augmented Reality
+(AR) applications adopt the paradigm of visual markers that users can point at with their mobile device to
+reproduce the corresponding 3D content. Examples include AR maps such as Barcellona10 and Holomaps11,
+and outdoor AR guides like Augmenting Rome Coliseum12. By mixing real and virtual stimuli, AR has a
+strong potential to induce presence, and the extent of the experience seems to be related to the “transparency” of the mediating device. This aspect sometimes leads to a kind of “camouflaging” of the device, such
+as in the Loupe (see Sec. 3.4.3).
+Given the variety of technologies, interaction paradigms and functionalities available, AR applications can
+be positioned at different points along the continuum between real and virtual reality, and several taxonomies have been developed to classify AR experiences (see, for instance, Hugues et al., 2011 and references
+therein). We briefly sketch some examples below.
+
+3.4.1. Acropolis in 3D
+
+Acropolis 3D developed by Moptil13 is actually a VR application deployed on site in order to augment the
+real visit. Visitors to the Acropolis are provided with tablets that visualize accurate 3D reconstructions of
+the buildings, shown with the original colours, statues and objects. The tablet shows a view that is always
+consistent with the visitor’s position and vision direction, thus minimizing the feeling of mediation. Recent
+upgrades have added human activity to the scenes, increasing the sense of immersion. The application can
+be used remotely as well; however, benefiting of the on-site experience is likely to provide a stronger feeling of engagement and presence.
+
+9
+
+http://www.tholos254.gr/en/index.html
+
+10
+
+https://www.youtube.com/watch?v=9vF_T6FBivU
+
+11
+
+https://www.youtube.com/watch?v=oMfNojNC0b0&t=9s
+
+12
+
+https://www.youtube.com/watch?v=WOVjISxlhpU
+
+13
+
+moptil.com
+
+13
+
+Michela Mortara and Chiara Eva Catalano
+
+3.4.2. Telamon case study at the Archaeological Museum “Paolo Orsi”
+of Syracuse
+
+Stanco et al. (2011) report a case study of the promotion of a classical Greek statue depicting a satyr called
+Telamon, from the stage-scenery of the ancient Theater of Syracuse, now kept at the “Paolo Orsi” Archaeological Museum in Syracuse. The statue, found at the end of the 19th century, is made out of local stone,
+which is particularly subject to degradation. The statue is broken into two main pieces, one part of the head
+and upper torso, and the lower torso and upper legs. Digitization of the Telamon was primarily carried out
+for digital preservation and monitoring of the statue, but also allowed presentation to the public in a new
+way using augmented reality. The head and torso have been virtually restored.
+Visual markers can be recognised with a smartphone, so that virtual models are shown in the position they
+were presumed to occupy in real space; in the case study, the reconstructed upper part of the Telamon is
+shown in AR on top of the real lower part of the statue. As the subject is a single artefact with no context,
+the feeling of immersion produced by the application is limited, even if interaction is quite natural. Sensory
+richness is also limited and there is no narrative to support identification.
+
+3.4.3. The Loupe
+
+Damala et al. (2016) present an augmented museum visit based on the mobile phone as a tangible interface. The phone is enclosed in a wooden case in the shape of a magnifying glass (the loupe). The interface
+guides the visitor through a thematic tour developed as a treasure hunt; the loupe displays the silhouette of
+the next object to be found as a visual clue. When the visitor frames the object that matches the silhouette,
+additional content is displayed on the loupe. To move forward/backward in the narrative, the visitor has to
+tilt the loupe left or right.
+This approach is interesting since the device, the loupe, is in effect disguised. It also fits well as a metaphor
+in two ways: firstly, because it shows more information than what is directly visible to the naked eye (the
+inside of an object, the contents of an object, or the original context in which the object was placed or discovered), and secondly, because the phone is ‘dressed up’ as a familiar vision-enhancing tool, and, as such,
+can be perceived as an enabling rather than a mediating tool.
+The treasure hunt mechanism fosters user involvement in the visit; still, vividness is limited as the additional content is mainly textual and 2D.
+
+3.5. Serious Games
+
+In this final subsection, we present some recent serious games addressing cultural heritage. For a wider
+survey, see Mortara et al. (2014). As already mentioned, the addition of game mechanics means that serious
+games can increase the motivation and involvement of users, including youngsters.
+
+3.5.1. Little Manila
+
+Little Manila was a Filipino community in Stockton, California, decimated by a freeway construction
+started in 1960.
+An interdisciplinary team of students developed a serious game to digitally recreate Little Manila as it appeared during the mid-twentieth century. The player takes the role of a Filipino immigrant who meets his
+cousin at the intersection of the two main streets in the city. The introduction underscores the historical significance of the place where newly arrived immigrants often met up with family members, who would subsequently acquaint the new arrival with the neighbourhood. The narrative proceeds following the cousin’s
+instructions to explore the city. Players can visit historically significant sites and interact with Non Player
+
+14
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+Characters14 (NPCs) to learn more about life in Little Manila. Special spinning icons in the environment
+activate historical information about a particular topic, archival photographs, or audio clips of interviews
+with former residents.
+The environment is very vivid and recreated buildings are represented very accurately; NPC contribute
+to make scenes lively and realistic. Interaction with the characters and interpretation of a role is likely to
+induce identification with the immigrants. Indeed, initial feedback from Filipino descendants was enthusiastic, as shown in Salyers et al. (2017).
+
+3.5.2. Taiwan Epic Game
+
+This serious game tackles cultural awareness; the educational aim is to provide an immersive experience
+that conveys the historical context of Southern Taiwan in the late nineteenth century (Shih, Jheng, & Tseng,
+2015).
+The genre is a 3D Role Playing Game; the game narrative is based on “Xiao-Mao”, a novel dealing with
+Taiwan Wu-Xia (a martial art). Players slip into the role of the heroic character and have to explore the
+virtual world, meet historical characters, face challenges, gain experience and improve personal abilities
+such as forging, gathering, ﬁshing, and different martial art skills.
+During the design phase, all the martial art movements were demonstrated by a Kung Fu master, shot, and
+then accurately reproduced in the character animations. The 3D environment is recreated in an extremely
+accurate way: 13 locations and 24 scenes were selected as game stages; all the scenes were placed in their
+exact locations, as determined by both historical maps and Google maps; the terrain was modelled in accordance with Google Earth. The vegetation shown features appropriate types of plants according to the areas,
+land heights, and seasons.
+The environment is realistically inhabited by NPCs, who have different lifestyles and behave following
+dynamic rules. The game world itself follows natural and physical rules; for instance, the sun rises and sets
+at the right time and produces shadows accordingly. Objects affect the virtual world as well: for example,
+rotten meat attracts mice.
+In order to guarantee historical accuracy, stories were written into seven major game tasks according to the
+relevant past events, and all the content was reviewed by experts on the basis of historical records. Moreover, the content and tasks of the game stages were designed in accordance with Taiwan’s primary and
+secondary school education curricula.
+The game environment indeed exhibits positive vividness, realism and accuracy, and the role play facilitates identification. The authors conducted a validation experiment to test appreciation of the game
+and learning impact. Outcomes of the research showed that the Taiwan Epic Game successfully enhances
+players’ cultural awareness and knowledge not only of locations and architectural characteristics, but of
+intangible heritage as well (local cultures, folk arts, faith and festivals).
+
+3.5.3. Playing History – The Plague
+
+“The Plague” is the first title in a series of three serious games called “Playing History”, produced and
+published by Serious Games Interactive15. The Plague is an adventure game set in a 3D environment targeting youngsters between eight and thirteen. This is one of the rare cases in which the game was developed
+for adoption in formal contexts, specifically at school, addressing formal curricula. The game is about the
+
+14
+
+Any character in a game that is not controlled by a player.
+
+15
+
+seriousgames.net
+
+15
+
+Michela Mortara and Chiara Eva Catalano
+
+plague epidemic that struck Europe in the Middle Ages; educationally, the game primarily targets the acquisition of knowledge about the Black Death and awareness of its impact on medieval society.
+The game is set in Florence in 1348; the player takes the role of a young boy whose family is threatened
+by the disease and the central mission is to gather key information helping the family avoid the advancing
+ravages of the plague. This is done by interacting with NPCs and following clues in order to complete a
+sequence of tasks. The game also features a parallel treasure hunt for historically inappropriate artefacts
+“hidden” throughout the environment (a PC, antibiotics, etc.). Each of these embeds information or powers
+that are useful for progress in gameplay.
+Immersion and exploration also contributes to the learning experience by conveying a sense of medieval
+life: the behaviour and beliefs of ordinary people, the role of faith and religion, the nature of medical and
+scientific knowledge and practice, and types of economic activity. The representation is suitably stylised
+for youngsters.
+To facilitate use in a school setting, the digital game comes with a supplementary educational package that
+includes student and teacher guides, summative evaluation tests, and activity sheets for further study. The
+study in Earp, Catalano and Mortara (2015) demonstrated high identification of players with the main character, and affective and cognitive impact.
+
+3.5.4. Imago Bononiae
+
+Imago Bononiae (Fanini & Pagano, 2015) is a serious game focused on the interactive exploration of a large
+3D reconstruction of the urban model of Bologna (Italy) during the first century AC. The game environment, including ancient roman roads, temples and theatres, is accurate and lively, populated by animated
+crowds. The game offers a first person view and interaction happens through an intuitive, gesture-based
+interface. The gameplay is a kind of treasure hunt: players explore the city and seek the help of NPCs to
+find three exploration abilities as rewards. These abilities are: 1) instant shift, 2) flight, and 3) imagination,
+i.e., the overlapping of modern-day Bologna on the Roman-era urban layer. This final ability enables a
+visual, volumetric and architectural comparison of what the urban model will look like in the future, from
+the Roman (past) perspective. Each ability is expressed by a specific gesture.
+The physical setup consists of a large screen or projection, a PC running the application and a Kinect sensor
+able to detect and recognize user gestures, with at least a 3x4 meter space required for comfortable interaction. Despite the natural interface paradigm and the high degree of realism, this application, like the other
+games presented, does not exploit immersive technologies and, as such, presence is not fully achieved.
+
+4. DISCUSSION
+
+All the examples in Section 3 use 3D environments as the basis for building cultural heritage learning environments (see Figure 2). In the case of AR visits, the 3D environment is primarily the real world, where
+technology juxtaposes additional multimedia content (textual information, images or digital 3D objects).
+In the other cases, the 3D setting is the virtual reconstruction of an artefact, a building, or a complete geographic site, which can be experienced more or less immersively. The digital scene can represent intangible
+heritage as well, like the martial art movements encoded as animation sequences in the Taiwan Epic Game.
+In the following, the variety of experiences will be discussed according to some of the features that make a
+3D environment a fertile setting for learning.
+Most of the cited items exhibit correctness of data and information. Indeed, the digital content they provide
+needs to be historically accurate and adhere to reality as much as possible. This implies a scientific and
+
+16
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+rigorous method of research of historical sources and validation of the hypotheses of reconstruction. Where
+physical remains are available, digitization is a way of adhering to reality.
+A second feature connected to the first one is the completeness of the world: the environment should meet the
+expectations of the viewer, including elements that are outside the direct focus of the application but complement the world, and ultimately make it realistic (The Tholos Theatre, Imago Bononiae). An example is the
+possibility to interact with more than a few pre-defined objects, like in the real world (Taiwan Epic Game).
+A recent trend is proposing multi-sensory and consistent stimuli during the experience: the more senses are
+solicited in a consistent way by the digital environment, the more realistic the perception will be (Giotto in
+3D, Imago Bononiae).
+
+Figure 2. Graphical hints about the applications described in section 3.
+
+Clearly, thanks to seamless and natural interactions, the user/visitor should have control over the scene and
+the objects therein as if they were real in order to maximize presence. Thus, the interaction paradigm should
+mimic human behaviour. Tracking systems (Giotto in 3D) and gesture recognition (Imago Bononiae) go in
+this direction, providing that a rich set of gestures is implemented, and each gesture intuitively corresponds
+to an action.
+We have already stressed the effectiveness of serious games, especially those with a compelling narrative
+or gameplay: good stories attract attention, and intriguing game mechanics foster engagement and involvement in the game, raising motivation to prolong and repeat the experience. Adding storytelling to 3D reconstruction (White Bastion Fortress) invites players to visualize all the content, while stimulating challenges
+
+17
+
+Michela Mortara and Chiara Eva Catalano
+
+drive them to complete the game (Taiwan Epic Game).
+An even stronger effect is produced by role-play and identification: slipping into a specific role, the player
+becomes an active participant in the learning process by exploring and manipulating objects in order to test
+hypotheses. Identification with the character induces empathy, awareness and affective impact: players can
+experience what they do not have in real life and project their affections in it. So game designers need to
+create characters that players can identify with (Playing History – the Plague, Little Manila).
+By contrast, a feature which has still not been completely achieved is smooth presentation of the content
+itself. Technical limitations should not affect the experience. Bandwidth can limit real-time interaction;
+low-quality representations or poor graphics can penalise appearance; sensory feedback must synchronize
+with actions, and so on. Any defect can remind visitors they are experiencing a simulation.
+
+5. CONCLUSIONS
+
+In this paper, we have discussed the potential of 3D virtual environments as effective learning contexts for
+cultural heritage, encompassing various disciplines and including tangible and intangible content. How
+suitable a virtual environment may be for fostering learning is a matter determined by many factors. We
+have focused in particular on immersion, presence and interaction as determinants of interest in learning
+and empathy, which in turn are likely to produce cognitive and affective impact on the user.
+Moreover, we have highlighted the hardware, interaction paradigms and design choices of different applications, reasoning about the potential of each solution to induce involvement and learning. Finally, we
+have listed and discussed some recent examples of applications which have started to make use of such
+new technologies.
+Virtual worlds and AR/VR applications are not mature yet and there is much room for improvement in the
+technological domain. As human-computer interaction progresses, we expect to see a wider range of finegrained stimuli, conveyed through increasingly “transparent” interfaces, continuously thinning the barrier
+between the real and virtual worlds. Interactions between the learner and the machine will become natural
+and seamless and not hindered by technical limitations. Indeed, as computational power gets higher and
+higher, virtual simulations will become smooth and plausible. With the prospect of fast technological advancements, communication and learning in CH should centre on pedagogical aspects, while fully exploiting new interaction paradigms.
+
+6. ACKNOWLEDGEMENTS
+
+This paper has been supported by the H2020 EU project GRAVITATE “Geometric Reconstruction And
+noVel semantIc reunificaTion of culturAl heriTage objEcts”, Grant Agreement n. 665155.
+
+7. REFERENCES
+
+Bachen, C. M., Hernandez-Ramos, P., Raphael, C., & Waldron, A. (2016). How do presence, ﬂow, and character identiﬁcation affect players’ empathy and interest in learning from a serious computer game?. Computers in Human Behavior, 64, 77-87.
+Batson, C. D., Ahmad, N., & Lisher, D. A. (2009). Empathy and altruism. In C. R. Snyder, & Shane J. Lopez
+(Eds.), Oxford handbook of positive psychology (pp. 417-426). New York, NY: Oxford University Press.
+
+18
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+Biasotti, S., Cerri, A., Falcidieno, B. & Spagnuolo, M. (2015). 3D artifacts similarity based on the
+concurrent evaluation of heterogeneous properties. ACM Journal on computing and cultural heritage, 8(4).
+doi: 10.1145/2747882
+Biocca, F., Inoue, Y., Lee, A., Polinsky, H., & Tang, A. (2002). Visual cues and virtual touch: Role of
+visual stimuli and intersensory integration in cross-modal haptic illusions and the sense of presence. Fifth
+International Workshop on Presence, June 2001, Porto, Portugal (247–265).
+Catalano, C.E., Repetto, A. & Spagnuolo, M. (2017), A dashboard for the analysis of tangible heritage
+artefacts: a case study in archaeology. EUROGRAPHICS Workshop on Graphics and Cultural Heritage,
+Graz, Austria, 27-29, 2017.
+Cohen, J. (2001). Deﬁning identiﬁcation: A theoretical look at the identiﬁcation of audiences with media
+characters. Mass Communication & Society, 4(3), 245-264. doi: 10.1207/S15327825MCS0403_01
+Cohen, J. (2006). Audience identiﬁcation with media characters. In J. Bryant, & P. Vorderer (Eds.),
+Psychology of entertainment (pp. 183-197). Mahwah, NJ: Lawrence Erlbaum Associates.
+Damala, A., Hornecker, E., van der Vaart, M.,van Dick, D., & Ruthven, I. (2016). The Loupe: Tangible
+Augmented Reality for Learning to Look at Ancient Greek Art. Mediterranean Archaeology and
+Archaeometry, 16(5), 73-85.
+Draper, J. V., Kaber, D. B., & Usher, J. M. (1998). TelePresence. Human Factors, 40(3), 354-375.
+Earp, J. Catalano, C. E., & Mortara, M. (2015). Investigating the Deployment of Serious Games in
+Secondary Education: A Pilot Study Inspired by Design-Based Research. Lecture notes in computer science,
+Volume 9221, International Conference on Games and Learning Alliance GALA 2014, July 2014, Bucharest,
+Romania (pp. 5-15).
+Fanini, B., & Pagano, A. (2015). Interface Design for Serious Game Visual Strategies - The Case Study of
+Imago Bononiae. Digital Heritage 2015 International Congress Proceedings. Oct 2015, Granada, Spain (pp.
+623-626). doi: 10.1109/DigitalHeritage.2015.7419583
+Frischer, B. (2013). Introduction with Remarks on Digital Restoration of the Richmond Caligula and Its
+Methodological Implications. In Papers of the NEH Symposium “Caligula 3D” Virginia Museum of Fine
+Arts, Dec. 2013, Richmond, Virginia, USA. Retrieved from http://www.digitalsculpture.org/papers/frischer/
+frischer_paper.html
+Grouling Cover, J. (2010). The Creation of Narrative in Tabletop Role-Playing Games. McFarland &
+Company. Jefferson, NC: McFarland & Co Inc.
+Gutierrez, D., Frischer, B., Cerezo, E., Gomez, A., & Seron, F., (2007). AI and virtual crowds: Populating
+the Colosseum. Journal of Cultural Heritage, Volume 8, Issue 2, 2007, 176-185. doi: 10.1016/j.
+culher.2007.01.007
+Happ, C., Melzer, A., & Steffgen, G. (2013). Superman vs. BAD man? The effects of empathy and game
+character in violent video games. Cyberpsychology, Behavior, and Social Networking, 16(10), 774-778.
+Heeter, C. (1992). Being There: The subjective experience of presence. Presence: Teleoperators and Virtual
+Environments, 1(2), 262-271.
+
+19
+
+Michela Mortara and Chiara Eva Catalano
+
+Hugues, O., Fuchs, P., & Nannipieri, O. (2011). New Augmented Reality Taxonomy: Technologies and
+Features of Augmented Environment. Furht, Borko Editors. Handbook of Augmented Reality, Springer,
+pp.47-63.
+Ijsselsteijn, W. A., de Ridder, H., Freeman, J., & Avons, S. E. (2000). Presence: Concept, determinants
+and measurement. In B. E. Rogowitz, & T. N. Pappas (Eds.), Proceedings of the SPIE, Human Vision and
+Electronic Imaging V, Vol. 3959, Jan 2000, San Jose, CA. doi: 10.1117/12.387188
+Klimmt, C., Hefner, D., & Vorderer, P. (2009). The video game experience as “true” identiﬁcation: A theory
+of enjoyable alterations of players’ self-perception. Communication Theory, 19(4), 351-373.
+Konijn, A., & Bijvank, M. N. (2009). Doors to another me. Identity construction through digital game play.
+In U. Ritterfeld, M. Cody, & P. Vorderer (Eds.), Serious games: Mechanisms and effects (pp. 179-203).
+London, UK: Routledge.
+Lee, K. M. (2004). Presence, explicated. Communication Theory, 14(1), 27-50.
+Lercari, N., Forte, M., & Onsurez, L. (2013). Multimodal reconstruction of landscape in serious games
+for heritage: An insight on the creation of Fort Ross Virtual Warehouse serious game. In Digital Heritage
+International Congress (DigitalHeritage), 2, Oct 2013, Marseille, France (pp. 231–238).
+Lombard, M., & Ditton, T. (1997). At the heart of it all: The concept of presence. Journal of Computer
+Mediated Communication, 3(2). doi: 10.1111/j.1083-6101.1997.tb00072.x
+Menna, F., Nocerino, E., Remondino, F., Dellepiane, M., Callieri, M., Scopigno, R. (2016). 3D
+digitization of a heritage masterpiece - a critical analysis on quality assessment. In The Int. Archives of the
+photogrammetry, Remote Sensing and Spatial Inform. Sciences, Prague, Czech Republic, Vol. XLIB5 (pp.
+675–683).
+Mestre, D. R., & Fuchs, P. (2006). Immersion et presence. In P. Fuchs, G. Moreau, A. Berthoz, & J.
+L.Vercher (Eds.), Le traite d́ e la realite ́ virtuelle (pp. 309 –38). Paris, FR: Ecole des Mines de Paris.
+Moreno, R., & Mayer, R. E. (2002). Learning science in virtual reality multimedia environments: Role of
+media and methods. Journal of Educational Psychology, 94(3), 598-610.
+Mortara, M., Catalano, C.E., Bellotti, F., Fiucci, G., Houry-Panchetti, M., & Petridis, P. (2014). Learning
+cultural heritage by serious games. Journal of Cultural Heritage, 15(3), 318–325.
+Papagiannakis, G., Foni, A., & Magnenat-Thalmann, N. (2003). Real-Time recreated ceremonies in VR
+restituted cultural heritage sites. CIPA International Symposium.
+Pietroni, E., & Rufa, C. (2012) Natural interaction in Virtual Environments for Cultural Heritage: Giotto in
+3D and Etruscanning study cases. Virtual Archaeology Review, 3(7), 86-91. doi: 10.4995/var.2012.4394
+Qian, M., & Clark, K. R. (2016). Game-based learning and 21st century skills: A review of recent research.
+Computers in Human Behavior, 63, 50-68. doi: 10.1016/j.chb.2016.05.023
+Rizvic, S., Okanovic, V., Prazina, I., & Sadzak, A. (2016). 4D Virtual Reconstruction of White Bastion
+Fortress. Proceedings of 14th EUROGRAPHICS Workshop on Graphics and Cultural Heritage, Oct 2016,
+Genoa, Italy (pp. 79-82).
+Salyers, J., Cliburn, D., Sparks, E., Culilap, J. L, Kuo, S., Sabbatino, K., Sanchez, R., Thomasson, D. &
+
+20
+
+Italian Journal of Educational Technology / Volume 26 / Issue 2 / 2018
+
+Tvergyak, H. (2017). Little Manila: A Digital Recreation. Proceedings of 15th Eurographics Workshop on
+Graphics and Cultural Heritage, Sept 2017, Graz, Austria (pp. 103-107). doi: 10.2312/gch.20171299
+Semb, G.B. & Ellis, J.A. (1994). Knowledge Taught in School: What Is Remembered? Review of
+Educational Research 64(2), 253-286. doi: 10.2307/1170695
+Sheridan, T. (1992). Musings on telepresence and virtual presence. Presence: Teleoperators and Virtual
+Environments, 1(1), 120-125.
+Shih, J-L., Jheng, S-C., & Tseng, J-J. (2015). A simulated learning environment of history games
+for enhancing players’ cultural awareness. Interactive Learning Environments, 23(2), 191–211. doi:
+10.1080/10494820.2014.997249
+Slater, M., & Wilbur, S. (1997). A Framework for Immersive Virtual Environments (FIVE): Speculations on
+the Role of Presence in Virtual Environments. Presence: Teleoperators and Virtual Environments, 6(6), 603616.
+Stanco, F., Tanasi, D., Buffa, M., Basile, B., Grana, C., & Cucchiara, R., (2011). Augmented Perception of
+the Past: The Case of the Telamon from the Greek Theater of Syracuse. Multimedia for Cultural Heritage:
+First International Workshop, MM4CH 2011, May 2011, Modena, Italy (pp. 126-135).
+Steuer, J. (1992). Defining virtual reality: Dimensions determining telepresence. Journal of Communication,
+42(4), 73-93.
+Tamborini, R., & Skalski, P. (2006). The Role of Presence in the Experience of Electronic Games. In
+Playing Video Games: Motives, Responses, and Consequences (Chapter 16, pp. 225-240). Routledge Taylor
+& Francis Group. doi: 10.4324/9780203873700
+Torrente, M. L., Biasotti, S. & Falcidieno, B. (2018). Recognition of feature curves on 3D shapes using an
+algebraic approach to Hough transforms. Pattern Recognition, 73, 111-130.
+doi: 10.1016/j.patcog.2017.08.008
+Tychsen, A., Hitchens M., Brolund T., & Kavakli, M. (2006). Live action role-playing games: control,
+communication, storytelling, and MMORPG similarities. Games and Culture, 1(3), 252–275. doi:
+10.1177/1555412006290445
+Wirth, W., Hartmann, T., Böcking, S., Vorderer, P., Klimmt, C., Schramm, H., … Jäncke, P. (2007). A
+Process Model of the Formation of Spatial Presence Experiences. Media Psychology, 9(3), 493-525.
+doi: 10.1080/15213260701283079
+
+21
+
+

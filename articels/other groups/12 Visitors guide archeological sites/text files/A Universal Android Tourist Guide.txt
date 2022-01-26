@@ -1,0 +1,392 @@
+L INT. SC. CONF. ON INFORMATION, COMMUNICATION AND ENERGY SYSTEMS AND TECHNOLOGIES, 24-26 JUNE, SOFIA, BULGARIA
+
+A Universal Android Tourist Guide
+Using the GPS Technology
+Đorđe Manoilov1, Dušan B. Gajić1, Radomir S. Stanković1
+Abstract – This paper describes an Android tourist guide for
+mobile devices, based on the global positioning system (GPS)
+technology. We present the architecture of the application and its
+typical use-case scenarios. Employment of the presented
+application on archaeological sites allows visitors to access
+additional multimedia content and easily navigate through onsite objects. Other existing systems, aimed at similar purposes,
+are mostly focused on audio content, while the presented
+application also features video and 3D material. The use of XML
+decouples the implementation from the content of the
+application, thus allowing an almost straightforward adoption of
+the presented application on different archaeological sites.
+
+The Android tourist guide for mobile devices presented in
+this paper is developed by the ARhiMedia group from the
+Faculty of Electronic Engineering in Niš, Serbia. The
+proposed application offers one approach to solving problems
+discussed in the previous paragraph. Solutions to some of
+these problems were discussed earlier in [1, 2, 3, 4], while this
+study focuses on solving the problem of choosing the optimal
+route. The idea for this application emerged during visits to
+archaeological parks Mediana, close to Niš, Serbia, and
+Iustinana Prima – Caričin Grad, near Lebane, Serbia.
+The paper has the following structure. In Section II, we
+present the motivation behind the development of the
+application, as well as its architecture. Section III contains a
+brief description of the user interface and implementation of
+the application. Section IV presents the most important
+conclusions, as well as plans for future work.
+
+Keywords – Android, mobile programming, augmented reality,
+cultural heritage, tourist guide, global positioning system - GPS.
+
+I. INTRODUCTION
+The application of information technologies (IT) creates
+new opportunities for better presentation of cultural and
+historical objects and museum exhibitions. Multimedia
+presentations and applications for mobile devices make
+historical sites and art exhibitions more accessible and more
+interesting to a wider audience. Through their use, each visitor
+can find information about an exhibition to the extent that
+suits their interests. Mobile devices, such as smartphones and
+tablets, recently became omnipresent in everyday human
+activities. Tourism industry followed this change.
+Development of digital tourist guides based on various
+information technologies can greatly help in several aspects
+related to tourism. In addition to helping with the complex
+preparations before starting a trip, mobile applications can
+help in solving the problem of lack of information about
+cultural and historical attractions. Tourists have at their
+disposal a number of activities, such as visiting attractions or
+restaurants and shops, but they don’t have enough information
+to make an informed decision. A similar problem may be
+encountered during visits to archaeological parks or large
+museums, due to the large number of offered exhibits and lack
+of information about the preferred visiting routes. Further,
+there is often a problem of timing certain activities and having
+correct information about working hours of institutions.
+Finding an optimal route to a desired location in an unfamiliar
+place is another task made easier with mobile devices. This
+task is especially difficult in large cities, where important
+attractions are often distant from each other.
+
+II. THE APPLICATION
+The mobile tourist guide presented in this paper, is
+developed to allow users easier navigation through
+archeological parks and objects of great cultural and historical
+importance which very often cover large areas. It also
+provides information about objects of cultural and historical
+significance, such as three-dimensional (3D) reconstructions
+of objects and audio and video content about them. The
+application also gives users an opportunity to dictate the pace
+of the tour and to select additional information in accordance
+with their interests and available time. The presented
+application is already used in the digital mini-museum of the
+Faculty of Electronic Engineering Niš, as a demo tourist guide
+through the Niš medieval fortress and the Roman site of
+Viminacium, Serbia.
+A number of applications designed for similar purposes
+exist. An example is an Android application Taj Mahal
+Official Tour, intended for visiting the Taj Mahal in India [5].
+This application contains an audio guide with a map that
+shows points on which visitors can stop and hear additional
+information. Another example is the Smart Tour Guide
+application, created by the Korean Tourism Organization,
+which contains interesting anecdotes collected from the
+archives of Korean history [6]. Both applications, as well as
+most of the other existing applications of similar purpose, are
+devoted primarily to audio content. The tourist guide
+presented in this paper puts more emphasize on video and 3D
+materials. Further, the presented application is developed so
+that the entire multimedia content is independent of the
+implementation. Therefore, the application can be applied to
+any location without additional programming, just by
+changing the configuration file and adding appropriate
+multimedia content.
+
+1
+
+Đorđe Manoilov, Dušan B. Gajić, and Radomir S. Stanković, are
+with the CIITLab, Faculty of Electronic Engineering, Aleksandra
+Medvedeva
+14,
+18000
+Niš,
+Serbia,
+E-mails:
+manoilov88@gmail.com,
+dusan.b.gajic@gmail.com,
+radomir.stankovic@gmail.com.
+
+26
+
+L INT. SC. CONF. ON INFORMATION, COMMUNICATION AND ENERGY SYSTEMS AND TECHNOLOGIES, 24-26 JUNE, SOFIA, BULGARIA
+
+expansion file. The remaining content is classified into folders
+whit the tree structure shown in Fig 2.
+
+A. The Application Architecture
+The application is developed for mobile devices with
+Android operating systems. Position between points of
+interest and current position of the user is determined using
+global positioning system (GPS) and device's orientation
+sensors - accelerometer and compass. Functions for
+communication with GPS satellites and for determining
+orientation of the device are available within the Android
+application framework [7].
+The application architecture is shown on Fig 1. The
+application consists of several forms: Compass, Map, List,
+Video and form for models 3D Preview. Application logic and
+multimedia data that are used are completely separated. Each
+of the mentioned forms will be explained in detail later in the
+text. Data that are used in the application are packed in an
+expansion file, which is downloaded along with the
+application from the Google Play market and stored in the
+external memory of the device.
+
+Fig. 2. Structure of the expansion file.
+
+From the folder names, we can conclude that, for example,
+the audio folder keeps the necessary audio material, model
+folder stores the 3D models of reconstructed objects, etc.
+Materials to be loaded into the application for a particular
+object are determined by tags in the XML file. An example of
+a well-configured XML file is shown in Fig 3.
+
+Fig. 1. The application architecture.
+
+The maximum size of application that can be placed on the
+Google Play market is 50 MBs. Typically, there can be a
+large number of points of interest on archaeological parks.
+Therefore, there is a possibility that a lot of multimedia
+content might be necessary, so the application is implemented
+not to be size-limited. One possible solution are expansion
+files [8]. An expansion file contains all necessary information
+and is placed on Google Play along with the application. It is
+possible to add two expansion files, each with size up to 2
+GBs. Conceptually each expansion file plays a different role.
+Main expansion file is the primary expansion file for
+additional resources that are necessary in application. Patch
+expansion file is optional, and it is designed for small changes
+in the primary expansion file. Both expansion file can be in
+any of the following formats: ZIP, PDF, MP4, etc.
+Independently of the type, Google Play renames them using
+the following scheme: [main|patch].<version-of-expansionfile>.<package-name>.obb.
+After the download is complete, data are loaded into the
+application according to the XML configuration file. For our
+application, the XML configuration file is also a part of the
+
+Fig. 3. A well-configured XML configuration file.
+
+All important points in a site are placed within the <point>
+tag and they are all grouped within the root tag <points>.
+Every object contains the following tags: the <name> tag,
+which defines the name of object; <latitude> and <longitude>
+tags, which are used to define GPS coordinates of object; the
+
+27
+
+L INT. SC. CONF. ON INFORMATION, COMMUNICATION AND ENERGY SYSTEMS AND TECHNOLOGIES, 24-26 JUNE, SOFIA, BULGARIA
+
+a user walks through the park, this arrow is rotated so that its
+head shows the direction to the closest point.
+The method of calculating the rotation angle is shown in
+Fig 5. In this figure, P1 is the current user location, P2 is the
+closest location of an object in the archeological park, α is an
+angle between P1 and P2 in relation to the North Pole, β is an
+angle of the phone, also in relation to the North Pole, and,
+finally, γ (γ = α - β) is an angle for which it is necessary to
+rotate the arrow so that its head shows the direction of the
+closest point.
+
+<radius> tag which represents radius around the object in
+meters, within which users can hear additional information
+about object. An audio file which will be played for an object
+is defined with the <file> tag. When a user is found within a
+defined radius of the object, he also has the possibility to see
+image of the object, video, or a 3D reconstruction of the
+object. This is all specified with the <img>, <video> and
+<model> tags, respectively. If there is a 3D reconstruction of a
+given object, it is necessary to export the model and its
+textures from the expansion file. After that, it is possible to
+successfully load it into the application. Files which need to
+be exported are defined using the <item> tags. All <item>
+tags are grouped within the <model_items> tag. For adding
+new points, its necessary to add the <point> tag, which
+contains all of the mentioned tags.
+
+III. THE USER INTERFACE AND IMPLEMENTATION
+The welcome screen of the application is shown in Fig 4a.
+In the top of the screen, a user can see the distance to the
+closest object, radius around, and the current accuracy of the
+GPS signals received from satellites. All distances are shown
+in meters, and calculations are based on the user’s current
+GPS coordinates and the coordinates of the closest object in
+the archeological park.
+In the case when GPS signal is not available or it is lost,
+user’s last known location is used for calculations. This last
+known location is provided by a function called
+getLastKnownLocation [9]. Current GPS position of the user,
+which includes latitude and longitude coordinates, is stored in
+the device local memory using two double-precision floating
+point variables, one for each coordinate. Therefore, memory
+requirements for storing GPS data are measured in bytes,
+while the typical available device memory is in GBs.
+
+Fig. 5. Method for calculating the rotation angle.
+
+When the user enters within the radius determined for an
+object, the application starts the corresponding audio file
+which is pre-defined in the XML file. This audio file can
+contain ambient sounds characteristic for an object, or
+additional information about it. Further, instead of an arrow,
+the application shows an image of the object. The main
+function of the image is to show to the user the reconstruction
+of object, if it is not preserved in its entirety, or to show an
+image of a mosaic, if it is, for protection, covered with sand.
+The previously described screen is shown in Fig 4b.
+When a user is within the radius of an object, he can view a
+video clip about the object or a 3D model of its
+reconstruction. These two features are optional, and if they
+exist, buttons 3DPreview and Video, respectively, are shown
+to the user.
+By choosing the option 3DPreview, the screen an example
+of which is shown in Fig. 7a is presented to the user. This
+application module is realized using Metaio Mobile SDK.
+Metaio is a tool which is primarily intended for developing of
+augmented reality applications for Android and iOS mobile
+devices, but it can be used for the implementation of this
+module [10].
+
+Fig. 4. a) Welcome screen of the application. b) The application
+screen shown when a user is within the object radius.
+
+With simple finger gestures, a user can rotate the model and
+thus view it from all sides. Zoom options are also
+implemented. In the top right corner, there is a model which
+represents x, y, and z axis, in order to provide users easier
+interaction with an object.
+
+Besides these information, there is a compass in form of
+arrow in the bottom of the screen. Its purpose is to provide
+users easier positioning within the archaeological park. When
+
+28
+
+L INT. SC. CONF. ON INFORMATION, COMMUNICATION AND ENERGY SYSTEMS AND TECHNOLOGIES, 24-26 JUNE, SOFIA, BULGARIA
+
+provides easier navigation through archeological sites using
+the GPS, accelerometer, and compass, which are available on
+almost all current mobile devices. Further, it provides textual
+information and audio and video contents about objects on the
+site. The presented application can be applied to any location
+without the need for additional programming, since its content
+is completely decoupled from its implementation.
+Plans for future work include the implementation of an
+augmented reality module. The main functionality of this
+module will be to show the real-world environment
+augmented by 3D models of reconstructed objects in a
+common screen.
+
+Selecting the Video option shows the user a form with a
+full-screen video about the object. A frame from an example
+video is shown in Fig 8.
+
+ACKNOWLEDGEMENTS
+The research reported in this paper is partly supported by
+the Ministry of Education and Science of the Republic of
+Serbia, projects ON174026 (2011-2015) and III44006 (20112015).
+
+REFERENCES
+
+Fig. 6. a) 3D reconstruction of an object. b) Map of an
+archeological park.
+
+[1] R. Stanković, D. Tatić, M. Stošić, Đ. Manoilov, ARhiMed,
+technical solution - prototype, (in Serbian), Faculty of
+Electronic Engineering Niš, Serbia, 2014, available at:
+http://www.elfak.ni.ac.rs/
+downloads/projekti/tehnickaresenja/07-10-003-13/prijava.pdf, last access: Feb 8, 2015.
+[2] D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković, “Universal
+Mobile Cultural Heritage Guide Based on Android
+Technology”, XII Conf. New Technologies and Standards:
+Digitization of National Heritage, Belgrade, October 2013.
+[3] Đ. Manoilov, N. Gajić, M. Stošić, D. Tatić, “A Virtual Tour of
+the Mediana Archeological Park using Unity 3D Engine”, XII
+Conf. New Technologies and Standards: Digitization of
+National Heritage, Belgrade, October 2013.
+[4] Đorđe Manoilov, Dušan Gajić, “Razvoj virtuelne šetnje
+primenom programskog okruženja Unity i Microsoft Kinect-a”,
+(in Serbian) in Proc. 20th YU INFO, Kopaonik, March, 2014,
+pp.271-274.
+[5] Taj
+Mahal
+Official
+Tour,
+available
+at:
+https://itunes.apple.com/us/app/taj-mahal-officialtour/id531740560?mt=8, last access: March 29, 2015.
+[6] Smart
+Tour
+Guide,
+available
+at:
+https://play.google.com/store/apps/details?id=kto.smarttour, last
+access: March 29, 2015.
+[7] The
+Android
+Architecture,
+available
+at:
+http://www.tutorialspoint.com/android/android_architecture.htm
+last access: Feb 8, 2015.
+[8] APK Expansion Files, available at:
+http://developer.
+android.com/google/play/expansion-files.html, last access: Feb
+8, 2015.
+[9] Android
+API
+–
+LocationManager,
+available
+at:
+http://developer.android.com/reference/android/location/Locatio
+nManager.html, last access: Jun 5, 2015.
+[10] Metaio Mobile SDK, available at: http://www.metaio.com/sdk/,
+last access: Feb 8, 2015.
+[11] Action Bar, available at:
+http://developer.android.com/
+guide/topics/ui/actionbar.html, last access: Feb 8, 2015.
+[12] Google
+Maps
+API
+version
+2.0,
+available
+at:
+https://developers.google.com/maps/documentation/android/,
+last
+access:
+Feb
+8,
+2015.
+
+Fig. 7. Frame from a video content about an object.
+
+On the top of the screen within the Action bar, there are two
+more options [11]. The first option is Map, which provides an
+overview of the entire archeological park and objects of
+interest. Objects are marked on the map as pins, and a pin
+which is the closest to the user is animated in order to be
+located easily. This form is realized using Google Maps. For
+our application, we used the Google Maps API version 2 [12].
+An example of using this functionality of the application is
+shown in Fig 7b. Another option within the Action bar shows
+a list of all objects of interest within the park.
+All of the previously described application layouts are
+designed as responsive, which means that they are not
+dependent on neither screen resolution nor size.
+
+IV. CONCLUSIONS
+The application presented in this paper - A universal tourist
+guide based on the GPS technology - is implemented as an
+Android application for mobile devices. The application
+
+29
+
+

@@ -1,0 +1,1160 @@
+Analysis and Prediction of Museum Visitors’
+Behavioral Pattern Types
+
+Tsvi Kuflik¹, Zvi Boger³ and Massimo Zancanaro²
+
+¹The University of Haifa, Mount Carmel, Haifa, 31905, Israel
+
+²FBK, via Sommarive 18, 38050 Povo, Italy
+
+³Ben-Gurion University of the Negev, Beer-Sheva, 84105, Israel
+tsvikak@is.haifa.ac.il; zboger@bgu.ac.il; zancana@fbk.eu
+
+Abstract. Personalization in the “museum visit” scenario is extremely
+challenging, especially since in many cases visitors come to the museum for the
+first, and may be the last time in their life. There is therefore a need to 
+generate
+an effective user model quickly without any prior knowledge. Furthermore, the
+initial definition of a user model is also challenging since it should be built 
+in a
+non-intrusive manner. Understanding visitors’ behavioral patterns may help in
+initializing their user models and supporting them better. This chapter reports
+three stages of analysis of behavior patterns of museum visitors. The first step
+assesses, following past ethnographic research, whether a distinct stereotype of
+behavior can be identified; the second shows that visitors' behavior is not
+always consistent; the third shows that, in spite of the inconsistency, 
+prediction
+of visitor type, is possible.
+
+1  Introduction
+
+The museum environment is both an attractive and a challenging arena for 
+developing
+and experimenting with personalized information delivery. It is rich in 
+information,
+offering much more than a visitor can experience in a museum visit of limited 
+time,
+and hence personalization may be a tool for enhancing the visit experience and 
+help
+the visitor avoid information overload. The need for personalization is also 
+motivated
+by recent research regarding museum visitors’ identity [Falk, 2009]. However, to
+achieve this goal, an accurate model of the user must be built quickly in order 
+to
+provide a personalized service at the earliest stage possible of the visit.
+
+In this work, we adopted the classification of visiting styles proposed by the 
+ethno
+methodologists Veron and Levasseur [1983]. Starting from ethnographic 
+observations
+of the behavior of a number of visitors in the Louvre museum, they argued that
+visitors’ movements may be classified into four categories that, for the sake 
+of clarity,
+they named after the “typical” behavior of four “typical” animals. 
+Specifically, they
+suggests that: the ANT visitor tends to follow a specific path and spends a lot 
+of time
+observing almost all the exhibits; the FISH visitor most of the time moves 
+around in
+the centre of the room and usually avoids looking at exhibits' details; the
+BUTTERFLY visitor does not follow a specific path but rather is guided by the
+physical orientation of the exhibits and stops frequently to look for more 
+information;
+
+
+and finally, the GRASSHOPPER visitor seems to have a specific preference for 
+some
+pre-selected exhibits and spends a lot of time observing them while tending to 
+ignore
+the others. Of course, it might be expected that a given visitor can change her
+behavior during a long visit, and it is also possible that the style is 
+affected by the
+specific interests.
+
+In this work, we started from the very basics: we empirically validated Veron 
+and
+Levasseur’s model of visiting style. We then looked at the consistency of the 
+visitors’
+exhibited behavior during the visit, and finally we tried to identify the 
+visitors’ type
+based on initial observations at early stages of the visit. We used log files 
+of 140
+visitors exploring a frescoed room with a multimedia museum guide, first to 
+provide
+quantitative-based evidence that museum visitors’ behavior may effectively be
+classified according to Veron and Levasseur’s mode and then to analyze their
+behavior and to try to identify their type. This work is intended to complement 
+and
+build on Veron and Levasseur's ethnographic study by providing empirical 
+evidence,
+as well as to provide information in a principled way for further research on 
+user
+modeling, and then to extend it for automatic identification of visitors’ types 
+at the
+very beginning of the visit.
+
+2 Related Work
+
+Many studies have investigated personalized information presentation in the 
+context
+of mobile museum guides, as surveyed by Baus and Kray [2003]. Several research
+prototypes focused on user preferences, initial knowledge and history of 
+interaction.
+For example, the GUIDE system presented in Cheverst et al. [2000], adapted 
+web-like
+presentations by adding information about nearby attractions that might 
+interest the
+visitor  to a city. The HIPPIE system proposed personalized tours in a museum by
+maintaining a model of user interests and knowledge [Opperman and Specht, 2000].
+The REAL system [Baus and Kruger, 2002] adapted route descriptions according to
+the actual user position, the limited technical resources of the device, and the
+cognitive resources of the user. In the context of the PEACH project [Stock et 
+al.,
+2007] a spreading activation technique applied on a domain knowledge-base was
+implemented to predict the interest in concepts related to those for which the 
+system
+received explicit feedback from the user.
+
+Knowledge and interest-related features are not, however, the only sources of
+information that are worth considering for modeling a museum visitor. For 
+example,
+Petrelli and Not [2005] suggested considering whether the user is visiting the 
+museum
+alone or with companions, whether it is a first-time or a recurrent visit, and 
+so on.
+
+Behavioral traits have also been taken into consideration. Sparacino [2002]
+proposed categorization of user types into three main categories: (i) the 
+greedy visitor
+who wants to know and see as much as possible; (ii) the selective visitor who 
+spends
+time on artifacts that represent certain concepts only and neglects the others; 
+and (iii)
+the busy visitor who prefers strolling through the museum in order to get a 
+general
+idea of the exhibition without spending much time on any exhibits. Her 
+application
+employs Bayesian networks to model both the user (interest and style) and the
+appropriateness of the guide’s content (length and order).
+
+
+The same categorization of user types is also used by Hatala and Wakkary [2005]
+together with an ontology-based model of the interests. In both these papers, 
+the
+validity of such a scheme is justified through qualitative analysis, mainly 
+site studies
+and interviews with staff at various museums.
+
+In addition to research into exploiting the potential of novel technology in the
+museum, recent research studies in museums point out the need for personalized
+support for visitors. Falk [2009], based on a lifetime of research in the area, 
+concluded
+that the notion of identity is important for understanding the reasons that 
+bring a
+person to a museum and defining their goals. He identifies five major 
+categories of
+identity-related  groups:  Explorer, Facilitator, Experience seeker, 
+Professional/
+Hobbyist, and Recharger. He emphasizes that whatever the visitor sees or does is
+influenced by the combination of their identity, his or her personal context
+constituting prior knowledge, experience and interest, the physical context, 
+that is, the
+specifics of the exhibition he/she encounters, and the socio-cultural context, 
+that is,
+the within- and between-group interaction that occurs in the museum. Hence, the
+visitor perceives the museum experience as satisfying if there is a good match
+between the visitor's identity-related needs and the museum affordances. During 
+and
+just after the visit, the visitor constructs meaning from the experience, where 
+this is
+particularly related to identity building.  If a system is to improve the 
+visitor's
+experience, it should be able to do this better if it takes into account the 
+visitors' type,
+their personal context that is composed of prior knowledge, experience and 
+interests,
+social context, and the museum's physical context. Hence personalization in 
+museums
+is not just about exploring novel technology capabilities but also answering a 
+real
+need.
+
+Concerning the Veron and Levasseur classification, the first attempt to exploit 
+it
+as part of a user model for a mobile guide was in the HIPS project (mainly 
+[Marti et
+al. 1999]). They used a Recurrent Artificial Neural Network (ANN) trained to
+recognize the visiting style of a visitor given her interaction history. 
+Although most of
+the ideas that were tested experimentally in HIPS underwent user evaluation, 
+the very
+idea of the existence of visiting styles was taken for granted, relying on the 
+qualitative
+analysis of the original work.
+
+Chittarro and Ieronutti [Chittaro and Ieronutti, 2004] employed Veron and
+Levasseur's classification in the context of a tool that visualizes users’ 
+behaviors in a
+virtual environment. Their use of the visiting styles was based on qualitative 
+analysis.
+They did not evaluate the existence of these classes and they did not use it for
+personalization.
+
+The use of behavioral traits for user modeling has also been taken into
+consideration by Sparacino [2002], although she used different categories. Her
+application employs Bayesian networks to model both the user (interest and 
+style) and
+the appropriateness of the guide’s content (length and order).
+
+The same categorization of user types was also used by Hatala and Wakkary
+[2005] together with an ontology-based model of the interests. In both these 
+works,
+the validity of such a scheme is justified through qualitative analysis, mainly 
+site
+studies and interviews with the staff at various museums.
+
+Recently, Bohnert et al. [2008] tried to predict visitors’ behavior 
+automatically by
+using manually annotated visitors logs. They tracked and annotated visitors’ 
+paths
+through a museum exhibition, recording where they stopped and for how long and
+
+
+then tried to train a variety of classifiers, with different features to 
+predict visitors’
+behavior. They tried to predict the visitors' next K stops, once based on their 
+interest
+in already seen exhibits, and then again based on the visitor’s path similarity 
+to that of
+other visitors through the museum. They also experimented with a combination of 
+the
+two (hence an interest-based classifier, a collaborative classifier, and a 
+hybrid one).
+
+3  Research Environment and Experimental Results
+
+In the context of a user study of a multimedia mobile guide [Stock and 
+Zancanaro,
+2007], 143 regular visitors to Torre Aquila1 in Trento were invited to test the 
+system.
+Among the subjects, 61 were males and 82 females. Their age ranged from 20 to 79
+years (mean=47, median=50, std.dev=15.9). The visitors were recruited at the
+entrance of the museum and got a free ticket to visit the castle as a reward for
+participating in the experiment. The visitors used a mobile multimedia museum
+visitors’ guide and their interactions with the system, such as presentation 
+selection
+and giving feedback, were logged throughout the visit using time-tagged 
+Infrared-
+based positioning information. Out of the 143 visit logs, 140 were used for 
+this study;
+the rest had various errors that prevented their use.
+
+3.1  Identifying Distinct Visitors’ Stereotypical Groups2
+
+In the first stage we were interested in trying to identify four distinct 
+groups of
+visitors based on their behavioral patterns. Hence we used measures that 
+related to the
+entire visit rather than temporal-based indices that may be better suited for 
+prediction.
+The measures used for the analysis were the following: AvT, average time a 
+visitor
+spent at each position; the percentage of exhibits visited during the visit (a 
+binary
+variable where 1 means the visitors spent some time at every exhibit and 0 
+means the
+visitor did not stop at any exhibit); Order, a numerical representation between 
+0 and 1
+of the order of the visit, where 1 means that the visitor walked from one 
+exhibit to the
+other, following the natural order of the exhibition, while 0 means that the 
+visitor
+jumped back and forth in unordered manner; Completeness, a combined description
+of visitors’ interaction with the museum visitors’ guide system, taking into 
+account
+interaction and whether or not visitors listened fully through complete 
+presentations.
+Further, four cumulative measures, represented by the four letters A,B,C,D, were
+defined that considered the percentage of the visit for which the visitor was: 
+A,
+interacting with the guide, i.e., giving feedback and asking for more 
+information, but
+
+1 Torre Aquila is a tower at the Buonconsiglio Castle in Trento, Italy where a 
+fresco called
+“The Cycle of the Months,” a masterpiece of the Gothic period, is displayed. 
+This fresco,
+painted in the Fifteenth Century, covers all fours walls of a room in the tower 
+and illustrates
+the activities of aristocrats and peasants throughout the year. The museum 
+guide used to
+collect visitor data is one of the many prototypes developed in the PEACH 
+project; for more
+details see [Stock and Zancanaro, 2007].
+
+2 It is worth noting that here we report only the main findings, since this 
+part is also reported in
+detail by Zancanaro et al. [2007],
+
+
+not reaching the conclusion at the end of the presentations; B, interacting and 
+reaching
+conclusions; C, not interacting and not reaching conclusions; and D, not 
+interacting
+but reaching conclusions. The sum of A, B, C and D is 100%; each part presents 
+the
+percentage of the visit where the visitor exhibited the type of behavior 
+represented by
+the specified letter.
+
+Data pre-processing generated 140 7-dimensional vectors including the average
+time, visit order and completeness, and the percentage of the visit for which 
+the
+visitor’s behavior was according to each of the four types represented by the 
+letters.
+checking for each and every position whether the visitor interacted with the 
+system or
+not and whether s/he viewed complete presentations or not and then calculating 
+the
+ratios.
+
+Two different clustering approaches were used independently, Artificial Neural
+Networks (ANN) and K-means algorithm [MacQueen, 1967], and their results were
+compared.
+
+Artificial neural networks are used to form data-driven models. In order to 
+perform
+unsupervised learning, an auto-associative ANN (AA-ANN), in which the “targets”
+are identical to the inputs, was used. If the trained AA-ANN succeeds in 
+replicating
+the inputs as outputs, it means that the hidden neurons are encoding the 
+essential
+information “distilled” from the inputs features. In most cases the outputs of 
+the
+hidden neurons are close to either one or zero [Boger and Guterman, 1997]. Thus 
+all
+examples that generate the same hidden neurons output pattern are deemed to 
+belong
+to  the same cluster.
+
+The AA-ANN used was a fully-connected, feed-forward ANN of two hidden
+neurons and seven output neurons, each having the sigmoidal transfer function, 
+which
+was presented with the dataset with the seven input variables and the identical 
+values
+as targets.
+
+K-means is a well-known technique of clustering data-points by maximizing the
+distances among the clusters of similar data points.
+
+Table 1. Confusion matrix for the classifications based on the ANN and K-means 
+clustering
+
+
+Count
+
+ANN Labels * Kmean Labels Crosstabulation
+
+Kmean Labels
+
+A     B     F     G
+
+Total
+
+
+ANN  A
+
+Labels  B
+F
+G
+
+Total
+
+50     1     0
+
+1     33     2
+
+0     2     12
+
+2     0     3
+
+53     36     17
+
+2    53
+
+0    36
+
+1    15
+
+31    36
+
+34   140
+
+We clustered the 7-dimensional vectors into four clusters, using the two 
+different
+methods. The clusters were then manually annotated using the “animals”
+characteristics. It was possible to do this annotation for both AAN and K-means
+clusters.
+
+In order to assess to what extent the two clustering algorithms agree on
+classification of the visitors into the different visitors styles, we used the 
+κ statistics
+[Landis and Koch, 1977], which provides a better estimation of the bare 
+percentage
+
+
+agreement since it takes into account the possibility of chance agreement. 
+Table 1
+shows the confusion matrix. The value of the κ statistics in our case 
+is 0.860 with a
+standard error of 0.035 (p<0.0001; N=140). According to Landis and Koch’s 
+criteria
+[1977], the agreement is very good (κ > 0.8).
+
+The results of the first study showed that the two algorithms, which are based 
+on
+different principles, provided similar very results and classified the data 
+along the
+same characteristics that were close to the ones predicted by the 
+Veron-Levasseur
+model. Therefore, we can assume that the four “animals” are a natural way of
+categorizing visitors when the variables above are chosen.
+
+3.2  Analyzing the Consistency of Visitors’ Behavior
+
+The results of the first study paved the way for the second one that was aimed 
+at
+exploring how consistent the visitors were in their behavior. The measures used 
+for
+the analysis were the same seven measures used for the previous study and a few
+more. At each position, we measured the portion of the time dedicated to 
+viewing a
+presentation as well as the portion of “idle” time, that is, time spent at a 
+position when
+no presentation is played. We also noted start time and end time. In total the 
+dataset
+was composed of 140 11-dimensional vectors. In order to explore behavioral 
+changes
+over time, the log files were sampled every two minutes in order to generate 
+vectors
+representing the cumulative parts of the visit in two-minute intervals. The 
+first set of
+vectors represented the first two minutes of the visit, then the second set of 
+vectors
+represented the first four minutes of the visit, etc. Hence we had sets of 11-
+dimensional vectors, representing, for every visitor, “cumulative visit 
+behavior” in 2–
+minute intervals, from the beginning of the visit until its end. The 2-minute 
+time
+interval was selected as it seemed to be most appropriate to the task: we had 
+six
+positions and people tend to stay about 3 to 4 minutes at every position, so 
+this gave
+us between one and two measures at every position.
+
+For this experiment we used only the ANN. To simulate a real-time application, 
+in
+which a new visitor behavior type is learned on-line, an AA-ANN model was 
+trained
+repeatedly every two minutes, using the accumulated information up to that 
+point in
+time. The AA-ANN architecture had 11 features, both as inputs and targets, and 2
+hidden neurons. The trained ANNs were used to categorize the partial vectors 
+every
+two minutes and thus, for every visitor we got a series of categories from the 
+time
+he/she started the visit until they left the exhibition. Ideally, if the 
+visitors exhibit
+consistent behavior, we can expect that the categorization of the partial 
+vectors will be
+the same as the final categorization, as represented by the AA-ANN. It is worth
+noting that in this step we were interested in assessing the characteristics of 
+the
+behavior of the individual visitors and not the predictive capability of the 
+ANN, and
+hence we performed training, using the whole data set, without any testing 
+stage.
+
+Since visit durations of the various types differ (see Table 2 for details), 
+and in
+order to be able to analyze and compare the results, we converted the time-based
+results (“snapshots taken every two minutes”) to results that are relative to 
+the visit
+length. We calculated the categorization results after the first 10% of the 
+visit, after
+20%, etc. Table 2 presents, for the different visitor types, the average time 
+of a visit
+and the standard deviation of it and the number of visitors for every type.
+
+
+Table 2. Duration of the visit according to visitor types: the differences 
+between all types were
+found significant (two-tailed T-Test, p< 0.05) with the exception of the Fish 
+and the
+Grasshopper.
+
+Type        Average     Ant     Butterfly    Fish    Grasshopper
+Av. Time       25.18     29.7      24.3      19.1      21.2
+
+STDEV                4.3      3.7      4.0      6.7
+
+Number of cases            56       37       12       35
+
+In  order  to  evaluate  the  categorization,  we  calculated  the  accuracy  as
+((TP+TN)/(TP+TN+FP+FN)) of the categorization every 10% of the visit time where
+TP stands for true positive, TN stands for true negative, FP stands for false 
+positive
+FN stands for false negative. Figure 1 presents the accuracy of the 
+categorization
+results: on the X axis there is the portion of the visit (1=end of visit) while 
+on the Y
+axis is the accuracy.
+
+
+1
+
+0.9
+
+0.8
+
+0.7
+
+0.6
+
+0.5
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0
+
+Accuracy
+
+0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90  1
+
+Ant
+Butterfly
+Fish
+Grasshopper
+Average
+
+Fig. 1. Accuracy of predicting museum visitors' type based on their behavior 
+during the visit
+
+Looking at Figure 1, we can see that the average accuracy starts at a level of 
+about
+55% and increases linearly to 90% at the end of the visit. Therefore, it is 
+possible to
+predict the visitor type at an early stage of the visit and we may be able to 
+produce
+better estimations as the visit progresses. Yet, looking at the individual 
+visitor types,
+some are better estimated that others. For example, the accuracy in predicting
+“BUTTERFLY” is very good from the very beginning. “ANT” prediction is quite good
+at    the beginning and improves with time. “FISH” is not good at the beginning 
+but
+constantly and quickly improves (after about 50% of the visit it is like all 
+others) and
+“GRASSHOPPER” prediction seems to be good at the beginning (over 70%)
+deteriorates   a bit to about 57%, and then improves again.
+
+
+We should note that the accuracy is composed of correct acceptance of a right
+categorization and correct rejection of a wrong categorization. A low level of 
+false
+positive is good, so we do not make mistakes; however, we also need good 
+prediction
+(high level of true positive). Hence we took a closer look at the quality of 
+the positive
+prediction, known as “precision” measure in information retrieval (TP/(TP+FP)) 
+and
+the comprehensiveness of the prediction, known as “Recall” (TP/(TP+FN)). These
+two measures are used in combination to present the effectiveness of search 
+engines:
+how “clean” the results returned to the user are and how comprehensive the 
+returned
+set is. Both represent two aspects of how well the search engine finds the 
+relevant
+information available. Values of precision and recall vary between 0 and 1; the 
+higher
+the value, the better the performance. We calculated the Precision of the
+categorization that shows how accurate the practical categorization is, i.e., 
+when the
+system categorizes a visitor, how accurate this definition is. We calculated 
+also the
+Recall, to show how well the system can find all users that belong to a specific
+category.
+
+Precision
+
+1.2
+
+1
+
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+Ant
+Butterfly
+Fish
+Grasshopper
+Average
+
+0
+
+0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90  1
+
+Fig. 2. Precision of predicting museum visitors' type based on their behavior 
+during the visit
+
+Figure 2 presents the precision of the prediction of the visitors’ type. The X 
+axis
+represents the portion of the visit (1=end of visit) while the Y axis 
+represents the
+precision. As can be seen in Figure 2, quite early during the visit the system 
+is able to
+identify an “ANT” and a “BUTTERFLY” accurately and maintain this good
+identification throughout the visit. The practical meaning is that once a 
+visitor has
+been identified as an “ANT” or a “BUTTERFLY”, the identification is good, while 
+the
+“FISH” and “GRASSHOPPER” are not identified successfully until very late during
+the visit
+
+Figure 3 presents the recall of the prediction of the visitors' type as a 
+function of the
+progress of the visit. It can be seen in Figure 3 that the system identifies 
+all, or most,
+
+
+of the visitors of type “FISH”. Many visitors of type “BUTTERFLY” are identified
+properly sometimes, and their identification improves over time. The visitors 
+of type
+“ANT” tend to be identified relatively late during the visit while visitors of 
+type
+“GRASSHOPPER” are generally missed.
+
+As can be see in Figures 1, 2 and 3, while the categorization in general is 
+quite
+good – accuracy of over 0.5 at the very beginning and improving as the visit 
+evolves,
+there are major differences between the various types. The accuracy of 
+categorization
+predication for the “BUTTERFLY” seems to be extremely good, for the “ANT” and
+“GRASSHOPPER” quite good, and for the “FISH” poor at the beginning, but
+improving dramatically towards the middle of the visit. Looking at Figures 2
+(precision) and 3 (recall), if an “ANT” or a “BUTTERFLY” is identified, the
+identification is accurate, while identification of a “GRASSHOPPER” is not good 
+and
+identification of a “FISH” is poor.
+
+Recall
+
+1.2
+
+1
+
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+Ant
+Butterfly
+Fish
+Grasshopper
+Average
+
+0
+
+0.10 0.20 0.30 0.40 0.50 0.60 0.70 0.80 0.90  1
+
+Fig. 3. Recall of predicting museum visitors' type based on behavior during the 
+visit
+
+The differences between the Accuracy and the precision/recall of the prediction
+lead us to examine further the visitors’ behavior, since it can be expected 
+that visitors’
+behavior will change along the visit (and that the measured data will reflect 
+that).
+
+Table 3. Visit types stabilization time. All differences are found to be 
+significant (two tailed T-
+test, p< 0.05)
+
+
+Time
+STDEV
+
+Pecentage
+
+Average
+15.1
+
+8.0
+
+58%
+
+Ant
+21.6
+
+4.9
+
+72%
+
+Butterfly
+9.0
+
+4.4
+
+38%
+
+Fish
+0.9
+
+2.7
+
+4%
+
+Grasshopper
+15.4
+
+4.6
+
+75%
+
+Indeed, we found out that at the very beginning, all visitors are first 
+predicted to be
+
+“FISH” which is a reasonable expectation since the “FISH” is the category with 
+little
+
+
+need of information. This means that the data accumulated at the first 
+two-minute
+interval of the visit are not enough for visit style prediction. Moreover, on 
+the
+average, during the first 10 minutes many visitors were defined as “FISH”. The
+prediction tends to change and stabilize on the correct type after about 9 to 15
+minutes. Table 2 shows the average “stabilization” time (we define 
+stabilization as the
+convergence to the accurate type, as was defined manually) and percentage of the
+visit  for the various types.
+
+Table 2 emphasize that the “ANT” behavior requires quite a long learning time,
+but once learned, the identification is accurate, as presented by the precision.
+“BUTTERFLY” behavior is identified more quickly, while identification of “FISH”
+may   be immediate, but the fact that with little information almost all 
+visitors are
+identified as “FISH” explains the low precision. The “GRASSHOPPER” seems to be
+the trickiest to identify.
+
+The results of the analysis of the consistency of visitors’ behavior were a bit
+discouraging. It seemed that, as may be expected, visitors do not exhibit well 
+defined
+and consistent behavior throughout the visit.
+
+3.4  Results - Predicting Museum Visitors’ Visiting Patterns
+
+In spite of the discouraging results of the second step, we wanted to evaluate 
+the
+system's ability to predict visitor type at early stages of the visit. Given 
+the relatively
+poor results of the previous stage, we decided not to rely on single cumulative 
+data
+points, as we did before, but to use a growing number of samples and to see if 
+the
+predication capability improved as the visit progressed. We used vectors that 
+are
+multiplications of the original vectors – 11-dimension vectors represented the 
+first
+two minutes, 22-dimension vectors represented the first four minutes (where the 
+first
+11-dimension represented the first two minutes and the second 11-dimensions
+represented the first four minutes – including the first two)., so every vector
+represented the evolution of the behavior of the visitors. Again, we used the 
+ANN for
+the study; however, this time, since we aimed at identifying visitor types, we
+performed 10-fold validation; we trained the ANN with 90% of the data and 
+tested it
+with the 10% that were not used for testing. This process was repeated 10 
+times. We
+performed the study for vectors representing visits after 6 minutes from the 
+beginning
+of the visit, since before that we do not have enough data, until 16 minutes 
+from the
+beginning of the visit, since at that time some of the visitors started to 
+leave the
+museum and we wanted to be able to use data representing realistic scenarios.
+
+For analyzing the accuracy of the prediction of visitors’ type we used again
+precision and recall. Figure 4 presents the results for visitor type prediction 
+precision.
+It presents the average results of the 10 repetitions, for the individual 
+visitor type and
+a general average. Additionally it presents the average of “ANT”, “BUTTERFLY” 
+and
+“GRASSHOPPER” (to be discussed shortly). Looking at Figure 4, it seems that, in
+general, prediction gradually improves from a little over 0.6 at 6 minutes into 
+the visit
+to 0.8 after 16 minute of the visit. While 0.6 may seem a bit low, 0.8 seems 
+quite
+promising.
+
+Turning to the individual graphs, we note that, while all exhibit gradual
+improvement, the “FISH” type exhibit a strange behavior: a missing value at 8
+
+
+minutes and deteriorating performance at 12 minutes. Since this behavior seems
+problematic (and will be discussed later), we presented also an average of 
+results
+without taking into account the “FISH” type, which now shows a slight 
+improvement.
+
+Fig. 4. Precision of the prediction of visitors' type as a function of time 
+into the visit
+
+Fig. 5. Recall of the prediction of visitors' type as a function of time into 
+the visit
+
+As already discussed, while precision represents the accuracy of the 
+performance,
+i.e., the proportion correctly classified by the system, this is only half of 
+the picture.
+
+
+Another question is whether the system is able to find all, or almost all, 
+items of a
+given class. Hence we need to look at recall as well. Figure 5 presents the 
+recall of the
+prediction. Like Figure 4, it presents the recall for the individual types as 
+well as the
+two averages. Looking at Figure 5 we see a similar behavior: gradual 
+improvement in
+average, from a little below 0.6 to a little above 0.7. Again, “FISH” behavior 
+is quite
+strange and taking this type out of the consideration results in a noticeable
+improvement from a little above 0.6 to about 0.85. Looking at the individual 
+graphs
+we notice that the system is able to find more “ANT” and “BUTTERFLY” types than
+“GRASSHOPPER” at early stages, but the difference is getting smaller as time 
+passes.
+Overall, we can see that the system is able to categorize the visitors 
+correctly.
+
+In order to understand this behavior better, we looked into the 10 individual 
+runs
+and checked if the ANN was able to identify “FISH” every time. Figure 6 presents
+the ability of the ANN to identify visitor types at every individual run. In 
+Figure 6 we
+clearly see that the system fails to identify “FISH”. At the first step it 
+succeeds in 4
+out of 10 attempts, at the second step (8 minutes) it fails completely; this 
+explains the
+“hole” in the results.
+
+Fig. 6. Level of success in identifying visitors' type at every point in time
+
+Looking back at Table 1, we see that in general there were 12 visitors 
+classified as
+“FISH” on which the two clustering algorithms agreed (out of 17 or 15, based on 
+the
+system and 14 based on manual annotation). Hence it is obvious that the system 
+did
+not have enough training data and that for this case of analysis “FISH” is not
+predictable. It seems that even though visitors’ behavior tends to be 
+inconsistent, as
+more data are accumulated it is possible to predict visitors’ types.
+
+
+4  Discussion
+
+This work follows and extends our previous work [Zancanaro et al., 2007], which
+showed that it may be possible to identify different generic types of museum 
+visitors,
+based on their behavior. The ability to distinguish types of visitors may lead 
+to
+services that are better adapted to museum visitors, a requirement shown by 
+recent
+museum research to be important. The aim of the work was to validate the 
+finding of
+the ethnographical research and to examine the possibility of predicting 
+visitors’
+behavioral types correctly, considering that visitors may behave 
+inconsistently. We
+were able to identify four distinct types characterized by distinct behaviors. 
+We also
+found that the behavior of the visitors tends to be somewhat inconsistent and 
+it may
+take time until the type “stabilizes”, i.e., converges to a consistent animal 
+type.
+However, in spite of this inconsistency, we were able to identify three out of 
+the four
+visitor types accurately, while the fourth type was probably not identified 
+simply due
+to lack of data. Once visitors are identified, in the early stage of the visit, 
+this may
+allow us to adapt services provided to the visitors according to the visitor’s 
+type to
+which they belong. Information delivered to an “ANT” may be detailed and 
+thorough
+while information delivered to a “FISH” may be of an overview type. Information
+delivered to a “GRASSHOPPER” may be detailed, but limited to the specific 
+objects
+of interest, while the information delivered to a “BUTTERFLY” may be 
+“in-between”
+“FISH” and “GRASSHOPPER”. Our results show that a visitor's type can be
+accurately identified rather early during the visit, within 10 to 20 minutes, 
+assuming a
+museum visit may take a few hours. Hence, once identified, these visitors may 
+receive
+information tailored to their “type”: Detailed and thorough information for the 
+“ANT”;
+more generic an overview for the “BUTTERFLY”. A “GRASSHOPPER” seems to be
+a little less easily identifiable. Identification of the “FISH” requires a bit 
+more
+research.
+
+As noted earlier, the overall Accuracy of the results seemed encouraging, but a
+closer look revealed differences between the different visitors’ types. This 
+was better
+analyzed using the classical complementary measures of Precision and Recall.
+However, in the museum scenario, we may not treat precision and recall equally.
+While we would like to be able to categorize all visitors accurately as early as
+possible, reality may be different. This raises the question of what is more 
+important,
+precision, that is the correct categorization of visitors, or recall, that is, 
+comprehensive
+categorization of as many visitors as possible. It seems to us that in our case 
+it is more
+important to categorize visitors accurately than to try to categorize all of 
+them while
+making errors in the process. We had better miss an “ANT”, and provide no 
+service,
+than treat an “ANT” as a “FISH”, and provide the wrong service. In practice, 
+such
+errors may cause the system to exhibit undesired behavior, such as presenting 
+short
+and general presentations, intended for the “FISH” type of visitor to an “ANT” 
+type of
+visitor identified as a “FISH” at the early stage of the visit.
+
+The tradeoff between precision and recall is also well known in Information
+retrieval and the “E” measure is one known measure that allows one to assign
+different weights to precision and recall and by doing so to give preference to 
+one
+rather than the other. The “E” measure is defined as (see [van Reijsbergen, 
+1979] for
+details) ((β²+1)*precision*recall)/(β²precision + recall). In our case, we tend 
+to prefer
+precision to recall, as explained. To illustrate the actual meaning of such a 
+preference,
+
+
+Figure 7 demonstrates the combination of precision and recall using the “E” 
+measure
+when β² = 0, 0.25, 0.5, 1, 2, 4. β² = 0.25 means considering precision four 
+times more
+important than recall. Looking at Figure 7, it seems that, in general, the 
+system is
+better at finding more visitors than identifying them accurately (performance
+improves as we prefer recall over precision). The practical meaning is that 
+more effort
+should be made to improve the correct identification of the visitors.
+
+It is worth noting that the experiment described above has certain limitations. 
+It
+was conducted in a single, rather small, museum room, where the visit duration 
+was
+relatively short. In this scenario the findings are quite limited. For example, 
+there may
+be little benefit in adapting information to visitors after 40% of the visit. 
+Moreover,
+we were interested in this stage to discover whether visitors exhibit 
+consistent and
+predictable behavior, and hence we analyzed all visitors’ logs in order to see 
+how
+consistent their behavior is. However, museum visits, especially in large 
+museums,
+may take quite a long time and therefore that it takes a few minutes to learn 
+and
+identify the visitor is reasonable, and accurate identification can be 
+achieved.
+
+Fig. 7. “E” measure with different B values
+
+5  Conclusions and Future Work
+
+This work analyzed the evolvement of museum visitors’ behavior patterns during 
+the
+visit. We first of all found an empirical validation of a qualitative model 
+derived from
+ethnographic evidence. We then looked into the consistency of the behavior of 
+the
+visitors and finally we investigated the possibility of predicting the type of 
+visit from
+a few initial observations. The results showed that in certain cases it may be 
+possible
+to identify the type of a museum visitor in the early stages of the visit. They 
+also
+
+
+demonstrated  the  possible  tradeoff  between  accurate  categorization  and
+comprehensive categorization. There are implications for the museum visit 
+scenario.
+The knowledge of visitors’ type may be used for tailoring the information 
+delivered to
+them. Such an adaptation may make unnecessary questionnaire filling or 
+interviewing
+at the beginning of a visit, which are common approaches for initial user model
+definition.
+
+Future study should evaluate the practical meaning of the findings. Assuming
+visitors’ type prediction is possible, as we suggest, then the practical 
+meaning should
+be evaluated: how well the information is adapted to the visitors' needs based 
+on such
+a prediction and whether they indeed appreciate this adaptation.
+
+Additional aspects for future work are whether visitors’ behavior stabilizes and
+then remains constant throughout the visit or whether it changes. If changes 
+occur,
+then what may be the reasons for the change? How do different kinds of exhibits
+trigger a change in behavior? How does the length of the visit change the 
+behavior
+(for instance, “ANT” visitors may get hungry and lose interest in the 
+exhibits)?
+
+Extending the scope even more, we need to consider small groups of visitors. In
+many cases visitors visit the museum in small groups. How can inter-group type
+differences be identified and how can this information be used for improving the
+whole group's visit experience?
+
+Furthermore, we need to examine how these technological solutions can be
+combined with recent museum research that motivates the need for supporting
+individual museum visitors, such as the identity-based model of Falk [2009].
+
+References
+
+1.  Baus J., Krüger A., Wahlster W. A resource-adaptive mobile navigation 
+system. In
+Proceedings of the 7th international conference on Intelligent User Interfaces. 
+San
+Francisco, CA. (2002)
+
+2.  Baus J. and Kray, C.: A Survey of Mobile Guides. Workshop on Mobile Guides 
+at:
+Mobile Human Computer Interaction '03 (2003).
+
+3.  Boger Z. and Guterman, H.: Knowledge Extraction from Artificial Neural 
+Networks
+Models. Proceedings of the IEEE International Conference on Systems Man and
+Cybernetics,                                  SMC'97, Orlando, Florida, (1997), 
+pp. 3030-3035.
+
+4. Bohnert, F., Zukerman, I., Berkovsky, S., Baldwin, T., and Sonenberg, L. 
+2008. Using
+interest and transition models to predict visitor locations in museums. AI 
+Commun. 21, 2-
+3 (Apr. 2008), 195-202.
+
+5.  Cheverst K., Davies, N., Mitchell, K., Friday, A. and Efstratiou, C.: 
+Developing a
+Context-aware Electronic Tourist Guide: Some Issues and Experiences. The CHI 
+2000
+Conference on Human factors in Computing Systems, The Hague, Netherlands (2000)
+17-24
+
+6.  Chittaro L. Ieronutti L.: A Visual Tool for Tracing Users’ Behavior in 
+Virtual
+Environments. Proceedings of the Working Conference on Advanced Visual 
+Interfaces,
+Gallipoli, Italy (2004) 40-47
+
+7.  Falk, H. J. 2009. Identity and The museum visit experience. Walnut Creek 
+CA. Left Coast
+press.
+
+8.  Hatala M. and Wakkary R.: Ontology-Based User Modeling in an Augmented Audio
+Reality System for Museums. User Modeling and User-Adapted Interaction. 15 
+(2005)
+pp. 339–380.
+
+
+9.  Kuflik, T., Callaway, C., Goren-Bar, D., Rocchi, C., Stock, O. and 
+Zancanaro, M.: Non-
+Intrusive User Modeling for a Multimedia Museum Visitors Guide System. UM 2005,
+Edinburgh, UK. (2005) pp 236-240.
+
+10. Kuflik T. and Rocchi. C.: User Modeling and Adaptation for a Museum 
+Visitors' Guide –
+the PEACH Experience, in Stock & Zancanaro (eds.), PEACH – Intelligent 
+Interfaces for
+Museum Visits, Springer-Verlag, Berlin-Heidelberg, (2007), pp 121 – 146.
+
+11. Kuflik, T., Sheidin, J., Jbara, S., Goren-Bar, D., Soffer P., Stock O. and 
+Massimo
+Zancanaro : Supporting Small Groups in the Museum by Context-Aware Communication
+Services. IUI 2007 , Honolulu, Hawaii, USA, (2007) pp. 305-308.
+
+12. Landis JR, Koch GG. 1977. The measurement of observer agreement for 
+categorical data.
+Biometrics 33:159-174.
+
+13. Marti P., Rizzo A., Petroni L. , Tozzi G., and Diligenti M.: Adapting the 
+Museum: A
+Non-intrusive User Modeling Approach. In: Proceedings of User Modeling 
+Conference
+UM99 (1999)
+
+14. Oppermann, R. and Specht, M.: A Context-Sensitive Nomadic Exhibition Guide. 
+In
+proceedings of Handheld and Ubiquitous Computing: Second International 
+Symposium,
+HUC 2000, Bristol, UK, (2000) pp. 127-142.
+
+15. Petrelli D. and Not, E. 'User-Centred Design of Flexible Hypermedia for a 
+Mobile Guide:
+Reflections on the HyperAudio Experience'. User Modeling and User-Adapted
+Interaction: The Journal of Personalization Research 15(3-4): (2005) 303-338
+
+16. Sparacino, F.: The Museum Wearable: Real-Time Sensor-Driven Understanding of
+Visitors’ Interests for Personalized  Visually-Augmented  Museum Experiences’.
+Museums and the Web, Boston, Massachusetts (2002).
+
+17. Steinley D. Properties of the Hubert-Arabie adjusted Rand index. 
+Psychological
+Methods;9(3)                                  (2004) pp.386–96.
+
+18. Stock O. and Zancanaro M.: PEACH: Intelligent Interfaces for Museum Visits. 
+Cognitive
+Technologies                                         Series, Springer, Berlin 
+(2007).
+
+19. van Reijsbergen, C. J. Information Retrieval. Butterworths. (1979)
+
+20. Veron E. and Levasseur M. : Ethnographie de l'exposition, Paris, 
+Bibliothèque Publique
+d'Information, Centre Georges Pompidou (1983).
+
+21. Zancanaro, M., Kuflik, T., Boger, Z., Goren-Bar, D. and Goldwasser, D. 
+Analyzing
+Museum Visitors’ Behavior Patterns, In proceedings of the 11th International 
+Conference
+on User Modeling, UM 2007 Corfu, Greece, (2007) pp. 238-246.
+

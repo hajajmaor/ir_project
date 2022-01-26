@@ -1,0 +1,610 @@
+Smart Environments and their
+Applications to Cultural Heritage
+Nick Ryan
+
+Tullio Salmon Cinotti
+
+Giuseppe Raffa
+
+Computing Laboratory
+University of Kent
+Canterbury, CT2 7NF, UK
++441227827699
+
+ARCES - University of Bologna
+Via Toffano 2/2
+40125-Bologna-ITALY
++390512095421
+
+ARCES - University of Bologna
+Via Toffano 2/2
+40125-Bologna-ITALY
++390512095421
+
+n.s.ryan@kent.ac.uk
+
+tsalmon@arces.unibo.it
+
+graffa@arces.unibo.it
+
+SUMMARY
+Cultural and natural heritage applications have proved to be an
+attractive vehicle for ubicomp researchers. Several projects
+have developed data collection tools, museum or city visitor
+guides as a means of demonstrating various concepts including
+location and context awareness and smart building
+environments. Together, these represent two ends of the
+‘production’ process of bringing cultural and natural heritage
+from the research environment to its consumers. The
+intermediate analytical, archival and curatorial stages are less
+well represented, but also provide considerable scope for
+ubicomp research.
+The workshop invited researchers and practitioners from the
+ubicomp and heritage communities to share their experience, to
+envision future directions beyond existing demonstrators, and to
+examine directions towards deployable and interoperable
+systems. This volume presents the ten best papers received.
+They address many classes of ambient: touristic routes, cities,
+parks, archaeological sites, ancient buildings, and museums.
+They address the issue of using ambient intelligence to extend
+the users perception level, their learning abilities or their
+productivity; in fact the user is not only the information
+consumer but also the producer, as shown, for example in the
+papers on growing tour guides and on collecting context tagged
+data. Most are not focused on technology; rather they
+concentrate on its application, and they envisage strong support
+from the ambient intelligence in simplifying the interfaces (Bay,
+Garzotto, Ghosh, Jung, Li-Wei, Roffia) and in creating
+innovative services, and new expectations for the users
+(Sklenar, Niu). Or they describe approaches and propose ideas
+to understand the environment and its past (Malkin, Sukigara).
+One paper addresses the design of applications to be run in
+smart environments and provide guidelines for moving
+Multimedia Cultural Applications from Stationary to Mobile
+Location-Aware Devices (Garzotto).
+Many papers show how to tailor information access and
+presentation to a user location recognized from various sets of
+sensors, but there is also one paper (Niu) that shows how to
+tailor information with respect to user preferences and interests,
+through the generation of personalized guided tours based on
+dynamic ontologies; this is an interesting research area that can
+boost the power of smart environments not only in the cultural
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies
+are not made or distributed for profit or commercial advantage and that
+copies bear this notice and the full citation on the first page. To copy
+otherwise, or republish, to post on servers or to redistribute to lists,
+requires prior specific permission and/or a fee.
+Smart Environments and Their Applications to Cultural Heritage,
+UbiComp’05, September 11–14, 2005, Tokyo, Japan.
+
+heritage domain.
+The authors originate from many parts of the world, including
+Africa, Australia, United States, Asia (Japan, Korea, Republic
+of China, India), and Europe (Belgium, Italy, Switzerland and
+UK), and, most important of all, they let us envisage a clear
+short and medium term research path towards the application of
+smart environments in the creation, management and
+dissemination of cultural and natural heritage. Such a path is
+strongly interdisciplinary, and this must be understood by the
+research planners: unfortunately, while the scientific committee
+of this workshop includes in the same percentage experts in
+technology, humanities and cultural heritage communication,
+most of the papers come only from Science and Technology
+institutions. However, the committee feels that a ubicomp
+research community and a market focused on the applications of
+smart environments to cultural heritage are emerging and
+intends to invite to the next events experts in the economics of
+cultural heritage and tourism.
+
+Keywords
+Smart Environments, Ubiquitous Computing, Context
+Management, Cultural and natural heritage, Sensors, HumanComputer
+Interaction,
+Data
+Acquisition,
+Collection
+Management, Visitor Guides, Education, Edutainment.
+
+1. BACKGROUND
+The research area variously known as Ubiquitous Computing,
+Pervasive Computing or Ambient Intelligence derives much of
+its inspiration from Weiser’s vision [1] of a third age of
+computing beyond the current ‘Personal Computing’ paradigm
+and the growth of the Internet. The vision is characterised by
+the ubiquitous presence of networked computing devices, on
+the person, in vehicles, in the fabric of buildings, in consumer
+products, etc. We are already some way towards this with
+embedded processors and mobile phones greatly outnumbering
+conventional computing devices but, in our present
+environment, only a minority of these devices are networked
+and even fewer are more than minimally interoperable. In this
+imagined future, we will interact directly with only a small
+proportion of the devices around us. Unlike today, where the
+computer is often the centre of attraction, many of these devices
+will be peripheral and will disappear into the environment
+where they will provide information, services and control
+functions as and when they are needed. In the ubiquitous
+paradigm, a personal computing environment should be truly
+personal in that it accompanies the individual wherever they go
+and whatever they are doing. It should not, however, be limited
+to the capabilities of our conventional desktop or laptop
+machines. Instead, it should also be able to adapt to its
+immediate environment and to make use of location specific
+services. Equally, the environment should be able to adapt to its
+
+occupants by offering services that most closely correlate with
+their needs.
+For many reasons, applications in the domains of cultural
+heritage have proved to be especially popular amongst ubicomp
+researchers for demonstrating innovative ideas. Amongst these
+reasons are the inherent mobility of potential users, a wide
+diversity of attractive materials for presentation, and the
+potentials of tourism and associated markets.
+
+2. UBIQUITOUS COMPUTING,
+CULTURAL HERITAGE AND
+UBICOMP05
+To date, most demonstrator applications in the cultural and
+natural heritage areas have concentrated on data collection
+systems and on various forms of visitor guides. These have
+been seen as obvious applications of context-aware and, more
+specifically, location aware technologies.
+Location-awareness has been an especially popular subarea of
+context-awareness. The technologies used are mainly shortrange infrared, ultrasonic or radio signals for indoor
+applications, such as museum guides [2], [3]. Outdoors, Global
+Positioning System (GPS) receivers have been widely used for
+data collection [4] and urban visitor guides [5]. Some of the
+Workshop papers investigate these and also alternative
+solutions. Bay, for example, uses computer vision techniques to
+precisely locate the spotted object and to access related
+multimedia contents. We suggest that such precise location and
+orientation information provided by image analysis can be used
+in multisensor location systems to periodically correct
+accumulated position errors.
+Many examples using location as a key aspect of context
+illustrate the idea of smart environments in which information
+and services applicable to immediate local needs are
+emphasised. In most cases, the locations of interest are typically
+those of the mobile user and of static exhibits and structures.
+The location of portable artifacts has received less attention, but
+there is clearly scope for applications that support the specialist
+analysis of collected data, and the management of museum
+collections.
+A key ingredient in building context and location-aware
+services for smart environments is an infrastructure for
+managing and disseminating contextual information. We can
+now envisage the deployment of infrastructure support for the
+full spectrum of activities from initial data collection, through
+the essential analytical, archival and curatorial stages, to the end
+products of public and scholarly presentation, education and
+edutainment.
+Applications need not be restricted to an individual museum or
+visitor site. The concept of ‘cultural routes’ (recently introduced
+by Neil Silberman and Daniel Pletinckx of the Ename Center
+for Public Archaeology and Heritage Presentation, Ename,
+Belgium) seeks to bring together related attractions within a
+region and to offer thematic routes that would be attractive to
+individuals and family groups pursuing self-organised
+vacations. This, in turn, adds complexity to location models,
+and suggests a link with more conventional navigational tools.
+This wider range of scales brings with it a need for careful
+consideration of established ubicomp concerns, including:
+1.
+2.
+3.
+
+networking and communications
+the suitability of different devices for use in a range of
+situations
+interoperability of devices and infrastructures
+
+4. support for tool building
+5. support for content authoring
+6. and, of course, personal privacy .
+Position papers addressing these and related themes were
+invited to the Workshop.
+It turned out that, with the exception of the support for tools
+building (Bay, Li-Wei, Jung), none of the above mentioned
+system issues was directly considered by the authors. Most of
+them, instead, focused on their own application or on design
+methodologies, while the technology was mostly taken for
+granted, as pointed out by many of the scientific committee
+reviews.
+The papers are therefore subdivided in the following sections:
+1.
+2.
+3.
+4.
+
+Building context related knowledge bases
+Methodologies for embedding contextual knowledge
+in mobile applications
+Location and orientation subsystems
+Ambient intelligence for outdoor cultural experiences
+
+2.1 Building context-related knowledge
+bases
+The main benefit of smart environments in cultural heritage
+applications is to increase the effectiveness of information
+access and presentation thanks to the knowledge of the user’s
+context provided by the smart environment itself. This implies
+that a comprehensive context-related knowledge base exists.
+Therefore there must exist proper methods to build such
+context-related databases and to make them smoothly available
+to the users. Two workshop papers are focused on this issue:
+Sklenar relies on today’s nearly global location awareness and
+connectivity to provide smart guide users with a means (i.e. a
+dedicated simple interface) to contribute to the knowledge base
+by adding new point of interest, and related metadata, such as
+location, description, and preferences of the potentially
+interested users.
+Sklenar points out that such a simple system could contribute to
+the “growth” of unbiased and effective tourist guides, with
+many implied benefits, including the discovery of interesting
+locations well ahead to their appearance in the standard guides.
+The paper addresses both functional and system related issues,
+including inter-node communication, automatic preference
+related data access and implied privacy needs.
+Ghosh, on the other hand, shows how a context-management
+infrastructure can be used by archaeologists in building a
+knowledge base that can be available to the researchers, but
+also, eventually, to others visiting the same area.
+Both of these applications require a proper information flow
+from data acquisition to data presentation, and therefore raise
+interoperability issues, as pointed out by Garzotto.
+
+2.2 Methodologies for embedding contextual
+knowledge in mobile applications
+In the past, much access to cultural heritage digital
+presentations took place on the home PC or in virtual theatres,
+often far from the real exhibits. Virtual museums and virtual
+reconstructions are examples of such a usage model, where the
+user experience is confined within the software application, in a
+decontextualized space. New horizons disclosed when cultural
+heritage applications went mobile, offering an opportunity to
+use digital contents not to replace but to reinforce the value of
+the experience within a cultural site, when the visitor is in front
+of the materiality of the exhibits or naturally immersed in the
+addressed real context. To be effective, such mobile
+
+applications must be sensitive to the user context and must be
+developed according to specific design guidelines. Three papers
+address these issues.
+Garzotto’s paper analyzes the differences between stationary
+and mobile multimedia cultural heritage applications. It
+provides a comprehensive set of practical design guidelines to
+build a context-aware mobile application starting from a
+stationary version.
+Roffia’s paper shows how the use of context information can
+help to simplify the user interface of mobile multimedia guides,
+and argues that in this type of application the context can not be
+limited to the user’s location and orientation. Rather a logical
+context component is required to identify the level of
+abstraction of the user’s focus of attention, according to the
+hypothesis that it will always be possible to identify a hierarchy
+in the cultural heritage site organization. For example, in a
+museum with many displays of small objects, such a logical
+coordinate is required to understand if a visitor looking at a
+shelf is interested in an individual exhibit, in the set of exhibits
+located on the shelf or in the entire display case.
+Niu’s paper considers the need to personalize the mobile guide
+according to preferences initially set by the user. Once the
+preferences that act as components of the user context are set,
+the system, adapts the tour to the user’s preferences using an
+approach based on ontologies. Eventually, the user can inspect
+the way in which the information displayed has been adapted,
+and may change their user model to improve the personalized
+behaviour of the guide.
+
+2.3 Location and orientation subsystems
+The development of smart environment applications requires a
+considerable integration effort, and suitable tools are required to
+support both application set up and algorithms verification.
+For example, in the cultural and natural heritage domain we
+need to devise new sensory solutions in order to recognize the
+users activity and their focus of attention, with the goal of
+anticipating their intentions; research on sensor systems for
+wearable devices should be carried out, the main goal being to
+close the gaps — that is cancelling all discontinuities —
+between the visitor, the environment and the platform.
+Similar challenges may have to be considered in other domains.
+Bay, Li-wei and Jung address three frameworks that use
+different technologies to support the implementation of location
+and orientation aware distributed, mobile applications.
+
+2.4 Ambient intelligence for outdoor
+cultural experiences
+The idea of a time machine that comprehensively visualizes the
+history of the cities is not novel. For example, back in 1999 it
+was used in a virtual reconstruction of Bologna city center, to
+cover the historical period from the XIIIth to the XIXth century
+(Nume project, [11]). This model could be enjoyed in a virtual
+theatre or on the web, but it could not be accessed aligned with
+the user’s location on a mobile device.
+Two papers in the workshop show that such a historical
+experience can be fruitfully enjoyed walking in today’s cities.
+The lack of immersiveness of current mobile devices is
+compensated by the cognitive and emotional impact of
+simultaneous access to the reality and to the digital
+representation of its history. The paper from Malkin describes a
+digital graffiti system implemented in Manhattan, along a
+religiously significant boundary, the route of the former 3rd
+Avenue elevated train line. By deploying optical tags that
+
+provide hyperlinks from physical locations to the web,
+conceptually similar to the web-signs in the CoolTown program
+at Hewlett Packard Laboratories, web-based information can be
+accessed along the route, using mobile phones. Contents
+include text and photographs of the locations as they appeared
+from fifty to one hundred years ago.
+Sukigara’s paper considers the problem of collecting, sharing
+and using information about ruins and other remains, and
+suggests a location-aware time-machine to provide mobile users
+with a unified vision of the history, the politics and the religion
+of large civilized areas. To this end multimedia contents aligned
+to the user point of view but shifted back in time are presented,
+confirming in this way that aligning contents with the user’s
+viewpoint is a very versatile technique that can be used in many
+cultural heritage applications, as also proposed within the
+workshop by Li-wei and Roffia.
+
+3. ISSUES NEEDING FURTHER
+INVESTIGATION
+Many ubiquitous computing issues remain to be examined by
+the “smart environments for cultural heritage” community.
+Some are outlined in this section.
+
+3.1 Networking and Communications
+Addressing communications over the range of scales envisaged
+in the previous section will require different scales of
+communication. This suggests that devices should be able to
+adapt transparently to the available networks, taking account of
+Quality of Service offered whilst minimizing costs to the user.
+Reliability and availability of connection is also a well-known
+issue. When data collectors work in remote locations, mobile
+phone networks are invariably the only available form, yet even
+these may lack continuous coverage of many mountainous areas
+and locations far from population centers. Similar problems
+may arise, albeit less frequently, for those following cultural
+routes which pass through remote rural areas. Even indoors,
+where WiFi or Bluetooth connectivity is available, coverage
+may be partial or bandwidth may be reduced as the number of
+participants increases. The problem may be particularly acute in
+modern buildings containing large amounts of structural steel.
+In summary, heritage applications will need to address the full
+range of connectivity and communications issues that have been
+recognized by the ubicomp community. At Ubicomp05,
+Workshop W13, organized by Prof. Shiro Sakata from Chiba
+University, is dedicated to wireless networking and
+communications in ubiquitous computing; the interested readers
+are invited to address to the related material.
+
+3.2 Devices and Interoperability
+So far, most heritage-oriented systems have typically been
+based around a single class of user terminal device, such as a
+production PDA. In a few cases, specialized devices have been
+developed to address limitations of commercial products.
+However, looking to the future, we must be prepared to deliver
+services to a variety of different devices, including special
+purpose terminals that are beginning to replace an earlier
+generation of audio guides, but also PDA-like machines and,
+especially, smart phones owned by the visitors.
+Even if it is not yet clear whether a general-purpose “life
+navigator” [6] accompanying all of our mobile experiences may
+ever really exist, certainly current standard devices are often
+inadequate. For example, in the cultural heritage domain, it is
+doubtful that standard PDAs can be successfully used as
+museum navigators, for reasons including a lack of embedded
+
+context-management support, an inability to be accessed handsfree, internetworking bandwidth, and limited screen size and
+brightness
+
+heritage applications may have the potential to be used in more
+general frameworks.
+
+Better solutions may be provided by application-specific
+navigators with ergonomics optimised to meet the user
+requirements, and with functional specifications inspired by
+research in context management and activity recognition,
+context-based usability policies, context-based resource and
+power management, space modeling, and technology
+convergence. Mobile device architecture and design is a factor
+in the success of smart cultural and natural heritage applications
+and needs further investigation.
+
+3.4 Personal Security and Privacy
+
+In the cultural route model, there is also a requirement for
+interoperability with vehicle and personal navigation systems,
+as well as across and, possibly, between support infrastructures.
+These infrastructures may be commissioned and operated by
+different commercial or governmental institutions, yet visitors
+will need to move smoothly between their coverages. There are
+many open issues of importance to the ubicomp community
+concerning how this might be achieved with a minimal impact
+on the developers, implementers and managers of these separate
+systems. Ideally we should be able to build once, yet
+interoperate with many.
+Within the Workshop, Garzotto considers the need for a sort of
+interoperability between stationary and mobile devices called
+“cross-channel workflow”. This is a requirement to support
+user-centric rather than device-centric ubiquitous computing
+already considered by other authors (e.g. the CMU Project Aura
+team http://www.cs.cmu.edu/∼aura/). In cultural heritage smart
+environments the envisaged applications are, for example, the
+preparation at home of a personalized itinerary to be enjoyed en
+route with the support of the electronic guide, or the annotation
+of travel notes, to be developed when back home, at the home
+station. Key issues at the design level are, in this context, the
+interaction paradigms that assure smooth access to the user and
+consistent information flow between the “interoperable”
+devices.
+
+3.3 Content Authoring
+Usually, when we access a medium, two actors are involved: us
+and the medium itself (e.g. the computer, the stage, the
+television screen, the newspaper). In contrast, at a cultural or
+natural heritage site, and more generally in most mobile
+context-related applications, there are three actors: ourselves,
+the mobile device and the “target” of our attention, i.e. an
+application-specific real object (e.g. the exhibit in a museum).
+Multimedia content, therefore, should not surrogate the target
+real object, as normally happens in a DVD or on the Internet,
+but should be the catalyst of the “resonance” between the users
+and their environment. So, we need to find new cognitive
+models, new ways of mixing audio, video and text, new
+methods to handle interactivity and to create “contextual
+multimedia” for on-site access.
+While the design trade-offs of context-aware mobile
+applications are clearly addressed in Garzotto’s paper, the
+specific issue of content authoring was not addressed by the
+Workshop participants. In contrast, this issue is currently
+considered by many cultural institutions: for example, the
+contents under development within the MUSE project [7], are
+based on research carried out at two Italian museums, the
+Certosa e Museo di San Martino in Napoli, and il Museo di
+Storia della Scienza in Florence. The time has come to
+investigate content authoring methodologies for location-based
+services and the experience gained in cultural and natural
+
+Privacy is a recognized issue in ubiquitous computing, albeit
+one that has received relative little attention. In the kinds of
+systems covered by this workshop, it will be an important
+consideration where many users will be expected to visit
+multiple sites/museums and where there may be benefits to the
+user experience to be gained by sharing information about the
+user’s activities and interests between sites. Potentially there
+may be conflicts between personal privacy and commercial
+interests as different sites may be operated by separate
+companies who may view visitor information as commercially
+confidential. The issue of personal security and privacy is
+considered by Sklenar in his paper on growing a tourist guide
+with the contribution of the tourists: in such application, “the
+device knows the tourist location and personal preferences,
+and is sending this data out to some server somewhere. Hence
+the mechanism to do this would have to ensure that a user’s
+identity is kept secret. Randomly generated keys could be used
+to link requests with resulting generated location lists, making
+sure the server cannot link the data it receives to any particular
+person.”
+At Ubicomp05, Workshop W4 organized by Prof. John Canny
+from the University of California, Berkeley is dedicated to
+privacy in ubiquitous computing; the interested readers are
+invited to focus on W4 website.
+
+4. CONCLUSIONS
+The papers presented here provide a snapshot of current
+research directions in several related areas. They have been
+grouped under four headings reflecting the topics addressed by
+their authors: Building context related knowledge bases;
+Methodologies for embedding contextual knowledge in mobile
+applications; Location and orientation subsystems; and Ambient
+intelligence for outdoor cultural experiences.
+We began by suggesting that smart environments, ubiquitous
+computing and context-aware systems had much to offer to a
+broad spectrum of cultural heritage applications, ranging from
+the production of knowledge, through the research,
+management and conservation of collections, to public
+presentation. The papers presented here confirm our impression
+that the majority of effort to date has been focused on the two
+ends of this ‘pipeline’. The application of ubicomp technologies
+across this spectrum of activities in a way that addresses the
+issues covered in section 3 (networking and communications,
+devices and interoperability, content authoring and personal
+privacy) remains a challenge to the research community.
+
+REFERENCES
+[1] Weiser, M. and Seely Brown, J., The Coming Age of Calm
+Technology. In Denning & Metcalfe (Eds.). Beyond
+Calculation: The Next 50 Years of Computing. SpringerVerlag, 1997.
+[2] Spasojevic, M. and Kindberg, T., A study of an
+Augmented Museum Experience, HP Laboratories, Palo
+Alto, July 2001,
+http://www.hpl.hp.com/techreports/2001/HPL-2001178.pdf
+[3] Vlahakis, V., Demiris, A., Bounos, E. and Ioannidis, N., A
+novel Approach to Context-Sensitive Guided e-Tours in
+Cultural Sites: “Light” Augmented Reality on PDAs, in
+Chrysanthou, Y., Cain, K., Silberman, N. & Niccolucci, F.
+
+(eds), VAST 2004, 5th International Symposium on Virtual
+Reality, Archaeology and Intelligent Cultural Heritage,
+December 2004
+[4] Pascoe, J., Morse, DR., and Ryan, NS., Developing
+personal technology for the field, Personal Technologies,
+2:28-36, August 1998.
+[5] Davies, N., Mitchell, K., Cheverst, K. and Friaday, A.,
+1999, Caches in the Air: Disseminating Tourist
+Information in the Guide System, 2nd IEEE Workshop on
+Mobile Computing Systems and Applications, New
+Orleans, USA, 11-19.
+[6] Kostov V., Ozawa J., Matsuura S., Analysis of Wearable
+Interface Factors for Appropriate Information Notification,
+8th IEEE International Symposium on Wearable
+Computers (ISWC2004, Arlinton, Virginia), Oct 31 – Nov
+3, 2004, Proceedings, pp. 102 - 109
+[7] Salmon Cinotti, T., Raffa, G., Roffia, L., Garzotto, F.,
+Muzii, R., Varlese, V., Malavasi, M. and Galasso, S.,
+Evaluating Context-aware Mobile Applications in
+Museums: Experiences from the MUSE project, Museums
+and the Web, 2004,
+http://www.archimuse.com/mw2004/papers/salmon/salmon.html
+
+[8] Ryan, N.S., Smart Environments for Cultural Heritage,
+24th International Research Symposium, International
+Research Center for Japanese Studies, Kyoto, February 711, 2005.
+http://www.cs.kent.ac.uk/~nsr/papers/kyoto2005/SmartEnv
+CH.pdf
+[9] Ma L., Smith D.J., Ryan N.S., Acoustic Environment as an
+Indicator of Social and Physical Context, to be published
+in Personal and Ubiquitous Computing, 2005.
+[10] Salmon Cinotti T., Nagaraj R., Mincolelli G., Sforza F.,
+Raffa G., Roffia L., WHYRE: a Context-aware Wearable
+Computer for Museums and Archaeological Sites, 8th
+IEEE International Symposium on Wearable Computers
+(ISWC2004, Arlinton, Virginia), Oct 31 – Nov 3, 2004,
+Proceedings, pp. 174 – 175
+[11] Bocchi F., Bonfigli M. E., Ghizzoni M., Smurra R., Lugli
+F., The 4D virtual Museum of the City of Bologna, Italy,
+Siggraph 1999, Los Angeles, August 1999.
+
+Workshop Organizers
+Nick Ryan is a member of the Pervasive Computing research
+group in the Computing Laboratory at the University of Kent,
+Canterbury, UK. The group has a wide range of experience,
+particularly in deploying systems in rugged outdoor
+environments. He has worked in ubiquitous/pervasive
+computing since the mid-nineties, concentrating in the area of
+data capture and information access applications for use in the
+field sciences, including archaeology and ecology [4][8]. This
+work led to an interest in support infrastructures for a wide
+range of ubiquitous applications, including the development of
+the Kent MobiComp infrastructure [8][9].
+Tullio Salmon Cinotti is a member and one of the proposers of
+ARCES a Research Center on Electronic Systems for
+Information and Communication Technologies at the
+University of Bologna, Italy. He works on context-aware
+computing, concentrating on applications requiring
+unobtrusive ambient intellegence. He is the coordinator of
+MUSE [7], the project originating WHYRE [10], a contextsensitive wearable computer for museums and archaeological
+sites.
+Giuseppe Raffa is a PhD student at the University of Bologna
+and he is also a member of ARCES. He works on localization
+and context recognition in mobile indoor and outdoor cultural
+heritage applications, and he concentrates on the interaction
+between the sensors output and the human-computer interface.
+All three are involved in EPOCH, the European 6th Framework
+Network of Excellence on Intelligent Heritage (www.epochnet.org). EPOCH is a network of more than 80 European
+cultural and technological institutions joining their efforts to
+improve the quality and effectiveness of the use of Information
+and Communications Technology in Cultural Heritage. Ryan is
+a member of the EPOCH Board of Directors and is responsible
+for coordinating efforts in the areas of mobile, wearable and
+ambient computing. Together with three other EPOCH
+partners, Ryan, Salmon Cinotti and Raffa are currently
+involved in the EPOCH project CIMAD, an exploratory
+implementation of a framework for smart CH environments
+supporting distributed and mobile on-site applications, from
+data capture to public dissemination.
+
+

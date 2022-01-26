@@ -1,0 +1,660 @@
+DEVELOPMENT OF A VIRTUAL MUSEUM INCLUDING A 4D PRESENTATION
+OF BUILDING HISTORY IN VIRTUAL REALITY
+
+T. P. Kersten ᵃ*, F. Tschirschwitz ᵃ, S. Deggim ᵃ
+
+a HafenCity University Hamburg, Photogrammetry & Laser Scanning Lab, 
+Überseeallee 16, D-20457 Hamburg, Germany -
+(Thomas.Kersten, Felix.Tschirschwitz, Simon.Deggim)@hcu-hamburg.de
+
+Commission II
+
+KEY WORDS: 3D, 4D, construction phases, HTC Vive, modelling, reconstruction, 
+virtual museum, virtual reality
+
+ABSTRACT:
+
+In the last two decades the definition of the term “virtual museum” changed due 
+to rapid technological developments. Using today’s
+available 3D technologies a virtual museum is no longer just a presentation of 
+collections on the Internet or a virtual tour of an exhibition
+using panoramic photography. On one hand, a virtual museum should enhance a 
+museum visitor’s experience by providing access to
+additional materials for review and knowledge deepening either before or after 
+the real visit. On the other hand, a virtual museum
+should also be used as teaching material in the context of museum education. 
+The laboratory for Photogrammetry & Laser Scanning
+of the HafenCity University Hamburg has developed a virtual museum (VM) of the 
+museum “Alt-Segeberger Bürgerhaus”, a historic
+town house. The VM offers two options for visitors wishing to explore the 
+museum without travelling to the city of Bad Segeberg,
+Schleswig-Holstein, Germany. Option a, an interactive computer-based, tour for 
+visitors to explore the exhibition and to collect
+information                                                        of interest 
+or option b, to immerse into virtual reality in 3D with the HTC Vive Virtual 
+Reality System.
+
+
+1. INTRODUCTION
+
+A function of a museum is to aide non-specialists in
+understanding information and context via an interaction of short
+duration. Ideally museums should also deepen visitors’ interest
+in the subjects that they present. In accordance with their
+educational mission, museums must constantly present and re-
+present complex issues in ways that are both informative and
+entertaining, thus providing access to a wide target audience.
+Visitors with prerequisite knowledge, prior experiences, as well
+as associated individual interests and objective tend to take a
+more active role in engaging with museums (Reussner, 2007).
+Today,  these  fundamental  ideas  are  increasingly  being
+implemented through so-called “serious games”, which embed
+information in a virtual world and create an entertaining
+experience through the flow of and interaction with the game
+(Mortara et al. 2014).
+
+For the museum field, the consolidation and implementation of
+culture and information technology is often called Virtual
+Museum (VM). The definition of a Virtual Museum is, however,
+not fixed. Since the 1990s many different definitions for a VM
+have been published with significant differences depending on
+the contemporary status of information and communication
+technology (ICT) (Shaw 1991; Schweibenz 1998; Jones &
+Christal 2002; Petridis, et al. 2005; Ivarsson 2009; Styliani et al.
+2009). According to V-MusT (2011) “a virtual museum is a
+
+digital entity that draws on the characteristics of a museum, in
+order to complement, enhance, or augment the museum
+experience through personalization, interactivity and richness of
+content. Virtual museums can perform as the digital footprint of
+a physical museum, or can act independently …”. Pujol &
+Lorente (2013) use the term VM to refer to a digital spatial
+environment, located in the WWW or in the exhibition, which
+reconstructs a real place and/or acts as a knowledge metaphor,
+and in which visitors can communicate, explore and modify
+spaces and digital or digitalized objects. Pescarin et al. (2013)
+evaluated VMs. They found that the impact of interactive
+applications on the user seems to be depend on the capability of
+the technology to be “invisible” and to allow a range of
+possibilities for accessing content. To achieve this, VMs need a
+more integrated approach between cultural content, interfaces,
+and social and behavioural studies. However, VMs are using
+different media, such as text, images, sound and animated 3D
+models, to act as an interactive platform for the informative
+supplement of the real museum visit (Samida 2002). The design
+of the VM varies from simple Web pages (Bauer 2001) to
+panorama-based virtual tours (Kersten & Lindstaedt 2012) to
+interactive apps for smartphones or tablets (Gütt 2010). A good
+example for a VM is AfricanFossils.org, which presents as a
+virtual lab a spectacular digital collection of fossils and artefacts
+found mostly at Lake Turkana in East Africa in the Internet
+(http://africanfossils.org/). The digital collection of animals,
+human ancestors, and ancient stone tools offers a unique tool for
+
+Figure 1. Front view of the Old-Segeberg town house (left), its textured 3D 
+model (centre) and plan of the ground floor (right)
+
+* Corresponding author
+
+
+scholars and enthusiasts to explore and interact with the
+collection online. Another example for a digital collection of
+exhibits is Smithsonian X 3D (https://3d.si.edu/), for which
+various 3D capture methods are applied to digitize iconic
+collection objects. The idea of Smithsonian X 3D is to promote
+the use of 3D data for many applications.
+
+A VM that is retrievable on the Internet would offer the
+possibility of making a time- and location-independent virtual
+visit to the museum. It would also facilitate preparation for and
+evaluation of an actual museum visit, as this medium stimulates
+the attention of the visitor while also providing further
+information. The great strength of a VM is the ability to utilise
+current ICT to supplement conventional exhibition techniques
+via the presentation and integration of content into the real
+exhibition,  thus  significantly  contributing  to  a  visitor’s
+understanding.
+
+The Laboratory for Photogrammetry & Laser Scanning of the
+HafenCity University Hamburg has developed a VM for the
+museum  of  Old-Segeberg  town  house  (Alt-Segeberger
+Bürgerhaus) as an interactive tour for a windows-based computer
+system and as a virtual reality application in 3D using the Virtual
+Reality System HTC Vive. Based on this concrete example, this
+contribution provides examples of how museums can fulfil the
+technological and media requirements in the 21st century using
+detailed geo data and appropriate ICT.
+
+2. THE OLD-SEGEBERG TOWN HOUSE
+
+predecessor building (Reimers & Hinrichsen 2015). In the
+following centuries the house was extended and converted
+several times.
+
+With support of a historian and based on historical sources
+(Reimers & Hinrichsen 2015) six construction phases of the
+building could be identified. These were each modelled in
+AutoCAD and are presented in chronological order in Figures 2
+and  3, from left to right.: (1) construction work (1541), (2) the
+first extension (around 1587), (3) Stall addition at the south front
+(before 1805), (4) extension of the living space (from 1814), (5)
+renovation and conversion of the front façade (ca. 1890), and (6)
+refurbishment of the building and conversion to a museum
+(1963/64). A detailed description of the six construction phases
+of                            the building are presented in Kersten et al. 
+(2014).
+
+After the refurbishment in 1963-64, the building contained the
+local museum of the City Bad Segeberg. For the next few
+decades, exhibits from the petty-bourgeois living and working
+environment of the 19th and 20th centuries were shown in its
+historic  rooms.  After  the  adult  education  centre
+(Volskhochschule) Bad Segeberg took over sponsorship of the
+museum in 2012, it was renamed “Museum Alt-Segeberger
+Bürgerhaus" and successive permanent exhibitions on the topics
+"500 years development of civic culture in the mirror of a 470-
+year-old house" and "800 years history of the city of Segeberg -
+from the medieval castle settlement to the modern resort" were
+hosted.
+
+
+Even at the end of the 19ᵗʰ century, the Old-Segeberg town house
+(Fig. 1), located in the city of Bad Segeberg 40 km northeast of
+Hamburg, was already known as the oldest house of the city.
+Today it is one of only a few well-preserved, small urban town
+houses from the beginning early modern period in the federate
+state of Schleswig-Holstein. In the new installed council book
+from 1539, the building was already included in the historic rent
+listing. After Segeberg was almost completely destroyed in June
+1534 during the Count feud from 1533-1536/37, the town house
+was re-established in 1541. Firstly, as a simple hall building with
+a single-storey, in-frame construction with brick-bracing to the
+property that is today's Lübecker Straße No. 15. The method of
+construction was poor and building materials from neighbouring
+ruined properties (e.g. in the roof framing) were partly recycled.
+However, the basic structure of the framework construction was
+established from fresh wood (oak). It is presumed that the cellar
+with walls, constructed from boulders, hailed from the medieval
+
+3. PROJECT WORKFLOW
+
+The entire museum Old-Segeberg town house was modelled in
+3D so that visitors could virtually explore the exterior and interior
+of the building in close relationship to the various exhibits in the
+museum. Special focus was given to developing visitors’
+understanding of the complex history of the building via an
+interactive visualisation of the nearly 500-year-old museum
+building's extensive construction history.
+
+The project has been roughly divided into three major phases of
+development (Fig. 4): A) Concept creation and test of all planned
+functions, B) Modelling and texturing of the Museum, its content
+and the models for the visualisation of architectural history, and
+
+C) Integration into a program and generation of interaction
+possibilities.
+
+Figure 2. 3D model of Old-Segeberg town house: f.l.t.r. 1541 outside, 1541 
+inside, 1584-1588 outside and 1584-1588 inside
+
+Figure 3. 3D model of Old-Segeberg town house: f.l.t.r. 1814 outside, 1814/1890 
+inside, 1890 outside and 1964 outside/inside
+
+
+4. MODELLING
+
+The 3D object recording was conducted over two separate
+acquisition campaigns, on 21 April and 2 August 2011, using the
+IMAGER 5006h terrestrial laser scanner and two digital SLR
+cameras, Nikon D40 and D90, for the exterior and interior areas,
+respectively. The base for the development of the virtual museum
+was  this detailed 3D recording of the exterior and interior of the
+building using digital photogrammetry and terrestrial laser
+scanning. Intensive 3D CAD modelling, using coloured point
+clouds  from  laser  scanning  and  manually-measured
+photogrammetric 3D points, represented the second stage of
+activity.   For the 3D modelling and visualisation of huge point
+clouds in AutoCAD, the plug-in PointCloud, from the company
+Kubit in Dresden, Germany, was used. Using this plug-in, CAD
+elements, e.g. surfaces such as the half-timbered bars, could be
+directly digitised in the point cloud. In the oriented images, each
+object point was measured manually in at least four photos from
+different camera stations. After the image point measurements
+were completed for one object element, for example a window,
+the computed 3D object points for this element were transferred
+to AutoCAD. There, polylines were generated from these points,
+and these were later used to generate surfaces. Simple object
+parts were constructed using geometrical primitives (e.g. cuboid,
+pyramid, cylinder, cone, circle, ring, etc.), while some more
+complex object parts were created with the Boolean operators in
+CAD (union, subtraction and intersection). Kersten et al. (2014)
+give a detailed description of the data acquisition and modelling
+of the town house.
+
+
+Figure 4. Workflow for the development of the VMs – A):
+concept (top - green), B): modelling (centre - blue) and C):
+programming (bottom - red)
+
+Existing VMs are typically either digitized collections or virtual
+tours based on panoramas with little or no interaction. In this
+work, to further exploit the potential of digital visualisation, the
+serious games approach was selected because it enabled
+consideration                         of the use of elements known from games, 
+such as
+extensive free movement and the option of looking closer at
+surroundings or interesting objects/exhibits.
+
+Initially, several methods of control and presentation of
+information were tested in a rough test model. In later stages,
+other planned functions were implemented to enable optimal use
+of the program.
+
+Based on this reconstructed 3D model further 3D modelling was
+carried out to fulfil the requirements for the development of the
+virtual museum. To bring the interior to life, the most important
+exhibits, information panels and furnishings were also modelled
+and these were placed in their appropriate places within the
+building. Additionally the six different historical construction
+stages of the Old-Segeberg town house were modelled, in
+collaboration with the historian Nils Hinrichsen (Director of the
+Museum Old-Segeberg town house). The appearance of the
+building, in particular for the early construction phases, is only
+assigned to parts based on historical scientific evidence collected
+in recent years. For example, a dendrochronological analysis of
+individual timbers was conducted, which determines the age of
+various parts of the building and which could be assigned to the
+corresponding construction phases (Reimers & Hinrichsen
+2015). For data reduction, the six construction phases were
+modelled together, i.e.  objects,  which occur  in  several
+construction phases, were created only once and stored in a
+database, thus allowing utilisation by the program in multiple
+phases. Fig. 3 shows the first four construction stages and their
+most distinctive changes from the same perspective. Finally,
+
+Figure 5. Advanced 3D models of the different construction stages of the town 
+house. From left to right: 1541-1585, 1585 – ca.
+
+1805, ca. 1805-1814 and 1814 – ca. 1890
+
+
+based on terrestrial photos and Google Earth data, the
+environment of the building was also reconstructed to ensure that
+this historic building was embedded in its urban environment. As
+a stylistic device, the surrounding buildings were coloured grey
+to emphasize the museum in the visualisation.
+
+The texture mapping of the model was carried out using the
+software Autodesk 3ds Max. The photos used for texturing were
+mainly locally-taken photos. However, textures that were freely
+available online were also integrated after appropriate editing.
+Furthermore, bump and alpha textures were used to improve the
+depth effect and the appearance of details. In total, 239 textures
+were used for visualisation.
+
+
+5. GAME ENGINE UNREAL
+
+A game engine is a software framework designed for the creation
+and development of video games for consoles, mobile devices
+and personal computers. The core functionality typically
+provided by a game engine includes a rendering engine for 2D or
+3D graphics to display textured 3D models (spatial data), a
+physics engine or collision detection (and collision response) for
+the interaction of objects, an audio system to emit sound,
+scripting, animation, artificial intelligence, networking,
+streaming, memory management, threading, localisation support,
+scene graph, and may include video support for cinematics. A
+game engine controls the course of the game and is responsible
+for the visual appearance of the game rules. For the development
+of a virtual museum, game engines offer many necessary
+concepts with much functionality so that users can interact with
+the VM.
+
+In the past, the development of game engines was mostly based
+on the development of a specific game with paid licensing to
+external game developers. In recent years, however, most of the
+large engine providers have focused more on the advancement of
+engines and additionally offer free access for developers.
+Examples of game engines with free potential use are the engine
+Unity from Unity Technologies, the CryEngine of the German
+development studio Crytek, and the engine Unreal from Epic
+Games (www.epicgames.com). A current overview and
+comparison of different game engines can be found e.g. in
+O’Flanagan (2014) and Lawson (2016). The selection of the
+appropriate engine for a project is based on the provided
+components mentioned above, the adaptability in the existing
+work processes as well as special preferences of the (game)
+developer. In the framework of this project, the game engine
+Unreal was selected due to the opportunity to develop application
+and interaction logics using a visual programming language, the
+so-called Blueprints. Visual programming with Blueprints does
+not require the writing of machine-compliant source code. Thus
+it provides opportunities for non-computer scientists to program
+all functions for a VM using graphic elements. The saving in time
+associated with this method of software development allows for
+the generation of additional scenarios and for more intensive user
+testing. Game engines are, therefore, very well-suited to the
+development of virtual museums.
+
+6. VIRTUAL REALITY SYSTEM HTC VIVE
+
+HTC Vive (www.vive.com) is a virtual reality headset (with a
+weight of 555 grams, Fig. 6) for room-scale virtual reality. It was
+developed by HTC and the Valve Corporation, was released on 5
+April 2016, and is currently available on the market for EUR 899.
+Basic components are the headset for the immersive experience,
+two controllers for user interactions and two "Lighthouse" base
+stations for tracking the user's movement.
+
+Figure 6. The virtual reality system HTC Vive in use. The
+screen in the background shows the same sequence as appears
+to the user in the VR glasses (right)
+
+The technical specifications of the HTC Vive are summarized in
+the following: a) two screens with a field of view of
+approximately 110 degrees, one per eye, each having a display
+resolution of 1080x1200 with a refresh rate of 90 Hz, b) more
+than 70 sensors including a MEMS (Microelectromechanical
+systems) gyroscope, accelerometer and laser position sensors, c)
+
+4.6 by 4.6 m tracking space for user operation using two
+"Lighthouse" base stations for tracking the user's movement with
+sub-millimetre precision by emitting pulsed IR lasers, d)
+SteamVR running on Microsoft Windows as platform/operating
+system, e) Controller input by SteamVR wireless motion tracked
+controllers, and f) front-facing camera for looking around in the
+real world to identify any moving or static object in a room as
+part of a safety system.
+
+The following technical specification is required as the minimum
+for the computer to be used: processor Intel™ Core™ i5-4590 or
+AMD FX™ 8350, graphic card NVIDIA GeForce™ GTX 1060
+or AMD Radeon™ RX 480, 4 GB RAM, video output 1x HDMI
+1.4-connection or DisplayPort 1.2 or newer, 1x USB 2.0-
+connection or newer, operating system Windows™ 7 SP1,
+Windows™ 8.1 or more up to date or Windows™ 10.
+
+The device uses a gyroscope, accelerometer, and laser position
+sensor to track the head's movements as precisely as one-tenth of
+a degree. Wireless controllers in each hand, with precise
+SteamVR-tracking, enable the user to freely explore virtual
+objects, people and environments, and to interact with them. The
+VIVE-controller is specifically designed for VR with intuitive
+control and realistic haptic feedback. The Lighthouse system uses
+simple photo sensors on any object that needs to be captured. To
+avoid occlusion problems, this is combined with two lighthouse
+stations that sweep structured light lasers within a space.
+
+7. IMPLEMENTATIONS
+
+7.1. Windows-based VM implementation
+
+The major part of the work dealt with the programming of the
+user                          movement in the museum, with information queries 
+and the
+corresponding animations in the game engine "Unreal Engine".
+The intuitive handling of the program was an essential
+prerequisite, allowing also easy access to and use of the VMs for
+inexperienced PC users (Fig. 7).
+
+
+now be selected to display information about the development of
+building use. Furthermore, it is possible to start an animated
+transition from the previous construction phase, which shows and
+describes the structural changes to the next state for each
+construction phase. These animations required a subdivision of
+all 3D models into 387 smaller objects, to precisely control the
+movement of the objects for each animation. In the animation,
+the user is guided by predefined camera movements to
+appropriate viewpoints.
+
+
+Figure 7. Graphical User Interface for the virtual museum tour
+
+The control of the software is exclusively available via mouse
+interaction and is based on many well-distributed positions
+throughout the building, which can be directly selected by
+clicking on a map or approached using a defined camera path
+through the 3D environment. In these positions, the users can
+freely look around using a 360⁰ panorama. Users can also zoom
+in and out, and click on the available information button. As a
+special highlight of the VM, the visualisation of the building
+history was realized with a "model in the model" (Fig. 8, Fig. 9
+left and Fig. 11 right).
+
+Figure 8. Graphical User Interface for the building history with
+an animated view into the interior of a construction phase
+
+At one station of the virtual tour, which is located in front of the
+model, the user can open this model to display and animate, upon
+request, each of the building states including all related
+information. The user can look at the building model from all
+sides using virtual rotation. In addition, with a mouse click, the
+roof can be removed, the individual floors can be driven apart by
+animation, and the appearance of the building interior in the
+respective building phase will be shown (Fig. 5). Each room can
+
+Menus and information boards, which can be opened during the
+individual tour using the info button placed next to the selected
+objects, were created for the exhibits. These menus include brief
+explanations and mostly a figure that can be enlarged via mouse
+click. Some information is directly imparted using detailed point-
+of-view shots in the 3D environment. In such cases, cameras were
+distributed in the whole Museum at appropriate points. These can
+also be selected using the info button.
+
+Finally, comfort functions were created such as tool tips, an
+overview map and a help menu. For quality assurance, the VM
+program has been tested by several people with different PC
+experience to subsequently customize the software details.
+
+7.2. Virtual Reality Application with HTC Vive
+
+Based on the modelled and textured 3D data in the game engine,
+an immersive virtual reality visit was developed utilizing the new
+Virtual Reality System HTC Vive. The visit offers the possibility
+of experiencing the museum and the history of the building from
+a real person’s point of view and interaction scheme. For this
+purpose, the controlling positions have been replaced by the
+possibility of free movement by the user. To bridge long
+distances in the virtual object, a teleportation function is available
+for                         the navigation of the user (Fig. 10).
+
+The users’ hands can interact with various components of the
+virtual world to control the building’s presentation. The object
+selection and menu operation is enabled via a "laser beam",
+which is controlled by the motion controller (Fig. 11 left). The
+highlight of the virtual museum visit is the animation of the
+architectural building history, which is vividly represented by the
+HTC Vive glasses directly in front of the visitor’s eyes on the
+basis of the 3D models (Fig. 6). Different historically-confirmed
+construction phases are visibly demonstrated in 3D and changes
+are illustrated by transition animations.
+
+Figure 9. Impressions from the 3D environment of the virtual museum 
+Old-Segeberg town house including the model of the
+building (left), the stairways to the attic (centre) and a view at the attic 
+(right)
+
+
+The VR application using the HTC Vive gives the opportunity to
+check the geometric quality of the modelled 3D data during the
+VR visualisation. However, walking through the virtual museum
+of the Old-Segeberg town house, collecting all of the information
+in the exhibition and seeing all of the different animations, which
+explain the construction changes of the building over the
+centuries, is a very immersive experience.
+
+
+Figure 10. Navigation in the virtual museum Old-Segeberg
+town                         house using the developed teleportation function 
+for the
+Virtual Reality System HTC Vive
+
+Figure 11. The virtual museum Old-Segeberg town house in the
+Virtual Reality System HTC Vive as an intense experience.
+Menu navigation with green motion controller by "laser beam"
+(left) and second red controller for the information menu (right)
+
+8. CONCLUSION AND OUTLOOK
+
+This contribution described the successful development and
+implementation of a Virtual Museum for the museum Old-
+Segeberg town house with two options: a) interactive software
+application for windows-based computer systems and b) virtual
+reality application for the VR system HTC Vive. Many visitors
+and participants have tried and tested the VM by using both a
+windows-based computer system and the VR system HTC Vive.
+The Old-Segeberg town house can look back on 475 years of
+architectural development, identified and explained in form of
+animations, which are the highlights of the virtual museum. The
+developed computer program contains 13 guided viewpoints
+distributed at important positions in the museum and 52 info
+menus with detailed information for visiting the virtual museum.
+The program has a size of 500 MByte and is executable as a
+standalone program on Windows operating systems. It is
+developed in the game engine Unreal, which offers, not only
+complex visualisations of 3D objects, but also provides every
+programming tool necessary for creating extensive interactions
+between the user and the environment. To make this program
+accessible for the visitors, a PC-terminal will be provided in the
+Old-Segeberg town house in the next museum season. It allows,
+in addition to the current exhibition, a multimedia interaction
+with the history of the city and the building. Thus, based on this
+building, it carries out an important educational contribution for
+the urban development of Bad Segeberg and about 500 years of
+housing tradition in Schleswig-Holstein. Developed entirely in
+3D, the VM is unique in this form in Germany as an informative
+component of a museum.
+
+The emerging technology Augmented Reality also offers great
+potential by combining the advantages of a VM with the real
+museum visit. It also enables the museum visit in situ using a
+Smartphone or tablet for digital superimposition of the current
+state with a historic building state, for example at sites of (former)
+historic ground (Canciani et al. 2016).
+
+In general, VR applications or systems can also be used outside
+the museum context - for example, for product visualisations, for
+facility management, for trade fairs or for tutorials of workflows
+(e.g. for the fire brigade).
+
+ACKNOWLEDGEMENTS
+
+The significant support of the historian Nils Hinrichsen (Head of
+the  museum  Alt-Segeberger  Bürgerhaus)  is  gratefully
+acknowledged.
+
+REFERENCES
+
+Bauer, T., 2001. Museen und Internet. Museologie Online, 3,
+112-161.
+
+Canciani, M., Conigliaro, E., Del Grasso, M., Papalini, P. &
+Sacconea, M., 2016. 3D Survey and Augmented Reality for
+Cultural Heritage. The Case Study of Aurelian Wall at Castra
+Praetoria in Rome. ISPRS-International Archives of the
+Photogrammetry, Remote Sensing and Spatial Information
+Sciences, 41 (B5), 931-937.
+
+Gütt, I., 2010. Smartphone-Applikationen im Museumsbereich.
+Bachelor thesis, Studiengang Museumskunde, Fachbereich
+Gestaltung,                       HTW Berlin, 74 p.
+
+Ivarsson, E., 2009. Definition and Prospects of the Virtual
+Museum.   Master   Thesis,   Uppsala   University,
+http://www.elinivarsson.com/docs/virtual_museums.pdf.
+
+Jones, G. & Christal, M., 2002. The future of virtual museums:
+On-line, immersive 3-D environments. Created Realities Group,
+2002 (9), 1-12.
+
+Kersten, T. & Lindstaedt, M., 2012. Virtual Architectural 3D
+Model of the Imperial Cathedral (Kaiserdom) of Königslutter,
+Germany through Terrestrial Laser Scanning. EuroMed 2012 -
+Int. Conference on Cultural Heritage, Ioannides, M.; Fritsch, D.;
+Leissner, J.; Davies, R.; Remondino, F.; Caffo, R. (Eds.), Lecture
+Notes in Computer Science (LNCS), Volume 7616, Springer-
+Verlag Berlin Heidelberg, 201-210.
+
+Kersten, T., Hinrichsen, N., Lindstaedt, M., Weber, C., Schreyer,
+
+K. & Tschirschwitz, F., 2014. Architectural Historical 4D
+Documentation  of  the  Old-Segeberg  Town  House  by
+Photogrammetry, Terrestrial Laser Scanning and Historical
+Analysis. Progress in Cultural Heritage. Documentation,
+Preservation, and Protection, 5th International Conference,
+EuroMed 2014, Limassol, Cyprus, November 3-8, 2014,
+Ioannides, M., Magnenat-Thalmann, N., Fink, E., Zarnic, R.,
+Yen, A.-Y., Quak, E. (Eds.), Lecture Notes in Computer Science
+(LNCS), Volume 8740, Springer International Publishing
+Switzerland 2014, pp. 35–47.
+
+
+Lawson,   E.,   2016.   Game   Engine   Analysis.
+https://www.gamesparks.com/blog/game-engine-analysis/ (last
+access January 12, 2017).
+
+Mortara, M., Catalano, C. E., Bellotti, F., Fiucci, G., Houry-
+Panchetti, M. & Petridis, P., 2014. Learning cultural heritage by
+serious games. Journal of Cultural Heritage, 15(3), 318-325.
+
+O’Flanagan, J., 2014. Game Engine Analysis and Comparison.
+https://www.gamesparks.com/blog/game-engine-analysis-and-
+comparison/ (last access January 11, 2017).
+
+Pescarin, S., Pagano, A., Wallergård, M., Hupperetz, W. & Ray,
+C., 2013. Evaluating virtual museums: Archeovirtual case study.
+Archaeology in the Digital Era, Proceedings of the 40th Annual
+Conference of Computer Applications and Quantitative Methods
+in Archaeology (CAA), 74-82.
+
+Petridis, P., White, M., Mourkousis, N., Liarokapis, F., Sifniotis,
+M., Basu, A. & Gatzidis, C., 2005. Exploring and interacting with
+virtual                       museums. Proceedings of the 33rd Annual 
+Conference of
+Computer  Applications  and  Quantitative  Methods  in
+Archaeology (CAA), Figueiredo, A. & Gonçalo Leite, V. (eds)
+2007.
+
+Pujol, L. & Lorente, A., 2013. The Virtual Museum: a Quest for
+the Standard Definition. Archaeology in the Digital Era,
+Proceedings of the 40th Annual Conference of Computer
+Applications and Quantitative Methods in Archaeology (CAA),
+40-48.
+
+Reimers, H. & Hinrichsen, N., 2015. Das Alt-Segeberger
+Bürgerhaus. Vom Stadtwohnhaus des 16. Jahrhunderts zum
+Stadtmuseum im 21. Jahrhundert. Lutherstadt Wittenberg,
+Torgau und der Hausbau im 16. Jahrhundert, Jahrbuch für
+Hausforschung, Goer, M., Furrer, B., Klein, U., Stiewe, H. &
+Weidlich, A. (Hrsg.), Band 62, 341-355.
+
+Reussner, E., 2007: Wissensvermittlung im Museum – ein
+überholtes Konzept? Kultur und Management im Dialog, 5, 20-
+23.
+
+Samida, S., 2002. Überlegungen zu Begriff und Funktion des
+
+„virtuellen Museums“: Das archäologische Museum im Internet.
+
+Museologie Online, 4, 1-58.
+
+Schweibenz,  W.,  1998.  The"  Virtual  Museum":  New
+Perspectives for Museums to Present Objects and Information
+Using the Internet as a Knowledge Base and Communication
+System.  Internationales  Symposium  für  Informations-
+wissenschaft ISI, 185-200.
+
+Shaw, J., 1991. The Virtual Museum. Installation at Ars
+Electrónica. Linz, Austria: ZKM, Karlsruhe.
+
+Styliani, S., Fotis, L., Kostas, K. & Petros, P., 2009. Virtual
+museums, a survey and some issues for consideration. Journal of
+Cultural Heritage, 10(4), 520-528.
+
+V-MusT, 2011. What is a Virtual Museum? Virtual Museum
+Transnational   Network,   http://www.v-must.net/virtual-
+museums/what-virtual-museum, (last access January 13, 2017).
+

@@ -1,0 +1,569 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/229015793
+
+
+
+RSSI-Based WLAN Indoor Positioning Used Within a Digital Museum Guide
+
+Article · January 2008
+
+
+
+CITATIONS                                                                                              READS
+
+6                                                                                                      221
+
+
+3 authors, including:
+
+            Uwe Grossmann
+            University of Applied Science and Arts Dortmund
+            50 PUBLICATIONS 366 CITATIONS
+
+              SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+
+                      Indoor Positioning View project
+
+
+                      Smart Service Power - Intelligente Daten-Aggregation und -Nutzung für innovative Funktionen beim altersgerechten technikgestützten Wohnen im Quartier View
+                      project
+
+
+
+
+ All content following this page was uploaded by Uwe Grossmann on 19 May 2014.
+
+ The user has requested enhancement of the downloaded file.
+                                        Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+                                                                                                        ISSN 1727-6209
+                                           computing@computingonline.net
+                                                                                                 International Scientific
+                                              www.computingonline.net
+                                                                                                   Journal of Computing
+
+
+
+
+                              RSSI-based WLAN indoor positioning
+                               used within a digital museum guide
+
+                              Grossmann, U.1; Gansemer, S.1; Suttorp, O.2
+  1)
+       University of Applied Sciences and Arts Dortmund, Emil-Figge-Str. 44, 44227 Dortmund – Business Department,
+                                   {uwe.grossmann, sebastian.gansemer}@fh-dortmund.de
+       2)
+          University of Applied Sciences and Arts Dortmund, Emil-Figge-Str. 44, 44227 Dortmund – Computer Science
+                                       Department, oliver.suttorp@stud.fh-dortmund.de
+
+Abstract: As modern mobile devices are often equipped with a WLAN interface and many buildings are equipped with
+a WLAN infrastructure, WLAN could be used for localization. The aim of this work is to investigate the quality of
+different indoor positioning methods based on values of WLAN received signal strength index (RSSI) using
+commercially available devices (smart phones, personal digital assistants). Three positioning algorithms were
+considered: minimal Euclidian distance, intersections of RSSI-Isolines and a stochastic model based on Bayes' theorem.
+A measuring test bed within an empty seminar room, four different types of personal digital assistants (Dell, Fujitsu,
+HP, T-Mobile) and two types of access points (Netgear, Lancom) were used. No modification of hardware and software
+was conducted. Furthermore this paper shows how WLAN localization can be applied in a museum guide application.
+This paper also shows the visualization of spatial user position frequency pattern during a field trial within a museum.
+
+Keywords: RSSI, WLAN, Indoor, Positioning, Localization, PDA, Digital Museum Guide, Location Based Services,
+User Position, User Behavior
+
+
+                   1. Introduction                                 question, whether indoor positioning using such
+                                                                   infrastructures and devices would be accurate
+    For Location Based Services it is essential to                 enough for mobile indoor applications.
+know the current position of the user. Depending
+                                                                       Beside other methods some are based on
+on the application the needed accuracy differs
+                                                                   recordings of values of received signal strength
+from less than one meter to some hundred meters.
+                                                                   index (RSSI) of several access points. Several
+For outdoor applications satellite positioning
+                                                                   mathematical methods exist for calculating the
+systems or localization within cellular networks                   current position. We investigated the accuracy of
+(e.g. cell of origin) can be used. Indoors satellite               determining the current position using three
+positioning systems do not work. Localization
+                                                                   different algorithms.
+based on cellular networks requires a mobile
+                                                                       Several measurements were carried out over
+device with an appropriate communication
+                                                                   the period of a year's time. Circumstances,
+interface (GSM/UMTS) and an appropriate SIM                        methods, results and conclusions are summarized
+card which leads to additional costs. For location                 below.
+based museum guide applications the current user
+                                                                       Having determined the current user position,
+position is needed as accurate as possible.
+                                                                   this information can be logged into a database.
+    One appropriate localization system for indoor
+                                                                   Afterwards these user positions can be analysed.
+applications is WLAN localization. The aim of the
+                                                                   In this paper we present a visualization of spatial
+activities presented in this paper was the                         user position frequency pattern recorded during a
+investigation of different wireless local area                     field trial carried out in a museum.
+network (WLAN) positioning methods for indoor
+applications using commercially available devices
+                                                                                         2. Related Work
+like personal digital assistants (PDA) without
+modifying their system hardware and software.                         Other groups working on the above mentioned
+The increase of existing WLAN infrastructures                      questions use notebooks or laptops as mobile
+inside of buildings and the commercial                             devices, and most of them use modified system
+availability of WLAN capable PDA lead to the                       hardware or software, e.g. a WLAN adapter with
+
+
+                                                                                                                            1
+                                   Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+a modified driver. Some of them are outdoor                       Similar measurements using similar methods
+oriented, e.g. for localizing a mobile phone.                 as reported within this paper are performed by
+    A signature based outdoor location scheme is              Roehrig et al. ([6]). They focused on a calibration
+proposed by Meurer et al. which relies on                     grid with larger mesh widths and used a modified
+covariance matrices of channel impulse responses              ISOLINE-method (see below). The localization
+(CIR) as signatures and which can do with a data              algorithms have also been discussed in [7].
+base of substantially reduced size. This reduction                Location sensitive museum guides with
+resorts to the observation that the CIR are made              WLAN localization are currently very rarely used.
+up by individual wave fronts which remain                     One system is in use at museum “Tate Modern” in
+unaltered over geographical areas with                        London. They evaluated their PDA-based
+dimensions much larger than one wavelength. It is             museum guide in 2002 [8]. The main focus of
+shown that the achievable localization accuracy in            their evaluation was the content use. They did not
+typical mobile radio scenarios satisfies the FCC              evaluate user behaviour or movements. Currently
+E911 requirements ([1]).                                      location sensitive museum guides are very rarely
+    Ladd et al. ([2]) used a notebook for                     used; published evaluation results are rarely
+determining the position by measuring the signal              available. However there are some outdoor tour
+strength of several access points. For calculation            guides. Modsching et. al. [9] analysed the spatial
+they used Fingerprints and a Bayesian inference               behaviour of tourists in the city of Görlitz using
+algorithm. Experiments were conducted by a                    GPS trackers and built a network of areas of
+human operator carrying a Hewlett Packard                     interest. He also showed the positions on a density
+OmniBook 6000 laptop with a PCMCIA LinkSys                    map. Larson, Bradlow and Fader [10] analysed
+wireless Ethernet card with a modified standard               the paths of shoppers in a supermarket using
+Linux kernel driver. This modification supports               RFID tags attached to their shopping carts.
+new functionalities, including the scanning and
+recording of hardware MAC addresses and signal                                      3. Methodology
+strengths of packets and the automatic scanning of
+base stations. Sampling times ranged from ten                     There are different mathematical methods for
+seconds to about a minute. A total of 1307 packets            positioning based on measuring RSSI values of
+                                                              several access points. We investigated the
+over both orientations at 11 different positions
+                                                              accuracy of determining the position under
+were measured. Neighbouring positions had 3
+                                                              different circumstances, with different devices and
+metres distance from each other. The algorithm
+reported positions with a distance of up to 1.5               mathematical methods.
+meters to the measuring position.                                 One proposed evaluation method (fingerprint)
+                                                              is divided into two phases. During an initial
+    Retscher et al. ([3]) developed the IPOS
+                                                              calibration phase a radio map of RSSI values of
+system using RSSI-fingerprints as well. Their test
+                                                              several access points is developed at points with
+bed was an office building and a tablet-pc was
+moved from each position to the next either in                known coordinates. During the second phase
+stop-and-go or kinematical mode. They focussed                (positioning phase) again the RSSI values of
+                                                              several access points are recorded. These
+on determining whether a user is located inside a
+                                                              observations are compared with those values
+room or not and whether one or two calibration
+                                                              stored previously during the calibration phase.
+points within one room are sufficient.
+                                                              The position whose calibration measurement is
+    Teuber et al. ([4]) used a method of minimal
+Euclidian distance together with Fuzzy logic post-            most similar to the measurement during
+processing. Their test bed was an empty airport               positioning phase is assumed to be the current
+                                                              position.
+hangar. Accuracy of positioning was 4.47 m using
+                                                                  One measure of similarity to be used is the
+Euclidian distance alone. With Fuzzy logic post
+                                                              EUCLIDIAN DISTANCE of observations.
+processing the accuracy decreased to 3 m.
+    The Ekahau Positioning Engine (EPE) is a
+commercially available Software for WLAN RSSI                           d = ( SS ci1 − SS m1 ) 2 + ... + ( SS cin − SS mn ) 2 ; (1)
+based indoor positioning. According to the
+manufacturer's instructions ([5]) the engine                     SScij represents an RSSI value of access point j
+combines signal strength pattern recognition                  recorded during calibration phase at calibration
+together with an attempt to include the user’s                point i. SSmj represents an RSSI value of access
+history (boundary conditions like allowed paths               point j recorded during positioning phase. There
+and speed). Determination of the current position             will be at least one calibration position i with
+is possible depending on the environment with                 minimal d. One approach is claiming this point to
+accuracy of 1-5 m.                                            be the estimated position.
+
+2
+                                                               Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+    Using the BAYESIAN THEOREM we                                                         of access points as possible. Within this list of
+generated a probability distribution over state                                           selected triangles we establish a ranking based on
+space for measuring at point ( x, y , θ ) (x, y:                                          the number of intersections of two isolines.
+coordinates of calibration point; θ : orientation of                                          The balance point of the "best" triangle, i.e. the
+measurement) regarding one access point by                                                triangle with the largest number of intersection
+scalar multiplication of RSSI histograms of the                                           points, is considered to host the estimated position
+calibration and the positioning phase. Furthermore                                        (see [13] and [14]).
+we assume that every position is equally likely
+with an a priori probability γ i . The probability for                                             4. Test Beds and Measurements
+the current measurement performed at point                                                   For applying and evaluating the algorithms
+( x, y , θ ) is calculated by:                                                            discussed above we used two test beds.
+                                                                                          Measurements were carried out within an empty
+                                 γ i P ( o j | si )                                       seminar room (scale: approx. 15m x 7m) within a
+        P ( si | o j ) =    n
+                                                           ;                (2)           building of Dortmund University of Applied
+                           ∑
+                           α
+                             (γ α P (o
+                            =1
+                                             j   | sα ))                                  Sciences, test bed 1.The location had been
+                                                                                          equipped with four access points at the outer
+                                                                                          corners below the room's ceiling. A map of the
+    The product of these probabilities over all                                           seminar room together with the calibration grid on
+access points delivers the joint probability for                                          the room's floor is shown in Fig. 2 below.
+measuring at point ( x, y , θ ). Points with
+maximum probability are assumed to be the
+current measuring position (see [2]).
+    For using the method of ISOLINES a network
+of triangles having calibration points as nodes is
+developed (Delaunay-Triangulation, see [11]).
+Given a recorded RSSI value of one access point
+we can select triangles whose nodes show signal
+strength values higher and lower than the recorded
+value. Linear interpolation between node values
+within the triangle delivers a detailed radio map
+consisting of a surface of interpolated RSSI values
+over the triangle. Moreover, we calculate an
+interpolated line of constant RSSI values
+(ISOLINE) within the triangle and the whole area                                                        Fig. 2 Empty seminar room (test bed 1)
+of triangulation.                                                                             Moreover an interpolated radio map of an
+    Given RSSI values of several access points                                            access point below the room's ceiling at the lower
+triangles are selected including the corresponding                                        left corner of the room is plotted. Areas colored
+isolines. Within triangles including several                                              black show high RSSI-values (approx. -40 db),
+isolines the positions of intersection (see Fig. 1                                        areas colored grey or white show lower RSSI-
+below) are calculated ([12]).                                                             values (approx. -60 db). The radio map is shown
+                                                                                          in Fig. 3.
+                                                                                                                                             (            )
+                                                                                              6
+
+
+                                                                                              5
+
+                                                                                                                                                                        -70
+                                                                                              4                                                                         -65
+                                                                                                                                                                        -60
+                                                                                                                                                                        -55
+                                                                                         Y
+
+
+
+
+                                                                                              3                                                                         -50
+                                                                                                                                                                        -45
+                                                                                                                                                                        -40
+                                                                                              2
+
+
+                                                                                              1
+                                                                                                  2,3    3,3   4,3   5,3   6,3   7,3   8,3   9,3   10,3   11,3   12,3
+
+                                                                                                                                 X
+
+                                                                                             Fig. 3 Interpolated radio map of test bed 1 for one
+                                                                                                      access point (right upper corner)
+ Fig. 1 Triangles with isolines of two access points                                        Test bed 2 was a showroom (scale: approx.
+   We select triangles including as much isolines                                         30m x 11m) of the museum 'Strom und Leben'
+
+                                                                                                                                                                        3
+                                        Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+partly owned by the German energy supplier                         of these points in four orientations θ (0, 90 180,
+RWE: Again the location had been equipped with                     270 degree). RSSI tuples of all 4 access points had
+four access points at the outer corners below the                  been recorded for a period of 50 seconds (one
+room's ceiling. Fig. 4 shows a map of test bed 2.                  reception per second). During positioning phase
+                                                                   measurements were carried out again at a given
+                                                                   position with given orientation. The recorded data
+                                                                   were stored in a database. Table 1 shows typical
+                                                                   fingerprints recorded throughout calibration
+                                                                   phase.
+                                                                    Table 1. Fingerprints recorded in calibration phase
+                                                                     Date/Time             MP    θ   MAC             db
+                                                                     10.11.2006 14:32:13   001   0   000B6B4D7AD6    -54
+                                                                     10.11.2006 14:32:13   001   0   000B6B2ADAB8    -45
+                                                                     10.11.2006 14:32:13   001   0   000B6B2ADD78    -50
+                                                                     10.11.2006 14:32:13   001   0   000B6B2ADA8B    -57
+         Fig. 4 Museum's show room (test bed 2)
+   An interpolated radio map of an access point
+                                                                               4. Indoor museum guide
+below the room's ceiling at the lower left corner of                   For evaluating the positioning technology
+the room is plotted. Areas colored black show                      presented above concerning usability and
+high RSSI-values (approx. -40 db), areas colored                   applicability we developed a digital museum
+grey or white show lower RSSI-values (approx. -                    guide application, which is based on a client
+60 db). The radio map is shown in Fig. 5.                          server architecture. The clients are commercially
+                                                                   available PDA with Windows Mobile operating
+                                                                   system. Clients are designed as thin, i.e. they do
+                                                                   not contain any data apart from a small software
+                                                                   for recording RSSI data and for client/server
+                                                                   communication. Thus, all content can be
+                                                                   administrated centrally without the need for
+                                                                   updating all clients if the content has changed.
+                                                                       The server runs a Windows Server operating
+    Fig. 5 Interpolated radio map of test bed 2 for one            system with Microsoft Internet Information
+              access point (left lower corner)                     Services. As database management system
+                                                                   MySQL Server is used. In total there are four
+    In several series of measurements Netgear and
+                                                                   webservices running on the server. The
+Lancom access points were used.
+                                                                   webservices are for localization, content delivery,
+    For measuring WLAN signal strength values
+                                                                   content management and analysis. The latter two
+several Windows-Mobile PDA (Dell Axim X51v,
+                                                                   are not necessary to operate the museum guide;
+HP 4700, Fujitsu/Siemens Pocket Loox 720, T-
+                                                                   they are only needed for analysis or
+Mobile MDA 3) with inbuilt WLAN adapters
+                                                                   administration. The webservices as well as the
+were used. For measuring WLAN RSSI values of
+                                                                   client software is programmed in C#. The entire
+four access points a C# software tool was
+                                                                   architecture is shown below in Fig. 6.
+developed using the OpenNetCF framework
+([15]). The framework offers methods for
+recording data like SSID, MAC address and signal
+strength values of WLAN access points.
+    Throughout a pretest phase we checked the
+receiving qualities of the different PDA. With
+every device a radio map inside the lecture hall
+was measured and calculated. It turned out that
+the Dell PDA showed the most stable behavior
+during all measurements. It was able to record
+RSSI values decreasing reasonably with distance
+from the access point. All further measurements                       Fig. 6 Client/Server Architecture of the museum
+were carried out using this device.                                                         guide
+    The test environment was provided with a 1
+                                                                      The communication between client and server
+metre rectangular grid on the floor. Measurements
+                                                                   takes place via a IEEE 802.11b/g WLAN
+were carried out during calibration phase at each
+
+4
+                                      Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+network.                                                         within the museum which are frequently visited or
+    The current user position is calculated every                others visited not at all (see Fig. 7 below).
+two seconds. Depending on the current position
+the PDA shows the objects in the surrounding                                                 7. Results
+area. Because of the limited accuracy of the
+positioning methods areas within the showroom                       The main result of the work is that RSSI based
+                                                                 WLAN indoor positioning is possible using
+(diameter: app. 5 m) are located and the user has
+                                                                 commercially available devices, like personal
+to select exhibits within these areas. The museum
+                                                                 digital assistants or smart phones equipped with
+guide can present audio, video, images and texts.
+                                                                 WLAN adapters and access points, without any
+                                                                 modification of system hardware and software.
+            6. Museum Field Trial
+                                                                    For a test series of a random walk the
+    A field trial was carried out within the museum              positioning algorithms EUCLID, BAYES and
+(Umspannwerk Recklinghausen - Museum 'Strom                      ISOLINE showed a mean distance between
+und Leben' in Recklinghausen, Germany).                          measuring position and calculated position of
+Visitors were offered the PDA based museum                       max. 3 metres (see Table 2).
+guide when they walked in. In total 136 visitors                  Table 2. Mean distance between measuring position
+participated in the field trial.                                               and calculated position
+    As in the field test before, four access points at
+                                                                                                     Mean       standard
+the outer corners below the room ceilings were                                 test series           distance   deviation
+mounted. Additionally we equipped the museum                                                         (m)        (m)
+with one access point in the middle of the                        BAYES        Seminar (random walk) 2,91       1,56
+exhibition space below the ceiling. This access                   EUCLID       Seminar (random walk) 2,33       1,51
+point was used for data transmission between                      ISOLINE      Seminar (random walk) 2,00       1,04
+PDA and server. It proofed to be sufficient to
+cover the whole exhibition area with one access                     The calculated mean distances for the three
+point. For localization, the Euclidian distance                  algorithms differ by max. 1 m. Nevertheless, we
+algorithm was used.                                              observe considerable standard deviations for the
+    We evaluated user acceptance using a                         mean distances in all cases between 1 and 1.5 m.
+questionnaire. Moreover, all user actions such as                A more detailed analysis including different test
+clicks etc. were logged and stored in a database.                series within both test beds is shown in refs. [13,
+Furthermore the calculated user position was                     14].
+logged. Based on these loggings user positions are                  Fig. 7 shows the frequency map of calculated
+visualized on a map. This may help to analyse                    user positions during the field trial. Black colored
+user behaviour within the museum.                                areas had been frequently visited; white colored
+    All calculated positions logged in the database              areas are not visited at all. On the left hand side of
+are described by x and y coordinates referring to                Fig. 7 there is the entrance hall with the reception
+the lower left corner of the museum's map.                       desk and the cafeteria area, in the middle we have
+    For visualizing the user position frequency                  an area with interactive games and other features,
+pattern during the field trial we counted all                    and on the right hand side an old tram is located.
+calculated positions stored in the database within               These areas show a deep black color, i.e. these are
+squares of 1.5 m x 1.5 m. The squares covered the                the areas mainly visited.
+entire field trial area and did not overlap each
+other. The central points of the squares build a
+grid of grid length 1.5 m. Using Delaunay
+Triangulation we can find a set of triangles
+covering the area having the grid points as nodes.
+Similar to the visualization of the RSSI values by
+a radio map shown above we now are able to
+calculate a frequency map by 2-dimensional linear                    Fig. 7 Visualization of user position frequency
+interpolation between adjacent grid points.                                              pattern
+    Depending on the frequency gray values are
+allocated to specific areas according to a scale                 Fig. 7 includes all data recorded during the field
+ranging from white for a frequency of zero to                    trial. This means that the figure represents the
+black for a frequency of more than 2000.                         calculated positions of all 136 visitors.
+    After overlaying this frequency map with a                   A similar analysis could be performed using the
+map of the museum we are able to identify areas                  data of only one particular visitor or a particular
+                                                                 visitor group (e.g. only female/male persons).
+
+                                                                                                                            5
+                                    Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+Combined with logged data concerning clicks on                     Workshop on Positioning, Navigation and
+specific content items this may lead to a specific                 Communication        (WPNC'05),      Hannover,
+profile of interests which could be used for direct                17.3.05, p 31-40.
+marketing measures or for a spatial redesign of the            [2] Ladd, A. M.; Bekris, K. E.; Rudys, A.;
+exhibition.                                                        Kavraki, L. E.; Wallach, D. S.: "Robotics-
+                                                                   based location sensing using wireless
+                8. Conclusion                                      Ethernet", Wireless Networks, vol 11, no 1 - 2,
+                                                                   2005, p. 189 – 204
+The use of access points of different quality
+                                                               [3] Retscher G., Moser E., Vredeveld D. and
+(Netgear, Lancom) led to unexpected results.                       Heberling D., "Performance and accuracy test
+Using more expensive and more capable access                       of the WLAN indoor positioning system
+points (Lancom) in comparison to more simple
+                                                                   ipos", in Kamakya K, Jobmann K.,
+and less expensive access points (Netgear) did not
+                                                                   Kuchenbecker, H.-P. (eds). Proceedings of the
+show a significant improvement of accuracy.
+                                                                   3rd Workshop on Positioning, Navigation and
+    Measurements with personal digital assistants
+                                                                   Communication        (WPNC'06),      Hannover.
+of different manufacturers showed different                        16.3.06, p 7-15
+quality in receiving signal strength index values.             [4] Teuber A., Eissfeller B., "WLAN indoor
+Probably, for a PDA the antenna design has a
+                                                                   positioning based on Euclidean distances and
+stronger influence on the received signal quality
+                                                                   fuzzy logic", in Kamakya K, Jobmann K.,
+than for notebooks.
+                                                                   Kuchenbecker, H.-P. (eds). 3rd Workshop on
+    Some series of measurements over time
+                                                                   Positioning, Navigation and Communication
+showed an unusual behaviour. Received signal                       (WPNC'06), Hannover, 16.3.06, p 159-168
+strength index values did not change over a period
+                                                               [5] Ekahau; "Ekahau positioning engine 2.0;
+of several seconds. Usually, a change within a
+                                                                   802.11 based wireless LAN positioning
+range of 3-5 db every second was observed. There
+                                                                   system"; An Ekahau Technology Document,
+is some evidence, that the used OpenNetCF
+                                                                   2002
+framework's methods are not mirroring instantly,               [6] Roehrig, C.; Kuenemund, F.: "Mobile robot
+i.e. within a period of a second or less, RSSI value               localization using WLAN signal strength",
+changes. The framework OpenNETCF has to be
+                                                                   Personal Communication, FH Dortmund
+examined again.
+                                                                   2006, unpublished
+    The localization algorithms can be used for
+                                                               [7] Grossmann, U; Schauch, M: RSSI based
+indoor LBS applications. The calculated position                   WLAN indoor positioning with personal
+can be used to present context related content to                  digital assistants, in: Proceedings of the 4th
+the user. The position can also be logged to a
+                                                                   IEEE Workshop on Intelligent Data
+database for analyzing user behavior and user
+                                                                   Acquisition and Advanced Computing
+positions. Even if the localization is not used for
+                                                                   Systems: Technology and Applications
+presenting context related content the analysis of                 IDAACS 2007, (Ed. Sachenko, A), pp. 653 -
+user positions may be of high value.                               656; Dortmund, 2007
+                                                               [8] Tate Modern: Tate Modern Multimedia Tour
+            9. Acknowledgment                                      Pilots            2002-2003,            Online:
+   This work was funded by the German Federal                      http://www.tate.org.uk/modern/multimediatou
+Ministry of Education and Research (BMBF-                          r/phase1_keyfindings.pdf,       last  reviewed
+Project IKAROS) and the commission for                             15.04.2008
+research, development and transfer of Dortmund                 [9] Modsching, M; Kramer, R; ten Hagen, K,
+University of Applied Sciences.                                    Gretzel, U: Using geographic tracking data to
+   The Authors are grateful to Mr. Hanswalter                      analyse spatial behaviour in eTourism,
+Dobbelmann, head of “Umspannwerk Reckling-                         Online:                      http://www.ikaros-
+hausen – Museum Strom und Leben” Reckling-                         projekt.de/CmodsDownload-index-req-getit-
+hausen, for his cooperation and support.                           lid-62.html, last reviewed 15.04.2008
+                                                               [10]    Larson, S; Bradlow, ET, Fader, PS: An
+                  References                                       exploratory look at supermarket shopping
+                                                                   paths; in: International Journal of Research in
+[1] Meurer M., Heilmann S., Reddy D., Weber                        Marketing, Vol. 22, Issue 4, December 2005,
+    T., Baier P.W., "A signature based                             pp.395-414
+    localization technique relying on covariance               [11]    Klein, R; Algorithmische Geometrie,
+    matrices", in Kamakya K, Jobmann K.,                           Addison-Wesley, Bonn, 1997
+    Kuchenbecker, H.-P. (eds). Joint 2nd                       [12]    Dalhaus, M.: "WLAN-Ortung innerhalb
+
+6
+                                       Author / Computing, 2000, Vol. 0, Issue 0, 1-2
+
+
+       von Gebäuden mittels Signalstärkelinien",                  Department of University of Applied Sciences and
+       Internal Report, FH Dortmund 2006,                         Arts, Dortmund
+       unpublished                                                focus of research: mobile business, mobile
+   [13]    Grossmann, U.; Roehrig, C.; Hakobyan,                  commerce, location based services
+       S.; Domin, T.; Dalhaus, M.: "WLAN indoor
+       positioning based on Euclidian distance and
+       interpolation (isobars)", In Wollert J. (ed).
+       Wireless       Technologies,        Dortmund,
+       27./28.9.06, Fortschritt-Berichte VDI, Reihe
+       10, Nr. 772, S.296-305, 2006                                                     cand. inf.   (FH)   Oliver
+   [14]    Grossmann, U.; Schauch, M.; Hakobyan,                                        Suttorp
+       S. "The accuracy of algorithms for WLAN
+       indoor positioning and the standardization of                                    graduate    in   computer
+       signal reception for different mobile devices",                                  science at University of
+       International Journal of Computing, Vol . 6                                      Applied Sciences and Arts,
+                                                                                        Dortmund
+       (2007), Issue 1, pp 103-109
+   [15]    L'hoest, A.: "Entwicklung mobiler
+       Anwendungen mit Microsoft.NET", Internal
+       Report, FH Dortmund 2005, unpublished
+
+
+                        Prof. Dr. Uwe Grossmann,
+                        studies of mathematics and
+                        information        technology
+                        (Bochum             University,
+                        Germany),         PhD        in
+                        mathematics          (Bochum
+                        University,        Germany),
+                        research associate at Essen
+                        University and Max-Planck-
+                        Institute Dortmund, project
+                        manager computer aided
+   manufacturing at mbp software & systems gmbh;
+   current position: professor of mathematics and
+   business information technology at University of
+   Applied Sciences and Arts, Dortmund; project
+   manager of joint BMBF research project IKAROS;
+   speaker of research group 'mobile business -
+   mobile systems' of University of Applied Sciences
+   and Arts, Dortmund;
+   focus of research: multimedia applications, mobile
+   business/commerce, mobile systems
+   author of a textbook in information technology and
+   several papers in the area of mobile/wireless
+   systems; reviewer and session chair of
+   national/international conferences
+
+
+
+                         Dipl. Bw. (FH) Sebastian
+                         Gansemer
+
+                         studies      of      business
+                         administration with focus on
+                         business          information
+                         technology at University of
+                         Applied Sciences and Arts,
+                         Dortmund
+                         current position: research
+                         associate     at    Business
+
+
+                                                                                                                7
+
+View publication stats
+

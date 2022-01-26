@@ -1,0 +1,865 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/229039254
+
+The accuracy of algorithms for WLAN indoor positioning and the
+standardization of signal reception for different mobile devices
+Article · January 2007
+CITATIONS
+
+READS
+
+18
+
+225
+
+3 authors, including:
+Uwe Grossmann
+University of Applied Science and Arts Dortmund
+50 PUBLICATIONS 366 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Indoor Positioning View project
+
+Smart Service Power View project
+
+All content following this page was uploaded by Uwe Grossmann on 29 January 2014.
+
+The user has requested enhancement of the downloaded file.
+
+The accuracy of algorithms for WLAN indoor positioning and the
+standardization of signal reception for different mobile devices
+Grossmann, U.; Schauch, M.; Hakobyan, S.
+Business Department, Dortmund University of Applied Sciences, Emil-Figge-Strasse 44, 44227 Dortmund, Germany
+uwe.grossmann@fh-dortmund.de, markus.schauch@fh-dortmund.de, syuzanna.hakobyan@fh-dortmund.de
+www.ikaros-projekt.de
+Abstract: Often mobile devices like mobile phones or personal digital assistants (PDA) are equipped with IEEE 802.11
+WLAN adapters. Furthermore, within many buildings a WLAN infrastructure is available. The aim of this work is to
+investigate the quality of different indoor positioning methods based on values of WLAN received signal strength index
+(RSSI) using commercially available devices (mobile phones, PDA). Three positioning algorithms were considered:
+minimal Euclidian distance, intersections of RSSI-Isolines and a stochastic model based on Bayes' theorem. Two
+measuring testbeds, a museum's exhibition room and an empty seminar room, four different types of PDA (Dell, Fujitsu,
+HP, T-Mobile) and two types of access points (Netgear, Lancom) were used.
+Results show that positioning can be achieved with an average accuracy of approx. 2-3 metres. WLAN capable mobile
+devices behave differently in receiving RSSI values of a base station. For reasons of standardization a linear
+correlation between different receiving levels of PDA was investigated.
+Keywords: WLAN, RSSI, Positioning, Bayes, Euclidian distance, Triangulation, Isoline
+
+1. Introduction
+Location based services (LBS) will be one of the
+most exiting features of the next generation wireless
+systems. Location based services are already
+established in the area of mobile phone networks
+using the global positioning system (GPS) as
+outdoor positioning component. Since GPS is not
+working indoors, establishing LBS within buildings
+needs an indoor wireless network, for instance
+WLAN, together with an positioning system [1].
+The aim of the activities presented in this paper
+was the investigation of different WLAN positioning
+algorithms for indoor position based applications.
+The increase of existing WLAN infrastructures
+inside of buildings and the commercial availability
+of WLAN capable mobile devices leads to the
+question, whether an indoor positioning using such
+infrastructures and devices would be accurate
+enough for mobile indoor applications.
+Beside other methods some are based on values
+of received signal strength index (RSSI) of several
+access points. Several mathematical methods exist
+for calculating the current position. We investigated
+the accuracy of determining the current position
+using three different algorithms.
+Commercially available mobile devices like
+personal digital assistants (PDA) with WLAN
+capability show different reception quality of RSSIvalues. We investigated the correlation between
+recorded RSSI-values of different PDA.
+Several measurements were carried out in two
+testbeds over the period of a year's time. Methods,
+
+testbeds, measurements and results are presented
+below.
+
+2. Related Work
+Several groups are working on WLAN-RSSI
+based indoor positioning methods using different
+algorithms and different mobile devices.
+Ladd et al. [2] used a Bayesian inference
+algorithm for comparing histograms of calibration
+and positioning phase. Experiments were conducted
+by a human operator carrying a Hewlett Packard
+OmniBook 6000 laptop with a PCMCIA LinkSys
+wireless Ethernet card. They modified the standard
+Linux kernel driver to support new functionalities,
+including the scanning and recording of hardware
+MAC addresses and signal strengths of packets and
+the automatic scanning of base stations. Sampling
+times ranged from ten seconds to about a minute. A
+total of 1307 packets on 11 different positions were
+measured. Neighbouring positions are located in 3
+meters distance from each other. The algorithm
+reported calculated positions with a deviation of up
+to 1.5 meters from the measuring position.
+Retscher et al. [3] developed the IPOS system
+using RSSI-fingerprints as well. Their testbed was
+an office building and a tablet-pc was moved from
+each position to the next either in stop-and-go or
+kinematic mode. They focussed on determining
+wether a user is located inside a room or not and
+wether one or two calibration points within one
+room are sufficient.
+
+Teuber et al. [4] used a method of minimal
+Euclidian distance together with Fuzzy logic
+postprocessing. Their testbed was an empty airport
+hangar. Accuracy of positioning was 4.47 m using
+Euclidian distance alone. With Fuzzy logic
+postprocessing the accuracy decreased to 3 m.
+
+The authors developed a method identifying
+intersections of lines of constant RSSI-values
+(isolines) of several base stations within interpolated
+radio maps based on a Delaunay triangulation [6]. A
+slightly modified method was used by Röhrig et al.
+[7] focussing on a triangulation with larger mesh
+widths.
+
+3. Lines of constant received signal
+strength index (RSSI-Isolines)
+The Isoline method proposed here belongs to the
+group of fingerprint methods, i.e. measured RSSI
+values of several base stations (access points) are
+compared with RSSI values previously recorded
+during a calibration phase.
+A network of triangles not overlapping each other
+with grid nodes representing the triangle nodes is
+developed using Delaunay triangulation [8]. The
+triangle nodes are represented by the calibration
+points. Fig. 1 shows the triangulation of one of our
+testbeds, an empty seminar room of size 15m x 7m.
+
+(
+
+)
+
+6
+
+5
+
+4
+
+-70
+-65
+-60
+
+3
+
+-55
+-50
+-45
+
+Y
+
+The Ekahau Positioning Engine (EPE) [5] is a
+commercially available Software for RSSI-WLAN
+indoor positioning. The engine combines according
+to the manufacturer's instructions signal strength
+pattern recognition together with an attempt to
+include the user’s history (boundary conditions like
+allowed paths and speed). Determination of the
+current position is possible depending on the
+environment with an accuracy of 1-5 m.
+
+map consisting of a surface of interpolated RSSI
+values over the entire area of triangulation. (Fig. 2).
+
+-40
+
+2
+
+1
+2,3
+
+3,3
+
+4,3
+
+5,3
+
+6,3
+
+7,3
+
+8,3
+
+9,3
+
+10,3
+
+11,3
+
+12,3
+
+X
+
+Fig. 2 - Interpolated radio map of one access point
+(right upper corner)
+
+Given a RSSI-value of one access point recorded
+during positioning phase we can select triangles
+whose nodes have RSSI-values recorded during
+calibration phase, which are higher and lower than
+the RSSI-value recorded during positioning phase.
+Within such a triangle it is possible to calculate an
+interpolated line of constant RSSI-value (isoline).
+These isolines build continous trajectories through
+the whole area of triangulation.
+Given two RSSI-values of different access points
+measured simultaneously at the same location we are
+now able to select triangles whose interpolated radio
+maps include the according isolines. Fig. 3 shows a
+triangulation with triangles including one or two
+isolines of different access points. If there is an
+intersection of the two isolines, we can calculate the
+intersection point within the triangle. A first idea
+takes the intersection point as estimated position.
+
+Fig. 1 - Triangulation of testbed 1 ('seminar')
+
+Fig. 3 - Triangles with isolines of two access points
+
+Every node of the triangulation in Fig. 1
+represents a calibration point, i.e. RSSI-values are
+recorded at every point from four access points
+located at the four corners of the room. Having
+recorded RSSI-values of an access point at every
+calibration point linear interpolation between node
+values within one triangle delivers a detailed radio
+
+Using small sized triangles with mesh width up
+to 1m the balance point of the triangle itself can be
+used as the estimated position.
+Usually we will select several triangles including
+isolines of several base stations. We rank all
+triangles of the entire triangulation according to the
+number of isolines they include. The secondary
+
+ranking parameter is the number of intersections
+within one triangle.
+The "best" triangle is assumed to be the triangle
+with the largest number of isolines and the largest
+number of intersections. The estimated position is
+assumed to be the balance point of the "best"
+triangle or the average of all intersection points
+within this triangle. For our evaluation we used the
+average of the balance points of the five "best"
+triangles.
+As an example Fig. 4 shows the result of the
+ranking process. Isolines of RSSI-values recorded
+from all four base stations are drawn and marked by
+different grey scale values. The shaded areas show
+five triangles selected as "best" triangles. They
+contain at least three different isolines and one
+intersection. The original measuring position is
+marked by the black square.
+
+11m) was used. Both locations had been equipped
+with four access points at the outer corners below
+the room's ceilings. In two series of measurements
+Netgear and Lancom access points were used as
+base stations.
+Fig. 5 shows the triangulation of testbed 2
+('museum'). Some triangles of the original
+triangulation had to be eliminated, because they
+cover areas with large exhibits or areas people are
+not able to enter. Such triangles contribute
+misleading data, so they had to be removed from the
+triangulation
+
+Fig. 5 - Triangulation of testbed 'museum'
+
+For measuring WLAN RSSI-values personal
+digital assistants (PDA) with Windows Mobile OS
+and with inbuilt WLAN adapter were used.
+Recordings were carried out using devices of the
+manufacturers Fujitsu-Siemens (Pocket Loox 720),
+Hewlett Packard (hx4700), T-Mobile (MDA III) and
+Dell (Axim X50v).
+Fig. 4 - Radio map including isolines of 4 access points
+
+4. Accuracy and comparison of three
+positioning algorithms
+One aim of our measurements was to investigate
+and compare the accuracy of three algorithms used
+for WLAN-RSSI indoor positioning: the Bayes
+inference algorithm (Bayes) [2], the algorithm of
+minimal Euclidian distance (Euclid) [4] and the
+algorithm using Isolines within a triangulation
+(Isolines). All three algorithms were implemented in
+C# resulting in corresponding positioning programs,
+which deliver a position within the area covered by
+the triangulation resp. a grid of calibration nodes.
+Knowing the original measuring position we are able
+to calculate the deviation between the original and
+the estimated position.
+
+For simultaneous recording of WLAN RSSIvalues of four access points with a PDA a software
+tool was developed. The tool was implemented in
+C# using the OpenNetCF framework. The
+framework offers methods for recording data like
+SSID, Mac address and RSSI values of neighbouring
+WLAN access points.
+Both testbeds were provided with a 1 metre
+rectangular grid covering the ground floor.
+Measurements were carried out during calibration
+phase at each of these points in four directions (0, 90
+180, 270 degree). RSSI-tuples of all 4 access points
+had been recorded simultaneously over a period of
+50 seconds (one recording per second).
+Fig. 6 shows a radio map of testbed 2 ('museum').
+The access point is positioned in the left lower
+corner below the room's ceiling.
+
+5. Testbeds and measurements
+Measurements were carried out within two
+different testbeds: testbed 1 ('seminar') and testbed 2
+('museum'). Testbed 1 represents an empty seminar
+room (scale: approx. 15m x 7m) in a building of
+Dortmund University of Applied Sciences. As
+testbed 2 an exhibition room of the museum "Strom
+und Leben" at Recklinghausen (scale: approx. 30m x
+
+Fig. 6 - Radio map of testbed 'museum'
+(access point at the left lower corner)
+
+All recordings were carried out by a person
+keeping the PDA horizontally in front of him in his
+left hand. Recording was started by the person by
+clicking on a button on the touch screen with his
+right hand.
+
+Between August 2005 and November 2006
+several test series were carried out in both testbeds.
+There was one series in testbed 2 ('museum'), a tour
+through the exhibition room and three series of
+measurements in testbed 1 ('seminar'). Within the
+latter there was one series called 'exhibit', where the
+measuring person stands close to the wall with
+orientation to the wall like observing an exhibit at
+the wall. Another series ('strolling') was a loop
+through the room with orientation parallel to the
+walls and the third series ('random') consists of
+measurements at calibration points randomly
+selected.
+
+6. Standardization of reception quality of
+different types of PDA
+Another aim of our measurements was the
+analysis of receiving quality of different types of
+PDA. During our measurements we observed
+significant differences of different PDA concerning
+their WLAN reception quality. The following two
+figures will illustrate this.
+Fig. 7 shows a radio map based on RSSI-values
+recorded from access point 1 (AP1) with a Dell PDA
+within testbed 1 ('seminar'). The access point is
+located at the upper right corner.
+Dell Axim x50v
+6
+
+5
+-70
+-65
+-60
+-55
+-50
+-45
+-40
+
+4
+
+Y
+3
+
+2
+
+1
+2,3
+
+3,3
+
+4,3
+
+5,3
+
+6,3
+
+7,3
+
+8,3
+
+9,3
+
+10,3
+
+11,3
+
+12,3
+
+X
+
+Fig. 7: Radiomap recorded by a Dell PDA
+(testbed 1, AP1, orientation 0 degree)
+
+Fig. 8 shows a radio map based on RSSI-values
+recorded from AP1 analogously with FujitsuSiemens PDA again within testbed 1 ('seminar').
+
+5
+-70
+-65
+-60
+-55
+
+4
+
+Y
+
+During positioning phase measurements were
+carried out under the same conditions as in the
+calibration phase at known grid points and with
+known orientation. The recorded data had been
+stored in a database.
+
+Fujitsu Pocket Loox 720
+6
+
+3
+
+-50
+-45
+-40
+
+2
+
+1
+2,3
+
+3,3
+
+4,3
+
+5,3
+
+6,3
+
+7,3
+
+8,3
+
+9,3
+
+10,3
+
+11,3
+
+12,3
+
+X
+
+Fig. 8: Radiomap recorded by a Fujitsu PDA
+(testbed 1, AP1, orientation 0 degree)
+
+During both measurements the parameters of the
+testbed, particularly the transmitting power of the
+base station (AP1), were not changed. The
+difference between the two radio maps is obvious.
+Especially, when using fingerprint methods this
+represents a major problem, because calibration has
+to be repeated for every different type of PDA
+resulting in a multiplication of workload.
+One reason for the difference of radio maps could
+be the influence of the measuring person, who did
+not perform both measurements along the same
+lines. To exclude this we tried to make sure, that the
+measuring process was always carried out along the
+same strict specifications. There were guidelines for
+keeping and positioning the PDA. Moreover, the
+measurements were carried out by the same person.
+Another reason for this phenomenon may be due
+to different receiving capabilities of the mobile
+devices' inbuilt WLAN adapters and their antenna
+layouts. One possibility to overcome this problem
+and to reduce calibration amount is to find a
+function, which correlates the RSSI-values of two
+different types of PDA. If there are such functions,
+calibration can be carried out by one PDA, and
+during positioning phase 'correlated' PDA may be
+used.
+Table 1: RSSI-values recorded by four PDA under
+identical conditions
+BS
+AP1
+AP1
+…
+AP2
+AP2
+…
+AP3
+AP3
+…
+AP4
+AP4
+…
+
+MP
+MP 001
+MP 002
+
+Dell
+-46,23
+-43,60
+
+Fujitsu
+-54,97
+-49,38
+
+HP
+-44,95
+-42,82
+
+MDA
+-49,70
+-49,12
+
+MP 001
+MP 002
+
+-49,95
+-50,35
+
+-52,60
+-55,72
+
+-45,75
+-50,00
+
+-52,05
+-53,15
+
+MP 001
+MP 002
+
+-58,35
+-55,47
+
+-61,78
+-61,63
+
+-56,53
+-54,43
+
+-61,68
+-63,27
+
+MP 001
+MP 002
+
+-57,87
+-56,53
+
+-63,42
+-65,58
+
+-59,63
+-58,48
+
+-63,90
+-65,43
+
+Within testbed 1 ('seminar') we recorded RSSIvalues from all base stations at all calibration points
+with all available PDA along the same lines
+(identical transmission power, orientation etc.).
+
+and 'Isolines' arranged according to the different
+series are shown in Fig. 10.
+
+Table 1 shows recorded RSSI-values of four
+PDA. The RSSI-values in one row correspond to the
+same base station, the same calibration point, the
+same transmission power and the same orientation.
+The idea is to find out, wether RSSI-values
+recorded under identical circumstances from one
+base station by two PDA are linearly correlated.
+Using regression analysis [9] parameters for a
+linear correlation between the RSSI-values recorded
+by the Dell-PDA and the three other PDA were
+calculated with Microsoft EXCEL.
+
+(1)
+
+RSSIx means a RSSI-value recorded by one of the
+other PDAs. Ax and Bx are the parameters calculated
+by regression analysis for PDAx. RSSIx-values will
+be transformed to RSSIDell-values and may than be
+compared to RSSI-values recorded by the Dell-PDA
+during calibration phase.
+
+Table 2: Average difference between measuring and
+estimated position
+test series
+
+ISOLINE
+
+For visualization the values of HP, Fujitsu and TMobile were plotted on the x-coordinate (abscissa)
+against the values of Dell on the y-coordinate
+(ordinate). Fig. 9 shows the result.
+
+Table 2 shows more precisely the average
+distance between measuring position and estimated
+position together with the corresponding standard
+deviation of a test series rearranged according to the
+different algorithms.
+
+BAYES
+
+RSSI Dell = Ax * RSSI x + Bx ;
+
+Fig. 10 - Comparing the accuracies of three algorithms
+
+EUCLID
+
+The Dell PDA was selected as reference device,
+since it has shown the most stable behaviour of all
+used mobile devices during the measurements. For
+every combination (Fujitsu-Dell, HP-Dell, TMobile-Dell) separate calculations were carried out.
+The result of each calculation is a linear equation:
+
+Museum
+Seminar
+Seminar
+Seminar
+Museum
+Seminar
+Seminar
+Seminar
+Museum
+Seminar
+Seminar
+Seminar
+
+tour
+exhibit
+strolling
+random
+tour
+exhibit
+strolling
+random
+tour
+exhibit
+strolling
+random
+
+mean
+(m)
+4,01
+2,03
+2,67
+2,91
+4,16
+1,47
+2,91
+2,33
+3,40
+2,90
+2,00
+2,00
+
+standard
+deviation
+(m)
+2,27
+2,34
+1,40
+1,56
+2,51
+1,27
+1,15
+1,51
+1,71
+0,48
+0,58
+1,04
+
+Table 2 and Fig. 10 show ambiguous results.
+There is no definite best algorithm. The isoline
+method has an advantage, since regarding the mean
+deviation it is three times on the first position, but
+after all at least once on the last position. Standard
+deviations seem to be significantly smaller for the
+isoline method in comparison to those of the other
+algorithms.
+Fig. 9 - Scatter-plot of correlated RSSI-values
+
+7. Results
+The results of measurements concerning the
+accuracies of the three algorithms 'Bayes', 'Euclid'
+
+The measurements within testbed 2 ('museum')
+result in larger average deviations than those in
+testbed 2 ('seminar'). This may be due to the more
+inhomogenous environment of testbed 2. Testbed 1
+is an empty room, testbed 2 a room containing
+several large exhibits.
+
+In testbed 2 ('museum') we observe an average
+deviation between 3,4m and 4,16m depending on the
+selected algorithm, in testbed 1 an average deviation
+between 1,47m and 2,91m again depending on the
+algorithm.
+
+used framework's methods are not mirroring
+instantly (within a period of a second or less) RSSIvalue changes. The framework OpenNETCF has to
+be reexamined.
+
+The results of the regression analysis are
+presented quantitatively in Table 3. As shown
+qualitatively in Fig. 9 we can observe rather linear
+correlations between the RSSI-values measured by
+the Dell PDA and the other PDA.
+
+9. Acknowledgement
+
+Table 3: Regression analysis of RSSI-values
+PDA
+Fujitsu-Dell
+HP-Dell
+T-Mobile-Dell
+
+Correlation
+Coefficient
+0,9036
+0,8677
+0,8252
+
+Correlation
+y = 0,834x - 4,164
+y = 0,787x - 11,648
+y = 0,774x - 7,612
+
+A good positive linear correlation between the
+signal level indices of the Fujitsu PDA and the Dell
+PDA is found. The correlation coefficient was
+calculated as 0,9036. The corresponding coefficients
+of the correlations HP-Dell and T-Mobile-Dell are
+calculated as 0,8677 and 0,8252.
+
+8. Conclusion
+The results of this paper show, that WLAN-RSSI
+based positioning can be achieved with
+commercially available Personal digital assistants
+without modification of hardware and software.
+For the time being WLAN-RSSI-based
+fingerprint positioning technologies seem to be not
+accurate enough for disposal in position based
+indoor applications using personal digital assistants
+in all environments. In small and medium sized
+rooms the accuracy of positioning is not sufficient.
+Moreover, obstacles preventing line of sight
+transmission cause further detoriation of accuracy.
+Within larger rooms and a required accuracy of not
+less than 2-3 m WLAN-RSSI based indoor
+positioning can be used.
+The comparison of the different PDA and their
+receiving capabilities shows a distinctive linear
+correlation. Correlation coefficients values of 0.9
+(Fujitsu), 0.86 (HP) and 0.82 (T-Mobile) suggest a
+good positive linear correlation. This will lead to a
+considerable decrease in calibration workload and
+make fingerprint methods more applicable.
+There are improvements possible by refining
+measuring technology. By using the framework
+OpenNETCF some series of measurements over
+time showed an unusual behaviour. RSSI-values did
+not change over a period of several seconds, whereas
+a change within a range of 3-5 db every second was
+observed usually. There is some evidence, that the
+
+This work was funded by the German Federal
+Ministry of Education and Research (BMBF-Projekt
+IKAROS).
+The authors are grateful to Mr. Hanswalter
+Dobbelmann, head of museum "Strom und Leben"
+Recklinghausen, for his cooperation and support.
+
+10. References
+[1] Rerrer, U.; Kao, O.: Suitability of Positioning
+Techniques for Location-based Services in
+wireless LANs, Proceedings of the 2nd
+Workshop "On Positioning, Navigation And
+Communication (WPNC05)", Hannover, 17
+Mach 2005, pp. 51-56
+[2] Ladd, A. M.; Bekris, K. E.; Rudys, A.; Kavraki,
+L. E.; Wallach, D. S.: Robotics-based location
+sensing using wireless Ethernet, Wireless
+Networks, 11 (1-2) (2005), pp. 189 - 204
+[3] Retscher, G.; Moser, E.; Vredeveld, D.;
+Heberling, D.; Performance and Accuracy Test
+of the WLAN Indoor Positioning System "ipos";
+Proceedings of the 3nd Workshop "On
+Positioning, Navigation And Communication
+(WPNC06)", Hannover, 16 March 2006, pp. 715
+[4] Teuber A.; Eisfeller B.; WLAN Indoor
+Positioning Based on Euclidian Distances and
+Fuzzy Logic; Proceedings of the 3nd Workshop
+"On
+Positioning,
+Navigation
+And
+Communication (WPNC06)", Hannover, 16
+March 2006, pp. 159-168
+[5] Ekahau; Ekahau Positioning Engine 2.0; 802.11
+based Wireless LAN positioning system; An
+Ekahau Technology document, 2002
+[6] Grossmann, U.; Röhrig, C.; Hakobyan, S.;
+Domin, T.; Dalhaus, M.: WLAN indoor
+positioning based on Euclidian distance and
+interpolation (isobars), Wireless Technologies
+(Hrsg. Wollert, Jörg), Fortschritt-Berichte VDI,
+Reihe 10 Nr. 772, Dortmund, 27-28 September
+2006, S.296-305
+[7] Röhrig, C.; Künemund, F.: Mobile Robot
+Localization using WLAN Signal Strengths;
+Personal Communication, 2006
+
+[8] Klein, R; Algorithmische Geometrie, AddisonWesley, Bonn, 1997.
+
+[9] Chatterjee, Price; Praxis der Regressionsanalyse, Oldenbourg, 1995;
+
+Prof. Dr. Uwe Grossmann
+Studies of Mathematics and Information Technology at Bochum University, Germany
+PhD in Mathematics (Bochum University)
+Current Position: Professor of Mathematics and Business Information Technology at Dortmund University
+of Applied Sciences; project manager of joint BMBF research project IKAROS; Speaker of research group
+'Mobile Business - Mobile Systems' of Dortmund University of Applied Sciences
+Focus of research: multimedia applications, mobile business/commerce, mobile systems
+
+Dipl. Inf. Markus Schauch
+Studies of Business information technology at Dortmund University of Applied Sciences
+Former occupation: Consultant at Eutelis Consult, Ratingen, with focus on deregulation of German
+telecommunication market.
+Current position: Research associate at Business Department of Dortmund University of Applied Sciences;
+coordinator of joint BMBF research project IKAROS
+Focus of research: mobile business / mobile commerce
+
+Syuzanna Hakobyan, MSc.
+Studies of Information Technology and Computer Systems At Armenian State Engineering University,
+Erewan
+PhD student at the University Duisburg-Essen
+Current position: Research associate t Business Department of Dortmund University of Applied Sciences;
+member ofjoint BMBF research project IKAROS
+Focus of research: Localization algorithms in WLAN systems
+
+View publication stats
+
+

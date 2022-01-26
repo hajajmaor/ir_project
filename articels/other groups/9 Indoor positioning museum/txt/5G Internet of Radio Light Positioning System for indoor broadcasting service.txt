@@ -1,0 +1,993 @@
+5G Internet of Radio Light Positioning System for
+Indoor Broadcasting Service
+Lina Shi, Dayu Shi, Xun Zhang, Benjamin Meunier, Hequn Zhang, Zhan
+Wang, Andrei Vladimirescu, Wei Li, Yue Zhang, John Cosmas, et al.
+
+To cite this version:
+Lina Shi, Dayu Shi, Xun Zhang, Benjamin Meunier, Hequn Zhang, et al.. 5G Internet of Radio Light
+Positioning System for Indoor Broadcasting Service. IEEE Transactions on Broadcasting, Institute of
+Electrical and Electronics Engineers, 2020, pp.1-11. �10.1109/TBC.2020.2981755�. �hal-02559008�
+
+HAL Id: hal-02559008
+https://hal.archives-ouvertes.fr/hal-02559008
+Submitted on 30 Apr 2020
+
+HAL is a multi-disciplinary open access
+archive for the deposit and dissemination of scientific research documents, whether they are published or not. The documents may come from
+teaching and research institutions in France or
+abroad, or from public or private research centers.
+
+L’archive ouverte pluridisciplinaire HAL, est
+destinée au dépôt et à la diffusion de documents
+scientifiques de niveau recherche, publiés ou non,
+émanant des établissements d’enseignement et de
+recherche français ou étrangers, des laboratoires
+publics ou privés.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+IEEE TRANSACTIONS ON BROADCASTING
+
+1
+
+5G Internet of Radio Light Positioning System
+for Indoor Broadcasting Service
+Lina Shi , Dayu Shi, Xun Zhang , Benjamin Meunier, Hequn Zhang , Zhan Wang, Andrei Vladimirescu,
+Wei Li, Yue Zhang, John Cosmas, Kareem Ali, Nawar Jawad , Rudolf Zetik, Eric Legale,
+Matteo Satta, Jintao Wang , and Jian Song
+
+Abstract—Many features of 5G are definitely important to
+the broadcasting service, including diverse content services such
+as follow-me TV, video-on-demand, but also gaming, Virtual
+reality (VR) and Augmented reality (AR) and many others.
+Meanwhile, those services depend more and more on the user’s
+position accuracy, especially in indoor environment. With the
+increase of broadcasting data traffic indoors, to obtain a highly
+accurate position is becoming a challenge because of the impact
+of radio interference. In order to support a high-quality indoor
+broadcasting service, a high-accuracy positioning, radiation-free,
+and high-capacity communication system is urgently needed.
+In this paper, a 5G indoor positioning system is proposed for
+museums. It utilizes unlicensed visible light of the electromagnetic spectrum to provide museum visitors with high-accuracy
+positioning, multiple forms of interaction services, and highresolution multimedia delivery on a mobile device. The geographic data and the location-related data integrated into the
+5G New Radio (NR) waveform are detailed. A general-purpose
+system architecture is provided and some basic techniques to
+enhance system performance are also investigated. A prelimi-
+
+Manuscript received December 1, 2019; revised March 2, 2020; accepted
+March 3, 2020. This work was supported in part by the Collaborative EUChina Project funded by the National Key Research and Development Program
+of China under Grant 2017YFE011230, and in part by the European Union’s
+Horizon 2020 Research Program through the Internet of Radio-Light Project
+under Grant H2020-ICT 761992. Part of this paper have been published in the
+Proceedings of the 2018 25th IEEE International Conference on Electronics,
+Circuits and Systems (ICECS) (pp. 61–64), Bordeaux, France. (Corresponding
+author: Xun Zhang.)
+Lina Shi, Dayu Shi, Xun Zhang, Zhan Wang, and Andrei Vladimirescu
+are with the Department of Electronic and Computer Engineering,
+Institute Supérieur d’Electronique de Paris, 75006 Paris, France (e-mail:
+lina.shi@isep.fr; xun.zhang@isep.fr).
+Benjamin Meunier, John Cosmas, Kareem Ali, and Nawar Jawad are with
+the Department of Electronic and Computer Engineering, Brunel University,
+Uxbridge UB8 3PH, U.K. (e-mail: benjamin.meunier@brunel.ac.uk).
+Hequn Zhang and Yue Zhang are with the Department of
+Engineering, University of Leicester, Leicester LE1 7RH, U.K. (e-mail:
+yue.zhang@leicester.ac.uk).
+Wei Li is with the Department of Engineering, Viavi Solutions, Stevenage
+SG1 2AN, U.K. (e-mail: wei.li@viavisolutions.com).
+Rudolf Zetik is with the Department Wireless Distribution Systems,
+Fraunhofer Institute for Integrated Circuits IIS, Fraunhofer-Gesellschaft zur
+Foerderung der Angewandten Forschung E.V., 91058 Erlangen, Germany
+(e-mail: rudolf.zetik@iis.fraunhofer.de).
+Eric Legale and Matteo Satta are with the Research and Development
+Department, Issy Média, 92130 Issy-Les-Moulineaux, France (e-mail:
+eric.legale@ville-issy.fr).
+Jintao Wang and Jian Song are with the Department of Electronic
+Engineering, Research Institute of Information Technology, Tsinghua National
+Laboratory of Information Science and Technology, Tsinghua University,
+Beijing 100084, China (e-mail: wangjintao@tsinghua.edu.cn).
+Color versions of one or more of the figures in this article are available
+online at http://ieeexplore.ieee.org.
+Digital Object Identifier 10.1109/TBC.2020.2981755
+
+nary demonstration is built in the laboratory environment. It
+supports over 45.25 Mbps data rate and a mean positioning
+error of 0.18 m.
+Index Terms—5G new radio (5G NR), visible light communication (VLC), location-based services (LBS), indoor broadband
+broadcasting system, 5G Internet of radio light (5G IoRL).
+
+I. I NTRODUCTION
+N RECENT years, with the emergence of 5G technologies,
+the convergence of 5G with broadcasting services may have
+a much more transformative impact than expected [1]–[4]. The
+5G forum white paper [5] pointed clearly that the next (5th )
+generation wireless network provides a safer, more secure,
+customizable and intelligent building network that reliably
+delivers increased throughput (greater than 10Gbps) from
+access points pervasively located within buildings, whilst minimizing interference and electromagnetic field exposure and
+providing location accuracy from 10 m to less than 1 m for
+80 % of occasions, and better than 1 m for indoors. With those
+features, 5G will be essential for a myriad of new broadcasting services based on accurate location awareness and other
+contextual information [6].
+Meanwhile, the demand for mobile data broadcasting and
+location-related broadcasting service in broadband networks is
+rapidly increasing. According to the data from Cisco, it predicts that broadcasting data traffic will reach approximately
+77 Exabytes per month by 2020, where 70% to 90% of
+the overall data traffic will occur in indoor environments [7].
+Apart from enjoying high-speed data broadcasting services like
+4K live broadcasting, VR, AR, High Dynamic Range (HDR)
+and high-definition (HD) video surveillance, people also
+put much higher requirements for related location-based
+services (LBS) [8]. According to the report in [9], there is
+a minimum of 52.63% of frequently used devices with positioning capabilities, such as mobile phones, vehicle satellite
+navigation, fitness devices, iWatch, iPod, iPad. These devices
+with positioning capabilities facilitated the growth of the
+location-related broadcasting services.
+However, the accurate geographic data broadcasting is
+not only relying on the characteristics of the up-link and
+down-link signals but also on new technologies and network
+configurations. For example, Global Navigation Satellite
+Systems (GNSS) (e.g., BeiDou, Galileo, GLONASS, and
+GPS), Terrestrial Beacon Systems (TBS), Bluetooth, WLAN,
+
+I
+
+c 2020 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+0018-9316 
+See https://www.ieee.org/publications/rights/index.html for more information.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+2
+
+IEEE TRANSACTIONS ON BROADCASTING
+
+sensors etc. [9]. Although these non-3GPP technologies have
+been widely used thanks to their low-cost, they cannot guarantee to provide satisfactory positioning resolution for 5G
+network especially in the indoor environment where it is lack
+of service coverage and poor accuracy.
+In this context, this paper proposes an integrated solution
+of indoor positioning systems and broadcasting service based
+on Internet of Radio Light (IoRL) infrastructure [10]. Visible
+Light Communication (VLC) system and VLC-based positioning method are adopted to fulfil the requirement in terms of
+capacity and positioning accuracy with low-cost LED devices.
+The proposed system is evaluated in a museum scenario and
+will be deployed in the museum “Musée Nationale de la Carte
+à Jouer” of Issy-les-moulineaux in Paris in June 2020.
+The main contributions of this paper can be summarized as
+follows:
+1) The unified 5G NR signal is designed as the positioning
+signal over VLC, the geographic data and the locationrelated data is in a unified 5G NR frame structure and
+some special adaptations for the VLC case are studied.
+Furthermore, the positioning procedure is also proposed
+for the first time.
+2) A real-time demonstration which has a data rate of
+around 45.25 Mbps within a bandwidth of 10 MHz by
+using 3.6 W LED lamp is implemented in laboratory.
+The system supports an Error Vector Magnitude (EVM)
+less than 4% with different modulation scheme (QPSK,
+16-QAM, 64-QAM and 256-QAM). In view of positioning performance, to the best of our knowledge, our
+work is the first to demonstrate that by using 5G NR signal, VLC-based indoor positioning system can achieve
+a mean positioning error of 0.18 m.
+The rest of this paper is organized as follows: Section II
+highlights the related positioning technologies for broadcasting
+services. Section III describes the location-based broadcasting applications for museum scenarios. The proposed system
+architecture diagram together with the main components are
+introduced in Section IV. Section V provides the definition
+of the geographic data and the location-related data; the positioning procedure is also investigated. The proposed end user
+applications for museums are introduced in Section VI. The
+details of the demonstration setup and evaluation are presented
+in Section VII. The system features and capabilities are illustrated in Section VIII. Section IX highlights the conclusions.
+II. P OSITIONING T ECHNOLOGIES FOR
+B ROADCASTING S ERVICES
+This section reviews the various indoor positioning technologies for broadcasting services in recent years and their
+drawbacks.
+The Global Navigation Satellite Systems (GNSS), as the
+most widely used technology in the current 4G long term
+evolution (LTE) standards, enables determining the outdoor
+geographic location within few meters of accuracy and thus
+supports lots of location-based broadcasting applications and
+services [11] such as navigation, tracking and Location-Based
+Social Networking. However, the GNSS cannot provide users
+
+with the same level of positioning accuracy, continuity, and
+reliability in the indoor environment due to the attenuation and reflection by buildings. To cope with this issue,
+the research of emerging technologies for indoor positioning is on-going [12]–[22], for example, Wi-Fi [18], Frequency
+Modulation (FM) broadcast technology (ex. digital television
+terrestrial broadcasting (DTTB) [19]), Bluetooth [16], [20],
+RFID [21], Ultra-wideband (UWB) [13]–[17], ZigBee [14],
+etc. The advantages and disadvantages of these technologies
+are compared in detail in [22]. Besides these well-known
+positioning technologies, 5G proposes a number of promising
+positioning technologies, which can be applied at mmWave
+frequencies and which is a feasible solution in 5G era with
+two advantages: 1) large available bandwidth to meet the
+increasing demand for mobile data broadcasting; 2) the possibility to pack a large number of antenna elements in
+smartphone or others mobile device. A large number of
+antenna elements enables massive MIMO and high accurate
+beamforming [23]. This is helpful for 2D/3D position and
+3D orientation [24]. Although the mmWave-based positioning
+technology can meet the positioning accuracy requirements
+for the 5G LBS, the high time resolution required from
+the mmWave-based positioning system needs a high synchronization clocking source with extreme low phase noise
+and the cost of mmWave frontend is still considerably high.
+Compared with these Radio-Frequency (RF) solutions mentioned above, the advantages of visible light technology
+include achieving high positioning accuracies, high transmission capacity, interference-free while maintaining a low
+deployment cost [25], [26], [28], [29]. Apart from that, VLCbased positioning system can be a reasonable alternative to
+those RF-based positioning systems in some RF prohibited
+areas such as hospitals, aircraft cabins and oil plants [30].
+In general, the current VLC applications are very rich and
+broad, with opportunities in the most diverse areas. High speed
+transmission and high accuracy indoor positioning are the most
+widely discussed among these areas. Orthogonal frequencydivision multiplexing (OFDM) is most extensively used in
+VLC systems to achieve high-speed transmission, because
+of its high spectral efficiency and low-complexity implementation. Gigabit transmissions using OFDM-based VLC have
+recently been achieved and reported [31], [32]. For example,
+10 Gb/s is achieved by using a GaN violet micro-LED [31].
+Apart from OFDM, multiple channel multiplexing techniques
+such as wavelength division multiplexing (WDM) has been
+used to realize high speed data rate goal. Reference [33], [34]
+reported WDM with the use of RGB laser diodes (LD) demonstrating the rate of 8 Gb/s and 14 Gb/s, respectively. However
+most importantly from the positioning perspective, visible
+light-based systems have the ability to estimate an object’s
+position at the accuracy within the centimeter range [36].
+For example, according the summary about the state-of-theart of indoor VLP in [37], the highest positioning accuracy
+is proposed by [38], in which a positioning accuracy of
+0.69cm is achieved in an indoor environment of 4m x 4m
+x 6m by using differential evolution algorithm. These attractive performance data illustrate that visible light technology
+is a promising candidate for serving the high data rate as
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+SHI et al.: 5G INTERNET OF RADIO LIGHT POSITIONING SYSTEM FOR INDOOR BROADCASTING SERVICE
+
+Fig. 1.
+
+3
+
+Internet of Radio Light infrastructure.
+
+well as positioning accuracy demands of 5G communication
+systems.
+Our proposition is based on the IoRL framework,
+which is a typical indoor solution that integrates VLCbased positioning system into 5G network with Intelligent
+Home IP Gateway (IHIPGW) and Software Defined
+Networks (SDN)/Network Function Virtualization (NFV)
+network paradigm and which provides Virtual Network
+Functions (VNFs). It is structured in four layers including
+the service layer, NFV layer, SDN layer, and the access
+layer. The system architecture is shown in Fig. 1. IoRL is
+also compatible with existing system/standards, e.g., IEEE
+802.11, 802.15, 3GPP. There are two main benefits namely
+delivering a total of 10Gbs data rates in a building with
+a latency under 1ms for future 5G broadcasting service; providing location sensing services with sub 10cm accuracy for
+upcoming indoor 5G era. This is made possible by modulating a high-powered communication LED within the existing
+lighting infrastructure for VLC. Furthermore, we investigated
+the reuse of the same Transport Blocks of 5G NR and adding
+some improvements/adaptation for the VLC case. This may
+simplify and reduce prices of the terminals and the access
+points. All the above-mentioned capabilities have brought
+great motivation for VLC research in 5G networks.
+The intention of the proposed system is to employ
+a location-based broadcasting VNF based on IoRL framework
+into museum scenarios to provide an improved Quality of
+Experience (QoE) and a high accuracy LBS by using low-cost
+VLC-based positioning technology.
+III. L OCATION -BASED B ROADCASTING A PPLICATIONS
+FOR M USEUM S CENARIOS
+The museum as a typical scenario for indoor broadband
+and broadcasting systems, which has attracted more and more
+
+attention in recent years. It requires to display position and
+direction on a map of the mobile device and broadcasts also
+the corresponding information about its surroundings, closeby objects, or time to destination. There are three typical
+requirements for the geographic data broadcasting.
+A. Indoor Location-Based Data Access
+Research in [39] applies iBeacon technology in museums to
+provide visitors with indoor location-based data access. With
+the aid of the geographic data information, staff members of
+museums can provide the exhibit’s information to immediately
+inform the museum visitors. However, this system can only
+provide the rough estimation of the position (between 3 and
+5 meters).
+B. Indoor Location Monitoring and Guiding
+Research in [40] investigated to implement a museum
+monitoring and guiding application using Bluetooth Low
+Energy (BLE) beacon.
+The visitor’s position is calculated by BLE beacon signal strength (RSS) at the location server. The server then
+broadcasts the information about the artifact near the visitor’s
+location through the Internet. Even as the location accuracy
+has been improved in [40] compared to [39], visitors need
+additional connected readers to obtain higher location accuracy (around 2 meters). This method is not convenient for
+visitors.
+Another example is the “Smart Museum” system proposed
+in [41], where Near-field communication (NFC) and RadioFrequency Identification (RFID) technologies are used for
+indoor localization. However, this solution is required to install
+RFID readers on mobile devices, which are expensive and not
+convenient.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+4
+
+Fig. 2.
+
+IEEE TRANSACTIONS ON BROADCASTING
+
+5G IoRL positioning system architecture diagram.
+
+C. Interaction Between Visitors and Systems
+Research in [42] presented a simulation framework for
+a location-based VR museum, which is a RF-based location
+system operating in the Gigahertz band. However, there is no
+practical demonstration based on their simulation.
+The limitation of the aforementioned works is that they cannot provide satisfactory positioning accuracies required for
+future broadcasting service. To deal with the limitation and
+meet all requirements above, a high accuracy 5G positioning
+system using VLC is presented in the next section.
+IV. S YSTEM A RCHITECTURE D IAGRAM
+This section details the 5G IoRL positioning system architecture presented in Fig. 2. The architecture consists of two
+subsystems: the networking and services subsystem and the
+radio access network subsystem (5G RAN). Both parts are
+connected together through a 10Gbps enhanced Common
+Public Radio Interface (eCPRI) Ethernet ring.
+The networking and services subsystem consist of the Cloud
+Home Data Center Server (CHDCS) and IHIPGW, which
+incorporate with the NFV technologies offering a flexible
+infrastructure.
+The 5G RAN subsystem consists of the Remote Radio Light
+Head Controllers (RRLHC), the VLC RRLHs (LEDs) and
+UE. The number of RRLHC (N) depends on the number of
+rooms in building. The number of VLC RRLH (n) depends
+on the number of LEDs required in one room. There can be
+any number of UEs in a room.
+In summary, there are four main components relevant to
+location in these two subsystems: the location server (LS),
+the location database (LD) in the IHIPG, the RRLH controller (RRLHC) in the RAN and the location service
+client (LSC) in the UE.
+• The LS is a VNF implemented within the IHIPGW to
+estimate the coordinates of UE;
+• The LD is another VNF implemented within the
+IHIPGW. There are three different sets of parameters
+stored in the LD:
+1) Received signal strength (RSS) of the geographic
+data obtained by UE within geographic coverage
+area of a room;
+
+•
+
+•
+
+2) Estimated coordinates of UE;
+3) Coordinates of all LEDs and floor plans.
+RRLHC is used to transmit geographic data with known
+power, where one RRLHC is responsible for signal
+dissemination within one room;
+The LSC is a software application (e.g., indoor location monitoring and guiding application) inside both the
+UE and the CHDCS. It provides position information for
+monitoring, guiding and interactive applications (ex. VR
+gaming application) in the form of RSS measurements.
+V. G EOGRAPHIC DATA , L OCATION -R ELATED DATA ,
+AND P OSITIONING P ROCEDURE IN M USEUM
+
+A. The Geographic Data and the Location-Related
+Data Integration in 5G NR Frame
+Each geographic data represents one LED’s ID. This ID is
+generated by 5G RAN and broadcasted through VLC link.
+The geographic data and location-related data are integrated
+in 5G NR frame, which is illustrated in Fig. 3. They are
+allocated in the Physical Downlink Shared Channel (PDSCH)
+slots. In each slot, the 3rd to 10th OFDM symbols are used to
+transmit the location-related data such as the multimedia contents about the close-by exhibitions. The last four OFDM
+symbols transmit four geographic data, where only one particular subcarrier frequency f is used to carry the respective
+geographic data. Since one time slot duration is 0.5 ms, each
+data is obtained by UE every 36 us (0.5 ms/14) at least.
+In the next subsection, the indoor positioning procedure will
+be presented.
+B. Indoor Positioning Procedure
+The indoor positioning procedure involves interaction
+between RRLHC, LD, LS, LSC and the UE, which is illustrated in Fig. 4.
+1) Measurement of Location Relevant Parameters (See the
+Red Lines in Fig. 4):
+a. The UE sends the positioning request to the RRLHC;
+b. The RRLHC sequentially broadcasts a series of LEDs’
+IDs at Time Division Multiplex (TDM) mode;
+c. The UE receives the IDs from all LEDs in one room
+and reports them to the LD by using TCP/IP packages.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+SHI et al.: 5G INTERNET OF RADIO LIGHT POSITIONING SYSTEM FOR INDOOR BROADCASTING SERVICE
+
+5
+
+Fig. 3. Definition of the geographic data and the location-related data in 5G NR frame. One frame consists of 10 subframes, each subframe has two slots
+and each slot has 14 OFDM symbols. In the frequency domain, the subcarrier spacing is 30 kHz.
+
+Fig. 4.
+
+Geographic data broadcasting and positioning procedure.
+
+2) Position Estimation (See Blue Lines):
+a. The LS retrieves the latest IDs data and coordinates of
+corresponding LED from the LD to perform the UE’s
+position estimation;
+b. The LS writes the UE’s position estimation results to
+the LD.
+3) Exploitation of Position Estimation:
+a. The LSC provides location-related broadcasting service
+to user by retrieving the UE’s position estimation from
+the LD.
+C. VLC Positioning Algorithm
+Common positioning algorithms used for VLC indoor localization systems are based on the triangulation method, and
+they need to estimate the distance or angle between transmitter and receiver. There are many ways to achieve the
+distance or angle such as received signal strength (RSS) [25],
+[43], time of arrival (TOA) [14], [27], time difference of
+arrival (TDOA) [30], and angle of arrival (AOA) [44].
+
+AOA positioning algorithm can achieve high accuracy, but
+it needs to deploy a sensor array, which is very expensive
+for users. On the other hand, the TOA or TDOA method is
+a positioning algorithm based on transmission time. However,
+TOA requires the transmitted signals to be very accurately
+synchronized. The need for accurate transmitter synchronization can be avoided if TDOA [45] rather than TOA is
+used. However, the short distance between transmitter and
+the receiver results in short transmission time in indoors.
+Thus, extremely accurate time measurement is required. On
+the contrary, RSS does not need high accuracy synchronization and high frequency clocking compared to the TOA and
+TDOA methods. Furthermore, VLC RSS parameters are easy
+to obtain using a single photodetector without the need for
+auxiliary devices. To take the cost, complexity and accuracy
+of indoor positioning into consideration, RSS based positioning is preferred due to its low cost, low complexity and high
+accuracy [25].
+Therefore, this section elaborates the RSS positioning
+algorithm in our proposition. Based on RSS triangulation
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+6
+
+IEEE TRANSACTIONS ON BROADCASTING
+
+Fig. 5.
+
+Positioning algorithm diagram.
+Fig. 6.
+
+positioning algorithm, minimum three LED’s ID signal power
+should be registered for estimating UE’s position. In the example shown in Fig. 5, three LED’s ID signal f1, f2 and f3 are
+the dedicated subcarrier frequencies with the three highest
+received power. Therefore, the distance d between the LED
+and UE can be calculated by using equation (1)
+
+
+(m + 1)Ar h(m+1) PT
+(m+3)
+(1)
+d=
+2π
+PR
+where Ar is the effective area of the receiving surface of the
+UE. h is a known constant about the vertical distance between
+the UE and the LED. m is the order of Lambertian emission,
+which is relative to the semi-angle at half power of the LED
+denoted as ϕ 1/2 .
+−ln2
+
+m=  
+ln cos ϕ1/2
+
+(2)
+
+The received power PR of the UE can be represented as:
+PR = H(0) ∗ PT
+
+(3)
+
+Location-Based Data Access Application.
+
+where B, C and Xe are defined as
+B=
+
+x2 − x1
+x3 − x1
+
+y2 − y1
+y3 − y1
+
+C=
+
+d12 −d22 +x22 +y22 −x12 −y21
+2
+d12 −d32 +x32 +y23 −x12 −y21
+2
+
+x
+, Xe = e
+ye
+
+
+(8)
+(9)
+
+The estimated Xe can then be obtained by the linear least
+squares.
+
+−1
+(10)
+Xe = BT B BT C.
+VI. E ND U SER A PPLICATIONS
+To demonstrate the performance requirements for broadcasting the geographic data mentioned in Section III, three
+different applications are developed as following.
+A. Location-Based Data Access Application
+
+where PT is the transmitted light power of LED. H (0) is VLC
+Line of Sight (LOS) channel gain between the LED and UE
+which can be shown as:
+(m + 1)Ar cosm (ϕ)cosm (θ )
+(4)
+H(0) =
+2πd2
+where ϕ is the radiation angle between the LED and the UE,
+and θ is the angle of light incident to the receiving surface of
+the UE.
+Thus, the distance d1 , d2 and d3 can be obtained
+respectively.
+The projection distance r1 , r2 , and r3 between LED and UE
+is expressed as shown below:
+
+(5)
+r = d2 − h2
+
+As shown in Fig. 6, it allows the museum to deliver the
+specific description of the demonstrated objects to the visitors nearby yet within exhibition room. The application is
+able to view exhibits from the location database. The location database has been designed using Django architecture.
+The application requires the use of a database and an interface
+that will interact with the VLC access points and the database.
+Essentially the VLC access points would from now on lookup
+the data from the database, and the application developer
+would be able to access and edit the information in this
+database (see Fig. 7), making it easier to manage and control
+the application.
+
+The estimated coordinates of UE: Xe (xe , ye ) thus can be
+calculated as follows:
+⎧
+⎨ (xe − x1 )2 + (ye − y1 )2 = r12
+(6)
+(x − x2 )2 + (ye − y2 )2 = r22
+⎩ e
+(xe − x3 )2 + (ye − y3 )2 = r32
+
+Monitoring application see Fig. 8, allows the museum to
+record the behavior of visitors listed below for further analysis.
+• The visitor’s path through the museum;
+• The amount of time individual visitor spent at each
+exhibit;
+• The most visited exhibit;
+• The population density of visitors in the museum at
+any time.
+According to the definition of LBS, LBS systems use realtime geo-data from a mobile device or smartphone to provide
+
+where, (x1 , y1 ), (x2 , y2 ) and (x3 , y3 ) are the known coordinates of three LED respectively. Equation (6) can be formed
+in a matrix format as (7)
+BXe = C
+
+(7)
+
+B. Monitoring & Guiding Application
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+SHI et al.: 5G INTERNET OF RADIO LIGHT POSITIONING SYSTEM FOR INDOOR BROADCASTING SERVICE
+
+Fig. 9.
+Fig. 7.
+
+7
+
+Guiding Application.
+
+Application fetching data from the location database.
+
+Fig. 10.
+
+VR gaming application.
+TABLE I
+T HE L ABORATORY E NVIRONMENT S ETUP
+
+Fig. 8.
+
+Monitoring Application.
+
+information, entertainment or security and to improve user
+experience. For the museum scenarios, our solution allows the
+visitors to access to a floor plan of the museum to help the
+visitor to navigate around it, as shown in Fig. 9.
+As visitors move around the museum from exhibit to
+exhibit, the location of each visitor is estimated by RSS
+measurements and constantly updated on the user application
+database. The monitoring & guiding application then accesses
+the user application database and retrieves appropriate LED’s
+ID that covers that visitor. The downlink packets destined for
+specific visitor are then broadcasted by his serving LED and
+received by the corresponding visitor. Moreover, at the same
+time, a database records their behaviors, namely: the time each
+visitor spends at each exhibit, their path through the museum,
+the density of visitors in the museum at any one time etc. for
+analysis by the museum management and for increasing the
+user experience.
+C. Interaction Application
+Interaction can enhance the visitor user experience where
+the museums provide their exhibitions with massive bespoke
+digital information only through the individual visitors’ request
+including VR or AR applications [46].
+Once the received geographic raw data in the LD has been
+processed by the positioning algorithm in the LS to determine
+the UE’s geographic position, it can then be used by user
+applications. The VR application can now retrieve this data to
+
+determine the user’s physical movements and thus their position in the virtual environment. The process of the position
+data dissemination is illustrated in the green line of Fig. 10.
+The procedure involves the mobile application sending out
+a request to the LD on the IHIPGW via the RRLHC. The
+location data is then outputted from the LD back to the
+application.
+VII. T HE D EMONSTRATION AND E VALUATION
+A. Demonstration Setup
+The demonstration is performed in a practical indoor environment and its feasibility has been shown through experiments, as shown in Fig. 11. This system is quite simple in
+composition and does not require any additional installation.
+There are four commercial LEDs installed on the ceiling
+to broadcast the geographic data. Each LED is connected
+to a VLC modulator. A Silicon avalanche photodetector (Hamamatsu APD C5331-11) is used as the VLC
+receiver [47]. Related parameters of LED and of APD can
+be found in Table I.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+8
+
+Fig. 11.
+
+IEEE TRANSACTIONS ON BROADCASTING
+
+The demonstration of the 5G Internet of Radio Light positioning system in the laboratory environment.
+
+At the Tx, one Dell server R740 acts as the 5G NR transmitter and generates 5G baseband signals. The user data is
+modulated with different modulation schemes that include
+QPSK, 16-QAM, 64-QAM and 256-QAM. The modulated
+symbols are then assigned to the PDSCH of the 5G NR frame.
+After that, inverse Fast Fourier transform (IFFT) processing is
+applied to convert the OFDM frame to the time-domain. In
+addition, the 5G NR baseband signal is complex-valued data,
+to guarantee that the time-domain signal is real-valued in the
+IM/DD VLC system, IQ modulation is adopted. Subsequently,
+the time-domain discrete signal is scaled and passed through
+a digital-analog (D/A) converter by using USRP 2944R. Then,
+a DC bias is added to ensure the signal is in the quasilinear range of LED. At the end, the signal can be transmitted
+over VLC.
+At the receiver side, the VLC signal is received by APD
+and digitized by analog-digital (A/D) converter of USRP
+2944R. After receiving data from USRP, a UE Layer 1 processing software is used to do the Fast Fourier transform (FFT)
+and OFDM demodulation to recover the data from timedomain to frequency-domain. It estimates the channel response
+with pilot signal in PDSCH and uses zero forcing equalizer
+to recover the symbols. After that, it calculates the EVM and
+positioning error.
+
+B. Evaluation of the Demo
+1) Communication Performance: The demonstration can
+work well with white LED lamp in a normal laboratory indoor
+lighting environment. The system can provide a data rate of
+
+around 45.25 Mbps with a bandwidth of 10 MHz from 10 MHz
+to 20 MHz.
+The constellation diagrams of the received signal as well
+as the signal’s Error Vector Magnitude (EVM) are measured for QPSK, 16-QAM, 64-QAM and 256-QAM modulation schemes, as shown in Fig. 12. The system supports an EVM less than 4% with those kinds of schemes
+and their constellation points are concentrated, which means
+that our system has a good communication link quality and ensures the probability of successful demodulation. In addition, QPSK, 16QAM and 64QAM can meet
+the 3GPP EVM recommendation: EVMQPSK < 17.5%,
+EVM16−QAM < 12.5%, and EVM64−QAM < 8% which are
+illustrated in Table 6.5.2-1 in [48]. The EVM of the 256-QAM
+and 3GPP recommendation in this modulation scheme are also
+extremely close.
+2) Positioning Accuracy: Four single-tone signals are used
+to represent the geographic data of four LEDs’ ID: 300 kHz,
+600 kHz, 900 kHz and 1200 kHz with −3 dBm transmitter
+power. The positioning accuracy is evaluated by the PE defined
+in equation (11) as follows:
+
+(11)
+PE = (xe − xr )2 + (ye − yr )2
+where xr , yr and xe , ye are the coordinates of the reference
+points and estimated points, respectively.
+We plot the distribution of reference points and estimated
+points in Fig. 13 (a). Under the experimental environment,
+6*11 uniform distributed reference points are selected over
+the positioning area. Each reference point is measured 5 times
+thus there are 330 (6*11*5) estimated points in total.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+SHI et al.: 5G INTERNET OF RADIO LIGHT POSITIONING SYSTEM FOR INDOOR BROADCASTING SERVICE
+
+9
+
+Fig. 12. The measured constellation diagrams of the received signal for proposed system (left upper corner: QPSK, left lower corner: 16-QAM, right upper
+corner: 64-QAM, right lower corner: 256-QAM).
+
+The distribution of PEs is illustrated in Fig. 13 (b). Although
+there are significant PEs especially in the room corners, it
+obtains a good positioning performance in the room center.
+This can be explained by its sensitivity due to the light reflection. 75% of room coverage can achieve the PEs of less than
+0.25 m.
+Fig. 13 (c) plots the PEs distribution of five ranges.
+According to the results, our system has a probability of
+60.2 % to achieve a PE less than 0.2m and only 15.8 % to have
+PEs in the range 0.3-0.4m. Thus, we can say that our proposal
+can guarantee a reasonable high-accuracy positioning ability.
+
+VIII. S YSTEM F EATURES AND C APABILITIES
+
+B. High-Capacity
+The high-capacity can be illustrated in the following aspects:
+1) a wide capacity is guaranteed by designing of LED’s layout;
+2) many spectrally efficient modulation formats cooperation
+with different digital signal processing techniques could provide the high-capacity. For example, wavelength division
+multiplexing (WDM) could support multiple users with different colors LED [49], space division multiple access (SDMA)
+could create parallel spatial pipes by differing spatial locations of the users and hence improve the capacity [50]. All
+these aspects enable users to seamlessly access the Internet
+while keeping high Quality of service (QoS) levels, avoiding
+network congestions and delays.
+
+The proposed system inherits the advantages of VLC-based
+positioning system and meanwhile overcomes some shortcomings in current positioning systems, such as the low-accuracy
+by using the radio beacon, high-cost of mmWave frontend and
+so on. The features and capabilities of this system in museum
+scenario can be summarized as follows.
+
+C. Radiation-Free
+
+A. High-Accuracy
+
+D. Low-Cost
+
+This system provides a reasonable high positioning accuracy
+with a mean PEs of 0.18 m obtained by single-tone training
+signals. It allows visitors to match precisely their geographic
+location to the surrounding location-related information.
+
+The cost is lower because the VLC uses the existing lighting
+infrastructure to communicate and illuminate without additional installation, and the cost of the VLC front-end is only
+a LED lamp price with a small LED driver.
+
+With LED Lamp, the system utilizes unlicensed visible light
+which has no radiation and no interference issues to broadcast
+geographic data. Based on this feature, the system and the
+broadcasting service can be applied more widely in indoor
+environment.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+10
+
+IEEE TRANSACTIONS ON BROADCASTING
+
+A demonstration with white LED lamps and commercial
+APD shows that the system has a high data rate of around
+45.25 Mbps in the laboratory environment and a mean PEs
+of 0.18 m. Besides that, the system has many other excellent
+features, such as high communication bandwidth, low-cost,
+radiation-free etc., so we do believe that the system can be
+widely used in the future in different indoor broadcasting
+service scenarios such as museums, shopping centers etc.
+Moreover, based on these experimental results obtained in
+this paper, we summarized the key points of future work in
+order to improve system performance. First of all, as for the
+RSS-based VLC indoor positioning systems, many research
+works demonstrated that the calibration during offline preparation can improve the positioning accuracy [51]. Thus, our next
+work should focus on this and carefully analyze the effect on
+positioning accuracy and adopt appropriate calibration method
+in our system.
+Secondly, the positioning errors have been measured to
+be relatively high on the edges, or corners, of the experimental environment. This may be caused by the multipath
+effect [12], [52]. Therefore, in order to boost the positioning
+accuracy, it is absolutely necessary to analyze the characteristics of practical indoor optical wireless channel in near
+future.
+Thirdly, the current experimental results are based on RSS
+positioning algorithm and we will try to analyze and compare the performance of various positioning algorithms under
+the same experimental condition in our laboratory. These
+more comprehensive experimental results will be obtained and
+reported in the future.
+Finally, to guarantee a high positioning accuracy, one technology will not be enough because of the complex indoor
+environment. It is necessary to propose an enhanced positioning system in the near future that fuses different positioning
+data to compensate for some inherent defect of visible light
+(such as impassable via opaque obstacles).
+R EFERENCES
+
+Fig. 13. (a) The distribution of reference points and estimated points. (b) The
+distribution of PEs. (c) The distribution of PEs among five error ranges.
+
+IX. C ONCLUSION
+In this paper, a 5G indoor positioning system for broadcasting service in the museum is proposed. This system
+uses LED devices for indoor positioning as well as indoor
+broadband communication, which is low-cost, radiation-free
+and easy to install. The definition of geographic data, the
+location-related data and a positioning procedure are proposed.
+
+[1] J. J. Gimenez et al., “5G new radio for terrestrial broadcast: A forwardlooking approach for NR-MBMS,” IEEE Trans. Broadcast., vol. 65,
+no. 2, pp. 356–368, Jun. 2019.
+[2] S. Ahn, K. Kim, S. Myung, S. Park, and K. Yang, “Comparison of lowdensity parity-check codes in ATSC 3.0 and 5G standards,” IEEE Trans.
+Broadcast., vol. 65, no. 3, pp. 489–495, Sep. 2019.
+[3] F. Alvarez et al., “An edge-to-cloud virtualized multimedia service
+platform for 5G networks,” IEEE Trans. Broadcast., vol. 65, no. 2,
+pp. 369–380, Jun. 2019.
+[4] S. Rommel, D. Perez-Galacho, J. M. Fabrega, R. Muñoz, S. Sales, and
+I. T. Monroy, “High-capacity 5G Fronthaul networks based on optical
+space division multiplexing,” IEEE Trans. Broadcast., vol. 65, no. 2,
+pp. 434–443, Jun. 2019.
+[5] NGMN 5G White Paper. Next Generation Mobile Networks, Frankfurt,
+Germany, NGMN Alliance, White Paper, 2015.
+[6] N. Jawad et al., “Smart television services using NFV/SDN network
+management,” IEEE Trans. Broadcast., vol. 65, no. 2, pp. 404–413,
+Jan. 2019.
+[7] “Cisco visual networking index: Global mobile data traffic forecast
+update, 2017–2022,” San Jose, CA, USA, Cisco, White Paper, 2019.
+[8] Y. Jeong, S. Cho, G. Kim, C. Ahn, S. Lee, and W. Kim, “Location based
+service based on digital multimedia broadcasting,” in IEEE Dig. Tech.
+Papers Int. Conf. Consum. Electron., Jan. 2006, pp. 147–148.
+[9] A. Basiri et al., “Indoor location-based services challenges, requirements
+and usability of current solutions,” Comput. Sci. Rev., vol. 24, pp. 1–12,
+May 2017.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+This article has been accepted for inclusion in a future issue of this journal. Content is final as presented, with the exception of pagination.
+SHI et al.: 5G INTERNET OF RADIO LIGHT POSITIONING SYSTEM FOR INDOOR BROADCASTING SERVICE
+
+[10] IoRL. Accessed: Nov. 7, 2019. [Online]. Available: https://iorl.5gppp.eu/
+[11] R. Abbas, K. Michael, and M. G. Michael,
+“Locationbased privacy, protection, safety, and security,” in Privacy in
+a Digital, Networked World. Cham, Switzerland: Springer, 2015,
+pp. 391–414.
+[12] S. Mazuelas, A. Conti, J. C. Allen, and M. Z. Win, “Soft range
+information for network localization,” IEEE Trans. Signal Process.,
+vol. 66, no. 12, pp. 3155–3168, Jun. 2018.
+[13] S. Bartoletti, A. Giorgetti, M. Z. Win, and A. Conti, “Blind selection
+of representative observations for sensor radar networks,” IEEE Trans.
+Veh. Technol., vol. 64, no. 4, pp. 1388–1400, Apr. 2015.
+[14] A. Conti, D. Dardari, M. Guerra, L. Mucchi, and M. Z. Win,
+“Experimental characterization of diversity navigation,” IEEE Syst. J.,
+vol. 8, no. 1, pp. 115–124, Mar. 2014.
+[15] A. Conti, M. Guerra, D. Dardari, N. Decarli, and M. Z.
+Win, “Network experimentation for cooperative localization,”
+IEEE J. Sel. Areas Commun., vol. 30, no. 2, pp. 467–475,
+Feb. 2012.
+[16] H. Wymeersch, J. Lien, and M. Z. Win, “Cooperative localization
+in wireless networks,” Proc. IEEE, vol. 97, no. 2, pp. 427–450,
+2009.
+[17] B. Hanssens et al., “An indoor variance-based localization technique
+utilizing the UWB estimation of geometrical propagation parameters,”
+IEEE Trans. Antennas Propag., vol. 66, no. 2, pp. 2522–2533,
+May 2018.
+[18] S. Shrestha, J. Talvitie, and E. S. Lohan, “Deconvolution-based indoor
+localization with WLAN signals and unknown access point locations,”
+in Proc. IEEE Int. Conf. Localization GNSS (ICL-GNSS), Jun. 2013,
+pp. 1–6.
+[19] V. Moghtadaiee and A. G. Dempster, “Indoor location fingerprinting
+using FM radio signals,” IEEE Trans. Broadcast., vol. 60, no. 2, pp.
+336–346, Jun. 2014.
+[20] R. Faragher and R. Harle, “Location fingerprinting with Bluetooth
+low energy beacons,” IEEE J. Sel. Areas Commun., vol. 33, no. 11,
+pp. 2418–2428, Nov. 2015.
+[21] A. Basiri, P. Peltola, P. F. e Silva, E. S. Lohan, T. Moore, and C. Hill,
+“Indoor positioning technology assessment using analytic hierarchy process for pedestrian navigation services,” in Proc. Int. Conf. Location
+GNSS (ICL-GNSS), Jun. 2015, pp. 1–6.
+[22] J. Luo, L. Fan, and H. Li, “Indoor positioning systems based on visible
+light communication: State of the art,” IEEE Commun. Surveys Tuts.,
+vol. 19, no. 4, pp. 2871–2893, 4th Quart., 2017.
+[23] J. Saloranta and G. Destino, “On the utilization of MIMO-OFDM channel sparsity for accurate positioning,” in Proc. 24th Eur. Signal Process.
+Conf. (EUSIPCO), Aug. 2016, pp. 748–752.
+[24] Z. Lin, T. Lv, and P. T. Mathiopoulos, “3-D indoor positioning
+for millimeter-wave massive MIMO systems,” IEEE Trans. Commun.,
+vol. 66, no. 6, pp. 2472–2486, Jun. 2018.
+[25] M. F. Keskin, A. D. Sezer, and S. Gezici, “Localization via visible light
+systems,” Proc. IEEE, vol. 106, no. 6, pp. 1063–1088, 2018.
+[26] Y. Almadaniet al., “A novel 3D visible light positioning method using
+received signal strength for industrial applications,” Electronics, vol. 8,
+no. 2, p. 1311, 2019.
+[27] S. Bartoletti, W. Dai, A. Conti, and M. Z. Win, “A mathematical model
+for wideband ranging,” IEEE J. Sel. Topics Signal Process., vol. 9, no. 2,
+pp. 216–228, Mar. 2015.
+[28] D. Plets, S. Bastiaens, L. Martens, W. Joseph, and N. Stevens, “On the
+impact of LED power uncertainty on the accuracy of 2D and 3D visible
+light positioning,” Optik, vol. 195, Oct. 2019, Art. no. 163027.
+[29] E. M. Jeong, S. H. Yang, H. S. Kim, and S. K. Han, “Tilted receiver
+angle error compensated indoor positioning system based on visible light
+communication,” Electron. Lett., vol. 49, no. 14, pp. 890–892, 2013.
+[30] P. Du, S. Zhang, C. Chen, A. Alphones, and W.-D. Zhong,
+“Demonstration of a low-complexity indoor visible light positioning
+system using an enhanced TDOA scheme,” IEEE Photon. J., vol. 10,
+no. 4, pp. 1–10, Aug. 2018.
+[31] M. S. Islim et al., “Towards 10 Gb/s orthogonal frequency division
+multiplexing-based visible light communication using a GaN violet
+micro-LED,” Photon. Res., vol. 5, no. 2, pp. A35–A43, 2017.
+
+11
+
+[32] G. Zhang, J. Zhang, X. Hong, and S. He, “Low-complexity frequency
+domain nonlinear compensation for OFDM based high-speed visible
+light communication systems with light emitting diodes,” Opt. Exp.,
+vol. 25, no. 4, pp. 3780–3794, 2017.
+[33] T. Wu et al., “Tricolour R/G/B laser diode based eye-safe white lighting
+communication beyond 8 Gbit/s,” Sci. Rep., vol. 7, p. 11, Jan. 2017.
+[34] D. Tsonev, S. Videv, and H. Haas, “Towards a 100 Gb/s visible light
+wireless access network,” Opt. Exp., vol. 23, no. 2, pp. 1627–1637, 2014.
+[35] D. Plets et al., “Three-dimensional visible light positioning: An experimental assessment of the importance of the LEDs’ locations,” in Proc.
+IEEE Int. Conf. Indoor Position. Indoor Navig. (IPIN), 2019, pp. 1–6.
+[36] T. Q. Wang, Y. A. Sekercioglu, A. Neild, and J. Armstrong, “Position
+accuracy of time-of-arrival based ranging using visible light with application in indoor localization systems,” J. Lightw. Technol., vol. 31,
+no. 20, pp. 3302–3308, Oct. 15, 2013.
+[37] P. Du et al., “Experimental demonstration of 3D visible light positioning
+using received signal strength with low-complexity trilateration assisted
+by deep learning technique,” IEEE Access, vol. 7, pp. 93986–93997,
+2019.
+[38] Y. Wu, X. Liu, W. Guan, B. Chen, X. Chen, and C. Xie, “High-speed 3D
+indoor localization system based on visible light communication using
+differential evolution algorithm,” Opt. Commun., vol. 424, pp. 177–189,
+Oct. 2018.
+[39] X. Y. Lin et al., “A mobile indoor positioning system based on iBeacon
+technology,” in Proc. 37th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc.
+(EMBC), Aug. 2015, pp. 4970–4973.
+[40] A. Handojo, R. Lim, T. Octavia, and J. K. Anggita, “Museum interactive
+information broadcasting using indoor positioning system and Bluetooth
+low energy: A pilot project on Trowulan museum Indonesia,” in
+Proc. 3rd Technol. Innov. Manag. Eng. Sci. Int. Conf. (TIMES-iCON),
+2008, pp. 1–5.
+[41] A. Kuusik, S. Roche, and F. Weis, “SmartMuseum: Cultural content
+recommendation system for mobile users,” in Proc. IEEE 4th Int. Conf.
+Comput. Sci. Converg. Inf. Technol., 2009, pp. 477–482.
+[42] J. L. Lugrin et al., “A location-based VR museum,” in Proc. 10th
+Int. Conf. Virtual Worlds Games Serious Appl. (VS-Games), Sep. 2018,
+pp. 1–2.
+[43] S. Bastiaens, W. Raes, N. Stevens, W. Joseph, and D. Plets, “New photodiode responsively model for RSS-based VLP,” in Proc. Global LIFI
+Congr. (GLC), Jun. 2019, pp. 1–6.
+[44] H. Steendam, “A 3-D positioning algorithm for AOA-based VLP with
+an aperture-based receiver,” IEEE J. Sel. Areas Commun., vol. 36. no. 1,
+pp. 23–33, Jan. 2018.
+[45] S. Y. Jung, S. Hann, S. Park, and C. S. Park, “Optical wireless indoor
+positioning system using light emitting diode ceiling lights,” Microw.
+Opt. Technol. Lett., vol. 54, no. 7, pp. 1622–1626, 2012.
+[46] E. Woods et al., “Augmenting the science centre and museum
+experience,” in Proc. ACM 2nd Int. Conf. Comput. Graph. Interactive
+Techn. Australasia South East Asia, Jun. 2004, pp. 230–236.
+[47] L. Shi, W. Li, X. Zhang, Y. Zhang, G. Chen, and A. Vladimirescu,
+“Experimental 5G new radio Integration with VLC,” in Proc. 25th
+IEEE Int. Conf. Electron. Circuits Syst. (ICECS), Dec. 2018,
+pp. 61–64.
+[48] Evolved Universal Terrestrial Radio Access (E-UTRA); Base Station
+(BS) Radio Transmission and Reception, V14, 3GPP Standard TS
+36.104, 2009.
+[49] F.-M. Wu, C.-T. Lin, C.-C. Wei, C.-W. Chen, Z.-Y. Chen, and
+H.-T. Huang, “3.22-Gb/s WDM visible light communication of a single
+RGB LED employing carrier-less amplitude and phase modulation,” in
+Proc. IEEE Opt. Fiber Commun. Conf. Exposit. Nat. Fiber Optic Eng.
+Conf. (OFC/NFOEC), Mar. 2013, pp. 1–3.
+[50] L. Yin, X. Wu, and H, Haas, “SDMA grouping in coordinated
+multi-point VLC systems,” in Proc. IEEE Summer Topicals Meeting
+Series (SUM), Jul. 2015, pp. 169–170.
+[51] R. Amsters et al., “Towards automated calibration of visible light positioning systems,” in Proc. Int. Conf. Indoor Position. Indoor Navig.
+(IPIN), 2019, pp. 1–8.
+[52] A. Conti, S. Mazuelas, S. Bartoletti, W. C. Lindsey, and M. Z. Win, “Soft
+information for localization-of-things,” Proc. IEEE, vol. 107, no. 11,
+pp. 2240–2264, 2019.
+
+Authorized licensed use limited to: Xun Zhang. Downloaded on April 30,2020 at 06:37:00 UTC from IEEE Xplore. Restrictions apply.
+
+

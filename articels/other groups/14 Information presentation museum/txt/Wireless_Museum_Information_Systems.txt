@@ -1,0 +1,409 @@
+IEEE International Workshop on Intelligent Data Acquisition and Advanced 
+Computing Systems: Technology and Applications
+6-8 September 2007, Dortmund, Germany
+
+Wireless Museum Information Systems
+
+Jürgen Sieck ¹, André Fiedler ²
+
+University of Applied Sciences FHTW Berlin
+
+1) j.sieck@fhtw-berlin.de, http://inka.f4.fhtw-berlin.de/sieck
+
+2) andre.fiedler@fhtw-berlin.de, http://inka.f4.fhtw-berlin.de/fiedler
+
+
+Abstract – This article describes several technical aspects of
+three different museum information systems developed at the
+author’s university. It examines key features of the systems,
+shows multiple ways of mobile content access and outlines future
+research potentials.
+
+Keywords - wireless information systems, mobile devices, IT-
+infrastructure in museums
+
+I. INTRODUCTION
+
+The development of mobile devices in the last 25 years
+has continually affected the creation of new mobile
+applications based on emergent technologies. While newly
+developed  device  types  with  different  technical
+specifications have surrounded us in our everyday life and
+private environment, new base technologies have also
+been established step-by-step.
+
+Industrial standards and paradigms tremendously affect
+inventions  and  developments  in  the  mobile  sector
+nowadays starting in the field of ergonomic hardware
+design for the mobile market and ending with common
+patterns for highly effective software engineering.
+
+By  combining  the  advantages  of  established
+technologies with these new approaches and furthermore
+adapting those criteria to the different user needs and
+application scenarios we are able to extend existing
+applications with new mobile components and services.
+Furthermore highly innovative concepts can be realised
+and integrated in a given environment.
+
+II. IMPACT OF MOBILE DEVICES ON WIRELESS
+INFORMATION SYSTEMS
+
+By looking more closely at the development of
+common network technologies in the consumer market
+those effects can be examined regarding the acceptance of
+miniaturised mobile devices. After starting with the idea
+of using mobile devices mainly for managing contacts we
+use those network enabled multimedia gadgets today for
+much more. The capability of permanent communication,
+almost independent from the user’s current time and
+location, lets people create scenarios not only for
+transmitting speech but also increasingly more pure data.
+
+With regard to these and further features, there are
+currently a plethora of devices on the world market such
+as personal digital assistants, smartphones and UMTS
+mobile phones, going further to internet tablets or mobile
+
+navigation systems and finally video-enabled MP3 players
+with lifestyle character. Even though most of them show
+differences concerning their technical aspects, engineering
+departments however are increasingly asked to develop
+mobile applications that cover all existing device types.
+
+Particularly those services and systems that are created
+for the usage in a mobile environment by integrating new
+technologies must offer a significant additional value to
+the  user’s life to be generally accepted and resold. At this
+point meeting the users expectations and demands is as
+important as constantly offering new features and services
+with easy-to-use interfaces.
+
+Since using the term of “third generation mobile
+technology”  for  addressing  the  universal  mobile
+telecommunication system (UMTS) both the name and the
+demand  for  location-based  services  have  arisen.
+Applications and systems, which follow these demands
+and concepts, begin to take the user’s mobility and her
+device into consideration, in order to evaluate and
+integrate the permanently changing parameters as well as
+the aspects of a restricted runtime environment into the
+application itself. As a result information is distributed in
+a memory- and bandwidth efficient way, depending on the
+users location and her environment. Using this technology
+not only makes it possible to offer basic information in a
+wide field of topics but it also uses information in a more
+detailed way which brings the additional value to the user.
+Instead of always giving access to the entire application
+the system generates single views with highly specialised
+content.
+
+With regard to this range of functions a second aspect
+becomes increasingly important to the development of
+new mobile applications. For a vast array of different
+devices with an equally large range of different
+parameters not only does location dependent information
+play  a significant role but also the reuse and adoption of a
+constantly growing and updated central database. For that
+reason it is not the goal for software developers to create
+several highly customised services for single platforms but
+to generate and distribute an optimized version of an
+application with respect to the device of interest.
+
+In the following subsections three applications are
+presented which were jointly developed at the University
+of  Applied  Sciences  FHTW  Berlin  as  part  of
+
+1-4244-1348-6/07/$25.00 ©2007 IEEE         669
+
+
+interdisciplinary projects by the departments of Applied
+Computer Sciences and Museum Sciences (q.v. [1]). In
+the project results the mechanisms of both the location-
+based information presentation and the multiple content
+transformation are discussed.
+
+III. A MULTIMEDIA TOURIST INFORMATION SYSTEM
+FOR THE GREEK PENINSULA PELOPONNES (THE
+
+DIMO PROJECT)
+
+In contrast to common applications in the field of
+museum guides this project does not contain information
+and media assets for a spatially restricted exhibition area.
+It rather follows the concept of treating a whole
+geographical region as an open-air museum where the
+surrounding landscape is more or less the new museum’s
+walls. With many detailed, widely-researched subsections
+the system offers a convenient way for visitors to receive
+information or look just around. For this purpose all
+historical, archaeological, geographical and cultural data
+were collected and listed into a content management
+system. This enables a better management and final
+presentation  through  a  database  integrating  internet
+platform for different user devices (Fig. 1 and 2) (q.v. [2]).
+Experts as well as generally interested users can access
+this information collection not only through their private
+desktop computer but also via a specially customized
+flexible view on the system, optimised for the device they
+use. This means, that besides notebook computers also
+personal  digital  assistants  and  mobile  phones  are
+supported as well as other mobile devices. Additionally
+users can also use the system to dynamically produce a
+
+printable format like PDF.
+
+For presenting the multimedia content assets the
+application offers access to a multitude of images, videos
+and 360° panorama scenes. Even the usage of these assets
+undergoes a special treatment for only distributing media
+sections in an optimised form and thus keeping the
+additional value for the user through multiple channels.
+
+Fig. 1. Data handling and presentation in the DIMO project.
+
+Fig. 2. Automatic content adaptation on mobile clients.
+
+The system described is based on the Cocoon
+Framework (as described in [3]) of the Apache Software
+Foundation in combination with some major XML
+language dialects (XSL-FO, XSLT, XPath, XSP). This
+enables the application to keep the most flexible
+mechanisms for customising and extending, even in a
+sophisticated scenario with multiple new mobile device
+types. XML serves as a data format that is independent of
+any used media asset and therefore offers a convenient
+way of storing and processing any kind of data.
+Particularly the constantly growing database and direct
+accessibility for users, allow the advantages of an adaptive
+data transformation and presentation become increasingly
+important.
+
+The continuing project is focused on integrating
+location-based services for marketing a complete mobile
+museum’s guide application for personal digital assistants.
+In  this situation the user and his position is constantly
+being tracked in a well-defined environment. After
+comparing this with data sets of known objects or places
+we  can obtain a prediction of whether the user is in the
+close environment of a predefined object or place. In case
+of a positive match the system will present information
+and data in a proactive way, addressing exactly the current
+object. This feature obtains a highly important meaning
+especially in the field of archaeology or tourist
+information systems. Imagine a system, which can
+automatically display background information about an
+almost completely destroyed temple combined with some
+animated 3D-predictions about its previous appearance.
+With the detailed scenario the user can get an additional
+value as well as experiencing long gone cultures in a very
+present environment.
+
+670
+
+
+IV. LOCALISATION IN THE CONTEXT OF A MOBILE
+
+INFORMATION SYSTEM
+
+The common idea of location-based information
+distribution was considered and researched more
+intensively in a project, dealing with the conception and
+development of a museum guide for the Berlin Pergamon
+Museum (q.v. [4]). In contrast to a potential scenario,
+where the Global Positioning System might be used to
+track the user’s position in a widely-spread area and
+present location-dependent information about a certain
+object, this concept cannot be applied to an indoor
+scenario with short distances due to its variation range.
+
+The amount and size of objects, together with their
+mass of information, demanded new concepts when
+developing a mobile information application in this case.
+For storing and managing data at a central location, a
+database was established. Access to this base by a mobile
+device, e.g. a PDA, was given through a wireless local
+area network. Among several other criteria, such as
+calling up desired information about a particular object in
+a manual manner by navigating a media-enriched flash
+menu structure, the main goal was to automatically
+present relevant information as soon as the user explicitly
+moves towards a certain object, e.g. the world-famous
+Pergamon Altar (Fig. 3).
+
+For guaranteeing this range of functions, the system
+distributes information depending on the device’s relative
+position to several previously registered points of the
+exhibition. To be able to clearly localise a user within an
+indoor-context, the system accesses the wireless local area
+network and its protocols, which are already used for
+communication purposes. Tracking the user’s position
+exactly   is based on the idea that every exhibition room
+offers an array of new information worth presenting to the
+user. As soon as a user and their device change position,
+which is equal to leaving one access point coverage and
+entering another, the base of relevant information changes
+coincidentally. This handover occurs without the loss of
+network connectivity. By adopting this approach to the
+described use case at the Pergamon Museum, a network
+consisting of several access points, servers, mobile clients
+and alike is established, as illustrated in Fig. 4.
+
+Fig. 3. Location-based content presentation on a mobile device.
+
+Fig. 4. Network composition of the Pergamon Museum project’s
+mobile information system.
+
+V. USING NEW WAYS OF DISTRIBUTING CONTENT IN
+
+MOBILE INFORMATION SYSTEMS
+
+The complexity and method of presenting multimedia
+content on a mobile device in a museum information
+system scenario is strongly dependent on the basic
+parameters of the museum’s concept itself, as described
+above. In contrast to the formerly described scenarios, the
+appearance, conception and image of the Berlin Museum
+of Modern Art (Berlinische Galerie) is completely
+different. Instead of realising a permanent and fixed
+object’s placement, every exhibit presented undergoes a
+frequent change in arrangement and composition amongst
+others. For developing a mobile information system
+meeting this Museum’s demands, the conceptual model
+needed to take two facts into consideration: firstly, the
+management of the vast amount of information regarding
+a constantly growing exhibit base with only an extract to
+be presented; secondly, the possibility to frequently
+rearrange objects depending on a certain topic.
+
+By using a network-based platform, which guides users
+according to previously created topic-specific tours, only
+fractions of any voluminous database needs to be
+displayed. At the same time, a location-based distribution
+of  data according to one’s relative position to a fixed
+network component, like WLAN access points, can be
+omitted. Complex tours are offered to the user, which can
+be chosen manually and cover several exhibition topics.
+Through this method, a wide range of bonus material can
+be presented to a consumer, only considering the objects
+of the currently chosen tour. However, this form of
+inflexible guidance may prevent a user from fully
+appreciating the exhibition scenery. Therefore, users are
+able   to start, stop and continue a tour at any point of
+interest
+
+As the runtime environment and principal platform for
+mobile usage, PDAs were addressed since these devices
+currently offer multiple methods of network connections,
+as well as the best compromise regarding display quality,
+media content support and physical appearance, as
+Marjorie Schwarzer already predicted in [5]. Through
+addressing these devices, the chance of usage barriers
+
+671
+
+
+appearing is minimised due to interaction similarities
+compared to desktop personal computers. Complex
+museum contents can be visualised and explained in place
+by offering multiple multimedia-enriched contents, which
+reminds a user of commonly experienced human-guided
+museum tours. Going further, this experience is not only
+restricted to the Museum’s visit itself. For preparing a
+visit, as well as for subsequent research, the system
+(illustrated in Fig. 5) gives access to two key features.
+
+On the one hand, there is a way of subscribing to a list
+of updated tour contents from a personal computer. By
+utilising the RSS (Really Simple Syndication) technology,
+tour contents are offered as freely podcasts with the
+capability to manually control the replay of combined
+image and audio data. The additional value – besides the
+mobile usage of museum contents – can be seen in an
+extremely data-reduced way of distributing a combination
+of image and audio assets, which can be user-controlled.
+After synchronising an iPod with a personal computer of
+choice, the transferred contents can be brought into the
+Museum environment on a private mobile device, and
+finally be consumed in a similar way to PDAs. Here, an
+array of additional aspects positively influences the
+experience for users, especially concerning the degree of
+freedom and flexibility: the novel interaction concept
+integrated in iPods as well as larger resources in the fields
+of storage and battery operating time.
+
+On the other hand, a secondly created additional value
+for users can be experienced while visiting the exhibition.
+There, a user can generate their personal exhibition
+catalogue on the fly and gradually add objects of interest
+to  it while visiting the museum. At the end, an email is
+sent to the user’s address of choice, containing the
+generated catalogue attached in a printable format.
+
+For collecting both the user’s contact datasets and
+composing and managing the different exhibits, a custom
+Content Management System (as illustrated in figure 5)
+was developed. This application holds the information
+base, integrates media assets and provides the opportunity
+to generate new tours or manage existing ones according
+to specified parameters.
+
+VI. RESULTS
+
+Several features of what has already been outlined in
+
+[5] were developed and tested separately in the projects
+described above. Nevertheless, there is only little
+approach regarding a potential permanent use of a highly
+sophisticated mobile information system combining these
+results with the dynamic context and location based data
+selection and presentation in a multimodal way.
+
+Therefore, the new project EMIKA, as described in [6],
+was established in a co-operation between the Berlin
+Jewish Museum Berlin and the University of Applied
+Sciences FHTW Berlin. Here, the main focus is to design
+mobile  multimedia indoor and outdoor information
+systems with regard to all descibed features.
+
+REFERENCES
+
+[1] Research group “Information and Communication Systems,”
+University  of  Applied  Sciences  FHTW  Berlin.
+http://inka.f4.fhtw-berlin.de
+
+[2] C. Hoepfner, J. Sieck, P. Weyrich, “Informationstechnische
+Grundlagen fuer das mobile Informationssystem Dimo Enkyklo-
+pedia, (The IT-infrastructure of the mobile information system
+Dimo Enkyklopedia),” Proceedings of the Conf. Electronic
+Imaging and the Visual Arts (EVA), SPK Berlin, 2005, pp. 180-
+187.
+
+[3] S. Niedermeyer, Cocoon 2 und Tomcat. Galileo Computing, 2005.
+
+[4] M. Hybsier, A. Lang, J. Sieck, K. Sommer, C. Friedrich, “Entwurf
+und Implementierung multimodaler Museumsinformationssysteme
+am Beispiel eines Prototypen fuer die Berlinische Galerie, (Design
+and implementation of multimodal museum information systems in
+a prototype approach for the Berlin Museum of Modern Art),”
+Proceedings of the Conf. Electronic Imaging and the Visual Arts
+(EVA), SPK Berlin, 2006, pp. 89-93.
+
+[5] M. Schwarzer, Art & Gadgetry - The Future of the Museum Visit,
+published in Museum News, The American Association of
+Museums, 2001.
+
+[6]  J. Mohnke, J. Sieck, “History, philosophy, and computer science –
+How to bring them together to develop an outstanding eLearning
+tool for a museum,” Proceedings of the 2007 UICEE 11ᵗʰ Baltic
+Region Seminar on Engineering Education, Tallinn, Estonia, 18-20
+June 2007 (to be published).
+
+[7] J. Schiller, Mobilkommunikation (Mobile Communication),
+Addison-Wesley, 2003.
+
+Fig. 5. System architecture for the Berlin Museum of Modern
+Art project.
+
+672
+

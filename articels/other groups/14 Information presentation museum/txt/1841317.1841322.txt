@@ -1,0 +1,1767 @@
+Modeling Visitors’ Profiles: A Study to Investigate
+Adaptation Aspects for Museum Learning Technologies
+
+ANGELIKI ANTONIOU and GEORGE LEPOURAS, University of Peloponnese
+
+The time restrictions that apply in museum learning increase the need for 
+adaptive and/or adaptable technologies. However,
+deriving a visitor’s profile is not an easy task, since most common ways 
+(asking direct questions, recording user actions) are
+either intrusive or time consuming. Observing the visitors’ movement (visiting 
+style) within the museum could provide valuable
+information regarding adaptivity. In the present study, issues of visiting 
+style were explored and statistical significance was
+found once different factors were analyzed. Most importantly, there seems to be 
+a connection between the way people move in
+a museum and the way they prefer to approach and process information 
+cognitively. Environmental factors that can affect the
+expression of visiting style were also identified.
+
+Categories and Subject Descriptors: H.1.2 [Models and Principles]: User/Machine 
+Systems—Human factors; human informa-
+tion processing; H.5.2 [Information Interfaces and Presentation]: User 
+Interfaces—User-centered design; prototyping; K.3.1
+[Computers and Education]: Computer Uses in Education—Computer-assisted 
+instruction
+
+General Terms: Design, Human Factors                                            
+     7
+
+Additional Key Words and Phrases: Adaptability, adaptivity, museum adaptive 
+learning technologies, education, design guide-
+
+lines, museum
+
+ACM Reference Format:
+
+Antoniou, A. and Lepouras, G. 2010. Modeling visitors’ profiles: A study to 
+investigate adaptation aspects for museum learning
+technologies. ACM J. Comput. Cult. Herit. 3, 2, Article 7 (September 2010), 19 
+pages.
+
+DOI = 10.1145/1841317.1841322 http://doi.acm.org/10.1145/1841317.1841322
+
+1. INTRODUCTION
+
+During the past years museums have moved from preserving and displaying 
+artifacts to institutions
+focused on the education and entertainment of visitors [Falk et al. 1997; Kelly 
+2000]. To this end,
+museum curators strive to design and implement exhibitions that offer an 
+educational and at the same
+time enjoyable experience. However, designing such an exhibition is not an easy 
+task. The exhibition
+has to cater to the needs of different types of visitors and the selection of 
+the most prominent learning
+technologies is further restricted by two important issues: (1) most visitors 
+might only visit once and
+
+(2) a typical museum visit only lasts for a few minutes [Falk et al. 1985; 
+Serrell 1998]. The provision of
+a personalized experience to the visitor may help alleviate the problem of 
+limited time and may more
+generally enhance the experience of any visitor if properly customized.
+
+Author’s address: A. Antoniou (corresponding author), G. Lepouras, University 
+of Peloponnese, Tripolis, Greece; email:
+angelant@uop.gr.
+
+Permission to make digital or hard copies of part or all of this work for 
+personal or classroom use is granted without fee provided
+that copies are not made or distributed for profit or commercial advantage and 
+that copies show this notice on the first page
+or initial screen of a display along with the full citation. Copyrights for 
+components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, to 
+republish, to post on servers, to redistribute to
+lists, or to use any component of this work in other works requires prior 
+specific permission and/or a fee. Permissions may be
+requested from Publications Dept., ACM, Inc., 2 Penn Plaza, Suite 701, New 
+York, NY 10121-0701 USA, fax 1 (212) 869-0481,
+or permissions@acm.org.
+
+c 2010 ACM 1556-4673/2010/09-ART7 $10.00
+
+DOI 10.1145/1841317.1841322 http://doi.acm.org/10.1145/1841317.1841322
+
+
+However, unlike other learning systems, the time limitations imply that in a 
+museum one cannot
+obtain the necessary information by asking direct questions to the visitor or 
+by recording and postan-
+alyzing user actions on a given device interface (i.e., on a PDA) [Papanikolaou 
+and Grigoriadou 2005].
+At this point it is important to make a distinction between the different terms 
+used to describe
+the different levels and aspects of adaptation. Adaptation is a general term to 
+describe the ability
+of a computer system to adapt to the requirements of its environment or the 
+needs of the users. In
+the latter case, when the system adapts to user needs, the process is known as 
+personalization. The
+users of adaptive systems can have different levels of control of the system’s 
+adaptive features. For
+example, when the user has full control of the system’s adaptive features and 
+can select between
+different available options, then this system is described as adaptable. When 
+the system adapts to
+perceived user requirements without informing the user, it is known as a fully 
+adaptive system. In a
+hypothetical continuum with different levels of user control, the amount of 
+user control can vary in
+
+different systems from full control to no control.
+
+Furthermore, the use of personalized interfaces for adaptive applications has 
+been criticized mainly
+regarding the amount of control provided to different users [Papanikolaou et 
+al. 2001], since problems
+could derive from different levels of control allowed, either too little or too 
+much. For example, full
+control and many available options could confuse the user. In addition, certain 
+features on nonadaptive
+systems seem to increase time effectiveness of use [Findlater and McGrenere 
+2004]. Nevertheless,
+users tend to prefer adaptive applications [Findlater and McGrenere 2004], even 
+though they may not
+customize them in optimal ways [Bunt et al. 2004]. Effective adaptivity seems 
+to be dependent on the
+nature of the task, as well as on the users’ individual characteristics 
+[Graziola et al. 2005; Li et al. 2009]
+and available features [McGrenere et al. 2007], implying that adaptive systems 
+can be significantly
+improved to accommodate different user preferences and needs. Since the 
+different factors that might
+affect the effectiveness of adaptivity are not fully explored, the field 
+requires further research. There
+seems to be a need for personality-aware interfaces. There are indications that 
+when the adaptivity
+parameters match the different personality and cognitive characteristics of the 
+individual, learning
+becomes significantly more effective both in regards to application features 
+and content [Caporusso
+2009].
+
+Furthermore, in regards to learning, adaptive technology can be a valuable tool 
+[Gaeta et al. 2009]
+
+supporting different types of learning, like collaborative [Gweon et al. 2006] 
+and museum learning
+[Wakkary and Hatala 2007]. From all the preceding, we can conclude that 
+although there are certain
+limitations with the use of personalized interfaces, mostly in regards to 
+interface design, the design
+of museum learning technologies could benefit from their use. Not only the 
+increasing complexity of
+the available technologies but also the multidimensional learning content of 
+museums make adaptiv-
+ity issues relevant, in an attempt to cover diverse learning needs [Muntean and 
+Muntean 2009]. We
+therefore aim at solutions that will use salient cues to lead to adaptivity 
+without the users’ awareness
+or explicit action. Consequently, all information counts whether it is provided 
+by the user intentionally
+or unintentionally.
+
+Museums around the world are using adaptive technologies for a variety of 
+purposes. There are
+applications that provide customized information for different target groups 
+[Terrenghi and Zimmer-
+mann 2004; Walczak et al. 2006], for example, according to visitors’ age 
+[Alzua-Sorzabal et al. 2005].
+There are also applications that attempt to match different visitors with 
+similar interests [Sumi and
+Mase 2002]. Different applications can also use different technologies. For 
+instance, certain applica-
+tions provide adaptive information over the Web [De Bra et al. 2002]. In 
+addition, there are applications
+that adapt to the specific learning needs of the individual, like INSPIRE, a 
+hypermedia system devel-
+oped in order to adapt to the knowledge levels and learning style of the 
+learners [Papanikolaou et al.
+2002].
+
+
+Fig. 1. The Cicero guide from Dini et al. [2007].
+
+Furthermore, museums worldwide use a variety of not simply adaptive but also 
+mobile applications.
+More specifically, a wide range of mobile and space-sensitive devices exist 
+that provide museum vis-
+itors with adaptive content [Crowley and Knutson 2002; Hall and Bannon 2006; 
+Jacucci et al. 2009;
+Leinhardt et al. 2002; Rocchi et al. 2004; Raptis et al. 2005] for individual 
+and collaborative learning
+[Dini  et al. 2007; Huizenga et al. 2009; McGreen and Sanchez 2005; Schroyen et 
+al. 2008]. Adaptivity in
+these cases relied on different environmental cues. The following screen shots 
+illustrate the interface
+of the Cicero guide, as an example of museum-adaptive and mobile applications.
+
+Another good example is the PEACH (Personal Experience with Active Cultural 
+Heritage) project,
+in which mobile devices were also used. This particular project is worth 
+mentioning due to its special
+design, using cinematic techniques in order to create a feeling of personalized 
+TV. The documentary-
+like content also adapted to the interests of the user [Rocchi et al. 2004]. In 
+addition, the PIL (PEACH-
+Israel) project attempted mobile adaptation for groups of visitors, since 
+rarely people visit museums
+alone [Kuflik et al. 2007]. In this article, we discuss the implications of 
+visiting style and cognitive
+style for instructional design based on 335 questionnaires.
+
+1.1 Visiting Style
+
+The way people behave in a museum can provide valuable information for the 
+design of adaptive tech-
+nologies. Perhaps the easiest observation and the least intrusive is to record 
+the way people move in
+the physical space of a museum. Anthropological research by Veron and Levasseur 
+[1983] has identi-
+fied four dominant types of museum movement. Animal metaphors were used to 
+describe the different
+visitors. An Ant visitor moves in a linear fashion, approaches almost all 
+exhibits, is interested in detail,
+avoids empty spaces and follows a clear path and the curators’ suggestions. A 
+Fish visitor moves in
+the center of rooms, trying to see the “larger” picture, does not approach most 
+exhibits and does not
+stop very frequently. A Butterfly visitor moves in a nonlinear fashion and does 
+not pay attention to the
+curators’ suggestions, changes the direction of her movement often, approaches 
+exhibits, is interested
+in detail, sees almost all exhibits, and is affected by environmental 
+affordances (the exhibit’s accessi-
+bility, visitor traffic, etc.) [Gabrielli et al. 1999; Marti et al. 2001]. 
+Finally, a Grasshopper visitor is a
+person of particular interests and only approaches certain items, crosses empty 
+spaces, and spends a
+significant amount of time in front of these exhibits.
+
+Visiting style has a strong situational component and implies that different 
+environmental issues
+
+affect its expression. As discussed earlier, different environmental factors, 
+that is, visitor traffic, can
+prohibit the expression of certain visiting styles (Ants) and enhance others 
+(Butterflies). Important
+environmental issues that seem to affect visiting style are: the width of the 
+artworks, their positions,
+their artistic importance, access points to a room, arches, steps, crowds, 
+lights, etc. [Marti et al. 2001].
+
+
+In the present study, environmental issues are further explored, including 
+issues of museum size.
+There is a possibility that the size of a museum could affect the expression of 
+the visiting styles.
+For example, in a large museum visitors cannot simply see all or most exhibits, 
+therefore, we expect
+fewer Ant and Butterfly visitors. Similarly, in a small museum, the number of 
+Fish and Grasshopper
+visitors might be limited. In our study, we have also included another 
+situational factor, the type of
+visitor. By the term “type of visitor,” we refer to different visitors that 
+visit either alone or in a group
+(family, school, friends, and tourists). The type of visitor could 
+significantly affect visiting style. Finally,
+questions on museum type were also introduced, with the thought that there 
+might be differences in
+the proportions and expressions of visiting style in museums of different 
+thematic material.
+
+A few applications are already using visiting style in order to provide the 
+visitors of cultural her-
+itage sites with personalized information. An example of such systems is HIPS 
+(Hyper-Interaction
+within Physical Space), a hypermedia system supporting mobile presentation of 
+museum and histor-
+ical information. Tourists and museum visitors are equipped with a hand-held 
+device which provides
+electronic tours. Tourists’ positions are detected and auditory information is 
+personalized and context
+depended [Broadbent and Marti 1997]. The main principle of the application is 
+that information is
+context depended and thus, it should be presented in different ways [Petrelli 
+et al. 1999a]. The envi-
+ronment becomes an interface and the visitor’s movements become a form of input 
+to the system. The
+system can spot a novice visitor from her movements and support her during the 
+visit. HIPS assumes
+that different visiting styles need different durations for the presentations 
+and the empirical data
+supports this hypothesis [Gabrielli et al. 1999]. HIPS uses infrared emitters 
+to connect to the users’
+devices (PDAs) [Marti et al. 2001]. Finally, user testing and evaluation showed 
+that all users like the
+idea of receiving information related to their movement. In addition, in the 
+experimental cases where
+the visiting style was matched to appropriate content, the users demonstrated 
+increased interest by
+requesting more information about the exhibits explicitly [Marti et al. 2001].
+
+The use of applications that adapt to visitors’ visiting style [Broadbent and 
+Marti 1997; Gabrielli
+et al. 1999; Petrelli et al. 1999b] was found effective in terms of solving 
+navigation problems in physical
+[Oppermann et al. 1999; Specht and Oppermann 1999] and virtual museums 
+[Chittaro and Ieronutti
+2004],  as well as increasing visitor satisfaction and learning motivation 
+[Marti et al. 2001]. However, it
+was also found that visiting style should be combined with other 
+considerations, notably the taxonomy
+of the artworks, the physical location of exhibits, and the visitors’ interests 
+[Oppermann and Specht
+2000].
+
+1.2 Cognitive Style
+
+Aiming especially at learning technologies, it was important to study issues 
+relevant to human learn-
+ing. One important factor was cognitive style, a relatively constant and 
+situation-independent charac-
+teristic that describes the cognitive processes involved in learning. Cognitive 
+style shows how people
+prefer to approach and process information [Riding and Rayner 1998]. This is a 
+well-studied field [Ford
+1995; Hudson 1966; Kagan 1965; Liu and Reed 1995; Pask 1972; Riding and Cheema, 
+1991; Witkin,
+1962, 1978] and it has been connected to the design of effective learning 
+technologies [Atkins et al.
+2001]. A list of guidelines for the accommodation of all cognitive styles in 
+the design of adaptable
+learning technologies is also available from previous research [Lawrence 1997; 
+Martin 1997].
+
+Systems developed so far using visiting style were based on observations in 
+order to match content.
+For example, Chittaro and Ieronutti suggest that “long and detailed 
+presentations are more suitable
+for an [A]nt visitor, while short presentations are more suitable for 
+[G]rasshopper visitors” [Chittaro
+and Ieronutti 2004, p. 46]. Empirical data confirms the hypothesis of a 
+correspondence between vis-
+iting style and different contents [Gabrielli et al. 1999], showing a clear 
+potential for efficient learn-
+ing. Furthermore, Umiker-Sebeok [1994] made a first attempt to combine visiting 
+and cognitive style.
+
+
+However, the small sample size (N=41) did not permit elicitation of significant 
+results. Nonetheless,
+there were clear indications that there might be a connection between the two.
+
+1.3 Assessment Tools
+
+Depending on the different aspects of the cognitive style researchers wish to 
+study, various assess-
+ment tools have been designed and employed. Probably the most well-known and 
+cited are the CSA
+(Cognitive Style Analysis) [Riding and Rayner 1998] and the MBTI (Myers-Briggs 
+Type Indicator)
+[Briggs-Myers and McCaulley 1985]. The MBTI uses self-reported questionnaires 
+and is based on
+Jung’s theory of psychological types. Participants are described using four 
+dimensions: extraversion-
+introversion, sensing-intuition, thinking-feeling, and judging-perceiving. The 
+combination of the four
+dimensions offers 16 personality types. Having a strong validity and 
+reliability while being easy to
+complete and including questions on user control, the MBTI was selected for use 
+in this study.
+
+In recent years, there has been an ongoing debate about whether to use adaptive 
+or adaptable sys-
+tems in education. A very important reason for using MBTI was the fact that it 
+includes questions
+on user control. The main question was whether it is better for the user to 
+interact with an adaptive
+system or whether it is better that the system permits user control and 
+provides customization choices
+to the user. The issues of user control are very important for the design of 
+educational technologies.
+Kettanurak et al. [2001] found that accommodators as described in Kolb’s 
+learning styles [Kolb 1985]
+appreciated the control given to them and a high interactivity mode, whereas 
+divergers did not like
+the  high user control condition. By specifying participants’ control 
+preferences we will then be able to
+see the possible connections to the other variables like visiting style.
+
+2. METHOD
+
+A variety of methods exist for the collection of visitor data. These methods 
+include interviews with
+the museum visitors, observing their movement inside the museum, as well as 
+using questionnaires to
+reveal visitor-related information. In this study, the latter method of 
+questionnaire survey was used. It
+is important to note that all available methods have certain strengths and 
+weaknesses associated with
+their use, as well as a number of financial, practical, and ethical 
+considerations [Bitgood 1988; 2002].
+
+Questionnaires were chosen since they do not interfere with the visit, like 
+observations might do,
+and they also allow statistical analysis and stronger generalization than 
+interviews [Petrelli et al.
+1999b]. Considering the trade-off between practicality, cost, and ethics on the 
+one hand and reliability
+and validity on the other, as well as taking into account the nature of the 
+required research, a deci-
+sion was made in favor of the questionnaires’ use. This decision is also in 
+line with previous findings
+from the Smithsonian Institution indicating that similarities in results 
+outweigh the differences be-
+tween the methods when different practical and ethical issues are considered 
+[Doering and Pekarik
+1998]. In addition, the present study is a front-end informative research. 
+According to the Wells and
+Butler Visitor-Centered Evaluation Hierarchy, which matches research goals to 
+appropriate methods,
+different research goals require different data collection methods and in this 
+front-end study the use
+of questionnaires can provide valid results [Doering 2006; Wells and Butler 
+2002].
+
+Although questionnaires are not directly related to the movement patterns of 
+the visitors, but rather
+report the participants’ perception of their own behavior, they were still 
+considered appropriate for the
+purposes of this study due to a number of reasons. Firstly, there are certain 
+limitations regarding direct
+observation of visitors which mainly pertain to ethical and legal reasons.
+
+Secondly, questionnaires were also found appropriate due to the specific 
+character of the present
+research. Certain questions can produce more accurate results than others. 
+Previous research has
+indicated that self-reports on physical movement provide more accurate results 
+than self-reports on the
+time spent [Bitgood and Richardson 1986; Iguchi 2006]. In this study, requiring 
+simple answers on the
+
+
+linearity or nonlinearity of one’s movement, and not detailed descriptions 
+regarding visiting behavior,
+allowed participants to describe their actual movement styles, and ensured that 
+the questionnaires
+reflected this information accurately.
+
+Reliability was also indirectly checked in the questionnaires. The 
+questionnaires included a hy-
+pothetical question of how visitors usually move in museums of different sizes. 
+Their answers were
+compared to their description of their actual movement in the museums they had 
+just visited, together
+with their estimation of this museum’s size. This comparison showed that 
+visitors reported similar
+movement patterns in both physical and hypothetical settings.
+
+Furthermore, certain types of questions are more prone to providing biased 
+answers than other types
+[Parry and Crossley 1950]. These questions usually include an emotional 
+element. To comply with the
+literature findings on the subject and acquire as indicative answers as 
+possible, the types of questions
+used  in this study were carefully chosen and phrased, using comprehensive 
+language and emotionally
+neutral, nonsuggestive questions.
+
+Proper question design, according to the steps described before, ensured the 
+best possible reliability
+of the survey in terms of acquiring answers that reflected actual visitor 
+behavior in the gallery. Apart
+from that, reliability and validity also had to be ensured in terms of properly 
+acquiring the data. To this
+end, the “Code of Ethics for Museums” has been followed in this study, not 
+simply by taking into ac-
+count ethical considerations but also by attempting to increase the validity of 
+the responses [Museums
+Association 2009]. Following museum-ethics guidelines, data was collected on 
+the visitors’ way out, in
+a   quiet space away from the exhibits. Questionnaires were also anonymous and 
+were distributed to
+more than one participant at the time (the investigator would not know which 
+questionnaire corre-
+sponded to which individual). The participants were also left to complete the 
+questions alone, away
+from the presence of the researcher. In the questionnaire, participants could 
+provide their email for a
+follow-up process; however, it was made clear that they could decline that 
+option. Participants were
+also informed about their right to refuse to answer questions. Finally, 
+following the code of ethics, par-
+ticipants were informed about the solely academic purposes of the study, were 
+given the contact details
+of  the researcher and the institution, and had the option to receive an email 
+with further information
+about the study and its results.
+
+To assure internal consistency reliability, the questionnaires were distributed 
+for a whole week (in-
+cluding weekends) and during all opening hours of different museums (museums of 
+different size and
+thematic content), in an attempt to minimize the risk of getting specific types 
+of visitors (for example,
+schools visiting in the mornings of week days, etc.). Moreover, the visitors 
+considered in this study
+were not predetermined, but this study rather used the actual population that 
+visited the museum for
+a specific time span, following a simple, random sampling procedure. In 
+addition, not all individuals
+chose to participate in the study. As a consequence, these limitations may have 
+caused certain biases
+in the sample used. Considering these biases, certain measures were taken to 
+increase the external
+validity of the survey to the best possible extent [Petrelli et al. 1999b]. 
+These measures pertain to the
+use of a large sample (335 fully completed questionnaires), as well as using a 
+heterogeneous population
+(male and female participants of different ages from 35 countries).
+
+The study is divided into the analyses of primary questions like those 
+presented in this section,
+
+concerning mostly visiting style, and the analyses of secondary questions that 
+mainly concern issues
+of cognitive style. The secondary significant findings are only explained in 
+the Results section due to
+space limitations.
+
+2.1 Visiting Style and Museum Size
+
+The present research wishes to study a number of issues relevant to visiting 
+style, whose role has not
+been clear from previous studies. One of them is the issue of museum size, how 
+this is determined,
+
+
+what factors affect the perception of size and how this affects, or not, 
+visiting style. The size of a
+museum and the perception of its size to the visitors could be determined by a 
+number of factors.
+Perhaps the most important are the number of square meters, the number of 
+rooms, and the number
+of exhibits and/or the combination of them. Together with asking direct 
+questions about museum’s
+size factors, we also wished to compare the perceived size with the visiting 
+style expressed. Therefore,
+it was hypothesized that people’s visiting styles are affected by museum size. 
+The null hypothesis
+(Hn) was: There will be the same proportion of visiting styles that could be 
+observed in museums of
+different sizes. The Hn is formed in such a way since we suppose that in small 
+museums most visitors
+could be either Ants or Butterflies and in large museums most visitors could be 
+either Grasshoppers or
+Fish.
+
+2.2 Visiting Style and Type of Visitor
+
+Visiting style and type of visitor could significantly affect visiting style. 
+For example, the different
+visiting styles can only emerge when the visitor is alone. By the term type of 
+visitor, we describe the
+number of people visiting together and the type of group they form. We have 
+identified five different
+types of visitors: people visiting alone, families, groups of friends/ peers, 
+schools, and tourist groups.
+Null hypothesis: People’s visiting style is not affected by the type of visitor 
+they belong to. Hn1: all four
+visiting styles will emerge equally (in similar proportions) for individuals 
+and groups.
+
+2.3 Visiting Style and Museum Type
+
+Hypothesizing that there might be a relation between museum type and visiting 
+style, the null hy-
+pothesis was formed as follows: Visiting style will not be affected by museum 
+type.
+
+2.4 Visiting Style and Cognitive Style
+
+Finding a correlation between the two variables could imply a solution to the 
+problem of adaptivity
+in museums, since the observable visiting style could provide valuable 
+information about the internal,
+nonobservable cognitive style and presentation preferences of the different 
+visitors. Thus, the null
+hypothesis was: There will be no significant correlation between the different 
+visiting styles and the
+cognitive styles of visitors.
+
+2.5 Visiting Style and User Control
+
+For issues of adaptivity, it is important to know the amount of control the 
+user wishes to have. In the
+questionnaire, there were questions to investigate issues of user control. The 
+null hypothesis is: there
+will be no statistical correlation between the different visiting styles and 
+the amount of user control
+the visitors wish to have.
+
+2.6 Visiting Style and Demographic Factors
+
+Different demographic factors like age, nationality, and gender are correlated 
+to visiting style that
+could have adaptivity implications. The null hypothesis was that visiting style 
+would be independent
+of demographic factors.
+
+The questionnaire was distributed to different museums, but the main bulk of 
+data came from the
+National Archaeological Museum (Athens, Greece). The distribution of 
+questionnaires at the National
+Archaeological Museum lasted for one week during spring 2008. The study factors 
+were identified from
+a pilot study at the University of Athens, History Museum [Antoniou and 
+Lepouras 2006]. Therefore,
+the questionnaire included questions on museum size (how visitors view the 
+specific museums and
+what are the factors that determine a museum’s size), questions on the type of 
+visitor (whether they
+visited alone or in a group), questions on visiting style, questions for the 
+elicitation of cognitive style
+
+
+(the MBTI test), and questions for collecting demographic information. Visitors 
+completed the ques-
+tionnaires on their way out of the museum. In total, 335 questionnaires were 
+gathered. All the data
+were categorical (nominal) and chi-square tests were used for the statistical 
+analyses. A questionnaire
+template is available to interested readers at 
+[http://hci-vr.cst.uop.gr/museum-quest.pdf].
+
+2.7 Variables
+
+The analysis of data concentrated around 12 main variables, in order to 
+investigate possible relation-
+ships.
+
+—Age (four possible values: under 21, 22–45, 46–65, over 66);
+
+—Gender (two possible values: Female, Male);
+
+—Nationality;
+
+—Museum size (three possible values: small, medium, large);
+
+—Museum size factors (seven possible values: number of rooms, square meters, 
+number of exhibits,
+quality of artifacts, density of exhibits, number of highlights, time spent, 
+museum architecture.
+These categories emerged from the pilot study);
+
+—Visiting style (four possible values: Ant, Fish, Grasshopper, Butterfly);
+
+—Type of visitor (five possible values: alone, school, tourist group, peers, 
+family);
+
+—Behavior with others, only for group visitors (four possible values: exhibits 
+important to me, exhibits
+important to the group, exhibits important to all of us, exhibits important to 
+some since we split up);
+
+—Museum type (name of the different museum where the study took place);
+
+—Museum content (three possible values: In an industrial museum I would like to 
+learn about prin-
+ciples of engineering, industrial aesthetics, industrial history. The 
+Industrial museum was chosen
+since it is not a common museum type and therefore not associated with specific 
+learning stereo-
+types).
+
+—Cognitive style (16 possible values, based on the Myers and Briggs Type 
+Indicator);
+
+—User control (three possible values: prefers control, prefers instructions, 
+neutral).
+
+It should be noted here that more variables could have been included, like 
+domain expertise, previous
+visits, etc. For example, a visitor with specific interests and domain 
+expertise would probably spend
+more time in front of specific exhibits or would probably desire in-depth 
+information. In addition, a
+distinction between local and nonlocal visitors might also be very important, 
+since there are different
+learning needs for people that might only visit once than other visitors than 
+have the option of repeated
+visits. However, more variables were not included, in the interests of keeping 
+the questionnaire short,
+to avoid participants’ fatigue. Nevertheless, different descriptive variables 
+are also very important and
+should be investigated in future works. The field could be further explored and 
+would possibly provide
+very interesting findings.
+
+3. RESULTS
+
+All the variables described earlier were nominal/categorical. These nominal 
+data, with multiple cate-
+gorical values, formed several contingency tables. The contingency tables were 
+statistically analyzed
+with chi-square tests. From the available chi-square tests, the Pearson’s 
+chi-square test was used in or-
+der to test the goodness of fit of the observed frequency distribution against 
+the theoretical distribution
+and also to test the independence of the variables. Although the Pearson’s test 
+is the best known and
+most widely used for the analysis of contingency tables, there are several 
+problems associated with its
+use when the expected frequencies are low. For those cases when the expected 
+frequencies were low, a
+more appropriate test was used, the Likelihood Ratio.
+
+
+Table I. Percentage of Visiting Styles in Museums of Different
+Sizes
+
+Small Museum  Medium Museum  Large Museum
+Ant        57.9%      40.9%      24.2%
+
+Butterfly      23.3%       29.3%       19.1%
+
+Fish         6.9%       10.7%       16.4%
+
+Grasshopper     7.5%       13.7%       35.2%
+
+45
+
+40
+
+35
+
+30
+
+25                                   grasshopper
+
+20                                   ﬁsh
+
+15                                   bu erﬂy
+
+10                                   ant
+
+5
+
+0
+
+Fig. 2. Visiting and cognitive style.
+
+3.1 Primary Findings
+
+3.1.1  Visiting Style and Museum Size. It was found that the most important 
+size factors were
+number of exhibits (60.7%) and number of square meters (22.1%). Furthermore, 
+the null hypothesis
+that museum size would not affect visiting style was rejected,  ²(6, 318)  
+Pearson .004, Likelihood
+Ratio .002, p < .05. Table I shows how visiting styles change according to 
+museum size.
+
+3.1.2 Visiting Style and Type of Visitor. We failed to reject the null 
+hypothesis related to the type
+of visitor and visiting style, since ² (12, 308)  Pearson .227, p > .05. 
+However, it seemed that most
+people in groups would see exhibits important to everyone in the group (34.3%) 
+(“I saw exhibits impor-
+tant to me” – 19.7%, “exhibits important to some since the group split up” – 
+9%, “exhibits important to
+the rest of the group” – 5.1%).
+
+3.1.3 Visiting Style and Museum Type. We also failed to reject the null 
+hypothesis concerning visit-
+ing style and museum type. However, this could be due to the small sample size 
+coming from museums
+other than the National Archaeological Museum (National Archaeological N = 295, 
+other museums
+N = 23). The value of chi-square was ×2 (18, 318) = Pearson .406, p > .05.
+
+3.1.4 Visiting Style and Cognitive Style. The null hypothesis was that visiting 
+style would be inde-
+pendent of cognitive style. The chi-square test allowed us to reject this null 
+hypothesis since ×2 (48,
+271)   = Pearson chi-square .093, Likelihood Ratio .020, p < .05. Figure 2 
+shows the relations.     F
+
+
+Further analysis of the data on the different axes of the MBTI revealed that 
+the ×2 values are par-
+ticularly significant once related to introverts-extroverts and 
+judgers-perceivers ×2 (3, 299) = Pearson
+
+.018, p < .05 and ×2 (3,271) = Pearson .018, p < .05 respectively.
+
+3.1.5 Visiting Style and User Control. We failed to reject the null hypothesis 
+related to visiting
+style and the amount of user control visitors wish to have. The value of 
+chi-square was ² (6, 283)
+Pearson .162, p > .05.
+
+3.1.6 Visiting Style and Demographic Factors. Once comparing visiting style to 
+different demo-
+graphic variables like age and gender the comparisons gave statistically 
+nonsignificant results with
+p  > .05. Although visiting style seems independent of age and gender, it was 
+observed that visiting
+style might be culturally dependent. The sample used in this study did not 
+allow in-depth statistical
+analysis. However, there are indications towards this direction that require 
+further study.
+
+3.2 Secondary Findings
+
+In this section, only the significant secondary findings are reported. These 
+findings could be useful in
+the process of adapting the museum content to visitors of different profiles.
+
+3.2.1 Cognitive Style and Museum Content. We failed to reject the hypothesis 
+that people of dif-
+ferent cognitive type would not have different preferences on museum content. 
+In order to investigate
+this issue, we included a question about what people would like to learn in an 
+industrial museum.
+The options presented to the participants were: (1) I would like to learn 
+principles of engineering; (2)
+I would like to learn about industrial aesthetics; (3) I would like to learn 
+industrial history. The chi-
+square test did not reveal statistically significant differences between the 
+different cognitive types [×2
+(30, 244) = Pearson .171, p > .05]. However, a closer look showed that on the 
+judger-perceiver axis
+there were significant values ×2 (2, 244) = Pearson .055, Likelihood Ratio 
+.041, p < .05.
+
+3.2.2 Cognitive Style and Control Provided. The null hypothesis that cognitive 
+style and amount
+of wanted control would be independent of each other was also rejected, since ² 
+(30, 287)  Pearson
+
+.034, Likelihood Ratio .008, p < .05.
+
+3.2.3  Age and Different Factors. Statistically significant results were also 
+found when age was
+studied. In particular, the cognitive style shows significant values once 
+correlated to the different age
+groups,  ² (48, 287)  Pearson .085, Likelihood Ratio .047, p < .05. Especially 
+the axis judger-perceiver
+seems to be affected with  ² (3, 287)  Pearson .027, Likelihood Ratio .021, p < 
+.05. Similarly, the
+different age groups are highly correlated to the different visitor types, that 
+is, whether someone visits
+alone or in a certain group. ×2 (12, 294) = Pearson .000, Likelihood Ratio 
+.000, p < .001. Finally, the
+value of ×2 was also significant for age and nationality a not surprising 
+finding, since traveling is
+affected by the age of people. ×2 (102, 304) = Pearson .141, Likelihood Ratio 
+.034, p < .001.
+
+4. DISCUSSION
+
+4.1 Primary Findings
+
+4.1.1 Visiting Style and Museum Size. It was found that visiting style is 
+indeed affected by the
+size of the museum. As suspected, in a small- and a medium-sized museum most 
+visitors are Ants,
+whereas in large museums most visitors show Grasshopper behavior. Therefore, 
+using visiting style
+for adaptation purposes is also very important in regard to museum size. In 
+addition, what seems to
+determine the size of a museum is primarily the number of exhibits with the 
+number of square meters
+secondary. For example, most participants regarded the British Museum and the 
+Louvre as examples
+of  large museums, while most visitors viewed the National Archaeological 
+Museum as medium-sized
+
+
+(51.6%). To provide a brief description of this museum in terms of these size 
+factors, the Greek Na-
+tional Archaeological Museum covers an area of 8,000 square meters and contains 
+more than 20,000
+exhibits. Therefore, knowing the size of a museum, the design of learning 
+technology, and the learn-
+ing content can shift from supporting storytelling in small museums to provide 
+detailed information
+for certain highlights in large museums. However, in the present study the 
+participants answered
+hypothetical questions on the way they would behave in a small, a medium, and a 
+large museum
+regarding their visiting style. Although the analysis of the answers showed 
+that the proportions of
+visiting styles found in the National Archaeological Museum (a medium-sized 
+museum) matched the
+answers in the hypothetical questions regarding visiting style in medium-sized 
+museums, thus provid-
+ing validity to the method, the need for further investigation remains. 
+Avoiding the use of hypothet-
+ical questions, a future study should compare results on visiting style between 
+museums of different
+size.
+
+4.1.2 Visiting Style and Type of Visitor. Since the value of chi-square was 
+high, it did not allow
+for the rejection of the Hn. This implies that there is not statistical 
+difference between the different
+types of visitors and the proportion of visiting styles within these groups. As 
+suspected, that indicates
+that visiting style research is only valid for individuals visiting museums 
+alone. Once in a group, the
+visiting style cannot emerge, since the group behavior has unique visiting 
+characteristics that require
+separate research. In general, it was found that group members come to a 
+compromise between their
+individual needs and try to cover the interests of all group members. 
+Similarly, not many groups split
+up, which shows the increased need for collaborative technologies in museums.
+
+4.1.3 Visiting Style and Museum Type. As mentioned earlier, the statistical 
+analysis did not reveal
+any significant difference between the different museum types. Although we 
+found no significant re-
+sults, nevertheless, there is an interesting observation. Previous studies 
+reported that from the total
+population of visitors approximately 20% are Fish, 30% Ants, 50% Butterflies 
+and 10% Grasshoppers
+[Oppermann and Specht, 2000]. However, our analysis showed that the visiting 
+groups were quite dif-
+ferent  and the visitors could be described as 10.4% Fish, 41.2% Ants, 28.7% 
+Butterflies, and 14.6%
+Grasshoppers. These differences are probably related to the museum type the 
+data was gathered
+from,    or some characteristics of the participants like their nationality. 
+Issues of museum type seem
+still unclear and need further investigation. It would be interesting to see 
+whether the distribution
+of the visiting styles changes in museums of different thematic content. The 
+small sample size com-
+ing from museums other than the National Archaeological did not allow the 
+further analysis at this
+point.
+
+4.1.4 Visiting Style and Cognitive Style. The cognitive styles found with MBTI 
+can be easily con-
+nected to specific learning content appropriate for the different learners. 
+Since cognitive style describes
+and reflects the specific cognitive processes that the learner uses in order to 
+process information, it can
+therefore be employed as an indication of learners’ preferences for the 
+presentation and the content
+of  the learning material. The significant values of chi-square found indicate 
+that different visiting
+styles correlate with particular cognitive styles. For example, it was found 
+that Grasshoppers have
+significantly higher chances of being judgers and introverts, whereas Butterfly 
+visitors show increased
+extroversion. These findings together with the finding for an increased need 
+for adaptable and not
+fully adaptive technologies (discussed shortly) suggest that all visitors 
+should be presented with dif-
+ferent options of the learning material that provide them with choice. However, 
+previous research on
+cognitive styles [Durling et al. 1996] shows that extroverts prefer group 
+activities, while introverts
+prefer to work alone. This implies that in a museum, Butterfly visitors could 
+be presented with the
+choice of a group activity (i.e., perhaps with other Butterfly visitors). In 
+the same way, a group activity
+
+
+is probably not desired by Grasshopper visitors, since they show an increased 
+introversion. For these
+cases, the presentation order for the different activities could change. That 
+means that all visiting
+style users are presented with all the options but in a manner that is closer 
+to their cognitive style,
+bringing the expected best-fit activity first in the presentation order. 
+Similarly, judgers want structured
+and organized learning material, while perceivers want to have a flexible 
+learning environment. Since
+Grasshoppers were found to be significantly more judgers than perceivers, the 
+option of a structured
+lesson should be given first on the interface of a given device (i.e., PDA) 
+than a list of different learning
+options.
+
+Previous research has also made suggestions about different ways to observe and 
+place visitors in
+different visiting style groups. One possibility is that visitors can be 
+provided with museum devices
+like PDAs (i.e., HIPS). There were also suggestions for the use of visitors’ 
+mobile phones and Bluetooth
+technology in an attempt to reduce museum expenses [Antoniou and Lepouras 
+2005].
+
+4.1.5 Visiting Style and User Control. Questions about the amount of control 
+users wanted to have
+over the technology given to them were also included in the questionnaire. The 
+insignificant results
+found in the chi-square test do not imply a connection between visiting style 
+and the amount of con-
+trol visitors wish to have on a given device. That means that people of 
+different visiting styles do not
+show a specific preference over adaptivity (full adaptation) or adaptability 
+(option of adaptive content
+controlled by the user) of the learning content. The results revealed that 
+device and content control
+preferences are related to cognitive style that is a deeper personality 
+characteristic and relatively in-
+dependent of the learning situation. As will be described shortly the knowledge 
+of a learner’s cognitive
+style can show preferences of adaptivity or adaptability, which is something we 
+cannot see from vis-
+iting style alone. However, the results indicate that the majority of 
+participants, regardless of their
+visiting style, want to be able to control the museum content and do not want 
+full adaptation. It was
+found that 20.3% want the technology they use to be fully adapted to their 
+needs and to guide them
+through the museum. 36.4% wanted to be able to control a given device and did 
+not want full adap-
+tivity. 31.3% were neutral and would not mind either case. Based on these 
+findings, we will argue for
+the need for adaptable and not fully adaptive technologies. The design of 
+learning technologies for mu-
+seum use should provide the visitors with adaptability options that keep the 
+user informed of system
+actions.
+
+4.1.6 Visiting Style and Demographic Factors. Although visiting style seems 
+independent of age
+and gender, it was observed that visiting style might be culturally dependent. 
+The sample used in this
+study did not allow in-depth statistical analysis. However, there are 
+indications towards this direction
+that require further study. This certainly imposes significant implications for 
+the design of exhibitions
+and the presentation order for museums in different countries. For example, a 
+preference in nonlinear
+information was observed in participants from northern European countries, like 
+Norway, Denmark,
+and  UK. At the same time, participants from Greece and USA showed a preference 
+in linear infor-
+mation. The content of learning and/or edutaining applications for museums 
+should follow the same
+rationale.
+
+4.2 Secondary Findings
+
+The statistical analysis found a number of significant correlations between 
+variables that were not in
+the initial intentions of this study to investigate. However, the findings are 
+important and could be
+directly used in the design of educational technologies. Although in a museum 
+the visitor might only
+visit once, implying that finding visitors’ cognitive style is rather 
+problematic, in other learning tech-
+nologies planned for repeated uses, this is not an obstacle. For example, for 
+other learning technologies
+the learners’ cognitive style could be easily assessed with a small 
+questionnaire the very first time
+
+
+that she uses the application. For those cases, all the following findings 
+could be valuable. Neverthe-
+less, these secondary findings are also connected to this study, since they 
+provide a clearer picture on
+issues related to museum learning.
+
+4.2.1 Cognitive Style and Museum Content. High correlations were found when the 
+judger-perceiver
+axis was compared to museum content. Museum and learning preferences not only 
+in the presenta-
+tion order but about the content itself seem to be influenced by the cognitive 
+style of the visitor. For
+example, judgers seem to be interested in the aesthetics of things. Before 
+technology was introduced in
+museums, the visitors saw the thematic and exhibition approach of the curators, 
+that is, whether they
+wished to primarily demonstrate the functionality, the aesthetics, or the 
+history of items. For example,
+an archaeological museum can choose to focus on the aesthetics of the ancient 
+objects, or their func-
+tionality in the everyday life of the ancestors or the history of their 
+discovery, etc. Technology provides
+the opportunity for the presentation of different aspects of the items in 
+parallel, allowing the visitor to
+choose the one that is closer to her interests. The present study showed that 
+visitors of different cog-
+nitive styles have significantly different preferences when it comes to museum 
+content. These findings
+could have clear pedagogical implications, since it is not only important how 
+educational material is
+presented but also what is presented to different visitors can increase visitor 
+satisfaction, motivation,
+and learning outcomes. Technology can provide the necessary flexibility across 
+presentation styles and
+multiple contents. Clearly, the issue requires further investigation and will 
+be addressed in our future
+works.
+
+4.2.2 Cognitive Style and User Control. In the cases that the cognitive style 
+is known, the question
+of adaptive versus adaptable solutions is easily tackled. The findings of this 
+study showed a clear con-
+nection between cognitive style and amount of control desired by the user. For 
+example, mainly ESFJs
+(MBTI personality type), but also ESTPs, ISTJs, and ESFPs want support while 
+using technology. On
+the contrary, ENFJs, ENTJs, ENTPs, ENFPs, INTPs, INFPs, ISTPs, INFJs, ESTJs, 
+and INTJs want to
+control the devices.¹ In the first case, adaptive devices are recommended, 
+while in the second case users
+will be most comfortable with adaptable technology. Therefore, it seems that 
+the question of adaptive
+versus adaptable learning technology is by large situation dependent. As also 
+mentioned earlier, the
+results of the present work imply that adaptable technologies are more 
+appropriate for museum use,
+since the majority of visitors wanted to control the content presented to them.
+
+4.2.3 Cognitive Style and Nationality. The significant results found once 
+nationality was compared
+to cognitive style, suggest important implications for the design of 
+educational technology between dif-
+ferent national groups. In addition, the findings from the total participant 
+population of this study
+did not differ greatly from previous studies on the percentage of cognitive 
+styles in the general public
+[Durling 1986]. However, once the different national groups were examined 
+separately, distinct charac-
+teristics were revealed. For example, although the INFP is popular type for the 
+American participants
+(10.2%), it only represents 2.5% of the Greek sample population. In the same 
+way, it is surprising to
+see that 22.6% of the British participants show characteristics of the ISFJ 
+type, whereas only 6.3%
+of the Greek and 6.8% of the American participants belong to this category. The 
+sample size used is
+
+1A short description of the personality types is presented to assist the 
+reader. The initials at the styles stand for different axes
+in the MBTI. “E” stands for high extraversion (an interest in the outer world). 
+“I” stands for high introversion (an increased
+interest of the person in the inner world). “S” represents people that rely on 
+information coming from the senses, whereas “N”
+represents intuition and people that look for patterns in the information they 
+perceive. Thinkers (T) prefer concrete facts and
+Feelers (F) are more interested in peoples’ feelings and concerns. Finally, “J” 
+stands for judging and it represents individuals
+that prefer a structured lifestyle, whereas “P” stands for perceiving and 
+people that prefer a flexible lifestyle (The Myers and
+Briggs Foundation).
+
+
+not adequate for drawing any further conclusions in this direction. However, 
+these results indicate a
+tendency and require further testing.
+
+4.2.4 Age and Different Factors. Although cognitive style is a relatively 
+constant personality char-
+acteristic, it seems to change with age. For example, we found more young 
+people in certain cognitive
+styles, like ENTP and older people in other cognitive styles like INTJ. The 
+representation of the differ-
+ent age groups was very diverse in the various cognitive types. A further 
+analysis of the data revealed
+that the MBTI dimension that was mostly affected was the judger-perceiver. 
+While many people are
+perceivers in a young age, it seems that the numbers decrease with age, and 
+then the majority of older
+people are judgers. The implication for the design of (museum) learning 
+technologies are important
+since judgers want structured, planned, and organized learning material, 
+whereas perceivers perform
+better while flexible, with opportunities for exploratory learning. In 
+addition, life-long learning ap-
+plications can consider these findings. The number of mature learners increases 
+with the growing
+needs for life-long learning even within the premises of modern museums 
+[Antoniou and Lepouras
+2008].
+
+Furthermore, older people are not only likely to have a certain cognitive 
+style, but it was also found
+
+that they are group visitors. Old people seldom visit museums alone. In the 
+older visitors group we
+placed the ages over 66. The significant results found in the comparison of age 
+to visitor type impose
+propositions for the design of collaborative learning activities for museums. 
+Since older people are
+likely to travel and visit in groups of friends, families, or tourist groups 
+and at the same time they
+have increased needs for structured presentation of learning content, 
+collaborative activities for groups
+should provide the option of structured presentation and not only exploratory 
+activities. Finally, the
+significant value of chi-square in the comparison between age and nationality 
+is both expected and
+difficult to use for the design of learning technologies for museums. Although 
+it is beyond the scope of
+the present work, it is not surprising that, for example, no elderly visitors 
+from Australia were found
+in a Greek museum. Travel factors together with possible cultural differences 
+do not allow the drawing
+of conclusions from these findings. Nevertheless, the issue could be worth 
+further investigation for the
+design of other learning technologies. In different cultures, older people 
+might have a different degree
+of participation in learning and/or cultural activities.
+
+5. CONCLUSIONS
+
+Based on the previously described findings, we could divide learning 
+technologies applications into
+those intended for single-episode learning, like the one usually taking place 
+in museums and in those
+intended for multiepisode learning where there are repeated uses of the 
+learning technology. In the
+latter cases, a short questionnaire can reveal the cognitive style of the 
+learner during the first use,
+together with other factors that affect learning like age, cultural background, 
+etc. The identification
+of  the cognitive style provides additional information about the user’s 
+learning interests and preferred
+content, as well as the amount of the control she wishes to have on the device. 
+Since certain cognitive
+styles demand more support, adaptivity is recommended in these cases. However, 
+for cognitive styles
+that want to control the device and the presentation philosophy of the learning 
+content, adaptability
+is advised. Especially considering the case of online environments, the 
+findings of the present study
+imply that there are possibilities for the delivery of targeted learning 
+material to the user. An online
+learning environment, including online museums, is available for multiple 
+visits, during which the
+user can engage in learning activities at their own time and pace. Furthermore, 
+while visiting an
+online environment the user can be easily monitored or even probed to create a 
+more detailed profile.
+This can be coupled with the findings of this study to further enhance the 
+learning experience and
+provide a better-targeted content.
+
+
+On the other hand, technologies for single-episode museum learning need to 
+provide options for
+multiple learning contents to accommodate the interests of the different 
+visiting and cognitive styles.
+The solutions should also be adaptable and not fully adaptive. Although these 
+findings seem to apply
+to most museums, visiting style only seems to emerge in medium-sized museums 
+and only for people
+visiting alone. Only when those two conditions apply can visiting style emerge. 
+Furthermore, large mu-
+seums require a nonlinear structure of the learning and museum content. There 
+should also be options
+for providing the visitor with increased information on certain exhibits and 
+especially highlights. In a
+small-sized museum, there should be options for the presentation of information 
+both in a horizontal
+manner (i.e., storytelling) and a vertical manner (i.e., details for specific 
+exhibits).
+
+In order to better comprehend the complex results of this study, the following 
+scenarios were devel-
+oped.
+
+1st Scenario: Learning Application for a Small-Size Museum. The technology 
+provides option of
+adaptability. That means that the user is provided with a choice of the 
+learning material. The material
+is designed in a way that accommodates various visitors by providing options 
+for collaboration (for
+groups and families) and multiple content (i.e., information about exhibits’ 
+history, aesthetics, usabil-
+ity, etc.). The information is organized in a horizontal fashion (i.e., 
+presentation of information in a
+chronological order) and in a vertical fashion (i.e., detailed information 
+about the exhibits). According
+to her visiting style, the visitor can choose to view details or to be 
+presented with a story of the artifacts
+and so on.
+
+2nd Scenario: Learning Application for a Medium-Size Museum. All the preceding 
+still applyies.
+However, visiting style is also present. For individuals visiting alone, the 
+visiting style is observed
+and assessed and different learning content is presented accordingly. Optimal 
+routes are proposed
+according to interests (Butterfly and Grasshopper visitors), stories of the 
+exhibits are available (Ant
+visitors), and general information about the rational of the exhibition is also 
+offered (Fish visitors).
+The technological solutions used are adaptable and allow user control.
+
+3rd Scenario: Learning Application for a Large-Size Museum. It is important 
+that visitors’ naviga-
+tion is supported together with route suggestions according to interests. 
+General information about
+the different exhibitions is available together with detailed information about 
+certain exhibits and
+highlights. Proposals for future visits and further investigation are also 
+presented. Once again, the
+technological solutions used are adaptable and allow user control.
+
+Linking the previous findings with computer science, such a modeling approach 
+can be easily trans-
+formed into effective algorithmic solutions which can lead to recommendation 
+systems for learning
+applications and mobile devices. The proposed approach can be used along with 
+mobile devices (e.g.,
+PDAs, mobile phones) provided to museum visitors upon their entrance. These 
+devices combined with
+the respective algorithms can then easily identify movement patterns of a 
+visitor, through tracking
+technology, in a timely manner. The application can then suggest those routes 
+that have been deemed
+more suitable for the specific user. In addition, the algorithms can also 
+appropriately adapt the edu-
+cational content that will be presented to the user, based on the identified 
+visiting and cognitive style.
+Therefore, combining the proposed modeling approach with existing technological 
+solutions can lead
+to effective recommendation systems tailored to the individual learning and 
+cognitive needs of the
+visitor.
+
+In a previous work, it was suggested that the preceding modeling approach could 
+be used in visitors’
+mobile phones, in an attempt to reduce the cost of technology for museum use 
+and also to avoid cog-
+nitive overload of visitors. The Bluetooth technology of visitors’ mobile 
+phones could be used together
+with Bluetooth transmitters near the exhibits, tracking visitors’ physical 
+movement and identifying
+
+
+visiting style. The learning content would be adapted accordingly providing 
+information relevant to
+users’ cognitive styles [Antoniou and Lepouras 2005].
+
+Furthermore, in the case of computer-mediated assistance in the design of 
+physical exhibitions, the
+findings of the current study could enhance the functionality of the software 
+by allowing
+curators/designers to predict and visualize possible visitor movement in the 
+physical space. For exam-
+ple, the different visiting styles can be used in a software application to 
+describe stereotypic visitors
+and assist curators in identifying both movement patterns as well as possible 
+cognitive and learning
+needs.
+
+Acknowledging previous research explaining the importance of combining visiting 
+style with dif-
+ferent parameters of museum visits (like the physical aspect of the exhibitions 
+and visitors’ personal
+characteristics) [Oppermann and Specht 2000], the present study is a step 
+towards personality-aware
+interfaces. Investigating personality and situational factors in museum 
+learning, this work should be
+viewed as a part of a methodology for the development of museum learning 
+technologies that certainly
+requires further research. Nevertheless, the data gathered can be meaningfully 
+used in a museum,
+since past examples of use showed that employing visiting style in museum 
+technologies enhances the
+museum experience and increases learning [Marti et al. 2001]. In line with 
+current findings, systems
+like HIPS (Hyper-Interaction within Physical Space) [Broadbent and Marti 1997] 
+and Hippie [Opper-
+mann et al. 1999], by simply employing visitors’ visiting style, without 
+targeting issues of visitors’
+personalities, manage to augment the museum visit.
+
+So far, this work has been solely focused on the modeling and profiling of 
+visitors. However, the
+
+main goal of our future works is to create concrete connections to the 
+development of adaptive cultural
+technologies in a form of a framework that can have direct implementation. 
+Within this framework,
+an important issue to investigate is the precise method by which users’ 
+visiting style is determined at
+each point during the visit, since people can change their visiting styles 
+during a single visit. Perhaps
+the use of a mixed method that combines qualitative and quantitative elements 
+(e.g., camera obser-
+vations and questionnaires) could provide answers. Finally, we have been using 
+the term “learning”
+in this work in a broad sense, without further specifying it, that could 
+include anything from simple
+information systems to pedagogically developed learning environments (based on 
+the museum cura-
+tors’ decisions). However, in our future work we aim at combining the findings 
+from this research with
+explicit pedagogic approaches, since it is essential to provide a clear 
+learning context for the use of
+museum learning technologies.
+
+Finally, from the present study certain questions have been raised regarding 
+museum-adaptable
+
+applications. In an attempt to extend the visitors’ museum experience, 
+different applications could
+support the visitor before, during, and after her visit. Linking the physical 
+museum space with a
+possible virtual and online environment that could provide information prior to 
+and after the visit,
+it would be very interesting to investigate whether there is any correlation 
+between the users’ online
+behavior and their actual museum visit. This information could be used for the 
+preparation of the
+actual visit, by suggesting optimal routes, or providing appropriate learning 
+content. The findings of
+the present study revealed a high correlation between visiting and cognitive 
+style. In this light, a
+museum could identify the cognitive styles of its possible visitors online and 
+during the actual visit,
+use the information for effective adaptable solutions relevant to the visitor’s 
+visiting and cognitive
+needs.
+
+ACKNOWLEDGMENTS
+
+We are particularly grateful to the director Dr. Kaltsas, the archaeologist Ms. 
+Christopoulou and the
+personnel of the National Archaeological Museum (Athens, Greece) for permitting 
+and supporting the
+
+
+present study. The authors also wish to acknowledge the valuable help of Dr. I. 
+Lykourentzou (Univer-
+sity of Peloponnese), Mr. T.A.H. Lunde and Prof. C. Agriantoni (University of 
+Thessaly).
+
+REFERENCES
+
+ALZUA-SORZABAL, A., LINAZA, M. T., ABAD, M., ARRETXEA, L., AND SUSPERREGUI, A. 
+2005. Interface evaluation for cultural
+
+heritage applications: The case of FERRUM exhibition. In Proceedings of the 6th 
+International Symposium on Virtual Reality,
+Archeology and Cultural Heritage.
+
+ANTONIOU, A. AND LEPOURAS, G. 2005. Using Bluetooth technology for personalized 
+visitor information. In Proceedings of the
+IADIS International Conference on Mobile Learning. 307–309.
+
+ANTONIOU, A. AND LEPOURAS, G. 2006. Adaptation to visitors’ visiting and 
+cognitive style. In Proceedings of the 3rd Interna-
+tional Conference of Museology and ICOM-AVICOM Annual Conference.
+
+ANTONIOU, A. AND LEPOURAS, G. 2008. Reflections on mobile and life long 
+learning: Museums as application fields. In Proceed-
+ings of the IADIS International Conference on Mobile Learning. 249–252.
+
+ATKINS, H., MOORE, D., SHARPE, S., AND HOBBS, D. 2001. Learning style theory 
+and computer mediated communications. In
+
+Proceedings of the ED MEDIA Conference.
+
+BITGOOD, S. 1998. An overview of the methodology of visitor studies. Visitor 
+Behav. 3, 3, 4–6.
+
+BITGOOD, S. 2002. Environmental psychology in museums, zoos, and other 
+exhibition centers. In Handbook of Environmental
+Psychology, R. Bechtel and A. Churchman, Eds. John Wiley and Sons.
+
+BITGOOD, S. AND RICHARDSON, K. 1986. Validation of self-reports in a zoo. Tech. 
+rep. 86-30, Center for Social Design, Jack-
+sonville, AL.
+
+BORUN, M. AND MILLER, M. 1980. What’s in a Name? A Study of the Effectiveness 
+of Explanatory Labels in a Science Museum.
+Franklin Institute Science Museum, Philadelphia, PA.
+
+BRIGGS-MYERS, I. AND MCCAULLEY, M. H. 1985.  Manual: A Guide to the Development 
+and Use of the Myers-Briggs Type
+Indicator. Consulting Psychologists Press.
+
+BROADBENT, J. AND MARTI, P. 1997. Location aware interactive guides: Usability 
+issues. In Proceedings of the ICHIM’97.
+
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.40.3065.
+
+BUNT, A., CONATI, C., AND MCGRENERE, J. 2004. What role can adaptive support 
+play in an adaptable system? In Proceedings
+of the 9th International Conference on Intelligent User Interfaces. 117–124.
+
+CAPORUSSO, N. 2009. Personality-Aware interfaces for learning applications. In 
+Proceedings of the ACM SIGUCCS Fall Con-
+ference on User Services. 189–196.
+
+CHITTARO, L. AND IERONUTTI, L. 2004. A visual tool for tracing users’ behavior 
+in virtual environments. In Proceedings of the
+Working Conference on Advanced Visual Interfaces. ACM, New York, 40–47.
+
+DE BRA, P., AERTS, A., SMITS, D., AND STASH, N. 2002. AHA! Version 2.0. More 
+adaptation flexibility for authors. In Proceedings
+of the AACE ELearn Conference. 240–246.
+
+DINI, R., PATERNO, F., AND SANTORO, C. 2007. An environment to support 
+multi-user interaction and cooperation for improving
+museum visits through games. In Proceedings of the 9th International Conference 
+on Human Computer Interaction with Mobile
+Devices and Services. ACM, New York, 515–521.
+
+DOERING, Z. 2006. Visitor studies 101: Understanding audiences. Current Trends 
+Audience Res. Eval. 19-20. AAM Committee
+on Audience Research and Evaluation.
+
+DOERING, Z. D. AND PEKARIK, A. J. 1998. Visitors to the Smithsonian 
+Institution: Some observations. Visitor Studies Theory
+Res. Pract. 9, 40–50.
+
+DURLING, D., CROSS, N., AND JOHNSON, J. 1996. Personality and learning 
+preferences of students in design and design-related
+disciplines. In Proceedings of the International Conference on Design and 
+Technology Educational Research (IDATER’96). J. S.
+Smith, Ed. 88–94.
+
+FALK, J. H. AND DIERKING, L. D. 1997. School field trips: Assessing their long 
+term impact. Curator 40, 3, 211–218.
+FALK, J., KOREAN, J., DIERKING, L., AND DREBLOW, L. 1985. Predicting visitor 
+behaviour. Curator 28, 4, 249–257.
+
+FINDLATER, L. AND MCGRENERE, J. 2004. A comparison of static, adaptive, and 
+adaptable menus. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems. 89–96.
+
+FORD, N. 1995. Levels and types of mediation in instructional systems: An 
+individual difference approach. Int. J. Hum.-
+Comput. Studies 43, 243–259.
+
+GABRIELLI, F., MARTI, P., AND PETRONI, L. 1999. The environment as interface. 
+In Proceedings of the i3 Annual Conference:
+Community of the Future. 44–47.
+
+
+GAETA, A., GAETA, M., AND RITROVATO, P. 2009. A grid based software 
+architecture for delivery of adaptive and personalized
+learning experiences. Personal Ubiq. Comput. 13, 3, 207–217.
+
+GRAZIOLA, I., PIANESI, F., ZANCANARO, M., AND GOREN-BAR, D. 2005. Dimensions of 
+adaptivity in mobile systems: Personality
+and people’s attitudes. In Proceedings of the 10th International Conference on 
+Intelligent User Interfaces. 223–230.
+
+GWEON, G., ROSE, C., CAREY, R., AND ZAISS, Z. 2006. Providing support for 
+adaptive scripting in an online collaborative learning
+environment. In Proceedings of the SIGCHI Conference on Human Factors in 
+Computing Systems. 251–260.
+
+HALL, T. AND BANNON, L. 2005. Designing ubiquitous computing to enhance 
+children’s interaction in museums. In Proceedings
+of the Conference on Interaction Design and Children. ACM, New York, 62–69.
+
+HUDSON, L. 1966. Contrary Imaginations. Penguin, New York.
+
+HUIZENGA, J., ADMIRRAL, W., AKKERMAN, S., AND DAM, G. T. 2009. Mobile 
+game-based learning in secondary education: Engage-
+ment, motivation and learning in a mobile city game. J. Comput. Assist. Learn. 
+25, 4, 332–344.
+
+IGUCHI, J. H. 2006. Visitor studies from the psychological and sociological 
+points of view. Global Communications Platform,
+Japanese Institute of Global Communications, Colloquium No. 66.
+
+http://www.glocom.org/special topics/colloquium/20060718 iguchi 
+visitor2/index.html (accessed 12/09).
+
+JACUCCI, G., SPAGNOLLI, A., CHALAMBALAKIS, A., MORRISON, A., LIKKANEN, L., 
+ROVEDA, S., AND BERTONCINI, M. 2009. Bodily
+
+explorations in space: Social experience of a multimodal art installation. In 
+Proceedings of the INTERACT’09 Conference.
+Lecture Notes in Computer Science, vol. 5727. Springer, 62.
+
+KAGAN, J. 1965. Impulsive and reflective children: Significance of conceptual 
+tempo. In Learning and the Educational Process,
+
+J. D. Krumboltz, Ed. Rand McNally, Chicago, IL.
+
+KELLY, L. 2000. Understanding conceptions of learning. In Proceedings of 
+GERG’00 Conference.
+http://www.amonline.net.au/amarc/pdf/research/paper2000.pdf (accessed 2/09).
+
+KETTANURAK, V. N., RAMAMURTHY, K., AND HASEMAN, W. D. 2001. User attitude as a 
+mediator of learning performance improve-
+ment in an interactive multimedia environment: An empirical investigation of 
+the degree of interactivity and learning styles.
+Int. J. Hum.-Comput. Studies 54, 541–583.
+
+KOLB, D. 1985. Learning Style Inventory: Technical Manual. McBer and Company, 
+Boston, MA.
+
+KUFLIK, T., SHEIDIN, J., JBARA, S., GOREN-BAR, D., SOFFER, P., STOCK, O., AND 
+ZANCANARO, M. 2007. Supporting small groups
+
+in the museum by context-aware communication services. In Proceedings of the 
+12th International Conference on Intelligent
+User Interfaces. 305–308.
+
+LAWRENCE, G. L. 1997. Looking at type and learning styles. Center for 
+Application of Psychological Type, Inc., Gainesville,
+FL.
+
+LEINHARDT, G., CROWLEY, K., AND KNUTSON, K. 2002. Learning Conversations in 
+Museums. Lawrence Erlbaum Associates,
+Mahwah, NJ.
+
+LI, X., HESS, T. J., MCNAB, A. L., AND YU, Y. 2009. Culture and acceptance of 
+global Web sites: A cross-country study of the
+effects of national cultural values on acceptance of a personal Web portal. ACM 
+SIGMIS 40, 4, 49–74.
+
+LIU, M. AND REED, W. M. 1995. The effect of hypermedia assisted instruction on 
+second-language learning through a semantic-
+network-based approach. J. Educ. Comput. Res. 12, 2, 159–175.
+
+MARTI, P., GABRIELLI, F., AND PUCCI, F. 2001. Situated interaction in art. 
+Personal Ubiq. Comput. 5, 71–74.
+
+MARTIN, C. R. 1997. Looking at type: The fundamentals. Center for Application 
+of Psychological Type, Inc., Gainesville, FL.
+MCGREEN, N. AND SAANCHEZ, A. I. 2005. Mapping challenge: A case study in the 
+use of mobile phones in collaborative, contex-
+
+tual learning. In Procedings of the Mobile Learning Conference, P. Isaias et 
+al., Eds. 213–217.
+
+MCGRENERE, J., BAECKER, R. M., AND BOOTH, K. S. 2007. A field evaluation of an 
+adaptable two-interface design for feature-rich
+software. ACM Trans. Comput.-Hum. Interact. 14, 1.
+
+MUNTEAN, C. H. AND MUNTEAN, G. M. 2009. Open corpus architecture for 
+personalized ubiquitous e-learning. Personal Ubiq.
+Comput. 13, 3, 197–205.
+
+MUSEUMS ASSOCIATION. 2010. Code of ethics for museums. 
+http://www.museumassocation.org/publications/code-of-ethics (ac-
+cessed 12/09).
+
+MYERS AND BRIGGS FOUNDATION. 2010. Myers-Briggs homepage. 
+http://www.myersbriggs.org/my-mbti-personality-type/mbti-
+basics/ (accessed 7/10).
+
+OPPERMANN, R. AND SPECHT, M. 2000. A context-sensitive nomadic information 
+system as an exhibition guide. In Proceedings
+of the UbiComp’00. Springer, 127–142.
+
+OPPERMANN, R., SPECHT, M., AND JACENIAK, I. 1999. Hippie: A nomadic information 
+system. In Proceedings of the 1st Interna-
+tional Symposium on Handheld and Ubiquitous Computing, H. Gellersen, Ed. 
+Lecture Notes in Computer Science, vol. 1707.
+Springer, 330–333.
+
+
+PAPANIKOLAOU, K. A. AND GRIGORIADOU, M. 2005. Modelling and externalizing 
+learners’ interaction behaviour. In Proceedings
+of the Workshop on Learner Modelling for Reflection, International Conference 
+on Artificial Intelligence in Education. 52–61.
+
+PAPANIKOLAOU, K., GRIGORIADOU, M., AND KORNILAKIS, H. 2001. Instructional and 
+interface design in an adaptive education
+hypermedia system. In Proceedings of the Conference on Human-Computer 
+Interaction, Panhellenic Conference with Interna-
+tional Participation. 223–228.
+
+PAPANIKOLAOU, K., GRIGORIADOU, M., KORNILAKIS, H., AND MAGOULAS, G. D. 2002. 
+INSPIRE: An intelligent system for person-
+
+alized instruction in a remote environment. In Hypermedia: Openness, Structural 
+Awareness, and Adaptivity, S. Reich et al.,
+Eds. Lecture Notes in Computer Science, vol. 2266. Springer, 215–225.
+
+PARRY, H. J. AND CROSSLEY, H. M. 1950. Validity of responses to survey 
+questions. Public Opinion Quart. 14, 61–80.
+PASK, G. 1972. A fresh look at cognition and the individual. Int. J. Man-Mach. 
+Studies, 211–216.
+
+PETRELLI, D. A., DE ANGELI, A., AND CONVERTINO, G. 1999a. A user-centered 
+approach to user modeling. In Proceedings of the
+7th International Conference. J. Kay, Ed. Springer, 255–264.
+
+PETRELLI, D., NOT, E., AND ZANCANARO, M. 1999b. Getting engaged and getting 
+tired: What is in a museum experience. In
+Proceedings of the Workshop on Attitude, Personality and Emotions in 
+User-Adapted Interaction. (Held in conjunction with the
+UM’99).
+
+RAPTIS, D., TSELIOS, N., AND AVOURIS, N. 2005. Context-Based design of mobile 
+applications for museums: A survey of exist-
+ing practices. In Proceedings of the 7th International Conference on Human 
+Computer Interaction with Mobile Devices and
+Services (MobiCHI’05). ACM Press, New York, 153–160.
+
+RIDING, R. J. AND CHEEMA, I. 1991. Cognitive styles- An overview and 
+integration. Educ. Psychol. 11, 193–215.
+RIDING, R. AND RAYNER, S. G. 1998. Cognitive Styles and Learning Strategies. 
+David Fulton Publisher, London.
+
+ROCCHI, C., STOCK, O., ZANCANARO, M., KRUPPA, M., AND KRUGER, A. 2004. The 
+museum visit: Generating seamless personalized
+presentations on multiple devices. In Proceedings of the 9th International 
+Conference on Intelligent User Interfaces (IUI’04).
+ACM, New York, 316–318.
+
+SCHROYEN, J., GABRIELS, K., LUYTEN, K., TEUNKENS, D., ROBERT, K., CONINX, K., 
+FLERACKERS, E., AND MANSHOVEN, E. 2008.
+
+Training social learning skills by collaborative mobile gaming in museums. In 
+Proceedings of the International Conference on
+Advances in Computer Entertainment Technology (ACE’08). ACM, New York, 46–49.
+
+SERRELL, B. 1998. Paying Attention: Visitors and Museum Exhibitions. American 
+Association of Museums, Washington, DC.
+SPECHT, M. AND OPPERMANN, R. 1999. User modeling and adaptivity in nomadic 
+information systems. In Proceedings of the
+
+13th Annual Conference: Community of the Future. 65–68.
+
+SUMI, Y. AND MASE, K. 2002. Supporting the awareness of shared interests and 
+experiences in communities. Int. J. Hum.-
+Comput. Studies 56, 1, 127–146.
+
+TERRENGHI, L. AND ZIMMERMANN, A. 2004. Tailored audio augmented environments 
+for museums. In Proceedings of the Inter-
+national Conference on Intelligent User Interfaces (IUI’04). ACM, New York, 
+334–336.
+
+UMIKER-SEBEOK, J. 1994. Behavior in a museum: A semio-cognitive approach to 
+museum consumption experiences. Signif.
+Behav. J. Res. Semiotics Comm. Theory Cognit. Sci. 1, 1, 52–100.
+
+VERON, E. AND LEVASSEUR, M. 1983. Ethnographie de l’exposition. Bibliotheque 
+Publique d’Information, Centre Georges Pom-
+pidou, Paris.
+
+WAKKARY, R. AND HATALA, M. 2007. Situated play in a tangible interface and 
+adaptive audio museum guide. Personal Ubiq.
+Comput. 11, 3, 171–191.
+
+WALCZAK, K., WOJCIECHOWSKI, R., AND CELLARY, W. 2006. Dynamic interactive VR 
+network services for education. In Proceed-
+ings of the ACM Symposium on Virtual Reality Software and Technology (VRST’06). 
+ACM, New York, 277–286.
+
+WELLS, M. AND BUTLER, B. 2002. A visitor-centered evaluation hierarchy. Visitor 
+Studies Today! 5, 1, 5–11.
+WITKIN, H. A. 1962. Psychological Differention: Studies of Development. Wiley, 
+New York.
+
+WITKIN, H. A. 1978. Cognitive Styles in Personal and Cultural Adaptation. Heinz 
+Werner Lecture Series, vol. 11.
+
+Received March 2009; revised March 2010; accepted July 2010
+

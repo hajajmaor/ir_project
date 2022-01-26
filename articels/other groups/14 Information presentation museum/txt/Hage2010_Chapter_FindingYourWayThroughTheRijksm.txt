@@ -1,0 +1,716 @@
+Finding Your Way through the Rijksmuseum
+with an Adaptive Mobile Museum Guide
+
+Willem Robert van Hage1, Natalia Stash2, Yiwen Wang2, and Lora Aroyo1
+
+¹ VU University Amsterdam
+
+wrvhage@few.vu.nl, l.m.aroyo@cs.vu.nl
+
+² Eindhoven University of Technology
+
+n.v.stash@tue.nl, y.wang@tue.nl
+
+Abstract. This paper describes a real-time routing system that im-
+plements a mobile museum tour guide for providing personalized tours
+tailored to the user position inside the museum and interests. The core
+of this tour guide originates from the CHIP (Cultural Heritage Infor-
+mation Personalization) Web-based tools set for personalized access to
+the Rijksmuseum Amsterdam collection. In a number of previous pa-
+pers we presented these tools for interactive discovery of user’s interests,
+semantic recommendations of artworks and art-related topics, and the
+(semi-)automatic generation of personalized museum tours. Typically,
+a museum visitor could wander around the museum and get attracted
+by artworks outside of the current tour he is following. To support a
+dynamic adaptation of the tour to the current user position and chang-
+ing interests, we have extended the existing CHIP mobile tour guide
+with a routing mechanism based on the SWI-Prolog Space package.
+The package uses (1) the CHIP user proﬁle containing user’s prefer-
+ences and current location; (2) the semantically enriched Rijksmuseum
+collection and (3) the coordinates of the artworks and rooms in the mu-
+seum. This is a joint work between the Dutch nationally funded CHIP¹
+and Poseidon² projects and the prototype demonstrator can be found at
+http://www.chip-project.org/spacechip.
+
+Keywords: Interactive museum tours, mobile museum guide, semantic
+web, recommender systems, user modeling.
+
+1  Introduction
+
+Cultural heritage and museum collections provide a wide variety of objects,
+which could be of interest to diﬀerent visitors. To meet the diversity of 
+prefer-
+ences and backgrounds of visitors museum curators oﬀer tours on diﬀerent topics.
+However, these topics usually are selected based on the highlights of the 
+collection
+and the resulting tours include a ﬁxed and predeﬁned sequence of artworks to
+
+¹ http://www.chip-project.org
+
+² http://www.esi.nl/poseidon
+
+L. Aroyo et al. (Eds.): ESWC 2010, Part I, LNCS 6088, pp. 46–59, 2010.
+
+ c Springer-Verlag Berlin Heidelberg 2010
+
+
+view. An audio tour provides more freedom in determining your own sequence of
+artworks while visiting a museum. However, the set of artworks to choose from is
+still a predeﬁned one and is the same for all visitors. Currently, museums turn 
+to
+multimedia guides in order to bridge the gap between the visitor’s interests and
+the static museum tours. Personalization is one way to provide dynamics related
+to visitor’s interests, which subsequently could enhance visitor’s experiences 
+[5].
+An adaptive mobile museum guide acts as a museum expert and provides the
+user with information adapted to the current situation [2]. For example, the
+MIT Media Lab3 audio and visual narration adapts to the user’s interest ac-
+quired from the physical path in the museum and length of the user stops. The
+mobile museum guides developed within Hippie [3] and PEACH [4] projects pro-
+vide content adaptation based on technical restrictions of speciﬁc presentation
+devices as well as visitor’s preferences and knowledge. The diﬀerence between
+two projects is that Hippie museum guide uses stationary and mobile devices in a
+sequential way (e.g., a user prepares his museum visit on the personal computer
+at home and then uses the mobile device while actually visiting the museum), the
+PEACH museum guide combines both mobile and stationary devices in parallel.
+The mobile museum guide built within Sotto Voce [1] project takes into account
+the special needs of groups visiting a museum and facilitates social interaction
+between group members. AgentSalon [6] system users are provided with mobile
+devices and are monitored while exploring the museum. The system can infer an
+overlap between users’ interests and experiences and fosters communication be-
+tween the users with stationary devices. ARCHIE [10] provides a socially-aware
+handheld guide that stimulates interaction between group members. They can
+communicate with each other either directly (by voice) or indirectly (by collab-
+orative games) by means of their mobile guides. By using a personal proﬁle it
+allows to adapt the interface and tailor the information to the needs and inter-
+ests of each individual user. The user proﬁle evolves slowly by observing how 
+the
+user interacts with the digital content, e.g. asking for more, or bookmarking 
+it,
+may indicate interest while stopping an explanation prematurely may indicate
+a lack of it. The Kubadji mobile tour guide4 aims at deriving visitor’s 
+interests
+from implicit behavior (e.g. artworks viewing times), recommendation of items
+of interest and personalization of the content delivered for these items via the
+handheld device. Besides it uses collaborative ﬁltering approach for predicting
+visitor’s viewing times of unseen exhibits from his viewing times at visited ex-
+hibits. The context-aware museum tour guide presented in [11] is used to give
+directions to the visitor and is adjusted as the tour progresses dropping one or
+more exhibits if the visitor falls behind the tour or suggesting additional 
+exhibits
+or taking a break at a nearby restaurant if the visitor has extra time. The 
+envi-
+ronment also supports peer-to-peer interactions between visitors, allowing them
+to ﬁnd each other, share ratings and comments about exhibits. A number of
+museums, e.g. Tate Modern, Science Museum Boston, are already exploring the
+potential of personalized museum guides, currently available on their websites.
+
+³ http://www.media.mit.edu/
+
+⁴ http://www.kubadji.org/
+
+
+A major bottleneck in realization of this personalization is how to collect
+the necessary information about the user’s (constantly evolving) interests [5]
+without intruding on the visitor too much. Typically, for large scale online ac-
+cess personalization can be achieved through usage of stereotypes (e.g. 
+students,
+novices, art experts, children) or through deducing a user proﬁle from observa-
+tion of their online browsing and searching (or in museum) viewing behavior. In
+this way, personalized virtual tours are ways for visitors to construct their 
+own
+narratives5. In addition, the indoor localization of people and objects plays a
+critical role in order to implement and deploy successfully such a system. Two
+tasks are considered in this context [2]:
+
+– Detecting user’s location inside the museum requires a positioning system
+that considers the boundaries and constraints (i.e. the walls, doors, stairs) of
+the physical indoor space. Methods using diﬀerent hardware solutions have
+been proposed to increase the accuracy of the indoor user position.
+
+– Assessing user’s context in terms of artworks in her neighborhood, which
+artworks have been already seen by the users, how much time has the user
+already spent in the museum and additional temporal constraints (e.g. how
+much time is available), what are visitor’s general interests in art, and po-
+tentially also their physiological and the emotional state [2].
+
+Having the limited resources of mobile guides in mind, most of representation
+and processing of relevant knowledge needs to be carried out remotely in the
+infrastructure. To reduce complexity and to ensure reusability of the knowl-
+edge representations and inference mechanisms a ﬂexible web-based approach is
+required that allows diﬀerent types of systems to exchange and augment infor-
+mation on users and particular situations [2]. In the following sections we 
+discuss
+brieﬂy the CHIP project, the routing mechanism of SWI-Prolog Space package
+and pay a special attention to the SPACE-CHIP demonstrator.
+
+2  CHIP Demonstrator
+
+The CHIP (Cultural Heritage Information Presentation) project is a cross-
+disciplinary research project, combining aspects from cultural heritage and
+information technologies. The team has been working at the Rijksmuseum Am-
+sterdam since early 2005, as part of the Dutch CATCH (Continuous Access to
+Cultural Heritage) program on techniques to provide a personalized access to the
+museum collection both online and inside the museum, therefore also allowing to
+link visitor’s experience in both environments. We have used explicit semantics
+in order to enrich the museum collection and in this way to be able to discover
+relationships between the objects in the collection, and use those to generate 
+per-
+sonalized recommendations and tours for each user. The main goal of the project
+so far, was to explore how explicit semantics can improve the users’ 
+satisfaction
+with respect to the recommendation of artworks and related art concepts. All
+
+⁵ Virtual Museum (of Canada), http://www.museevirtuel-virtualmuseum.ca/
+
+
+the CHIP Web-based tools6 for browsing the online collections, planning per-
+sonalized museum tours, getting recommendations about interesting artworks
+to see, and quickly ﬁnding their ways in the museum use a common distributed
+user model, which collects user interaction data and interprets it in terms of
+user’s interests used further for generating recommendations and personalized
+tours. The Art Recommender helps the user to discover his art interests in
+the Rijksmuseum collection and store them in a user proﬁle (also visible to the
+user). The Tour Wizard helps the user to generate personalized tours through
+the museum based on his user model and visualizes them on the museum map
+and on a historical timeline. By default, two tours are generated automatically
+for each user based on his ratings–Tour of Favorites containing artworks posi-
+tively rated by the user and Tour of Recommended Artworks containing 20 top
+recommended artworks. The user can also create tours by searching for concrete
+
+artworks. The e-Culture Semantic Search⁷ open API helps him ﬁnd semantically
+related topics and artworks to include in the personalized tours. For example, 
+if
+the user searches for “Rembrandt” he gets not only artworks created by Rem-
+brandt himself but also artworks created by Rembrandt’s teachers and students,
+
+as well as artworks by artists in the same style as Rembrandt. Finally, the Mo-
+bile Museum Guide allows users to access their tours created with the Tour
+Wizard on their mobile devices in the museum. Technical details about the design
+and implementation of the CHIP Art Recommender, Tour Wizard and Mobile
+Museum Guide (ver 0.1 and ver 1.0) can be found in [9]. However, so far all
+those tools considered only user preferences are constraints for the adaptation.
+In order to realize this in the real physical space we need to also consider 
+spa-
+tial constraints in generating both recommendations and museum tours. In this
+paper we propose a method for on-the-ﬂy adaptation of museum tours based on
+a spatial model of the museum.
+
+The ﬁrst two versions of the CHIP Mobile Guide⁸ used two diﬀerent hard-
+ware settings to allow users to use on their handhelds the museum tours created
+with the online CHIP Tour Wizard. The Mobile Guide is implemented as a Web-
+based application and is therefore viewable in any browser. For demonstration
+
+purposes we have created also an iPhone simulation of the graphical user inter-
+face. The simulation can be used if a user wants to get familiar with the mobile
+environment before going to the museum. The Mobile Guide automatically de-
+tects  the screen resolution of the user and based on this information chooses 
+to
+display the Mobile Guide for a mobile device or the simulation. As the other
+CHIP tools the Mobile Museum Guide provides an extensive description of each
+artwork and a set of artworks related to it. Visitors can also search for 
+speciﬁc
+artworks exhibited in the museum and can also give a rating to objects they ﬁnd
+interesting or like.
+
+When the user selects a tour to follow the Mobile Guide checks the avail-
+ability and the positioning of all the artworks in the tour in the museum. It 
+is
+
+⁶ See http://www.chip-project.org/demo
+
+⁷ http://e-culture.multimedian.nl/
+
+⁸ http://www.chip-project.org/demo/mobileguide
+
+
+possible that the user has created the tour in advance but by the time that he
+actually managed to visit the museum some artworks could have been removed
+or replaced. Next the user adds artworks to the tour that qualify according to
+contextual and user criteria. Similarly the user can remove artworks from the
+tour. The user can also specify tour constraints, such as the length of the 
+tour in
+terms of the maximum number of artworks included in a tour or in terms of the
+maximum time to spend in the museum. Based on these constraints, the tour
+can adapt dynamically while the user is in the museum. The user can change
+those adaptation parameters at any point during the usage of the Mobile Guide
+(e.g. before starting a tour, while following a tour). The user can also choose 
+an
+option of adapting the tour based on his ratings given to artworks while using a
+Mobile Guide.
+
+Suppose the user follows a tour of recommended artworks and he has chosen
+an option of adapting the tour. If he provides a rating to an artwork that he
+sees CHIP demonstrator updates the user model and as consequence the list
+of recommended artworks. However, this version of the Mobile Guide does not
+take spatial constraints as well as information about already seen artworks into
+account. In section 3 we show how SWI-Prolog Space package allows to solve
+this problem and in section 4 we present details about the implementation of
+the third version of the CHIP Mobile guide including those spatial constrains,
+http://www.chip-project.org/spacechip.
+
+3  Finding Routes through the Rijksmuseum
+
+The Art Recommender supplies a list of recommended artworks that are ordered
+by the estimated likelihood that the user will ﬁnd them appealing based on
+manual ratings. Even though the rooms in the Rijksmuseum have themes, such
+as works about the Dutch republic or works by Rembrandt and his pupils, these
+themes do not necessarily coincide with the preferences of the user. This means
+that even a small set of recommended artworks can be distributed over the entire
+museum. In order to improve the user experience of the museum visit, we reorder
+the results of the Art Recommender so that there is an eﬃcient way to walk from
+one to the other. This route minimizes the walking eﬀort, while maximizing the
+number of top recommendations. Also, it takes into account a optional caps to
+the walking distance and the number of artworks. This helps the user to decide
+where to go given limited time. (The feeling of missing something important can
+cause people to linger too long in the “wrong” rooms and therefore to miss their
+favorite works.)
+
+An Easy Traveling Salesman Problem. Computing an eﬃcient route through a
+museum is very similar to the traveling salesman problem. However, for a few
+reasons, theoretically at least, a signiﬁcantly easier problem than the general
+traveling salesman problem, for which the greedy nearest-neighbor search algo-
+rithm is considered a sub-optimal solution. First, if you consider the artwork
+displays, rooms, doors, hallways, and stairs to be nodes in a connectivity 
+graph,
+
+
+then this graph is not fully connected, because there are walls and ﬂoors in the
+way. This is illustrated in Fig. 1. Second, the rooms are considered units when
+the exhibits are created, which means it makes sense to view all works from a
+single room together. This means it is nearly always a good idea to delay 
+transi-
+tions across doors until all displays in a room have been visited. And third, 
+ﬂoor
+transitions take a lot of eﬀort, especially up by stairs, or either way by 
+elevator,
+because you have to wait for the elevator. For these reasons there are only a 
+few
+sensible paths through the museum. Locations are grouped per room and then
+per ﬂoor. If you set the transition weight of the edges in the connectivity 
+graph
+to the experienced distance instead of the actual distance then nearest neighbor
+search will always send the visitor to works within the same room ﬁrst before
+making the transition to another room (or even ﬂoor), which is good in the case
+of the Rijksmuseum, but which is bad in the case the general traveling salesman
+problem, because it causes local optima.
+
+
+room
+
+door
+
+room
+
+door   hallway
+
+door
+
+display  display
+
+
+display
+
+display
+
+display   display   display
+
+stairs
+
+door   room
+
+Fig. 1. Example connectivity graph
+
+Implementation of the Nearest Neighbor Router. The SWI-Prolog space package
+
+[8] provides nearest neighbor search. However, this nearest neighbor search is
+unaware of the restrictions posed by the walls and ﬂoors. Therefore, we base our
+routing on a connectivity graph search algorithm that uses intersection queries
+as opposed to nearest neighbor queries. First we compute a connectivity graph
+between all the artwork displays, rooms, stairwells, etc. that takes into 
+account
+where the doors are. Then we compute the weighted shortest path between all
+the displays. The weight is based on graph distance, the type of the transition
+(e.g. moving to another ﬂoor is more expensive), and on the distance between
+locations inside a room (e.g. how far displays are from each other or from a
+door). This shortest distance matrix is used to compute an eﬃcient path along
+all the recommended artworks. The exact method we use to calculate the routes
+is as follows:
+
+– Pre-compute artwork distance matrix once
+
+1. deﬁne that stairs, hallways, toilets, are rooms
+
+2. deﬁne works are at a display in the museum
+
+(a) give the display a x, y, z coordinate
+
+3. deﬁne what it means to be connected
+
+(a) places (displays, doors) space intersect with same room
+
+(b) places are stated to be connected (stairs to stairs on other ﬂoor) by
+
+A chip:connectsTo B
+
+
+4. assert A chip:connectsTo B for each connected pair A, B
+
+5. make connectivity graph of chip:connectsTo
+
+6. compute weights for each transition
+
+(a) graph distance plus distance within room
+
+(b) door transitions get a higher graph distance than display-display
+transitions
+
+(c) stairs transitions get an even higher graph distance
+
+7. compute and cache upper triangle matrix of weighted graph shortest
+path distances between all places
+
+– Apply routing algorithm for each request
+
+1. fetch set of recommended works (given by Art Recommender)
+
+2. fetch current position (given by user interface)
+
+3. fetch remaining time in museum (given by user interface)
+
+4. fetch maximum number of artworks to route (given by user interface)
+
+5. greedy nearest neighbor search in weighted distance graph until list of
+recommended works is empty:
+
+(a) look up nearest recommended work
+
+(b) remove work from list of candidates
+
+(c) add path from current position to work to recommended route
+
+(d) set current position to location of work
+
+(e) add length of path to total length of recommended route
+
+6. while total path length of recommended route takes longer than remain-
+ing time in museum
+
+(a) remove furthest artwork from current position
+
+(b) apply greedy nearest neighbor search again (step 5)
+
+4  SPACE-CHIP Demonstrator
+
+4.1 Usage Scenario
+
+Imagine the following usage scenario: Our user prepares a visit to the Rijksmu-
+seum. He provides his opinion about a number of Rijksmuseum artworks and
+topics through the Art Recommender e.g. rates the painting “Woman Reading
+a Letter” and the artist that made the painting Johannes Vermeer with 4 stars
+meaning he likes them. These ratings result in the list of recommended artworks
+that form a Tour of Recommended Artworks that the user can view in the Tour
+Wizard 9. The user is going to follow this tour inside the museum with the help
+of the CHIP Mobile Guide. The routed tour is shown in Fig. 3. We use icons
+
+⁹ For the demonstration purposes we simulate the user’s experience with the 
+mobile
+device by showing the tour map in the Tour Wizard tool. In diﬀerence with the
+original version of the tool in this Tour Wizard we indicate with icons the 
+(imaginary)
+artworks locations. Semantically enriched data about Rijksmuseum collection only
+provides information about the room number where a particular artwork is located
+but does not provide information about the exact artwork location.
+
+
+Fig. 2. Artwork description page
+
+in a diﬀerent color to indicate artworks that are in the tour and connect them
+with the tour line. The user location is indicated with an icon at the entrance
+door on the ground ﬂoor. During the visit the user views artworks that are in
+the tour but is also attracted by other artworks outside his tour. In order to 
+give
+a notiﬁcation to the system that the user has viewed an artwork he has to click
+on a corresponding icon on the museum map and in the popup window showing
+artwork description (see Fig. 2) he has to click on “Viewed” icon. If the user
+clicks on a “Viewed” icon for an artwork that is in his tour then the tour route
+remains the same. Otherwise the tour may be re-routed taking into account the
+user’s interest in that artwork. He can also give ratings to any artwork he 
+sees.
+These actions result in the tour being dynamically adapted taking into account
+the history of his visit (seen artworks), changing interests and current 
+location.
+(However if the user wants to follow the initial sequence of recommended art-
+works and does not want the tour to be adapted he can select a corresponding
+option in the tour conﬁguration). If the user, for example, likes the works by
+Frans Hals and Ferdinand Bol he comes across on his way to the recommended
+Johannes Vermeer works, he can add a rating by selecting the work on the map
+and submitting a new rating (see Fig. 2). This automatically updates the tour.
+The updated tour is shown in Fig. 4. For the sake of clarity we have highlighted
+the works from the original tour with red, the new Frans Hals recommendations
+with yellow and the new Ferdinand Bol work with blue.
+
+
+Fig. 3. Initial route of the tour of recommended recommended artworks
+
+Fig. 4. Re-routed tour of recommended artworks
+
+
+Fig. 5. Mapping CHIP user model (UM) to the simple event model (SEM)
+
+4.2  Mapping the CHIP User Model to SEM
+
+In order to provide data exchange between CHIP and SWI-Prolog Space package
+we mapped the original CHIP user model (UM) [9] speciﬁed using RDF/XML
+to the Simple Event Model (SEM)10 which is proposed by van Hage et al. [7]
+and is just a formalization in RDF using SEM.
+
+:Saskia a sem:Actor ;
+
+sem:participatesIn :event_1, :event_2, :event_3 .
+
+:event_1 a sem:Event ;
+
+sem:eventType :rating ;
+chip:rated :artwork_9 ;
+chip:ratedValue "0.5" .
+
+:event_2 a sem:Event ;
+
+sem:eventType :viewing ;
+sem:partOf :event_3 ;
+chip:viewed :artwork_16 .
+
+:event_3 a sem:Event, rdf:Seq ;
+sem:eventType :tour ;
+rdf:_1 :artwork_16 ;
+rdf:_2 :artwork_5 ;
+rdf:_3 :artwork_9 .
+
+Fig. 6. Code example of the CHIP User Model based on SEM
+
+¹⁰ For this work we use this version: 
+http://semanticweb.cs.vu.nl/2009/04/event/.
+A newer version is available at http://semanticweb.cs.vu.nl/2009/11/sem/
+
+
+As shown in Fig. 5, we deﬁned chip:User as a sub class of the sem:Actor,
+who participates in the sem:Event. In our case, there are three diﬀerent types
+of events: (i) rating, (ii) viewing, and (iii) tour. In a rating event, the 
+user rates
+a sem:Object with a chip:ratedValue from “-1” to “1”. The viewing events
+are usually part of the tour events, since the user views a sem:Object during
+the tour. In a tour event, the user adds a sem:Object into a particular tour.
+All of the objects added in the tour will be ordered in a sequence based on
+their locations in the museum, which are described using the rdf: n¹¹ as a sub
+property of the rdfs:member.
+
+Suppose Saskia is a CHIP user who participated in three events: (i) she rated
+
+artwork 9 with a value of “0.5”; (ii) she added three artworks (artwork 5, art-
+work 9 and artwork 16) in the tour; and (iii) she viewed artwork 16 in this 
+tour.
+Using the routing algorithm, artworks are ordered in a sequence: artwork 16,
+artwork 5 and then artwork 9. In Fig. 6 we give the corresponding code that
+describes these information in the user proﬁle and tour proﬁle.
+
+To indicate the locations of objects in the museum, we use various properties:
+chip:inRoom, chip:onFloor, georss:point¹² and georss:polygon. There are
+also many diﬀerent types of places in our case, such as display (the place type
+for artworks), room, door, hallway, stair, elevator, restroom, etc. Two places 
+are
+connected by using the chip:connectsTo property.
+
+5  Evaluation
+
+We consider two issues for evaluation: (1) that recommendations are useful for
+the users and (2) that sequence of recommendations follows an eﬃcient route
+through the museum in a reasonable time that allows real-time interaction with
+the system.
+
+With respect to the ﬁrst issue we performed a study Eﬀectiveness of recom-
+mendations, novices versus experts. Our conclusion was that the Art Recom-
+mender helps novices to elicit or clarify their art preferences from their 
+implicit
+or unclear knowledge about the museum collection[9]. Compared to the novices,
+the experts (mainly museum domian experts) do not seem to beneﬁt from it a
+lot, although there is a slight increase of 0.23 (the increase for the novices 
+is
+1.18) which indicates that the system also helps the experts to elicit their art
+preferences.
+
+With respect to the second issue, we measured the speed of the router. To
+determine the speed of the router we measured the CPU time taken on a 2.66
+GHz Intel processor, given enough memory to store the cached distance matrix
+between the artworks. The result is shown in Fig. 7. Even though the perfor-
+mance curve shows exponential growth in terms of the number of artworks that
+needs to be routed, the total time needed for the routing stays within 
+reasonable
+bounds for the number of artworks in a realistic tour through the Rijksmuseum.
+This performance could be signiﬁcantly improved by further optimizing the data
+
+¹¹ http://www.w3.org/TR/rdf-schema/
+
+¹² http://georss.org/simple
+
+
+4.5
+
+4
+
+3.5
+
+3
+
+2.5
+
+2
+
+1.5
+
+1
+
+0.5
+
+0
+
+0  10  20  30  40  50  60  70  80  90
+
+number of artworks to route
+
+Fig. 7. Time performance of the router for n artworks. The router needs exponen-
+tial time to derive an eﬃcient route, but stays within a reasonable time for 
+real-time
+response for the number of artworks that a realistic tour comprises.
+
+structure that stores the distance matrix. At the moment this is a binary tree.
+An array matrix would provide faster access. Furthermore, we guarantee that
+the router always favors within-room transitions over between-room transitions,
+which in turn are always favored over ﬂoor transitions. Given the limited con-
+nectivity between the rooms and ﬂoors this guarantees an eﬃcient path.
+
+6  Discussion and Future Work
+
+Existing adaptive mobile museum guides diﬀer in the ways they construct the
+user model, the ways they provide personalized experience inside the museums,
+devices that they use. Many projects focus on social communication between the
+visitors (e.g. friends, group members) while following a tour. Currently, CHIP
+does not take social aspect into account–neither for generating recommendations,
+nor for communication inside the museum. This could be one of the improve-
+ments to the CHIP demonstrator. The strong points of CHIP however are the
+distributed user model and the ability to view the CHIP Mobile Guide in any
+browser. No additional software installation is required while typically museums
+would provide the visitors with the PDA’s running pre-installed software and ask
+them to provide some personal information to start creating their user models.
+In the presence of Wiﬁ inside the Rijksmuseum the visitor could use his own
+device (iPod touch or iPhone) to follow the CHIP Mobile Guide that uses the
+user model and the tours information stored on the CHIP server.
+
+We consider several directions for future work.
+
+First, implementing the demonstrator for the use in the realistic situation (in-
+side the museum) with the real time data. In the current prototype we simulated
+the user’s experience with the mobile device by showing the tour map in the Tour
+Wizard tool. To indicate the fact that the user has seen an artwork he has to 
+ﬁrst
+
+
+click on a corresponding icon on the map and then on a “Viewed” icon in the
+popup window that opens. Time issues while following the tour in this way are
+not taken into account. The next step in developing the demonstrator would be
+the implementation of the real-time user localization and re-routing the user by
+taking into account the time that he spends viewing artworks, moving between
+artworks, taking stairs, etc.
+
+Second, designing and evaluating the user interface for guiding the user in the
+realistic situation. At the moment the user is only provided with the museum
+map that indicates the tour route and the current user location. Based on the
+map the user has to ﬁgure out where to go next. It would be interesting to
+consider the possibility of guiding the user “locally” by an indication about
+where to go next from the current point, like turn left/right, etc. It would be
+also interesting to consider using technologies like Google Goggles13 to show
+information about an artwork when the user points with his device on it.
+
+And third, experimenting with various re-routing algorithms. Current algo-
+rithm can provide re-routing of a tour or sequencing of a given set of artworks
+from the tour (generated by CHIP Art Recommender and Tour Wizard tools)
+based on user’s position or closeness to a certain artwork from the tour. In 
+addi-
+tion to this artworks set, the routing mechanism uses the museum coordinates.
+It does not take into account the information from the user model. It would be
+interesting however to consider more complex algorithms that would also take
+user preferences into account and possibly decide to add more artworks to the
+tour that might be interesting for the user based on the user closeness to 
+them.
+
+Acknowledgments. The work on the CHIP project is funded by the Dutch Sci-
+ence Foundation CATCH program and is in collaboration with the Rijksmuseum
+Amsterdam. Part of this work has been carried out as a part of the Poseidon
+project  in collaboration with Thales Nederland, under the responsibilities of 
+the
+Embedded Systems Institute (ESI). This project is partially supported by the
+Dutch Ministry of Economic Aﬀairs under the BSIK program.
+
+References
+
+1. Aoki, P.M., Grinter, R.E., Hurst, A., Szymanski, M.H., Thornton, J.D., 
+Woodruﬀ,
+A.: Sottovoce: exploring the interplay of conversation and mobile audio spaces. 
+In:
+SIGCHI Conference on Human factors in computing systems (2002)
+
+2. Kruger, A., Jorg, B., Heckmann, D., Kruppa, M., Wasinger, R.: Adaptive Mobile
+Guides. In: Brusilovsky, P., Kobsa, A., Nejdl, W. (eds.) Adaptive Web 2007. 
+LNCS,
+vol. 4321, pp. 521–549. Springer, Heidelberg (2007)
+
+3. Oppermann, R., Specht, M.: A nomadic information system for adaptive 
+exhibition
+guidance. In: ICHIM99 Conference (1999)
+
+4. Rocchi, C., Stock, O., Zancanaro, M., Kruppa, M., Kruger, A.: The museum 
+visit:
+generating seamless personalized presentations on multiple devices. In: 9th 
+Inter-
+national Conference on Intelligent User Interfaces (2004)
+
+¹³ http://www.google.com/mobile/goggles/
+
+
+5. Roes, I., Stash, N., Wang, Y., Aroyo, L.: A personalized walk through the 
+museum:
+The CHIP interactive tour guide. In: ACM CHI-Student Research Competition
+(2009)
+
+6. Sumi, Y., Mase, K.: Interface Agents that facilitate knowledge interactions 
+between
+community members. In: Cognitive Technologies Series, pp. 405–427. Springer,
+Heidelberg (2004)
+
+7. van Hage, W.R., Malais´e, V., de Vries, G., Schreiber, G., van Someren, M.: 
+Com-
+bining ship tra jectories and semantics with the simple event model (sem). In:
+1st ACM International Workshop on Events in Multimedia. Sheridan Publishers
+(2009)
+
+8. van Hage, W.R., Wielemaker, J., Schreiber, G.: The space package: Tight 
+inte-
+gration of space and semantics. In: 8th International Semantic Web Conference
+Workshop: TerraCognita (2009)
+
+9. Wang, Y., Stash, N., Aroyo, L., Gorgels, P., Rutledge, L., Schreiber, G.: 
+Recom-
+mendations based on semantically enriched museum collections. Journal of Web
+Semantics 6(4), 43–58 (2008)
+
+10. Luyten, K., Van Loon, H., Teunkens, D., Gabri¨els, K., Coninx, K., 
+Manshoven,
+E.: ARCHIE: Disclosing a Museum by a Socially-aware Mobile Guide. In: 7th
+International Symposium on Virtual Reality, Archaeology and Cultural Heritage
+VAST (2006)
+
+11. Chou, S.-C., Hsieh, W.-T., Gandon, F.L., Sadeh, N.M.: Semantic Web Technolo-
+gies for Context-Aware Museum Tour Guide Applications. In: 19th International
+Conference on Advanced Information Networking and Applications, pp. 709–714.
+IEEE Computer Society, Washington (2005)
+

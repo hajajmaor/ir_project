@@ -1,0 +1,368 @@
+Journal of Physics: Conference Series
+
+You may also like
+
+PAPER • OPEN ACCESS
+
+Mobile augmented reality using cloud database for
+interactive museum guiding system
+
+- CD133 antibody conjugation to
+decellularized human heart valves
+intended for circulating cell capture
+John D Vossler, Young Min Ju, J Koudy
+Williams et al.
+
+To cite this article: I P Sari and H R Fajrin 2019 J. Phys.: Conf. Ser. 1193 012030
+
+- On free groups in the infinitely based
+varieties of S. I. Adian
+S. I. Adian and V. S. Atabekyan
+
+View the article online for updates and enhancements.
+
+- Nanosecond laser direct-part marking of
+data matrix symbols on titanium alloy
+substrates
+C L Li
+
+Recent citations
+- Bharath G. et al
+- Decubitus pump health device
+implementation with pressure sensor
+based on Atmega 328
+Alan Rifky Wicaksana et al
+
+This content was downloaded from IP address 77.138.97.74 on 28/12/2021 at 22:59
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+Mobile augmented reality using cloud database for interactive
+museum guiding system
+I P Sari1 and H R Fajrin2
+1
+
+Department of Informatics and Computer Engineering, Jakarta State Polytechnic,
+Depok, Indonesia
+2
+Electrical Engineering, Vocational, Muhammadiyah University of Yogyakarta,
+Bantul, Special Region of Yogyakarta, Indonesia
+E-mail: irma.permatasari@tik.pnj.ac.id
+Abstract. The use of marker in museum can ruin the aesthetics of a room. In this paper, we
+will describe ARGuide. ARGuide is a guiding application to help museum visitors, which is
+implemented on Android smartphone. It uses an unmarked augmented reality method. The
+application has been developed and tested. The testing is conducted by tracking some objects
+in a real museum. It shows that ARGuide is able to track different objects at about 63.64% with
+the tracking speed of between 2-6 seconds. However, ARGuide is not able to work properly if
+there is either limited or excessive lighting.
+Keywords—augmented reality; unmarked, guidance system; museum; tracking
+
+1. Introduction
+Museum can be determined as a place to collect historical and memorial objects. Almost half of the
+museum visitors come to a museum just to see the objects, not to interact with them. In Indonesia, more
+than half of 275 museums are not yet complete as it has to be, and they need to be revitalized.
+Moreover, the revitalization is expected to provide more function such as a universal medium for
+preservation cultural heritage, creative and interactive tools. For this effort, a creative and effective
+strategy is required.
+Normally, the visitor needs a tour guide that will serve and tell some information about museum and
+all objects. A tour guide also guides the visitor to visit all of rooms of the museum. There will be a
+problem, when the museum is crowded so that the tour guide could not serve each of visitors.
+E-museum is a concept to use electronic devices such as PC desktop, television, smartphone and
+others in a museum. The use of devices gives more experiences for the visitor by increasing the
+interactivity and creativity values.
+Nowadays, mobile technology has grown rapidly and almost everyone has a smartphone, so it allow
+us to implement the augmented reality on mobile devices [1]. Research on navigation systems using
+mobile phone and Augmented Reality (AR) technology has been conducted and introduced at some
+museums in the world. For example, National Palace Museum in Taiwan has developed a digital
+navigation system using RFID, and has become a pioneer in digital navigation of museum. With this
+navigation system, museum visitors can get voice-based information about the objects of the museum
+through earphones. They reported that the use of the technology can increase the interest of the visitors
+to come to museum.
+
+Content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution
+of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI.
+Published under licence by IOP Publishing Ltd
+1
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+American Museum of Natural History Application from the American of Natural History provides
+guidance service using text and Wi-Fi positioning with indoor AGPS. Using Wi-Fi for positioning with
+indoor AGPS is a one way of getting the location of visitor accurately.
+Vision-based location positioning system and AR for indoor environment allow information service
+to visitor [2]. This application uses AR marker and displays some 3D objects together with audio
+information. Through this application, museum visitors can get some information interactively.
+The using of marker AR in museum could ruin the aesthetics of room because of marker AR uses a
+specific image as marker. Unmarked technique could be implemented in museum. Unmarked AR is a
+technique that uses object or natural image in real world as a marker. In this paper, we propose a
+museum guidance system. The system is built based on a case study that has been carried out in
+Museum Sonobudoyo Yogyakarta.
+2. Related Work
+Augmented Reality is used in military and technological system for the first time [3]. But Augmented
+Reality (AR) has increased significantly in recent years. Augmented Reality (AR) is a concept of
+combining the real world with virtual objects created by computer graphics [4]. AR can be
+implemented in various sectors such as visual information, navigation systems in real world,
+advertising, military, games, education, and so on. AR is usually implemented in navigation system
+for the museum visitors.
+Navigation systems require information about location. Based on the location, there are two
+different navigation systems: indoor and outdoor. Research on indoors navigation for museum base on
+smartphone that consists of location positioning (localization) and content-based augmented reality
+has been conducted by several researchers. It has proven that it gives more benefits for the museum.
+For example, the efficiency of mobile guidance system using AR makes usefulness and effectiveness
+in exhibition at National Museum Korea [5]. This system uses method-tracking algorithm to estimate
+the accuracy of image adaptively for objects in museum.
+3D AR mobile navigation system that supports indoor positioning system has been developed in the
+campus of Oxford [4]. The system tells about history of Oxford in the past and the future in 3D and
+based on multimedia that includes the navigation system, the positioning based on RFID, and
+unmarked AR technology to detect the location of visitors actively. Activity-based instructions method
+with 3D location is used to get point of the building and success to find that balance between mixtureAR with interface non-AR influenced in indoor navigation of AR technology [6].
+Navigation systems may use different identification methods. Approach of tracking to image
+features without marker can use existing sensors on mobile devices [7]. The determination of location
+where visitor been is very important in the navigation system type.
+Vision-based localization can be used to navigate indoor environment [8]. The system will
+recognize the location from sequence of images that are taken automatically in a room. To identify a
+location, we need to make a pre-reconstruction of an image and use a model in a location database
+which consists of location and path between the rooms. This system is a kind of client-server system.
+A client which in this case can be a smartphone or other type of mobile device will take a few pictures
+and send the images to the server to be processed through the network. After the checking process, it
+will produce the relocation information that will be sent to the client. The determination of the location
+using mobile devices may consist of several stages: feature extraction and description, matching
+characteristics, determination optionally, removes the outermost points (outliers) and the last pose
+calculation and smoothness.
+Other museum navigation system that employs a robot has also been conducted. In this case the use
+of the robot is combined with the use of augmented reality technology. The navigation uses interaction
+with human-robot and location method to find position and orientation [9]. This type of AR museum
+tour guide robot displays some elements as object virtual 3D, video and audio in the museum.
+
+2
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+3. System Model
+3.1. System Description
+ARGuide is a guidance application for museum visitor. The architecture system of ARGuide can be
+described in the Figure 1. The application is composed by core component such as: camera, image
+converter, tracker, database, video render background, and application code.
+
+Figure 1. Architecture of ARGuide.
+In Figure 1, the process is started by taking point camera to the object. The application converts the
+image into pixel format in order to AR is able to process it. Then it continues to the tracking process to
+detect the object that has been matched in the cloud database. The results are stored in a state object
+used by the video background renderer which can be accessed from the application code.
+There are three modules in the application codes. They are query of the state object, update of the
+application logic and render of graphics. Query of the state object processes newly detected targets,
+markers or updated states of these elements. Update of the application logic is to input new data.
+Render of graphics is to overlay and show the AR object.
+ARGuide guides the museum visitors to get information about objects and location related to the
+real situation of the museum. Museum Sonobudoyo Yogyakarta has 13 different rooms and 43.235
+collections of historical and memorial objects. These objects are registered as image targets in Vuforia
+Target Manager.
+The application is created based on Vuforia SDK and use cloud database systems. There are two
+types of databases used in the mobile phone: mobile database and cloud database. A mobile database
+refers to a database embedded on a mobile device. Cloud database refers to computing resources in
+clouds to provide mobile data services and applications [10]. Mobile Cloud Computing (MCC)
+defined by [11] is “an emergent mobile cloud paradigm which leverage mobile computing,
+networking, and cloud computing to study mobile service models, develop mobile cloud
+infrastructures, platforms, and service applications for mobile clients.”
+3.2. Flowchart
+Workflow of ARGuide is described in Figure 2.
+
+3
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+Figure 2. Flowchart of ARGuide.
+As shown in Figure 2, this application is started with a welcome screen and a description about the
+application. After the application is opened, user can choose either to continue or not. If the user
+chooses not to close the application, the user can take point the camera to an object. If the recognizing
+process is not success, the application will back to tracking process. If the object is successfully
+recognized, the information will be displayed. The next step is user can choose either to close the
+information or not. If the user chooses to close, the application backs to tracking process. Otherwise,
+the user can choose either to touch button audio or not. Or else, the application will return to display
+text information. But if the user chooses yes, the application renders the audio information and back to
+welcome screen.
+4. Testing and Result
+Testing is conducted using different Android smartphone. The purpose of the testing is to determine
+capabilities and tracking speed of the application to recognize the objects. For the testing, uses 33
+different objects.
+1. Testing 1 (T1) is conducted using smartphone Sony Experia Acro S, Android (Jelly Bean 4.1.2),
+CPU: 1.5 GHz dual-core Scorpion, memory: 1 GB RAM, camera: dual-camera (rear 12 MP +
+front 1.3 MP).
+
+4
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+2. Testing 2 (T2) is conducted using smartphone Lenovo K860, Android (Ice Cream Sandwich
+v4.0.4), CPU: Quad-core 1.4 GHz Cortex-A9, memory: 1 GB RAM, camera: dual camera (rear
+8 MP + front 2 MP). Result of the test can be seen in Table 1.
+Table 1. Result Tracking.
+No
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+Room
+Pendopo
+Introduction room
+Prehistoric room
+Islam & Classic room
+Batik room
+Wayang Kulit room
+Wayang Golek room
+Masking room
+Central of Java room
+Silver room
+Weapon room
+Playing room
+Bali room
+Total Object
+Percentage
+
+Testing 1
+Success
+Time (s)
+Tracking
+1
+3
+1
+3
+0
+1
+3
+2
+3
+0
+3
+2-5
+2
+4
+3
+2-5
+3
+3-6
+2
+3-4
+1
+5
+4
+3-5
+23
+69.70 %
+
+Testing 2
+Success
+Time (s)
+Tracking
+1
+8
+1
+7
+0
+1
+10
+2
+7
+0
+3
+3-10
+1
+5
+2
+5-7
+3
+6-9
+2
+5-12
+1
+5
+2
+7
+19
+57.58 %
+
+As shown in the Table I, the testing 1, the application has succeeded to recognize 23 objects. This is
+about 69.70% of the objects. It is also shown that the response time of tracking process is in between 26 seconds. In the testing 2, success tracking is about 57.58% or 19 objects can be tracked successfully,
+with response time between 3-12 seconds. There is significant difference between testing 1 and testing
+2, which is approximately 12.12%. It is probably caused by the difference quality of camera and
+internet connection. Quality of the camera influences quality of image and also tracking process. Based
+on the observation, when the tracking process has been conducted, the display of picture tracking in
+testing 2 is not as clear as in testing 1. The result of tracking in testing 2 is a less lighting. It makes the
+tracking process of testing 2 slower than testing 1. The succeed tracking process can be described in
+Figure 3.
+In Figure 3, ARGuide is able to recognize objects in this museum, except in Prehistoric and Wayang
+kulit room. It is caused by lighting of the room which is too bright. It makes some noise in image target,
+so the application could not recognize the feature of the object. The features of the objects are not
+match with the marker that has been registered in the database.
+5. Conclusion
+The average of succeed tracking of ARGuide application is about 63.64%. This application is an
+unmarked AR technology using a real object as a marker. There is different result when the application
+is implemented on different smartphone that have different capability of camera.
+Other factors that affect the success of tracking are the quality of processor, internet
+connection and lighting in the room. This application is not recommended for use in a dark or excessive
+light environment. The use of sensors to get a real position of the visitors may be considered in the
+future research.
+
+5
+
+2018 International Conference of Computer and Informatics Engineering (IC2IE)
+IOP Publishing
+IOP Conf. Series: Journal of Physics: Conf. Series 1193 (2019) 012030 doi:10.1088/1742-6596/1193/1/012030
+
+Figure 3. Visualization of succeed tracking.
+References
+[1] Marshall T 2011 Moving the museum outside its walls: An Augmented Reality Mobile
+Experience (Stockholm: KTH Royal Institute of Technology School of Information and
+Communication Technology)
+[2] Iriarte-Solis A, Gonzalez-Villegas P, Fuentes-Covarrubias R, Fuentes-Covarrubias G 2016
+Mobile Guide to Augmented Reality for Campus of the Autonomous University Of Nayarit
+IEEE Int. Symp. on Mixed and Augmented Reality (ISMAR-Adjunct) (Merida: IEEE) pp 1-4
+[3] Mohareri O and Rad A B 2011 Autonomous humanoid robot navigation using augmented
+reality technique IEEE Int. Conf. on Mechatronics (Istanbul: IEEE) pp 463-468
+[4] Marjury D H, Karen B C, Diana M-M, Gabriel L F 2017 Ofﬂine Mobile Application for Places
+Identiﬁcation with Augmented Reality in 4th Int. Conf. on eDemocracy & eGovernment
+(ICEDEG) (Quito: IEEE)
+[5] Oh J, Lee M-H, Park H, Park J-I, Kim J-S, Son W 2008 Efficient mobile museum guidance
+system using augmented reality IEEE Int. Symp. on Consumer Electronics (Vilamoura:
+IEEE) pp 1-4
+[6] Wang C-S, Chiang D-J, Ho Y-Y 2012 3D augmented reality mobile navigation system
+supporting indoor positioning function IEEE Int. Conf. on Computational Intelligence and
+Cybernetics (CyberneticsCom) (Bali: IEEE) pp 64-68
+[7] Mulloni A, Seichter H, Schmalstieg D 2011 Handheld augmented reality indoor navigation with
+activity-based instructions Proc. of the 13th Int. Conf. on Human Computer Interaction with
+Mobile Devices and Services (New York: ACM) pp 211–220
+[8] Klopschitz M, Schall G, Schmalstieg D, Reitmayr G 2010 Visual tracking for augmented reality
+Int. Conf. on Indoor Positioning and Indoor Navigation (IPIN) (Zurich: IEEE) pp 1-4
+[9] Kim J and Jun H 2008 Vision-based location positioning using augmented reality for indoor
+navigation IEEE Trans. on Consumer Electronics vol. 54 no. 3 (IEEE Consumer Electronics
+Society: IEEE) pp 954-962
+[10] Lei L, Sengupta S, Pattanaik T, Gao J 2015 MCloudDB: A Mobile Cloud Database Service
+Framework in 3rd IEEE Int. Conf. on Mobile Cloud Computing, Services, and Engineering
+(San Fransisco: IEEE)
+[11] Chang R S, Gao J, Gruhn V, He J, Roussos G, Tsai W-T 2013 Mobile Cloud Computing
+Research - Issues, Challenges and Needs Proc. of IEEE 7th Int. Symp. on Service-Oriented
+System Engineering (SOSE) (San Francisco: IEEE) pp 442-453
+
+6
+
+

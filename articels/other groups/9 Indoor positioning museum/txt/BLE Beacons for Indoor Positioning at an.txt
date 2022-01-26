@@ -1,0 +1,736 @@
+                                                                                                                                                                                          1
+
+
+
+
+                                                       BLE Beacons for Indoor Positioning at an
+                                                         Interactive IoT-Based Smart Museum
+                                                            Petros Spachos, Senior Member, IEEE, and Konstantinos N. Plataniotis, Fellow, IEEE
+
+
+
+
+                                            Abstract—The Internet of Things (IoT) can enable smart                       get a brief introduction, images or even a website with related
+                                         infrastructures to provide advanced services to the users. New                  information by scanning the QR code on their mobile device.
+                                         technological advancement can improve our everyday life, even                   Another approach includes Augmented Reality (AR), where
+                                         simple tasks as a visit to the museum. In this paper, an indoor
+                                         localization system is presented, to enhance the user experience                the visitors can interact with objects [2], [3]. However, both
+arXiv:2001.07686v1 [cs.NI] 21 Jan 2020
+
+
+
+
+                                         in a museum. In particular, the proposed system relies on                       approaches require the visitors to take action in order to get
+                                         Bluetooth Low Energy (BLE) beacons proximity and localization                   further information about an exhibit, either by scanning the
+                                         capabilities to automatically provide the users with cultural                   QR code or by downloading all the necessary software and
+                                         contents related to the observed artworks. At the same time,                    application for the AR technology. Passive approaches can be
+                                         an RSS-based technique is used to estimate the location of the
+                                         visitor in the museum. An Android application is developed                      helpful for visitors that are already interested in an exhibit and
+                                         to estimate the distance from the exhibits and collect useful                   know where to find it, but they are not helpful for the majority
+                                         analytics regarding each visit and provide a recommendation                     of the visitors that have limited or no knowledge at all about
+                                         to the users. Moreover, the application implements a simple                     the different available collections.
+                                         Kalman filter in the smartphone, without the need of the Cloud,                    Positioning technologies, especially those based on the
+                                         to improve localization precision and accuracy. Experimental
+                                         results on distance estimation, location, and detection accuracy                proximity from the different objects can help and increase
+                                         show that BLE beacon is a promising solution for an interactive                 the interaction with the visitors in an active way, where
+                                         smart museum. The proposed system has been designed to be                       the exhibit triggers an action. Location-aware services can
+                                         easily extensible to the IoT technologies and its effectiveness has             guide the visitor in a complex indoor environment such as
+                                         been evaluated through experimentation.                                         a large museum. However, the deployment of an accurate
+                                           Index Terms—BLE beacons; iBeacons; Indoor Positioning;                        indoor location-aware system is challenging, while it might
+                                         Smart Museum; RSSI; Kalman filter.                                              not be available in every object of interest. At the same time,
+                                                                                                                         museums tend to change the location of the exhibits and
+                                                                 I. I NTRODUCTION                                        collections over time, making it difficult to have some basic
+                                                VER the centuries, the traditional role of museums is to                 coordination for the localization system. A system that does
+                                         O      collect objects and materials of cultural, religious and
+                                         historical importance, preserve them, research into them and
+                                                                                                                         not use the absolute location but relative information regarding
+                                                                                                                         the object within a range from the visitor can be more useful.
+                                         present them to the public for the purpose of education and                        The increased popularity of smartphones along with the
+                                         enjoyment. Nowadays, museums usually provide the visitor                        development of the Internet of Things (IoT) can alleviate the
+                                         with paper booklets or with audio guides to help them navigate                  problem. Low-cost and small size devices can interact with
+                                         in the large museum areas. These booklets are designed for                      a smartphone application and provide useful information to
+                                         the general audience and sometimes they fail to meet the                        the visitor, without affecting the current infrastructures at the
+                                         needed of individuals with special interest. At the same time,                  museum. IoT devices can work autonomously with minimal
+                                         as the number of exhibits and collections increases, while the                  human intervention to provide a simple service. Bluetooth Low
+                                         available time of the visitors is limited, they might not manage                Energy (BLE) beacons, commonly referred to as beacons, are
+                                         to visit the exhibits they are interested in or even explore more               small wireless devices that can provide proximity services to
+                                         exhibits and collections related to their personal interest. As a               nearby BLE enabled devices [4], [5]. Beacons can be placed
+                                         result, sometimes visits to the museum ends up being boring or                  almost in any indoor location and convert a traditional room
+                                         even too difficult for many visitors. Therefore, an interactive                 into a smart environment where the visitor interacts with the
+                                         and personalized museum tour that takes into consideration                      objects based on her/ his distance from them.
+                                         the available time for a visit and the personal interests of the                   In this paper, the proposed system uses BLE beacons for
+                                         visitors is needed.                                                             an IoT-based smart museum. The visitors use a developed
+                                            A popular way to contain exhibits and collection informa-                    Android application that runs in the background. When the
+                                         tion is the use of Quick Response (QR) code [1]. Visitors can                   visitors are close to an exhibit, they receive a notification
+                                                                                                                         about the exhibit. Then, the user decides either to get more
+                                           This work was supported in part by the Natural Sciences and Engineering
+                                         Research Council of Canada (NSERC).                                             information about the exhibit or ignore it. While the visitor
+                                           P. Spachos is with the School of Engineering, University of Guelph, Guelph,   uses the application, her/ his location is estimated based on
+                                         ON, Canada. (e-mail: petros@uoguelph.ca).                                       the Received Signal Strength Indicator (RSSI) values of nearby
+                                           Konstantinos N. Plataniotis is with the Department of Electrical and
+                                         Computer Engineering, University of Toronto, Toronto, ON, Canada.               BLE beacons. At the same time, the proposed system captures
+                                         (kostas@ece.utoronto.ca)                                                        useful analytics about the visitors’ retention time - the time
+                                                                                                                                     2
+
+
+
+they spend in the museum, and interest towards the different       RSSI is prone to noise and interference, there are techniques
+collections and exhibits, and based on this information to         that can improve its performance when it comes to localiza-
+provide a recommendation for future visits.                        tion. In [14], Bayesian filters are used to improve estimation
+   To evaluate the performance of the proposed system three        accuracy. In [15], a sigma-point Kalman smoother (SPKS)-
+sets of experiments were conducted in two environments: In         based location and tracking algorithm is proposed. SPKS algo-
+the first experiment, the distance estimation accuracy of a        rithm has higher accuracy in comparison with a commercially
+single BLE beacon was examined. In the second experiment,          available positioning engine, over a number of trials. In [16],
+the localization performance of three BLE beacons was ex-          an improved unscented Kalman filter and the particle swarm
+amined, when the receiver is moving between them. In the           optimization (PSO) are proposed. PSO can reduce the posi-
+third experiment, the detection accuracy of the developed          tioning error and improve positioning accuracy. In [17], the
+application is examined when three beacons are placed side by      average of a number of selected maximum RSSI observations
+side in different topologies. The experimental results verified    is used to improve the accuracy. Experiments were conducted
+some expected assumption, but also revealed some interesting       in four rooms and a corridor within an office building with
+insights. According to the experimental results:                   promising results in positioning accuracy. In [18], a Gaussian
+   • Beacons can be placed anywhere without interfering            Mixture Model (GMM) to model the distribution of a set
+     with any other wireless infrastructures in the area. When     of Non-Line-Of-Sight (NLOS) corrupted range estimations is
+     needed, the location of each beacon can also change           proposed. In [19], convex optimization is used to address
+     easily. However, an accurate path loss model of the           the RSS-based noncooperative and cooperative localization
+     deployment area is necessary for the beacons to have          problems, while a Linear Least Squares (LLS) estimator is
+     acceptable performance.                                       proposed in [20]. In [21], a multi-task correlation particle filter
+   • The location accuracy of the beacons in a complex indoor      for robust visual tracking is proposed, while in [22] particle
+     environment is sufficient for an application such as the      filters for partially-observed Boolean dynamical systems are
+     smart museum when errors within a few meters might            examined. A multi-fidelity Bayesian optimization algorithm
+     be acceptable. Advanced filtering techniques can improve      for the inference of general nonlinear state-space models is
+     the accuracy. Location accuracy increases as the distance     proposed in [23] and a Bayesian decision framework in [24].
+     between the beacons that act as anchors increases.                With the increased popularity of the IoT, people in their
+   • When the receiver is close to the beacon, the detection       daily lives are surrounded by more and smarter devices such as
+     estimation accuracy is acceptable. As the receiver is         laptops, smartphones, and tablets that are capable of collecting
+     moving further away, the estimation accuracy decreases.       RSSI signals [25], [26]. BLE beacons are small size, low-cost
+     At the same time, as the distance between neighboring         devices that can be used for indoor localization [27], [28]. IoT
+     beacons increases the detection estimation accuracy is        devices can be found in a plethora of application for smart
+     more challenging. Also, as the number of the neighbor-        cities [29], [30], smart homes [31], healthcare [32] and many
+     ing beacons increases, the detection estimation accuracy      more [33]–[35]. At the same time, the popularity of smart-
+     decreases.                                                    phone and mobile devices have also enabled the smartphone-
+   • Any BLE-based application should take into considera-         based indoor localization where a number of sensors are used
+     tion the unique characteristics of the deployment area,       to measure human mobility and enrich location context [36].
+     such as noise and interference. Beacon’s performance is           When it comes to smart museums, there are a few recent
+     affected by many factors, however, their proper placement     approaches that try to increase interaction and provide ana-
+     can improve the system accuracy.                              lytics regarding visitors’ retention time [37]–[39]. In [40], a
+   The rest of this paper is organized as follows: Section II      framework that allows for self-aware exhibits positioned close
+reviews the related works, followed by an indoor localization      to each other to cooperate and work together, to produce self-
+technique based on iBeacons in Section III. The proposed           organized exhibitions is proposed. In [41], a smartphone is
+system architecture is discussed in Section IV followed by         used to follow trails in a museum by scanning QR codes.
+a number of experiments to evaluate the performance of the         In [42], RFID-Enhanced Museum for Interactive Experience
+system in Section V. The conclusions are in Section VI.            (REMIX) which aims to develop a personalization platform
+                                                                   for museums based on RFID technology is presented. An
+                                                                   automatic museum guide system that provides both interactive
+                     II. R ELATED W ORK                            guidance for exhibition and NFC-based location navigation
+   Wireless indoor positioning systems have become very            is presented in [43]. A noninvasive Bluetooth monitoring of
+popular in recent years [6], [7]. One promising technology         visitors’ length is proposed in [37], using the visitor’s mobile
+is Ultrawide Bandwidth (UWB). UWB can provide accurate             devices to get useful analytics. In [38], a wearable device
+localization capabilities through Time-Of-Arrival (TOA)-based      that combines image recognition and localization capabilities
+ranging techniques [8]. UWB is a great candidate for indoor        through BLE beacons is proposed. The system, apart from
+localization due to its power efficiency, fine delay resolution,   the localization algorithm, it also requires images to provide
+and robust operation in harsh environments [9]. However,           accurate information to the visitor. In [39], a location-aware
+UWB requires extra hardware devices to be deployed.                service for a museum is proposed. The authors examine both
+   RSS- based indoor positioning systems are more popular          UWB and BLE techniques and combine them with Pedestrian
+due to their availability and low cost [7], [10]–[13]. Although    Dead-reckoning (PDR) estimation and they demonstrate that
+                                                                                                                                    3
+
+
+
+BLE ranging techniques along with smartphone-based PDR is              2) BLE beacons characteristics: Beacons have several
+feasible in a museum-like use case.                                 characteristics that made them a promising solution for indoor
+   In this work, BLE beacons are used along with a developed        localization technology. Their small size made it possible
+Android application. Beacons are the only source of infor-          to place them almost anywhere in a complex environment,
+mation to extract the location of the visitor and any other         without disturbing other infrastructures. They can work for
+analytics regarding their visit. No other sensor or devices are     months with single coin cell batteries [47], while there are also
+used, making the deployment of the proposed system easier           beacons with two AA batteries [48] for an extended lifetime or
+while increasing its usability and applicability.                   even USB-powered beacons and solar-powered beacons [49],
+                                                                    [50] for outdoor deployment. Beacons can be located behind
+                                                                    or on the side of an item and send notifications about it to
+     III. I NDOOR L OCALIZATION BASED ON B EACONS
+                                                                    other devices in the range.
+   In this section, the main features of the BLE beacons are           Another important characteristic of beacons that works as
+described, followed by the ranging technique that is used for       a tradeoff is their transmission power. As every wireless
+the proximity estimation. Then, trilateration which is used for     transmitting device, the transmission power directly affects
+localization is briefly described.                                  the transmission range. Beacons can reach up to 60 m of
+                                                                    transmission however, this will drain their battery faster, while
+                                                                    it can create interference to other beacon transmissions in the
+A. BLE beacons features
+                                                                    area. A transmission range between 2 to 5 m is enough for an
+   BLE beacons, usually referred to as beacons, are small,          application as the proposed smart museum.
+inexpensive, battery-operated wireless transmitters [4], [5], and      The time between consecutive transmissions, known as
+they can have several protocols. In this work, the iBeacon          advertising interval, is also important for the lifespan of the
+protocol is used [44]. Beacons broadcast their identifier to        beacons. When the receivers are moving fast in the area,
+nearby electronic devices that support BLE signals, such            a short advertising interval is necessary but unfortunately,
+as smartphones or single-board computers. They use only             the signal might not be stable. A longer advertising interval
+advertising mode, which is one-way BLE discovery process.           will provide a more stable signal and extend beacon’s bat-
+They periodically send packets of data that can be received         tery lifetime, while it might not reach fast-moving receivers.
+by other devices like smartphones or tablets. They only send        Advertising interval is another tradeoff when designing an
+a signal and not listening. Their signal can be transmitted at      application using beacons.
+intervals from 20 ms up to 10 s. The transmission interval             The main characteristic of beacons that makes them ideal
+affects the battery life of the beacons. The longer the interval,   for indoor localization is their measured power. This is the
+the more available battery left.                                    expected RSS at 1 m distance from the beacon. The receivers
+   1) BLE wireless technology: BLE beacons use BLE tech-            can use this value, calibrate it and eventually find the distance
+nology. BLE was introduced by the Bluetooth Special Interest        from the beacon. There are many works in the literature that
+Group as a subsystem of Bluetooth, in order to achieve              focus on RSS-based localization [7], [15], [51], [52].
+device discovery and connectivity with low power consump-
+tion [45]. BLE was designed for applications that do not need
+to exchange a large amount of data and intend to provide            B. Ranging technology
+considerably reduced power consumption and cost, while it              The RSSI from the beacon can be used to find the distance
+maintains similar communication range with classic Bluetooth.       between the beacon and the receiver. RSS-based localization is
+BLE is popular among IoT devices due to its low-cost and            among the most popular techniques for localization due to its
+low-power requirements.                                             simplicity and signal availability. As the radio wave propagates
+   BLE 4.0 can reach 25 Mbit/s at a distance of 60 m. Although      from the beacon to the receiver according to the inverse-square
+BLE and Wi-Fi utilize the same radio frequency bands, BLE           law, the distance between the two can be calculated, as long
+advertising only occurs on three channels, 37, 38 and 39,           as no other errors contribute to faulty results.
+and they are widely spaced at 2402 MHz, 2426 MHz, and                  Each beacon sends its location ID along with the Transmis-
+2480 MHz, which separates them from the popular Wi-Fi               sion Power (TX) value. In its simplest form, the path loss can
+channels. In this way, BLE prevents interference with other         be calculated using the formula:
+Wi-Fi infrastructures in the deployment area. Unfortunately,
+only the Received Signal Strength (RSS) values are registered
+                                                                                     RSSI = −10n log10 d + A                     (1)
+but not the channel on which the packet was received, leading
+to important fading of 30 dB in very close positions [46].          where n is a signal propagation constant depending mainly
+   Simplicity and popularity of BLE among IoT devices made          on the environment, d is the distance, and A is the received
+it one of the promising technologies or microlocation [5].          signal strength at 1 m.
+There are a plethora of energy-efficient, low-cost BLE beacon          Following the traditional path loss model, the formula for a
+vendors that build beacons to meet the needs of various             noisy environment [11]:
+applications. Among the disadvantages is that BLE is prone
+to interference, however, there are techniques that can be used
+                                                                                                                      
+                                                                                                                  d
+to minimize it.                                                               RSSI = RSSI0 − 10n log10                     +v    (2)
+                                                                                                                  d0
+                                                                                                                                       4
+
+
+
+
+Fig. 1: An example of trilateration with three beacons, b1 , b2
+                                                                      Fig. 2: Illustration of the system services. There are three main
+and b3 in known locations, (0, 0), (l,m) and (k,0), respectively,
+                                                                      services: The location service, the proximity service, and the
+are the transmitters and a smartphone at the intersection, (x,
+                                                                      data analytics service.
+y), as the receiver.
+
+
+where d0 is the reference distance in 1 m, RSSI0 is the mean                                     r12 − r32 + k 2
+RSSI value obtained at the reference distance of d0 , n is the                               x=                                   (8)
+                                                                                                       2k
+path loss component and v is a Gaussian random variable with
+                                                                                          r2 − r22 + l2 + m2      l
+zero mean and standard deviation σRSSI that accounts for the                         y= 1                        − x              (9)
+random effect of shadowing.                                                                        2m             m
+  When solving for the distance and without taking into                 Since RSSI is prone to interference and noise, it is expected
+account RSSI noise:                                                   an error in the calculation of the actual location. The error
+                                                                      between the estimated and the real location can be found using
+                                        RSSI0 −RSSI
+                   dnoiseless = d0 10       10n                (3)    the Mean Square Error (MSE):
+   However, for a real noisy RSSI with deviation σRSSI the                              p
+estimated distance is given by [51]:                                       M SEest =     (xest − xreal )2 + (yest − yreal )2       (10)
+                                     σ
+                               −0.5 RSSI
+                                          ln 10 2
+                                                                       MSE helps calculate the accuracy of the system and perform
+             d = dnoiseless exp        10n
+                                                       (4)            any necessary calibrations.
+   As it can be seen, the accuracy of the calculation of the path
+loss component can affect the accuracy of the system. During                    IV. P ROPOSED S YSTEM A RCHITECTURE
+experimentation, knowing RSSI0 in d0 can help to calculate               The proposed IoT-based smart museum has three main
+n from Eq. (1).                                                       services. Along with a number of beacons that are located
+                                                                      in different spots in the museum, an Android application that
+C. Trilateration                                                      is installed in a visitor’s smartphone and a data collection
+   A popular indoor positioning technique is lateration. Later-       platform running on the server of the museum.
+ation is the process of estimating the location of the receiver,
+given the distance from a set of points with know location.           A. System services
+   An example of lateration with three known points, trilatera-          An illustration of the system services is shown in Fig. 2.
+tion, is shown in Fig. 1. Trilateration calculates the intersecting   The main services offered by the proposed systems are the
+point of the three circles, where the smartphone is located           following:
+when the center points of each beacon and their radii are
+                                                                         1) Proximity service. Beacons at each exhibit broadcast
+already known. The radii can be determined from Eq. (1).
+                                                                            their messages continuously. When the visitor is close to
+   Assuming that the smartphone is located at (x, y), beacon
+                                                                            an exhibit, she/ he gets a notification about the exhibit on
+1 at b1 = (0, 0), beacon 2 at b2 = (l, m), and beacon 3 at
+                                                                            the smartphone. If the visitor gets closer to the exhibit,
+b3 = (k, 0) and the radii r1 , r2 are known, then:
+                                                                            more information regarding the specific exhibit will be
+                                                                            forward to the smartphone. At the same time, the interest
+                             r12 = x2 + y 2                    (5)
+                                                                            of the visitor at the specific exhibit is recorded at the
+                    r22 = (x − l)2 + (y − m)2                  (6)          application.
+                                                                         2) Localization service. As the visitor is moving between
+                       r32              2
+                             = (x − k) + y    2
+                                                               (7)
+                                                                            the beacons, the different messages coming from the
+  Combining Eq. (5), Eq. (6), and Eq. (7), the location of the              beacons are used to provide an approximate location of
+smartphone can be calculated as:                                            the visitor in the museum. This information can be used
+                                                                                                                                     5
+
+
+
+       from the visitor to navigate to the different rooms of
+       the museum and find the exhibits she/ he is interested
+       in. The application running on the smartphone can also
+       track the path of the visitor in the museum and provide a
+       recommendation based on the visitor’s preferences and
+       distance from the different rooms.
+   3) Data analytics service. The path that the visitor fol-
+       lowed along with her/ his preferences, the retention time
+       and the timestamp of each action are forwarded to a
+                                                                                        Fig. 3: Gimbal Series 21.
+       processing center. These data are collected and provide
+       useful analytics for the visitor and the management of             Transmission Type           Bluetooth 4.0 Low Energy
+       the museum. The visitor can mark the exhibits she/ he              Antenna                               Omni-directional
+       visited along with any notes she/ he made. At the same
+                                                                          Transmission                              Configurable
+       time, in the application, the visitor can set up a path with
+                                                                          Interval                      from 100 ms up to 10 s
+       the desired exhibits. The management of the museum
+                                                                          Transmission                              Configurable
+       collects analytics about the number of visitors in each
+                                                                          Power                     from -23 dBm up to 0 dBm
+       exhibit and their retention time throughout the day.
+                                                                          Transmission Range             Typical up to 50 meters
+       These can be useful information to improve the visibility
+                                                                          Battery Type                          4 - AA Alkaline
+       of some exhibits, make sure to be able to accommodate
+                                                                          Battery Life                  Typical up to 18 months
+       a large number of visitors in specific exhibits during
+       rush hours and provide a recommendation to the visitors            Dimensions                        3.4 x 3.0 in x 1.0 in
+       according to their interest.                                       (L x W x H)              (86 mm x 77 mm x 25 mm)
+                                                                                                                      170 grams
+   If the museum offers Wi-Fi access all the above services               Weight
+                                                                                                            (including batteries)
+can benefit from real-time access to a devoted server for
+the application. The location estimation can be improved                            TABLE I: Beacon specifications.
+through filtering such as Kalman or Particle filters, while the
+recommendation for suggested iteration can be received from
+the visitor in real-time, based on the retention time at each         where the recommendation system is running. If there is no
+exhibit.                                                              Wi-Fi connection, the application stores all the information
+                                                                      locally and forwards them to the server the next time there is
+B. Hardware components                                                a wireless connection.
+                                                                        The localization also runs on the application. Based on the
+   There are a plethora of beacon vendors in the market.
+                                                                      RSSI from the neighboring beacons and their ID, the visitor’s
+There are beacons in different sizes, with different power
+                                                                      location on the museum’s map is displayed. If a Wi-Fi is
+sources and a different number of sensors. In the proposed
+                                                                      available, the accuracy of the localization can be improved
+system, the Gimbal Series 21 beacons were used [47] due
+                                                                      with the use of particle filtering [14], while with no Wi-Fi
+to their low price and extended lifetime. Series 21 beacons
+                                                                      connection, Kalman filtering is running on the application [53].
+they use four AA batteries and have a typical battery life
+of 18 months, transmitting every 100 ms running 24 hours/
+                                                                                    V. E XPERIMENTAL E VALUATION
+day [47]. A Series 21 beacon is shown in Fig. 3 along with
+its specifications in Table I.                                           The performance of the proposed system was evaluated
+   As a receiver during experimentation, LG Nexus 5 was used.         through experimentation in a large laboratory room, shown in
+It has Bluetooth 4.0, which is required for the developed ap-         Fig. 4a, and at a corridor, shown in Fig. 4b, at our University.
+plication. During experimentation, the OS was Android 6.0.1.          Three sets of experiments were conducted in each environ-
+                                                                      ment to evaluate the system under different environmental
+C. Software components                                                parameters, such as parallel wireless transmissions, number
+                                                                      of people in the area and number and type of obstacles in the
+   An Android application was developed for the proposed              environment.
+system. The visitor needs to download and install the appli-
+cation at the beginning of her/ his visit to the museum. The
+application requests for Bluetooth access and then it runs in         A. Path loss model
+the background.                                                          At the beginning of the experimentation, the path loss model
+   When the visitor is close to a beacon, the application sends       in each of the experimental environment was determined. A
+a notification to the visitor. If the visitor goes closer to the      smartphone was used to collect the RSSI values every 20 cm
+exhibit, the application comes in the foreground and start            and up to 5 m from the beacon. In each location, values were
+displaying information about the exhibit. While the visitor           collected for 10 min. The results for the laboratory and the
+is in the proximity of the exhibit, the application records           corridor are shown in Fig. 5a and Fig. 5b, respectively.
+the retention time and the beacon ID. If there is a Wi-Fi                In both environments, the RSSI value varies over time. The
+connection, these data are forwarded to the control room,             variation is greater as the distance between the beacon and the
+                                                                                                              6
+
+
+
+
+                                                                                (a) Laboratory.
+                    (a) Laboratory experiment.
+
+
+
+
+                                                                                 (b) Corridor.
+
+                                                                   Fig. 5: Raw RSSI values and average.
+                     (b) Corridor experiment.
+
+              Fig. 4: Experimental environment.
+
+
+
+
+smartphone increases. Also, the RSSI variation in the corridor
+is higher than the RSSI variation in the laboratory. In the
+laboratory, the beacon transmits in a large area, away from
+walls or windows that can affect the signal. People are walking
+around but most of the time, there is a Line-of-sight (LOS)
+between the beacon and the smartphone. On the other hand, the
+corridor has concrete walls close to the beacon, hence space is
+                                                                                (a) Laboratory.
+limited. People walking on the corridor also block the signal
+between the beacon and the smartphone for most of the time,
+due to the limited space.
+
+    When all the RSSI values were collected, a curve fitting for
+the path loss was performed for the laboratory and the corridor,
+shown in Fig. 6a and Fig. 6b, respectively. It is clear that the
+two environments experience noise and interference due to
+other beacon transmissions in the area as well as the general
+construction of the environment and people’s movement. The
+path loss component, n in Eq. (1), for the laboratory was
+calculated as n = 2.208 with A = −68.99 and the corridor as
+n = 2.341 with A = −62.94. According to the experimental
+results for the path loss, the corridor is a more challenging                    (b) Corridor.
+environment since it seems to be more difficult to follow the
+                                                                   Fig. 6: Curve fitting for the path loss.
+fitting curve and the path loss component is higher. Hence, it
+is expected that the performance of the system, in terms of
+accuracy, will be lower in the corridor.
+                                                                                                                                   7
+
+
+
+
+                          (a) Laboratory.                                                    (a) Laboratory.
+
+
+
+
+                           (b) Corridor.                                                      (b) Corridor.
+Fig. 7: RSSI values and Kalman filter in the two environments                 Fig. 8: Distance estimation performance.
+in 3 m distance from the beacon.
+
+                                                                    the distance of the smartphone from the beacon increases,
+B. Proximity performance                                            the RSSI values decrease. This is expected since the signal
+   To evaluate the proximity performance, one Gimbal Series         becomes weaker and it gets affected by other factors such as
+21 was acting as the transmitter and a Nexus 5 smartphone was       the material of the objects at the environment and the noise.
+acting as the receiver. The beacon had a transmission interval      Another interesting insight from this experiment has to do with
+of 100 ms and the smartphone was placed in ten distances, in        the distribution of the values. As the smartphone is moving
+a straight line from the beacon, starting from 50 cm up to 5 m,     away from the beacon, the RSSI values have greater variation
+increasing 50 cm every time. In every distance, more than 100       from the mean value. RSSI is affected by the environmental
+RSSI measurements were recorded on the smartphone.                  parameters, hence, as the distance between the communicating
+   To improve the accuracy of the system, a Kalman filter was       devices increases, the variation of RSSI values increases.
+also implemented, similar to [53]. Kalman filter can improve            The overall cumulative error for each environment is shown
+the estimation, especially in noisy environments, such as the       in Fig. 9a and Fig. 9b. For the laboratory, the estimation error
+two experimental areas. An example of the Kalman filter at          is less than 3 m, for 95% of the time, when raw data are
+different distances in the two environments is shown in Fig. 7.     used, and for the corridor, it is less than 3.5 m for 95% of the
+It is clear that Kalman filter helps in both environments. In the   time. When Kalman filter is used, it can reduce the estimation
+laboratory, shown in Fig. 7a, the variation of the RSSI around      error. For the laboratory, when Kalman filter is used, the error
+the mean values is small, so the Kalman filter has a similar        is within 2 m and for the corridor within 2.5 m. It is clear
+value to the final average value. In the corridor, shown in         that Kalman filter can improve the estimation and the overall
+Fig. 7b, where the environment is more complex in terms of          performance of the proposed system.
+obstacles, material, people moving around and available space,          A histogram of the distance estimation error for all the
+the Kalman filter helps to minimize the effect of the noise.        distances is shown in Fig. 10. For the laboratory, when the
+   The distance estimation, using the path loss model for           error is within 3 m both raw data and Kalman filter have sim-
+each environment, based on the raw RSSI data and after              ilar performance. When the error is higher than 3 m, Kalman
+using Kalman filter for the laboratory and the corridor is          filter helps to improve the system performance by smoothing
+shown in Fig. 8a and Fig. 8b, respectively. In general, as          the values based on previous RSSI values. Similarly, for the
+                                                                                                                               8
+
+
+
+
+                                                                         Fig. 11: Localization experiment topology.
+
+                        (a) Laboratory.                                                   Estimation Error (m)
+                                                                          d1   d2
+                                                                                       A       B       C       D
+                                                                           1    2    0.142 0.301 0.396 0.401
+                                                                           3    4    0.703 0.798 0.814 1.122
+                                                                          TABLE II: Localization estimation error.
+
+
+                                                                corridor, when the error is within 6 m, the performance is the
+                                                                same, while after 6 m, Kalman filter minimizes the errors.
+
+
+                                                                C. Localization performance
+                                                                   The localization performance of the proposed system was
+                         (b) Corridor.                          examined in another experiment. Since the size of the corridor
+Fig. 9: Cumulative probability error for distance estimation.   was limited, the localization experiment was conducted only in
+                                                                the laboratory. The experimental topology is shown in Fig. 11.
+                                                                   Three Gimbal Series 21 beacons were used to create a
+                                                                triangular and they had LOS between them. The smartphone
+                                                                was placed in four locations, A, B, C and D for approximately
+                                                                one minute. Then, the location estimation was calculated.
+                                                                The experiment was conducted for two identical topologies
+                                                                with different d1 and d2 distances: at the first experiment the
+                                                                distances were d1 = 1 m and d2 = 2 m while at the second the
+                                                                distances were d1 = 3 m and d2 = 4 m. The distances were
+                                                                selected to be similar to distances between the exhibits in a
+                                                                museum.
+                                                                   The localization estimation error for each location is shown
+                                                                in Table II. In the first topology, where the beacons are close
+                        (a) Laboratory.
+                                                                to each other, the estimation error is close. It is interesting
+                                                                to mention that the error is within centimeters from the
+                                                                real distance, although no filtering was used. In the second
+                                                                topology, where the distance between the beacon increases,
+                                                                the estimation error is below 1 m.
+                                                                   In both topologies, when the beacons are close to each other,
+                                                                such as in location A, the estimation has the best performance.
+                                                                On the other hand, when the smartphone is is equal distance
+                                                                from all three beacons, such as in location D, the estimation
+                                                                has the worst performance, probably due to interference.
+                                                                   The experimental results showed that it is easier to estimate
+                                                                the location of the receiver when it is between two beacons. At
+                         (b) Corridor.                          the same time, as the distance between the beacons increases,
+                                                                the localization error increases as well. This is probably due
+      Fig. 10: Histogram of distance estimation error.
+                                                                to interference that makes the RSSI signals weak and the
+                                                                estimation poor. Another interesting insight is that when the
+                                                                receiver moves among all the three beacons, the localization is
+                                                                                                                                          9
+
+
+
+                         A                   B                       C                                       2.3 m
+                                                                                            A                             B
+
+            0.5 m                                                                                  L1           L2
+                                                         d
+    1m              L1                  L4
+                                                                                                0.5 m
+1.5 m
+                                                                                                        1m
+                    L2                  L5
+                                                                                      d
+
+                    L3                  L6
+                         Fig. 12: Laboratory topology.                                      C                             D
+
+                                  Estimation
+        d     Location                                Accuracy (%)
+                                A      B         C
+                    L1         109      2         0      98.2                               Fig. 13: Corridor topology.
+                    L2         101      4         1      95.28
+                    L3         100      7         2      91.74                                          Estimation
+        1                                                                     d    Location                            Accuracy (%)
+                    L4          6     101         8      87.83                                     A       B C D
+                    L5          9     109        11      84.5                          L1          92     13 8 3              79.31
+                                                                              1
+                    L6         10      85        16      76.58                         L2          86     14 9 2              77.48
+                    L1         104      1         0      99.05                         L1         101     13 4 1              84.87
+                                                                             1.5
+                    L2         105      3         1      96.33                         L2          89     14 7 1              80.18
+                    L3         102      1         2      92.73                         L1          98     12 2 0               87.5
+     1.5                                                                      2
+                    L4          4     103         8      89.57                         L2          93     12 3 0              86.11
+                    L5          5     107        10      87.7
+                    L6          9      85        14      78.7                  TABLE IV: Corridor estimation accuracy results.
+                    L1         103      0         0       100
+                    L2         103      2         0      98.10
+                                                                         and with beacon B, for locations L4- L6, as shown in Fig. 12.
+                    L3         102      4         2      94.44
+        2                                                                In every location, the application on the smartphone collected
+                    L4          3     111         6      92.5
+                                                                         approximately 100 readings and the application predicts the
+                    L5          4      103        6      91.15
+                                                                         closer beacon, based on the smallest RSSI value. The results
+                    L6          9      87        14      79.09
+                                                                         along with the estimation accuracy are shown in Table III.
+        TABLE III: Laboratory estimation accuracy results.                  When the distance between the beacons is 1 m, and the
+                                                                         receiver is on one side of the topology, close to A, the
+                                                                         performance is high. The closer is the receiver to the beacon,
+a bit more challenging. This can be due to the interference the          the higher the accuracy. As the receiver is moving further from
+beacons create to each other when they transmit their signal.            the beacon the accuracy drops. This is due to the reception of
+   Another promising insight is that the error is below 1 m in           signals from the other two beacons with similar RSSI values
+almost all the experiments. Considering the simple topology              as of the RSSI values from beacon A. As the distance between
+and the LOS between the beacons, this number might increase              the beacons increases, the system accuracy increases as well.
+in a more complex scenario. However, these are the estimation            When the distance is greater between the beacon and the
+based on the raw data, hence, advanced filtering techniques can          neighboring devices which create interference, it is easier for
+be applied to improve the readings from the beacons.                     the receiver to estimate the beacon that it is closer to.
+                                                                            When the same experiment is repeated and the beacon is
+D. Detection accuracy                                                    in the middle of the topology, closer to B but in the same
+   The third experiment examines the detection accuracy of the           distance from A and C, the accuracy drops. As the beacon
+proposed systems when multiple beacons are in close proxim-              is moving further from B, the detection of signals from A
+ity in the area. Three Gimbal Series 21 beacons were used                and C increases and the accuracy of the system drops. As the
+with different distances, d, between them. For the laboratory,           distance between the beacons increases, that helps the receiver
+topology is shown in Fig. 12 was used, and for the corridor,             to improve the detection estimation.
+topology shown in Fig. 13 was used with the detailed results in             It is clear that when the receiver is close to a beacon, within
+Table III and Table IV, respectively. Since the second topology          50 cm, the accuracy of the system is high. As the receiver is
+was at the corridor, one of the distances between the beacons            moving further away from the beacon, the accuracy drops. At
+was 2.3 m, which is the width of the corridor.                           the same time, the distance from other beacons in the area
+   In the laboratory experiment, the smartphone was placed in            also affects the performance. When the neighboring beacons
+six different locations, L1- L6, which are in different distances,       are within 1 m, the accuracy of the system drops. The accuracy
+in vertical connection with beacon A, for locations L1- L3,              can increase if the distance between the beacons increases. In a
+                                                                                                                                              10
+
+
+
+museum scenario, when there is sufficient distance between the                                   R EFERENCES
+beacons, and there is minimum interference among them, the
+application estimation would have an acceptable performance.        [1] M. K. Schultz, “A case study on the appropriateness of using quick
+                                                                        response (qr) codes in libraries and museums,” Library & Information
+   At the corridor topology, shown in Fig. 13, the detection            Science Research, vol. 35, no. 3, pp. 207 – 215, 2013.
+accuracy is lower, as shown in Table IV. This is expected           [2] R. Cucchiara and A. D. Bimbo, “Visions for augmented cultural heritage
+since the higher noise in this environment. Again, the closer           experience,” IEEE MultiMedia, vol. 21, no. 1, pp. 74–82, Jan. 2014.
+to the beacon the higher the detection accuracy at the receiver.    [3] T.-H. Tsai, C.-Y. Shen, Z.-S. Lin, H.-R. Liu, and W.-K. Chiou, “Ex-
+                                                                        ploring location-based augmented reality experience in museums,” in
+However, as the number of the neighboring devices increases             Universal Access in Human–Computer Interaction. Designing Novel
+that affect the detection performance. The more beacons in              Interactions, M. Antona and C. Stephanidis, Eds. Cham: Springer
+the area, the worst the detection estimation. If the distance           International Publishing, 2017, pp. 199–209.
+                                                                    [4] K. E. Jeon, J. She, P. Soonsawad, and P. C. Ng, “Ble beacons for
+between the neighboring beacons increases, that can help to             internet of things applications: Survey, challenges, and opportunities,”
+improve the detection estimation, as shown in the experimental          IEEE Internet of Things Journal, vol. 5, no. 2, pp. 811–828, April 2018.
+results. System performance increases, as the distance between      [5] P. Spachos, I. Papapanagiotou, and K. N. Plataniotis, “Microlocation
+                                                                        for smart buildings in the era of the internet of things: A survey
+the beacons increases.                                                  of technologies, techniques, and approaches,” IEEE Signal Processing
+                                                                        Magazine, vol. 35, no. 5, pp. 140–152, Sep. 2018.
+                                                                    [6] H. Liu, H. Darabi, P. Banerjee, and J. Liu, “Survey of wireless indoor
+E. Discussion                                                           positioning techniques and systems,” IEEE Transactions on Systems,
+    According to experimental results, beacons have a promis-           Man, and Cybernetics, Part C (Applications and Reviews), vol. 37, no. 6,
+                                                                        pp. 1067–1080, Nov. 2007.
+ing performance for both proximity and localization services.       [7] S. Sadowski and P. Spachos, “Rssi-based indoor localization with the
+However, their performance based on raw data, without any               internet of things,” IEEE Access, vol. 6, pp. 30 149–30 161, 2018.
+filtering, might not be sufficient for applications that need       [8] D. Dardari, A. Conti, U. Ferner, A. Giorgetti, and M. Z. Win, “Ranging
+                                                                        with ultrawide bandwidth signals in multipath environments,” Proceed-
+beacons to be placed too close to each other. Advanced                  ings of the IEEE, vol. 97, no. 2, pp. 404–426, Feb. 2009.
+filtering techniques can be used to improve their performance.      [9] S. Marano, W. M. Gifford, H. Wymeersch, and M. Z. Win, “Nlos
+If there is Wi-Fi connection in the museum, the filtering can           identification and mitigation for localization based on uwb experimental
+take place in real-time and improve even more the performance           data,” IEEE Journal on Selected Areas in Communications, vol. 28,
+                                                                        no. 7, pp. 1026–1035, September 2010.
+of the services.                                                   [10] C. Feng, W. S. A. Au, S. Valaee, and Z. Tan, “Received-signal-strength-
+    Another interesting insight from the experiment is that the         based indoor positioning using compressive sensing,” IEEE Transactions
+beacons can drop their proximity and localization accuracy              on Mobile Computing, vol. 11, no. 12, pp. 1983–1993, Dec. 2012.
+                                                                   [11] S. Mazuelas, A. Bahillo, R. M. Lorenzo, P. Fernandez, F. A. Lago,
+rapidly, when there is a dynamic change in the environment,             E. Garcia, J. Blas, and E. J. Abril, “Robust indoor positioning provided
+such as noise and interference. In every application, the               by real-time rssi values in unmodified wlan networks,” IEEE Journal of
+deployment area should be studied in advance to improve the             Selected Topics in Signal Processing, vol. 3, no. 5, pp. 821–831, Oct.
+                                                                        2009.
+estimation of the beacons and minimize the errors.                 [12] P. Pivato, L. Palopoli, and D. Petri, “Accuracy of rss-based centroid
+    The main advantage of the proposed system is its simplicity,        localization algorithms in an indoor environment,” IEEE Transactions
+low cost, and ease of installation. All the experiments took            on Instrumentation and Measurement, vol. 60, no. 10, pp. 3451–3460,
+                                                                        Oct. 2011.
+place without creating any interference to the other wireless      [13] S. Tomic, M. Beko, and R. Dinis, “Rss-based localization in wireless
+infrastructures in the area, while the developed Android ap-            sensor networks using convex relaxation: Noncooperative and cooper-
+plication required minimum interaction with the user. After             ative schemes,” IEEE Transactions on Vehicular Technology, vol. 64,
+                                                                        no. 5, pp. 2037–2050, May 2015.
+installing the application, the users were moving around and
+                                                                   [14] A. Mackey, P. Spachos, L. Song, and K. N. Plataniotis, “Improving ble
+when they approached a beacon they get a notification. At the           beacon proximity estimation accuracy through bayesian filtering,” IEEE
+same time, the beacons can be moved around and relocated                Internet of Things Journal, pp. 1–1, 2020.
+easily to follow the needs of the exhibits and the collections.    [15] A. S. Paul and E. A. Wan, “Rssi-based indoor localization and tracking
+                                                                        using sigma-point kalman smoothers,” IEEE Journal of Selected Topics
+The architecture presented in this paper is scalable and can be         in Signal Processing, vol. 3, no. 5, pp. 860–873, Oct. 2009.
+applied to museums with different sizes.                           [16] X. Chen and S. Zou, “Improved wi-fi indoor positioning based on
+                                                                        particle swarm optimization,” IEEE Sensors Journal, vol. 17, no. 21,
+                                                                        pp. 7143–7148, Nov. 2017.
+                     VI. C ONCLUSIONS                              [17] W. Xue, W. Qiu, X. Hua, and K. Yu, “Improved wi-fi rssi measurement
+   In this paper, a BLE localization technology for an IoT-             for indoor localization,” IEEE Sensors Journal, vol. 17, no. 7, pp. 2224–
+                                                                        2230, April 2017.
+Based smart museum was presented. The proposed system              [18] Q. Wang, I. Balasingham, M. Zhang, and X. Huang, “Improving rss-
+uses BLE beacons to improve the interaction in a museum.                based ranging in los-nlos scenario using gmms,” IEEE Communications
+iBeacons were used to provide proximity and localization ser-           Letters, vol. 15, no. 10, pp. 1065–1067, October 2011.
+                                                                   [19] S. Tomic, M. Beko, and R. Dinis, “Rss-based localization in wireless
+vices. An Android application was also developed to examine             sensor networks using convex relaxation: Noncooperative and cooper-
+the performance of the system. The system was designed to               ative schemes,” IEEE Transactions on Vehicular Technology, vol. 64,
+work without Internet connection, however, its accuracy can             no. 5, pp. 2037–2050, May 2015.
+                                                                   [20] H. C. So and L. Lin, “Linear least squares approach for accurate received
+be increased if access to a cloud server is provided.                   signal strength based source localization,” IEEE Transactions on Signal
+   Three experiments were conducted to measure the perfor-              Processing, vol. 59, no. 8, pp. 4035–4040, Aug 2011.
+mance under different scenarios. The experimental results are      [21] T. Zhang, C. Xu, and M. Yang, “Multi-task correlation particle filter for
+promising. BLE beacons can improve the interaction in a                 robust object tracking,” in 2017 IEEE Conference on Computer Vision
+                                                                        and Pattern Recognition (CVPR), July 2017, pp. 4819–4827.
+museum with low cost and without creating any interference         [22] M. Imani and U. M. Braga-Neto, “Particle filters for partially-observed
+with other wireless infrastructures in the area.                        boolean dynamical systems,” Automatica, vol. 87, pp. 238 – 250, 2018.
+                                                                                                                                                                   11
+
+
+
+[23] M. Imani, S. F. Ghoreishi, D. Allaire, and U. M. Braga-Neto, “Mfbo-            [46] R. Faragher and R. Harle, “Location fingerprinting with bluetooth low
+     ssm: Multi-fidelity bayesian optimization for fast inference in state-space         energy beacons,” IEEE Journal on Selected Areas in Communications,
+     models,” in Thirty-Third AAAI Conference on Artificial Intelligence,                vol. 33, no. 11, pp. 2418–2428, Nov. 2015.
+     2019.                                                                          [47] “Gimbal            series         21          proximity        beacon,”
+[24] M. Imani, S. F. Ghoreishi, and U. M. Braga-Neto, “Bayesian control                  http://docs.gimbal.com/manuals/S21.html.
+     of large mdps with unknown dynamics in data-poor environments,”                [48] “Bluecat,” https://www.bluecats.com/.
+     in Advances in Neural Information Processing Systems 31, S. Bengio,            [49] “Cyalkit-e02,”      http://www.cypress.com/documentation/development-
+     H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Gar-                 kitsboards/.
+     nett, Eds. Curran Associates, Inc., 2018, pp. 8146–8156.                       [50] P. Spachos and A. Mackey, “Energy efficiency and accuracy of solar
+[25] S. Tarkoma and H. Ailisto, “The internet of things program: the finnish             powered ble beacons,” Computer Communications, vol. 119, pp. 94 –
+     perspective,” IEEE Communications Magazine, vol. 51, no. 3, pp. 10–11,              100, 2018.
+     March 2013.                                                                    [51] G. Zanca, F. Zorzi, A. Zanella, and M. Zorzi, “Experimental comparison
+[26] J. A. Stankovic, “Research directions for the internet of things,” IEEE             of rssi-based localization algorithms for indoor wireless sensor net-
+     Internet of Things Journal, vol. 1, no. 1, pp. 3–9, Feb 2014.                       works,” in Proceedings of the Workshop on Real-world Wireless Sensor
+[27] J.-H. Huh and K. Seo, “An indoor location-based control system using                Networks, ser. REALWSN ’08. New York, NY, USA: ACM, 2008, pp.
+     bluetooth beacons for iot systems,” Sensors, vol. 17, no. 12, 2017.                 1–5.
+[28] B. Molina, E. Olivares, C. E. Palau, and M. Esteve, “A multimodal              [52] Q. Luo, Y. Peng, J. Li, and X. Peng, “Rssi-based localization through
+     fingerprint-based indoor positioning system for airports,” IEEE Access,             uncertain data mapping for wireless sensor networks,” IEEE Sensors
+     vol. 6, pp. 10 092–10 106, 2018.                                                    Journal, vol. 16, no. 9, pp. 3155–3162, May 2016.
+[29] J. Jin, J. Gubbi, S. Marusic, and M. Palaniswami, “An information              [53] A. Mackey and P. Spachos, “Performance evaluation of beacons for
+     framework for creating a smart city through internet of things,” IEEE               indoor localization in smart buildings,” in 2017 IEEE Global Conference
+     Internet of Things Journal, vol. 1, no. 2, pp. 112–121, April 2014.                 on Signal and Information Processing (GlobalSIP), Nov. 2017, pp. 823–
+[30] A. Zanella, N. Bui, A. Castellani, L. Vangelista, and M. Zorzi, “Internet           827.
+     of things for smart cities,” IEEE Internet of Things Journal, vol. 1, no. 1,
+     pp. 22–32, Feb 2014.
+[31] S. D. T. Kelly, N. K. Suryadevara, and S. C. Mukhopadhyay, “Towards
+     the implementation of iot for environmental condition monitoring in
+     homes,” IEEE Sensors Journal, vol. 13, no. 10, pp. 3846–3853, Oct
+     2013.
+[32] S. M. R. Islam, D. Kwak, M. H. Kabir, M. Hossain, and K. S. Kwak,                                       Petros Spachos (M’14–SM’18) received the
+     “The internet of things for health care: A comprehensive survey,” IEEE                                  Diploma degree in Electronic and Computer
+     Access, vol. 3, pp. 678–708, 2015.                                                                      Engineering from the Technical University of Crete,
+[33] A. Al-Fuqaha, M. Guizani, M. Mohammadi, M. Aledhari, and                                                Greece, in 2008, and the M.A.Sc. degree in 2010
+     M. Ayyash, “Internet of things: A survey on enabling technologies,                                      and the Ph.D. degree in 2014, both in Electrical
+     protocols, and applications,” IEEE Communications Surveys Tutorials,                                    and Computer Engineering from the University of
+     vol. 17, no. 4, pp. 2347–2376, Fourthquarter 2015.                                                      Toronto, Canada. He was a post-doctoral researcher
+[34] L. D. Xu, W. He, and S. Li, “Internet of things in industries: A survey,”                               at University of Toronto from September 2014 to
+     IEEE Transactions on Industrial Informatics, vol. 10, no. 4, pp. 2233–                                  July 2015. He is currently an Assistant Professor in
+     2243, Nov 2014.                                                                                         the School of Engineering, University of Guelph,
+[35] W. He, G. Yan, and L. D. Xu, “Developing vehicular data cloud services                                  Canada. His research interests include experimental
+     in the iot environment,” IEEE Transactions on Industrial Informatics,          wireless networking and mobile computing with a focus on wireless sensor
+     vol. 10, no. 2, pp. 1587–1595, May 2014.                                       networks, smart cities, and the Internet of Things. He is a Senior Member
+[36] Z. Yang, C. Wu, Z. Zhou, X. Zhang, X. Wang, and Y. Liu, “Mobility              of the IEEE.
+     increases localizability: A survey on wireless indoor localization using
+     inertial sensors,” ACM Comput. Surv., vol. 47, no. 3, pp. 54:1–54:34,
+     Apr. 2015.
+[37] Y. Yoshimura, A. Krebs, and C. Ratti, “Noninvasive bluetooth monitor-
+     ing of visitors’ length of stay at the louvre,” IEEE Pervasive Computing,
+     vol. 16, no. 2, pp. 26–34, April 2017.
+[38] S. Alletto, R. Cucchiara, G. D. Fiore, L. Mainetti, V. Mighali, L. Patrono,
+     and G. Serra, “An indoor location-aware system for an iot-based smart                                     Konstantinos N. (Kostas) Plataniotis (S’90–M’92–
+     museum,” IEEE Internet of Things Journal, vol. 3, no. 2, pp. 244–253,                                     SM’03–F’12) received his B. Eng. degree in Com-
+     April 2016.                                                                                               puter Engineering from University of Patras, Greece
+                                                                                                               and his M.S. and Ph.D. degrees in Electrical En-
+[39] A. R. Jiménez and F. Seco, “Finding objects using uwb or ble local-
+                                                                                                               gineering from Florida Institute of Technology Mel-
+     ization technology: A museum-like use case,” in 2017 International
+                                                                                                               bourne, Florida. Dr. Plataniotis is currently a Profes-
+     Conference on Indoor Positioning and Indoor Navigation (IPIN), Sept.
+                                                                                                               sor with The Edward S. Rogers Sr. Department of
+     2017, pp. 1–8.
+                                                                                                               Electrical and Computer Engineering at the Univer-
+[40] C. Vassilakis, V. Poulopoulos, A. Antoniou, M. Wallace, G. Lepouras,
+                                                                                                               sity of Toronto in Toronto, Ontario, Canada, where
+     and M. L. Nores, “exhistory: Smart exhibits that tell their own stories,”
+                                                                                                               he directs the Multimedia Laboratory. He holds the
+     Future Generation Computer Systems, vol. 81, pp. 542 – 556, 2018.
+                                                                                                               Bell Canada Endowed Chair in Multimedia since
+[41] A. Haworth and P. Williams, “Using qr codes to aid accessibility in a
+                                                                                    2014. His research interests are primarily in the areas of image/signal pro-
+     museum,” Journal of Assistive Technologies, vol. 6, no. 4, pp. 285–291,
+                                                                                    cessing, machine learning and adaptive learning systems, visual data analysis,
+     2012.
+                                                                                    multimedia and knowledge media, and affective computing. Dr. Plataniotis is a
+[42] R. Karimi, A. Nanopoulos, and L. Schmidt-Thieme, “Rfid-enhanced mu-            Fellow of IEEE, Fellow of the Engineering Institute of Canada, and registered
+     seum for interactive experience,” in Multimedia for Cultural Heritage,         professional engineer in Ontario.
+     C. Grana and R. Cucchiara, Eds. Berlin, Heidelberg: Springer Berlin               Dr. Plataniotis has served as the Editor-in-Chief of the IEEE Signal Process-
+     Heidelberg, 2012, pp. 192–205.                                                 ing Letters. He was the Technical Co-Chair of the IEEE 2013 International
+[43] D. Cai, L.-D. Chou, C.-H. Wu, S.-P. Ho, C.-C. Lee, J.-M. Chen,                 Conference in Acoustics, Speech and Signal Processing, and he served as
+     R. Kawashima, T. Takehana, H. Takahashi, Y. Saito, C. Ciavarella,              the inaugural IEEE Signal Processing Society Vice President for Membership
+     F. Paternò, Y.-P. Huang, W.-P. Chuang, T.-Y. Liu, T.-H. Tan, and Y.-          (2014 -2016) and General Co-Chair for the 2017 IEEE GLOBALSIP. He
+     L. Chu, “Museum navigation based on nfc localization approach and              serves as the 2018 IEEE International Conference on Image Processing (ICIP
+     automatic guidance system,” 2015.                                              2018) and the 2021 IEEE International Conference on Acoustics, Speech and
+[44] Apple, “Getting started with ibeacon,” June 2 2014,                            Signal Processing (ICASSP 2021) General Co-Chair.
+     https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf.
+[45] Bluetooth Special Interest Group, “Bluetooth 4.0 core specification,”
+     https://www.bluetooth.com/specifications/bluetooth-core-specification.
+

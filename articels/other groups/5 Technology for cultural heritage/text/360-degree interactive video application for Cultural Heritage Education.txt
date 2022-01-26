@@ -1,0 +1,312 @@
+WestminsterResearch
+http://www.westminster.ac.uk/westminsterresearch
+
+360-degree interactive video application for Cultural Heritage
+Education
+Argyriou, L., Economou, D. and Bouki, V.
+
+This is an electronic version of a paper presented at the 3rd Annual International
+Conference of the Immersive Learning Research Networ,. Coimbra, Portugal, 26 - 29
+June 2017. It was published in iLRN 2017: Coimbra Workshop, Long and Short Paper,
+and Poster Proceedings from the Third Immersive Learning Research Network
+Conference, and is available from the publisher at:
+https://dx.doi.org/10.3217%2F978-3-85125-530-0
+Copyright © 2017 Verlag der Technischen Universität Graz www.ub.tugraz.at/Verlag
+This work is published under the Creative Commons Attribution-NonCommercialNoDerivs 4.0 International License (CC BY-NC-SA 4.0)
+
+The WestminsterResearch online digital archive at the University of Westminster aims to make the
+research output of the University available to a wider audience. Copyright and Moral Rights remain
+with the authors and/or copyright owners.
+
+Whilst further distribution of specific materials from within this archive is forbidden, you may freely
+distribute the URL of WestminsterResearch: ((http://westminsterresearch.wmin.ac.uk/).
+In case of abuse or copyright appearing without permission e-mail repository@westminster.ac.uk
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+360-degree interactive video application for Cultural
+Heritage Education
+Lemonia Argyriou1 , Daphne Economou1 , Vassiliki Bouki1
+, 1 Department
+
+of Computer Science, Faculty of Science and Technology, University of Westminster, London, UK
+argyrioulemonia@gmail.com; d.economou@westminster.ac.uk;
+boukiv@westminster.ac.uk
+
+Abstract. There is a growing interest nowadays of using immersive technologies
+to promote Cultural Heritage (CH), engage and educate visitors, tourists and citizens.
+Such examples refer mainly to the use of Virtual Reality (VR) technology or focus on
+the enhancement of the real world by superimposing digital artefacts, so called Augmented Reality (AR) applications. A new medium that has been introduced lately as
+an innovative form of experiencing immersion is the 360-degree video, imposing
+further research challenges. This paper presents a study on the creation of an immersive application that is based on 360-degree video and targets the users’ education in
+the importance of CH. The user is engaged in a journey where they learn about preserved artefacts in the city of Rethymno, Greece and their historical value in a playful
+way. The integrated architecture and development steps for creating such applications
+that are based on 360-degree video are demonstrated. The overall design process is
+driven by the goal to increase the level of immersion offered by incorporating game
+elements in a realistic storytelling experience. The final application can be experienced with the use of a VR low-cost device such as the Google cardboard and a compatible mobile phone. The study concludes with a set of recommendations and future
+directions for offering more immersive experiences in the CH sector.
+Keywords: user-centered design, 360-degree video, immersion, games, cultural heritage,
+education, virtual reality
+
+1
+
+Introduction
+
+The desire for better immersion and presence in computer simulated environments
+has driven an aggressive growth of immersive technologies, presenting new forms of
+Virtual Reality (VR) media and innovative VR devices. A promising technology for
+experiencing VR is 360-degree video. 360-degree video offers enhanced realism that
+although it is possible to produce using computer generated virtual environments, it is
+resource intensive and expensive process. This enhanced realism offered by video
+resources when combined with game techniques has great potentials of leading to
+highly immersive, interactive and engaging forms of experiencing VR. 360-degree
+video applications are based on free viewpoint videos and resemble navigation in
+
+297
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+virtual worlds of 3D computer graphics by allowing viewers to interactively change
+their viewpoint in the scene [10] while in traditional video productions the viewpoint
+is chosen by the director.
+In this paper we present the concept and design framework for creating a new form
+of engaging and immersive applications for CH education that are based on 360degree gamified video. The overall framework has been designed in order to address a
+set of technical and design challenges that affect the user experience when experiencing 360-degree video aiming to offer more interactive and engaging educational experiences. The framework is presented through its adaptation for creating an experimental case study for designing an immersive educational application to educate its
+users in the preserved artefacts of the Historical Centre of Rethymno in Crete, Greece.
+The study concludes with a set of future steps and possible directions.
+
+2
+
+Immersive applications for Cultural Heritage
+
+There is an increase of interest the last years and huge effort on the research work
+based on the VR innovative techniques and holographic display devices, the AR applications and the serious games use in the fields of medicine, entertainment, education and cultural heritage. Our study introduces new practices in the development and
+use of VR technology for cultural heritage education. As presented 15 years ago on
+Archeoguide [12], AR has been effectively used as a new form for guiding visitors in
+outdoor archaeological sites with the use of holographic mobile wearable devices
+(HMDs) and the use of Geographical Information Systems (GIS) data during the creation of the virtual content and the design of the tour. Nowadays, the method of creating such applications has been simplified and improved with the increase on the
+availability of open source augmented reality Software Development Kits (SDKs), the
+release of new engines for 3D applications development, the improvement on the
+results in 3D content creation and reconstruction, the use of “smarter” mobile devices
+and more effective devices for scanning and tracking.
+Augmented reality techniques have been also adapted for creating educational storytelling experiences towards enhancing museums and exhibitions visits and cultural
+education in schools. AR refers to the tracking of text, images but also small objects
+that allow the triggering and presentation of adequate 3D models along with 3D text
+and voice-over explanations creating an enhanced interactive experience. An AR
+application accompanied by a printed map of Crete, enhanced with aerial photos of
+the most attractive ancient monuments has been created (Fig. 1) in order to inform its
+users about the history of the island through a 3D non-linear digital storytelling experience [1]. The user uses an android mobile device and hovers over the images of the
+monuments on the map. When an image is recognized, the relative 3D model of the
+monument can be observed along with its 3D text label. The user can through the UI
+buttons select to listen to historical information of the specific monument in its preferred language (Greek or English) learning about their story of preservation and their
+role in the past.
+
+298
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+Fig. 1.
+
+Android Augmented Reality application for the monuments of Crete
+
+Besides the successful use case scenarios of augmented reality and serious games
+in the CH sector, 360-degree videos can have a huge potential of generating highly
+immersive video environments that surround the user and offer an increased sense of
+presence. In contrast to AR or web-based serious gaming applications, with 360degree video the users are immersed in the captured real world scene experiencing the
+feeling of being present in an archeological site and interacting with it though a VR
+headset.
+To support the creation of a rich mental model through 360-degree gamified experiences, a cognitively demanding environment that triggers the user’s thinking and
+understanding of what’s going on in the scene should be designed. This can be
+achieved by devising interesting 360-degree branching narratives that attract user’s
+attention and make the game world believable. Branching narrative belongs to the
+category of non-linear gameplay where players are presented with challenges that can
+be addressed through a number of different sequences. In branching, interactive narratives the player can select to follow different subplots of the game story which can
+lead to its success or failure at addressing a challenge [9].
+Applications ,therefore, that are based in branching narratives created with the use
+of 360-degree video content that depicts archaeological sites and historical places can
+lead to a new form of immersive educational experiences for the CH sector. Those
+applications designed by incorporating game techniques can offer a more interactive,
+engaging and effective way of educating people in the preserved historical monuments of a city and the importance of CH.
+
+3
+
+Integration design framework for 360-degree video applications
+
+There are several challenges and implications that have to be addressed when trying to create immersive, interactive and engaging experiences with the use of 360degree videos. These challenges are mainly based on the limitations inflicted by the
+video itself which is used as the main game scene and lacks depth of virtual space
+where the user can navigate. In conventional virtual environments the user can navigate in complex 3D geometries reconstructing real spaces, attempting to simulate
+reality, or creating imaginative spaces that cannot exist in real life. Our approach in
+
+299
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+addressing those challenges is to focus on designing strong, realistic, rich and cognitively demanding branching narratives with the use of 360-degree video.
+In order to address the technical and design challenges for more immersive and engaging experiences offered by consuming 360-degree video, a conceptual gamification framework for virtual reality applications is proposed. The framework is based on
+the use of game elements in a 360-degree video environment to enhance user interaction with the medium. The presented framework, as depicted in the figure below (Fig.
+2), is the basis for creating 360-degree gamified applications.
+
+Fig. 2. 360-degree gamification framework.
+
+The main core of the design framework is a game engine and in our case that of
+Unity 3D [11]. The first step is the creation of the content. 360-degree video resources
+can be produced using relative production cameras such as the low-cost and easy to
+use Ricoh Theta S [7]. Moreover, the 3D objects that are necessary for the game design are produced using laser scanning equipment or camera equipment for photogrammetric reconstruction [5] to create the point clouds of real objects and a software
+tool to convert them to meshes.
+The next step for designing 360-degree gamified immersive applications is the creation of the scene (Fig. 3). For creating the 360- degree game scene we follow the
+spherical approach to define a panoramic environmental surround. A game environment using a spherical approach is created by projecting an equirectangular video
+onto the surface of a 3D sphere that is inserted in the Unity project’s scene and by
+
+300
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+placing the camera at the center of the sphere. The scene design process continues by
+importing the 3D reconstructed game objects and placing them inside the sphere.
+
+Fig. 3. 360-degree scene creation
+
+To start the implementation of our immersive application, the required SDK for
+building VR mobile applications targeting a specific device must be integrated (such
+as Google cardboard VR SDK [4]). Then we move to the design and integration of
+our preferred game elements, such as time pressure mechanisms, badges assignment
+techniques and level-systems and the programming of the required game logic scripts
+to run the game scenarios. The user interface of the gamified application is also designed to support the user interaction with the content and the overall game logic,
+such as the display of notifications, the level/ points/badges visualizations and the
+navigation support view. In addition, scripts are used for defining the game logic and
+designing interaction processes and events.
+
+4
+
+Historic Rethymno Interactive 360-degree application
+
+Our case study is based on the use of the 360-degree gamification framework presented earlier to create an immersive educational application of a treasure hunt game
+in a cultural heritage site, that of the historical center of Rethymno city, in Greece.
+Rethymno city has been chosen because of its great historical importance, preserving
+artefacts and monuments in good condition from different historical periods such us
+the Ottoman and Venetian periods, useful for designing interesting branching narratives. The game has been developed to be used with the Google Cardboard VR device
+and an Android mobile phone. In order to create the gameplay, several video resources have been produced capturing the user’s movement in 360-degrees view between the several key areas, historical buildings and artefacts on the site to be used for
+resembling user navigation in the virtual scene. Moreover, a list of short-time 360degree videos per area of interest where also captured in first person view depicting
+the user standing in the middle of each area or in front of a building, to allow the ex-
+
+301
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+ploration of the place in 360-degree view. Those exploratory video resources are used
+to create a mixed media scene where 3D objects depicting important historical artefacts are integrated in order for the user to be able to identify them in the scene and
+move to another level of the game. Those 3D realistically reconstructed objects represent important historical remains of the Ottoman period that can be found in the old
+city of Rethymno [3].
+The logic of the overall gameful experience is designed based on the concept of
+exploratory games that allows the user to freely navigate and revisit several stages/levels of the game by experiencing different narratives till he identifies and completes all challenges presented [6]. The exploratory approach triggers the users’ curiosity motivating them to master the rules and affordances of the game by supporting
+them to level-up and advance in the game, making the whole experience more engaging.
+The game starts by displaying the first 360-degree video short clip where the player stands at the middle of a square in the historical center of the city. The player has
+the role of an Ottoman soldier missioned to collect water from several historical fountains of the Ottoman period, which remain in the city, and carry it to the most important fountain of the city, the Rimondi fountain [8], in a specific time limit.
+The player is presented through the UI with the first challenge asking to spot three
+historical fountains that are placed in the main square scene. Challenges are continuously presented to the players at each level of the game that increase their interest
+while testing their knowledge and allowing them to apply it. Addressing challenges
+makes people feel they have earned their achievement giving them the sense of accomplishment which is one of the eight core drives of gamification according to the
+Octalysis gamification framework [2].The scope of the game is to spot these fountains
+in the scene in order to later on place them at the Rimondi fountain.
+After collecting all the three fountains, the player is requested to peak one and select to move towards its real location through the shortest path between two possible
+options (branches). Thus two possible branching narratives are provided for each
+selected fountain. Depending on the selected path, players are presented with different
+historical information and/or clues contributed to the gameplay. The triggered video
+resource is depicting the player walking in the chosen direction towards the area in
+the city where the selected fountain is actually placed. Then the next video clip is
+played with a time limit to address the next challenge which is a historical question
+about the fountain. The question can be answered by analyzing the information gained
+during the tour in the selected path.
+After having visited all the locations of the fountains in the city the players are
+transferred to the location of the Rimondi fountain. At this final stage, the collected
+fountains can be placed on the three tabs of the Rimondi after answering a historical
+question again for each one of them. When all fountains are placed in Rimondi, the
+game ends and the players are addressed with a Gold, a Silver or a Bronze badge of
+the Ottoman citizen of Rethymno according to the points collected though addressing
+the challenges imposed.
+
+302
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+A snapshot of the gameplay is shown at Fig. 4 depicting the main UI elements, the
+radar map, and the water level indicator that depicts the points gained, the time limit
+and the play/pause button.
+
+Fig. 4. Gameplay snapshot.
+
+5
+
+Conclusions and future directions
+
+360-degree video is new promising technology for creating virtual reality immersive applications. Educational gamified application that incorporate such technology
+could offer more engaging experiences and increase the level of user’s immersion.
+The presented case study for the Historical Centre of Rethymno and the proposed
+design framework is a first approach towards presenting the benefits of the 360-video
+use in the creation of immersive educational applications.
+To offer the user the expected feeling of immersion and sense of actually participating in the game story, an interesting story game that unfolds through 360-degree
+videos has been designed. The main game story has been based on the branching narrative technique presenting a virtual scenario where the user has the option though
+interacting with the environment to experience it in different ways. This technique
+offers the user an enhanced sense of presence as it creates the feeling of controlling
+and actually taking part in the scenario. Good stories attract the user to the gaming
+experience while make the world seem more believable. A list of other game mechanics have been integrated in the design of the gaming experience and the UI, such as
+revealing challenges accompanied by time pressure techniques and the assignment of
+points, levels and badges that engage the user by giving the sense of accomplishment
+and progression in the game. Navigation and orientation mechanisms have been also
+used through the incorporation in the UI design of 360-degree “radar” maps depicting
+
+303
+
+DOI: https://doi.org/10.3217/978-3-85125-530-0-44
+
+the field of user’s view in real time and showing the position of points of interest in
+the scene.
+All the above presented and incorporated design techniques to our case study
+should be evaluated in the future through usability studies involving real users. Real
+user studies will provide us with the necessary results in evaluating our approach for
+the effective use of 360-video interactive content in CH education. Future steps include the planning and execution of trials involving representative users from the
+targeted categories such as professionals in CH sector, undergraduate students in History and Archaeology and citizens of the Rethymno area.
+
+6
+
+References
+
+1. Argyriou, L. and Papadopoulos N. Mixed reality applications, innovative 3D reconstruction techniques & GIS data integration for cultural heritage, In A. Sarris (ed.), Best Practices of GeoInformatic Technologies for the Mapping of Archaeolandscapes, Archaeopress, 2015
+2. Chou, Y. Octalysis: Complete Gamification Framework. Yu-Kai Chou & Gamification
+blog, available at: http://goo.gl/Qa1Vm2, last accessed on 23/06/2016.
+3. Digital Crete online database by IMS FORTH, Ottoman monuments directory listing,
+available at : http://digitalcrete.ims.forth.gr/tourkology_monuments_search.php?l=1, last
+accessed on 03/07/2016.
+4. Google
+Cardboard
+VR
+SDK
+for
+Unity,
+available
+at:
+https://developers.google.com/vr/unity/, last accessed on 04/06/2016.
+5. Grün, Armin, Fabio Remondino, and Li Zhang. "Photogrammetric reconstruction of the
+great Buddha of Bamiyan, Afghanistan." The Photogrammetric Record 19.107 (2004):
+177-199.
+6. Linda de Valk, Pepijn Rijnbout, Tilde Bekker, Berry Eggen, Mark de Graaf, and Ben
+Schouten. Designing for playful experiences in open-ended intelligent play environments.
+In IADIS International Conference Games and Entertainment Technologies, pages 3–10,
+2012.
+7. Ricoh Theta S 360° video camera, available at: https://theta360.com/uk/about/theta/s.html,
+last accessed on 08/06/2016.
+8. Rimondi fountain Cultural Heritage Monument, Municipality of Rethymno, information
+available at: https://www.rethymno.gr/en/city/Rimondi/rimondi.html, last accessed on
+27/06/2016.
+9. Rollings, Andrew; Ernest Adams. Fundamentals of Game Design. Prentice Hall. pp. 194–
+204, 2006
+10. Smolic, Aljoscha, Karsten Mueller, Philipp Merkle, Christoph Fehn, Peter Kauff, Peter
+Eisert, and Thomas Wiegand. "3D video and free viewpoint video-technologies, applications and MPEG standards." In 2006 IEEE International Conference on Multimedia and
+Expo, pp. 2161-2164. IEEE, 2006.
+11. Unity 3D Game Platform, available at: http://unity3d.com, last accessed on 27/02/2017.
+12. Vlahakis, V., Ioannidis, N., Karigiannis, J., Tsotros, M.,Gounaris, M., Stricker, D., Gleue,
+T., Daehne, P. and Almeida,L. 2002. Archeoguide: An Augmented Reality Guide for Archaeological Site. IEEE Computer Graphics and Applications, Vol. 22, no. 5, pp. 52(1)60
+
+304
+
+

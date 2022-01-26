@@ -1,0 +1,1100 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/316285095
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of
+SCRABS, A Smart Context-awaRe Browsing Assistant for Cultural EnvironmentS
+Article in Journal on Computing and Cultural Heritage · April 2017
+DOI: 10.1145/3012286
+
+CITATIONS
+
+READS
+
+36
+
+2,401
+
+7 authors, including:
+Fabio A. Schreiber
+
+Flora Amato
+
+Politecnico di Milano
+
+University of Naples Federico II
+
+134 PUBLICATIONS 1,270 CITATIONS
+
+180 PUBLICATIONS 1,760 CITATIONS
+
+SEE PROFILE
+
+SEE PROFILE
+
+F. Colace
+
+Massimo De Santo
+
+Università degli Studi di Salerno
+
+Università degli Studi di Salerno
+
+172 PUBLICATIONS 1,516 CITATIONS
+
+204 PUBLICATIONS 1,795 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+A Community Detection Approach for Smart-Phone Addiction Recognition View project
+
+Video and image retrieval View project
+
+All content following this page was uploaded by Fabio A. Schreiber on 16 October 2017.
+
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+Big Data Meets Digital Cultural Heritage: Design and
+Implementation of SCRABS, A Smart Context-awaRe
+Browsing Assistant for Cultural EnvironmentS
+FLORA AMATO, VINCENZO MOSCATO, and ANTONIO PICARIELLO, Dip.di Ingegneria Elettrica e
+delle Tecnologie dell’informazione, Universitá degli Studi di Napoli Federico II, Via Claudio 21,
+80125, Napoli - CINI Consorzio Interuniversitario Nazionale per l’Informatica, Laboratorio CINI
+ITeM, Complesso Universitario di Monte S. Angelo, Via Cinthia 80126, Napoli (Italy)
+FRANCESCO COLACE and MASSIMO DE SANTO, Dip. di Ingegneria Industriale, Universitá degli
+Studi di Salerno, Via Giovanni Paolo II 132, 84084 Fisciano SA (Italy)
+FABIO A. SCHREIBER and LETIZIA TANCA, Dip. di Elettronica e Informazione, Politecnico di Milano,
+P.zza Leonardo da Vinci 32, 20133 Milano (Italy)
+
+Information and Communication Technologies have radically changed the modern Cultural Heritage scenery: Simple traditional
+Information Systems supporting the management of cultural artifacts have left the place to complex systems that expose rich
+information extracted from heterogeneous data sources—like Sensor Networks, Social Networks, Digital Libraries, Multimedia
+Collections, Web Data Service, and so on—by means of sophisticated applications that enhance the users’ experience. In this
+article, we describe SCRABS, a Smart Context-awaRe Browsing assistant for cultural EnvironmentS. SCRABS has been developed during the Cultural Heritage Information Systems national project and promoted by DATABENC, the Cultural Heritage
+Technological District of the Campania Region, in Italy. SCRABS has been designed on top of a Big Data technological stack as
+the result of a multidisciplinary project carried out by a heterogeneous team of computer scientists, archeologists, architects, and
+experts in humanities. We describe the main ideas that support the system, showing its use in some real application scenarios
+located in the Paestum Archeologica Sites.
+CCS Concepts:
+databases
+
+r
+
+Information systems → DBMS engine architectures; Retrieval models and ranking; Multimedia
+
+Additional Key Words and Phrases: Big data, cultural heritage, multimedia
+ACM Reference Format:
+Flora Amato, Vincenzo Moscato, Antonio Picariello, Francesco Colace, Massimo De Santo, Fabio A. Schreiber, and Letizia Tanca.
+2017. Big data meets digital cultural heritage: Design and implementation of SCRABS, a smart context-awaRe browsing assistant for cultural environmentS. ACM J. Comput. Cult. Herit. 10, 1, Article 6 (April 2017), 23 pages.
+DOI: http://dx.doi.org/10.1145/3012286
+
+Authors’ addresses: F. Amato, V. Moscato, and A. Picariello, Dip. di Ingegneria Elettrica e delle Tecnologie dell’informazione,
+Università degli Studi di Napoli Federico II, Via Claudio 21, 80125, Napoli - CINI Consorzio Interuniversitario Nazionale
+per l’Informatica, Laboratorio CINI ITeM, Complesso Universitario di Monte S. Angelo, Via Cinthia 80126, Napoli (Italy);
+emails: {flora.amato, vmoscato, picus}@unina.it; F. Colace and M. de Santo, Dip. di Ingegneria Industriale, Università degli
+Studi di Salerno, Via Giovanni Paolo II 132, 84084 Fisciano SA (Italy); emails: {fcolace, desanto}@unisa.it; F. A. Schreiber and
+L. Tanca, Dip. di Elettronica e Informazione, Politecnico di Milano, P.zza Leonardo da Vinci 32, 20133 Milano (Italy); emails:
+{fabio.schreiber, letizia.tanca}@polimi.it.
+Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided
+that copies are not made or distributed for profit or commercial advantage and that copies show this notice on the first page
+or initial screen of a display along with the full citation. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, to republish, to post on servers, to redistribute to
+lists, or to use any component of this work in other works requires prior specific permission and/or a fee. Permissions may be
+requested from Publications Dept., ACM, Inc., 2 Penn Plaza, Suite 701, New York, NY 10121-0701 USA, fax +1 (212) 869-0481,
+or permissions@acm.org.
+c 2017 ACM 1556-4673/2017/04-ART6 $15.00
+
+DOI: http://dx.doi.org/10.1145/3012286
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6
+
+6:2
+
+1.
+
+•
+
+F. Amato et al.
+
+INTRODUCTION
+
+The enhancement and promotion of worldwide Cultural Heritage (CH) using Information and Communication Technologies (ICT) represents nowadays an important research issue with a variety of
+potential applications. This challenge is particularly important in Italy, whose artistic heritage embodies a universal resource of priceless value, attracting every year millions of visitors to monuments,
+archaeological sites, and museums.
+Since the mid-2000s, the use of ICT has radically changed the mode of fruition, and even the purpose,
+of Cultural Heritage exhibitions, rapidly moving from an old vision, providing tourists with static information consisting of a large amount of “cultural signs,” to novel personalized services that meet the
+visitors’ personal tastes by considering their cultural needs and preferences together with information
+about their current context [Bolchini et al. 2007].
+As an example, the user experience could be surely enhanced if the devices of the tourists were
+embedded within a digital ecosystem providing useful services and information coming from rich and
+heterogeneous sources, from textual descriptions, to pictures and videos, possibly giving the opportunity of enjoying some kind of multimedia real-time storytelling.
+In particular, On-line Social Networks (e.g., Facebook and Twitter) and multimedia sharing systems
+(e.g., YouTube, Flickr, Panoramio, Instagram, etc.), together with open digital libraries and archives
+(e.g., DBpedia), constitute some of the most diffused multimedia information sources that can be considered “useful” for tourists when they visit cultural environments such as museums, archaeological
+sites, old town centers, and so on.
+Following the Internet of Things (IoT) paradigm [Perera et al. 2014], we can thus imagine a scenario where persons (citizens, tourists, etc.) and objects (items, buildings, rooms, etc.) conveniently
+equipped with the appropriate devices, GPS (Global Positioning System), smartphone, video cameras,
+temperature/humidity sensors, etc. can communicate and operate, supported by ICT infrastructures
+and services that constitute the building blocks of a “smart” cultural environment.
+It is the authors’ opinion that such a vision perfectly suits a Cultural Heritage environment (e.g.,
+museums, archeological sites, old town centers), grounded on a set of cultural Points of Interest (PoIs)
+that correspond to one or more Cultural Items (C Is) (e.g., specific ruins of an archeological site, sculptures and/or pictures exhibited within a museum, historical buildings and famous squares in an old
+town center, and so on), in their turn provided with multimedia descriptions and other useful information/services that make the cultural environment smart, thus facilitating its virtual and physical
+browsing.
+On the other hand, the amazing increase of available digital information has the unpleasant consequence that users may be overwhelmed by this ocean of information when trying to find “what they
+need.” In this respect, context-oriented data and service designcan be employed to generate models
+specifying how the data returned by services and applications, selected on the basis of the current user
+context, can be merged and visualized on the tourist device.
+In this article, we describe a Smart Context-awaRe Browsing assistant for cultural EnvironmentS
+(SCRABS) system, a “portable” prototype for the management, and context-driven browsing, of cultural
+environments that is actually an extension of preliminary work proposed in Colace et al. [2015a].
+The system has been developed within the Cultural Heritage Information Systems National project,
+promoted by DATABENC,1 the High Technology District for Cultural Heritage management of the
+Campania Region, in Italy, and is characterized by the following technical features (typical of a Big
+Data platform [Chen and Zhang 2014; Colace et al. 2015b]):
+1 www.databenc.it.
+
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:3
+
+(1) capability to gather information from distributed and heterogeneous pervasive data sources (e.g.,
+Sensor Networks, Social Networks, Digital Libraries and Archives, Multimedia Collections, Web
+Data Services, etc.);
+(2) context-awareness and, consequently, ability to provide useful and personalized data and services
+to users based on their preferences, the current situation, and the surrounding environment;
+(3) advanced data management techniques and technologies necessary to deal with the information
+variety, velocity, and volume;
+(4) advanced smart services such as information retrieval, recommendation, data analytics, and other
+utilities.
+From the application viewpoint, consider that SCRABS manages the following collection of multimedia and social resources providing detailed information about the cultural heritage belonging to some
+specific geographic areas of Campania and provides easy access to the smart services related to them.
+The information includes the following:
+(1) cultural items’ descriptions—coming from open web sources (e.g., Wikipedia) or from several digital
+libraries and archives;
+(2) multimedia data—video, text, image, and audio—associated with the various items of interest,
+retrieved from open (Social Media Networks as Panoramio, Picasa, YouTube, and Flickr) or private
+collections;
+(3) social data—for example, user comments and opinions from common on-line social networks like
+Facebook, Twitter, and so on;
+(4) sensor data—related to environmental parameters (e.g., humidity and temperature) and captured
+by Sensor Networks deployed in a given PoI;
+(5) web service data—any kind of useful data gathered by means of web services, for example, about
+other touristic attractions, accommodations in the same geographic area, or meteorological
+information.
+Consistently, the services include the following:
+(1) retrieval and presentation functionalities to search information of interest and present it to the
+users in a suitable format and according to their needs;
+(2) recommendation facilities suggesting cultural visiting paths to users or helping them browse multimedia information as a sort of multimedia guide;
+(3) social sensing, in other words, the possibility of exploring the general mood of a social community
+and of adding personal opinions and comments on a cultural object;
+(4) data analytics, reporting, and visualizing statistics on a given PoI (e.g., number of visiting users,
+present and future environmental and weather conditions, user feedbacks, etc.);
+(5) other general utilities, as the possibility to book the visit to an exhibitions or a table in a restaurant
+in the same area, and so on.
+Last but not least, the described data and services are dynamically “tailored” to each specific user
+in a context-driven way. Indeed, a fundamental feature of SCRABS is its portability: Each user is endowed with, and can carry, a personalized version of the system, in which the relevant information
+dynamically changes with the context. Typically, users consulting SCRABS while at home will be presented with information and services that can differ from what they get when physically close to a PoI.
+For example, when at home, the user will receive general information on how to reach the various PoIs,
+along with information on booking and summarized descriptions of the related Cultural Items, while,
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:4
+
+•
+
+F. Amato et al.
+
+when at the specific PoI, another set of data and services (meteorological information, details on art
+pieces, or other facilities related to the specific place) will be offered.
+By means of a set of ad hoc APIs (Application Programming Interfaces), and exploiting the provided
+services, our system can support several applications: mobile multimedia guides for cultural environments, web portals to promote the cultural heritage of a given organization, and so on, also integrated
+with sensor data, applications for cultural heritage preservation and security.
+In this way, our platform can achieve a large number of potential addressees: general users and
+tourists interested in obtaining information about cultural spaces, experts in the CH domain (e.g.,
+archeologists, archivists, art historians) that can use and enrich the system Knowledge Base for their
+studies, and CH institutions leveraging the analytical functionalities to monitor a cultural environment and plan the correct activities to promote and preserve the related heritage.
+The article is organized as follows. Section 2 shows a motivating example of the proposed system related to an outdoor scenario. Section 3 describes the system with the related functionalities. Section 4
+presents system implementation details with preliminary experimental results, while Section 5 reports the related work about the most recent smart ICT technologies applied in the Cultural Heritage
+domain. Finally, Section 6 discusses some conclusions and future work.
+2.
+
+CASE STUDY
+
+In this section, we describe a case study for the famous Paestum archeological site, designed and implemented in order to showcase the main ideas and the related technologies of SCRABS.
+The archeological site of Paestum is one of the major Graeco-Roman cities in Southern Italy. Here, a
+set of ancient buildings is the main cultural attraction for a tourist: three main temples of Doric style
+(the First Temple of Hera, also called the Basilica; the Second Temple of Hera, also known as the Temple
+of Neptune; and the Temple of Athena), the Roman Forum with several ruins, and the Amphitheater.
+The buildings are surrounded by the remains of the city walls. In addition, a museum near the ancient
+city contains many examples of Graeco-Roman life (e.g., amphorae, paintings, and other objects).
+The ancient buildings, together with the museum and its main artifacts, constitute the set of cultural
+items for our case study. Tourists, both from their places and while visiting ruins, can browse these
+cultural items and enjoy a useful multimedia guide describing them or have other nearby places with
+visiting paths recommended, comments of other users, and other information of interest.
+As an example, suppose that some users from the nearby seaside resorts would like to know more
+about the ruins in front of them, beyond their names and a very generic and basic explanation of
+the main cultural items. If they decide to visit the archeological site, then there is the possibility of
+visualizing a map of the different PoIs along with a set of basic information: (e.g., names and metadata
+of the CIs, other users’ mood about it, meteorological information on the surrounding area, number of
+visitors currently present in the same area, etc.) and services (e.g., booking of a restaurant near the
+ruins or of an exhibition within the museum).
+In particular, when a user approaches a certain PoI, for example, containing as cultural item the
+Temple of Neptune, or selects it explicitly, a “change of context” occurs, and the related multimedia
+description (i.e., audio, images, video, and texts) and detailed users’ comments are delivered together
+with the activation of a set of more specific services.
+The list of proposed multimedia objects depends on the user’s preferences (images rather than voice
+or expert-level rather than layman-level descriptions of the art pieces), and their browsing can be
+facilitated using multimedia recommendation facilities. At the same time, users can choose to retrieve
+some interesting information; to read comments, opinions, and ratings about the visited cultural items;
+and to express their own ratings and opinions that will be posted on social networks. Possibly, details
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:5
+
+Fig. 1. SCRABS—a running example.
+
+about environmental conditions within the temple and other services can be provided together with
+the suggestion of cultural visiting paths [Colace et al. 2015a].
+When a user is approaching a different PoI, a new list of cultural items with a set of objects is
+automatically delivered (e.g., removing those related to the previous visited PoI and adding the new
+objects) along with a different, more suitable, set of services, and, consequently, the visiting path will
+be automatically updated.
+The paths can take into account the current context in terms of actual position (obtained in this case
+by GPS), weather, and environmental conditions, thus enhancing the visiting experience.
+Figure 1 shows a running example (obtained by assembling different screenshots of the SCRABS
+mobile client application) concerning a path for the Paestum ruins. Users can browse the data by
+means of an appropriate GUI (Graphical User Interface); they can filter objects belonging to a given
+CI—related to a PoI—using different criteria: type of multimedia data, language, size, and so on.
+Thus, the information is dynamically tailored on the users depending on the context but also on
+their preferences and needs, captured either explicitly—by using questionnaires—or implicitly from
+the system logs. As an example, young people with high-school education and basic notions of history
+and art could receive only some general concepts about the cultural items, while CH experts could be
+interested in more detailed descriptions and richer multimedia data.
+As explained in the following sections, our platform provides context-aware recommendation services
+that can easily support the described information tailoring process.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+•
+
+6:6
+
+3.
+
+F. Amato et al.
+
+SYSTEM DESCRIPTION
+
+3.1 Data Model
+The SCRABS data model relies on the concept of CI that is in turn related to a given cultural environment (e.g., a museum, an archeological site, an old town center). Examples of CIs are specific ruins of
+an archeological site, sculptures and/or pictures exhibited within a museum, historical buildings and
+famous squares in an old town center, and so on. In addition, a CI may be associated with a specific
+PoI, defined by a set of geographic coordinates, and corresponding either to a single point or to a set of
+lines and more complex polygons) of the considered environment.
+In the Cultural Heritage domain, a CI can be described with respect to a variety of annotation
+schemes, for example, the archeological view, the architectural perspective, the archivist vision, the
+historical background, and so on, that usually exploit different harvesting sets of metadata and possibly domain taxonomies or ontologies [Doerr et al. 2010].
+In a simplified way, we consider an ontology O = (V, E) as a network of concepts belonging to a
+given domain of interest, where a node v ∈ V represents a “concept” and an edge e ∈ E represents
+a relationship between two concepts.2 We define an annotation schema and a semantic annotation
+[Amato et al. 2008] for a cultural item as follows.
+Definition 3.1 (Annotation Schema). Given a set of ontologies O, an Annotation Schema is a particular tuple λ O = (A1 , . . . , An, B1 , . . . , Bm), where A1 , . . . , An are attributes for which ∀i ∈ [1, n], ∃O =
+(V, E) ∈ O s.t. dom(Ai ) ⊆ V (i.e., Ai assumes values corresponding to nodes of some ontology), and
+B1 , . . . , Bm are attributes for which ∀ j ∈ [1, m],  ∃O = (V, E) ∈ O s.t. dom(B j ) ⊆ V (i.e., B j does not
+assume values corresponding to nodes of any ontology).
+In other words, the attributes A1 , . . . , An are ontological attributes and correspond to concepts that
+are relevant for the specific domain(s) being modeled. In turn, non-ontological attributes B1 , . . . , Bm
+can contain other useful information, such as measures returned by the sensors attached to cultural
+items, or multimedia objects (e.g., audio, video, images, text, and 3D models) characterized by lowlevel features and metadata. In particular, we can adopt both “literals” or a set of Uniform Resource
+Identifiers (URIs) that allow access to related information according to the Linked Data/Linked Open
+Data (LD/LOD) paradigms, as values of the annotation attributes.
+Definition 3.2 (Semantic Annotation). Given a set of ontologies O, an annotation schema λ O , and CI,
+a Semantic Annotation of C I is a tuple λ O (C I) = (a1 , . . . , an, b1 , . . . , bm), where ∀i ∈ [1, n], ai ∈ dom(Ai )
+and ∀ j ∈ [1, m], bi ∈ dom(Bi ).
+Using various sets of ontologies/taxonomies and semantic annotations, we can thus describe a cultural item from different points of view supporting several applications.
+A large set of relationships can also be instantiated among cultural items, and the entire Knowledge
+Base (KB) can be modeled as a graph.
+Definition 3.3 (Cultural Heritage Knowledge Base). The Cultural Heritage Knowledge Base is a
+graph G = (C, R): Each node c ∈ C can be a cultural item, a point of interest, or an ontological
+attribute, while each edge r ∈ R represents a relationship derived from a semantic annotation or
+established between two cultural items or between a point of interest and a cultural item.
+
+2 Note
+
+that a taxonomy is a particular ontology only containing ISA (concept-subconcept) relationships.
+
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:7
+
+Fig. 2. SCRABS: The data model.
+
+Thus these nodes and edges are abstract data types with a set of properties (attributes and methods).
+Figure 2 shows how a portion of knowledge related to the Paestum ruins can be easily represented
+in our model. In particular, we can see some of the several cultural items in which a tourist visiting the
+Paestum ruins can be interested: the Archeological Museum of Paestum (containing evidence from the
+entire archeological area and related to a specific POI on the cultural environment map), the Temple of
+Neptune, and the Tomb of the Diver fresco (the famous burial painting belonging to the Greek period
+in Paestum) that is located within the museum. The non-ontological attributes of the temple are essentially images related to planimetry (information useful for architects) and some pictures retrieved from
+social media networks; in turn, the fresco’s non-ontological attributes represent information related to
+Art History but also comments from on-line social networks and environmental measures collected by
+the sensors deployed in the museum rooms. Ontological attributes are then referred to different metadata (type and period for the museum artifact and type and materials of the ancient building) whose
+values can be linked to the nodes of taxonomies and ontologies available for the Cultural Heritage
+domain.
+Leveraging different annotation schemas and available ontologies, our model allows achieving interoperability goals. In fact, the Knowledge Base content can be easily exported in the most-used formats,
+e.g., XML (eXtensible Markup Language), RDF (Resource Description Framework), OWL (Ontology
+Web Language), and according to the most diffused harvesting standards for CH applications (e.g., Europeana Data Model3 (EDM), Italian Central Institute for the Catalogue and Documentation (ICCD),
+etc.). On the other hand, the LD/LOD paradigm permits us to deal with several problems related to
+data consistency and copyright constraints in an effective manner: some cultural items descriptions are
+accessible only using URI, and thus the data management issues are connected to the related source.
+3 http://pro.europeana.eu/edm-documentation.
+
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:8
+
+•
+
+F. Amato et al.
+
+Fig. 3. SCRABS architecture.
+
+3.2 Architecture
+Figure 3 describes at a glance a functional overview of the proposed system in terms of its main components. It is worth noticing that SCRABS presents the layered architecture typical of a Big Data system
+[Chen and Zhang 2014; Colace et al. 2015b], exploiting a related stack of technologies.
+In the data source layer, each data source is properly wrapped in order to extract the information
+of interest that is then represented as required by the data model. In particular, each Wrapper is
+specialized for a particular kind of source (i.e., Sensor Networks, Social Networks, Digital Repositories,
+Users Data, and Web Data Services) and must address all the interoperability issues, providing a set of
+functionalities to access data sources and gather all the desired data, possibly leveraging the available
+APIs. Data integration problems for heterogeneous data sources are addressed by means of classical
+schema mapping techniques or other type of approaches, according to the specific data source.
+In the data management layer, data are stored in the KB in compliance with the above-described
+data model and managed also exploiting the LD/LOD paradigm. In addition, specific semantics to be
+attached to the data is provided using the annotation schemes, including ontologies, vocabularies, taxonomies, and so on, related to the Cultural Heritage domain. The Knowledge Base leverages different
+advanced data management technologies (e.g., Distributed File Systems, NoSQL (non relational SQL),
+and relational systems) and provides a set of basic APIs to read/write data.
+The data management layer is further enriched with two additional components: a Geographic Information System (GIS) and a Context Management System (CMS). The GIS manages the maps of the
+cultural environments offering a set of primitives to capture, store, manipulate, retrieve, analyze, and
+present all types of spatial or geographical data; the CMS performs data tailoring by exploiting context
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:9
+
+ALGORITHM 1: PerLa Query for Sensing If a Location Temperature Exceeds 27◦ C
+CREATE OUTPUT STREAM SensedT (SENSID sid, LOCATION loc, FLOAT Tval, TIME timest) AS LOW:
+EVERY 5m
+SELECT sid, loc, Tval, timest
+HAVING Tval ≥ 27
+SAMPLING ON EVENT TemperatureChange
+EXECUTE IF EXISTS (GPS, termometer)
+
+information [Bolchini et al. 2013] and generates a set of georeferenced Contextual Areas for each user
+w.r.t. a given cultural environments, possibly enabling a set of services on such data views.
+As a basis for the application layer, our system provides a set of services that can be invoked by user
+applications. In its current version SCRABS offers:
+Recommendation Services: to suggest personalized cultural visiting paths to the users and also to
+help them browse multimedia collections related to a given CI;
+Information Retrieval Services: to search information of interest using content-based facilities;
+Data Analytics Services: to obtain useful statistics about a CI or as support for data-mining and
+pattern recognition applications;
+Social Comment Services: to post comments and feedback about users’ experience to social networks;
+Utility Services: for example, to inform users on weather conditions or to book events or tourist
+attractions related to a given cultural environment.
+
+3.3 Functionalities
+In the following, we describe the main functionalities provided by SCRABS.
+3.3.1 Data Gathering from Big Data Sources. One of the most important functionalities provided
+by SCRABS consists in the capability of gathering different kinds of data from the various Big Data
+sources.
+In our vision, Big Data for the CH domain are essentially composed of all the data sources that can
+be properly used by the applications, having characteristics of volume, variety, and velocity typical of
+Big Data scenarios. In particular, we distinguish five classes of data sources: Sensor Data, User Data,
+Social Data, Digital Repository and Multimedia Data, and Web Data.
+Concerning Sensor Data, in the current system implementation, we deal only with Wireless Sensor Network (WSN) data sources. WSN capabilities can be exploited to monitor the temperature and
+humidity of indoor or outdoor environments. In particular, we leverage the PerLa WSN management
+middleware [Schreiber et al. 2012], which abstracts a sensor network as a virtual distributed database
+system providing an SQL (Structured Query Language)-like language for query formulation and data
+retrieval. As an example, a PerLa query can be used (Algorithm 1) to retrieve the temperature at a
+given location, whenever there is a temperature change and the detected temperature exceeds 27◦ C .
+Then sensor data are periodically retrieved by the wrapper and converted into a JSON (JavaScript
+Object Notation) format. For such types of data, we have to deal with data stream management challenges [Panigati et al. 2015]; in addition, complex event processing techniques can be exploited to
+reduce the amount of information flow [Cugola and Margara 2015]. Measures returned by sensors
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:10
+
+•
+
+F. Amato et al.
+
+Fig. 4. An example of a JSON message generated by a WSN Wrapper.
+
+are finally associated with one or more cultural items in the considered environment. An example of
+resource that could be derived from such data sources is reported in Figure 4.
+The example shows that in a given indoor location (corresponding to a room of the Paestum museum) a certain sensor (identified by the string “S01”) has performed a temperature measure (whose
+value is “32◦ ”) in a given temporal instant (“12-Apr-16 14:20”) related to a given CI (with identifier
+“00ayr4hfdD2”).4 The meaning of all the metadata describing the measures (e.g., Type, Timestamp,
+Location, Value, Source) can be retrieved from the annotation schema Sensor.
+Sensor data can be used both to report environmental conditions (that could be interesting for certain users) of a given cultural item and especially—for monitoring aims—to support preservation and
+security of cultural items.
+We note that even the user devices, which can communicate the effective users’ location by using
+the GPS technology or capture their preferences and needs, constitute a different sort of sources, generating User Data that have to be opportunely wrapped and coded in the described format. For user
+localization within indoor cultural environments, the applications communicating with SCRABS can
+use beacons or Near Field Communication (NFC) technologies. Simple multimedia guides may use QR
+(Quick Response) codes to detect the cultural items currently observed by the user. Each context-aware
+and proximity-based recommendation service leverages such technologies in some way to determine
+users’ positions as well as the cultural items close to them.
+User data may include other static and dynamic information useful to define the related profiles.
+In particular, recall that user preferences, needs, and behaviors can be acquired either explicitly, by
+means of suitable questionnaires provided by the applications, or in an implicit manner using system
+logs. Static information (e.g., favorite artistic genre) is stored in the Knowledge Base and possibly
+updated; in turn, dynamic information (e.g., browsing paths) is continuously updated.
+Such information constitutes the Personally Identifiable Information (PII) that can be exploited by
+recommendation and analytical services.
+
+4 All
+
+the information about this measure is accessible via web using the URI www.databenc.it/resource/measure/?id=321.
+
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:11
+
+Fig. 5. An example of a JSON message generated by the Twitter Wrapper.
+
+As to Social Data, the current prototype only considers information coming from Twitter. In particular, SCRABS retrieves user comments and posts information about a given CI by exploiting the related
+APIs.
+The example in Figure 5 shows that user “Vincenzo.Moscato” has expressed a comment (“Wonderful”)
+on a post about The Tomb of the Diver on a certain date (“14-Apr-16”). The meaning of all the metadata
+describing the user activity (e.g., Type, Timestamp, Language, Text, Topic, User, etc.) can be retrieved
+from the annotation schema Social.
+Social data can be used in several applications requiring a “social vision” of cultural items (e.g.,
+general users’ mood of a given social community with respect a given picture). Such information might
+also exploited by some CH applications as an additional fact to enrich the recommendation process.
+We collect Digital Repositories’ Data, information describing cultural items from on-line digital
+repositories (e.g., museums, libraries, theatrical foundations digital archives, multimedia collections).
+Resources are often described on the basis of different annotation schemes and provided in XML- or
+RDF-based formats (as in DBpedia). The wrapper for this kind of sources can import such data descriptions and convert them into the described JSON format according to the system data model.
+The example in Figure 6 shows a possible description (together with an image) of the The Tomb
+of the Diver. The meanings of all the metadata describing the painting (e.g., Type, Name, Author,
+Period, Description, Subject) can be retrieved in the annotation schema Art History. Clearly, textual
+descriptions of cultural items can be made available in different languages, and users’ applications can
+choose the desired ones.
+Multimedia web resources (e.g., images, texts, video) related to a given cultural item can be similarly collected using the wrapper facilities and associated with a given annotation schema. In particular, the descriptions in terms of basic metadata are captured and stored within SCRABS, while raw
+multimedia data can be opportunely linked and, in other cases, temporarily imported into the system
+for content-based analysis [Amato et al. 2016; Bartolini and Patella 2015]. Note that multimedia data
+that are managed by the system are suitably filtered before the storing process. The number and kinds
+of multimedia data required by the application are tuned by means of configuration parameters.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:12
+
+•
+
+F. Amato et al.
+
+Fig. 6. An example of a JSON message generated by the Digital Repository Wrapper.
+
+Other information of interest, such as that related to meteorological or traffic conditions, can also be
+captured using the available Web Data services and represented in the described format.
+3.3.2 Data Management. The data gathered by the Wrappers are stored and managed by the Knowledge Base. Data are represented according to the described model, based on the LD/LOD
+paradigm: The integration task has been performed using schema mapping, record linkage, and data
+fusion techniques for the considered data sources [Dong and Srivastava 2013].
+One of the basic functionalities of the KB is to export the related content into the EDM format,
+a proposal that aims to bridge the gaps between different harvesting standards providing a unique
+solution to metadata specification. In the EDM [Doerr et al. 2010], each Cultural Heritage Object—the
+main entity of the model corresponding to a given CI—can be described at various levels of detail using
+different metadata schemes by means of the aggregation construct.
+Thus, our annotation schemes correspond to specific metadata aggregations: As an example, social
+and sensor aggregations permit to associate/link interesting environmental measures or users’ comments from an Online Social Network to each cultural item. Similarly, the archeological aggregation
+supports the description of a cultural item by metadata that are useful for the annotation work of an
+archeologist.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:13
+
+Two further EDM basic concepts are considered and mapped in our model: Place (where the object
+is located corresponding to our PoI entity) and Time Span (allowing us to deal with different temporal
+views of a cultural item). Possibly, a certain number of web resources (e.g., images, videos, texts, etc.)
+can be linked to each item. Finally, metadata semantics is provided by the set of annotation schemes
+(in XML, RDF, or OWL formats). For instance, the data can be represented as sequences of triples
+( subject, predicate, object ) according to the described data model.
+In particular, the KB is based on several technologies as follows:
+The data describing basic properties of CIs (e.g., name, short description, etc.) and user information are stored in a key-value data store.
+The complete description in terms of all the metadata of a CI using the different annotation
+schemes are in turn saved using a wide column data store.5
+The document store technology is used to deal with wrapper messages (JSON), user profiles, and
+internal resources (multimedia data and textual documents, etc.) associated with a cultural item.
+All the relationships among cultural items within a cultural environment and interactions with
+users are managed by means of a graph database.
+The entire cartography related to a cultural environment together with PoIs is managed by the
+GIS, which provides the functionalities to filter and visualize on a map the geographic area
+around a given PoI together with the cultural visiting paths that have possibly been suggested.
+The context description, in terms of a Context Dimension Tree [Bolchini et al. 2011], is managed
+by the CMS, which allows the retrieval of the useful data and services tailored on the base of the
+context the user is experiencing.
+Contextual data views can also be cached in RDF stores providing a SPARQL (recursive acronym
+of SPARQL Protocol and RDF Query Language) endpoint for the applications.
+The above applications might also store the data into the embedded in-memory databases.
+This heterogeneous Knowledge Base provides basic Restful APIs to read/write data and further functionalities for importing/exporting data in the most common diffused Web standards. The search of
+data useful for the applications can be eased by using different filters that implement the right queries
+to the various databases.
+We chose to adopt such heterogeneous technologies in order to meet the specific requirements of the
+applications dealing with the huge amount of data at stake. For example, Social Networking applications typically benefit from graph database technologies because of their focus on data relationships.
+In turn, more efficient technologies (key-value ore wide-column stores) are required by Tourism applications to quickly and easily access the data of interest.
+3.3.3 Context-Aware Data and Service Tailoring. The data retrieved from the Knowledge Base for
+the different users are filtered using the approach described in Colace et al. [2015c], which allows us
+to define the information that is relevant for the current user needs and preferences depending on the
+context—represented by means of a Context Dimension Tree (CDT) [Bolchini et al. 2011]. The data are
+intensionally described by contextual data views, defined at design time, and materialized on the user
+devices when needed. In a similar way, at runtime, the system tailors the subset of services actually
+necessary in the current context, the activation of which is driven by a Context Evolution Petri Net
+(CEPN) [Colace et al. 2015c]; this formalism models the evolution of a context instance into another
+one as a function of the conditions or services of the first one.
+5 We
+
+use a table for each kind of CIs having a column for each metadata; column values can be literals or URIs.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:14
+
+•
+
+F. Amato et al.
+
+Fig. 7. Context management.
+
+Futher details are as follows:
+At design time (see Figure 7(a)), using the CDT context model, the designer must conceive a
+context schema for the considered scenario, that is, a representation of the available contexts
+describing the relevant perspectives w.r.t. the fact that the context and the values they can take
+may change (dimensions). These values correspond to data that, at runtime, might be obtained
+from physical sensors (e.g., the present location) or by interacting with other applications (e.g.,
+to obtain the date from an electronic calendar), or directly asking the user (e.g., to know his or
+her current mood). The contexts represented in the context schema must then be associated with
+the related context-aware knowledge, which naturally derives from the application scenario and
+normally consists of pieces of information (represented in terms of views over the available data),
+useful services, rules to be triggered, and so on.
+At runtime (see Figure 7(b)), the system recognizes the current context by gathering the necessary information from applications and physical sensors, or by asking the user when necessary,
+and triggers the related context-aware behavior in terms of data and services (activated by CEPN)
+defined at design time. Note that when context information comes from physical sensors or other
+applications, the obtained raw data usually need to be preprocessed in order to be associated with
+one of the values of the corresponding dimensions. For instance, a numerical temperature value
+would need to be recognized as belonging to the corresponding class (e.g., cold, warm or hot), just
+as the set of web pages the user is currently viewing should be associated with his or her current
+interest topic.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:15
+
+3.3.4 Multimedia and Recommendation Services. We used the techniques proposed in Bartolini et al.
+[2011] to provide content-based information-retrieval facilities for multimedia data. Furthermore, we
+exploit the multimedia recommendation techniques that some of the authors have presented in Albanese et al. [2011], Albanese et al. [2013], Bartolini et al. [2014], and Colace et al. [2015] with several
+applications in the Cultural Heritage domain.
+Formally, a recommender system deals with a set of users U = {u1 . . . , um} and a set of items O =
+{o1 , . . . , on} (e.g., news, photos, movies). For each pair (ui , o j ), a recommender can compute a score (or
+a rank) ri, j that measures the expected interest of user ui in item o j (or the expected utility of item o j
+for user ui ), using a knowledge base and a ranking algorithm that generally could consider different
+combinations of the following characteristics: (i) user preferences and past behavior, (ii) preferences
+and behavior of the user community, (iii) items’ features and how they can match user preferences,
+(iv) user feedback, and (v) context information and how recommendations can change together with
+the context.
+In particular, our system is composed of the following:
+A pre-filtering module that, for each user ui , selects a subset Oic ⊂ O containing items that are
+good candidates to be recommended; such items usually match user preferences and needs. For
+this purpose, we employ high-order star-structured co-clustering techniques [Ienco et al. 2009]—
+that some of the authors have adopted in previous work [Bartolini et al. 2014]—to address the
+problem of heterogeneous data pre-filtering.
+A ranking module that assigns, w.r.t. user ui , a rank ri, j to each candidate item o j in Oic using
+the well-known recommendation techniques. In particular, we use a novel technique that some of
+the authors have proposed in previous works—combining in a novel manner low- and high-level
+features of items, possible past behavior of individual users and overall behavior of the whole user
+“community”—to provide useful recommendations during the browsing of multimedia collections.
+In addition, users’ opinions and sentiments about items are considered a further ranking criterion.
+A post-filtering module that dynamically excludes, for each user ui , some items from the recf
+ommendations’ list; in this way, a new set Oi ⊆ Oic is obtained on the base of user feedbacks
+and other contextual information (such as data coming from the interactions between the user
+and the application). Possibly, depending on applications, recommended items can be arranged in
+visiting path according to additional constraints.
+Thus, in our approach, several aspects related to users, that is, preferences (usually coded in the
+shape of items’ metadata), opinions (textual comments to which it is possible to associate a particular
+sentiment), behavior (in the majority of cases logs of past items’ observations made by users), feedback
+(usually expressed in the form of ratings), are considered and integrated together with items’ features
+and context information within a general and unique recommendation framework that can support
+different applications using suitable customizations.
+3.3.5 Analytics. Big Data Analytics techniques are used to provide useful statistics for a given CI or
+PoI (e.g., number of visiting users, average temperature and humidity for different periods of a year)
+or as support to anomaly detection or for pattern recognition aims. Sentiment analysis techniques
+(proposed in Colace et al. [2016] and based on the Latent Dirichlet Allocation (LDA) for Ontology
+Building and Sentiment Extraction) are further exploited to endow each CI with a general user mood
+coming from the related comments in Online Social Networks.
+In particular, LDA is used to obtain, from a set of documents belonging to a same knowledge domain,
+the Mixed Graph of Terms, containing the most diffused adverbs and adjectives used in the comments,
+with the related probabilities of occurrence and co-occurrence. This graph is then transformed into
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:16
+
+•
+
+F. Amato et al.
+
+Fig. 8. An example of Sentiment-Oriented Terminological Ontology.
+
+a set of Sentiment Oriented Terminological Ontologies (one for each sentiment degree) thanks to a
+methodology that involves the introduction of annotated lexicon as WordNet and exploited for the
+sentiment classification task. Figure 8 shows an example of Sentiment-Oriented Terminological Ontology useful to classify positive comments.
+In addition, data-mining techniques are profitably exploited to discover significant relationships
+among users’ profiles, general moods, and visiting paths.
+4.
+
+IMPLEMENTATION AND EXPERIMENTATION
+
+We tested SCRABS for the described Paestum case study. In the following, we first report some implementation details concerning the customization of the system developed for the considered environment and then discuss the experiments.
+4.1 Implementation Details
+Our data collection consists of a database of about 1,000,000 resources, mainly consisting of metadata
+descriptions, images, and texts of CIs coming from several digital Repositories (i.e., Europeana, Flickr,
+Panoramio, Wikipedia) related to all the main attractions of Paestum. In addition, user comments are
+gathered from Twitter by means of its API. Furthermore, using the devices’ GPS facilities and the
+Google Weather APIs, the system captures the user location and some environmental parameters for a
+given area (number of a persons and the related weather conditions).
+Data are stored in the Knowledge Base, concretely implemented by means of the following
+technologies:
+we use Voldemort, a key-value store containing basic information of all the managed CIs, such as
+name, GPS coordinates of the related PoI, and a short description;
+the entire description in terms of metadata of a CI is managed by HBASE column store;
+JSON messages and multimedia documents related to CIs are managed by the MongoDB document store;
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:17
+
+multimedia data management have been realized using the Windsurf library6 ;
+relationships among cultural items and among cultural items and users data are maintained in
+the Titan graph database;
+user profiles and preferences (managed by MongoDB) are captured as described in Section 3.3;
+we exploit Sesame,7 an RDF store to memorize data views related to the users’ contextual areas;
+the spatial information related to a cultural environment are managed by the PostegreSQL ORDBMS and its spatial extension PostGIS, leveraging the Google Maps;
+CDT and CEPN are managed using proper Java tools8 ;
+basic analytics facilities are provided by Hive and Impala tools of the Cloudera9 suite based on
+HDFS (Hadoop Distributed File System);
+semantics of data can be specified by linking values of high-level metadata to some available
+ontological schema managed by Sesame.
+All the functionalities provided by the Knowledge Base and services offered by the application layer
+have been implemented in Java and related technologies.
+As to the computational environment, we used the SCOPE distributed computing infrastructure at
+the University of Naples.10 In this first implementation, a user interacts with the system by using an
+Android App. The presentation logic is based on apposite widgets. The client requests are elaborated
+by JAVA Servlets, and the results are sent to the client in the form of XML data.
+4.2 Experimental Results
+In order to verify the proposed system, we decided to test the utility of the recommendation services
+[Adomavicius and Tuzhilin 2005] for users browsing multimedia collections related to a given cultural
+environment.
+As described in a previous work of some of the authors [Albanese et al. 2013], we evaluated the
+impact of the proposed system on users engaged in several search tasks of multimedia items and
+compared its performances with the well-known Panoramio system11 that, in turn, provides basic
+search mechanisms.
+We performed a user-centric evaluation based on user satisfaction with respect to assigned activities,
+evaluating how our recommendations can effectively support browsing tasks of increasing complexity.
+In particular, our goal was to establish how helpful our system is in assisting the search of specific
+multimedia objects (images) and guiding the users towards information which satisfy their interests.
+The dataset used in these experiments is a subset of about 50,000 items (in particular images) related
+to specific cultural item.
+We asked a group of about 50 people12 to browse the collection of items and complete several search
+tasks (20 tasks per user) of different complexity (five tasks for each complexity level) using Panoramio
+facilities. Then we asked them to browse the same collection with the assistance of our recommender
+6 http://www-db.deis.unibo.it/Windsurf/.
+7 http://rdf4j.org.
+8 Concerning
+
+the context management, we use two different kinds of CDTs: a meta CDT representing a set of CIs in a given
+geographic area with the related services and a cultural CDT with more specific information and services for each CI.
+9 http://www.cloudera.com.
+10 SCOPE consists of over 300 computing nodes (quad-core Intel Xeon 2.33GHz processors with 8GB of RAM) communicating by
+dedicated optical-fiber channels.
+11 http://www.panoramio.com/.
+12 Users are experts of Graeco-Roman art and are selected from graduate students, researchers, and professors working in
+DATABENC.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:18
+
+•
+
+F. Amato et al.
+Table I. Comparison Between Our System
+and Panoramio in Terms of ta and
+nc Average Values
+Task Class
+
+ta (sec)
+
+nc
+
+Low Complexity
+Low Complexity
+Medium Compl.
+
+SCRABS
+Panoramio
+SCRABS
+
+System
+
+134
+142
+327
+
+32
+40
+81
+
+Medium Compl.
+High Complexity
+High Complexity
+
+Panoramio
+SCRABS
+Panoramio
+
+398
+1150
+1301
+
+100
+295
+332
+
+Very High Compl.
+Very High Compl.
+
+SCRABS
+Panoramio
+
+1621
+1831
+
+341
+410
+
+system and complete other 20 tasks of similar complexity. We subdivided browsing tasks into four
+broad categories:
+(1) Low Complexity search tasks (T1 ): for example, find at least 30 images (of the initial collection of
+50,000 items) related to three different cultural items depicting ancient temples;
+(2) Medium Complexity search tasks (T2 ): for example, find at least 50 images related to five different
+cultural items depicting ancient temples, historical buildings, and museum artifacts (10 objects for
+each subject);
+(3) High Complexity search tasks (T3 ): for example, find at least 100 images related to 10 different
+POIs (near the actual user position) depicting ancient temples, historical buildings, and museum
+artifacts (10 objects for each subject);
+(4) Very High Complexity search tasks (T4 ): for example, find at least 150 images objects related
+to 10 different POIs (near to the actual user position) ancient temples, historical buildings, and
+museum artifacts (15 objects for each subject).
+Note that the complexity of a task depends on several factors: the number of items to explore, the
+type of desired features, and the number of additional constraints. Two strategies were used to evaluate the results of this experiment: (i) empirical measurements of access complexity in terms of mouse
+clicks and time and (ii) the NASA Task Load Index factor (TLX). With respect to the first strategy, we
+measured the following parameters: (i) access time (ta ), the average time spent by the users to request
+and access all the images for a given class of tasks, and (ii) number of clicks (nc ), the average number
+of clicks necessary to collect all the requested images for a given class of tasks.
+As the retrieval application for our experimentation we used a web portal with an interface very
+similar to the Panoramio one in order to guarantee the same ease-of-use and speed of retrieval.
+Table I reports the average values of ta and nc for both Panoramio and our system (Recommender) for
+each of the four defined task complexity levels. Our system shows better performances than Panoramio,
+especially for the more complex tasks.
+Then we asked the same group of users to express their opinion about the capability of Panoramio
+and our system, respectively, in order to provide an effective user experience in completing the assigned search tasks, based on the TLX evaluation protocol [Hart and Staveland 1988]. TLX is a multidimensional rating procedure that provides an overall workload score based on a weighted average of
+ratings on six sub-scales: mental demand, physical demand, temporal demand, own performance, effort, and frustration. Lower TLX scores are better, and the average scores are then reported in Table II.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:19
+
+Table II. Comparison Between Our System
+and Panoramio in Terms of TLX Factors for
+Each Category of Users
+TLX factor
+
+SCRABS
+
+Panoramio
+
+Mental demand
+Physical demand
+Temporal demand
+
+36
+35.6
+38
+
+40
+44
+50
+
+Effort
+Perfomances
+Frustation
+
+33
+65.4
+32.9
+
+52.5
+73.2
+45
+
+Our application outperforms Panoramio in every sub-scale except mental demand and performance:
+This happens because sometimes an expert user considers the automatic suggestions not useful, since
+they know exactly what they are looking for. In summary, our system provides a better (and less
+frustrating) user experience during the search tasks.
+In addition, the fact that search tasks can be completed faster using our system is an indication that
+recommendations are effective, as they allow a user to explore interesting and related items one after
+another, without the interference of undesired items that would otherwise slow down the process.
+The final aim of such experimentation has been to demonstrate that the recommendation services
+provided by SCRABS are useful to build CH applications (web-based or mobile) that are advanced
+multimedia guides with the capability of automatically suggesting cultural items of interest for users.
+5.
+
+RELATED WORK
+
+In the Cultural Heritage domain, ICT technologies, and in particular those related to the IoT [Perera
+et al. 2014], make the described “integration” between the digital and real dimensions into new smart
+environments possible. These technologies provide facilities for supporting the browsing of cultural
+spaces through the delivery of real-time multimedia stories about cultural objects that can dynamically change with the context. In particular, the IoT technologies can play a crucial role in supporting
+cultural site visitors and enhancing their overall experiences: content and delivery must provide relevant information and at the same time allow visitors to get the level of detail and the perspectives in
+which they are really interested [Kuflik et al. 2011].
+Following this vision, a lot of work has been developed in recent years for recommending the most
+suitable multimedia contents, based on user information, such as preferences and needs, position, and
+so on. In the following, we report a brief overview of some of these techniques.
+Bihler et al. [2011] developed a prototypical context-aware museum guide based on ultrasound technology, where a smartphone is able to recognize the exhibits by receiving a modulated ultrasonic signal,
+but in any museum an adaptation of the used frequencies is necessary. Other works [Rukzio et al. 2005]
+focus their attention on the problem of how to recognize the presence of close-by objects (i.e., performing a relative localization of the user devices) through several technologies as RFID Sensor Networks
+and passive RFID tags, Bluetooth beacon search, and barcode scanning. In particular, placing barcodes (e.g., QR-tags) next to an object is a cheap technology, and the tag can carry enough information
+to point the visitor to related content. Unfortunately, such a technology has a range typically limited to
+a couple of centimeters, which limits its utilization. In turn, Ceipidor et al. [2013] presents the design
+of a multimedia mobile guide for the visitors of the Wolfsoniana museum of Genoa by means of the
+NFC technology.
+As far as content adaption and delivery issues are concerned, the literature offers some work that,
+using mobile sensor networks, analyzes the behavior of museum visitors to provide them with ad
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:20
+
+•
+
+F. Amato et al.
+
+hoc information depending on the visitors’ specific characteristics [Sparacino 2008]. As an example,
+Chianese et al. [2013a] reports a system of location-aware mobile devices that enables the development
+of multimedia interactive applications
+Furthermore, several multimedia systems have been designed and developed to help the user’s exploration of available multimedia content [Van Aart et al. 2010; Kuflik et al. 2011; Costantini et al. 2008].
+Even if these systems absorbed most of the previous results coming from different research projects,
+they also pose new challenges in the recommendation process, such as how different multimedia modules can be efficiently integrated; how conflicts coming from the management of heterogeneous data
+can be resolved; or how the user, with his/her preferences, habits, and social relationships, can be considered. In Ardissono et al. [2012], the authors describe the latest approaches related to how we can
+model and represent the users in the context of Cultural Heritage applications and how we can use
+those models to reason about the available information. All these approaches are useful to perform a
+personalization of the services [Bellotti et al. 2012].
+At the same time, similar experiences have been already conducted with DATABENC, aiming at realizing location-based services and smart multimedia guides, especially for indoor scenarios [Chianese
+and Piccialli 2014; Chianese et al. 2013b]: They aimed to transfer a smartness to a cultural site, applying different communication technologies and sensors.
+Finally, a very interesting research issue for multimedia management in a smart cultural environment concerns multimedia recommendation strategies [Adomavicius and Tuzhilin 2005], taking into
+account contextual information [Ricci et al. 2011; Adomavicius et al. 2005]. To this goal, different recommendation techniques have been extended to the multimedia realm (e.g., multimedia repositories,
+digital libraries, multimedia sharing system) with the aim of considering in the more effective way
+multimedia content of recommended objects, both in terms of low-level and high-level characteristics
+(i.e., multimedia features and semantics), in the recommendation process together with user social
+behavior and preferences.
+In the field of content-based techniques, Maidel et al. [2008] propose a method that exploits some
+ontologies for ranking items’ relevancy in the electronic article domain, while in Hijikata et al. [2006]
+a content-based filtering has been applied by Hijikata et al. to music data using decision trees. In the
+framework of a multimedia sharing system, Kazienko and Musiał [2006] introduce a recommender
+system that uses two ontologies (one for multimedia objects and one for users) in the context of a photo
+sharing system. Among collaborative-filtering proposals, Baloian et al. [2004] propose a collaborative
+recommender system that suggests multimedia learning material based on the learner’s background
+and preferences. Kim et al. [2009] propose a collaborative filtering-based multimedia contents recommender system in P2P (Peer-to-peer) architectures that rates multimedia objects of nearest peers with
+similar preference through peer-based local information only. As hybrid solutions, the uMender system
+[Su et al. 2010] exploits context information, musical content, and relevant user ratings to perform
+music recommendations on mobile devices. Knijnenburg et al. [2009] propose a user-centric approach
+to media recommendations that exploits subjective and objective measures of user experience, while
+users interact with multimedia data. Another example of hybrid approach, implemented in MoRe, a
+movie recommendation system, has been described in Lekakos and Caravelas [2008]. Finally, low- and
+high-level features have been used to define the similarity among multimedia items in Albanese et al.
+[2013].
+The diversity of the mentioned methods and applications, whether for indoor or outdoor cultural
+spaces, highlights that in most cases they remain isolated attempts focusing on specific applications
+and usable for a single cultural environment: They do not arouse effective interest due to the lack
+of applicability and difficulty of reuse in different environments and scenarios. It is evident that, for
+complete enjoyment and valorization of cultural spaces, in all their forms and needs, there is the need
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:21
+
+to design an integrated architecture following the IoT paradigm and based on Big Data issues that can
+be exploited and adapted to different scenarios as in the case of SCRABS.
+6.
+
+CONCLUSIONS AND FUTURE WORK
+
+In this article, we showed an application and some examples of the use of Big Data technologies for
+the Cultural Heritage domain.
+In particular, we described SCRABS, a scalable prototype for the management and context-driven
+browsing of cultural environments. The system is characterized by several features that are typical of
+the modern big data systems: (i) information gathering from distributed and heterogeneous pervasive
+data sources (Sensor Networks, Social Networks, Digital Libraries and Archives, Multimedia Collections, Web Data Services, etc.); (ii) context-awareness, provisioning of useful and personalized data and
+services, on the basis of users’ preferences and of the surrounding environment; (iii) advanced data
+management techniques and technologies for dealing with the information variety, velocity, and volume; and (iv) advanced smart services such as retrieval, recommendation, analytics, and other utilities.
+In addition, we described a real case study implemented in the DATABENC Cultural Heritage Technological district, related to the archeological site of Paestum.
+REFERENCES
+Gediminas Adomavicius, Ramesh Sankaranarayanan, Shahana Sen, and Alexander Tuzhilin. 2005. Incorporating contextual
+information in recommender systems using a multidimensional approach. ACM Trans. Inf. Syst. 23, 1 (2005), 103–145.
+Gediminas Adomavicius and Alexander Tuzhilin. 2005. Toward the next generation of recommender systems: A survey of the
+state-of-the-art and possible extensions. IEEE Trans. Knowl. Data Eng. 17, 6 (2005), 734–749.
+Massimiliano Albanese, Antonio d’Acierno, Vincenzo Moscato, Fabio Persia, and Antonio Picariello. 2011. A multimedia semantic
+recommender system for cultural heritage applications. In Proceedings of the 2011 4th IEEE International Conference on
+Semantic Computing (ICSC’11). IEEE, 403–410.
+Massimiliano Albanese, Antonio d’Acierno, Vincenzo Moscato, Fabio Persia, and Antonio Picariello. 2013. A multimedia recommender system. ACM Trans. Internet Technol. 13, 1 (2013), 3.
+Flora Amato, Francesco Colace, Luca Greco, Vincenzo Moscato, and Antonio Picariello. 2016. Semantic processing of multimedia
+data for e-government applications. J. Vis. Lang. Comput. 32 (2016), 35–41.
+Flora Amato, Antonino Mazzeo, Antonio Penta, and Antonio Picariello. 2008. Building rdf ontologies from semi-structured legal
+documents. In 2008 International Conference on Complex, Intelligent and Software Intensive Systems.
+Liliana Ardissono, Tsvi Kuflik, and Daniela Petrelli. 2012. Personalization in cultural heritage: The road travelled and the one
+ahead. User Model. User-Adapt. Interact. 22, 1–2 (2012), 73–99.
+Nelson Baloian, Patricio Galdames, César A. Collazos, and Luis A. Guerrero. 2004. A model for a collaborative recommender
+system for multimedia learning material. In Groupware: Design, Implementation, and Use. Springer, 281–288.
+Ilaria Bartolini, Vincenzo Moscato, Ruggero G. Pensa, Antonio Penta, Antonio Picariello, Carlo Sansone, and Maria Luisa
+Sapino. 2014. Recommending multimedia visiting paths in cultural heritage applications. Multimedia Tools and Applications
+(2014), 1–30.
+Ilaria Bartolini and Marco Patella. 2015. Multimedia queries in digital libraries. In Data Management in Pervasive Systems.
+Springer, 311–325.
+Ilaria Bartolini, Marco Patella, and Guido Stromei. 2011. The windsurf library for the efficient retrieval of multimedia hierarchical data. In Proceedings of the 2011 International Conference on Signal Processing and Multimedia Applications (SIGMAP’11).
+IEEE, 1–10.
+Francesco Bellotti, Riccardo Berta, Alessandro De Gloria, Annamaria D’ursi, and Valentina Fiore. 2012. A serious game model
+for cultural heritage. J. Comput. Cult. Herit. 5, 4 (2012), 17.
+Pascal Bihler, Paul Imhoff, and Armin B. Cremers. 2011. SmartGuide–A smartphone museum guide with ultrasound control.
+Proc. Comput. Sci. 5 (2011), 586–592.
+Cristiana Bolchini, Carlo A. Curino, Elisa Quintarelli, Fabio A. Schreiber, and Letizia Tanca. 2007. A data-oriented survey of
+context models. ACM Sigmod Rec. 36, 4 (2007), 19–26.
+Cristiana Bolchini, Giorgio Orsi, Elisa Quintarelli, Fabio A. Schreiber, and Letizia Tanca. 2011. Context modeling and context
+awareness: Steps forward in the context-ADDICT project. IEEE Data Eng. Bull. 34, 2 (2011), 47–54.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+6:22
+
+•
+
+F. Amato et al.
+
+Cristiana Bolchini, Elisa Quintarelli, and Letizia Tanca. 2013. CARVE: Context-aware automatic view definition over relational
+databases. Inf. Syst. 38, 1 (2013), 45–67. DOI:http://dx.doi.org/10.1016/j.is.2012.05.004
+U. Biader Ceipidor, C. M. Medaglia, V. Volpi, Anna Moroni, S. Sposato, M. Carboni, and A. Caridi. 2013. NFC technology applied
+to touristic-cultural field: A case study on an italian museum. In Proceedings of the 2013 5th International Workshop on Near
+Field Communication (NFC’13). IEEE, 1–6.
+CL Philip Chen and Chun-Yang Zhang. 2014. Data-intensive applications, challenges, techniques and technologies: A survey on
+big data. Inform. Sci. 275 (2014), 314–347.
+Angelo Chianese, Fiammetta Marulli, Vincenzo Moscato, and Francesco Piccialli. 2013a. A” smart” multimedia guide for indoor contextual navigation in cultural heritage applications. In Proceedings of the 2013 International Conference on Indoor
+Positioning and Indoor Navigation (IPIN’13). IEEE, 1–6.
+Angelo Chianese, Fiammetta Marulli, Vincenzo Moscato, and Francesco Piccialli. 2013b. SmARTweet: A location-based smart
+application for exhibits and museums. In Proceedings of the 2013 International Conference on Signal-Image Technology &
+Internet-Based Systems (SITIS’13). IEEE, 408–415.
+Angelo Chianese and Francesco Piccialli. 2014. Designing a smart museum: When cultural heritage joins IoT. In Proceedings
+of the 2014 8th International Conference on Next Generation Mobile Apps, Services and Technologies (NGMAST’14). IEEE,
+300–306.
+Francesco Colace, Massimo De Santo, Luca Greco, Vincenzo Moscato, and Antonio Picariello. 2015. A collaborative user-centered
+framework for recommending items in online social networks. Comput. Hum. Behav. 51 (2015), 694–704.
+Francesco Colace, Massimo De Santo, Luca Greco, Vincenzo Moscato, and Antonio Picariello. 2016. Probabilistic approaches
+for sentiment analysis: Latent dirichlet allocation for ontology building and sentiment extraction. In Sentiment Analysis and
+Ontology Engineering. Springer, 75–91.
+Francesco Colace, Massimo De Santo, Vincenzo Moscato, Antonio Picariello, Fabio A. Schreiber, and Letizia Tanca. 2015a.
+PATCH: A portable context-aware atlas for browsing cultural heritage. In Data Management in Pervasive Systems. Springer,
+345–361.
+Francesco Colace, Massimo De Santo, Vincenzo Moscato, Antonio Picariello, Fabio A. Schreiber, and Letizia Tanca. 2015b. Pervasive systems architecture and the main related technologies. In Data Management in Pervasive Systems. Springer, 19–42.
+Francesco Colace, Vincenzo Moscato, Elisa Quintarelli, Emanuele Rabosio, and Letizia Tanca. 2015c. Context awareness in
+pervasive information management. In Data Management in Pervasive Systems. Springer, 235–256.
+Stefania Costantini, Leonardo Mostarda, Arianna Tocchio, and Panagiota Tsintza. 2008. DALICA: Agent-based ambient intelligence for cultural-heritage scenarios. IEEE Intell. Syst. 23, 2 (2008), 34–41.
+Gianpaolo Cugola and Alessandro Margara. 2015. The complex event processing paradigm. In Data Management in Pervasive
+Systems. Springer, 113–133.
+Martin Doerr, Stefan Gradmann, Steffen Hennicke, Antoine Isaac, Carlo Meghini, and Herbert van de Sompel. 2010. The europeana data model (edm). In World Library and Information Congress: 76th IFLA General Conference and Assembly. 10–15.
+Xin Luna Dong and Divesh Srivastava. 2013. Big data integration. In Proceedings of the 2013 IEEE 29th International Conference on Data Engineering (ICDE’13). IEEE, 1245–1248.
+Sandra G. Hart and Lowell E. Staveland. 1988. Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. Adv. Psychol. 52 (1988), 139–183.
+Yoshinori Hijikata, Kazuhiro Iwahama, and Shogo Nishida. 2006. Content-based music filtering system with editable user
+profile. In Proceedings of the 2006 ACM Symposium on Applied Computing. ACM, 1050–1057.
+Dino Ienco, Ruggero G. Pensa, and Rosa Meo. 2009. Parameter-free hierarchical co-clustering by n-ary splits. In Machine Learning and Knowledge Discovery in Databases. Springer, 580–595.
+Przemysław Kazienko and Katarzyna Musiał. 2006. Recommendation Framework for Online Social Networks. Springer.
+Hyea Kyeong Kim, Jae Kyeong Kim, and Young U. Ryu. 2009. Personalized recommendation over a customer network for ubiquitous shopping. IEEE Trans. Serv. Comput. 2, 2 (2009), 140–151.
+Bart Knijnenburg, Lydia Meesters, Paul Marrow, and Don Bouwhuis. 2009. User-centric evaluation framework for multimedia
+recommender systems. In User Centric Media. Springer, 366–369.
+Tsvi Kuflik, Oliviero Stock, Massimo Zancanaro, Ariel Gorfinkel, Sadek Jbara, Shahar Kats, Julia Sheidin, and Nadav Kashtan. 2011. A visitor’s guide in an active museum: Presentations, communications, and reflection. J. Comput. Cult. Herit. 3,
+3 (2011), 11.
+George Lekakos and Petros Caravelas. 2008. A hybrid approach for movie recommendation. Multimed. Tools Appli. 36, 1–2
+(2008), 55–70.
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+Big Data Meets Digital Cultural Heritage: Design and Implementation of SCRABS
+
+•
+
+6:23
+
+Veronica Maidel, Peretz Shoval, Bracha Shapira, and Meirav Taieb-Maimon. 2008. Evaluation of an ontology-content based
+filtering method for a personalized newspaper. In Proceedings of the 2008 ACM Conference on Recommender Systems. ACM,
+91–98.
+Emanuele Panigati, Fabio A. Schreiber, and Carlo Zaniolo. 2015. Data streams and data stream management systems and
+languages. In Data Management in Pervasive Systems. Springer, 93–111.
+Charith Perera, Arkady Zaslavsky, Peter Christen, and Dimitrios Georgakopoulos. 2014. Context aware computing for the internet of things: A survey. IEEE Commun. Surv. Tutor. 16, 1 (2014), 414–454.
+Francesco Ricci, Lior Rokach, and Bracha Shapira. 2011. Introduction to Recommender Systems Handbook. Springer.
+Enrico Rukzio, Sergej Wetzstein, and Albrecht Schmidt. 2005. A framework for mobile interactions with the physical world. In
+Proceedings of Wireless Personal Multimedia Communication (WPMC’05).
+Fabio A. Schreiber, Romolo Camplani, Marco Fortunato, Marco Marelli, and Guido Rota. 2012. Perla: A language and middleware
+architecture for data management and integration in pervasive information systems. IEEE Trans. Softw. Eng. 38, 2 (2012),
+478–496.
+Flavia Sparacino. 2008. Natural interaction in intelligent spaces: Designing for architecture and entertainment. Multimed. Tools
+Appl. 38, 3 (2008), 307–335.
+Ja-Hwung Su, Hsin-Ho Yeh, Philip S. Yu, and Vincent S Tseng. 2010. Music recommendation using content and context information mining. IEEE Intell. Syst. 25, 1 (2010), 16–26.
+Chris Van Aart, Bob Wielinga, and Willem Robert Van Hage. 2010. Mobile cultural heritage guide: Location-aware semantic
+search. In Knowledge Engineering and Management by the Masses. Springer, 257–271.
+Received April 2016; revised September 2016; accepted October 2016
+
+ACM Journal on Computing and Cultural Heritage, Vol. 10, No. 1, Article 6, Publication date: April 2017.
+
+View publication stats
+
+

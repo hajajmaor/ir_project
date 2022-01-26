@@ -1,0 +1,4085 @@
+applied
+sciences
+Article
+
+Survey: Using Augmented Reality to Improve
+Learning Motivation in Cultural Heritage Studies
+Juan Camilo González Vargas 1, * , Ramon Fabregat 1, * , Angela Carrillo-Ramos 2, * and
+Teodor Jové 1
+1
+2
+
+*
+
+Broadband Communications and Distributed Systems (BCDS), Universitat de Girona, 17003 Girona, Spain;
+teodor.jove@udg.edu
+System Engineering Department, Pontificia Universidad Javeriana, Bogotá 110231, Colombia
+Correspondence: juangonzalez1221@gmail.com (J.C.G.V.); ramon.fabregat@udg.edu (R.F.);
+angela.carrillo@javeriana.edu.co (A.C.-R.); Tel.: +57-322-7151932 (J.C.G.V.); +34-658-823-098 (R.F.);
++57-314-4440094 (A.C.-R.)
+
+Received: 15 November 2019; Accepted: 23 January 2020; Published: 29 January 2020
+
+
+
+
+Abstract: Cultural Heritage (CH) refers to the representation of historical places and traditional
+customs of a specific city or country. Its principal aim is to transmit to future generations how their
+ancestors lived, and what their customs and buildings were like, etc. Nowadays, there are different
+technology systems and research investigations that are focused on CH education that use augmented
+reality (AR), virtual reality (VR), and mixed reality (MR). The aim of this document is to specifically
+identify if the use of AR improves students’ motivation to learn about topics related to CH. To this
+end, studies from different databases and specific journals, along with those concerning technology
+systems, were evaluated, and comparisons were made between them. Additionally, the aspects that
+should be considered in future research to improve student motivation and technology systems
+were identified.
+Keywords: adaptive information; augmented reality; content co-creation; cultural heritage; inclusive
+learning; mixed reality; virtual reality
+
+1. Introduction
+Cultural Heritage (CH), “is the legacy of physical artifacts and intangible attributes of a group or society
+that are inherited from past generations, maintained in the present, and bestowed for the benefit of future
+generations” [1] (p. 1). According to the UNESCO International Convention of Cultural Heritage, there
+are 1,007 relevant places in 161 countries that are at risk due to their physical conditions and are extremely
+important to preserve [2]. CH is twofold—tangible and intangible. Tangible CH refers to elements such
+as paintings, sculptures, monuments, structures, etc., while intangible CH considers aspects such as oral
+traditions and expressions, music, social practices, rituals, festive events, knowledge of previous generations,
+etc. [2–4]. A synonym of CH in virtual environments is Virtual Heritage (VH), where electronic media is
+used to reconstruct cultural elements from the past and the present [5,6].
+Nowadays, the use of different technologies such as AR, VR, and MR, are reliable methods with
+which to preserve CH [7]. In this survey, of the three technologies employed for CH education, only AR
+is considered because the general aim is to analyze whether the use of AR in CH education enhances
+student motivation. Another more specific goal is to investigate if it is possible to motivate students
+providing a stimulus that enables them to do different activities without being aware of the time it takes
+or the difficulty involved [8]. For instance, Yoon [9] shows that using AR in learning environments
+could provide a better experience compared to that encountered in classrooms. Above all, this paper
+attempts to answer the following research questions about student motivation when studying CH:
+Appl. Sci. 2020, 10, 897; doi:10.3390/app10030897
+
+www.mdpi.com/journal/applsci
+
+Appl. Sci. 2020, 10, x FOR PEER REVIEW
+
+2 of 27
+
+all, this paper attempts to answer the following research questions about student motivation when
+studying CH:
+Appl. Sci. 2020, 10, 897
+
+2 of 26
+
+
+
+What advantages, disadvantages, limitations, and challenges do AR technologies have for
+the subject
+of CH?
+•
+What
+advantages,
+disadvantages, limitations, and challenges do AR technologies have for the
+ subject
+Whatofadvantages
+and disadvantages do AR technologies have compared to other
+CH?
+technologies
+such
+asdisadvantages
+VR and MR? do AR technologies have compared to other technologies
+•
+What
+advantages
+and
+ such
+What
+tools
+or
+frameworks
+for developing applications in AR are used to create CH content?
+as VR and MR?
+ Does the use of AR improve student learning motivation in topics related to CH?
+•
+What tools or frameworks for developing applications in AR are used to create CH content?
+ To improve student motivation, what characteristics are considered in applications
+•
+Does the use of AR improve student learning motivation in topics related to CH?
+currently available, and which ones are missing?
+To improve student motivation, what characteristics are considered in applications currently
+•
+available, and which ones are missing?
+These research questions were proposed to determine whether digitalizing content (using AR)
+These
+research
+questions
+werestudying
+proposedCH
+to determine
+digitalizing
+content
+(using AR)
+improves
+student
+motivation
+when
+compared whether
+with more
+traditional
+methodologies
+improves
+student
+motivation
+CH are
+compared
+more traditional
+and,
+furthermore,
+which
+aspects when
+of the studying
+digitalization
+relevantwith
+to consider
+for future methodologies
+research and
+and, furthermore,
+aspects
+the digitalization
+areAR,
+relevant
+to 2consider
+research
+and
+system
+development.which
+Although
+theoffocus
+is on the use of
+Section
+defines for
+thefuture
+AR, VR,
+and MR
+system development.
+Although
+the focus isbetween
+on the use
+of AR,
+Section
+2 defines
+AR, VR, of
+and
+technologies
+and highlights
+the differences
+them.
+Section
+3 shows
+the the
+importance
+MR technologies
+the differences
+Section 3 shows
+theresearch
+importance
+implementing
+AR inand
+CHhighlights
+study programs.
+Section between
+4 presentsthem.
+the methodology
+for the
+andof
+AR inquestions
+CH study
+programs.
+Section
+presents
+for the
+research5,and
+theimplementing
+five investigation
+posed
+concerning
+the4use
+of the the
+ARmethodology
+in CH education.
+In Section
+a
+taxonomy
+with the classifications
+to the articles
+databases
+and
+scientific journals
+is 5,
+the five investigation
+questions applied
+posed concerning
+thefound
+use ofin
+the
+AR in CH
+education.
+In Section
+defined,
+and the
+five
+questions
+presented
+Section
+4 areinanswered.
+Section
+6 lists is
+a taxonomy
+with
+theresearch
+classifications
+applied
+to the in
+articles
+found
+databases Finally,
+and scientific
+journals
+the
+conclusions
+and
+some
+considerations
+concerning
+literature
+review
+presented
+thisthe
+defined,
+and the
+fivenotes
+research
+questions
+presented
+in Sectionthe
+4 are
+answered.
+Finally,
+Section 6inlists
+work.
+conclusions and notes some considerations concerning the literature review presented in this work.
+The
+Reality-Virtuality
+Continuum
+2. 2.
+The
+Reality-Virtuality
+Continuum
+Milgram
+and
+Kishino
+[10]
+define
+what
+AR,
+VR,
+and
+MR
+are,
+based
+the
+Milgram
+and
+Kishino
+Milgram
+and
+Kishino
+[10]
+define
+what
+AR,
+VR,
+and
+MR
+are,
+based
+onon
+the
+Milgram
+and
+Kishino
+Reality-VirtualityContinuum
+Continuumscale
+scale they
+they developed
+developed (Figure
+The real source
+world isnot
+represented
+on the
+left
+Reality-Virtuality
+(Error! 1).
+Reference
+found.). The
+real
+and
+the
+virtual
+world
+on
+the
+right.
+Thus,
+AR
+is
+closer
+to
+the
+real
+world,
+VR
+to
+the
+virtual
+world,
+and
+orld is represented on the left and the virtual world on the right. Thus, AR is closer to the real world,
+MR
+as it is and
+the mixture
+of both AR
+VR.mixture of both AR and VR.
+VR
+to in
+thebetween
+virtual world,
+MR in between
+as itand
+is the
+
+Figure
+1. The
+Milgram
+and
+Kishino
+Reality-Virtuality
+Continuum.
+Figure
+1. The
+Milgram
+and
+Kishino
+Reality-Virtuality
+Continuum.
+
+One
+most
+accepted
+definitions
+is given
+by Azuma,
+defines
+as a system
+One
+of of
+thethe
+most
+accepted
+definitions
+for for
+AR AR
+is given
+by Azuma,
+who who
+defines
+AR asAR
+a system
+that
+that
+[11]:
+[11]:
+1. Combines
+or overlays
+virtual
+real or world
+physical world
+1.
+Combines
+or overlays
+virtual objects
+inobjects
+the realinorthe
+physical
+2. Executes
+in real-time
+2.
+Executes
+in real-time
+3.
+Allows
+user-interaction
+with the
+virtual
+and real objects
+3.
+Allows user-interaction with the virtual
+and
+real objects
+Although
+when
+talking
+about
+it is
+common
+mention
+use
+virtual
+objects
+like
+texts,
+Although
+when
+talking
+about
+ARAR
+it is
+common
+to to
+mention
+thethe
+use
+of of
+virtual
+objects
+like
+texts,
+images,
+and
+videos,
+it
+is
+also
+possible
+to
+expand
+the
+contents
+to
+human
+senses
+(sight,
+smell,
+taste,
+images, and videos, it is also possible to expand the contents to human senses (sight, smell, taste,
+hearing,
+and
+touch)
+and
+can
+used
+improve
+replace
+sensesthat
+thatthe
+theuser
+usermay
+mayhave
+havelost
+lost[12].
+[12].
+hearing,
+and
+touch)
+and
+it it
+can
+bebe
+used
+toto
+improve
+oror
+replace
+senses
+At
+first,
+AR
+was
+used
+only
+in
+professional
+applications
+such
+as
+medical
+visualizations
+or
+repairing
+At first, AR was used only in professional applications such as medical visualizations or
+complex complex
+equipment
+because initially,
+was veryit expensive
+terms of money,
+implementation,
+repairing
+equipment
+because itinitially,
+was veryinexpensive
+in terms
+of money,
+and
+development,
+and
+the
+only
+users
+who
+were
+able
+to
+invest
+in
+this
+technology
+were
+some
+companies
+implementation, and development, and the only users who were able to invest in this technology
+and
+governments
+[13].
+Nowadays,
+a
+number
+of
+companies
+have
+invested
+in
+developing
+applications
+were some companies and governments [13]. Nowadays, a number of companies have invested in
+for AR (forapplications
+example, ARToolKit,
+Vuforia,
+Layar,ARCore,
+etc.) which
+has, in
+turn, etc.)
+simplified
+access
+developing
+for AR (forARCore,
+example,
+ARToolKit,
+Vuforia,
+Layar,
+whichits
+has,
+in
+for all parties [13,14] and ensured that AR technology would be even bigger than VR in the future [13].
+Unlike AR, VR creates totally computer-generated digital environments generated in which a user
+is immersed, and the environment has similarities to reality [15]. In this case, the users are immersed
+
+Appl. Sci. 2020, 10, 897
+
+3 of 26
+
+inside a virtual environment that allows them to manipulate what they perceive as real objects—just as
+they would in the real world [15].
+MR, on the other hand, refers to the mixture of the two technologies (AR and VR) mentioned
+above, i.e., there is an interaction between virtual and real objects [10]. To understand the difference
+between AR and MR, AR overlays virtual objects onto the real world, whereas in the case of MR, the
+user can not only interact with virtual objects but also with those from the real world as well.
+Although these three technologies are available, from here on, the article will only discuss
+AR approaches.
+3. Why Consider AR for CH Education?
+UNESCO considers CH preservation to be essential and also differentiates CH into tangible and
+intangible elements [2]. Tangible elements are physical artifacts such as masterpieces, buildings,
+monuments, etc., and intangible elements are social and cultural practices, knowledge, skills,
+expressions, and so forth. Accordingly, implementing virtual technologies such as AR, allows
+educational institutions and museums to support the learning process through the digitalization of
+educational content. Virtual technologies offer tools that generate positive changes in student learning
+processes and motivation because they encourage students to be interested in learning for learning’s
+sake, i.e., without the ‘carrot’ of receiving prizes or recognition [16].
+In European countries, CH education has typically relied on traditional learning methods such as
+textbooks and presentations. In other words, lessons where face-to-face interaction is involved [17].
+A clear example of the first system in AR for CH education is the ARCHEOGUIDE (Augmented
+Reality-based Cultural Heritage On-site GUIDE) [18–21] project launched in 2001. This system generates
+information for the user about the history of Olympia, Greece, and it gives that information using positional
+and orientation sensors [22,23]. To use it, a laptop and special lenses (Head Mounted Display—HMD) are
+employed to superimpose virtual models of the Greek ancient warriors onto the real world. It also adds
+buildings, monuments, masterpieces, etc., that have been destroyed or that are structurally degraded.
+For some years now, mobile devices have been an ideal tool for developing AR applications.
+In addition, MIT (Massachusetts Institute Technology) considers AR to be one of the ten principal
+technologies to have emerged and can be used not only by students learning about CH but also
+researchers and artists [24].
+Several papers mention that interest in the use of AR for education has increased [9,25] and show
+that in educational institutions, this technology generates greater motivation and participation in the
+content that is being taught for both teachers and students alike. When AR is used, students become
+more involved in the explanations, and interactive learning is extended, thus improving the perception
+and understanding of the real world through the use of virtual information [26–28].
+The article by Di Serio [29] considers that, “motivation provides a source of energy that is
+responsible for why learners decide to make an effort, how long they are willing to sustain an activity,
+how hard they are going to pursue it, and how connected they feel to the activity” [8]. In addition,
+when comparing traditional teaching methods (such as the use of slides) in relation to AR, the article
+shows that the use of AR encourages students to be more motivated in their learning process [29].
+AR can be applied not only in formal learning environments like the classroom but also in informal
+learning environments like museums, parks, archeological sites, etc. [30,31]. Employing AR in internal
+environments like museums has the considerable advantage of motivating users to learn about the
+resources they have been presented with. For example, Damala’s article [32] evaluates AR applications
+in museums and shows that this technology provides intuitive and discrete ways of interaction with
+the objects presented. In addition, AR allows exhibitions to be presented virtually in places where
+space is limited or restricted [33], without invading physical space [34] and thus avoiding any possible
+physical discomfort [35].
+
+Appl. Sci. 2020, 10, 897
+
+4 of 26
+
+AR systems can also be applied to creating, distributing, and providing access to learning
+resources [24], thus improving interactivity with and immersion in the virtual content, which, in turn,
+enhances student motivation and the skills involved in the learning process [29].
+On the other hand, it is also important to consider how AR can provide users with disabilities the
+opportunity to interact with the elements. For example, a possible strategy to help visually-impaired
+users interact with elements and access information presented in museums would be through music and
+sounds [36]. Another example from the literature is mentioned in the article by Albouys-Perrois [37],
+where a tool called PapARt (Paper Augmented Reality ToolKit) is used to make and explore interactive
+maps using electronic boards with audio.
+In general, AR allows users to have better experiences in the services offered, since it allows access
+to relevant information, and thus, helps improve participants’ knowledge about different places they
+can visit [38–41]. For instance, an application called AudioNear [39] uses an AR system with audio
+on public transport and generates information about a monument or interesting place based on the
+user’s position.
+One of the difficulties mentioned in the literature concerning AR implementation in external
+places are environmental conditions because optimum environmental conditions are required for AR
+to operate well. For instance, Angelopoulou [24] shows where the user-experience could be affected,
+while Azuma and Van Krevelen [13,42] outline various difficulties related to the technical aspects of
+AR implementation such as pixel-accurate registration for tracking large environments and weather
+conditions [13]. Van Krevelen’s article [42] also mentions that it is important to bear in mind that
+screens can generate low levels of light in the real world and impede the content being seen correctly.
+Thus, when developing any AR application, external factors such as the amount of light, reflections off
+objects, the position of the user, screen resolution, contrast, and color depth, etc., must all be taken
+into consideration.
+Another issue considered in most of the studies, and also mentioned in the article by Radu [43], is
+the usability of AR compared to other kinds of technologies such as computers. Radu mentions that this
+problem is generated because AR is a relatively new technology in the classroom, and so only some students
+and teachers know how it works. For example, the article by Tzima [44] shows that AR is not well-known by
+students, and teachers who have used it found that its implementation is difficult when creating 3D content.
+Generally, the creation of these models is done by scholars. However, as described in the article by Wu [45],
+teachers can modify content in a simplistic way. Meanwhile, Tzima’s [44] article develops a study about the
+effectiveness of applying AR in education by taking into account teachers’ points of view. They claimed
+that employing AR is not advisable because many applications that currently exist not only often require
+some kind of payment, but they also undergo constant change. Similarly, the article from Akçayır [46] also
+mentions that one of the challenges to implementing AR in education, on account of it being such a new
+technology, is that not many teachers and students know how to use its functions. Thus, if current learning
+methods are to be changed, a greater amount of time will need to be dedicated to explaining exactly how
+AR works and how it is used.
+Using mobile devices can also be considered to be a drawback for students because the device
+itself could become a distraction and increase the time that they spend on carrying out tasks [45]
+and, as it also includes virtual information that may be unrelated to the task, the technology itself
+may become intrusive in the learning process [25]. However, Wu [45] describes possible solutions or
+methods (e.g., notifications) that could be used to capture student interest once again.
+4. Questions Posed and Research Methodology
+For UNESCO, museums, and research studies are highly relevant in the effort to preserve CH,
+in that many buildings have structural risks and limited access [2]. Likewise, UNESCO considers it
+important to use technological tools for learning (but only if used in an appropriate way [16]) because
+through these tools CH and places can be preserved for future generations. From this, the following
+research questions were framed:
+
+cultural heritage/virtual heritage
+After applying these exclusion criteria, there were 127 eligible articles from Scopus, 47 from
+Science Direct, and 47 from WOS. Next, the titles were analyzed and any repeated articles deleted,
+i.e., articles that appeared on more than one of the WOS, Scopus, or Science Direct platforms. This
+Appl.
+Sci. 2020,
+10, 897
+of 26
+resulted
+in 61
+repeated articles and 17 others being discarded as there were not accessible. In5total,
+143 articles were obtained.
+The fourth step, was to carry out a manual exclusion of articles. In other words, only articles
+•
+What advantages, disadvantages, limitations, and challenges do AR technologies have for the
+that satisfied some of the following were considered:
+subject of CH?
+ The article mentions the advantages of AR. For instance, if AR improves motivation
+•
+What advantages and disadvantages do AR technologies have compared to other technologies
+in CH education.
+such as VR and MR?
+ The article mentions the advantages, disadvantages, and challenges that AR has.
+•
+What tools or frameworks for developing applications in AR are used to create CH content?
+In relation to the first criterion, articles that mentioned that AR improved motivation in CH
+•
+Does the use of AR improve student learning motivation in topics related to CH?
+education were considered because it is important to know if the digitalization of educational content
+student
+motivation,
+what
+considered
+currently
+•intoTo
+ARimprove
+improves
+student
+motivation
+in characteristics
+their learning are
+process
+and if in
+it applications
+has a positive
+change
+available,
+and
+which
+ones
+are
+missing?
+compared to the traditional education methods.
+Likewise, articles that mentioned the advantages, disadvantages and/or challenges that AR has,
+Research Methodology
+were also considered as this criterion complements the first criterion because it identifies the viability
+the exploration
+carried
+into articles
+related
+to CH or
+education,
+and based
+on the research
+and For
+difficulties
+than need
+to be out
+considered
+when
+developing
+implementing
+AR applications
+that
+questions
+mentioned
+above, the
+different
+kinds
+techniques
+and examples described in the articles
+improve student
+motivation
+in topics
+related
+toof
+CH
+education.
+by Rozo,
+and Silva
+[47–49](fourth
+were considered
+for theremained.
+literature These
+review.were
+Figure
+shows the
+AfterOlson,
+this manual
+exclusion
+step), 84 articles
+then2analyzed
+in
+methodology
+proposed,
+and
+below,
+the
+steps
+are
+explained
+in
+more
+detail.
+detail to identify how AR had been implemented and if it had improved motivation in CH.
+
+Figure
+Figure2.2.Steps
+Stepsfor
+forarticle
+articleevaluation.
+evaluation
+
+As theclassification
+articles by Rozo, Olson and Silva [47–49] mention, it is important to define the main
+5. System
+research questions for a literature review. To do so, the aspects that the researchers want to answer
+In the
+84 into
+articles
+selected, different
+are mentioned,
+These
+systems
+can
+be classified
+using
+must be
+taken
+consideration.
+Here, assystems
+a first step,
+the research
+questions
+were
+generated
+based
+on
+the
+classifications
+presented
+in
+the
+articles
+by
+Ardissono,
+Azuma,
+Bekele,
+Milgram,
+and
+Čopič
+the premise of identifying whether implementing AR technologies in CH education would enhance
+[10,11,14,50,51]
+along
+with
+the categories
+motivation,
+co-creation,
+andquestions
+type of adaptation
+student
+motivation
+in the
+learning
+environments
+or not.content
+Once the
+five research
+had been
+(Figure
+3).
+Motivation,
+content
+co-creation,
+and
+type
+of
+adaptation
+were
+considered
+defined, the next step was to define the keywords, as stated in the article by Silva [49]. and
+The included
+steps to
+identifying these keywords are as follows:
+1.
+2.
+
+Analyze the research questions and extract the keywords from them.
+From the keywords extracted, use papers from the area of interest to find synonyms or new words.
+
+Based on the research questions, the initial keywords were heritage, augmented reality (AR),
+educational, and learning. Later, when searching through papers from the area of interest, articles
+mentioning the use of technologies (such as AR in heritage), also defined virtual heritage and that the
+learning process of heritage is known as Cultural Heritage (CH). With the steps mentioned above, the
+subsequent keywords were considered:
+•
+•
+•
+•
+
+Cultural Heritage
+Augmented Reality
+Educational
+Learning
+
+Appl. Sci. 2020, 10, 897
+
+•
+
+6 of 26
+
+Virtual Heritage
+
+As a second step, the definition of the search string is important [47–49], i.e., separating each
+keyword and linking synonym words with the OR connector and using the connector AND to link
+those words that have some relationship to the research. The search string generated was:
+•
+
+Augmented reality AND (cultur* OR virtual*) AND heritage AND (educat* OR learn*)
+
+Next, as mentioned in the work by Rozo, Olson, and Silva [47–49], and using the search string,
+different scientific journals and databases related to computer science were selected. The journals and
+databases selected were:
+•
+•
+•
+
+Scopus
+Science Direct
+Web of Science (WOS)
+As a result, 209 articles from Scopus, 343 from Science Direct, and 109 from WOS were acquired.
+As a third step, the following exclusion criteria were applied to the results:
+
+•
+•
+•
+•
+
+Year of publication: any articles not published between 2009 and 2019
+Article area: articles different from computer science
+Document type: articles that were not published in journals or did not come from conferences
+Keywords: articles that do not have keywords such as augmented reality and cultural
+heritage/virtual heritage
+
+After applying these exclusion criteria, there were 127 eligible articles from Scopus, 47 from Science
+Direct, and 47 from WOS. Next, the titles were analyzed and any repeated articles deleted, i.e., articles that
+appeared on more than one of the WOS, Scopus, or Science Direct platforms. This resulted in 61 repeated
+articles and 17 others being discarded as there were not accessible. In total, 143 articles were obtained.
+The fourth step, was to carry out a manual exclusion of articles. In other words, only articles that
+satisfied some of the following were considered:
+•
+•
+
+The article mentions the advantages of AR. For instance, if AR improves motivation in
+CH education.
+The article mentions the advantages, disadvantages, and challenges that AR has.
+
+In relation to the first criterion, articles that mentioned that AR improved motivation in CH
+education were considered because it is important to know if the digitalization of educational content
+into AR improves student motivation in their learning process and if it has a positive change compared
+to the traditional education methods.
+Likewise, articles that mentioned the advantages, disadvantages and/or challenges that AR has,
+were also considered as this criterion complements the first criterion because it identifies the viability
+and difficulties than need to be considered when developing or implementing AR applications that
+improve student motivation in topics related to CH education.
+After this manual exclusion (fourth step), 84 articles remained. These were then analyzed in
+detail to identify how AR had been implemented and if it had improved motivation in CH.
+5. System Classification
+In the 84 articles selected, different systems are mentioned, These systems can be classified
+using the classifications presented in the articles by Ardissono, Azuma, Bekele, Milgram, and
+Čopič [10,11,14,50,51] along with the categories motivation, content co-creation, and type of adaptation
+(Figure 3). Motivation, content co-creation, and type of adaptation were considered and included
+because in the inspection of the articles and systems, these characteristics were mentioned as being
+able to improve the student’s learning process in topics related to CH.
+
+Appl. Sci. 2020, 10, x FOR PEER REVIEW
+
+7 of 27
+
+Appl. Sci.in2020,
+897
+7 of 26
+because
+the10,
+inspection
+of the articles and systems, these characteristics were mentioned as being
+able to improve the student´s learning process in topics related to CH.
+
+Figure 3. Classification of applications.
+Figure 3. Classification of applications.
+
+Immersion:
+The kind of technology that uses (AR, VR, MR, another) systems. To this purpose,
+Immersion: The kind of technology that uses (AR, VR, MR, another) systems. To this purpose,
+thethe
+different
+types
+ofof
+realities
+different types
+realitiesmentioned
+mentionedininthe
+thearticle
+articleofofMilgram
+Milgram[10]
+[10]are
+areconsidered:
+considered:
+ AR: complements the real world with virtual objects
+•
+AR: complements
+the real
+with
+virtualvirtual
+objectsworld
+ VR: immerses
+theworld
+user in
+a totally
+•
+VR: immerses
+the user
+a totally
+virtual world
+ MR: mixes
+ARinand
+VR technology
+•
+MR: mixes
+AR and uses
+VR technology
+ Another:
+another technology
+and MRuses
+systems
+weretechnology
+considered so as to compare the advantages and disadvantages these
+• VR
+Another:
+another
+two systems have over AR technology and to determine how AR can improve the learning process
+VR and MR systems were considered so as to compare the advantages and disadvantages these
+in CH. Note that Table 1 depicts the systems that implement MR with a + in the options AR and VR
+two systems have over AR technology and to determine how AR can improve the learning process
+because MR uses both technologies.
+in CH. Note that Table 1 depicts the systems that implement MR with a + in the options AR and VR
+Device: identify if the system needs to use a special device such as a head-mounted display
+because MR uses both technologies.
+(HMD), handheld devices, computers, etc. The classification selected is based on the article by Azuma
+Device: identify if the system needs to use a special device such as a head-mounted display
+[11], and the option GUI was also added because there are systems in which content can only be
+(HMD), handheld devices, computers, etc. The classification selected is based on the article by
+obtained through a web server, and they do not use technologies such as AR or VR.
+Azuma [11], and the option GUI was also added because there are systems in which content can only
+ Head-Mounted Display (HMD): a special device that is used (e.g., goggles or
+be obtained through a web server, and they do not use technologies such as AR or VR.
+helmets) for AR and VR.
+ Handheld
+devices:
+mobile
+devices
+such
+mobile
+phones,
+PDAs,foretc.
+•
+Head-Mounted
+Display
+(HMD):
+a special
+device
+thatasistablets,
+used (e.g.,
+goggles
+or helmets)
+AR and VR.
+
+SAR
+(Spatial
+Augmented
+Reality)
+devices:
+augment
+objects
+in
+the
+real
+world
+•
+Handheld devices: mobile devices such as tablets, mobile phones, PDAs, etc.
+without
+special
+displays
+such
+as
+monitors,
+i.e.,
+projectors
+to
+show
+information
+about
+•
+SAR (Spatial Augmented Reality) devices: augment objects in the real world without special displays
+the physical
+objects oftothe
+realinformation
+world.
+such as monitors,
+i.e., projectors
+show
+about the physical objects of the real world.
+
+GUI:
+refers
+to
+the
+use
+of
+technologies
+thanVR.
+AR and VR.
+•
+GUI: refers to the use of technologies other thanother
+AR and
+Tracking methodology: refers to how the system executes the AR content in the device. As
+how
+the [11,14,42,50,51],
+system executes
+AR content
+incan
+thebe:
+device.
+Tracking
+methodology:
+mentioned
+in Ardissono,
+Azuma,refers
+Bekeletoand
+Čopič
+thethe
+tracking
+methods
+As mentioned in Ardissono, Azuma, Bekele and Čopič [11,14,42,50,51], the tracking methods can be:
+ Based on the location: the content is generated by the location of the user.
+•
+Based on the location: the content is generated by the location of the user.
+o Global Positioning System (GPS): tracking is generated by geo position.
+Sensors: System
+tracking(GPS):
+uses the
+device´
+own sensors
+such
+as accelerometers,
+#
+GlobaloPositioning
+tracking
+is sgenerated
+by geo
+position.
+gyroscopes,
+Communication
+etc.
+usesNear-Field
+the device’s
+own sensors (NFC),
+such asBluetooth,
+accelerometers,
+gyroscopes,
+#
+Sensors: tracking
+ Near-Field
+Based onCommunication
+images: content(NFC),
+in AR is
+generated
+by
+the
+recognition
+of
+targets
+or images
+Bluetooth, etc.
+o Quick Response Codes (QR codes): a bi-dimensional barcode (square
+•
+Based on images:barcode).
+content in AR is generated by the recognition of targets or images
+o Recognition of 2D images or 3D models: recognizes images through 2D or
+#
+Quick Response Codes (QR codes): a bi-dimensional barcode (square barcode).
+3D patterns.
+#
+Recognition
+of 2D
+or 3D
+recognizes
+2D or 3D
+Environment
+execution:
+thisimages
+category
+wasmodels:
+considered
+in the images
+articles through
+by Ardissono
+andpatterns.
+Čopič
+[50,51]:
+Environment execution: this category was considered in the articles by Ardissono and
+ Internal environments: systems are executed in internal environments such as
+Čopič [50,51]:
+museums, classrooms, excavations, etc.
+•
+Internal
+systems are
+executed
+in internal
+such as museums,
+ environments:
+External environments:
+systems
+are executed
+in environments
+external environments
+such as
+classrooms,
+excavations,
+etc.
+parks,
+public transport,
+archeological sites, etc.
+ environments:
+Virtual environments:
+are executed
+in aenvironments
+virtual way, in
+other
+words,public
+VR
+•
+External
+systems systems
+are executed
+in external
+such
+as parks,
+transport,applications.
+archeological sites, etc.
+•
+Virtual environments: systems are executed in a virtual way, in other words, VR applications.
+
+Appl. Sci. 2020, 10, 897
+
+8 of 26
+
+Table 1. Comparative table systems.
+Device
+
+Tracking Methodology
+
+Painting appreciation [26]
+
++
+
+MARCH [33]
+
++
+
+Virtual exhibitions and museums [32]
+
++
+
++
+
+Auxie [36]
+
++
+
+EvoGuide [53]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+VisAge [54]
+
++
+
++
+
++
+
+Virtual Heritage of the territory [55]
+
++
+
++
+
++
+
+Visual Art Course [29]
+
++
+
++
+
+ARIES [56]
+
++
+
++
+
+Augmented reality in science museum [9]
+
++
+
++
+
+Exploring spatial narratives [57]
+
++
+
++
+
+ARIS [7]
+
++
+
++
+
+TaggingCreaditor [7]
+
++
+
++
+
+ArtSense [58]
+
++
+
++
+
+AR museum guide [59]
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
++
++
+
++
+
++
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+Interactive tourist guide [66]
+
++
+
++
+
+Mobile augmented reality for CH [22]
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
++
+
++
+
+ARtifact [62]
+
++
+
++
+
++
+
+AR Nagasepaha [63]
+
+Easy Perception Lab [65]
+
++
+
++
+
++
++
+
++
+
+AR in education and training [23]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+Digital research and education [64]
+
++
+
++
+
+AR presentation system [60]
+
++
+
++
+
++
+
+integrative framework for extending the
+boundaries of the museum visit experience [61]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
++
+
+Group
+
++
+
+Individual
+
++
+
+Context
+
++
+
+Type of Adaptation
+Content
+Co-Creation
+
++
+
+Extrinsic
+
++
+
++
+
+Intrinsic
+
++
+
++
+
+Art Galleries
+
+AudioNear [39]
+Re-experiencing History in Archaeological
+Parks [30]
+
++
+
+Cultural
+Heritage Sites
+
+NA
+
++
+
+Motivation
+
+Model Type
+Museums
+
+NA
+
++
+
+Virtual
+
+2D Image/
+3D Model
+
++
+
++
+
+Sensor
+
++
+
+Sutton Hoo [24]
+
+GPS
+
+Hybrid ICT [52]
+
+Environment
+
+External
+
+Based on
+Images
+
+Internal
+
+Based on
+Location
+
+QR Code
+
+Another
+
+VR
+
+AR
+
+Desktop
+
+SAR
+
+Handheld
+
+HMD
+
+Application
+
+Immersion
+
++
+
++
+
++
+
++
+
++
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+Appl. Sci. 2020, 10, 897
+
+9 of 26
+
+Table 1. Cont.
+Designing an immersive tool experience [41]
+
++
+
+Tangible Past [67]
+
++
+
++
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
+A flexible platform for the creation of 3D
+semi-immersive environments [68]
+
++
+
++
+
++
+
++
+
++
+
+Reviving the past [69]
+
++
+
++
+
++
+
++
+
++
++
+
++
+
+Virtual Heritage: living the past [5]
+
++
+
++
+
++
+
++
+
+Access to complex reality-based 3D models [70]
+
++
+
++
+
++
+
++
+
+Design of information landscapes [71]
+
++
+
+Development of a low-cost application of VR [72]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
+Meta-museum [74]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+HIPS [75]
+
++
+
++
+
+LoCloud [7]
+
++
+
++
+
+Detailed 3D reconstruction of large-scale heritage
+sites [76]
+
++
+
++
+
+AR using Kinect [35]
+
++
+
++
+
+A tracking framework for AR tours on cultural
+heritage sites [77]
+
++
+
++
+
++
+
+The buildings speak about our city [78]
+
+SKILLS [81]
+
++
+
++
+
++
+
++
+
++
+
++
+
+Cañari AR application [83]
+
++
+
++
++
+
+MARS [84]
++
++
+
+Temple of Debod [87]
+CHESS project [88]
+
++
++
+
+Malolos City [90]
+
++
+
++
+
+Cova dels Cavalls [91]
+
++
+
++
+
+Malolos Kameztizuhan [6]
+
++
+
++
+
+History Learning support system: Ancient
+Japanese architectures [92]
+SOMARA [93]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
++
++
++
++
+
++
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
+Batlló Museum [89]
+Industrial Heritage [90]
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
+Learning tacit artisan skills [86]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
++
+
++
+
++
+
++
+
++
+
+AR Book [82]
+
+PON DiCet Project [85]
+
+NA
+
++
+
++
+
++
+
+NA
+
++
+
++
+
+Virtual tour of Geological Heritage [80]
+
++
+
+NA
+
++
+
++
++
+
+systematic design for serious heritage games [79]
+
++
+NA
+
++
++
+
+Exploring CH using VR [73]
+
+Building virtual and AR exhibitions [34]
+
++
++
+
++
++
+
++
+
+Appl. Sci. 2020, 10, 897
+
+10 of 26
+
+Table 1. Cont.
+Development of spatiotemporal information
+system using MR [94]
+
++
+
+Digital Heritage: Progress in Cultural
+Heritage [95]
+Distributed, Ambient and Pervasive
+Interactions [96]
+
++
+
++
+
+Evaluation of learning outcomes iphone game vs
+traditional game [98]
+
++
+
++
+
++
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+
++
++
+
++
+
++
+
++
+
++
+
+Lonja Valencia [99]
+
++
+
++
++
+
++
++
+
++
+
++
+
++
+
++
+
+ARCO [100]
+
++
+
++
+
+E-Pumapunku [4]
+
+Complete workflow for CH visualization and
+experience [101]
+
++
+
++
+
++
+
+Cala Minnola [97]
+Cala Minnola VR app [97]
+
++
+
++
+
++
+
++
+
+SPIRIT
+
++
+
++
+
++
+
++
+
+Guidelines for designing a smart and ubiquitous
+learning environment [102]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+Habanapp [103]
+
++
+
++
+
+Argon Project: the lights of St. Etienne [104]
+
++
+
++
+
+Argon Project 1: Campus Tour [104]
+
++
+
++
+
++
+
+Argon Project 1: InfraestructAR [104]
+
++
+
++
+
++
+
++
+
+Argon Project 2: Auburn Avenue [104]
+
++
+
++
+
++
+
+Argon Project 2: Neptun [104]
+
++
+
++
+
++
+
++
+
++
+
++
+
+OR.C.HE.S.T.R.A: Caruso [105]
+
++
+
++
+
++
+
++
+
++
+
++
+
+OR.C.HE.S.T.R.A: Smart Floor [105]
+
++
+
++
+
++
+
++
+
+21
+
+52
+
+7
+
+10
+
+67
+
+21
+
+4
+
+27
+
++
+
++
+
++
+
+Total
+
++
+
++
+
+OR.C.HE.S.T.R.A: E.Y.E.C.U. [105]
+
+25
+
+16
+
+26
+
+50
+
++
+
++
++
+
++
+
+Argon Project 2: Midtown Buzz [104]
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
++
+
++
+
++
+30
+
+17
+
+35
+
++
+45
+
+9
+
+17
+
+5
+
+2
+
+2
+
+11
+
+1
+
+Appl. Sci. 2020, 10, 897
+
+11 of 26
+
+Model type: this takes as its reference to the article by Čopič [51]. It considers the systems used in:
+•
+•
+•
+
+Museums: systems are executed in museums
+Art galleries: systems are executed in art galleries
+Cultural Heritage sites: systems are executed in different places to museums and art galleries.
+
+Motivation: the type of motivation considered came from the article by Garris [106]. This category
+is created to identify the type of motivation that is generated by each system and if it is focused on
+improving it.
+•
+•
+
+Intrinsic: motivation is generated willingly. In the systems analyzed intrinsic motivation was
+considered because students can select different options to look up information in AR.
+Extrinsic: motivation is generated by prizes or external rewards. In the systems analyzed, extrinsic
+motivation was considered for those that use games to attract student interest.
+
+Content co-creation: identifies if the systems allow users access to the creation of content without
+any previous knowledge of the technology used.
+Type of adaptation: this takes as its reference to the article by Ardissono [50]. The content could
+be adapted by:
+•
+•
+•
+
+Context: user location.
+Individual: specific user.
+Group: group characteristics.
+
+The article by Challenor and Ma [107] mentions a review of AR applications for history education
+and heritage visualization, where the purpose of the study is to identify if using an AR system enhances
+the teaching of topics such as the Holocaust in history. The review studied a list of AR systems for
+education, and classified these systems into subject area, the authenticity of the augmented content,
+photorealism, impact on learning, and emotional impact. Comparing this study with this review, we
+found that aspects such as content co-creation, type of adaptation, environment, tracking methodology,
+motivation, device, and immersion are important factors to consider in AR systems in order to improve
+the learning process of the students in CH education.
+Even though the research proposal did not originally include content co-creation and type of
+adaptation, these aspects have been included in Table 1 and Figure 3 as a consequence of the literature
+review carried out.
+Some disadvantages to implementing AR in CH education in terms of content co-creation are
+that teachers and students cannot create their own content because they need to acquire specialized
+knowledge to be able to use the software [44]. In the case of an adaptation, the systems need to have
+appropriate content, because in some of the systems analyzed, showing all the content had been found
+to (possibly) produce an overwhelming amount of information which could, in fact, be irrelevant to
+student’s interest [50]. For that reason, adaptation is an important element and the personal aspects
+of the user and their context (e.g., interest, preferences, personal characteristics, time available, and
+so on) must be considered. The article by Damala [58] mentions that adaptation/personalization can
+enable the same content to be shown in different ways depending on the user’s preferences (e.g.,
+videos, text, audio, etc.). Furthermore, adaptation allows potential users who may have a disability,
+access to this technology. For example, the article by Dulyan [36] mentions a system available to the
+visually-impaired in galleries and art museums that uses audio AR.
+Table 1 compares the systems evaluated for each one of the previously defined categories. The plus
+symbol (+) indicates that the system considers that specific characteristic. In the case that (NA) appears,
+this means that the article in question does not specifically mention that characteristic. For example,
+the article by Alitany [52] mentions that they use image methodology tracking, but they do not specify
+if it is with QR codes, 2D images, or 3D models. The fields left blank, mean that the character has not
+
+Appl. Sci. 2020, 10, 897
+
+12 of 26
+
+been mentioned at all. In the case of immersion, those who implement MR have a + in both the AR
+and VR options because MR uses both technologies.
+In the case of devices, from the 84 articles studied, 52 (61.9%) use handheld devices for the AR
+systems, which coincides with the article by Čopič [51]. The systems focus on this type of device since
+access to this is becoming easier and easier nowadays [24,108]. In addition, these devices have sensors
+such as gyroscopes, GPS, Bluetooth, and so on, which can be readily employed, as well. [55]. There are
+also some articles that mention VR, for instance the system described by Esclapes [72], where they
+used low-cost devices like Google’s CardBoards or GO from VRelia.
+In terms of tracking methodology, most of the AR systems were observed to focus on the
+recognition of 2D images/3D models and the use of the GPS, however, some of them also use other
+sensors like the NFC in TaggingCreaditor [7], Bluetooth [59,109], laser scanners [76], etc.
+In Table 1, a relationship between the tracking methodology that the system uses and the model
+type (museums, art galleries, cultural heritage sites) is observed. In the case of cultural heritage
+sites, most of the systems’ tracking methodology works through location, and 2D image/3D model
+recognition, and the majority are implemented in external environments. On the other hand, in the
+museums and art gallery categories, most of the systems focus on internal environments and use
+tracking methodologies like sensors and 2D image/3D model recognition.
+From the literature review and the elements mentioned above, few systems consider the aspects
+of adaptation, which agrees with what was mentioned in the article by Ardissono [50]. In the case
+of content co-creation and motivation, few systems allow students and teachers to adapt and create
+content for CH education, nor do they focus on improving student motivation. As both aspects are
+important to consider for future research, and when developing applications, they were included in
+Table 1.
+From the analysis of the 84 articles selected (as well as the others that were considered in the
+literature review), the research questions previously proposed could now be answered.
+What Advantages, Disadvantages, Limitations and Challenges do AR Technologies have for the
+Subject of CH?
+The main advantage of using AR for CH education is that it improves learning performance, generates
+motivation [26], provides interaction with physical resources [11,35], and encourages collaboration
+between users [26,83]. It avoids being isolated from others [110], enhances user-perception of the
+surrounding environment by providing superimposed additional information using 2D and 3D
+graphics [3], develops a student’s cognitive process [111], has an impact on learning retention [107]
+and is a highly reliable technology because it copies physical elements through digital files that can be
+used in conservation work [112] such as preserving buildings, masterpieces, ruins, etc. In other words,
+AR improves the user’s experience by making reconstructions and exploring and managing the CH
+information [14].
+Nowadays, Information and Communication Technologies (ICT), coupled with the evolution of
+smartphones, make AR applications attractive to CH sites like museums because they can be used to
+show different types of content to a wider audience [83]. As such, the number of AR applications used
+in CH is on the increase, and future predictions suggest this will be accompanied by an exponential
+increase in the numbers of AR technology users [91]. Chang [26], for example, describes a study
+designed to identify the experience the user has with AR in an art appreciation class and concludes that
+employing AR is more effective compared to the use of audio guides in an art museum. This is because
+AR makes the information easier to digest through its audio and visual material. Chang [26] also
+shows that in different studies, AR offers visitors interesting, fun, and challenging experiences, as well
+as immersive sensations. In educational applications, it also generates motivation and participation by
+attracting students and teachers through additional information. By integrating images between the
+real and virtual worlds, it diminishes the chance of students becoming overwhelmed by the amount
+of information available and, in turn, enhances their learning process [63]. AR is a useful learning
+
+Appl. Sci. 2020, 10, 897
+
+13 of 26
+
+platform for CH education because it motivates both students and researchers to understand historical
+events [28].
+In addition, AR improves the human perception of [35] and interaction with the real world, and it
+could be applied to human senses such as hearing, taste, smell, touch, and vision [11,12] to improve on
+them or even replace them [12]. Meanwhile, the article by Bolestis [40] mentions that using audio AR
+reduces any distraction mobile devices can cause because the user, is focused on the audio content.
+They describe an application called AudioTransit, which is an AR audio tour guide used on public
+transport to provide commuters/users with free information about cultural points of interest they may
+be passing.
+For CH education, AR allows the focus to be on the user, because it provides navigation, interaction,
+and orientation when the museums do not have enough space or resources to present their collections,
+thus improving the user’s experience by reconstructing heritage information [14]. Furthermore, it
+allows users like researchers or artists, to exploit its applications to teaching cultural and artistic
+elements, and allows interactive learning that could be extended and enhanced in terms of distribution,
+creation, collaboration, time allocation and access to learning resources [24]. In addition, AR is a
+valuable tool for CH because it can reconstruct (and thus retain) archeological sites that are in poor
+condition or no longer exist, i.e., they can be seen virtually by future generations [28,35,70,100]. In fact,
+nowadays, the latest mobile technologies mean that users can learn about CH in informal learning
+environments like museums, parks, archeological sites, etc., [30].
+The use of mobile games with AR could be beneficial in formal and informal environments
+because, as AR is not limited to any type of technology and can be used in different environments [78],
+it allows learners and instructors to collaborate and communicate remotely about topics related to CH
+and they can also share different virtual material with each other [82]. Puyuelo’s article [99] presents an
+example of an AR design application using interactive resources for the Gothic Silk Market Building,
+called the “Lonja de la Seda”, in Valencia, issues such as poor lighting, difficult access, etc., are resolved,
+and AR is demonstrated as being an effective tool in CH for accessibility and communication because
+it is non-intrusive and supplements additional information that enhances the user’s visual experience.
+In addition, AR is an interesting tool because it engages [87,88] and enhances [3,90] the user’s perceptions
+through virtual content overlaid with additional information in 2D or 3D. The use of markers to show AR
+content increases the robustness and reduces the computational requirements of the system [81].
+However, AR also has some shortcomings and limitations depending on who is using it because,
+as learners have constant access to a variety of immersive technologies, using AR does not necessarily
+mean that students will learn better compared to more traditional methods and for that reason AR
+should be focused on the content rather than entertainment [107]. Nonetheless, the role of educational
+institutions and museums should be to motivate the student learning process [82], and AR may be one
+way to achieve this. Bustillo [68] comments that the use of AR through games can alter the learning
+process of abstract concepts in CH if it is not used in an appropriate way. For example, Champion [113]
+describes that using emblematic game interaction in topics related to CH could, depending on the
+implementation and content of the game (for instance, first-person shooter games), encourage violence.
+To avoid any negative experiences, the content available should be useful and appropriate [14] contain
+interactive subject matter [50], and the technologies in physical museums and heritages sites must
+stimulate the user in order to educate future generations to understand their past [113]. Another
+disadvantage in AR is that the tracking methodology based on markers could be intrusive in some
+scenarios [81]. In the same vein, it is important to consider different aspects that might affect the user’s
+experience; for example, in [91], they mention that in their application, the virtual content takes too
+much time to appear in the mobile device. An article by Martinetti [114] mentions that the main factors
+for the lack of AR pervasiveness are technological/technical limitations (image recognition, internet
+connection, responsiveness), human interaction (distraction and ergonomic devices) and organizational
+limitations (handling AR projects, IT infrastructure and financial resources).
+
+Appl. Sci. 2020, 10, 897
+
+14 of 26
+
+Challenges for AR include precision, user-tracking, and registering 3D models in a real environment.
+As Bostanci [35] notes, these aspects are important to bear in mind when developing an application. In
+external environments, such as excavations, AR applications could be affected by the light conditions,
+and therefore, it is fundamental to consider this kind of aspect if the application is to work properly [24].
+The success of an AR application also depends on the content available, and it could be affected by
+aspects such as resolution, illumination, contrast, latency, calibration of the virtual objects with the
+real world [14], geometric precision, capture of details, photorealism, portability, efficiency, etc. [76].
+For example, the articles by Blanco-Pons and Chang [91,115] mention that perceived usefulness is a
+factor that determines the use of AR applications [91], and that the popularity of an exhibition is not
+dependent on the museum, but rather on the content offered and the device used [115]. Azuma [13]
+notes another point that is important to work on when using AR in CH, namely, choosing places that
+are important for current and future generations to remember. Furthermore, [44] mentions that other
+factors to consider in CH AR applications are the characteristics of the urban environment, the constant
+changes this kind of technology undergoes, which means teachers and students will need (re)training,
+and keeping the information updated.
+What Advantages and Disadvantages do AR Technologies Have Compared to Other Technologies
+Such as VR and MR?
+AR allows interaction with the real world to take place and is enriched by superimposing
+virtual information in real-time, thus enhancing human perceptions of CH by reconstructing physical
+archeological sites and preserving them for future generations [35]. It does not replace the user’s
+reality [11], but it does allow for on-site construction, thus avoiding physical difficulties [35]. Neither
+does it generate isolation among users [38] but rather generates interaction with other users, thus
+improving the CH learning experience [35]. Furthermore, AR reduces the time consumed in recreating
+virtual objects [81] because the user perceives both realities simultaneously [91]. It also avoids problems
+such as motion sickness [81]. Ardito [30] describes an application they refer to as ‘edutainment’, that
+uses AR in archaeological parks where students are encouraged to more involved in the learning
+process through games.
+As AR only manipulates part of the real environment, it is a viable technology in terms of
+technological and economic cost, as well as for creating content [15,41].
+Unlike VR, where everything is a virtual object, AR replicates the authenticity of the artifacts and
+does not require specialized hardware to operate an application [107]. In VR, the user’s location is
+not important, but the problem is that these environments are synthetic and do not offer real artifacts,
+and so the authenticity of the CH elements are lost [57]. AR also provides real augmented visual
+perceptions of the information or content because, unlike VR, AR does not change the real world
+at all [41], thus allowing users the opportunity to experiment with real objects [23]. For example,
+Challenor and Ma [107] mention that VR creates complete immersive environments but lacks the
+stimulation of senses like the smell because the environment is not real. AR has the potential to
+transform the ways we learn about our world and the places and elements around us. Choudary [33]
+mentions that, in the case of prehistoric caves where their access is restricted, AR allows the user to
+visit the real places virtually. For museums, the use of AR provides thoughtful and intuitive interaction
+with the objects on display to the public [32].
+The disadvantage that AR has compared to VR is that the objects from the real and virtual worlds
+must coexist and be aligned; thus AR needs to have greater precision [11] than VR. As well, [116]
+mentions that there is evidence that many of the AR devices and some of the content in AR can
+generate confusion, dissatisfaction, physical fatigue, etc. External aspects such as illumination,
+reflections, shadows, and weather are also noted as being able to affect the workings of the applications.
+For example, [87] describes an application used in the exterior and interior of a temple. When there is
+too much light or too many shadows on the engravings, the functionality is affected at the moment the
+user wants to watch the augmented content.
+
+Appl. Sci. 2020, 10, 897
+
+15 of 26
+
+Fällman [15] mentions that Winn [117] identifies a number of the advantages VR has over AR:
+(i) in its virtual world, VR allows changes to be made to the relative size of the objects, (ii) the user can
+interact with, and design all of the virtual world themselves, (iii) objects that are difficult to represent
+in the real world can be created and visualized and (iv) user experiences are more secure and safer than
+in places where interaction with real objects could affect other users [5]. For example, article [70] shows
+that VR helps engineers to visualize different techniques in a 3D environment for military training that
+feigns emergency situations but avoids possible damage or accidents because it all takes place in a
+virtual world. However, that said, if in VR the virtual world is more interactive in content, the users
+might want to manipulate or sabotage it [118].
+MR, on the other hand, provides the user with the advantages of both the AR and VR
+technologies [14,119], but its drawback is that it currently uses expensive devices (for example,
+Hololens from Microsoft) to show content [51].
+What Tools or Frameworks for Developing Applications in AR are Used in the Creation of CH
+Contents?
+To determine which tools or frameworks for developing applications in AR can be used, a
+comparative table was drawn up (Table 2) depicting the characteristics that each has. The systems
+analyzed in Table 2 were evaluated to identify which would be the most suitable for resolving the
+challenges mentioned before, on technological and economic levels, and by taking into account the
+analysis presented in Table 1.
+Table 1 reveals that most of the systems use handheld devices, and most of the AR content
+is executed in internal and external environments with tracking methodologies such as QR codes,
+2D images/3D models, GPS, and sensors. Nevertheless, in the case of QR codes and 2D images/3D
+models, these systems are focused on internal environments while GPS and sensors are used in external
+environments. Table 2 contains information about the version, the tracking methodologies that can be
+implemented, where a + symbol indicates the characteristics that can be used or—if it does not have
+that characteristic, the platforms that support AR (Unity, Android, and IOS) if it is open source, if it
+needs a license to use it, if it is available commercially and how much each license costs.
+Does the Use of AR Improve Student Learning Motivation in Topics Related to CH?
+From the analysis, it is deduced that AR improves the learning experience [23,82] and extends
+it interactively [24] because it can be used as an auto guide for CH resources. For instance, the
+application described in [30], which was used by middle school students from Michelangelo (Bari,
+Italy). The application consists of a game with 4-5 players where they have to formulate hypotheses
+and discuss them in order to discover and learn about the culture of Ancient Rome. Thanks to this
+technology, the children who participated were more involved with the 3D visualization and the
+physical models that can be printed in 3D. Compared to traditional methods, student motivation
+to understand the topics was enhanced, and it also developed their skills and encouraged social
+relationships to be built between their peers [28]. Using games with AR stimulates an understanding
+of history in students that can be difficult to engender. It is a fun way for students to enjoy the subject,
+and they can learn better compared to traditional methods because the activities require different
+abilities that can be developed simultaneously and also boost collaboration between partners [30].
+However, it is important to distinguish between entertainment and education because simply using
+games, in general, will not mean that students learn effectively [118]; educational objectives also need
+to be included. For example, [29] shows that AR has a positive impact on student motivation when the
+Instructional Materials Motivation Survey (IMMS) is included. This is an evaluation of satisfaction and
+motivation that considers four factors of motivation: attention, relevance, satisfaction, and confidence.
+Scientists, researchers and teachers alike agree that when students feel motivated to learn, they retain
+more information about the topic(s) and are more involved in finishing the proposed activities, thus
+
+Appl. Sci. 2020, 10, 897
+
+16 of 26
+
+allowing for a student to interact with their classmates and teachers and improve their abilities and
+performance [29].
+For educational purposes, the process becomes easier in museums and classrooms because
+conventional methods fail to engage and motivate students [82]. The museum and classroom
+environments are not as effective as AR is in helping students to imagine historical scenes and
+to understand what happened in those places [89]. Recently, mobile AR applications have been
+successfully integrated into museums, heritage sites, tourism, and learning environments and AR
+has proven to be a promising technology because it increases the appreciation of the CH content,
+attracts new users, increases motivation, and promotes participation [89]. Moreover, the use of AR
+in learning environments generates more interest because students have better experiences in their
+learning process as it is fluid, sporadic, and participative [9] and methods based on textbooks are less
+effective in helping students to understand historical events. Nevertheless, it is important to mention
+that the use of technologies like AR does not replace classes and traditional methods; it only improves
+the student’s learning process [82].
+Similarly, AR not only allows participation between students but also between teachers [26],
+generating collaborative environments where they can work together simultaneously, thus allowing
+the students to take control of their learning experience by attracting them with additional information
+that this technology overlays [29] as is described in Kerawalla [120].
+To Improve Student Motivation, What Characteristics are Considered in Applications Currently
+Available, and Which Ones are Missing?
+The characteristics that were considered from the applications analyzed include the device used,
+the type of technology used, the tracking methodologies, the environment it is used in, etc. These
+characteristics only focus on software and hardware, albeit some of them consider the environment
+(internal and external) where they are executed.
+So, very few applications consider students to be an important focus. In [50], it is shown
+that for adaptation/personalization, it is essential to consider student interest, knowledge, personal
+characteristics, etc. since this allows for the most appropriate content to be selected and avoids
+overloading the user with content that is of no interest to them. A good example of considering the
+user is the application HIPS [75], which uses infrared sensors in a museum, and the user can select a
+tour prepared by the curator, design their own tour, or select one that has been designed by other users.
+An evaluation of a project [118], shows that aspects such as interactivity and adaptation/personalization
+might be more important than realism because CH has a lot of information that is not relevant for all
+users. Besides, [50] shows that in the case of tourism, as it is a social activity, the system adapts the
+content to groups of users that have similar interests, experiences, and needs because each of them
+requires different types of information and different levels of detail. For example, [75] shows that
+the information selected and presented depends on location, level of interest, knowledge, and user
+preferences (i.e., users can select how they would like the information to be presented (video, audio,
+text, etc.). AR also offers to users who have a disability, the opportunity to visit places like museums
+and galleries [36].
+Thanks to the technological advances in mobile devices, these now have sensors such as barometers,
+gyroscopes, accelerometers, and so forth, which allow new tools to be created for learning and
+knowledge assessment, thus generating two new methodologies in education known as ubiquitous
+learning (u-learning) and mobile learning (m-learning) [55]. In [58], the information provided about a
+masterpiece can be complemented by selecting different types of content (videos, audios, texts, etc.)
+and by considering the user’s interests. The system is developed for different kinds of visitors (school
+groups, children, families, adults, etc.).
+On the other hand, few applications take into account the type of student’s motivation (extrinsic
+or intrinsic), and if students and teachers can create content. Applications will function only if the
+content generated is useful and interesting [14]. Nowadays, education is related to the evolution
+
+Appl. Sci. 2020, 10, 897
+
+17 of 26
+
+of the student and their personal skills because these skills will define who they are in the future
+and will improve aspects such as critical knowledge, responsibility, passion, motivation, enthusiasm,
+confidence, etc., [121]. This is why in CH education, it is important to take into account factors that
+can enhance and improve the learning process. For example, the article by Wu [45] mentions three
+elements that should be considered for active learning: (i) using the AR system is fun, (ii) the system
+offers interesting challenges to complete, and (iii) it generates curiosity about the new topics.
+In addition, future applications in AR will need to consider usability and content co-creation [122]
+as some of the AR systems were found to be difficult for students to use because of technical problems
+such as size screen, network speed, battery life, etc., and because of a lack of knowledge about how to
+use this technology [44]. Another study shows that an aspect of improving is in the creation of CH AR
+applications because creating content currently consumes a lot of time [122]. For instance, constructing
+3D monuments demands time be spent on collecting data, on re(training) (because of the constant
+changes the technology undergoes) and on implementation (because AR content for CH needs skilled
+software developers, designers accomplished in 2D imaging and 3D modeling, video editing, etc., [44]).
+6. Conclusions and Considerations
+Through the categories defined for this study and the evaluation of the systems, it was observed
+that using AR for CH education generates a positive impact on motivation for topics related to art,
+history, the sciences, etc. AR can be applied in formal environments like classrooms and informal
+environments such as museums, parks, archeological sites, cultural heritage sites, public transport,
+and so forth. Based on this, it is observed that the use of this technology allows information that is
+relevant to a student to be complemented, and it improves the student’s learning experience in topics
+related to CH.
+The points below, summarize the findings from the literature review carried out:
+•
+•
+•
+
+•
+
+•
+•
+
+•
+•
+
+Most of the systems, nowadays, focus on CH education through AR and VR. Both have advantages
+and disadvantages, depending on the context in which they are executed.
+CH education is focused on complementing the student’s learning process principally with the
+use of AR in informal environments such as museums, parks, public transport, art galleries, etc.
+Most of the studies show that for museums and their curators/managers, the underlying motivation
+to implement these technologies is to attract the public and encourage them to visit their galleries
+and presentations.
+Few systems consider the adaptation/personalization of the content when they use the content
+for the students. Context is adapted based on the location and time available, while individual
+adaptation considers interests, ways of presenting the content (video, audio, text), and in
+some systems, helping those with disabilities or fears (for example [104] mention users with
+claustrophobia). Meanwhile, group adaptation considers those users that have similar interests in
+a specific topic.
+It has been observed that, over time, most of the AR systems use handheld devices (tablets,
+smartphones, laptops, etc.) because access to such devices is much easier these days.
+When developing future systems, it will be important to consider the usability and technical
+aspects such as the environment in which it will be executed, the type of content that will be
+shown, the tracking methodologies that will be used, etc.
+Most of the systems in AR focus on learning topics related to art and history. In addition, many of
+them use GPS and 2D image recognition, 3D models, and tracking methodologies.
+Systems that use intrinsic motivation focus on student learning and allow them to choose what
+they want to learn, while systems with extrinsic motivation use other ways to motivate students,
+for instance, by using games.
+
+Appl. Sci. 2020, 10, 897
+
+•
+
+•
+•
+
+18 of 26
+
+Depending on the environment where the systems are executed, they use a specific tracking
+methodology. For example, most of them use sensors, QR code recognition, and 2D image
+recognition and 3D models in internal environments and GPS in external environments.
+Few systems consider content co-creation by the student or the teacher.
+Few systems consider the student’s motivation since they generally focus on the user’s experience
+in terms of the content and technology it uses.
+
+As was found in the literature, implementing AR in CH learning improves a student’s learning
+experience and motivation, but to do this, the systems must develop useful content by considering
+the type of application, tracking methodologies, environment, devices, etc. In addition, it must be
+remembered that most of the systems focus on handheld devices since these days it is easier to have
+access to them.
+However, from the observations mentioned in the previous sections, some of the challenges to
+implementing AR in education are (i) usability- since AR is a relatively new technology and few users
+know how it works, (ii) content creation -as this is difficult for a non-expert user, (iii) the overload of
+information, which is not relevant for the students, and (iv) the improper use of the technology. Finally,
+technical aspects such as lighting, the reflection of objects throw out, the type of visual device, tracking
+methodologies, etc., are factors that must also be taken into account when developing applications.
+One way of overcoming these challenges is to include the student as part of the system where they
+can create their own content collaboratively with classmates and teachers and show that information
+in different ways such as video, audio, texts, and so forth. The goal here is to help improve student
+motivation as they themselves are the ones creating the activities related to CH education through the
+medium of AR.
+Co-creation allows the user to be a participant in the content generated, so the information used
+should be suitable for the student’s age and the topics explained by the teacher. At the same time,
+content adaptation/personalization means that the student has the opportunity to learn in a better way.
+However, in this case, it is necessary to create a user and context profile that allows the student to be to
+identified and thus avoid cognitive overload with information that is not important for that particular
+student and select the augmented content by considering that student’s specific preference(s) (audio,
+video, text, etc.).
+Motivation can be intrinsic or extrinsic. In the case of intrinsic motivation, the student performs
+the activities without expecting any reward as they are interested and motivated to learn regardless of
+the time spent on the activities. On the other hand, extrinsic motivation focuses on rewards so that
+learning is to reach a specific objective, and for that reason, it is a characteristic that is important to
+consider when generating content in AR.
+From the analysis of Table 2, it is possible to deduce that complete frameworks with which to
+develop AR applications that are currently being used are Vuforia, ARKit (Apple), ARCore (Google),
+and Wikitude. In future applications, these frameworks could also be used since they support most of
+the tracking methodologies and handheld devices currently available. Besides, the developer can also
+find detailed information about how to create the AR content. Moreover, these frameworks can be
+used to develop an AR system that improves motivation in CH education by considering not only
+student characteristics but also content co-creation because these allow AR content to be created for
+external and internal environments, and most of them support different platforms and devices.
+
+Appl. Sci. 2020, 10, 897
+
+19 of 26
+
+Table 2. Comparative table of AR frameworks.
+
++
+
+Price
+
++
+
+Free
+
++
+
+Commercial
+
++
+
+Open Source
+
+GPS
+
++
+
+Platform
+
+Multiple
+Images
+
++
+
+Supports
+AR/VR
+
+Model
+
+8.1
+
+Image
+
+Version
+
+Vuforia
+
+QR Code
+
+Framework
+
+Tracking Methodology
+
+iOS, Android, Unity
+
+no
+
+yes
+
+yes. Developer version
+
+Standard – 500$/y
+Cloud – 100 $/m
+Pro – By contact
+Pay 1 time/ subscription
+demo—499 €
+sdk pro—1990 €/ 2490 €/y
+sdk pro 3D—2490 €—2990 €/y
+cloud—4490 €/y
+Developer account
+100 $/y
+
+Wikitude
+
+8.5
+
++
+
++
+
++
+
++
+
++
+
++
+
+iOS, Android, Unity
+
+no
+
+yes
+
+Yes (trial and limit
+characteristics)
+
+ARKit (Apple)
+
+2.0
+
++
+
++
+
++
+
++
+
++
+
++
+
+iOS
+
+no
+
+yes
+
+yes (limit number of projects
+in the week)
+
+ARCore (Google)
+
+1.9.190422066
+
++
+
++
+
++
+
++
+
++
+
++
+
+iOS, Android
+
+yes
+
+no
+
+yes
+
+Does not specify
+
+yes (with watermark)
+
+AR business – 1500$/y
+AR enterprise – By contact
+Does not specify
+
+1.5
+
++
+
++
+
+ARToolKit
+
+5.3.2
+
++
+
+ARmedia
+
+Does not specify
+
++
+
+Maxst
+
+4.1.1
+
+Kudan
+
++
+
++
+
++
+
++
+
+iOS, Android, Unity
+
+no
+
++
+
+-
+
++
+
++
+
++
+
+-
+
++
+
++
+
+iOS, Android, Unity
+
+yes
+
+no
+
+yes
+
++
+
++
+
+iOS, Android
+
+no
+
+yes
+
+yes (no commercial license)
+
++
+
++
+
++
+
+By contact
+
+-
+
++
+
+-
+
+iOS, Android, Unity
+
+no
+
+yes
+
+yes (with watermark and no
+commercial license 1 month)
+
+Pro—39 $/m
+Enterprise – by contact
+
+yes
+
+droidAR
+
+3.0
+
+-
+
++
+
++
+
++
+
++
+
+-
+
+Android
+
+yes
+
+no
+
+yes
+
+Does not specify
+
+LayAR
+
+Does not specify
+
++
+
+-
+
+-
+
+-
+
++
+
++
+
+iOS, Android
+
+no
+
+yes
+
+no
+
+By contact
+
+Aurasma (HP
+Reveal)
+
+2.0
+
++
+
++
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android
+
+no
+
+yes
+
+no
+
+SDK in development
+
+Xzimg
+
+Does not specify
+
+-
+
++
+
++
+
+-
+
+-
+
+-
+
+iOS, Android, Unity
+
+no
+
+yes
+
+yes (limit characteristics)
+
+Professional – By contact
+
+Augment
+
+Does not specify
+
+-
+
++
+
++
+
+-
+
+-
+
+-
+
+iOS, Android
+
+no
+
+yes
+
+yes (14 days)
+
+Essential—9 € per dispositive
+Professional—25 € per dispositive
+Enterprise—59 € per dispositive
+
+EasyAR
+
+2.0.0
+
+-
+
++
+
+-
+
++
+
+-
+
+-
+
+iOS, Android
+
+no
+
+no
+
+yes (limit characteristics)
+
+By contact
+
+simpleCV
+
+1.3
+
+-
+
++
+
+-
+
+-
+
+-
+
++
+
+Android
+
+yes
+
+no
+
+yes
+
+Does not specify
+
+BlippAR
+
+Does not specify
+
+-
+
++
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android
+
+no
+
+yes
+
+yes (30 days)
+
+By contact
+
+CraftAR
+
+3.4.1
+
+-
+
++
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android
+
+no
+
+yes
+
+no
+
+Indie—9 € per page
+Pro – By contact
+
+PixLive
+
+Does not specify
+
+-
+
++
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android
+
+no
+
+yes
+
+yes (demo 30 days)
+
+Indie—9 €/m
+Pro – By contact
+
+DeepAR
+
+Does not specify
+
+-
+
++
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android, Unity
+
+no
+
+yes
+
+yes (30 days)
+
+By contact
+
+NyARToolKit
+
+5.0.8
+
++
+
+-
+
+-
+
+-
+
+-
+
+-
+
+iOS, Android
+
+yes
+
+no
+
+yes
+
+Does not specify
+
+Appl. Sci. 2020, 10, 897
+
+20 of 26
+
+Author Contributions: Conceptualization: J.C.G.V., R.F., A.C.-R. Funding acquisition: R.F., T.J., Investigation:
+J.C.G.V., R.F., A.C.-R. Methodology: J.C.G.V., R.F., A.C.-R., Project administration: R.F., A.C.-R., Supervision: R.F.,
+A.C.-R. and T.J. Writing—original draft: J.C.G.V., R.F., A.C.-R. and T.J., Writing—review & editing: J.C.G.V., R.F.,
+A.C.-R., and T.J. All authors have read and agreed to the published version of the manuscript.
+Funding: This research received no external funding.
+Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.
+
+2.
+3.
+
+4.
+
+5.
+6.
+
+7.
+
+8.
+9.
+
+10.
+11.
+12.
+13.
+14.
+15.
+
+16.
+17.
+
+UNESCO. Office in Cairo Tangible Cultural Heritage|United Nations Educational, Scientific and Cultural
+Organization. Available online: http://www.unesco.org/new/en/cairo/culture/tangible-cultural-heritage
+(accessed on 26 April 2019).
+Stylianidis, E.; Remondino, F. 3D Recording, Documentation and Management of Cultural Heritage; Whittles
+Publishing: Scotland, UK, 2016; ISBN 978-184995-168-5.
+Sabri, F.N.M.; Khidzir, Z.; Ismail, A.R.; Daud, K.A.M. Empirical study on important elements of mobile
+augmented reality application for heritage content. In Proceedings of the 2016 4th International Conference
+on User Science and Engineering, i-USEr 2016, Melaka, Malaysia, 23–25 August 2016.
+Arias-Espinoza, P.; Medina-Carrion, A.; Robles-Bykbaev, V.; Robles-Bykbaev, Y.; Pesantez-Aviles, F.; Ortega, J.;
+Matute, D.; Roldan-Monsalve, V. E-Pumapunku: An Interactive App to Teach Children the Cañari and Inca
+Indigenous Cultures during Guided Museum Visits. In Proceedings of the 2018 Congreso Internacional de
+Innovacion y Tendencias en Ingenieria, CONIITI 2018, Bogota, Colombia, 3–5 October 2018.
+Jacobsen, J.; Holden, L. Virtual heritage: Living in the Past. Techné Res. Philos. Technol. 2007, 10, 1–7.
+[CrossRef]
+Dela Cruz, D.R.; Sevilla, J.S.A.; San Gabriel, J.W.D.; Dela Cruz, A.J.P.; Ella Joyce, S.C. Design and Development
+of Augmented Reality (AR) Mobile Application for Malolos’ Kameztizuhan (Malolos Heritage Town,
+Philippines). In Proceedings of the 2018 IEEE Games, Entertainment, Media Conference, GEM 2018, Galway,
+Ireland, 15–17 August 2018.
+Fidas, C.; Sintoris, C.; Yiannoutsou, N.; Avouris, N. A survey on tools for end user authoring of mobile
+applications for cultural heritage. In Proceedings of the IISA 2015—6th International Conference on
+Information, Intelligence, Systems and Applications, Corfu, Greece, 6–8 July 2015.
+Rost, M. Generating Student Motivation. In World View; Pearson Education: London, UK, 2006.
+Yoon, S.A.; Elinich, K.; Wang, J.; Van Schooneveld, J.G. Augmented reality in the science museum: Lessons
+learned in scaffolding for conceptual and cognitive learning. In Proceedings of the IADIS International
+Conference on Cognition and Exploratory Learning in Digital Age, CELDA 2012, Madrid, Spain, 19–21
+October 2012; pp. 205–212.
+Milgram, P.; Kishino, F. A Taxonomy of mixed reality visual displays. IEICE Trans. Inf. Syst. 1994, 77,
+1321–1329.
+Azuma, R.T. A Survey of Augmented Reality. Presence Teleoper. Virtual Environ. 1997, 6, 355–385. [CrossRef]
+Carmigniani, J.; Furht, B.; Anisetti, M.; Ceravolo, P.; Damiani, E.; Ivkovic, M. Augmented reality technologies,
+systems and applications. Multimed. Tools Appl. 2011, 51, 341–377. [CrossRef]
+Azuma, R.T. The Most Important Challenge Facing Augmented Reality. Presence Teleoper. Virtual Environ.
+2016, 25, 234–238. [CrossRef]
+Bekele, M.K.; Pierdicca, R.; Frontoni, E.; Malinverni, E.S.; Gain, J. A Survey of Augmented, Virtual, and
+Mixed Reality for Cultural Heritage. J. Comput. Cult. Herit. 2018, 11, 1–36. [CrossRef]
+Fällman, D.; Informatics, D.O.; Backman, A.; Holmlund, K.; Utbildningsteknik, C.F. VR in Education:
+An Introduction to Multisensory Constructivist Learning Environments, Universitetspedagogisk konferens,
+Umeå universitet. Psychol. Sci. 2013, 22, 1113–1119.
+Semenov, A. Las Tecnologías de la Información y la Comunicación en la Enseñanza; UNESCO: Paris, France, 2006;
+Volume 15, ISBN 9974324149.
+Ott, M.; Pozzi, F. Towards a new era for cultural heritage education: Discussing the role of ICT. Comput. Hum.
+Behav. 2011, 27, 1365–1371. [CrossRef]
+
+Appl. Sci. 2020, 10, 897
+
+18.
+
+19.
+
+20.
+
+21.
+
+22.
+
+23.
+24.
+
+25.
+
+26.
+
+27.
+28.
+
+29.
+30.
+
+31.
+
+32.
+
+33.
+
+34.
+
+21 of 26
+
+Dähne, P.; Karigiannis, J.N. Archeoguide: System Architecture of a Mobile Outdoor Augmented Reality
+System. In Proceedings of the International Symposium on Mixed and Augmented Reality (ISMAR’02),
+Darmstadt, Germany, 30 September–1 Octomber 2002.
+Gleue, T.; Dähne, P. Design and implementation of a mobile device for outdoor augmented reality in the
+archeoguide project. In Proceedings of the 2001 Conference on Virtual Reality, Archeology, and Cultural
+Heritage—VAST ’01, Glyfada, Greece, 28–30 November 2001; ACM Press: New York, NY, USA, 2001; p. 161.
+Vlahakis, V.; Ioannidis, M.; Karigiannis, J.; Tsotros, M.; Gounaris, M.; Stricker, D.; Gleue, T.; Daehne, P.;
+Almeida, L. Archeoguide: An augmented reality guide for archaeological sites. IEEE Comput. Graph. Appl.
+2002, 22, 52–60. [CrossRef]
+Vlahakis, V.; Ioannidis, N.; Karigiannis, J.; Tsotros, M.; Gounaris, M.; Almeida, L.; Stricker, D.; Gleue, T.;
+Christou, I.T.; Carlucci, R. Archeoguide: First results of an Augmented Reality, Mobile Computing System
+in Cultural Heritage Sites. In Proceedings of the 2001 Conference on Virtual Reality, Archeology, and
+Cultural Heritage—VAST ’01, Glyfada, Greece, 28–30 November 2001; ACM Press: New York, NY, USA,
+2001; pp. 131–140.
+Haugstvedt, A.C.; Krogstie, J. Mobile augmented reality for cultural heritage: A technology acceptance study.
+In Proceedings of the ISMAR 2012—11th IEEE International Symposium on Mixed and Augmented Reality,
+Atlanta, GA, USA, 5–8 November 2012; Science and Technology Papers. pp. 247–255.
+Lee, K. Augmented Reality in Education and Training. TechTrends 2012, 56, 13–21. [CrossRef]
+Angelopoulou, A.; Economou, D.; Bouki, V.; Psarrou, A.; Jin, L.; Pritchard, C.; Kolyda, F. Mobile augmented
+reality for cultural heritage. In Lecture Notes of the Institute for Computer Sciences, Social-Informatics and
+Telecommunications Engineering; Springer: Berlin/Heidelberg, Germany, 2012; Volume 93, LNICS; pp. 15–22.
+Bacca, J.; Baldiris, S.; Fabregat, R.; Graf, S. Kinshuk International Forum of Educational Technology & Society
+Augmented Reality Trends in Education: A Systematic Review of Research and Applications. Educ. Technol.
+2014, 17, 133–149.
+Chang, K.-E.E.; Chang, C.-T.T.; Hou, H.-T.T.; Sung, Y.-T.T.; Chao, H.-L.L.; Lee, C.-M.M. Development and
+behavioral pattern analysis of a mobile guide system with augmented reality for painting appreciation
+instruction in an art museum. Comput. Educ. 2014, 71, 185–197. [CrossRef]
+Mortara, M.; Catalano, C.E.; Bellotti, F.; Fiucci, G.; Houry-Panchetti, M.; Petridis, P. Learning cultural heritage
+by serious games. J. Cult. Herit. 2014, 15, 318–325. [CrossRef]
+Paper, C.; Noh, Z.; Sunar, M.S.; Pan, Z. A review on Augmented Reality for Virtual Heritage System.
+In Proceedings of the L Learinging by Playing.Game-based Education Syatem Design and Development,
+Banff, AB, Canada, 9–11 August 2009.
+Di Serio, Á.; Ibáñez, M.B.; Kloos, C.D. Impact of an augmented reality system on students motivation for a
+visual art course. Comput. Educ. 2013, 68, 585–596. [CrossRef]
+Ardito, C.; Buono, P.; Costabile, M.F.; Lanzilotti, R.; Pederson, T. Re-experiencing History in Archaeological
+Parks by Playing a Mobile Augmented Reality Game. In Proceedings of the OTM Confederated
+International Conferences “On the Move to Meaningful Internet Systems”, Vilamoura, Portugal, 25–30
+November 2007; Springer: Berlin/Heidelberg, Germany, 2007; Volume 9, pp. 357–366, ISBN 1872-9649
+(Electronic)r1568-1637 (Linking).
+Juan, M.C.; Loachamin-Valencia, M.; Garcia-Garcia, I.; Melchor, J.M.; Benedito, J. ARCoins. An Augmented
+Reality App for Learning about Numismatics. In Proceedings of the—IEEE 17th International Conference on
+Advanced Learning Technologies, ICALT 2017, Timisoara, Romania, 3–7 July 2017; pp. 466–468.
+Damala, A.; Cubaud, P.; Bationo, A.; Houlier, P.; Marchal, I. Bridging the gap between the digital and the
+physical design and evaluation of a mobile augmented reality guide for the museum visit. In Proceedings
+of the 3rd International Conference on Digital Interactive Media in Entertainment and Arts—DIMEA ’08,
+Athens, Greece, 10–12 September 2008; ACM Press: New York, NY, USA, 2008; p. 120.
+Choudary, O.; Charvillat, V.; Grigoras, R.; Gurdjos, P. MARCH: Mobile Augmented Reality for Cultural
+Heritage. In Proceedings of the Seventeen ACM International Conference on Multimedia—MM ’09, Beijing,
+China, 19–20 October 2009; ACM Press: New York, NY, USA, 2009; Volume 3, pp. 1023–1024.
+Wojciechowski, R.; Walczak, K.; White, M.; Cellary, W. Building Virtual and Augmented Reality museum
+exhibitions. In Proceedings of the Ninth International Conference on 3D Web Technology—Web3D ’04; ACM Press:
+New York, NY, USA, 2004; Volume 1, pp. 135–144.
+
+Appl. Sci. 2020, 10, 897
+
+35.
+36.
+
+37.
+
+38.
+
+39.
+
+40.
+
+41.
+
+42.
+43.
+44.
+45.
+46.
+47.
+48.
+49.
+50.
+51.
+
+52.
+
+53.
+
+54.
+
+55.
+
+22 of 26
+
+Bostanci, E.; Kanwal, N.; Clark, A.F. Augmented reality applications for cultural heritage using Kinect.
+Hum.-Cent. Comput. Inf. Sci. 2015, 5, 1–18. [CrossRef]
+Dulyan, A.; Edmonds, E. AUXie: Initial evaluation of a blind-accessible virtual museum tour. In ACM
+International Conference Proceeding Series; Association for Computing Machinery: New York, NY, USA, 2010;
+pp. 272–275.
+Albouys-Perrois, J.; Laviole, J.; Briant, C.; Brock, A.M. Towards a Multisensory Augmented Reality Map for
+Blind and Low Vision People: A Participatory Design Approach. In Proceedings of the CHI Conference on
+Human Factors in Computing Systems—CHI ’18, Montreal, QC, Canada, 21–26 April 2018; pp. 1–14.
+Bederson, B.B. Audio augmented reality: A prototype automated tour guide. In Proceedings of the
+Conference companion on Human factors in computing systems—CHI ’95, Denver, CO, USA, 7–11 May
+1995; ACM Press: New York, NY, USA, 1995; pp. 210–211.
+Boletsis, C.; Chasanidou, D. Smart Tourism in Cities: Exploring urban destinations with audio augmented
+reality. In Proceedings of the 11th PErvasive Technologies Related to Assistive Environments Conference
+on—PETRA ’18, Corfu, Greece, 26–29 June 2018; ACM Press: New York, NY, USA, 2018; pp. 515–521.
+Boletsis, C.; Chasanidou, D. Audio augmented reality in public transport for exploring tourist sites.
+In Proceedings of the 10th Nordic Conference on Human-Computer Interaction—NordiCHI ’18, Oslo,
+Norway, 29 September–3 October 2018; ACM Press: New York, NY, USA, 2018; pp. 721–725.
+Park, D.; Nam, T.-J.; Shi, C.-K. Designing an immersive tour experience system for cultural tour sites. In
+Proceedings of the CHI ’06 Extended Abstracts on Human Factors in Computing Systems-CHI EA ’06, New
+York, NY, USA, 25–30 April 2006; pp. 1193–1198.
+Van Krevelen, R.; Poelman, R. A Survey of Augmented Reality Technologies, Applications and Limitations.
+Int. J. Virtual Real. 2010, 9, 1–22. [CrossRef]
+Radu, I. Augmented reality in education: A meta-review and cross-media analysis. Pers. Ubiquitous Comput.
+2014, 18, 1533–1543. [CrossRef]
+Tzima, S.; Styliaras, G. Augmented Reality Applications in Education: Teachers Point of View. Educ. Sci.
+2019, 9, 99. [CrossRef]
+Wu, H.K.; Lee, S.W.Y.; Chang, H.Y.; Liang, J.C. Current status, opportunities and challenges of augmented
+reality in education. Comput. Educ. 2013, 62, 41–49. [CrossRef]
+Akçayır, M.; Akçayır, G. Advantages and challenges associated with augmented reality for education: A
+systematic review of the literature. Educ. Res. Rev. 2017, 20, 1–11. [CrossRef]
+Rozo, H.; Real, M. Pedagogical guidelines for the creation of adaptive digital educational resources: A review
+of the literature. J. Technol. Sci. Educ. 2019, 9, 308–325. [CrossRef]
+Chen, S.Y. Multimedia Tools and Applications Individual Differences and Personalized Learning A Review
+and Appraisal. Springer Nat. 2018, 67, 36.
+Weidt, F.; Silva, R. Systematic Literature Review in Computer Science—A Practical Guide. Relatórios Técnicos
+Do DCC/UFJF 2016, 1, 8.
+Ardissono, L.; Kuflik, T.; Petrelli, D. Personalization in cultural heritage: The road travelled and the one
+ahead. User Model. User Adapt. Interact. 2012, 22, 73–99. [CrossRef]
+Čopič, K.; Kljun, M. ART for Art: Augmented Reality Taxonomy for Art and Cultural Heritage; Geroimenko, V.,
+Ed.; Springer Series on Cultural Computing; Springer International Publishing: Cham, Switzerland, 2018;
+ISBN 978-3-319-69931-8.
+Alitany, A.; Redondo, E.; Fonseca, D.; Riera, A.S. Hybrid-ICT. Integrated methodologies for heritage
+documentation TIC-Híbridas. Metodologías integradas para la. In Proceedings of the 2013 8th Iberian
+Conference on Information Systems and Technologies (CISTI), Lisbon, Portugal, 19–22 June 2013.
+Hable, R.; Rößler, T.; Schuller, C. evoGuide: Implementation of a tour guide support solution with multimedia
+and augmented reality content. In Proceedings of the 11th International Conference on Mobile and Ubiquitous
+Multimedia—MUM ’12; ACM Press: New York, NY, USA, 2012; pp. 1–7.
+Julier, S.J.; gen Schieck, A.F.; Blume, P.; Moutinho, A.; Koutsolampros, P.; Javornik, A.; Rovira, A.;
+Kostopoulou, E. VisAge: Augmented Reality for Heritage. In Proceedings of the 5th ACM International
+Symposium on Pervasive Displays—PerDis ’16, Oulu, Finland, 20–22 June 2016.
+Nagata, J.J.; Garcia-Bermejo Giner, J.R.; Martinez Abad, F. Virtual Heritage of the Territory: Design and
+Implementation of Educational Resources in Augmented Reality and Mobile Pedestrian Navigation. IEEE Rev.
+Iberoam. Tecnol. Aprendiz. 2016, 11, 41–46. [CrossRef]
+
+Appl. Sci. 2020, 10, 897
+
+56.
+57.
+
+58.
+59.
+
+60.
+
+61.
+
+62.
+
+63.
+64.
+
+65.
+
+66.
+67.
+
+68.
+
+69.
+70.
+71.
+
+72.
+
+73.
+
+23 of 26
+
+Wojciechowski, R.; Cellary, W. Evaluation of learners’ attitude toward learning in ARIES augmented reality
+environments. Comput. Educ. 2013, 68, 570–585. [CrossRef]
+Dow, S.; Lee, J.; Oezbek, C.; Maclntyre, B.; Bolter, J.D.; Gandy, M. Exploring spatial narratives and mixed
+reality experiences in Oakland Cemetery. In Proceedings of the 2005 ACM SIGCHI International Conference
+on Advances in Computer Entertainment Technology—ACE ’05, Valencia, Spain, 15–17 June 2005; ACM Press:
+New York, NY, USA, 2005; pp. 51–60.
+Damala, A.; Stojanovic, N.; Schuchert, T.; Moragues, J.; Cabrera, A.; Gilleade, K. Adaptive Augmented Reality
+for Cultural Heritage: ARtSENSE Project; Springer: Berlin/Heidelberg, Germany, 2012; pp. 746–755.
+Miyashita, T.; Meier, P.; Tachikawa, T.; Orlic, S.; Eble, T.; Scholz, V.; Gapel, A.; Gerl, O.; Arnaudov, S.;
+Lieberknecht, S. An Augmented Reality Museum Guide. In Proceedings of the IEEE International Symposium
+on Mixed and Augmented Reality, Vienna, Austria, 5–8 October 2005.
+Zöllner, M.; Keil, J.; Wüst, H.; Pletinckx, D.; Zoellner, M.; Keil, J.; Wüst, H.; Pletinckx, D. An Augmented
+Reality Presentation System for Remote Cultural Heritage Sites. In Proceedings of the 10th International
+Symposium on Virtual Reality, Archaeology and Cultural Heritage, St. Julians, Italy, 22–25 September 2009.
+Kuflik, T.; Wecker, A.J.; Lanir, J.; Stock, O. An integrative framework for extending the boundaries of the
+museum visit experience: Linking the pre, during and post visit phases. Inf. Technol. Tour. 2015, 15, 17–47.
+[CrossRef]
+Vanoni, D.; Seracini, M.; Kuester, F. ARtifact: Tablet-based augmented reality for interactive analysis of
+cultural artifacts. In Proceedings of the—2012 IEEE International Symposium on Multimedia, ISM 2012,
+Irvine, CA, USA, 10–12 December 2012; pp. 44–49.
+Dewi, L.J.E.; Permana, A.A.J.; Purnamawan, I.K.; Sudadana, I.K. Augmented Reality (AR)-Based Application
+to Introduce Nagasepaha North Bali Puppet Style Character. J. Phys. Conf. Ser. 2019, 1165, 1–8. [CrossRef]
+Giordano, A.; Friso, I.; Borin, P.; Monteleone, C.; Panarotto, F. 4D Augmented City Models,
+Photogrammetric Creation and Dissemination. In Digital Research and Education in Architectural Heritage;
+Münster, S., Friedrichs, K., Niebling, F., Seidel-Grzesińska, A., Eds.; Communications in Computer and
+Information Science; Springer International Publishing: Dresden, Germany, 2018; Volume 817, pp. 47–62.
+ISBN 978-3-319-76991-2.
+Invitto, S.; Spada, I.; Turco, D.; Belmonte, G. Easy Perception Lab: Evolution, Brain and Virtual and
+Augmented Reality in Museum Environment. In Lecture Notes in Computer Science (including subseries
+Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics); Springer: Cham, Switzerland,
+10 December 2014; Volume 8853, pp. 302–310. ISBN 9783319139685.
+Fino, E.R.; Martín-Gutiérrez, J.; Fernández, M.D.M.; Davara, E.A. Interactive tourist guide: Connecting web
+2.0, augmented reality and QR codes. Procedia Comput. Sci. 2013, 25, 338–344. [CrossRef]
+Chrysanthi, A.; Papadopoulos, C.; Frankland, T.; Earl, G. Tangible Pasts: User-centred Design of a Mixed
+Reality Application for Cultural Heritage. In Archaeology in the Digital Era; Verhagen, P., Earl, G., Eds.;
+Amsterdam University Press: Amsterdam, The Netherlands, 2014; pp. 31–39.
+Bustillo, A.; Alaguero, M.; Miguel, I.; Saiz, J.M.; Iglesias, L.S. A flexible platform for the creation of 3D
+semi-immersive environments to teach Cultural Heritage. Digit. Appl. Archaeol. Cult. Herit. 2015, 2, 248–259.
+[CrossRef]
+Gaitatzes, A.; Christopoulos, D.; Roussou, M. Reviving the past: Cultural heritage meets virtual reality.
+Interventions 2009, 11, 293–315.
+Jiménez Fernández-Palacios, B.; Morabito, D.; Remondino, F. Access to complex reality-based 3D models
+using virtual reality solutions. J. Cult. Herit. 2017, 23, 40–48. [CrossRef]
+Ruffaldi, E.; Evangelista, C.; Neri, V.; Carrozzino, M.; Bergamasco, M. Design of information landscapes for
+cultural heritage content. In Proceedings of the 3rd International Conference on Digital Interactive Media in
+Entertainment and Arts—DIMEA ’08, Athens, Greece, 10–12 September 2008; ACM Press: New York, NY,
+USA, 2008; p. 113.
+Esclapes, J.; Tejerina, D.; Martin, A.; Fabregat, L. Development of a low-cost application of virtual reality
+for the promotion of cultural heritage. In Proceedings of the 2015 Digital Heritage, Granada, Spain, 28
+September–2 October 2015; pp. 421–422.
+Debailleux, L.; Hismans, G.; Duroisin, N. Exploring Cultural Heritage Using Virtual Reality. In Digital
+Cultural Heritage; Springer: Berlin, Germany, 2018; pp. 289–303.
+
+Appl. Sci. 2020, 10, 897
+
+74.
+
+75.
+
+76.
+77.
+
+78.
+
+79.
+80.
+81.
+
+82.
+
+83.
+
+84.
+85.
+86.
+
+87.
+
+88.
+89.
+
+90.
+91.
+
+24 of 26
+
+Mase, K.; Kadobayashi, R.; Nakatsu, R. Meta-Museum:
+A Supportive Augmented-Reality
+Environment for Knowledge Sharing.
+Available online: https://pdfs.semanticscholar.org/68c3/
+1f755269ed889103c8caf52d8fd7bbe85cb4.pdf (accessed on 29 January 2020).
+Oppermann, R.; Specht, M. A Nomadic Information System for Adaptive Exhibition Guidance. In Proceedings
+of the International Conference on Hypermedia and Interactivity in Museums, Pittsburgh, PA, USA,
+14–16 October 1999.
+El-Hakim, S.F.; Beraldin, J.-A.; Picard, M.; Godin, G. Detailed 3D reconstruction of large-scale heritage sites
+with integrated techniques. IEEE Comput. Graph. Appl. 2004, 24, 21–29. [CrossRef]
+Seo, B.-K.; Kim, K.; Park, J.; Park, J.-I. A tracking framework for augmented reality tours on cultural
+heritage sites. In Proceedings of the 9th ACM SIGGRAPH Conference on Virtual-Reality Continuum and its
+Applications in Industry—VRCAI ’10, Seoul, Korea, 12–13 December 2010; ACM Press: New York, NY, USA,
+2010; pp. 169–174.
+Koutromanos, G.; Styliaras, G. “The buildings speak about our city”: A location based augmented reality
+game. In Proceedings of the IISA 2015—6th International Conference on Information, Intelligence, Systems
+and Applications, Corfu, Greece, 6–8 July 2015; pp. 3–8.
+Chen, S.; Pan, Z.; Zhang, M.; Shen, H. A case study of user immersion-based systematic design for serious
+heritage games. Multimed. Tools Appl. 2013, 62, 633–658. [CrossRef]
+Martínez-Graña, A.M.; Goy, J.L.; Cimarra, C.A. A virtual tour of geological heritage: Valourising geodiversity
+using google earth and QR code. Comput. Geosci. 2013, 61, 83–93. [CrossRef]
+Piciarelli, C.; Vernier, M.; Zanier, M.; Foresti, G.L. An augmented reality system for technical staff training.
+In Proceedings of the—IEEE 16th International Conference on Industrial Informatics, INDIN 2018, Porto,
+Portugal, 18–20 July 2018; pp. 899–904.
+Eleftheria, C.A.; Charikleia, P.; Iason, C.G.; Athanasios, T.; Dimitrios, T. An innovative augmented reality
+educational platform using Gamification to enhance lifelong learning and cultural education. In Proceedings
+of the IISA 2013—4th International Conference on Information, Intelligence, Systems and Applications,
+Piraeus, Greece, 10–12 July 2013; pp. 258–263.
+Medina-Carrion, A.; Arias-Espinoza, P.; Robles-Bykbaev, V.; Robles-Bykbaev, Y.; Pesantez-Aviles, F.; Ortega, J.
+An interactive educational tool based on augmented reality, mobile applications and comic strips to teach
+children the Cañari and Inca cultures in the Ecuadorian context. In Proceedings of the Congreso Argentino
+de Ciencias de la Informatica y Desarrollos de Investigacion, CACIDI 2018, Buenos Aires, Argentina,
+28–30 November 2018.
+Novotný, M.; Lacko, J.; Samuelčík, M. Applications of multi-touch augmented reality system in education
+and presentation of virtual heritage. Procedia Comput. Sci. 2013, 25, 231–235. [CrossRef]
+De Paolis, L.T.; Mongelli, A. Augmented and virtual reality. In Proceedings of the Second International
+Conference, AVR 2015, Lecce, Italy, 31 August–1 September 2015.
+Hiyama, A.; Onimaru, H.; Miyashita, M.; Ebuchi, E.; Seki, M.; Hirose, M. Augmented reality system for
+measuring and learning tacit artisan skills. In Proceedings of the Lect. Notes Comput. Sci. (Incl. Subser.
+Lect. Notes Artif. Intell. Lect. Notes Bioinform.), Las Vegas, NV, USA, 21–26 July 2013; Volume 8017, LNCS.
+pp. 85–91.
+Gutierrez, J.M.; Molinero, M.A.; Soto-Martín, O.; Medina, C.R. Augmented Reality Technology Spreads
+Information about Historical Graffiti in Temple of Debod, San Cristóbal de la Laguna, Spain. Procedia Comput.
+Sci. 2015, 75, 390–397. [CrossRef]
+Kyriakou, P.; Hermon, S. Can I touch this? Using Natural Interaction in a Museum Augmented Reality
+System. Digit. Appl. Archaeol. Cult. Herit. 2019, 12, 1–9. [CrossRef]
+Gimeno, J.; Portalés, C.; Coma, I.; Fernández, M.; Martínez, B. Combining traditional and indirect augmented
+reality for indoor crowded environments. A case study on the Casa Batlló museum. Comput. Graph. 2017, 69,
+92–103. [CrossRef]
+De Paolis, L.T.; Bourdot, P. Correction to: Augmented Reality, Virtual Reality, and Computer Graphics.
+In Proceedings of the 5th International Conference, Otranto, Italy, 24–27 June 2018.
+Blanco-Pons, S.; Carrión-Ruiz, B.; Luis Lerma, J.; Villaverde, V. Design and implementation of an augmented
+reality application for rock art visualization in Cova dels Cavalls (Spain). J. Cult. Herit. 2019, 39, 177–185.
+[CrossRef]
+
+Appl. Sci. 2020, 10, 897
+
+92.
+
+93.
+
+94.
+
+95.
+
+96.
+
+97.
+
+98.
+99.
+
+100.
+101.
+102.
+
+103.
+104.
+
+105.
+
+106.
+107.
+108.
+109.
+
+110.
+
+25 of 26
+
+Zhou, X.; Zhou, X.; Kobashi, K.; Sugihara, K. Development of history learning support system: 3D virtual
+reconstruction and visualization of ancient Japanese architectures. In Proceedings of the ICCSE 2016—11th
+International Conference on Computer Science and Education, Nagoya, Japan, 23–25 August 2016;
+pp. 317–320.
+Rattanarungrot, S.; White, M. Development of service oriented mobile AR applications for museum
+learning activities. In Proceedings of the 2016 International Conference on Virtual Systems and Multimedia,
+Kuala Lumpur, Malaysia, 17–21 October 2016; pp. 1–8.
+Makino, R.; Yamamoto, K. Development of Spatiotemporal Information System Using Mixed Reality.
+In Proceedings of the 2018 Jt. 10th Int. Conf. Soft Comput. Intell. Syst. (Scis) 19th Int. Symp. Adv. Intell.
+Syst. (Isis), Toyama, Japan, 5–8 December 2018; pp. 75–80.
+Ioannides, M.; Chatzigrigoriou, P.; Nikolakopoulou, V.; Leventis, G.; Papageorgiou, E.; Athanasiou, V.;
+Efstratios, G.; Michael, T.; Ioannides, M.; Chatzigrigoriou, P.; et al. Digital Heritage. Progress in Cultural
+Heritage: Documentation, Preservation, and Protection. In Proceedings of the 7th International Conference,
+Nicosia, Cyprus, 29 October–3 November 2018.
+Zhang, L.; Qi, W.; Zhao, K.; Wang, L. Distributed, Ambient and Pervasive Interactions: Understanding
+Humans; Springer International Publishing: Cham, Switzerland, 2018; Volume 10921, pp. 439–451.
+ISBN 978-3-319-91124-3.
+Bruno, F.; Barbieri, L.; Muzzupappa, M.; Tusa, S.; Fresina, A.; Oliveri, F.; Lagudi, A.; Cozza, A.; Peluso, R.
+Enhancing learning and access to Underwater Cultural Heritage through digital technologies: The case
+study of the “Cala Minnola” shipwreck site. Digit. Appl. Archaeol. Cult. Herit. 2019, 13, 1–9. [CrossRef]
+Furió, D.; González-Gancedo, S.; Juan, M.-C.; Seguí, I.; Rando, N. Evaluation of learning outcomes using an
+educational iPhone game vs. traditional game. Comput. Educ. 2013, 64, 1–23. [CrossRef]
+Puyuelo, M.; Higón, J.L.; Merino, L.; Contero, M. Experiencing Augmented Reality as an Accessibility
+Resource in the UNESCO Heritage Site Called “La Lonja”, Valencia, Spain. Procedia Comput. Sci. 2013, 25,
+171–178. [CrossRef]
+Sylaiou, S.; Mania, K.; Karoulis, A.; White, M. Exploring the relationship between presence and enjoyment in
+a virtual museum. J. Hum. Comput. Stud. 2010, 68, 243–253. [CrossRef]
+Rahaman, H.; Champion, E.; Bekele, M. From photo to 3D to mixed reality: A complete workflow for cultural
+heritage visualisation and experience. Digit. Appl. Archaeol. Cult. Herit. 2019, 13, 1–12. [CrossRef]
+Alkhafaji, A.; Cocea, M.; Crellin, J.; Fallahkhair, S. Guidelines for designing a smart and ubiquitous learning
+environment with respect to cultural heritage. In Proceedings of the International Conference on Research
+Challenges in Information Science, Brighton, UK, 10–12 May 2017.
+Morganti, C.; Bartolomei, C. Habanapp: Havana’s architectural Heritage a click away. Int. Arch. Photogramm.
+Remote Sens. Spat. Inf. Sci. ISPRS Arch. 2018, 42, 723–730. [CrossRef]
+Kurosu, M. In Human-Computer Interaction Users and Contexts. In Proceedings of the 17th International
+Conference, HCI International 2015, Los Angeles, CA, USA, 2–7 August 2015; Proceedings, Part III. Volume
+9171, pp. 112–124.
+Barile, F.; Calandra, D.M.; Caso, A.; Dauria, D.; Di Mauro, D.; Cutugno, F.; Rossi, S. ICT solutions for
+the OR.C.HE.S.T.R.A. project: From personalized selection to enhanced fruition of cultural heritage data.
+In Proceedings of the—10th International Conference on Signal-Image Technology and Internet-Based
+Systems, SITIS 2014, Marrakech, Morocco, 23–27 November 2014; pp. 501–507.
+Garris, R.; Ahlers, R.; Driskell, J.E. Games, Motivation, and Learning: A Research and Practice Model.
+Simul. Gaming 2002, 33, 441–467. [CrossRef]
+Challenor, J.; Ma, M. A Review of Augmented Reality Applications for History Education and Heritage
+Visualisation. Multimodal Technol. Interact. 2019, 3, 39. [CrossRef]
+Grevtsova, I.; Sibina, J. Augmented, mixed and virtual reality. Techniques of visualization and presentation
+of archaeological heritage. Library.RU 2018, 90–102.
+Ardissono, L.; Gena, C.; Kuflik, T. Mobile access to cultural heritage. In Proceedings of the 18th International
+Conference on Human-Computer Interaction with Mobile Devices and Services Adjunct—MobileHCI ’16,
+Florence, Italy, 6–9 September 2016; ACM Press: New York, NY, USA, 2016; pp. 960–963.
+Bederson, B.B. Audio augmented reality. In Proceedings of the Conference companion on Human factors in
+computing systems-CHI ’95, Denver, CO, USA, 7–11 May 1995; ACM Press: New York, NY, USA; pp. 210–211.
+
+Appl. Sci. 2020, 10, 897
+
+26 of 26
+
+111. Lacka, E. Assessing the impact of full-fledged location-based augmented reality games on tourism destination
+visits. Curr. Issues Tour. 2018, 23, 1–13. [CrossRef]
+112. Pieraccini, M.; Guidi, G.; Atzeni, C. 3D digitizing of cultural heritage. J. Cult. Herit. 2001, 2, 63–70. [CrossRef]
+113. Champion, E.M. Otherness of place: Game-based interaction and learning in virtual heritage projects. Int. J.
+Herit. Stud. 2008, 14, 210–228. [CrossRef]
+114. Martinetti, A.; Marques, H.C.; Singh, S.; Dongen, L. Van applied sciences Reflections on the Limited
+Pervasiveness of Augmented Reality in Industrial Sectors. Appl. Sci. 2019, 9, 3382. [CrossRef]
+115. Ch’ng, E.; Cai, S.; Leow, F.T.; Zhang, T.E. Adoption and use of emerging cultural technologies in China’s
+museums. J. Cult. Herit. 2019, 37, 170–180. [CrossRef]
+116. Yovcheva, Z.; Buhalis, D.; Gatzidis, C. Engineering Augmented Tourism Experiences. In Information and
+Communication Technologies in Tourism 2013; Springer: Berlin/Heidelberg, Germany, 2013; Volume 29, pp. 24–35.
+ISBN 978-3-319-03972-5.
+117. Winn, W. A Conceptual Basis for Educational Applications of Virtual Reality; Washington Technology Centre
+University: Washington, DC, USA, 1993.
+118. Champion, E.M. Game-Based Historical Learning. In Handbook of Research on Effective Electronic Gaming in
+Education; IGI Global: Hershey, PA, USA, 2011; pp. 219–234.
+119. Zhou, F.; Dun, H.B.L.; Billinghurst, M. Trends in augmented reality tracking, interaction and display:
+A review of ten years of ISMAR. In Proceedings of the—7th IEEE International Symposium on Mixed and
+Augmented Reality 2008, ISMAR 2008, Cambridge, UK, 15–18 September 2008; pp. 193–202.
+120. Kerawalla, L.; Luckin, R.; Seljeflot, S.; Woolard, A. “Making it real”: Exploring the potential of augmented
+reality for teaching primary school science. Virtual Real. 2006, 10, 163–174. [CrossRef]
+121. Vocaturo, E.; Zumpano, E.; Caroprese, L.; Pagliuso, S.M.; Lappano, D. Educational games for cultural heritage.
+In Proceedings of the CEUR Workshop, Pisa, Italy, 30 January 2019.
+122. Bower, M.; Howe, C.; McCredie, N.; Robinson, A.; Grover, D. Augmented Reality in education—Cases,
+places and potentials. Educ. Media Int. 2014, 51, 1–15. [CrossRef]
+© 2020 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+article distributed under the terms and conditions of the Creative Commons Attribution
+(CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+
+

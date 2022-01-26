@@ -1,0 +1,479 @@
+A Review on Augmented Reality for Virtual Heritage
+System
+Zakiah Noh1, Mohd Shahrizal Sunar1, and Zhigeng Pan2
+1
+
+Faculty of Computer Science and Information System, Universiti Teknologi Malaysia,
+81310 Skudai, Johor
+zakiahnoh@gmail.com, shah@fsksm.utm.my
+2
+State Key Lab of CAD&CG, Zhejiang University, Hangzhou,
+310027, China
+zhigengpan@gmail.com
+
+Abstract. Augmented reality is one of the emerging technologies to reconstruct
+the historical building and monument in the previous era, where the user experiences with the real environment or virtual scene. In education, Virtual Heritage becomes as a platform of learning, motivating and understanding of certain
+events and historical elements for the students and researchers. The significance
+of reconstruction of digital culture heritage are to preserve, protect and interpret
+of our cultural and history. In recent year, there are a number of significant researches and techniques that have been developed, which is focusing on virtual
+restitution of historical sites. This paper will present an overview on augmented
+reality in Virtual Heritage system and also consists with the explanation of
+techniques to reconstruct the historical sites.
+Keywords: Virtual Reality, Augmented Reality, Virtual Heritage, 3D Reconstruction.
+
+1 Introduction
+With the increase of computational speed and advancement of specific computer
+technology, virtual reality or augmented reality applications become feasible in multidisciplinary areas such as in simulation, education, entertainment, medical and
+game. Furthermore, researches in Virtual Reality (VR) and Augmented Reality (AR)
+have shown considerable growth with the development of interactive computer technology and sophisticated 3D modeling packages.
+Virtual Heritage is one of the computer-based interactive technologies in virtual
+reality where it creates visual representation of monument, artifacts, building and
+culture to deliver openly to global audiences [1]. In education, Virtual Heritage becomes as a platform for enhancing the learning process, motivating and understanding
+of certain events and historical elements for the use of students and researchers. In
+developing Virtual Heritage application, eight requirements have been specified: high
+geometric accuracy, capture of all details, photorealism, high automation level, low
+cost, portability, application flexibility, and model size efficiency [2].
+Digital technology is used for the anthology, preservation and discovery of art and
+cultural heritage. However, in the developments of the concept of cultural park, AR
+M. Chang et al. (Eds.): Edutainment 2009, LNCS 5670, pp. 50–61, 2009.
+© Springer-Verlag Berlin Heidelberg 2009
+
+A Review on Augmented Reality for Virtual Heritage System
+
+51
+
+technologies are significance on the re-enact of historical monuments to reproduce on
+site historical places as in the golden period [3].
+Recently, AR technology has become a well-accepted technology among
+scientific community and public, which used for combining of real and virtual objects
+and mixed it into the real environment. In virtual heritage, this technology is used for
+improving the visitor experience of a cultural heritage site.
+This paper will present a review on augmented reality in virtual heritage. Section 2
+will discuss the previous research works of Virtual Heritage system. Section 3 will
+elaborate about augmented reality in Virtual Heritage and Section 4 will explain further about 3D reconstruction in AR for virtual heritage. Afterwards, we conclude this
+paper with summarize the related to this study.
+
+2 Virtual Heritage System
+Mixed reality is one of the technologies that encompass all the fields of reality,
+namely physical reality, augmented reality, augmented virtuality and virtual reality.
+Mixed reality refers to space which consists of real and virtual elements that interact
+with each other. The user will be experienced by putting them into certain type of
+reality. This technology has affected various fields of applications, from sociology to
+informatics and from art to architecture [4]. The concept of virtuality continuum defined by Milgram and Kishino [5] that relates to the mixture of classes of objects
+presented in any particular display situation.
+Virtuality continuum defines the environment consisting of real object or real environment. This real world scene can be observed either via conventional video display
+or not using any particular electronic display system. For example, in cultural heritage
+system, visitor can see the real museum or artifact in real scene.
+The continuum also presents the virtual environment, known as Virtual Reality that
+consists of only a virtual element. Virtual environment allows a user to interact with a
+computer-simulated environment where the user experience is real or imagined one.
+This technology completely immerses a user into an artificial environment such as in
+development of virtual museum. The most current VR environments are primarily
+visual experiences, which displayed either on a computer screen or through stereoscopic displays, speakers or headphones.
+Augmented reality and augmented virtuality are two technologies in the mix reality
+area. AR is a combination of real object and computer-generated data where virtual
+object are blended into the real world. It means that user could see virtual and real
+object coexisted in the same space. Thus, AR technologies supplement reality rather
+than completely replacing it [6]. In [6], three criteria of AR system are defined: 1)
+Combination of real and virtual; 2) Interactive in real-time; 3) Register in 3D. For
+instance, in virtual Pompeii, the virtual characters are superimposed into a real environment. The visitors can see the animated characters acting a storytelling drama on
+the site of ancient Pompeii using mobile AR-life system’s i-glasses in the real world.
+On the other hand, augmented virtuality, also referred to as mixed reality, is a
+technology that merges the real world element into virtual environment. Augmented
+virtuality environment is mostly in a virtual space, where physical objects are integrated and interacted with the virtual world in real-time. For example, augmented
+
+52
+
+Z. Noh, M.S. Sunar, and Z. Pan
+
+virtuality technologies bring the visitor into the virtual museum environment. Various
+techniques are used to achieve this integration such as using streaming video from
+physical spaces.
+In general, the term of heritage refers to the study of everything that is inherited
+and recovery to remain through the archeology, art, tradition, religious and cultural.
+Cultural heritage is one of the valuable assets need to be preserved and protected for
+the future generation.
+The aim of Virtual Heritage is to restore ancient cultures as a real environment that
+user can immerse and understand a culture. By creating ancient culture simulation,
+Virtual Heritage applications become as a link between the user of the ancient culture
+and the modern user. The interaction between them is one way, where the Virtual
+Heritage applications are dead and user can learn about the culture by interacting with
+their environment [7]. The efficient approach is to use VR in teaching students about
+ancient culture by sharing social space between user and virtual world.
+According to [2], there are several motivations for Virtual Heritage reconstruction
+which are:
+•
+•
+•
+•
+
+Documenting historic buildings and objects for reconstruction in case of disaster;
+Creating educational resources for history and culture;
+Reconstructing historic monuments that no longer or only partially exist;
+Visualizing scenes from viewpoints impossible in the real world due to size or
+accessibility issues;
+• Interacting with objects without risk of damage; and
+• Providing virtual tourism and virtual museum exhibits.
+Currently, Virtual Heritage has become increasingly important in the preservation,
+protection, and collection of our cultural and natural history. The world’s resources of
+historical in many countries are being lost and destroyed. With the establishing of
+new technology, it can be used as a solution for solving problematic issues concerning
+cultural heritage assets [8]. The paradigms of Virtual Heritage project are discussed in
+the following section.
+2.1 Virtual Hagia Sophia
+Virtual Hagia Sophia was developed by researchers from MIRALab at University of
+Geneva [9]. It was under the Conservation of the Acoustical Heritage by the Revival
+and Identification of the Sinan’s Mosques (CAHRISMA) project. Hagia Sophia
+Museum formerly was a mosque which is known as Masjid Sinan. The aim of this
+project is to develop an interactive simulation of Hagia Sophia museum that produces
+realistic environment with the illumination. This project also presented the simulation
+of characters and sound background.
+2.2 Ancient Malacca Project
+The purpose of Ancient Malacca project [10] is to produce the visualization of environment at Malay Sultanate of Malacca era during Sultan Mansur Syah's rule in 15th
+century. This project was developed in 2003 at Virtual Reality Center at Multimedia
+Development Corporation Sdn Bhd (MDeC) in Cyberjaya. The Ancient Malacca
+
+A Review on Augmented Reality for Virtual Heritage System
+
+53
+
+Fig. 1. Ancient Malacca Virtual Heritage application [10]
+
+project is based on research works done by historian that study about Malay Sultanate
+of Malacca history. The visualization of Ancient Malacca project was implemented
+by using high specification machine, namely SGI Onyx 3800 with 16 CPUs. This
+visualization was developed by using Iris Performer's software and displayed using
+dome approach. Fig. 1 shows the screenshot of Ancient Malacca project.
+2.3 Virtual Campeche
+Virtual Campeche [11] was created to simulate an old Mexican city located on the
+Yucatan Peninsula. It was found by the Spanish in 1540. In 2001, UNESCO declared
+Campeche as a World Cultural Heritage site. By creating the virtual Campeche, it
+allows the user to visit virtual Campeche through a web-based application using standard PCs. It was developed based on standard approach that is data acquisition and
+building reconstruction. To maximize interactivity and system responsiveness, three
+main techniques was applied in the virtual Campeche; 1) level of detail, 2) progressive scene display, 3) potential visibility computation.
+2.4 Virtual Pompeii
+In 1995, the virtual Pompeii project [12] was developed to recreate the theater area of
+the ancient Roman city of Pompeii in virtual space. This project has integrated with
+models of the Temple of Isis, the grand Theater, the Triangular Forum and connecting
+areas in three dimensional. The supporting historical documentation, original musical,
+dramatic compositions and imagery sources also have been produced in this project.
+To construct an interactive historical recreation, virtual Pompeii project has exploited
+the new immersive Virtual Reality as a medium.
+
+3 Augmented Reality in Virtual Heritage
+Recently, AR is widely being used in many applications such as education, entertainment, virtual heritage, simulation and games. In virtual heritage, AR is used to enhance the overall experience of the visitor of a cultural heritage site. Furthermore,
+with the interactive, realistic and complex AR system, it can enhance, motivate and
+stimulate students’ understanding of certain events, especially for the traditional notion of instructional learning that has proven inappropriate or difficult [13]. With the
+
+54
+
+Z. Noh, M.S. Sunar, and Z. Pan
+
+increasing of development current technologies, a lot of projects related with AR
+technologies are present, for example in Virtual Heritage application. The paradigms
+of AR in Virtual Heritage project are discussed in the following section.
+3.1 Ancient Pompeii
+Papagiannakis et al. [14][15][16] described mixing virtual and real scenes in the site
+of ancient Pompeii. Ancient Pompeii is a symbolic site for European cultural identity
+and archeology history. This project is based on 3D reconstruction of ancient frescospaintings for real-time revival of their fauna and flora, featuring groups of virtual
+animated characters with artificial life dramaturgical behaviors in an immersive, fully
+mobile AR environment.
+In this project, video-see-through HMD is used to capture real scene. After that, this
+scene was blended by precise real-time registration and 3D modeling of realistic complete simulation of virtual humans and plants in a real-time storytelling scenario based
+on the environment. These virtual humans are completely with real-time body, speech,
+face expression and cloth simulation. The project was performed in a mobile and wearable setup with markerless tracked camera and was implemented in real-time.
+
+Fig. 2. Virtual human character in ancient Pompeii (Left) and AR scenario with plant simulation (Right) [15][16]
+
+3.2 AR Based System for Personalized Tours in Cultural Heritage Sites
+The project developed by ARCHEOGUIDE [17][18] is associated with the development of personalized electronic guide and tour assistant. The system was developed to
+transform the method of viewing and learning about a cultural heritage site for the
+visitors. In this beginning of system, the visitors are providing with user profile representing their interest and background. Then, the system provides a set of predefined
+tour that the visitor must choose. From that, the system will guide the visitor through
+the site, acting as a special instrument. To display AR reconstruction of the temples
+and other monuments of the site, the system will depend on the position-orientation
+tracking component. Fig. 3 illustrates the natural view from the visitor’s viewpoint
+and followed by the same view augmented with the 3D model. The site visitors are
+wearing AR glasses to see the 3D image display. This system is handy unit carried by
+visitor during their site tours and communication networks.
+
+A Review on Augmented Reality for Virtual Heritage System
+
+55
+
+Fig. 3. Original image (Left) and Augmented image (Right) of Ancient Olympic Games [18]
+
+3.3 ARICH and ARCO Projects
+Augmented Reality in Cultural Heritage (ARICH) and Augmented Representation of
+Cultural Objects (ARCO) has been discussed in [19]. For visualization of archaeological artifacts, ARICH project focuses on the design, development and implementation of an indoor augment reality system. The scope of this project covers the
+automated modeling from architectural plans to efficient and realistic AR rendering.
+The archaeologist provided 2D architectural plans to ARICH project as the input of
+the system. Meanwhile, in ARCO project, it is based on novel and robust digital capture and presentation technique. The overview of this project is to technical solution
+for automated creation of virtual cultural objects using object modeling through
+photogrammetry. Enhancement of these objects, management of all data and reenactment and arrangement of the collections and their environment based on
+augmented interface or a web browser.
+3.4 Virtual Reality for Archeological Maya Cities
+Ruiz et al. [20] developed the VR for archeological Maya Cities. Their project is
+based on reconstruction of Calakmul’s archeological site located in the State of Campeche, Mexico. AR technology is used in this system to give the visitor two different
+sights of the same situation. At the one sight, the system will present a state of the
+funerals which it’s physically reproduction. Another sight, the system can present
+accordingly with laboratory test, which is theoretically virtual superposition of the
+elements of Calakmul. The visitors can use this virtual Calakmul system in several
+ways: 1) As a looped-projection of pre-established walkthrough around the structured;
+2) As a self guided experience with or without immersive devices; 3) As a guided tour
+for learning of each structure aided with an intelligent agent provided with a voice
+recognition system. The advantage of virtual technology for Calakmul archeological
+site is to provide more information and understanding about the Calakmul’s building
+where the location is very deep in the tropical forest which requires five hours trip just
+to see it.
+3.5 The PRISMA Project
+F. Fritz et al. [3] were presented the PRISMA project. The purpose of this project is to
+design, develop and implement of new 3D visualization device based on AR
+
+56
+
+Z. Noh, M.S. Sunar, and Z. Pan
+
+technologies that incorporates with a tourist application. The concepts of this combination are known as tourist binoculars with AR system, which multimedia personalized interactive information can enhance the real scene in order to increase the user
+experience. With these technologies, the user can retrieve interactive multimodal
+information about monuments and historical buildings. Basically, the PRISMA system record the real-time video stream using a video-see through visualization system
+composed of a camera. To visualize the scene, this project used visualization device
+that is binoculars and the point of view and rotation of the binocular is track by inertial sensor. The camera mounted on the binoculars will capture the field of view of
+the spectator. Then, it will send to the processing unit to add graphical data and the
+augmented stream is sent back to the binocular screens.
+
+4 3D Reconstruction Techniques for AR in Virtual Heritage
+AR technologies are becaming increasingly popular. This technologies not only practically for the AR system developers but also for the scientific community. However,
+the development of AR technologies involved the several issues as depicted in Fig. 4.
+This figure illustrates the overview of AR issues in Virtual Heritage that have been
+studied and well-structured that is reconstruction, registration, rendering or animation
+and position orientation tracking. According to [6], registration is the one of problem
+that limiting in building effective AR applications. Registration means an accurate
+alignment of real and virtual elements. Without accurate registration, AR will not be
+accepted in many applications because it fails to show precise results. In [14][15], the
+project associated with the simulation of virtual humans and plants in a real-time. The
+issues with the rendering and animation are considering increasing the realism and the
+presence of the user in the scene. Besides that, virtual animation system currently
+does not consider interaction with object in the scene. Position and orientation tracking system relates with the issues of position and direction of view. Based on [26],
+there are a few current tracking technologies that offer high accuracy and low latency
+
+Fig. 4. Structure of AR in Virtual Heritage
+
+A Review on Augmented Reality for Virtual Heritage System
+
+57
+
+Table 1. Techniques for 3D Reconstruction
+Technique
+
+Description
+
+Image-based
+modeling
+
+This technique commonly used for geometric surfaces of architecture
+objects [21][22] or for precise terrain modeling. Image-based modeling
+refers to the use of images to make the reconstruction of 3D models. It is
+use a mathematical model to pick up 3D object information from 2D image
+dimensions or they get 3D data using methods such as shape from shading,
+texture, specularity, contour and from 2D edge gradients. Image-based 3D
+modeling method consists of several steps: 1) design (sensor and network
+geometry); 2) measurement (point, cloud, lines); 3) structuring/modeling
+(geometry, texture); 4) visualization/analysis [23]. The advantage of
+image-based representations is the capability to represent arbitrary
+geometry. For modeling complete geometric structures, it is typically
+essential to remove the labor-intensive task through this approach. This
+technique also can handle subtle real-world effects captured by images, but
+difficult to reproduce with usual graphics techniques [21].
+
+Range-based
+modeling
+
+3D geometric information of an object can directly capture through this
+technique. It is based on costly active sensor that often lack in texture
+information, but can give a very detailed and precise illustration of most
+shapes. However, the information of texture or color can be attached from
+the scanner through color channel or from separate digital camera,
+[22][23]. Textures with high-resolution color that get from separate digital
+camera support the creation of realistic 3D models. To wrap every aspect
+of the object, it is generally required to make multiple scans from different
+locations, which appropriate to object size, shape and occlusions. The
+alignment and combination of the different scans can influence the final
+accuracy of the 3D model, where every scanner has different range of
+accuracy. Besides that, range-based modeling can provide precise and
+complete details with a high degree of automation for small and medium
+size objects, which up to the size of a human [22].
+
+Image-based
+rendering
+
+Image-based rendering uses images as modeling and rendering primitives.
+The goal of this technique is to get more realistic and faster renderings and
+to simplify the modeling task. This technique is considered as a good
+technique for the generation of virtual view, where particular objects and
+under specific camera motions and scene conditions. From the input image,
+this technique creates novel view of 3D environment. In general, imagebased rendering technique is only used for applications requiring limited
+visualization. The technique relies on accurate camera positions or
+performing automatic stereo matching, where the absence of geometry
+data, need a large number of closely spaced images to succeed [23]. Most
+of image-based rendering match to image-geometry hybrids, by means of
+the equivalent amount of geometry ranging from per-pixel depth to
+hundreds of polygons [21].
+
+Photogrammetric
+
+Photogrammetric is an instrument for the efficient and accurate gaining
+of information for topographic and thematic mapping applications. High
+geometric accuracy can attain using photogrammetric methods, even
+though without capturing all fine geometric details. To get image data, it
+
+58
+
+Z. Noh, M.S. Sunar, and Z. Pan
+Table 1. (Continued)
+Technique
+
+Description
+can be acquired from ground level or at different altitude and with different
+sensors. The main benefit of photogrammetric technique is the possibility
+to simultaneously provide both geometry and surface texture for depicted
+objects [24].
+
+Combination
+of image-and
+range-based
+modeling
+
+The combinations of technique require the modeling of large structures and
+scenes because there is no single technique by itself can efficiently provide
+the complete model. Thus, the coherent solution is determined by imagebased methods and get details by laser scanning. The aerial and terrestrial
+images for the main shapes and laser scanning for fine geometric details to
+fully model the abbey of Pomposa in Italy have already used by [2]. [25]
+combined the 3D technologies to model the heritage site of Selinunte and a
+Byzanthine Crypt near Lecce (Italy) [22][23].
+
+but none of the available system appropriate for outdoor usage with adequate precision such as for [17][18].
+However, in this paper, reconstruction in AR will describe more details. In development of reconstruction cultural heritage, 3D modeling became an important and
+elementary step in the process of development. Nowadays, there are many investigations have been conducted in the fields of 3D modeling object. This is because 3D
+modeling object can be used in many applications such as visualization, navigation,
+animation and inspection. It also can be seen as complete process that starts from data
+acquirement until ends with 3D virtual model visually on a computer screen. Based
+on previous research works, there is no single technique that can be considered as a
+best technique for all applications including reconstruction of cultural heritage. Most
+of the techniques that were proposed have different accuracy, consistency and facility
+to capture details and their level of automation.
+On the other hand, in this study, the reconstruction technique is emphasized in order to get accuracy and photorealistic 3D measurements. In [22] 3D object measurement and reconstruction technique are divide in two: contact methods and non-contact
+methods. In contact methods, coordinate measuring machines, calipers, rules and
+bearing are used, meanwhile in non-contact methods, it used tool likes X-ray, SAR,
+photogrammetry and laser scanning. Currently, the generation of 3D model is achieving using non-contact systems based on light waves. Several techniques for reconstruction in Virtual Heritage application are shown in Table 1.
+
+5 Conclusion and Discussion
+We have presented a review of AR in Virtual Heritage studies that focuses on 3D
+reconstruction of cultural heritage. Virtual Reality and Augmented Reality technology
+are commonly used for cultural heritage purposes which focus on learning process, as
+well as for education and entertainment through interactive experience. Virtual reality
+technologies are totally simulated the environment, which commonly immerse the
+user into synthetic environments. The user experiences in virtual reality environments
+
+A Review on Augmented Reality for Virtual Heritage System
+
+59
+
+are real. Meanwhile, AR technology is a combination of real and virtual objects,
+where virtual spaces are mixed with the physical spaces. Furthermore, AR can provide more information and knowledge for user to gain. For instance, in virtual Pompeii, the visitors can observe the animated characters perform in a storytelling drama
+on the site of ancient Pompeii using mobile AR-life system’s i-glasses in the real
+world environment. On the other hand, augmented contribute virtual in reality rather
+than replace the real world.
+In this paper, several projects related to AR and Virtual Heritage developed by
+previous researchers have been discussed. In virtual heritage, every object in real
+world such as museum must be modeled to create interactive virtual environment.
+Hence, the system required a lot of memory to render every model that has been created. Ultimately, it increases the computation cost and reduces the rendering speed in
+order to perform large-scale sites. AR in Virtual Heritage is not required a lot of space
+of memory. This is due to AR is not modeled everything in real world, but only adds a
+certain virtual object in the real world. Thus, this may speed up the rendering process
+because only small quantity of virtual objects will be rendered and overcome the
+computation cost problems. The overview on AR issues in Virtual Heritage that have
+been studied and well-structured consists of reconstruction, registration, rendering or
+animation and position orientation tracking. However, in this paper, a major focus is
+reconstruction in AR. The importance of reconstruction of digital culture heritage is
+to preserve, protect and interpret of our cultural and history.
+This paper will bring benefits especially for academic purposes and research studies in Virtual Heritage application. This Virtual Heritage application can enhance and
+stimulate student’s understanding of certain features particularly for inappropriate or
+difficult learning instructional. As a conclusion, we hope that this study is useful for
+the AR system developer and therefore, contributing to the computer graphics community.
+
+Acknowledgments
+We would like to express our appreciation to Universiti Teknologi Malaysia (UTM)
+and Malaysian Ministry of Science, Technology and Innovation (MOSTI) for providing financial support for this research through eScienceFund grant (79282).
+
+References
+1. Stone, R., Ojika, T.: Virtual Heritage: What Next? IEEE Multimedia, 73–74 (2002)
+2. El-Hakim, S., Beraldin, J.A., Picard, M., Godin, G.: Detailed 3D reconstruction of largescale heritage sites with integrated techniques. IEEE Computer Graphics and Application 24(3), 21–29 (2004)
+3. Fritz, F., Susperregui, A., Linaza, M.T.: Enhancing Cultural Tourism experiences with
+Augmented Reality Technologies. In: The 6th International Symposium on Virtual Reality,
+Archaeology and Cultural Heritage VAST (2005)
+4. Mixed Reality, http://www.architecturemixedreality.com/
+5. Milgram, P., Kishino, F.: A Taxonomy of Mixed Reality Visual Displays. IEICE Trans.
+Information Systems E77-D(12), 1321–1329 (1994)
+
+60
+
+Z. Noh, M.S. Sunar, and Z. Pan
+
+6. Azuma, R.: A Survey of Augmented Reality. Presence: Teleoperators and Virtual Environments 6, 355–385 (1997)
+7. Jacobsen, J., Holden, L.: Virtual Heritage: Living in the Past. Techné: Research in Philosophy and Technology 10(3) (Spring 2007)
+8. Vlahakis, V., Ioannidis, N., Karigiannis, J., Tsotros, M., Gounaris, M.: Virtual Reality and
+Information Technology for Archaeological Site Promotion. In: 5th International Conference on Business Information Systems (BIS 2002), Poznań, Poland (2002)
+9. Foni, A., Papagiannakis, G., Magnenat-Thalmann, N.: Virtual Hagia Sophia: Restitution,
+Visualization and Virtual Life Simulation. In: UNESCO World Heritage Congress Proceedings (2002)
+10. Sunar, M.S., Mohd Zin, A., Tengku Sembok, T.M.: Improved View Frustum Culling
+Technique for Real-Time Virtual Heritage Application. The International Journal of Virtual Reality 7(3), 43–48 (2008)
+11. Zara, J., Beneš, B., Rodarte, R.: Virtual Campeche: A Web Based Virtual ThreeDimensional Tour. In: Proceedings of the Fifth Mexican International Conference in Computer Science (ENC 2004), pp. 133–140 (2004)
+12. Jacobson, J., Vadnal, J.: The Virtual Pompeii Project. In: Richards, G. (ed.) Proceedings of
+World Conference on E-Learning in Corporate, Government, Healthcare, and Higher Education 2005, pp. 1644–1649. AACE, Chesapeake (2005)
+13. Fällman, D., Backman, A., Holmlund, K.: VR in Education: An Introduction to Multisensory Constructivist Learning Environments. In: Conference on University Pedagogy.
+Umea University, Sweden (1999)
+14. Papagiannakis, G., Ponder, M., Molet, T., Kshirsagar, S., Cordier, F., MagnenatThalmann, N., Thalmann, D.: LIFEPLUS: Revival of life in ancient Pompeii. In: Virtual
+Systems and Multimedia, VSMM 2002 (2002)
+15. Papagiannakis, G., Schertenleib, S., O’Kennedy, B., Poizat, M., Magnenat-Thalmann, N.,
+Stoddart, A., Thalmann, D.: Mixing Virtual and Real scenes in the site of ancient Pompeii.
+Computer Animation and Virtual Worlds 16, 11–24 (2005)
+16. Papagiannakis, G., Magnenat-Thalmann, N.: Virtual Worlds and Augmented Reality in
+Cultural Heritage Applications. In: Baltsavias, et al. (eds.) Proc. Recording, Modeling and
+Visualization of Cultural Heritage, pp. 419–430. Taylor and Francis Group, Abington
+(2006)
+17. Stricker, D., Dähne, P., Seibert, F., Christou, I., Almeida, L., Ioannidis, N.: Design and
+Development Issues for ARCHEOGUIDE: An Augmented Reality-based Cultural Heritage On-site Guide. In: EuroImage ICAV 3DConference in Augmented Virtual Environments and Three-dimensional Imaging, Mykonos, Greece (2001)
+18. Vlahakis, V., Karigiannis, J., Tsotros, M., Gounaris, M., Almeida, L., Stricker, D., Gleue,
+T., Christou, I., Carlucci, R., Ioannidis, N.: ARCHEOGUIDE: First results of an Augmented Reality. In: Mobile Computing System in Cultural Heritage Sites, Virtual Reality,
+Archaeology, and Cultural Heritage International Symposium (VAST 2001), Glyfada, Nr
+Athens, Greece (2001)
+19. Mourkoussis, N., Liarokapis, F., Darcy, J., Pettetsson, M., Petridis, P., Lister, P.F., White,
+M.: Virtual and Augmented Reality Applied to Educational and Cultural Heritage Domains. Business information Systems. In: Proceedings of BIS 2002, Poznan, Poland (2002)
+20. Ruiz, R., Weghorst, S., Savage, J., Oppenheimer, P., Furness, T.A., Dozal, Y.: Virtual Reality for Archeological Maya Cities. Presented at UNESCO World Heritage Conference,
+Mexico City (December 2002)
+21. Oliveira, M.M.: Image-Based Modeling and Rendering Techniques: A Survey. RITA 9(2),
+37–66 (2002)
+
+A Review on Augmented Reality for Virtual Heritage System
+
+61
+
+22. Remondino, F., El-Hakim, S.: Image Based 3D Modeling: A Review. The Photogrammetric Record 21(115), 269–291 (2006)
+23. Remondino, F., El-Hakim, S.: Critical Overview of Image-based 3D Modeling. In: Workshop 3D laser Scanning and Photogrammetry for Building Information Modeling, Trondheim, Norwey (2008)
+24. Gonzo, L., Voltolini, F., Girardi, S., Rizzi, A., Remondino, F., El-Hakim, S.: Multiple
+Techniques Approach to the 3D Virtual Reconstruction of Cultural Heritage. In: Eurographics Italian Chapter Conference 2007 (2007)
+25. Beraldin, J.A., Picard, M., El-Hakim, S., Godin, G., Valzano, V., Bandiera, A.: Combining
+3D Technologies for Cultural Heritage Interpretation And Entertainment. In: Beraldin,
+J.A., El-Hakim, S., Gruen, A., Walton, J. (eds.) Videometrics VIII, vol. 5665, pp. 108–118
+(2005)
+26. Hildebrand, A., Daehne, P., Christou, I.T., Demiris, A., Diorinos, M., Ioannidis, N.,
+Almeida, L., Weidenhausen, J.: Archeoguide: An Augmented Reality based System for
+Personalized Tours in Cultural Heritage Sites. In: International Symposium of Augmented
+Reality 2000 (2000)
+27. Addison, A.C.: Emerging Trends in Virtual Heritage. IEEE Multimedia 7, 22–25 (2000)
+28. Azuma, R., Baillot, Y., Behringer, R., Feiner, S., Julier, S., MacIntyre, B.: Recent Advances in Augmented Reality. IEEE Computer Graphics and Applications (2001)
+29. Azahar, M.A.M., Sunar, M.S., Daman, D., Bade, A.: Survey on Real-Time Crowds Simulation. In: Pan, Z., Zhang, X., El Rhalibi, A., Woo, W., Li, Y. (eds.) Edutainment 2008.
+LNCS, vol. 5093, pp. 573–580. Springer, Heidelberg (2008)
+
+

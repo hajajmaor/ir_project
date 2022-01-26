@@ -1,0 +1,338 @@
+  IUI 2011 Workshop on Location
+Awareness for Mixed and Dual Reality
+
+           Indoor Positioning:
+        Group Mutual Positioning
+Eyal Dim, Tsvi Kuflik, Joel Lanir, Oliviero Stock, Michele Corra
+                       University of Haifa
+                         FBK-irst, Trento
+                           Tretec S.r.l.
+ In all these cases you may want to
+share social experiences with family
+    or friends who are far away
+
+
+
+
+       5
+           Social Experience
+
+
+
+
+Be
+together
+
+
+                               6
+           Social Experience
+
+
+
+
+            Send a
+            message
+
+Be
+together
+
+
+                               7
+           Social Experience
+
+
+
+
+                      Share
+                      audio
+            Send a
+            message
+
+Be
+together
+
+
+                               8
+           Social Experience
+
+
+
+
+                              Share
+                      Share   video
+                      audio
+            Send a
+            message
+
+Be
+together
+
+
+                                      9
+           Social Experience
+
+
+
+                                      Share
+                              Share   presence
+                      Share   video
+                      audio
+            Send a
+            message
+
+Be
+together
+
+
+                                                 10
+       Shared Presence
+
+
+            Be here
+    Feel as if you are there
+Appear there as if you are there
+
+
+
+                                   11
+    Shared Presence Prerequisite
+
+• Need to detect, transmit and represent:
+  – Individual context
+  – Social context
+
+
+
+
+                                            12
+               Context
+“Any information that can be used to
+characterize the situation of an entity. An
+entity is a person, place, or object that is
+considered relevant to the interaction
+between a user and an application, including
+the user and application themselves”
+
+                  [Dey and Abowd, 2000]
+
+                                           13
+                  Social Context
+• Who is in the social group
+• Group characteristics (e.g. cohesiveness)
+• Group member characteristics (e.g. friendship, leadership,
+  role, dominance)
+• Interpersonal characteristics (e.g. being polite, heaving
+  empathy, arguing)
+• Current status (e.g. involved in conversation)
+• History of relations
+• Inter-group relations
+• Mob
+                                                        14
+        Sensors for Context Detection
+                  Examples
+•   Positioning and proximity
+•   Orientation – compass, gyro
+•   Voice – voice detection, recorders
+•   Body language – video, markers
+•   Eye gaze sensors
+•   Brain activity
+•   Vital signs
+•   Artificial nose
+
+
+                                         15
+     Positioning and Proximity Sensing
+                 Examples
+•   RFID
+•   Wifi
+•   Cellular
+•   IR
+•   GPS (outdoors),  Pseudolites (indoors)
+•   INS
+•   Video
+•   Active floor
+•   Ultra sound
+•   Markers
+•   Air flow pressure changes
+•   Power line positioning
+
+
+
+                                              16
+             Determining Position
+                  Examples
+•   Proximity
+•   Trilateration
+•   Time of flight
+•   Angle of arrival
+•   Signal Strength
+•   Dead Reckoning
+
+
+
+                                    17
+           Positioning Problems
+•   Holes in detection
+•   Sensor networks - holes in transmission
+•   Interferences
+•   Reflections
+•   Occlusion and shielding
+
+
+
+
+                                              18
+Mutual Positioning
+
+
+
+
+                     19
+        Research Environment
+
+• The research is conducted in Museums
+• Exploring ways to measure museum visitors
+  behavior, analyze it, and suggest smart
+  services to the visitors
+• One important aspect, that can influence
+  these services is the social context of the
+  museum visitors
+
+                                                20
+     Museums – Social Activity
+
+
+
+
+The overwhelming percentage of visitors come in
+groups — usually with families or friends …
+Consequently, museum visitation is, to a large extent,
+a social experience
+                                    [Bitgood, 2002]
+
+                                                      21
+     Sensors at the Hecht Museum
+              (PIL Project)
+•   Proximity to a stationary point (RFID, signal strength)
+•   Proximity to a mobile device (RFID, signal strength)
+•   Orientation (magnetometers)
+•   Voice detection (microphone)
+•   Motion detection (accelerometers)
+
+
+
+
+                                                              22
+    Requirements from a Positioning
+               System
+• We would like positioning data to be:
+  – Precise
+  – Accurate
+  – Continuous
+  – Complete
+  – Error free
+• This is not the case for indoor positioning
+
+
+                                                23
+       Can Social Behavior Assist in
+              Positioning?
+
+
+If A is near B, the position of A is unknown and
+   the position of B is known, we may be able to
+   infer the position of A from the position of B
+
+
+
+
+                                                    24
+      The Nature of RFID Proximity
+                              a
+
+• Pair mutual proximity
+                                  B         A                    B   A             B A
+                                      (1)                      (2)                  (3)
+                              b                                  c
+
+
+• Triple mutual proximity
+                                      C         B     A
+                                                                          B    A   C
+
+                              d
+
+
+• Mutual proximity accuracy                                C     A
+                                                                      B
+                              Legend:
+                                                    Mobile Blind sensor
+                                                    Stationary Beacon sensor
+                                                    Mobile Blind transmission pattern
+                                                    (schematic)
+                                                    Stationary Beacon transmission pattern
+                                                    (schematic)
+                                                                                             25
+                     Test Case
+• 13 small groups ( 4 groups of 3, 9 pairs)
+• Museum visit time 35 – 135 minutes (64 minutes
+  average)
+• 113,441 messages
+• 10.1% were proximity messages (0.7% proximity to
+  two other people) . Out of them:
+  – Only 21% had positioning reports
+  – Mutual positioning added 7.8% , an increase of 37% in
+    regards to the available positioning messages
+
+
+                                                            26
+                      Discussion
+• Mutual positioning decreases accuracy
+• Increased quality of service and coverage would contribute to
+  proximity assessment (if the position is accurate and
+  continuous then the proximity is known too)
+• Proximity would contribute in cases of decreased quality of
+  service and coverage
+• Spatiotemporal separation of group members decreases the
+  chances for mutual positioning, and being joint increases
+  them
+• Crowding may increase the chances for mutual positioning,
+  while adding interferences
+• Complementary social factors such as conversation and
+  orientation may help in assessing proximity
+
+
+                                                                  27
+                  Conclusions
+
+• Where you are and whom you are with are equally
+  important in order to share contexts in mixed reality
+
+• Positioning may contribute to proximity detection
+  and vice versa
+
+
+
+
+                                                          28
+                         Bibliography
+• Dey, A. K., Abowd G. D. Towards a better understanding of context and
+  context-awareness. In: CHI’2000 Workshop on the What, Who, Where,
+  When, and How of Context-Awareness, (2000).
+• Bitgood, S.: Environmental Psychology in Museums, Zoos, and Other
+  Exhibition Centers. In: Bechtel, R., and Churchman, A. (eds.), Handbook of
+  Environmental Psychology, John Wiley & Sons., (2002), 461-480.
+• Dim, E., and Kuflik, T.: Social Signal Processing: Detecting Small Groups
+  Interaction in Leisure Activity. In: The Proceeding of the 14th International
+  Conference on Intelligent User Interfaces, IUI'2010, Hong Kong, China,
+  (2010), 309-312.
+• Varshavsky, A. and Patel, S. Location in Ubiquitous Computing. In: Krumm,
+  J. (edt.), Ubiquitous Computing Fundamentals, Taylor and Francis Group,
+  Florida, (2010), 285-319
+• Vinciarelli A., Pantic, M., Bourland H.: Social Signal Processing: Survey of
+  an Emerging Domain. In Image and Vision Computing, vol. 27 (2009),
+  pp1743-1759.
+
+
+                                                                                  29
+

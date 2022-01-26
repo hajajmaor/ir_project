@@ -1,0 +1,1227 @@
+EAI Endorsed Transactions
+
+on Creative Technologies                   Research Article
+
+Organization of Museum Exhibit Information for
+Ubiquitous Visitors
+
+Preeti Khanwalkar, Pallapa Venkataram∗
+
+Protocol Engineering and Technology Unit,
+Department of Electrical Communication Engineering,
+Indian Institute of Science, Bangalore, India, 560012
+preetik@iisc.ac.in, pallapa@iisc.ac.in
+
+AbIsNtrTaRctODUCTION: A wide variety and an increasing amount of exhibit 
+information is often overwhelming for
+the museum ubiquitous visitors.
+
+OBJECTIVES: In this work, we propose the organization of museum exhibit 
+information to mitigate the
+information overloading problem of the ubiquitous visitors.
+
+METHODS: The Introductory Attributes (IA), Functional/Behavioral Attributes 
+(F/BA), and Descriptive Attributes
+(DA) which broadly characterize the museum exhibit information are organized as 
+essential and further as
+elaborated information at the levels of school kids, college students, and 
+professionals ubiquitous visitors.
+
+RESULTS: The results show that the museum exhibit information organization time 
+and the size of the
+organized information increases with the increase in the understanding levels 
+of the ubiquitous visitors.
+
+CONCLUSION: The organization of Swami Vivekananda exhibit information indicates 
+an example of catering
+information for the individual requirements of museum ubiquitous visitors.
+
+Received on 02 July 2020; accepted on 27 August 2020; published on 28 August 
+2020
+
+Keywords: Museum Ubiquitous Visitors, Exhibit Information, Organization
+
+Copyright © 2020 Preeti Khanwalkar et al., licensed to EAI. This is an open 
+access article distributed under the terms of
+the Creative Commons Attribution license, which permits unlimited use, 
+distribution and reproduction in any medium
+so long as the original work is properly cited.
+
+doi:10.4108/eai.11-6-2020.166011
+
+
+The increasing capacity of museum archives has led
+to the availability of a large amount of exhibit
+information. However, from a large amount of exhibit
+information, mostly a small fraction of information
+segments might be relevant for the ubiquitous visitors
+[1–5]. Museum ubiquitous visitors are the visitors who
+need anywhere, anytime exhibit information according
+to their individual requirements without any requests
+or interventions. Thus, providing exhibit information
+as available from the original sources may lead to
+offer the same information to the ubiquitous visitors,
+despite the fact that their individual requirements
+such as levels of understandings, interests, etc., are
+different [6–10]. In other words, museum ubiquitous
+visitors may have different information need [11,
+12]. Even with such individual requirements of the
+
+ubiquitous visitors, accordingly, the organization of
+museum exhibit information is not widely discussed.
+Indeed, from the perspectives of the ubiquitous visitors,
+organization of exhibit information is useful for both:
+
+(i) To alleviate the information overloading problem for
+the ubiquitous visitors by filtering and managing a large
+amount of information at different levels; (ii) To provide
+the most significant exhibit information pertaining to
+the individual requirements of the museum ubiquitous
+visitors.
+
+This paper presents the organization of museum
+exhibit information to cater to the individual needs
+of the ubiquitous visitors. We organize the museum
+exhibit information as essential information and further
+as elaborated information at the levels of school
+kids, college students, and professionals ubiquitous
+
+  visitors, respectively. The Introductory Attributes (IA),
+
+∗Corresponding author. Email: pallapa@iisc.ac.in         Functional/Behavioral 
+Attributes (F/BA), and Descriptive
+
+
+Preeti            Khanwalkar,            Pallapa            Venkataram          
+                         
+
+
+Attributes (DA) which broadly characterize the exhibit
+information are identified and used to organize the
+exhibit information. The organized museum exhibit
+information is maintained at respective URLs to
+dynamically cater to the individual requirements of
+the ubiquitous visitors. We present an example of
+organization of Swami Vivekananda exhibit information.
+The simulation results show that the museum exhibit
+information organization time and the size of the
+organized information increase with the increase in the
+understanding levels of the ubiquitous visitors.
+
+The rest of the paper is organized as follows.
+Section 2 discusses some of the related work. Section 3
+presents the organization layout of the museum exhibit
+information. Section 4 provides an example of the
+organization of Swami Vivekananda Exhibit Information
+at   the level of school kids, college students, and
+professionals ubiquitous visitors. Section 5 presents
+the simulation results followed by the conclusion and
+future work in Section 6.
+
+Providing exhibit information museum services to the
+ubiquitous visitors introduces new challenges in the
+organization of exhibit information [6, 7, 12–23]. The
+key points of concern here are: (i) Maintain the focus
+of attention of museum ubiquitous visitors and to
+avoid distractions through information overloading
+
+(ii) Provide exhibit information according to the
+individual requirements of the museum ubiquitous
+visitors. Katz et al. [6] have presented a methodological
+approach to design museum presentations in PEACH
+and PIL projects [7, 8]. For the organization of
+exhibit information, the whole exhibition, its objects,
+objectives, and the visitor interested information are
+considered. Nine steps are used to prepare museum
+presentation: (i) Finding the main idea of the exhibition
+
+(ii) Recording exhibits (iii) Defining fields of interests
+
+(iv) Searching and selecting source text (v) Writing text
+(spoken language) (vi) Choosing images (vii) Selection
+of cinematographic techniques (viii) Audio generation
+
+(ix) Synchronizing audio and images. These steps are
+used to support museum visitors to obtain museum
+presentations at their own pace and knowledge level.
+
+MacroNode approach [15] is developed within
+HyperAudio [24] and HIPS [20] project to dynamically
+compose the adaptive hypermedia for the museum.
+The available information is divided into content
+units (called Macronodes) which are annotated with
+the required descriptions. The annotations provide
+an explanation of the main topic of macronodes and
+the rhetorical relations exists with the other nodes.
+At the time of interaction of the visitors, the system
+
+dynamically designs the nodes of hypermedia with
+varied pieces of information using rule-based mecha-
+nism which encodes strategies according to the user
+model and the domain model. For textual informa-
+tion, macronode is considered as paragraphs. Moreover,
+macronode may represent data from different media
+such as text, audio, images, or any of these combina-
+tions.
+
+In [13], effective levels of adaptation support are
+discussed for the different types of visitors during
+navigation of museum information. The adaptation
+support is discussed for: Presentation, where different
+types of media, layout and the attributes of the
+perceived components are considered; Information,
+where a change in the information content of the same
+topic for a different type of visitors are considered;
+Navigation, where different links to different locations
+and modalities are considered. In [25], four components
+are discussed to improve visitor’s museum experience
+which includes information representations, modeling
+visitors, matching visitors and content, and providing
+content to the visitors. These components enable to
+provide exhibit information according to the individual
+requirements of the museum visitors.
+
+M-PIRO (Multilingual personalized information
+objects) [26, 27] project is designed to provide
+automatic multilingual textual and spoken descriptions
+of exhibits. The descriptions are generated in several
+languages and are tailored to the visitor’s backgrounds,
+ages, and their past interaction with the system. The
+techniques related to the field of natural language
+generation, user modeling, and speech synthesis are
+used  to develop the information about the exhibits,
+which is stored in the database to present over the Web.
+M-PIRO extends ILEX’s and HIPS [20, 28] technology
+by incorporating enhanced multilingual capabilities,
+higher quality speech output, modular core generation
+engine, and extended user modeling mechanisms. M-
+PIRO has discussed four stages within natural language
+generation for the exhibit information descriptions: (i)
+Content selection specifies the facts i.e., relations or
+attributes that the exhibit information should describe;
+
+(ii) Document planning which specifies the sequence of
+facts and their rhetorical relations; (iii) Microplanning
+specifies how facts expressed as a phrase in each
+language; (iv) Surface realization produces the final
+textual form of the descriptions.
+
+The Personal Experience with Active Cultural Her-
+itage (PEACH) [7] project has constructed the suite of
+interactive and visitor-adaptive technologies for pro-
+viding individual experience to the museum visitors.
+For providing an adaptive, intelligent presentation of
+exhibit information PEACH has implemented all fea-
+tures similar to ILEX [28], and introduced video along
+with the texts and images. Xscript language is used
+to provide coherent presentations [29]. The presented
+
+
+                                    Organization of Museum Exhibit Information 
+for Ubiquitous Visitors
+
+
+approach expands the range of choices to prepare coher-
+ent presentations for the visitors according to their
+history, interests, and previous knowledge.
+
+PIL  (Personal  experience  with  active  cultural
+heritage-IsraeL) is designed as an extension of the
+PEACH project [30]. PIL project architecture consists
+of a personal broker which present on visitor device to
+deliver presentations and enables the visitor to control
+the system; a spatial information broker observes
+visitor position; a visitor modeler updates the model of
+an individual visitor; a presentation composer suggests
+presentation according to the preferences and locations
+of the visitors; and a service manager provides context-
+aware communication for visitors. In order to provide
+personalized services in museum different aspects
+are presented in [8], which includes preparation of
+museum contents, ubiquitous visitor modeling, visitor
+interface design, and system architectural aspects.
+
+Oppermann et al. [21] has discussed the nomadic
+information system for automatic selection and presen-
+tation of exhibit information. A Web-based client-server
+approach based on the visitor model provides adaptive
+selection and presentation of exhibit information. The
+visitors are allowed to control the adaptation by spec-
+ifying their interests in a visitor model dialog. Visitor
+interests are acquired by explicit visitor dialogs where
+the visitors are allowed to set the languages, choose
+automatic or manually controlled presentations, and
+configure the interfaces, etc.
+
+In [16, 31], macronode and cinematic techniques
+[14, 32] are discussed to provide dynamic presentations
+in museum. The rhetorical structure theory and the
+repositories of material are used to provide specific
+presentations based on the locations of the visitors and
+the system observations about the visitor’s behavior to
+obtain interests. In [33], SCALEX toolkit is designed
+to prepare museum exhibitions with digital and
+personalized content presentations according to the
+individual interests of the visitors.
+
+Despite of existing approaches available in the litera-
+ture, the new approach of the organization of museum
+exhibit information is still needed as providing exhibit
+information is a compelling future to enhance ubiqui-
+tous visitor’s experience. The proposed approach of the
+organization of museum exhibit information improves
+the relevance of exhibit information for the individual
+requirements of the ubiquitous visitors.
+
+3T.heOorrggaanniizzaattiioonn Llaayyoouutt ooff tMheusmeuusmeuEmxheixbhitibit 
+infor-
+mation is as shown in Figure 1. The proposed layout
+consists of three levels of exhibit information at the
+level of School Kids, College Students, and Professionals
+ubiquitous visitors. The organization layout is needed
+
+since depending on the education levels or levels of
+understandings, etc., different segments of the exhibit
+information are of different relevance for the museum
+ubiquitous visitors [11, 21, 22, 34–39]. The segment
+of the exhibit information which needs to be provided
+depends on the understanding levels of the museum
+ubiquitous visitors [13, 14, 40, 41]. Thus, we organize
+the exhibit information at three levels, as essential infor-
+mation and further as elaborated information according
+to the understanding levels of the ubiquitous visitors.
+The organized exhibit information is linked to the
+specific URLs to provide relevant exhibit information
+museum services to the ubiquitous visitors.
+
+FiEgaucreh1e.xhOirbgiatniinzaftoiornmLaatyioountdoef 
+sMcruisbeeusmthEexhaibtittriIbnfuotrmesataionnd
+facts of the exhibits from multiple points of view
+depending on the types of exhibits [26]. The exhibit
+could be a historical statue, scientific exhibits, biolog-
+ical exhibits, zoological exhibits, paintings, historical
+locations, etc. We consider, the exhibit information
+broadly characterizes the details about the Introductory
+Attributes (IA) such as identity, type, size, shape, color,
+texture, place, time, and origin of the exhibits; the Func-
+tional/Behavioral Attributes (F/BA) such as functions,
+working, properties, and role of the exhibits; and the
+Descriptive Attributes (DA) such as additional evidence,
+facts, features, specifications, life cycle, journey, and life
+history of the exhibits.
+
+The organization layouts are designed based upon
+the predefined schematic representation of the exhibit
+information. The layout provides a standard way
+to describe the exhibit information with a pre-
+defined structure of segments, and their orders. The
+multiple levels of organized exhibit information are
+obtained by combining the information segments
+characterizing the attributes of the exhibits, where each
+information segment adds more details to the preceding
+information. The set of exhibit information attributes
+
+
+Preeti            Khanwalkar,            Pallapa            Venkataram          
+                         
+
+
+are organized in advance and then dynamically
+combined together according to the understanding
+levels of the museum ubiquitous visitors. At each level,
+along with the essential information, more detailed
+information is added based on the understanding levels
+of   the ubiquitous visitors as described below.
+
+Essential Information: Essential Information provides
+the key information of the exhibit to motivate
+the visitors to explore the rest of the exhibit
+information. Depending on the understanding levels
+of   the ubiquitous visitors, the essential information
+includes most common and comprehensive information
+characterizing different attributes of exhibits such as
+a    key or basic information about the place, origin or
+formation of the exhibits; key or basic information
+about functions, properties, working, roles of the
+exhibits; key or basic information about features or
+specifications of the exhibits as shown in Figure 2,
+Figure 3, and Figure 4, respectively. During the visit,
+whenever, ubiquitous visitors has no/less available
+time, only the essential exhibit information is provided
+to the visitors. Essential Information about exhibits Ei is
+organized at respective URLs along with the elaborated
+information at each level.
+
+Information for the School Kids: School kids, along
+with the Essential Information, need elementary and
+distinguishing information which describes different
+attributes of the exhibits such as the origin of exhibits,
+the period of exhibits, size, the shape of the exhibits,
+etc., with limited descriptions. Exhibit information of
+each exhibit Ei for the school kids is organized at
+Level l1 and linked to URL Ei-infol1.pet.iisc.in as shown
+in Figure 2. The links indicate the relative order of
+the association between different segments of exhibit
+information attributes organized for the school kid
+ubiquitous visitors.
+
+Information for the College Students: College Stu-
+dents, along with the Essential Information, need addi-
+tional exhibit information, with the increasing details
+of description including objects descriptions, features
+descriptions, evidence about the origin, and so on.
+Exhibit information of each exhibit Ei for the college
+students is organized at Level l2 and linked to URL Ei-
+infol2.pet.iisc.in as shown in Figure 3. The links indicate
+the relative order of the association between different
+segments of exhibit information attributes organized
+for the college student ubiquitous visitors.
+
+Information for the Professionals: Professionals,
+along with the Essential Information, need detailed
+exhibit information which is available for the exhibits.
+For example, extended descriptions that describe
+additional facts, evidence about the origin, comparative
+facts, additional roles, detailed functionality, so on.
+Exhibit information of each exhibit Ei for the
+professionals is organized at Level l3 and linked to
+URL Ei-infol3.pet.iisc.in as shown in Figure 4. The links
+
+indicate the relative order of the association between
+different segments of exhibit information attributes
+organized for the professional ubiquitous visitors.
+
+The fundamental need of the organization is
+that the original museum exhibit information is
+relevantly segmented according to the requirements
+of the ubiquitous visitors. Indeed, the organization of
+museum exhibit information is essential for both: (i)
+To alleviate the information overloading problem for
+the ubiquitous visitors by filtering and managing the
+vast amount of information at different levels; (ii) To
+provide the most significant information pertaining to
+the individual requirements of the museum ubiquitous
+visitors. The organized museum exhibit information
+collates relevant segments of the exhibit information
+based upon the significance and the meaningful
+coherence [22, 40, 42]. The exhibit information is
+organized in advance and used dynamically to cater to
+the individual requirements of ubiquitous visitors.
+
+4T.hiTs hseectEioxnamprpelseesnotsf aOnregxaanmizpalteioonf 
+tohfeEoxrhgiabniitzation of
+Swami Vivekananda exhibit information. Different seg-
+ments of exhibit information are identified depending
+on the available facts and attributes of the exhibits.
+We organize three levels l={l₁, l₂, l₃} of the exhibit
+information for the ubiquitous visitors such as School
+Kids, college students, and professionals in the succeeding
+order with each level contain the Essential Information.
+The Essential Information covers the most salient infor-
+mation, with each higher level l₁, l₂, and l₃ in succession
+adds more detailed exhibit information for the ubiq-
+uitous visitors. The segments of exhibit information
+are collated in their temporal order of occurrence, the
+order of events presented, the perspective with which
+the exhibit information is narrated, and the amount
+of information characterizes the exhibits to tailor to
+the requirements of ubiquitous visitors. The organized
+exhibit information in its multiple forms preserves the
+required information for the individual requirements of
+the ubiquitous visitors.
+
+We consider an example of Swami Vivekananda
+exhibit information as given in Figure 5. Suppose,
+original exhibit information of Swami Vivekananda
+as available from the server comprises of following
+points. The exhibit information consists of different
+segments which provide Swami Vivekananda birth
+details, his relationship with Ramakrishna, lecture
+tours in India, United Kingdom (UK), and United
+States (US), Vivekananda philosophy, publications,
+rock memorial, etc. The links indicate the relative
+order of the association between different segments
+
+
+ Organization of Museum Exhibit Information for Ubiquitous Visitors
+
+
+Exhibit Information
+
+Introductory Attributes (IA)
+
+IA1:Key information about place,
+origin or formation of exhibit
+
+IA2:Basic information about place,
+origin or formation of exhibit
+
+IA3:Limited information with evidence
+of place, origin or formation of exhibit
+
+IA4:Detailed information with evidence
+of place, origin or formation of exhibit
+
+Functional / Behavioral
+Attributes (F/BA)
+
+FA1: Key functions, properties,
+working or role of exhibit
+
+FA2:Basic functions, properties,
+working or role of exhibit
+
+FA3:Limited functions, properties,
+working or role of exhibit
+
+FA4:Detailed functions, properties,
+working or role of exhibit
+
+Descriptive Attributes (DA)
+
+DA1:Key features and
+specifications of exhibit
+
+Exhibit Information
+
+Introductory Attributes (IA)
+
+IA1:Key information about place,
+origin or formation of exhibit
+
+IA2:Basic information about place,
+origin or formation of exhibit
+
+IA3:Limited information with evidence
+of place, origin or formation of exhibit
+
+IA4:Detailed information with evidence
+of place, origin or formation of exhibit
+
+Functional / Behavioral
+Attributes (F/BA)
+
+FA1: Key functions, properties,
+working or role of exhibit
+
+FA2:Basic functions, properties,
+working or role of exhibit
+
+FA3:Limited functions, properties,
+working or role of exhibit
+
+FA4:Detailed functions, properties,
+working or role of exhibit
+
+Descriptive Attributes (DA)
+
+DA1:Key features and
+specifications of exhibit
+
+Exhibit Information
+
+Introductory Attributes (IA)
+
+IA1:Key information about place,
+origin or formation of exhibit
+
+IA2:Basic information about place,
+origin or formation of exhibit
+
+IA3:Limited information with evidence
+of place, origin or formation of exhibit
+
+IA4:Detailed information with evidence
+of place, origin or formation of exhibit
+
+Functional / Behavioral
+Attributes (F/BA)
+
+FA1: Key functions, properties,
+working or role of exhibit
+
+FA2:Basic functions, properties,
+working or role of exhibit
+
+FA3:Limited functions, properties,
+working or role of exhibit
+
+FA4:Detailed functions, properties,
+working or role of exhibit
+
+Descriptive Attributes (DA)
+
+DA1:Key features and
+specifications of exhibit
+
+
+DA2:Basic features and specifications
+
+DA3:Limited information with
+evidences and comparative facts
+
+DA4:Detailed evidences with
+comparative facts and explanations
+
+DA2:Basic features and specifications
+
+DA3:Limited information with
+evidences and comparative facts
+
+DA4:Detailed evidences with
+comparative facts and explanations
+
+DA2:Basic features and specifications
+
+DA3:Limited information with
+evidences and comparative facts
+
+DA4:Detailed evidences with
+comparative facts and explanations
+
+
+FfoirguSrceho2o.l OKridgaUnibziaqtuioitnouLsayVoisuittors
+
+FStiguuderent3U. bOiqrugiatnouizsatVioisnitoLrasyout for CollegeFsiiognuarles 
+U4.biOqurigtaonuiszaVtisointorLsayout for Profes-
+
+
+of the exhibit information available at URLs. We
+present the organization of Swami Vivekananda exhibit
+information at three levels of details along with the
+essential information to cater to the individual needs of
+ubiquitous visitors as below.
+
+The organization of Swami Vivekananda exhibit
+information for a school kid ubiquitous visitor at level l₁
+is as shown in Figure 6. Initially, the information related
+to identity, origin such as Swami Vivekananda birth
+details, and basic functional and descriptive attributes
+such as his relationship with Ramkrishna and as Hindu
+monk are chosen to provide as essential information.
+Further, for organizing the exhibit information at a
+basic level l₁ other segments from the introductory,
+functional/behavioral, and descriptive attributes such
+as early childhood, his inclination towards Brahmo
+followers, etc., are chosen based on their order of
+occurrence for a school kid ubiquitous visitor.
+
+Similarly, the organization of Swami Vivekananda
+exhibit information for a college student ubiquitous
+visitor at level l₂ is as shown in Figure 7. Initially, the
+information related to identity, origin such as Swami
+Vivekananda birth details, and basic functional and
+
+descriptive attributes such as his relationship with
+Ramkrishna and as Hindu monk are chosen to provide
+as essential information. Further, for organizing the
+exhibit information at the intermediate level l₂ other
+segments describing additional information about
+functional/behavioral, and descriptive attributes such
+as his teachings and philosophy and lecture tours are
+chosen based on their order of occurrence for a college
+student ubiquitous visitor.
+
+The organization of Swami Vivekananda exhibit
+information for a professional ubiquitous visitor at level
+l₃ is as shown in Figure 8. Initially, the information
+related to identity, origin such as Swami Vivekananda
+birth details, his relationship with Ramkrishna, and
+functional and descriptive attributes such as his
+inclination towards Brahmo followers are chosen
+to provide as essential information. Further, for
+organizing the exhibit information at advanced level l₃,
+other segments describing detailed information about
+introductory, functional/behavioral, and descriptive
+attributes such as education details, his teachings,
+and philosophy, his lecture tours, book publications
+
+
+Preeti            Khanwalkar,            Pallapa            Venkataram          
+                         
+
+Swami Vivekananda Exhibit Information
+
+IA₁: Swami Vivekananda (12 January 1863 ˘ 4 July 1902) was born in Calcutta, 
+India.
+Belonged to an aristocratic Bengali Kayastha family of Calcutta, Swami 
+Vivekananda
+was more inclined towards spirituality from his childhood.
+
+IA₂: Swami Vivekananda was a Hindu Monk and a chief disciple of Indian mystic
+Ramkrishna.
+
+IA₃: Swami Vivekananda founded Ramkrishna Mission.
+
+IA₄: His initial beliefs were shaped by the Brahmo followers who believed in the
+deprecation of idolatry and in a formless God
+
+F/BA₁: Swami Vivekananda extensively traveled India (1888-1893) and has given
+lectures on Hindu Veda, Upanishads and Purana.
+
+F/BA₂: Swami Vivekananda attended parliament of world religion at art Institute 
+of
+Chicago.
+
+F/BA₃: After parliament of world religion Swami Vivekananda gave lecture tours 
+in
+United Kingdom and United States.
+
+DA₁: Swami Vivekananda introduced the Indian teachings and philosophy of Advaita
+and Vedanta. He was a fervid reader of several subjects including subjects of 
+art and
+literature, social science, history, religion, and philosophy.
+
+DA₂: Swami Vivekananda had published many books like Karmayoga, Rajayoga,
+Vedanta philosophy to name few.
+
+DA₃: Swami Vivekananda Rock Memorial is one of the popular tourist place in
+Kanyakumari, India.
+
+DA₄: Swami Vivekananda memorial is in Belur Math, WestBengal, which is his 
+place of
+death.
+
+IA: Introductory Attributes; F/BA: Functional/Behavioral Attributes; DA: 
+Descriptive Attributes
+
+Swami Vivekananda ExFhiigbuitreIn5f.orOmraigtiionnal Exhibit Information of 
+Swami Vivekananda [43]
+
+
+Birth Details
+Chief Disciple
+
+Ramkrishna Mission
+
+Essential Information
+
+Early Childhood
+Brahmo Followers
+
+Parliament of World Religion
+
+Swami Vivekananda (12 January 1863 to 4 July 1902)
+was born in Calcutta, India. He was a Hindu Monk and
+chief disciple of Indian mystic Ramkrishna. He founded
+Ramkrishna Mission. His initial beliefs were shaped by
+the Brahmo followers who believed in the deprecation
+of idolatry and in a formless God. Swami Vivekananda
+attended parliament of world religion at the art Institute
+of Chicago. After parliament of world religion Swami
+Vivekananda gave lecture tours in United Kingdom and
+United States
+
+URL: SV-infol1.pet.iisc.in
+
+Figure 6. Organized Exhibit Information of Swami Vivekananda at URL: 
+SV-infol1.pet.iisc.in for School Kid Ubiquitous Visitors
+
+
+ Organization of Museum Exhibit Information for Ubiquitous Visitors
+
+Swami Vivekananda Exhibit Information
+Segments for College Students Visitors
+
+
+Birth Details
+Chief disciple
+
+Ramkrishna mission
+
+Brahmo Followers
+
+Essential Information
+
+Family and Early life
+Teaching and philosophy
+Parliament of World Religion
+Lecture tours to US and UK
+
+Swami Vivekananda (12 January 1863 to 4 July 1902)
+was born in Calcutta, India. He was a Hindu Monk and
+chief disciple of Indian mystic Ramkrishna. Belonged to
+an aristocratic Bengali Kayastha family of Calcutta, Swami
+Vivekananda was more inclined towards spirituality from
+his childhood. His initial beliefs were shaped by the Brahmo
+followers who believed in the deprecation of idolatry and
+in   a formless God. He founded Ramkrishna Mission. Swami
+Vivekananda attended parliament of world religion at the
+art Institute of Chicago. After parliament of world religion
+Swami Vivekananda gave lecture tours in United Kingdom
+and United States. Swami Vivekananda introduced the
+Indian teachings and philosophy of Advaita and Vedanta.
+Swami Vivekananda extensively traveled India (1888-1893),
+United Kingdom and United States and has given lectures on
+Hindu Veda, Upanishads and Purana.
+
+URL: SV-infol2.pet.iisc.in
+
+Figure 7. Organized Exhibit Information of Swami Vivekananda at URL: 
+SV-infol2.pet.iisc.in for College Student Ubiquitous Visitors
+
+
+are chosen based on their order of occurrence for a
+professional ubiquitous visitor.
+
+In this section, we present the simulation experiments
+for the organization of museum exhibit information
+for the ubiquitous visitors. We execute the simulation
+using Python scripts and evaluate the museum exhibit
+information organization time and the size of the
+organized information for three different exhibits
+information based on the understanding level of the
+ubiquitous visitors. In the simulation, we consider
+exhibit information of Swami Vivekananda, Moon, and
+DNA exhibits are available at the museum server with
+sizes 20 MB, 25 MB, and 30 MB, respectively. In
+the simulation, we consider the varying size of the
+exhibit information, with the variation in its essential
+exhibit information and the available introductory,
+functional/behavioral, and descriptive attributes. We
+evaluate    the variation in the size of the organized
+exhibit information with respect to the original
+exhibit information at the understanding level of the
+ubiquitous visitors.
+
+As shown in Figure 9, the size of the organized
+exhibit information of Swami Vivekananda decreases
+with the decrease in details from professional to school
+kid ubiquitous visitors, which avoids the overwhelming
+of information. The difference in sizes indicates the
+levels of details at which organized exhibit information
+(around 16 MB, 10MB, and 5MB) is provided for
+the professional, college student and the school kid
+
+ubiquitous visitors in comparison to the size of the
+original exhibit information (20 MB), which may
+contain excessive and irrelevant for the ubiquitous
+visitors.
+
+Similarly, the size of the organized exhibit informa-
+tion of Moon and DNA exhibits decreases according
+to the understanding level of professionals, college
+students, and school kids ubiquitous visitors as shown
+in Figure 10 and Figure 11, respectively. Further, we
+evaluate the museum exhibit information organization
+time corresponding to the size of the exhibit informa-
+tion. The simulation is executed with varying essen-
+tial exhibit information and the available introductory,
+descriptive, and functional/behavioral attributes, and
+accordingly exhibit information is organized for the
+professionals, college students, and school kid ubiqui-
+tous visitors. We found that with the increasing size of
+the exhibit information, and with more availability of
+essential exhibit information, the museum exhibit infor-
+mation organization time increases with the increase in
+the understanding levels of the ubiquitous visitors as
+shown in Figure 12.
+
+The organization of museum exhibit information is
+presented to cater to the individual requirements of
+the ubiquitous visitors. The Introductory Attributes (IA),
+Functional/Behavioral Attributes (F/BA), and Descriptive
+Attributes (DA) which broadly characterize the exhibit
+information are identified and used to organize
+the exhibit information. The exhibit information is
+
+
+Preeti            Khanwalkar,            Pallapa            Venkataram          
+                         
+
+Swami Vivekananda Exhibit Information
+Segments for Professional Visitors
+
+
+Birth Details
+Chief disciple
+
+Ramkrishna mission
+
+Brahmo Followers
+
+Essential Information
+Education Details
+Teaching  and Philosophy
+
+Book Publications
+Parliament of World Religion
+
+Lecture tours to US and UK
+Rock Memorial and Belur math
+
+Swami Vivekananda (12 January 1863 to 4 July 1902)
+was born in Calcutta, India. He was a Hindu Monk and
+chief disciple of Indian mystic Ramkrishna. He founded
+Ramkrishna Mission. Belonged to an aristocratic Bengali
+Kayastha family of Calcutta, Swami Vivekananda was more
+inclined towards spirituality from his childhood. His initial
+beliefs were shaped by the Brahmo followers who believed
+in the deprecation of idolatry and in a formless God.
+Swami Vivekananda attended parliament of world religion
+at the art Institute of Chicago. After parliament of world
+religion Swami Vivekananda gave lecture tours in United
+Kingdom and United States. He was a fervid reader of several
+subjects including subjects of art and literature, social
+science, history, religion, and philosophy. He extensively
+traveled India (1888-1893), United Kingdom and United
+States and has given lectures on Hindu Veda, Upanishads
+and Purana. Swami Vivekananda had published many books
+like Karmayoga, Rajayoga, Vedanta philosophy to name few.
+Swami Vivekananda Rock Memorial is one of the popular
+tourist place in Kanyakumari,India.
+
+URL: SV-infol3.pet.iisc.in
+
+Figure 8. Organized Exhibit Information of Swami Vivekananda at URL: 
+SV-infol3.pet.iisc.in for Professional Ubiquitous Visitors
+
+
+organized as Essential Information and further as
+elaborated information at the levels of school kids,
+college students, and professionals ubiquitous visitors.
+We present an example of the organization of
+Swami Vivekananda exhibit information. The organized
+exhibit information in its several forms maintained at
+respective URLs and is used to cater to the individual
+requirements of the museum ubiquitous visitors. The
+simulation results show that the museum exhibit
+information organization time and the size of the
+organized information increase with the increase in
+the understanding levels of the ubiquitous visitors.
+In the future, we extend the proposed approach for
+other application domains such as tourist-guides and
+educational documentaries.
+
+[1] John H Falk. Identity and the museum visitor experience.
+Routledge, CRC Press, Taylor and Francis Group, 2009.
+
+[2] M.Elena Renda and Umberto Straccia. A personalized
+collaborative digital library environment: a model
+and   an application.  In Information Processing and
+Management, volume 41, pages 5 – 21, 2005.
+
+[3] Armelle Prigent and Arnaud Revel.  Cite – content
+interaction time and space: a hybrid approach to model
+man-robot interaction for deployment in museums.
+In EAI Endorsed Transactions on Creative Technologies,
+volume 4, Oct 2017.
+
+[4] Pallapa Venkataram and M. Bharath. Context based
+service discovery for ubiquitous applications. In Inter-
+national Conference on Information Networking (ICOIN),
+pages 311–316, Jan 2011.
+
+[5] Preeti Khanwalkar and Pallapa Venkataram. A weight
+based context analysis system to provide a required
+ubiquitous multimedia service.  In Proceedings of
+International Conference on Wireless Networks, pages 153–
+159,  July 2011.
+
+[6] Shahar Katz, Yaacov Kahanov, Nadav Kashtan, Tsvi
+Kuflik, Ilenia Graziola, Cesare Rocchi, Oliviero Stock,
+and Massimo Zancanaro.  Preparing personalized
+multimedia presentations for a mobile museum visitors’
+guide: a methodological approach. In Proceedings of
+Museums and the Web, May 2006.
+
+[7] Oliviero Stock, Massimo Zancanaro, Paolo Busetta,
+Charles Callaway, Antonio Krüger, Michael Kruppa,
+Tsvi Kuflik, Elena Not, and Cesare Rocchi. Adaptive,
+intelligent presentation of information for the museum
+visitor in peach. In User Modeling and User-Adapted
+Interaction, volume 17, pages 257–304, July 2007.
+
+[8] Tsvi Kuflik, Oliviero Stock, Massimo Zancanaro, Ariel
+Gorfinkel, Sadek Jbara, Shahar Kats, Julia Sheidin,
+and Nadav Kashtan. A visitor’s guide in an active
+museum: Presentations, communications, and reflection.
+In Journal on Computing and Cultural Heritage (JOCCH),
+volume 3, page 11, March 2011.
+
+[9] Pallapa Venkataram and M Bharath.  A method
+of context-based services discovery in ubiquitous
+environment. In Proceedings of the 2nd International
+
+
+ Organization of Museum Exhibit Information for Ubiquitous Visitors
+
+
+Original   
+Organized
+
+20
+
+15
+
+10
+
+5
+
+0     Professional College Student  School Kid
+
+FInifgourmreat9i.onVaorifatiSonwainmSi izVeivoef kOarngaanndiazedfoErxhitbhiet
+
+Organized
+
+25
+
+20
+
+15
+
+10
+
+5
+
+0     Professional College Student  School Kid
+
+EFixghuibreit I1n0fo.rmVatrioantioonf iMnooSnizefor otfheOrMgaunsiezuemd
+
+Original
+Organized
+
+30
+
+25
+
+20
+
+15
+
+10
+
+5
+
+0     Professional College Student  School Kid
+
+EFixghuibreit I1n1fo. rmVationtionof iDnNSAizfeor otfheOrMgaunsiezuemd
+
+College Student
+
+25               School Kid
+
+20
+
+15
+
+10
+
+5
+
+0
+
+3  4  5  6  7  8  9  10  11  12
+
+Size of the Museum Exhibit Information (MB)
+
+nFiizgautrioen1T2i.meMfuosretuhme EUxbhiqibuiittoIunsforVmisaittioorns Orga-
+
+Conference on Context-Aware Systems and Applications
+(ICCASA), November 2013.
+
+[10] Emmanouil Zidianakis, Kalliopi Stratigi, Danai Ioannidi,
+Nikolaos Partarakis, Margherita Antona, and Constantin
+Stephanidis. Designing intelligent games adapting to
+children’s playing maturity. In EAI Endorsed Transactions
+on Creative Technologies, volume 4, July 2017.
+
+[11] Andry Rakotonirainy and Nicholas Lehman. Augment-
+ing a museum visitor’s tour with a context aware frame-
+work. In 1st International Workshop on Ubiquitous Com-
+puting, INSTICC Press, pages 104–112, 2004.
+
+[12] Preeti Khanwalkar and Pallapa Venkataram. Context-
+based service identification in the museum environment.
+In Proceedings of the 4th EAI International Conference
+on Context-Aware Systems and Applications, ICCASA,
+Springer International Publishing, pages 151–164, 2016.
+
+[13] F. Paternó and C. Mancini. Effective levels of adaptation
+to different types of users in interactive museum
+systems. In Journal of the American Society for Information
+Science, John Wiley and Sons, Inc., volume 51, pages 5–13,
+Jan 2000.
+
+[14] Charles Callaway, Elena Not, Alessandra Novello,
+Cesare Rocchi, Oliviero Stock, and Massimo Zancanaro.
+Automatic cinematography and multilingual nlg for
+generating video documentaries. In Artificial Intelligence,
+volume 165, pages 57 – 89, 2005.
+
+[15] Elena Not and Massimo Zancanaro. The macronode
+approach: Mediating between adaptive and dynamic
+hypermedia. In Adaptive Hypermedia and Adaptive Web-
+Based Systems, Springer Berlin Heidelberg, pages 167–178,
+2000.
+
+[16] Oliviero Stock, Elena Not, and Massimo Zancanaro.
+Intelligent interactive information presentation for
+cultural tourism. In Multimodal Intelligent Information
+Presentation, Springer Netherlands, pages 95–111. 2005.
+
+[17] Fabian Bohnert Timothy Baldwin, Patrick Ye and Ingrid
+Zukerman.  In situ text summarisation for museum
+visitors. In 25th Pacific Asia Conference on Language,
+Information and Computation, pages 372–381, 2011.
+
+[18] Silvia Filippini-Fantoni, Sarah McDaid, and Matthew
+Cock. Mobile devices for orientation and way finding:
+the case of the british museum multimedia guide. In
+Museums and the Web, Proceedings, Archives and Museum
+Informatics. Archives and Museum Informatics, March
+2011.
+
+[19] Anita Coleman and Tamara Sumner. Digital libraries
+and user needs: Negotiating the future. In Journal of
+Digital Information, volume 5, 2006.
+
+[20] G. Benelli, A. Bianchi, P. Marti, E. Not, and D. Sennati.
+Hips: hyper-interaction within physical space.  In
+Proceedings IEEE International Conference on Multimedia
+Computing and Systems, volume 2, pages 1075–1078,
+June 1999.
+
+[21] Reinhard Oppermann and Marcus Specht. A context-
+sensitive nomadic exhibition guide. In Handheld and
+Ubiquitous Computing (HUC), Springer Berlin Heidelberg,
+pages 127–142, 2000.
+
+[22] Costas Vassilakis, Vassilis Poulopoulos, Angeliki Anto-
+niou, Manolis Wallace, George Lepouras, and Mar-
+tin Lopez Nores. exhistory: Smart exhibits that tell their
+own stories. In Future Generation Computer Systems,
+
+
+Preeti            Khanwalkar,            Pallapa            Venkataram          
+                         
+
+
+volume 81, pages 542 – 556, 2018.
+
+[23] M. K. L. Nielsen. A conceptual framework for audio-
+visual museum media. In EAI Endorsed Transactions on
+Creative Technologies, volume 4, April 2017.
+
+[24] Daniela Petrelli and Elena Not. User-centred design
+of flexible hypermedia for a mobile guide: Reflections
+on the hyperaudio experience. In User Modeling and
+User-Adapted Interaction, volume 15, pages 303–338, Aug
+2005.
+
+[25] Yidi Zhang. Improving museum visiting: Personaliza-
+tion (revised), cctp-820: Leading by design – principles
+of technical and social systems, December 2015.
+
+[26] Ion Androutsopoulos, Vassiliki Kokkinaki, Aggeliki
+Dimitromanolaki, Jonathan Calder, Jon Oberlander,
+and Elena Not. Generating multilingual personalized
+descriptions of museum exhibits: The m-piro project. In
+CoRR, volume cs.CL/0110057, 2001.
+
+[27] I. Androutsopoulos, J. Oberlander, and V. Karekaletsis.
+
+Source authoring for multilingual generation of person-
+alised object descriptions. In Natural Language Engineer-
+ing, Cambridge University Press, volume 13, pages 191–
+233, 2007.
+
+[28] Richard Cox, Michael O’Donnell, and Jon Oberlander.
+Dynamic versus static hypermedia in museum edu-
+cation: an evaluation of ilex, the intelligent labelling
+explorer. In Proceedings of the Artificial Intelligence in
+Education Conference, pages 181–188, Apr 2001.
+
+[29] Cesare Rocchi and Massimo Zancanaro.  Rhetorical
+patterns for adaptive video documentaries. In Adaptive
+Hypermedia and Adaptive Web-Based Systems, Springer
+Berlin Heidelberg, volume 3137, pages 324–327, August
+2004.
+
+[30] Oliviero Stock and Massimo Zancanaro.  PEACH
+
+- Intelligent Interfaces for Museum Visits (Cognitive
+Technologies). Springer-Verlag, Berlin, Heidelberg, 2007.
+
+[31] Oliviero Stock and Massimo Zancanaro. Multimodal
+intelligent information presentation. volume 27. Jan
+2005.
+
+[32] Elena Not, Charles B. Callaway, Cesare Rocchi, Oliviero
+Stock, and Massimo Zancanaro. Cinematographic tech-
+niques for automatic documentary-like presentations. In
+PEACH - Intelligent Interfaces for Museum Visits, pages
+23–44, 2007.
+
+[33] Jochen Martin and Christian Trummer.  Scalex
+
+- personalized multimedia information system for
+museums and exhibitions.  In First International
+Conference on Automated Production of Cross Media
+Content for Multi-Channel Distribution (AXMEDIS),
+pages 332–335, Nov 2005.
+
+[34] E. S. Tan and K. Oinonen.  Personalising content
+presentation in museum exhibitions - a case study.
+
+In 15th International Conference on Virtual Systems and
+Multimedia, pages 232–238, September 2009.
+
+[35] Areti Damala. Design principles for mobile museum
+guides using visitor studies and museum learning
+theories. In International Association for Development of
+the Information Society (IADIS), International Conference
+on Mobile Learning, pages 277–281, 2007.
+
+[36] Cesare Rocchi, Oliviero Stock, Massimo Zancanaro,
+Michael Kruppa, and Antonio Krüger. The museum
+visit: Generating seamless personalized presentations
+on multiple devices. In International Conference on
+Intelligent User Interfaces, Proceedings IUI, pages 316–
+318, Jan 2004.
+
+[37] Shlomo Berkovsky, Timothy Baldwin, and Ingrid Zuk-
+erman. Aspect-based personalized text summarization.
+In Adaptive Hypermedia and Adaptive Web-Based Systems,
+Springer Berlin Heidelberg, pages 267–270, July 2008.
+
+[38] Panagiotis Stathopoulos, Stavroula Zoi, Nikolaos Kon-
+stantinou, Emmanuel Solidakis, Christos Basios, Anasta-
+sios Zafeiropoulos, Panagiotis Papageorgiou, and Niko-
+las Mitrou. E-museum - a content management system
+for providing museum visitors with personalized audio-
+visual information. In Third International Conference of
+Museology and Annual Conference of AVICOM Mytilene,
+June 2006.
+
+[39] Svebor Karaman, Andrew D. Bagdanov, Lea Landucci,
+Gianpaolo D’amico, Andrea Ferracani, Daniele Pezzatini,
+and Alberto Bimbo. Personalized multimedia content
+delivery on an interactive table by passive observation of
+museum visitors. In Multimedia Tools and Applications,
+Kluwer Academic Publishers, volume 75, pages 3787–
+3811, April 2016.
+
+[40] Elena Not, Massimo Zancanaro, Mark T. Marshall,
+Daniela Petrelli, and Anna Pisetti. Writing postcards
+from the museum: Composing personalised tangible
+souvenirs. In ACM Proceedings of the 12th Biannual
+Conference on Italian SIGCHI Chapter, CHItaly, pages
+5:1–5:9, 2017.
+
+[41] L. Jonsson. Designing for learning and empowerment:
+how designbased research can impact education and
+practice.  In EAI Endorsed Transactions on Creative
+Technologies, volume 4, April 2017.
+
+[42] Einat Minkov, Keren Kahanov, and Tsvi Kuflik. Graph-
+based recommendation integrating rating history and
+domain knowledge: Application to on-site guidance
+of museum visitors. In Journal of the Association for
+Information Science and Technology, John Wiley and Sons,
+Inc., volume 68, pages 1911–1924, Aug 2017.
+
+[43] A Short Life of Swami Vivekananda, Advaita Ashrama (A
+publication branch of Ramakrishna Math, Belur Math).
+2016.
+

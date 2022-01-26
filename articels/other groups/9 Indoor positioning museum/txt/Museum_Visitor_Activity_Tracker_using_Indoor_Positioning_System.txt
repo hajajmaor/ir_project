@@ -1,0 +1,381 @@
+                                                                                      Author search             Sources                          Create account       Sign in
+
+
+
+Document details - Museum Visitor Activity Tracker using Indoor
+Positioning System
+
+  1 of 1
+                                                                                                                                     Cited by 0 documents
+  Export  Download More... ▻
+
+
+    TIMES-iCON 2019 - 2019 4th Technology Innovation Management and Engineering Science International
+                                                                                                                                     Inform me when this document
+    Conference
+                                                                                                                                     is cited in Scopus:
+    December 2019, Article number 9024378                                                                                             Set citation     Set citation
+                                                                                                                                      alert ▻          feed ▻
+    4th Technology Innovation Management and Engineering Science International Conference, TIMES-iCON 2019;
+    Fortune Mercure HotelBangkok; Thailand; 11 December 2019 through 13 December 2019; Category
+    numberCFP19R77-ART; Code 158371                                                                                                  Related documents
+
+ Museum Visitor Activity Tracker using Indoor Positioning System(Conference                                                          Find more related documents in
+                                                                                                                                     Scopus based on:
+ Paper)(Open Access)
+ Handojo, A., Lim, R., Octavia, T., Anggita, J.K.                                                                                    Authors ▻ Keywords ▻
+ aPetraChristian University Surabaya, Informatics Department, Indonesia
+ bElectricalEngineering Department, Petra Christian University, Surabaya, Indonesia
+ cIndustrial Engineering Department, Petra Christian University, Surabaya, Indonesia
+
+ Abstract
+ Tourism is one of the sources of state revenue that has enormous potential, especially for developing countries. One of
+ the great tourism potential is the museum. In displaying the artifacts and their information the museum manager has
+ difficulty in recognizing the behavior of museum visitors such as the route chosen in seeing the artifacts presented,
+ how long they have been at a location, what artifacts are of their interest, etc. This is quite difficult to do, especially
+ with the many artifacts that exist in a museum. This research created an activity tracker system for museum visitors
+ using the Indoor Positioning System by utilizing Bluetooth Low Energy (BLE) beacons. Signals from BLE beacons
+ detected by museum visitors' smartphones are used as a reference to estimate the location of visitors using the
+ trilateration method and the Kalman filter. This location data is then stored in a server to be information of the
+ movement of visitors in the museum. Based on this information, museum managers can find out which locations are
+ often / rarely visited by visitors and how long visitors spend at that particular location. According to the distance error
+ testing that compare real location and calculation position, it shows that the average error distance is around 114.35
+ cm. So, it can be concluded that the information obtained is sufficient to represent the position of the museum
+ visitors. © 2019 IEEE.
+
+ SciVal Topic Prominence 
+ Topic: Indoor Positioning Systems | Received Signal Strength | Wi-Fi
+
+ Prominence percentile:      99.559                 
+ Author keywords
+   Activity Tracker   BLE Beacon   Indoor Positioning System      Museum           Smartphone
+ Indexed keywords
+
+ Engineering                 Developing countries   Engineering research           Indoor positioning systems      Location
+ controlled terms:           Managers     Smartphones      Tourism
+
+
+ Engineering                 Average errors   BLE Beacon        Bluetooth low energies (BLE)       Error testing     Location data
+ uncontrolled terms          Museum visitor    Tracker system      Trilateration
+
+
+ Engineering main            Museums
+ heading:
+
+
+ Funding details
+      Funding sponsor                         Funding number                                             Acronym
+
+
+                                              002/SP2H/P/K7/KM/2019
+
+
+    Funding text
+    ACKNOWLEDGMENT (Heading 5) This research supported by Indonesia Directorate Research and Technology of
+    Higher Education under grant 002/SP2H/P/K7/KM/2019. This research also support by Petra Christian University
+    Mobile Computing Research Group.
+
+
+
+
+    ISBN: 978-172813755-1                              DOI: 10.1109/TIMES-iCON47539.2019.9024378
+    Source Type: Conference Proceeding                 Document Type: Conference Paper
+    Original language: English                         Sponsors: The Association of Thai Digital Industries (ATDI)
+                                                       Publisher: Institute of Electrical and Electronics Engineers Inc.
+
+
+
+    © Copyright 2020 Elsevier B.V., All rights reserved.
+
+
+
+
+About Scopus                                               Language                                                Customer Service
+What is Scopus                                             日本語に切り替える                                               Help
+Content coverage                                           切换到简体中文                                                 Contact us
+Scopus blog                                                切換到繁體中文
+Scopus API                                                 Русский язык
+Privacy matters
+
+
+
+
+                            Terms and conditions ↗         Privacy policy ↗
+                            Copyright © Elsevier B.V ↗. All rights reserved. Scopus® is a registered trademark of Elsevier B.V.
+                            We use cookies to help provide and enhance our service and tailor content. By continuing, you agree to the
+                            use of cookies.
+         Museum Visitor Activity Tracker using Indoor
+                    Positioning System
+
+                      Andreas Handojo                                                              Resmana Lim
+                    Informatics Department                                              Electrical Engineering Department
+                   Petra Christian University                                               Petra Christian University
+                      Surabaya, Indonesia                                                       Surabaya, Indonesia
+                      handojo@petra.ac.id                                                      resmana@petra.ac.id
+
+
+                         Tanti Octavia                                                      Jonathan Kurnia Anggita
+              Industrial Engineering Department                                               Informatics Department
+                  Petra Christian University                                                 Petra Christian University
+                     Surabaya, Indonesia                                                        Surabaya, Indonesia
+                       tanti@petra.ac.id                                                    jonathandot13@gmail.com
+
+
+    Abstract—Tourism is one of the sources of state revenue that         seas, beaches, and so on. In addition, Indonesia also has a
+has enormous potential, especially for developing countries. One         diversity of flora and fauna as well as a variety of customs,
+of the great tourism potential is the museum. In displaying the          cultures, and historic relics ranging from ancient relics such as
+artifacts and their information the museum manager has                   temples and inscriptions, to the legacy of the war against the
+difficulty in recognizing the behavior of museum visitors such as        invaders. This, makes Indonesia one of the countries that has a
+the route chosen in seeing the artifacts presented, how long they        huge tourism potential.
+have been at a location, what artifacts are of their interest, etc.
+This is quite difficult to do, especially with the many artifacts that       One of the tourism visits offered is a visit to the museum.
+exist in a museum. This research created an activity tracker             Consider that Indonesia has many historical artifacts such as
+system for museum visitors using the Indoor Positioning System           cultural artifacts of the past (temples, monuments), religious
+by utilizing Bluetooth Low Energy (BLE) beacons. Signals from            artifacts (churches, temples, mosques) as well as artifacts of the
+BLE beacons detected by museum visitors' smartphones are used            colonial period (fortresses, cannons, weapons). These artifacts
+as a reference to estimate the location of visitors using the            are stored in museums spread throughout Indonesia. The
+trilateration method and the Kalman filter. This location data is        Indonesian government has made several improvements such
+then stored in a server to be information of the movement of             as standardization and classification of museums (120
+visitors in the museum. Based on this information, museum                museums out of 400 museums in Indonesia) [2] and museum
+managers can find out which locations are often / rarely visited
+                                                                         revitalization efforts (80 museums) [3].
+by visitors and how long visitors spend at that particular
+location. According to the distance error testing that compare               In order to present museum information, museums
+real location and calculation position, it shows that the average        generally display their artifacts using display media that placed
+error distance is around 114.35 cm. So, it can be concluded that         in surrounding museum rooms. The layout of the artifacts
+the information obtained is sufficient to represent the position of      becomes very important. Because it can provide important and
+the museum visitors                                                      interesting information for visitors. The number of artifacts in a
+                                                                         museum that can be reach thousands of pieces. Such as The
+   Keywords—Museum; Activity Tracker; Indoor Positioning                 National Museum Indonesia which has 141.000 artifacts [4].
+System; BLE Beacon; Smartphone
+                                                                         The artifacts display and layout must be very challenging in
+                                                                         order to build an informative and interesting information for
+                       I.   INTRODUCTION                                 museum visitors.
+    Tourism is one of the major state revenue, especially for                Another problem that arises is how the museum manager
+developing countries that do not have the technological ability          can find out whether the artifacts display layout and
+or trading of state revenues. Indonesia as one of the developing         information that provided is in suitable with what the museum
+countries sees this as a state revenue opportunity. In Indonesia,        manager wants. Where the route chosen by visitors when
+the tourism is the fourth largest contributor to income (9%)             viewing artifacts display in the museum. Whether information
+after oil and gas, coal and palm oil [1]. Moreover, the tourism          about the artifacts provided can attract visitors.
+sector is able to absorb 10 million workers. Therefore tourism
+is crucial to get serious attention. Indonesia is an island nation           Therefore, this research will track the location of museum
+that is endowed with abundant natural beauty. The natural                visitors while in the museum location (indoor). The location of
+beauty that there are diverse ranging from mountains, forests,           museum visitors when they see the display of artifacts in this
+museum will be taken periodically and stored on a server. The            Research on the Indoor Positioning System (IPS) to
+location data will then be mapped into the route chosen by           determine the location of users in a room in a building (indoor)
+visitors during the museum visit. This route mapping aims to         is also widely developed. Like Thamm et al. [11] and Yeo et al.
+help the process of a thorough analysis of the display of            [12] uses IPS in shopping malls. Narzullaev et al. [13] who
+artifacts that have been prepared by the museum manager.             used IPS in equipment in hospitals and warehouses. Handojo
+                                                                     [5] using IPS for broadcast information to museum visitors.
+    This museum visitor tracking route was built using the
+Indoor Positioning System (IPS) method by utilizing Bluetooth            By considering the enormous growth rate of smartphone
+Low Energy (BLE) beacons and Bluetooth equipment that is             usage in Indonesia, this research choose to build a museum
+on smartphones owned by museum visitors. Museum visitors             visitors activity tracker using smartphone. According to data
+are asked to install the museum information application (via         from the Indonesian Internet Service Users Association - APJII
+Google Playstore) that has been made in previous research [5].       (Penetration and Behavior of Indonesian Internet users) [14],
+The application will be equipped with information about              the growth of internet users in Indonesia continues to grow to
+artifacts in the museum. So, it can help visitors in obtaining       reach 143.26 million users from a total of 262 million people in
+information on the artifacts they want more deeply. The              Indonesia (Fig. 1). This means that approximately 54.68% of
+application also features a museum (indoor) map and                  Indonesia's population has used the internet. APJII also reports
+information on where visitors are currently located in the           that the majority of internet access is done through
+museum. To find out the location of the visitor, the application     smartphones (85%). With easy network access and the
+uses the Bluetooth facility on the mobile to detect the location     availability of smartphone devices, this museum visitor’s
+of the BLE beacons that have been placed at certain locations        tracker will be easy to adopt for any museums.
+in the museum. The location of these visitors will then be
+stored on a server periodically to create museum visitor route
+data.
+    Each BLE beacon will emit a signal that can be received by
+Bluetooth devices that are on the museum visitor's smartphone.
+From the received BLE beacon signal strength, the application
+will calculate the approximate location of the museum visitors.
+This calculation is done by calculating the distance of the
+smartphone with the location of the BLE beacon detected by
+the smartphone by looking at the signal strength of the BLE
+beacon. The method used to calculate the position of visitors is
+to use trilateration and kalman filter. Then, information about
+the location of the visitor is then sent to the server as the
+location of the museum visitors. The data is then managed to
+                                                                     Fig. 1. Internet users in Indonesia
+be the route information of visitors when in the museum and
+the number of visitors who are in a location in the museum.
+    With this visitor route information, the museum manager                               III. IMPLEMENTATION
+can analyze whether the placement of artifact displays is                This research will conduct at Trowulan Museum that’s
+suitable. Like for example if there are certain locations in the     located in Mojokerto, a town on East Java Province in
+museum that are rarely passed by museum visitors, in which           Indonesia. The Museum provide artifacts information from the
+areas visitors often pass, which locations are frequented by         Majapahit Empire (1293-1500 AD). Majapahit is one of the
+visitors, when and where visitors pass certain routes, and           major ancient empire that controls most of Indonesia,
+others. With this information, the museum manager can                Singapore, and parts of Malaysia. There’s so many artifacts
+rearrange the layout of the room and the location of the             such as weapons, sculpture, statue, pottery, temple.
+artifacts so that they are needed or organize the flow of visitors
+so that the displayed artifacts can be seen by visitors properly.       There are 3 main rooms in Trowulan Museum, namely
+                                                                     Metal Room (contains metal equipment, metal weapons, etc.),
+                                                                     Terracotta Room (contains pottery, roof tile, etc.), and Statue
+                   II. LITERATURE REVIEW                             Room (contains statue, sculpture, etc.). The Metal Room and
+     Research to develop tourism and interesting museum visits       Terracotta rooms are both surrounded by walls, but the Statue
+continue to be developed, such as Botturi et al. [6] who use         Room is an open space room with roof.
+games on smartphones to study cultural heritage. Chivarov et             In order to build IPS, this research place some BLE
+al. [7] developed interactive presentations with smartphones to      Beacons (WEMOS LOLIN32 Lite) at certain location in the
+create a modern museum. Handojo et al. [8] uses smartphones,         museum (Fig. 2). Besides the low price, this BLE beacon has
+GPS technology to trace the history route of the battle for          the advantage that relatively small in size (13 x 5 cm) so that
+independence in Surabaya. Turan and Kesser [9] created an            they can easily be placed in various places in the museum room
+ancient car museum guide using a smartphone. Handojo [10]            without disturbing the artifacts on display. in addition, this
+created a battle of independence in Surabaya using GPS and           BLE beacon also has a very low energy consumption level so
+smartphone technology.                                               that it can operate using small batteries that only need to be
+                                                                     replaced once a year. This BLE beacons are also easy to install.
+Based on this consideration, this BLE beacon the right choice
+to be implemented in museums in Indonesia which have
+various levels of diversity such as in terms of financial budget,
+use of technology, and the number of daily visitors.
+
+
+
+
+Fig. 2. WEMOS LOLIN32 Lite Bluetooth Low Energy Beacon
+                                                                                    (a)                               (b)
+    Each BLE beacon will emit a signal that will be obtained
+by a museum visitor's smartphone (Fig 3.). The application on
+the smartphone will then send the beacon id to the server to
+find out the location of the BLE beacon. The application will
+then calculate the user's current approximate location based on
+the strength of the BLE beacon signal that was successfully
+obtained. The approximate location is then sent to the server
+and stored by the server. Based on the collection of user
+locations, a mapping of visitor tracker information was built.
+This information will be useful for analyzing the behavior of
+museum visitors.
+
+
+
+
+                                                                                    (c)                               (d)
+
+                                                                       Fig. 4. Museum Visitors Tracker Testing on Terracota Room Report
+
+                                                                        By this application museum manager could see the visitors’
+                                                                    movement in the museum room. From this information
+                                                                    museum manager could analyze the effectiveness of the
+Fig. 3. Museum Visitors Activity Tracker System Design              existing room layout and artifacts. Museum manager could also
+                                                                    see how long each visitors stay on each museum room and in
+    This study maps the location of museum visitors to the          which locations museum visitors spend their time. From this
+website-based museum tracker application as shown in Fig. 4.        information museum manager could analyze which exhibitions
+Museum manager can see visually the movements of museum             are of appealing to visitors.
+visitors based on a certain time according to the input. For
+example museum manager want to know visitors movement on                This research tests the accuracy of the estimated location of
+Terracotta Room start from 10:00 AM. The application will           visitors obtained data. Testing is done by comparing the
+plot the visitor location that recorded by server on the map. The   estimated location of visitors (calculation results) with the
+museum manager then can input the tracking duration that            actual location, as can be seen in Fig. 5. From these tests the
+he/she want to view (for example for every three minutes). The      calculation of the resulting error rate is calculated, as shown in
+museum manager then can click next/previous duration button         Table 1. From the position accuracy testing conducted, the
+to see visitor location. This application will show the location    results show that the accuracy level is strongly influenced by
+of museum visitors for the next period of time (on the next         the Received Signal Strength Indicators (RSSI) BLE beacons
+three minutes / 10:03 AM).                                          received by Bluetooth devices on smartphone visitors to the
+                                                                    museum visitors. Where testing numbers 6, 9, 4, and 5 (Table
+                                                                    1) has the best RSSI level. So that it has an error rate of
+                                                                    distance around 47.12 to 97.28 cm.
+                                                                  manager can analyze and evaluate the layout and laying of
+                                                                  artifacts and displays in the museum.
+                                                                      Based on error testing by comparing the distance of real
+                                                                  locations and estimation locations based on the calculations.
+                                                                  The level of error that obtained is 47 to 174 cm with an average
+                                                                  of 114.35 cm. So, it can be concluded that the location
+                                                                  information obtained by visitors is sufficient to be able to
+                                                                  present the position of the museum visitors in order to obtain
+                                                                  information on the behavior of museum visitors.
+
+                                                                                    TABLE I.        TESTING OF POSITION ACCURACY
+                                                                                Real               RSSI Beacon          Calculation     Dista
+                                                                               Position        (Strongest Detected)      Position        nce
+                                                                    No
+                                                                                                                                        Error
+                                                                              X        Y        1         2       3     X       Y
+                                                                                                                                        (cm)
+                                                                                                   -         -      -
+                                                                             232      197.                              116.    220.
+                                                                         1                     165.8     170.0   160.                  174.12
+                                                                              .47      67                                00      57
+                                                                                                   7         0    48
+                                                                                                   -         -      -
+                                                                             106      97.8                              103.    198.
+                                                                         2                     104.2     105.5   107.                  110.94
+                                                                              .67        8                               27      65
+                                                                                                   3         3    59
+                                                                                                   -         -      -
+                                                                             256      219.                              158.    222.
+                                                                         3                     114.0     120.0   119.                  125.14
+                                                                              .56      33                                43      67
+                                                                                                   0         7    09
+                                                                                                                    -
+                                                                             264      236.         -         -          253.    251.
+                                                                         4                                       97.0                   95.40
+                                                                              .38      27      90.07     92.23           67      00
+                                                                                                                    0
+                                                                                                                    -
+                                                                             254      275.         -         -          254.    256.
+                                                                         5                                       99.4                   97.28
+                                                                              .97      70      98.31     93.88           33      10
+                                                                                                                    0
+                                                                                                                    -
+                                                                             100      250.         -         -          87.6    253.
+                                                                         6                                       58.5                   47.16
+                                                                              .90      27      60.84     59.52             7     33
+                                                                                                                    3
+                                                                                                   -         -      -
+                                                                             254      462.                              255.    455.
+                                                                         7                     115.8     125.0   113.                  129.24
+Fig. 5. Position Accuration Testing                                           .21      32                                17      10
+                                                                                                   9         0    39
+                                                                                                   -         -      -
+    So, it can be concluded that the location of each BLE                    117      580.                              109.    459.
+                                                                         8                     142.4     143.5   158.                  165.26
+                                                                              .33      00                                67      44
+beacon is very important in terms of increasing the accuracy of                                    8         1    24
+approximate location. Therefore, the location of each beacon                                                        -
+                                                                             228      575.         -         -          162.    468.
+must consider the range of each beacon and the need to cover             9                                       88.3                   68.41
+                                                                              .00      33      79.35     82.55           63      90
+                                                                                                                    3
+each room. Overall error rate from comparing real locations                                        -         -      -
+with estimated locations based on calculations obtained an                   297      628.                              307.    463.
+                                                                        10                     117.6     128.4   112.                  130.59
+error of 114.35 cm so that it can be concluded that the system                .33      39                                93      67
+                                                                                                   7         7    09
+created can be a reference for visitor movement information.                                        Average                            114.35
+
+                        IV. CONCLUSION                                                 ACKNOWLEDGMENT (Heading 5)
+     This research tries to determine the behavior of museum         This research supported by Indonesia Directorate Research
+visitors when visiting the museum. Visitor behavior is            and Technology of Higher Education under grant
+recognized by tracking the movement of visitors in the            002/SP2H/P/K7/KM/2019. This research also support by Petra
+museum. Information on the location of visitors during the        Christian University Mobile Computing Research Group.
+museum is obtained by using the Indoor Positioning System
+with BLE beacons. Signals from BLE beacons placed in                                                   REFERENCES
+various positions in the museum will be detected by Bluetooth
+                                                                  [1]    Tempo, “Tourism Donate Foreign Exchange US$ 10 Milliard
+on the user's smartphone as a reference for calculating the              [Pariwisata Sumbang Devisa US$ 10 Milliard],” [online] available at
+visitor's location estimation by trilateration and the Kalman            Tempo.com, 2014, accessed 17 May 2019.
+filter method. The visitor's location is then mapped on the       [2]    UNESCO & Indonesia Tourism Ministry, “Practical Guide for Museum
+website-based museum map application. Through this visitor               Revitalization in Indonesia,” UNESCO, 2011.
+movement information the museum manager can find out the          [3]    Kompas, “100 Standardized Museum [100 Museum Distandardisasi]“,
+route chosen by visitors while in the museum, which locations            [online] available at travel.kompas.com, 2015, accessed 21 June 2019.
+in the museum are frequently visited, which artifacts are of      [4]    AR. Sampeliling, “A Big Plan for Indonesia’s National Museum, Global
+interest to visitors, etc. Based on this information the museum          Indonesian           Voices”,        [online]        available        at
+      http://www.globalindonesianvoices.com/30728/a-big-plan-for-              [10] A. Handojo, R. Lim, J. Andjarwirawan, S. Sunaryo, “Games and
+      indonesias-national-museum, 2017, accessed 20 June 2019.                      multimedia implementation on heroic battle of Surabaya: An android
+[5]   A. Handojo, R. Lim, T. Octavia, JK. Anggita, “Museum Interactive              based Mobile Device Application”, Lecture Notes in Electrical
+      Information Broadcasting Using Indoor Positioning System and                  Engineering, 2016, No. 365, pp. 619-629.
+      Bluetooth Low Energy: a Pilot Project on Trowulan Museum                 [11] A. Thamm, J. Anke, S. Haugk, D. Radic, “Towards the Omni-Channel:
+      Indonesia”, Technology Innovation Management and Engineering                  Beacon-Based Services in Retail”, International Conference on Business
+      Science International Conference. Bangkok, 2018, pp. 237-242.                 Information Systems, 2016.
+[6]   L. Botturi, A. Inversini, AD. Maria, “City Treasure: Mobile Games For    [12] KS. Yeo, A. Ting, SC. Ng, D. Chieng, N. Anas, “Wi-Fi Indoor
+      Learning Cultural Heritage”, Proceedings of Museum and the Web,               Positioning Fingerprint Health Analysis for a Large Scale Deployment”,
+      Archives and Museums Information, 2009.                                       International Journal on Advanced Science Engineering Information
+[7]   N. Chivarov, V. Ivanova, D. Radev, I. Buzov, “Interactive Presentation        Technology, 2018, No. 8 Vol 4-2, pp. 1411-1416.
+      of the Exhibits in the Museums Using Mobile Digital Technologies.        [13] A. Narzullaev, Z. Muminov, G. Ibragimov, “Wi-Fi Signals Database
+      Workshop on International Stability”,Technology, and Culture The              Construction using Chebyshev Wavelets for Indoor Positioning
+      International Federation of Automatic Control, 2013.                          Systems”, International Journal on Advanced Science Engineering
+[8]   A. Handojo, J. Andjarwirawan, S. Sunaryo, R. Lim, “Heroic battle of           Information Technology, 2019, No. 9 Vol. 1, pp. 236-241.
+      Surabaya Application Based on Android”, Journal of Engineering and       [14] Indonesian Internet Service Users Association – APJII. Penetration and
+      Applied Sciences, 2014, No. 9 Vol. 12, pp. 2396-2403.                         Behavior of Indonesian Internet users. 2017
+[9]   B. Turan and H. Keser, “Museum Guide Mobile App: The Case of the
+      Near East University Classical Car Museum”, Social and Behavioral
+      Sciences, 2014, No. 131, pp. 278 – 285.
+

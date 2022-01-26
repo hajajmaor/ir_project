@@ -1,0 +1,2121 @@
+User Model User-Adap Inter (2008) 18:389–416
+DOI 10.1007/s11257-008-9049-x
+
+ORIGINAL PAPER
+
+LISTEN: a user-adaptive audio-augmented
+museum guide
+
+Andreas Zimmermann·Andreas Lorenz
+
+Received: 30 July 2007 / Accepted in revised form: 25 February 2008 / Published 
+online: 29 July 2008
+
+© Springer Science+Business Media B.V. 2008
+
+AbstractModern personalized information systems have been proven to support the
+user with information at the appropriate level and in the appropriate form. In 
+speciﬁc
+environments like museums and exhibitions, focusing on the control of such a 
+system
+is contradictory to establishing a relationship with the artifacts and 
+exhibits. Prefer-
+ably, the technology becomes invisible to the user and the physical reality 
+becomes
+the interface to an additional virtual layer: by naturally moving in the space 
+and/or
+manipulating physical objects in our surroundings the user will access 
+information and
+operate the virtual layer. The LISTEN project is an attempt to make use of the 
+inherent
+“everyday” integration of aural and visual perception, developing a tailored, 
+immer-
+sive audio-augmented environment for the visitors of art exhibitions. The 
+challenge of
+the LISTEN project is to provide a personalized immersive augmented environment,
+an aim which goes beyond the guiding purpose. The visitors of the museum 
+implicitly
+interact with the system because the audio presentation is adapted to the 
+users’ con-
+texts (e.g. interests, preferences, motion, etc.), providing an intelligent 
+audio-based
+environment. This article describes the realization and user evaluation of the 
+LISTEN
+system focusing on the personalization component. As this system has been 
+installed
+at the Kunstmuseum Bonn in the context of an exhibition comprising artworks of 
+the
+painter August Macke, a detailed evaluation could be conducted.
+
+KeywordsAudio information systems·User-adaptive systems·Context-
+awareness·User modeling·Personalization·Personalized audio environments·
+Acoustic information spaces·Motion styles·User tracking
+
+A. Zimmermann (B) A. Lorenz
+
+Fraunhofer Institute for Applied Information Technology, Schloß Birlinghoven,
+53754 Sankt Augustin, Germany
+
+e-mail: Andreas.Zimmermann@ﬁt.fraunhofer.de
+
+A. Lorenz
+
+e-mail: Andreas.Lorenz@ﬁt.fraunhofer.de
+
+
+1 Introduction
+
+The LISTEN project (LISTEN 2006) conducted by an international consortium lead
+by the Fraunhofer Institute for Media Communication is an attempt to make use 
+of the
+inherent integration of aural and visual perception, developing a tailored, 
+immersive
+audio-augmented environment (Eckel 2001). The LISTEN system enhances every-
+day environments with interactive soundscapes. The users of the system are 
+provided
+with an interactive access to personalized and position-dependent acoustic 
+informa-
+tion spaces while they naturally explore their everyday environments. While 
+using the
+system, the users automatically navigate a dynamic virtual auditory scene 
+designed as
+a complement or extension of the real space they are exploring.
+
+The user moves in the physical space wearing motion-tracked wireless headphones,
+which enable the rendering of three-dimensional sound. This sophisticated 
+auditory
+rendering process takes into account the user’s current position and head 
+orientation
+in order to seamlessly integrate the virtual scene with the real one. Speech, 
+music and
+sound effects are dynamically arranged to form an individualized and 
+location-aware
+soundscape offering information related to visual objects as well as creating 
+context-
+speciﬁc atmospheres. Figure 1 shows one possible installation of the LISTEN 
+system
+as an innovative type of art.
+
+The user listens to audio sequences emitted by sound sources virtually placed 
+in the
+environment. The system enables the composition of sound, body and space 
+through
+
+Fig. 1Art installation based on the LISTEN system
+
+
+a tight correlation of the three perception aspects: self-perception, visual 
+and tactile
+space perception, and the acoustic space perception. On the one hand, the user 
+can walk
+through soundscapes created by virtual sound sources emerging from speciﬁc 
+points
+in space with different acoustics which can be passed through. On the other 
+hand, the
+person’s position within space related to other objects is known, which allows 
+for a
+response to the listener’s behavior in space. The system knows where in space 
+the
+users move, where they have been, how fast they are, and what they have heard, 
+and
+reacts to these parameters in the composition.
+
+The LISTEN project has deﬁned and investigated a new form of multi-sensory
+content which increases the perceptual, emotional and pedagogical effect of a 
+vari-
+ety of applications ranging from exhibitions to marketing and entertainment 
+events.
+Everyday environments like exhibition halls, storage areas, public places or 
+living
+rooms might become interfaces which enable intuitive and non-intrusive access to
+a three-dimensional auditory information environment. In the course of the 
+project
+several prototypes have been developed. One prototype has been evaluated in a 
+public
+exhibition called the Macke Laboratory, which is described in the remainder of 
+the
+paper.
+
+2 The Macke Laboratory
+
+In October 2003, a LISTEN environment was set up for a representative selection
+of paintings by the artist August Macke (1887–1914) at the Kunstmuseum Bonn
+(Unnützer 2001). TheMacke Laboratoryintegrates Macke’s paintings into a differ-
+entiated acoustic space, in which spoken texts and sounds reﬂect and supplement 
+the
+visual experience in an associative manner. The following sections illustrate 
+the appli-
+cation of the LISTEN system in this museum context, discuss related work and 
+list
+requirements on the personalization of the audio information.
+
+2.1 Application of the LISTEN system
+
+The features of the LISTEN system make accessible different perspectives on the
+artworks by August Macke: different real andﬁctitious reviewers, art historians 
+and
+restorers speak to and approach the visitor and bring alive selected places and 
+situa-
+tions in Macke’s creative activity. A variety of linguistic levels are marked 
+by different
+room acoustics, accompanying the quotations with sound collages. Thus, the 
+acous-
+tic and spatial productions merge: The combination of paintings, sound events, 
+and
+the architecture of the exhibition hall comprises a topography of the contents 
+which
+outline locations and situations of Macke’s life. Figure 2 gives an impression 
+of a user
+in front of a painting of August Macke.
+
+In contrast to the approaches “Carletto the spider” (Damiano et al. 2008), CHIP
+(Cramer et al. 2008) and iCity (Carmagnola et al. 2008) described in this 
+special
+issue, the application of the LISTEN system to a museum context enables the 
+visitor
+to move freely through the museum without paying attention to the technology 
+which
+steps back for the beneﬁt of the aesthetic experience. The visitors are not 
+restricted
+to a stream of presentations, but can move through different soundscapes and 
+stay in
+
+
+Fig. 2A visitor of the Macke
+Laboratory
+
+one place as long as they want. What the visitors hear depends on their 
+movements
+through the space and the direction of their gaze at any given moment. If the 
+visitor
+approaches an exhibit, the attached acoustic information and simulation of a 
+moving
+sound source is activated: the visual experience is virtually and acoustically 
+comple-
+mented, and the visitor can control the intensity and extent of the acoustic 
+information
+by head movements, approaching and turning away from the exhibit.
+
+2.2 Related work
+
+The special requirements of a museum guide offer a valuable proving ground for
+the concepts of the LISTEN project. Museums and exhibitions have already been
+explored as domains in several research projects. Many of them focus on the 
+goal to
+provide a museum guide including content concerning the artworks (Oppermann and
+Specht 1999), to immerse the user in a virtually augmented environment built in 
+virtual
+museums (Chittaro et al. 2003), or to provide orientation and routing 
+functionalities
+(Ciavarella and Paternó 2003). In addition, the interaction methodologies of 
+museum
+visitors with the mobile guide vary significantly. Recent approaches such as the
+HyperAudio System (Petrelli and Not 2006) rely on a pen and a palmtop computer
+and   the ec(h)o system described by Wakkary and Hatala (2006) depends on a 
+wooden
+cube for the selection of audio presentations.
+
+Traditional systems provide different channels for explicit interaction with 
+exhib-
+its. For the selection of the exhibit of interest, Rukzio (2006) describes four 
+methods
+of Touching, Pointing, Scanning, and User-mediated Object-interaction. From 
+this
+
+
+selection, users preferred to employ touching, e.g. hit a button attached to 
+the artifact
+or scanning an associated RFID-tag with a mobile device, mainly for its 
+simplicity
+and enjoyment. On the other hand, user-mediated object-interaction, e.g. typing 
+a
+numerical code into a mobile device, was seen as the most reliable selection 
+method.
+Another outcome of his work was that people tend to be lazy: If the object was 
+within
+physical range, users preferred touching, if the object was unreachable but 
+nearby they
+preferred pointing rather than moving to the object in order to use touching. 
+Pointing
+to  the object of interest was therefore one of the earliest methods for 
+selection, already
+implemented in early work like the HIPPIE system (Oppermann and Specht 2000).
+Although not explicitly tracked by the system, the position of the user is a 
+valuable
+dimension of the interaction regardless. In general, the use of scanning RFID 
+tags or
+using pointing devices like IR in HIPPIE delivers information about the 
+location of
+the user in relation to an object. In the back end, the event of 
+RFID-recognition or
+Infrared-code triggers the delivery of adapted information. The HyperAudio 
+system
+aims   at better supporting a visitor of a museum by combining location 
+awareness
+and information adaptation. The system interprets the visitor’s behavior (i.e. 
+physi-
+cal and interactive) to create and adapt presentations on the basis of the user 
+model,
+the physical context and the history of interaction. With a focus on automatic 
+text
+generation, the ILEX system for example produces descriptions of objects encoun-
+tered during a guided tour of a museum gallery. The displayed hypertext pages 
+are
+generated dynamically and are therefore tailored to a particular user in a 
+particular
+situation.
+
+If the trigger can be read automatically from a tracking system, this trigger 
+would
+be replaced with a location-event initializing the delivery of information. 
+Bellotti et
+al. (2003) describe such a location-aware guide where RFID-technology was used
+for the purpose of localization. The Cicero system (Ciavarella and Paternó 2003)
+installed at Marble museum at Carrara (Italy) uses a set of infrared beacons 
+located
+at each entrance of the museum’s rooms. With the aid of precise tracking 
+technol-
+ogy, which is additionally capable of detecting location and orientation, the 
+LISTEN
+system described in this paper becomes capable of building more sophisticated 
+user
+models aiming at higher user satisfaction. In contrast to other systems based 
+on explicit
+scanning of infrared-lights or electronic tags, the technology does not require 
+the atten-
+tion by the user for creating the location-event. In outdoor environments, 
+system like
+the GUIDE system (Cheverst et al. 2000) and other city guides combine personal
+information (like the visitor’s interest) and environmental information (like 
+the time
+of   the day; in particular the location in a city) to present the information 
+in a way
+that is suitable for a given user. Based on the location, the system can reﬂect 
+for
+example the fact that a visitor is making a return visit, e.g. by welcoming the 
+visitor
+back.
+
+In view of the paradigm shift in Ubiquitous Computing, where technology becomes
+invisible to the user, the visitors of the museum equipped with the LISTEN 
+system are
+not forced to carry any devices in their hands but interact with the system 
+implicitly.
+Therefore, the LISTEN system represents a different approach compared to the 
+others
+presented in this special issue because it cannot access explicit feedback from 
+its users
+through a mobile device. Based on the combination of aural and visual 
+perception,
+the challenge of the Macke Laboratory was to go beyond the guiding purpose. Our
+
+
+concept enhances the conventional form of informative guiding through a museum
+with elements of the radio feature and the surround sound installation. 
+Existing prob-
+lems of traditional audio guides like “querying” each exhibit, the 
+inconvenience of
+carrying the device and the co-listening in crowds, can be solved by the 
+installation
+of the LISTEN system into such an environment.
+
+2.3 Requirements on personalization
+
+The visitors to the Macke Laboratory experience audio information about exhibits
+and in parallel are navigating through a complex data structure. Rather than a 
+pre-
+determined, prerecorded audio program, the LISTEN system personalizes the audio
+presentation and adapts the data structure to the visitors of the Macke 
+Laboratory, based
+on   their movements within the real space. This data structure has to provide 
+layers of
+information with increasing levels of involvement in order to allow the 
+visitors toﬁnd
+their own level of engagement with an exhibition. The varying depth of 
+experience
+gives each visitor the chance toﬁnd her own level or area of comfort and 
+interest.
+
+In contrast to traditional audio guides, the application manages an intelligent 
+mem-
+ory in order to reduce repetitive loops in the audio presentation. The system 
+registers
+the repetition of an action and reacts immediately with offering other sound 
+enti-
+ties and new audio sources. The personalization process detects and carefully 
+applies
+redundancies in the presentation of audio information. Therefore, the system 
+has to
+keep  track of each visitor’s visit history and the system then adapts the 
+presented
+information with respect to what the visitor has already experienced. In 
+addition, the
+analysis of the visitor’s behavior should allow for the provision of a 
+personalized tour
+through the exhibition.
+
+In order to address the above mentioned issues, the LISTEN system exhibits an
+adaptive behavior that it selects for that purpose, recommends, presents and 
+adapts
+audio information considering the visitor’s goals, preferences, knowledge, and 
+inter-
+ests. Traditionally, the acquisition of information about the user is driven by 
+monitoring
+the user’s activities and explicit interactions with the user interface. 
+However, one of
+the main objectives of the LISTEN project was to avoid any portable device or 
+remote
+control for the visitor except for the headphones and the movement in physical 
+space.
+For the personalization process, this means that only implicit feedback is 
+available in
+any LISTEN application and the visitor’s body is the only interface for 
+interaction.
+In this regard the LISTEN system differs significantly from the other approaches
+presented by this special issue, because they offer explicit means of 
+interaction and
+feedback through mobile devices.
+
+3 The hardware setup
+
+For a visitor of the Macke Laboratory, the LISTEN system basically consists of 
+the
+wireless headphone with two attached antennas for the localization of the person
+wearing these headphones. In the background, several computer systems are 
+required
+for the operation of the LISTEN system but are not visible to the visitor. 
+Particularly
+two hardware components realize the adaptive behavior of the LISTEN system: the
+
+
+rendering digital signal processor, which renders the transmitted audio signal 
+into
+three-dimensional surround sound, and the tracking system, which acquires the 
+user’s
+position and head orientation. The following sections describe these two 
+hardware
+components in more detail.
+
+3.1 The digital signal processor for rendering
+
+The visitor experiences the information regarding August Macke’s paintings 
+through
+motion-controlled wireless headphones that exceed the conventional stereophonic
+headphones by an extended binaural rendering technology. A digital signal 
+proces-
+sor (DSP) on the headphone receives the transmitted audio signal and renders it 
+into
+three-dimensional surround sound played to the visitor. The sounds seem to 
+emerge
+from everywhere around, and thus, the sound presentation immerses the visitor 
+in an
+extended three-dimensional environment that can be intuitively explored.
+
+Spatial sound rendering and the segregation of sounds emanating from differ-
+ent directions are key factors for improving the naturalness of the LISTEN 
+envi-
+ronment. The Institut de Recherche et Coordination Acoustique/Musique (IRCAM
+2007) has developed a real-time modular software system processing spatial 
+sound, the
+Spatialisateur, which allows the reproduction and control of the localization 
+of sound
+sources  in three dimensions (auditory localization) and the reverberation of 
+sounds
+(room effect) in an existing or virtual space (Jot 1999). The provided signal 
+process-
+ing library comprises elementary objects and operations for reconstructing 
+localization
+and room effect cues associated to one source signal. Several operations can be 
+inte-
+grated in a single compact processor, which in turn can be associated in 
+parallel in
+order to process several source signals simultaneously. A higher level user 
+interface
+controls the different signal-processing sub-modules of a processor 
+simultaneously,
+and provides direct access to perceptually relevant parameters for specifying 
+distance
+and reverberation effects. The LISTEN system exploits these methods for 
+synthesizing
+complex three-dimensional sound environments for describing the interaction of 
+each
+sound source with the virtual space and for the preparation of the rendering 
+activities.
+Besides the technical rendering of the sounds, the natural hearing impression 
+re-
+quires headphones with digital wireless technology that do not result in a 
+typical
+headphone sound with an associated, disturbing in-head-localization. The 
+Individ-
+ual-Virtual-Acoustics-Technology (IVA-Technology) developed by AKG Acoustics
+GmbH          (AKG 2007) makes a simulation of the natural spatial hearing via 
+headphones
+possible. This technology completely eliminates the headphone-inherent phenome-
+non of the in-head-localization. The coordination of the IVA-Technology with the
+head tracking system enables a noiseless and uninterrupted transmission of the 
+audio
+signals via digital radio communication. The freely conﬁgurable radio 
+transmitter is
+
+capable of processing any algorithm for positioning sound waves in space.
+
+3.2 The tracking system
+
+A highly accurate indoor tracking system is necessary to detect the spatial 
+structures of
+the environment. The requirements on the tracking technology arise from the 
+goal to
+
+
+completely immerse the user into a convincing virtual acoustic scene (Bregman 
+1994):
+Continuous low-latency tracking of the position of the user’s head and its 
+orientation is
+necessary to cover the entire area to be augmented. The total system latency, 
+i.e. time
+interval between the head motion and the adjustment of the sound presentation, 
+must
+be below 59 ms (Wenzel 1998). A user tracking based on Wireless LAN as applied 
+by
+Cramer et al. (2008) would not sufﬁce these speciﬁc requirements.
+
+In contrast to concepts where the object to be tracked is receiving information,
+like for example the Global Position System (GPS), the user of the LISTEN system
+carries the wireless navigation transmitter. The navigation transmitter, 
+mounted upon
+the user’s headphones, enables the system to determine the user’s position and 
+head
+orientation. Since the transmit antenna is mounted to the user headphones it 
+has to be
+as  small sized, low weighted and as efﬁcient as possible concerning power 
+consump-
+tion. As a LISTEN project partner, the Institute of Industrial Electronics and 
+Material
+Science (IEMW), now Institute of Sensor and Actuator Systems (ISAS 2007),
+accounts for the development of a tracking system that complies with these 
+require-
+ments.
+
+For the LISTEN system, a time-of-arrival tracking concept using short radio 
+fre-
+quency burst signals was chosen (Goiser 1998). The navigation receivers pick up 
+the
+navigation signals transmitted from the device attached to the user’s 
+headphones. The
+navigation receivers have to be arranged and set up in an adequate geometry and 
+each
+receiver obtains a knownﬁxed location. A central signal-processing unit 
+accumulates
+the data collected by the network of receivers and calculates the absolute 
+position and
+the orientation of each navigation transmitter. The position is determined by 
+geometric
+triangulation based on the relative time-of-arrival differences between the 
+receivers.
+For the measurement of the orientation each transmitter is equipped with two 
+antennas
+arranged in a deﬁned distance to each other. This assembly generates a small 
+delay
+that enables the calculation of the angle the user’s head displays compared to 
+aﬁxed
+known position.
+
+The determination of the position in (x, y)-coordinates and the orientation 
+angle
+requires at least four receivers with direct line-of-sight contact to the 
+transmitters. In
+order to obtain appropriate accuracy and reliability and to cover the whole 
+space of a
+large room like the one in the Kunstmuseum Bonn (15 m  15 m  5 m) eight 
+receivers
+have to be deployed. Due to the long period of supply for the planned tracking 
+system,
+the Macke Laboratory was equipped with a different tracking system by Advanced
+Realtime Tracking GmbH (see ARTracking 2007 for more details). This system uses
+infrared cameras that recognize the target mounted to the headphones and 
+exhibits
+similar accuracy compared to the planned tracking system.
+
+The tracking system automatically selects the most favorable device from the 
+array
+of receivers for the calculation of the position and orientation. 
+Non-line-of-sight links
+as well as interfering multi-path signals are discarded by plausibility checks 
+concern-
+ing the strength and quality of the received signal and the calculated 
+position. For a
+proper system operation the assumption must be satisﬁed that in any situation 
+at least
+four line-of-sight links are available. With this setup the tracking system is 
+able to
+measure the positions of eight users simultaneously with an absolute accuracy 
+of the
+head position of about 10 cm and the minimum granularity of the orientation 
+angle of
+5 degrees. The battery of the navigation transmitters lasts at least 1 h.
+
+
+4 Domain model and adaptation of the Macke Laboratory
+
+For the Macke Laboratory the LISTEN system dynamically arranges an audio pre-
+sentation to form an individualized and situated soundscape offering 
+exhibit-related
+information as well as creating visitor-speciﬁc atmospheres. The design of 
+individu-
+alized information services demands the intuitiveness of the information 
+structure for
+the successful application of an adaptation process. Prior to the 
+implementation of the
+process, considerable conceptual work reveals the entire design space of the 
+adapta-
+tion process. This chapter documents the elaboration of content structure as 
+well as
+the adaptation goals, targets and means of the Macke Laboratory in more detail.
+
+4.1 The world and location model
+
+The LISTEN system translates the visitor’s spatial position and head 
+orientation in
+physical space into virtual positions in the electronic space relative to 
+virtual objects.
+The world and location model of the LISTEN system constitute a virtual environ-
+ment that enables the definition of virtual sound sources and the segmentation 
+of the
+physical space into virtual zones.
+
+Theworld modeldescribes the physical environment the visitor moves through
+while interacting with the system. In the LISTEN environment, this model 
+contains
+the detailed geometric information of the exhibition space and its objects. The 
+LISTEN
+world model comprises an extensive virtual-reality-based geometric model 
+created for
+the AVANGO software platform (Tramberend 1999). This extensible virtual reality
+framework supports programmers in the rapid prototyping and developing of vir-
+tual reality applications and environments. AVANGO allows for the generation of 
+a
+geometric scene graph of the real environment. This geometric model enables 
+authors
+and developers to conduct tests and simulations using the display setups like 
+the
+Cave Automatic Virtual Environment (CAVE) system (Cruz-Neira et al. 1993). This
+virtual reality system projects virtual environments on a curved, 240 degree 
+wide-
+angle screen and creates an almost realistic, three-dimensional reproduction of 
+the
+real environment. The combination of the AVANGO platform and the CAVE pro-
+jection capabilities enables the exploration and interaction with the virtual 
+LISTEN
+prototype and the fast deployment into real environments.
+
+On top of the world model, thelocation modeldeﬁnes areas within the world model
+that the visitor of the system interacts with. This model allows the LISTEN 
+system
+to gain the location and the focus of the visitor through the interpretation of 
+the vis-
+itor’s position and head orientation. It obtains the visitor’s relation to the 
+physical
+space through mapping the position to virtual zones and the head orientation to 
+object
+identiﬁers. The virtual reproduction of the real environment enables the 
+positioning
+of virtual sound sources.
+
+Figure 3 illustrates the location model of the Macke Laboratory on the left-hand
+side and a magniﬁcation of a part of this model on the right-hand side. As 
+theﬁgure
+shows, a location model segments the exhibit hall intoobject zonesandnearﬁelds
+(Gossmann and Specht 2002), which are connected to the respective visual objects
+placed within the environment. The object zones establish an association with 
+their
+
+
+Fig. 3Location model of the Macke Laboratory
+
+accordant visual object and take the user’s position into account. The 
+nearﬁelds refer
+to smaller, more detailed parts of this visual object and additionally take 
+into account
+the visitor’s focus as the spot the visitor is looking at plays a more 
+important role.
+In general, the object zones as well as the nearﬁelds could assume any 
+imaginable
+shape; however, squares and circles are easier to model.
+
+4.2 Structuring the information domain
+
+Besides the detailed modeling of the physical environment, for which the LISTEN
+system has to be deployed, the structured representation of the audio content 
+and
+the content represented by the visual objects constitute a central issue of the 
+work.
+The LISTEN system makes use of a large amount of audio information in order to
+completely immerse the visitor in a realistic soundscape. The available audio 
+content
+consists of sound entities that can be combinedﬂexibly and form the main 
+entities to
+generate immersive audio presentations.
+
+The outcomes of the LISTEN workshops (see Chap. 6) comprise the selection
+of different strategies and methodologies to structure sound entities and 
+answer the
+question, how to combine these entities in a highlyﬂexible way for several 
+visitors?
+The analysis of the needs of museum visitors and the observation of human museum
+guides revealed that the event character of museum visits in most cases is much 
+more
+important than plain provision of information about the art object as such. In 
+most
+cases, human museum guides extend the visual perception of such artworks with 
+“sto-
+ries or impressions” taken from the respective time period of the artist to 
+immerse the
+visitor into an authentic experience of the works and the life of the artist.
+
+Concerning the introduction of several artworks by August Macke, his works are
+interconnected by personal episodes, events and experiences in his life. 
+Furthermore,
+August Macke’s interaction with his social environment, such as the reactions 
+and
+responses to personal letters, media or press articles, are relevant as well as 
+the zeitgeist
+
+
+and other factors regarding the world at his time. Thus, the structured 
+description
+(meta-tagging) of a possibly large collection of such “stories or impressions” 
+enables
+the LISTEN system for the immersion of the user into an audio-augmented 
+experience
+in aﬂexible way.
+
+The effective personalized delivery of sound entities presupposes the 
+intelligent
+structuring and internal representation of the sound entities. The sound 
+entities can
+be described along a variety of dimensions, and thus, these entities can be 
+classi-
+ﬁed into a category system spanning the respective dimensions. The LISTEN system
+applies the ontology methodology offeringconceptsandcategoriesfor the generation
+of   a meaningful model of the audio content. Besides the simple classiﬁcation 
+of the
+sound entities into a tree structure, the ontology concept provides means of 
+classiﬁ-
+cation of sound entities intomultiplecategories, which allows for the 
+catenation of
+sound entities and enables individualized sequencing and presentation of these 
+enti-
+ties. Furthermore, this classiﬁcation facilitates the association of sound 
+entities to the
+corresponding visual objects.
+
+Regarding the August Macke exhibition, the category system reﬂects the need to
+capture “stories or impressions” from his time and offers dimensions for 
+describing
+the sound entities technically and from a stylistic point of view. The 
+domain-speciﬁc
+ontology of the Macke exhibition provides classiﬁcation means based on:
+
+technical descriptionsof the sound entities, e.g. the length of the item or 
+type such
+as music, speech, or sound effects,
+
+relationsof the sound entity to physical or visual objects of the environment, 
+e.g.
+other exhibits, object zones or foci,
+
+contentof the described visual object, e.g. phases of work, image genre, or 
+technical
+aspects regarding the artwork,
+
+intended target group of visitorsfor the sound entity, i.e. stereotypical 
+listeners,
+emotional impacts or dramaturgy.
+
+In particular, speech sound entities are further distinguished into 
+subcategories like
+Citation, Collage, Diary, Letter, Newspaper and others to describe their style 
+of pre-
+sentation. In an analogous manner, the category system captures the visual 
+objects of
+the August Macke exhibition, i.e. his artworks, and the annotations for these 
+exhibits
+and cover matters like:
+
+descriptionof the visual object, e.g. the name of the artwork, its creation 
+date, the
+type of artistic media,
+
+relationsto physical space, e.g. the relation to other exhibits in the 
+environment,
+anchorage in object zones or focus,
+
+contentof the visual object, e.g. phases of work, image genre, or technical 
+aspects
+regarding the production of the artwork.
+
+The structured internal representation of the metadata associated with each 
+sound
+entity and each visual object enables the effective authoring and distribution 
+of the
+audio content. However, there exists a tradeoff between the efforts of 
+authoring the
+sound entities in a highly enriched information representation and the daily 
+work
+of curators of a museum. The right balance offers an information brokering 
+service
+(cf. Klemke 2002) as a central management component for all sound entities
+(Zimmermann et al. 2003).
+
+
+4.3 Adaptation goals for audio-augmented museums
+
+A LISTEN environment can increase the perceptual, emotional and pedagogical 
+effect
+of an exhibition. The installation for the Macke Laboratory concentrates on the 
+peda-
+gogical issues in the procurement of arts and disregards the artistic use of 
+the system.
+The three major goals of the Macke Laboratory are the provision of information 
+regard-
+ing the particular artworks, the assistance in the perception of the artwork 
+compilation
+and the support of visitors walking through the exhibition in groups. 
+Accordingly, three
+adaptation goals have been deﬁned for this LISTEN installation, which are 
+described
+by  the following paragraphs.
+
+4.3.1 Increasing knowledge
+
+The consideration of the level of detail makes it possible for visitors to 
+access infor-
+mation depending on their interests and favor. The information contained by the 
+sound
+entities should comply with the visitor’s knowledge and interests. The LISTEN 
+system
+assumes that the longer the visitor’s focus lingers on some exhibit the more 
+interest
+in this object is expressed. The level of interest corresponds to the 
+complexity, the
+amount, and the style of information already received about a single exhibit. 
+If one of
+the succeeding exhibits complies with the visitor’s interests, the sound 
+presentation
+directly steps into the right level of detail, and the system plays sound 
+entities that are
+classiﬁed on the adequate information depth and style.
+
+4.3.2 Increasing the comprehension of semantic relations
+
+In comparison to the recognition of the exhibits and their associated 
+information,
+the underlying information structure is not as easily recognizable by the 
+visitors. A
+structure among the exhibits or among the associated information items creates 
+seman-
+tic, hierarchical or chronological links between these objects. The adaptation 
+of the
+information structure takes into consideration the semantic relations between 
+exhibits.
+Traditionally, this information structure corresponds to a tour arranged by 
+museum
+curators. Such tours exploit the knowledge of the experts about the overall 
+collection
+of artworks and form a systematic representation of this knowledge.
+
+4.3.3 Considering the social context
+
+If visitors depict a spatially and temporally similar behavior, they might want 
+to receive
+similar audio information, e.g. a family walking through an audio-augmented 
+museum.
+In contrast to each single person having heard an entirely different 
+presentation, a
+discussion after the visit about the seen objects would become possible through 
+the
+clustering of people with a similar background. Vice versa, the adaptation to 
+the social
+context includes breaking up clusters of people. This would lead to a better 
+distribution
+of people among several exhibits.
+
+
+4.4 Adaptation targets
+
+Adaptation does not always occur at the same level and different parameter 
+combina-
+tions accomplish a wide range of adaptation means. Three major targets for 
+adaptation
+means are the information structure, the sound presentation and the location 
+model.
+The following paragraphs describe these three adaptation targets and provide 
+means
+of their modiﬁcation.
+
+4.4.1 Adaptation of the information structure
+
+The selection of the appropriate sound entity forms the basis of every kind of 
+adapta-
+tion of the sound presentation. The sequence of the selected sound entities 
+qualiﬁes the
+information structure. One major aspect that inﬂuences this selection process 
+com-
+prises the content reﬂected by the selected sound entity. For an audio-augmented
+museum the content represented by the sound entity has to comply with the 
+content
+of  the exhibits. Another important facet that affects the selection of a 
+suitable sound
+entity denotes the type of entity regarding aspects such as speech, music or 
+effects.
+
+4.4.2 Adaptation of the sound presentation
+
+Besides the selection of the next sound entity to be played, a variety of 
+parameters
+affects the character of the sound presentation. The character of the sound 
+presenta-
+tion predominantly depends on the sound sources, which play back the sound 
+entity,
+and the modiﬁcation of these sound sources over time. The selection of the sound
+source determines the direction, from which the sound emerges, and the motion, 
+with
+which the sound moves. In addition, the sound presentation can be modiﬁed taking
+into account when, with which volume, and how long a sound is played.
+
+4.4.3 Adaptation of the location model
+
+The location model of the LISTEN system virtually divides the physical space 
+into
+zones that are associated with speciﬁc visual objects. Thus, visitors enter and 
+leave
+zones in virtual space. Some visitors want to step back and look at the object 
+from a
+different viewpoint. Because the visitor still shows interest in this speciﬁc 
+object, the
+associated zone should adapt to the visitor’s particular behavior and expand up 
+to a
+predeﬁned point (“zone breathing”) in order to further provide the visitor with 
+sound
+entities. The adaptation of the location model allows the transportation of a 
+sound
+entity, which has not completed playing, from one zone to the other.
+
+5 The software architecture of the Macke Laboratory
+
+The creation of an immersive audio-augmented environment requires the combina-
+tion of adaptive behavior with virtual-reality-based world modeling techniques. 
+The
+LISTEN system bases the adaptation process on aspects taken from theﬁeld of user
+modeling with principles taken from context-aware computing. Context-aware com-
+
+
+puting is a computing paradigm in which applications can take advantage of 
+contextual
+information such as user location, time of day, nearby people and devices, and 
+user
+activity. From a general point of view, Dey (2001) deﬁned context as any 
+information
+that can be used to characterize the situation of an entity. The Macke 
+Laboratory com-
+prises three basic entities: visitors, sound entities and exhibits. 
+Additionally, when the
+context-information is recorded across a time span, the application can obtain 
+histories
+like  interaction history, movement history, or event histories (Chen and Kotz 
+2000).
+
+Adaptive systems collect information from user assessment, feedback, the current
+task or user goal and other implicit and explicit acquisition methods that 
+involve some
+form of learning, inference, or decision making (Jameson 1999). The LISTEN 
+system
+divides the adaptation process into four main steps: information collection, 
+modeling,
+controlling and rendering. Each step fulfils a certain role within the user 
+modeling
+process. The software architecture corresponds to these four steps and 
+distributes the
+basic software components required for the adaptation process on the four 
+layers of the
+architecture (see Fig. 4). The actuator and the sensor layer have already been 
+described
+in   the Sects. 3.1 and 3.2. The following sections describe the semantic and 
+the control
+layer in more detail.
+
+5.1 The semantic layer
+
+Based on the available information provided by the tracking system and encoded 
+in
+the domain model, the semantic layer of the software architecture derives the 
+complete
+model of the visitor’s context represented by a set of attribute-value pairs. 
+The context
+model comprises the context attributes “time”, “position” and “orientation”, 
+which
+directly correspond to the accordant sensor components described in Chap. 3, 
+and the
+
+Fig. 4Software architecture of the Macke Laboratory
+
+
+Table 1Description of the context attributes
+
+Attribute       Description
+
+Time         Contains the current time to the second
+
+Position        Contains twoﬂoat values that indicate the x,y-position of the 
+visitor using the
+world model as a basis
+
+Orientation      Contains the value of the visitor’s head orientation in 
+angular degree
+Location       Indicates the identiﬁer of the exhibit associated with the zone 
+the visitor is
+
+currently standing in
+
+Focus         Indicates the identiﬁer of the exhibit that the visitor is 
+currently looking at
+Speed         Indicates the speed the visitor is moving with
+
+visit_history      Holds a list of identiﬁers of exhibit entities the visitor 
+has seen and identiﬁers of
+sound entities the visitor has heard
+
+motion_style    Indicates the motion style of the visitor through the exhibition
+Interests      Indicates the visitor’s interests in August Macke’s artworks
+
+context attributes “location”, “focus”, “speed”, “visit_history”, 
+“motion_style” and
+“interests”.
+
+Table 1 provides a description of each context attribute. The connections 
+between
+the context attributes indicate an event-listener relationship: whenever an 
+above-
+located context attribute receives a change event, it starts the derivation of 
+semantically
+enriched information. The following subsections explain this derivation chain 
+in more
+detail.
+
+5.1.1 Interaction history
+
+The location model described in Sect. 4.1 allows the LISTEN system to gain 
+values for
+the context attributes “location” and “focus” based on the visitor’s position 
+and head
+orientation. Figure 5 shows the XML representation of the location model, which 
+is
+used  for the translation of the visitor’s position to virtual zone identiﬁers 
+and the head
+orientation to exhibit identiﬁers. Therefore, the location model constitutes 
+the main
+source of establishing relations between a visitor, an exhibit and a sound 
+entity, which
+allow for a reﬁnement of the visitor’s interests and visit history.
+
+The current time constitutes an important variable for the derivation process. 
+The
+required information is read from the system clock. The combination of the 
+visitor’s
+spatial position and the time information allows for the derivation of the 
+speed the visi-
+tor moves with. The current time contributes to building up a visit history 
+database. This
+history database stores the identiﬁer of the exhibit, the visitor currently 
+views, and the
+identiﬁer of the sound entity, the visitor currently listens to, attached with 
+a time stamp.
+
+5.1.2 Motion-styles
+
+People walking through an environment often show different kinds of common or
+stereotypical behavior (e.g. clockwise in museums Oppermann and Specht 2000). In
+a museum environment, the definition of such meaningful stereotypes is a 
+non-triv-
+ial task (Rich 1989). A visitor-oriented approach requires a good understanding 
+of
+what the visitor’s motivations for the visit are. These motivations can be 
+looked at
+
+
+<listen_location_model>
+
+<Tunisia TYPE="toolkit.semantic.model.spacemodel.SquareZone">
+
+<X_COORDINATE VALUE="146.0"/>
+
+<Y_COORDINATE VALUE="77.0"/>
+
+<X_EXPANSION VALUE="139.0"/>
+
+<Y_EXPANSION VALUE="70.0"/>
+
+</Tunisia>
+
+<Landscapes TYPE="toolkit.semantic.model.spacemodel.SquareZone">
+
+<X_COORDINATE VALUE="373.0"/>
+
+<Y_COORDINATE VALUE="77.0"/>
+
+<X_EXPANSION VALUE="88.0"/>
+
+<Y_EXPANSION VALUE="70.0"/>
+
+</Landscapes>
+
+<KinderImGarten TYPE="toolkit.semantic.model.spacemodel.CycleZone">
+
+<X_COORDINATE VALUE="7.0"/>
+
+<Y_COORDINATE VALUE="220.0"/>
+
+<RADIUS VALUE="55.0"/>
+
+</KinderImGarten>
+
+<Bench TYPE="toolkit.semantic.model.spacemodel.SquareZone">
+
+<X_COORDINATE VALUE="200.0"/>
+
+<Y_COORDINATE VALUE="320.0"/>
+
+<X_EXPANSION VALUE="80.0"/>
+
+<Y_EXPANSION VALUE="43.0"/>
+
+</Bench>
+
+</listen_location_model>
+
+Fig. 5Translation of the location model into a XML representation (excerpt)
+
+from different perspectives like for example the visitor’s learning or visiting 
+style.
+McCarthy and McCarthy (2005) distinguish four different types of learners 
+(imagi-
+native, analytical, common sense and experimental) and Gardner (1993) 
+orthogonally
+identiﬁes seven different types of learning approaches (linguistic, 
+logical-mathemati-
+cal, musical, bodily-kinesthetic, spatial, interpersonal and intrapersonal). 
+Each visitor
+of a museum belongs to one or more of these categories. However, a fast 
+classiﬁcation
+of a visitor into these categories without any pedagogical tests prior to the 
+actual visit
+of the exhibition will be inaccurate.
+
+One of the strengths of the LISTEN system lies in the accurate determination of
+the user’s position and head orientation. Therefore, information about the way 
+how
+museum visitors move through the exhibition reveals a valuable source of 
+adaptation.
+Visitors show different approaches to experience the exhibition. Véron and 
+Levasseur
+(1983) determined visiting styles as an approach to classify the way how 
+different
+visitors explore an exhibition following observations of animals: ant 
+(following the
+curator’s path),ﬁsh (holistic view), butterﬂy (interest in all exhibits without 
+following
+the curator’s path), and grasshopper (interest only in speciﬁc exhibits). The 
+Macke
+Laboratory adopts this approach and introduces motion styles as the 
+stereotypical
+behavior of a museum visitor. Motion styles can be seen as representing possible
+ways of looking at exhibits:
+
+Sauntering: the visitor is slowly walking around with an excursive gaze.
+
+Goal-Driven: the visitor displays a directed movement with the gaze directed
+towards a speciﬁc artwork.
+
+Standing, Focused: the visitor is standing with the gaze directed towards a 
+speciﬁc
+artwork.
+
+•Standing, Unfocused: the visitor is standing or sitting with an excursive 
+gaze.
+
+
+<motion_style>
+
+<standing>
+
+<LESS TYPE="NUMBER">
+
+<REFERENCE ATTRIBUTE="visitor.spatial_context.speed"/>
+
+<REFERENCE VALUE="0.03"/>
+
+</LESS>
+
+</standing>
+
+<standing_focused EXTENDS="STANDING">
+
+<EQUALS INVERT="true" TYPE="SYMBOL">
+
+<REFERENCE ATTRIBUTE="visitor.spatial_context.focus"/>
+
+<REFERENCE VALUE="None"/>
+
+
+</EQUALS>
+
+</standing_focused>
+
+<sauntering>
+
+<AND>
+
+<GREATER TYPE="NUMBER">
+
+<REFERENCE attribute="visitor.spatial_context.speed"/>
+
+<REFERENCE value="0.03"/>
+
+</GREATER>
+
+<EQUALS INVERT="true" TYPE="SYMBOL">
+
+<REFERENCE ATTRIBUTE="visitor.spatial_context.focus"/>
+
+<REFERENCE VALUE="None"/>
+
+
+</AND>
+
+</sauntering>
+
+</motion_style>
+
+</EQUALS>
+
+Fig. 6Three selected motion styles represented in XML
+
+The introduction of motion styles enables the system to accordingly adapt the 
+scenery
+and to cause a different sound presentation based on the visitor’s type of 
+observation
+(see Sect. 5.2.2 for more details). Changes in the values of the three context 
+attributes
+“location”, “focus” and “speed” triggers the next determination of the 
+best-suited
+motion style. Each motion style is deﬁned by a set of intervals for these three 
+con-
+text attributes. These intervals are speciﬁed in an XMLﬁle in order to allow 
+for fast
+adjustments. Figure 6 illustrates the accordant definition of motion styles in 
+XML. This
+ﬁgure shows the extension of a basic “standing” stereotype through a more 
+speciﬁc
+“standing_focused” stereotype.
+
+5.1.3 Interests
+
+In addition to the motion styles of the museum visitor, the visitor’s interests 
+are inferred
+from their interaction with the environment in order to provide the visitor 
+with a per-
+sonalized selection of appropriate contents. Because the LISTEN installation 
+for the
+Macke Laboratory disclaims explicit visitor feedback, the approach of Pazzani 
+and
+Billsus (1997) has been adopted for the derivation of interests: It is assumed 
+that the
+more time the visitors spend with a speciﬁc exhibit the more they like it. In 
+this regard
+the context attributes “location” and “focus” indicate the topic of the 
+visitor’s interest,
+
+i.e. the respective exhibit identiﬁer.
+
+The combination of the time the visitor spends in front of a painting and the 
+meta-
+information concerning the paintings and sound entities allows for an assumption
+about the visitor’s interests. The accordant interest model is based on a 
+simple scoring
+of the meta-tags associated with the respective exhibit (cf. Sect. 4.2): An 
+increased time
+span in front of an exhibit results in an increased score value for each of the 
+meta-tags
+associated with this exhibit. Thus, the interest model equals a name-value 
+list, in which
+each name corresponds to a meta-tag (e.g. “landscape”, “portrait”, “people”, 
+“green”,
+
+
+etc.) with an associated value indicating the level of interest. Such a 
+score-based inter-
+est model induces a procedural aspect concerning time, space and 
+meta-information.
+Carmagnola et al. (2008) follow a similar approach of representing user 
+interests as
+feature-value pairs, where the value represents a probability value computed on 
+the
+basis   of the user’s actions.
+
+This interest model serves as aﬁlter of sound entities and as a source for a 
+tour
+recommendation. In addition, this model allows for the determination of points 
+of
+interest in the exhibition taking all visitors into account.
+
+5.2 The control layer
+
+The control layer of the LISTEN system takes decisions between several 
+high-level
+adaptation means for tailoring the soundscape presentation within the visitor’s 
+envi-
+ronment. The selection and presentation of sound entities rely on semantically 
+enriched
+information about the visitor’s context as described in the previous section. 
+This sec-
+tion illustrates the steps that lead to the realization of the adaptive 
+behavior of the
+LISTEN system installed for the Macke Laboratory.
+
+5.2.1 Adaptation means
+
+During the exploration of the space the system tries to make the interaction 
+with the
+system transparent to the visitor. Therefore, the system applies two auditory 
+layers, the
+soniﬁcationand thedialogue layer. The soniﬁcation layer immediately responds to 
+the
+position of the visitor and acoustically makes the invisible interface elements 
+(zones,
+segments) comprehensible through significant atmospheres. These atmospheres 
+align
+with the content accessible in the zone or segment and are adjusted to the 
+present
+exhibit. The characteristic of the soniﬁcation adapts to the analysis of the 
+motion
+style. The content of the dialogue layer depends on the analysis of the motion 
+and
+interests of the visitor as well as her position. The visitor recognizes this 
+layer inde-
+pendently from the soniﬁcation layer. The emerging temporal structures of these 
+two
+layers can overlap, but are independent in general.
+
+The orthogonally aligned pro-active behavior of the system lies in the recommen-
+dation of an exhibit. The LISTEN system emits special attractor sounds from 
+speciﬁc
+sound sources in order to draw the visitor’s attention to a certain exhibit 
+(see Fig. 7).
+This adaptive method allows the recommendation of entire predeﬁned tours through
+the audio-augmented environment, e.g. arranged by artists or curators of a 
+museum,
+chronologically ordered, or determined by the visitor’s personal interest or 
+motion
+style.   The adaptation process follows adaptive prompting (Brusilovsky 1996) 
+as the
+overall strategy, which passively follows or pro-actively leads the visitor 
+through the
+exhibition hall.
+
+5.2.2 Two-phase adaptation process
+
+For the realization of a speciﬁc and domain-dependent tailoring of the 
+soundscape to
+the individual visitor and for the achievement of the adaptation goals, the 
+adaptation
+
+
+Fig. 7Attracting the visitor’s attention
+
+process built into the LISTEN system combines the above mentioned adaptation 
+tar-
+gets with the adaptation means described in the preceding section. The system 
+observes
+the evolution of the visitor’s context, and changes in certain attributes of 
+this context
+information trigger different activities of the adaptation process. Basically, 
+the adapta-
+tion process decomposes two phases: acontextualization phaseand apersonalization
+phase.
+
+The contextualization phaseThis considers the three context attributes 
+“location”,
+“focus” and “visit_history”, which are used as triggers. Changes in the 
+“location”
+and the “focus” indicate that the visitor moved into a different zone or 
+examines a
+different exhibit. Furthermore, the visit history indicates the completed 
+playback of a
+sound entity. Both types of changes require the selection of a new sound entity 
+in order
+to continue the audio presentation. An alternation in the values of any of 
+these three
+context attributes triggers a preﬁltering process, which retrieves a 
+preliminary set of
+sound entities from the repository, a set of exhibits and a set of visitor 
+identiﬁers.
+
+The list of sound entities and the list of visual entities represent the set of 
+LISTEN
+domain objects that can be recommended to the visitor. The list of visitors is 
+used to
+identify clusters of visitors that depict similar characteristics. The 
+properties of the
+retrieved entities match the location and focus of the visitor. In addition, 
+the preﬁltered
+sound entities and exhibits have not been heard or viewed so far.
+
+The personalization phaseThe completion of the retrieval activates the 
+subsequent
+personalization phase, which regards the visitor’s motion style and interests. 
+Theﬁrst
+step     of this phase sorts and combines the preﬁltered set of sound entities 
+and the set
+of unvisited exhibits, which results in an ordered list of items thatﬁt best 
+the visitor’s
+motion style and interests. This step utilizes a similarity measure that 
+matches these
+
+
+Table 2Motion-styles and their
+inﬂuence on the selection of
+sound entities
+
+Sauntering Curator speech, comparison of
+
+landscapes depending on the
+visitor’s interests, soniﬁcation
+
+Goal-Driven  Only soniﬁcation, no dialogue
+Standing, focused  Single dialogue (speech) to the
+
+artwork, soniﬁcation steps to the
+background
+
+Standing, unfocused→No soniﬁcation and dialogue (music)    
+
+two attributes of the visitor’s context with the meta-information that is 
+available for
+the sound entities and exhibits.
+
+Furthermore, the similarity assessment procedure considers existing connections
+among the entities preset by the authors of the audio-augmented museum environ-
+ment. By default, the sound entities are connected through the information 
+depth they
+represent and the visual entities are connected through chronological 
+constraints. For
+the Macke Laboratory, the authors created some additional constraints based on 
+the
+visitor’s motion style as shown in Table 2.
+
+The second step of the personalization phase selects the best-suited entity 
+from the
+ordered list of results. Depending on what type of entity is ranked higher in 
+the sorted
+list, the most appropriate one can be a sound entity or a visual entity. In 
+case of a sound
+entity, the system plays this sound from the sound source connected to the 
+location
+and focus of the visitor. For a visual entity, the system emits an attractor 
+sound from
+the sound source connected to the respective visual entity.
+
+The authors of the audio-augmented museum environment deﬁned the behavior
+of the application through a rule system. With the aid of this rule system, the 
+sys-
+tem controls and accordingly adapts the scenery in order to trigger different 
+sound
+presentations.
+
+6 Evaluation
+
+Before theﬁrst LISTEN art exhibition in the form of the Macke Laboratory opened
+for the public at the Kunstmuseum Bonn in July 2003, evaluation tasks on the 
+person-
+alization component of this LISTEN installation were performed in the context 
+of two
+LISTEN expert workshops. For the conduction of these expert workshops, a part of
+the real museum was reproduced in a laboratory setting. The test exhibition 
+comprised
+four paintings arranged in a corner of the room.
+
+The group of experts chosen for the two workshops comprised artists, lyricists,
+sound designer, museum curators, project partners, and developers. From the per-
+spective of the realization of the adaptive behavior of this LISTEN 
+installation, these
+experts assumed the roles of three actors: author, expert and visitor. Thus, an 
+assess-
+ment could be conducted of how the running application fulﬁlls the demands of 
+these
+actors.
+
+Theﬁrst expert workshop led to a large list of requests for changes in the 
+system,
+in particular, changes regarding the personalization component of the system. 
+These
+requests were addressed and realized for a second expert workshop, which 
+constituted
+theﬁnal review prior to the opening for public visitors. Finally, a group of 
+699 visitors
+
+
+to the Macke Laboratory at the Kunstmuseum Bonn were asked to provide a personal
+statement regarding the application of the LISTEN system in the museum 
+environment
+subsequent to their tour through the exhibition. This section describes the 
+results of
+these evaluation processes.
+
+6.1 Theﬁrst expert workshop
+
+The LISTEN installation composed for theﬁrst expert workshop differed 
+significantly
+from theﬁnal installation described by the preceding sections. The 
+personalization
+aspect of the adaptation process created for thisﬁrst expert workshop was based 
+on a
+set of selectable stereotypes. Three expressive stereotypes had been deﬁned in 
+previ-
+ously conducted project meetings and were offered to the visitor on a touch 
+screen at
+the entrance:
+
+•fact-oriented, putting a high weight on spoken text,
+
+•emotional, prioritizing music pieces and sound effects, and
+
+•overview, focusing mainly on short sound entities.
+
+In order to receive an explicit statement from each visitor without bothering 
+them
+during the presentation, all visitors were requested to choose their stereotype 
+prior to
+the start of the visit. During the operation of the system, the preselected 
+stereotype
+inﬂuenced the character of the sound presentation and the depth of information 
+the
+visitor would hear.
+
+After the presentation of the implemented system, the experts jointly agreed on
+the success of the synesthetic experience: they enjoyed the combination of 
+audio-
+visual perception and sensed an increase of interaction with the real visual 
+objects.
+In particular, the museum curators acknowledged the possibility to supply 
+content
+concerning the artworks in an innovative, enriched and less descriptive way. In 
+their
+role as authors of the museum guide, they found the information brokering 
+service
+useful for the authoring and designing of the audio-augmented environment.
+
+In their role as users of the LISTEN installation, and thus, as visitors of the 
+repro-
+duced museum’s section, the experts mentioned the lack ofﬂexibility of the 
+location
+model as the main point of criticism: The zones surrounding each artwork were 
+recog-
+nized as occasionally too small, thus, forcing the visitor to approach the 
+artwork very
+closely. Furthermore, the experts could hardly localize the boundaries of 
+overlapping
+zones. In this regard, the conﬁgurationﬁles of the personalization part of the 
+LISTEN
+installation allowed for fast adaptations of the location model: the experts 
+were able
+to manually adjust the boundaries of the respective zones and immediately feel 
+the
+effect. However, at the end of the presentation, the experts aspired to a more 
+dynamic
+concept of zones.
+
+Moreover, during their visit of the test museum the experts observed that the 
+rec-
+ognition of the real visitor focus caused irritations: the tracking system 
+determines the
+spatial position of a visitor, which enables the derivation of the zone where 
+this visitor
+is located. However, the visitor focus can potentially be on a visual object 
+belonging
+to another zone. In addition, some experts could not detect whether the changes 
+in the
+audio-augmented environment were due to their movements in the space or were 
+part
+of the audio sequence.
+
+
+With regard to the system’s adaptive behavior, the main criticism in the 
+evaluation
+concerned the use of stereotypes. Taking the position of museum visitors, the 
+experts
+neither liked to be clustered or classiﬁed nor to publicly state to which class 
+they
+belong: the request to think about what type of museum visitors they are 
+generated
+irritation. A minority group did not even experience the personalized character 
+of the
+audio presentation as a response to their stereotype selection.
+
+6.2 The second expert workshop
+
+With regard to the personalization component of the LISTEN installation, several
+improvements have been accomplished subsequent to theﬁrst expert workshop. This
+improved personalization component largely matches theﬁnal version deployed in 
+the
+real museum, and therefore, the preceding sections can be referred to for a 
+detailed
+description. The improvements were subject to evaluation with experts in a 
+second
+expert workshop prior to the opening of the Macke Laboratory.
+
+Theﬁrst improvement aimed at moreﬂexible zones in the location model in order to
+overcome the problems of the small and static zones. Therefore, the concept of 
+adap-
+tive “breathing zones” was investigated, which links the sounds tightly to the 
+visitor’s
+behavior when observing the artworks. In addition, auditory icons providing 
+land-
+marks in the virtual environment navigation were inserted in the audio 
+presentation in
+order to make the visitor aware of the interaction with the environment.
+
+In a second step, the utilization of stereotypes needed a revision. The manual 
+selec-
+tion of stereotypes prior to the visit of the museum contradicted the main 
+objective of
+the LISTEN project to not provide the visitor with any input devices, neither 
+desktops
+nor handhelds. The revised personalization component automatically categorizes 
+the
+visitor into stereotypes at runtime. These improved internal stereotypes 
+comprise the
+four motion styles as described in Sect. 5.1.2 and illustrated in Table 2, and 
+repre-
+sent the visitor’s style of moving through the exhibition hall. The visitor’s 
+real-world
+movements continuously reﬁne their motion style, which the application 
+determines
+through an analysis of the visitor’s speed and focus. These motion styles form 
+the
+basis of the adaptive behavior, which leads to different audio presentations.
+
+By means of the motion styles, the reviewing experts now positively noticed a 
+clear
+interaction with the system only through their movements. The consideration of 
+the
+visitor’s acceleration and activity in the selection of suitable sound entities 
+gained
+acceptance among the experts and was assessed as a valuable extension of the 
+system.
+By using their bodies as interfaces, the experts recognized the interaction 
+means very
+fast and were able to intuitively use these mechanisms.
+
+As a third improvement of theﬁrst prototype, the analysis of the interaction 
+history
+gained increased weight in the second expert workshop and played a more impor-
+tant role in the adaptation process of the system. The calculation of the 
+average time,
+which visitors spend in front of a painting and inside a certain zone, allowed 
+for the
+determination ofpoints of interestwithin the exhibition. Based on this 
+approach, the
+application inferred an interest model of each visitor during her visit, which 
+arose
+from certain characteristics of exhibits and sounds, in combination with the 
+time (see
+Sect. 5.1.3) and inﬂuenced the selection of the sounds for presentation. Due to 
+the
+analysis of the interaction history, the experts positively recognized the 
+reduction of
+
+
+repetitions in the sound presentation and a continuous story. The reviewers 
+realized a
+new procedural aspect concerning time and space integrated into the system.
+
+A critical point in the centre of discussion became the general use of 
+personalization
+methods in the LISTEN system. The experts agreed on the opinion that an 
+adaptation
+process makes sense in application domains like demonstrations, shows and events
+with a presentational character. However, domains such as museums and 
+exhibitions
+are to be approached carefully because of the sensitive and old-fashioned view 
+of
+long-established visitors. Overall, the reviewing experts came to the 
+conclusion that
+the personalized selection of appropriate sounds from a large amount of sound 
+entities
+denotes an important feature of the LISTEN system.
+
+6.3 User evaluation of the Macke Laboratory
+
+During the opening period of the Macke Laboratory, we seized the opportunity of
+conducting a user evaluation at the Kunstmuseum Bonn. This section describes how
+the user evaluation was arranged and then summarizes the results gained from the
+interpretation and analysis of the evaluation.
+
+6.3.1 Conduction of the user evaluation
+
+The goal of the user evaluation of the Macke Laboratory was toﬁnd out more 
+about the
+general “acceptance” of the installation of innovative technology within a 
+traditional
+museum environment with a special focus on the consistency of the audio 
+presenta-
+tion and adaptation aspects. The user evaluation of the Macke Laboratory 
+involved
+the total amount of 699 museum visitors, who were asked to provide a personal 
+state-
+ment. The age of the visitors who participated in the interviews ranged from 12 
+to
+58 years. Subsequent to their tour through the Macke Laboratory exhibition, 
+these
+699 visitors were asked toﬁll in prepared questionnaires. The questionnaires 
+covered
+closed questions which were mainly based on the selection among several 
+predeter-
+mined statements and ratings. In addition to choosing from applicable answers 
+and
+ratings, the visitor’s could provide some handwritten statements, in order to 
+obtain
+some subjective impression about the acceptance of the LISTEN installation.
+
+6.3.2 Summary of the user evaluation
+
+The visitors who were evaluated responded mainly positively to their 
+audio-visual
+experience. There were many statements which described the “Macke Labor” as “a
+very good, progressive idea”, “in my opinion a very innovative system, which 
+can be
+improved, but it will address young, media-oriented people too”, “excellent! 
+not only
+explanations, but also the context has been provided too”, “recommendable” and 
+so
+on.
+
+Figure 8 summarizes the general attractiveness of the LISTEN system installed
+in a museum. In total, 91% of the visitors interviewed responded positively to 
+their
+audio-visual museum experience and only 2% considered this service as not 
+suitable.
+Two percent of the visitors had no opinion concerning this LISTEN installation. 
+In
+
+
+Fig. 8General attractiveness of the LISTEN installation in a museum
+
+order to reﬂect the group of visitors that gave no statement, a worst-case or a 
+best-case
+scenario could be pursued in the attempt to classify them. Depending on the 
+potential
+allocation of these visitors to the negative or positive party, the ratio 
+positive to negative
+assessments would decrease (91%/7%) or increase (96%/2%). However, the positive
+overall impression of the interviewed visitors still remains.
+
+Furthermore, a special interest of the LISTEN consortium aimed at the visitors’
+personal reports about the combination of visual and auditory elements realized 
+in
+the Macke Laboratory. For this part of the evaluation, the evaluation forms 
+suggested
+speciﬁc terms regarding the description of certain characteristics of this 
+combination.
+The visitors assessed these terms through choosing between three different 
+nuances
+of fulﬁllment: yes, no and partly.
+
+Figure 9 shows the overall result of this evaluation. In summary, a clear 
+positive
+feedback has been provided for all the characterizations of the LISTEN 
+installation
+in   a museum. Two-thirds of all interviewees even rated the installation as 
+‘enriching’
+and ‘succeeded’ in the overall impression, which can be an indicator for the 
+visitors’
+perception of the LISTEN installation as an add-on compared to ordinary 
+museums. In
+addition, the percentage of negative feedback never exceeded 2% for allﬁve 
+character-
+izations of the LISTEN installation. This means that even in the worst case 
+scenario,
+in which the visitors who gave no statement are allocated to the negative 
+party, the
+positive impression still persists for all characterizations. Furthermore, a 
+clear rise of
+the number of visitors who gave no statement to the negatively verbalized 
+charac-
+terizations “irritating” and “boring” is noticeable. In general, the high 
+percentage of
+visitors who provided no statement could be due to a wrong choice of terms for 
+the
+characterization.
+
+
+Fig. 9Evaluation of the combination of artwork and auditory information
+
+The technical functionality of the LISTEN system was evaluated as well. The com-
+positional structure of the Macke Laboratory allowed a more distinctive 
+analysis of
+visitors’ acceptance of the introduced innovative means of interaction because 
+their
+effectiveness and functionality was interpreted more directly. The visitors 
+evaluated
+were asked how they personally experienced the “activation” of auditory informa-
+tion within the Macke Laboratory, emphasizing that they could give several 
+answers:
+68% of the 699 evaluated people acknowledged that the “auditory information 
+seemed
+to have been activated depending on one’s physical movements and spatial 
+position”.
+Only 4% of the visitors marked that “there was no comprehensible association 
+between
+one’s movements and position and the activation of auditory information”. Some 
+the
+remaining remarks regarding this question outline that the visitors “had to get 
+used to
+the systemﬁrst”. In addition, some statements of the type “I realized very late 
+how I
+should conduct myself” or “the longer I moved through the environment, the 
+better
+I could manage it” were collected, as well as positive self-observations such 
+as “one
+can learn quite easily how to navigate the textual segments.”
+
+Asked for a characterization of its understandability, 49% answered with “not 
+con-
+fusing” (15% stated “partly,” 2% stated “confusing”, 34% gave no statement). 
+Analyz-
+ing the combination of the sounds, 54% answered with “not boring” (10% answered
+with “partly” 2% with “boring”, 35% gave no statement). A total of 65% of the 
+visitors
+to the Macke Laboratory would describe the combination of Macke’s paintings with
+the auditory information they experienced as “enriching,” 13% responded to this 
+term
+“partly,” another 1% “no[t] at all” (21% gave no statement). Weﬁnally asked 
+about a
+characterization of the Macke Laboratory as a “successful overall impression”: 
+67%
+marked “yes,” 12% “partly,” 1% “no” (21% gave no statement).
+
+Most of the evaluations performed in similar projects were conducted on an aca-
+demic level in order to test new prototypes, and therefore, lack a more 
+substantial
+long-term perspective. Moreover, most of these evaluations were only meant to 
+as-
+sess the usability of the prototype on a more general level. Therefore, their 
+focus
+on personalization is only marginal. Even though the two expert workshops con-
+ducted prior to the opening of the Macke Laboratory did not provide detailed and
+precise conclusions, these assessments, however, give an idea of what beneﬁt 
+brought
+along by personalization might or might not be, both for the museums and their
+visitors.
+
+
+7 Conclusions
+
+In this paper we highlighted the potential of tailored audio augmented 
+environments
+designed for museum guides. The described project shows the complexity of the 
+mod-
+eling and design process of a tailored audio augmented environment.
+
+We presented an approach for adapting the sound presentation of an audio aug-
+mented environment provided by the LISTEN system. The embedded user modeling
+and personalization component assembles a bunch of well-known user modeling 
+tech-
+niques for adapting the audio presentation addressing the users’ preferences, 
+interests,
+and motion. We discussed the application of these techniques in this special 
+interac-
+tion environment and described suitable realizations together with their 
+advantages
+and drawbacks.
+
+The main challenge concerning user modeling in LISTEN was the fact that the only
+user interface is the user’s motion. This implies a trade-off in terms of 
+communication
+between the user and the system. Once the users have started their walk through 
+the
+environment, they do not carry any device except the head-phones. Thus, the user
+can neither control the sound presentation pro-actively, nor switch to a 
+different type
+of sound presentation while experiencing the environment. Since there is no 
+explicit
+control channel provided, the system infers such information from the user’s 
+behavior.
+The basis for this inference process is the data delivered by an observation 
+component:
+time, position, focus and descriptions of visual and sound objects 
+(meta-information).
+The research on intelligent audio user interfaces shows high potential for mu-
+seum guides, though still going along with unsolved issues. An interesting 
+feature
+of the LISTEN system is the use of attractor sounds to provide recommendations
+for the users and to play the role of a guide through the audio-augmented 
+environ-
+ment. In future, developers and researchers in this area should turn their 
+attention to
+certain strategies for making the decision which particular object is 
+recommended
+
+next.
+
+For the project we employed a step-by-step approach with two preliminary 
+evalua-
+tions of prototypes with experts and aﬁnal evaluation at an art-exhibition. For 
+theﬁrst
+prototype we employed common personalization techniques like preselected stereo-
+types andﬁxed borders of a predeﬁned location model. The advantages are reduced
+effort for implementation and a well-grounded decision process. From the 
+experts of
+ourﬁrst evaluation step we learnt that specifically for art exhibitions such 
+approaches
+are too rough. In art exhibitions, people do often focus on exhibits while 
+crossing
+borders to other zones of the location model. Additionally, visitors might not 
+like to
+state “I am a …” at the entrance. From the second evaluation by experts as well 
+as
+from theﬁnal evaluation we learnt that the stereotype-approach can be applied 
+with
+an adaptive assignment. We found out that of position, speed, head orientation, 
+and
+a combination of the three, are good adaptation sources for this purpose. 
+Ultimately,
+the feedback in theﬁnal evaluation to the usefulness of the system was 
+outstanding.
+Most important to us, three quarters of the visitors noticed a connection 
+between their
+movements and the audio presentation and the same high percentage felt an 
+enriched
+experience in the exhibition due to our personalized audio augmentation.
+
+AcknowledgementsLISTEN was funded as an EU-IST project with the contract No. 
+1999-20646
+
+
+References
+
+AKG: AKG Acoustics GmbH—homepage. http://www.akg.com (2007). Accessed 26th Mar 
+2007. AKG
+Acoustics GmbH, Vienna, Austria
+
+ARTracking: A.R.T. GmbH–Your expert for infrared optical tracking systems. 
+Advanced Realtime Tracking
+GmbH, Weilheim i. OB, Germany. http://www.ar-tracking.de/ (2007) Accessed on 
+March 26, 2007.
+Bellotti, F., Berta, R., De Gloria, A., Margarone, M.: Supporting efﬁcient 
+design of mobile HCI. In:
+
+Proceedings of the Conference on Human Computer Interaction with Mobile Devices 
+and Services
+(MobileHCI), pp. 241–255. Springer, Berlin (2003)
+
+Bregman, A.S.: Auditory scene analysis: the perceptual organization of sound. 
+MIT Press, Cambridge,
+Massachusetts, 792 pp. (1994)
+
+Brusilovsky, B.: Methods and techniques of adaptive hypermedia. User Model. 
+User-Adapt. Interact.
+
+6(2–3), 87–129 (1996)
+
+Carmagnola, F., Cena, F., Console, L., Cortassa, O., Gena, C., Goy, A., Torre, 
+I., Toso, A., Vernero, F.:
+Tag-based user modeling for social multi-device adaptive guides. User. Model. 
+User-Adap Inter.18,
+5 (2008). doi:10.1007/s11257-008-9052-2
+
+Chen, G., Kotz, D.: A survey of context-aware mobile computing research, 
+Computer Science Department,
+Dartmouth College, Hanover, New Hampshire (2000)
+
+Cheverst, K., Davies, N., Mitchell, K., Friday, A., Efstratiou, C.: Developing 
+a context-aware electronic
+tourist guide: some issues and experiences. In: Proceedings of the 
+International Conference on
+Human-Computer Interaction (CHI 2000), pp. 17–24. ACM New York, NY, USA, The 
+Hague, The
+Netherlands (2000)
+
+Chittaro, L., Ranona, R., Ieronutti, L.: Guiding visitors of Web3D worlds 
+through automatically generated
+tours. In: Proceedings of the 8th International Conference on 3D Web 
+Technology, pp. 27–38. ACM
+New York, NY, USA Saint Malo, France (2003)
+
+Ciavarella, C., Paternó, F.: Supporting access to museum information for mobile 
+visitors. In: Proceedings of
+the 10th International Conference on Human-Computer Interaction, pp. 319–323. 
+Crete, Greece (2003)
+Cramer, H., Evers, V., Ramlal, S., van Someren, M., Rutledge, L., Stash, N., 
+Aroyo, L., Wielinga, B.: The
+effects of transparency on trust in and acceptance of a content-based art 
+recommender. User. Model.
+
+User-Adap Inter.18, 5 (2008). doi: 10.1007/s11257-008-9051-3
+
+Cruz-Neira, C., Sandin, D.J., Defanti, T.A.: Surroundscreen projection-based 
+virtual reality: the design and
+implementation of the CAVE. In: Proceedings of the 20th Annual Conference on 
+Computer Graphics
+and Interactive Techniques, pp. 135–142. ACM Press, New York, NY, USA (1993)
+
+Damiano, R., Gena, C., Lombardo, V., Nunnari, F., Pizzo, A.: A stroll with 
+Carletto. Adaptation in
+drama-based tours with virtual characters. User. Model. User-Adap Inter18, 5 
+(2008). doi: 10.1007/
+s11257-008-9053-2
+
+Dey, A.K.: Understanding and using context. Pers. Ubiquitous Comput.5(1), 4–7 
+(2001)
+
+Eckel, G.: LISTEN—augmenting everyday environments with interactive 
+soundscapes. In: Proceedings
+of the I3 Spring Days Workshop “Moving Between the Physical and the Digital: 
+Exploring and
+Developing New Forms of Mixed Reality User Experience”. Porto, Portugal (2001)
+
+Gardner, H.: Frames of mind: theory of multiple intelligences. Fontana Press, 
+464 pp. (1993)
+
+Goiser, A.M.J.: Handbuch der Spread-Spectrum Technik. Springer-Verlag, Wien New 
+York, pp. 152–158
+(1998)
+
+Gossmann, J., Specht, M.: Location models for augmented environments. Pers. 
+Ubiquitous Comput.
+
+6(5–6), 334–340 (2002)
+
+IRCAM: WWW IRCAM: The institute. http://www.ircam.fr/institut.html. (2007) 
+Accessed 26 Mar 2007.
+
+Institut de Recherche et Coordination Acoustique/Musique, Paris, France
+
+ISAS: Institute of sensor and actuator systems—home. 
+http://www.isas.tuwien.ac.at. (2007) Accessed 26
+Mar 2007. Institute of Sensor and Actuator Systems, Vienna University of 
+Technology, Vienna, Austria
+Jameson, A.: User-adaptive systems: an integrative overview, tutorial presented 
+at seventh international
+
+conference on user modeling. Banff, Canada, (1999)
+
+Jot, J.-M.: Real-time spatial processing of sounds for music, multimedia and 
+interactive human-computer
+interfaces. Multimed. Syst.7, 55–69 (1999)
+
+Klemke, R.: Modelling context in information brokering processes. PhD Thesis, 
+RWTH Aachen, Aachen
+(2002)
+
+LISTEN: LISTEN—augmenting everyday environments through interactive 
+soundscapes. LISTEN Project
+Consortium 2001 (2006)
+
+
+McCarthy, B., McCarthy, D.: Teaching around the 4MAT� cycle: designing 
+instruction for diverse learners
+with diverse learning styles. Corwin Press 120 pp. (2005)
+
+Oppermann, R., Specht, M.: A nomadic information system for adaptive exhibition 
+guidance. Arch. Mus.
+
+Inform. Cult. Herit. Inform. Q.13(2), 127–138 (1999)
+
+Oppermann, R., Specht, M.: A context-sensitive nomadic information system as an 
+exhibition guide. In:
+Proceedings of the Second Symposium on Handheld and Ubiquituous Computing (HUC 
+2000).
+Lecture Notes in Computer Science, pp. 127–142. Springer-Verlag, London, UK, 
+Bristol, UK (2000)
+
+Pazzani, M., Billsus, D.: Learning and revising user proﬁles: the identiﬁcation 
+of interesting web
+sites. Mach. Learn.27(3), 313–331 (1997)
+
+Petrelli, D., Not, E.: User-centred design ofﬂexible hypermedia for a mobile 
+guide: reﬂections on the
+hyperAudio experience. User Model. User-Adapt. Interact. (UMUAI)15(3–4), 
+303–338 (2006)
+
+Rich, E.: Stereotypes and user modeling. In: Kobsa, A., Wahlster, W. (eds.) 
+User Models in Dialog Systems,
+pp. 35–51. Springer Verlag, Berlin, Heidelberg (1989)
+
+Rukzio, E.: Physical mobile interactions: mobile devices as pervasive mediators 
+for interactions with the
+real world. PhD Thesis, University of Munich, PhD Thesis, 180 pp. (2006)
+
+Tramberend, H.: Avango: a distributed virtual reality framework. In: 
+Proceedings of the IEEE Virtual
+Reality’99 Conference, pp. 14–21. Houston, Texas, US (1999)
+
+Unnützer, P.: LISTEN im Kunstmuseum Bonn. KUNSTFORUM Int.155, 469–470 (2001)
+
+Véron, E., Levasseur, M.: Ethnographie de l’expositionl’exposition: l’espace, 
+le corps, le sens, Paris,
+Bibliothèque publique d’Information, Centre Georges Pompidou (1983)
+
+Wakkary, R., Hatala, M.: Ec(h)o: situated play in a tangible and audio museum 
+guide. In: Proceedings
+of the 6th ACM conference on Designing Interactive systems, Symposium on 
+Designing Interactive
+Systems, pp. 281–290. ACM Press, New York, NY, USA University Park, PA, USA 
+(2006)
+
+Wenzel, E.: The impact of system latency on dynamic performance in virtual 
+acoustic environments. In:
+5th International Congress on Acoustics and 135th Meeting of the Acoustical 
+Society of America,
+pp. 2405–2406. Seattle, WA (1998)
+
+Zimmermann, A., Lorenz, A., Specht, M.: The use of an information brokering 
+tool in an electronic
+museum environment. In: Bearman, D. Trant, J. (eds.) Proceedings of the 
+International Conference
+about Museums and the Web (MW2003), pp. 217–225. Archives & Museum Toronto, 
+Canada,
+Charlotte, NC, USA (2003)
+
+Authors’ vitae
+
+Andreas Zimmermannreceived his Diploma in Computer Science and Electrical 
+Engineering from the
+University of Kaiserslautern (Germany) in 2000. After one year of business work 
+as a product innovation
+manager at TRAIAN Internet Products in Bonn (Germany) and as a consultant for 
+T-Systems in Aachen
+(Germany) he joined the research group Information in Context at the Fraunhofer 
+Institute for Applied
+Information Technology (FIT) in Sankt Augustin (Germany). In 2007, he received 
+his PhD in theﬁeld of
+context-aware computing. Other interest areas of Dr. Zimmermann include nomadic 
+systems, end-user con-
+trol of ubiquitous computing environments, and artiﬁcial intelligence. He 
+currently manages two European
+projects and is responsible for the user-centered design process and for the 
+design of software architectures.
+
+Andreas Lorenzcompleted his master’s degree in Computer Science at the 
+University of Kaiserslautern
+(Germany) in 2001. He joined the research group Information in Context of 
+Fraunhofer Institute for Applied
+Information Technology in Sankt Augustin (Germany) in spring 2002. He is a 
+research associate and PhD
+candidate in the researchﬁeld of human-computer interaction in ambient 
+computing environments. He is
+also interested in user-adaptive systems, mobile and nomadic systems, 
+multi-agent systems, and software
+engineering. He was responsible for software-design and implementation in the 
+LISTEN-project.
+

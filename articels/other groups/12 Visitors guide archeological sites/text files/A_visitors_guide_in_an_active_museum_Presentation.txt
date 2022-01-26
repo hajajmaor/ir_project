@@ -1,0 +1,1236 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/234768599
+
+A visitor's guide in an active museum: Presentations, communications, and
+reﬂection
+Article in Journal on Computing and Cultural Heritage · March 2011
+DOI: 10.1145/1921614.1921618 · Source: doi.acm.org
+
+CITATIONS
+
+READS
+
+144
+
+3,068
+
+8 authors, including:
+Tsvi Kuflik
+
+Oliviero Stock
+
+University of Haifa
+
+Fondazione Bruno Kessler
+
+257 PUBLICATIONS 3,420 CITATIONS
+
+237 PUBLICATIONS 3,484 CITATIONS
+
+SEE PROFILE
+
+SEE PROFILE
+
+Massimo Zancanaro
+
+Julia Sheidin
+
+Fondazione Bruno Kessler
+
+University of Haifa
+
+250 PUBLICATIONS 4,079 CITATIONS
+
+9 PUBLICATIONS 236 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+DramaTric View project
+
+The Emotive lexicon of Arabic View project
+
+All content following this page was uploaded by Tsvi Kuflik on 01 October 2014.
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+A Visitor’s Guide in an Active Museum: Presentations,
+Communications, and Reflection
+TSVI KUFLIK, University of Haifa, Israel
+OLIVIERO STOCK and MASSIMO ZANCANARO, FBK-IRST, Povo, Trento, Italy
+ARIEL GORFINKEL, SADEK JBARA, SHAHAR KATS, JULIA SHEIDIN, and NADAV KASHTAN,
+University of Haifa, Israel
+
+Technology can play a crucial role in supporting museum visitors and enhancing their overall museum visit experiences. Visitors
+coming to a museum do not want to be overloaded with information, but to receive the relevant information, learn, and have
+an overall interesting experience. To serve this goal, a user-friendly and flexible system is needed. The design of such a system
+poses several challenges that need to be addressed in parallel. The user interface should be intuitive and let the visitors focus
+on the exhibits, not on the technology. Content and delivery must provide relevant information and at the same time allow
+visitors to get the level of detail and the perspectives in which they are interested. Personalization may play a key role in
+providing relevant information to individuals. Yet, since visitors tend to visit the museum in small groups, technology should
+also contribute to and facilitate during-the-visit communication or post-visit group interaction. The PIL project applied at the
+Hecht museum extended the research results of the PEACH project and tried to address all of these considerations. Evaluation
+involving users substantiated several aspects of the design.
+Categories and Subject Descriptors: H.5.2 [Information Interfaces and Presentation]: User Interfaces—Screen design; Prototyping; User-centered design; Graphical user interfaces; Theory and methods
+General Terms: Design, Human Factors, Experimentation
+ACM Reference Format:
+Kuflik, T., Stock, O., Zancanaro, M., Gorfinkel, A., Jbara, S., Kats, S., Sheidin, J., and Kashtan, N. 2011. A visitor’s guide in
+an active museum: presentations, communications, and reflection. ACM J. Comput. Cult. Herit. 3, 3, Article 11 (March 2011),
+25 pages.
+DOI = 10.1145/1921614.1921618 http://doi.acm.org/10.1145/1921614.1921618
+
+1.
+
+INTRODUCTION
+
+The visitors’ experience in museums tends to be personal, self-motivated, self-paced, and exploratory;
+they choose what, where, and when to learn [Falk and Dierking 2000; Falk 2009]. Location-aware multimedia content on mobile systems provides new opportunities for the museum’s curators to enhance
+this experience. However, together with the growing acceptance of technology in the museum, new
+This work was supported by the collaboration project between the Caesarea-Rothschild Institute at the University of Haifa and
+FBK/IRST in Trento, and by FIRB project RBIN045PXH.
+Author’s address: T. Kuflik; email: tsvikak@is.haifa.ac.il.
+Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided
+that copies are not made or distributed for profit or commercial advantage and that copies show this notice on the first page
+or initial screen of a display along with the full citation. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, to republish, to post on servers, to redistribute to
+lists, or to use any component of this work in other works requires prior specific permission and/or a fee. Permissions may be
+requested from Publications Dept., ACM, Inc., 2 Penn Plaza, Suite 701, New York, NY 10121-0701 USA, fax +1 (212) 869-0481,
+or permissions@acm.org.
+c 2011 ACM 1556-4673/2011/03-ART11 $10.00
+
+DOI 10.1145/1921614.1921618 http://doi.acm.org/10.1145/1921614.1921618
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11
+
+11:2
+
+•
+
+T. Kuflik et al.
+
+challenges arise. In particular, multimedia content should not divert the visitors’ attention from the
+actual objects in the museum, which should remain the focus of the visit; a balance should be kept
+between fulfilling the need to provide a rich information space, suitable for a wide variety of visitors,
+on the one hand, and tailoring the presentation to individual preferences and characteristics on the
+other; the visitor’s use of technology should be conceived as contributing to one unique experience, and
+as such it should offer an integrated approach to different aspects of the visit.
+These challenges need to be addressed during all the phases of the development of museum visitors’
+guide systems: the definition of the system’s functionalities, the design of the user interface, and the
+planning and preparation of multimedia information presentations.
+Many visitors tend to visit museums in small groups, mainly with family or friends [Falk and
+Dierking 1992], so that not only the individual visitor but also the whole group needs support. In
+this context, interaction among visitors may enhance learning in the museum environment, as well as
+the whole visit experience [Leinhardt and Knutson 2004; Falk and Dierking 2000]. New tools for communication may increase this interaction and hence contribute to the visit experience. Some recent
+research prototypes of museum visitors’ guide applications provide means of communication among
+visitors (for instance see Rantanen et al. [2004]).
+The PIL project (Personal experience with active cultural heritage-IsraeL), was concerned with developing an integrated framework for museum visits that addresses these challenges, and focused on
+four specific aspects: multimedia content preparation, user interface design, ubiquitous user modeling,
+and group interaction. It followed in the footsteps of the PEACH project [Stock and Zancanaro 2007,
+Stock et al. 2007], and extended the prior experience of implementing a mobile multimedia guide at the
+historic-artistic Renaissance site at the Buonconsiglio Castle in Trento, and, in part at an industrial
+archeological site, the Iron Works at the Voelklinger Huette museum in Saarbruecken, by applying its
+technology and enhancing it using novel research results. Following the initial PEACH idea, that is,
+to produce a multifaceted system that accompanies the visitors and augments their overall museum
+experience, PIL introduced some primary elements for the transition from supporting the individual
+visitor to supporting the common situation of a small group visit. PIL has resulted in the creation
+of a multifaceted prototype that was demonstrated and tested at the Hecht Museum at the University of Haifa, Israel, which has 4000 square meters of exhibition area, with 8 different exhibitions,
+6 permanent and 2 temporary, with over 5200 exhibits, mostly devoted to archeology in the Land of Israel. Evaluation involving users substantiated several aspects of the design and in some cases yielded
+unexpected results.
+The rest of the article is organized as follows. Section 2 provides a survey of related work, in order
+to put this work in the context of current research; Section 3 briefly presents the PIL system and the
+research environment and goals; Section 4 details the specific research directions and realizations;
+Section 5 presents an evaluation of some aspects of the system; Section 6 discusses the lessons learned
+from the project; and Section 7 presents the conclusions of the study.
+2.
+
+RELATED WORK
+
+Research prototypes of multimedia museum visitors’ guides and other mobile guides started as early as
+the late 1990s. Several surveys were published presenting the state-of-the-art of mobile guides (among
+them: Kray and Baus [2003]; Baus et al. [2005]; Raptis et al. [2005]; Stock et al. [2007]; Ardissono and
+Petrelli [2008]), emphasizing the challenges and wealth of research opportunities provided by museum
+visitors’ guide systems. The systems in those surveys span a broad range of research directions. This
+includes presentations preparation, user modeling and personalization, context awareness and context
+aware services, and more. However, PIL focused on several specific areas where relatively little work
+has been done so far.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:3
+
+Multimedia presentations preparation. Generating multimedia presentations for mobile guides is
+known to be a time- and effort-consuming task. Previous research tried to address this challenge by
+using various levels of automation, varying from dynamic integration of small predefined building
+blocks, as needed [Not et al. 1997, 1998] and rule-based information integration for dynamic page
+generation, such as Ardissono et al. [2003], to applying Natural Language Generation techniques for
+dynamic generation of multimedia presentations [Callaway et al. 2005]. However, while the former are
+still limited in their flexibility, the latter requires a detailed domain knowledge base and complicated
+deep Natural Language Generation mechanisms. PIL did not focus on this aspect, and hence presentations were generated manually. As part of the project, a methodology describing know-how about
+multimedia presentations generation was defined, based on classical guidelines for museum label generation, augmented by the requirements for audio and images.
+User interface design. Petrelli and Not [2005] present a detailed description of applying a usercentered design for the development of museum visitors’ guides as part of the HyperAudio and HIPS
+projects. They started with an extensive study of user practices that resulted in detailed requirements
+for a museum visitors’ guide. HyperAudio was one of the few adaptive projects where a user-centered
+design approach was employed, and was probably the first such project in the area of adaptive and
+ubiquitous guides. We adopted their recommendation for the development of the PIL project. The
+two interfaces developed for the project were designed following the user-centered design approach
+proposed by the RESPECT framework [Kirakowsky and Vereker 1998].
+System architectural aspects. Since most prior research work naturally focused on the specific areas of interest of the researchers, museum visitors’ guide systems were developed ad hoc, as research
+prototypes, for specific research purposes. Architectural aspects of museum visitors’ guide systems
+were addressed only in PEACH [Stock et al. 2007], where a generic agent-oriented communication infrastructure was adopted. This was done in order to demonstrate its applicability for such a dynamic
+environment and to allow the development of a flexible and extendible system. Recently Costantini
+et al. [2008] also exploited intelligent agents for two ambient-intelligence scenarios in cultural heritage. In PIL, the flexibility and extendibility of the PEACH architecture was demonstrated by adding
+communication service agents with minimal impact on other system components.
+Ubiquitous user modeling. Personalization in cultural heritage has gained growing attention during
+the past ten years, as surveyed by Ardissono and Petrelli [2008], where almost all the applications
+had a level of adaptation or personalization. The GUIDE system [Cheverst et al. 2002], a tourist guide
+for the city of Lancaster, provided its users with personalized information, based on a user model explicitly defined at the onset of the service. Sarini and Strapparava [1998] thoroughly analyzed the
+requirements of a user model for a museum visitors’ guide, and later on implemented in the HIPS
+project. They applied an explicit definition of the initial model using a short questionnaire filled out
+by the visitors. Filippini-Fantoni [2003] carried out an evaluation of the Carrara Marble Museum Web
+site that offered personalized support to three possible visitor categories—tourists, art students, and
+experts—and allowed visitors to set their own individual profiles (for all those who did not associate
+themselves with any of the previously mentioned types). Bright et al. [2005] describe the MyMuseum
+guide that tailors presentations to the visitors’ interests and preferences, allowing individual visitors
+to visualize what has been adapted to them and why. After the visitor’s authentication, the system
+initialized a user model by using information explicitly provided by the user (in the form of yes/no answers to questions) providing some background and the level of information in which she is interested.
+The result of this short process was a Web page of the system adapted to a visitor. In Stock et al. [2007]
+one of the versions of user models was initialized by stereotypes represented by a virtual character
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:4
+
+•
+
+T. Kuflik et al.
+
+the visitors selected as they started the visit, to accompany them through the museum (for instance, a
+virtual character of a painter was associated with a stereotype representing a user with an interest in
+painting). In this case the user model was associated with the stereotype, so the visitors did not have
+to initialize it explicitly.
+In general, the issue of bootstrapping a user model remains a challenge hardly addressed by any
+of these systems. Yet in the museum, user model initialization is an important aspect, given that a
+visit is usually not very long, and it takes some time to build a model from scratch. Acknowledging the importance of a solution that relieves the users from taking specific actions for initialization
+(such as compiling a questionnaire), the PIL project had among its goals to find a generic solution for
+the challenge of user model initialization. It should be noted that this problem was also addressed
+in a recent work of Wang et al. [2009], but in a somewhat less general way. Alternative approaches
+based on observing users’ behavior and matching them with past users in order to provide nonintrusive bootstrapping of user models, have recently been proposed (see for example Zancanaro et al.
+[2007] and Bohnert et al. [2008]); however, these are at the research stage and not yet used in real
+applications.
+Intragroup communication. Interaction among visitors is known to enhance the museum visit experience, and technological support for communication among museum visitors already gained attention
+in prior research. The Sotto Voce project [Szymanski et al. 2008] focused on shared listening as a way
+to encourage interaction among museum visitors. Another approach was taken by Dini et al. 2007,
+where a group game that combined the use of handheld devices and a large display was used for enhancing social interaction during the museum visit. However, visitors do not walk together all the time
+and game playing does not appeal to everyone. Visitors separate from and rejoin each other, following
+their own interests and paths, and technology may support them while temporarily separated, or even
+help bring them together again. Campiello [Grasso et al. 1998] enabled visitors to create a personal
+diary (so as to communicate with themselves in the future). CyberGuide [Long et al. 1999] provided
+support for leaving messages for the curators or other visitors and for sending reports about the visitor’s location that other visitors could access. Hippie [Oppermann and Specht 1999] allowed its users
+to take notes and annotate visited exhibits in order to store personal explanations or bookmarks available during the visit and to send SMS-like messages that could be directed to a dedicated addressee,
+such as family or group members in the museum, or to enter a full email address to contact a remote
+user. Guide [Davies et al. 2001] enabled visitors to send and receive messages to/from their companions, and to attach virtual notes at specific locations in the city so they could share their experiences
+with other tourists. Guidebook [Fleck et al. 2002] provided its users with two communication services,
+named “rememberer” that gave visitors the means to build a record of their experiences which they
+could consult during and after their visit, and “communicator” that helped visitors to communicate via
+electronic bulletin boards for individual exhibits, instant-messaging, and/or beaming information between handheld devices. MUSE [Garzotto et al. 2003] allowed visitors to mark the currently displayed
+screen or to use a built-in camera to take a picture of what they were looking at, for updating a visit
+memory album that later on could be saved on a CD, which represented the memory of the onsite visit.
+Proctor and Burton [2004] in a paper concerned with the museum visitor guide at the Tate, reported
+positive responses to the option to take notes and put forward the need of visitors to page each other
+and to interact with the gallery’s curator. MoMo [Jaen et al. 2005] allowed visitors to send messages
+to other visitors, and to see the names of visitors who had already visited a specific artwork, in order
+to share similar interests at the museum or to keep in touch more easily. The researchers claimed
+that the messaging feature was the main point of the social interaction because it allowed visitors to
+communicate and interact with other museum visitors, either by sending messages individually or by
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:5
+
+sending the same message to all the members of a group. Thus, it became extremely easy to share
+ideas and opinions or keep in touch with other people.
+While all of these systems had specific services provided as part of the application, PIL took a different approach, trying to abstract and generalize the classical communication services (leaving out
+shared listening and group games, since they represent totally different aspects).
+Post-visit group support. A museum visit or a tour does not end at the end of the visit. Visitors
+would like to keep memories, as already presented in the communication services survey, using various
+kinds of visit diaries. Several of these systems allowed their visitors to manually compose a summary
+of a visit during the visit (with some help from the systems). PEACH [Stock et al. 2007] took this
+visit summary one step further by suggesting automatic generation of a personalized museum visit
+summary report. However, visitors may also benefit from discussing the visit during breaks in the
+visit and at the end of it while still at the museum. For instance the attention of one visitor may be
+attracted by his fellows to an exhibit he has missed, after discussion with the others in front of a large
+screen; they may then go together to revisit the real thing.
+3.
+
+THE RESEARCH ENVIRONMENT AND PIL SYSTEM
+
+The museum environment is both challenging and a rich research environment. A variety of topics
+related to the PIL scenario have been the occasion for developing substantial research studies.
+—Multimedia presentations preparation. A methodological approach to multimedia presentations preparation for the museum environment has been defined and applied. Presentations are composed so
+that they stand alone as self contained components on the one hand, while on the other, a subset of
+them can be presented as a collection providing a rich content space allowing every visitor to pursue
+specific interests.
+—User interface design. A fundamental issue has been how to provide the visitor with a nonintrusive,
+intuitive device that includes personal adaptation. Two versions of the user interface were built
+following the user-centered design approach.
+—Ubiquitous user modeling. Personalization is particularly challenging in the museum environment
+where, in many cases, the visitor visits for the first and only time. Hence, personal information,
+possibly available from external sources, is requested and mediated to bootstrap a local user model,
+so the visitor may get personal support at the onset of the visit.
+—Intragroup communication. Generic communication mechanisms that standardize and ease the development of intragroup communication services were developed and applied, to allow developers of
+museum visitors guides to foster interaction and enhance the overall visit experience.
+—Post-/within-visit group support. Aiming at supporting groups of visitors, at the end of the visit or
+while taking a break, systems were built to allow them to revisit the visit, using a large display for
+sharing individual experiences and fostering interaction.
+—User studies and evaluation. Evaluation of the technology developed was an important object of our
+study. It required careful design and user evaluation studies and simulations that in turn shed light
+on how technology is perceived and used by visitors. It should be noted that extensive work with
+self-motivated real visitors will be possible only with a complete and well engineered guide.
+In the PIL project we have considered the scenario of technology-assisted museum visits from a broad
+perspective that encompasses a pre- and a post-visit scenario as well as support during the actual visit.
+A museum visitors’ guide system is initialized with a user profile and then, in the course of the visit,
+adapts to the behavior of the visitor, proposing context-dependent presentations, ordered to best fit the
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:6
+
+•
+
+T. Kuflik et al.
+Interface Channel
+Time Trigger Channel
+Services
+Manager
+
+Content Info Channel
+
+User
+Modeler
+
+Services Channel
+
+Presentation
+Composer
+
+Application Channel
+
+Spatial Information
+Broker
+Position Channel
+
+Fig. 1. PIL system architecture.
+
+visitors’ perceived interests. It capitalizes on the individual visitor’s feedback to guarantee that the
+ordered presentations are appropriate to their interests. Explicit input is gathered in a very simple
+and intuitive way, being limited to a simple communication of liking or disliking the current piece of
+the presentation, which affects subsequent presentations. The intragroup communication service is
+aimed at encouraging interaction among visitors when they separate and temporarily visit different
+sections of the museum. Visitors are able to send immediate messages to each other or leave virtual
+Post-its on exhibits.
+As part of the project, and to enable the research, a prototype of a museum visitor’s guide system
+was developed for two related exhibitions at the Hecht museum at the University of Haifa, namely
+the “Phoenicians on the Northern Coast of Israel in the Biblical Period” and “The Ma’agan Mikhael
+Ancient Ship” rooms.
+Following PEACH, the system architecture was based on the LoudVoice [Busetta et al. 2002] multiagents infrastructure, where individual agents joined to perform the tasks of personalized information delivery and context-aware communication among visitors. This infrastructure is based on agent
+group communication: the ability to send messages to an unlimited number of agents that have shown
+a common interest. The conceptual framework (that is implemented by LoudVoice) is called channeled
+multicast [Busetta et al. 2003]. It allows agents to create or tune to any number of channels where anybody can send a message to anybody else and listen to everybody’s messages, no matter their intended
+destinations, in a way vaguely similar to communicating in chat rooms. Messages can be addressed
+either to specific listeners or to any agent that matches an expression in an application-specific language. Such flexibility suits well the dynamic museum environment where users arrive and leave at
+will and continuous services are required.
+The system is composed of a personal agent residing on the user’s mobile device that interacts with
+the visitor (delivers presentations and messages, allows the visitor to control the system); a spatial
+information broker that monitors and reports visitors’ positions as they change; a user modeler that
+continuously updates a model of the individual visitor; a presentation composer that, based on the
+visitor’s location and preferences, suggests presentations to view; and a services manager that enables
+context-aware communication among visitors (see Figure 1).
+4.
+
+PIL RESEARCH ASPECTS
+
+PIL has been a many-faceted project and this section presents its most significant research accomplishments.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:7
+
+Table I. Content Preparation Process
+Step
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Description
+Deciding on/finding the main idea of the exhibition
+Recording exhibits
+Defining fields of interest (perspectives)
+Searching and selecting information sources (text)
+Writing presentations text (in spoken language)
+Choosing images for supporting the textual description
+Selection of cinematographic techniques
+Audio generation
+Presentations integration (synchronizing audio and images)
+
+4.1 Multimedia Presentations Preparation
+Interactive multimedia appears to be universally popular with visitors [Economou 1997]. They constitute a powerful communication tool for cultural heritage attractions and museums, which complements
+other interpretative techniques. In the first place, they should assist in placing exhibits and artifacts
+in their historical and cultural context. The preparation of presentations for such multimedia guides
+has not yet been widely discussed. One of the main challenges is how to design a multimedia presentation in such a way that it will convey the information to the visitors, thus enriching the visit experience, without distracting their attention from the exhibits themselves. The first aspect the PIL project
+dealt with was the definition of a methodological approach for multimedia presentation preparation,
+addressing these challenges. This approach was defined based on, and combined with, experience
+gained in the PEACH project. The methodology is composed of nine consecutive steps, as presented in
+Table I.
+Exhibitions usually have a main idea which should clarify, limit, and focus their nature and scope.
+In order to define the scope of the presentations to be prepared, possible questions that a visitor might
+ask regarding the specific objects need to be listed. This process allows a comprehensive selection of
+possible answers to be planned to satisfy a wide range of visitors. The questions can be categorized into
+more abstract perspectives, which are actually general views that can be applied to the presentation
+of the objects in the exhibition. The process is inductive, beginning with the specific objects, listing
+the questions, and then extracting the relevant perspectives. The perspectives’ definition helps define
+coherent sets of presentations that can be linked and related one to another when delivered [Serrell
+1996]. The content of the presentations must be condensed, yet understandable by the greatest possible
+number of visitors whose interest the museum wishes to capture. The text must be clear, so that it will
+be easily understood. It is thus essential to use a simple, but not simplistic, writing style in order
+to reach the visitors regardless of their level of knowledge, and to involve only those concepts that
+the visitors need in order to understand the overall message. It is the author’s task to familiarize
+visitors with the appropriate terminology and the concepts to which it refers. Accordingly, all relatively
+specialized terms should be followed by a brief explanation so that the visitors can fully understand
+them. Since a multimedia guide text is heard and not read, it is preferable to use short sentences and
+avoid departures from normal word order and nested subordinate clauses [Banos 1995]. Once the text
+is ready, it is time for audio preparation. Speech generation is an economically viable possibility yet
+it might not be appealing to the visitor. In this case careful attention should be given to the selection
+of the reader or the voice synthesis tool, or preferably, the voice of a professional speaker should be
+recorded. The next step, after the texts for the presentations have been written, is to choose the right
+picture for each sentence. The possibilities of pictures that can be put in the guide are endless, among
+them: a picture of the exhibit in the museum; a close-up of a detail of the object; a parallel exhibit from
+a different period or culture; overlaying of measurements and information, and so on. The purpose of
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:8
+
+•
+
+T. Kuflik et al.
+
+the images in particular and of the visual elements in general is to support the verbal elements and to
+highlight significant points that are inaccessible to the visitor, without diverting the visitor’s attention
+from the actual exhibits. Finally, the sequence of pictures is synchronized with the audio commentary
+and the transitions among them are chosen according the general rules of cinematography [Alfaro
+et al. 2004].
+Figure 2 gives an example of how the visual effects support the textual context. An overall aerial
+view when a visitor approaches an object (left); questions for triggering users’ curiosity, as presentation
+titles; presentations are sorted to match the visitor’s inferred preferences (right); and zoom-in and
+animation for emphasizing specific details (bottom). The production of an approximately 1-minute
+flash presentation takes about 15 hours of work, passing through the various stages of the methodology
+including review and support by domain and technology experts. For a more detailed description of the
+methodology please see Kahanov et al. [2006].
+4.2 User Interface Design
+Ultimately, the most significant challenge in designing the interface for a mobile guide is to provide
+a system that will meet the user’s needs and let her focus on the exhibits rather than on the mobile
+guide. The guide has to adapt to the user’s changing situation taking into consideration the personal,
+social and physical context [Baus et al. 2002].
+The User Interface has to be designed carefully so as to render it intuitive, simple, and easy to use.
+Personalization and adaptation may play a major role in making systems easier to use on the one
+hand, but on the other, they may make them less predictable and less intuitive.
+Within the framework of the PIL project, two user interface designs for a specific setting of a multimedia museum visitors’ guide were developed and compared: (1) a nonadaptive menu-driven (NAMD)
+user interface (that was build and used as a reference for a controlled users’ study), and (2) an adaptive menu-driven (AUI) user interface. These user interfaces were developed applying a user-centered
+design approach. Both interfaces conveyed the same contents (the same set of multimedia presentations), provided the same functionalities, and shared the same underlying architecture and similar
+look and feel. The process started with user requirements and definitions. We used the “RESPECT
+Forms” [Kirakowski and Vereker 1998] technique for this purpose. Afterwards, every action the user
+has to take in order to use the guide, and every action that the system needs to implement in order
+to provide the multimedia guide’s service, were examined and described using the HTA (Hierarchical
+Task Analysis) methodology [Diaper 1989], which allowed us to distribute tasks between humans and
+a computer, and to map the task model directly onto an interface design. The HTA was translated
+into a storyboard, a technique used in filmmaking [Lewis and Rieman 1995], which yields a realistic
+sequence of sketches showing progression through the interface for a typical task. It was supposed to
+show interface features unambiguously, realistic input and output, and exactly how to progress from
+screen to screen [Gruen 2002].
+Two storyboards were developed: one for the NAMD user interface and another for the AUI user interface. Several rounds of evaluations of the early stages of the design were performed (while changes
+were relatively simple to make), before the final implementation. These also included three pilot studies at the museum with system prototypes. The first involved nine students from the Museology course
+at the University of Haifa. None of them had seen a real museum multimedia guide before and none
+of them had evaluated an audio guide but might have used one in the past. The nine participants were
+divided into three groups of three people each. Each group used a different kind of guide: adaptive,
+nonadaptive, and audio-based guide. The same content was available in all cases. The results showed
+that visitors found it hard to understand how they were supposed to use the guide. The results of the
+evaluation guided the development of the second version of the interface, which again, was evaluated,
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:9
+
+Fig. 2. Adaptive user interface.
+
+this time by four researchers from the MIS (Management of Information Systems) Department at the
+University of Haifa. None of them had seen a real museum multimedia guide before and none of them
+had evaluated an audio guide, though they may have used one in the past. All of the participants
+used the Non-adaptive version of the guide. The goal of the study was to examine whether the visitors
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:10
+
+•
+
+T. Kuflik et al.
+
+understood how they were supposed to view presentations while using the nonadaptive guide, since
+both versions had the same look and feel. The results of the second study were much better than the
+previous one, but still required some improvements. The third pilot study involved 22 participants (attendees at a local conference) who visited the museum and were randomly assigned to one of the two
+prototypes—12 used the AUI guide, and 10 used the NAMD guide. In the AUI group of participants,
+four were male and eight female; the average age was 33.33 years (SD = 7.66). In the NAMD group,
+two were male and eight female, with an average age of 42.67 years (SD = 14.16). For evaluating
+the prototypes, we used the SUS questionnaire [Brooke 1996]. Both user interfaces received average
+scores; for NAMD, Mean = 53.75 and SD = 20.04; for AUI: Mean = 52.08 and SD = 19.09. This time,
+in addition to usability testing, we tested the evaluation method and process (visitors’ briefing, previsit and postvisit questionnaires, etc.). There was no statistically significant difference between the
+two versions of the system as far as the SUS test reports. All subjects’ comments and suggestions
+were noted and implemented in the final version of the PIL user interface. The result of this iterative
+development process is described in the following and this version was used for experimentation.
+Figure 2 shows the typical scenarios of using the user interface: when a visitor approaches an exhibit,
+she gets an aerial picture. Exhibits where information is available are marked with rectangles and the
+control buttons are dim (inactive, left). When the visitor selects an exhibit, available questions that
+can be answered by the system with multimedia presentations are listed. They are ordered according
+to inferred preference (that is also marked by stars representing the inferred level of interest for each
+specific question) and the control buttons are active (Figure 2, right). When a question is selected
+the multimedia presentation starts (Figure 2, bottom). When the presentation ends, the delivered
+presentations are marked in purple (as can be seen in Figure 4). At this point, communication buttons
+become active as well, as will be discussed further in Section 4.4.
+4.3 Ubiquitous User Modeling
+Accurate initialization of a user model (UM) is important to every system that provides personalized
+services to its users. It is of paramount importance for those systems, such as museum visitor’s guides,
+where repeated usage is rare and the overall amount of interactions in a single usage is limited.
+The lack of standards in the representation of UMs, commercial competition, and privacy issues
+have led developers of personalized service-providing systems to build their own specific models and
+store UM data in proprietary formats. Despite the fact that plenty of data about a specific user might
+exist in other systems, the data are typically unavailable for bootstrapping a UM in a new system.
+In the PIL project, we demonstrated a novel UM mediation mechanism [Berkovsky et al. 2006],
+where the bootstrapping of a UM is performed by a mediator, on the basis of available previous data
+about the visitor, acquired in a different but related context and with a possibly different type of
+system.
+Figure 3 illustrates the ideas of the mediation mechanism in our museum setting. For bootstrapping
+our guide, we have used a simulated experience with a trip planning system that uses a case-based
+UM representation. It consists of a small Web-based system that allows its user to browse through a
+list of attractions in the northern part of Israel (the green page on the left of Figure 3) and read a short
+textual description of these attractions (that is accompanied by relevant images). The information for
+the purpose of the study was extracted from official tourists’ Web sites of the region. The attractions
+that are selected and defined by the user as interesting are saved as a tour plan case. The case is then
+used for mediation as follows. First, the user asks (implicitly—logs in) for a personalized service, (1).
+The mediator retrieves the user’s case from the case-based UM and extracts the list of attractions,
+(2). It then obtains free-text descriptions of these attractions from a knowledge base of tourism attractions, (3). During the mediation process, a set of representative terms is extracted from the textual
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:11
+
+Museum Visitors Guide
+System
+
+Museum
+User Modeling
+Mediator
+
+3
+External
+Knowledge Base
+5
+
+4
+1
+
+2
+
+1
+Museum
+Visitor
+
+Exhibition B
+“Phoenicians”
+
+Exhibition A
+“Ship”
+
+Trip Planning System
+Fig. 3. User model mediation.
+
+description of the attractions included in the cases. Then, a set of terms appearing both in these descriptions and in the textual description of the museum exhibits is identified and used for creating the
+content-based UM (vector of weighted terms representing the inferred interest of the visitor in these
+terms—4 and 5). During the visit, this initial UM is continuously adapted by incorporating explicit
+user feedback, provided at the end of every presentation. A five-point feedback scale is used to adapt
+the UM (by setting the weights of the terms representing the presentation that was just seen—4 and
+5) so as to better reflect the user’s interests as more information becomes available when the visitor
+interacts with the system. Positive feedback is used to increase the weights of the terms appearing in
+the presentation, in the vector of terms representing the UM, while negative feedback is used to decrease them. The UM is consulted whenever the visitor arrives at a new position, to predict the user’s
+preference with respect to the available presentations (marked by stars and order of presentations, as
+illustrated by the right image of Figure 2). In addition to bootstrapping a UM at the beginning of the
+visit, the mediator serves as an intramuseum UM converter between museum exhibitions, since the
+different exhibitions have their own collections of terms used in their descriptions. Hence, whenever
+a visitor arrives at a new exhibition, the mediator is called upon to bootstrap a new model. Finally, at
+the end of the visit, the user modeling data accumulated during the visit may be used to update the
+external user modeling source (however, this specific aspect was not implemented, since we focused on
+the museum visit scenario itself).
+The work of Wang et al. [2009] addressed the same problem. In their work, an onsite UM for a
+museum visitor’s guide system is bootstrapped by an online UM generated from scratch while planning
+a trip to the museum. Our work, however, is more general, in the sense that the UM is bootstrapped
+from a UM created by a general trip planning system (in this case, but can be generated from other
+sources as well) without any direct connection to the specific museum.
+4.4 Context-Aware Communication Services
+Museum visitors, even if they arrive together, often tend to split and follow personal routes and then
+join together and split again, based on personal interests. The museum environment itself is quiet
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:12
+
+•
+
+T. Kuflik et al.
+
+and discourages vocal interaction. While separated, visitors may benefit from the possibility of using
+technology for interaction with their team members, to draw attention to or comment on objects of
+interest. For example, if one of the visitors encounters an object that she thinks is very interesting
+for a colleague, in order to draw her attention she may send an immediate message stating “come
+here,” since she cannot call to her colleague who is on the other side of the room (unlike the Sotto
+Voce mechanism, which requires the user to eavesdrop on her partner in order to learn what she is
+listening to). Such interaction may be enabled by allowing the visitors to send context-aware immediate
+messages to their colleagues, leave virtual “Post-it” notes to colleagues, take notes for themselves for
+later use, leave comments to everybody, and so on.
+As noted earlier, communication services in the museum domain share several common characteristics. There are sender, recipient, and content to be delivered and, optionally, contextual conditions for
+the delivery of the content. The various services reviewed can be categorized into three main types: immediate messaging (“SMS’s”), location-based delivery (“Post-its”), and notes users take for themselves
+(“Memories”).
+In PIL, a general context-aware communication services middleware generation tool was designed to
+support development of communication services for visitors with various addressees, based on contextual conditions and offering contextual message enrichment. The tool aims at freeing the developers
+from dealing with detailed code development and allowing them to focus on the definition of the desired communication service, integrating their application with a standard API developed once for
+every communication infrastructure. A wizard-like Communication Definition Tool was developed for
+defining communication services, as needed by application developers. The developer simply defines
+a service type, conditions, and contextual information, and is finally asked to initialize the variables
+that he used. At the application level, the developer uses the middleware’s API to send the message,
+while s/he just needs to allow the user to select/view the content of the message while the delivery is
+performed by the underlying system, according to the class and its instantiation.
+An architecture and implementation for Communication Generator was provided for the Loud Voice
+multiagent infrastructure used for PIL. It demonstrated that our framework can provide means for
+defining and configuring different communication services with different characteristics. As a result,
+PIL’s generic framework offers a variety of potential services. In the prototype we have experimented
+with context-aware immediate message (SMS-like) and context-aware virtual post-its (illustrated in
+Figure 4). The messages are sent either among visitors or by the system to the visitors, when the
+system is in a proactive state. A visitor may send messages selecting among a list of predefined ones,
+such as “come here” or “you must see this!” message to a partner; the message is contextualized by
+the system using the sender’s actual location (e.g., if the receiver has already been to the place, the
+system notifies the sender about that; otherwise the message gets to the receiver enriched with an
+image about the exhibit the sender is looking at, and possibly the position on the museum map). A
+visitor may leave a virtual post-it to a colleague at a specific location, and the system will notify the
+visitor in case her partner already visited that place. The visitor may also send a message suggesting
+meeting at the cafeteria (or taking a break, scheduling the visit, etc.).
+Finally, a time-based alerting service was designed to improve group communication. Since visitors
+have a limited time for their visit, this specific service helps visitors get the most from their time by
+exploiting the group dimension. We consider that people generally do not want to miss seeing the most
+important exhibits (there is nothing that can take the place of being in front of the real object). But
+if time is running short, presentations following the introductory ones provided to the members of
+a group can complement each other, and people can integrate what has been presented to them by
+talking to the other members of the group later. In the last phase of the visit, when little time remains,
+the system sends a message to visitors suggesting that they see the “must-see” exhibits. In this case the
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:13
+
+Fig. 4. Selectable communication services (in the lower part of the screen).
+
+system takes care of the group, making sure that individuals in the group visit all important exhibits
+and get a variety of relevant presentations, so they have complementary information to be possibly
+discussed and shared after the visit. In this situation, the UM, which influences the material proposed
+by the system to the individual in the general modality is less important, because the state of the
+group prevails. In this scenario, the system considers first visitors proximity to “must-see” exhibits,
+not visited by the group members and then UM aspects (so the UM is consulted if there are several
+exhibits to choose from).
+The context-aware communication services were integrated into the system in such a way that they
+do not interfere with normal use of the guide. This means for instance, that communication activities
+are available to the visitor only when no multimedia presentation is being played (e.g., only when
+moving around/approaching an exhibit or between presentations in a certain position).
+4.5 Post-Visit Group Support
+A further aspect of the PIL system is that it takes into consideration the “after-the-visit” scenario.
+The main idea is that visitors, at certain points during the visit or after the visit, take breaks at the
+museum cafeteria. This situation is an important opportunity for interaction and discussion about
+the visit. The visitors are tracked continuously during the visit and the information recorded includes
+places visited, presentations viewed, and special notes posted. Exploiting this fact, the break becomes
+an opportunity to revisit and discuss the experience of all individuals in the group as a joint activity in
+front of a display. The system presents a detailed report, which includes places visited, presentations
+viewed, and notes posted by each member of the group during the visit. When starting the “coffee
+break” session, visitors are exposed to interactive maps of the museum over a large group display.
+They can view the individual personal paths traversed within the museum, as illustrated by an aerial
+image of a part of an exhibition in Figure 5, where small colored icons representing the visitors are
+placed next to the exhibits they visited.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:14
+
+•
+
+T. Kuflik et al.
+
+Fig. 5. A screen shot of the large-screen display, showing an area of the ship exhibition visited by the group members. Every
+group member has a colored figurine (legend at the top of the screen). It can be seen that Julia, Shahar and Sadek visited “Vit.
+num1” and that Sadek also visited the “Amphorae”.
+
+Using a pointing device and through icons designating the various individuals, they can see at the
+same time, all group members’ paths, the presentations viewed, and the communication notes left or
+exchanged. Information can be viewed at various levels of detail and visitors can replay presentations
+viewed (and other presentations) if they want to share their experience with other group members or
+recall some specific details or have access to further material.
+Of course, they may also go back to the museum and see together something some of the friends
+have missed.
+5.
+
+USER STUDIES AND EVALUATION
+
+User studies with real visitors are not simple. In fact, besides the large organizational effort required,
+they require a robust system in place with a large coverage of the museum (a large number of exhibits
+and diversity of presentations that the system can provide are needed to appreciate the benefit of
+a flexible technology). Although some multimedia guides have been evaluated with real visitors (for
+example, Szymanski et al. [2008]; Damiano et al. [2008]; Bellotti et al. [2002]; Proctor and Burton
+[2004]), they are usually devoted to one specific technology, while PIL is a complex prototype whose
+functionalities range from adaptive presentation of content to group support.
+Since we have a museum located within the university we decided to employ students as subjects
+in our study because of the ease with which we could recruit and group them. Using students as subjects for experiments is a common practice in many empirical disciplines and evaluation of interactive
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:15
+
+systems, and has been used in the cultural heritage domain as well, among others by Cox et al. [1999];
+O’Grady et al. [2004]; Sung et al. [2010] who used college students; His [2003] who used a mix of high
+school and college students, teachers, and visitors; and O’Hara et al. [2007] who used schoolchildren.
+Currently the system is being reengineered in order to produce a complete industrial quality system.
+Once this stage is completed, we are going to experiment with real visitors, autonomously motivated
+to go to the museum (see the final section of this article).
+In general, users tend to be unable to distinguish between overall system performance and specific
+characteristics. Nonetheless, several characterizing aspects of the PIL museum-visitor’s guide have
+been evaluated with several different complementary techniques, including subjective user evaluations, visit log analysis, and simulations.
+We conducted the user studies at the Hecht museum, where the evaluation focused mainly on the
+Phoenicians exhibition for which about 100 multimedia presentations were prepared. One hundred
+sixteen students from the University of Haifa, randomly selected, were asked to try the system and
+answer a few questions regarding its ease of use (whether it is predictable and intuitive), their satisfaction with the system, and the knowledge they gained. They were randomly assigned to one of the
+two conditions: 62 used the adaptive guide (AUI), and 54 used the nonadaptive guide (NAMD). In the
+AUI group, 38 participants were male and 24 female; the average age was 30.24 years (SD = 9). In
+the NAMD group, 33 participants were male and 21 female with an average age of 29.74 years (SD =
+5). In terms of their background (assessed by a previsit questionnaire), there was no significant difference between the groups regarding familiarity with computers (NAMD 4.378 and AUI 4.368 on a
+5-point Likert scale, where 1 = no familiarity and 5 = good familiarity) and familiarity with museum
+visitor’s guides (NAMD 2.726 and AUI 2.974 on a 5-point Likert scale, where 1 = no familiarity and
+5 = good familiarity). The students completed a questionnaire immediately after they finished the visit.
+The evaluation by user studies was aimed at assessing the contribution of the multimedia museum visitor’s guide to the visitor’s learning at the museum and to their experiences in general: whether and
+how personalization is perceived as a benefit by the users, and whether the intragroup communication
+option was appreciated by them. Ninety visit log files were used to complement and validate the user
+studies, 47 logs for the adaptive system and 43 logs for the nonadaptive one. There are fewer logs than
+questionnaires because of technical problems, such as files that were not saved and written over, and
+so on. Simulation was used for evaluating the user modeling mediation mechanism itself.
+5.1 Learning at the Museum
+The first part of the study examined the contribution of multimedia and mobile technologies to the
+teaching and exhibiting in museums of maritime archaeology and early seafaring artifacts. In this research it was assumed that a multimedia guide, when designed properly, that is, as a tool that supports
+the visitor’s interpretation, will enhance the visit experience and especially the learning experience.
+The visitor’s interest in the subject will increase, and the time spent at the exhibition will be longer.
+It is also assumed that a visitor who uses a multimedia guide will enrich his knowledge more than a
+visitor who visits the exhibitions while using the traditional methods of interpretation present in the
+museum.
+In order to examine these assumptions, a user study was performed at the Phoenicians exhibition.
+Subjects consisted of three groups of participants: people before a visit to the exhibition, people after
+a nonguided visit to the exhibition, and people after the multimedia-guided visit. Two main parameters were tested in this study: (1) the duration of the visit was measured for the last two groups of
+participants, from the moment they entered the exhibition and until they left it; and (2) the visitors’
+knowledge about the Phoenicians before and after the visit was tested in a between-groups study using
+a questionnaire containing 12 yes/no questions, which was filled by the participants of all three groups.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:16
+
+•
+
+T. Kuflik et al.
+
+The main findings of the study showed a significant difference in average visit time between the
+two groups: 4.96 minutes was the average time of visit for a nonguided tour in the exhibition versus
+20.69 minutes on average for a multimedia-guided tour in the exhibition, out of which 8.69 minutes
+were spent on viewing presentations. Longer time spent may be interpreted as a result of the fact that
+the multimedia guide deepens and empowers the learning experience of the visitors in the exhibition
+(Manning and Sims [2004] found as well, that the use of a handheld device providing multimedia
+presentations caused the visitors to spend more time in the exhibition). In light of this finding, it would
+have been expected to also find a significant difference between the knowledge test scores, but the fact
+was that, even though there was a difference in the knowledge test scores (31.39 before the visit 41.46
+for the unguided tour, 44.14 for the guided tour)—no significant difference was recorded between the
+test scores of visitors with the multimedia guide compared to the scores of the independent visitors
+(while there was a significant difference between visitors before the visit and after the guided visit—
+T-test < 0.05). This differs from the findings of Manning and Sims [2004] that in 3 out of 4 cases
+that visitors who used the guide reported better learning compared to visitors who did not use the
+guide; however, this learning was not evaluated by questionnaire. We assume that this could have
+been attributed in part to the fact that the visitors did not view all presentations and possibly did not
+look at all the exhibits; however, further research is needed in order to verify this assumption.
+5.2 Adaptive versus Nonadaptive User Interface
+The second part of the study was aimed at evaluating the contribution of the system’s adaptivity to the
+overall visit experience. In general, we found that the visitors liked the mobile museum visitor’s guide
+system very much. According to System Usability Scale (SUS) questionnaire [Brooke 1996], both user
+interfaces got high scores; for NAMD: (Mean = 80) and (SD = 15.15); for AUI: (Mean = 79) and (SD =
+15.21), where scores of 80 and above are considered very good in general. The results of the SUS part of
+the questionnaire show that the visitors liked the system but that there was no statistically significant
+difference between the two variants as far as the SUS test reports. Manning and Sims [2004] also
+found that visitors appreciated the use of new multimedia-based technology in museums.
+The analysis of the visit logs showed that, in general, the visitors seemed to choose information
+that is more general in nature than specific (about 60% of the NAMD users selected the general presentation and about 70% of the AUI users selected the general overview, even when it was not the
+most recommended for them), and they rarely tended to deepen the exploration by asking for more
+information (on average, 0.4 additional presentations were requested per object in both prototypes).
+Nevertheless, when they did ask for more information, their feedback was consistent with that predicted by our user model (in the AUI prototype). Hence the log analysis showed that there is some
+evidence for interest-based user modeling, but it becomes relevant only after general information has
+been viewed and is not as important as we expected. It is interesting to note that the users of the adaptive system viewed more presentations that the users of the nonadaptive system (7.7 on average, SD =
+3.7, compared with 7.1, SD = 4.4 for the nonadaptive one; the difference was small, but statistically
+significant).
+It should also be noted that, as mentioned earlier, the visitors were students and about half of them
+(56 out of 116) had never visited the museum before. Hence they represent naı̈ve, first-time visitors to
+a museum and in this case the findings are in line with the prior research results of Filippini-Fantoni
+[2003], that found that personalization (of a museum Web site in their case) in cultural heritage is
+tricky and challenging and it is not always appreciated by users.
+Indeed most of the research work in the area of mobile museum visitors’ guides strives to provide
+adapted information in one form or another. In particular, the dimension of interest, although not the
+only one, is one of the most exploited: the presentation of information is tailored with respect to a
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:17
+
+dynamically adapted model of the visitor’s specific interests about the topics presented in the museum.
+We investigated personalization based on modeling of the user interest in the content of the presentations. We had a strong hypothesis: the specific interest of a visitor in some aspects of the museum
+experience may be so strong that s/he appreciates receiving specific information that corresponds to
+this interest (even if this is provided before a general introduction to the specific exhibit). Our adaptive
+guide was built according to this hypothesis. Hence, our expectation was that AUI would outperform
+the NAMD, but our data do not support this. We found instead that in general nonexpert visitors
+looking at exhibits need a general presentation regardless of any adaptation, even if previously they
+appeared to be biased toward some specific dimensions of interest.
+We can conclude that our strong hypothesis, namely that the specific interest may be so strong that
+visitors appreciate receiving the specific information that responds to their interest first, even before
+a general introduction to the specific exhibit, has been disconfirmed, with first time visitors, with no
+particular motivation. It will be interesting to see if the expectation is right with second time visitors
+or museum-friends instead (see discussion in the final section).
+What can we say about a weaker adaptivity, that is, one that does not put general presentations at
+the same level as the specific ones, but considers them as another category? A notable result was that
+visitors appear to appreciate the specific presentations offered along the dimension that the system
+attributed to them as being of highest interest. Our results in this aspect are unexpected and should
+be viewed from a wider perspective. Of course, we are not advocating against adaptive interfaces in
+museums (there is a growing amount of evidence that personalization may indeed help appreciation
+of cultural heritage). We think that adaptation is a subtle mechanism that requires tuning, or one can
+make what may later appear to be obvious grossly erroneous simplifications.
+5.3 Intragroup Context-Aware Communication Services
+In a third part of the user study, we were interested in exploring whether communication activities
+contribute to the success of the visit.
+We found that 65% of participants using the AUI (compared with 57% of NAMD users) agreed that
+the communication activities were useful, made them feel a part of the group, and improved their visit
+experience (group and individual).
+The users were asked whether:
+(1) they liked communicating with their group members;
+(2) communication services made the visitor feel part of the group;
+(3) the communication services improved the group’s visit.
+The users provided answers to the questions on a 9-point Likert scale, where 9 was “very much” and
+1 was “not at all.” The results of the evaluation are shown in Figure 6 (the scale is from 5.8 to 7.2
+for better visualization of the relatively small differences). 62 users were questioned for AUI and 54
+for the NAMD applications. The results show that the visitors understood and were satisfied with the
+communication services of both guides and that there was no difference between the two applications
+with respect to the communication services.
+5.4 User Modeling Mediation
+A major question regarding the user modeling mediation mechanism was evaluating its performance.
+User-studies require careful planning, are time consuming and inherently biased, since users usually
+evaluate the overall system and have problems evaluating its adaptability. Conversely, conducting an
+evaluation via simulation may allow an easy, automatic and objective assessment of UM technical
+mechanisms, independent of the effectiveness of any system action resulting from the personalization
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:18
+
+•
+
+T. Kuflik et al.
+
+Fig. 6. Visitors’ answers to the three questions about the use of communication actions.
+
+mechanism. We were interested in evaluating the effectiveness of a mediated UM, compared to a
+random/empty UM, in order to assess its potential contribution in shortening the training process of a
+UM for a personalized museum visitor’s guide.
+A similar approach was taken by Bohnert et al. [2008]. They tracked and manually recorded visitors’
+paths through a museum. They used these individual paths as a data set to train and evaluate classifiers that predict the next locations to be visited by visitors using a given partial visit path, as well as
+the time to be spent at that location, as an alternative to experiments with real users. They used this
+approach since they were interested in evaluating the accuracy of their prediction (comparing several
+algorithms), while not having or needing a complete system for performing real-user-studies. We took
+the same approach in order to evaluate the contribution of our mediator (in order to focus only on its
+performance, avoiding the effects of the whole system in the users study); however, we used simulated
+visitors and not manually recorded visit logs. The evaluation of UM mechanisms in PIL was compared
+to a gold standard, as this method allows one to assess UM quality at various stages of UM adaptation,
+as opposed to assessing the overall system performance. In PIL, the gold standard model of a user is
+the model that represents a user after an “infinite” number of interactions (implemented as iterations
+of the simulation) with the system. In the simulation an indication of how well the current model (after
+a certain number of interactions) is adjusted to the user, is provided by measuring its similarity to the
+gold standard model. In our specific setting, the simulation was conducted by using different stereotypic simulated museum visitors that act according to a predefined behavior. They acted as if they were
+the actual visitors: they visited locations at the museum, chose available presentations, and gave feedback about the chosen presentations. This stereotypical behavior was characterized by a predefined
+fixed feedback response to every presentation in the museum, allowing continuous system adaptation
+for the UM, of every simulated user (initially empty). With a large enough number of these adaptation
+iterations a gold standard UM is generated for each simulated user (the gold standard models were
+generated after simulated visits that included 25,000 simulated feedback responses to presentations
+selected by the model).
+The experimental results show that the mediation technique (initialization of a user model by a set
+of attractions from the trip planning system that match the stereotypic visitor) outperforms random
+initialization and zero initialization (initializing a model to the zero vector of terms). A sample of the
+results that were obtained in these simulation experiments is depicted in Figure 7 (only random, due to
+space limitation, the zero vector of terms has a worse starting point and converges at a similar rate).
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:19
+
+Fig. 7. The average case (Mediated UM versus Randomly initialized UM).
+
+The figure shows that on average, the mediation initialization technique outperformed the random
+initialization technique. The mediated model has a better initial similarity score and then converges
+faster to the gold standard—it converged after 300 iterations, whereas the random model did not
+converge during the first 1000 iterations. The mediated model even has a better convergence rate
+during the first fifty iterations, in spite of having less room for improvement. The results demonstrate
+the potential of mediation. Even at the onset of the service, the system provides a personalized service
+that greatly improves during the first 100 iterations. These results are promising, but require futher
+research, since in practice we would like to have this quality of service at the onset of a service or after
+a much smaller number of iterations.
+6.
+
+DISCUSSION
+
+The PIL project followed in the footsteps of PEACH [Stock et al. 2007] and took a holistic approach for
+developing a robust research infrastructure for enabling research work in a wide variety of areas. This
+section points out the long-term lessons that can be learned from the project and also some specific
+insights we are using in our current realization of a complete system for the Hecht Museum.
+Content preparation for museum visitor’s guides has always been a time- and effort-consuming task,
+as also noted in Manning and Sims [2004]. This is not going to change as long as high quality and
+carefully produced presentations are needed, even for evaluating a research prototype as we did. Our
+unique contribution here was to organize and suggest a relatively simple methodology for multimedia
+presentation preparation. It has been successfully adapted for the extended phase of the project for
+producing a large number of presentations with various perspectives for the whole museum.
+A second issue is infrastructure. In order to be able to develop and maintain a system over time
+so that novel components can be introduced without changing it, a flexible infrastructure is needed.
+Unlike most past projects that focused on other specific aspects, this project specifically considered
+this aspect and adopted an existing (PEACH) agent-based infrastructure. Using this infrastructure
+we could easily add additional functionality to the basic guide, simply by adding new components,
+including the communication services manager. We are in a position to make a strong claim in favor of
+a good infrastructure, as ad hoc adaptations are costly and technology evolves over time.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:20
+
+•
+
+T. Kuflik et al.
+
+A third issue is adaptation. It is indeed a subtle matter that in many cases goes unnoticed by the
+visitors, as we found in our evaluation, and was also described by Filippini-Fantoni [2003], which found
+that personalization of a museum Web site is not straightforward and may not be appreciated by visitors, unless they see some clear benefits. However, recent museum research [Falk 2009] emphasizes
+the need for knowing the visitor and providing a personalized experience so visitors will come over and
+over again. Our experiments showed that first-time visitors with limited motivation need a general
+presentation and only visitors who expressed interest in additional information seem to enjoy adaptation. Well-motivated visitors, especially if coming for a second time or more, will probably behave
+differently. Yet, interestingly, another aspect has appeared recently. In the interface assessment process, we were following casual users and it became clear that the font size we were using was far too
+small for many users. The increase in font size will mean that only one, or at most two, questions will
+appear on the screen. So, this trivial fact will immediately give importance to adaptation, as questions
+that require more actions to be reached will be penalized, so it is very important that the appropriate
+ones are shown first.
+The PIL project also demonstrated the potential of user-model mediation—how to apply this novel
+idea in practice and avoid a tedious process of questionnaire-filling in order to bootstrap a user model.
+Future visitors to the museum will expect a personalized experience; this will not be possible without
+a detailed user model that should be available a priori (on the visitor’s device or elsewhere); usermodeling mediation is the practical way to bootstrap such a model. Social networks that are flourishing
+in recent years may be a source for such user-modeling data, as demonstrated by Liu [2007]. However,
+in our opinion this work emphasizes the needs and potential benefits of the mediation idea, since
+there is a need to convert the available data at the social network to what is required by a museum
+recommender system, and such a conversion is far from being trivial.
+Interaction among visitors is known to enhance the overall museum experience. This issue was the
+focus of the Sotto Voce project that looked into shared listening as a way to support interaction. Shared
+listening and eavesdropping required physical proximity of the visitors, yet often visitors moved independently during the visit, even if they came to the museum together. In PIL we took a different
+approach, using technology to enable interaction among visitors who are not close to one another. The
+importance of intergroup communication is widely recognized but it has been addressed in an ad hoc
+manner by numerous projects. Hence, our contribution is in suggesting a standard definition for intragroup communication that may be applied in any setting. Moreover, we have suggested a generic
+framework that can be implemented over any communication infrastructure. In fact it needs to be
+implemented once per operating system and then used over and over again for the development of
+different applications.
+Another aspect of social interaction is group interaction with large displays, whether regular, tablemounted (as demonstrated in our case), wall-mounted, or table-top. The general idea is that shared
+interaction with large displays will enable the visitors to share their personal experiences with their
+friends while still at the museum. The idea, again, goes beyond the specific technology. The concept
+is specifically group-oriented. For instance, the automatic system may make apparent to all, that an
+exhibit that had a specific meaning for someone in the group, which was seen by others but totally
+overlooked by one member of the group. This may then lead to a revisit of the missed exhibit, either by
+the individual with the guide, or even better, by the whole group. This group-oriented aspect is one step
+forward from what we see now (rather in open sites than in the museum): visitors move around with
+smart phones, they can take images, attach vocal notes, and later possibly transfer bits and pieces
+from their personal devices to a place where they can share them with colleagues. Pushing forward
+the concept of group behavior and interfaces for group communication in the museum, the theme of
+conversation at the museum café, sitting around a table-top display has been the object of a recent
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:21
+
+novel technological research study [Rocchi et al. 2009]. The observation of group behavior in face to
+face communication, that relies a lot on automatic detection of visual attention, as done in that work,
+is something for the future in a mobile setting like the one described in the present article.
+While considering the PIL project, the technological issue is one of the most interesting ones. PIL
+was developed using technology available at the beginning of the project: Just a few years ago the PDA
+technology looked rampant. Nowadays, smart phones are appearing, while PDAs are disappearing
+(or somehow being integrated into smart phones). Does the rapid technological change impact the
+lessons learned so far? We think that the lessons learned are still valid and some become even more
+important, given such rapid changes. Considering current and future mobile technology, obviously the
+user interface is of major importance. Personal mobile devices will remain small—lightweight, small
+size screen, and with limited CPU and memory. A question developers of new systems will face is
+whether to develop a client application (and porting it to the many available platforms) or to select
+a platform-independent Web-based approach. Aside from the specific pros and cons of each technical
+solution, and the social consequence of using one’s own device, we think that the picture is not changed
+radically by the hardware and system platform.
+A different observation can be made for the positioning infrastructure and the sensory aspects. Infrared technology (as well as RFID tagging) was the simplest available technology that could avoid
+requiring explicit position specification to be reported by the user. It may sound strange, but accurate
+positioning inside a building is still an open issue. So in the current phase, after having experimented
+with a number of technologies (e.g., signal-based triangulation, UWB) we decided to go ahead with a
+wireless sensor network, which takes care of general positioning and different kinds of proximity, using
+Zigbee technology. It is based on moving nodes (small devices carried by visitors), fixed beacons, network gateways, and a data server. The central data server includes a reasoning component that filters
+out false positives (a recurrent problem caused by unavoidable reflections) and then provides information to the presentation devices (PDAs or smartphones). Proximity (the radius can be software-defined
+for each individual device) to beacons, is important for finer positioning when close to a specific exhibit,
+and is integrated into the general positioning system. The result is a continuously updated visitor position. The newer realization has a number of positive features compared with IR, among them accuracy,
+continuity, and recognition of the exit from a “hot” area, which were not present with IR technology.
+This has some consequences for the interface, for instance, making navigation tools with continuous
+position update feasible.
+However wide the range of aspects covered by PIL could have been, it could not attempt to cover the
+whole range of the museum visit experience. Engaging the visitor is still one of the most challenging
+aspects, as noted by Falk [2009] and new research is looking into themes such as adding affective
+aspects [Lim et al. 2005; Damiano et al. 2008] or, as we are doing in a complex new project, introducing
+a flexible, group-oriented mobile digital drama as an introductory stage to the museum experience
+[Stock and Callaway 2009]—see also Sung et al. [2010] for a role-playing approach.
+7.
+
+CONCLUSIONS
+
+The multidisciplinary project presented in this article used PEACH technology and extended its research results in several specific aspects. Most of the lessons learned are not limited by the scenario or
+the technology of the project, as discussed earlier.
+The work started by streamlining a methodology for content preparation, combining prior PEACH
+results with new lessons. The fact that content preparation is the most time-consuming part of designing an interactive guide cannot be overemphasized and a methodology for this enterprise is of great
+value. The multimedia museum visitor’s guide was liked by visitors in general. However, on the subject of personalization and adaptation, it seems that personalization based on dynamic alternatives
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:22
+
+•
+
+T. Kuflik et al.
+
+and presentation ordering based on inferred users’ interests were not perceived as major contributions
+by the visitors. In particular, we had a strong hypothesis that information specific to the attributed
+user interests is more valuable than any, even general, information. As for weaker adaptivity (adaptivity that does not impact general presentations), people appreciate the specifically suggested material
+when exposed to it, but they are not so conscious of wanting something specific and do not seem to
+be willing to pursue their information targets actively, as required by an interface that presents the
+supposedly most appealing options first.
+A possible interpretation of all these findings is that people in a museum want to be exposed to new
+material, while they feel they are in a constrained situation in an unknown territory. The museum
+itself is an interface that is meant to attract the interest of the visitor visually, according to one privileged point of view. When it comes to receiving information, of course, people are happy to receive
+information that is interesting but they are not so conscious of having specific interests beyond the
+basic information the museum offers. Although technology’s role is much more ambitious in our case,
+our results for museum newcomers match those found for the case of tourists—one of the main visitor
+types in the museum. Of course, there is greater variability in visitors and it would be important to
+study different types of visitors. For instance, “friends” of a museum, who come often and are well
+acquainted with the contents, may show different behaviors.
+Another aspect studied was the issue of user-modeling and the complexity of its evaluation. For this,
+a novel approach to evaluation by simulation was proposed with good results, allowing us to focus on
+the technological aspects of performance without taking into account the overall system.
+In this project, in addition to the thorough and methodologically sound development of the multimedia presentations and the user interface, we invested a lot of effort into two directions important for
+dealing with groups: technology-based communication among members of a group visiting the museum
+and continuity between the mobile, active visit, and moments of group reflection in front of a large display, where the visit is discussed. The system, being aware of all activity: positions, exhibits visited,
+presentation chosen, interest, messages exchanged—is capable of producing a view of the group behavior, help them talk about different aspects of the shared experience, or point to important aspects
+for the group that were possibly overlooked by some members. It can then easily lead to the members
+of the group revisiting relevant exhibits together.
+On the basis of the realized prototype, work is now focused on two aspects: first, applying the research results and producing a robust museum visitor’s guide with a wide coverage of the museum
+(still for the Hecht Museum), to be used by visitors on a daily basis. The second aspect (correlated with
+the first) is creating a test bed for further experimentation. The fact that the system will be used by visitors on a daily basis will enable us to monitor visitors continuously and collect visit logs. An analysis of
+visit logs will allow us both to study visitors’ behavior and also to advise the museum curator about various issues (such as exhibit popularity, etc.). Such an ongoing evaluation will further enable extended
+studies that are quite rare in real-life scenarios. The system will also allow us to experiment with new
+ideas and services, without the need to invest major effort in building the infrastructure from scratch.
+ACKNOWLEDGMENTS
+
+The authors would like to thank Dina Goren-Bar for her contribution to the early parts of this work.
+REFERENCES
+ALFARO, I., NARDON, M., PIANESI, F., STOCK, O., AND ZANCANARO, M. 2004. Using cinematic techniques on mobile devices for
+cultural tourism. Inform. Tech. Tourism 7, 2, 223–230.
+ARDISSONO L., GOY, A., PETRONE, G., SEGNAN, M., AND TORASSO, P. 2003. INTRIGUE: Personalized recommendation of tourist
+attractions for desktop and handset devices. Appl. Artif. Intell. 17, 8–9, 687–714.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:23
+
+ARDISSONO, L. AND PETRELLI, D. 2008. Preface to a special issue on personalizing cultural heritage exploration. User Model.
+User-Adapt. Interact. 18, 383–387.
+BANOS, H. 1995. Writing exhibition texts. In Text in the Exhibition Medium, Québec: Société des musées québécois and Musée
+de la civilisation, A. Blais, Ed., 205–228.
+BAUS, J., CHEVERST, K., AND KRAY, C. 2005. A survey of map-based mobile guides. In Map-based Mobile Services – Theories,
+Methods and Implementations, L. Meng, A. Zipf, and T. Reichenbacher, Eds. 197–213. Springer, Heidelberg.
+BAUS, J., KRÜGER, A., AND WAHLSTER, W. 2002. A resource-adaptive mobile navigation system. In Proceedings of the 7th International Conference on Intelligent User Interfaces (IUI), 15–22.
+BELLOTTI, F., BERTA, R., DE GLORIA, A., AND MARGARONE, M. 2002. User testing a hypermedia tour guide. IEEE Pervasive Comput.
+1, 2, 33–41.
+BERKOVSKY, S. GORFINKEL, A., KUFLIK, T., AND MANEVITZ, L. 2006. Case-based to content-based user model mediation. In Proceedings of the Workshop on Ubiquitous User Modeling, (in conjunction with the 17th European Conference on Artificial Intelligence) (ECAI), 1–4.
+BOHNERT, F., ZUKERMAN, I., BERKOVSKY, S., BALDWIN, T., AND SONENBERG, L. 2008. Using interest and transition models to predict
+visitor locations in museums. AI Commun. 21, 2–3, 195–202.
+BRIGHT, A., KAY, J., LER, D., NGO, K., NIU, W., AND NUGUID, A. 2005. Adaptively recommending museum tours. In Proceedings of
+the Ubicomp Workshop Smart Environments and Their Applications to Cultural Heritage. http://smart.arces.unibo.it/pdf/04Adaptively-Recommending Bright.pdf.
+BROOKE, J. 1996. SUS: A ‘quick and dirty’ usability scale. In Usability Evaluation in Industry. W. Jordan, B. Thomas, B. A.
+Weerdmeester, and I. L. McClelland, Eds. Taylor and Francis, London, 189–194.
+BUSETTA, P., DONÀ, A., AND NORI, M. 2002. Channeled multicast for group communications. In Proceedings of the 1st International
+Joint Conference on Autonomous Agents and Multiagent Systems, 1280–1287.
+BUSETTA, P., MERZI, M., ROSSI, S., AND LEGRAS, F. 2003. Intra-role coordination using group communication: A preliminary report’.
+In Proceedings of the International Workshop on Agent Communication Languages and Conversation Policies, 231–253.
+CALLAWAY, C., NOT, E, NOVELLO, A., ROCCHI, C., STOCK, O., AND ZANCANARO M. 2005. Automatic cinematography and multilingual
+NLG for generating video documentaries. Artif. Intell. 165, 1, 57–89.
+CHEVERST, K., DAVIES, N., AND MITCHELL, K. 2002. The role of adaptive hypermedia within a context-aware tourist GUIDE.
+Comm. ACM, (Special Issue on adaptive Web-based Systems and Adaptive Hypermedia.) 45, 5, 47–51.
+COSTANTINI, S., MOSTARDA, L., TOCCHIO, A., AND TSINTZA., P. 2008 DALICA: Agent based ambient intelligence for cultural-heritage
+scenarios. IEEE Intell. Syst. 23, 2, 34–41.
+COX, R., O’DONNELL, M., AND OBERLANDER, J. 1999. Dynamic versus static hypermedia in museum education: An evaluation of
+ILEX, the intelligent labelling explorer, in Proceedings of the Artificial Intelligence in Education Conference.
+DAMIANO, R., GENA, C., LOMBARDO, V., NUNNARI, F., AND PIZZO, A. 2008. A stroll with Carletto: Adaptation in drama-based tours
+with virtual characters. User Model. User-Adapt. Interact. 18, 417–453.
+DAVIES, N., CHEVERST, K., MITCHELL, K., AND EFRAT, A. 2001. Using and determining location in a context-sensitive tour guide.
+Comput. 34, 8, 35–41.
+DIAPER, D., Ed. 1989. Task Analysis for Human-Computer Interaction. Ellis Horwood.
+DINI, R., PATERNÒ, F., AND SANTORO, C. 2007. An environment to support multi-user interaction and cooperation for improving
+museum visits through games. In Proceedings of the 9th International Conference on Human Computer Interaction with Mobile
+Devices and Services (MobileHCI), Vol. 309. ACM, New York, 515–521.
+ECONOMOU, M. 1997. The evaluation of multimedia application for gallery interpretation: The Euesperides project in Oxford.
+In Museum Interactive Multimedia 1997: Cultural Heritage Systems, Design and Interfaces. D. Bearman and J. Trant, Eds.
+218–226.
+FALK, H. J. AND DIERKING, L. D. 1992. The Museum Experience. Whalesback Books, Washington.
+FALK, H. J. AND DIERKING, L. D. 2000. Learning from Museums: Visitor Experience and the Making of Meaning. Rowman &
+Littlefield, New-York.
+FALK, H. J. 2009. Identity and The Museum Visit Experience. Walnut Creek CA. Left Coast press.
+FILIPPINI-FANTONI, S. 2003. Personalization through IT in museums. Does it really work? The Case of the Marble Museum Website. In Proceedings of the International Conference on Hypermedia and Interactivity in Museums (ICHIM), an International
+Conference. Paris, Louver: Archives & Museums Informatics Tech. rep. 1–16.
+FLECK, M., FRID, M., KINDBERG, T., O’BRIEN-STRAIN, E., RAJANI, R., AND SPASOJEVIC, M. 2002. From informing to remembering:
+Ubiquitous systems in interactive museums. Perv. Comput. 1, 2, 13–21.
+GARZOTTO, F., CINOTTI, T., AND PIGOZZI, M. 2003. Designing multi-channel web frameworks for cultural tourism applications: The
+MUSE case study. Selected Papers from Museums and the Web. Toronto Archives & Museums Informatics. Toronto.
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+11:24
+
+•
+
+T. Kuflik et al.
+
+GRASSO, A., KOCH, M., AND SNOWDON, D. 1998. Campiello—New user interface approaches for community networks. In Proceedings of the Workshop on Designing Across Borders: The Community Design of Community Networks (CSCW).
+GRUEN, D. 2002. Storyboarding for design: An overview of the process. Lotus res. http://domino.research.ibm.com/
+cambridge/research.nsf/0/ebcd159a81a43e36852569200067d59e/$FILE/Techreport%202000.03.PDF.
+HIS, S. 2003 A study of user experiences mediated by nomadic web content in a museum. J. Comput. Assist. Learn. 19, 3, 308–319.
+JAÉN, J., MOCHOLÍ, J. A., ESTEVE, J. M., BOSCH, V., AND CANÓS, J. H. 2005. MoMo: Enabling social multimedia experiences in
+hybrid museums. International Workshop: Re-Thinking Technology in Museums: Towards a New Understanding of People’s
+Experience in Museums. http://www.idc.ul.ie/museumworkshop/Papers/Jaen.pdf.
+KAHANOV, Y., KASHTAN, N., KATZ, S., KUFLIK, T., GRAZIOLA, I., ROCCHI, C., STOCK, O., AND ZANCANARO, M. 2006. Preparing personalized multimedia presentation for a mobile museum visitors’ guide: A Methodological Approach. In Proceedings of Museums
+and the Web.
+KIRAKOWSKI, J. AND VEREKER, N. 1998. RESPECT: User-Centred Requirements Handbook. http://www.effin.org/Dokumenter/
+Framework/Respect.pdf.
+KRAY, C. AND BAUS, J. 2003. A survey of mobile guides. In Proceedings of the HCI in Mobile Guides Workshop at the Fifth
+International Symposium on Human Computer Interaction with Mobile Devices and Services.
+KUFLIK, T., JBARA, S., SOFFER, P., and STOCK, O. 2007. Context-aware communication services in “Active Museums”. Proceedings
+of Software Science Technology, and Engineering (SWESTE).
+LEINHARDT, G. AND KNUTSON, K. 2004. Listening in on Museum Conversations. Alta Mira Press.
+LEWIS, C. AND RIEMAN, J. 1995. Getting to know users and their tasks. In Readings in Human-Computer Interaction: Toward
+the Year 2000. R. M. Baecker, J. Grudin, W. A. S. Buxton, and S. Greenberg, Eds. Morgan Kaufmann Publishers, Inc., San
+Francisco.
+LIM, M. Y., AYLETT, R., AND JONES, C. M. 2005. Affective guide with attitude. In Proceedings of the 1st International Conference
+on Affective Computing and Intelligent Interaction. 772–779.
+LIU, H. 2007. Social network profiles as taste performances. J. Comput.-Mediat. Comm. 13, 1, article 13. http://jcmc.indiana.edu/
+vol13/issue1/liu.html.
+LONG, S., KOOPER, R., ABOWD, G. D., AND ATKESON, C. G. 1999. Rapid prototyping of mobile context-aware applications: The
+Cyberguide case study. In Proceedings of 1st International Symposium on Handheld and Ubiquitous Computing, (HUC),
+52–66.
+MANNING, A. AND SIMS, G. 2004. The Blanton iTour—An interactive handheld museum guide experiment. Museums and the Web
+2004. www.archimuse.com/mw2004/papers/manning/manning.html
+NOT, E., PETRELLI, D., STOCK, O., STRAPPARAVA, C., AND ZANCANARO, M. 1997. Person-oriented guided visits in a physical museum.
+In Museums Interactive Multimedia 1997: Cultural Heritage Systems. Design and Interfaces. Selected Papers from (ICHIM),
+D. Bearman and J. Trant, Eds. Archives & Museum Informatics, Paris, 69–79.
+NOT, E., PETRELLI, D., SARINI, M., STOCK, O., STRAPPARAVA, C., AND ZANCANARO, M. 1998. Hypernavigation in the physical space:
+Adapting presentations to the user and to the situational context. New Rev. Hypermedia Multimedia J. 4, 33–45.
+O’GRADY, M. J. AND O’HARE, G. M. P. 2004. Just-in-time multimedia distribution in a mobile computing environment. IEEE
+Multimedia, 11, 4, 62–74.
+O’HARA, K., KINDBERG, T., GLANCY, M., BAPTISTA, L., SUKUMARAN, B., KAHANA, G., AND ROWBOTHAM, J. 2007. Collecting and sharing
+location-based content on mobile phones in a zoo visitor experience. Comput. Support. Coop. Work 16, 1–2, 11–44.
+OPPERMANN, R. AND SPECHT, M. 1999. A nomadic information system for adaptive exhibition guidance. In Cultural Heritage
+Informatics 1999: Selected Papers From ICHIM 99, D. Bearman and J. Trant, Eds. 103–110.
+PETRELLI, D. AND NOT, E. 2005. User-centred design of flexible hypermediafor a mobile guide: Reflections on the hyperaudio
+experience. User Model. User-Adapt. Interact. 15, 303–338.
+PROCTOR, N. AND BURTON, J. 2004. Tate modern multimedia tour pilots. In Learning with Mobile Devices, (LSDA), J. Attewell
+and C. Savill-Smith, Eds. London, 127–130.
+RANTONEN, M., OULOSVIRTA, A., BLOM, J., TITTA, S., AND MÄNTYLÄ, M. 2004. InfoRadan: Group and public messaging in the mobile
+context. In Proceedings of Nordic Forum For Human-Computer Interaction Research, 131–140. ACM Press.
+RAPTIS, D., TSELIOS, N., AND AVOURIS, N. 2005. Context-based design of mobile applications for museums: A surveyof existing
+practices. In Proceedings of the 7th International Conference on Human Computer Interaction with MobileDevices and Services,
+153–160
+ROCCHI, C., STOCK, O., ZANCANARO, M., PIANESI, F., AND TOMASINI, D. 2009. Persuasion at the museum café: Initial evaluation
+of a tabletop display influencing group conversation. In Proceedings of the Symposium on Persuasive Technology and Digital
+Behaviour Intervention (in Conjunction with the AISB Convention).
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+A Visitor’s Guide in an Active Museum: Presentations, Communications, and Reflection
+
+•
+
+11:25
+
+SARINI, M. AND STRAPPARAVA, C. 1998. Building a user model for a museum exploration and information-providing adaptive
+system. In Proceedings of the 2nd Workshop on Adaptive Hypertext and Hypermedia (HYPERTEXT).
+SERRELL, B. 1996. Exhibit Labels—An Interpretive Approach. Altamira Press, Walnut Creek.
+STOCK, O. AND CALLAWAY, C. 2009. Multiple coordinated mobile narratives as a catalyst for face-to-face group conversation. In
+Proceedings of 2nd International Conference on Interactive Digital Storytelling (ICIDS).
+STOCK, O. AND ZANCANARO, M., Eds. 2007. PEACH: Intelligent Interfaces for Museum Visits. Cognitive Technologies Series,
+Springer, Berlin.
+STOCK, O., ZANCANARO, M., BUSETTA, P., CALLAWAY, C., KRÜGER, A., KRUPPA, M., KUFLIK, T., NOT, E., AND ROCCHI, C. 2007. Adaptive,
+intelligent presentation of information for the museum visitor in PEACH. User Modell. User-Adapt. Interact. 17, 3, 257–304.
+SUNG, Y., CHANG, K., HOU, H., AND CHEN, P. 2010. Designing an electronic guidebook for learning engagement in a museum of
+history. Comput. Hum. Behav. 26, 1, 74–83.
+SZYMANSKI, M., H., AOKI, P., M., GRINTER, R., E., HURST, A., THORNTON, J., D., AND WOODRUFF, A. 2008. Sotto Voce: Facilitating
+social learning in a historic house. Comput. Support. Coop. Work 17, 5–34.
+WANG, Y., AROYO, L., STASH, N., SAMBEEK, R., SCHUURMANS Y., SCHREIBER, G., AND GORGELS, P. 2009. Cultivating personalized
+museum tours online and on-site. J. Interdisciplinary Sci. Rev. 34, 2, 141–156.
+ZANCANARO, M., KUFLIK, T., BOGER, Z., GOREN-BAR, D., AND GOLDWASSER, D. 2007. Analyzing museum visitors’ behavior patterns.
+In Proceedings of the 11th International Conference, on User Modeling (UM). 238–246.
+
+Received August 2009; revised March 2010, June 2010; accepted August 2010
+
+ACM Journal on Computing and Cultural Heritage, Vol. 3, No. 3, Article 11, Publication date: March 2011.
+
+View publication stats
+
+

@@ -1,0 +1,241 @@
+     The 2018 Technology Innovation Management and Engineering Science International Conference (TIMES-iCON2018)
+
+
+ Museum Interactive Information Broadcasting Using
+   Indoor Positioning System and Bluetooth Low
+    Energy: a Pilot Project on Trowulan Museum
+                      Indonesia
+                        Andreas Handojo1, Resmana Lim2, Tanti Octavia3, Jonathan Kurnia Anggita1
+                                                 1
+                                                     Informatics Engineering Department
+                                                     2
+                                                       Electrical Engineering Department
+                                                     3
+                                                       Industrial Engineering Department
+                                                           Petra Christian University
+                                                              Surabaya, Indonesia
+                                                              handojo@petra.ac.id
+
+
+  Abstract—The tourism sector become a promising country                alternative country revenue. In Indonesia, the tourism sector is
+income. This is because its nature which is not easily run out if       the fourth largest country revenue contributor (9%) [1].
+managed properly. This sector can be a great support especially         Moreover tourism sector is also able to absorb 10 million
+for developing countries such as Indonesia, because usually             workers. The government is targeting a significant increasing
+developing countries income only rely on natural and human
+                                                                        number of foreign tourists from 9 million (2014) to 20 million
+resources income. Museums are one of the tourism sectors that
+have not been explored properly. Museums in Indonesia are still         (2019) that will create 260 trillion rupiah (IDR) revenue [2].
+few that using the latest technology such as smartphone                     According to Indonesia Minister of Tourism Arief Yahya,
+application, wifi, bluetooth, RFID. So, that it makes the museum        revenue from Indonesia's tourism sector continues to increase.
+a less attractive place to visit, especially for young generation.      Indonesia's tourism revenue in 2015 obtain US$ 12,225 billion
+This research tries to create an interactive broadcasting museum        in the fourth position under CPO (US$ 16,427 billion) and coal
+information by utilizing applications on smartphones, indoor            (US$ 14,717 billion). The last acquisition of the tourism sector
+positioning systems, and bluetooth low energy beacons to provide        in 2017 was US$ 16.8 billion (Detik.com, 2018). Until August
+information to museum visitors about artifacts around museum            2017 foreign tourist arrivals increased by 25.68 percent [3]. It
+visitor location. As a pilot project a testing was conducted at the
+Trowulan Museum, Mojokerto, East Java, Indonesia, which is a
+                                                                        is expected that by the end of 2017 tourism sector foreign
+museum that exhibits the relics of the Majapahit kingdom. The           exchange earnings can reach US$ 17.05 billion. Foreign tourist
+application has been able to provide interactive information            arrivals from January to August 2017 experienced the highest
+about artifacts around the visitor's location so as to create an        growth in Southeast Asia at 25.68%. This figure is recorded
+interesting museum to visit                                             higher than Singapore (3.83%) and Thailand (5.05%) [3].
+                                                                        Tourism minister report that in 2017 foreign tourist is increase
+  Index Terms—Museum, Indoor Positioning System, Bluetooth              rapidly (Fig.1) compare to 2016 data [4].
+Low Energy, Smartphone, Information Broadcasting
+
+                         I. INTRODUCTION
+    Tourism industry has a big potential as a contributor to
+Indonesian revenue. This is very important especially for
+developing countries which generally cannot rely on country
+revenue from technological or industrial capabilities.
+Developing countries generally get their revenue from natural
+resources and human resources which are relatively cheaper
+than developed countries. The problem is this exploration of
+natural resources is limited and can be run out. This is different
+compared to the tourism. Tourism is one thing that cannot be
+exhausted as long as it is managed properly.
+    Indonesia as a developing country also has a similar
+problem. The largest country revenues from oil and gas, coal,
+and coal and palm oil (CPO). Therefore, the Indonesian                          Fig. 1. Monthly Foreigner Tourist Data 2017 vs. 2016 [4]
+government tries to develop the tourism sector as one of the
+
+
+
+  978-1-5386-7573-1/18/$31.00 ©2018 IEEE
+    Indonesia has a huge potential in tourism sector considering      Ciamis district based on mobile phone [12], Solo information
+that Indonesia is a country that has natural beauty, various          system application on mobile devices [13], and also using
+ethnic groups, various cultures, and many historical relics such      games and multimedia applications to build an interactive city
+as temples that are scattered in various locations in Indonesia.      tour [14].
+Indonesia itself currently has 8 World Heritage Site locations            Meanwhile, the use of information technology in providing
+from UNESCO. One potential tourism in Indonesia is a legacy           facilities for museum visitors has also been carried out by
+of the past such as artifacts, ceramics, canons, weapons,             several researchers such as games about museum via SMS on
+sculpture, etc. This relics usually store on museums. Indonesia       mobile device [15], audio information from as a mobile
+has around 400 museums scattered in various places in                 museum audio guide [16], a portal website to display additional
+Indonesia [5]. Unfortunately the management of museums in             information on museums [23], Ranggawarsita information
+Indonesia is still not optimal. Museum management in                  system museum using mobile phone [18], and Perjuangan
+Indonesia still uses old mechanisms (such as pamphlets,               Indonesia Museum Information Application [19]. There is still
+signage, and website) without involving the latest technological      a few research that explores delivering broadcast information
+advancements (such as smartphones, wifi, bluetooth, NFC).             to museum visitors based on the location of the visitor (indoor
+This, being one of the factors causing the museum to be a less        positioning system) in the museum using Bluetooth Low
+attractive place to visit.                                            Energy (BLE).
+    Another problem is the large amount of artifact information           On the other hand, research on indoor positioning system to
+in the museum, in terms of the number of artifacts and the            find out the location of the user has been done. The equipment
+amount of information held by each artifact. Usually, for             that is usually used for such purposes such as RFID, wifi,
+artifact information, museums in Indonesia still use text display     bluetooth, ultrasonic, and infrared signal. The IPS research
+which is very limited space of information that could be              purposes are quite various such as Manzano et al. [20]
+display. This is further worse by the inability to publish the        researched the indoor location finder for children using
+information in non-written forms such as audio and video. So          Bluetooth. Meliones et al. [21] creating an indoor blind
+visitors do not get enough information about the artifacts they       navigator application as a tool to help blind people to be able to
+want to know. Another problem is the large number and types           explore in a museum. Yucel et al. [22] develop indoor
+of artifacts that hold in a museum. Because usually the               positioning system using ultrasonic and infrared signals. While
+museum does not provide complete information about artifacts          Huang et al. [23] uses RFID and Kalman Filter to detect the
+that store in the museum and its location. So, museum visitors        location of goods.
+must see one by one the existing artifacts without being able to          Based on the research that has been done, there is still a few
+directly go to the location of the artifact that they want to see     research that develops IPS to provide additional information
+and can spend more time in that location.                             about artifacts for museum visitors. Research also usually only
+    Based on the above problems, this study tries to build a          reads user locations without broadcasting information to users.
+museum visitor location detection application (Indoor                 Therefore, in addition to detecting the location of the user, this
+Positioning System / IPS) using a Bluetooth low energy (BLE)          research will also inform the user where the current user's
+beacon. Visitors can find out their current position on the           position and artifacts are around the user. The location
+museum map by using the application on the smartphone.                detection of the user will use a bluetooth connection on the
+From the information on the location of the visitor, visitors will    smartphone that will detect the Bluetooth low energy (BLE)
+receive a broadcast of information about the artifacts that are       position of the beacon that has been placed in the museum
+nearby. This information will be sent via the smartphone              rooms.
+application. The application can also provide information about
+artifacts in other rooms. So, museum visitors can take                                     III. IMPLEMENTATION
+advantage of this information to get to the artifacts that interest
+them. The application also comes with an interactive map of               This research use of BLE beacons as a tool for IPS
+the museum along with artifacts in the museum. Visitors can           detection with several considerations such as BLE Beacon
+find out more about the artifacts on the museum map by                requires a fairly low energy so the maintenance for batteries
+clicking on the artifact icon on the map. With this application,      can be carried out about once a year. BLE beacons are small in
+visitors are expected to get information about the location of        size (Fig. 2), around 10 cm x 2 cm x 1 cm, so that they can be
+artifacts in the museum interactively.                                easily placed in hidden places without disturbing the
+                                                                      convenience of museum artifact displays. Because the small
+                                                                      shape of the BLE beacon is also easily moved. In addition,
+                     II. LITERATURE REVIEW                            BLE beacons also have easy setting so that they can be
+    Several research efforts have been carried out in order to        operated without special expertise. Especially BLE beacons
+provide facilities for tourists by using information technology.      have very cheap prices (around $5) making them suitable for
+Such as intelligent recommendations for tourist [6], NFC for          use in Indonesian museums.
+tourism activities [7, 8], Location Based Services for tourists
+[9, 10], Surabaya battle tour using android applications and
+Google map API [11], tourism information application in
+                Fig. 2. Bluetooth Low Energy Beacon
+
+    The mechanisms of the interactive information
+broadcasting museum can be explained as follows (Fig. 3). The
+smartphone from the user captures a signal from the BLE
+Beacon. The smartphone automatically captures UUID from
+BLE devices and sends the UUID to the server via the internet.
+The server sends the information along with the coordinates of
+the BLE beacon on museum map. The application on the
+smartphone calculates the location based on BLE beacons
+signal strength (RSSI) that receive by the smartphone and the
+location of the BLE beacon coordinates. The user's location
+then mapped on the museum map that’s available on the
+smartphone application. Based on that location, the server
+provides artifact information nearby to the user. Users can view                   Fig. 4. Manage BLE Beacon Location
+detailed information on the smartphone application and also
+can go to the location of the artifact. With this information,         The museum administrator can also arrange information on
+museum visitors expected to get information on artifacts in the    the room inside the museum (Fig. 5). This information is useful
+museum interactively.                                              for visitors to find out the location information of the room in
+                                                                   the museum.
+
+
+
+
+                  Fig. 3. Broadcast System Design
+
+    To make it easier for the museum administrator to arrange
+information and the location of the BLE beacons on the
+museum map. The research also provides a website-based
+facility for museum administrators to input museum maps and
+BLE beacon locations along with the radius of each beacon
+(Fig. 4). With this application, the museum administrator will
+easily adjust the location of the BLE beacons.
+       Fig. 5. Manage Museum Room Location and Information
+
+   After knowing the coordinates of the location of visitors,
+the system will broadcast information about the artifacts
+around the visitor's location (Figure 6). Visitors can view
+images, text information, etc.
+
+
+
+
+                                                                     Fig. 6. Information about Artefact near Museum Visitor Location
+
+                                                                   This pilot has been tested to 85 people (from age 11-62)
+                                                                museum visitors. The results that obtained is that the level of
+                                                                user satisfaction from this application is 87%. So it can be
+                                                                concluded that the application that made already meet user
+                                                                requirements.
+                                                                                          IV. CONCLUSION
+                                                                    In this research we trying to implement a museum
+                                                                information broadcasting application using smartphone
+                                                                application, Indoor Positioning System, and Bluetooth Low
+                                                                Energy beacon. Museum visitors can use their smartphone to
+                                                                receive BLE beacon signal. The application on smartphone will
+                                                                send di BLE beacon ID that they receive to the server then the
+                                                                server will gives BLE beacon location (on map). The
+                                                                application on smartphone will calculate BLE beacon signal
+                                                                strength (RSSI) and the BLE beacon location to locate the
+visitor location on the map. The server then will broadcast           [11] A. Handojo, J. Andjarwirawan, S. Sunaryo, R. Lim, “Heroic
+information about the artifact near the visitor. This information          battle of Surabaya application based on android,” Journal of
+will attract the visitor to see the artifact on the museum. So,            Engineering and Applied Sciences, vol. 9, no. 12, 2014
+this application will give a fun and interesting visit to the         [12] M. Lailasari, D. Wulandari, A. Kurniawati, “Tourism
+museum and also indirectly a learning tools for the visitors.              Information Application in Ciamis District Based Mobile Phone
+    In the future, this research could be improve by mapping               [Aplikasi Informasi Pariwisata di Kabupaten Ciamis Berbasis
+                                                                           Mobile Phone],” Proc. Information System National
+user movement in the museum using visitors location By this                Conference, 2013
+information we could gather the knowledge which artefact
+                                                                      [13] H. Sulistyanto, Nurgiyatna, “Application Development Solo
+location that visitors spend most of the time.
+                                                                           Raya Tourist Information System On Mobile Devices
+                      ACKNOWLEDGMENT                                       [Pengembangan Aplikasi Sistem Informasi Wisata Solo Raya
+                                                                           pada Perangkat Mobile],” Proc. National Symposium RAPI XIII
+    This research was supported by Indonesia Directorate                   (2014)
+Research and Technology of Higher Education under grant               [14] A. Handojo, R. Lim, J. Andjarwirawan, S. Sunaryo, “Games and
+002/SP2H/P/K7/KM/2018. We would also like to show our                      multimedia implementation on heroic battle of Surabaya: An
+gratitude to the Mobile Computing Research Study Group for                 android based Mobile Device Application,” Lecture Notes in
+assistance to improve this research.                                       Electrical Engineering, 365, 2016
+                                                                      [15] L. Botturi L, A. Inversini, A. Di Maria, “City Treasure: Mobile
+                          REFERENCES                                       Games For Learning Cultural Heritage,” Proc. Museum and the
+[1] Tempo, “Tourism Donate Foreign Exchange US$ 10 Milliard                Web, Archives and Museums Information, 2009
+     [Pariwisata Sumbang Devisa US$ 10 Milliard],” [online]           [16] L. Tallon, K. Walker, “Introduction: Mobile, Digital and
+     available at Tempo.com (2014) accessed 17 March 2018.                 Personal,” In: Tallon L (editors.) Digital Technologies and the
+[2] Jawa Pos National Network, “Chase 20 Million Foreign Tourist           Museum Experience: Handheld Guides and Other Media.
+     and 260 Trillion IDR Foreign Exchange [Kejar 20 Juta Wisman           Altamira Press (2008)
+     dan Rp.260 Triliun Devisa],” [online] available at jawapos.com   [17] N. Chivarov, V. Ivanova, D. Radev and I. Buzov, “Interactive
+     (2014) accessed 27 August 2018                                        Presentation of the Exhibits in the Museums Using Mobile
+[3] G. Gumelar, CNN Indonesia, “Indonesia Tourism Minister                 Digital Technologies,” Workshop on International Stability,
+     Claims Become the Main Contributor of Foreign Exchange”               Technology, and Culture The International Federation of
+     [Kemenpar Klaim Pariwisata Jadi Kontributor Utama Devisa],            Automatic Control, 2013
+     2017                                                             [18] H. Susanto, “Android Based Museum At Ranggawarsita
+[4] Indonesia Tourism Ministry. “Foreign Tourist Statistics Data           Museum Semarang With Prototype Competence [Museum
+     2017 [Data Statistik Turis Luar Negeri 2017],” 2017                   Berbasis Android Pada Museum Ranggawarsita Semarang
+[5] UNESCO & Indonesia Tourism Ministry, “Practical Guide for              Dengan Kompetensi Prototype],” Repository Dian Nuswantoro
+     Museum Revitalization in Indonesia,” UNESCO, 2011                     University, Semarang, 2014
+[6] J. Borràs, A. Moreno, A. Valls, “Intelligent Tourism              [19] Y.P.W. Sari, “Information Application Museum of the Republic
+     Recommender Systems: A Survey,” Expert System with                    of Indonesia In D.K.I Jakarta Based Android [Aplikasi
+     Application,          pp.7370-7389,         2014,         DOI:        Informasi Museum Perjuangan Republik Indonesia Di D.K.I
+     10.1016/j.eswa.2014.06.007                                            Jakarta Berbasis Android],” Repository Universitas Gunadarma,
+                                                                           2014
+[7] R.D. Egger, “The impact of near field communication on
+     tourism”, Journal of Hospitality and Tourism Technology 4(2),    [20] D. Manzano, G. Villarrubia, D. Hernández, J.F. de Paz, “Indoor
+     DOI: 10.1108/JHTT-04-2012-0014, 2018                                  children location system using BLE technology”, Advances in
+                                                                           Intelligent Systems and Computing 619, pp. 148-154, 2017
+[8] J. Pesonen & E. Horster, “Near field communication technology
+     in Tourism,” Tourism Management Perspectives, Vol. 4, pp. 11-    [21] A. Meliones, D. Sampson,“Indoor blind navigator: A use case
+     18, DOI: 10.1016/j.tmp.2012.04.001, 2012                              for self-guided tours in museums”, ACM International
+                                                                           Conference Proceeding Series Part F128530, pp. 17-20, 2017
+[9] CH. Chou, “Location Based Services for Tourism-Literature
+     Review,” Journal of Multidisciplinary Management Studies, vol    [22] H. Yucel, R. Edizkan, T. Ozkir, and A. Yazici, “Development of
+     2, no 2, 2012                                                         indoor positioning system with ultrasonic and infrared signals,”
+                                                                           in Proc. Int. Symp. Innov. Intell. Syst. Appl., pp. 1–4, 2012
+[10] M. Sholeh, C. Iswayudi, E.T. Prabowo, “Museum in Yogyakarta
+     Based Location Based System [Museum di Yogyakarta Berbasis       [23] C.H. Huang, L.H. Lee, C. C. Ho, L.L. Wu, Z.H. Lai., “Real-
+     Location Based System],” Proc. National Seminar Science &             Time RFID Indoor Positioning System Based on Kalman-Filter
+     Technology Application, 2014                                          Drift Removal and Heron-Bilateration Location Estimation”,
+                                                                           IEEE Transactions On Instrumentation And Measurement, vol.
+                                                                           64, no. 3, 2015.
+

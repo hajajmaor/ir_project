@@ -1,0 +1,448 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224198842
+
+
+
+RSSI-based Euclidean Distance algorithm for indoor positioning adapted for
+the use in dynamically changing WLAN environments and multi-level
+buildings
+
+Conference Paper · October 2010
+DOI: 10.1109/IPIN.2010.5648247 · Source: IEEE Xplore
+
+
+
+CITATIONS                                                                                              READS
+
+54                                                                                                     1,898
+
+3 authors, including:
+
+             Uwe Grossmann
+             University of Applied Science and Arts Dortmund
+             50 PUBLICATIONS 366 CITATIONS
+
+                 SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+               Smart Service Power View project
+
+
+
+               Indoor Positioning View project
+
+
+
+
+ All content following this page was uploaded by Uwe Grossmann on 21 April 2015.
+
+ The user has requested enhancement of the downloaded file.
+  2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+
+
+  RSSI-based Euclidean Distance Algorithm for
+    Indoor Positioning adapted for the use in
+ dynamically changing WLAN environments and
+              multi-level buildings
+                           Sebastian Gansemer*; Uwe Großmann*; Syuzanna Hakobyan*
+      *   FH Dortmund, FES Mobile Business – Mobile Systems, Dortmund, Germany. Email: {sebastian.gansemer;
+                              uwe.grossmann; syuzanna.hakobyan}@fh-dortmund.de
+
+
+
+Abstract— This paper presents positioning algorithms for
+WLAN environments based on RSSI-fingerprinting and                                   II. RELATED WORK
+Euclidean Distance (EDA). The adapted algorithms can be             The RADAR System ([1]) uses EDA with a fixed set of
+used in large and dynamically changing environments and          base stations (BS) together with a signal propagation
+multi-level buildings. Evaluation results show a median          model. They found that their system has a median location
+location estimation error (MLEE) of 2.12m. The discrete          estimation error of 2.94m.
+third spatial direction (floor level) was correctly estimated       Ladd et al. ([8]) used a notebook for determining the
+in 99% of cases. The calibration effort may be decreased by      position by measuring RSSI values of several base
+a factor of 4, if an increase of MLEE error from 2.12m to        stations. For calculation they used fingerprinting and a
+2.69m is tolerated.                                              Bayesian inference algorithm based on RSSI histograms.
+                                                                 Experiments were conducted by a human operator
+Keywords — WLAN; Indoor Positioning; Fingerprinting;
+                                                                 carrying a notebook. The calibration grid size was 3m.
+RSSI; Euclidean Distance.                                        The algorithm reported positions with a distance of up to
+                                                                 1.5m to the measuring position.
+                    I.   INTRODUCTION
+                                                                    Retscher et al. ([9]) developed the IPOS system using
+   Positioning techniques are of essential value for             RSSI-fingerprinting as well. Their test bed was an office
+Location Based Services (LBS). For outdoor applications          building and a tablet-pc was moved from each position to
+like car navigation satellite positioning systems Global         the next either in stop-and-go or kinematical mode. They
+Positioning System (GPS) can be used easily, but for             focused on determining whether a user is located inside a
+indoor environments GPS is not available. Indoor                 room or not and whether one or two calibration points
+applications, e.g. autonomous robots, mobile museum              within one room are sufficient.
+guides or mobile shopping guides, have to make use of
+                                                                    Teuber et al. ([12]) again used fingerprinting and the
+different technologies for determining their current
+                                                                 method of minimal Euclidian distance together with fuzzy
+position independently ([2], [6], [11]).
+                                                                 logic postprocessing. Their test bed was an empty airport
+   For indoor localization in WLAN environments                  hangar. Accuracy of two-dimensional positioning was
+methods based on Received Signal Strength Index (RSSI)           4.47 m using Euclidian distance alone. With Fuzzy logic
+with fingerprinting and Euclidean distance algorithm may         postprocessing the accuracy improved to 3 m.
+be used to determine the current position ([7]).
+                                                                    A positioning system for industrial automation with
+Measurement of RSSI of several base stations in reach
+                                                                 automatic calibration was developed by Ivanov ([6]). This
+offer the opportunity to determine the current position. In
+                                                                 system is able to perform automatic measurement and
+large areas of positioning or in dynamically changing
+                                                                 model calibration. No manual measurements are
+environments the basic Euclidean Distance Algorithm
+                                                                 necessary. The algorithm shows a mean accuracy of 3.7m
+(EDA) using the same permanent set of base stations (BS)
+                                                                 with standard deviation of 3.4m using automatic
+has to be adapted. The set of received BS may change
+                                                                 calibration. If manual calibration was used the mean
+between calibration points (CP) or for a specific CP it may
+                                                                 accuracy would be 3.1m with a standard deviation of
+change from calibration to positioning phase.
+                                                                 2.6m.
+   This paper presents an adapted Euclidean Distance
+                                                                    The Ekahau Positioning Engine (EPE) is a
+Algorithm (AEDA) for the use in dynamically changing
+                                                                 commercially available software using RSSI based
+environments. The results shown are based on data
+                                                                 WLAN indoor positioning. According to the
+gathered during a systematic field trial within an office
+                                                                 manufacturer's instructions ([2]) the engine combines
+building of University of Applied Sciences and Arts in
+                                                                 RSSI pattern recognition together with an attempt to
+Dortmund, Germany.
+                                                                 include the user’s history and boundary conditions like
+                                                                 feasible paths and user's speed. Determination of the
+                                                                 current two-dimensional position is possible with an
+                                                                 accuracy of 1-5m depending on the environment. The
+
+
+
+978-1-4244-5864-6/10/$26.00 ©2010 IEEE
+  2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+system is able to determine the discrete third dimension
+                                                                             1 m
+(floor level) as well.
+   Fu et. al. ([3]) work with active RFID tags using EDA
+                                                                      d=       ∑ ( RSSI ci − RSSI pi )2
+                                                                             m i =1
+                                                                                                                           (2)
+and the integration of an inertial navigation system (INS).
+They present four different approaches to use EDA with              (RSSIci: RSSI value of BS i in calibration phase;
+different subsets of headings and tags for positioning.          RSSIpi: RSSI value of BS i in positioning phase; m:
+They found that direction-tag based approach and heading         number of matching BS)
+based approach perform best in terms of accuracy.                   Calculating the adapted Euclidean distance d (Equation
+                                                                 (2)) for a calibration point only those BS received in both
+                     III.      ALGORITHM                         calibration and positioning phase (matching BS) are taken
+A. Basic Euclidean distance algorithm                            into account. If for a specific measuring point a BS is
+                                                                 received neither in calibration nor in positioning phase this
+   The Euclidean distance algorithm is a fingerprinting          BS is not considered for calculating d. The number m of
+algorithm often used for WLAN localization divided in            matching BS may vary between calibration points.
+two phases, a calibration phase and a subsequent
+positioning phase ([10]). The algorithm needs a set of              With equation (2) d values calculated by taking into
+calibration points with known positions distributed over         account different numbers m of matching BS become
+the area of positioning. During calibration phase RSSI of        comparable.
+several base stations are measured simultaneously at             C. Algorithmic use and handling of unreliable RSSI
+calibration points and stored together with a timestamp              values
+and coordinates. During positioning phase RSSI values of
+several base stations are measured simultaneously at a              Within large and dynamically changing environments
+point whose position has to be determined. The RSSI-             four specific problem cases may occur:
+tuple of positioning phase is compared to the RSSI-tuples           Case 1: A BS is measured in calibration phase but not
+of calibration phase stored in the data base. A measure          in positioning phase,
+(Euclidean distance) for determining the similarity                 Case 2: A BS is measured in positioning phase but not
+between the positioning tuple and a calibration tuple has        in calibration phase,
+to be defined (see Equation (1)). A small d indicates a             Case 3: Number of matching BS within calibration and
+high similarity.                                                 positioning tuple is too low,
+            n                                                       Case 4: RSSI-values of positioning and/or calibration
+    d=     ∑ ( RSSI
+           i =1
+                      ci    − RSSI pi ) 2               (1)      tuple are too low.
+                                                                    Different subsets of received BS in calibration and
+                                                                 positioning phase for a measuring point and a calibration
+   (RSSIci: RSSI value of BS i in calibration phase;             point may occur in Case 1 and Case 2:
+RSSIpi: RSSI value of BS i in positioning phase; n:                 There are two reasons which may lead to the
+number of BS received)                                           occurrence of Case 1. Either the BS was operating during
+   Within permanent environments where all base stations         calibration phase and not operating during positioning
+can be received at all calibration points the number of          phase or the measurement of calibration phase happened
+received base stations n is constant.                            within the transmission range of the BS and the
+   The basic Euclidean Distance algorithm can be used            measurement of positioning phase occurred outside of the
+assuming a median location estimation error of 2.33m             transmission range of the BS. If Case 1 occurs, the BS
+([5]) within small and static environments.                      under consideration is not considered for calculating d
+                                                                 according to equation (2).
+B. Calculation of adapted Euclidean distance d for
+                                                                    Case 2 may occur if the measurement at the calibration
+    dynamically changing environments                            point was accomplished beyond the transmission range of
+   Within small and static environments there is a fixed set     the BS. If this case occurs the algorithm distinguishes two
+of base stations received at every calibration point in          sub cases. If the RSSI-value of the BS is above a threshold
+calibration phase and positioning phase. A dynamically           parameter TP3, it is assumed that the calibration
+changing environment is characterized by spatially and           measurement was accomplished beyond the BS
+temporally changing sets of received base stations. Within       transmission range. Consequently, this calibration point is
+larger areas of positioning we observe sets of received          excluded from the ranking and no d is calculated. If the
+base stations varying between calibration points. Or, for a      RSSI-value of the BS is below the threshold parameter
+specific point there may be different sets of received BS        TP3 the BS is not considered for calculation of d.
+within calibration phase and positioning phase.                     If the number m of matching BS is too low (Case 3) the
+Consequently, the assumption of a constant n in Equation         information included within the fingerprints may not be
+(1) is not valid anymore.                                        sufficient. The algorithm searches for calibration and
+   The calculation of d has to be adapted to a varying           positioning tuple-combinations where the number of
+number of BS, i.e. d has to be 'normalized'.                     matching BS equals the number of measured BS in the
+'Normalization' takes into account a varying number m of         positioning tuple. If no calibration tuple meets this
+received BS between calibration points resp. a number m          condition, the required number of matching BS is reduced
+of matching BS, i.e. the number of BS received at a              by one and the search is performed again for all
+specific calibration point within calibration phase and          calibration points. This procedure is repeated until the
+positioning phase:                                               condition is met or until the searched number of matching
+                                                                 BS is smaller than a parameter NBSmin (minimal number
+  2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+of matching BS). Within the latter case no Euclidean                           IV. TWO APPROACHES FOR EDA
+distance d will be calculated for any calibration point, i.e.      Using mobile devices as mobile phones or personal
+the position estimation cannot be accomplished for a             digital assistants for calibration and positioning the human
+measured RSSI-tuple within the calibration area. In this         body may have a major influence on the signal received
+case the measurement within positioning phase has                by the mobile devices. One option to take into account the
+probably been carried out outside of the calibration area.       impact of the human body is to carry out measurements in
+   Case 4 occurs, if the RSSI-values of positioning and          4 headings (00, 900, 1800, 2700) during calibration phase.
+calibration tuples are too low. Due to signal attenuation,       Consequently, this leads to two approaches in applying the
+the signal strength of a transmitted signal decreases with       Euclidean distance algorithm.
+increasing distance to the sender. For low RSSI-values the
+function has a small angle of slope, i.e. even large             A. Base station oriented approach
+variations of distance cause only small variations of the           According to the BS oriented approach d is calculated
+RSSI-value. Consequently, RSSI-tuples with low RSSI-             for every calibration point and for every direction
+values are less reliable for the use in fingerprints than        according to equation (2). For one calibration point with
+higher RSSI-values, i.e. position estimation based on low        four headings four different d values are calculated. All
+RSSI-values may result in higher location estimation             calculated d values are included into the ranking.
+errors.
+   Taking this into account the adapted EDA works with a         B. Heading oriented approach
+filtering system based on another two threshold                     Another approach is to calculate d for every calibration
+parameters TP1 and TP2 with TP1 < TP2.                           point, but use the RSSI-values of the four headings for the
+   First, calibration and positioning RSSI-values of a BS        calculation of d. The different influence of the human
+are examined for RSSI-value lower than threshold value           body on the RSSI-values according to the four headings is
+TP1. If this is the case for one of them, this BS is excluded    therefore included into the calculation of d. During
+from the set of matching BS and is not taken into account        calibration phase measurements are carried out for four
+for calculation of d. Second, those BS where both                directions and during positioning phase a measurement
+calibration and positioning tuples have RSSI-values lower        takes place in one direction only.
+than threshold TP2 are excluded from calculation of d.                                      n( i )
+                                                                                        m
+                                                                         1
+   This filter leads to a lower number of matching BS used
+for position estimation. However, due to the filtering of             d=
+                                                                         nf
+                                                                                    ∑∑ ( RSSI
+                                                                                    i =1 h =1
+                                                                                                     cih   − RSSI pi ) 2
+'unreliable' RSSI-values causing outliers the quality of                                                                   (3)
+location estimation increases.                                               m
+                                                                      nf = ∑ n(i )
+D. Ranking and position estimation                                          i =1
+   Given a currently measured RSSI-tuple from a point
+within the positioning area with unknown position the               (RSSIcih: RSSI value of BS i and heading h in
+Euclidean distance d is calculated for all calibration points    calibration phase; RSSIpi: RSSI value of BS i in
+using the corresponding RSSI-tuples. Afterwards all              positioning phase; m: number of matching BS; n(i):
+calibration points will be ranked according to d. As a first     number of measured headings for BS i during calibration;
+approach the calibration point with the smallest Euclidean       nf: normalization factor)
+distance d may be assumed to be the current measuring               Equation (3) calculates the normalized d for each BS
+position. It is also common to use a weighted average of         with all directions measured during calibration phase. The
+the coordinates of m calibration points with smallest d.         sum is normalized by the normalization factor nf which is
+The weightings may be based on the reciprocal values of          the sum of all numbers of headings measured for all
+d.                                                               matching BS at one calibration point. A similar approach
+   For determining the x, y, z coordinates a two stage           was implemented by Fu and Retscher ([3]) using RFID
+approach is used. At the first stage the estimated z-value       technology.
+(floor level) is given by the z-coordinate of the calibration
+point with the smallest d.                                                         V.       TESTBED AND PARAMETERS
+   At the second stage the calibration point with the            A. Location and calibration grid
+smallest d is selected from all calibration points within the       For evaluating the algorithm a series of measurements
+floor estimated during first stage. The estimated x- and y-      in a building at University of Applied Sciences and Arts
+coordinates are given by the coordinates of the selected         has been carried out. The building is equipped with a
+calibration point or by the weighted average of the n            WLAN infrastructure for data communication. In order to
+calibration points with the smallest d.                          evaluate the algorithm under non-laboratory conditions
+E. Moving Median Filter                                          this infrastructure has been used and no additional BS
+                                                                 have been installed. In total 24 different BS were received
+   For increasing the robustness of the algorithm against        during calibration and used for positioning.
+large sudden changes in positions a moving median filter
+is implemented. The filter calculates the median over the n         The measurements are taken on 3 floors (first floor,
+last estimated coordinates x, y and z. With that filter          second floor and third floor) each consisting of a corridor
+highly incorrect position estimations from the algorithm         area and a foyer area. A map of the first floor with the
+do not have an effect on the actual delivered position. The      basic calibration grid is shown in Figure 1. All three floors
+history parameter (HP) should be 3 or larger to make the         have an identical layout. The corridor areas are approx.
+filtering effective.                                             2m in width and 36m in length, the foyer area is approx.
+                                                                 21m in width and 12m in length. For calibration a basic
+  2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+rectangular 1m x 1m grid is used. Every node presents a                  TP2/TP1: If the RSSI-values of a specific matching BS
+calibration point.                                                    both from calibration and positioning phase are larger than
+   During calibration phase at a specific calibration point           TP1 but lower than TP2 the BS is excluded from the
+RSSI-values from received BS are simultaneously                       calculation of d.
+recorded. For each calibration point 15 successive                       TP1: If the RSSI-value of a specific matching BS either
+measurements are accomplished. At every calibration                   from calibration phase or from positioning phase is lower
+point measurements in four headings (0°, 90°, 180°, 270°)             than TP1 the BS is excluded from the calculation of d.
+are carried out to allow for the influence of the human                  The parameters are set for gaining optimal positioning
+body. The map is oriented with 0° on the upper edge and               results. Therefore a number of sample measurements with
+90° on the right edge of the map (see Figure 1). After each           known positions are made and parameters are optimized.
+measurement the median of the recorded RSSI-values for                More detailed analysis on parameter setting is given in
+each BS is calculated. The tuple is stored in a database              ([4]). The parameters used for evaluation in this field trial
+together with the corresponding position, timestamp and               are shown in Table I.
+heading.
+   During positioning phase 20 successive measurements                                TABLE I.   THRESHOLD PARAMETERS
+of RSSI-tuples are carried out in one randomly chosen
+direction at 78 randomly chosen points within the                                     Threshold Parameter      Value
+calibration area.                                                                     NBSmin                        4
+   Figure 1 shows the 1m x 1m grid of calibration points.                             TP1                      -85 db
+This basic grid is used for investigating the accuracy of                             TP2                      -80 db
+the adapted EDA.                                                                      TP3                      -75 db
+B. Parameter settings
+                                                                      C. Hard- and Software
+   As pointed out earlier the adapted Euclidean distance
+                                                                         All measurements are accomplished using a personal
+algorithm needs 4 parameters (NBSmin, TP1, TP2, TP3).
+                                                                      digital assistant (PDA: HP iPAQ 114) with Windows
+The meaning of the four parameters is described below.
+                                                                      Mobile operating system. A capture software based on
+   NBSmin: The minimal number of matching BS                          .NET Compact Framework records the RSSI-values and
+required for calculating a reliable d.                                MAC addresses of WLAN BS (Access Point) within
+   TP3: If the RSSI-value in positioning phase of a certain           reach. To allow for the influence of the human body all
+BS is larger than TP3 and RSSI-value from calibration                 measurements are carried out by a person holding the
+phase of this BS is not available the calibration point is            PDA in the hand.
+excluded from the ranking.
+
+
+
+
+                                           Figure 1: Map of first floor with calibration grid
+
+                                                                            As one possible option for reducing the influence of
+                     VI. RESULTS                                         heavily incorrect position estimations a moving median
+  The algorithms presented above are used for                            filter is applied on the coordinates of the estimated
+answering the following questions:                                       positions, i.e. the median of the k recently estimated
+ • What is the accuracy of positioning using the                         position coordinates is determined.
+   adapted Euclidean distance algorithm?                                    Moving median filter is designed to be used with
+ • Can calibration effort be reduced?                                    continuous positioning. To show comparable results
+                                                                         based on the same data set we simulated the moving
+A. Accuracy of positioning using adapted EDA                             median filter by calculating the median over 20 position
+   For evaluating the accuracy of positioning the                        estimations made for a specific positioning point.
+adapted Euclidean distance algorithm for two                                The cumulative distribution of location estimation
+approaches (base station oriented and heading oriented)                  errors of position estimation using the 1m x 1m basic
+are used. Within the calibration phase medians of                        calibration grid and four calibration bearings is
+measured RSSI-values are stored into the database. For                   presented in Figure 2.
+positioning phase single RSSI-tuples are fed into the
+algorithm.
+  2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+                                                                       • The number of recorded RSSI-tuples per calibration
+                                                                         point and per bearing
+                                                                        To allow for natural variation of RSSI-values over
+                                                                     time the amount of RSSI-tuples for each calibration
+                                                                     point and bearing cannot be reduced, but the amount of
+                                                                     calibration points may be reduced, if the increase of
+                                                                     location estimation error is moderate and acceptable.
+                                                                        Having carried out measurements on a 1mx1m grid
+                                                                     we simulated coarser grids by excluding intermediate
+                                                                     calibration points and thus, increasing the mesh size.
+                                                                        Figure 3 presents the median location estimation
+                                                                     error drawn over the edge lengths of the initial grid and
+                                                                     the simulated grids<. It is shown that the median
+   Figure 2: Cumulative distributions of location estimation error   location estimation error increases with increasing
+                                                                     calibration grid size.
+   From the figure it can be seen that the base station
+oriented approach has a smaller location estimation
+error that the direction based approach. The median
+location estimation error lies at 2.12m for the base
+station oriented approach and 3.04m for the heading
+based approach. With the heading based approach 95%
+of location estimation errors are below 16m while the
+base station oriented approach shows 95% location
+estimation errors below 9.25m.
+   Furthermore, it can be seen that the moving median
+filter reduces median location estimation error as well
+as the number of highly incorrect estimations. With
+moving median filter the base station oriented approach
+has a median location estimation error of 1.8m and 95%                 Figure 3: Median location estimation error vs. edge length of
+of values below 6.5m. With the heading oriented                                             calibration grid
+approach the median location estimation error reduces
+to 2.52m and 95% of estimations are below 8.5m.                         Using the basic 1m x 1m grid the median location
+                                                                     estimation error is 2.12m. The error increases to 2.69m
+       TABLE II.        LOCATION ESTIMATION ERROR (LEE)              when the edge length is increased to 2m. The amount of
+                                                                     calibration points is decreased approx. by a factor of 4.
+LEE                   single values mov. median                      The error increases to 3.64m when the edge length is
+base station oriented                                                increased to 6m. The number of calibration points
+median (m)                     2.12        1.80                      decreases by a factor 36 approx.
+90% (m)                        7.00        4.50                         Furthermore the influence of the number of
+95% (m)                        9.25        6.50                      calibration headings on the location estimation error
+                                                                     was investigated.
+maximal (m)                   45.04       10.51
+heading oriented
+median (m)                     3.04        2.52
+90% (m)                        9.00        7.80
+95% (m)                       16.00        8.50
+maximal (m)                   35.00       25.50
+
+  The vertical z-coodinate (floor level) was estimated
+correctly in 99.44% of cases with base station oriented
+approach and 97.31% of cases with heading oriented
+approach.
+B. Reduction of Calibration Effort
+   Calibration usually takes a large amount of time                  Figure 4: Median location estimation error vs. number of bearings
+when installing a WLAN positioning system. There are                                      in calibration phase
+three factors which influence the amount of time spent
+for calibration:                                                        Figure 4 presents the calculated median location
+  • Calibration grid size and size of positioning area, i.e.         estimation errors vs. number of used bearings in
+    the number of calibration points                                 calibration phase. There is an increase from approx.
+                                                                     2.12m to 2.9m when using 1 heading instead of 4
+  • Number of bearings per calibration point                         headings during calibration phase. The figure also
+                                                                     shows a trend that the median location estimation error
+         2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+
+
+   decreases with increasing number of bearings included                      [4]  Gansemer, S.; Pueschel, S.; Frackowiak, R.; Hakobyan, S.;
+   in calibration phase.                                                           Grossmann, U., “Improved RSSI-based Euclidean Distance
+                                                                                   Positioning Algorithm for Large and Dynamic WLAN
+                      VII. CONLUSION                                               Environments”, International Journal of Computing, Vol. 9,
+                                                                                   Issue 1, 2010.
+      This paper shows that an adapted version of the                         [5] Grossmann, U.; Gansemer, S.; Suttorp, O., “RSSI-Based
+   Euclidean distance algorithm can deal with dynamically                          WLAN Indoor Positioning Used Within a Digital Museum
+   changing WLAN environments and shows reasonable                                 Guide”, International Journal of Computing, Volume 7, Issue 2,
+   results in positioning. The calibration effort may be                           2008.
+   decreased by a factor of 4, if an increase of MLEE error                   [6] Ivanov, S.; Nett, E.; Schemmer, S., “Automatic WLAN
+                                                                                   Localization for Industrial Automation”, Proceedings of
+   from 2.12m to 2.69m is tolerated.                                               Wireless Factory Communication Systems 2008, , pp. 93-96,
+      The base station oriented approach which calculates                          Dresden, Germany, 2008.
+   Euclidean distances for every calibration point and                        [7] Kolodziej, KW; Hjelm, J., “Local Positioning Systems – LBS
+   every direction shows better results than the heading                           Applications and Services”, Taylor & Francis, 2006.
+   based approach which only calculates Euclidean                             [8] Ladd, AM; Bekris, KE; Rudys, A.; Kavraki, LE; Wallach, DS,
+   distances for each calibration point considering all                            “Robotics-based location sensing using wireless Ethernet”,
+   directions with MLEE of 2.12m vs. 3.04m. This may be                            Wireless Networks, Volume 11, No 1-2, p. 189– 204, Springer
+                                                                                   Netherlands, 2005.
+   explained with the higher amount of potentially
+                                                                              [9] Retscher, G.; Moser, E.; Vredeveld, D.; Heberling,, D.,
+   incorrect information used in heading oriented                                  “Performance and accuracy test of the WLAN indoor
+   approach. This finding is different to those from Fu et                         positioning system ipos”, Proceedings of the 3rd Workshop on
+   al. ([3]), who finds that heading based approach                                Positioning, Navigation and Communication (WPNC'06), p. 7-
+   performs better.                                                                15, Hannover. Germany, 2006.
+                                                                              [10] Roth, J., „Mobile Computing – Grundlagen, Technik,
+                                  REFERENCES                                       Konzepte“, Dpunkt, 2005.
+   [1]        Bahl, P.; Padmanabhan, VN., “RADAR: An In Building RF-          [11] Sieck, J.; Fiedler, A., “Wireless Museum Information
+              based User Location and Tracking System”, Proceedings of             Systems”, Proceedings of the 4th IEEE Workshop on
+              IEEE INFOCOM 2000, April 2000.                                       Intelligent Data Acquisition and Advanced Computing Systems
+                                                                                   (IDAACS), pp. 669-672, Dortmund, Germany, 2007.
+   [2]        Ekahau, "Ekahau positioning engine 2.0; 802.11 based wireless
+              LAN positioning system", Ekahau Technology Document,            [12] Teuber, A.; Eissfeller, A.,“WLAN indoor positioning based on
+              2002.                                                                Euclidean distances and fuzzy logic”, Proceedings of the 3rd
+                                                                                   Workshop on Positioning, Navigation and Communication
+   [3]        Fu, Q.; Retscher, G., “Using RFID and INS for Indoor
+                                                                                   (WPNC'06), pp. 159-168, Hannover, Germany, 2006.
+              Positioning”, In: Gartner, G.; Rehrl, K.: Location Based
+              Services and TeleCartography II, Springer, 2009.
+
+
+
+
+View publication stats
+

@@ -1,0 +1,1045 @@
+applied
+sciences
+Article
+
+Extending 3D-GIS District Models and BIM-Based Building
+Models into Computer Gaming Environment for Better
+Workflow of Cultural Heritage Conservation
+Yu-Pin Ma
+Department of Architecture, National University of Kaohsiung, Kaohsiung 81148, Taiwan;
+yupinma@go.nuk.edu.tw
+
+
+
+Citation: Ma, Y.-P. Extending 3D-GIS
+District Models and BIM-Based
+Building Models into Computer
+Gaming Environment for Better
+Workflow of Cultural Heritage
+Conservation. Appl. Sci. 2021, 11,
+2101. https://doi.org/10.3390/
+
+Abstract: Research on cultural heritage conservation has shifted from emphasizing the digital information process with the advantages of “precision” and “visualization” in the early stage to focusing
+on the development of “realistic” and “highly experiential” gamified interactive environments. As
+game technology provides a highly interactive experience, effective communication, and an integrated environment, it brings new application opportunities for the future development of the
+reconstruction of historical blocks and cultural spaces. This study takes the old city blocks and
+historic buildings in Taiwan as examples, applies ArcGIS and SketchUp as the information modeling
+software, uses the Unity3D game engine as the development platform, and carries out the integration and interactive presentation of the scene information model through the two-stage process of
+information modeling and programming integration. The historical building information model and
+3D-GIS attribute data are integrated, and the visibility and interaction of the information model of
+the old city blocks are enhanced. Using game technology to optimize the digital integration process
+of cultural asset not only simplifies the integration of multiple information models and provides
+two-way updates, but also effectively enhances the interaction and display application capabilities
+of historic district and building space information. The development tasks that were completed in
+this research are (1) integrate historical building models and 3D-GIS attribute data; (2) get all the
+necessary visual information; (3) update historical buildings and historic district models and data at
+any time; (4) provide virtual reality simulation function and environmental interaction experience.
+
+app11052101
+
+Keywords: 3D-GIS; BIM; cultural heritage conservation; game engine technology; interactive design
+Academic Editors: Inhan Kim
+and Jung In Kim
+Received: 9 February 2021
+Accepted: 22 February 2021
+Published: 27 February 2021
+
+Publisher’s Note: MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional affiliations.
+
+Copyright: © 2021 by the author.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+
+1. Introduction
+In recent years, more and more historical buildings and cultural heritage sites have
+been preserved using 3D modeling techniques for digital modeling for a variety of applications by general users or research groups, including tour guides, disaster prevention, urban
+planning, restoration, and reuse, and the scope of applications is constantly expanding [1].
+There are also more and more studies on the establishment of 3D virtual city models that
+take real-world data into consideration for planning [2]. The 3D urban visualization and
+analysis platform is conducive to the direct browsing of social institutions and citizens,
+as well as the analysis of urban big data, and can be further expanded [3], thus, 3D visualization of the building information model has become key to communication [4]. The
+link between 3D visualization and information can allow users to better understand the
+project [5], and 3D information modeling technology plays a very important role.
+The application of 3D digital tools and the information modeling system in the conservation of historical buildings and cultural heritage sites can accurately record and present
+the actual sites, and thus, expand the user’s ability to explore and interact with the historical
+district environment. BIM and 3D-GIS are currently mostly defined as 3D design tools with
+the ability to generate 3D visual models of cultural heritage. In visualization, commercial
+software packages can be used to prerender and generate photo-like lighting and surface
+
+Appl. Sci. 2021, 11, 2101. https://doi.org/10.3390/app11052101
+
+https://www.mdpi.com/journal/applsci
+
+Appl. Sci. 2021, 11, 2101
+
+2 of 22
+
+material rendering [6]; for example, Autodesk 3dsMAX, Autodesk Maya, Artlantis, and
+Lumion can also be combined with related integrated commercial software packages in the
+field of animation simulation, such as Navisworks, Infraworks, CityEngine, Lumion, or
+cloud platforms (BIMserver), to provide users with the possibility of a real-time tour of
+historic blocks and experience the actual historic buildings. Besides, data modeling and
+data visualization are integral parts of planning a smart city, and planning professionals
+currently seek new methods for real-time simulations [7].
+At present, most research on 3D modeling technology or virtual platforms focus on
+model visualization, prerendering graphics, dynamic simulation, and virtual tours of the
+scene. While 3D rendering and virtual technology have been used for a long time, and is still
+an effective way to provide users with sufficient detail about urban blocks and buildings, it
+lacks the environment to allow users to interact with their surroundings in real time. The
+impact analysis of “what-if scenarios” frequently takes a significant amount of time and
+resources, and virtual reality (VR) is a potential tool for addressing these challenges. VR
+is a computer technology that replicates an environment, whether real or imagined, and
+simulates the physical presence and environment of a user to allow for user interaction. VR
+technology research can assist urban planners, stakeholders, and communities to further
+understand the roles of planning policies in creating a smart city, particularly in the early
+design stages. The significant roles of technologies, such as VR, in targeting real-time
+simulations and visualization requirements for smart cities are emphasized [7].
+Furthermore, game environments provide a highly interactive experience, and allow
+users to interact with various objects, such as cities or buildings [8,9]. The game engine can
+provide realistic rendering technology, a physics engine, animation effects, API support,
+etc., which can assist planners to simulate the construction situation, experience the actual
+scene, increase the authenticity and interactivity, and provide the ability of tool development. Modern game engines like Unity allow users to create realistic 3D environments
+containing terrains as well as natural and artificial objects easily and swiftly. In addition,
+recent advances of game engine capabilities enable effortless implementation of virtual VR
+compatibility [10].
+The rise of VR as well as other emerging interactive displays and game technologies,
+have provided a high level of interactive experience, effective communication, and integrated environments. The application of the game engine in 3D model visualization has
+gradually become a research trend [11–13] and provides a highly interactive experience and
+integrated environment for effective communication. The integration of BIM, 3D-GIS data,
+and the game engine allows users to obtain a more operational and interactive experience,
+increases the diversity of applications for the BIM process, and brings new application
+opportunities for the future developments of the reconstruction of historical blocks and
+cultural spaces.
+2. Literature Review
+This study explores the integration of the 3D-GIS city model and historical building
+information model (BIM) with game engine technology, optimizes the workflow of generating an urban virtual environment of historical and cultural heritage sites, and expands
+the ability to display and apply cultural heritage. Through literature review, this paper
+discusses the digital information process in the field of cultural heritage conservation
+by emphasizing the advantages of “precision” and “visualization” at the early stage to
+emphasizing the interactive virtual collaborative design environment of “simulation” and
+“high level of experience”, and the evolution process of combining game technology to
+enhance the digital historical scenes in visual interaction, as well as new possibilities.
+2.1. The Application of Digital Information Technology in the Conservation of Cultural Heritage
+In recent years, digital information technology has been widely discussed and used in
+the field of conservation and the reproduction of cultural heritage of historical buildings.
+Browsing buildings and executing spatial queries through a virtual 3D environment can
+
+Appl. Sci. 2021, 11, 2101
+
+3 of 22
+
+help professionals find all the information needed for the conservation and maintenance
+of architectural heritage, and develop appropriate strategies [14]. The 3D visualization of
+historical scene information modeling becomes key to communication [5,15]. As the simple
+3D geometric model lacks information about a building and its components, research
+has begun to apply building information modeling (BIM) technology in the construction
+process of cultural heritage conservation.
+The historical parameter library, which is a parametric modeling method that uses
+historical documents and actual survey results as data, is a new area for BIM. Historic building information modeling (HBIM) provides a method [16] for the parametric modeling of
+historic buildings, including laser scanning and photogrammetry data. The HBIM process
+starts from point clouds, photo modeling, and measurement data collection, which is a
+reverse engineering process [1,17], provides a variety of workflows for historic buildings,
+and digitizes buildings and documents. Existing historic buildings require very complex
+workflows, and often involve a hybrid approach for different data, such as CAD drawing
+files, point clouds, photo modeling, and the collection of measurement data. The parametric model, which is a combination of information modeling technology and historical
+data construction, is generated by HBIM and is especially suitable for preservation. Moreover, it allows research to be conducted on the technical construction system of historical
+buildings [18].
+However, in terms of interface use, the current BIM software is not mature enough
+for the conservation of historical buildings and cultural heritage, and most research on the
+information model only focused on a single building, which cannot express the relationship
+between the historical building and an old city block, and thus, is not conducive to the
+conservation and restoration of historical buildings and cultural heritage. Furthermore,
+the focus on historical building models must be extended to include whole geographic
+information blocks [19,20], meaning the geographical information of nearby old city blocks
+should be added to conduct comprehensive data analysis among such objects [21]. 3DGIS digital technology plays a very important role [4], as its application in 3D model
+visualization can accurately record and truly present historical scenes, and provide users
+with sufficient details of urban blocks and building information for reconstruction.
+At present, BIM and 3D-GIS are mostly defined as 3D information tools, which can
+generate 3D visual models of cultural heritage sites. Through a three-stage technique of
+information integration, conceptual modeling, data structuring, and data presentation,
+researchers are able to present shared data between historic blocks and buildings in 3D
+digital form. Information integration technology is not only an advantage of model
+visualization, it can also represent the unique geometric form of historical buildings,
+cultural semantics, and historical information, and their value [14,20,22].
+2.2. Integration of Integrated Hybrid 3D Modeling and Information Modeling (BIM) Platform
+As mentioned above, there are a number of techniques that can be used independently
+to create 3D scenes of historical architectural and cultural heritage. High-tech tools, such as
+the 3D-GIS digital city model, BIM technology, point-cloud scanning, and UAV (unmanned
+aerial vehicle) aerial photography, have been widely discussed and used in the field
+of conservation and the reproduction of historical buildings [2,22]. However, as these
+technologies complement each other, no single technology can fulfill all requirements,
+thus, integrated hybrid modeling technology should be adopted to overcome the various
+limitations [23].
+GIS and BIM were developed to meet the needs of specific fields, as different areas
+require different levels of model fineness and quality. BIM supports architecture at a
+more detailed scale, while GIS supports urban planning at a more macro scale, thus, the
+integration of BIM and GIS is becoming more common in the AEC industry. The use of
+parameterized models is very different from GIS in that they have different information
+sources and differ in scale [24]. Recent studies have also attempted to integrate GIS data
+with BIM data. BIM focuses on information related to individual buildings, while GIS
+
+Appl. Sci. 2021, 11, 2101
+
+4 of 22
+
+focuses on topological spatial information and has broader spatial analysis and processing
+capability [25]. Therefore, the integration of 3D-GIS and BIM 3D city models can assist
+each other in the performance and control of different scales.
+In the case of Henrietta Street [1], the entire historical street was built through pointcloud scanning, and the historical building information model was imported into the BIM
+platform ArchiCAD to generate the final historical building information model. In the final
+stage, the model was transformed by CityGML, and using an interoperable format that
+can share data, it was imported into GIS for further analysis, which is very important for
+historical modeling.
+In the case of the Jeddah district [16], Baik combined the BIM model with GIS data,
+and regarded it as the next stage of future research, as such integration can optimize BIM
+and 3D-GIS analysis of historical buildings and cultural heritage sites throughout the
+district. At present, the principles of 2D-GIS have been applied to 3D-GIS spatial data for
+more complex analysis, such as disaster management and cultural heritage information
+preservation. However, as only simple geometric elements are allowed in the GIS platform,
+it cannot create high-quality 3D models; therefore, the advantages of BIM and GIS should
+be combined [26]. However, the two models have different details, which will lead to
+the failure of interoperability in data exchange. Despite these incompatibilities, in order
+to overcome the specific weaknesses of BIM and GIS, many studies have tried various
+approaches and ensured that more stable and acceptable integrated hybrid modeling
+technology can be widely adopted [25].
+In the case of Kursunlu Khan in Turkey [14], Saygi et al. mentioned that although
+databases could be built on GIS, GIS was still limited in terms of its 3D editing function.
+To solve this problem, they used Autodesk AutoCAD for 2D drawing, and SketchUp and
+Autodesk 3DS Max for 3D modeling, and then, imported them into the GIS environment,
+where property sheets were created and connected to relevant building elements. The
+resulting database allows architects or professionals to search or navigate through the 3D
+models. While further data integration can be achieved in a GIS environment to provide
+users with a better understanding of the characteristics of historical buildings and cultural
+heritage sites, some information may be lost in the format conversion.
+In the case of Sant’Apollinare Nuovo, Centofanti et al. also mentioned [26] that,
+in order to make the database structure more comprehensive and perfect, a perfect 3D
+model was required. However, as GIS only allows simple geometric modeling on 3D
+drawing, they suggested using the most common 3D modeling software, such as Autodesk
+AutoCAD and 3D Studio Max, Robert McNell and Associates Rhinoceros, and INUS
+Technology, to realize the process of importing 3D models drawn by Autodesk AutoCAD,
+and Autodesk 3dsMAX into the ESRI GIS environment. The combination of BIM and GIS
+helps to manage cultural heritage information for cultural heritage conservation planning.
+The application of information technology (IT) in the field of architectural conservation
+is a complex workflow, which provides a comprehensive information base and helps us
+understand cultural heritage information beyond geometric features [14].
+2.3. Optimization of the Application of BIM in Cultural Heritage with Game Engine Technology
+In the field of the conservation of cultural heritage historical buildings, the 3D digital
+modeling and information modeling system is an important tool for analysis, reconstruction, and virtual display. In addition to accurate records and real presentation, it can
+enhance users’ ability to interact with the environment of historic blocks. However, the
+research of BIM and 3D-GIS mostly focuses on 3D model visualization, which provides
+users with enough details of urban blocks and building information, but lacks an environment that allows users to interact with the surrounding environment in real time, which
+is in sharp contrast with the environment provided by Game Engine. As the BIM and
+3D-GIS model contains a large amount of geometric and nongeometric information, it is an
+excellent candidate for importing a game engine to build accurate virtual environments.
+
+Appl. Sci. 2021, 11, 2101
+
+5 of 22
+
+The game engine is introduced in real-time architectural visualization, and contributes
+to the development of high quality interactive architectural environments. The game engine
+can also add light, weather, sound, and animation to the object for better rendering [11].
+VR can provide users with a high-quality interactive experience, which allows users to
+interact with various objects, such as buildings [13]. The game engine can provide realistic
+rendering technology, a physics engine, animation effects, application programming interfaces (API), etc., which can assist the designer to experience VR, increase the authenticity
+and interactivity, and have the ability of tool development. Klein (2016) pointed out that
+databases in environmental research often fail to be effectively visualized, while game
+engines can provide powerful tools to construct 3D virtual scenes, as well as first-person
+and third-person exploration technologies, which allows users to conduct better evaluation
+and analysis through data links between 3D virtual scenes and the real world [27].
+The 3D modeling technology of cultural heritage and historical buildings expands
+from focusing on a single historical building to an entire street, which leads to increased
+data size, thus, the application of a game engine in 3D model visualization is receiving more
+and more attention. In addition to 3D visualization of city models, high-quality virtual
+environments and their dynamic elements are usually required in architecture and urban
+design. VR has the potential to enable users to interact, which enhances users’ awareness
+and understanding of the space, and enables them to make further space exploration
+and conduct decision-making [28]. In the game engine environment, information can be
+attached to an object or placed in the right location through a programming language,
+which improves the visual quality and resilient integration interaction, and allows the use
+of physical collision and gravity to examine architectural problems. When the model is
+combined with information, a very flexible system can be realized [29]. If the 3D-GIS data
+can be integrated with the game engine, in addition to allowing users to obtain a more
+operational and interactive experience, it can also increase the diversity of preservation
+and the application of the old city blocks [30,31].
+Based on the case results of literature analysis, the development of 3D modeling
+technology for historical buildings and cultural heritage sites has made great progress,
+and there are many single software tools available to model historic buildings. Moreover,
+the field of digital conservation of historical buildings and cultural heritage sites has
+expanded from focusing on a single historical building to the research trend of old city
+streets. As the working environment of a single tool cannot meet all the requirements,
+different modeling techniques must be combined to solve the existing research problems.
+Therefore, many related studies have begun to combine the BIM model and GIS data as
+the next stage of future research; for example, building information modeling (BIM) is
+introduced into the GIS environment to optimize the application of historical building
+cultural heritage through software integration. However, as GIS and BIM are developed
+for the needs of specific fields, different fields require different levels of development
+(LOD) and model quality, which have great differences in communication. Moreover, as
+there are many incompatibilities between 3D-GIS and BIM software, in the process of
+integration, the information model will lose some information due to the format exchange.
+To solve the integration problem, many relevant studies have also started to discuss
+the use of the game engine as the third-party platform, imported a large number of
+information models in BIM and 3D-GIS into the game engine, and presented the scenes
+of historical blocks in a real virtual environment [9,28–34]. Therefore, the related research
+trend of integrated hybrid modeling technology also extends from the CAD, BIM, or GIS
+environment to the game environment, which is presented by the gamified interface and
+interactive platform (Figure 1).
+
+Appl. Sci. 2021, 11, 2101
+
+6 of 22
+
+Figure 1. Research trend of integrated hybrid modeling technology (sources: [9,28–34]).
+
+In game and virtual reality development, the use of game engines to create games
+has become more and more common. Focusing on the game engines, Unity and Unreal
+Engine are the two most popular game engines on the market today. They are the go-to
+tools for most indie developers. Unity has a lot of explanations and articles in Mandarin,
+and it is easy to get started in the development environment in Taiwan, but in the case of
+Unreal Engine, it is often used mainly in Europe and the United States, so it is a little hard
+to find Chinese materials. Additionally, in contrast to being able to use Unity’s features
+for free, Unreal Engine now allows you to use all features for free, but Unity has released
+certain features from the paid version. On the other hand, Unreal Engine has adopted a
+mechanism to collect 5% royalty when making a game that sells.
+Although the rendering quality in Unreal scenes is better than Unity, in terms of
+development efficiency, Unity has a great advantage. Unreal must be authorized to develop
+through a customized platform and C++ language. On the contrary, Unity can use the
+free mono platform for development. Unity provides more interfaces for independent
+developers, and its price strategy is much more flexible. The Unity game engine is a crossplatform system and also provides many open-source technologies. Games can export
+independent applications for OSX and MS Windows. Game engine assets (Assets) can be
+imported from different software, such as scripts, materials, models, etc. Objects are also
+allowed to be simulated in different scenarios [35]. It can help developers easily create
+comprehensive games such as 3D video games, architectural visualization, and real-time
+3D animation. Unity has a highly optimized graphics rendering pipeline for DirectX and
+OpenGL. It supports all major file formats and can work with most related applications. For
+example, the FBX format can bring texture and geometry information to the game engine,
+and it is also the best choice for conversion between platforms. Therefore, Unity was chosen
+for this study because there are many tutorials, resources, solutions, and skilled users.
+3. Research Method and Procedures
+This study is divided into three stages: requirements assessment, software selection,
+and platform construction and development. First, according to the research background
+and motivation, the research topic and purpose are introduced, then, the relevant literature
+is discussed to define the research framework, object, and scope. Based on the needs of
+this research, the conservation of historical buildings and the application of the hybrid
+modeling technology and integrated information platform are discussed (Figure 2).
+
+Appl. Sci. 2021, 11, 2101
+
+7 of 22
+
+Figure 2. Integrated hybrid approach.
+
+This study integrated a variety of digital platform software tools, chose Game Technology as the development platform, used procedural modeling to build the scene platform of
+historical blocks, and explored the possibility of Information and Communication Technology (ICT) to promote the re-evolution of the digital process in the field of cultural
+heritage conservation. Old city blocks and historical buildings in Taiwan were taken as
+the exhibition objects. Considering that SketchUp is commonly used as a tool to build
+3D historical models in the field of cultural heritage, ArcGIS and SketchUp were selected
+to build the main 2D and 3D information models. Taking Unity3D as the game engine
+development software, and aiming at information visualization, the interaction of historical buildings, the automatic update technology of the historical building model in the
+game engine, and the 3D historical building model and 3D-GIS historical block geographic
+information were integrated through the Unity platform and the third-party game engine,
+in order to optimize historical building environment information viewing (Figure 3). In
+order to expand the research on the application ability of cultural heritage display, real-time
+architectural visualization further creates the interactive game script of the exclusive old
+city model in the game engine environment through interactive programming.
+
+. Sci. 2021, 11, 2101
+
+8 of 24
+
+Appl. Sci. 2021, 11, 2101
+
+8 of 22
+
+time architectural visualization further creates the interactive game script of the exclusive
+old city model in the game engine environment through interactive programming.
+
+(a)
+
+(b)
+Figure
+3. Research
+subjects
+andold
+tools:
+the old
+city street
+around
+ChiTainan
+Kan Tower,
+Tainan was
+City,taken as the
+Figure 3. Research
+subjects
+and tools:
+(a) the
+city(a)
+street
+around
+Chi Kan
+Tower,
+City, Taiwan,
+was 3D
+taken
+as the display
+object;
+(b)built
+2D and
+information
+models were
+withwas used as the
+display object;Taiwan,
+(b) 2D and
+information
+models
+were
+with3D
+ArcGIS
+and SketchUp,
+and built
+Unity3D
+ArcGIS and SketchUp,
+game engine development
+software. and Unity3D was used as the game engine development software.
+
+Based
+on the
+literature
+review, modeling
+proceduralwas
+modeling
+selected
+as the research
+Based on the
+literature
+review,
+procedural
+selectedwas
+as the
+research
+method
+this study. modeling
+Proceduralismodeling
+is divided
+into two
+stages: information
+modelmethod in this
+study.inProcedural
+divided into
+two stages:
+information
+moding and programming integration (Figure 4). In the procedural modeling stage, the most
+eling and programming integration (Figure 4). In the procedural modeling stage, the most
+suitable research tools were selected for this study. GIS digitization and Sketchup modeling
+suitable research tools were selected for this study. GIS digitization and Sketchup modelwere fitted to the game engine to conduct information visualization and the interactivity
+ing were fitted to the game engine to conduct information visualization and the interacof 3D historical building models, respectively, and after the prototype was completed,
+tivity of 3D historical building models, respectively, and after the prototype was comprofessionals were invited to conduct user evaluation. Finally, the research results were
+pleted, professionals were invited to conduct user evaluation. Finally, the research results
+collated, and the user evaluation results were used as reference for conclusions and future
+were collated, and the user evaluation results were used as reference for conclusions and
+research directions.
+future research directions.
+3.1. Information Modeling
+The first stage of procedural modeling is information modeling, including 2D modeling and 3D modeling. In 2D modeling, we digitized the GIS database in the way of
+semiautomatic information, imported the .shp file of the old city block to automatically
+generate the regional attribute data table, and input the number of floors, building height,
+building materials, and land use from the historical file into GIS, and obtained the latitude
+and longitude points (calculate geometry). Finally, the terrain model (Figure 5) of the
+
+Appl. Sci. 2021, 11, 2101
+
+9 of 22
+
+old city block, as generated from ArcScene, was imported into the game engine as the
+visualization and interactive object of the terrain structure.
+
+Figure 4. Two stages of procedural modeling.
+
+Figure 5. GIS workflow concept map.
+
+Appl. Sci. 2021, 11, 2101
+
+Regarding 3D modeling, this study selected SketchUp, which is a software capable of
+fast modeling, to build historical buildings, including the materials of the historic buildings
+and the surrounding building volume, and .fbx was imported into the game engine
+10 ofto24
+complete the 3D old city block model (Figure 6).
+
+Figure6.6.Concept
+Conceptmap
+mapofofthe
+the3D
+3Dold
+oldcity
+cityblock
+blockmodel.
+model.
+Figure
+
+3.2. Programming Integration
+Programming integration was carried out after the completion of information modeling, including information model fusion and interactive design.
+
+Appl. Sci. 2021, 11, 2101
+
+10 of 22
+
+3.2. Programming Integration
+Programming integration was carried out after the completion of information modeling, including information model fusion and interactive design.
+3.2.1. Information Model Fusion
+Considering the future application scope, modeling software should not be limited in
+the process of information fusion between the 3D geometric model and the nongeometric
+abstract data. Any software that can be used to model historic buildings and cultural
+heritage sites can be used as a tool for geometric modeling. This study used SketchUp for
+the construction demonstration. In addition, the GIS attribute table was used to provide
+architectural information, the geometric model and nongeometric data of the historical
+block were imported into the Unity scene through the fbx format and csv file, respectively,
+and the entity model was linked to the attribute data table through the object-oriented
+programming of the Unity3D game engine.
+The FBX (Filmbox) format is a popular 3D data interchange format utilized between 3D
+editors and game engines and enables all those applications to share 3D data. As SketchUp
+Pro can export an FBX file (.fbx), we created scenes in SketchUp and then exported that data
+to FBX for use with other applications that support FBX. CSV (comma separated values) is a
+common data exchange format that typically stores tabular data (numbers and text) in plain
+text, in which case each line will have the same number of fields. We exported the feature
+attributes or a table to a CSV file (.csv), in ArcGIS. Unity supports FBX files which export
+from many 3D modeling applications. The attribute tables of corresponding buildings
+were extracted from the 3D-GIS model to conduct automatic information matching with
+the entity model, multiple applications of the GIS database were effectively activated to
+avoid information loss of transfer files between platforms, and spatial exploration was
+optimized in the Unity3D virtual environment (Figure 7).
+
+Figure 7. Concept map of the game engine that integrates historical building models with GIS information.
+
+Through the collaboration of the game engine and the database, the whole building
+life cycle can be adjusted in the VR environment, and the different LODs can be achieved
+through scene transformation. In the future, it is expected that the entity model and the
+attribute data can both be updated.
+3.2.2. Interactive Design
+While SketchUp can create highly detailed information models and 3D-GIS is capable
+of powerful data analysis, they lack “realistic” and “highly experiential” interactive virtual
+collaborative design environments. The highly visual information model and interactive
+design environment can improve user feedback and communication between users and
+objects. Therefore, after the completion of information model fusion, interactive program
+scripts were written to connect real-world data and virtual space models, and enhance the
+“realistic” and “highly experiential” interactive virtual collaborative design environment.
+The communication between experts and information models in different fields has been
+completely improved (Figure 8).
+
+Appl. Sci. 2021, 11, 2101
+
+11 of 22
+
+Figure 8. Optimizing virtual environment with interactive script.
+
+4. Platform Design and Development
+Unity 3D was used as the platform to develop the software, and the database and 3D
+model were integrated through the programming language. The abstract database could
+be obtained from 3D-GIS, while historical building models and terrain models could be
+obtained from Sketchup and 3D-GIS. Information visualization and the interactivity of
+historical buildings and old city blocks could be displayed through Unity. Therefore, the
+tools for program modeling technology in this study are SketchUp and 3D-GIS, and the
+program modeling technology is integrated through Unity3D.
+4.1. Contextual Design for Platform Users
+There are three purposes for the development of this platform: (1) integrating the
+historical building model with 3D-GIS attribute data; (2) professionals can automatically
+visualize all the required information in the Unity scene; (3) real-time updating of historical building models and data; therefore, the platform users are professionals, architects,
+and GIS users. Figure 9 shows the architect’s design workflow and GIS user’s analysis
+workflow. This study only discusses the workflow involved in the field of cultural heritage
+conservation. Architects and GIS users can present problems to the platform developers
+during analysis planning and data collection, which can be used as the concept for platform
+development. After the goal is set, the programming language is written in the Unity game
+engine, including the user interface design and menu design. Then, architects can import
+the historical building model and material into Unity, and GIS users can import the 2D
+analysis data and 3D terrain model into Unity. Finally, the historical building and the old
+city block model are displayed.
+
+Figure 9. Contextual design for platform users.
+
+Appl. Sci. 2021, 11, 2101
+
+12 of 22
+
+The key value of this platform is that it can integrate information from different fields,
+and help architects communicate more effectively with professionals in different fields,
+such as GIS users, or improve communication between the platform and architects or the
+platform and GIS users. In short, the communication between people, or between people
+and things, can be improved, which is consistent with the theme of this study stage: using
+game technology to improve the interaction and visibility of 3D-GIS.
+4.2. Information Models and Digital Content
+Historical documents, historic building models, and 3D-GIS information were studied
+in the first phase of this project. A valuable historical building model includes the following
+information: architectural coordinates, historical documents, materials used, structural
+systems, and architectural elements [20]. Therefore, the digitization process of the historical
+building model in this study includes the material and volume model. In addition, the
+semiautomatic information approach was used to digitize the GIS database, while the
+shape file (.shp) data, as obtained from the open data, was combined with the existing
+geographic information, and the longitude and latitude coordinates of the building were
+found in GIS. Through the programming of the interactive program script, the historical
+building model and 3D-GIS attribute data were integrated with the game engine, so that
+each building volume model could be linked to its corresponding 3D-GIS attribute table.
+The function of the game engine is mainly to improve the visibility and interactivity of the
+3D-GIS information model of old city blocks (Figure 10).
+
+Figure 10. Platform information.
+
+4.3. Interactive Programming
+Unity integrated .csv from GIS and the volume model built in SketchUp. In Sketchup,
+the model was exported as .fbx and imported into Unity, while the attribute data of GIS
+was exported as .csv for Unity to read and confirm the data and the volume of some
+buildings (Figure 11).
+Two C# interactive scripts were written in Unity to integrate historic buildings and
+old city blocks with the information models. First, the longitude and latitude coordinates
+of buildings generated by GIS were linked. In GIS, this study calculated the center point of
+Polygon, and took the center point of the building as the longitude and latitude coordinate
+points. Through the C# interactive program script in Unity, the model was linked with
+the longitude and latitude information, and the volume model was placed in the correct
+coordinates. Secondly, the attribute data of the building can be visualized by using the C#
+interactive program script in Unity in the GIS-generated ID Tag volume model. Therefore,
+the position of the volume model is coordinated according to latitude and longitude, and
+the displayed information shows the height of the building (unit is meters) (Figure 12).
+
+Appl. Sci. 2021, 11, 2101
+
+13 of 22
+
+Figure 11. Unity reading database and the volume model.
+
+4.4. Interface Design and Application
+4.4.1. Interface Design
+Based on the workflow of architects and GIS users, this study provides an interface
+that is intuitive, operational, and convenient. As this platform has a unique UI design,
+it meets the needs of professionals to improve the communication between the platform
+and users. This platform is called IM Fusion (information modeling fusion), which is an
+interactive platform used to build a virtual world and amplify the VR display based on real
+world data. As a city has many different elements, integrating historical building models
+with geographic information requires that the real world is considered, thus, digital city
+models are complex systems. Therefore, this study took architects and GIS users as the
+user objects, and only selected the model information required by these two different fields
+for application in cultural heritage conservation as the display objects of IM Fusion.
+There are two kinds of applications on this platform (Figure 13). Architectural professionals engaged in cultural heritage conservation have focused on historical buildings
+and surrounding buildings; however, such structural information is not easily obtained
+by architects. On the contrary, for professionals in the field of geographic information, as
+building models lack details, not all buildings can be accurately and individually edited.
+Therefore, through IM Fusion, this study connects the workflow of architects and GIS users
+to enhance data sharing and collaboration in different fields.
+The user interface of the platform has setting options for architects and GIS users,
+respectively (Figure 14), and scenes can be selected according to the users’ professional
+field or the content they seek.
+Therefore, the historical building model will appear after the user selects the architect
+option in the menu screen, which is designed according to the habitual workflow of
+architects, while Taiwan’s terrain will appear when the GIS User option is selected. The
+field of GIS was started from the analysis of large scale data (Figure 15).
+In order to improve the communication between architects and GIS users, this study
+designed different options for different users in IM fusion (Figure 16); the three on the left
+are the common instructions used by architects, which are model scene, single building
+information scene, and old city block scene in order. The three geographic information
+scenarios in the middle are the common instructions used by GIS users, which are global
+terrain, region or country, and administrative region. The three on the right are the future
+development functions for the platform. The integrated VR interactive interface can be
+used for virtual presentation, immersive devices, or multiplayers. In the overall process of
+scene transformation, users can enter the platform with any identity and select each scene.
+
+Appl. Sci. 2021, 11, 2101
+
+14 of 22
+
+Figure 12. Flow chart of integrating volume building and attribute data by C# interactive
+program script.
+
+Figure 13. Serial flow chart of architects and GIS users.
+
+Appl. Sci. 2021, 11, 2101
+
+15 of 22
+
+Figure 14. User interface.
+
+Figure 15. Selection of the character scene.
+
+Figure 16. User menu.
+
+4.4.2. Application of IM Fusion
+The size of IM Fusion is set as 2664*768, which is the ratio of iSpace-Urban Simulation and the Cloud Computing Laboratory of Feng Chia University. The iSpace-Urban
+Simulation and Cloud Computing Laboratory of Feng Chia University is the only visual
+simulation laboratory in central Taiwan (Figure 17). By integrating the developments of
+game environments and 3D interactive technology in this study, users can have a better
+understanding of the environmental information of old city blocks for design evaluation,
+in order to achieve information visualization and interaction, and expand the multiple
+applications of iSpace (Figure 18).
+
+Appl. Sci. 2021, 11, 2101
+
+16 of 22
+
+Figure 17. iSpace-Urban Simulation and Cloud Computing Laboratory of Feng Chia University.
+
+Figure 18. iSpace achievement exhibition of the Urban Planning and Spatial Information Department
+of Feng Chia University.
+
+This study focused on the development of an interactive city script and UI design
+for the reconstruction of an old city block. The SketchUp model is connected with the
+corresponding objects in the GIS model through writing the interactive programs in Unity.
+In addition to solving the issue of data loss, as caused by transferring files of different
+formats for integration, the model information can also be updated at any time by means of
+file transferring. The issue of large execution files can be improved, and visual complexity
+can be reduced by setting how the model visualizes the scene, in order to expand the
+display ability of cultural heritage sites.
+4.4.3. Platform Usage Evaluation
+This study developed a platform to integrate historical buildings and 3D-GIS data to
+improve the interactivity and visibility of digital historical buildings. In order to improve
+the platform, user interviews were conducted to understand whether the development of
+the platform would be helpful for architects, GIS users, and platform developers in the
+field of cultural heritage conservation.
+
+Appl. Sci. 2021, 11, 2101
+
+17 of 22
+
+In response to the research questions raised in this study: it is not easy to integrate a
+single historical building with an old city block model, and the existing information model
+of the old city is insufficient in interactivity and visibility. The respondents in this study
+are architects, GIS users, and developers, with three respondents from each background,
+respectively. Three architects with experience in the field of cultural heritage conservation
+were selected, and this study did not subdivide GIS user respondents. The selected
+developer respondents had experience in platform development and game development,
+or interactive program writing using programming languages JavaScript, Python, or C#.
+All the respondents have computer application experience.
+The Unity3D game engine is a cross-platform system, which avoids the incompatibility
+problem of different users using different computer systems. Since the time and location
+of the respondents were different, this study set two interviewing methods: online visual
+communication and operation and interviews conducted in the iSpace-Urban Simulation
+and Cloud Computing Laboratory of Feng Chia University. After confirming the environment selected by the respondents, we provided a brief description of the platform, so that
+users could understand our purpose and the overall structure of the platform, and then,
+asked each user to operate the platform results in the form of execution files. In order to
+more clearly understand what is necessary for experts in different fields, and what they
+expect to present, users raised questions and gave comments after the operation.
+The content of the questionnaire is divided into three parts: (1) basic data, including personal background and the computer application experience of respondents; (2)
+according to Jakob Nielsen’s (1995) usability heuristics for user interface design, this study
+presented 10 common questions to all the respondents, and asked them to make objective
+choices in a five-equidistance manner; (3) three questions were presented regarding the
+opinions of the respondents from different backgrounds after using the platform.
+At present, we have completed the link to the SketchUp solid model and 3D-GIS
+attribute data table through script writing, and designed the basic instructions commonly
+used by architects and GIS users, so that users in these two fields can use the models and
+data. The users indicated that they are highly impressed by the platform’s purpose, the
+integration of historical building information models, and the ability for professionals to
+automatically visualize all the information they require in a Unity scene. This study also
+successfully integrated the GIS database and 3D SketchUp model of old city blocks, and
+used Unity to complete the visualization of the information model, thus, reducing the
+time cost for browsing drawings. Moreover, the simulated and highly spatial experience
+can also improve the spatial perception of users. This platform design conforms to the
+workflow of professionals in the field of cultural heritage conservation.
+In terms of interactivity, game development is mainly based on Unity. This study
+invited professionals to control the keyboard and mouse to guide the movement direction
+of the perspective; therefore, this is also an intuitive way for professionals to gain computer
+application experience. This study can change the environment, switch scenes, solve the
+LOD problems needed in different fields by writing programming language, and use
+interactive program scripts to allow users to walk around the old city in the first-person
+perspective, thus, this Unity development platform indeed reduces the software barriers.
+In the past, professional software had to be trained to work independently, while this
+interdisciplinary information and information model provides a simple operation mode
+through IM Fusion.
+According to user context analysis, as this platform is designed for users from different
+fields and backgrounds, users can intuitively operate the UI, and use this platform as an
+object for environmental guidance and space experience in historical buildings. According
+to the results of the questionnaire (Figure 19), this platform is indeed helpful to solve the
+problem of the 3D scene scale in the field of architecture, and the integration of real-world
+information is also helpful for planning and analysis. Moreover, the shortcomings of
+GIS visualization are also improved. For developers, this platform has low complexity,
+high feasibility, and great potential for developing cross-domain integration platforms.
+
+Appl. Sci. 2021, 11, 2101
+
+18 of 22
+
+Therefore, the development objectives and integration projects of IM Fusion can help
+architects and GIS users to conduct analysis and planning, and improve the interactivity
+and visibility of 3D-GIS, thus, the development feasibility of the platform is quite high.
+
+Figure 19. UX design evaluation, (a) UX usability heuristics, and (b) the feeling of respondents from
+different backgrounds after using the platform.
+
+5. Results and Future Studies
+5.1. Conclusions
+In this study, we successfully integrated the GIS database and the 3D old city block
+model, and completed the use of the Unity game platform as follows: (1) integrate historical
+building models and 3D-GIS attribute data; (2) get all the necessary visual information; (3)
+update historical buildings and historic district models and data at any time; (4) provide
+virtual reality simulation function and environmental interaction experience. Both professional and nonprofessional users can intuitively operate this platform to conduct research
+on restoration or as an environmental navigation and historical space experience.
+This research focused on interactive game script development and user interface
+design for the historic district regeneration. The attribute data in CSV format form 3DGIS software and the its data entity model created by SketchUp with different detail
+descriptions in FBX format are recombined in the Unity environment. In addition to
+avoiding the problem of integrating missing data in different formats and translating data,
+it is also possible to update the model with different details at any time. At the same time,
+through the visual settings of the scene in Unity environment, the big file loading problem
+of urban model can also be improved.
+We believe that in the possible development direction of the historic district regeneration, using game engines to optimize integration processes of information models will
+effectively enhance their visualization and interaction. This platform system chooses to
+
+Appl. Sci. 2021, 11, 2101
+
+19 of 22
+
+conduct development experiments in a semi-immersive VR environment (iSpace). Currently, user interface testing is ongoing, and system stability and interface design are
+continuously revised.
+5.2. Discussion
+At present, this study has completed the linking of 3D-GIS macrocosmic information with Unity, integrated historical building models and 3D-GIS attribute data, and
+can automatically match buildings with the same ID information through the writing of
+interactive program scripts, in order to facilitate reading and simulating the macro building
+environment information. Professionals can automatically visualize all the information
+they need in a Unity scene. This study designed user situations for professionals, meaning
+interdisciplinary information and the information model can be presented through scene
+switching, which is in line with the workflow of professionals. Moreover, the platform
+can update historical building models and data in real time; provided the model and
+edited text file (CSV) are extracted from the local database system, the information can be
+automatically updated.
+In addition, as IM Fusion offers the function of VR simulation and an interactive experience with the environment, both professional and nonprofessional users can intuitively
+operate the platform to conduct restoration surveys, or take it as an object for environmental guidance and spatial experiences in historic buildings. In the research process, this
+study found many integration problems, which are mainly related to the integration of the
+database and the model in Unity, which limits the visualization and interactivity of this
+research. The following outlines the problems and possible solutions:
+1.
+
+2.
+
+3.
+
+When an Overlay is tapped to display information in Unity, the Mesh must be touched;
+however, there is a parent–child relationship in Unity, which makes the Mesh at the
+bottom of the object. While this study separated the Mesh from the object, the number
+of 3D old city block models is very large, thus, when there are many complex objects
+in the scene, and they contain various materials, it takes a lot of time to organize the
+information model, which cannot reduce the time cost.
+The research scope of this study is the old city streets around Chi Kan Tower, and the
+number of buildings is over 3000. As manually importing each information model has
+the potential for errors, after integration, there is no way for Unity to automatically
+detect errors.
+When integrating the model and data, it was found that the cadastral map of the
+building model and the cadastral map of the geographic information could not be
+completely consistent due to the different measurement methods, which reduced the
+accuracy of the longitude and latitude coordinates.
+
+With the rapid development of technology, we look forward to overcoming the abovementioned problems and directing this platform to an automated process. All model
+information and environmental information can be automatically updated due to the
+sharing of data, so that it can be easily provided to different fields of professionals to
+conduct analysis and planning.
+Therefore, this research proposes three solutions for the next stage: first, through the
+programming of a programming language, the object can be automatically sorted and the
+material of the object itself can be obtained. Second, add triggers to each object so that the
+back-end administrator can discover problems in time during testing. Third, in response
+to the problem that different professional fields cannot correspond to the drawing files
+and data, when a high-detailed single building body is required, we mainly use the data
+provided by the construction field. In contrast, when a large-scale environmental structure
+model and urban information model are needed, the quantitative information provided by
+the geographic information field is the mainstay.
+
+Appl. Sci. 2021, 11, 2101
+
+20 of 22
+
+5.3. Future Studies
+The platform of this study can integrate different fields of expertise, and when such
+different fields can be linked to more databases, the platform will have more application
+capabilities. At present, this platform can link 3D-GIS macro information and Unity to
+simulate and display the macro building environment. As the current version can only
+read and display, the integration of Unity and the GIS coordinate system means every
+building must have its longitude and latitude coordinates to complete the information
+model, which shows that links between coordinates and databases will strengthen the
+overall platform for the future developments of environmental assessment simulation. In
+addition, the short-term goal of the next stage is to realize a linking application for the
+BIM model and Unity. At present, the BIM Revit model information is extracted through
+Revit Dynamo (parameter tool), while Unity is used for the visualization and interactive
+application of historical building components. The goal of this study was to integrate BIM
+and 3DGIS into the Unity environment, so that different platforms can work together and
+avoid format problems caused by data exchange between different platforms, and thus,
+carry out two-way link updates during game execution. All changes are expected to be
+automatically transmitted and updated between the different environments.
+The development of this platform has the key technologies for the integration of
+different professional fields. Combined with the GIS coordinate system, each building has
+its latitude and longitude coordinates, which will be helpful for future development. For
+the disadvantage of model data that can only be imported into the Unity environment in
+one direction, it is also expected that it can be broken through the platform. Both the entity
+model and attribute data can be a bidirectional update in Unity and ArcGIS will be our
+future efforts. The Unity platform that can be developed in the future include the following
+three points:
+1.
+2.
+3.
+
+In the future, our platform can link with more different databases to build a more
+complete integrated system platform.
+A Web-based platform can be developed to navigate the city model.
+It is allowed to add LBS (location-based services) and use latitude and longitude to
+connect with real world for more applications.
+
+In this research, we successfully used the game technology to improve the visibility
+and interactivity of spatial data, and performed platform implementation and usage
+evaluation. The assessment has the task of linking spatial data and 3D visualization.
+We invited many participants from different fields in architecture, urban planning and
+program development to conduct user evaluations. These participants have different
+spatial and memory abilities. From the user’s perspective, 3D environments created with
+VR compatibility can be experienced from an egocentric and stereoscopic perspective that
+surpasses the immersion of the ‘classical’ screen-based perception of 3D environments. The
+results of this research provide unique empirical evidence and contributions. According to
+the statistical results of the questionnaire, this platform does help solve the problem of 3D
+scene scale in the architectural field, and the integration of real-world information is also
+helpful for analysis and planning [10].
+Not only game developers benefit from the possibilities provided by game engines.
+The ability to use geospatial data to shape virtual 3D environments opens a multitude
+of possibilities for geographic applications, such as construction planning, spatial hazard
+simulations or representation of historical places [10]. The integration of more detailed
+models is helpful for analysis and planning in the field of GIS, and the lack of visualization
+can also be improved. For developers, the development process of this platform has low
+complexity and high feasibility, and it has great potential in developing cross-domain integration platforms. This article explains how game technology integrates geometric models
+and nongeometric information from different tools and platforms, and provides visual
+environment information, which will help to improve the future research of immersive
+virtual 3D environment visualization [36].
+
+Appl. Sci. 2021, 11, 2101
+
+21 of 22
+
+Funding: This research was funded by the Ministry of Science and Technology of Taiwan, grant
+number MOST 106-2119-M-390-002.
+Acknowledgments: This research was supported by the Ministry of Science and Technology of
+Taiwan for the generous research grant, the coded number: MOST 106-2119-M-390-002. I greatly
+appreciate my master student, Hsin-Hui Lien, for her technical assistance in the development of
+the system. I also would like to express my deepest appreciation to all those who provided me the
+possibility to complete this report.
+Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.
+
+2.
+3.
+
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+
+14.
+15.
+16.
+17.
+
+18.
+19.
+20.
+21.
+22.
+23.
+
+Dore, C.; Murphy, M. Integration of Historic Building Information Modeling (HBIM) and 3D GIS for recording and managing
+cultural heritage sites. In Proceedings of the 2012 18th International Conference on Virtual Systems and Multimedia (VSMM),
+Milan, Italy, 2–5 September 2012; pp. 369–376.
+Moghadam, S.T.; Lombardi, P.; Mutani, G.; Osello, A.; Ugliotti, F.M. BIM-GIS modelling for sustainable urban development. In
+Proceedings of the Towards Post-Carbon Cities, SBE16, Turin, Italy, 18–19 February 2016; pp. 18–19.
+Li, X.; Lv, Z.; Hu, J.; Zhang, B.; Shi, L.; Feng, S. XEarth: A 3D GIS Platform for managing massive city information. In Proceedings
+of the Computational Intelligence and Virtual Environments for Measurement Systems and Applications (CIVEMSA), 2015 IEEE
+International Conference, Shenzhen, China, 2–14 June 2015.
+Hor, A.H.; Jadidi, A.; Sohn, G. BIM-GIS integrated geospatial information model using semantic web and RDF graphs. ISPRS
+Ann. Photogram. Remote Sens. Spat. Inf. Sci. 2016, 3, 73–79. [CrossRef]
+Park, T.; Kang, T.; Lee, Y.; Seo, K. Project cost estimation of national road in preliminary feasibility stage using BIM/GIS platform.
+In Proceedings of the Computing in Civil and Building Engineering, Orlando, FL, USA, 23–25 June 2014; pp. 423–430.
+Holness, G.V.R. Building Information Modelling. ASHRAE J. 2006, 48, 38–46.
+Jamei, E.; Mortimer, M.; Seyedmahmoudian, M.; Horan, B.; Stojcevski, A. Investigating the Role of VirtualReality in Planning for
+Sustainable Smart Cities. Sustainability 2017, 9, 2006. [CrossRef]
+Parise, S.; Crosina, E. How a mobile social media game can enhance the educational experience. J. Online Learn. Teach. 2012,
+8, 209.
+Yan, W.; Culp, C.; Graf, R. Integrating BIM and gaming for real-time interactive architectural visualization. Autom. Constr. 2011,
+20, 446–458. [CrossRef]
+Keil, J.; Edler, D.; Schmitt, T.; Dickmann, F. Creating Immersive Virtual Environments Based on Open Geospatial Data and Game
+Engines. KN-J. Cartogr. Geogr. Inf. 2021, 1–13.
+Koehler, T.; Dieckmann, A.; Russell, P. An Evaluation of Contemporary Game Engines. In Proceedings of the 26th eCAADe
+Conference, Antwerp, Belgium, 17–20 September 2008; pp. 743–750.
+Hoon, M.; Kehoe, M. Enhancing Architectural Communication with Gaming Engines. In Connecting >> Crossroads of Digital
+Discourse. In Proceeding of the ACADIA 2003 Proceedings, Indianapolis, Indiana, 24–27 October 2003; pp. 349–355.
+Pelosi, A.W. Obstacles of utilising real-time 3D visualization in architectural representations and documentation. In Proceedings
+of the 15th International Conference on Computer Aided Architectural Design Research in Asia, Hong Kong, China, 7–10 April
+2010; pp. 391–400.
+Saygi, G.; Agugiaro, G.; Hamamcıoğlu-Turan, M.; Remondino, F. Evaluation of GIS and BIM roles for the information management
+ofhistorical buildings. ISPRS Ann. Photogram. Remote Sens. Spat. Inf. Sci. 2013, 2, 283–288. [CrossRef]
+Attar, R.; Prabhu, V.; Glueck, M.; Khan, A. 210 King Street: A dataset for integrated performance assessment. In Proceedings of
+the 2010 Spring Simulation Multiconference, Orlando, FL, USA, 12–15 April 2010; pp. 1–4.
+Baik, A. From point cloud jeddah heritage BIM nasif historical house–case study. Digit. Appl. Archaeol. Cult. Herit. 2017, 4, 1–18.
+[CrossRef]
+Fai, S.; Graham, K.; Duckworth, T.; Wood, N.; Attar, R. Building information modelling and heritage documentation. In
+Proceedings of the 23rd International Symposium, International Scientific Committee for Documentation of Cultural Heritage
+(CIPA), Prague, Czech Republic, 12–16 September 2011; pp. 12–16.
+Garagnani, S. Semantic Building Information Modeling and high definition surveys for Cultural Heritage sites. Disegnarecon 2012,
+5, 297–302.
+Logothetis, S.; Delinasiou, A.; Stylianidis, E. Building information modelling for cultural heritage: A review. ISPRS Ann.
+Photogramm. Remote Sens. Spat. Inf. Sci. 2015, 2, 177–183. [CrossRef]
+Tobiáš, P. BIM, GIS and semantic models of cultural heritage buildings. Geoinformatics FCE CTU 2016, 15, 27–42. [CrossRef]
+Boguslawski, P.; Mahdjoubi, L.; Zverovich, V.; Fadli, F.; Barki, H. BIM-GIS modelling in support of emergency response
+applications. Build. Inf. Model. (BIM) Des. Constr. Oper. 2015, 149, 381–392.
+Volk, R.; Stengel, J.; Schultmann, F. Building Information Modeling (BIM) for existing buildings—Literature review and future
+needs. Autom. Constr. 2014, 38, 109–127. [CrossRef]
+Albourae, A.T.; Armenakis, C.; Kyan, M. Architectural Heritage Visualization Using Interactive Technologies. Int. Arch.
+Photogramm. Remote Sens. Spat. Inf. Sci. 2017, 42, 7–13. [CrossRef]
+
+Appl. Sci. 2021, 11, 2101
+
+24.
+25.
+
+26.
+27.
+28.
+29.
+
+30.
+31.
+32.
+33.
+34.
+35.
+36.
+
+22 of 22
+
+Del Giudice, M.; Osello, A.; Patti, E. BIM and GIS for district modeling. In Proceedings of the 10th European Conference on
+Product & Process Modelling (ECPPM 2014), Vienna, Austria, 17–19 September 2014.
+Fosu, R.; Suprabhas, K.; Rathore, Z.; Cory, C. Integration of Building Information Modeling (BIM) and Geographic Information
+Systems (GIS)–a literature review and future needs. In Proceedings of the 32nd CIB W78 Conference, Eindhoven, The Netherlands,
+27–29 October 2015; pp. 27–29.
+Centofanti, M.; Continenza, R.; Brusaporci, S.; Trizio, I. The Architectural Information System SIArch3D-Univaq for analysis and
+preser-vation of architectural heritage. Int. Arch. Photogramm. Remote Sens. Spat. Inf. Sci. 2011, 5(W16), 9–14.
+Klein, B. Managing the Scalability of Visual Exploration Using Game Engines to Analyse UHI Scenarios. Procedia Eng. 2016,
+169, 272–279. [CrossRef]
+Indraprastha, A.; Shinozaki, M. The investigation on using Unity3D game engine in urban design study. J. ICT Res. Appl. 2009,
+3, 1–18. [CrossRef]
+Boeykens, S. Using 3D Design software, BIM and game engines for architectural historical reconstruction. In Proceedings of the
+14th International Conference on Computer Aided Architectural Design, Les Editions de l’Université de Liège, Liège, Belgium,
+4–8 July 2011; pp. 493–509.
+Bille, R.; Smith, S.P.; Maund, K.; Brewer, G. Extending building information models into game engines. In Proceedings of the 2014
+Conference on Interactive Entertainment, Newcastle, NSW, Australia, 2–3 December 2014; pp. 1–8.
+Broadbent, N. BIM and Gaming Engines: How We Present 4D Models Using Our Design Suite and Gaming Engine; Autodesk University:
+Las Vegas, NV, USA, 2011.
+Herrlich, M. A tool for landscape architecture based on computer game technology. In Proceedings of the 17th International
+Conference on Artificial Reality and Telexistence (ICAT 2007), Esbjerg, Jylland, Denmark, 28–30 November 2007; pp. 264–268.
+Merlo, A.; Belenguer, C.S.; Vidal, E.V.; Fantini, F.; Aliperta, A. 3D model visualization enhancements in real-time game engines.
+Int. Arch. Photogramm. Remote Sens. Spat. Inf. Sci. 2013, 5, 181–188. [CrossRef]
+Ribeiro, J.; Almeida, J.; Rossetti, R.; Coelho, A.; Coelho, A. Using serious games to train evacuation behaviour. In Proceedings of
+the 7th Iberian Conference on Information Systems and Technologies (CISTI), Madrid, Spain, 20–23 June 2012; pp. 1–6.
+Goldstone, W. Unity Game Development Essentials; Packt Publishing Ltd.: Birmingham, UK, 2009; B3 2PB.
+Lokka, I.E.; Çöltekin, A. Toward optimizing the design of virtual environments for route learning: Empirically assessing the
+effects of changing levels of realism on memory. Int. J. Digit. Earth 2019, 12, 137–155. [CrossRef]
+
+

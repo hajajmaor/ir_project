@@ -1,0 +1,1431 @@
+Communicating Museum Collections Information Online:
+Analysis of the Philosophy of Communication Extending
+the Constructivist Approach
+
+ION GIL-FUENTETAJA, University of Deusto
+
+MARIA ECONOMOU, University of Glasgow
+
+Cultural heritage institutions are spending considerable effort and resources 
+to provide online access to their collection
+catalogues and collection management systems, usually through their 
+institutional websites. This improves accessibility and
+supports research and engagement by diverse user groups, as well as meeting the 
+increasing expectation by audiences that
+this type of information will be freely and easily available online. However, 
+cultural organisations have not responded to these
+needs in the same way and have been employing different web tools and features 
+to present their collections online. In this
+article, we argue that the technological implementation choices and the type of 
+content provided reflect also the philosophy
+of communication of the institution itself. We used the constructivist 
+approach’s learning theory and theory of knowledge
+and combined these interrelated epistemological and cognitive perspectives to 
+analyse the communication philosophy of a
+large number of museum online catalogues. The article presents the research 
+carried out initially in 2007 through 2009 and
+then again in 2017, studying the provision of collections information online by 
+different types of museums across Europe
+and in the United States. This enabled us to establish categories of 
+presentation types and study the changes over time. The
+results highlighted the major shift towards participatory practices which have 
+been transforming the cultural heritage world
+
+over the past years.                                                          3
+
+CCS Concepts: • General and reference → Evaluation; • Information systems → 
+Digital libraries and archives; Users
+and interactive retrieval; Collaborative and social computing systems and 
+tools; • Human-centered computing → Human
+computer interaction (HCI); Web-based interaction;• Applied computing → Fine 
+arts; Digital libraries and archives;
+
+Additional Key Words and Phrases: Museum online catalogues, museum digital 
+collections, communication strategy, com-
+munication philosophy, constructivism
+
+The early stage of the research was performed within the wider research network 
+CHIRON: Cultural Heritage Informatics Research Oriented
+Network, 2004–2008, which was funded by the European Commission’s Sixth 
+Framework Programme under contract no. MEST-CT-2004-
+514539 and a matching funds grant from the Greek General Directorate of 
+Research and Technology, 2008–2009. The later stage of the research
+was partly carried out within POEM: Participatory Memory Practices European 
+Training Network, funded by the European Commission’s
+H2020 MSCA ITN 2017 Programme under contract no. MSCA-ITN-ETN-2018-764859.
+
+Authors’ addresses: I. Gil-Fuentetaja, Department of Tourism, University of 
+Deusto, P. Arrupe Building (231), Mundaiz 50 – 20012 Donostia
+
+/ San Sebastian, Spain; email: iongil@deusto.es; M. Economou, Information 
+Studies & The Hunterian, University of Glasgow, 11 University
+Gardens, Glasgow G12 8QQ, United Kingdom; email: maria.economou@glasgow.ac.uk.
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial advantage and that 
+copies bear this notice and the full citation on the first
+page. Copyrights for components of this work owned by others than ACM must be 
+honored. Abstracting with credit is permitted. To copy
+otherwise, or republish, to post on servers or to redistribute to lists, 
+requires prior specific permission and/or a fee. Request permissions
+from permissions@acm.org.
+
+© 2019 Association for Computing Machinery.
+1556-4673/2019/02-ART3 $15.00
+
+https://doi.org/10.1145/3283253
+
+
+ACM Reference format:
+
+Ion Gil-Fuentetaja and Maria Economou. 2019. Communicating Museum Collections 
+Information Online: Analysis of the
+Philosophy of Communication Extending the Constructivist Approach. ACM J. 
+Comput. Cult. Herit. 12, 1, Article 3 (February
+2019), 16 pages.
+
+https://doi.org/10.1145/3283253
+
+1 INTRODUCTION
+
+Over the past two decades, an increasing number of cultural heritage 
+institutions have been providing online
+access to information about their collections in an effort to increase 
+accessibility and support research, education,
+and public engagement. This followed the wider radical changes which had 
+started affecting the museum world
+since the 1970s, forcing cultural organisations to shift their attention from 
+their collections to their visitors.
+The ‘new museology’ discourse around the social and political role of museums 
+which was pushing for new
+communication models and style of expression [1–3] had a significant impact 
+also in the digital activities of
+museums. The transformation in the cultural heritage world meant that museums 
+changed from being seen as
+safe-keepers of collections to gradually becoming education, information, and 
+entertainment centres, expected
+to provide different types of experiences to a varied audience [4–6]. 
+Contemporary museums started increasingly
+relying on different types of media to convey their stories while using various 
+digital platforms in their exhibits,
+narratives, and interactions with visitors [7, 8].
+
+These rapid social and technological developments, particularly since the 
+millennium, made cultural institu-
+tions aware of the necessity of creating and maintaining a digital presence on 
+the web for more wide-reaching
+and effective communication. Consequently, a growing number have been investing 
+considerable effort and
+resources in providing access to their online digital catalogues as part of 
+their web presence. To answer the
+increased expectations from web users, museums have been exploring different 
+ways of offering added func-
+tionality and greater versatility in the provision of collections information 
+on their websites [9].
+
+This meant that they started moving beyond the provision of simple static 
+webpages, offering initially textual
+information from their catalogues, which was later complemented by digital 
+images and other audio-visual ma-
+terial. This type of online catalogue was based on the digital collections 
+information system (CIS) that was used
+by curators, conservators, and other specialists, or in some cases was the web 
+front-end to the in-house system
+without any or with minimal additional steps taken to clean up the data before 
+making it publicly accessible.
+CISs have more recently been called collections management systems (CMS), 
+reflecting the move from the sim-
+ple inventory or descriptive catalogue to a system for managing the 
+collections, their intrinsic and associated
+knowledge, and their movement, lending, borrowing, disposal and other related 
+activities, together with their
+role in creating and sharing knowledge [10]. The common assumption among 
+cultural heritage institutions was
+traditionally that this is a more specialised tool, complementing the general 
+information provided about the col-
+lections, often in the form of highlights or online exhibitions, and other 
+interpretive digital materials provided
+online at the websites of cultural institutions for a nonspecialist audience. 
+However, assumptions of this kind
+have usually not been tested with systematic research on the profile of online 
+catalogue users and the way these
+are being constructed by cultural institutions and used in practice by end 
+users.
+
+At the same time, the appearance and spread since the millennium of social 
+media and the information and
+
+knowledge architecture of Web 2.0 brought to the fore the idea of the 
+collaborative, participatory museum [11,
+12], and the shift of its role from repository to forum [13], focusing on 
+communities of users actively creating
+and contributing, and not just consuming, collections information [14]. 
+Crowdsourcing or citizen science initia-
+tives in cultural heritage have brought together communities of interested 
+individuals ready to work towards a
+specific aim, such as transcribing, digitising, translating, or describing 
+cultural heritage content [15, 16]. These
+developments have been transforming the cultural heritage sector and affecting 
+museum websites and online
+catalogues, yet the nature of this transformation has not been studied in 
+depth.
+
+
+Some early publications addressed issues related to the design and use of 
+cultural websites in general (e.g.,
+[17]) and their role in encouraging physical visits to the museums [18] or 
+compared physical and online visits
+from a theoretical perspective [19]. Other studies examined the informational 
+value [20], accessibility, usability
+[21], interface design, or user needs of museum websites as a whole [22, 23]. 
+There has also been a lot of work
+in information retrieval, interpretation of user interaction, and the 
+evaluation of digital libraries in general (e.g.,
+[24, 25]), but the standard evaluation benchmarks which have been developed in 
+information retrieval usually
+focus on a ‘single document, genre, language, media-type, and searcher 
+stereotype that is radically different from
+the unique content and user community of a particular digital library’ [26].
+
+But when we want to understand and study in depth the real use and impact of 
+museum websites and online
+catalogues, as with any technological solution, it is important to examine the 
+triangulation between three dif-
+ferent actors, namely institutions, technologies, and end users, in this case 
+online visitors [27]. Therefore, the
+specific technological solutions or communication strategies that museums 
+adopted on the web must be care-
+fully analysed in relation to all actors and parameters and their complex 
+interrelationships, because they have
+profound consequences for the cultural organisation on the digital sphere, 
+becoming the clear reflection of the
+fostered philosophy of communication of the institution itself.
+
+This article makes a significant contribution in this area because museum 
+websites online collection cata-
+logues have not been analysed in sufficient depth and breadth. It addresses the 
+need to systematically examine
+a substantial number of museum websites from different countries, in this case 
+across Europe and North Amer-
+ica; analyse changes over a long period of time, taking into account these 
+complex interrelationships; and link
+theory and practice, particularly learning and knowledge theories, to study the 
+provision of online collections
+information in the context of the organisation’s communication paradigm. The 
+article is based on the findings
+of    a research project which spanned from 2007 to 2009, funded by an FP6 
+Marie Curie EST grant to investigate
+the online provision of museum catalogues, the users’ profile, and pattern of 
+use. This was later expanded with
+additional case studies, comparing the original findings to new ones from 2017. 
+This allowed the examination of
+change over time—an important aspect rarely addressed in digital heritage 
+research.
+
+2 RESEARCH METHODOLOGY
+
+To comprehensively study the development and use of museum websites and online 
+collections, it was necessary
+to analyse both the way museums are communicating on the web and how this 
+online content is consumed by
+its intended audience. Therefore, the two main objectives of the research were 
+to (a) study the implementation
+of different web technologies and models by the cultural institutions 
+themselves and analyse their underlying
+communication philosophy, and (b) identify the patterns of use of these museum 
+websites by online visitors.
+Following this line of action, the project covered the following stages: first, 
+study a large sample of online museum
+catalogues from around the world to establish a typology of how the information 
+was organised and presented
+[28]; second, carry out an email survey with the museum staff of the 
+organizations with the most complex type
+of online catalogue that offered some kind of searching tool [29]; and third, 
+select a small number of case studies
+from this group to analyse their web access logs in depth to trace user 
+profiles and usage patterns [30].
+
+The results presented in this article relate to the first stage of the project, 
+which includes a brief comparison
+of the original data of 2008 with an updated analysis of the websites performed 
+in late 2017. One of the most
+important things to bear in mind when interpreting the results obtained during 
+the two stages of analysis is their
+different socio-technological juncture. Although during the 2008 analysis most 
+of the technological solutions
+were based on the initial static understanding of the Internet and social 
+networking in cultural heritage was only
+an emerging phenomenon [14, 31, 32], the second phase was carried out during a 
+very different technological
+reality. In fact, mobile subscriber penetration increased during that period 
+from less than 40% to 67.6% of the
+population worldwide, and from about 2.6 billion to 5.14 billion unique 
+subscribers at the end of 2017 [33, 34].
+Similarly, Internet users increased from 1.6 billion (23.5% of the world 
+population) at the end of 2008 to 4.2 billion
+
+
+(54.4%) at the end of 2017 [35]. Active social media unique users more than 
+tripled since 2008, reaching 3.2 billion
+worldwide, representing 42% of the global population [33]. Therefore, it is 
+important to understand the distinct
+social and technological realities that museums were facing during the two 
+separate research stages.
+
+The first step of the research process involved carrying out an extensive 
+literature review, which supported the
+selection and empirical evaluation of museum websites. This helped to identify 
+the different models of presen-
+tation of museum collections and digital catalogues. The different ways of 
+presenting online collections and the
+implementation of particular features were analysed in terms of the model of 
+communication they represented
+and the ways they supported visitors’ exploration, learning processes, and 
+knowledge construction. In this pro-
+cess, we hypothesised that the philosophy of communication of the institution 
+would be reflected on the design
+and implementation of the web technologies they selected to communicate 
+contents to their audience, and we
+tested this empirically with a large sample of museum websites. To answer the 
+research question, this phase of
+the research used critical examination of the websites by the researchers and 
+did not include any qualitative data
+collection about user experiences.
+
+2.1 Theoretical Approach: Extending the Constructivist Model
+
+Following a constructivist approach, we found it useful to define the 
+communication philosophy of every in-
+stitution in relation to two different but closely interrelated theoretical 
+approaches, namely the learning theory
+and the theory of knowledge, combining epistemological and cognitive 
+perspectives [36]. According to the con-
+structivist model, how learning theory is adopted by each museum delimits the 
+degree of intervention of the
+institution on the learning process of the individuals, with the two extreme 
+perspectives when communicating
+contents to the audience being complete user freedom on the one hand and 
+complete institutional intervention
+on the other. In the direct intervention approach, content is filtered by the 
+staff and specialists of the institution,
+who are the ones deciding which is the most significant or useful to make 
+available to the users to support their
+learning process. In other words, the model in this case is that institutions 
+process the most suitable information
+to improve the learning process of passive users. The opposite perspective 
+which gives complete freedom to the
+users, conversely, supports users in choosing themselves among all of the 
+contents available at the institution
+which are made freely and easily available to them. In this perspective, users 
+are the ones who are selecting and
+differentiating contents according to their learning needs.
+
+Additionally, the theory of knowledge as employed by the constructivist model 
+[36] was also used as another
+key parameter to interpret the implementation of web technologies by museums. 
+This theory identifies two main
+antithetical paradigms for understanding how knowledge is perceived, which also 
+underpins the way cultural
+institutions are presenting their contents. On one end is the realist vision of 
+the theory of knowledge which sup-
+ports that knowledge exists outside the individuals and consequently can only 
+be presented to users, providing
+true, objective, and equal knowledge for everyone. The idealist vision of the 
+theory of knowledge, on the oppo-
+site side of the spectrum, affirms that knowledge is constructed by the learner 
+personally or socially. Therefore,
+the information presented must be processed by every individual to be 
+assimilated and fit it into their conceptual
+framework, which results in variations on the constructed knowledge depending 
+on every individual.
+
+George Hein, one of the main theoreticians of the constructivist museum, took 
+the positioning of cultural
+institutions on these learning and knowledge theory axes as key factors 
+determining their philosophy of com-
+munication [36]. Following the intersection of these axes, Hein identified four 
+archetypical distinct theoretical
+models of philosophy of communication expressed among different institutions, 
+namely the didactic museum,
+the discovery museum, the stimulating museum, and the constructivist museum 
+(Figure 1). After being adapted
+to the current study, these models can be briefly described as follows. In the 
+didactic museum, which believes
+in the acquisition of external knowledge, this is driven by the intervention of 
+the institution through selection
+and differentiation of the online content to be displayed for the users. The 
+discovery museum, however, allows
+users to freely acquire this external independent knowledge by providing 
+several choices of navigation through
+
+
+Fig. 1. Archetypical models of philosophy of communication of museums.
+
+the presentation of extensive contents. The third model, the stimulating 
+museum, fosters the construction of
+knowledge by users according to their background, but this is driven mainly by 
+the institutional intervention
+of curators and museum staff. Finally, the constructivist museum is the one 
+that allows users to freely navigate
+through the contents of the institution to construct their own knowledge.
+
+This model proposed by Hein has been widely accepted [37–44], although lately 
+some updates have been sug-
+gested following the evolving trends in communication and museology [42]. 
+However, not all of the four afore-
+mentioned models of museum communication have been implemented to the same 
+extent, and most researchers
+advocate for the constructivist museum model because it fits best the 
+increasing influence of technologies in all
+of  the processes linked to museums and their communicative and educative role 
+[43].
+
+Even though these models were originally proposed for the physical environment 
+of museums, we argue that
+they can also be applied to the digital sphere, and we tested their usefulness 
+for the analysis of museum websites,
+particularly the online presentation of the collections, and the communication 
+paradigm to which these relate
+[32].  At the first stages of our research analysis, we related the extremes at 
+either end of the two axes to the
+implementation of different features of the museum websites. In this sense, the 
+degree of intervention of the
+institutions on the learning process was linked to the browsable or searchable 
+character of the museum online
+content, as well as with the amount and type of online content provided [32]. 
+Therefore, institutional intervention
+which implies active selection by the institutions of the presented contents 
+was understood as a museum website
+with browsable collection content, whereas user freedom was related to 
+searchable museum content.
+
+
+Likewise, in relation to the theory of knowledge, the realist vision of 
+acquiring knowledge was associated with
+a model of transmission of information by museums to users who are given a 
+passive role, whereas personal
+construction of knowledge by the online visitors requires a broader and more 
+comprehensive presentation of
+information supported by the museums so that users can fit and adapt this to 
+their existing mental structures
+according to their needs [32].
+
+Following the expansion of social media and participatory practices, we 
+identified another model in our analy-
+sis which has evolved based on the principles of the constructivist museum, the 
+participatory one, in which users
+are given an active contributor’s role in many processes of the institution 
+[11]. In this model, institutions become
+even more audience centred, a place where not only visitors can construct their 
+own meaning but also where the
+voice of the user informs and influences processes of the museum itself. Or, in 
+other words, the museum becomes
+a place of creation, sharing, and connection for visitors and content to 
+improve active engagement [11].
+
+Similar to the long-established four archetypical models of museums, this new 
+participatory one can also
+be identified by the specific features characterising its online communication. 
+The impact of Web 2.0, and its
+capacity to allow multiple interactions at large scale [45], has expanded the 
+constructivist museum concept, not
+only by emphasizing a more active user model but also by reinforcing its role 
+in the communication processes
+of the institutions themselves.
+
+2.2 Terms and Categories Used in the Analysis
+
+Arising from these theoretical models of museums described in the previous 
+section, the empirical framework
+of the research was designed to shed some light on the use of web technologies 
+to communicate cultural con-
+tents around the four original main constructs and an additional one for the 
+more recent update of the data. To
+assist the analysis, each construct has been translated into specific features 
+of the institutional webs (Figure 2).1
+The main parameters of institutional intervention—user freedom, acquisition of 
+knowledge, and construction
+of knowledge—were translated into empirical variables considering the following 
+features: presentation of the
+holdings, existence and type of searching tool, presentation format, and the 
+presence of educational resources.
+
+Regarding the presentation of the holdings, the variables have been designed 
+from the perspective of the learn-
+ing theory and consider both the amount of the collection presented and the way 
+these contents are delivered.
+Depending on the extent of presented content from the collection, the option 
+labelled as ‘highlights’ refers to
+the presentation of a selection made by the institution’s staff of part of the 
+holdings, whereas ‘collections’ refers
+to the largest part of them being presented.
+
+Analysing the way contents are delivered, the related variables have also been 
+designed based on the learn-
+ing theory. In this sense, we made a clear distinction between ‘catalogues’ and 
+‘databases’, identifying the first
+ones as having a browsable character, presenting different areas, sections, or 
+groupings of the collection made
+by the institution, whereas databases are searchable and enable visitors to 
+access their desired content in a more
+focused and targeted way using specific search terms. Equally, some other 
+presentation options have been iden-
+tified. Briefly, these options have been labelled as online ‘exhibitions’ when 
+they structure contents in coherent
+groupings and as ‘virtual museum’ when they aim to present a digital version of 
+the whole institution.
+
+All of these variables are linked to one of the two main axes that lead the 
+analysis, the learning theory one.
+On the one hand, highlights and catalogues identify a trend of institutional 
+intervention, whereas collections,
+databases, and more complex presentations allow a greater degree of user 
+freedom.
+
+The presence of a searching tool and the level of search it supports also 
+relates to the learning theory, because
+the existence of any kind of search gives users a higher degree of freedom to 
+access the contents they want.
+Furthermore, the searching tools have been classified as simple, advanced, 
+complex, or combined tools.
+
+In relation to the theory of knowledge axis, the research analysed the way 
+content is delivered to users,
+examining whether the related features support more the acquisition or the 
+construction of knowledge. Briefly,
+
+1For a more in-depth description of the empirical framework, see Fuentetaja 
+[32].
+
+
+Fig. 2. Empirical model of the research.
+
+the following terms and categories were identified when examining presentation 
+features. ‘Images’ represent the
+digital facsimile of the physical content. ‘Labels’ are the digital equivalent 
+of the physical labels of the collections
+presenting facts related to the identity of the cultural content. ‘Explanatory 
+texts’ offer in greater depth details
+about the object, such as technique, composition, and topic, whereas ‘author 
+details’ present information about
+the artist or the person or group who created the object. The 
+‘contextualization’ category refers to the information
+about the context (historical, social, artistic, etc.) in which the object was 
+created or to more specific contextual
+information about the topic that the object is dealing with. If the website 
+allows zooming into the digital image of
+the objects, this was labelled as ‘image zoom’. Moreover, if websites deliver 
+additional information related to the
+content or the author, this was tagged as ‘link to related works’. Another 
+variation of this category is the ‘link to
+related news’, which can contain information about ongoing or recent news 
+related to the content. The simplest
+type of presentation of the contents is the merely informative and descriptive 
+one that addresses the realist
+vision of the acquisition of knowledge. The more complex and comprehensive 
+types, however, allow users to
+adapt the presented content to their mental structures and consequently are 
+linked to the personal construction
+of knowledge.
+
+Finally, the provision of educational resources on the institutional websites 
+was characterised as an identifiable
+feature of support of construction of knowledge by the users due to the 
+reinforcement of the learning processes
+these foster. Among the websites investigated which provided some kind of 
+educational resource, the features
+
+
+ranged from the simple schedule and contact information to more sophisticated 
+publications, downloadable
+activities to be carried out in the gallery, virtual activities, or innovative 
+edutainment options.
+
+Additionally, due to the expansion of participatory approaches among cultural 
+institutions, the presence of
+social media was considered as another variable linked to user freedom and the 
+construction of knowledge,
+because they offer the possibility of participation by the users in the 
+museum’s communication processes.2
+
+2.3 Selection of the Sample
+
+The initial research defined the sample of museum websites to analyse using the 
+Virtual Library museums pages
+(VLmp) in its 2008 version, an early leading directory of online museums around 
+the world. The website was
+initially created in 1994 by Jonathan Bowen (originally at the Oxford 
+University Computing Laboratory) and
+titled Virtual Library of Museums (VLM) and was later supported by the 
+International Council of Museums
+(ICOM) [46]. The directory was developed and organised in a distributed manner 
+by country, with about 20
+people and organisations in different countries maintaining various sections, 
+such as the Canadian Heritage
+Information Network (CHIN) maintaining the section on Canada or the Museum 
+Documentation Association
+(MDA) and later the Collections Trust maintaining the UK section. The directory 
+is currently organised as a wiki
+and is hosted at wikia.3 The entries that appeared on the early versions of 
+VLmp were sent voluntarily by the
+museum staff filling one simple web form, with slight variations according to 
+the origin of the institution, and
+they currently follow the standard conventions for wiki contributors.
+
+Practical linguistic and time constraints limited the initial analysis to 
+museums from Spain, the United King-
+dom, Germany, Greece and the United States. Apart from the United States, in 
+the rest of the countries studied,
+the online museums analysed were all of the ones that appeared in the VLmp list 
+in 2008. Regarding the Amer-
+ican ones, however, because of the large number of museums listed, the project 
+determined that the analysed
+sample would include only art and history museums (according to the VLmp 
+categorisation). The total amount
+of museum websites analysed was 1,921, which was divided as follows: United 
+States, 955; United Kingdom, 518;
+Germany, 299; Spain, 138; and Greece 11.4
+
+After an initial review during the first stage of the research, some of the 
+cases were discarded from further
+analysis for the following reasons: (a) the website did not work or was under 
+construction or (b) the website did
+not fulfil the minimum requirements for the analysis in relation to the 
+presentation of collections information.
+To fit with the focus of our research, only those websites presenting at least 
+some highlights of the collection
+with some minimum data about them were considered. For example, those websites, 
+which only had a paragraph
+describing the collection or only a few photographs, were not included in the 
+analysis. After this first analysis,
+the final sample studied in greater depth consisted of 219 entries. Most of the 
+219 museums selected for the
+analysis were art museums (78.5%) in English-speaking countries (United States, 
+50.2%; United Kingdom, 25.6%).
+The same final sample of 219 entries was consulted during late 2017 to identify 
+potential transformations
+of the websites and the related philosophy of communication of the museums. At 
+this stage of the research,
+the final sample was a little smaller than the previous one, because five 
+institutions did not have a website
+anymore and another eight museums did not provide access to their digital 
+collections any longer, not fulfilling
+the minimum criteria for the analysis. Therefore, the final sample to update 
+the data consisted of 206 entries. The
+average profile of the selected institutions remained similar, with most art 
+museums (77.7%) in English-speaking
+
+countries (United States, 51.5%; United Kingdom, 24.3%).
+
+2The presence of social media was not considered during the first stage of the 
+research in 2008, because they were not a common feature
+among cultural institutions.
+
+3http://museums.wikia.com/wiki/Virtual_Library_museums_pages.
+
+4The latter included the web portal of the Hellenic Ministry of Culture 
+(http://odysseus.culture.gr/), which links to more than 280 public
+museums, as well as a number of private collections in Greece.
+
+
+Table 1. Provision of Online Digital Collection and
+Educational Resources on Museum Websites (%)
+
+                 2008  2017
+
+Digital collection only    21.9  11.7
+
+Educational resources only  0.0  0.0
+
+Both              78.1  88.3
+
+Table 2. Provision and Type of Searching Tool
+on Museum Websites (%)
+
+2008    2017
+
+None         43.8     33.5
+
+Simple        16.4     22.3
+
+Advanced       5.0      1.5
+
+Complex       4.1      1.0
+
+Combined      30.6     41.7
+
+3 RESEARCH FINDINGS
+
+This section presents both the results obtained during the first phase of the 
+research in February 2008 and the
+updated data from November 2017. Therefore, the comparison between the results 
+obtained at these two phases
+gives a good indication of the evolution of museums’ websites in the past 
+decade.
+
+The first item of analysis of the research has been, in both cases, the 
+identification of digital collections and
+resources on the analysed websites. Even though the two measurements show an 
+overwhelming majority of
+websites that combine both the digital collections of the institution and some 
+educational resources, their per-
+centage has grown by a little more than 10 points (Table 1). Therefore, 
+although in 2008 the websites combining
+these two types of digital resources represented nearly 8 of 10 entries, in the 
+more recent analysis they are nearly
+9 of 10 websites in the sample. The rest of the entries in both phases are 
+websites that only present their digital
+collections, without any kind of educational resource.
+
+Regarding the existence of searching tools related to the collection, the 
+presence of sites without any kind of
+search has decreased by more than 10% (Table 2). However, there is still a 
+third of the whole sample that does not
+have any searching tool, not allowing users to search freely among the 
+displayed contents. In contrast, the share
+of sites providing a simple searching tool or one combining different degrees 
+of search has increased 5.9% and
+11.1%, respectively. In this sense, the existence of any searching tool 
+represents two thirds of the sample studied
+in the second phase.
+
+Analysing the type and structure of the digital presentation of museum 
+collections online, there has also been
+a clear evolution. Although collections and highlights were present in about 
+three fifths of the sample already
+in 2008, the second measurement has identified that the presence of catalogues 
+and databases has increased
+from below half of the sample to about three fourths and two thirds of the 
+sample, respectively (Table 3). This
+increment is also accompanied by a significant growth in the presence of 
+virtual exhibitions (22.3%), collections
+(17.8%), and highlight (8.4%). Therefore, during the update of the data, the 
+research has identified that catalogues,
+databases, highlights, and collections appear in most of the analysed sample, 
+together with digital exhibitions
+which appear in nearly two of five websites.
+
+However, when examining the way contents are presented, the different options 
+have remained quite stable,
+except for the decrease in use of author details (–17.6%), image zoom (–15.6%), 
+and explaining texts (–6.2%)
+(Table 4). The existence of links to related works, conversely, has experienced 
+an increase of 5.4%, being present
+
+
+Table 3. Type of Presentation of Digital
+Collection on Museum Websites (%)
+
+2008   2017
+
+Catalogues      47.5    76.2
+
+Databases      41.1    63.6
+
+Highlights      63.0    71.4
+
+Collection      59.4    77.2
+
+Exhibitions      16.0    38.3
+
+Virtual museum   8.2    9.2
+
+Table 4. Means of Presentation of Digital
+Content on Museum Websites (%)
+
+              2008  2017
+
+Image          95.0  98.5
+
+Label          91.3  92.7
+
+Explaining text     52.3  46.1
+
+Author details     39.9  22.3
+
+Contextualization   10.1  4.9
+
+Image zoom      32.1  16.5
+
+Link to related works  10.1  15.5
+
+Link to news      2.3   1.5
+
+Other          4.1   1.0 
+
+Table 5. Type of Educational Resources
+Identified on Museum Websites (%)
+
+               2008  2017
+
+Schedule and contact  95.9  98.9
+
+Publications       32.2  48.4
+
+In situ activities     26.3  27.5
+
+Virtual activities     12.3  14.8
+
+Edutainment activities  8.8  1.6
+
+Other           1.2   0.0 
+
+in one of six websites of the second sample. Therefore, apart from links to 
+related works, it appears that the more
+developed ways of presenting and exploring museum collections content were less 
+present during the second
+measurement.
+
+Finally, when dealing with educational resources, which as mentioned earlier 
+increased to 88.3% in 2017,
+the schedule and contact information remain the most popular option of 
+education provision (Table 5). In fact,
+nearly all of the museums with any kind of digital educational resource display 
+this information on the website.
+The highest increase in type of educational resources has been found in the 
+publications, because they now
+represent nearly half of the sample of online museums with educational 
+resources, although they did not even
+
+
+reach a third of it during the first phase of the research. Edutainment 
+activities, however, are the feature that
+has suffered a decrease of 7.2%. Consequently, traditional forms of educational 
+resources such as publications
+or in situ activities have globally gained more prominence, whereas more 
+innovative ones such as edutainment
+activities have receded in general terms.
+
+As mentioned previously, during the second measurement, social media have also 
+been taken into account. A
+total of 87.9% of the overall sample included some form of social media. Among 
+these, the most popular social
+media applications were, as expected, Facebook (97.2%), Twitter (91.2%), 
+Instagram (68.0%), YouTube (56.4%),
+Pinterest (26.5%), and any kind of blog related to the museum (24.3%). The rest 
+of the options were present in
+less than one of five cases of this delimited sample.
+
+Once all of these features had been measured and identified during the first 
+stage of the research in 2008,
+a cluster and factorial analysis was performed to see if there was any grouping 
+among the analysed cases, as
+well as to verify if the potential groups of websites corresponded to the 
+archetypical models proposed by the
+constructivist literature for the physical institutions [32]. According to the 
+statistical processes, four groups
+were clustered by the presence of educational resources, the existence of any 
+searching tool, the extent and
+structure of the digitally displayed collection, and some advanced options of 
+presentation of the contents.
+Analysing the features implemented by the websites in each group and responding 
+to the empirical framework
+that linked each feature to the theoretical debates on the philosophy of 
+communication of museums, we deduced
+that the obtained four clusters corresponded to the archetypical models 
+outlined in the literature (Table 6).
+
+For comparability of the data and continuity of the research, we examined the 
+same clusters again in the later
+analysis, which showed that there has been a shift in the philosophy of museum 
+website communication in the
+past decade (Table 7). During the first measurement in 2008, the model of the 
+stimulating museum was adopted
+by nearly half of the sample of the analysed websites (46.3%), whereas the 
+constructivist one was portrayed by
+less than a third (31.7%) and the didactic museum by one of six entries 
+(14.7%). The discovery museum model,
+however, had a limited presence in the analysed sample (7.3%). Therefore, in 
+2008, three of five analysed websites
+implemented a philosophy of communication based on the notion of a greater 
+institutional intervention. It is
+also interesting to note that more than three fourths also adopt a 
+technological implementation linked to the
+construction of knowledge.
+
+The second measurement, conversely, shows a different trend of technological 
+implementation. In fact, three
+of five websites of the sample (62.6%) have adopted the constructivist museum 
+model’s philosophy of commu-
+nication. Additionally, stimulating museums represent a fourth of the sample 
+(25.7%), whereas the rest of the
+entries are distributed between didactic museums (7.8%) and discovery ones 
+(3.9%). Consequently, user free-
+dom is supported in two thirds of the updated sample. Moreover, websites with 
+technological implementation
+influenced by the perspective of construction of knowledge represent nine 
+tenths of the sample.
+
+As mentioned earlier, the theory suggests that participatory museums are 
+opening their communication pro-
+cesses to digital users. Even though social media are present in each cluster, 
+constructivist museums make more
+extensive use of them, with more than nine tenths employing some type (93.0%), 
+followed by the stimulating
+(83.0%), the discovery (75.0%), and the didactic one (68.8%). Therefore, the 
+use of social media is popular among
+museums of all clusters. Some types of social media, however, are more common 
+than others in some of the
+clusters. In fact, two constructivist museums host two thirds of all of the 
+registered blogs (63.6%), where more
+developed contents are blended with options for user interactions.
+
+Looking at the data from a country perspective,5 some clear differences can 
+also be highlighted from this
+
+temporal comparison (Table 8). Although in Spain (40%), Germany (60%), and the 
+United States (60.9%) the stim-
+ulating museum was the model adopted by most museum websites with the general 
+focus being on institutional
+
+5Greece was not taken into consideration in this analysis, because it has only 
+two cases in the final sample. As mentioned in Section 2.2, the
+sample was restricted to these countries due to practical linguistic and time 
+constraints in the initial 2008 analysis and for comparability of
+result in the 2017 one.
+
+
+Table 6. Summary of Cluster Definition of Museum Websites’ Analysis
+
+Cluster 1        Cluster 2        Cluster 3       Cluster 4
+
+
+Type of digital
+resources
+
+Digital collection  Digital collection
+
+Educational resources
+
+Digital collection  Digital collection
+
+Educational
+resources
+
+
+Searching
+tools
+
+None       None
+
+Simple
+
+Advanced
+Complex
+Combined
+
+Advanced
+Complex
+Combined
+
+
+Presentation
+of collection
+
+Presentation
+of contents
+
+Highlights
+Catalogues
+Collection
+
+Images
+Labels
+
+Highlights
+Catalogues
+Collection
+
+Images
+Labels
+
+Explaining texts
+Author details
+Image zoom
+
+Collection
+Databases
+Catalogues
+Highlights
+
+Images
+Labels
+
+Explaining texts
+Author details
+Contextualization
+Link      related work
+
+Collection
+Databases
+Catalogues
+Highlights
+Exhibitions
+Images
+Labels
+
+Explaining texts
+Author details
+Contextualization
+Link      related work
+
+
+Educational
+resources
+
+No         Schedule and contact
+Publications
+
+In situ activities
+
+No         Schedule and
+
+contact
+Publications
+
+In situ activities
+Virtual activities
+Edutainment
+activities
+
+
+Identification
+of cluster
+
+Didactic museum  Stimulating museum    Discovery
+
+museum
+
+Constructivist
+museum
+
+Table 7. Museum Websites According to
+Clusters of Museum Archetypes (%)
+
+               2008  2017
+
+Didactic museum     14.7  7.8
+
+Stimulating museum   46.3  25.7
+
+Discovery museum    7.3   3.9
+
+Constructivist museum  31.7  62.6
+
+intervention, nearly half of the sample from the United Kingdom (48.2%) was 
+implementing a philosophy of
+communication based on the constructivist museum model, with overall emphasis 
+placed on user freedom.
+
+Analysing the updated data from this geographical perspective, the previously 
+mentioned differences become
+increasingly blurred. In 2017, the most popular type of website was the 
+constructivist one in all countries, with
+more than half of the group circumscribed in this cluster (Spain, 51.7%; 
+Germany, 57.9%; United States, 64.2%;
+and the United Kingdom, 68.0%). In all of the countries, more than eight tenths 
+of the sample supported the
+
+
+Table 8. Archetype of Museum Website by Country (%)
+
+Germany    Spain    United Kingdom  United States
+2008  2017  2008  2017  2008   2017   2008  2017
+
+Didactic museum     20.0   5.3   30.0  10.3  17.9    6.0    8.2   8.5
+
+Stimulating museum   60.0  31.6  40.0  31.0  17.9    20.0    60.9   26.4
+
+Discovery museum     5.0   5.3   0.0   6.9   16.1    6.0    4.5   0.9
+
+Constructivist museum  15.0  57.9  30.0  51.7  48.2    68.0    26.4   64.2
+
+construction of knowledge perspective, with special emphasis on user freedom. 
+Consequently, this transforma-
+tion has also produced a more homogenised philosophy of museum communication 
+compared to the previous
+situation.
+
+Summarising, the comparison of data gathered in 2008 and 2017 has demonstrated 
+that institutional web-
+sites of museums have evolved during this period. Having the main gravitational 
+point on the construction of
+knowledge in both measurements, the perspective on the learning theory has 
+inversely shifted from the insti-
+tutional intervention towards user freedom. Consequently, the main group of 
+museum websites has become the
+constructivist ones, whereas during the first stage of the measurement the most 
+popular was the stimulating
+one.
+
+4 DISCUSSION AND FURTHER IMPLICATIONS
+
+Digital technologies are increasingly being adopted by cultural institutions in 
+diverse ways to try to engage dif-
+ferent audiences, as well as to improve accessibility of their holdings. The 
+proliferation of these online collections
+is addressed to meet the evolving and increasingly more sophisticated needs and 
+expectations of potential digital
+visitors. However, the philosophy of communication of digital contents differs 
+among museums and, even when
+not immediately obvious, has lasting influence on their technological 
+implementation schemes.
+
+The research was designed to identify different ways online museum collections 
+have been designed and
+have evolved over the past decade. An initial analysis of the grouping of the 
+analysed websites confirms that in
+the digital sphere, museums replicate the archetypical models that the 
+constructivist literature proposes for the
+physical cultural institutions.
+
+A comparison of results of the two phases of measurement indicates a clear 
+evolution on the way museums
+present their online contents. During the second stage, the share of museums 
+that, apart from their digital collec-
+tion, also delivered some kind of educational resource increased by more than 
+10 percentage points. Within these
+contents, similarly, there has been a significant increase in online 
+publications provided. As well, the presence
+of some kind of searching tool is higher, even though a third of the sample has 
+still not implemented any. Cata-
+logues, databases, collections, and exhibitions are also more present in the 
+analysed sample, but conversely, the
+way contents are presented has become less developed than in the previous 
+stage, with fewer author or context
+details, among others. However, links to related works have increased, probably 
+because, after the implementa-
+tion of digital databases, the linking of different parts of the databases is a 
+straightforward process that does not
+require too much effort.
+
+Comparing the spread of the different clusters in the analysed sample, the 
+shift of the centre of gravity becomes
+evident. Although other archetypical models experienced a decrease in different 
+degrees, the constructivist mu-
+seum model gained three tenths of new cases. We can therefore infer that there 
+has been a clear move from other
+models towards less institutional intervention so that users can freely 
+construct their knowledge according to
+their own needs and expectations.
+
+Finally, both the examination of the literature and cultural heritage practice 
+suggest the rise of a new theoret-
+ical model of museum, namely the participatory one. To test the strength of 
+this model in the digital sphere, the
+
+
+research measured the presence of social media during the second phase of the 
+measurement in late 2017. The
+results affirm that the share of websites with social media is significantly 
+high. Moreover, their presence in the
+different clusters is also remarkable, but the stimulating museum model and the 
+constructivist one are the ones
+with an overwhelming presence of social media. In fact, in the case of the 
+latter, 9 of 10 of museums examined
+make use of them and two thirds support blogs in their websites.
+
+The systematic examination of a large sample across several European countries 
+and the United States in
+this study confirmed the idea of a growing participatory museum in the digital 
+sphere. This is an important
+contribution which has implications for research, practice, and policy in this 
+field, as all too often reports on
+digital initiatives in cultural heritage rely on anecdotal evidence and 
+personal impressions rather than systematic
+research. The study showed that most museums clearly felt the need to move from 
+highly curated websites which
+controlled the way users encounter their collections and associated information 
+towards more open systems
+that allowed online visitors to build their own path around the material 
+provided according to their needs, and
+that they have started encouraging more active user participation and 
+possibilities for co-creation. These are
+important findings for the institutions not following this paradigm, as well as 
+for future planning and policy in
+the field as a whole, because they also indicate the expectations from museum 
+audiences and what is becoming
+gradually the norm for the cultural offer.
+
+The findings also raise important questions about the reasons and motivations 
+for these developments. Is the
+increasing adoption of social media by museums motivated largely by the need to 
+widen their audience base and
+reach new constituencies, reflecting the significant changes taking place in 
+society at large at the same time?
+This would be a relatively safe interpretation of the data. Considering that 
+the study included two phases of
+analysis performed during two different socio-technological junctures, the 
+increase of participatory models in
+the online presence of museums seems to be the logical reflection of the 
+evolvement of society as a whole during
+this 10-year period. The drastic increase in the degree of penetration of 
+smartphones, other mobile devices,
+and social networks worldwide shows that users are more willing to connect with 
+each other and be more
+participatory in different aspects of their daily life. Extending George Henri 
+Rivière’s metaphor of ecomuseums
+as mirrors of society [47], these findings indicate that museums are not 
+isolated from this more widely developing
+transformation and have transformed their communication models to meet the 
+requirements and expectations
+of users in the growing participative interconnected reality. The results 
+obtained from this research indicate that
+museums and the evolution of their philosophy of communication are accurate 
+witnesses and testimonies of the
+socio-technological changes of society.
+
+But have these developments also led to a change in how museums and cultural 
+heritage in general are con-
+structed and experienced? Is this change reflecting a genuine invitation by 
+museums to a growing number of
+users to participate in this construction, encouraging ‘openness not closure of 
+interpretation and valuation, mak-
+ing flux, uncertainty and doubt critical’ [48]? Who is driving the changes? Are 
+these coming from the museums
+themselves or by different users or a combination of these two? Can we really 
+talk about communities of users,
+the way the participatory paradigm is encouraging us to, and what are the 
+characteristics of these communities?
+The participatory model is certainly spreading among museums, and the study 
+showed that there is a growing
+number of examples on how this is manifested and supported on museum websites. 
+The study recorded the up-
+take, reflecting the potential of the constructivist approach and participatory 
+practices, and the intentions of a
+large number of institutions covering a long period of time, including a large 
+sample across different countries.
+But is this being realised in practice?
+
+The mere existence of social media on museum websites does not necessarily mean 
+that this new model of
+museum is being implemented. It is not only the presence of social media on its 
+own that enforces the im-
+plementation of the model of the participatory museum, but the way these new 
+digital tools are used. Conse-
+quently, this idea needs to be further researched by analysing the type of 
+interaction, the contents shared, and
+the type of participation that the use of these tools supports. Having laid the 
+important groundwork with this
+
+
+extensive analysis, future research can further build on this foundation and 
+examine in depth the exact nature
+of participation and communication between museums and their audiences.
+
+ACKNOWLEDGMENTS
+
+We are grateful to Professor Seamus Ross for comments on an early draft of the 
+article and to Karolina
+Badzmierowska for improving the quality of the figures.
+
+REFERENCES
+
+[1] André Desvallées and Francois Mairesse (Eds.). 2010. Key Concepts of 
+Museology. International Council of Museums and Armand Colin,
+Paris, France. Retrieved September 10, 2018 from 
+https://icom.museum/wp-content/uploads/2018/07/Museologie_Anglais_BD.pdf.
+
+[2] Peter Vergo (Ed.). 1989. The New Museology. Reaktion Books, London, UK.
+
+[3] Stephen E. Weil. 1990. Rethinking the Museum and Other Meditations. 
+Smithsonian Institution Press, Washington, DC.
+
+[4] Graham Black. 2012. Transforming Museums in the Twenty-First Century. 
+Routledge, London, UK.
+
+[5] Eilean Hooper-Greenhill. 1992. Museums and Their Visitors. Routledge, 
+London, UK.
+
+[6] George Macdonald and Stephen Alsford. 1991. The museum as information 
+utility. Museum Management and Curatorship 10, 3 (1991),
+305–311. DOI:10.1016/0964-7775(91)90064-X
+
+[7] Lydia Ntamkarelou, Philemon Bantimaroudis, and Maria Economou. 2017. 
+Testing the uses and gratifications approach to museum
+visiting: Adopting a mediated perspective in the cultural domain. Visitor 
+Studies 20, 1 (2017), 56–71. DOI:10.1080/10645578.2017.1297131
+
+[8] Jenny Kidd. 2014. Museums in the New Media Scape: Transmedia, 
+Participation, Ethics. Ashgate, Farnham, England.
+
+[9] Fiona Cameron and Helena Robinson. 2007. Digital knowledgescapes: Cultural, 
+theoretical, practical, and usage issues facing museum
+collection databases in a digital epoch. In Theorizing Digital Cultural 
+Heritage: A Critical Discourse, F. Cameron and S. Kenderdine (Eds.).
+MIT Press, London, UK, 165–191.
+
+[10] Malcolm Chapman. 2015. Managing collections or managing content?: The 
+evolution of museum collections management systems. In
+
+The International Handbooks of Museum Studies, C. McCarthy (Ed.), Vol. 2. 
+Wiley, 267–292.
+
+[11] Nina Simon. 2010. The Participatory Museum. Museum 2.0, Santa Cruz, CA
+
+[12] Museums Etc (Ed.). 2012. Conversations With Visitors: Social Media in 
+Museums. Museums, Etc., Edinburgh, Scotland.
+
+[13] Ana Luisa Sánchez Laws. 2015. Museum Websites and Social Media: Issues of 
+Participation, Sustainability, Trust and Diversity. Berghahn,
+New York, NY.
+
+[14] Kirsten Drotner and Kim Christian Schroeder (Eds.). 2013. Museum 
+Communication and Social Media: The Connected Museum. Routledge,
+London, UK.
+
+[15] Johan Oomen and Lora Aroyo. 2011. Crowdsourcing in the cultural heritage 
+domain: Opportunities and challenges. In Proceedings of
+the 5th International Conference on Communities and Technologies (C&T’11). 
+138–149.
+
+[16] Mia Ridge (Ed.). 2016. Crowdsourcing Our Cultural Heritage. Routledge, 
+Abingdon, England.
+
+[17] Canadian Heritage Information Network (CHIN). 2004. 2004 Survey of 
+Visitors to Museums’ Web Space and Physical Space. Retrieved
+September 10, 2018 from 
+https://www.canada.ca/en/heritage-information-network/services/web-interactive-m
+obile-technologies/
+survey-visitors-museums-web.html.
+
+[18] Jonathan Bowen. 2000. The virtual museum. Museum International 52, 1 
+(2000), 4–7.
+
+[19] R. J. Wilson. 2011. Behind the scenes of the museum website. Museum 
+Management and Curatorship 26, 4 (2011), 373–389. DOI:10.1080/
+09647775.2011.603934
+
+[20] V. Kravchyna and S. K Hastings. 2002. Informational Value of Museum Web 
+Sites. First Monday. Retrieved September 10, 2018 from
+http://firstmonday.org/ojs/index.php/fm/article/view/929.
+
+[21] D. Cunliffe, E. Kritou, and D. Tudhope. 2001. Usability evaluation for 
+museum web sites. Museum Management and Curatorship 19, 3
+(2001), 229–252. DOI:10.1080/09647770100201903
+
+[22] K. Futer. 1997. Tell me what you want, what you really, really want. A 
+look at Internet user need. In Proceedings of the Conference on
+Electronic Visualisation and the Arts (EVA’97).
+
+[23] Paul F. Marty. 2008. Museum websites and museum visitors: Digital museum 
+resources and their use. Museum Management and Cura-
+torship 23, 1 (2008), 81–99. DOI:10.1080/09647770701865410
+
+[24] M. Agosti, F. Crivellari, and G. M. Di Nunzio. 2012. Web log analysis: A 
+review of a decade of studies about information acqui-
+sition, inspection and interpretation of user interaction. Data Mining and 
+Knowledge Discovery 24, 3 (2012), 663–696. DOI:10.1007/
+s10618-011-0228-8
+
+[25] N. Fuhr, G. Tsakonas, T. Aalberg, M. Agosti, P. Hansen, S. Kapidakis et 
+al. 2007. Evaluation of digital libraries. International Journal on
+Digital Libraries 8, 1 (2007), 21–38.
+
+[26] J. Zhang and J. Kamps. 2010. A search log-based approach to evaluation. 
+Lecture Notes in Computer Science, Vol. 6273. Springer, 248–260.
+
+DOI:10.1007/978-3-642-15464-5_26
+
+
+[27] Cesar Carreras (Ed.). 2005. Patrimonio Cultural y Tecnologías de la 
+Información y la Comunicación. A la búsqueda de nuevas fronteras.
+Tendencias 2, Ayuntamiento de Cartagena, Concejalía de Cultura y 3000 
+Informática, Cartagena, Spain.
+
+[28] Ion Gil Fuentetaja and Maria Economou. 2008a. Studying the type of online 
+access provided to museum collections. In Proceedings of
+the Annual Conference of the Documentation Committee of ICOM (CIDOC’08).
+
+[29] Ion Gil Fuentetaja and Maria Economou. 2008b. Online access to digital 
+collections—Design and use of museum databases. In Proceed-
+ings of Digital Heritage—14th International Conference on Virtual Systems and 
+Multimedia (VSMM’08). 118–120.
+
+[30] Ion Gil Fuentetaja and Maria Economou. 2009. Analysis of users’ access to 
+museums websites—Comparison of weblogs. In Proceedings
+of the 15th International Conference on Virtual Systems and Multimedia 
+(VSMM’09). 123–128. DOI:http://doi.ieeecomputersociety.org/
+10.1109/VSMM.2009.24
+
+[31] Elisa Giaccardi (Ed.). 2012. Heritage and Social Media: Understanding 
+Heritage in a Participatory Culture. Routledge, London, UK.
+
+[32] Ion Gil Fuentetaja. 2012. Knowledge-Based Society and Innovation in the 
+New Cultural Spaces: An Approach From the Digitised Museums.
+Ph.D. Dissertation. University of Deusto, Spain.
+
+[33] We Are Social and Hootsuite. 2018. 2018 Digital Yearbook. Heading 
+Internet, Social Media, and Mobile Use Data for Every Country in
+the World. Retrieved September 7, 2018 from 
+https://digitalreport.wearesocial.com.
+
+[34] GSMA Intelligence. 2017. Number of Unique Mobile Subscribers Worldwide 
+Hits Five Billion. Retrieved September 3, 2018 from https:
+
+//www.gsmaintelligence.com/research/2017/06/number-of-unique-mobile-subscribers-
+worldwide-hits-five-billion/624/.
+
+[35] Internet World Stats. 2018. Internet Growth Statistics. Retrieved 
+September 3, 2018 from https://www.internetworldstats.com/
+emarketing.htm.
+
+[36] George E. Hein. 1998. Learning in the Museum. Routledge, London, UK.
+
+[37] G. Leinhardt and K. Crowley. 1998. Museum Learning as Conversational 
+Elaboration: A Proposal to Capture, Code, and Analyze Talk in
+Museums. Museum Learning Collaborative.
+
+[38] S. Allen. 2002. Looking for learning in visitor talk: A methodological 
+exploration. Learning Conversations in Museums 1 (2002), 259–303.
+
+[39] J. R. Hill, D. Wiley, L. M. Nelson, and S. Han. 2004. Exploring research 
+on Internet-based learning: From infrastructure to interactions.
+In Handbook of Research on Educational Communications and Technology (2nd ed.), 
+D. H. Jonassen (Ed.). Lawrence Erlbaum Associates,
+Mahwah, NJ, 433–460.
+
+[40] Jennifer Trant & participants in the Steve.Museum Project. 2006. Exploring 
+the potential for social tagging and folksonomy in art
+museums: Proof of concept. New Review of Hypermedia and Multimedia 12, 1 
+(2006), 83–105.
+
+[41] M. Sharples, P. Rudman, J. Meek, and P. Lonsdale. 2009. Myartspace: Design 
+and evaluation of support for learning with multimedia
+phones between classrooms and museums. Computers and Education 53, 2 (2009), 
+286–299.
+
+[42] M. Hagedorn-Saupe, L. Kampschulte, and A. Norchka-Roos. 2014. Informal, 
+participatory learning with interactive exhibit settings and
+online services. In Museum Communication and Social Media: The Connected 
+Museum, K. Drotner and K. C. Schroeder (Eds.). Routledge,
+London, UK, 111–129.
+
+[43] Lynda Kelly. 2010. The Twenty-First Century Museum: The Museum Without 
+Walls, Alma S. Wittlin Memorial Lecture, ICOM Shanghai,
+China. November 2010.
+
+[44] Lynda Kelly. 2014. The connected museum in the world of Social Media. In 
+Museum Communication and Social Media: The Connected
+Museum, K. Drotner and K. C. Schroeder (Eds.). Routledge, London, UK, 54–71.
+
+[45] Maria Economou. 2015. Heritage in the digital age. In A Companion to 
+Heritage Studies, W. Logan, M. N. Craith, and U. Kockel (Eds.),
+
+Vol. 15. Wiley Blackwell, Chichester, UK, 215–228. 
+DOI:10.1002/9781118486634.ch15
+
+[46] Jonathan P. Bowen. 2002. Weaving the museum web: The Virtual Library 
+museums pages. Program 36, 4 (2002), 236–252. DOI:10.1108/
+00330330210447208
+
+[47] George Henri Rivière. 1989. La Museologie Selon Georges Henri Rivière. 
+Dunod, Paris, France.
+
+[48] Graham Fairclough. 2012. Others. A Prologue. In Heritage and Social Media: 
+Understanding Heritage in a Participatory Culture, E.
+Giaccardi (Ed.). Routledge, London, UK, xiv–xvii.
+
+Received February 2018; revised June 2018; accepted September 2018
+

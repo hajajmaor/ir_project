@@ -1,0 +1,3704 @@
+Museum Visitor Engagement Through Resonant,
+Rich and Interactive Experiences
+
+A thesis submitted to the School of Design, Carnegie Mellon University,
+for the degree of Master of Design in Interaction Design
+
+Cheryl A. Templeton
+
+Professor Mark Baskinger
+
+ c 2011 Cheryl A. Templeton
+
+
+
+Cheryl A. Templeton                 i
+
+Abstract
+
+Museum Visitor Engagement Through Resonant, Rich and Interactive Experiences
+Cheryl A. Templeton
+
+Master of Design in Interaction Design, Carnegie Mellon University
+Advisor Mark Baskinger
+
+Museums are vast resources, but much of their information is inaccessible to 
+visitors.
+Typical labels for artifacts provide few details, making it difficult for 
+non-expert visitors to
+learn about an artifact, and to find its relevance to other artifacts or to 
+themselves. Although
+museums have developed interpretive aids such as brochures and audio guides, 
+these are
+limited and do not offer visitors the possibility to explore artifacts both 
+broadly and deeply
+as they go through an exhibition. Visitors often have questions that go 
+unanswered or
+pass through an exhibition without being engaged. As visitors all have their 
+own personal
+interests and preferences, it would be difficult to offer a usable version of 
+any current inter-
+pretive aid that includes all of the information, stories, and related content 
+that each visitor
+would like. Personal mobile devices provide a platform for interactivity and 
+access to an
+unlimited amount of information, presentation of rich media, and flexibility 
+for customized
+experiences both inside the museum and beyond.
+
+To bridge the gap between museum collection information and visitor engagement, 
+I
+propose a framework for increasing engagement through resonant, rich, and 
+interactive
+experiences mediated by a personal mobile guide, and present a case study and 
+functional
+prototype mobile guide for the Hall of Architecture at the Carnegie Museum of 
+Art.
+
+
+ii Museum Visitor Engagement Through Resonant, Rich and Interactive Experiences
+
+For Todd.
+
+
+Contents
+
+Acknowledgments                                    vii
+
+1  Introduction                                      1
+
+2  Frameworks for Understanding Visitors                      3
+
+2.1  Falk’s Visitor Model                               3
+
+2.2  Other Visitor Models                               5
+
+3  Mobile Museum Guides                               7
+
+3.1  Benefits of Mobile Guides                            7
+
+3.2  Business Model                                 8
+
+3.3  Native Versus Web Applications                        8
+
+3.4  Current Guides                                  8
+
+3.5  Recommendation Systems                           10
+
+3.6  Object Selection                                 11
+
+3.7  Conclusions                                   11
+
+4  Understanding Visitors and Museum Staff                    13
+
+4.1  Art Museum Professionals                           13
+
+4.2  Visitor Case Study: University Students                    16
+
+4.3  Personas and Visitor Types                           18
+
+5  Findings & Design Criteria                             21
+
+5.1  Key Findings                                  21
+
+5.2  Design Criteria                                 22
+
+6  Initial Concepts                                   23
+
+6.1  Relation to Visitor Models                           26
+
+6.2  Relation to Other Interpretive Aids                       27
+
+6.3  Enhancing the Basic Features of Current Mobile Guides           27
+
+7  Case Study: The Carnegie Museum of Art                    29
+
+7.1  Prototyping                                   31
+
+iii
+
+
+8  Prototype Mobile Guide System                          37
+
+8.1  Supporting the Visit Cycle: Planning, Exploring, and Reviewing       37
+
+8.2  Resonant, Rich, and Interactive Experiences in the Guide           37
+
+8.3  Supporting Many Types of Visitors                      41
+
+8.4  Testing with Museum Visitors                         42
+
+8.5  Final Guide Design                               45
+
+9  Conclusion                                      51
+
+9.1  Feasibility & Implementation                         51
+
+9.2  Future Work                                   52
+
+Bibliography                                       53
+
+Appendix A                                        55
+
+Current Mobile Guides                                55
+
+Appendix B                                        57
+
+User Research                                     57
+
+Scenarios                                       58
+
+Appendix C                                        61
+
+UI Design                                       61
+
+Appendix D                                        65
+
+Interpretive Aids for the Carnegie Museum of Art                  65
+
+
+List of Figures
+
+2.1  Falk’s visitor categories                               3
+
+2.2  Dallas Museum of Art’s visitor model                        5
+
+3.1  Perspectives of key stakeholders                           9
+
+4.1  Key stakeholders in visitor experience                       14
+
+4.2  Kiosk at the Carnegie Museum of Art                       15
+
+4.3  Think aloud visit to the Carnegie Museum of Art                 17
+
+6.1  Concept 1: Location                                24
+
+6.2  Concept 2: Related Works                             24
+
+6.3  Concept 3: Contrasting Works                           25
+
+6.4  Concept 4: Musical Background                          25
+
+6.5  Concept 5: Match Game                              26
+
+6.6  Concept 6: Track Your Visit                            26
+
+6.7  Mobile guide integration                              27
+
+7.1  View of the Hall of Architecture                          30
+
+7.2  Small works hung in the Hall of Architecture                   30
+
+7.3  Location wireframe                                 32
+
+7.4  Related Works wireframe                              32
+
+7.5  Match Game wireframe                               33
+
+7.6  Geography wireframe                                33
+
+7.7  Architectural Styles wireframe                           34
+
+7.8  Track Your Visit wireframe                            34
+
+8.1  Types of exploration supported by the guide                    38
+
+8.2  Guide system overview                               39
+
+8.3  Information architecture                              40
+
+8.4  Match Game flow                                  41
+
+8.5  User testing                                     42
+
+8.6  Final UI screenshots                                46
+
+8.7  Additional final UI screenshots                           47
+
+8.8  Sample scenario part one                              48
+
+v
+
+
+8.9  Sample scenario part two                              49
+
+1   Overview of primary grids                             62
+
+2   Color palette                                     62
+
+3   Alternate navigation style                              63
+
+4   Object label                                     65
+
+5   Gallery sign                                     66
+
+
+Acknowledgments
+
+I would like to thank my advisor, Professor Mark Baskinger, for his 
+contributions and
+support; The Society for Contemporary Craft and The Mattress Factory museum; 
+the staff
+of the Carnegie Museum of Art (Marilyn Russell, Lucy Stewart, Tracy Myers, and 
+Krystina
+Mierins); and my family, colleagues, and research participants. I would also 
+like to thank
+my husband Todd for his tireless support.
+
+vii
+
+
+
+1 Introduction
+
+Learning is not restricted to classrooms or school curricula; people learn new 
+things every
+day when they read books, look things up online, go on hikes, or try to fix 
+their cars. People
+may also seek out places like museums, nature centers, gardens, or zoos in 
+order to be
+exposed to new ideas and to have new experiences. These places are dedicated to 
+engaging
+and educating visitors; unfortunately, there are few people who truly use these 
+institutions
+to the greatest potential. Many people visit an institution only once, or very 
+infrequently,
+and those visits could be more engaging and informative. Visitors are missing 
+out on the
+true breadth and depth of information, and the rich experiences, that these 
+places can offer.
+This is not merely a missed opportunity; many institutions realize that in 
+order to pros-
+per, they must change. They can no longer satisfy themselves with merely 
+preserving and
+displaying important collections, confident that the public will continue to 
+find value in
+repeat visits [4]. There are some in the museum community who have called for a 
+new ded-
+ication to excellence, asserting that museums too often focus on merely 
+surviving, when
+they should be innovative and work to exceed the expectations of visitors [25]. 
+Striving for
+excellence is a requirement for museums if they are to compete for the public’s 
+attention
+in  the face of content and activities like the increasingly-impressive and 
+accessible content
+
+online and on television.
+
+The difficulty in engaging visitors is that, although museums are extensive 
+resources,
+much of their information is inaccessible to visitors. Typical labels for 
+artifacts provide few
+details, making it difficult for non-expert visitors to learn about an 
+artifact, or to find its
+relevance to other artifacts or to themselves. Visitors have questions that go 
+unanswered
+or they pass through an exhibition without being engaged. Visitors can fully 
+engage with
+museum content through resonant, rich, and interactive experiences.
+
+• Resonance occurs when someone senses a connection between himself and an 
+object
+or event—it brings up memories of events, thoughts or feelings or ties to 
+personal
+interests. While visitors can choose exhibitions that they relate to, many 
+possible
+connections are not readily visible to visitors. An interpretive system can 
+present
+more options for visitors, like different ways to view collections, themed tour 
+options,
+or recommendations based on works that the visitor has already seen, resulting 
+in
+many more opportunities for visitors to find connections to artifacts.
+
+• Rich information goes beyond a listing of facts to provide further details or 
+related
+information that can help visitors to find resonance, and to become more 
+engaged.
+Some examples of rich information that an interpretive system can provide to 
+users
+include videos of artifact restoration, interviews with curators, period music 
+clips,
+and reconfigurable maps of connections between artifacts. Having a variety of 
+infor-
+mation, and ways to interact with that information, introduces a sense of 
+freedom and
+potential that will spark the curiosity of visitors and lead them to consider 
+not only
+
+1
+
+
+whether they like or dislike an artifact, but also its connections to other 
+artifacts or
+knowledge domains and, particularly, how it relates to themselves.
+
+• Interactive information enables visitors to make choices and to explore 
+exhibitions
+and related content on their own, as far as they would like to go. Providing 
+visi-
+tors more control in how they choose to learn about the exhibitions and 
+individual
+works may help them to discover their own connections to the exhibitions. 
+Interac-
+tive information frameworks may provide flexibility, customization, and 
+incidental
+exploration. These behaviors are important in transforming passive museum 
+visitors
+into active information seekers and engaged visitors.
+
+Museums offer many interpretive aids to engage and inform visitors, such as 
+wall la-
+bels, docent tours, audio guides, and brochures, but these aids are inherently 
+limited. A
+brochure may be very well designed, but it will always be static. Traditional 
+audio guides
+may contain interesting stories, but content is presented serially and users 
+cannot request
+more information. Docent tours have a personal touch and visitors can have 
+their questions
+answered on the spot, but they are restrictive (because visitors will only view 
+and get infor-
+mation about a predetermined set of artifacts) and limited (because they rely 
+on volunteer
+resources).
+
+Museums are in need of a new way to share their content. Some institutions like 
+chil-
+dren’s museums or science centers have many physical exhibits and signs that 
+provide in-
+formation and allow visitors to experiment in order to understand new concepts. 
+Physical
+and especially interactive, exhibits involving multiple senses are generally 
+accepted as very
+engaging, educational, and memorable. However, those institutions whose focus 
+has tradi-
+tionally been on presenting and preserving objects (such as specimens or 
+artworks), rather
+than on directly educating visitors, face a challenge because such exhibits and 
+activities
+may not fit within their culture or exhibition space.
+
+Mobile guides (offered on smartphones, PDAs, or other small electronic devices) 
+are
+a natural means of creating resonant, rich, and interactive experiences, and 
+require only
+minimal changes to the exhibition space. Unlike other interpretive aids, mobile 
+guides can
+access an unlimited amount of information via the Internet and can contain many 
+learning
+options that are tailored to individuals or to categories of visitors. Mobile 
+guides can tap
+into the depth of museum-curated digital content or link across the Internet to 
+external
+sources. While there are an increasing number of mobile guides, many are still 
+limited,
+merely offering another means of accessing pre-existing audio guide content, 
+and do not
+live up to the potential of their advanced technology.
+
+This thesis proposes a system that increases engagement through a resonant, 
+rich, and
+interactive experience that takes advantage of the new possibilities afforded 
+by personal
+mobile devices. The system is based on models of visitor goals and attitudes, 
+successes
+and failures of current mobile guides, interviews with key stakeholders (museum 
+staff and
+visitors), and user testing, in addition to known design principles. As a case 
+study, this
+thesis develops a mobile guide that successfully engages visitors at an art 
+museum, one of
+the most difficult types of museums for visitor engagement, because of the 
+required trade-
+off between providing interpretive content and maintaining an uncluttered 
+atmosphere.
+
+
+2 Frameworks for Understanding
+Visitors
+
+Traditionally, museum professionals have used demographic data to understand 
+their vis-
+itors. This data typically includes information such as race, age, income, and 
+level of
+education. While this data is easy for visitors to provide, it has been shown 
+through years
+of visitor research that it is not predictive of visitor behavior or experience 
+[7]. Visitor
+models can help museums find new ways to offer resonant experiences—experiences 
+that
+encourage curiosity and help visitors find meaning in the collections. People 
+often create
+or discover meaning by finding connections between something they are currently 
+experi-
+encing and something from their past, with their other interests, or with their 
+aspirations.
+While museums cannot have a deep understanding of all of their visitors in 
+order to create
+experiences that best resonate with them, visitor models can be an efficient 
+way to improve
+upon current strategies, which are often one-size-fits-all, and to evaluate 
+proposed solutions
+in terms of meeting and exceeding visitors’ expectations.
+
+2.1  Falk’s Visitor Model
+
+Renowned museum researcher John H. Falk describes different types of visitors 
+based on
+their visit goals, which relate to their sense of personal identity. These 
+visitor types in-
+clude: Explorers, Facilitators, Experience Seekers, Professionals/Hobbyists, 
+and Recharg-
+ers. These categories cut across demographics, and a person may go to a museum 
+or other
+learning institution as an Explorer one day and as a Facilitator the next. A 
+visitor may also
+embody a combination of categories during a visit.
+
+
+Experience
+Seekers
+
+Want to see the
+most renowned
+pieces and make
+memories.
+
+Explorers
+
+Want to learn
+new information
+and understand
+new concepts.
+
+Facilitators
+Want to ensure
+that their com-
+
+panions meet
+
+their visit goals.
+
+Hobbyists &
+Professionals
+Want to see and
+
+study speci!c
+
+pieces or exhibits.
+
+Rechargers
+Want to relax
+in a peaceful
+
+atmosphere.
+
+Figure 2.1: Falk’s visitor categories
+3
+
+
+Experience Seekers
+
+Experience Seekers want to see the “most important” exhibitions and to “make 
+memories;”
+they are often tourists. These visitors may be on a tight schedule, so they 
+want high-level in-
+formation about the museum collection rather than long stories and details. 
+They may also
+be especially interested in maps or navigational help as it is likely their 
+first visit to a par-
+ticular institution. Experience Seekers may also be locals attracted by a new 
+“blockbuster”
+exhibition—perhaps a traveling exhibition that has been to many renowned 
+museums.
+
+Explorers
+
+Explorers are curious and seek to learn new information, and understand new 
+concepts, dur-
+ing their visit. In order to satisfy their curiosity, Explorers read wall 
+labels and brochures,
+and may attend museum lectures or search for books specializing in topics that 
+they find
+particularly interesting during their visit. They may come alone, or separate 
+from their
+group. They are often repeat visitors and want to explore on their own, without 
+following
+prescriptive tours or audio guides. Falk suggests that Explorers might use a 
+guide if it were
+flexible and allowed them freedom of choice [7]. In terms of their identity 
+needs, Explorers
+are seeking to confirm themselves as curious people who value education. They 
+want to
+feel intrigued and challenged.
+
+Facilitators
+
+Facilitators go to learning institutions with others such as friends, 
+relatives, or children.
+Their primary goal is to ensure that the other people in their group have a 
+good time and
+accomplish their own goals at the museum. Parents are often Facilitators and 
+seek to con-
+firm themselves as good parents who help their children learn. Other 
+Facilitators seek to
+confirm themselves as good friends or family members. If visit companions are 
+not par-
+ticularly interested in the exhibitions, the museum may simply serve as a 
+“backdrop” for
+socializing and building relationships.
+
+Rechargers
+
+Rechargers want to relax in a peaceful atmosphere and are not especially 
+interested in the
+exhibitions themselves and are unlikely to use interpretive aids.
+
+Professionals/Hobbyists
+
+Professionals or Hobbyists often come to the museum with a specific interest or 
+to see a par-
+ticular exhibition. They think of themselves as the “real visitors,” unlike the 
+mere “tourists”
+and want to confirm themselves as sophisticated [7]. They are unlikely to read 
+wall labels
+or use other interpretive aids as they are already very knowledgeable. They 
+may, however,
+attend lectures or workshops, and enjoy talking to experts and learning 
+behind-the-scenes
+information about the museum.
+
+Falk, in collaboration with Lynn Dierking, also developed the Contextual Model 
+of
+Learning [8], which shows how visitor experience is affected by factors other 
+than iden-
+tity, such as personal context (prior knowledge, experiences, and interests), 
+socio-cultural
+
+
+Cheryl A. Templeton                 5
+
+Dallas Museum of Art Visitor Model
+
+
+Uncomfortable
+
+Comfortable
+
+Very Comfortable
+
+
+Tentative
+Observers
+
+Little experience
+with art.
+
+Curious
+Participants
+
+Enjoy art and
+museums.
+
+Committed
+Enthusiasts
+
+Knowledgeable
+and connected
+to art. Enjoy
+learning from
+experts.
+
+Discerning
+Independents
+
+Knowledgeable
+and connected
+to art. Enjoy
+developing
+their own views
+on art.
+
+Figure 2.2: The Dallas Museum of Art’s visitor types and their comfort with 
+art.
+
+context (current companions, others at the venue, and cultural background) and 
+physical
+context (advance organizers, architecture and exhibit design).
+
+2.2  Other Visitor Models
+
+In addition to Falk’s foundational work, there are more-recent studies 
+completed over the
+last ten years that propose other models of visitor types, centering on the 
+idea that personal
+information—like previous experience, goals and identity—are more meaningful 
+than de-
+mographic data in terms of predicting visitor behavior and desires. These 
+models offer
+other perspectives on visitors that can help to shape interpretive aids.
+
+The Dallas Museum of Art’s Visitor Model
+
+Researchers at the Dallas Museum of Art (DMA), in conjunction with research 
+consul-
+tancy Randi Korn and Associates, developed a visitor model based on the level 
+of comfort
+or “personal connection” that different visitors have with art. They identify 
+four types of
+visitors: Tentative Observers, Curious Participants, Discerning Independents, 
+and Commit-
+ted Enthusiasts [11]. While Committed Enthusiasts and Discerning Independents 
+are both
+knowledgeable, confident and emotionally connected to art, the Committed 
+Enthusiasts are
+those visitors who are interested in hearing explanations of artwork while 
+Discerning Inde-
+pendents are more interested in developing their own views.
+
+Randi Korn and Associates used the same approach to visitor categorization at 
+the
+Sports Legends Museum at Camden Yards [15]. While the categories that they 
+found there
+(Middle-Road Fans, TV Enthusiasts, Active Enthusiasts, and Indifferent 
+Companions) are
+different from those found at the DMA, this example illustrates that analyzing 
+visitors from
+a non-demographic view can be applied to different types of museums.
+
+As an example of how a visitor model can be put to use, in 2005 the Dallas 
+Museum
+of Art created a new system for developing visitor programs based on their 
+research. The
+DMA calls this new system The Arts Network and has used visitor categories to 
+develop
+
+
+“channels” that organize and target their offerings in the same way that many 
+television
+channels are targeted (e.g. HGTV focuses on home and garden interests and ESPN 
+focuses
+on sports interests). More information about their visitor studies and the 
+implementation
+of their framework can be found in their publications Dallas Museum of Art 
+Presents The
+Arts Network [11] and Ignite the Power of Art: Advancing Visitor Engagement in 
+Museums
+[23].
+
+By analyzing visitors, museums can generally find a small number of categories 
+into
+which visitors fit for the purposes of designing exhibits or communications to 
+appeal to a
+range of visitors. These categories can cover such distinctions as 
+identity-related goals (as
+does that Falk model), attitude toward the subject matter (as does the DMA 
+model) or other
+distinctions that are of interest to a particular museum.
+
+
+3 Mobile Museum Guides
+
+Museum audio guides, the precursors to mobile guides, originated in the 1950s 
+as the stan-
+dard method for delivering content beyond wall labels. They began as personal 
+receivers
+for short-wave radio broadcasts—visitors could “tune-in” and listen to a 
+recorded audio
+program that was already in progress. Visitors did not have any choice over 
+what to listen
+to  or when to listen to it [29].
+
+In the early 1990s random access capability was introduced and visitors could 
+ac-
+cess audio clips by keying in numeric codes placed by artworks [10]. Visitors 
+had more
+control—they could choose to only listen to information about works in which 
+they were
+interested. Today, most museums with audio guides use systems that have changed 
+little
+since the introduction of random access. Visitors typically go to a designated 
+area after pur-
+chasing museum admission and then pay to rent an audio guide player. They can 
+usually
+select a language option and then use the guide as described above.
+
+3.1  Benefits of Mobile Guides
+
+Mobile guides offer new capabilities and conveniences to address the 
+limitations of audio
+guides. They can be accessed on visitors’ own devices and can provide a richer 
+experi-
+ence: more information, more personalized information, and multimedia 
+information (text,
+pictures, videos). Current mobile guides capitalize on these capabilities to 
+varying degrees.
+
+• Unlimited Content Although it is important to consider connection speeds, 
+mobile
+guides that have access to the Internet can provide an unlimited amount of 
+informa-
+tion to visitors and can provide multimedia content in a number of formats. This
+allows museums to present visitors with many options for engaging with their 
+col-
+lections, and allows visitors to explore beyond basic facts about works in as 
+much
+breadth or depth as they choose.
+
+• Exploration Options Digital, interactive guides can also offer a choice 
+between guided
+tours or on-demand information (See Figure 8.1). While audio guides have evolved
+into on-demand systems, some visitors may still prefer the more structured 
+approach
+of an organized tour. Mobile guides can offer both, including many distinct 
+tours and
+the ability to switch between on-demand viewing and following a tour.
+
+• Purchase/Decision Timing Guides developed for visitors’ own devices (with 
+Internet
+access) can provide a new flexibility for visitors. Currently, visitors have to 
+decide at
+the beginning of their visit to get an audio guide, before they have seen the 
+exhibi-
+tions. They may not think that they will want a guide, or they might not 
+realize that
+the museum has a guide if it is not brought to their attention. By developing 
+guides
+
+7
+
+
+for these new devices, and specifically for the devices that a visitor may own 
+and
+carry with them, visitors can decide to opt-in to the guide at any time. If a 
+visitor has
+a smartphone, as he reads a label or looks at a sign in a gallery, he can learn 
+about the
+guide and quickly install it or access it through a Web browser.
+
+• Reading and Listening Options A reading- or text-based option allows for easy 
+brows-
+ing (can quickly see what information in included) and makes users appear more
+approachable than if they were wearing headphones (good for group visits).
+
+3.2  Business Model
+
+Audio or mobile guides are not relied upon for revenue, which largely comes 
+from donors
+and ticket sales (if admission is not free). Guide systems are implemented as 
+part of a
+strategy for increasing visitor engagement, contributing to the education of 
+the public and
+increasing a museum’s popularity and reputation. However, if a museum is 
+popular and the
+community recognizes it as a valuable resource (perhaps partially due to a 
+guide), that will
+help  the museum to secure funding.
+
+3.3  Native Versus Web Applications
+
+Current guides for mobile devices are either native applications (made to be 
+installed on
+a specific type of device) or Web applications (viewed through a Web browser). 
+Many
+of the current smartphone guides are native iPhone applications—made for 
+Apple’s iOS
+which, unfortunately, leaves out the majority of smartphone users. In order to 
+reach other
+users, additional applications would have to be developed specifically for 
+other smartphone
+operating systems. While Web applications cannot make use of some operating 
+system-
+specific features, such as integrating directly with the camera, they provide 
+access to anyone
+with an Internet-enabled device and avoid the cost and time associated with 
+developing
+multiple versions of an application for different devices.
+
+3.4  Current Guides
+
+Because of the new possibilities afforded by offering guides on consumer 
+devices, muse-
+ums and guide design firms are both interested and currently engaged in 
+exploring these
+platforms. Many large or forward-thinking museums are using mobile guides, and 
+many
+smaller, less-well-funded or more-conservative museums may follow in the future 
+as the
+guides are further explored and tested. Computer science researchers are also 
+interested in
+visitor experience and mobile guides because of the large data sets of works 
+and related
+information, and the challenge of exploring that information at the museum.
+
+Current guides are created either by design firms or in-house at museums. In 
+the past,
+museums often relied heavily on design firms to create and manage their audio 
+guides, but
+museums are increasingly handling their guides in-house [5]. Museums that do 
+use design
+firms generally have more control over content than they did in the past and 
+may rely on
+the design firm primarily for the user interface (UI) design and programming.
+
+
+What is the Future of Mobile Museum Guides?
+
+
+Guide Design Companies
+
+There will be opportunities for
+custom UIs as well as
+frameworks that many
+institutions can use.
+
+Shift focus from custom hardware
+to developing for common devices
+that visitors may bring to the
+museum.
+
+Museum Sta
+
+Create a database of the museum
+collection.
+
+Develop guide content in-house.
+
+Guides must be fun, educational,
+and adaptable to many dierent
+visitor interests.
+
+Minimize costs while making
+content available to as many
+people as possible.
+
+Researchers
+
+Recommendation algorithms,
+computer vision, and sensors
+have the possibility to enhance
+guides.
+
+Guides should be context aware
+and €t seemlessly into the visit
+experience.
+
+Figure 3.1: Different perspectives on future museum guides.
+
+UI Frameworks
+
+Some design firms have created flexible, generic UIs that can be used for many 
+different
+institutions. Two such systems are Antenna Audio’s Pentimento system [2] and 
+Acous-
+tiguide’s Smartour [1]. Museums can use these frameworks to organize and 
+display their
+content. The frameworks generally support multiple ways for visitors to access 
+content:
+
+• Themes
+
+• Browsable images of works by gallery
+
+• Numeric keypad
+
+• Interactive map
+
+• Text search
+
+• Tours
+
+Smartour also includes features such as a registration form through which 
+visitors can
+sign up for museum notifications, and social networking options so that 
+visitors can tell
+others about their visit.
+
+These frameworks can save time when creating a guide. However, although the 
+standard
+features may capture most of what museums currently expect, they do not 
+approach the full
+potential of a mobile guide.
+
+Custom Guides
+
+Most guides are custom-made for a museum or a specific exhibition. Many share 
+common
+features such as basic logistical information (like hours and tickets prices), 
+tours, and audio
+or video commentary. Some guides also include an interactive map, showing 
+locations of
+artworks on a chosen tour.
+
+
+Innovative features:
+
+• Including non-museum content such as relevant YouTube videos
+
+• Posting visitor comments
+
+• Allowing visitors easy access to guide material outside of the museum
+
+• Encouraging visitors to participate in curation
+
+Examples of museums with custom guides:
+
+• The Brooklyn Museum
+
+• The Cooper-Hewitt
+
+• The Louvre
+
+• The Mattress Factory
+
+• SFMOMA
+
+There are many guide examples (see Appendix A) and some have incorporated 
+features
+that have been recognized by museum professionals as engaging for visitors (see 
+Section
+4.1), but there is significant room for innovation and refinement of features 
+and user in-
+terface, and some areas of interest to museum professionals and visitors (such 
+as games,
+recommendations, and easy direct access to specific works) have not been fully 
+or satis-
+factorily explored in current systems. These areas will be explored in the 
+system that this
+thesis proposes.
+
+3.5  Recommendation Systems
+
+Museum professionals and computer science researchers are looking to see how 
+museum
+guides can go beyond the current state and reach new levels of engagement and 
+ease-of-
+use. A major interest is in recommendation systems; there are many options 
+covering a
+range of implementations and values for engagement. A fast and simple way to 
+provide
+personalization is through a fixed list of profiles (e.g. “Explorer” or 
+“Student”) from which
+visitors  can choose at the beginning of their visit. Researchers Tan and 
+Oinonen conducted a
+study to learn about visitors’ profiling preferences [30] and found that 
+participants prefer to
+have some direct control over their experience and are not satisfied with 
+choosing a profile.
+Alternatively, visitors can be profiled based on which items they view with a 
+guide or which
+they  rate highly, using an automated system based on machine learning (like 
+Pandora or
+Netflix). However, it is not clear how that can support first-time or 
+infrequent visitors as
+the system would not have sufficient time or data to make educated 
+recommendations. A
+simpler option that gives control to users is offering a list of themes or 
+related works from
+which visitors can choose.
+
+
+3.6  Object Selection
+
+Several research groups have developed and tested mobile museum guides, often 
+with a
+focus on how new technologies can enhance visitor experience. An overarching 
+trend is
+context awareness, with a focus on object recognition.
+
+Currently, users of mobile guides usually enter numerical codes provided on 
+wall labels
+into a guide system in order to access information. This method is reliable, 
+but text entry
+can be tedious or difficult. Aside from addressing usability concerns, new 
+object selection
+methods could also be playful.
+
+One new approach to object selection uses sensors and user gestures. In Towards 
+In-
+teractive Museum: Mapping Cultural Contexts to Historical Objects, Park et al. 
+present a
+wearable system through which users can point to an object to select it using a 
+“ring-type
+3D pointing device” equipped with a sensor and an accelerometer [14]. After 
+selecting an
+object, users can make a defined gesture to see information about that object 
+on a viewing
+device that is worn on the wrist. This work illustrates an innovative type of 
+interaction, but
+unfortunately, it may not be feasible in the near future (The majority of the 
+paper discusses
+the difficulties of object-selection.).
+
+Another approach to object selection uses computer vision. Bay et al. created a 
+system
+that includes a tablet PC with an attached webcam [3]. Users can take a photo 
+of an object,
+and the system will try to determine which object it is and then display 
+corresponding
+information. The system also makes use of location information obtained through 
+a wireless
+networking system installed in the space. While the authors state that the 
+system is “robust,”
+it  does require a database of museum holdings with several images for each 
+object that vary
+in angle, as well as a location-sensing system. Due to those constraints, such 
+a system
+seems difficult to maintain as exhibitions rotate in and out of museums and 
+also potentially
+expensive and difficult to install.
+
+Although these alternative means of object recognition may not be ready for 
+commer-
+cial use, they illustrate possibilities to consider for the future. Meanwhile, 
+some museums
+have used RFID or QR codes to aid in object selection, which are robust, 
+economical, and
+easy to implement (see Section 4.1 and Appendix A).
+
+3.7  Conclusions
+
+Mobile guides have evolved from simple audio tracks with few options to 
+multimedia touch-
+screen devices with large data stores and customization options. Many 
+professionals in the
+museum community are excited about the possibilities provided by these new 
+guides and
+are actively exploring them. However, many guides are still fairly limited, 
+merely offer-
+ing another means of accessing pre-existing audio guide content and not living 
+up to their
+potential. The system developed in this thesis will address these deficiencies 
+and take full
+advantage of the platform to meet and exceed visitor expectations.
+
+
+
+4 Understanding Visitors and
+Museum Staff
+
+A museum visitor’s experience is influenced by everyone from exhibit designers 
+to city
+government, but the primary stakeholders to consider when creating interpretive 
+systems
+are the museum staff and the visitors themselves (See Figure 4.1). The term 
+“museum
+staff” is intentionally broad as there are numerous roles that vary widely 
+depending on the
+size, subject matter, and collection of a particular museum. Among the staff, 
+two groups
+emerge as primary leaders and decision-makers: curators and educators. Curators 
+generally
+research artifacts, choose exhibition content and write interpretive text. 
+Educators take
+information about an exhibition and determine how best to present it to 
+visitors in order to
+maximize their engagement and learning. Educators also organize activities and 
+events for
+visitors that are aimed at enriching their understanding of the collections, 
+such as lectures
+or classes. A successful mobile guide (or any other interpretive system) will 
+help museum
+staff and visitors to achieve their goals. In order to understand their general 
+goals it is
+important to develop an understanding of any specific museum and visitor base 
+involved in
+a particular project. There is great variety among museums and visitor bases, 
+so it is not
+safe to assume that general information or models cover all of the necessary 
+considerations.
+
+4.1  Art Museum Professionals
+
+Museum professionals interviewed for this thesis were all enthusiastic about 
+improving vis-
+itor experience but came from institutions with varying types of artwork, 
+available content
+and desired visitor experience. All were interested in providing content to 
+visitors in addi-
+tion to what can be included on wall labels, in brochures or in audio guides; 
+suggestions
+included artist interviews, videos explaining the art-making process, 
+historical context, and
+recommendations about which works to view. Some were concerned that visitors 
+had ques-
+tions,    but did not ask staff for information; possible explanations include 
+that visitors are
+intimidated, worry about bothering staff, think that the staff is not 
+knowledgeable enough,
+or  worry about revealing their own lack of knowledge or understanding.
+
+Varying Exhibition Goals
+
+Overall, the museum staff were enthusiastic about giving options to visitors 
+and letting them
+explore, although some were concerned about visitors “wandering” in exhibitions 
+and not
+reaching the learning goals that staff had defined. Museum staff goals vary by 
+exhibition as
+well as by institution—in some cases the goal is for visitors to make their own 
+meaning and
+in others there are specific concepts or information that staff would like 
+visitors to learn.
+
+13
+
+
+
+PR
+
+Sta!
+
+Publications
+
+Sta!
+
+Website
+Creators
+
+Non-Museum
+Stakeholders
+
+
+Directors
+
+Curators
+
+City Gov’t
+
+Inuence on Experience
+
+Visitor
+
+
+Exhibit
+Designers
+
+Companions
+
+Other Visitors
+
+
+Museum
+Stakeholders
+
+Educators
+
+Conservators
+
+Audio/Guide
+Companies
+
+Donors
+
+Figure 4.1: Key stakeholders in visitor experience.
+
+Supportive or Distracting?
+
+Despite museum staff enthusiasm for the possibilities of mobile guides, some 
+did raise the
+question of whether a guide would distract from the artwork and become its own 
+activ-
+ity. One person gave the example of the Cooper-Hewitt’s guide [12], which 
+showed long
+videos that detracted from the exhibit. Koven J. Smith, of the Metropolitan 
+Museum of
+Art, said that he felt frustrated with the long videos and would rather watch 
+excerpts with
+the option to watch the videos at a later time [27]. A reviewer for the New 
+York Times felt
+that the Cooper-Hewitt’s guide worked very well in its context, but admitted 
+that such a
+guide “could be a fatal distraction from the art on view [28].” While any 
+interpretive aid
+could potentially distract from artwork, the advanced functionality and 
+multimedia possi-
+bilities of the latest mobile guides make them particularly prone to this 
+problem. However,
+well-structured content of an appropriate length can support visitors and avoid 
+becoming a
+distraction. Additionally, mobile guides allow visitors to save or bookmark 
+content for later
+viewing (if they are using their own device) and if they are using the museum’s 
+device then
+the museum can email content links to visitors or provide an easy way to find 
+the content
+on their websites.
+
+Guide Platforms
+
+In addition to traditional audio guides, the interviewed museum staff have 
+tried lending
+MP3 players, guide by cellular phone (providing numbers by artworks that 
+visitors can call
+for more information), and traditional audio guides. All systems were limited 
+to audio,
+the MP3 players quickly broke and the guide by cellular phone came with an 
+expensive
+contract for the museum. The Mattress Factory (an installation-art museum) 
+currently uses
+an inexpensive system for smartphone users. They have QR codes by their 
+artworks that
+
+
+Figure 4.2: Kiosk at the Carnegie Museum of Art
+
+visitors can scan in order to view additional content such as online videos of 
+the art instal-
+lation process or artist interviews. So far they have found that the visitors 
+who have tried
+the system have liked it and enjoyed the additional content.
+
+Supporting Socializing
+
+Beyond mobile guides, these institutions improve visitor experience through 
+art-making
+courses, reading groups, lectures, scavenger hunts and cocktail parties. They 
+are also active
+on social networking systems such as Facebook and Twitter, and they maintain 
+blogs. While
+these programs usually occur, or are accessed, outside of a typical visit, they 
+contain aspects
+that can inform a successful mobile guide. Many of these programs share a 
+social aspect
+in that they are either group activities or they promote dialog between 
+visitors, or between
+visitors and museum staff. This social aspect is something in which many 
+museums are
+interested [5]. A docent at the Carnegie Museum of Art (CMoA) illustrated the 
+museum’s
+focus on dialog when she said of the docent tour program, “We have discussion, 
+rather than
+a touring philosophy [20].” A mobile guide can include features that support 
+this focus on
+social connections and discussion through social media integration, and through 
+intriguing
+content that sparks in-person conversations.
+
+Supporting Curiosity
+
+Art museums in particular have a reputation as being imposing and elitist and, 
+as well-
+known visitor experience strategist Nina Simon says, they do not have the same 
+“vibe” as
+science museums, where visitors are encouraged to feel like anyone can be a 
+scientist [26].
+
+
+In many art museums the focus is on great artworks and artists rather than on 
+experimenta-
+tion and the art-making process. There may be ways to incorporate more 
+information about
+process in a mobile guide, as has been done with some museum kiosks. At the 
+CMoA they
+do have a few kiosks demonstrating process, and some include physical examples 
+of work
+that visitors can touch. In addition, they also had a live weaving 
+demonstration during a
+2009 exhibition on tapestries [19]. While process information and video 
+demonstrations
+on screen are still limited in interactivity and may not engage or excite 
+visitors at the same
+level as a full, physical exhibit, it may be an efficient way to satisfy the 
+curiosity of many
+visitors and perhaps inspire them to learn more about, and experiment with, the 
+process on
+their own or attend museum art-making activities.
+
+Key Findings from Museum Profesionals
+
+• The system should be relatively cheap, robust, and easy to pilot-test.
+
+• Context is key. Although there is a lot of information that museums want to 
+share, that
+information has to be shared strategically to support a positive learning 
+experience.
+
+• Museums want to engage visitors in a dialog.
+
+• Every exhibition is different, so a guide must be flexbile.
+
+• Visitors should have options and be encouraged to explore.
+
+4.2  Visitor Case Study: University Students
+
+This project will focus on improving the visit experience of university 
+students. Although
+most museums are moving away from focusing on demographics (see Chapter 2), uni-
+versity students are especially interesting because many of the universities in 
+Pittsburgh
+(Carnegie Mellon University, Chatham University, and the University of 
+Pittsburgh) provide
+free admission to the Carnegie Museum of Art (the subject of this thesis’ case 
+study), and
+many university students have flexible schedules and live near the museum. At 
+Carnegie
+Mellon University, which is the closest university to the museum, approximately 
+75% of
+undergraduates live on campus [31]. These conditions show that local university 
+students
+do   have access to the museum and any lack of visitorship can more readily be 
+attributed
+to disinterest rather than the scheduling, traveling, and financial concerns 
+that many people
+from the general population cite as reasons why they have not visited or do not 
+often visit a
+museum. If the visit experience for university students can be improved, then 
+there should
+be  an increase in interest and visitorship among them.
+
+Traditional Audio Guides
+
+Several students mentioned problems that they had with audio guides. They said 
+things
+like “I don’t want to spend that much time at every painting,” and the last 
+audio guide that I
+used, “was almost too much...It was kind of dull and rambling.” Some also said 
+that they do
+not like audio guides because they are too restrictive. Overall it seems that 
+guides that offer
+more freedom of choice, and the power to preview or get an overview of the 
+information
+they contain, would improve visitor satisfaction.
+
+
+Figure 4.3: Participants during a think aloud visit to the Carnegie Museum of 
+Art.
+
+Desired Information
+
+During think aloud visits to the Carnegie Museum of Art (See Figure 4.3 and 
+Appendix B),
+students asked a variety of questions about the artworks, such as how, when, 
+and why they
+were made, as well as questions about the artists and the historical context 
+for older works.
+It is clear that visitors have varying interests and that it would be difficult 
+to answer all of
+their questions. Traditional audio guides try to anticipate the most common 
+questions and
+relate the most interesting stories, but a well-organized screen-based guide 
+enables visitors
+to decide which information they find the most compelling and to easily make 
+selections
+that are not available on audio-only guides.
+
+Deciding Which Works to See
+
+Some students mentioned that they had a hard time deciding which works to see 
+or where to
+go next. While it seems that some guides can be overly prescriptive, there is 
+an opportunity
+to provide recommendations that the user can use or ignore as he chooses. As 
+mentioned
+previously (See section 3.5), there are many ways to provide recommendations. 
+Overly-
+abstract and simple profiling, such as having users choose from three 
+categories of visitors
+may not lead to good recommendations and may suggest that the museum does not 
+under-
+stand their visitors as individuals. Systems relying on machine learning can 
+take too long
+to learn enough about visitors’ interests based on how they use the system and 
+may end up
+frustrating users. Themed tours, from which users can select based on their 
+interests, may
+be a good solution and has been used in guides such as the Louvre’s Mon Guide 
+[6] and in
+print format by the Art Institute of Chicago [21].
+
+
+Key Findings from Student Visitors
+
+• Have many and varied unanswered questions about the exhibitions.
+
+• Think that audio guides are restrictive and lack structure.
+
+• Think that museums can do more to support subject-matter novices.
+
+• Feel they do not have time to visit museums.
+
+• Tend to visit in groups.
+
+4.3  Personas and Visitor Types
+
+These personas reflect characteristics found in both Falk’s and the Dallas 
+Museum of Art’s
+visitor types, and are used to illustrate how visitors with differing 
+backgrounds and goals
+might use a new mobile guide system. For full scenarios of use, see Appendix B.
+
+Rick Reynolds - Tentative Observer, Facilitator
+
+Rick is a graduate student from West Virginia in the third year of an Economics 
+Ph.D.
+program. He has been to a few museums while on vacation, but felt ambivalent 
+about them.
+Rick decides to take his girlfriend Anna to an art museum because she has only 
+ever
+been to the small art museum in her hometown and is enthusiastic about seeing a 
+more im-
+pressive collection. Since he has had more experience, Rick feels responsible 
+for showing
+
+her around and making sure that she has a good time.
+
+Nicole Davis - Curious Participant, Experience Seeker
+
+Nicole is a freshman from Atlanta who lives on campus. She is majoring in 
+professional
+writing, and is ambitious but naturally easy-going. She spends her free time 
+hanging out
+with friends and reading novels, but she also loves to travel and has a long 
+list of countries
+to visit. Even though Pittsburgh is not a large city, she is still excited to 
+see all of the sights.
+It is Friday and Nicole has just turned in a difficult project. She is ready to 
+take a break
+from school and wants to make some headway on her list of places to go in 
+Pittsburgh, so
+
+she heads to the art museum.
+
+Cassie Reed - Curious Participant, Explorer
+
+Cassie is a sophomore from Erie, PA who lives in the CMU dorms and is majoring 
+in
+biochemistry; she is hard-working and focused on her studies. Although she has 
+not had
+any time for take electives outside of her major or join student clubs, she 
+would like to be
+more well-rounded and feel like she is not only a “science person.”
+
+During mid-semester break when everyone has the day off from classes, Cassie 
+and her
+friend Katherine decide to go to the art museum because they have never been 
+there and it
+is just a short walk from campus.
+
+
+Megan Lewis - Committed Enthusiast, Explorer
+
+Megan is a junior from San Francisco who lives in the CMU dorms. Majoring in 
+anthro-
+pology, she loves learning about other cultures and studying their traditional 
+artwork.
+
+Megan visited the art museum during her freshman year, but has not returned 
+since then
+because she never has free time. When her friend Amanda comes to visit during 
+her spring
+break, Megan says that she will show her around Pittsburgh. They decide to 
+check out some
+of the local museums and start at the art museum.
+
+Martin Gray - Discerning Independent, Aspiring Professional
+
+Martin is a senior from Pittsburgh studying art history. He enjoys the growing 
+local arts
+scene, but plans to move to New York to earn his Ph.D. in art history at 
+Columbia. Some
+day he would like to be either a professor or a curator; he is not sure which.
+
+Martin is taking a class on the history of American furniture design and has to 
+choose a
+topic for his final research paper. He heads over to the Carnegie Museum of Art 
+to see their
+furniture collection—maybe he will be inspired and come up with a topic.
+
+
+
+5 Findings & Design Criteria
+
+5.1  Key Findings
+
+These key findings are distilled from the literature review, and from 
+interviews with mu-
+seum staff and university students.
+
+Literature Review
+
+• Museums are competing with many other education and entertainment options.
+
+• Museums are building databases of their works and related information.
+
+• Museums do not have the space for physical, interactive displays, or feel 
+that such
+displays would be too distracting from the exhibitions.
+
+• Museum staff are interested in experimenting with mobile guides.
+
+• There are different types of visitors and different visit goals.
+
+• Visitors tend to view work with which they are comfortable.
+
+Museum Staff
+
+• Are often on a budget and short-handed.
+
+• Want to ensure that interpretive information enhances learning and does not 
+distract
+from the exhibitions.
+
+• Want to give options to visitors and encourage them to explore.
+
+• Use different interpretive strategies depending on the exhibition 
+content—each exhi-
+bition has a unique story to tell.
+
+Visitors
+
+• Think that museums can do more to support subject-matter novices.
+
+• Feel they do not have time to visit museums.
+
+• Think that traditional audio guides can be verbose and limiting.
+
+• Have questions about artworks that are not answered by currently available 
+informa-
+tion.
+
+• Tend to visit in groups.
+
+21
+
+
+5.2  Design Criteria
+
+Learning
+
+• Must provide more pathways to learning through connections with visitors’ 
+interests.
+
+• Should support subject-matter novices.
+
+• Should provide more information than is currently accessible to visitors.
+
+Experience
+
+• Must support goals of different visitor types.
+
+• Should support and spark conversations.
+
+• Should extend the visit experience outside of the museum.
+
+• Should enable visitors to share their experiences and promote the museum to 
+friends.
+
+• Could create a long-term connection to the museum.
+
+• Could encourage participation in museum events.
+
+User Interface
+
+• Must be intuitive for first-time users to avoid frustration and distraction 
+from the
+exhibition.
+
+• Should use familiar UI design patterns.
+
+• Should encourage exploration.
+
+Implementation
+
+• Must use robust technology that is easy to maintain.
+
+• Should be easily pilot-tested so that museums can evaluate the system before 
+making
+a large investment.
+
+
+6 Initial Concepts
+
+In order to better understand visitors and what they want and expect from 
+museums, this
+thesis has reviewed literature on visitor research (see Chapter 2) and 
+interviews of visitors
+and museum staff (see Chapter 4). Main findings include that there are several 
+differ-
+ent types of identity-related goals with which visitors come to museums, and 
+that visitors
+have many unanswered questions about the collections and are interested in more 
+relatable,
+contextual information. Museum staff want visitors to feel engaged and to 
+appreciate the
+exhibitions but are constrained by practical concerns (finances and time), and 
+want to make
+sure that any changes made to the museum enhance the collections rather than 
+becoming a
+distraction.
+
+The following concepts enable resonant, rich, and interactive experiences to 
+drive en-
+gagement. For simplicity, basic features that have been well-explored and 
+-received in other
+guides, such as museum hours, rates, floor plan, events, standard tours of 
+collection high-
+lights (including length options for visitors short on time), ways to browse 
+works in the
+current gallery, and curator comments, have been excluded. It is assumed that 
+such features
+will be added to any guide before deployment. These features lay the foundation 
+for the
+types of concepts that will be explored here; if a visitor is lost or lacks 
+basic information,
+then the possibility for engagement is slight. Museums and their interpretive 
+aids, such
+as guides, need to meet the current expectations of visitors for basic 
+information and then
+pleasantly surprise them with additional offerings.
+
+23
+
+
+Location
+
+This concept shows the approximate geographic
+location of a work’s subject matter, and photographs
+of that location. Related images, such as other local
+historical sites or landscape images, may be included.
+
+
+Figure 6.1: Location
+
+The images will help visitors to make connections be-
+tween works and other interests or past experiences
+(like books or movies that the visitor has seen), places
+that they would like to visit, or places that they have
+visited, among other possibilities. If the location influ-
+enced the work then it might also help a visitor to imag-
+ine what the artist was feeling or thinking. As one visi-
+tor recalled during an interview, seeing the countryside
+where Van Gogh painted his Starry Night brought that
+painting to life and made her feel that she understood
+the painting. Providing these images as hooks into vis-
+itors’ experiences and interests allows them to find as-
+pects of the work that resonate with them and thus al-
+low them to become more reflective and engaged.
+
+
+Figure 6.2: Related Works
+
+Related Works
+
+This feature shows works with interesting connections
+to viewed works, in order to help visitors structure
+their visit in a meaningful way by revealing relation-
+ships between works and exhibitions. Works may be
+related in a number of ways, such as by one work’s
+influence on another, time period, medium, artist,
+artist ethnicity, or geographic location. Related works
+can be presented in list format or shown as highlighted
+items on a floorplan of the museum.
+
+Research participants said that they did not know what
+to see next or how to best move though an exhibition;
+this feature provides structure, but allows more choices
+than linear, scripted tours. The Related Works feature
+can also show works that are in the museum’s collec-
+tions but not currently on view, or even works that are
+in other museums; these works would help visitors to
+analyze the work that they are currently viewing.
+
+
+
+Figure 6.3: Contrasting Works
+
+Contrasting Works
+
+Visitors may be more likely to view types of art that
+they already like, rather than challenging themselves
+[7].  This feature suggests other works in order to
+encourage reflection and exploration.  Visitors can
+choose to immediately visit the contrasting work, or
+they might continue their current path but view the
+suggested work on their phone and perhaps stop at the
+work if they happen by it during their visit. Works may
+contrast in terms of style, time period or subject mat-
+ter. As an example, when viewing a realistic landscape
+painting, this feature can recommend an impression-
+ist or modern landscape. The contrasting work should
+have some connection to the current work so as not
+to create a disjointed experience, and so that visitors
+can understand the nature and importance of the con-
+trast. This feature would work best in a museum whose
+collection is large and has a great variety in style and
+subject matter.
+
+
+Figure 6.4: Musical Background
+
+Musical Background
+
+This feature provides period-specific background mu-
+sic that changes as a visitor moves through an exhibi-
+tion, setting the tone and historical context. Music can
+have a strong effect on experience—it is used in places
+such as stores, restaurants and movies to influence lis-
+teners. A musical background can shape museum visi-
+tor experience by quickly giving visitors a sense of the
+tone and style of the time period. The music may also
+tie into visitors’ memories of concerts, recordings or
+movies that they have experienced. This concept may
+work best in areas where there is a distinct contrast of
+time periods or cultural styles. It is also important to
+consider whether the exhibitions involve the work of
+living artists, who might object to a juxtaposition of
+their work with a piece of music.
+
+
+
+This small column
+was a calendar and a
+table of the wonders
+of the world.
+
+Figure 6.5: Match Game
+
+Themes
+
+When creating an exhibition, museum staff must
+choose only one way to group and arrange works.
+Themed information and games provide a way to
+show visitors many others ways of combining and
+connecting works, within an exhibition or throughout
+the museum.  Alternate views of the collections
+increase the liklihood that a visitor will find a view
+that resonates with him.
+
+Themes can be introduced through games. Some mu-
+seums have created elaborate gaming events [16] and
+some have themed tours [6] [21], but the interactive as-
+pect of games has yet to be applied to tours. In this con-
+cept, visitors are given a visual clue and must search
+for a work. Players are actively involved in searching
+for artworks and interpreting clues, and will also learn
+about the works and see other works that they may not
+have otherwise noticed.
+
+
+Figure 6.6: Track Your Visit
+
+Track Your Visit
+
+This feature allows visitors to save specific works or
+to track all of the works that they access in the guide
+so that they can follow up them, allowing them to con-
+tinue learning after their visit is over.
+
+6.1  Relation to Visitor Models
+
+The guide features support all of Falk’s visitor types. Explorers can satisfy 
+their curiosity
+by learning in-depth information and Facilitators can entertain or educate 
+their companions.
+The easy access to intriguing and varied information also encourages Experience 
+Seekers
+to delve more deeply into the exhibitions, and Hobbyists/Professionals to 
+explore and enjoy
+works beyond the specific pieces or exhibitions that they came to study. 
+Rechargers gener-
+ally do not have an interest in interpretive aids, but the guide can provide 
+valuable content
+that might lead them to transition to another visitor type.
+
+
+Interpretive Environment
+
+Object Label
+
+Gives name, date, attribution,
+origin, and link to mobile
+guide content.
+
+
+Visitor Guide
+Shows gallery
+location, overview
+
+of the museum, and
+
+information about
+the mobile guide.
+
+Mobile Guide
+
+Provides range of contextual
+information, media, and links,
+as wells a way to save
+information about the work
+for later reference.
+
+Docent Tour
+
+Explains the structure,
+ornamentation and
+history of the collection.
+
+Figure 6.7: Interpretive aid system for an artwork
+
+6.2  Relation to Other Interpretive Aids
+
+The guide system will be used within the larger interpretive system of the 
+museum and
+should integrate with that system so that each component is enhanced by the 
+others. The
+system components are variable but will often include physical brochures and 
+maps, wall
+labels, wayfinding signage, and information sheets or binders. These components 
+should
+include information about how to access the mobile guide and what type of 
+content it offers.
+The guide proposed in this thesis uses QR codes to access content about 
+specific galleries
+or artworks, so other interpretive aids should include such codes that visitors 
+can scan to
+access the guide (see Appendix D).
+
+Mobile guides are not meant to replace the rest of the interpretive system 
+because not
+all visitors have appropriate devices (and the devices would be expensive for 
+the museum
+to lend out), mobile guides are not ideal for all interpretive content or 
+strategies (such as
+complex information displays or long film screenings), and because visitors may 
+prefer one
+part of the system over another. In addition, these other interpretive aids are 
+necessary to
+promote, and provide information about, the guide.
+
+6.3  Enhancing the Basic Features of Current Mobile Guides
+
+Some of the basic features common in many current mobile guides can be enhanced 
+to re-
+flect visitor experience research and the criteria outlined in this thesis. In 
+particular, curator
+comments can include content such as interviews with other experts, staff or 
+visitors, and
+images or videos of the art-making or restoration process. Including viewpoints 
+other than
+those of curators is another idea that is gaining popularity in visitor 
+experience discussions;
+it combats an elitist and exclusive perception of museums that may discourage 
+visitors from
+
+
+visiting often or becoming involved with museum programs.
+
+
+7 Case Study: The Carnegie Museum
+of Art
+
+The context for this case study is a permanent exhibition at the Carnegie 
+Museum of Art
+(CMoA) called the Hall of Architecture. This exhibition displays many 
+full-sized casts
+of architectural and sculptural works, primarily from Western Europe. The 
+collection was
+created with the goal of educating the people of Pittsburgh and encouraging 
+them to study
+and understand great works that would be difficult to see in person.
+
+Although a mobile guide can include information about several exhibitions or an 
+entire
+museum, this case study restricts itself to a single exhibition for reasons of 
+practicality,
+and also as an illustration of how a museum might pilot-test such a system. It 
+can take
+considerable time and resources to aggregate content for a guide, so beginning 
+with one
+exhibition and expanding over time is a pragmatic approach. Museums may also 
+feel that
+some exhibitions are already very engaging and that there are only certain 
+exhibitions in
+need of a supplemental guide.
+
+Considerations for the Hall of Architecture
+
+The Hall of Architecture holds many challenges for designers of interpretive 
+aids, as well
+as some advantages that should be considered when developing guide features.
+
+Challenges of the Collection and Space
+
+• The cast collection is large, with great variety in the size and shape of the 
+works.
+While the collection is displayed in a large room created specifically for the 
+collec-
+tion, the large size of some casts (the largest is approximately 40 feet tall 
+and 78 feet
+wide) makes it difficult to display each piece to its full advantage. Small 
+pieces are
+generally hung on the perimeter walls, often in many rows reaching to a height 
+where
+it  is difficult for visitors to appreciate them in any detail. Some of the 
+large casts do
+not have sufficient space in front of them for visitors to view them in their 
+entirety.
+
+• There is a lack of space for interpretive information near each piece. While 
+there is
+an open space in the middle of the gallery, there is little space between the 
+casts to
+present information in situ. Pieces are generally placed close together and, in 
+some
+cases, as with the small pieces on the walls, they share a common label with 
+numbers
+to identify the specific works.
+
+• There are no clear pathways through the exhibition or distinct sections. 
+Visitors
+may be uncertain of where to begin viewing the casts, or if there is any 
+timeline or
+narrative guiding their organization. There is only a small sign by one of the 
+three
+
+29
+
+
+Figure 7.1: View of the Hall of Architecture.
+
+Figure 7.2: Small works hung in the Hall of Architecture.
+
+
+entrances giving an overview of the collection and indicating why the works were
+selected and what visitors might learn.
+
+• The casts are difficult to move. Although the casts could be moved, it would 
+be at a
+considerable expense of time and money.
+
+Given these spatial challenges, a mobile guide is a good fit—it can provide 
+unlimited
+information and support visitors without the need for additional space or for 
+rearranging the
+collection. Successful concepts for guide features should address the Hall of 
+Architecture
+challenges in addition to the design criteria outlined in Chapter 5.
+
+Advantages of the Collection and the CMoA
+
+• The Carnegie Museum of Art is physically connected to the Carnegie Museum of
+Natural History (CMNH). A guide for any part of the CMoA or the CMNH can ref-
+erence exhibitions in the other museum, helping to expose visitors from one 
+museum
+to the other. Visitors interested in natural history but not in art might be 
+persuaded—
+through guide content—to see an art exhibition (and vice-versa). The content in 
+one
+museum might also help a visitor to connect with a work in another if there are 
+exhi-
+bitions with related content, such as the Egyptian column in the Hall of 
+Architecture
+and the Egyptian mummy in the CMNH.
+
+• The size and shape of works is varied, many works are three-dimensional, and 
+there
+are multiple pathways. This variety can be intriguing and suggestive of 
+exploration,
+and could be integral to a mystery game or scavenger hunt.
+
+7.1  Prototyping
+
+This thesis’ working prototype for the Hall of Architecture includes several 
+features for
+evaluation with potential users. Note that not all of the concepts discussed in 
+Chapter 6 for
+general museums are included. The Musical Background concept was not included 
+as it is
+not well-suited to the exhibition due to the early time periods involved. The 
+Contrasting
+Works feature was not incorporated because the particular exhibition does not 
+suggest clear
+contrasts to make with other exhibitions or between works within the 
+exhibition. The re-
+maining concepts work well for the Hall of Architecture, and expansion of those 
+concepts,
+lead to a prototype that tests well with museum visitors (see Chapter 8).
+
+
+Guide Features
+
+Concepts included as features in the guide prototype include:
+
+Location
+
+This instantiation of the Location concept includes a
+map of the site where the original work (as opposed
+to the cast) was created. Some works represented in
+the cast collection have been moved from their origi-
+nal sites, but many have not, such as the cathedral en-
+trances. Also included are photographs of the original
+work (which may look dramatically different in color
+or texture), interior views if the cast is of a building,
+and recent photographs showing how the work is dis-
+played or used today. Recent photographs bring these
+works into the present day and make them appear more
+relevant to visitors. Seeing people in the photos inter-
+acting with the works can help to spark stories about
+what they are doing or can help a visitor imagine going
+to that location. If visitors are motivated to learn more
+about an area or to travel to view original works, then
+the guide and the exhibition will have fulfilled an im-
+
+
+Figure 7.3: Location
+
+portant goal of engaging visitors and motivating them
+to continue their learning outside of the museum.
+
+Related Works
+
+Related Works for this exhibition shows works in other
+media that are from the same time period as the cast
+that a visitor is reading about, providing other ways
+for visitors to orient themselves in time. A visitor un-
+familiar with architecture may have a better sense of
+the time period in reference to painting or sculpture.
+When available, works on display in the museum are
+shown so that visitors can follow up with these other
+works. A useful side-effect of this feature is that if the
+museum staff wants to increase interest in a particu-
+lar exhibition that is being overlooked, this feature can
+help drive more visitors to that exhibition.
+
+Figure 7.4: Related Works
+
+
+Match Game
+
+This instantiation of the Themes concept is a search-
+ing game that asks players to look at a detail from a
+work and find the work in the gallery. There are clues
+provided that offer information about the style, history,
+geography, or construction of the work. The works
+chosen for the game are part of a theme (geography
+and travel) and lead visitors around the different areas
+of the exhibition. The searching nature of the game
+prompts players to look around the exhibition more
+carefully than they might otherwise, highlights the va-
+riety of the collection and may also make art novices
+feel more comfortable in the museum [4].
+
+Figure 7.5: Match Game
+
+
+Figure 7.6: Geography
+
+Geography
+
+The Geography feature is another instantiation of the
+Themes concept and shows an overview of the coun-
+tries from which the casts originate and also includes
+interactive maps of the casts’ locations. Architecture
+novices might not have significant experience differ-
+entiating styles, but most people have experience with
+maps and geography. Geography is also important to
+this exhibition because part of Andrew Carnegie’s vi-
+sion for the collection was to “bring the world” to Pitts-
+burgh since most people did not have the means to
+travel. Additionally, the geography view quickly illus-
+trates to visitors that while the collection is meant to
+show great architectural work, it only covers a narrow
+piece of the world, excluding whole continents from
+which there must certainly be important architectural
+works (this may simply be due to practical concerns).
+The listing and map of cast origin could spark deep
+questions for visitors about ethnocentricity or, more
+simply, inspire them to travel or imagine the countries
+represented.
+
+
+Architectural Styles
+
+In this instantiation of the Themes concept, users can
+view the exhibition in terms of architectural style. Vis-
+itors can view information about a single style or view
+the styles in sequence by time period. Without the
+guide, a visitor might notice some differences between
+styles, but there is no route or structure to guide their
+observations. This feature includes a prime example
+from each style, question and answer style information
+(which prompts visitors to look at and notice details in
+the works) and local examples of the style (which will
+help them to make connections with past experiences
+and encourage them to continue learning outside of the
+museum).
+
+Figure 7.7: Architectural Styles
+
+
+Figure 7.8: Track Your Visit
+
+Track Your Visit
+
+This feature allows users to either save specific works
+or save all of the works that they access with the guide.
+The works and supporting content can be accessed
+through the guide or a desktop webpage on the mu-
+seum website. Currently, when a user likes an artwork,
+he tries to remember the title to look it up later or takes
+a photo of the work. This feature makes it easy for
+users follow up with works that they like, and review
+what they learned and felt during their visit. By contin-
+uing the museum experience at home, users can learn
+more in-depth information, developing more personal
+connections with the work and also more fully appre-
+ciate  the rich service provided by the museum.
+
+
+Implementation Considerations
+
+• Some of the preceding features require the collection of photographs related 
+to the
+artworks, such as those of the artwork’s original location. Using professional 
+pho-
+tographs would increase costs for the museum, but free sources such as Creative
+Commons might provide appropriate content. In either case, one should be 
+careful to
+choose photographs that will intrigue and inspire visitors.
+
+
+
+8 Prototype Mobile Guide System
+
+The final mobile guide system for the Carnegie Museum of Art’s Hall of 
+Architecture is
+based on the preceding literature review (Chapter 2), user research (Chapter 
+4), and user
+feedback (Chapter 7), as well as feedback from the university community and 
+staff at the
+Carnegie Museum of Art. This chapter gives a detailed overview of the system, 
+how it
+supports visitor engagement, and how it integrates with the museum.
+
+8.1  Supporting the Visit Cycle: Planning, Exploring, and
+Reviewing
+
+The final system supports planning, exploring and reviewing a visit. Upon 
+arriving at a
+museum, visitors can learn about the guide from paper museum guides, admissions 
+staff,
+and signs (see Appendix D). They are directed via QR code to plan their visit 
+in the online
+guide by browsing galleries and tour options. Later at home, visitors can look 
+over and
+learn more about artworks that they saved during their visit or browse through 
+works that
+they missed. The guide information would be available as part of the museum’s 
+desktop
+website, as well as on the mobile site, so that visitors can use their home 
+computers. Beyond
+continuing to learn about the museum and perhaps being motivated to return, the 
+guide also
+encourages lifelong and leisure learning in general.
+
+The exploring phase of the guide is generally, although not exclusively, used 
+during a
+visit. Visitors can view information about galleries and specific works, take 
+tours, share
+their favorite works (through social media), or take part in activities such as 
+games. It
+supports different levels of guidance for visitors (Figure 8.1), enabling them 
+to directly
+access information about specific works, get suggestions for other works to 
+see, or follow a
+tour depending on their preferences.
+
+8.2  Resonant, Rich, and Interactive Experiences in the Guide
+
+The goal of the guide is to move visitors from uncomfortable novices or 
+comfortable experts
+to a middle ground of exploration for maximum engagement and learning through 
+resonant,
+rich, and interactive experience.
+
+Resonant
+
+Resonance occurs when someone senses a connection between himself and an object 
+or
+event—it brings up memories of events, thoughts or feelings or ties to personal 
+interests.
+The guide provides several features aimed at connecting with visitors. Every 
+visitor is
+unique, but providing several types of content increases the chances of any 
+particular guide
+
+37
+
+
+Exploration Options
+
+
+Direct Access:
+
+View individual works.
+
+Supported Access:
+
+View related works.
+
+Guided Access:
+
+Take a tour.
+
+Figure 8.1: Visitors can choose their level of guidance by directly accessing 
+works, by
+seeing recommended works, or by taking a self-guided tour.
+
+user finding content to which they relate. The guide for the Hall of 
+Architecture includes
+well-organized content on a range of topics, including architectural style, 
+Greek mythology,
+geography, history and ties to popular culture and travel.
+
+Rich
+
+Rich information goes beyond a listing of facts to provide further details or 
+related infor-
+mation that can help visitors to find resonance, and to become more engaged. 
+The guide
+includes links to outside sources such as Wikipedia (which, in turn, links to 
+other sources)
+in order to provide a depth of information and a variety of related content. 
+This relieves
+the museum of the impractical task of collecting and curating a vast amount of 
+information
+and also brings other voices and authorities into the museum space, relating 
+the museum to
+other sources with which visitors are already familiar. The inclusion of 
+popular information
+sources such as Wikipedia and Google (Google Maps are used in the guide) tells 
+visitors
+that their past experiences and knowledge of those sources are relevant and 
+useful, which
+may encourage visitors to explore further on their own.
+
+Interactive
+
+Interactive information enables visitors to make choices and to explore 
+exhibitions and
+related content on their own, as far as they would like to go. Guide users can 
+choose their
+level of guidance (as described above), select which topics to learn more 
+about, follow links
+to outside sources on the Internet and continue to learn more about a topic, 
+save artworks
+to review later, or share artworks with friends online. Users can also play a 
+game in which
+they search for an artwork based on an image of a detail and optional clues. 
+The game—as
+opposed to a tour or direct access to content—is another way to experience the 
+exhibition;
+users can choose the experience that they find most engaging.
+
+
+
+Museum
+
+Engage with the collection
+
+Home
+
+Continue or begin
+self-guided learning
+
+
+Tours
+Galleries
+Today’s events
+Map
+
+Explorers
+Encourage their natural
+curiosity and inspire them
+to continue with self-guided
+
+learning.
+
+Q & A
+
+Local examples
+
+Links to more
+information
+
+Related works
+in the museum
+
+Facilitators
+
+Support them leading others
+and encourage their curiosity.
+
+Visual explanations
+(diagrams and maps)
+
+In-depth information about
+favorite works
+
+Information about the visit
+
+Recommendations for the
+next visit
+
+
+Match game
+
+Historical context
+
+Original location
+
+Geography
+
+
+Experience Seekers
+Help them see the highlights
+and inspire them to go further.
+
+Familiar tools
+
+Search
+
+Hobbyists/Professionals
+
+Help them locate speci!c works
+and inspire them to broaden
+their interests.
+
+
+Goals of each visitor type are supported,
+but notices in the museum about the guide
+and the content itself are aimed at inspiring
+all visitors to be curious and go beyond
+simple facts about the artwork and !nd
+deeper connections to the collections.
+
+Recharger
+
+Rechargers’ goal is relaxation
+rather than interacting with
+
+the museum collection. However,
+seeing the guide may intrigue
+and motivate them to change
+their visit goal.
+
+
+Plan
+
+Explore
+
+Review
+
+Visitor types source: John Falk, Identity and the Museum Visitor Experience
+
+
+Figure 8.3: Information architecture
+
+
+Match Game Flow
+
+Enter incorrect answer
+
+See a clue
+
+Challenge
+
+
+Enter solution
+See solution
+
+Solution
+
+More info
+
+Next Challenge
+
+Figure 8.4: Match Game flow
+
+8.3  Supporting Many Types of Visitors
+
+The guide supports each of Falk’s and the Dallas Museum of Art’s visitor types 
+as previ-
+ously described, although some may use the guide more than others. In 
+particular, Hobby-
+ists/Professionals and Rechargers may use the guide less than other visitor 
+types, because
+they    have fewer felt needs for information. However, a visitor does not have 
+to remain one
+visitor type during his entire visit. A visitor may enter a museum simply 
+wishing to take in
+the atmosphere as a Recharger but then be motivated to become an Explorer or 
+Experience
+Seeker when an exhibition attracts him or he sees signs for a new museum guide 
+that offers
+intriguing content.
+
+Experience Seekers
+
+Experience Seekers can use the guide to get the high-level information that 
+they are inter-
+ested in, such as a museum map, the day’s events and tours of the collection 
+highlights.
+
+Explorers
+
+Explorers are generally curious and motivated to learn. The guide can help them 
+to learn
+more deeply about a specific work and continue learning by viewing related 
+works. They
+may also play the game or take self-guided tours, depending on their particular 
+interests
+and comfort with the collection that they are viewing.
+
+Facilitators
+
+Facilitators can ensure a good visit for their companions by locating 
+intriguing stories and
+information relevant to companions, suggesting a tour, by playing a scavenger 
+hunt game
+or by simply using the guide to answer questions from their companions.
+
+
+Figure 8.5: A research participant playing the Match Game
+
+Hobbyists/Professionals
+
+Hobbyists/Professionals can use the guide to locate an artist or genre of 
+interest and may
+also open themselves to exploring the collection and going beyond the 
+particular work or
+exhibition that they intended to see.
+
+Rechargers
+
+Rechargers’ goal is to relax in a peaceful setting, so unless they move from 
+their current
+goal to that of another visitor type, they would not have much need for any 
+type of guide
+or interpretive system. A Recharger may use the guide if their interest is 
+piqued by signs or
+by seeing others using the guide, prompting them to move toward another visitor 
+type such
+as Explorer or Experience Seeker.
+
+Level of Comfort with Art
+
+Aside from visit goals, users will also vary with respect to their comfort with 
+the subject
+matter of a museum or exhibition, which is captured in the Dallas Museum of 
+Art’s visitor
+model (Figure 2.2). Tentative Observers may benefit the most from the guide 
+because of
+the dramatic difference between the amount of supportive content on a terse 
+wall label and
+in an interactive guide with access to the Internet.
+
+8.4  Testing with Museum Visitors
+
+University undergraduate and graduate students ranging in age from 19 to 30 
+tested the
+guide in the Hall of Architecture at the Carnegie Museum of Art. The guide was 
+also
+evaluated by museum staff.
+
+
+Evaluation Criteria
+
+Concepts must support critical design criteria from the literature review and 
+stakeholder
+research, as well as mediate the challenges of the specific exhibition. They 
+should also
+balance implementation difficulty and potential visitor engagement.
+
+Positive Feedback
+
+• Participants said that the contextual information answered their questions.
+
+• Participants were pleased to see local examples of artistic styles.
+
+• References to established interactions from their daily lives were 
+appreciated, such
+as Google maps.
+
+• Novices were supported and even felt that they could use the guide to tell 
+others about
+the exhibition.
+
+• The guide fit well into social visits—participants said that they would use 
+the guide
+alone or in a group and that the guide was less isolating than traditional 
+audio guides.
+
+• The game provided a pathway and goal for visiting the exhibition and was an 
+oppor-
+tunity to compete with companions.
+
+• Participants were interested in hearing compelling and relevant stories from 
+other
+visitors.
+
+Concerns
+
+• A participant found the game too difficult and became frustrated.
+
+• Some game aspects were unnecessary.
+
+• Users may already have too many online accounts and might appreciate a way to
+view their saved works later on without having to create an account on the 
+museum
+website.
+
+Design Implications
+
+• Games and other content should be evaluated by non-experts before releasing 
+them to
+visitors. Through the process of designing guide content, one gains a deeper 
+knowl-
+edge of the collections and should be careful to keep novices in mind.
+
+• It is important to acknowledge that visitors generally come to a museum to 
+learn.
+Guides should make visitors feel proud that they have chosen to have a learning
+experience, and should make the content fun and easy to comprehend, while 
+avoiding
+any condescension.
+
+• Alternatives to a new user account should be explored, such as integrating 
+with pop-
+ular organizations with which users may already have an account, such as 
+Facebook
+or Google.
+
+
+• Contextual information, references to well-known related content, and 
+references to
+common interactions or tools will help to inform and engage visitors and to make
+them feel comfortable using the guide.
+
+• Users may be interested in using the guide to connect with companions and 
+well as
+other visitors. Ways to elicit and present quality visitor-generated content 
+should be
+explored.
+
+Response to Testing Results
+
+There were several rounds of testing with modifications to the guide made in 
+the interim.
+
+Match Game
+
+Testing showed that the Match Game was too difficult at first, and that the 
+clues were too
+obscure. In the final design of the game, the first clue reveals what type of 
+object to look for
+(e.g. column, doorway, bust) and the second clue limits the search area in the 
+exhibition.
+Later testing sessions with these clues were more successful than earlier 
+sessions. The
+Hall of Architecture invites exploring due to its large size and variety of 
+objects, but those
+characteristics also make it a difficult search space. Other game features were 
+also changed
+based on testing. The game originally showed a user’s score, but testing showed 
+that users
+play the game in order to learn in a casual way, and that not all of the 
+trappings of games are
+necessary. Some users also felt that the incentive given at the beginning of 
+the game, which
+offers a discount or free item at the museum gift shop, was unnecessary as 
+motivation to
+play the game. Overall, it is important to respect visitors and acknowledge 
+that they want to
+learn. While an over-reliance on game features or incentives could suggest that 
+the museum
+thinks that visitors need to be tricked into learning, which is insulting to 
+visitors, some game
+aspects and incentives can be fun and encouraging. The final game does include 
+a nominal
+incentive, meant as a promotion for the gift shop rather than a hard-handed way 
+to make
+users play a game, and was appreciated as such.
+
+Track Your Visit
+
+When testing this feature, users were asked about their preferences for 
+receiving follow-up
+content for artworks that they saved during a visit. Some expected and wanted 
+to have
+an account on the museum’s website, some wanted an email with links to content, 
+others
+wanted it to be accessible from the museum website without needing to create an 
+account
+with the museum, and still others wanted their list of works to appear in their 
+Facebook
+accounts. Given the varied responses and the issues of content copyright, 
+public versus
+private saved lists, and if no account is made, determining when a museum 
+should remove
+a user’s list, this feature requires more investigation. In the final guide, 
+users are given the
+option of emailing themselves a link that will direct them to view their list 
+on the museum’s
+desktop website. If users choose not to use that feature, they can still view 
+their saved works
+through the mobile guide at the museum or later at home.
+
+Visual Hierarchy
+
+First versions of the guide copy were improved based on user feedback and 
+include in-
+creased visual hierarchy (additional headings, section demarcations, and use of 
+bold text to
+reveal highlights).
+
+
+8.5  Final Guide Design
+
+The following figures 8.6 and 8.7 show screenshots of the finished guide and 
+figures 8.8
+and 8.9 show a sample scenario of two visitors using the guide.
+
+
+
+Home screen gives users informa-
+tion about current exhibitions
+and helps them to plan their vist.
+
+Hall menu helps users choose a
+way to view the exhibition that
+best matches with their interests.
+
+Q & A creates a dialog and en-
+courages users to engage with
+works by examining details. Lo-
+cal examples connect to visitors’
+daily lives and past experiences.
+
+Visitor types served:
+
+Explorers
+Experience Seekers
+Facilitators
+
+Hobbyists/Professionals
+
+
+The Match Game directs users to
+look closely at the works and
+encourages their curiousity
+through the searching nature of
+the game.
+
+Connections to other exhibi-
+tions in the Museum of Natural
+History encourages users to
+expand their interests and may
+also help users with more inter-
+est in natural history connect
+with artwork.
+
+Figure 8.6: Screenshots of sample guide screens, and how the features 
+illustrated support
+visitor engagement.
+
+
+
+Artwork menu helps users
+choose a way to learn about the
+artwork that best matches their
+interests.
+
+Related works and content
+creates connections with the art-
+works and with broader culture
+and history, giving visitors more
+ways to relate to the artworks.
+
+Location information and
+photos of the original buildings
+from which the casts were taken
+makes the works come alive and
+seem more relevant.
+
+Visitor types served:
+
+Explorers
+Experience Seekers
+Facilitators
+
+Hobbyists/Professionals
+
+
+Diagrams help explain archite-
+cural terms, making novices
+feel more comfortable in the
+exhibition, an important step in
+becoming engaged.
+
+Saving artworks allows visitors
+to explore favorite works more
+deeply after their visit, freeing
+them to explore broadly at the
+museum and pay attention to
+the works rather than becoming
+distracted by the guide content.
+
+Figure 8.7: Screenshots of sample guide screens, and how the features 
+illustrated support
+visitor engagement.
+
+
+Sample Use-Case
+
+David is visiting the museum with his girlfriend Christine. He sees a notice 
+about the
+guide in the Hall of Architecture and uses the guide to learn about Gothic 
+Architecture,
+view an example of the style, and nd related works in the museum.
+
+
+1 Exhibition Home Screen
+David sees sign at the en-
+trance to the exhibition and
+scans a QR code to view this
+screen.
+
+2 Gothic Architecture Section
+He clicks “Architectural
+Styles” and then selects
+“Gothic.”
+
+3 Example of the Gothic Style
+He crolls down and sees an
+example of the style that is in
+the gallery.
+
+Figure 8.8: Sample scenario of visitors David and Christine.
+
+
+
+4 Q & A About the Example
+David and Christine walk to
+the cast and learns about
+the style through examining
+details of the cast. They also
+see local examples that they
+
+recognize. This helps them to
+understand common char-
+acteristics of Gothic architec-
+ture and makes a connection
+to their prior experiences.
+
+5 Cast Information
+
+David clicks to get more in-
+formation about the example
+work, Cathedral St. Andre,
+and then chooses ”Related
+Works.”
+
+6 Related Work
+
+David reads about Chinese
+sculpture and starts to think
+about what might have been
+going on in di!erent countries
+at the time that St. Andre was
+built. He and Christine decide
+to "nish viewing the current
+exhibition and then view this
+sculpture in the Art Before
+1300 Gallery.
+
+Figure 8.9: Sample scenario of visitors David and Christine.
+
+
+
+9 Conclusion
+
+Museums and other educational institutions are underutilized by many visitors. 
+A mo-
+bile guide, available on visitors’ own devices and containing resonant, rich 
+and interactive
+information, will encourage visitors to further explore exhibitions and become 
+engaged.
+Through the planning, exploring, and reviewing stages of their visits, visitors 
+can find exhi-
+bitions that speak to their interests; discover multi-faceted content that 
+makes connections
+between the exhibitions and their interests, past experiences and goals; and 
+continue the
+experience at home. Access and control over the guide content will encourage 
+and support
+visitors beginning or continuing self-guided learning.
+
+9.1  Feasibility & Implementation
+
+The prototype guide system is built on existing technologies and does not 
+require any hard-
+ware installation. The guide is a Web application, accessible from any 
+Internet-enabled
+device, provided the user has a data plan or access to a network (such as the 
+museum’s wire-
+less network). If an institution would like to implement such a guide, they 
+should consider
+installing wireless access in their galleries if they have not done so already. 
+Free wireless
+access allows those users with limited data plans or slow connections greater 
+access to the
+guide. The guide system is built as a Web application as opposed to a native 
+(platform-
+specific) application, because it provides the greatest access for the greatest 
+number of
+visitors and requires less development time and cost—one application can be 
+built for all
+users instead of a separate application for each device platform (or simply one 
+application
+for one platform, leaving many without access).
+
+To directly access content about a specific gallery or work, users scan QR 
+codes on
+museum brochures, signs, and object labels by taking a picture through a QR 
+code scanner
+application installed on their phone. The codes are fast, easy, and free to 
+create. In the
+future, as more NFC-enabled phones come on the market, NFC will become a viable 
+(and
+likely preferable option) to QR codes. Flat NFC stickers can be placed on 
+museum labels
+and visitors can be directed to simply tap their phone or place it near the 
+sticker to access
+the guide (without the need to install any scanner application).
+
+In terms of guide content, institutions will need to build a database of the 
+works and
+related content that they would like to include in the guide; many are already 
+creating
+such databases. Researching, organizing, and deciding which content to include 
+is a large
+task, but any additional information about the works is an improvement over 
+current object
+labels. The guide can begin small, perhaps restricted to one gallery, and 
+change and expand
+as visitor feedback is gathered and more content is added.
+
+51
+
+
+9.2  Future Work
+
+This project is focused on developing an understanding of the space of art 
+museums and
+visitors, and developing a specific case study to prototype a possible 
+implementation. The
+conceptual findings and experimental results, however, can be used to create a 
+larger appli-
+cation at a variety of museums. Moving forward, exhibitions should be evaluated 
+and key
+themes or ways of viewing the works determined. Curators and museum educators 
+may
+already have such knowledge, but lack a platform such as this guide system to 
+share all of
+their information. Future work might also include:
+
+• Testing the inclusion of visitor stories related to a particular exhibition. 
+In order to
+include substantive content from visitors, a physical space could be provided 
+outside
+of the gallery where visitors are encouraged to share their stories, as 
+text-entry on
+mobile devices is difficult.
+
+• Creating follow-up interactions on the museum website or through social media 
+chan-
+nels.
+
+
+Bibliography
+
+[1] Acoustiguide. Smartphone applications: Acoustiguide smartour, 2010. 
+Available from
+
+http://www.acoustiguide.com/smartphone-applications.
+
+[2] Antenna Audio. Pentimento, 2010. Available from 
+http://www.discoverpentimento.com/.
+
+[3]  Herbert Bay, Beat Fasel, and Luc Van Gool. Interactive museum guide, 2005. 
+The Seventh
+International Conference on Ubiquitous Computing UBICOMP, Workshop on Smart
+Environments and Their Applications to Cultural Heritage, September 2005.
+
+[4] Robin Cembalest. Reshaping the art museum. ARTnews, 2009.
+
+[5] 2010 Tate Handheld Conference. 2010. Available from
+
+http://tatehandheldconference.pbworks.com/w/page/19520838/2010-Handheld-Conferen
+ce.
+
+[6] Musee du Louvre. My guide, 2010. Available from
+
+http://monguide.louvre.fr/index.php?p=monGuide.
+
+[7] John H. Falk. Identity and the Museum Visitor Experience. Left Coast Press, 
+2009.
+
+[8]  John H. Falk and Lynn D. Dierking. Learning from Museums: Visitor 
+Experiences and the
+Making of Meaning. AltaMira Press, 2000.
+
+[9]  Center for the Future of Museums. Do innovation, and diversity, sometimes 
+look like failure?
+
+American Association of Museums: Center for the Future of Museums, June 15, 
+2010.
+
+Available from
+
+http://futureofmuseums.blogspot.com/2010/06/do-innovation-and-diversity-sometime
+s.html.
+
+[10] Espro Acoustiguide Group. Company profile, 2010. Available from
+
+http://www.acoustiguide.com/company-profile.
+
+[11] H. Gutierrez and J. Heimberg. Dallas museum of art presents the arts 
+network. Museums and
+the Web 2007: Proceedings, Toronto: Archives & Museum Informatics, published 
+2007.
+
+[12] The Smithsonian Institution. Visit cooper-hewitt, 2010. Available from
+
+http://exhibitions.cooperhewitt.org/Design-USA/visit.
+
+[13] Ken Johnson. 3,344 people may not know art but know what they like. The 
+New York Times,
+July 4, 2008. Available from
+
+http://www.nytimes.com/2008/07/04/arts/design/04clic.html.
+
+[14] Jong-woon Yoo Ki-woong Park, Sung Kyu Park and Kyu Ho Park. Towards 
+interactive
+museum: Mapping cultural contexts to historical objects, 2009. Presented at ACM 
+Mobile
+HCI 2009.
+
+[15] Amanda Krantz, Randi Korn, and Margaret Menninger. Rethinking museum 
+visitors: Using
+k-means cluster analysis to explore a museum’s audience. Curator: The Museum 
+Journal,
+October 2009, 2009.
+
+53
+
+
+[16] Smithsonian American Art Museum. Art activities: Ghosts of a chance game, 
+2010.
+Available from http://www.americanart.si.edu/calendar/activities/ghosts/.
+
+[17] The Brooklyn Museum. Bklynmuse. Available from
+
+http://www.brooklynmuseum.org/visit/bklynmuse.php.
+
+[18] The Mattress Factory Art Museum. Available from http://www.mattress.org.
+
+[19] The Carnegie Museum of Art. Carnegie museum of art 2009 annual report, 
+2009.
+
+[20] The Carnegie Museum of Art. What are museums for? exhibitionists unite: 
+How art
+exhibitions are born, 2010. Video shown during a public lecture given at the 
+Carnegie
+Museum of Art on October 28, 2010.
+
+[21] Art Institute of Chicago. Self-guide, 2010. Available from
+
+http://www.artic.edu/aic/visitor_info/selfguide/index.html.
+
+[22] The San Francsico Museum of Modern Art. Public tours. Available from
+
+http://www.sfmoma.org/pages/tours_public.
+
+[23] Bonnie Pitman and Ellen Hirzy. Ignite the Power of Art: Advancing Visitor 
+Engagement in
+Museums. Yale University Press, 2011.
+
+[24] Steve.Museum project. Steve.museum, 2010. Available from 
+http://www.steve.museum/.
+
+[25] Nina Simon. Museum 2.0 deliberately unsustainable. American Association of 
+Museums,
+available from http://www.aam-us.org/pubs/mn/museumtwopointo.cfm.
+
+[26] Nina Simon. The Participatory Museum. Left Coast Press, Inc., 2010.
+
+[27] Koven J. Smith. The ipod tour at the cooper-hewitt national design museum, 
+2010. Available
+from http://kovenjsmith.com/archives/311.
+
+[28] Roberta A. Smith. A guided tour in the palm of your hand, 2010. Available 
+from
+
+http://www.nytimes.com/2010/01/15/arts/design/15design.html.
+
+[29] Loic Tallon. Digital Technologies and the Museum Experience: Handheld 
+Guides and Other
+Media, chapter Introduction: Mobile, Digital, and Personal. AltaMira Press, 
+2008.
+
+[30] Eduard Tan and Katri Oinonen. How (not) to personalize content 
+presentation in museum
+exhibitions: Visitors want control, 2006. Paper presented at the annual meeting 
+of the
+International Communication Association, Dresden International Congress Centre, 
+Dresden,
+Germany.
+
+[31] Carnegie Mellon University. Dining & dorms, 2010. Available from
+
+http://www.cmu.edu/student-life/food.shtml, accessed November 13, 2010.
+
+
+Appendix A
+
+Current Mobile Guides
+
+SFMOMA
+
+The San Francisco Museum of Modern Art’s SFMOMA guide [22] is a native 
+application
+for both the iPhone and Android phones. The application allows visitors to get 
+information
+about visiting the museum (hours, prices, etc.), view artwork by museum floor, 
+and also
+enter codes to get information about a specific piece of art. The information 
+available to
+users is primarily audio content and thumbnails of the artwork. While users can 
+access the
+guide content outside of the museum, it is only easy for them to browse the 
+highlights listed
+by floor as the other works must all be accessed though stop numbers, which can 
+only be
+found next to each piece of work in the museum. This system is an example of a 
+simple
+guide that primarily replicates audio guide features, and is not making use of 
+many features
+possible on new devices.
+
+The Louvre
+
+The Louvre’s Mon Guide system comes on a small device about the size of a 
+smartphone or
+PDA and users navigate with the help of a stylus. The system provides many 
+features such
+as an interactive map; video commentaries in multiple languages, including sign 
+language;
+and tour options (by “theme, duration or difficulty” [6]). Information about 
+specific art-
+works is accessed by entering numeric codes listed next to the physical works. 
+The Louvre
+also has plans to make the guide commentaries available on their website so 
+that visitors
+can continue to use the content at home. Extending the life of guide content 
+can encourage
+visitors to continue learning after their visit and also relieve them of 
+worrying that they have
+to use all of the guide content during the visit so that they can spend more 
+time enjoying
+the actual artwork at the museum.
+
+The Cooper-Hewitt
+
+In addition to companies that focus on mobile guides, more general design 
+studios are also
+adding guides to their offerings. The well-received guide for the 
+Cooper-Hewitt’s tempo-
+rary exhibition Design USA: Contemporary Innovation at the National Design 
+Museum
+was created by the graphic design firm 2x4. Their guide included artist 
+interviews, videos
+and images, as well as the ability to comment on the exhibition [12].
+
+Visitor comments were displayed publicly in the museum and also posted online to
+Twitter. While soliciting and displaying visitor comments can create a sense of 
+dialog and
+a respect for visitor opinions, there is the possibility that comments will be 
+off-topic, insen-
+sible or simply boring. The question of how and to what extent museums should 
+include
+
+55
+
+
+visitor input is debatable and controversial within the museum community. The 
+answer
+may depend largely on variables such as the museum’s culture, goals, specific 
+exhibition
+topics and anticipated audience.
+
+Another novel aspect to the guide is that it pulls content from public sources 
+such as
+YouTube. Making use of pre-existing content can be helpful to museums because 
+they
+often have thousands of artworks and insufficient time and staffing to develop 
+or curate
+interpretive content. However, the trade-off with this practice is precisely 
+that the content
+is not truly curated and may not fit an exhibition as well as content created 
+by or at least
+reviewed by the museum. The Cooper Hewitt guide did receive some criticism that 
+the
+YouTube videos to which they linked were much too long to view during a visit 
+and were
+thus distracting and frustrating [27].
+
+The Brooklyn Museum
+
+The Brooklyn Museum is known for experimentation and innovation [9] [13]. One 
+experi-
+ment they have tried is asking visitors to tag artworks with descriptive words. 
+The tagging
+activity is offered as “Gallery Tag!,” a game in which users choose a word such 
+as “Lion”
+or “Fruit” and then enter an artwork’s numeric code when they see a work that 
+matches
+that tag. When a user is finished playing, he can see his score (based on 
+number of works
+tagged), enter his initials, and view the top scores. The game is available 
+online and can
+be played in the museum or using the museum’s online collection. Like the 
+steve.museum
+project [24], this example of tagging is not especially fun or engaging—there 
+is no learning
+or other reward for visitors’ efforts beyond seeing their score.
+
+The guide [17] also incorporates buttons that visitors can press to indicate 
+that they
+like a particular artwork. The number of “votes” that an artwork receives is 
+used in order
+to recommend artworks to other visitors. Like 2x4’s inclusion of uncurated 
+content, this
+leverages the work of others but risks providing lower-quality content than 
+that generated
+by  the museum. In particular, these user-generated recommendations do not 
+provide any
+explanation of why an artwork was compelling or how it relates to other works 
+in the
+exhibition, as one would expect with museum-generated recommendations.
+
+The Mattress Factory
+
+The Mattress Factory [18], a small installation art museum, provides links to 
+interpretive
+content such as artist process and interview videos through QR codes placed on 
+artwork
+wall labels. This simple and inexpensive system has allowed a small museum to 
+efficiently
+provide additional content to interested visitors without distracting from the 
+artwork as
+might larger and additional wall labels. Visitors enter the exhibitions and 
+whenever they
+read a label, they can choose to get more information by reading the code with 
+a (typically
+free) application on their own device (typically a smartphone). In this way, 
+visitors do not
+have to make an upfront decision about using a guide and the guide is 
+advertised through-
+out the exhibitions (on the wall labels), so that visitors are aware of the 
+option to use a
+guide. Interesting content can easily be saved for later viewing by using the 
+bookmarking
+capability already built into browsers.
+
+
+Appendix B
+
+User Research
+
+I conducted interviews with professionals at local art museums, a gallery and 
+with under-
+graduate students at Carnegie Mellon University. My direct research (IRB 
+HS10-447), in
+combination with my literature reviews and other findings, led to several 
+design criteria that
+drove the concept development phase of the project.
+
+Museum Professionals
+
+I conducted interviews at the Carnegie Museum of Art, The Mattress Factory (an 
+instal-
+lation art museum) and the Society for Contemporary Craft (a gallery and 
+instructional
+center). The professionals to whom I spoke came from a variety of areas 
+including cura-
+tion, education, and marketing. The focus of the interviews was the 
+professionals’ goals
+for visitor experience, and what the institutions have tried in order to 
+support visitor ex-
+perience. I also attended public lectures given by the Carnegie Museum of Art’s 
+director,
+curator of education, and curator of contemporary art; attended a lecture by 
+Nina Simon,
+a well-known, visitor-engagement strategist; and attended Culture Club, a 
+recurring social
+event at the Carnegie Museum of Art where visitors meet other visitors and 
+museum staff
+for art-related discussions.
+
+Undergraduate Students
+
+In order to better understand undergraduate students and how they experience 
+museums, I
+interviewed students in the Carnegie Museum of Art and asked them to think 
+aloud as they
+viewed artwork in several galleries. Through this technique I was able to gain 
+insight into
+what questions and impressions participants had about the museum. I also 
+interviewed stu-
+dents on the Carnegie Mellon University campus and conducted an online survey 
+about lo-
+cal free-choice learning sites, experience with visual art and personal 
+interests. Through this
+research I developed several personas of students which I then used to generate 
+scenarios
+in which a mobile guide could help student visitors in art museums. Research 
+participants
+were all Carnegie Mellon University students but came from a variety of 
+departments, such
+as Chemical Engineering, Mathematics, Design, Professional Writing, and Global 
+Studies.
+They had varying degrees of free time and affinity for visual art and museums. 
+Some were
+given nominal gift cards in appreciation of their participation.
+
+57
+
+
+Scenarios
+
+Rick and Anna
+
+Current Experience
+
+At the museum, Rick takes a look at the brochure he picked up. He has not been 
+to this
+particular museum before, so he is not sure what to see. They could rent audio 
+guides, but
+decide not to because they want to talk to each other, rather than listen 
+alone. There is not
+much information in the brochure about the galleries, so Rick and Anna just 
+wander into a
+nearby gallery. Anna has questions about the artwork, but Rick can not answer 
+any of them,
+so she soon stops asking and they just gaze at the artworks as they continue 
+along.
+
+Future Experience
+
+When they enter an exhibition area, Rick and Anna notice an introductory sign 
+with infor-
+mation about a guide. They don not need to go back to the admissions area to 
+check out
+the guide, because it is online and Rick has a smartphone. He takes his phone 
+and scans a
+QR code on the sign to quickly access the guide. It has an overview of the 
+exhibition and
+suggests a few ways that the works connect to each other. Rick also sees that 
+they can get
+information about any specific work that they are interested in, or even do a 
+scavenger hunt
+game that will teach them about a related subset of the exhibition. Rick and 
+Anna continue
+viewing the exhibition while the guide stories and images serve as a launching 
+point for
+conversations about the artwork. Some works are intriguing and have a lot of 
+related con-
+tent    in the guide, including links to Wikipedia and news articles, so they 
+save those works
+and will investigate them further at home. With the help of the guide, Rick and 
+Anna have
+an entry point for connecting with the artworks. Rick is glad that Anna had a 
+good time and
+is pleasantly surprised that he really enjoyed the museum. Next time, he will 
+challenge her
+to do the scavenger hunt with him.
+
+Nicole
+
+Current Experience
+
+Nicole arrives at the art museum and studies the brochure. She wants to know if 
+they have
+any famous artworks that she should see. There are a few highlights mentioned 
+in the
+brochure and one of them is a large waterlily painting by Monet which she 
+thinks must be
+very impressive, so she decides to check it out. She enjoys the watercolor 
+painting and then
+begins to walk through the galleries. She sees other paintings by artists that 
+she recognizes
+and feels that she is seeing some important artwork.
+
+Future Experience
+
+Nicole walks through the galleries and notices a painting by John Singer 
+Sargent. She thinks
+that he is famous, but she does not remember anything in particular about him. 
+She likes
+his painting and reads the label next to it. There is a note on it about a 
+smartphone guide
+and Nicole wonders if there is any interesting information about the artwork or 
+the artist,
+so she uses her phone to scan the code on the artwork label. She reads about 
+Sargent’s life
+and some background on the painting, which is a portrait of a well-to-do 
+family. There are
+even photographs of the estate where the family lived. Nicole tries to imagine 
+what it might
+
+
+Cheryl A. Templeton                59
+
+have been like to live back then and in such an estate. She wonders about 
+Sargent’s social
+status—if whether the gentry who he painted respected him or treated him as 
+lower-class.
+Nicole has a lot of questions now, but there is still a lot to see at the 
+museum, so she decides
+to save the artwork and look into it more when she gets home. At the end of her 
+visit,
+Nicole feels that she saw important and impressive artwork and also got a 
+chance to think
+more deeply about the works and issues related to them.
+
+Cassie and Katherine
+
+Current Experience
+
+Cassie and Katherine get museum brochures at the entrance and begin to wander 
+through
+the galleries. Cassie sees some paintings that she likes and takes photos of 
+them. After the
+visit, Cassie enjoys looking at the photos that she took, but she does not feel 
+like she learned
+a lot during her visit and can not remember the names of the artworks that she 
+liked.
+
+Future Experience
+
+Cassie and Katherine are in one of the galleries when Cassie notices that a 
+wall label has
+a code on it. She takes a closer look at the label and finds out that she can 
+view more
+information about the painting by the label by using her smartphone. She checks 
+it out and
+is taken to some content about the painting. There is an interesting story 
+about the artist, so
+she calls Katherine over. Cassie and Katherine think about the story and look 
+back to the
+painting. They can now see that the artist created tension in the painting by 
+using very fine,
+soft brushstrokes to depict a violent scene. The artist grew up in Hungary, 
+like Cassie’s
+grandparents. She decides to save the story and an image of the painting so 
+that she can
+send it to her dad when she gets home. Cassie gained insight into some of the 
+artworks and
+feels a little more confident in her abilities to discuss visual art—she even 
+recommends the
+museum to other friends.
+
+Cassie feels like she has learned something and has some understanding of art 
+even
+though it is outside of her field of expertise. Cassie tells others about her 
+visit because
+she is proud that she has ventured outside of her normal activities and is 
+becoming more
+”well-rounded.“
+
+Martin
+
+Current Experience
+
+Martin is taking a class on the history of American furniture design and has to 
+choose a
+topic for his final research paper. He heads over to the Carnegie Museum of Art 
+to see their
+furniture collection—maybe he will be inspired and come up with a topic. Martin 
+sees that
+there are a lot of chairs in the collection; maybe he will do a paper about 
+American chair
+design, he thinks. Back at his apartment Martin starts searching online and 
+trying to figure
+out what he can say about chair design.
+
+Future Experience
+
+Martin sees a small label by a chair with some dates, the designer’s name, and 
+a note about
+the museum’s mobile guide to the collection. Martin takes out his phone and 
+find the guide
+online. He is taken to information about the chair at which he is looking and 
+learns that its
+
+
+design is a precursor to the ergonomics movement. There are links in the guide 
+to related
+works and he finds a couple of other examples of ergonomics, as well as other 
+19th century
+American furniture and some examples of contemporary failures in ergonomics. 
+Martin
+thinks that the development of the ergonomics movement in American furniture 
+sounds
+like an interesting topic because a lot of products are still not very 
+comfortable to use. He
+feels like he already has some good information to start his research.
+
+
+Appendix C
+
+UI Design
+
+Color
+
+The prototype uses a light blue for UI elements such as buttons (See Figure 2). 
+The color
+blue is generally thought of as a cool, calming color and it goes well with 
+most other colors
+(an important consideration when dealing with visual content such as images of 
+artworks).
+The Carnegie Museum of Art’s website uses minimal color and is primarily black 
+and white
+with red links. While it might seem reasonable to adapt the link color from the 
+desktop
+website to the UI controls of the mobile website, red could be overwhelming 
+when used for
+the large buttons found in touchscreen interfaces such as those for mobile 
+websites.
+
+When creating a mobile guide, a decision should be made about whether it should
+match or coordinate with the desktop website or whether it should have a 
+separate look. In
+general, integration should be the default as guide users may already be 
+familiar with the
+desktop site and integration can help to build the brand of the institution. 
+However, if there
+is  a guide for a particular audience, such as children, it may be appropriate 
+to deviate from
+the look of the desktop site. Aside from the UI controls, the guide is 
+primarily black and
+white, as the content is of primary concern and the UI style is meant to 
+support the content
+rather than draw attention to itself.
+
+Typography
+
+Cantarell, a sans-serif typeface, was selected for its legibility and clean 
+look. While there
+are several common sans-serif web typefaces, a non-standard one was included in 
+the site
+in order to give the site a subtly different look that will set it apart.
+
+Grid
+
+Given the limited screen space available to mobile websites, the guide 
+primarily uses a one-
+column grid (see Figure 1). Pages that include lists of thumbnails and related 
+comments
+use a three-column grid with the image in the left column and text spanning the 
+remaining
+two columns. Although images are rich and inviting, limiting thumbnails to one 
+column is
+necessary to allow room for text with a comfortable line-length.
+
+Image Selection and Treatment
+
+When possible, professional photographs are included. While users may want a 
+realistic
+view of the location of an artwork or how it looked at various times, snapshots 
+or pho-
+tographs with poor lighting or contrast will not inspire users in the way that 
+higher-quality
+
+61
+
+
+Grid Overviews
+
+295px                       95px   190px
+
+10px                        10px
+
+
+10px             10px
+
+10px
+
+10px
+
+10px
+
+Figure 1: UI grid structures
+
+Color Palette
+
+
+90B3C2
+
+C2C76C
+
+D4B04F
+
+E0DAB8
+
+D4E8F1
+
+Figure 2: Color palette and Hex codes
+
+images will. Images in the guide have rounded corners to create a softer and 
+more casual
+appearance, inline with encouraging novices to feel comfortable in the museum 
+and with
+the interpretive content.
+
+Navigation Style
+
+The guide uses a common mobile UI pattern with a vertical navigation list and 
+arrows
+indicating whether the item will take the user up or down in the system 
+hierarchy. This
+pattern was chosen because many users may have experience navigating through 
+similar
+systems. Another pattern, based on application screens of mobile phones, was 
+explored
+(Figure 3), but was found to be inappropriate as it relies primarily on icons 
+and leaves little
+room for textual labels. As many guide users will be first-time users, it would 
+likely be
+more efficient for them to read a text label as opposed to learning an icon. 
+Additionally,
+it can be difficult to define logical or intuitive icons for abstract 
+navigation items such as
+those on the home screen of the guide.
+
+A constant (always on screen) navigation element was considered instead of the 
+navi-
+
+
+Cheryl A. Templeton                63
+
+Figure 3: Alternate navigation style
+
+gation that now appears at the bottom of each page when scrolled. A scrolling 
+navigation
+was chosen in order to save screen space for content since, based on user 
+observation, users
+primarily use the back button on their phone instead of the on-screen 
+navigation. If a user
+does enter the guide at a content page (perhaps by scanning the QR code next to 
+an artwork)
+then the on-screen navigation will be essential for that user to navigate the 
+hierarchy of the
+guide.
+
+The key considerations in creating the navigation system for the guide were 
+intuitive-
+ness (achieved through using a known design pattern) and enabling the user to 
+quickly
+evaluate their options. With the chosen style, there is ample room for 
+descriptive titles and
+all of the text is aligned and easy to scan, making is easy for users to 
+evaluate their options.
+
+Progressive Enhancements
+
+Some style choices, as seen in the screenshots, will not appear in all browsers 
+because they
+depend on support for CSS3. However, major platforms such as the iPhone and 
+Android
+phones use Webkit-based browsers which support the inclusion of such features 
+as embed-
+ded typefaces and the rounded corners used in the guide.
+
+
+
+Appendix D
+
+Interpretive Aids for the Carnegie Museum of Art
+
+The mobile guide should be integrated with other interpretive aids in the 
+museum. The
+following figures show examples of how that integration can be accomplished. 
+When NFC-
+enabled mobile phones become more common, it will be possible to use icons in 
+place of
+QR codes (See Section 9.1).
+
+Cast of colossal bust of Athena
+
+Site: Tivoli, Italy
+
+Origin: Greek, 450-500 BCE
+
+Present location: Glyptothek Museum, Munich
+
+
+More information
+
+Smartphones
+
+Use your phone’s application to
+scan this QR code and you will
+be taken to our online museum
+guide or visit
+
+www.cmoa.org/guide/mobile
+
+Cell phones
+
+Call (412) 555-5555
+
+Object ID: #555
+
+Figure 4: Object labels, such as this one, should provide QR codes to access 
+the guide.
+
+65
+
+
+Carnegie Museum of Art
+
+T€ H‚‚ ƒ„ A…†‡ˆ€†ˆ‰…€
+
+S€‚„-G‰‡!€! Tƒ‰…‡"#
+
+Smartphones
+
+Use your phone’s application to scan this QR
+code and you will be taken to our online mu-
+seum guide or visit
+www.cmoa.org/guide/mobile
+
+Whenever you see a code on an artwork’s label,
+you can scan it to get more information, such
+as  a curator commentary, historical context, or
+related works. See the museum brochure for
+more details.
+
+
+Commentary
+
+Architectural Styles
+
+Scavenger Hunt
+
+Figure 5: Signs at the entrances to galleries, such as this one, should inform 
+visitors about
+the mobile guide and provide QR codes to access the guide.
+

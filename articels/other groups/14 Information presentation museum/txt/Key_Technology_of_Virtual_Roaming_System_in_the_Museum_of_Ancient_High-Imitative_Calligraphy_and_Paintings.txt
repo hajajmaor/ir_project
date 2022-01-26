@@ -1,0 +1,1552 @@
+SPECIAL SECTION ON GIGAPIXEL PANORAMIC VIDEO WITH VIRTUAL REALITY
+
+Received June 27, 2020, accepted July 8, 2020, date of publication August 10, 
+2020, date of current version August 27, 2020.
+
+Digital Object Identifier 10.1109/ACCESS.2020.3015318
+
+Key Technology of Virtual Roaming System
+in the Museum of Ancient High-Imitative
+Calligraphy and Paintings
+
+JING LI AND NING YU
+
+College of Art, Qingdao Agricultural University, Qingdao 266109, China
+
+Corresponding author: Ning Yu (yuningluck@126.com)
+
+This work was supported by the Key Subject of Art Science in Shandong Province 
+under Grant 2014232.
+
+ABSTRACT To show the traditional Chinese painting and the spiritual culture of 
+universities, highlight the
+artistic accumulation and cultural heritage, analyze the value and significance 
+of digitalizing the Museum
+of Ancient High-Imitative Calligraphy and Painting, Qingdao Agricultural 
+University (QAU) is regarded as
+the research object. The design principles of the digital museum are clarified 
+by understanding the specific
+user needs, and the 3DS Max is utilized to develop a roaming system for the 
+Museum of Ancient High-
+Imitative Calligraphy and Painting of QAU through Unity3d, a Virtual Reality 
+(VR) software platform.
+Besides, the perspective control, collision detection of virtual characters and 
+scenes, and control of pop-up
+information display windows are realized to achieve the interactive design of 
+users and the QAU digital
+museum system. Finally, from the four aspects of resource content, information 
+presentation, resource
+presentation, and learning effect, a comprehensive evaluation is conducted. The 
+research results show that
+more than 80% of people think that the content satisfaction of virtual system 
+resources is high, which is more
+scientific and accurate; more than 65% think that the information is presented 
+better, and 87% think that the
+system is open enough; in addition, nearly one-third of the visitors believe 
+that using the system can initiate
+their interest and motivation in learning. This shows that the learning and 
+cultural communication effects of
+the virtual system are more obvious. This system realizes the objective of 
+disseminating traditional classic
+art culture and values by new technical means, which has reference significance 
+for research in other fields.
+
+INDEX TERMS Virtual roaming, high-imitative calligraphy and painting, digital 
+museum, digital system.
+
+
+I. INTRODUCTION
+
+Museums are carriers for disseminating, preserving, and
+displaying historical and cultural knowledge, science, tech-
+nology, and social features to the public. With the develop-
+ment of China’s culture and education, museums have been
+valued by more people [1]. The major function of museums
+is to spread the scientific and technological concepts, cultural
+connotations, and true meaning of life to the visitor through
+entertainment and art [2]. The digital museum can drive
+visitors to learn and experience digital history and culture
+through multimedia forms, such as pictures and videos [3].
+Research on digital museums started in the United States.
+With the continuous development and popularization of com-
+puter technology [4], [5], US scientists incorporated the col-
+lection information into the network database system to make
+
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Zhihan Lv .
+
+the collection information break through the limitations of
+physical museums [6]. Olesen (2016) found that countries
+are strengthening the application of computers in the field of
+museums, and have begun to use digital virtual technology
+to protect their cultural heritage [7]. How to better embody
+the museums’ functions of display, education, and research,
+better serve the society and the public, and promote the
+development of the museums is a more prominent problem
+currently [8]. As the network information technology devel-
+ops rapidly, the virtual digital museums built by network
+technology and Virtual Reality (VR) technology widen the
+extension space and maximize the function of the museums,
+forming a fast, comprehensive, and effective way of visiting
+museums [9]. Therefore, studying digital museums is of great
+significance for the public to understand history and culture.
+The digital museum is a virtual museum that is presented
+on the Internet in three-dimensional form based on three-
+dimensional imaging technology, interactive manipulation
+
+151072    This work is licensed under a Creative Commons Attribution 4.0 
+License. For more information, see https://creativecommons.org/licenses/by/4.0/ 
+ VOLUME 8, 2020
+
+
+
+technology, VR technology, and special effect production
+technology [10]. Specifically, it uses the Internet and the
+internal information architecture system of the institution
+to display the business work of traditional museums in a
+computer virtual network; by closely integrating the two,
+the museum is presented to the public in a virtual form; such a
+virtual form uses a lively three-dimensional model to replaces
+the original boring plane data so that the function of the
+physical museum can be fully realized [11]. Pu and Zhao
+(2018) found that when choosing which cultural heritage
+resources to display, the museum needs to consider not only
+the resources available to the museum itself but also the
+intensity of the user’s demand for specific information [12].
+China began the research, exploration, and construction of
+virtual museums in the early 1990s. Due to the strong sup-
+port of government departments in policies, coupled with
+strong social needs, a good start has been created for the
+development of virtual museums in China. The digitaliza-
+tion of museums has become more mature and standardized
+both technically and theoretically [13]. As a place to collect,
+protect, and display various important exhibits, university
+museums are an important part of the cultural infrastructure
+of colleges and universities, and an important education base
+for implementing quality education and improving the cul-
+tural quality of students [14]. The continuous development
+of computer technology has promoted the development of
+virtual reality technology and made it possible to digitalize
+the QAU Museum of Ancient High-Imitative Calligraphy
+and Painting. The digital museum can provide users with
+sufficient convenience and has attracted increasingly more
+attention from users.
+
+By clarifying the design principles of the digital museum
+and understanding the specific user needs, the 3DS Max is
+utilized to develop a roaming system for the Museum of
+Ancient High-Imitative Calligraphy and Painting of Qingdao
+Agricultural University (QAU) through Unity3d, a Virtual
+Reality (VR) software platform. This will play a positive
+role in the protection of the works and the promotion of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU. Here, the VR technology is applied to the field
+of museum digitalization for the first time, which is a bold
+attempt of new technology in the fields of art and culture.
+Through the digital design of the Museum of Ancient High-
+Imitative Calligraphy and Painting of QAU, the physical
+museum building and display will be reconstructed with dig-
+ital technology, which will greatly facilitate the user’s visit,
+as well as the reproduction, protection, and promotion of
+cultural relics.
+
+II. METHODS
+
+A. 3D SCENE-MODELING TECHNOLOGY
+
+In the process of designing and implementing the VR system,
+the virtual environment must be designed and constructed
+in detail. Therefore, the modeling and construction of a 3D
+scene has a huge influence on the implementation of the
+entire virtual reality system. Only through 3D scene modeling
+
+can operations such as real-time rendering, texture map-
+ping, lighting processing, interaction, and real-time roam-
+ing be performed on the system, thereby making the virtual
+world built more realistic. The current 3D scene modeling
+technology is mostly based on the following technologies:
+
+(1) geometry-based modeling technology; (2) image-based
+modeling technology; (3) geometric and image-based hybrid
+modeling technology.
+
+The objective is to show the content and characteristics
+of ancient high-imitative calligraphy and painting. Image-
+based modeling technology has a small amount of calculation
+and a fast modeling process. At the same time, it does not
+require high computer configuration. Users can easily realize
+the implementation of complex scene modeling through their
+computers. This technology uses external equipment to shoot
+the scene in real-time and the computers to process and
+splice the image information in the scene; therefore, the scene
+can be presented to the users more realistically, meeting the
+requirements of different users to observe and operate the
+scene from multiple angles. The modeling method based
+on image rendering can quickly collect scene data during
+the modeling process, as well as realistically reflecting the
+object characteristics in the scene. In addition, it can solve
+the problems encountered in the process of digital museum
+scene modeling, such as user interaction with virtual objects
+and the lack of immersion in the scene.
+
+Therefore, in the virtual modeling process of the museum
+scene, the hybrid modeling method is adopted. The
+panoramic modeling of the scene is carried out through image
+processing technology, and the image information is collected
+from multiple angles and sent to the computer for processing,
+thereby producing a more realistic visual experience of the
+model. Besides, the geometry-based modeling methods are
+utilized to design interactions between users and museum
+collection models, achieving a better display effect of the
+QAU museum. The hybrid modeling technology is shown
+in Fig. 1:
+
+FIGURE 1. Process of hybrid modeling technology.
+
+B. 3D SCENE-ROAMING TECHNOLOGY
+
+The 3D roaming system presents not only a real space but
+also a real simulated virtual space of an imaginary space,
+
+
+
+which is a virtual environment within a specific range. The
+virtual environment has the characteristics of real integration
+of viewing, listening, and touching. The roaming users are in
+the virtual space in a natural way. In this space, the users must
+use the necessary equipment to observe in all directions. The
+virtual objects in the environment not only can make users
+feel immersive but also can be planned and operated. Roam-
+ing scenes are mainly divided into indoor scene management
+and outdoor scene planning.
+
+(1) Indoor scene management based on Binary Space
+Partitioning (BSP) tree:
+
+Technically, BSP utilizes walls or glass to divide the space.
+These walls or glass are orthogonal or approximately orthog-
+onal in the building body; in this way, the objects in the
+space can be gradually separated according to the pre-defined
+walls or glass. Then, these separated objects are separated
+again into other independent spaces, which can be rendered
+independently. Therefore, a subspace organized by the BSP
+tree    is formed. This subspace is formed through such a static
+preprocessing technology, and the subspace that needs to be
+rendered is rendered through the real-time rendering tech-
+nology. This improves the efficiency of real-time rendering,
+during which the system only needs to render the dynamic
+parts. The specific algorithm flowchart is shown in Fig. 2:
+
+FIGURE 2. Algorithm structure of indoor scene management based on
+BSP tree.
+
+(2) Image-based outdoor virtual roaming technology:
+
+The basic data of image-based virtual roaming technology
+come from the process of collecting information. Some of the
+data come from discrete images collected by cameras, and
+some from continuous images collected by cameras. These
+information data are processed through image processing to
+obtain the panoramic images. Then, the obtained panoramic
+images are organized into a virtual reality space. During
+this organization process, a suitable space model is chosen.
+In this virtual reality space, users can operate the scene in
+different directions, which realizes 3D scene roaming from all
+aspects.
+
+A panoramic image generator and a space editor are uti-
+lized to generate a virtual reality space. The panoramic image
+generator is mainly responsible for stitching ordinary images
+or videos into panoramic images. These ordinary images
+have overlapping parts, and the video is continuous. The
+space editor organizes many panoramic images into a vir-
+tual real space, and the image processing includes perspec-
+tive transformation, flattening, compositing, and cropping
+methods.
+
+C. OVERALL DESIGN OF THE DIGITAL MUSEUM
+
+User demand and system positioning of digital museum
+system: the goal of analyzing the user needs of the digital
+museum system and the positioning of the system design is
+to meet the needs of visitors and thus generate practical val-
+ues [15]–[19]. The system design is to reproduce the Museum
+of Ancient High-Imitative Calligraphy and Painting of QAU
+building as realistically as possible so that users can have the
+same experience of visiting the physical museum through the
+system. To achieve this goal, in terms of the system content,
+it  is necessary to fully utilize various forms of media such as
+images, sounds, and videos, which is of great historical and
+aesthetic value to the comprehensively describe the buildings
+of the Museum of Ancient High-Imitative Calligraphy and
+Painting of QAU. First, by observing and comparing the
+topographic structure and model characteristics of the project,
+a 3D laser scanner is utilized to obtain cloud data in the school
+museum, as well as taking photos of details such as doors,
+windows, stairs, and booths. The obtained cloud data are
+imported into 3D Max to create a 3D model with the photos.
+Then, the model is imported into the VR-Platform to make
+virtual scenes and interactive functions. Finally, the model is
+saved as an exe file and exported. The entire virtual roaming
+system is completed.
+
+(1) Design principles: the first is optimization. To ensure
+the operating efficiency of the system while not losing the
+quality of the image as much as possible, two processing
+methods are adopted. One method is to use textures instead of
+modeling with subtle parts to reduce the data volume of the
+model while ensuring that the model will not lose the image
+quality, that is, using textures to supplement the lack of detail
+caused by the model; as for the other method, by splitting
+a model into multiple models and selecting different scenes
+to choose to load different models, the data amount of a
+single model can be as low as possible. In addition, in the
+process of modeling, it is also necessary to try to reduce
+the number of faces and vertices of the model, as well as
+reducing the calculation of computer rendering during the
+later roaming process. The second is intuition. When visitors
+from different regions and even different countries are expe-
+riencing the digital museum, they will inevitably encounter
+cultural differences in understanding the exhibits through the
+senses such as vision and hearing. How to enable visitors in
+different regions to better understand the culture and spirit
+contained in the Museum of Ancient High-Imitative Callig-
+raphy and Painting of QAU requires the principle of intu-
+itiveness in the digital design process of the museum, that is,
+not only the language and characters but also the multimedia
+methods such as graphics, images, and sound are used in
+the display of the digital museum so that people from all
+walks of life in different regions, cultures, and ethnic groups
+can better enjoy and learn about the art and culture of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU.
+
+(2) Overall process: before the digital model of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+
+
+
+of QAU and surrounding scenes are formally produced, it is
+necessary to collect information about the relevant physical
+
+where the modulus of the point (m, n) is calculated as:
+
+M ᵈf (m n) = q W ¹ f (m n) 2 + W ²jd f (m n) 2  (3)
+
+
+eled through the architectural design drawings of the building
+
+and assisted with on-site building photos. For the surrounding
+scenes, on the one hand, photos of the scene environment are
+
+Then, the phase angle should be:
+
+2 d
+
+A f (m, n) = arctan   ²    
+
+(4)
+
+
+taken; on the other hand, the size of the surrounding scenes
+can be referred to the size of the museum building. The overall
+
+²        W ¹df (m, n)
+
+where W ² ᵈ f (m, n) is the discrete binary wavelet transform
+
+process is shown in Fig. 3:                        2 j         1 d
+
+
+FIGURE 3. Virtual roaming design process for the Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU.
+
+D. IMAGE COLLECTION AND PROCESSING
+
+(1) Image collection: it mainly utilizes the image scanning
+method. The approximate location of the scanner site is
+set according to the internal structure of the museum, and
+the scanning is started under the premise of minimizing
+occlusion. To facilitate the later point registration, it should
+be noted that a 10%-20% overlap should be set between
+the scanned data of each two stations. The scanned data
+can be used in 3D Max after a series of processing such
+as registration, impurity removal, and format conversion
+through software. Then, the internal structure of the museum
+is observed. According to the needs of model material and
+
+value of point 2, and W₂ j f (m, n) is the discrete binary
+wavelet transform value of point 1.
+
+Second, due to the differences between different images,
+image registration technology is also utilized. Image regis-
+tration finds the conversion relationship in multiple images.
+These images must be in the same area, mainly in the same
+scene. Then they are matched. The image is defined as fol-
+lows: I₁ and I₂ are used to represent the reference image and
+the image to be registered, respectively; thus, the registration
+
+relationship between the two images is as follows:
+
+I₂(x, y) = g(I₁(f (x, y)))        (5)
+
+In (5), f and g represent the 2D geometric transformation
+function and the one-dimensional gray-scale transformation
+function, I₂(x, y) and I₁(x, y) represent the gray value of
+the reference image and the image to be registered at the
+point (x, y), respectively. Normally, g does not need to be
+calculated; thus, the task of image registration is to obtain the
+
+optimal f . Hence, the above equation can be simplified into:
+
+I₂(x, y) = I₁(f (x, y))         (6)
+
+To detect the details of images, the Haar classifier is uti-
+lized. This is a traditional image processing algorithm based
+on machine learning, which mainly relies on the rotation of
+the image to obtain the feature values of different images.
+This type of algorithm is characterized by fast detection and
+slow training. The specific calculation process is as follows:
+First, the image is filtered and detected. The filtering is
+completed according to the difference operators in the vertical
+and horizontal directions, and the respective derivatives Iₓ
+and Iy of the pixels are calculated in the two vertical direc-
+
+tions, thereby obtaining the following matrix:
+
+m =  I 2Ix Iy           (7)
+
+
+a camera and processed with Photoshop software.
+
+(2) Image processing: the method of wavelet transform
+operator is utilized. If the image p has different pixels, p
+is decomposed at a certain scale, and the appropriate 2D
+smoothing function θ (x, y) is selected; then, the function will
+
+be defined as:
+
+IₓIyIy
+
+After the Gaussian filtering of the above matrix m is
+passed, the Gaussian function of autocorrelation function
+matrix M is:
+
+w  exp(  x2 − y2 )         (8)
+
+2πσ 2
+
+
+∂θ (x, y)
+
+ψ                               
+
+∂x
+
+(1)
+
+Then, the matrix M could be expressed as:
+
+M = m ⊗ w =  I 2Ix Iy  ⊗ exp(− x2 − y2 )   (9)
+
+
+ψ ²(x, y) =
+
+∂θ (x, y)
+
+(2)
+
+IₓIyI ²
+
+2πσ 2
+
+
+∂x
+
+By constructing a discrete filter, the discrete binary wavelet
+transform of each point is calculated on different scales,
+
+The above calculation obtains the Harris corner detection
+operator R for each pixel, where:
+
+R = det(M ) − KTr²(M )       (10)
+
+
+
+When the operator R is greater than some threshold,
+the corner point is regarded as a point that obtains a local
+extreme value in some field. Here, R  0.3 and K is a
+constant.
+
+E. IMPLEMENTATION OF DIGITAL MUSEUM
+VIRTUAL SYSTEM
+
+(1) Model scene implementation: the 3D Max software is
+used for design and production. Before making the building
+model of the QAU Museum of Ancient High-Imitative Callig-
+raphy and Painting, first, the corresponding scene construc-
+tion method is selected according to the shape and structural
+characteristics of the building. The system adopts the hybrid
+scene construction method. This method first establishes the
+bottom surface of the building model; then, through the mod-
+ification toll in the extrusion tool kit, the plane is made into
+a 3D building, and the roof is made by referring to the build-
+ing. In the entire building modeling process, CAD drawings
+must first be imported into 3D Max, which are utilized as
+the background view of the entire view window. By using
+the drawings as the dimension basis, the outer contour of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU building is formed by drawing lines. Based on the
+outer contour, through the modification toll in the extrusion
+tool kit, the 2D line contour is extruded into a 3D geometry,
+which is the model of the Museum of Ancient High-Imitative
+Calligraphy and Painting of QAU building. In the process
+of extrusion, the height of the building is considered, which
+should be above the height of the two floors plus the height
+of the ground and roof. The roof is constructed by the method
+of patch modeling, and the external facade on the side of the
+building is constructed by adding planes. The detail model is
+shown in Fig. 4:
+
+FIGURE 4. Reproduction of the building detail model of QAU Museum of
+Ancient High-Imitative Calligraphy and Painting.
+
+(2) Assigning materials and textures: after the scene is cre-
+ated, it can be assigned with materials. The final model should
+be imported into the VRP editor to build the virtual roaming
+system. VRP only supports standard materials; therefore,
+advanced materials such as Vray and Mental Vray should be
+avoided when modeling. After the model material is assigned,
+the ‘‘UVW’’ map should be added to facilitate the adjustment
+
+of the material in the VRP. It should be noted that to optimize
+the effect, fine photos of details should be taken, such as stair
+handrails, marble steps, wooden doors, and windows; also,
+the Photoshop software is utilized for editing and color ton-
+ing. After all textures are created, the 3D Max model needs to
+be exported in.obj format, and the exported model is imported
+into Deep Paint 3D to prepare for the subsequent mapping of
+the entire building. Deep Paint 3D is a model mapping tool,
+which maps the plan to the surface of the 3D model. Multiple
+layers are created in Deep Paint 3D software. The textures are
+mapped from multiple angles to the museum building model
+one by one. Finally, the mapped models are imported into
+3D Max software. The texture production process is shown
+in Fig. 5:
+
+FIGURE 5. Process of texture production.
+
+(3) Lighting arrangement: light is set, and a free spotlight
+is established. The spotlight parameter is set to 40, and the
+attenuation parameter is set to 60. The spotlight is copied to
+the top of the showcase for lighting according to the layout
+of the venue. Floodlights are established to fill the dark parts
+of the scene. 3D Max has its lights and supports Vray lights.
+VRP also supports these two lights. The Vray renderer has
+excellent performance and effects; thus, the Vray renderer is
+recommended. When arranging the lights, the light sources
+should be minimized. Too many light sources will increase
+the system overhead. When adding the light sources, the order
+of the main light source and then the auxiliary light source
+should be followed. In addition to making the model more
+realistic, the lights should also bring out the lighting effect
+of the spotlight. Therefore, parameters such as ‘‘multiplier’’
+and ‘‘sampling range’’ in the shadow map of the light should
+be set carefully. After the rendering is finished, the lights
+are adjusted to obtain the required effects. The adjustment
+process is shown in Fig. 6.
+
+(4) Scene baking: the goal of baking is optimization. Bak-
+ing light maps will produce lighting and shadow effects to
+create fake lighting. When lighting effects are not considered,
+baking light maps is unnecessary. Using only textures to
+express the effects will reduce the amount of calculations that
+files are imported into the engine, which can make the project
+more efficient. Since the model built in 3D Max needs to be
+imported into VRP, the following points when baking should
+be valued: VRP only supports the textures of the two baking
+methods of Complete Map and Lighting Map; the default
+
+
+
+FIGURE 6. Process of light adjustment.
+
+texture of baking is 256 256, but large-sized objects should
+be resized; the baked texture cannot have the same name. The
+model after scene baking is shown in Fig. 7.
+
+FIGURE 7. Scene baking renderings.
+
+F. PATH PLANNING PROBLEMS IN VIRTUAL ROAMING
+
+Of late years, there have been great breakthroughs in path
+planning, mainly in the fields of robots, unmanned aerial
+vehicles (UAVs), and virtual reality. While solving the path
+planning problems, the path-finding algorithm is gradu-
+ally updated, and new algorithms with better performance
+appear one after another. Under different scenarios, the
+performance of the path-finding algorithm is different, and
+
+approach the optimal solution. Meanwhile, each individual
+can affect the surrounding environment by releasing
+pheromone, as well as perceiving the real-time changes in
+the surrounding environment. Besides, ACO algorithm is a
+heuristic search, which is not easy to fall into the local opti-
+mum. In nature, ants will choose the route with the highest
+pheromone concentration and continue to release pheromone
+during the journey so that the pheromone concentration on
+this path always remains the highest.
+
+The ACO algorithm takes a long time during searching;
+after the algorithm searches to some extent, all ants will
+choose the same path, which is not conducive for the algo-
+rithm to further search the solution space. Therefore, the algo-
+rithm will fall into the local optimum prematurely; in other
+words, premature phenomenon occurs. Hence the traditional
+ACO algorithm is improved before being applied to the path
+planning of the virtual roaming system, which will improve
+the performance of the algorithm and make the system more
+efficient and reliable.
+
+Because the chaotic optimization has the characteristics
+of using the chaotic sequence to traverse all the states in
+some range without repetitively traversing, it has obtained
+superior performance than the random sequence. Therefore,
+the chaotic optimization theory is adopted to improve the
+ACO algorithm. The improvement ideas are: (1) using the
+advantages of the faster search speed of the turbidity opti-
+mization to generate a set of better solutions to solve the
+problem of lacking initial pheromone houses in the ant colony
+algorithm; (2) using the chaotic disturbance to jump out
+of  the local optimal solution and introducing it into the
+ACO algorithm to enhance the later search ability of the
+algorithm.
+
+Based on the Max-Min Ant System (MMAS) theory,
+the pheromone is disturbed by the idea of secondary carrier in
+chaotic optimization, which makes the algorithm stronger and
+enables the algorithm with the ability to jump out of the local
+optimal solution. The improved Chaos MMAS (CMMAS)
+algorithm uses the branch influence factor λ to determine
+whether it is stuck, which is a quantity related to the search
+space dimension. The branching factor λi is defined as the
+
+number of subsequent edges where node i meets the condi-
+tion. The specific definition process is as follows:
+
+τi,j > λiδi + τj,min            (11)
+
+δi = τj,max − τj,min           (12)
+
+τj,mₐₓ  max τi,j            (13)
+
+j∈Ni
+
+τj,min  min τi,j             (14)
+
+j∈Ni
+
+
+various application scenarios also put forward higher require-
+ments for the efficiency and storage space of the path-finding
+algorithms.
+
+τi,j
+
+(t) =
+
+1
+
+k (
+
+0, others
+
+(15)
+
+
+Ant Colony Optimization (ACO) algorithm is a newly
+developed bionic optimization algorithm that simulates the
+group behaviors of ants in nature foraging. The ACO algo-
+rithm uses a positive feedback mechanism to converge
+the searching process continuously, and finally, gradually
+
+where i and j are two points forming an edge, Ni represents the
+set of all nodes connected to node i, τi,j is the value obtained
+from the pheromone update operation, and Gᵏ (t) is the path
+length of the current elite ants, that is, the global optimal path
+length.
+
+
+
+The chaotic method is utilized to perturb the pheromone,
+and the following equations are obtained:
+
+c   τi,j − τmin 
+
+i,j  τmax − τmin
+
+τ ᶜ (t + 1) = ρτᶜ (t) + r ∗ (2c − 1)    (17)
+
+animation is the basis of multiple fixed roaming effects,
+and multiple cameras should be attached to it. This system
+realizes the roaming of the scene in two ways through the
+character tracking camera, walking camera and character
+control camera. When using the role tracking camera for
+
+
+In (16) and (17), ρ represents the retention rate of
+pheromone, τmₐₓ is the maximum value of pheromone, τmin is
+the minimum value of pheromone, r is the chaotic disturbance
+radius, and c is the chaotic factor generated by Tent mapping.
+
+G. IMPLEMENTATION OF DIGITAL MUSEUM
+ROAMING SYSTEM
+
+(1) The development of interactive functions: it is controlled
+by the script engine in the Unity3D virtual roaming engine.
+The biggest advantage of Unity 3D is the cross-platform
+nature of the scripting language. In the past, software often
+did not have such characteristics. The compiled program can
+only run on a single platform, which is very inconvenient.
+In Unity 3D, most of the platform-related code is placed
+inside the game engine so that the code related to the game
+content can be executed across platforms, which is convenient
+and fast, and saves a lot of manpower and material resources.
+Before digitizing the interactive design of the Museum of
+Ancient High-Imitative Calligraphy and Painting of QAU
+system, the preparatory work that needs to be done is to
+import the intermediate conversion data format FBX file
+generated in the early stage into the newly created project file
+in Unity 3D. Because the objects in the scene must have basic
+collision detection functions, the size of each model and the
+option to accept collision must be checked before creating the
+scene. After adjusting the position of each model, it is nec-
+essary to create the material of the model. The development
+process of Unity 3D is shown in Fig. 8:
+
+two modes, ‘‘movement control’’ and ‘‘fixed-point viewing’’,
+should be noted. Movement control mode means that the
+camera moves with the character; while in the fixed-point
+viewing mode, the camera is fixed, only the character is
+moving, and the viewing angle distance will vary with the
+character’s movement. In autonomous roaming, the ‘‘far clip-
+ping plane’’ and ‘‘near clipping plane’’ in the properties of
+the walking camera can define the clipping distance in the
+camera perspective. The system will use the default value, or
+the value can be customized according to the needs of the
+scene. It should be noted that when the ‘‘walking’’ mode is
+selected, the system will automatically turn on the collision
+detection of the camera. In the flight mode, users can choose
+whether to detect the collision according to their needs. In the
+‘‘Character Control’’ camera, users can double-click the cam-
+era, choose to track the created character model, and adjust
+the parameters. After all the parameters are set, users can
+perform simple autonomous roaming through W (forward) S
+(backward) A (left shift) D (right shift) keys on the keyboard,
+as shown in Fig. 9.
+
+
+FIGURE 8. Function implementation of Unity 3D.
+
+(2) Roaming system: there are two major roaming modes
+in VRP, the fixed roaming and autonomous roaming. The
+fixed roaming is simple; the autonomous roaming is highly
+free and has many viewing angles, whose user experience
+is more sufficient. Walking along a fixed route in skeletal
+
+FIGURE 9. Schematic diagram of roaming system implementation.
+
+(3) System display mode: for the Windows version of
+the digital roaming system of the Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU, the final
+product system is an.exe file that can be run directly.
+It can run directly in the Windows system environment
+
+
+
+by double-clicking. Control commands are input through
+commonly used user command input interfaces (keyboard
+and mouse), and the corresponding movement is generated
+through the system’s recognition of the commands. The
+default keyboard control mode of the digital museum roaming
+system is to control the forward, backward, left, and right
+movement of the viewing angle in the system through the
+WSAD key of the keyboard; the left and right keys of the
+mouse are used to control the left and right rotation of the
+viewing angle in the system.
+
+H. EVALUATION OF DIGITAL MUSEUM SYSTEM EFFECTS
+To comprehensively evaluate the effectiveness of the digital
+museum system, the overall indicator evaluation system of
+Likert scale is adopted. From the dimensions of ‘‘resource
+content, information presentation, resource presentation, and
+learning effect’’, a questionnaire survey is performed. The
+
+personnel of QAU museum fill in the questionnaire imme-
+diately after they use the system. The questions are designed
+according to relevant literature, and the reliability and validity
+of  the questionnaire data are tested.
+
+(1) Reliability analysis: the Cronbach’s alpha coefficient
+method proposed by Hadjichambis et al. (2020) is utilized
+[20]. When the coefficient is between 0.7-0.8, it means that
+the questionnaire results have a high degree of credibility;
+when the coefficient is between 0.65-0.7, the reliability is
+within the acceptable range, when the coefficient is between
+0.6-0.7, the questionnaire survey results are not credible [21].
+
+(2) Validity analysis: Ratio Statistic Test (RST) method is
+used for validity analysis, which is judged by redundancy
+and sensitivity. The Redundancy Degree (RD) represents the
+independence and redundancy of each indicator. When RD is
+0.5, it means the indicator is valid. The smaller the RD value
+is, the higher the validity is. The Sensitivity Degree (SD)
+represents the adaptability of different evaluation systems
+on evaluation indicators. When SD is  5, the indicator is
+
+valid [22].
+
+(3) The questionnaire is designed according to the three-
+level indicators in the performance evaluation. Each ques-
+tion has 5 options: ‘‘very non-conforming’’, ‘‘relatively
+non-conforming’’, ‘‘general’’, ‘‘relatively conforming’’, and
+‘‘very conforming’’, corresponding to 1, 0.8, 0.6, 0.4, and
+
+0.2 points. A total of 300 questionnaires have been issued, and
+292 questionnaires have been recovered, in which 280 copies
+are valid. The recovery rate is 97%, and the valid rate is 97%.
+Among them, A1, A2, A3, A4, and A5 are very inconsistent,
+relatively inconsistent, general, relatively consistent, and very
+consistent.
+
+(4) Normalization processing: before modeling, all the data
+are normalized first. The calculation method utilized is as
+follows: all results are averagely weighted to calculate the
+final score of each indicator, and the normalized interval
+
+is [0, 1]. The specific equation is as follows:
+
+To reduce the error effectively, all the matrices are tested
+for consistency. The specific calculation is as follows:
+
+CI = (λmₐₓ − n) / (n − 1)       (19)
+
+In (19), λmₐₓ is the maximum eigenvalue, which is the
+average value of Awi/wi; wi is the component vector of each
+row of the matrix multiplied by the weight W and summed;
+Awi/wi is the divisor of the matrix and its corresponding
+component vector; N is the number of data. Also, the average
+random consistency index RI is utilized to determine the
+approximate range of inconsistency. The consistency ratio CR
+(CR  CI/RI) is adopted to determine whether the matrix
+is consistent (if CR is < 0.1, the judgment matrix will be
+consistent).
+
+III. RESULTS
+
+A. ALGORITHM PERFORMANCE OF VIRTUAL ROAMING
+PATH PLANNING
+
+In the ACO algorithm, the parameter is utilized to adjust the
+influence of the remaining pheromone on the path on the next
+ant colony search, which controls the convergence speed of
+the algorithm. To verify the influence of the parameters on the
+algorithm, test cases KroAlOO, d198, eil51 and lin318 of the
+standard traveling salesman problem (TSP) are utilized for
+testing. The value of ρ starts from 0.1, and a value is taken
+every 0.1 for verification. Finally, a set of ρ  0.95 experi-
+mental groups is added. Figures 10-13 show the experimental
+results with ρ values ranging from 0.5 to 0.95.
+
+FIGURE 10. KroAlOO experiment results of different ρ.
+
+When the number of iterations is small, a smaller value of ρ
+can be selected to obtain a better solution. However, this does
+not converge faster in the true sense; instead, it prematurely
+converges toward the local optimal solution. When the value
+of  ρ is large, the algorithm does not have an advantage
+when the number of iterations is small; as the number of
+iterations increases, the algorithm obtains a stronger spatial
+search ability, and finally, obtains a better search result.
+
+Next, the four standard test datasets of KroAlOO, d198,
+eil51 and lin318 are utilized to evaluate the performance of
+
+
+X  x − xmin 
+xmax −xmin
+
+(18)
+
+the ACO algorithm fused with chaotic optimization, which
+is compared with the Ant Colony System (ACS) algorithm
+
+
+
+FIGURE 11. d198 experiment results of different ρ.
+
+FIGURE 14. The iterative convergence curves of different algorithms in
+KroAlOO.
+
+
+FIGURE 12. eil51 experiment results of different ρ.
+
+FIGURE 15. The iterative convergence curves of different algorithms in
+d198.
+
+
+FIGURE 13. lin318 experiment results of different ρ.
+
+and the MMAS algorithm. The comparison results are shown
+in Fig. 14-17.
+
+For the small-scale TSP problem eil51 dataset, the opti-
+mization efficiency of CMMAS and MMAS is not much
+different, and both are significantly better than the traditional
+ACS algorithm; at this moment, compared with the MMAS
+algorithm, the improved algorithm does not show its superi-
+ority. For the KroAlOO and d198 datasets, CMMAS not only
+has an advantage in convergence speed but is also superior to
+MMAS in terms of solution quality. When CMMAS is tested
+in the lin318 dataset, although the convergence speed in the
+
+FIGURE 16. The iterative convergence curves of different algorithms in
+eil51.
+
+early stage is slightly slower than MMAS, it shows a good
+ability in jumping out of the local optimal solution in the
+later stage of the search, and finally, obtains better solution
+accuracy.
+
+B. DATA INSPECTION OF QUESTIONNAIRE SURVEY
+
+The ‘‘Analysis/Measurement/Reliability’’ of the IBM SPSS
+Statistics 22 software is utilized to analyze the reliability of
+the five dimensions included in the questionnaire separately.
+The obtained alpha coefficient values are all greater than 0.8,
+
+
+TABLE 3. Normalization processing.
+
+FIGURE 17. The iterative convergence curves of different algorithms in
+lin318.
+
+TABLE 1. Reliability test of virtual roaming system evaluation system.
+
+FIGURE 18. Evaluation results of resource content saturation.
+
+
+and the reliability is high. The internal reliability analysis
+of 17 indicators shows that the alpha coefficient value is 0.95,
+indicating that the scale has high internal consistency and is
+a credible measurement tool.
+
+Table 2 shows the validity analysis results of indicators
+by the RST method. The RD and SD values are less than
+0.5, respectively; therefore, the evaluation indicator system
+for the questionnaire survey of virtual roaming system is
+effective.
+
+TABLE 2. Validity test of evaluation system of virtual roaming system.
+
+After determining the judgment matrix of the criteria at
+all levels, it is necessary to test the consistency of the con-
+structed evaluation system for the evaluation system of virtual
+roaming system through Matlab 7.0 software. The calculation
+results are shown in Table 3, where the CR value of resource
+content saturation is 0.0126, information presentation satu-
+ration is 0.0158, resource presentation saturation is 0.0079,
+and the learning effect saturation is 0.0158. Since all the
+CR values and λmₐₓ values are less than 0.1, the data are
+reasonable, the evaluation system has passed the consistency
+test, and the deviations are small.
+
+C. RESOURCE CONTENT SATURATION
+
+As shown in Figure 18, for the evaluation results of the
+system resource content, the analysis is performed from four
+aspects: scientific, accuracy, completeness, and uniqueness.
+The results show that: 33.2% of the users think that the system
+is more in line with science, 20% think that the system is not
+very good. For accuracy, 36.16% of the users think that the
+accuracy is more in line with historical facts, more than 80%
+agree on the accuracy of the designed system. For the integrity
+of resources, 40% of the users think that it is complete, and
+only 35.5% think that the system is unique but don’t pay
+more attention to this based on the perception of the public.
+According to the above results, the content satisfaction of the
+virtual system resource is high, which is more scientific and
+accurate, but the uniqueness of the system needs to be further
+improved.
+
+D. INFORMATION PRESENTATION SATURATION
+
+As shown in Figure 19, to present the evaluation results for
+the information of the system, the three aspects of interface
+diversity, interface aesthetics, and interface quality are ana-
+lyzed. The results show that: 37.1% of the users think that
+the system has good diversity, which can meet the needs of
+different groups of people; for the aesthetics of the interface,
+more than 80% think that it is very beautiful and satisfactory,
+of which more than 65% think the quality of the virtual
+museum is better than other products on the market. Accord-
+ing to the above results, the virtual system information is well
+
+
+
+presented, but it still needs further improvement in terms of
+interface aesthetics and quality.
+
+ability’’, ‘‘using the system can improve the spiritual and
+cultural life’’, and ‘‘using the system can be more conducive
+to inheriting China Traditional Culture’’. The results show
+that nearly one-third of users believe that using this system
+can stimulate interest and motivation for learning to some
+extent. Among them, 38% of users believe that using the
+system can significantly improve their appreciation, 33.8%
+believe that using the system can significantly improve their
+spiritual and cultural life; another 31.3% believe that using the
+system can be more conducive to the inheritance of traditional
+Chinese culture. The above results prove that the learning
+effect of the virtual system is more obvious.
+
+FIGURE 19. Evaluation results of information presentation saturation.
+
+
+E. RESOURCE PRESENTATION SATURATION
+
+As shown in Figure 20, for the resource presentation eval-
+uation results of the system, the survey is performed from
+three dimensions: ease of use, openness, and controllability of
+resource presentation. The results show that more than 80%
+of the users think that the method of the system is simple
+and feasible, the function is more suitable for the public, and
+they can master its usage in a short time. Among them, 87%
+think that the designed system can be displayed and learned
+from multiple aspects so that the openness of the system
+is better, while 35% think that the control of the system is
+average, this may be because that more functions are needed.
+According to the above results, the virtual system learning is
+more acceptable to the public, and learners can easily learn
+to operate and spread through the Internet, allowing more
+people to accept and learn.
+
+FIGURE 20. Evaluation results of resource presentation saturation.
+
+F. LEARNING EFFECT SATURATION
+
+As shown in Figure 21, it illustrates the evaluation results of
+the learning effect of the system. B1, B2, B3, and B4 respec-
+tively stand for ‘‘using the system can understand painting
+knowledge’’, ‘‘using the system can improve the appreciation
+
+FIGURE 21. Evaluation results of learning effect saturation.
+
+IV. DISCUSSION
+
+A. COMMUNICATION VALUE OF THE DIGITALIZED
+MUSEUM OF ANCIENT HIGH-IMITATIVE CALLIGRAPHY
+AND PAINTING OF QAU
+
+(1) The popularization of communication types: The purpose
+of a museum is to provide information to a wide range of
+users, including history, humanities, geography, and natural
+sciences [23]. According to the elements of communica-
+tion, the museum should be the source of information, that
+is, the communicator [24], [25]. The information transmis-
+sion of traditional museum is realized within the scope of
+the museum, and the most information recipients are the
+groups, which cannot achieve mass communication. Taking
+the visitors who visited the entity Museum of Ancient High-
+Imitative Calligraphy and Painting of QAU as an example,
+the process of the visit is nothing more than individual visits;
+the instructor explains to the individual visitors, which is
+exactly the same way that the instructor explains to the group
+visitors. These types of forms, according to the classifica-
+tion of communication in terms of communication types,
+include self-communication, interpersonal communication,
+and group communication. However, with the extensive uti-
+lization of digital technology in museums, the scope of the
+visitor has been greatly expanded and extended to the scope
+of the public, which is no longer blocked by the ‘‘walls’’
+of the museums. In addition, the communication scope of
+collection and display of information in the museum has been
+
+
+
+greatly expanded. On the basis of retaining the interpersonal
+and group communication functions of physical museums,
+the function of mass communication has also been added.
+First, the digitalization of museums meets the dynamic infor-
+mation needs of the public for cultural heritage protection
+and management, which is the function of monitoring; in
+addition, it realizes the evaluation and interpretation of cul-
+ture, which is the function of publicity and education to the
+public, as well as realizing the attributes of the mass media
+organization of the museum.
+
+Taking the Museum of Ancient High-Imitative Calligraphy
+and Painting of QAU as an example, traditional physical
+museum visitors are conducted in the form of individuals or
+groups, and the spread of the scope is limited, while the digital
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU has broken through the restrictions of the ‘‘walls’’,
+allowing the majority of users to visit the museum at any time
+in any place, thereby realizing the mass communication of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU.
+
+(2) Interactivity in the communication process: The
+communication process of most traditional museums is a one-
+way flow of information [26]. Such a communication pro-
+cess has caused limited communication between the museum
+and the visitors. Often, users receive information from the
+museum but cannot effectively pass their feedback to the
+museum management in a timely and effective manner. Even
+if the museum issues questionnaire surveys to the crowds
+who come to visit for soliciting the opinions of the visitor,
+it will cause the problem of narrow investigation scope. More
+seriously, because the form and content of the questionnaire
+survey cannot be quickly modified according to changes in
+the actual situation, the information returned by the visitors
+is also indirect and lagging. During the visit of the Museum
+of Ancient High-Imitative Calligraphy and Painting of QAU,
+the visitor has watched in front of the exhibition board as the
+recipient of the information and listened to the explanation of
+the instructor. There are few opportunities to give feedback or
+to ask questions to the instructor. This type of communication
+is a mass communication method that does not have individ-
+ual characteristics and lacks pertinence for each individual.
+At the same time, because the traditional museum visit model
+places the visitor as the absolute receiver of information,
+the blind acceptance of information by the visitor will reduce
+the visitor’s initiative to receive information.
+
+Due to the openness of time and space, the virtual museum
+under digitalization can make the users interact with the vir-
+tual museum through mouse clicks and finger touches, as well
+as selectively receiving the information of interest according
+to the users. Besides, the feedback of information to the
+museum realizes the two-way flow of information. Visitors
+no longer need to passively receive the information displayed
+by the museum in front of them as in the past; instead, they
+can choose the desired text and images according to their sub-
+jective ideas and real-timely communicate with the museum
+about what they are experiencing; so, the initiative of the
+
+visitors is well mobilized, and the efficiency and quality of the
+communication are improved. Compared with the traditional
+tour of the Museum of Ancient High-Imitative Calligraphy
+and Painting of QAU, whether interested or uninterested,
+visitors must visit the museum from the beginning to the
+ending according to the route of the tour. The final result
+is conceivable; the uninterested information is filtered out
+by their brains, while the interested information cannot be
+received well due to interference from other information. The
+effect of the visit will not be good with no doubts. This is not
+the case during the visit to the digitalized Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU. Visitors
+can choose the information they are interested in to browse
+based on their personal preferences and manually filter out
+the interference of other information so that the quality of the
+information received is improved. At the same time, due to
+the manual selection process of the audience, their initiative
+has been greatly enhanced.
+
+B. THE PRACTICAL VALUE OF THE DIGITALIZED MUSEUM
+OF ANCIENT HIGH-IMITATIVE CALLIGRAPHY AND
+PAINTING OF QAU
+
+(1) Digital display function: With the development of com-
+puter technology, it has become possible to provide visitors
+with a multi-sensory enjoyment of sight and sound through
+text, screen images, sounds, and videos, and such a means
+has gradually become the mainstream [27]. The Museum
+of Ancient High-Imitative Calligraphy and Painting of QAU
+provides visitors with an unprecedented perception experi-
+ence through multimedia forms of graphic images and audios,
+allowing visitors to choose their perception method according
+to their subjective wishes.
+
+In the traditional display mode of the Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU, the flow of
+information is one-way. As the recipient of the information,
+the visitors can only accept the information but cannot react
+to the museum. Here, the method improves the consensus
+and consistent experience between visitors, but weakens the
+differentiated perception experience of the visitors. With the
+help of digital technology, the QAU Museum of Ancient
+High-Imitation Calligraphy and Painting digitally changed
+the information and images of the display objects through
+the interaction with the digital display objects, resulting in
+a change in the meaning of the displayed objects. During
+the digital display of the QAU Museum of Ancient Highly
+Imitative Calligraphy and Painting, visitors only need a sim-
+ple mouse click or keyboard operation to display they are
+interested in; also, they can rotate the viewing angle and make
+a detailed observation of the display. This is unimaginable
+in the traditional museum visits. The interactivity not only
+makes the visitors interested in the exhibits but also makes
+the virtual display objects have life and constantly changes.
+
+The Museum of Ancient High-Imitative Calligraphy and
+Painting of QAU has been greatly extended in space and
+time. The first is the expansion of the content of the objects
+displayed in time and space dimensions. Because of the
+
+
+
+preservation limitations, in the physical Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU, exhibits
+have to be locked in the display cabinet. The digital
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU can provide visitors with complete digital images
+and attribute information of physical display objects through
+virtual technology. In the virtual QAU roaming system, vis-
+itors can adjust their perspective and observe the display
+objects from multiple angles to observe the parts and details
+of the objects so that they can master the connotation infor-
+mation and structural information from all angles. Second,
+the time and space for visitors to visit the exhibition has
+been expanded. Because the digital virtual QAU roaming uses
+digital means to copy and spread, visitors no longer need to
+rush to the Museum of Ancient High-Imitative Calligraphy
+and Painting of QAU exhibition on the ground at a specific
+time. In the digital museum, users can visit anytime and
+anywhere without any limits.
+
+(2) Digitalized protection function: The Museum of
+Ancient High-Imitative Calligraphy and Painting of QAU
+have collected more than 100 high-imitative paintings and
+calligraphy works printed by Nigensha Japan, including fine
+paintings and calligraphy works in Tang, Song, Yuan, Ming,
+Qing, and other ancient Chinese dynasties. The collected
+works cover three painting subjects of characters, landscape,
+and flowers and birds, all of which are master-class fine
+works, such as Fan Kuan’s Xi Shan Xing Lv and Li Tang’s Wan
+He Song Feng Tu in the Song Dynasty, Huang Gongwang’s
+Fu Chun Shan Ju Tu in the Yuan Dynasty, Shen Zhou’s Lu
+Shan Gao in the Ming Dynasty, and fine works of famous
+ancient Chinese artists Ni Zan, Tang Yin, Shi Tao, and Wang
+Yuanqi. These works have been stored in the exhibition hall
+for a long time, which may cause damages to some extent.
+Digital technology provides a new means and channel to
+protect these ancient high-imitative calligraphy and painting
+works. Through digital means, the high-imitative calligraphy
+and painting works in the QAU museum are digitized. Since
+the digitized works can be continuously copied and stored
+on the premise of maintaining integrity, the collections in the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU can get rid of the damages caused by the passage of
+time and maintain their original appearances for a long time.
+Besides, for any building, no matter how large the building
+scale is, it will have a corresponding capacity according to its
+characteristics. For the Museum of Ancient High-Imitative
+Calligraphy and Painting of QAU, the museum management
+has to take restrictive measures when the number of tourists
+is large to prevent the number of visitors visiting at the
+same time from exceeding the upper limit of the daily tourist
+volume; however, for ordinary tourists, this delays the visit-
+ing time, and they have to spend their time waiting in line
+outside the museum. The virtual the Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU relieves
+the pressure of tourists to some extent. Due to the infinite
+reproducibility of numbers, anyone can visit the Museum
+of Ancient High-Imitative Calligraphy and Painting of QAU
+
+through the terminal at any time and any place, which has
+a good diversion effect for visitors; in addition, the digi-
+tal museum can reduce the number of visitors visiting the
+physical museum, which is beneficial for protecting and
+extending the service life of the QAU Museum of Ancient
+High-Imitative Calligraphy and Painting.
+
+(3) Digital collection function: The digital collection
+includes the collection and preservation of information
+related to the works. The digital objects are stored in the form
+of data through digital processing, such as the digital shoot-
+ing of the works and virtual production of 3D models [28].
+In the preservation process of traditional museum exhibits
+and related materials, in addition to the tedious process,
+it also requires dedicated personnel to integrate and manage
+the physical objects. This not only consumes a lot of time,
+during which the management personnel need to spend a lot
+of energy in the entire management process, but also requires
+enough storage space to save these physical exhibits. Taking
+the traditional Museum of Ancient High-Imitative Calligra-
+phy and Painting of QAU as an example, the management
+of all exhibits in the museum requires staff with professional
+management skills, and many such professionals are required.
+Even  for the same exhibit, it needs continuous maintenance
+and management to understand the latest status of the exhibit
+in real-time, which requires a lot of manpower and financial
+resources. In addition, all exhibits need to be prepared with
+enough space for preservation during the preservation pro-
+cess. In this way, a large amount of storage space needs to be
+consumed, which means that QAU must have a lot of space
+to support the venue.
+
+In terms of digital collections, virtual museums have
+advantages that traditional museums do not. Because virtual
+museums store information in the form of zero and one data,
+it can save a lot of storage space; furthermore, because of
+the ease of data maintenance, without human interference,
+the data will not be destroyed, so there is no need for special
+guards, no time and space restrictions, and no requirements
+for long-term storage of information resources, thereby sav-
+ing manpower and resources [29]. It is precisely because the
+information in the form of data is easy to be operated in
+terms of input, query, modification, and deletion that makes
+the digital exhibits in the virtual museum easy to be added,
+managed, queried, updated, and maintained. Digitally stored
+museum exhibit information can be preserved for a long time
+and is not easily affected by the environment, ensuring that
+the collection can be better collected, reducing the possi-
+bility of cultural relics being damaged by natural environ-
+ment and objective factors, and keeping the collection longer.
+The characteristics of the Museum of Ancient High-Imitative
+Calligraphy and Painting of QAU include convenient and
+lasting, convenient and fast maintenance, manpower saving,
+and material resource saving. Besides, the information of
+the collection is not easy to be destroyed. Not only is it
+conducive but also counterproductive to the promotion of the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU. In turn, the protection of the Museum of Ancient
+
+
+
+High-Imitative Calligraphy and Painting of QAU promotes
+its further development.
+
+C. THE AESTHETIC VALUE OF THE DIGITALIZED MUSEUM
+OF ANCIENT HIGH-IMITATIVE CALLIGRAPHY AND
+PAINTING OF QAU
+
+When digital technology first appeared, people had no under-
+standing of this emerging field, and it was impossible to
+realize the immense energy and value contained in it. But as
+technology is gradually recognized and mastered by people,
+the simple technical level of understanding begins to change
+into a higher level of arts integration. But in turn, high-
+level artistic aesthetics require a large number of underlying
+technologies as support. So, advanced aesthetic requirements
+have played a certain role in promoting the development of
+technology [30].
+
+The characteristics of aesthetic activities include intuitive-
+ness, emotion, and pleasure. These three characteristics are
+the advantages of digitalization [31]. The characteristics of
+aesthetic activities include intuitiveness, emotion, and plea-
+sure. These three characteristics are the advantages of dig-
+italization. In terms of digital display, digital technology is
+used to display museum information for the visitors. It is
+precisely because of this advantage that this display method
+is artistically aesthetic. It can convey beauty to the public
+and maximize the subjective initiative of the public. As the
+application of digital graphics and image technology in the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU, the museum has a strong professionalism and rich
+artistic quality at the same time. Since the visual graphic
+images are displayed in front of the visitors, the visitors can
+judge the beauty and ugliness of the images through their
+subjective experiences. Therefore, the process of visiting the
+Museum of Ancient High-Imitative Calligraphy and Painting
+of QAU is itself an aesthetic process.
+
+V. CONCLUSION
+
+Here, the QAU is taken as the research object. Through
+the virtual roaming system design of the venues and
+representative exhibition items in the Museum of Ancient
+High-Imitative Calligraphy and Painting of QAU, the virtual
+roaming of the Museum of Ancient High-Imitative Calligra-
+phy and Painting of QAU is realized in terms of the visual
+interface and interactive function development; users can
+utilize computer peripheral devices to perform interactive
+browsing and access, achieving the spread and display of
+multiple multimedia forms from images to videos. A com-
+prehensive evaluation from the aspects of resource content,
+information presentation, resource presentation, and learning
+effect has found that compared with the physical museum, the
+digitalized QAU Museum of Ancient High-Imitative Callig-
+raphy and Painting has new features of bilateral interactive
+display and collaboration of multiple senses in coordination
+with display methods. For the collection of exhibits, it has
+the characteristics of saving space, damage avoiding, and
+easy to query and manage. By displaying the information
+
+through the advantages of graphic images, the recipients of
+information can participate in the selection of information
+sources according to their aesthetics, which provides a means
+for the beautification and display of the museum exhibits.
+However, due to the complexity of the virtual roaming of
+the building and the artistic features it embodies, as well
+as the limited nature of the data, the diversity of the digital
+process methods and the difference in the final effect are
+understood deeply, as well as the complexity of the artistic
+characteristics reflected thereby, which needs to be followed
+up and deepened in the future.
+
+REFERENCES
+
+[1] J. Liu, E. Gong, D. Wang, and Y. Teng, ‘‘Cloud model-based safety per-
+formance evaluation of prefabricated building project in China,’’ Wireless
+Pers. Commun., vol. 102, no. 4, pp. 3021–3039, Oct. 2018.
+
+[2] G. Arrigoni, T. Schofield, and D. T. Pisanty, ‘‘Framing collaborative
+processes of digital transformation in cultural organisations: From literary
+archives to augmented reality,’’ Museum Manage. Curatorship, pp. 1–22,
+Oct. 2019.
+
+[3] V. V. Saaze, G. Wharton, and L. Reisman, ‘‘Adaptive institutional change:
+Managing digital works at the museum of modern art,’’ Museum Soc.,
+vol. 16, no. 2, pp. 220–239, Jul. 2018.
+
+[4] J. A. Drew, C. S. Moreau, and M. L. J. Stiassny, ‘‘Digitization of museum
+collections holds the potential to enhance researcher diversity,’’ Nature
+Ecology Evol., vol. 1, no. 12, pp. 1789–1790, Dec. 2017.
+
+[5] A. Sartori, ‘‘Towards an intellectual history of digitization: Myths,
+dystopias, and discursive shifts in museum computing,’’ Digit. Scholarship
+Hum., vol. 31, no. 2, pp. 428–440, Jun. 2016.
+
+[6] D. Stuedahl, ‘‘Participation in design and changing practices of museum
+development,’’ in The Routledge Handbook of Museums, Media and Com-
+munication. 2018, pp. 219–231.
+
+[7] A. R. Olesen, ‘‘For the sake of technology? The role of technology views in
+funding and designing digital museum communication,’’ Museum Manage.
+Curatorship, vol. 31, no. 3, pp. 283–298, May 2016.
+
+[8] P. Hovi-Assad, ‘‘The role of the museum in an ageing society,’’ Museum
+Int., vol. 68, nos. 3–4, pp. 84–97, Jul. 2016.
+
+[9] P. Sirikulpipat and P. Nadprasert, ‘‘Development virtual museum interac-
+tive application with 360-degree and 3d scans virtual reality technology:
+Case study 10 Museums of Thailand,’’ J. Inf. Sci., vol. 38, no. 1, pp. 42–58,
+2020.
+
+[10] J. A. Bae, S. Mu, J. S. Kim, N. L. Turner, I. Tartavull, N. Kemnitz,
+
+C. S. Jordan, A. D. Norton, W. M. Silversmith, R. Prentki, M. Sorek,
+
+C. David, D. L. Jones, D. Bland, A. L. R. Sterling, J. Park, K. L. Briggman,
+and H. S. Seung, ‘‘Digital museum of retinal ganglion cells with dense
+anatomy and physiology,’’ Cell, vol. 173, no. 5, pp. 1293–1306. e19, 2018.
+
+[11] E. P. Myrczik, ‘‘Cultivating digital mediation: The implementation of
+publicly funded digital museum initiatives in Denmark,’’ Int. J. Cultural
+Policy, vol. 26, no. 2, pp. 239–254, Feb. 2020.
+
+[12] L. Pu and B. Zhao, ‘‘Study on the protection and utilization of cultural
+heritage in the Qiang district under the concept of ‘Rural revitalization’—
+Taking Aba prefecture as an example,’’ Open J. Social Sci., vol. 6, no. 11,
+pp. 195–202, 2018.
+
+[13] Z. Wang, ‘‘‘Self-cognition’ in the construction of digital museums—
+A study based on the ‘collection of famous paintings in the palace
+museum,’’’ Open J. Social Sci., vol. 6, no. 11, pp. 293–300, 2018.
+
+[14] C. Li and S. Ghirardi, ‘‘The role of collaboration in innovation at 
+cultural
+and creative organisations. The case of the museum,’’ Museum Manage.
+Curatorship, vol. 34, no. 3, pp. 273–289, 2019.
+
+[15] S.-H. Chin, C. Chen, P.-C. Ko, and S.-Y. Lin, ‘‘Design of museum adver-
+tisement picture management system based on Web,’’ J. Vis. Commun.
+Image Represent., vol. 63, Aug. 2019, Art. no. 102595.
+
+[16] J. Li, R. Sun, C. Cheng, and S. Li, ‘‘Roaming path generation algorithm and
+optimization based on Bezier curve,’’ IFAC-PapersOnLine, vol. 51, no. 17,
+pp. 339–345, 2018.
+
+[17] L. Fowler, T. T. Neaves, J. N. Terman, and A. G. Cosby, ‘‘Cultural pen-
+etration and punctuated policy change: Explaining the evolution of U.S.
+energy policy,’’ Rev. Policy Res., vol. 34, no. 4, pp. 559–577, Jul. 2017.
+
+[18] N. Kerimbayev, ‘‘Virtual learning: Possibilities and realization,’’ Educ. 
+Inf.
+Technol., vol. 21, no. 6, pp. 1521–1533, Nov. 2016.
+
+
+
+[19] A. P. F. Pires, D. S. Srivastava, N. A. C. Marino, A. A. M. MacDonald,
+
+M. P. Figueiredo-Barros, and V. F. Farjalla, ‘‘Interactive effects of climate
+change and biodiversity loss on ecosystem functioning,’’ Ecology, vol. 99,
+no. 5, pp. 1203–1213, May 2018.
+
+[20] S. Carden, T. Camper, and N. Holtzman, ‘‘Cronbach’s alpha under insuf-
+ficient effort responding: An analytic approach,’’ Stats, vol. 2, no. 1,
+pp. 1–14, Dec. 2018.
+
+[21] H. Van Der Maas, K.-J. Kan, M. Marsman, and C. E. Stevenson, ‘‘Network
+models for cognitive development and intelligence,’’ J. Intell., vol. 5, no. 2,
+p. 16, Apr. 2017.
+
+[22] J. Fan and W. Xing-Yuan, ‘‘BWM-RST method for decision analysis of
+new product attributes combination,’’ Soft Sci., no. 6, pp. 24–26, 2016.
+
+[23] P. F. Marty, ‘‘Museum Websites and museum visitors: Digital museum
+resources and their use,’’ Museum Manage. Curatorship, vol. 23, no. 1,
+pp. 81–99, Mar. 2008.
+
+[24] G. F. MacDonald and S. Alsford, ‘‘The museum as information utility,’’
+
+Museums in a Digital Age. 2010, pp. 72–79.
+
+[25] R. G. Chenhall and P. Homulos, ‘‘Museum data standards,’’ Museum Int.,
+vol. 30, nos. 3–4, pp. 205–212, Sep. 1978.
+
+[26] J. K. Nielsen, ‘‘Museum communication and storytelling: Articulating
+understandings within the museum structure,’’ Museum Manage. Curator-
+ship,  vol. 32, no. 5, pp. 440–455, Oct. 2017.
+
+[27] L. Purse, ‘‘Layered encounters: Mainstream cinema and the disaggre-
+gate digital composite,’’ Film-Philosophy, vol. 22, no. 2, pp. 148–167,
+Jun. 2018.
+
+[28] J. M. Perrin, H. Winkler, K. Daniel, S. Barba, and L. Yang, ‘‘Know your
+crowd: A case study in digital collection marketing,’’ Reference Librarian,
+vol. 58, no. 3, pp. 190–201, Jul. 2017.
+
+[29] C. Kiourt, A. Koutsoudis, and G. Pavlidis, ‘‘DynaMus: A fully dynamic 3D
+virtual museum framework,’’ J. Cultural Heritage, vol. 22, pp. 984–991,
+Nov. 2016.
+
+[30] C. Hwang, T.-L. Chung, and E. A. Sanders, ‘‘Attitudes and purchase inten-
+tions for smart clothing: Examining US consumers’ functional, expressive,
+and aesthetic needs for solar-powered clothing,’’ Clothing Textiles Res. J.,
+vol. 34, no. 3, pp. 207–222, 2016.
+
+[31] R. Wang, J. Zhao, and M. J. Meitner, ‘‘Urban woodland understory char-
+acteristics in relation to aesthetic and recreational preference,’’ Urban
+Forestry Urban Greening, vol. 24, pp. 55–61, May 2017.
+
+JING LI graduated from the China Academy
+of Arts.
+
+She is currently an Assistant Professor with
+Qingdao Agricultural University. She mainly
+works on artistic creation and art theory
+research. In November 2015, her work Food for
+the Sky was selected into the First China Compre-
+hensive Materials Painting Biennale hosted by the
+Chinese Artists Association. In September 2018,
+her article A Brief Analysis of the Characteristics
+
+of the Social Reality Theme Creation—Viewed from the Most Beautiful
+Chinese Large-Scale Art Exhibition was selected as the first National Art
+Summit Forum hosted by the Chinese Artists Association. In Novem-
+ber 2019, my work Love Letter—to You Who Was Young was selected into
+the 23rd National Printmaking Exhibition organized by the Chinese Artists
+Association.
+
+NING YU is currently an Associate Professor
+with the College of Art, Qingdao Agricultural
+University. She has hosted one subsidiary subject
+of National Social Science Fund in Art and one
+provincial key subject of Art Science. She has also
+participated several planning research of provin-
+cial Social Science.
+

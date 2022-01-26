@@ -1,0 +1,566 @@
+Преглед НЦД 36 (2020), 1–12
+
+
+
+Radomir S. Stanković
+Mathematical Institute of SASA, Belgrade
+Dušan Tatić
+Faculty of Electronic Engineering, University of Niš
+
+
+
+A SCENARIO FOR APPLICATION OF INFORMATION TECHNOLOGIES IN REPRESENTATION OF ARCHAEOLOGICAL PARKS
+
+Abstract.  The chief purpose of application of information technologies in representation of 
+archaeological parks is a well-studied subject and the corresponding conclusions are clearly 
+formulated. It is however much less done in their concrete applications. In this paper, we propose 
+a possible scenario for application of information technologies in representation of archaeological 
+parks. This scenario is primarily based on a purposely designed electronic guide and specific 
+projection systems realized by the ARhiMedia group of the Mathematical Institute in Belgrade that 
+is working at the Faculty of Electronic Engineering in Niš. In the design of such projection 
+systems a special attention has been paid to achieving a reduced production price which makes them 
+affordable by archeological parks in Serbia.
+In the proposed scenario, the data of interests for a visitor are presented in multimedia form 
+including text, photos, drawings, audio and video records and computer generated 3D objects, which 
+is of a particular interest for reconstruction purposes. A purposely designed electronic guide 
+enables the visitor to be independent on the guided tour and allows him to explore the site 
+individually. In this way, the visitor takes an active role in creating the exhibition contents 
+depending his personal interests, previous knowledge, and available time.
+Keywords. Information technologies, projection systems, elecronic guides.
+
+
+1. Introduction
+Building an archaeological park over an archaeological site is a very complex and responsible task 
+requiring to take into account various aspects, starting from strictly preserving  historical  
+values,  authenticity,  and  integrity,  through  feasibility and maintainability, to providing 
+accessibility and inclusiveness. Such a task is usually performed through a multidisciplinary 
+project involving experts from different areas. As a recent example, we refer to [4]
+where building an archaeological park is elaborated on a concrete example. Converting an 
+archaeological park into an attractive tourist destination offering an engaging and immersive 
+approach to learning and at the same time enjoying experiencing of cultural and historical heritage 
+is a particular aspect of the related requirements and tasks to be implemented [2]. Information 
+technologies, and also advent of related hardware, offer an important and powerful support in 
+achieving such goals. At the same time, in attempts towards their application at concrete locations 
+they open challenging problems which usually has to be solved for each individual archaeological 
+park separately. Universal solutions proposed in the literature have to be adapted to the various 
+restrictions and demands coming from the situation at a concrete archaeological site. Various 
+problems can appear starting from very basic, such as power supply at particular positions within 
+the archaeological park due to unavoidably restrictions to electrical network distribution, through 
+security of installations and devices, insulation
+
+2                    R.S. Stanković, D. Tatić
+
+and amount of light during the visiting hours which particularly affects various projections, to 
+the contribution of various information technologies based devices and related  applications  to  
+the  understanding  and  the  interpretation  of  particular archaeological objects. These problems 
+related to the engaging and implementation of new technologies into service of touristic industry 
+and preservation and spreading information about historical and cultural heritages are a subject of 
+intensive research usually carried out by multidisciplinary teams of researchers [9]. For example, 
+this lastly mentioned problem of contribution in the case of the usage of 3D technologies for 
+recording, processing, and presentation of archaeological data, is studied in [17].
+Besides the main and most important goals as achieving interactive and immersive installations in 
+presenting national historical heritage of Serbia, another issue that we are taking into account is 
+proposing solutions that are inexpensive and therefore affordable for practical implementations 
+presently. Thus, solutions proposed in this article are based on selected inexpensive hardware 
+still providing high durability and simplicity in maintaining and easy handling by non-experts in 
+information technologies employed at cultural institutions. This feature can be viewed as an 
+important difference comparing to various other solutions proposed in the literature usually, if 
+not primarily, aimed at implementation on archaeological parks supported by economically well- 
+established touristic organisations and industry.
+The software and hardware elements of the scenario proposed in this article are realized by the 
+ARhiMedia group of the Mathematical Institute and verified as technical solutions within the 
+project III 44006 supported by the Ministry of Science of Serbia and conducted by the Mathematical 
+Institute of SASA. The group works at the Faculty of Electronic Engineering in Niš within the 
+Laboratory for Computational Intelligence and Information Technologies (CIIT Lab).
+A preliminary version of this paper was presented at XVII Conference Digitalization of cultural 
+heritage, old written documents from natural and social sciences, and digital humanities, September 
+17, 2019, Belgrade, Serbia.
+
+2. Application of Information Technologies at Archaeological Parks
+Information technologies have an important role in the presentation of cultural heritage in order 
+to provide an engaging content to the contemporary society. Different studies based on information 
+technologies have been proposed to attract and enhance the visitor experience. Therefore, 
+multimedia solutions such as projection systems, mobile applications, and interactive installations 
+have been realized with the purpose to enlarge the presented amount of information and provide a 
+more compelling content of exhibitions compared to classical presentations based on printed panels 
+that are necessary limited in the available space for text and images [5], [8], [16], [18], [19].
+Creating interactive installations for archeological parks is a challenging and demanding task. 
+Visitors presently expect more and more multimedia material to be shown depending on their interest 
+and also within the available time. Therefore, the provided multimedia information should be 
+quickly displayed in such a manner that can immerse a visitor into an interactive storytelling. 
+Accordingly, the dynamic content of presentations should be realized to provide concrete 
+information that will correspond to the visitors possessing a different level of knowledge on the 
+subject. This leads to an improved visual presentation and better informing solution than the usage 
+of classical leaflets, booklets and brochures. Another advantage of interactive installations is 
+that they offer to visitors a possibility to move from passive observers to active creators of the 
+exhibition during the tour across an archeological park. By selecting topics of their
+
+R.S. Stanković, D. Tatić               3
+
+personal interest in interactive installations, visitors are able to create by themselves the 
+content of the exhibition.
+
+In summary, information technologies should be a tool to achieve several, in a way contradictory 
+requirement, such as
+1. Offering interactivity with possibility for individual selection of topics of personal interest,
+2. Ensuring amount of information large enough to meet interest of visitors with different levels 
+of previous knowledge,
+3. Providing attractive and compelling presentations.
+Further, all this should usually be provided in a restricted time a visitor can devote to an 
+exhibition, make the task challenging. Another issue it that the information technologies can help 
+to devote a special attention to visitor with special requirements [1].
+To achieve these goals, we propose a possible scenario for application of information technologies 
+in representation of archaeological parks. This scenario is conceptualized with aim to guide the 
+visitor through different stages during the archaeological park visit. Each stage uses a different 
+solution such as mobile electronic guides or specific projection systems [3], [10], [12]. The 
+mobile electronic guide acts as an interactive part of the presentation where the visitor has an 
+active role due to possibility to navigate across the content according his interests. Purposely 
+designed projection systems as these discussed below are used to provide global presentations on 
+the important spots of the archaeological park. Special attention is paid to the inexpensive design 
+of these projection systems which makes them affordable for archeological parks in Serbia.
+
+3. The System Elements
+The elements of a system realizing the scenario that we propose for implementation of information 
+technologies in archeological parks are:
+• Info point,
+•  Inclined plane projection system,
+• Projection pyramid,
+•  Rear projection planes,
+• Electronic guide.
+
+Info point (Figure 1) is a conveniently shaped glass panel equipped with QR codes [11]. The glass 
+was selected to ensure transparency to avoid blocking the view at the archaeological park, while QR 
+codes serves as information provider. It is assumed that visitor can scan QR codes with his mobile 
+phone and get basics information which can be shown in the form of images, text, audio or video 
+records.
+
+4                    R.S. Stanković, D. Tatić
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 1. Info point
+
+Inclined plane projection system (Figure 2) is a custom designed projection system constructed to 
+synchronize two video projections on a horizontal and an inclined projection plane [6], [7]. The 
+inclined plane realizes a holographic effect and can be viewed as a digitalized version of the 
+Pepper ghost effect. The holographic effect is achieved by a monitor that is used to project an 
+especially prepared video content on an adequately selected glass covered with a thin transparent 
+coating of metal oxides. The horizontal plane serves as a projection screen for the either rear or 
+front projection from a different signal source. The orientation of the projection depends on the 
+position of the projector with respect to the horizontal projection plane, below or above it. In 
+the first case, the horizontal projection plane is implemented as a transparent material, glass or 
+plexiglass, covered by purposely selected projection transparencies. Synchronization of two videos 
+is realized by custom designed software running on two interconnected Raspberry Pi computers. This 
+selection of hardware components makes the system inexpensive.
+
+R.S. Stanković, D. Tatić               5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2. Inclined plane projection systems.
+
+Projection pyramid (Figure 3) is a typical projection system aimed at producing the holographic 
+effect when projecting 3D models. The proposed solution is specific compared to the commercially 
+available projection pyramids, since a Raspberry Pi is used to run the video displayed on a simple 
+monitor instead of usually applied classical computers or television screens. This makes the system 
+inexpensive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 3. Projection pyramid
+
+6                    R.S. Stanković, D. Tatić
+
+
+Rear projection planes (Figure 4) are aimed at projection of multimedia content on the custom 
+designed shapes of transparent material which can be adapted to imitate a part on an enterior or 
+exterior object. They are realized by using special projection transaprencies attached to a 
+transparent surface such as glass or plexiglass. In the application on an archeological park, they 
+can serve as reconstruction elements of ruins [5].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4. An illustration of application of rear projection planes
+
+Electronic guide is designed as a mobile application for devices such as smartphones or tablet PCs 
+to provide detailed information and enhance the presentation for the visitors [13], [14], [15]. 
+Depending on personal interest and time they can devote to the visit, visitors can choose items 
+presented in the electronic guide in various
+
+R.S. Stanković, D. Tatić               7
+multimedia formats. An electronic guide consists of several modules that will be described below.
+Map module (Figure 5) is created to navigate the user to the archeological site from either their 
+current location, bus station, train station, or the city center. Also, interactive points of 
+interest are implemented to offer the visitor guidance or provide additional information about 
+specific spots within the archeological park.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 5. Electronic guide – Map module
+
+List module (Figure 6) is made for a classification of archeological findings that are discovered 
+on the site. For example, specific lists could be created for the archeological movable findings 
+like coins, statues, and figures, or immovable findings such as palaces, churches or settlement 
+areas. Interactive list elements with text and photos, 3D models, audio and video records, can 
+provide additional information to the visitors.
+
+8                    R.S. Stanković, D. Tatić
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 6. Electronic guide – List module
+
+Info module (Figure 7) shows the information about archeological finding in the form of text or 
+audio. Also, image gallery and video player are embedded. When a 3D model is available, it can be 
+displayed as an interactive object to show the digital reconstruction of some finding or 3D scanned 
+archeological artefact from the depo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 7. Electronic guide – Info module
+
+R.S. Stanković, D. Tatić               9
+AR module (Figure 8) by using camera of the mobile device enables to scan and recognize concrete 
+marked pieces of objects in the archeological park and display virtual information to the visitor 
+directly on the site. Pointing the camera towards the purposely marked places, the visitor can see 
+various reconstructions and similar effects. This could be realized as 3D reconstructions which 
+enables the visitor to virtually walk around the objects and observe from different angles findings 
+that are physically unavailable or their physical reconstruction is expensive to be accomplished.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 8. Electronic guide – AR module
+
+4. The Scenario of Application
+In this section, we propose a scenario for application of the information technology system 
+described above for improvement of the presentation of archeological parks. Figure 9 illustrates 
+and explains the proposed scenario.
+We propose to use first an Info point located near the entrance to provide by QR-codes initial 
+historical information about the archaeological park so that visitors can be informed and prepared 
+what they are going to see and explore. It is also good to use QR-codes to inform the visitor about 
+technical details and also available facilities like working hours, souvenir shop, restaurants, 
+possible walking paths, etc. Also, there should be information about possibility to rent a PC 
+tablet with the electronic guide installed or download the corresponding application by the 
+personal smart mobile device from Google Play or App Store.
+After entering the archeological park visitors are advised to watch a central presentation 
+displayed on an Inclined plane projection system. This device can be also used to present brief 
+information about the history of the archeological park. The contents should be realized as 3D 
+projections with animations for an impressive and immersive visual presentation and with an ability 
+to simulate holographic effect at the inclined plane. The horizontal plane can be used to project 
+an animated map of the
+
+10                   R.S. Stanković, D. Tatić
+
+archeological park with points of interests marked and accompanied with basic textual or audio 
+explanations.
+After watching the central presentation, the visitor is advised to activate his electronic guide on 
+a personal or a rented mobile device. In this way, the visitor will navigate himself across the 
+archeological park and use the electronic guide to get information about the objects of his 
+personal interest. Also, the AR module embedded in the electronic guide enables interaction with 
+objects at the archeological park. By recognition of various images at the site used as markers, 
+such as patterns of mosaics or frescos, the visitor will get additional information in an appealing 
+way. Furthermore, by using the AR module, it is possible to provide virtual reconstructions of 
+objects how they have looked like in the past.
+Rear projections planes located at the exact position where some objects existed in the past enable 
+projecting 3D models to visualize the missing and destroyed parts. Alternatively, projection 
+pyramids can be used to project 3D holographic simulation of destroyed objects, or artefacts which 
+for various reasons are not exposed to the public.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9. A possible scenario for application of information technologies in exhibitions at 
+archaeological parks
+
+5. Conclusion
+Contemporary visitors of archaeological parks typically expect attractive multimedia installations 
+and interactions at cultural heritage sites. Application of information technologies at 
+archeological parks provides foundations for creating an engaging content and impressive visual 
+presentation. The proposed hardware and software solutions and the scenario of their usage could 
+immerse visitors into historical exhibitions. Also, by using the electronic guide a visitor takes 
+an active role in creating his own way in exploring the exhibition according to his interests.
+
+R.S. Stanković, D. Tatić              11
+
+Acknowledgments
+The authors are grateful to an anonymous reviewer whose constructive comments were useful in 
+preparing the present version of the paper.
+
+References
+[1] Baker, E.J., Bakar, J.A.A, Zulkifli, A.N., “Mobile augmented reality elements for museum 
+hearing impaired visitors’ engagement”, Journal of Telecommunication, Electronic and Computer 
+Engineering (JTEC), 9:2-12(2017), 171–178.
+[2] Bozzelli, G., Raia, A., Ricciardi, S., De Nino, M., Barile, N., Perrella, M., Tramontano, M., 
+Pagano, A., Palombini, A., “An integrated VR/AR framework for user-centric interactive experience 
+of cultural heritage: The ArkaeVision project”, Digital Applications in Archaeology and Cultural 
+Heritage, 15, December 2019, 15 e00124
+[3] Djukić, A., Antonić, B., Stanković, R.S., Tatić, D., „Digital mini-museum as an innovative and 
+affordable presentation of local heritage for tourists: Example from Serbia“, Proc. of the 3rd 
+International Conference on Tourism and Business 2019, Mahidol University International College, 
+Thailand, August 2019., 1–11.
+[4] Marchetti, N., Franco, G., Musso, S.F., Spadolinmi, M. B., (Eds.), An Integrated Approach for 
+an Archaeological and Environmental Park in South-Eastern Turkey, Tilmen Höyük, Springer, 2020.
+[5] Petrelli, D., “Making virtual reconstructions part of the visit: An exploratory study”, Digital 
+Applications in Archaeology and Cultural Heritage, Volume 15, December 2019, e00123
+[6] Radmanović, M., Tatić, D., Gajić, D., “A solution for synchronization of events in video 
+projecting systems for multimedia presentations”, Proc. INFOTEH, Sarajevo, Bosnia and Herzegovina, 
+February 19-21, 2014., 657–661 ISBN 978-99955-763-3-2, (in Serbian).
+[7] Radmanović, M., Tatić, D., Gajić, D., “One solution for building reconfigurable multi- 
+projection systems using the Adobe AIR platform”, Proc. Int. Conf. ICEST, Niš, June 2014., 121–124, 
+ISBN 978-86-6125-108-5.
+[8] Roberts, J., Banerjee, A., Hong, A., McGee, S., Horn, M. and Matcuk, M., “Digital exhibit 
+labels in museums: Promoting visitor engagement with cultural artifacts”, Proc. 2018 CHI Conf. on 
+Human Factors in Computing Systems, Montréal, Canada, April 21-26, 623(2018), 1–12.
+[9] Rodrigues,J. M. F., Ramos, C. M. Q., Cardoso, P. J. S., Henriques, C., Handbook of Research  on 
+ Technological  Developments  for  Cultural  Heritage  and  eTourism Applications, IGI Global, 
+2018.
+[10]   Stanković, R. S., Tatić, D., Tatić, D., Jovanović, N., „Digital museum in the Fortress of 
+Niš – An example of application of information technologies in presentation of national historical 
+heritage“, The 14-th National Conf. With International participation on Digitalization of National 
+Heritage , old records from Natural and Social Sciences and Digital Humanistic, Beograd, September 
+29, 2016., 16, ISBN: 978-86-7589-111-6
+[11]   Tatić, D., Gajić, D., Stanković, R. S., QR codes telling the story about the history of 
+Niš“, The Fifth Int. Conf. on Digital Presentation and Preservation of Cultural and Scientific 
+Heritage - DiPP2015, Veliko Trnovo, Bulgaria,  29-30 September 2015, 133– 139, ISSN: 1314-4006.
+[12]  Tatić, D., Stanković, R.S., Stojanović, J., Jovanović, M., „Application of information 
+technologies in presentation of historical heritage of Niš“, Proc. Conf. Digitalization of Cultural 
+Heritage in Niš Region, May 16, 2019, Niš, Serbia, 47–52.
+[13]  Tatić, D., Stanković, R. S., Stojanović, J., Jovanović, M., „Universal electronic guide for 
+museum exhibitions“, Proc. Conf. Digitalization of Cultural Heritage in Niš Region, May 16, 2019, 
+Niš, Serbia, 54–62.
+[14]   Tatić, D., Jovanović, N., Tatić, D., Stanković, R., Ognjanović, Z., „A case study of the 
+usage  of  information  technologies  and  mobile  devices  by  visitors  in  museum environments“, 
+The Fifteenth National Conference Digitization of Cultural Heritage, Old
+
+12                   R.S. Stanković, D. Tatić
+
+Records from the Natural and Social Sciences and Digital Humanities, Faculty of Mathematics, 
+University of Belgrade, 2017, Beograd, pages 23, ISBN: 978-86-7589-121-5.
+[15]   Tatić, D., Vitanović, N., Stevanović, K., Živković, N., Jovanović, N., Stanković, R. S., 
+Ognjanović, Z., “Universal electronic guide developed in Unity environment”, The Fifteenth National 
+Conference Digitization of Cultural Heritage, Old Records from the Natural and Social Sciences and 
+Digital Humanities, Faculty of Mathematics, University of Belgrade, Beograd, 24 , 2017., ISBN: 
+978-86-7589-121-5.
+[16]  Tsai, H. and Sung, K., “Mobile applications and museum visitation”, Computer, 45:4(2012), 
+95–98.
+[17]   Tsiafaki, D., Michailidou, N., “Benefits and problems through the application of 3D 
+technologies in archaeology – recording, visualization, representation and reconstruction”, 
+Scientific Culture, 1:3(2015), 37–45.
+[18]   Vlahakis, V., Ioannidis, M., Karigiannis, J., Tsotros, M., Gounaris, M., Stricker, D., 
+Gleue, T., Daehne, P. and Almeida, L., “Archeoguide: an augmented reality guide for archaeological 
+sites”, IEEE Computer Graphics and Applications, 22:5(2002), 52–60.
+[19]  Yoon, S.A., Elinich, K., Wang, J., Steinmeier, C. and Tucker, S., “Using augmented reality 
+and knowledge-building scaffolds to improve learning in a science museum”, Int. J. of 
+Computer-Supported Collaborative Learning, 7(4), 519–541.
+
+Radomir.Stankovic@gmail.com
+dule_tatic@yahoo.com

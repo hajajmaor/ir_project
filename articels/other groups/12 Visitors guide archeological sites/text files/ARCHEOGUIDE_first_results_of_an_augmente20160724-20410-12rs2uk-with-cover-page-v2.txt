@@ -1,0 +1,881 @@
+Accelerat ing t he world's research.
+
+ARCHEOGUIDE: First results of an
+augmented reality
+John Karigiannis
+
+Related papers
+
+Download a PDF Pack of t he best relat ed papers 
+
+Archeoguide: ﬁrst result s of an augment ed realit y, mobile comput ing syst em in cult ural herit …
+John Karigiannis, Renzo Carlucci
+
+Archeoguide: An Augment ed Realit y Guide for Archaeological Sit es
+John Karigiannis
+Personalized Augment ed Realit y Touring of Archaeological Sit es wit h Wearable and Mobile Comput ers
+John Karigiannis
+
+ARCHEOGUIDE: First results of an Augmented Reality, Mobile Computing
+System in Cultural Heritage Sites
+Vassilios Vlahakis††, John Karigiannis†† , Manolis Tsotros††, Michael Gounaris††, Luis Almeida+,
+Didier Stricker*, Tim Gleue**, Ioannis T. Christou††, Renzo Carlucci†, Nikos Ioannidis††
+*
+Fraunhofer Institut für Graphische Datenverarbeitung.
+**
+Zentrum für Graphische Datenverarbeitung
++
+Centro de Computacao Graphica
+†
+A&C 2000 Srl.
+††
+Intracom S.A.
+E-mail: vvla@intracom.gr
+Abstract:
+This paper presents the ARCHEOGUIDE project
+(Augmented Reality-based Cultural Heritage On-site
+GUIDE). ARCHEOGUIDE is an IST project, funded by
+the EU, aiming at providing a personalized electronic
+guide and tour assistant to cultural site visitors. The
+system provides on-site help and Augmented Reality
+reconstructions of ancient ruins, based on user’s
+position and orientation in the cultural site, and realtime image rendering. It incorporates a multimedia
+database of cultural material for on-line access to
+cultural data, virtual visits, and restoration information.
+It uses multi-modal user interfaces and personalizes the
+flow of information to its user’s profile in order to cater
+for both professional and recreational users, and for
+applications ranging from archaeological research, to
+education, multimedia publishing, and cultural tourism.
+This paper presents the ARCHEOGUIDE system and
+the experiences gained from the evaluation of an initial
+prototype by representative user groups at the
+archeological site of Olympia, Greece.
+Keywords:
+Augmented Reality, Mobile Computing, Position
+Tracking, Image Rendering, Avatars.
+Project URL:
+http://Archeoguide.intranet.gr.
+
+1. Introduction
+ARCHEOGUIDE is a novel system bringing state-of-
+
+the-art visualization technology and mobile computing
+in cultural heritage. It provides personalized Augmented
+Reality tours [1] and reconstructions of ruined cultural
+heritage sites in order to help visitors and scientists
+better appreciate and enjoy the past glory of these sites.
+It features portable units carried by users during their
+site tours, communication networks, and a central
+database. This multimedia database is the central
+depository for the multimedia material making up the
+tour presentations. It is also used to support scientific
+research and promote cultural education in European
+countries and beyond.
+The system bridges the gap between recreation and
+science and renders culture and history more accessible
+to a wider public. Unlike traditional audio commentary
+systems widely adopted in cultural sites all over the
+world, ARCHEOGUIDE offers a more lively and
+realistic experience. The 3D reconstructions of
+monuments and artifacts are presented to the user
+through a special augmented reality interface while he
+has constant visual contact with the natural surroundings
+and listens to audio commentary. This feature renders
+the system more user-friendly and avoids the
+shortcomings of other similar systems where the user is
+isolated, or immersed in a purely synthetic world.
+Respecting the sensitivity of cultural heritage sites, the
+system poses no risk of damage to the site, visual or
+visitor disturbance, or interruption of the normal
+operation of the site. In addition, it presents a very
+simple interface for creating new content and enriching
+the database with scientific information.
+This paper is organized in 10 sections. The system
+architecture is described first and details are given on its
+modules. This is followed by a presentation of the user
+evaluation of the system and an analysis of these results.
+Emphasis is put on presenting a complete description of
+ARCHEOGUIDE for the benefit of the reader and other
+technical projects in cultural heritage. Details on the
+system setup and use scenarios are given and
+conclusions are drawn for use in the future system
+development.
+
+2. Overview of System’s Architecture
+A description of ARCHEOGUIDE’s architecture is
+contained in [12]. In this paper we provide more
+detailed information for the purpose of completeness
+and for helping the reader better understand the user
+feedback following the evaluation of the system.
+ARCHEOGUIDE is based on a client-server
+architecture. It comprises three modules: the Site
+Information Server, the Mobile Units, and the
+Communication Infrastructure. These modules are
+depicted in Figure 1 and analyzed below.
+
+The server is accompanied by authoring tools. These
+tools can be used by the site manager for creating new
+multimedia content, organizing it, and defining new
+tours in the site. The same tools can also be used for
+creating and updating existing guidebooks and CDROMS. Alternatively, they provide archeologists and
+scientists with a user-friendly graphical interface for
+documenting the contents of the site and update it with
+the latest research in the field. Figure 2 illustrates the
+graphical user interface (GUI) of the authoring tools. It
+is based on Windows and supports all standard features
+and operations familiar to computer users.
+
+2.1. The Site Information Server
+The Site Information Server, or server for short, is a
+central PC comprising a multimedia relational database.
+It serves as the main depository of the system, storing
+audio-visual and textual information covering the site
+and its monuments, as well as, related artifacts and
+information. The database is organized thematically and
+Site Information Server
+
+Figure 2 Authoring Tools GUI.
+
+2.2. The Mobile Unit
+WLAN
+
+Mobile Units
+
+Figure 1 System Architecture.
+supports querying according to attributes like
+geographic position (coordinates), item type (e.g.
+temple), time (e.g. chronological era), level of
+information (e.g. general, detail, scientific), theme (e.g.
+relates to sports), and versioning (e.g. stage in the
+restoration process). Its contents can be accessed by the
+mobile units who request material according to user
+preferences, position, and selected tour.
+A Database Manager (DBM) is in charge of the
+operation of the database. It exports a remote access
+interface for communication with mobile units and other
+servers (e.g. Web servers, museum servers) and allows
+querying and retrieval of its contents.
+
+The clients are a group of Mobile Units (MU). There
+are three different implementations of MUs based on
+laptop, pen-PC, and palmtop computers, each providing
+similar features according to their processing
+capabilities.
+The top-of-the-range MU, the laptop-based one, is
+built on a Toshiba Satellite 800MHz laptop computer,
+with 256 MB RAM. A Differential GPS receiver
+(Garmin GPS-35 LVS) and a digital compass (Precision
+Navigation TCM2) are hooked on the laptop to provide
+position and orientation tracking of the touring user. A
+PC camera with automatic luminance adjustment for
+capturing live video from the user’s viewpoint, and a
+special Augmented Reality (AR) Head-Mounted Display
+(HMD) (Sony Glasstron PLM-S700) in the form of a
+pair of see-through sunglasses for displaying AR worlds
+featuring monument reconstructions on top of their
+natural surroundings are also attached to the laptop.
+The DGPS receiver collects data from a constellation
+of 4-12 satellites to calculate the exact location of the
+user. The accuracy of the calculations is improved by a
+correction signal transmitted from a DGPS beacon
+situated at a precisely known position. This accuracy is
+typically measured at less than one meter.
+
+The compass is based on a digital inclinometer sensor
+to measure the user’s heading with an accuracy of 0.2°
+and allows for magnetic field measurements and
+automatic calibration. This approach provides superior
+precision and suffers no interference from
+electromagnetic fields in the archaeological site.
+The position and orientation information is used by the
+MU to determine the position of the user in the
+archeological site and the monument ruins he is staring
+at. Based on this information, the system matches the
+corresponding, calibrated images (retrieved from the site
+database and being captured from a slightly different
+angle) with the live video captured from the camera in
+the user’s heading. The matching is performed by a
+phase-correlation image registration technique [13] used
+to calculate a warping transform. This transform is then
+used to rotate, translate, and scale a 3D VRML model of
+the reconstructed ruins the user stares at, so that it can
+be rendered on top of the live video image. The image
+matching and rendering currently run at 15 frames/sec
+resulting in realistic augmented views even when the
+user is moving at a fast pace or turning his head. The
+resulting AR image is displayed on the HMD. The user
+sees a realistic representation of the monument in its
+ancient glory and at the same time he has visual contact
+with his surroundings, in contrast with other systems
+where he is isolated. Audio commentary is coupled to
+the visual presentations, giving descriptions and
+additional information.
+The hardware components of the MU are integrated in
+a compact way and are carried by the touring user. The
+user wears the HMD and a bicycle-type helmet upon
+which the camera and the compass are mounted. They
+are connected to the laptop and the DGPS receiver,
+which are carried in a backpack for protection and easy
+transport.
+The pen-computer implementation of the MU is built
+on a Fujitsu Stylistic 3400S flat panel PC with 64 MB
+RAM. The machine features a pressure-sensitive screen
+where the user can write and interact with it with a
+special pen, and DGPS and digital compass devices like
+the ones described above. This lighter version of the
+MU displays pre-rendered 3D reconstructions of ancient
+ruins on its screen, accompanied by information and
+audio-visual content of related artifacts (e.g. statues
+originally found in the visualized temple and currently
+stored in a museum). The presented information is
+closely related to the position and orientation of the user
+as it is tracked by the system. The visual content is
+archived in the site database and downloaded to the MU
+together with the accompanying audio commentary.
+Navigation help is also offered to the user. A digital map
+(catopsis) of the site is displayed on screen together with
+his current position and the direction he is heading for.
+Figure 3 illustrates the map. The heading of the user is
+indicated by a red-yellow compass updated in real time.
+
+The lightest version of the MU is built on a Compaq
+iPAQ Colour Pocket PC. This is a lightweight and very
+compact standalone device supporting user interaction
+via a special pen operating on its screen. It presents the
+user with similar information as the pen-computer but it
+is the user’s responsibility to request the material
+corresponding to the monument he is looking at as the
+system has no means of determining it automatically.
+
+Figure 3 Navigation Interface.
+The user can consult an on-screen digital map to
+navigate in the site. However, his position and
+orientation are not displayed. This choice (of not using a
+DGPS receiver or a digital compass) is based on the
+compactness of the device, which would otherwise have
+to be sacrificed.
+
+2.3. Communication infrastructure
+ARCHEOGUIDE uses two wireless networks for the
+communication needs of its components. The first one is
+used for the communication between the Mobile Units
+and the Site Information Server allowing the transfer of
+the audio-visual content of the site tours. It is a wireless
+LAN based on the IEEE 802.11 Wireless LAN
+Standard. The mobile units and the server can hook up
+into the WLAN with a Lucent ORiNOCO wireless
+network PCMCIA card and accompanying antenna
+plugged into their PCMCIA slots. The network uses a
+group of 3 Access Nodes (comprising antenna and
+transceiver modules) to fully cover the archaeological
+site of Olympia. The traffic handled by the network
+includes images, VRML models, and audio clips and up
+to 50 mobile units can connect to the network at any
+moment.
+The second network is a point-to-point wireless link
+used by a DGPS reference station to communicate
+correction signals to the MU’s DGPS receiver. This
+station is a LF DGPS beacon transmitting data over the
+
+wireless link in the 300kHz band under the RTCM SC104 specification.
+
+3. Overview of System’s Software
+Architecture
+This section gives a brief description of the software
+components of the SIS and the MU. Server components
+have been implemented in Java for maximum
+portability, whereas mobile unit components have been
+developed in C++ for maximum speed, as they must
+operate in real time.
+
+3.1. SIS Software Components
+The Site Information Server consists of the following
+components: Data Manager, Authoring Tool, and GIS
+Authoring Tool.
+The Data Manager (DBMS) is built on Oracle 8 and
+supports querying and interfacing of the database with
+the other system components. The multimedia material
+is stored (in several standard formats) outside the
+DBMS itself to avoid having to manage a very “heavy”
+database. It is stored in a special directory of the
+server’s network file system, which requires special
+privileges for browsing and/or editing, and is pointed to
+by a URL.
+The Authoring Tool is used by content creators in
+order to insert, delete and manipulate objects in the
+multimedia database. Through this interface users can
+traverse the archeological site’s database structure in a
+tree view, change this structure, manipulate multimedia
+objects, group multimedia objects into composite
+objects, list multimedia and composites to construct
+scripts and, finally, create schedules from existing
+scripts.
+The GIS Authoring Tool (GISAT) is a module of the
+ARCHEOGUIDE Authoring Tool. This module enables
+the user to perform the following operations:
+- Visualize the archaeological area in Olympia, as
+shown from above, using an orthophotomap of the
+site in high resolution.
+- Perform basic graphical operations on the image,
+such as zoom-in, zoom-out, and distance measures.
+- Recognize the coordinates of each point in the
+image by a mouse click. Since the image is
+registered in both geographical and projection
+coordinates systems, each mouse click is identified
+by two coordinate pairs: (longitude, latitude) and
+(X, Y), in WGS84 and UTM systems, respectively.
+- Define new and manipulate existing site node
+entities, which reside on the Server Data Manager.
+Specifically, the user is provided with Select, Insert,
+Delete and Query options to define or manipulate
+the geometry of the Server Site Nodes.
+
+-
+
+Define new and manipulate existing viewpoint
+entities, which reside on the Server Data Manager.
+Specifically, the user is provided with Select, Insert,
+Delete and Query options to define or manipulate
+the geometry of Server Viewpoints.
+The SIS tools are accessed via a standard windows
+Graphical User Interface, depicted in Figure 2. Standard
+operations like Create, Cut, Paste, Save, Edit are
+supported with the contents listed in a tree-like structure
+for easier visualization. The root of the tree comprises
+the whole site with nodes corresponding to smaller
+regions (e.g. the Temple of Zeus), and leaf nodes to
+multimedia objects (e.g. images).
+
+3.2. Mobile Unit Software Components
+The Mobile Unit consists of the following
+components: MPS Controller, Image Tracker,
+AVALON renderer, and Graphical User Interface
+(GUI). All these client components operate
+concurrently,
+with
+the
+controller
+instructing
+continuously the renderer what to render based on the
+data read from the tracking system, and the user
+interactions. The controller’s interaction with the image
+tracker is done indirectly via the image renderer. The
+controller is also responsible for requesting multimedia
+objects from the site database over the wireless network.
+So, the MU is implemented as a multithreaded process
+with the Multimedia Presentation Synchronization unit
+(or Controller for short) being the main thread of
+control. Other threads include the handler for the image
+tracker, the AVALON renderer, and the GUI.
+Image
+
+Composite
+Video
+Script
+
+Composite
+Script
+
+Composite
+
+VRML
+
+Schedule
+Script
+Audio
+
+Figure 4 Tour Schedule Hierarchy.
+An important concept is that of the personalization of
+information and the hierarchical structure of tour scripts.
+As mentioned earlier, the multimedia objects are stored
+in the site database together with several attributes.
+These attributes are used to select these objects and
+create tours adapted to the user’s profile. This profile is
+created by the user at the beginning of the tour when he
+is prompted by the controller to reply to simple
+questions scoring his interests, background, age, sex,
+and language of preference. This way, the tour is
+
+adapted to cover regions fitting his description (e.g.
+emphasis on sports), the available time for his visit, the
+detail and the level of information (implied by his
+background and age), and the language of choice. Based
+on these parameters, the objects that constitute a tour are
+hierarchically ordered as shown in Figure 4. At the
+finest level of granularity, there are audio, image, and
+VRML objects [16]. These are grouped to form
+composite objects, containing the actual data to be
+rendered along with additional profile meta-data
+characterizing it. For example, a VRML object contains
+a string describing the URL location of the VRML file
+containing a VRML scene – e.g. the temple of Zeus –
+plus data about the Earth co-ordinates of the reference
+point of the VRML, plus a direction vector (together
+with scale information if necessary). The controller
+evaluates the condition associated with each object. If
+met, it instructs the appropriate renderer to present it. At
+a higher level of complexity, tour scripts represent an
+ordered sequence of multimedia objects, all of which are
+to be presented if the script is presented. Scripts may
+have partial order constraints, which essentially implies
+that the content creator may require the visitor to view
+one script before presenting another. Scripts are also
+logically associated with a geographical area. The
+rendering of the objects of each such script is the
+responsibility of the renderer and is accomplished with
+the help of the position and orientation tracking system.
+Finally, at the top of the hierarchy, we find tour
+schedules that represent partially ordered sequences of
+scripts. This structure aims at helping the controller
+synchronize the presentation of these scripts.
+The image tracker is the component responsible for
+matching the image seen by the user (and captured by
+the camera) and the reference images stored in the site
+database, and calculating the transformation needed to
+render the VRML models on the video sequence [3],
+[6], [7], [9], [10], [11], [13], [14], [18].
+The transformation parameters are passed to
+AVALON, which performs the rendering at speeds up to
+15 frames/sec.
+The interaction between the user and the system is
+supported by a Graphical User Interface (GUI). Three
+different versions exist corresponding to the various
+implementations of the MU.
+In the laptop-version, the flow of information is
+controlled by effectively treating the user as an active
+pointing device. Instead of using a mouse, he positions
+himself to predefined points-of-interest (or viewpoints)
+in the site. His position and orientation triggers the
+presentation of the corresponding audio-visual material
+on the HMD. The user can intervene and alter the flow
+of information by skipping a presentation (by moving
+away, or heading to an other direction), or requesting
+additional information by means of an optional
+gamepad.
+
+In the pen-computer version, the user takes a similar
+active pointer role and interacts by means of a special
+pen used to “write” on the computer screen. He can
+view augmented reconstructions with a standard web
+browser, listen to related audio clips, and request
+additional material.
+In the palmtop implementation of the MU, the user
+can see augmented pictures, read related information,
+and listen to audio commentary through a pocket web
+browser. No tracking of his location is available and he
+is responsible for selecting the material of his interest.
+It should be noted that all the multimedia material is
+downloaded from the SIS database unless it already
+exists in the MU database (e.g. downloaded by the
+previous user of the device).
+An example of the User Interface presented by the
+pen-computer is illustrated in Figure 5. A similar one
+exists for the palmtop device, whereas the laptop user
+sees only the augmented images on the HMD.
+
+Figure 5 User Interface of the pen-computer MU.
+
+4. Augmented Reality Presentations
+The ARCHEOGUIDE system presents its user with
+Augmented Reality views of reconstructed ruins. The
+calibrated 3D models of the reconstructed monuments
+are rendered on the video or still image (according to
+the version of the MU) to construct augmented images
+like the ones shown in Figure 6.
+A special category of these presentations is made
+available to users situated inside the stadium. This
+category includes the reconstruction of Ancient Olympic
+Games with avatar athletes competing in the stadium.
+In order to achieve this goal, virtual human models
+have been created and animated with high realism and
+historical accuracy in terms of the necessary movements
+(and/or artifacts) to execute each sporting modality.
+Special care was taken in modeling and animating the
+virtual athletes (Figure 7), based on specific
+bibliography and historical descriptions, published by
+international experts on ancient Greek civilization,
+about the ancient Olympic athletes and games [4].
+The problem of creating virtual humans in a 3D
+environment addresses two issues: modeling the
+
+geometry of the human body and simulating the correct
+behaviour and movements. The details of the modeling
+process can be considered out of the scope of this paper.
+Nevertheless, our approach is based on the
+customization of a pre-existing 3D human body, in order
+to achieve a model with ancient Greek athlete look
+(Figure 7), and model the movements it should describe,
+according to the bibliography, for each sport [4].
+Defining human character behaviour includes its
+animation to execute “human like” movements [17].
+Methods for animating virtual characters can be roughly
+divided into two approaches: motion-based captures and
+simulation-based. Motion capture is typically done offline and played at runtime. The drawbacks of motion
+capture include the relatively high cost of capturing
+data, the lack of flexibility of pre-recording, and the fact
+that the motion must be performed by someone [17].
+Simulation relies on computation of a mathematical
+model to generate the motion of the 3D model. This can
+be done on-line or off-line. If the model is too “heavy”,
+i.e. the existing hardware is not able to compute the
+minimum number of frames per second to achieve
+smooth motion, the animation should be calculated off-
+
+(a) Original Image
+
+(b) Augmented Image
+Figure 6 Augmented Reality presentation.
+
+Figure 7 Models of ancient Greek athletes.
+line, recorded and presented as a video clip. Otherwise,
+the animation can be calculated in real time, enabling
+some control over the movement parameters. Taking
+advantage of such control, it is somehow easy to adapt a
+simulation to include variations on the animation
+parameters, such as limb, length, or walking speed. This
+can be very useful in implementing animations that vary
+in time according to the stimuli received from the user
+or other objects in the scene. [2], [8], and [15] contain
+useful texts on modeling, animation and simulation.
+At this stage of development, it is possible to use the
+ARCHEOGUIDE system prototype to present the
+Diaulos (two-stadium-long race), the javelin throw, the
+discus throw, the race in armour and the long jump,
+augmenting the corresponding animated models in the
+real scenario. To implement the animations of collective
+sports, like the Diaulos, the same model was replicated,
+differentiating each one by changing its muscular mass
+and the time duration of the associated animation. This
+way, it is possible to achieve a more realistic
+representation for these kinds of sports. To implement
+the simulation the H-ANIM [5] specification was used,
+which intends to be a standard representation for human
+characters. Figure 8 illustrates a frame of the avatar
+video presented to system users at the stadium of
+Olympia. The competing avatar athletes are rendered on
+the live camera image of the stadium. Realism is
+enhanced by the individual behaviour of each athlete
+and the fact that the user is not isolated but can, instead,
+see other visitors present in his field of view.
+An additional feature aimed at giving more realism to
+the presentations of the pen-PC and palmtop-based
+versions of the MUs is the augmented panorama. This
+presentation features 360º views of the natural
+surroundings with augmented reconstructions rendered
+on top. This enables the user to have a more realistic
+experience from the selected viewpoints. In the case of
+the pen-PC, the DGPS receiver and the digital compass
+readings are used to automatically align and rotate the
+panorama with the position and directions the user is
+staring at. This, effectively, minimizes the user’s
+interaction with the MU and provides real-time
+panoramic views. In the palmtop-based MU, the user
+
+can click a direction button to rotate the panorama. This
+is necessary, as this unit features no position and
+orientation tracking mechanism. These augmented
+panoramas feature high quality reconstructions, as is the
+case for the standard augmented images. Accuracy and
+realism is enhanced by occlusions and shading of the
+augmented models.
+
+5. Trials Preparation Procedure
+The system was evaluated at the archaeological site of
+Olympia, in Greece, by representative user groups. This
+section describes the procedure followed for the
+evaluation.
+First, a site survey was performed to collect
+topographical data and was combined with photographic
+images used to create a 3-D representation of the site.
+Monuments of interest were identified and the temple of
+Hera, the temple of Zeus, the Philippeion, and the
+Stadium were selected for the initial prototype scenario.
+
+Figure 8 Avatar athletes competing in the Stadium.
+Based on this list of monuments and the site
+representation, and taking into account occlusions, tour
+paths were defined that allowed visitors to view these
+monuments. This way, tree-covered areas have been
+avoided and optimum GPS data reception has been
+achieved by locating an adequate number of satellites
+(between 4 and 12). Similarly, candidate locations have
+been identified for the installation of the wireless LAN
+antennae. Three points have been selected outside the
+perimeter of the site, providing good radio coverage to
+the selected path and minimum esthetical disturbance.
+Second, viewpoints have been selected and marked in
+the site. These are locations providing the best views of
+the selected monuments. The user is guided by the
+system to stand on these points for visualizing the
+augmented reconstructions.
+Third, GPS reception was tested. The DGPS device
+provided an accuracy of less than 1 meter.
+Fourth, the digital compass was calibrated and tested
+to ensure that no strong magnetic field is present that
+can compromise the accuracy of its readings.
+
+Fifth, a set of photographs has been taken from the
+selected viewpoints and from slightly different angles.
+These photographs are used as references in the imagetracking algorithm.
+Sixth, a set of 3-D reconstruction models of temples
+has been designed based on archaeological and
+architectural reconstruction data. These models
+correspond to the reference images and are rendered on
+the live video or the still images (depending on
+prototype version) to create the augmented views.
+A group of 50 representative users was selected. It
+comprised visitors of various ages, sex, academic
+background, nationality, interests, and computer skills.
+This selection ensured that all use scenarios would be
+tested and feedback would cover all features of the
+system. Emphasis was given in ensuring that the
+disturbance to the normal operation of the
+archaeological site was kept to a minimum.
+The visitors were given a briefing on the system and
+assistance during its use. At the end of their tour, they
+filled in a questionnaire scoring their impressions on the
+system and commenting items they thought significant.
+The questionnaire starts with a section recording the
+user’s profile and comprises 5 sections. The first three
+sections deal with the three implementations of the
+mobile units (laptop, pen-PC, palmtop-based), and the
+last two sections with general questions and comments,
+respectively. A scoring scheme is used where the user
+can score between 1 (lowest) and 5 (highest). For
+general questions a choice between Yes, No, Not Sure is
+available.
+The first three sections test for:
+-
+
+User’s
+comfort
+in
+using
+each
+system
+implementation
+Clarity of audio-visual output (audio descriptions,
+augmentations, related objects, animations)
+Realism of audio-visual presentations
+Efficiency and ease-of-use of the multi-modal user
+interfaces
+Flow of information
+Suitability of information
+User’s satisfaction of his tour with each system
+version.
+Would the user use the system again?
+
+The fourth section tests the overall user’s impression
+of ARCHEOGUIDE and compares the three versions
+for:
+-
+
+User satisfaction
+How informative each version is
+Ease-of-use
+
+Finally, the last section logs user comments in order to
+identify in depth his impressions on the
+ARCHEOGUIDE touring experience.
+
+6. Results
+The general impression of the users was that
+ARCHEOGUIDE is a good system and an interesting
+application that they would like to see in other cultural
+sites too. They were happy to use it and considered it a
+useful learning tool that enhanced their visit. They were,
+in general, satisfied by the type of AR, 3D, video and
+audio presentations.
+The most enthusiastic of all were visitors of younger
+ages, who can be identified as those with the highest
+level of computer skills. These visitors are accustomed
+to computer graphics and viewed ARCHEOGUIDE
+mainly as a video game or leisure activity.
+As we move to older ages with fewer, if any, computer
+skills, the system is perceived as a leisure and learning
+experience. There is some amount of uncertainty on its
+use from computer illiterate subjects, though these
+problems were greatly overcome with the help of the
+engineers who participated in the tests.
+Elderly citizens were interested in testing the system
+but the majority of them felt uneasy when first
+approaching it and curious to check its capabilities.
+People with limited understanding of foreign
+languages (mainly elderly and southern Europeans) were
+dissatisfied by the limited language support (only Greek
+and English) of the prototype.
+The most serious complaint came from the use of the
+pen-computer-based MU. All users pointed out the low
+contrast of its screen, making it very difficult to view it
+under direct sunlight.
+Further on, the limited available multimedia content
+(only the temples of Zeus and Hera, the Philippeion, and
+the Stadium) was a negative factor as only part of the
+site was covered. Consequently, the system could be
+used only in the four most important monuments; other
+areas were not supported.
+A serious concern deals with the pricing policy for the
+rental of the equipment and its insurance in case of
+damage or accident.
+For the top-of-the-range version, the realistic AR
+presentations were highly appreciated but objections
+arose on the size and weight of the equipment.
+The pen-computer-based MU was rated low due to its
+low visibility display but was appreciated for its smaller
+dimensions and weight, as well as the fact that it
+comprised a single unit.
+The palmtop-based MU scored high in its user’s
+preferences for its very compact and lightweight design.
+The screen was clearly visible under all lighting
+conditions, including direct sunlight, and its size was a
+reasonable price to pay for easy carrying it in the site.
+Both the pen-PC and the palmtop MU received good
+comments for the augmented panoramas they feature.
+
+Finally, concern was raised on the availability and the
+wait time to rent and use a mobile unit.
+
+7. Conclusions
+The results of the user evaluation of the
+ARCHEOGUIDE system at the test site of Olympia
+were very encouraging. The system was enthusiastically
+accepted by visitors, especially those of younger ages.
+Several aspects remain to be solved. However, we
+should stress that most of the negative comments were
+expected as the prototype under evaluation exhibits a
+limited number of features compared to the final system.
+Current work focuses on the enrichment of the
+multimedia database with high quality, scientifically
+accurate material covering all areas and monuments of
+the test site, as well as, most major European languages.
+Linked to that, is the further development of the
+personalization features used in the adaptation of the
+tour to the user profile. Additional work is being
+performed in improving the hardware of the mobile
+units regarding its size and weight, and the visibility of
+the portable screens under all lighting conditions. Tests
+at other cultural sites are planned.
+
+8. Acknowledgents
+We would like to acknowledge the EU who selected
+ARCHEOGUIDE to be financially supported within the
+IST program under contract number IST-1999-11306.
+
+9. Consortium Members
+The ARCHEOGUIDE consortium is made up of the
+following partners:
+Intracom S.A. (Greece), Fraunhofer Institute of
+Computer Graphics (IGD) (Germany), the Computer
+Graphics Center (ZGDV) (Germany), the Centro de
+Computacao Graphica (CCG) (Portugal), A&C 2000 Srl
+(Italy), Post Reality S.A. (Greece), and the Hellenic
+Ministry of Culture (Greece).
+
+10. References
+[1]
+
+[2]
+[3]
+
+R. Azuma, “A Survey of Augmented Reality”,
+Proc. SIGGRAPH 95, Course Notes #9
+(Developing Advanced Virtual Reality
+Applications), ACM Press, 1995.
+N. I. Badler, C. B. Phillips, B. Lynn Webber.
+Simulating Humans, Oxford Univ. Press, 1993.
+L.G. Brown. “A Survey of Image Registration
+Techniques”, ACM Computing Surveys, 24(4),
+pages 325-376, December 1992.
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+[14]
+
+[15]
+
+[16]
+[17]
+
+[18]
+
+G. Christopoulos, J. Bastias, The Olympic
+Games in Ancient Greece, Ekdotike Athenon,
+Athens, 1982.
+H-ANIM Specification for a standard VRML
+humanoid, version 1.0, 1998, on-line paper
+http://ece.uwaterloo.ca:80/~h-anim/spec.html
+R. Holloway, “Registration Errors in
+Augmented
+Reality
+Systems”,
+Ph.D.
+dissertation, University of North Carolina at
+Chapel Hill, 1995.
+W. Press, S. Teukolsky, W. Vetterling, B.
+Flannery. Numerical Recipes in C: The Art of
+Scientific Computing. Cambridge University
+Press, Cambridge, UK, 2nd edition, 1992.
+P. Ratner. 3-D human modelling and
+animation,. John Wiley and sons, 1998.
+B. Reddy, B. Chatterji. “An FFT-based
+Technique for Translation, Rotation, and Scaleinvariant Image Registration”, IEEE IP, 5(8),
+August 1996.
+F. Seibert, “Augmented Reality by Using
+Uncalibrated Optical Tracking”, Computers &
+Graphics 23 (1999), Special Issue on
+Augmented Reality, pp 801-804.
+A. State, G. Hirota, D. T. Chen, W. F. Garrett,
+M. A. Livingston, “Superior Augmented
+Reality Registration by Integrating Landmark
+Tracking and Magnetic Tracking”, Proc. of
+SIGGRAPH 96, ACM Press, 1996.
+D. Stricker, P. Daehne, F. Seibert, I. T.
+Christou, R. Carlucci, N. Ioannidis, “Design &
+Development Issues in ARCHEOGUIDE: An
+Augmented Reality based Cultural Heritage
+On-site Guide”, Proc. Intl. Conf. on
+Augmented & Virtual Environments and 3D
+Imaging” (EuroImage 2001), Myconos,
+Greece, 30 May-01 June 2001.
+D. Stricker, J. Karigiannis, I. T. Christou, T.
+Gleue, N. Ioannidis, “Augmented Reality for
+Visitors of Cultural Heritage Sites”, Proc. Intl.
+Conf. on Artistic, Cultural and Scientific
+Aspects of Experimental Media Spaces (CAST
+01), Bonn, Germany, 21-22 September 2001.
+R. Szeliski, H-Y. Shum. “Creating Full View
+Panoramic Mosaics and Environment Maps”,
+Proc. ACM SIGGRAPH 97, August 1997.
+N. Magnenat Thalmann, D. Thalmann, editors.
+Interactive computer animation, Prentice Hall,
+1996.
+VRML
+Specification
+on-line
+http://www.vrml.org.
+M. Wray, V. Belrose; “Avatar in Living
+Space”, Proc. VRML 99 of the 4th symposium
+on the virtual reality modelling language, 1999.
+I. Zoghiami, O. Faugeras, R. Deriche. “Using
+Geometric Corners to Build a 2D Mosaic from
+a Set of Images”, CVPR97, 1997.
+
+

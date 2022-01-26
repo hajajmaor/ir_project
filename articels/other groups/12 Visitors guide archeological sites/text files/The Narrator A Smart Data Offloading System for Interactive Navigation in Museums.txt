@@ -1,0 +1,768 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/283592833
+
+The narrator: A smart data ofﬂoading system for interactive navigation in
+museums
+Article · February 2015
+DOI: 10.1109/ICENCO.2014.7050448
+
+CITATIONS
+
+READS
+
+0
+
+100
+
+1 author:
+Ahmed Salah EL-Din Ali
+Helwan University
+23 PUBLICATIONS 86 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Caching D2D communication for Cellular Networks View project
+
+handover in mobile atm View project
+
+All content following this page was uploaded by Ahmed Salah EL-Din Ali on 03 October 2016.
+The user has requested enhancement of the downloaded file.
+
+2014 10th International Computer Engineering Conference (ICENCO)
+
+The Narrator: A Smart Data Offloading System for Interactive
+Navigation in Museums
+A. S. Ali, Member, IEEE
+Department of Communications and Electronics, Faculty of Engineering-Helwan University – Egypt
+
+Abstract— Information and Communication Technologies
+(ICTs) are extremely important for sustainable development
+for all countries. It can be used to make information available
+in the right form to the right user at the right time in faster and
+better way. Archeological sites, museums and old towns are
+some of the fields that can take great advantages of such
+technologies. These places need a particular ICTs
+infrastructure and services to convert these physical locations
+into useful smart environments. In this paper we present the
+narrator; a system that assist visitors of such places and
+automatically delivering them in a smart manner with the
+required information according to their current position in this
+site. The key idea of the suggested system is to integrate
+Location Based Service (LBS) technology, data offloading,
+Wi-Fi networks and recommender algorithm to realize a smart
+self-guide system. This system is able to detect visitor
+position, create visitor profile, recommend a visiting map,
+interact with the visitor, and finally offload the textual and
+multimedia data to visitor’s device as if it makes objects of the
+site able to talk and narrate their story to visitors. The results
+of our suggested system showed that the narrator guarantees
+on-demand information delivery for large number of visitors
+simultaneously in the same site with high QoS and without
+service interruption or failure. In addition, the proposed
+system efficiently solves the run down problem due to the
+limited system bandwidth of the wireless networks.
+Index Terms— ICT, Wi-Fi, Data offloading, QoS.
+I. INTRODUCTION
+Archeological sites and museums hold large amounts of
+antiquities, artifacts, and artworks [1]. This vast wealth seeks
+the whole world to see it and know its story, but unfortunately
+it lies in its place and could not tell its story and secrets to its
+visitors. As well as it cannot tell if any one tries to tamper or
+stole it. On the other hand, tourism plays an important role in
+the investment and the economics of countries. It can secure
+foreign exchange earnings, employment and regional
+development [2]. Therefore to attract more tourists as well as
+local visitors, archeological sites and museums must provide
+attractive and interactive personalized services to meet
+individual needs.
+In most of museums, visitors move from room to room and
+from object to object and read information from labels which
+is not significant for most of visitors. As a main issue, one
+problem is that the demand for guides at these sites will
+increase as the number of tourists increased. On the other
+
+©2014 IEEE
+
+hand, there may not be a sufficient number of trained guides
+and if they existed they will be offered only for groups of
+visitors at certain times. While it is neither economical nor
+feasible to provide each visitor with a human guide, some of
+the flexibility and personalization of a one-to-one tour would
+be a valuable way to enhance the museum experience. One
+solution is to provide electronic devices to visitors including
+headsets, and audio playback devices. Visitors can listen to
+pre-recorded file which is not interactive or interesting and not
+cope with visitor demands [3]. Several approaches have been
+proposed in the literatures. These approaches allow visitors to
+interact with an automatic guide in museums. An approach
+using mobile phones was proposed in [4] but their recognition
+technique is limited. In a few cases, museums may present
+information through electronic guide books [5]. However,
+when visitors need to get more information, they asked to
+browse a lengthy list and query the required information
+which is always a cumbersome task. Querying, search time,
+and the locating effort interrupt the visiting fun and benefit.
+Instead and in order to make the museum guide interesting, it
+must be dynamic and attractive by having a variety of
+multimedia content which delivered in an intelligent manner.
+Technically, the location-awareness technologies used for
+indoor applications (such as museum guides) are the shortranged ultrasonic, infrared or radio signals [6]. Most of similar
+works are not focus on technology rather they concentrate on
+its application and in creating innovative services. In indoor
+case, where Bluetooth, Wi-Fi, ZigBee connectivity or RFID
+sensor networks are used, coverage may be incompletely for
+all the site as well as bandwidth may be reduced as the number
+of visitors increases [7-11]. As an example, in [12] which is
+one of the recent projects in this context that working in Italy,
+the authors present a service platform to make objects of a
+museum exhibition able to talk during user’s visit. This project
+based on using wireless sensor network and Bluetooth
+technology to sense the surrounding area for detecting user
+devices’ presence. When a device has been detected, a
+multimedia story of the closest museum objects is transmitted
+to the user. One disadvantage of this system is always run and
+objects almost continuously talking even if the visitor walking
+beside this object but he didn’t want to listen to this story. In
+addition, and due to using of Bluetooth technology, there is a
+limitation for the total number of users that can be handled
+concurrently. For these reasons and to provide better
+performance it should be preferable to provide a smart
+narrating system in which the object starts to narrate its story
+only when visitor ordered it.
+According to its greatness, Egyptian museums and
+exhibitions are expected that there are large numbers of
+
+2014 10th International Computer Engineering Conference (ICENCO)
+visitors and then they will suffer from congestion. Therefore,
+and to tackle this situation problem, a smart guide system
+based on a scalable and dynamic applications that will be
+available through deployment cloud in the museum is
+required. Using ICT infrastructure and application services,
+we can convert the antiquities and artifacts to a smart narrator
+that answer when it is asked.
+In this paper, we introduce a smart narrator system for
+archeological sites, exhibitions and museums around the world
+and especially for the Egyptian museums. The narrator system
+offers a full control solution including how a visitor log in the
+system, authentication, management, and IP address
+assignment. The narrator guarantees on-demand information
+delivery for large number of visitors simultaneously in the
+same site with high QoS and without service interruption or
+failure. The key idea of the suggested system is to integrate
+Location Based Service (LBS) technology, data offloading,
+Wi-Fi networks and recommender algorithm to realize a smart
+self-guide system.
+The narrator delivers multimedia data to visitor’s device in
+gradual manner according to visitor current location, visitor’s
+profile, and his choices. Consequently, it is expected that
+smart data offloading system with efficient recommended
+algorithm using Wi-Fi network accomplished by local control
+unit will be able to remotely manage, monitor and serve much
+more concurrent visitors and delivering all of them with the
+required data with high QoS. Fully monitoring, managing and
+controlling the visitor’s trip lead to enhance service efficiency
+of the system, adjusting the visitor’s distribution inside the
+museum to avoid service interruptions or failure and finally
+saving antiquities from tamper or stole.
+A number of key challenges are featured in such system.
+One of these challenges is the maximum number of visitors
+can be served concurrently in each room. Another challenge is
+how to distribute visitors around all rooms of the museum to
+avoid congestion in any room. Finally how it can force the
+visitors choices to achieve maximum throughput over all the
+system.
+The rest of this paper is organized as follows. Section II,
+introduces the motivations and technologies. In section III, the
+suggested system architecture is presented. Section IV
+presents the system operation. The results and discussion is
+provided in section V. Section VI, concludes the paper.
+
+II. MOTIVTIONS AND TECHNOLOGIES
+The main goal of our proposed system is to make visiting
+museum and exhibition more interesting and attractive. Most
+of visitors especially local visitors are always not able to be
+given tour at the museum. The final impression and visiting
+outcomes for the visitors depends on the skills of the guides
+who accompanying to them. A self-guide interactive system
+is designed to provide relevant information for each antique
+according to visitor profile and selections. This makes
+tourists have fun and enjoy the stories behind each antique
+and let them imagine and like to live that era of time.
+In order to achieve these features in our proposed system,
+we have to use technologies and devices that must be as
+friendly as possible for visitors use. Through a cloud system
+
+©2014 IEEE
+
+and using a smart recommender algorithm, our system will
+suggest to the visitor a complete navigation map for his/her
+tour inside the museum (in the rest of the paper we will take
+museums as an example for all archeological sites). The
+recommended journey schedule depends on the sequence and
+decade of the presented antiquities in museum as well as
+visitor profile. Moreover the visitor has the opportunity to
+accept this suggestion partially or completely, as well as he
+can plan his own journey map. In all cases, the narrator
+system will prepare a Visitor Information Tree (VIT) for each
+user based on his decision. Each VIT starts with the first
+𝑁
+antique 𝑎𝑟𝑖
+that the visitor “i” select item “a” which has
+number “r” in room “N” to start his tour from it. The tree
+𝑁
+structure starts with 𝑎𝑟𝑖
+and branched according to the local
+room that contain this antique and its decade and continued
+with the suggested items in the next two levels. If the visitor
+next visit (selection) matched with the suggested tree, VIT
+will be extended to the next level. Otherwise the VIT i will be
+upgraded according to the new selection. Instantly, a series of
+data and multimedia files for each item are ready to be
+delivered to this visitor through data offloading algorithm.
+Actually, data offloading is a set of techniques used to move
+traffic from core networks to other local network in order to
+enable optimum utilization of network resources. A robust
+data offload solution can provide us the flexibility to control
+data flow across the narrator network based on visitor’s type,
+class of service, traffic pattern to achieve maximum QoS
+[13]. One of the main complementary network technologies
+used for data offloading is Wi-Fi that is costly less to build
+than other LANs. On the other hand, the physical nature of
+the archeological sites and most of museums forced us to
+depend on wireless network connections between visitor’s
+devices and our narrator system. Wi-Fi has the advantage of
+ubiquity and unlicensed spectrum characteristics that make it
+as an attractive solution for our proposed system. In addition,
+Wi-Fi is efficient for large file downloads in terms of battery
+usage and duration of signal; therefore users enjoy a better
+user experience through higher data throughput [14].
+As we will see in the next section, the Wi-Fi access point
+will be connected to the core network through optical fiber
+cables. Optical fiber has many advantages includes that it
+offers longer distances without requiring repeaters as well as
+it provides a huge amount of potential bandwidth exceeds
+that provided by any other transmission medium [15].
+Combining the advantages of optical fiber (capacity and
+ranges) with the advantages of Wi-Fi (ubiquity and mobility)
+are attractive for our proposed system since they provide a
+powerful platform that can be reliable in all services.
+Location-Based Services (LBS) are a set of applications that
+integrate available information of geographical locations with
+a service system in order to make these information are
+ubiquitous and pervasive. It can be used to identify a location
+of person or object and it can be used in a variety of fields
+such as indoor object search, health, entertainment, and
+personal life [16]. Users of LBS benefit from the interaction
+with the system where it can provide them with all required
+information about the location and the objects it contain. We
+will use LBS as query-based system to provide the visitor
+with the useful information he required.
+
+2014 10th International Computer Engineering Conference (ICENCO)
+
+III. THE SUGGESTED SYSTEM
+ARCHITECTURE
+
+Authentication Server
+Data Center
+
+This section describes the components and the overall
+architecture of the proposed system. The structural overview
+of the proposed system supporting the narrator system is
+showed in Fig. 1. The suggested system configured in
+hierarchical based and will be depend on various concepts
+including location detection, context awareness, data
+offloading, and smart environment. In this architecture, a
+hybrid cloud offload infrastructure is organized as two level
+hierarchies combining the core cloud with local clouds. The
+first level of this architecture is a large centralized core which
+is the base of system administration and data offloading. This
+cloud is located in a stable and secure environment, far from
+physical threats. At the edge of the architecture there are
+Offload Elements (OEs) providing local clouds for mobile
+visitors. These elements are distributed and each is located in
+each room close to the mobile devices that it will serve. In
+other words, two types of data offload are identified for
+mobile visitors: Radio Access Network (RAN) offload and
+core network offload. These are distinct in that they target
+different parts of the network and impact visitors differently.
+In particular, we have deployed a particular wireless spot site
+that using Wi-Fi technology which will be used to detect and
+communicate with visitor’s devices. Each spot site will serve
+visitors they detected in its room and starts offload
+information to them according to their traffic order. The main
+components of our proposed system include: server-side
+(Authentication, Content management, and Database servers),
+core network switch, local offload element, Wi-Fi Access
+Point (AP), visitor Smart Device (SD), a set of software
+applications (Narrator services), and guide’s visitor interface.
+We expect that in most cases, the visitors prefer to read textual
+descriptions for presented objects. Therefore, this introductory
+information will be stored in the cache memory of the offload
+element in each room. In other words, only the introductory
+data is stored in the local offload elements while the core
+cloud store all site data including visitors profile,
+authentication data, textual and multimedia information. The
+cloud and the employed wireless network will offer the
+required information to visitors in form of audio, video,
+textual and hypermedia documents. The delivered information
+to visitor’s devices will be offered in a customized manner and
+based on the visitor profile as well as the network status.
+The server-side contains a set of servers including the
+Authentication Server (AS), Content Management Server
+(CMS) and Data Center (DC). The authoring system works
+offline in advance to feed the related information and
+multimedia files that contain to the CMS. Creation of visitor’s
+profiles, the visitor tree map and its update as well as content
+management will be handled by the CMS. The DC stores all
+textual and multimedia files for all objects in the museum. All
+servers, offload elements and SDs work in real-time to interact
+visitors with the narrator system. Servers and offload elements
+are responsible for responding to visitors’ requests.
+
+©2014 IEEE
+
+Management Content
+Serrver
+
+Optical Fiber Cable
+
+Switch
+OE
+
+OE
+Ch9
+
+Ch7
+
+Ch5
+
+User
+
+Ch2
+
+Ch8
+
+7
+
+8
+
+9
+
+4
+
+R2
+
+R3
+
+R4
+
+2
+
+6
+
+R5
+
+R1
+
+R6
+
+5
+
+9
+
+R7
+
+R8
+
+R9
+
+7
+
+2
+
+3
+
+4
+
+Ch7
+
+Ch3
+
+Ch1
+
+Ch4
+
+Ch9
+
+Ch6
+
+Ch9
+
+Ch7
+
+User
+
+Fig. 1. The system architecture.
+To guarantee large bandwidth and so high data rates to
+support the multimedia traffic for a large number of
+concurrently visitors, optical fiber cables through core
+network switch is used for the connection between servers and
+offload elements. On the other side and in order to achieve the
+ubiquity and dispersed, visitors’ SD connected to the system
+using Wi-Fi technology. As shown in Fig. 1, the available
+Radio Frequency (RF) channels in Wi-Fi access point will be
+distributed over the neighboring rooms in a way to prevent the
+mutual interference and reduce chances of collision.
+Consequently, visitors will request the object information
+from the OE (with object ID) which in turn forward this
+request to the CMS. Then the CMS retrieves required
+information from the DC and offloads it to visitor’ SD through
+the involved OE using a selected RF channel. One of the
+advantages of our proposed system is the flexibility of
+arranging the APs and their RF channels based on each room
+area, number of suggested visitors to visit this room
+simultaneously and the number of antiquities in this room.
+
+IV. THE NARRATOR SYSTEM OPERATION
+The flowchart of the proposed narrator system operation is
+showed in Fig. 2. When the visitor turns on his/her SD and run
+the narrator application, the narrator sends a welcome message
+to him and the narrator system operation starts with the
+registration process. Each visitor should register his SD to the
+system by entering the user name and password that he got
+from the system operation in the museum (Login phase). In
+the personalize and recommendation phase, the narrator will
+give the visitor a time limited IP address allowing him to
+navigate through the museum and listen to the story of the
+Egyptian pharaoh’s civilization. Subsequently, the system
+starts to determine the visitor profile by asking him a group of
+questions such as age, educational level, interest, favorite, .etc.
+Each visitor starts his journey by listening to the suggested
+navigation map from the narrator system according to his
+interest. On the other hand, during system installation and
+configuration, each OE self-provisions the introductory
+
+2014 10th International Computer Engineering Conference (ICENCO)
+information from the core network. Therefore, any visitor does
+not need to directly communicate with the core during offload
+operation; it only needs to communicate with its OE. When
+the visitor enters any room, his SD will be connected to the
+OE in this room. This OE will send list of all objects that its
+room has and allow the visitor to select any one of them to
+start narrating. Once the visitor selects the object, the OE
+using the brief data stored in its local RAM, will starts to
+narrate the brief story of this object on the visitor’s SD. In the
+meantime, the OE will also send a request control signal
+accomplished by the visitor ID and object ID to the CMS to
+prepare the full information about this object to be ready for
+offloading on demand. After the brief story is finished, the
+visitor has the choice to require more information about this
+object or move to next one. According to the visitor choice,
+the OE will send confirm or deny message to CMS to inform
+it for offloading or canceling the previous order. In case of
+confirming, the multimedia information will be forwarded
+from the DBS to visitor’s SD through the OE. This process
+will be repeated for all objects in the navigation tour for all
+visitors.
+The recommender algorithm in the CMS recommends
+suitable VIT map for each visitor. The visitor confirmation or
+selection stage allows visitors to choose between the system
+recommendations or selects his own selection. Once the visitor
+selects an object, he is asked to select the information level he
+wants to start. For each object, there are three levels of
+information, Data & Voice, Presentation, and video. Each
+level includes unique multimedia contents. According to his
+selection and network status, the visitor will view and listen to
+one of the greatest stories that will hear in his life. The
+narrator system will automatically selects a suitable VIT map
+for each user based on his profile, but the visitor can also
+choose a different start point manually. After the visitor read,
+listen or watched the required information, the narrator asks
+the visitor which next step he wants. Depending on the
+visitor’s answer, the system determines the next stage and
+updates the VIT map and informs the visitor with this updates.
+The system retrieves the visitor profile each time the visitor
+moves to another object to update it. When the visitor enters
+any room and selects an object from the object list of this
+room, the detailed data and recommendations of the object is
+offloaded from the OE via the Wi–Fi network.
+The key element of the traffic type selection phase is the
+Wi-Fi network capacity. Therefore, and to ensure system
+stability and a deliverables high QoS, we put certain
+constrains for the total number of visitors attached to the
+system in general and the maximum number attached to each
+room. In addition, a distribution algorithm will be used to
+arrange the traffic type selection to prevent network
+interruption or failure. This procedures guarantee that visitors
+always get the optimum scenario for his journey in the
+museum. As a result of this limitation, the recommender
+algorithm responds to each request (Attending a room or
+moving to higher data level) according to the already existing
+visitors inside this room and the offloaded traffic of each one.
+Accordingly, the narrator system will positively respond to
+number of visitors (starts to offload data to them) while block
+others and redirecting them to another room or asked them to
+wait some time until the required bandwidth is available. The
+
+©2014 IEEE
+
+visitor has the choice to leave to another object/room or wait
+his turn to be served in this room which will be done in a
+prioritized manner.
+The visitor starts Narrator
+application
+
+Application
+GUI
+
+Login Phase
+
+Welcome
+and
+Registration
+
+Recommendation
+Phase
+
+Traffic Type
+Selection
+Phase
+
+Offloading
+Phase
+
+Check
+Network
+Status
+
+VIT & next
+step
+recommender
+
+Visitor
+Confirnation
+
+Creation
+Visitor
+Profile
+
+Multimedia
+Choice
+
+/ Selection
+
+Start
+Narrating
+
+Data
+Offloading
+
+The Narrator starts
+the story
+
+Fig. 2. The Flowchart of the Narrator system.
+The network status check stage ensures a stable and robust
+connection. To overcome the problem of the system run out of
+the system resources, the network status checker cyclically
+monitors the system resources and may be block or postpone a
+service required by a visitor. The data offload stage is
+concerned with offloading the required data once the
+connection is available.
+Finally, the narrator not only narrate the stories for visitors
+but also it will tell the control center if any antique suffer from
+tamper or moved from its location. Once the visitor starts his
+tour, the system will record his movement and which rooms
+and items he visit. Accordingly at the end of the tour for any
+visitor the system has a recorded file for the complete
+navigation movement for that visitor. At the end of each day
+the system gives a report about the number of visitors and
+listed file for each user linked with his recorded file. If any
+antique is disappeared or moved from its location, the system
+gives a report having a list of the visitors of this antique and
+who is the last visitor and at what time is the last visit. The
+narrator can also be used in case of emergency cases, where an
+emergency message can be broadcast to all visitors via their
+smart devices and show them the positions of emergency
+exists.
+One of the important issues in Wi-Fi data offloading is to
+determine how much data Wi-Fi can offload. The performance
+of Wi-Fi data offloading is related to Wi-Fi coverage,
+maximum throughput, user mobility, traffic type, required
+QoS and delay tolerance characteristics of user data
+applications.
+
+2014 10th International Computer Engineering Conference (ICENCO)
+
+V. RESULTS AND DISCUSSION
+In this section, we will evaluate the performance of the
+proposed system in terms of the total throughput required to
+support the served visitors, and the blocking probability for
+visitors try to attend to the system or request higher level of
+information. Firstly, and in order to show powerful of our
+system we will find results for the previous parameters for the
+system neither using recommending algorithm nor limiting the
+number of attended visitors to any room, figures 3, 4, 5. Then
+we will repeat assuming limited number of visitors attended to
+each room, figures 6, 7. Finally, Fig. 8 shows the results for
+the narrator system using both the recommender and limitation
+on visitor’s numbers. In each scenario we present the results
+for the most popular Wi-Fi protocols used nowadays, 802.11a,
+b, g and 802.11n.We assume that each visitor can request a
+higher order of information in three different forms, Data and
+Voice (D&V), Presentations (Pres.), and Video.
+
+Fig. 5. Blocking Probability Vs Total Number of Attended
+visitors
+As shown in Fig. 5, when the number of attended visitors
+increased, the blocking probability will increased to the extent
+that more than half of the visitors can’t be served when
+visitors exceeds 65. Of course increasing the system capacity
+using 802.11n protocol will enhance the performance and
+decrease the blocking probability where in this case more than
+half of the visitors will be blocked when visitors exceeds 100.
+
+Fig. 3. Required Throughput Vs Time.
+Figure 3, shows the required throughput for each type of
+traffic as well as the total required throughput against time. As
+can be seen, video traffic consumes the higher percentage
+while data and voice consume low percentage. As there is no
+any limitation on the number of visitors, the required
+throughput is increased nearing Gbps which is too costly to
+provide it wirelessly in each room.
+
+Fig. 6. Required throughput Vs Time.
+In the second scenario we have identified the total number of
+visitors allowed to attend to any room. Figure 6, shows the
+required throughput against time, in this case and due to the
+applied limitation the throughput didn’t exceeds 500 Mbps
+while most of time it is around 360 Mbps which is better
+compared to the first scenario. Obviously the required
+throughput for video files form the overall shape of the total
+throughput curve. Furthermore, even though there is slightly
+difference in the blocking probability in case of 802.11a, b, g
+due to the limited system bandwidth, the blocking was
+improved using the 802.11n protocol and up to 75 visitors will
+be served without any blocking as shown in Fig. 7.
+
+Fig. 4. Total Required Throughput Vs Arrival rate
+Actually and as predicted, as the arrival rate increased the
+total required throughput increased dramatically to very large
+values of Mbps and more as shown in Fig. 4. It is also
+important to note that offloading of video files has the upper
+hand in the total required throughput.
+
+©2014 IEEE
+
+Fig. 7. Blocking Probability Vs Total Number of Attended
+visitors
+
+2014 10th International Computer Engineering Conference (ICENCO)
+Figure 8, shows the required throughput for our narrator
+system where both recommender and limitation on visitor’s
+numbers are applied. In this scenario we control both the
+number of visitors for each room as well as the traffic type
+that allowed to request according to the available system
+bandwidth. Therefore, the total required throughput will be
+around 50 Mbps for 802.11 a, b, g and around 300 Mbps for
+802.11n. Consequently, there will no blocking in the room
+level because the recommender early handles this situation by
+redirecting the visitors according to the instant system status.
+
+Fig. 8. Required throughput Vs Time.
+
+VI. CONCLUSION
+Archeological sites and museum has greater attraction
+factor for tourism all over the world. Countries are aiming to
+offer high quality – low cost services which provide
+interesting and understanding these sites and places.
+The main idea of our narrator system presented in this paper is
+to convert silent objects in museum and sites to fluent narrator
+that tell his story behind the decade. One of the advantages of
+our system is that it can provide information and multimedia
+content in advance such that a fast fetch for the detailed
+explanation of contents is possible.
+The results we have obtained emphasize that our suggested
+system match the number of visitors and their offload traffic to
+the available system bandwidth.
+As a future work, we are currently investigating how the
+served number of visitors can be increased using virtual
+offloading groups inside each room.
+REFERENCES
+[1] Ryan, N.S., Smart Environments for Cultural Heritage,
+24th International Research Symposium, International
+Research Center for Japanese Studies, Kyoto, Feb. 2005.
+[2] Ryan, N.S., T. S. Cinotti, G. Raffa, “Smart Environment
+and their Applications to Cultural Heritage,” A workshop
+held in conjunction with UbiComp’05, Tokyo, Japan, 11
+Sept.,2005.
+[3] Bonfigli, M.E., Calori, L., Guidazzoli, A. Mauri, M.A.,
+Melotti, M.: Tailored virtual tours in Cultural Heritage
+worlds, Proc. ACM SIGGRAPH’00, New Orleans, 2000.
+[4] P. F¨ockler, T. Zeidler, and O. Bimber. Phoneguide:
+Museum guidance supported by on-device object
+recognition on mobile phones. Research Report 54.74
+54.72, Bauhaus-University Weimar, Media Faculty, Dept.
+Augmented Reality, 2005.
+
+©2014 IEEE
+View publication stats
+
+[5] L. W. Chan, Y.SV, Y. P. Hung, and J. Y. Jen
+“Orientation- Aware hand helds for panorama-based
+Museum Guiding System” UbiComp 05, , Tokyo, Japan,
+Sept. 11-14, 2005.
+[6] Vlahakis, V., Demiris, A., Bounos, E. and Ioannidis, N.,
+A novel Approach to Context-Sensitive Guided e-Tours
+in Cultural Sites: “Light” Augmented Reality on PDAs, in
+Chrysanthou, Y., Cain, K., Silberman, N. & Niccolucci,
+F. Nick Ryan, Tullio Salmon Cinotti, Giuseppe Raffa
+(eds), VAST 2004, 5th International Symposium on
+Virtual Reality, Archaeology and Intelligent Cultural
+Heritage, December 2004.
+[7] F. Amato, A. Chianese, V. Moscato, A. Picariello, G.
+Sperli, SNOPS: “A smart environment for cultural
+heritage applications” Proceedings of the twelfth
+International Workshos on Web Information and Data
+Management (WIDM 2012 in conjunction with CIKM),
+pp. 49–56, 2012.
+[8] P. Bihler, P. Imhoff, A. B. Cremers: SmartGuide – A
+Smartphone Museum Guide with Ultrasound Control,
+Procedia Computer. Science 5 (2011) pp. 586–592.
+[9] U.B. Ceipidor, C.M. Medaglia, V. Volpi, A. Moroni, S.
+Sposato, M. Carboni, A. Caridi, NFC technology applied
+to touristiccultural field: A case study on an Italian
+museum, Proc. of the 5th International Workshop on Near
+Field Communication, 2013.
+[10] E. Rukzio, S. Wetzstein, A. Schmidt, A framework for
+mobile interactions with the physical world, Proceedings
+of Wireless Personal Multimedia Communication
+(WPMC’05), 2005.
+[11] F. Sparacino, Natural interaction in intelligent spaces:
+Designing for architecture and entertainment, Multimedia
+Tools Appl,. 38(3), 2008, pp. 307–335C.
+[12] F. Amato, A. Chianese, A. Mazzeo, V. Moscato, A.
+Picariello, and F. Piccialli, “The Talking Museum
+Project” The 4th Int. Conference on Emerging Ubiquitous
+Systems and Pervasive Networks, EUSPN 2013.
+[13] D. Srinivasan, J. Dey, S. Kumar, R. N. Mukherjee “ Data
+Offload Approaches for Mobile Operations Improving
+Network Efficiency and Strengthening QoS”, Wipro
+technologies, 2012.
+[14] K. Lee, J. Lee, Y. Yi, I. Rhee, and S. Chong,, “Mobile
+Data Offloading: How Much Can WiFi Deliver?”,
+IEEE/ACM TRANSACTIONS ON NETWORKING,
+VOL. 21, NO. 2, APRIL 2013.
+[15] W. Fischer, A. Shami, M. Maier, and C. Assi, “Point-topoint FTTx,” in Broadband Access Networks:
+Technologies and Deployments, Eds., Springer,
+NewYork, NY,USA, 2009.
+[16] B. Guo, S. Satake, M. Imai. Home-Explorer: Ontologybased Physical Artifact Search and Hidden Object
+Detection System. Mobile Information Systems, Vol. 4
+No.2 (2008), 81–103, IOS Press, 2008.
+[17] R. Giuliano, F. Mazzenga, M. Petracca, and F. Vatalaro,
+“Application of Radio Frequency Identification for
+Museum Environment,” IEEE 22nd International
+Workshop on Enabling Technologies: Infrastructure for
+Collaborative Enterprises (WETICE), 2013.
+
+

@@ -1,0 +1,764 @@
+
+Interdisciplinary Science Reviews
+
+
+
+ISSN: 0308-0188 (Print) 1743-2790 (Online) Journal homepage: https://www.tandfonline.com/loi/yisr20
+
+
+Cultivating Personalized Museum Tours Online and On-Site
+
+Yiwen Wang, Natalia Stash, Rody Sambeek, Yuri Schuurmans, Lora Aroyo, Guus Schreiber & Peter 
+Gorgels
+
+To cite this article: Yiwen Wang, Natalia Stash, Rody Sambeek, Yuri Schuurmans, Lora Aroyo, Guus 
+Schreiber & Peter Gorgels (2009) Cultivating Personalized Museum Tours Online and On- Site, 
+Interdisciplinary Science Reviews, 34:2-3, 139-153, DOI: 10.1179/174327909X441072
+To link to this article: https://doi.org/10.1179/174327909X441072
+
+
+
+Published online: 18 Jul 2013.
+
+
+Submit your article to this journal
+
+
+Article views: 320
+
+
+View related articles
+
+
+Citing articles: 9 View citing articles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Full Terms & Conditions of access and use can be found at 
+https://www.tandfonline.com/action/journalInformation?journalCode=yisr20
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009, 139–153
+
+
+Cultivating Personalized Museum Tours Online and On-Site
+YIWEN WANG, NATALIA STASH, RODY SAMBEEK AND YURI SCHUURMANS
+Department of Mathematics and Computer Science, Technical University Eindhoven, The Netherlands
+LORA AROYO
+Department of Computer Science, Free University of Amsterdam, The Netherlands
+GUUS SCHREIBER
+Computer Science department, VU University Amsterdam, The Netherlands
+PETER GORGELS
+Rijksmuseum Amsterdam, The Netherlands
+
+
+Web 2.0 — the perceived second generation of the World Wide Web that aims to improve collaboration, 
+sharing of information and interoperability
+— enables increasing access to digital collections of museums. The expecta- tion is that more and 
+more people will spend time preparing their visit before actually visiting the museum and look for 
+related information reflect- ing on what they have seen or missed after visiting the museum. It can 
+also be expected that museum curators want to enhance visitors’ museum experiences in the more 
+personalized, intensive and engaging way promised by an improved Web. In other words, to keep their 
+visitors, they should adopt an immersive museum environment that combines the museum Web site 
+(online) with the physical museum space (on-site). In this context, the CHIP1 (Cultural Heritage 
+Information Presentation) project offers tools to the users to be their own curators, e.g. browsing 
+the online collections, planning a personalized museum tour suiting their art interests, getting 
+some recommendations about interesting artworks to see, and quickly find- ing their ways in the 
+museum. In this paper, we present the new additions to the CHIP tools, which target such 
+functionality: a Web-based museum Tour Wizard based on the user’s interests and the Mobile Guide 
+that converts the tours to a mobile device (PDA) used in the physical museum space. To connect the 
+user’s various interactions with these tools online
+
+© Institute of Materials, Minerals and Mining 2009       DOI 10.1179/174327909X441072 Published by 
+Maney on behalf of the Institute
+
+140  YIWEN WANG et al.
+
+and on-site, we built a dynamic user model. Online, the user model stores the user’s personal 
+background, ratings of artworks and art concepts, rec- ommended or created museum tours. On-site, 
+it is a conversion of the online user model stored in RDF into XML format which the mobile guide 
+can parse. When the user rates artworks inside the physical museum, the on-site user model is 
+updated and when the tour is finished, it is synchronized with the online user model. In such a 
+way, we support a ‘virtuous circle’ of the museum visit, which links the personalized museum 
+experiences both online and on-site.
+
+KEYWoRDS Online museum tours, Personalization, On-site museum tours,
+Mobile device, User guidance
+
+
+Introduction
+In recent years, the purpose of museums has shifted from merely providing static information of 
+collections to providing personalized services to
+various visitors worldwide, in a way suiting visitors’ personal characteristics, goals, tasks and 
+behaviours. Personalization enables changing “the museum monologue” into “a user-centred 
+information dialog” between the museum and its visitors (Bowen and Filippini-Fantoni 2004). This 
+interactive dialogue occurs not only in the real museum, but also in the “virtual museum” 
+(Schweibenz 1998) on the museum Web site. Museums are increasingly experimenting with and 
+implementing more personalized and interactive services on their own Web sites. All over the world, 
+the number of museum Web site visits is growing fast (Chan 2008). Visitors spend more and more time 
+on the museum Web sites, e.g. to discover interesting artworks, prepare a museum tour, or learn 
+related knowledge about artworks, usually in relation to a (possible) physical museum visit. This 
+brings a great challenge for museums to provide a personalized and extended museum experience for 
+visitors in an immersive museum environment, which includes both the virtual museum (online) and 
+the real museum (on-site).
+In this context, the CHIP (Cultural Heritage Information Presentation) project has been working at 
+the Rĳksmuseum Amsterdam² since early 2005, as part of the NWO-CATCH³ (Continuous Access to 
+Cultural Heritage) programme. CHIP is a cross-disciplinary research project, combining aspects from 
+cultural heritage (museum) and computer science. From the museum perspective, it poses three 
+issues: (i) how to acquire visitors’ interests in the museum collection; (ii) what kinds of 
+personalized services can be provided on the museum Web site and in the real museum space; and 
+(iii) how to link visitors’ museum experiences online and on-site and what approaches can be 
+deployed to increase visitors’ motivation to return to the immersive museum environment (online and 
+on-site). From the computer science perspective, our main research challenges are: (i) to enrich 
+the museum digital collection with semantic structures; (ii) to recommend artworks and related 
+concepts in a way suiting different users’ art interests; (iii) to build an interactive and
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+141
+
+dynamic user model that stores users’ various information; and (iv) to create personalized online 
+museum tours and to convert these online tours to on-site tours on the mobile device.
+To address these issues from both disciplines, we have so far taken the following steps: i) used 
+technologies associated with what has been called ‘the Semantic Web’⁴ to enrich the museum digital 
+collections by mapping them to existing common vocabularies; (ii) created an interactive user model 
+as an extended domain-overlay to acquire and store users’ art interests and other information; 
+(iii) developed three different tools within the CHIP demonstrator, namely, the Art Recommender, 
+the Tour Wizard and the Mobile Guide. The Art Recommender applies content-based recommendation 
+techniques to recommend artworks and concepts based on the user model. The Tour Wizard generates 
+personalized online museum tours containing recommended artworks and allows users to create new 
+tours by adding/ removing artworks. The Mobile Guide converts online tours to on-site tours on the 
+mobile device and guides users’ visits in the real museum environ- ment. Following a user-centred 
+design method, we have performed a series of empirical user studies (Wang et al. 2007, 2008a) with 
+real users to derive the requirements for building these tools and to access the quality of 
+personalization provided by the tools.
+In this paper, we focus on describing the creation and conversion of online and on-site museum 
+tours implemented in the Tour Wizard and the Mobile Guide tools. The descriptions of the semantic 
+enrichment of museum digital collections, the user model and the Art Recommender tool are explained 
+in Aroyo et al. (2007) and Wang et al. (2008a). The rest of the paper is structured as follows: In 
+the next section, we discuss related work about existing mu- seum tours and then, we give a use 
+case of such tours. Following this, we describe how to create online museum tours using the Tour 
+Wizard and how to export the tours using the Mobile Guide and give users guidance during their 
+tours in the physical museum. Further, a qualitative analysis of these tools is given. Finally, we 
+discuss our approach and outline directions for future work.
+
+Related work: museum tours
+Museum tours offer visitors a unique experience in the museum and special insights about the museum 
+collection. There are mainly four types of museum tour: human-guided tours, audio tours, 
+online/virtual tours, and multimedia tours (Wang et al. 2008b).
+The traditional human-guided and audio tours are usually available in most museums. In recent 
+years, enhanced Web technologies have enabled increasing access to museum Web sites. As a trend, 
+more and more museums create online/virtual tours on the museum Web sites for online visitors 
+across the world. Besides the online tours, with the support of mobile computer technology, 
+multimedia tours are becoming increasingly important to visitors by enhancing their museum 
+experience (Anderson and Blackwood 2004).
+Many museums offer multimedia tours, which are implemented on different
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+142  YIWEN WANG et al.
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 1 Other multimedia museum tours.
+Curtesy of a: Sparacino Flavia, b: Cesare Rocchi, c: Liliana Ardissono, d: The American Association 
+of Museums.
+
+mobile devices. These tours strengthen the exhibitions by allowing visitors more informed enjoyment 
+and knowledge, hence greater engagement with the artworks (Sakamura 2003). In Table 1, we give a 
+brief overview of these four types of museum tour with examples.
+Although we explored all four types, our mandate in CHIP to enhance personalized museum experiences 
+both on the Web site and in the real museum space dictates a focus on the online and multimedia 
+museum tours. From the exploration stage, we found that most online and multimedia tours suffer 
+from two main problems. The first is lack of content personalization and dynamic adaptation 
+according to the visitors’ interests and the contextual information. Most tours contain a fixed 
+list of artworks, which is the same for everyone or for visitors from the same predefined user 
+groups (e.g. groups of tourists, students, experts). The second problem is lack of connection 
+between online tours and on-site/multimedia tours, which are usually separated into two tours 
+without any connections. These two problems became our main challenges in building the personalized 
+online and on-site museum tours.
+
+TABLE 1
+EXPLORING EXISTING MUSEUM TOURS
+
+Museum and Tour type    Tour description
+
+Rijksmuseum Amsterdam (Human-guided tour)
+
+Rijksmuseum Amsterdam (Audio tour)
+The visitor follows a human guide, which selects artworks and gives corresponding information to 
+visitors using speech, gestures or extra material
+Most artworks are labelled with a number, and are coupled to an audio track on the visitor’s audio 
+device
+Tate Britain (Online tour)    The visitor sees a virtual museum representation on a museum map.
+Rooms can be selected and each room contains a set of artworks
+
+Metropolitan Museum of Art (Online tour)
+Van Gogh Museum Amsterdam (Multimedia tour)
+
+Netherlands Architecture Institute Rotterdam (Multimedia tour)
+The visitor can select six different virtual reality rooms and then navigate the virtual rooms and 
+the artworks inside the rooms
+The visitor walks through the museum following a timeline of Van Gogh’s life. Artwork information 
+can be seen on a PDA from the artwork list
+Artworks have sensors that can be scanned using a PDA. If a sensor is scanned, the corresponding 
+information will be presented on the PDA
+
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+143
+
+Providing personalized content
+For most online and multimedia museum tours, in order to deliver personalized content, the 
+visitor’s interests and contextual information are usually required. The user information can be 
+inferred implicitly by observing users’ behaviour in the museum or during their interactions with 
+the multimedia device; it can also be provided explicitly by the users (Bowen
+and Filippini-Fantoni 2004). The data are stored in the user model and are exploited in the process 
+of content generation to describe or recommend objects potentially relevant for users.
+These types of solutions are quite complex and therefore have been developed mostly in the context 
+of academic research. For example, the wearable computer (Figure 1a), developed at MIT Media Lab, 
+delivers audio and visual narration adapting to the user’s interest from her physical path in the 
+museum and length of stops (Sparacino 2002). The PEACH project (Rocchi et al. 2004) develops a 
+PDA-based museum tour application
+(Figure 1b), whose content is adapted to the visitor, location-aware and only available in certain 
+locations in the museum. The INTRIGUE project (Figure 1c), which relies on user-modelling, 
+recommends sightseeing destinations by taking into account the preferences of heterogeneous tourist 
+groups (Ardissono et al. 2003). Another application is the iPod Multimedia
+Tour (Figure 1d) designed for the Saint Louis Art Museum⁵ by Schwartz and Associates Creative,⁶ 
+which won the 2007 Muse Award⁷ (the Saint Louis Art Museum is one of the first in the world to 
+offer a tour on the iPod).
+For content personalization in CHIP, we built a user model to collect the user’s interests 
+automatically from his or her interactions. Based on the user model, we adopted a content-based 
+recommendation strategy to recommend both artworks and art concepts, that might be of interest. In 
+this way, our system enables the delivery of personalized content.
+
+Supporting the virtuous circle of museum visits
+The term ‘virtuous circle’ was coined by Ailsa Barry from London Natural History Museum (Barry 
+2006). It means creating a connection between the online (virtual) and the on-site (real) 
+information through functions such as bookmarks allowing people to save information of interest 
+from the museum interactions (e.g. from Kiosks, PDAs) and accessing it after the visit via e-mail 
+or on a personalized page available on the museum Web site (see Figure 2a). The essence of the 
+virtuous circle is that the visitor can start the museum tour either from the Web or in the museum, 
+and can extend the tour from the Web to the museum and back to the Web, or vice versa.
+There are two main reasons to link the visitor’s experiences online and on-site into a virtuous 
+circle. First, such linking supports a continuous
+learning experience. By activating previous knowledge, it helps retain memo- ries over time, 
+enables the person to pursue individual interests, and allows him or her to focus more on 
+experimentation, discovery and the aesthetic experience during the visit. Second, it can strengthen 
+the visitor-museum relationship by driving traffic to the museum Web site and stimulating further 
+interest in the digital collection.
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+144  YIWEN WANG et al.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 2 (a) Virtuous circle of the museum visit (b) and the GettyGuide example.
+Courtesy of a: Ailsa Barry, b: J. Paul Getty Museum and Triplecode.
+
+In practice, there have been several museum projects (e.g. Tate Modern, Science Museum Boston⁸ and 
+the Getty Guide⁹) to encourage the exploration of the virtuous circle. As illustrated in Figure 2b, 
+GettyGuide has kiosks that allow users to bookmark objects within their collections, and these are 
+then e- mailed back. However, commonly these e-mailed bookmarks contain distinct information and 
+are not directly linked back to the museum Web site (Barry 2006). They therefore do not really 
+encourage visitors to expand or continue their experiences further within the virtual space.
+To maintain the virtuous circle, we implemented the distributed user model, which stores a user’s 
+various information during the online and on- site museum tour. Once the tour is finished, the user 
+model is synchronized on these two different clients (the Web site and the mobile device) for the 
+user’s next visit. In such a way, we aim to extend the personalized museum experience in a more 
+long-lasting and engaging way.
+
+A use case
+To explain a possible scenario, let’s suppose Saskia plans to visit Rĳksmuseum Amsterdam for the 
+first time. She does not know much about the museum collection and she has only limited time for 
+the visit. Here is an illustrative scenario before, during and after the museum visit.
+Before the museum visit. Considering her limited visiting time, Saskia wants to make her visit 
+efficient so that she may be sure to see some artworks which are really interesting to her. Thus, 
+she decides to prepare herself before she goes to the museum. She checks the museum Web site and 
+looks for some artworks that she would like to see. However, the online collection of artworks is 
+on the museum Web site, and Saskia is confused by too much information, so she needs 
+recommendations of artworks that (i) match her art interests; (ii) are currently available in the 
+museum exhibition; (iii) fit her time-constraint.
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+145
+
+During the museum visit. After her preparation, Saskia visits the Rĳksmu- seum Amsterdam. At the 
+reception, she rents a mobile museum guide, with audio and with a detailed text description of 
+artworks. In addition, Saskia wants to load the data she prepared beforehand. She expects the 
+resulting combination of her data and the museum’s to be presented on the mobile device, indicating 
+the actual locations of artworks from the tour and the route linking these artworks. During the 
+visit, Saskia sees some new artworks and wants to receive more information about them.
+After the museum visit. Afterwards, Saskia becomes more interested and excited about the museum 
+collection. She wants: (i) to know more about what she has seen in the museum; (ii) to learn new 
+aspects about artworks which are related to her art interests; and (iii) to keep up-to-date with 
+new artworks being exhibited in the museum which might be of interest to her.
+
+Personalized museum tours
+The goal of museum tours within the CHIP demonstrator is to enhance the visitor’s museum experience 
+in a more intensive, long-lasting and engaging way, by linking the museum experiences both online 
+and on-site. Following a user-centred design method, so far we have developed three tools within 
+the CHIP demonstrator in a coherent way, namely, Art Recommender, Tour Wizard and Mobile Guide.
+•  The Art Recommender helps users to discover their art interests in the museum 
+collection and to store them in a corresponding user model.
+•  The Tour Wizard generates online museum tours containing interesting artworks 
+recommended from the first tool (Art Recommender). The online tours can be presented both on a 
+geographical museum map and in a historical timeline.
+•  The Mobile Guide converts online museum tours (generated from the Tour Wizard) to the 
+on-site tours on the mobile device, and assists the user to find his or her way during the visit. 
+When the tour is finished, it sends the user’s real behaviours to update the user model on the Web 
+server.
+To further understand the relations among these three tools and how they work together, we give an 
+architectural diagram of core components in Figure 3.
+CHIP demonstrator is based on a client-server architecture. There are three core components on the 
+server-side (Aroyo et al. 2007): (i) Collection data refers to the enriched museum collections 
+(Wang et al. 2008a), currently the Rĳksmuseum ARIA database, maintained in a Sesame Open RDF memory 
+store and queried with SeRQL. (ii) User data contains user models stored in RDF and tour data 
+stored in XML. To be used by the Mobile Guide, the user models currently have to be transformed to 
+XML. (iii) Web-based demo compo- nents are the Art Recommender and the Tour Wizard realized as Java 
+Servlets and JSP pages with CSS and JavaScript.
+Another CHIP client, implemented on a PDA (MS Windows Mobile OS) contains a standalone application 
+Mobile Guide. It is an RFID (Radio
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+146  YIWEN WANG et al.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 3 CHIP Architecture: Core components.
+
+Frequency Identification) reader enabled device and can work oﬄine inside the museum and 
+subsequently be synchronized with the server-side tools on demand. The user model and the tour data 
+(both in XML) can be down-
+loaded from the CHIP server to the mobile device to be used during the tour in the museum. When the 
+museum tour is finished, the user data can be synchronized with the user model on the server. The 
+second version of the Mobile Guide is now being prepared and will be implemented on an iPod (Ivo 
+Roes 2009).
+In this paper, we focus on describing the creation and conversion of online and on-site museum 
+tours using the Tour Wizard and Mobile Guide. For detailed descriptions about the Art Recommender, 
+the semantic enrichment of the collection (metadata vocabularies) and the specification of the user 
+model, see Aroyo et al. (2007) and Wang et al. (2008a).
+
+Web-based Tour Wizard
+Based on the ratings stored in the user model, the Tour Wizard automatically generates personalized 
+museum tours of artworks. It contains recommended museum tours and user-created tours. The 
+recommended tours contain artworks, that might be of interest to the user according to his or her 
+ratings of presented artworks and concepts. The user could also create tours by adding or removing 
+artworks. The tours can be presented both on the Rĳksmuseum map (Figure 4) and in a historical 
+timeline (Figure 5).
+Tour Wizard allows users to semantically search for artworks or related concepts to add them to the 
+tours. This function is supported by the search
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+147
+
+API of the MultimediaN E-Culture project (Schreiber 2006). For example, user Saskia wants to make a 
+tour about artworks created by the Dutch painter Rembrandt van Rĳn. If she searches ‘Rembrandt’, 
+the system will return four types of results (see Figure 6a): (i) Creator ‘Rembrandt van Rĳn’; (ii) 
+Artworks which contain ‘Rembrandt’ in the title, e.g. ‘The Prophetess Anna (known as ‘Rembrandt’s 
+Mother’)’, ‘Self portrait of Rembrandt van Rĳn’ and ‘Study for a statue of Rembrandt’; (iii) Theme 
+‘Rembrandt’s cycle’; and (iv) Other creators/ painters who are related to ‘Rembrandt van Rĳn’, e.g. 
+his teacher ‘Peter Lastman’, and his student ‘Dou Gerrit’.
+To return to Saskia, she wants to see all of Rembrandt’s works and add them to a tour, so she can 
+click on the first search result, which is the creator ‘Rembrandt van Rĳn’. The system will then 
+present the description about Rembrandt van Rĳn to her and give an overview of all 22 artworks (see
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 4  Tour Wizard: Museum tours on the map.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 5 Tour Wizard: Museum tours in the timeline bar.
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+148  YIWEN WANG et al.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 6 Tour Wizard: Semantic search function in the Tour Wizard.
+
+Figure 6b). By viewing these artworks, Saskia could add all of them to her Rembrandt tour or select 
+some of them to add to the tour.
+
+PDA-based Mobile Guide
+To export the online museum tours on the mobile device (PDA) and give guidance to users during 
+their visit in the real museum space, we implemented a stand-alone PDA-based Mobile Guide on the HP 
+Ipaq device with RFID reader for user-positioning.
+Figure 7 illustrates the main functions of the Mobile Guide: (a) select and download online tours; 
+(b) set up the constraints of the tour (e.g. time spent and number of artworks to see); (c) request 
+and receive detailed information (text, image and audio) about an artwork in the tour; (d) receive 
+detailed description about the artwork and rate this artwork on a 5-star scale; (e) indicate the 
+user’s current positioning and show the tour route; and (f) retrieve information about the room 
+such as the number of tour artworks that are available in the room.
+To download the online tours on the device, the Mobile Guide needs to invoke a Mobile data 
+application on the server (see Figure 8), which is created for exporting and importing information 
+in XML. Then, a Servlet called GetTours will be invoked to fetch the tour data from the data store 
+using SeRQL and returns the information to the PDA as an XML file using a DOM approach as a 
+separate component called the XML Writer. The
+generated XML file retrieves all data from the tours and returns to the PDA. Unlike online tours, 
+on-site tours in the real museum space encounter a number of constraints, e.g. the availability of 
+artworks, time duration and the
+route. In the Mobile Guide, we proposed a mapping mechanism: (i) to filter out unavailable artworks 
+from the total set of artworks in the selected tour;
+(ii) to allow users to limit the number of tour artworks to see and set up the total time duration; 
+and (iii) to link all available artworks and indicate the route for the visit.
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+149
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 7 Screenshots of the Mobile Guide on the PDA.
+
+In the Rĳksmuseum scenario, each artwork is tagged with a passive RFID tag, which is connected to 
+the PDA. We track the user’s position by scanning the location of the corresponding artwork. Once 
+the visit is finished, the Mobile Guide interactions are synchronized with the user model 
+maintained on the CHIP Web site. As indicated in Figure 8, the synchronization is performed by the 
+PostUM Servlet, which receives the user model from the Mobile Guide as a Post variable.
+
+Qualitative analysis
+Following a user-centred design method, we have performed a series of user studies to test the 
+effectiveness of personalized recommendations generated by the Art Recommender (Wang et al. 2007); 
+to explore various alternatives to build a user model representing the user’s interests in a short 
+time (Wang et al. 2008a); and to derive requirements for building museum tours (see Related work 
+section).
+However, it is difficult to perform an empirical evaluation on an application mainly used for 
+scientific research in order to access the quality of personalized
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+150  YIWEN WANG et al.
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 8 Download the online tour and update the user model.
+
+online and on-site museum tours provided by the Tour Wizard and the Mobile Guide. The problem is 
+the constraints from the museum side, such as permis- sion to use the real museum environment, the 
+attachment of RFID tags to artworks in the current exhibition, and the availability of mobile 
+devices and related hardware. So we have to augment the user studies with a qualitative analysis of 
+personalized museum tours provided by the Tour Wizard and the Mobile Guide, to identify possible 
+issues in usability and topics for future research. To support the ‘virtuous circle’ of museum 
+visits (Figure 2a), we define four tasks in a predefined sequence and discuss related 
+issues/problems in each task. As depicted in Figure 9, the distributed user model plays a central 
+role, as it is automatically initialized and updated based on ongoing user interactions on the Web 
+server or on the mobile device; and enables the personalization of content.
+Task 1: Create an online museum tour on the Web site. The user can visit the museum Web site at 
+home and use the online Art Recommender to rate presented artworks and art concepts. While he or 
+she rates artworks and concepts, the user model is automatically updated to store the declared art 
+interests. Based on the dynamic user model, the Art Recommender will recommend artworks and 
+concepts that fit these interests, and the Tour Wizard will generate online museum tours containing 
+recommended works and allow for adding/removing artworks. From the previous user study for the Art 
+Recommender (Wang et al. 2007), we found that the system efficiently helps users, especially novice 
+users to elicit their art interests in the museum collections and recommends artworks in a way 
+suiting their interests.
+However, as a sequence of recommended artworks, does the recommended museum tours fit the user’s 
+interests? Is the selection of artworks representa- tive of the whole museum collection?
+Task 2: Convert the online tour for the mobile device. Once the user gets the mobile device (PDA), 
+the Mobile Guide will download user-selected online tours and the user model. For the adaptation 
+from the online tour to the on-site tour, the Mobile Guide needs to: (i) filter out unavailable 
+artworks for the current exhibi- tion; (ii) order available artworks based on the location; and, 
+(iii) apply physical constraints (number of artworks and time spent) to adjust the tour. As a 
+prelimi- nary estimate, we presume that each artwork takes 5 minutes. However, it might be quite 
+different for individuals. Another issue is the user interface on the mobile device, e.g. how to 
+present the artworks with different types of information (image, text and audio) on the relatively 
+small screen of the mobile device?
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+151
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ﬁGURE 9 Four tasks supporting the virtuous circle of museum visits.
+
+Task 3: Guide the on-site tour in the real museum. During the tour, the user can request and 
+receive information about new artworks by reading the passive RFID tag attached to the artworks, 
+which also indicates the visitor’s current location. With the support of various wireless 
+communication and localization technologies (e.g. RFID, GPS, infrared, Bluetooth), it is possible 
+to provide functions that allow social activities for users. Based on the contextual infor- mation 
+during the tour (e.g. time, the sequence of artworks, user’s activities), how to dynamically adapt 
+the tour? For example, the new artworks the user adds are located in rooms which have already been 
+visited, and the user does not have much time left; in this case, how to dynamically adapt the tour 
+according to the changes, e.g. plan the new route, arrange the rest of the artworks?
+Task 4: Send the tour information to the Web. When the user finishes the museum tour, the Mobile 
+Guide will send tour information to update the user model on the Web server. Currently, we only 
+store ratings of visited artworks and related art concepts. What are the other contextual 
+information items
+we need to store from the tour, and how can we use these for content personalization on the next 
+visit?
+From the analysis, we see that the user model plays an essential role. It stores the user’s 
+interactions on two clients (Web and mobile device) and enables the personalization of content. In 
+order to enhance the personalized museum tours, we also need to take into account different aspects 
+of the user model, like the user groups, the context, device, etc. How to store the user data in a 
+standard way that can be shared with and understood by other applications is an important topic for 
+further research that we have partially addressed in Wang et al. (2008a).
+
+Discussion and future work
+In this paper, we have proposed an approach to exploit personalized museum tours suiting different 
+users’ art interests and to link the online and on-site
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+152  YIWEN WANG et al.
+
+tours in an intensive and long-lasting way based on an interactive and dynamic user model. We 
+proposed a method to import online tours from the Web server (Tour Wizard) to the mobile device and 
+to synchronize user data on the mobile device with the Web server. While moving from the online
+to the on-site tours, physical aspects of the museum are considered, e.g. time spent and number of 
+artworks in the tour. We presented a mapping mechanism for this conversion. Furthermore, we tried 
+to capture innovative new functionality for mobile museum tours like user guidance and user 
+positioning. User guidance and user positioning are used to offer museum visitors a dynamic tour 
+experience. However, the current Mobile Guide implements a basic use case as previously described. 
+In the future, we plan to extend the Mobile Guide with the following features or possibilities.
+Dynamic adaptation. When a wireless communication is provided, it brings an opportunity for 
+providing dynamic adaptation during the Mobile Guide. For example, the user can immediately receive 
+recommended artworks when he or she includes a new artwork during the Mobile Guide. As a result, 
+the whole plan of the tour (e.g. the route, total time spent, rest of the artwork in the tour) 
+could be dynamically adjusted according to the changes. Or if
+an artwork is heavily crowded on view, the system might recommend an alternative tour. One step 
+further, because of the limitations imposed by the fact that the user model is based on explicit 
+ratings, we might think of observing and storing implicit user information, such as, for example,
+how much time the user stands in front of a painting, and use this as an additional source for the 
+dynamic adaptation.
+A variety of Web applications and devices. The current Mobile Guide runs on Windows Mobile. To 
+support a larger spectrum of devices from museums and users, clients for other operating systems 
+could be implemented. For instance, to support more smart phones, a Symbian client could be 
+developed or to support iPhones, an implementation for Mac OS X could be created.
+Wireless communication and orientation. Wireless communication tech- nologies such as Bluetooth or 
+Wi-Fi can be used to share data between devices. This allows for providing social functionalities 
+like sharing tours with friends or sharing notes about artworks (Graziola et al. 2005) in the 
+hotspot area. Additionally, interactive maps and location-based technologies (e.g. infrared, RFID, 
+GPS, Bluetooth) can be applied to facilitate visitors’ orientation.
+User interaction. The user interactions of the current Mobile Guide on the PDA has been set-up 
+primarily to be functional and usable. Special attention is dedicated to support a small touch 
+screen controlled by a human finger instead of a stylus. Less attention was devoted to create a 
+nice look-and-feel for the user, which obviously will be a major target for our future work.
+
+Acknowledgements
+The CHIP project is funded by CATCH (Continuous Access to Cultural Heritage) programme of the Dutch 
+Science Foundation NWO. This work is a collaboration between the Technical University Eindhoven, 
+the Telematica Institute and the Rĳksmuseum Amsterdam.
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009
+
+CULTIVATING PERSONALIZED MUSEUM TOURS ONLINE AND ON-SITE
+153
+
+
+Notes
+1 http://www.chip-project.org (05/03/09)
+2 http://www.rĳksmuseum.nl (05/03/09)
+3 http://www.nwo.nl/catch (05/03/09)
+4 http://www.sciam.com/article.cfm?id=the- semantic-web&print=true (05/03/09)
+5 http://www.slam.org/ (05/03/09)
+
+
+6 http://www.sacreative.com/ (05/03/09)
+7  http://www.mediaandtechnology.org/muse/ 2007muselist.html (05/03/09)
+8 http://www.mos.org (05/03/09)
+9 http://www.triplecode.com/projects/getty.html (05/03/09)
+
+Bibliography
+Anderson, Paul, and Adam Blackwood. 2004. Mobile and PDA technologies and their future use in 
+education. Proceedings of JISC Technology and Standards Watch.
+Ardissono, Liliana, Anna Goy, Giovanna Petrone, Marino Segnan, and Pietro Torasso. 2003. INTRIGUE: 
+Personalized recommendation of tourist attractions for desktop and handset devices. Journal of 
+Applied Artificial Intelligence 17(8): 687–714.
+Aroyo, L., N. Stash, Y. Wang, P. Gorgels, and L. Rutledge. 2007. CHIP Demonstrator: Semantics 
+driven recommendations and museum tour generation. Proceedings of the International Semantic Web 
+Conference (ISWC’07).
+Barry, Alisa, 2006. Creating a virtuous circle between a museums on-line and physical spaces. 
+Proceedings of the Museums and the Web Conference (MW’06).
+Bowen, J.P., and S. Filippini-Fantoni. 2004. Personalization and the web from a museum perspective.
+Proceedings of the Museums and the Web Conference (MW’04).
+Chan, Sebastian. 2008. Towards new metrics of success for on-line museum projects. Proceedings of 
+the Museums and the Web Conference (MW’08), 13–22.
+Graziola, I., F. Pianesi, M. Zancanaro, and D. Goren-Bar. 2005. Dimensions of adaptivity in mobile 
+systems: personality and people’s attitudes. Proceedings of Conference on Intelligent User 
+Interfaces (IUI’05).
+Ivo Roes, Natalia Stash, Yiwen Wang, and Lora Aroyo. 2009. A personalized walk through the museum: 
+The CHIP interactive tour guide. CHI 2009 Works-in-Progress and Student Research Competition.
+Rocchi, C., O. Stock, M. Zancanaro, M. Kruppa, and A. Kruger. 2004. The museum visit: Generating 
+seamless personalized presentations on multiple devices. Proceedings of Conference on Intelligent 
+User Interfaces (IUI’04).
+Sakamura, Ken. 2003. Personalized digital museum assistant. Digital Museum 2000.
+Schweibenz, Werner. 1998. The virtual museum: New perspectives for museums to present objects and 
+information using the internet as a knowledge base and communication system. Proceedings of 
+Internationalen Symposiums fur Informationswissenschafi (ISI’98).
+Sparacino, Flavia. 2002. The museum wearable. Proceedings of Conference on Museums and the Web 
+(MW’02).
+Wang, Y., L. Aroyo, N. Stash, and L. Rutledge. 2007. Interactive user modeling for personalized 
+access to museum collections: The Rĳksmuseum case study. Proceedings of the User Modeling 
+Conference (UM’07).
+Wang, Y., N. Stash, L. Aroyo, P. Gorgels, L. Rutledge, and G. Schreiber. 2008a. Recommendations 
+based on semantically-enriched museum collections. Journal of Web Semantics: Semantic Web Challenge 
+6(4): 43–50.
+Wang, Y., R. van Sambeek, Y. Schuurmans, L. Aroyo, N. Stash, L. Rutledge, and P. Gorgels. 2008b. Be 
+your own curator with the CHIP Tour Wizard. Proceedings of the Museums and the Web Conference 
+(MW’08).
+
+
+Notes on Contributors
+Correspondence to: Yiwen Wang, Information Systems Group, Department of Mathematics and Computer 
+Science, Techical University Eindhoven, P.O. Box 513, 5600 MB, Eindhoven, The Netherlands.
+Email: y.wang@tue.nl
+
+INTERDISCIPLINARY SCIENCE REVIEWS, Vol. 34 No. 2–3, 2009

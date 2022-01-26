@@ -1,0 +1,1478 @@
+sustainability
+Article
+
+On How Technology-Powered Storytelling Can
+Contribute to Cultural Heritage Sustainability
+across Multiple Venues—Evidence from the
+CrossCult H2020 Project
+Kalliopi Kontiza 1, *,† , Angeliki Antoniou 2 , Abdullah Daif 3 , Susana Reboreda-Morillo 4 ,
+Maddalena Bassani 5,‡ , Silvia González-Soutelo 4,§ , Ioanna Lykourentzou 6 ,
+Catherine Emma Jones 7 , Joseph Padfield 8 and Martín López-Nores 3
+1
+2
+3
+4
+5
+6
+7
+8
+
+*
+†
+‡
+§
+
+Former CrossCult Fellow, Research Department, The National Gallery, London WC2N 5DN, UK
+Department of Informatics and Telecommunications, University of the Peloponnese, 22100 Tripoli, Greece;
+angelant@uop.gr
+AtlantTIC Research Center, Department of Telematics Engineering, University of Vigo, 36310 Vigo, Spain;
+adrady@det.uvigo.es (A.D.); mlnores@det.uvigo.es (M.L.-N.)
+Group of Studies in Archaeology, Antiquity and Territory, University of Vigo, 32004 Ourense, Spain;
+rmorillo@uvigo.es (S.R.-M.); silvia.gonzalezs@uam.es (S.G.-S.)
+Dipartamento dei Beni Culturali, Università Degli Studi di Padova, 35122 Padova, Italy;
+maddalena.bassani@unipd.it
+Department of Information and Computing Sciences, Faculty of Science, Utrecht University,
+3584 CC Utrecht, The Netherlands; i.lykourentzou@uu.nl
+Faculty of Language and Literature, Humanities, Arts and Education, University of Luxembourg,
+L-4365 Esch-sur-Alzette, Luxembourg; catherine.jones@uni.lu
+Research Department, The National Gallery, London WC2N 5DN, UK; Joseph.Padfield@ng-london.org.uk
+Correspondence: k.kontiza.12@ucl.ac.uk
+Current address: Department of Information Studies, University College London, Gower Street,
+London WC1E 6BT, UK.
+Current address: Study Center classicA, Università Iuav di Venezia, 30135 Venice, Italy.
+Current address: Department of Prehistory and Archaeology, Universidad Autónoma de Madrid/MIAS,
+28049 Madrid, Spain.
+
+Received: 17 January 2020; Accepted: 9 February 2020; Published: 23 February 2020
+
+
+
+
+Abstract: Sustainability in Cultural Heritage (CH) is a complex question that needs to be addressed
+by a group of experts tackling the different issues. In this light, the present work wishes to provide a
+multi-level analysis of the sustainability in CH, using as an example a recent European H2020 project
+(CrossCult) and the lessons learnt from its design, implementation and evaluation. The sustainability
+of CH has qualitatively changed over the last few years, under the developments in digital technology
+that seems to affect the very nature of the cultural experience. We discuss sustainability in venues
+using digital technologies, covering a span of needs of small/unknown and large/popular venues,
+which try to enhance the visitor experience, attract visitors, form venue networks, etc. Moreover,
+we explore issues of sustainability of digital content and its re usability through holistic design.
+Aspects of technology, human networks and data sustainability are also presented, and we conclude
+with the arguments concerning the sustainability of visitor reflection, the interpretation of social and
+historical phenomena and the creation of meaning.
+Keywords: cultural heritage; sustainability; storytelling; digital humanities
+
+Sustainability 2020, 12, 1666; doi:10.3390/su12041666
+
+www.mdpi.com/journal/sustainability
+
+Sustainability 2020, 12, 1666
+
+2 of 26
+
+“Every visitor interaction is a story-making as visitors fit
+portions of our collections into personal frames of reference;
+most often in ways we neither intended nor anticipated.”
+R.R. Archibald [1]
+
+1. Sustainability through Cultural Heritage
+According to the Council of Europe’s Framework Convention on the Value of Cultural Heritage
+for Society (held in 2006 in Faro, Portugal), Cultural Heritage (CH) may be defined as “a group of
+resources inherited from the past which people identify, independently of ownership, as a reflection
+and expression of their constantly evolving values, beliefs, knowledge and traditions”. The European
+Expert Network on Culture extended that definition with a notion of ‘heritage sector’ constituted by
+specialised activities involving heritage and related to other social or economic sectors, which provides
+jobs and generates growth. That direct impact is augmented by the social and economic effects of
+CH in other fields, such as agriculture, regional development, environment, science and education,
+tourism, technology, innovation, social cohesion, intercultural dialogue, etc [2].
+The aforementioned implications have been highlighted by numerous scientific studies,
+to the point that many policymakers now consider CH as one of the four pillars of sustainable
+development [3]. It contributes to sustainable growth through “a creative combination of the legacy of
+the past with innovative ideas aimed at shaping the future”, raising the profiles of places to make them
+more competitive in a globalised world, and serving as a source of inspiration for the contemporary
+arts and creative industries [4]. However, the sustainability of CH itself is being jeopardised whenever
+one of the following two opposites is reached:
+•
+
+•
+
+On the one hand, the pressure exerted on popular museums, buildings, archaeological sites
+or historical city centres (e.g., as a consequence of mass tourism) poses growing challenges to
+heritage professionals, institutions and stakeholders to protect and enhance the cultural assets
+as well as the territory around them. In the era of mobile devices, social media and massive
+consumption of information (quick and shallow reading, limited reflection), popular exhibits
+even face the risk of being deprived of their meaning, becoming ornamental stuff for casual
+photographs or suffering de-essentialising cultural appropriation [5].
+On the other hand, the lesser-known heritage—which is widespread—oftentimes incurs
+significant management and preservation costs for the benefit of reduced numbers of residents
+or visitors. In many cases, especially for the intangible heritage of social minorities, the levels
+of awareness and visibility are very low, and there are increasing risks that the heritage will be
+lost in a matter of a few years or decades. Practical loss may still happen if the heritage has been
+captured in digital form, but it remains in isolated and unconnected archives.
+
+During the last decades, Information and Communication Technologies (ICTs) have altered
+the ways in which CH information can be gathered from, managed by and delivered to residents,
+tourists, businesses, Humanities experts and policymakers. In this paper, we describe how some
+of the recent advances can contribute to CH sustainability -to both alleviate the pressure on
+the popular assets/venues and increase the preservation and valorisation of the lesser-known
+ones—by empowering the aforementioned stakeholder groups in different ways. Specifically,
+we present evidence gathered during the H2020 project CrossCult (www.crosscult.eu) about how
+technology-powered storytelling can contribute to the sustainability of the heritage kept by museums
+(in different ways depending on their size, popularity and topics) by presenting historical knowledge,
+interrelated facts and events, interpretations and narratives across countries and cultures to
+non-specialist audiences in an engaging way. The project can be considered a representative of
+the state-of-the-art, as it dealt with semantic reasoning technologies [6] to bring together multiple
+exhibits according to different criteria, with personalisation and recommendation systems to address
+the personal context that the museum visitors bring with them [7], with different storytelling and
+
+Sustainability 2020, 12, 1666
+
+3 of 26
+
+gamification strategies to assess the value of playful elements towards reflection and engagement
+with the venues and exhibitions [8,9], with location tracking and path routing optimisation to ensure
+that each visitor were navigated through the conceptually-linked exhibits while avoiding congested
+spaces as much as possible [10], and with innovative practices to address visitors’ interaction with the
+physical context of the museum [11].
+The Heritage venues participating in the project acted as demonstrators of these technologies
+and pilots for experimentation with visitors. Experiments took place in different Heritage venues of
+historical interest, meant to be representative of the different CH venues found across Europe in terms
+of their audience, needs, objectives and constraints:
+•
+•
+
+•
+•
+
+A vast transnational collection hosted at the National Gallery in London that wanted to invite
+visitors to explore conceptually linked exhibits that interest them the most.
+Four thematically similar archaeological sites (the Roman healing spa of Lugo in Spain, the Roman
+healing spa of Chaves in Portugal, the archaeological site of Montegrotto Terme in Italy, and the
+sanctuary of Epidaurus in Greece) that wanted to use narratives to connect their local heritage
+with other venues and broader European context.
+A small but invaluable collection hosted at the Archaeological Museum of Tripolis that aimed to
+present non typical itineraries through its museum exhibits.
+Two cities (Malta and Luxembourg City) connected through the topic of historical migration,
+that invite people to walk and serendipitously discover hidden stories or contribute their own.
+
+In the following subsections, we explain how the aforementioned technologies touched different
+facets of CH sustainability, with examples from the project’s pilot experiments. First, Section 2 looks
+at key aspects of sustainability within CH venues, from the big and most famous to the small and
+relatively unknown. Then, Section 3 discusses the sustainability of the different types of narratives
+delivered by the storytelling approaches, in relation to the effort and cost incurred by the content
+creation processes. Lastly, Section 4 focuses on sustainability within the CH ecosystem (ecosystem
+here is defined as all the ‘living organisms’ (data, objects, systems) and actors in a particular area
+(CH) considered together with their physical environment (venue)): The technology itself, discussing
+the advantages enabled by the open source philosophy and the professional profiles demanded in
+Digital Humanities (DH), the actors and dynamic groupings (such as GLAM labs), highlighting their
+mediating role to facilitate external audience engagement and interaction with the (technology and
+data) CH system and finally the data that underpins the operation of the technology, considering
+the opportunities generated by the wealth of content digitised during the last decades, as well as
+the challenges derived from the different standards and reference models and from varying levels of
+reliability of the information sources.
+2. Sustainability within Venues
+Since Falk and Dierking published ‘The Museum Experience’ 20 years ago, most exhibitions
+and programs are designed with careful attention not only to aspects of the physical context (such as
+lighting, color, placement of objects, and readability of text) but also to the visitors’ personal and
+socio-cultural contexts, which conform unique backgrounds of prior experiences, interests, knowledge,
+motivations, beliefs, and values. According to their suggested framework, “the museum experience
+begins before the visit to the venue, includes experiences within its premises (interactions with staff
+and members of one’s own group, as well as with other visitors, exhibitions, interpretive materials
+and programs) and continues long after the visitor leaves” [12]. In order for technology to underpin
+sustainable visiting models, it must be able to reach those different stages and make the most of the
+users’ time and attention, by providing them with the right kind of information. The CrossCult project
+approached this challenge in different ways within the multifaceted cultural venues involved, though
+always relying on storytelling strategies in order to ensure coherence of the end-to-end experiences
+and foster the intended cognitive phenomena.
+
+Sustainability 2020, 12, 1666
+
+4 of 26
+
+2.1. Sustainability in Large Venues
+The first CrossCult use case took place at the National Gallery (NG) in London, visited by
+5.7 million people in 2018 (visitor figure available through the Association of Leading Visitors Attraction
+(ALVA)—see https://www.alva.org.uk/details.cfm?p=423) and well-aware of sustainability issues
+faced by a large venue. This section will focus on explaining how personalisation technologies
+and the stories behind recommended sets of pictures, addressed some of the venue sustainability
+challenges. The created CrossCult NG application aimed to sustain visitors physical interaction with the
+venue (wayfinding) and increase visitors knowledge and interest of an interconnected, multi-themed
+collection, of more than 2.600 paintings, that narrates the story of European art, masterpiece by
+masterpiece. The quotes presented in this section were collected during the last phase of evaluation
+for this venue that took place in June, August and December of 2018, where the think aloud protocol
+was used to capture participants’ thoughts and experience [13]. We used a snowball method of
+recruiting participants—12 volunteers (10 female) with ages ranging from 30 to 65—via the researchers’
+professional networks (art historians, heritage scientists, curators, other museum professionals). While
+the participants work at CH field only half of them had a good prior knowledge of the NG collection.
+Once inside a large venue, there is often a high degree of freedom and choice in terms of what to
+look at, discuss, and do. It was the CrossCult vision that a bespoke mobile app could contribute to
+(i) encouraging visitors to think about topics that personally interested them, by connecting seemingly
+disparate paintings together, and (ii) the process of reflection, by encouraging visitors to connect trains
+of thought between the different paintings. Accordingly, the CrossCult NG (https://play.google.com/
+store/apps/details?id=eu.crosscult.pilot1.ng&hl=en) app was created to guide the visitors through
+the NG collection, providing recommended short tours or highlighting individual paintings, based on
+a user’s preferences, activities and physical location [14]. The application aimed to demonstrate that,
+by properly presenting curated sets of paintings, it is possible to (i) facilitate and promote the discovery
+and exploration of connections among the subjects depicted, the painters themselves, and events across
+the physical collection displayed over more than 69 galleries, and at the same time (ii) help visitors to
+access and navigate around the venue in a more balanced and dynamic way. The app detects the user’s
+location in the building, takes into consideration visitors’ tolerance to crowds and reduces the pressure
+on certain rooms by fostering greater interest for paintings other than the ‘must-see masterpieces’.
+The personalised NG app experience was designed to strengthen the engagement with the
+collection through the interaction with the app, before, during and after the visit. The engagement
+can be initiated at any point, even before the visitors’ arrival to the Gallery building. By following a
+process of short steps, the visitors prepare and tailor their visit, by building a user initiated profile,
+which is then used by the app to recommend groups of paintings and stories. To accommodate the
+needs of visitors that are less confident or knowledgeable about art, instead of asking them direct
+questions about their favourite artist or art period, the app introduces them to the NG Collection with
+a carousel of paintings (see Figure 1a). This pre-curated set of paintings is used by the profiling system
+to build a first, a-priori profile. The user can stop this process at any time as the profiling algorithm
+needs only a minimum of 3 paintings to begin making recommendations on the whole collection.
+During the profiling process steps, the visitors could also (i) configure different settings such as the
+time available for the visit and whether they are alone or visiting in a group, (ii) see how far they have
+progressed during the carousel interaction and continue if they want to, (iii) further customise their
+profile by selecting their interests from a curated list of keywords and finally (iv) state how fast they
+walk when they visit a museum on average (see Figure 1b). While the user interacted with the app,
+by visiting rooms and specific paintings, the profile kept updating in the background.
+
+Sustainability 2020, 12, 1666
+
+5 of 26
+
+Figure 1. This Figure presents some highlighted features and functionalities of the National Gallery
+CrossCult app: (a) Top left hand corner, the ‘Art taste elicitation’ panel contains screenshots of the
+carousel of paintings: Users swipe right or left through a stack of images from the top 100 paintings of
+the NG Collection to indicate what they like or dislike. (b) top right hand corner, the ‘Visits settings
+and Interests’ panel contains screenshots of the settings configuration. (c) bottom left hand corner,
+the ‘Start the Visit’ panel contains screenshots of the app personalised recommendations presented to
+the user, once the profiling process was completed. By clicking on the map the visitors could access
+the current content of a Room, receiving fresh information from the Gallery’s content management
+system through the NG research Beta API. (d) bottom left hand corner, the ‘Narratives - Storytelling’
+panel contains screenshots of the app recommended pre-defined stories and narratives, under specific
+themes, to allow visitors to experience the collection through different lenses.
+
+We observed that personalisation and profile building can be used as a technique to set the
+foundation of a relationship that can be built in time between the visitor and the CH venue and that,
+for the participants who were very familiar with the collection, the profiling process provoked a
+range of positive emotional reactions which were mainly associated with the act of new discovery.
+For example, P11 “While I am a person that knows what I like, it surprised me, some of the paintings I
+didn’t know we had and [the carousel] showed me some of my favourite pictures, so. . . ”, P01 “This one
+I didn’t realise we had it in the collection I haven’t seen it before”, P01 “it introduced me to a couple of
+things I didn’t know which is great and you have a collection you think you are familiar with and shows
+you things you don’t know about so that is interesting. . . ”. The connection of the visitors with the
+collection was initiated during the expressed reactions of liking or disliking a painting; the pre-curated
+sets of paintings, presented through the carousel of paintings strengthened the inter-connectivity
+of a multi-themed collection and the carousel interaction enabled the act of information and object
+discovery for some of the participants by giving them a new way into the collection. For some of
+the visitors this connection process enhanced their familiarity with the collection and sustained their
+intellectual journey of discovery, building at the same time future engagement with the CH venue
+and the collection. For example P01 “Animals, Saints, Furnitures, Boats so if you went for just one
+or more specific, that makes a lot of sense if they are affecting my paintings. . . I think the choices
+were limited but for this experience to give. . . you a way in to get into the collection it is quite nice. . . I
+should probably go and have a look at that too. This was connected to my choices. . . boats. . . I felt with
+this one putting in the parameters of what I was doing I was able to get information out of the app
+that I wanted and also in some cases looking for more information that perhaps was not there but it
+encouraged me to look around outside of the app and see things that I was not aware they were there.”
+
+Sustainability 2020, 12, 1666
+
+6 of 26
+
+One of the main features of the CrossCult NG app experience, accessible before and during
+the physical visit, was the digital map. It promotes sustainability within the venue as a building
+by augmenting the familiarity of the visitors with the sense of place; it also allowed the visitors to
+pre-plan their visit, familiarise with the building and the different floors, and get a grasp of the Gallery
+size even before they arrive and maximise the limited time they might have available (see Figure 1c).
+Once the visitors were in the building, the app automatically detected their position, so that they could
+see where they were and ask for routing information to navigate from one room to the other. While
+visitors walked through the rooms, the app displays a preview of the content of the room they were
+currently in, a preview of the paintings currently on display. Visitors could also use the map to locate a
+painting within the Gallery and get indications on how to reach it.
+While some of the participants in the evaluation had a good prior knowledge of the collection and
+the building, all of them stressed the difficulty of finding their way in the Gallery rooms. The difficulty
+to navigate through the physical space at the Gallery (wayfinding) and how the digital map with the
+automated indication of their current location supported them in making decisions on where to go,
+was highlighted; P01 “you can spend half an hour in Gallery and not have seen anything because you
+are looking around for something”, P11 “ok so now I embark, so here I am trying to figure out which
+Room I am in, this was actually really good, it pretty much understood the Room I was in right away
+which was really useful because a few times I looked for Room numbers to match the Room numbers
+on the map but I couldn’t find them on the Rooms”, P12 “But then once that is there is so. . . it is so
+intuitive to. . . it is so nice having. . . when you are in a big Gallery, having a route and specific things to
+look at and to kind of narrow it down, something that it is going to direct you to specific things rather
+than just wander around”.
+With their location detected by the app, visitors could ask the app to display a route to visit a
+painting in a dynamic way and follow the proposed recommendations for a group of paintings on
+the digital map; the app detected the visitors location in the building and displayed a path for them
+to follow from their current location to the paintings location. If they decided to visit another room
+not indicated in the path, then the path dynamically updated. During this personalised discovery
+of information, objects and stories, either by following a path or diverting from it, the participants
+curiosity was sparked, which allowed them to reflect on prior learning and previous experience
+and fostered greater interest for new information discovery of not such well known paintings of the
+collection. For example, the recommended set of paintings while following the app’s designated path
+P12 “sort of encouraged me to focus on things that I want, some things that I have taken for granted
+sometimes, so I managed to focus on different details and to look at things in a different way that I
+normally do” and on the recommended set of paintings while deviating from the app’s designated
+path P11 “so that was really interesting because I wouldn’t had stopped at this painting otherwise”.
+For venues that host well-known and highly-visited artworks in their collections, the breadth
+and scale of their visiting audiences varies from ‘rebouncing’ visitors that aim to contemplate with
+their favourite painting in quietness, to ‘buzzing’ crowds that visit for their first time Van Gogh’s
+’Sunflowers’. We have observed that the discovery of recommended groups of paintings lead
+participants to elaborate upon the connections between personal experiences and what they have read
+or noticed about the artworks. This part of their visiting experience also fostered their curiosity by
+encouraging discovery of other paintings either in the same room or in other less crowded rooms.
+For example P08 “I spotted something on the walk- and this is where I stopped it wasn’t anything
+it was just a picture I was walking through it’s just I wanted to discover a bit more about it and felt
+comfortable to come out [of the path] and learn a bit more about that painting then go back in the tour,
+so I would so for instance I would rather see less famous works where I could actually move around
+easily then to be in room so full as this where I can not enjoy them I can’t it really wasn’t a pleasant
+experience but I how would the app with know where all the people are? yes I would rather have
+gone to less famous if you like examples of pictures with colour obscure ones where there are few
+people then to be crowded like that which I found really irritatingly difficult”.
+
+Sustainability 2020, 12, 1666
+
+7 of 26
+
+As a preamble to Section 3 where we discuss in more detail the sustainability of digital storytelling,
+we will briefly highlight here the relevance of the CrossCult NG stories for a large venue (see Figure 1,
+(d)). The NG had previously experimented with stories and narratives that visitors could print
+in advance and explore when they arrive. However because of their fixed format, they could
+not accommodate paintings’ change of location as they were published as static resources in PDF
+format. In the CrossCult project, we explored the dynamic digital storytelling approach, taking into
+account the paintings change of location, that is rather crucial for a CH institution that needs to
+accommodate movement of paintings due to loans, conservation, in-house exhibitions etc. In addition
+to the pre-curated set of paintings for the carousel interaction that showcased the diversity and
+inter-connectivity of the collection, the app also recommended a second set of pre-defined stories
+and narratives, under specific themes; the CrossCult stories, a compilation of short descriptions for
+paintings, are grouped under a narrative that stems from a theme (i.e, Materials and Technique, Social
+Connections, Historical Events).
+From the analysis of the participants’ commentary on the reenactment of their visiting experience,
+it became more and more evident that the act of reading complementary alternative digital texts to
+the traditional descriptions, encourages a closer reading of the painting [13]. Storytelling and the
+connection of artworks in a narrative encouraged participants to further investigate and interpret what
+they have read or observed about the artwork. It also lowered the entry bar of engagement with the
+app, since the audience is familiarised with other more static storytelling approaches (such as audio
+guides). The process of thinking about and rediscovering the artworks from a different viewpoint
+initiated a process of a re-familiarisation with the collection, that is fully in line with the sustainability
+aspects raised at the beginning of this section. For some of them this process allowed them to scratch
+the surface of the network of links between creators (artists), places and events depicted in the paintings
+of the collection; P11 “it stopped me and made me think about the fabrics, and because I had fabrics in
+mind I was looking at those aspects of the painting too, I think more that I haven’t before. These are
+paintings I walk past every day”, P09 “so I was reading and then looking at the painting and I
+found interesting the description because I am familiar with this type of iconography but I found out
+interesting things”.
+2.2. Sustainability in Small Venues
+As one representative of the thousands of small European museums that face significant
+sustainability issues, the CrossCult project ran one pilot at the Archaeological Museum of Tripolis,
+in Greece. This museum receives very low numbers of visitors, owing to the fact that it is far from the
+main tourist destinations of the country, that it hosts items that are not known to the public and that it
+follows an old-fashioned approach in exhibiting items, with minimum information next to each exhibit
+and no digital presence. The fact that the museum fails to raise interest among the locals represents an
+additional flaw.
+The CrossCult consortium addressed the question of whether technology-powered storytelling
+could allow such venues to enrich the experience they provide to the visitors, in the belief that the
+sustainability of visitor inflow (and the very viability of small museums) depends on the intelligent
+combination of content and technology to attract visitors. Following Falk and Dierking observations,
+we created a set of web and mobile apps aiming to start interactions with potential visitors before
+they even bothered to search the Archaeological Museum of Tripolis on a map, to fill in their visits
+with thought-provoking content once they were there, and to keep the reflection going on social
+networks afterwards.
+Before the visit, the potential visitor could play specially-designed games, which served both to
+gain online presence and to create a user profile, identifying specific visitor interests and needs to be
+supported during the actual museum visit. The games were connected to the museum content and
+the narratives that could be explored during the visit, thus introducing specific topics. User testing
+revealed that the games were indeed very effective accomplishing both targets: Advertisement and
+
+Sustainability 2020, 12, 1666
+
+8 of 26
+
+profiling. In particular and in regards to profiling the implemented games were successful in predicting
+participants’ personality styles in 88% of the time (comparisons to actual psychometric tests), which is
+an invaluable input to pre-select the topics that they could be most interested in from among the many
+narratives that we created [15,16].
+Being yet another small archaeological museum in the periphery in Greece, the stories created
+by the CrossCult historians to be delivered during the visits went beyond the expected and provided
+a non-typical experience, focusing on social aspects of life in Antiquity. In the creative process, we
+roughly followed Lambert’s model for digital storytelling [17,18], with several rounds of selecting
+focal points from among the physical museum objects, finding appropriate visual material (also from
+external sources), and enhancing with personal elements and emotions.
+According to the museum personnel and their director, focusing on such topics as women’s lives
+in Antiquity and their role in society, could attract new visitors and make the museum content more
+appropriate for different kinds of visitors. The connections between the ancient society and the current
+one emerged through the narratives and provided plenty of reflection points. With the app providing
+food for thought, it came as no surprise in expert user tests that the duration of the visits can increase
+significantly in comparison with what happened in the original setting, that the visitors would simply
+wander inside the venue for a few minutes and go away with nothing but unconnected, shallow bits of
+information. Taking as reference the figures that an average museum visit lasts around 30 min, and the
+average time spent in front of exhibits is around 30 s [19], with the designed narratives we increased
+the overall duration to 40–45 min and the time in front of selected exhibits to 2–5 min, which are clear
+indicators of engagement and learning. Those 40–45 min were indeed our target during the creation of
+the narratives, as longer time would cause museum fatigue [20,21].
+The CrossCult pilot for the Archaeological Museum of Tripolis was evaluated different types
+throughout the project regarding different aspects (e.g., technical, content, experience). There were in
+total seven data collection studies but for the purposes of the current work we will use quotes from
+Study 5 (focusing on social reflections of participants) and Study 7 (focusing on individual reflections
+of visitors). Both studies used the snowball method of recruiting participants, via the researchers’
+professional networks. The participants were all from the general public, not museum experts. S5 took
+place in December 2017 with 36 participants (16 males and 20 females, ages ranging from 20 to 55) [13].
+After visiting the museum, S5 participants were asked to participate in a social media discussion
+regarding certain aspects of their experience on one of the museum topics: Appearance of women
+today and in antiquity. S7 took place in October 2018 with seven volunteers of which there were four
+female with ages ranging from 40 to 69 (artist, architect, midwife, housewife) and three males with
+ages ranging from 44 to 76 (medical doctor, film director, private sector employee). The think aloud
+protocol was used to capture participants’ thoughts and experience, as they visited the museum.
+User testing also showed that the visitors actively engaged with the digital content and they
+went beyond simply memorising facts to higher cognitive levels, such as reflection about historical
+and social phenomena. There were clear signs of reflective processes of app evaluation participants.
+For example, one user reflected upon the practices of arranged marriages in antiquity and mentioned:
+S7_P1 “That is very young that they got married. . . that must be difficult for a teenager. . . very young
+girl”, following with comparisons of such practices around the world in today’s societies and his
+personal feelings about the issue. Another user evaluated the experience she just had with the app
+and concluded: S7_P2 “Also allows the visitor to clarify certain things to make him think of issues he
+had not thought about previously”. Such increased reflection processes can be further linked with the
+quality of the visitor experience and thus the sustainability of visitor numbers in the venue [22,23].
+Moreover, visitors reported increased curiosity (e.g., S7_P3 “I would like to know who educated the
+children inside the house. . . the parents, their environment, teachers?”) and many mentioned that
+they would look into certain aspects more, even if fewer engaged in further exploration and actively
+explored the extra material available in the app (e.g., links to the literature sources, relevant games,
+documentaries and press articles). In any case, the triggered curiosity must be seen as a better quality
+
+Sustainability 2020, 12, 1666
+
+9 of 26
+
+of visitor experience [24,25], also linked to venue sustainability [26]. One cultural informatics expert
+used the app and mentioned that she liked it so much that she (S7_P6) “needed longer time and
+wanted more stuff”.
+After the visit, the app users could share their experience in social media, further promoting
+the venue to their circles of friends. Vivid discussions followed the museum visit where visitors
+exchanged opinions regarding the app content and the stories presented to them [27]. For example,
+the 36 people that participated in these social media discussions, discussed for one week issues related
+to appearance (women’s, nudity, appearance as a code, etc). A special discourse analysis revealed
+that participants reached upper level cognitive processes, like analysis, emotional activation and
+evaluation of information [13]. Overall from both studies the qualitative analysis showed that the
+participants engaged in social reflective processes and exchanged opinions, using facts, building
+arguments, enhancing cultural understanding and reaching conclusions, S5_P1 “It is striking, however,
+that women were exercising much more than some later epochs of western European history”. In many
+cases, people made comments that show that their empathy increased, since they tried to imagine
+how people must have felt in past times and different societies. When explicitly asked for feedback
+about the app, users reported that it did add important value to the museum experience. Some
+indicative comments follow: S7_P2 “I think that the app is adding value to the museum”, S7_P3“this
+app definitely helps people in understanding how people thought in past societies, how their society
+was. . . their way of life, their traditions, their culture”, S7_P7“It (the app) helps people to focus their
+thoughts and get more deeply into the questions. . . to reflect on your contemporary life”.
+These findings were corroborated in another CrossCult pilot in which an app was created to let
+users discover the heritage and history of one archaeological site (the Roman healing spa of Lugo in
+Spain, the Roman healing spa of Chaves in Portugal, the archaeological site of Montegrotto Terme in
+Italy, and the sanctuary of Epidaurus in Greece), while highlighting the commonalities and differences
+with regard to the others [28,29]. Unprecedented levels of engagement, increased duration of the visits
+and notable reflection processes were observed during the user tests conducted in the four venues,
+revealing the power of the wider historical and geographical context when it comes to interpreting
+heritage, as well as the value of cross-border narratives towards the goal of viewing the past as a
+shared, common experience. This experience also evidenced the potential for reusing entire narratives
+or their constituent elements, which is key to the feasibility of storytelling approaches, as explained in
+the next section.
+3. Sustainability of the Narratives
+Storytelling has long been used by CH institutions as a method of communication and
+interpretation. Having human guides telling explicit stories to visitors, while guiding them through the
+collections of the cultural site remains one of the most effective and popular means nowadays [30,31],
+but it entails significant costs that can not always be afforded. Audio guides came into scene in
+the 1980s, fostering more individual experiences and shifting the main costs of storytelling from
+the human resources to the production of the audio assets and the purchase and maintenance of
+the devices. During the last decade, the widespread adoption of interactive mobile devices with
+notable computing and networking capabilities, along with the corresponding changes of content
+consumption models, have led to extensive experimentation with new forms of interactive storytelling
+in the CH sector [32–36]: Historical podcasts, YouTube channels of philosophy and art-related videos,
+video games with a historical background,. . . all the way to the minimalist extreme represented by
+the Facebook account “Classical Art Memes”, that has grown to 5.4 million followers sharing and
+commenting on images excerpted from paintings, linked to ongoing events. Accordingly, the CrossCult
+project sought to experiment with different types of narratives in the pilots.
+Anyways, now that the cost of the devices has been largely transferred to the visitors,
+the sustainability of technology-powered storytelling depends on effectively supporting the creative
+and curatorial processes needed to develop experiences that are attractive, engaging and factual.
+
+Sustainability 2020, 12, 1666
+
+10 of 26
+
+Whereas the old audio guides delivered one only narrative—with recordings in multiple languages—to
+all the visitors, nowadays it is common to offer a menu of choices, multiple paths, driven by more or
+less complex interactions, and all sorts of visual content, from pictures to immersive 3D environments.
+Valtolina [37] provided an overview of software tools that aim to facilitate the work, coming to the
+conclusion that this is a niche market still at an incipient stage, and that it is necessary to develop
+further the capability to involve a variety of users groups with different backgrounds. In the meantime,
+researchers keep devising new models, algorithms and artificial intelligence techniques that may
+be integrated in those tools, e.g., to navigate large online knowledge bases in search for possible
+associations among artworks, historical events, locations or people that could be turned into interesting
+stories [8], to automatically retrieve multimedia contents that may be used to illustrate whichever
+topics [38,39], or to allow museum objects to self-organise and cooperate with other exhibits in order to
+make comprehensible stories [7]. All in all, the state of the art is such that museum curators and other
+participants can be given valuable aids in the creative processes of creating stories, but it does not seem
+feasible (or even desirable) to automate the whole tasks end-to-end, at least in the medium term [40].
+Valtolina’s proposed framework for storytelling in CH emphasised the fact that, when narratives
+comply with certain structures, they can have elements that may be re-used and re-combined in
+other settings. For example, if the topics are categorised from the most specific to the broadest ones,
+then it should be possible to adapt existing materials to get new stories for new venues with little
+effort and cost. Technology still falls short to help in the characterisation of reusable assets, in the
+hierarchical classification of topics and in the adaptation of existing stories to fit new contexts, among
+other challenges. However, there exist guidelines, patterns and aids for certain types of narratives,
+including the ones we assessed in the CrossCult pilot experiments, where we used pre-orchestrated
+narratives to convey venue messages.
+The specific attributes of contemporary mobile technologies significantly affect the content of
+a narrative and the experience of it [41]. In line with Marshall McLuhan’s famous adage that ‘the
+medium is the message’, the medium will often impact the way a narrative is told, distributed,
+and experienced [42]. The CrossCult platform provided a content management system for curating
+digital and dynamic CH stories, which takes into account the paintings change of location; the system
+allows curators and experts to create thematic narratives while their content is dynamically filtered by
+the CrossCult app to show only paintings that are currently on display. The beta version, connected to
+the back-end of the NG, has been used to create the stories related to the paintings or artists of the NG
+Collection. With the essential contribution of humanities experts, CrossCult developed a narrative
+strategies that allowed their sustainability even after the end of the project.
+We conceptualised a model for the structure of the narratives, which would enrich the personalised
+and context-aware experiences of the CrossCult app (the model is available at the project’s deliverables
+D2.4. Refined digital cultural resource data and data structure and D2.5. Upper-level cultural heritage
+data structure and ontology, both publicly available at https://www.crosscult.eu/en/resources/
+deliverables/). One of the structures that we proposed is recursive, meaning that a story can be
+composed of many elements. These elements acted as containers for carrying the range of additional
+pieces of information that contribute to the overall narrative and connect the narrative to a physical
+object. For example, a sculpture of an ancient woman connected to the topic “daily life” was not
+simply accompanied by a single digital image of that artefact but also by a short video describing the
+daily life of a woman in ancient Greece, an additional image of a similar sculpture dated to the Roman
+times, a piece of narrative about motherhood in Antiquity, an audio serving as an initial trigger prior
+to engaging with the item itself, etc. This model allows for the creation of reusable multi-hierarchical
+narrative structures and elements that may re-combined into numerous variation presented in Figure 2.
+Specifically, we used it to produce 9 complete stories for the NG CrossCult app, each one containing 5
+to 7 paintings. An illustration of this model with NG paintings that could also point to and connect
+with the other CH venues of the project is discussed later on in this section.
+
+Sustainability 2020, 12, 1666
+
+11 of 26
+
+Figure 2. This Figure presents an illustration of the CrossCult stories model and its recursive structure:
+(a) Each block (painting, text, transition link) in this sequence (objects 1.1, 1.2, 2.1, 2.2) describes
+one aspect of the related painting. (b) Each sub-unit (see the magnified puzzle pieces on the top
+right-hand side corner, subtitle and interpretative text and trigger for reflection) provides a highlight.
+(c) All sub-units (up to 7 in our case) present a story (CrossCult topic 1) that connects objects under
+a specific theme, the interpretive narrative (heading theme, cover paragraph/introduction, (see the
+magnified puzzle pieces on the bottom left-hand side corner).
+
+The interpretive design of the narratives communicates cultural values by connecting the tangible
+form with the intangible meaning within the limitations of the human processing time: 1 to 2 min
+assigned per each interpretive unit (individual text per painting, up to 200–250 words on average).
+In terms of the writing style, the message conveyed is concrete: The use of the passive voice is avoided,
+while the present tense is dominating the scene. Written language is straight-to-the-point and as
+expressive as possible, while technical terms are strictly avoided and explained. The purpose of the
+interpretive text is to assist the reader to extract essential elements related to the scene or the subject
+being depicted in the painting and it concludes with questions that act as triggers for the reader to
+reflect on the information presented. These blocks of text do not need to be read in a particular order,
+which makes the structure flexible enough to accommodate changes. Currently, all the produced
+content for the 9 stories has been added to the NG Collection management system and is also in
+use at the NG website (adapted for the in-depth description of the painting—see https://www.
+nationalgallery.org.uk/paintings/jan-steen-a-peasant-family-at-meal-time-grace-before-meat).
+For the pilot experiment connecting the Roman healing spas of Lugo [43] and Chaves [44],
+the thermomineral archaeological site of Montegrotto Terme [45–48] and the sanctuary of
+Epidaurus [49,50], we created an app that presents the users with successive bits of a story that
+describes aspects of life in Roman times. Starting from the phenomenon of healing waters, that was
+attested both in ancient Greek society and in the Roman Empire, we selected some contexts in which
+the waters, curative and sacred, played the main role in social dynamics; then, we wrote a story in
+five episodes that intended to highlight the most important archaeological aspects of each venue with
+an accessible language and fostering gradual discovery of the ancient settlements and their natural
+resources, step by step. Thus, the users can learn about chronology and location, the importance of
+water to human settlements, the use of thermal spas in Roman Age, the relationship between health
+and cult in that era, the pilgrimage routes enabled by the Roman roads, and the culture reflected in
+buildings and statues. It was found in the first rounds of user testing that the potential to trigger
+
+Sustainability 2020, 12, 1666
+
+12 of 26
+
+reflection depends heavily on linking the story to observations of the particular site that the user is
+visiting; a generic, one-size-fits-all narrative would simply not do. Therefore, the overall concept had
+to be adapted to the particular context of each venue. Fortunately, this could be done with relatively
+little effort once the Humanities experts had agreed on the core messages and written the first text
+version. Table 1 below compares, side by side, the text of the first episode of the story presented to
+people who visit the healing spa of Lugo and those who visit the healing spa of Chaves (in italics,
+the parts of the text that are venue and object specific).
+Table 1. Side-by-side comparison of a passage of the narratives used in a sample of multi-venue storytelling.
+
+Two travellers who came from the Roman city
+of Brigantium by via XX were attacked on their
+horses by aggressive dogs. They managed
+to escape but with some injuries. One of the
+travellers was wounded in the right leg while
+the horses had several cuts and bites from
+the dogs. They continued travelling slowly
+but they were exhausted, so, as it was late,
+they decided to spend the night there settling
+by the river and getting some comfort near
+the water.
+
+Two travellers who came from the Roman city
+of Bracara Augusta by via XVII were attacked
+on their horses by aggressive dogs. They
+managed to escape but with some injuries.
+One of the travellers was wounded in the
+right leg while the horses had several cuts and
+bites from the dogs. They continued travelling
+slowly but they were exhausted, so, as it was
+late, they decided to spend the night there
+settling by the river and getting some comfort
+near the water.
+
+The following morning, the travellers couldn’t
+find the horses: Where had they gone?
+The friends were desperate! How could they
+arrive on foot to Asturica Augusta? After a
+few minutes of stress, they decided to continue
+their trip looking for their horses.
+
+The following morning, the travellers couldn’t
+find the horses: Where had they gone?
+The friends were desperate! How could they
+arrive on foot to Asturica Augusta? After a
+few minutes of stress, they decided to continue
+their trip looking for their horses.
+
+During their trip they met people: Merchants During their trip they met people: Merchants
+with their products, men and women on with their products, men and women on
+litters with slaves, soldiers, but in particular litters with slaves, soldiers, but in particular
+ill people on charts or walking with crutches. ill people on charts or walking with crutches.
+Most of them were going to a settlement Most of them were going to a settlement
+that appeared on the horizon: A long bridge that appeared on the horizon: A long bridge
+spread across the river, and following it, on top spread across the river, and following it, they
+of the hill, they could see the walls and towers of a could see the buildings of a town. In fact, they
+city. In fact, they had reached the Roman city had reached the Roman city of Aquae Flaviae!
+of Lucus Augusti!
+
+Sustainability 2020, 12, 1666
+
+13 of 26
+
+Table 1. Cont.
+
+Photograph: Balneario Romano de Lugo
+
+Close to the river, beside a rock, they could Close to the river, beside a rock, they could
+see their horses using the backwater of a big see their horses using the backwater of a big
+building. Gods! They were safe! Where building. Gods! They were safe! Where
+they were, the water seemed something they were, the water seemed something
+‘magic’: There were some channels with really ‘magic’: There were some channels with really
+hot water, as vapours came up, and the hot water, as vapours came up, and the
+air smelled of sulphur. Moving close to air smelled of sulphur. Moving close to
+the horses, the boys saw that the wounded the horses, the boys saw that the wounded
+paws were practically healed: A miracle of a paws were practically healed: A miracle of a
+deity, they thought immediately! However, deity, they thought immediately! However,
+they understood that in that place there they understood that in that place there
+were thermo-mineral sources and as Roman were thermo-mineral sources and as Roman
+medicine taught, the sulphurous waters can medicine taught, the sulphurous waters can
+cure the wounds. So the friends realised cure the wounds. So the friends realised
+that the horses had instinctively gone to the that the horses had instinctively gone to the
+mineral springs to find a natural cure and they mineral springs to find a natural cure and they
+decided to have a time there. After many decided to have a time there. After many
+hours and thanks to the use of these waters, hours and thanks to the use of these waters,
+the wounded leg looked better.
+the wounded leg looked better.
+By reading this bit of story (and looking at the accompanying pictures), the app user becomes
+acquainted with important elements like the natural and built elements of the ancient landscape,
+the experience of healing, the presence of deities, some hints of ‘scientific’ knowledge many centuries
+ago, people, types of transport, etc. This triggers processes at several cognitive levels: Understanding,
+application (connections to contemporary practices of thermomineral treatment), analysis (different
+reasons for healing), evaluation (appropriateness of the treatments) [13]. Caring for all such phenomena
+in only one go of the creative and curatorial efforts made the development of the app much more
+cost-effective than having to work separately for each venue. Besides, with the outputs properly
+
+Sustainability 2020, 12, 1666
+
+14 of 26
+
+annotated and kept in a common repository (more about this in Section 4), it is easy to extend the app
+to cover more than the four original venues: The personnel in charge of the adaptation simply has to
+revise some passages of text and provide new pictures, in order to get an up-and-running experience
+with a story that deals with certain concepts and has been proved to work well.
+Similarly, the more than 70 narratives created for the Archaeological Museum of Tripolis involved
+both venue-specific and venue-independent elements, allowing them to be reused in other settings:
+Straightaway, in tens of small and medium-sized museums all over Greece, and with some more
+editing (and adopting a more abstract or comparative focus) in many others worldwide. The narratives
+for the Archaeological Museum of Tripolis were presented to the visitors in the form of videos. Subtitles
+were also available for people with hearing impairments. The text in Table 2, although written for the
+Archaeological Museum of Tripolis and the specific object shown in Figure 3, is one clear example
+(in italics, the parts that are venue- and object-specific, to be removed or replaced for other contexts).
+The same narrative can be used in different museums where images of ancient Greek girls and women
+appear, like in the ones in Figure 4. Likewise, elements from other narratives that revolve around the
+rich Greek mythology may be re-used with a cross-border perspective to reflect on comparisons with
+myths coined in the places of origin of the museum visitors (e.g., comparing creation myths around
+the world). Thus, by generalising reuse, small venues would increase their sustainability prospects,
+providing meaningful experiences to the visitors with reduced cost of producing content.
+Table 2. Sample text from a narrative written for the Archaeological Museum of Tripolis, highlighting
+text that may be easily reused in other settings.
+Archaeologists know that this is a young girl. While the head is not surviving, her clothes reveal
+her age. Young girls in ancient Greece were usually wearing a long dress all the way to their feet
+which also had an upper belt, attached to the body right under the breast. On your screen
+(see Figure 5a) you can access images of fine examples of statues of young girls from other
+museums. Observe this young girl and compare it with the image of an older woman you can
+access on your screen (see Figure 5b). Older women were wearing more complicated
+clothes. For example, they had a himation, a mantle or a wrap, which they wore over their chiton,
+which was their dress and if they were married they also half covered their hair with a veil, like the
+one shown in the photo. In this room, you can see examples of older women’s appearance and you
+can compare it to the one of the young girl.
+
+Figure 3. Museum item from the Archaeological Museum of Tripolis. Headless statuette of a young
+girl. She bears a chiton reaching to the feet with an upper belt. The garment is held onto the chest with
+straps. She holds a bird in her left hand, while she leans on a stele with her right hand (she leans on a
+small pillar). Material: Marble. Found in the Bouleuterion of Mantinea. Hellenistic era work (4th-3rd
+century BC). Dimensions: Height 0.65 m.
+
+The cross-border perspectives, in particular, may be applied to increase the visibility of the small
+and medium-sized venues, through references from the larger ones. The latter can deliver even richer
+information linked to their exhibits (for example, by pointing to paintings that share topics and style
+with one that really catches the visitor’s attention) while the formerly suddenly appear on the map
+to the eyes of tens or hundreds of potential visitors. This can be done at practically no cost, but the
+impact on the figures of the small museums can be significant: For example, if only 1 in every 100
+visitors to the NG in London got to learn that some interesting cultural items can be found in the
+
+Sustainability 2020, 12, 1666
+
+15 of 26
+
+Archaeological Museum of Tripolis, and only 1 out of 100 of those people eventually made a trip to the
+Peloponnese (not necessarily for that purpose, of course), then this venue would experience a huge
+increase in its number of visits. The technological infrastructure is not there yet to support and track
+these promotion mechanisms, but it can be said that many of the technical challenges have already
+been dealt with [51]. In addition, the narratives created for the Archaeological Museum of Tripolis
+also connect the museum items with the places that they were originally found (i.e. archaeological
+settlements, excavation sites of the Arcadia prefecture), thus connecting the museum with the different
+archaeological locations. This strategy not only shows the locations of the items (augmented reality
+and maps were used) but also increases the sustainability of the archaeological sites, since it promotes
+further visits (all sites supported with augmented reality and maps are within one hour drive from the
+museum). Thus, the museum becomes a central point in the exploration of the area around it.
+
+Figure 4. (a) The image on the left hand side is a marble grave stele of a little girl ca. 450-440 BC from
+the MET, available from https://www.metmuseum.org/art/collection/search/252890. (b) The image
+on the right hand side is a grave stele of a young girl ‘Melisto’, Greek, Attic, ca. 340 BC, marble,
+probably from Sounion—Arthur M. Sackler Museum, Harvard University.
+
+The nine created narratives for the National Gallery CrossCult app (Titles: ‘Contemporary
+Style—Fashion’, ‘Death’, ‘Monsters and Demons’, ‘Battles and Commanders’, ‘Warfare’, ‘Migration’,
+‘Water’, ‘Women’s Lives’, ‘Women artists and famous women’) aimed at presenting essential elements
+related to the scenes or the subject being depicted in the pre-selected paintings, whilst making
+connections to the other three participating CH venues at the theme level. In collaboration with
+the authors and editors of the Collections Information Project (http://network.icom.museum/cidoc/
+blog/rupert-shepherd/), who were overseen by the NG curators, we delivered carefully-chosen stories
+under the broader umbrella-terms ‘Social Connections’, ‘Materials and Techniques’, ‘Historical Events’,
+pinned to traversal and crosscutting themes “narrated” by the other CrossCult participating CH
+venues, such as ‘Daily life’, ‘Appearance’ or ‘Mortality’. Table 3 shows examples of how the narratives
+presented to the visitors of the NG in London were connected to the Archaeological Museum of
+Tripolis on a theme level with the potential to link to and reference specific items of the archaeological
+collection under the same theme (in italics, the parts that show theme-based connections, between
+customised narratives to the CH venues of the National Gallery and the Archaeological Museum of
+Tripolis, that could be further expanded to make connections between the “participating” in the story
+items of their collections).
+
+Sustainability 2020, 12, 1666
+
+16 of 26
+
+Figure 5. Images (a) on the left hand side and (b) on the right hand side that are used in the narrative
+presented in Table 2 and were appearing on the app screen.
+Table 3. Examples of how narratives presented to the visitors of the NG in London were connected to
+the Archaeological Museum of Tripolis.
+CrossCult National Gallery stories
+Women’s Lives
+
+CrossCult narratives from the Archaeological
+Museum of Tripolis
+Daily life
+
+Gendered roles, expectations and stereotypes can all be
+communicated through paintings and many of the
+works in our collection offer insight into ideas about
+womanhood at particular points in history.
+
+Ancient Greece is known about the great male
+philosophers, politicians, warriors and artists.
+But what about ancient Greek women? Where were
+they? And what did they do?
+
+Some genre paintings show women’s daily lives in
+the home and the workplace; other paintings show
+idealised figures based on classical myth or
+religious stories.
+
+Women, especially in Classical Athens, were
+destined to become good wives and especially
+good mothers. The ideal of a respectful woman is to be
+indoors, at least till the end of the 4th century BC.
+However, women from lower social classes could work
+outdoors and even go to the Agora to sell
+home-made products.
+
+Follow this trail to discover how women have been
+represented at different times and places across Europe.
+
+Follow us on a journey inside the Oikos,
+the family’s home, to know about the life of women
+there.
+
+Contemporary Style and Fashion
+
+Appearance
+
+Costume plays an important part in the way we
+perceive people in portraits and figure paintings.
+Just as the choices we make about our own clothing
+speak volumes about ourselves, so too does the clothing
+chosen by those who sit for their portraits.
+
+The clothes you are wearing today, did you choose
+them simply because you liked them or you want to tell
+something to the world?
+
+Yet while faces often appeal to us in a direct way,
+the significance of dress can be less obvious to a
+modern viewer.
+
+Ancient societies also found appearance important
+and clothes often function as a code between the person
+and the world.
+
+Artists also frequently have strong views about what the
+people who sit for portraits should wear, so an outfit
+may also say something about the artist as well as
+the sitter, just as clothes in figure paintings can be used
+to convey the essence of a person’s character.
+
+Archaeologist use items’ appearance to understand what
+this person was and the society he or she belonged to.
+
+Sustainability 2020, 12, 1666
+
+17 of 26
+
+Similarly and vice versa, a sculpture of an ancient woman from the Archaeological Museum of
+Tripolis connected to the topic ‘Daily Life’, was not simply accompanied by a single digital image
+of that artefact but also by a short video describing the daily life of a woman in ancient Greece,
+an additional image of a similar sculpture dated to the Roman times, a piece of narrative about
+motherhood in Antiquity, an audio serving as an initial trigger prior to engaging with the item
+itself, etc. More specifically, some of the narratives presented to the visitor of the Archaeological
+Museum of Tripolis were enriched with digital material from the NG, increasing digital connections
+of the museum content and enhancing its collection. For example, when introducing the myth
+of Artemis and Callisto at the Archaeological Museum of Tripolis regarding a statue of Artemis,
+the narrative (see Table 4) presented a painting by Titian from the NG Collection (see Figure 6),
+depicting exactly that topic and related content from the ‘Diana and Callisto’ Schools Project (see https:
+//www.nationalgallery.org.uk/learning/teachers-and-schools/diana-and-callisto-schools-project).
+Table 4. A sample of enriching narratives presented to visitors of the Archaeological Museum of
+Tripolis with content from National Gallery London.
+Accompanied narrative for object: 3084_arcadia, from the Archaeological Museum of Tripolis,
+part of the greater topic ‘names, animals, myths’
+Look at this simple tombstone, between the 1st and the 2nd century AD. Despite its simplicity this
+particular item is of great importance for Arcadia. It bears the inscription HAIL ARCADIA, in the
+honor of a deceased woman, who has the same name as this area. But the name Arcadia has its root
+in mythology. According to the myth, once there was the beautiful daughter of Lycaon, the kind of
+this area and she was called Callisto, meaning the most beautiful. Callisto was Artemis’ nymph and
+had taken a vow to remain a virgin. But Zeus seduced Callisto and she got pregnant. Artemis soon
+realized and she became furious, and so did Hera the wife of Zeus. Now the myth is not clear but
+one of the two goddesses transformed the beautiful girl into a bear. As a bear Callisto gave birth to
+a son called Arcas. Remember here in Greek bear is called Arctos or Arkouda and the name Arcas
+and Arcadia come from that. Arcas was separated from his mother, since he could not grow up with
+an animal. One day he went hunting and he nearly killed his own mother. But Zeus intervened and
+prevented the murder by placing mother and son amongst the stars, as Ursa Major and Minor, star
+constellations known as Great and Little Bear. And the myth goes further to explain why these two
+particular constellations are always visible in the northern hemisphere and they never set. This is
+because Hera cursed them to never rest.
+On your screen you can see a famous painting (see Figure 6) by Titian, housed in the National Gallery
+in London, picturing the scene in which Artemis discovers Callisto’s pregnancy. Imagine how she must
+have felt. Titian beautifully shows her emotions. This particular painting has been used in educational
+programs of the National Gallery in London (click here for related content from the Diana and Callisto’
+Schools Project), to show how myths and art can be relevant to today’s students. You can also access a
+very interesting video on the issue of art, myths and hidden pregnancies, as a part of an educational
+curriculum for teenagers.
+It seems that myths and art can be relevant to our modern lives. Can you think of more examples?
+
+By developing narratives in this way, that provide links to other venues, CrossCult created a
+network of different size and popularity venues. This interconnectivity of participating venues and
+institutions is beneficial for all. Not only can smaller venues benefit from their links to large-known
+ones, but by forming a network of venues and reusable narratives, all parties can gain access to
+elaborated content. In this light, venues are not simply connected to repositories of digital cultural
+data, but to ready-to-use content in the form of narratives that can be easily modified and applied in
+different settings, thus increasing sustainability of all parties involved. Data sustainability is further
+discussed below.
+
+Sustainability 2020, 12, 1666
+
+18 of 26
+
+Figure 6. Example of digital material enrichment for the object 3084_ arcadia, from the Archaeological
+Museum of Tripolis. The Image of the painting Titian (NG6616), Diana and Callisto, 1556-9 ©The
+National Gallery London/The National Galleries of Scotland, was part of the archaeological object
+accompanied narrative, connecting it to the painting.
+
+4. Sustainability within the CH Ecosystem: Technology, Actors, and Data
+From the preceding sections, it follows that state-of-the-art Information and Communication
+Technologies can facilitate many aspects of storytelling, from the identification of reusable narratives
+or elements thereof, to the search for artworks related to any given topic, or the final presentation
+of the stories to the potential/actual museum visitors through different media. We have explained
+how storytelling can contribute to the sustainability within the venues—mainly related to numbers
+of visitors—and discussed the sustainability of the storytelling itself—mainly related to the content
+production costs. In our experience, the CrossCult app users were exposed to other groups’ cultures,
+to comment, to advocate, to participate, to reflect, to personalise their CH experiences, supported by a
+technological system (the CrossCult Platform) that functioned as “brick ties”, allowing both innovation
+and the CH ecosystem—its users (reflective societies and museum audiences) and stakeholders (CH
+venues)—to interact smoothly. Now the questions must be tackled of whether the technology itself can
+be sustainable, as there may be significant hurdles regarding its adoption and success, whether people
+related emerged approaches such as the Living Lab or the ‘Galleries, Libraries, Archives and Museums’
+(GLAM) Labs are supportive and sustainable enough to facilitate CH workforce to make the digital
+shift happen and finally whether current data flow processes and aggregation of CH data across a
+variety of European institutions is a supportive and the most sustainable model for CH institutions to
+move forward.
+4.1. Sustainability of Technology
+The first thoughts have to do with openness, covering the following elements (among others):
+•
+•
+•
+•
+•
+
+The openness of the software tools offered to the Humanities experts to curate digitised CH assets
+and to create narratives.
+The openness of the software systems that support platforms of ICT services for Digital Humanities.
+The openness of the digitised CH archives from which the materials displayed by the narratives
+are retrieved.
+The openness of the standards and reference models that underpin the archives where the
+aforementioned assets are kept.
+The openness of the models adopted by many journals that publish the latest advances in DH research.
+
+Sustainability 2020, 12, 1666
+
+19 of 26
+
+As explained in [52], the principles of open source development have not only been massively
+adopted in the software world, but they have also extended into many other realms, defining how
+people interact and collaborate beyond the context of computers and mobile consumer devices.
+The domains of CH and DH are no exceptions. The whole set of software systems offered by the
+Apache Foundation, Wikipedia and Europeana, Open Linked Data resources, Creative Commons
+licenses, open publishing and, in many cases, crowdsourcing and crowdfunding, share the vision that
+information should be as freely and publicly accessible as possible. Besides, years of experience have
+shown that distributed modes of collaboration can be highly effective. The CrossCult platform itself
+was built on top of this spirit, and as shown in [53] most of the background systems it builds on are
+open source, just like the foreground software created during the project will be.
+However, as pointed out in a recent report on the state of open source [54,55], there is a
+growing concern about how many projects that may be considered essential infrastructure can sustain
+themselves indefinitely. Eghbal talks about a “free rider problem”, meaning that “resources are
+offered for free, and everybody (whether individual developer or large software company) uses them,
+so nobody is incentivised to contribute back, figuring that somebody else will step in.” Crichton
+explains that this problem “has led to a brittle ecosystem, just as open source software reached the
+zenith of its influence”, highlighting examples like OpenSSL—the library that encrypts most of the
+communications on the web—being a project used in billions of installations, but maintained by a very
+small team of individuals (only one of them working on it full-time). Those human resources represent
+crucial weak spots to the software industry, which in the particular realm of DH could be soothed—at
+least, to a significant extent—through public investment.
+This niche area of employment will require highly-specialised profiles in DH, which are not
+particularly furnished by higher education institutions anywhere around the world (e.g., the list of
+Universities or Colleges compiled by the European Association for Digital Humanities (EADH) counts
+as few as 20 entries, see https://eadh.org/education/digital-humanities-centres). James O’Sullivan
+even wonders about what the DH people should be exactly: “A scholar, a domain-specific expert
+who has advanced computational expertise, or a community builder whose scholarly expertise is less
+important than the ability to engage others?” [56]. The experience of the CrossCult project shows
+that the three facets are desirable in bridging the gap between Humanities and Technology experts,
+because it was challenging to get people from the two different realms to understand one another,
+and that understanding should not be reached with detriment to the goals of the joint projects. In this
+particular project, this was achieved as a result of team effort, making sure that technologies and
+designs were agreed by the whole consortium (not just the tech partners), that acceptance of the
+technology was based on the users involved, and that human-friendly designs would be promoted
+rather than technological complexity for complexity’s sake. One single person who had that knowledge
+beforehand would have saved lots of time and boosted the project outcomes. “Ideally”, O’Sullivan
+says, “the DH person would be all those things, a glorious amalgam that can single-handedly secure
+funding, execute the day-to-day administration of all that precious capacity, lead a team of humanities
+scholars and software developers, and maintain their own reputation as an international scholar.”
+Again, the sustainability of the technology seems compromised by whether such paragons may be
+abundant or exist at all. What today is feasible and cost-effective in limited settings, therefore, may
+not be so easy to scale up. Thus, sustainability of technology in Digital Heritage seems to require a
+paradigm shift, implying that expertise is not adequate in the individual level and should be built in
+the group level.
+4.2. Sustainability of Actors
+Our thread of thinking naturally leads us to human networks and how the CH community
+is supported to make the transition to the digital realm happen. CH institutions are champions
+in building collaborative infrastructures on a regional, national, European and International level.
+The urgent need of people in CH institutions “to innovate, feel empowered, trusted, tolerated and
+
+Sustainability 2020, 12, 1666
+
+20 of 26
+
+investeworthy by thinking out of the box” (Dr Georgios Papaioannou, University College London in
+Qatar and Ionian University, Corfu, Greece, quote available at https://glamlabs.io/), was highlighted
+in various outputs of Innovation EU projects calls (https://cordis.europa.eu/programme/rcn/664455/
+en). At the same time national CH institutions attempt to define their digital strategy (for example
+https://www.nationalgallery.org.uk/media/25328/strategic-plan_2018-2023.pdf) “to reflect a more
+digital world”, whilst building on the research capabilities of their personnel, who is an intellectual
+leader in their respective fields of expertise.
+The International GLAM Labs Community (https://glamlabs.io/), a bottom up created initiative,
+born in 2018 at an event on global ‘Library Labs’ held by the British Library, was attended by over
+70 people from 43 institutions and 20 countries and followed up by a second global Labs meeting
+at the Royal Danish Library in Copenhagen in March 2019. The community has now grown to
+250 people, from more than 60 institutions, in over 30 countries and has also produced a how-to
+guide “for cultural institution leaders looking to understand why their organisation might need a
+GLAM Lab, and also for those workers who are making the case for one” (Seb Chan, Chief Experience
+Officer, ACMI, Melbourne, quote available at https://glamlabs.io/books/open-a-glam-lab/). GLAM
+labs (for example the Gardens, Libraries and Museums (GLAM) of the University of Oxford https:
+//www.glam.ox.ac.uk/digital-strategy, the British Library Labs https://www.bl.uk/projects/britishlibrary-labs#) operate at the intersection of digital cultural heritage, innovation, technology and
+creativity, to benefit organisations, users, society and culture, acting as facilitators of the GLAMs
+community transition to the digital realm:
+•
+•
+•
+
+Instrumental for effecting the digital shift in cultural heritage institutions by challenging
+traditional approaches;
+Bringing institutions, technology, people and communities together through experimental ways
+of working;
+Based in a variety of cultural heritage institutions including national and state-based libraries,
+university galleries, libraries, archives and museums.
+
+In CrossCult, we have based our work on the approach proposed by Bergvall-Kåreborn: “A Living
+Lab is a user-centric innovation milieu to build on everyday practice and research, with an approach
+that facilitates user influence in open and distributed innovation processes, engaging all relevant
+partners in real-life contexts and aiming to create sustainable values” [57,58]. The CrossCult Living
+Lab implementation addressed specific areas (IPR and service modelling, stakeholders engagement,
+experiments) including the sustainability of financing (financial contributions), public-private
+partnerships, service infrastructure, and the management structure (commitment, responsibilities,
+influence, promotion and communication of the project’s results and outcomes). Our implementation
+worked on two closely-interconnected levels of governance; at the strategic level, that defines the
+overall vision and framework of guidelines of the project (involving for example local stakeholders
+and end-users or regional communities to adopt a common methodological approach towards the
+defined fields of actions) under the Living Lab Umbrella (for example the Living Lab Steering Board).
+At an operational level that referred to concretely running field actions (for example specific Living
+Labs activities, related to the engagement of specific stakeholders, i.e, end-users).
+In September 2019, the National Gallery and King’s College London jointly launched the
+‘National Gallery X’ (NGX), a collaborative research and development (R&D) programme that will
+explore the potential of new technologies for galleries in the future (https://www.nationalgallery.org.
+uk/about-us/press-and-media/press-releases/national-gallery-and-king-s-college-london-launchnew-research-partnership-national-gallery-x-to-investigate-the-gallery-of-the-future), hosted at a
+‘physical’ sandbox environment, a studio sitting next to the National Gallery (NG) building. The aim
+of NGX is to allow for experimentation and exploration of technological inventions and how they
+can be applied to CH institutions in the future, informing new kinds of cultural experiences over the
+next decade. Building on expertise, accumulated through internal and external human networks,
+
+Sustainability 2020, 12, 1666
+
+21 of 26
+
+consecutive long term collaborative projects such as Iperion CH (http://www.iperionch.eu/),
+CrossCult, and participation in larger research infrastructures such as E-RIHS (http://www.e-rihs.eu/)
+and SSHOC (https://sshopencloud.eu/), the NG managed to create a sustainable continuum of
+overlapping CH research projects, where the CH ecosystem is sustained through the project outcomes,
+that feed new questions to engage CH researchers and future audiences.
+4.3. Sustainability of Data
+In this final subsection, looking back to the CH datasets that we worked with and the lessons we
+were taught by the CrossCult experience, we discuss whether current models of CH data flows to larger
+aggregators is still a sustainable solution for all types of CH institutions or whether new paradigms
+such as aggregation of CH data across and between CH European institutions, is gaining more ground
+as a model to move forward for a more sustainable model within CH ecosystems. In the CrossCult
+project, we experimented with both approaches; we demonstrated practical implementations for
+sharing the CH datasets to larger collections aggregators such as Europeana but at the same time we
+also facilitated inter-connections of multi-institutional CH collections and multiple venues, through
+the selection of certain organisational patterns, data models, digital storytelling or even specific
+software [59,60]. We postulate that the sole and one directional aggregation and linking of CH data
+to larger external repositories, is not sufficient enough to provide meaningful connections between
+CH institutions information resources, unless it is reinforced by connections to CH data modeling
+standards and interconnections between CH information resources of the CH ecosystems themselves.
+The first main principle that we followed in the CrossCult Consortium was to adopt, reuse
+and extend were possible existing exemplary CH standards followed by the CH community. In this
+respect, we used the Conceptual Reference Model (CRM) of the International Council of Museums
+(ICOM)–International Committee for Documentation (CIDOC), CIDOC-CRM (ISO 21127:2014) to
+model our data, which provides an object-oriented schema based on real world concepts and events,
+implementing data harmonisation based on the relationships between things rather than artificial
+generalisations and fixed field schema. The model has been gaining increased popularity and it is
+considered to be a major standard in knowledge representation of CH data. The employment of the
+CIDOC Conceptual Reference Model enabled us to integrate the disparate datasets of the participating
+CH venues and institutions and their metadata under a common semantic layer, driving cross-search
+and inference capabilities. It also enabled the CrossCult datasets to be sustainable through their linking
+capabilities with other external CH datasets following the same standard and mutually benefiting
+the participating CH venues and institutions by creating a network of supported venues, increasing
+visibility and enhancement of their content.
+Semantic Web technologies ease access to CH content by facilitating new ways of engaging
+with heritage by the general public and experts that go beyond a simple interactive engagement.
+They provide an intelligent integration of resources via machine readable and human interpretable
+representations of a domain knowledge (i.e., ontology), enabling retrieval, reasoning, optimal data
+integration and knowledge reuse of disparate CH resources. In CrossCult we used semantic web
+technologies to ensure data backward and forward compatibility, so that the data could potentially
+be “linked”, while the aid of external CH standard vocabularies (i.e., AAT https://www.getty.
+edu/research/tools/vocabularies/aat/) and multi-hierarchical structures we used for the CrossCult
+keywords, ‘glued’ the content of the CrossCult Knowledge base. In terms of data sustainability,
+this approach facilitated data discovery and content engagement, since the participating CH venues
+and institutions gain the same benefits from the linking and interconnections across the collections,
+as their audiences and visitors do.
+At the CH Institution level, the National Gallery experimented with setting up initially a sandbox
+API (sandbox is defined here as the concept of having a place where ideas can demonstrate the purpose
+of functionality) and PID system [61], to demonstrate the potential of reusing and connecting to CH
+standards and to provide content for Crosscult. As a result of the work done in the CrossCult and
+
+Sustainability 2020, 12, 1666
+
+22 of 26
+
+IPERION-CH project outputs (http://wiki.iperionch.eu/wiki/) organising and mapping the data in
+the NG beta research API and the extensive testing carried out by Crosscult, the system is already
+being used in the NG Middleware as part of the collections Information Project and the NG beta API
+(https://data.ng-london.org.uk/) is slowly being replaced by an official institutional beta API, which
+is still in development (see also the NG object description (61 triples) accessible as an interactive node
+graph at https://rdf.ng-london.org.uk/modelling).
+While our data modelling approach accommodated Interoperability and Reuse, we also made
+the CrossCult datasets Findable and Accessible, addressing another set of guiding principles towards
+data sustainability within the CH community, the FAIR Data Principles (see https://www.force11.org/
+group/fairgroup/fairprinciples and guidelines on FAIR Data Management in Horizon 2020, available
+at http://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020hi-oa-data-mgt_en.pdf) [62]; The project participated in the Open Research Data Pilot, which aimed to
+make the research data generated by selected Horizon 2020 projects accessible with as few restrictions
+as possible, while at the same time protecting sensitive data from inappropriate access. The CrossCult
+datasets and scientific papers are available at the following repositories, Hypatia (http://hypatia.teiath.
+gr/xmlui/handle/11400/20097 and https://library1.uniwa.gr/en/institutional-depository-hypatia/)
+and Zenodo (https://zenodo.org/search?page=1&size=20&q=CrossCult&all_versions).
+So, our last thoughts bring us back to openness; the theme of the last Museums and Tech
+2019 conference (https://www.museumscomputergroup.org.uk/events/museumstech2019/) was
+‘Openness: How can museums and other cultural organisations be more open in terms of their
+collections and processes, is openness always desirable, and what barriers might we have to overcome
+for truly open digital cultural heritage?’. Delivering his lightning talk, the NG’s Collections and
+Information manager, stated that “Opening up our data already means that we can contribute to
+the creation of large-scale datasets, keep our collections at the forefront of research, and extend the
+ways in which users engage with our objects. However, now we’ve laid the foundations: This is just
+the beginning.” [63], highlighting the fact that the fundamental principles of Access and Openness
+within the CH ecosystem, even for a large CH institution such as the NG are still a long way towards
+achieving data sustainability.
+5. Sustainability through Reflection
+The CrossCult H2020 project targeted visitors’ reflection in multiple levels. Wishing to show the
+interconnections between locations, people, artefacts and concepts, the project used four pilots cases
+to show how social and historical phenomena can be re-interpreted. In particular, one of the pilots
+asked visitors to reflect on aspects of common European history through art, another one on women’s
+place in past and today’s societies, a third pilot asked people to reflect on population movements
+and migration, whereas a fourth one asked people to reflect on healing practices and the therapeutic
+use of water. These reflection topics were chosen with sustainability criteria, since their generic and
+contemporary character allows a richer cultural experience and further exploration in other projects.
+While reflection in CH is essential (the European Commission states that “supporting
+inclusive, innovative and reflective societies is a prerequisite for a sustainable European
+integration”, see External advice and societal engagement: Towards the 2016 and 2017
+work programme of ‘Inclusive, Innovative and Reflective Societies’ of Horizon 2020 available
+at https://ec.europa.eu/programmes/horizon2020/sites/horizon2020/files/External%20advice%
+20and%20societal%20engagement-SC6-2016-2017.pdf), technology does not yet facilitate fully the
+exploration of such concepts, since constant customisation is needed and more tools are necessary.
+This implies that stories, narratives and data need to be produced usually ad hoc for the current
+needs of venues, adding more workload to venue personnel. Our current work provides templates
+of narratives and guidelines for adaptation, trying to increase sustainability and support venues in
+the digital transformation. By automating the generation of narratives and the composition of digital
+CH resources to deliver meaningful interactive experiences to individuals and groups, we supported
+
+Sustainability 2020, 12, 1666
+
+23 of 26
+
+venue digital strategies (see for example the National Gallery Strategic Plan, available at https://
+www.nationalgallery.org.uk/media/25328/strategic-plan_2018-2023.pdf2018\T1\textendash2023) for
+audience engagement with CH collections in terms of Learning, Access, Participation. Similarly,
+the modular logic of the developed technology within CrossCult, also allows its easy adaptation to
+various other venues. For example, tools like profilers, authoring tools, recommendation engines,
+visitor tracking tools, etc. can be easily used for the purposes of other venues.
+Finally and most importantly, (audience) sustainability is enhanced and empowered through
+the creation of a network of non-competitive venues that wish to provide their visitors with rich
+cultural experiences. The cross-visibility and sharing of digital content leads to a win–win situation.
+In particular, smaller venues can be significantly benefited through their link to large, known ones, since
+the reflection process can be supported by references to well-known artworks from the large venues.
+Author Contributions: Conceptualization: K.K., A.A. and M.L.-N.; data curation: A.D. and J.P.; investigation:
+K.K., A.A., A.D., S.R.-M., M.B., S.G.-S., J.P., I.L., C.E.J. and M.L.-N.; methodology: A.A., S.R.-M., M.B., S.G.-S. and
+C.E.J.; project administration: I.L.; resources: S.R.-M., M.B., S.G.-S. and J.P.; software: K.K., A.D., C.E.J. and M.L.-N.;
+supervision: S.R.-M., M.B. and S.G.-S.; writing-original draft: K.K., A.A., A.D. and M.L.-N.; writing-review and
+editing: S.R.-M., M.B., S.G.-S. and J.P. All authors have read and agreed to the published version of the manuscript.
+Funding: This research was funded by the European Union’s Horizon 2020 research and innovation programme
+under grant agreement No 693150. The authors from the University of Vigo got further support from the European
+Regional Development Fund (ERDF) and the Galician Regional Government under agreement for funding the
+AtlantTIC Research Center for Information and Communication Technologies, as well as the Ministerio de
+Educación y Ciencia (Gobierno de España) research project TIN2017-87604-R.
+Acknowledgments: We would like to acknowledge the contribution of the National Gallery Collections and
+Information project authors, editors, reviewers and the National Gallery curators, in the production of the
+CrossCult NG narratives.
+Conflicts of Interest: The authors declare no conflict of interest.
+
+Abbreviations
+The following abbreviations are used in this manuscript:
+CH
+DH
+NG
+ICT
+
+Cultural Heritage
+Digital Humanities
+National Gallery
+Information and Communication Technologies
+
+References
+1.
+2.
+3.
+
+4.
+5.
+6.
+
+7.
+
+Marstine, J. Routledge Companion to Museum Ethics Redefining Ethics for the Twenty-First Century Museum;
+Routledge: Abingdon, UK; New York, NY, USA, 2011; p. 276, ISBN 1-280-68258-2.
+Dümcke, C.; Gnedovsky, M. The Social and Economic Value of Cultural Heritage: Literature Review; EENC:
+Chapel Hill, NC, USA, 2013.
+Greffe, X. Concept study on the role of Cultural Heritage as the fourth pillar of Sustainable Development.
+Venice Sustcult Proj. 2012, 1–73. Available online: http://docplayer.net/24195641-Concept-study-on-the-roleof-cultural-heritage-as-the-fourth-pillar-of-sustainable-development.html (accessed on 22 February 2020).
+Ecorys; Associates, F. Economic Value of Ireland’s Historic Environment; Final report to the Heritage Council;
+ECORYS: Rotterdam, The Netherlands, 2012; 94p.
+Young, J.O. The Ethics of Cultural Appropriation; Wiley-Blackwell: Oxford, UK, 2009.
+Kontiza, K.; Bikakis, A.; Miller, R. Cognitive-Based Visualization of Semantically Structured Cultural
+Heritage Data. In Proceedings of the 14th International Semantic Web Conference, Bethlehem, PA, USA,
+11–15 October 2015.
+Vassilakis, C.; Poulopoulos, V.; Antoniou, A.; Wallace, M.; Lepouras, G.; López Nores, M. exhiSTORY: Smart
+exhibits that tell their own stories. Future Gener. Comput. Syst. 2018, 81, 542–556. [CrossRef]
+
+Sustainability 2020, 12, 1666
+
+8.
+
+9.
+10.
+11.
+
+12.
+13.
+14.
+
+15.
+
+16.
+
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+
+24.
+25.
+
+26.
+27.
+
+28.
+
+29.
+
+30.
+
+24 of 26
+
+López-Nores, M.; Bravo-Quezada, O.G.; Bassani, M.; Antoniou, A.; Lykourentzou, I.; Jones, C.E.; Kontiza, K.;
+Gonzalez-Soutelo, S.; Reboreda-Morillo, S.; Naudet, Y.; et al. Technology-Powered Strategies to Rethink
+the Pedagogy of History and Cultural Heritage through Symmetries and Narratives. Symmetry 2019, 11, 22.
+[CrossRef]
+Antoniou, A. Social network profiling for cultural heritage: Combining data from direct and indirect
+approaches. Soc. Netw. Anal. Min. 2017, 7, 1–11. [CrossRef]
+Juniarta, N.; Couceiro, M.; Napoli, A.; Raïssi, C. Sequential Pattern Mining using FCA and Pattern Structures
+for Analyzing Visitor Trajectories in a Museum. CLA 2018, 2018, 231–242.
+Theodorakopoulos, M.; Papageorgopoulos, N.; Mourti, A.; Antoniou, A.; Wallace, M.; Lepouras, G.;
+Vassilakis, C.; Platis, N. Personalized Augmented Reality Experiences in Museums using Google Cardboards.
+In Proceedings of the 12th International Workshop on Semantic and Social Media Adaptation and
+Personalization, Bratislava, Slovakia, 9–10 July 2017.
+Falk, J.H.; Dierking, L.D. The Contextual Model of Learning. The Museum Experience Revisited; Routledge:
+Abingdon, UK, 2012.
+Jones, C.; Antoniou, A.; López-Nores, M.; Kontiza, K.; Schall, C.; Naudet, Y.; Deladiennée, L. Evaluation and
+Best Practices Report; CrossCult Deliverable 5.3 Final version; Unpublished work, 2019.
+Kontiza, K.; Loboda, O.; Deladiennee, L.; Castagnos, S.; Naudet, Y.
+A Museum App to
+Trigger Users’ Reflection.
+2018.
+Available online: https://pdfs.semanticscholar.org/f63b/
+8016534c129076b5dd89d30eb637dc700047.pdf (accessed on 12 February 2020).
+Bampatzia, S.; Bourlakos, I.; Antoniou, A.; Vassilakis, C.; Lepouras, G.; Wallace, M. Serious games: valuable
+tools for cultural heritage. In Proceedings of the International Conference on Games and Learning Alliance,
+Utrecht, The Netherlands, 5–7 December 2016; Springer: Cham, Switzerland, 2016; pp. 331–341.
+Antoniou, A. Predicting Cognitive Profiles from a Mini Quiz: A Facebook Game for Cultural Heritage.
+In Proceedings of the International Conference on Games and Learning Alliance, Palermo, Italy, 5–7
+December 2018; Springer: Cham, Switzerland, 2018; pp. 422–425.
+Lambert, J. Digital Storytelling: Capturing Lives, Creating Community; Routledge: Abingdon, UK, 2013.
+Dunford, M.; Jenkins, T.E. Digital Storytelling: Form and Content; Springer: Berlin/Heidelberg, Germany, 2017.
+Falk, J.H. The use of time as a measure of visitor behavior and exhibit effectiveness. Roundtable Rep. 1982, 7,
+10–13.
+Davey, G. What is museum fatigue. Visit. Stud. Today 2005, 8, 17–21.
+Falk, J.; Koran, J.; Dierking, L.; Dreblow, L. Predicting Visitor Behaviour. Curator 1985, 28, 4.
+Weiler, B.; Walker, K. Enhancing the visitor experience: Reconceptualising the tour guide’s communicative
+role. J. Hosp. Tour. Manag. 2014, 21, 90–99. [CrossRef]
+Cosley, D.; Lewenstein, J.; Herman, A.; Holloway, J.; Baxter, J.; Nomura, S.; Gay, G. ArtLinks:fostering social
+awareness and reflection in museums. In Proceedings of the SIGCHI Conference on Human Factors in
+Computing Systems, Florence, Italy, 5–10 April 2008; ACM: New York, NY, USA, 2008; pp. 403–412.
+Rounds, J. Strategies for the curiosity-driven museum visitor. Curator Mus. J. 2004, 47, 389–412. [CrossRef]
+Ciolfi, L.; Bannon, L. Designing Interactive Museum Exhibits: Enhancing visitor curiosity through
+augmented artefacts. In Proceedings of the Eleventh European Conference on Cognitive Ergonomics,
+Catania, Italy, 8–11 September 2002.
+Di Pietro, L.; Guglielmetti Mugion, R.; Renzi, M.F.; Toni, M. An audience-centric approach for museums
+sustainability. Sustainability 2014, 6, 5745–5762. [CrossRef]
+Poulopoulos, V.; Vassilakis, C.; Antoniou, A.; Lepouras, G.; Theodoropoulos, A.; Wallace, M. The Personality
+of the Influencers, the Characteristics of Qualitative Discussions and Their Analysis for Recommendations
+to Cultural Institutions. Heritage 2018, 1, 239–253. [CrossRef]
+Dahroug, A.; Aborizka, M.; López Nores, M.; Pazos Arias, J. A mobile app to explore cultural and historical
+associations between Europe and the Arab and the Islamic worlds. In Proceedings of the 12th International
+Conference on ICT, Society and Human Beings, Porto, Portugal, 16–19 July 2019.
+Daif, A.; Dahroug, A.; López-Nores, M.; González-Soutelo, S.; Bassani, M.; Antonio, A.; Gil-Solla, A.;
+Ramos-Cabrer, M.; Pazos-Arias, J.J. A Mobile App to Learn About Cultural and Historical Associations in a
+Closed Loop with Humanities Experts. Appl. Sci. 2019, 9, 9. [CrossRef]
+Best, K. Making museum tours better: Understanding what a guided tour really is and what a tour guide
+really does. Mus. Manag. Curatorship 2012, 27, 35–52. [CrossRef]
+
+Sustainability 2020, 12, 1666
+
+31.
+32.
+
+33.
+
+34.
+35.
+
+36.
+
+37.
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+
+45.
+
+46.
+
+47.
+
+48.
+49.
+
+25 of 26
+
+Bearman, D.; Geber, K. Transforming cultural heritage institutions through new media. Mus. Manag. Curatorship
+2008, 23, 385–399. [CrossRef]
+Linaza, M.T.; Eskudero, H.; Lamsfus, C.; Marcos, G. An authoring tool for interactive digital storytelling. In
+Proceedings of the 5th International Conference on Virtual Reality and Archaeology and Intelligent Cultural
+Heritage (vast’04), Oudenaarde, Belgium, 7–10 December 2004; Chrysanthou, Y., Cain, K., Silberman, N.,
+Niccolucci, F., Eds.; Eurographics Association: Aire-la-Ville, Switzerland, 2004; pp. 203–211. [CrossRef]
+Lu, F.; Tian, F.; Jiang, Y.; Cao, X.; Luo, W.; Li, G.; Zhang, X.; Dai, G.; Wang, H. Creative and collaborative
+digital storytelling inspired by cultural heritage. In Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI11), Vancouver, BC, Canada, 7–12 May 2011; ACM: New York, NY, USA,
+2011; pp. 1919–1928. [CrossRef]
+Lombardo, V.; Damiano, R. Storytelling on mobile devices for cultural heritage. New Rev. Hypermedia Multimed.
+2012, 18, 11–35. [CrossRef]
+Shin, J.; Park, H.; Woo, W. Connecting the Dots: Enhancing the Usability of Indexed Multimedia Data for
+AR Cultural Heritage Applications through Storytelling. In Proceedings of the 15th International Workshop
+on Content-Based Multimedia Indexing (CBMI), Florence, Italy, 19–21 June 2017; ACM: New York, NY, USA,
+2017; p. 6. [CrossRef]
+Vanoverschelde, F. No Story without a Backstory: The role and importance of the backstory in an augmented
+reality application for cultural heritage. In Proceedings of the 8th International Workshop on Narrative and
+Hypertext (NHT19), Hof, Germany, 17 September 2019; ACM: New York, NY, USA, 2019; pp. 1–3. [CrossRef]
+Valtolina, S. A storytelling-driven framework for cultural heritage dissemination. Data Sci. Eng. 2016, 1,
+114–123. [CrossRef]
+Peters, C.; Braschler, M.; Clough, P. Multilingual Information Retrieval; Springer: Berlin/Heidelberg,
+Germany, 2012.
+Tandon, A.; Slomska, A.; Opoku-Boateng, J.; Abbazia, D. Unlocking Sound and Image Heritage.
+In Proceedings of the International SOIMA Conference, Brussels, Belgium, 3–4 September 2015.
+Siegman, A. First Words: The World of Automated Storytelling. 2017.
+Available online: https://
+brainworldmagazine.com/first-words-the-world-of-automated-storytelling/ (accessed on 18 February 2020).
+Hayles, N.K. Print Is Flat Code Is Deep: The Importance of Media-Specific Analysis. Poet. Today 2004, 25,
+67–90. [CrossRef]
+McLuhan, M. Understanding Media; Routledge: London, UK, 1964.
+Crecente Maseda, M.; González Soutelo, S. (Eds.) 2000 años del Balneario de Lugo: Un Modelo de Activación del
+Patrimonio Termal; Crecente Asociados: Lugo, Spain, 2016.
+Carneiro, S. New data from the Roman healing spa of Aquae Flaviae (Chaves, Portugal). In Termalismo
+Antiguo en Hispania: Un Análisis del Tejido Balneario en éPoca Romana y Tardorromana en la Península Ibérica;
+Séiquer, G.M., Soutelo, S.G., Eds.; Anejos de Archivo Español de Arqueología 78; CSIC: Madrid, Spain, 2017;
+pp. 65–94.
+Bassani, M.; Bressan, M.; Ghedini, F. Aquae Patavinae. Il Termalismo Antico nel Comprensorio Euganeo e in
+Italia. Atti del I Convegno Nazionale (Padova, 21–22 giugno 2010); Padova University Press: Padova, Italy, 2011;
+Volume 21, pp. 1–296.
+Bassani, M.; Bressan, M.; Ghedini, F. Montegrotto Terme e il termalismo in Italia. Aggiornamenti e nuove
+prospettive di valorizzazione. In Atti del II Convegno Nazionale (Padova, 14–15 giugno 2011); Padova University
+Press: Padova, Italy, 2012; Volume 26, pp. 1–424.
+Bassani, M.; Bressan, M.; Ghedini, F. Aquae salutiferae. Il termalismo fra antico e contemporaneo. In Atti del
+Convegno Internazionale (Montegrotto Terme, 6–8 Settembre 2012); Padova University Press: Padova, Italy, 2013;
+Volume 29, pp. 1–449.
+Annibaletto, M.; Bassani, M.; Ghedini, F. Cura, Preghiera e Benessere. Le Stazioni Curative Termominerali
+Nell’Italia Antica; Padova University Press: Padova, Italy, 2014; Volume 31, pp. 1–336.
+Kasas, S.; Struckman, R. Important Medical Centres in Antiquity—Epidaurus and Corinth–: When Medicine Was
+Still Divine; Two Contributions to the Study of Ancient Medicine: (A) Some Medical Treatments in Ancient Corinth,
+(b) Asklepios in Epidaurus; Editions Kasas: Athens, Greece, 1979.
+
+Sustainability 2020, 12, 1666
+
+50.
+
+51.
+
+52.
+53.
+
+54.
+55.
+56.
+57.
+58.
+59.
+
+60.
+
+61.
+
+62.
+
+63.
+
+26 of 26
+
+Lambrinoudakis, V.K. Conservation and research: New evidence on a long-living cult. The sanctuary of
+Apollo Maleatas and Asklepios at Epidauros. In Excavating Classical Culture. Recent Archaeological Discoveries
+in Greece; Stamatopoulou, M., Yeroulanou, M., Eds.; BAR INternational Series 1031; Beazley: Oxford, UK,
+2002; pp. 213–223.
+López-Nores, M.; Kuflik, T.; Wallace, M.; Naudet, Y. Preface to the UMUAI special issue on personalized
+delivery of cultural heritage content—Perspectives on 7 years of progress in the field. User Model. User
+Adapt. Interact. 2019, 29, 1–7. [CrossRef]
+Tozzi, C. Free Software and Free Culture: Open Source’s Influence on Society; Channel Futures: Pittsford, NY, USA, 2015.
+Liapis, A.; López-Nores, M.; Gil-Solla, A.; Naudet, Y.; Lykourentzou, I.; Deladiennée, L.; Castagnos, S.;
+Napoli, A.; Antoniou, A.; Platis, N.; et al. Identification of Technologies and Useful Software. CrossCult
+Deliverable 3.1. Available online: http://www.crosscult.eu/en/resources/deliverables/ (accessed on
+18 February 2020).
+Eghbal, N. Roads and Bridges: The Unseen Labor Behind Our Digital Infrastructure; Ford Foundation: New York,
+NY, USA, 2016.
+Crichton, D. Open Source Sustainability; Tech Crunch: Bay Area, CA, USA, 2018.
+O’Sullivan, J. We Need to Talk about the Digital Humanities Job; Talking Humanities:New York, NY, USA, 2018.
+Bergvall-Kareborn, B.; Eriksson, C.I.; Staahlbröst, A.; Svensson, J. A Milieu for Innovation: Defining Living
+Labs. In Proceedings of the 2nd ISPIM Innovation Symposium, New York, NY, USA, 6–9 Decmber 2009.
+Bergvall-Kareborn, B.; Stahlbrost, A. Living Lab: An open and citizen-centric approach for innovation. IJIRD
+2009, 1, 356–370. [CrossRef]
+Vlachidis, A.; Bikakis, A.; Kyriaki-Manessi, D.; Triantafyllou, I.; Antoniou, A. The CrossCult Knowledge
+Base. A Co-inhabitant of Cultural Heritage Ontology and Vocabulary. In Advances in Databases and
+Information Systems 2017: New Trends in Databases and Information Systems; Springer: Cham, Switzerland, 2017;
+pp. 353–362.
+Vlachidis, A.; Bikakis, A.; Kyriaki-Manessi, D.; Triantafyllou, I.; Padfield, J.; Kontiza, K. Semantic
+Representation and Enrichment of Cultural Heritage Information for Fostering Reinterpretation and
+Reflection on the European History. In Proceedings of the Digital Cultural Heritage: Final Conference
+of the Marie Skłodowska-Curie Initial Training Network for Digital Cultural Heritage, ITN-DCH 2017,
+Olimje, Slovenia, 23–25 May 2017; Ioannides, M., Ed.; Springer: Cham, Switzerland, 2017; pp. 99–103.
+Padfield, J.; Kontiza, K.; Bikakis, A.; Vlachidis, A. Semantic Representation and Location Provenance of
+Cultural Heritage Information: The National Gallery Collection in London. Heritage 2019, 2, 648–665.
+[CrossRef]
+Wilkinson, M.D.; Dumontier, M.; Aalbersberg, I.J.; Appleton, G.; Axton, M.; Baak, A.; Blomberg, N. The FAIR
+Guiding Principles for scientific data management and stewardship. Sci. Data 2016, 3, 1–9. [CrossRef]
+[PubMed]
+Shepherd, R.; Padfield, J.; Tice, R. Opening Up the National Gallery’s Collection Information; Museums+Tech:
+London, UK, 2019.
+© 2020 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+article distributed under the terms and conditions of the Creative Commons Attribution
+(CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+
+

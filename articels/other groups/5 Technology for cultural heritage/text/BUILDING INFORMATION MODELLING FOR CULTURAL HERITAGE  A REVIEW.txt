@@ -1,0 +1,951 @@
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+BUILDING INFORMATION MODELLING FOR CULTURAL HERITAGE: A REVIEW
+S. Logothetis, A. Delinasiou, E. Stylianidis
+
+Aristotle University of Thessaloniki, Faculty of Engineering, School of Spatial Planning & Development, Thessaloniki, Greece,
+slogothet@auth.gr, adelinas@auth.gr, sstyl@auth.gr
+25th International CIPA Symposium
+
+KEY WORDS: Building Information Modelling, BIM platforms, HBIM, cultural heritage documentation, 3D environments
+
+ABSTRACT:
+We discuss the evolution and state-of-the-art of the use of Building Information Modelling (BIM) in the field of culture heritage
+documentation. BIM is a hot theme involving different characteristics including principles, technology, even privacy rights for the
+cultural heritage objects. Modern documentation needs identified the potential of BIM in the recent years. Many architects,
+archaeologists, conservationists, engineers regard BIM as a disruptive force, changing the way professionals can document and
+manage a cultural heritage structure. The latest years, there are many developments in the BIM field while the developed technology
+and methods challenged the cultural heritage community in the documentation framework. In this review article, following a brief
+historic background for the BIM, we review the recent developments focusing in the cultural heritage documentation perspective.
+
+1. INTRODUCTION
+BIM has been a growing development within the past decade
+in the field of cultural heritage documentation, paving the
+way towards a future in the virtually built environment. Many
+architects, archaeologists, conservationists, engineers regard
+BIM as a disruptive force, changing the way professionals
+can document and manage a historical monument. A
+monument is a type of structure that was created to
+commemorate an important event or a person. This event
+maybe has become important to a social group as a part of
+their cultural heritage or as an example of the historic
+architecture. The term "monument" is often applied to
+structures or buildings that are considered examples of
+important architectural and cultural heritage.
+1.1 Literature Review
+The term BIM was first used by Phil Bernstein from
+Autodesk. Another theory supports that Professor Charles
+Eastman extensively used the term in his books in late 1970.
+Later, the term was applied by German Jerry Laiserin to
+represent the manufacturing process and to facilitate the
+exchange of information in digital form. The first
+implementation of BIM was under the Virtual Building
+concept in 1987 by the company Graphisoft with platform
+ArchiCAD.
+Despite the trend of scientific community to adopt the BIM
+technology for the design and life-cycle management of
+constructions, little research has been undertaken to explore
+the value of BIM in the management and documentation of
+cultural heritage monuments (Fai et al., 2011).
+However, researchers have recently developed different
+techniques for the reliable and coherent management of
+information related to cultural heritage (Saygi and
+Remondino, 2013). The first usage of the BIM for existing
+buildings was in research of Arayici in 2008. That advocates
+the adoption of BIM in order to move beyond rote 3D
+
+visualization through the incorporation of intelligent,
+multifunction and multi representational data. The research
+focuses on adapting automated data processing and pattern
+recognition that leverages 3D point cloud data towards the
+generation of a simple building envelope (Fai et al., 2011).
+Furthermore, in two researches (Murphy et al., 2009 &
+2011), they developed the Historic Building Information
+Modelling (HBIM) for the integration of contemporary
+technology and BIM approach in the field of cultural heritage
+documentation. It functions as plug-in for BIM and it is a
+novel prototype library of parametric objects built from
+historic data and a system for mapping the parametric objects
+onto a point cloud and image survey data.
+This review paper consists of four sections relating to the
+trends in BIM technology in cultural heritage documentation.
+The first section briefly follows a history of the BIM
+development as used in the documentation of cultural
+heritage, in order to obtain a 3D representation of a
+monument in the form of a structured hierarchical set of
+structural elements (such as walls, vaults, roof, decorative
+elements etc.). The second section contains a summary of
+current available BIM software (commercial and open
+source) that are provided. In addition, descriptions are
+provided for each platform in order to determine have a
+comparative analysis among the various software. The third
+section describes the recent BIM applications in world
+monuments in order to facilitate the documentation of the
+cultural heritage. The final section concludes with a brief
+explanation of future BIM uses, developments and trends in
+documentation of cultural heritage.
+
+2. BUILDING INFORMATION MODELLING
+BIM is primarily a 3D digital representation of an
+environment, a structure or a building with its intrinsic
+characteristics. It consists of intelligent building components
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+177
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+or characteristics of environments which includes data
+attributes and parametric rules for each object (Hergunsel,
+2011). According to the National BIM Standard-United State
+Project Committees (NBIMS-US), BIM is “a digital
+representation of physical and functional characteristics of a
+facility and a shared knowledge resource for information
+about a facility forming a reliable basis for decisions during
+its life-cycle; defined as existing from earliest conception to
+demolition” (Saeed, 2013).
+What we observe, when comparing the two, is that the BIM
+tend to be a completely different system from Computer
+Aided Design (CAD), due to the fact that the procedures have
+now turned into an almost internalised system to integrated
+information, when at the same time CAD gets the
+information needed through external sources. It is noted that
+“a BIM model contains the buildings actual constructions
+and assemblies rather than a two-dimensional representation
+of the building that is commonly found in CAD-based
+drawings” (Krygiel and Nies, 2008). The BIM technology
+provides a number of advantages over CAD by being able to
+manage information, not just graphics. Also is supporting a
+controlled environment which in most commonly
+miscommunication eliminates the data redundancy (Bynum,
+2010).
+
+structural elements, mechanical systems, materials‟
+measurements, data suppliers, scheduling and financial data.
+BIM starts from the initial design and during the construction
+phase is used as a source of information. All information is
+incorporated in a model and thus can be studied securing
+valuable time and cost benefits.
+The BIM technology contributes to the creation of a digital
+representation having all physical and functional building
+characteristics in five dimensions (5D). These are the three
+(3D) primary spatial dimensions (width, height and depth),
+the fourth dimension (4D) is time and the fifth (5D) is cost.
+The developed virtual model provides an accurate overall
+picture to the project team (architects, civil engineers,
+surveyors, mechanical engineers, contractors, conservators,
+etc.) (Figure 1). One of the most important BIM‟s
+characteristics is the provision of a reliable basis for timely
+and quick decisions, helping the involved personnel to
+increase quality and productivity in the design but also during
+project operation. Since, BIM has greatly evolved in the
+recent years by providing high quality information, the
+technology help to significantly reduce defects and risks in
+all stages of a project.
+2.2 The BIM components
+
+Many are the basic capabilities of BIM, with the most
+important of them aiming to: develop the strategy of building
+project design, construction and maintenance management;
+ensure integration management of graphical and
+informational data flows, combine the graphical interface
+with the information flows and process descriptions;
+transform individual executors into teams and decentralise
+tools into complex solutions, this leading to individual tasks
+being implemented as complex processes; perform life cycle
+operations of a construction project more effective, faster and
+with lower cost (Popov et al., 2008).
+2.1 The technology
+BIM technology can realise a 3D virtual model of the
+construction to be realised or illustrate an existing model. The
+model becomes absolutely comprehensible from all
+individuals that participate in its construction while at the
+same time provides the possibility of important utilities
+during building life-cycle (Brumana et al., 2013).
+
+A BIM is based on components, namely parametric objects
+that are stored in object libraries. In fact, these are software
+counterparts of the real objects used to construct the physical
+building, such as steel beams, concrete slabs, framing,
+drywall, ducts, windows, etc. The components are
+represented in 3Dmodes while additional information is
+stored so as to give make them “intelligent”.
+The BIM components contain geometric information,
+associated with data and rules. These have a non-redundant
+geometry while they have parametric rules that automatically
+change associated geometries when inserted into a model or
+when changes are made to associated objects. The
+components‟ rules are crucial since they can identify when a
+particular modification violates object feasibility. The BIM
+components have the ability to link or export sets of
+attributes such as structural materials, acoustic data, energy
+data, cost, etc., to other applications and models (Eastman et
+al., 2008).
+The amount of the model detail is defined by more
+parameters beside width, depth and height. Additional
+parameters can be defined such as weight, density, cost, etc.
+to give added value to the model used. This reflects when the
+building is virtually constructed as it is enriched of
+thoroughly defined, intelligent objects. These objects now are
+incorporate intelligence; i.e. where they belong, how they are
+connected with other objects, what are they comprise from,
+etc.
+
+Figure 1: BIM Model
+The systems which are using BIM technology differ from the
+3D CAD because are "smarter" and can present the
+information more detailed; contained information and data
+for the whole „construction project‟ such as: drawings,
+
+In modern BIM platforms, we can undoubtedly create and
+manage parametric geometries, analysing them in primitives
+that can be connected through hierarchical relationships. This
+is a perfect procedure when creating simple objects from
+software libraries, where constraints and shapes were already
+set. However, it is much more difficult when components are
+generated to represent heterogeneous and original existing
+morphologies (e.g. data using digital photogrammetry or
+laser scanning). In this case, BIM designs have to be mostly
+remodelled manually, since automatic feature recognition in
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+178
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+available with commercial AEC (Architecture, Engineering,
+Construction) computer programs are still not effective
+(Garagnani et al., 2013).
+In the case of cultural heritage objects things are more
+complex as cultural heritage monuments are mainly made of
+components and materials whose geometry and
+characteristics are not representative for typical software
+libraries. A possible solution to the lack of geometric
+primitives issue in the current typical BIM software libraries,
+involves the so called HBIM approach. In HBIM the
+Product Name
+
+Manufacturer
+
+BIM Use
+Creating and reviewing
+3D models
+Creating and reviewing
+3D models
+Conceptual 3D
+Modelling
+Conceptual 3D
+Architectural Model
+Conceptual 3D
+Modelling
+
+Revit Architecture
+
+Autodesk
+
+Bentley Architecture
+
+Bentley Systems
+
+SketchUpPro
+
+Google
+
+ArchiCAD
+
+Graphisoft
+
+TeklaStructures
+
+Tekla
+
+DProfiler
+
+Beck Technology
+
+Vectorworks Designer
+
+Nemetschek
+
+Affinity
+
+Trelligence
+
+Edificius
+
+AccaSoftware
+
+Vico Office
+
+Vico Software
+
+Conceptual 5D
+Modelling
+
+Revit Structure
+
+Autodesk
+
+Structural
+
+SDS/2
+
+Design Data
+
+Structural
+
+RISA
+
+RISA
+Technologies
+
+Structural
+
+Robot
+
+Autodesk
+
+Structural Analysis
+
+Green Building Studio
+
+Autodesk
+
+Energy Analysis
+
+Ecotect
+
+Autodesk
+
+Energy Analysis
+
+Bentley Systems
+
+Structural
+Analysis/Detailing,
+Quantity Take-off,
+Building Performance
+
+Solibri Model Checker
+
+Solibri
+
+Model Checking &
+Validation
+
+TeklaBIMSight
+
+Tekla
+
+Model Viewer
+
+xBIMXplorer
+
+Open BIM
+
+IFC viewer
+
+Solibri Model Viewer
+
+Solibri
+
+Model Viewer
+
+Navisworks Freedom
+
+Autodesk
+
+3D Model Viewer
+
+Structural Analysis
+Design Detailing,
+Building Performance
+
+parametric objects are built from historic data (surveys,
+assays and literature) and layered in plug-in libraries aimed to
+map the elements onto point clouds data and image survey
+data (Dore and Murphy, 2012). Unfortunately, this
+methodology assumes buildings to be documented through
+correctly organised components, are already presented in
+libraries, with limited capabilities to change them in order to
+represent possible existing different states (Garagnani et al.,
+2013).
+
+Conceptual Design and
+Cost Estimation
+Conceptual 3D
+Modelling
+Conceptual 3D
+Modelling
+Architectural BIM Design
+and 3D object CAD
+
+Primary Function
+
+Supplier Web Link
+
+Architectural Modelling
+and parametric design.
+
+www.autodesk.com
+
+Architectural Modelling
+
+www.bentley.com
+
+Conceptual Design
+Modelling
+Architectural Model
+Creation
+Architectural 3D Model
+Application
+3D conceptual modelling
+with real-time cost
+estimating
+Architectural Model
+Creation
+A 3D Model Application
+for early concept design
+Architectural Modelling
+5D conceptual model
+generate cost and
+schedule data
+Structural Modelling and
+parametric design
+3D Structural Modelling
+and Detailing
+Full Suite of Structural
+Design Applications
+Bi-directional link with
+Autodesk Revit Structure
+Measure energy use and
+carbon footprint
+Weather, energy, water,
+carbon emission analysis
+Measure, assess and
+report building
+performance.
+Rules-based checking for
+compliance and
+validation of all objects
+in the model
+Combine models, check
+for clashes and share
+information
+Open, view IFC files and
+navigate through a model
+Open all Standard IFC
+Solibri Checker Files
+Open, view IFC files and
+navigate through a model
+
+www.sketchup.google.com
+www.graphisoft.com
+www.tekla.com
+www.beck-technology.com
+www.nemetschek.net
+www.trelligence.com
+www.accasoftware.com
+www.vicosoftware.com
+www.autodesk.com
+www.dsndata.com
+www.risatech.com
+www.autodesk.com
+www.autodesk.com
+www.autodesk.com
+
+www.bentley.com
+
+www.solibri.com
+
+www.teklabimsight.com
+http://xbim.codeplex.com
+www.solibri.com
+www.autodesk.com
+
+Table 1. Commercial and open source BIM tools
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+179
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+3. EXISTING BIM PLATFORMS
+The
+current
+BIM
+platforms
+are
+separated in three distinctly different sets of tools:
+1. tools for design 3D models (3D modellers);
+2. tools of projection
+/
+visualisation
+models
+(Viewers/Surface modellers) and
+3. tools of calculating analysis of models (Analysers),
+(see http://www.awci.org/pdf/bim.pdf)
+There are several major software developers that supply
+products with functionality in the BIM world, separated in
+commercial platforms and open source platforms. The 3D
+modeller is the real BIM tool, working with solid, parametric
+objects in sufficient features to virtually construct the
+building. In order to realise how the building will “look”, a
+surface modeller or a viewer to which all shapes are empty is
+necessary. Analysers are normally third-party software that
+communicate to the main BIM tool, e.g. analyse data from
+the 3D modeller to determine the model‟s energy efficiency
+or day lighting (see http://www.awci.org/pdf/bim.pdf).
+The commercial and open source software presented in the
+following sections is perhaps the most well-known BIM exist
+nowadays. There are many more equally important software
+and some of them are presented in Table 1.
+3.1 Commercial platforms
+There are plenty BIM tools used for cultural heritage.Τhe
+most popular commercial software are GraphiSoft
+ArchiCAD, Autodesk Revit, Bentley MicroStation V8i and
+Tekla Structures.
+ArchiCAD (Graphisoft) is an architectural design platform,
+created around the BIM concept as standalone software. The
+modelling of the objects in ArchiCAD can be achieved
+through using standard parametric of structure elements. The
+elements created as new objects using the embedded scripting
+language Geometric Description Language (GDL) or
+imported from the software (such as walls, roofs, beams,
+slabs, etc.). The use of GDL allows the creation of any
+number of rich parametric BIM objects and for their storage
+in internal libraries or databases for further reuse or
+modification (Murphy et al., 2011).
+Revit Autodesk is also BIM software that gives the
+possibility to the user to create a mass model with a
+combination of void and solid forms. The faces of the mass
+volume can be converted into building elements and floors
+and other architectural elements can be generated inside the
+mass model (Boeykens et al., 2008). Autodesk expanded this
+BIM platform and created three Revit products: Architecture,
+Structure and MEP. Revit is one of many varieties of BIM
+software which support the open XML-based IFC standard,
+developed by the ΒuildingSMART organisation. This file
+type makes it possible for a client or general contractor to
+require BIM-based workflow from the different discipline
+consultants of a building project.
+Bentley Systems offers a wide range of related products for
+architecture, construction and engineering. The architectural
+BIM platform, Bentley Architecture that presented in 2004 is
+an evolution of software Triforma. The latest software is the
+MicroStation V8i that used for the AEC (Architecture,
+Engineering, and Construction). Also, additional operations
+of all infrastructure types including buildings, roads, bridges,
+utility systems, railway lines, communication networks,
+
+wastewater networks, water, process plants, mining etc. The
+MicroStation can be used either as a software application or
+as a technology platform.
+The platform provides immersive interaction with 2D
+drawings and 3D models, to produce trusted deliverables
+such as 3D plots, information-rich 3D PDFs and precise
+designs. The analysis capabilities and data enable
+performance simulation of designs, including animations and
+lifelike renderings. Furthermore, the ability to integrate a
+comprehensive breadth and depth of engineering geometry
+and data from an unmatched range of CAD software and
+engineering formats ensures that users can work seamlessly
+with the entire project team.
+The MicroStation is used as technology platform for specific
+applications. Bentley and other software vendors use such
+technology platforms. It offers subsystems for consistent
+integration of data, geometry and increasing the user
+experience across a broad portfolio of comprehensive
+engineering, design and simulation applications. The
+platform ensures and leverages for each application the
+advantages, enabling in multidisciplinary groups to benefit
+from an interoperable software portfolio (Bentley, 2015).
+Tekla Structures is a BIM software that enables the creation
+and management of accurately detailed and highly
+constructible 3D models irrespective of material or
+complexity of the structure. Tekla models can be used to
+cover the whole building process from conceptual design to
+construction and the management of the structure. The
+software can be used to interface with other existing
+applications, or as a platform to develop an internal
+customizable solution. It is an open solution that supports
+standardisation and interoperability.
+The software supports interfaces with: DWG, IFC, DGN,
+DXF, CIS/2, DTSV and SDNF file formats. Tekla Structures
+has the ability to model structures that incorporate all kinds
+of structural materials and detailing; its ability to support
+very large models and concurrent operations on the same
+project and with multiple simultaneous users. It supports
+compilation of complex parametric custom component
+libraries with little or no programming (Eastman et al., 2008).
+3.2 Open source platforms
+Many software companies have developed several
+commercial platforms for BIM. In the field of open source
+platforms we observe an inadequate collection of tools. Most
+of them belong to the category of tools for projection and
+visualisation models.
+Edificius (Acca Software) is an advanced design tool for
+BIM. Professionals can obtain: section views, elevation
+views, floor plan views, tables, reports, construction details,
+schedules, perspective views, isometric views, renderings,
+animations and photo inserts.
+This software allows the use with custom working drawing
+layouts and import/export in standard formats such as
+DXF/DWG for CAD drawings, OBJ and 3DS for 3D models,
+BMP and JPG for renders. Projects and professional
+collaborations are possible to be shared with every designer;
+all data is saved in a single file that anyone can open and
+work with the Edificius Free UPP. Edificius Free UPP
+increases the BIM potential by integrating the features of
+other software:
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+180
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+•
+•
+•
+•
+
+PriMus for bills of quantities
+SketchUp for solid modelling
+Edificius-CAD for DWG CAD drawings
+EdiLus for structural calculations
+
+Tekla BIMsight is a BIM software application based on
+construction project collaboration. The entire workflow can
+combine the models, control the clashes, and share the
+information using the same easy to use BIM platform. The
+Tekla BIMsight enables project participants to identify and
+solve issues already in the design phase before the final
+visualisation.
+Autodesk Navisworks Freedom software is a free viewer
+for NWD and DWF file formats. The use of Navisworks
+Freedom extends the whole-project view to all stakeholders,
+helping to improve the collaboration and communication.
+With such software it is possible to create multi-disciplinary
+models in a wide range of applications, including information
+from BIM, digital prototypes and process plant design. All
+ofthese can be combined into a single integrated project
+model and published into the NWD format. The published
+file provides access to: object properties, model hierarchy
+and embedded review data, including animations, viewpoints
+and comments.
+
+4. BIM FOR CULTURAL HERITAGE
+The plug-in HBIM is a library of parametric objects that
+created from historic data. Furthermore, it is a system for
+mapping the parametric objects onto a point cloud and the
+survey image data. The HBIM process is started with distant
+collection of survey data using terrestrial laser scanning or
+digital photogrammetric modelling.
+In building parametric objects, the problem of file format and
+exchange of data has been overcome by using Geometric
+Description Language (GDL). The scripting in GDL allows
+for sharing and editing of the parametric objects at different
+levels (Murphy et al., 2012).
+The use of historic data introduces the opportunity to develop
+detail behind the object‟s surface concerning its methods of
+construction and material composition. In the last stage of the
+HBIM process, the libraries of parametric objects are mapped
+onto the point cloud and image survey data using a platform
+of cross software management. Full engineering orthographic
+drawings and 3D models can be automatically produced from
+the HBIM (Murphy et al., 2011).
+In addition, benefits of generating heritage structures in a 3D
+BIM environment:
+•
+Remote reviewing of the building exterior and
+interior.
+•
+Allows study with new structures in the
+environment context.
+•
+Possibility to survey of different periods of time.
+•
+Better estimation of the structure using images to
+understand texture, massing and form.
+•
+Allows appreciation of renovations and adaptations
+prior to committing to a strategy and full
+construction documents.
+•
+Most people can understand a 3D building more
+than a 2D flat drawing (Maddigan, 2012).
+
+4.1 BIM applications in the cultural heritage context
+There are different BIM applications in the cultural heritage
+context and this section describes characteristic cases. One of
+them is the Basilica of St. Maria of Collemaggio in L‟Aquila
+of Italy that was damaged by the earthquake in 2009. In this
+survey created a 3D detailed model (Figure 2) to support the
+on-going design project of conservation and intervention of
+the damaged temple parts. The HBIM model manages the
+stages of simulation of structural behaviour, analysis,
+economic evaluation of the project, and restoration of the
+temple (Oreni et al., 2014).
+
+Figure 2.3D ©Revit model of the Basilica St. Maria and
+WBS to manage the restoration (Oreni et al., 2014)
+Another BIM application is the modelling of the Henrietta
+Street, in Dublin, of Ireland. The process started with laser
+scanning and the final orthographic images was imported into
+the BIM platform ArchiCAD. The use of laser scanning and
+photogrammetry can record very high and accurate levels of
+detail in the field for cultural heritage. Next, the modelling
+was completed by combining all the required library parts
+included in the HBIM plug-in. The final stage is converting
+the HBIM model (Figure 3) for Henrietta Street into
+CityGML for further GIS analysis. For this purpose Google
+SketchUp with the CityGML plug-in was used. Finally, the
+integration to CityGML can provide further capabilities for
+linking the information systems with 3D heritage model. The
+CityGML model can be integrated into GIS systems for
+analysis and efficient management that is required for
+maintaining important heritage monuments (Dore and
+Murphy, 2012).
+
+Figure 3. Final HBIM Model of the Henrietta Street (Dore et
+al., 2012)
+Another project describes the Batawa project-model that is a
+redevelopment proposal for approximately 600 hectares of
+land that includes a former factory in Toronto (a cluster of
+three 19th century heritage buildings) with its rich history of
+modern architecture and town planning. The purpose is to
+document the heritage assets of Batawa and to develop a BIM
+model using available software packages that are appropriate
+for specific applications (AutoCAD, Civil 3D, SketchUp,
+Revit,). That will serve as a digital archive to help in
+conserving the extant heritage buildings and planning and to
+test future development proposals within the context of these
+historic buildings and plans (Fai et al., 2011).
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+181
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+The Batawa project brings together heterogeneous datasets
+into a single digital object that allows access to, and on-going
+verification of the individual assets that comprise the
+integrated model. This includes data related to the type of the
+building, performance and construction, as well as material
+typically associated with intangible heritage such as
+storytelling and music. The model uses point cloud data
+acquired through terrestrial laser scanning. In order to bring
+all the pieces together into a single model Navisworks used, a
+robust project management tool that is able to integrate the
+diverse software required for the project (Fai et al., 2011).
+
+The last example refers to the valuation and dissemination of
+the role of the Church of Santa Maria at Scaria in Como of
+Italy. The study attempted to explain the reconstruction and
+the main transformations and chronological phases of the
+church, from the Romanic to the Baroque interventions and
+to the more recent ones. For this purpose, laser scanning and
+photogrammetric surveys have been carried out with on-site
+stratigraphic analysis while available historical documents
+have used as well. An integrated BIM approach (Figure 6,
+with Autodesk Revit 2013) has been chosen as an
+experimental way of transmitting a piece of the church‟s life
+history to the local people and also for touristic purposes. The
+aim of the research was also to designate the potential BIM
+platform when used for energy analysis with the appropriate
+tools for life-cycle building management and energy
+efficiency. Finally, the research applied the Building
+Performance Analysis with collaboration of BIM platform
+and Autodesk‟s web-based energy analysis software the
+Green Building Studio (Brumana et al., 2013).
+
+Figure 4. Final HBIM Model of factory (Fai et al., 2011)
+The 3D environment (Figure 4) was created to allow the
+navigation for maintaining the BIM intelligence of the
+objects that comprise the model. This way we can examine
+the model at both micro and macro scales with no loss of
+reliability or data. Then, intangible heritage information was
+incorporated such as historical images and texts, multilanguage storytelling, and music. Finally, the Batawa Model
+can be viewed trans-temporally by employing the timeline
+function of the project management software (Fai et al.,
+2011).
+One more case describes the procedures for the visualisation
+of Sant‟ Apollinare Nuovo in Ravenna of Italy: the Byzantine
+church with walls covered with mosaics. For the monument‟s
+modelling, the data were acquired using a Leica ScanStation
+C5 laser scanner which where integrated with the dense point
+surfaces obtained through digital photogrammetry, using
+Menci Z-Scan software. The final result was a model (Figure
+5) of the inner nave, including some details captured with a
+higher number of points: point clouds were superimposed in
+order to get a complete documentation of the walls and
+mosaics. The point clouds were registered, decimated and
+processed in order to be transformed in a proper geometric
+input for Autodesk Revit Architecture 2012. A simple plug-in
+for Revit, the GreenSpider, was used to layout points in space
+as if they were nodes of an ideal cobweb. The parametric
+production of smart elements is easier and much more
+accurate. This application is able to translate points into
+native reference snaps aimed to allow elements modelling
+with much more precision instead of a simple tracing out
+(Garagnani and Manfredini, 2013).
+
+Figure 5. Final HBIM Model of pillar (Garagnani and
+Manfredini, 2013)
+
+Figure 6. HBIM Model of the church St. Maria di Scaria,
+with stratigraphic information related to each singular object
+(Brumana et al., 2013)
+5. CONCLUSIONS AND DISCUSSION
+The paper presents a review of the BIM use in the field of
+cultural heritage documentation. The diversity and
+complexity of BIM technology is obvious in many different
+fields; environment, buildings, construction, monument,
+structure framework.
+We report the existing BIM platforms. On one hand the most
+popular commercial software for HBIM which are quite
+many while they are expensive enough and inaccessible for
+researchers and SMEs. On the other hand, in the field of open
+source no outstanding platforms for HBIM exist. In practice,
+there are some model viewers; however, there is only one
+complete ΒΙΜ platform.
+In addition, we reported five (5) of the most representatives
+BIM applications in the area of cultural heritage, the majority
+of them from Italy.
+The review of the current BIM applications illustrates that
+most researchers adopt a particular methodology for
+developing a HBIM for historic environments and structures.
+In practice, this process starts with data collection and data
+processing, e.g. laser data and images; identify the structural
+details from historic and architectural books; create the
+database of parametric historic objects; correlation of
+parametric objects onto laser data and final the production of
+the survey drawings for the 3D historic virtual model. In this
+detailed 3D model more details can be included about the
+various objects such as construction materials, schedules for
+cost decay, energy etc. adding intelligent data to the point
+cloud.
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+182
+
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume II-5/W3, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+This review showed that many developments occurred the
+last year in the area of BIM while the potential for many
+more exist. There is a still lot of space for more and more
+developments. In the area of open source platforms it seems
+that many more could be done to moderate the high prices in
+the existing commercial platforms.
+
+REFERENCES
+Arayici, Y., 2008. Towards Building Information Modelling
+for Existing Structures, Structural Survey, 26.3, 210-222.
+Bentley MicroStation, 2015. http://www.bentley.com/enUS/Products/microstation+product+line/, (20-02-15).
+
+Murphy, M., McGovern E., et al., 2009. "Historic building
+information modelling (HBIM). "Structural Survey Vol. 27
+(Iss: 4,): 311 – 327.
+Murphy M., McGovern E. & Pavia, S. 2011. 'Historic
+Building Information Modeling - Adding Intelligence to
+Laser and Image Based Surveys', 4th ISPRS International
+Workshop, 3D ARCH 2011: "3D Virtual Reconstruction and
+Visualization of Complex Architectures" Trento, Italy, 2-4
+March 2011.
+
+Boeykens, S. and H. Neuckermans. 2008. "Scale Level and
+Design Phase Transitions in a Digital Building Model."
+http://www.asro.kuleuven.be/IDEA.
+
+Murphy, M., Dore, C., 2012. Integration of Historic Building
+Information Modeling (HBIM) and 3D GIS for Recording
+and Managing Cultural Heritage Sites, 18th International
+Conference on Virtual Systems and Multimedia (VSMM):
+“Virtual Systems in the Information Society”, 2-5 September
+2012, Milan, Italy, pp. 369-376.
+
+Brumana R., Oreni D., Raimondi A., Georgopoulos A.,
+Bregianni A., 2013. From survey to HBIM for
+documentation, dissemination and management of built
+heritage. Digital Heritage International Congress (Digital
+Heritage), Oct. 28-Nov. 1 2013, Marseille, pp. 497 – 504.
+
+Oreni D., Brumana R., Della Torre S., Banfi F., Barazzetti
+L., Previtali M., 2014. “Survey turned into HBIM: the
+restoration and the work involved concerning the Basilica di
+Collemaggio after the earthquake (L'Aquila)”, ISPRS
+Technical Commission V Symposium, 23–25 June 2014, Italy.
+
+Bynum P., 2010. Building Information Modeling in Support
+of Sustainable Design and Construction, University of
+Florida.
+
+Popov, V., Mikalauskas, S., Migilinskas, D., Vainiunas, P.,
+2006. “Complex Usage of 4D Information Modeling Concept
+for Building Design, Estimation, Scheduling, and
+Determination of Effective Variant”.
+
+Dore, C., Murphy, M., 2012. Integration of Historic Building
+Information Modeling and 3D GIS for Recording and
+Managing Cultural Heritage Sites, 18th International
+Conference on Virtual Systems and Multimedia: "Virtual
+Systems in the Information Society", 2-5 September, 2012,
+Milan, Italy, pp. 369-376.
+
+Saeed KIA, 2013. Review of Building Information Modeling
+(BIM) Software Packages Based on Assets Management,
+Amirkabir University of Technology, Department of Civil
+and Environmental Engineering, 27 March 2013.
+
+Eastman C., Teicholz P., Sacks R., Liston K., 2008. “BIM
+Handbook, A guide to Building Information Modeling for
+Owners, Managers, Designers, Engineers, and Contractors”,
+John Wiley & Sons, Hoboken, New Jersey
+
+Saygi, G., Remondino, F., 2013. Management of
+Architectural Heritage Information in BIM and GIS: State-ofthe-art and Future Perspectives. Int. Journal of Heritage in
+the Digital Era, Vol.2(4), pag. 695-714, DOI 10.1260/20474970.2.4.695.
+
+Fai S., Graham K., Duckworth T., Wood N., Attar R., 2011.
+Building Information Modeling and Heritage Documentation,
+CIPA 2011 Conference Proceedings: XXIIIrd International
+CIPA Symposium.
+Foundation of the Wall and Ceiling Industry, 2009. Building
+Information Modeling: Understanding and Operating in a
+New
+Paradigm,
+Falls
+Church,
+http://www.awci.org/pdf/bim.pdf
+Garagnani, S., Manfredini, A. M., 2013. Parametric
+Accuracy: Building Information Modeling Process Applied
+to the Cultural Heritage Preservation, 4th ISPRS
+International Workshop “3D-ARCH”, Trento, Italy
+.
+Hergunsel, M. F., 2011. Benefits of Building Information
+Modeling for Construction Managers and BIM-based
+scheduling, Worcester Polytechnic Institute.
+Krygiel, E., Nies, B., 2008. Green BIM: Successful
+Sustainable Design with Building Information Modeling, 1st
+ed., Wiley, New York.
+Maddigan, J. 2012. HCF National Heritage Summit,
+Canadian Association of Heritage Professionals.
+
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-II-5-W3-177-2015
+183
+
+

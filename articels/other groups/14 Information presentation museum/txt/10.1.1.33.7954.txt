@@ -1,0 +1,764 @@
+Tokyo University Digital Museum
+
+Noboru Koshizuka
+
+Information Technology Center/The University Museum, The University of Tokyo
+
+koshizuka@l.u-tokyo.ac.jp
+
+Ken Sakamura
+
+Interfaculty Initiative in Information Studies/The University Museum, The 
+University of Tokyo
+
+sakamura@um.u-tokyo.ac.jp
+
+
+Abstract
+
+We  present  our  basic  philosophy  and  concept  of
+Tokyo University Digital Museum.  The main goal of our
+activity is to propose new forms of museums of the future
+in  which  digital  technologies  support  all  kinds  of
+museum  activities  such  as  gathering,  preserving,
+researching,   exhibiting,   and   educating   about
+collections.  Further,  we  report  our  novel  digital
+technologies for the digital museum such as media and
+human interface technologies for new exhibition styles
+and data processing technologies for digital archiving of
+cultural or historical materials. Lastly, we conclude with
+observation for the museum of the future.
+
+1. Introduction
+
+For around 2,300 years since Ancient Alexander Era,
+museum has been a facility to restore intellectual and
+cultural property of human kind and to inherit them to
+posterity [1].   Generally, museums have two kinds of
+functions: the primary and the secondary functions. The
+primary function is to acquire, classify, preserve, and
+research  collections.   The  second  function  is  the
+educational   activity   using   collections   including
+exhibitions.   Recently,  adopting  digital  technologies,
+advancing these two major functions of museums, and
+bringing  much  higher  functions  are  expected.   To
+accomplis h these goals, we have proposed a new style of
+museum, called “Digital Museum”, which utilizes digital
+technologies in all of its activities [1].
+
+The  digital  technologies  would  be  useful  for
+advancing both functions of museum. As for the primary
+function, digital archive is the most effective method.
+Whatever  the  condition  of  collection  preservation  in
+museums is good, the collection will certainly deteriorate
+with  time.   The  only  way  to  preserve  the  current
+conditions of collections is to measure in accurate by
+means of various scanners and sensors, and to record and
+store the measurement data in digital formats.  By digital
+technologies, we can make perfect copies of these data
+easily.  If we would make backups of the digital data
+
+properly, we can theoretically preserve the records of the
+current  conditions  of  museum  collections  without
+deterioration forever.
+
+The second function, especially museum exhibition, is
+expected to change drastically by means of multimedia and
+networking technologies.  These  technologies include
+virtual museums built upon hypermedia systems in the
+Internet  such  as  WWW  and,  more  innovatively,
+networked  3D  virtual  environments.  These  virtual
+exhibitions  supplement  the  limit  of  conventional  real
+exhibitions.
+
+Furthermore, the both functions in museums have
+been contradictory.  The objective of preservation is
+future use, but if those materials are used, a deterioration
+in the state of preservation is more or less unavoidable.
+For this problem, the digital technology can provide one
+solution to improve this situation: utilization of digital data.
+
+As seen above, digital museums have a potential to
+change the way of museum collection preservation and
+exhibition  in  drastic.   Furthermore,  they  will  bring  a
+revolution  to  all  museum  activities  such  as  curation,
+management, and business models.  We have started
+“Tokyo University Digital Museum” by applying these
+concepts to our university museums in the University of
+Tokyo.  The rest of this paper makes a brief overview of
+the basic concept of the Digital Museum, and the result of
+our feasibility study in these five years.
+
+2. History and Background
+
+In this section, we briefly present the history and
+background of Tokyo University Digital Museum.  Our
+university, the University of Tokyo, has established its
+university museum in 1966.  Its main mission was to
+provide  the  primary  function  of  museums:  collecting,
+preserving, and studying objects.  It consisted of ten
+sections from humanities to natural sciences, and worked
+as a center of academic materials preservation.  In 1996,
+our museum has been reorganized, and a new mission, the
+second  function  of  museums  including  frequent
+exhibitions, has been added.  Simultaneously, our Tokyo
+
+
+University Digital Museum project has started as its
+leading project.  Our mission is to construct a digital
+archive of Tokyo University Collection, which consists of
+more than six millions of academic materials.  Another
+mission is to create an innovative museum that fully
+utilizes digital technologies.  Since 1996, on the basis of
+the  digital  museum  concept,  we  have  made  six
+experimental exhibitions in our university that would cover
+various research fields [2,3,4,5,6,7].
+
+3. Concept
+
+Digital  Museum  is  a  museum  that  utilizes  digital
+technologies in its all activities. This section proposes the
+five challenging concepts of Digital Museum.
+
+3.1. Museum with digital archives
+
+The first concept of Digital Museum is a digital archive.
+There are two backgrounds of the digital archive. First, it
+is the only practical way to record and preserve current
+states  of  museum  collections  without  deterioration.
+Seconds, it provides a method to solve the well-known
+contradictory between preservation and exhibition, by
+utilizing  the stored data in digital archives.  Hence, the
+concept of digital archive was born, in which we capture
+almost all features of materials, translate them into digital
+data, preserve them electronically, and utilize them for
+public education or academic researches.
+
+From the past, records have been taken to preserve the
+information of materials. Typical examples are paintings,
+miniature models, photographs and movies, all of which
+are analog information.  However, it is unavoidable that
+the recording media deteriorate with time. In addition, it is
+impossible for copies of analog records to be made at the
+same fidelity level as the original records, and in this case,
+deterioration in repeated copies is unavoidable.
+
+In contrast, perfect copies of digital data can be made
+without any loss of information.  Whether the media on
+which information is recorded be an optical disk or a
+magnetic  disk,  the  information might be lost or mis -
+recorded over time. However, by using the digital coding
+theory and using redundant information, it is also possible
+to discover such errors and then correct them. This draws
+the total error rate close to zero.  Then, by regularly
+renewing data by copying that information itself onto a
+new medium, permanent preservation of data becomes
+theoretically possible.
+
+On the other hands, preservation and exhibition have
+remained to be the major requirements of museums since
+ancient times. However, they have been contradictory.
+The objective of preservation is future use, but if those
+materials  are  used,  deterioration  in  the  state  of
+preservation is unavoidable. In this case, if it is adequate
+enough to obtain only information, not having to take out
+
+actual collections is important in terms of preventing their
+deterioration. Digital archive will contribute to this process.
+In other words, digital archive promotes the effective use
+of actual collections, while at the same time reducing the
+necessity of using actual items, thereby protecting the
+actual items.
+
+3.2. Three kinds of openness
+
+Here, we present three kinds of openness, which has
+not been fully solved until today while it has been
+required for museums from the past. We are recognizing
+that digital technologies are effective to solving this.
+
+3.2.1. Open cases. The reason museums look up exhibits
+in glass cases is not for the benefit of visitors, obviously,
+but to protect the collection. Ideally, visitors should be
+able to touch the exhibits with their own hands, the better
+to understand them. In the case of solid objects such as
+pottery, they should be able to feel the shape. In the case
+of ancient writings, they should be able to take out and to
+leaf it at their own pace. It would be nice to try playing
+ancient instruments or striking an old temple bell to hear
+its sound. On the contrary, the use of materials must be
+restricted to prevent them from being damaged. From a
+security standpoint as well, valuable collections need to
+be protected from the hand of the public.  The Digital
+Museum aims to satisfy both needs, that of preserving
+collections and that of making them readily available, by
+taking advantage of digital technologies.
+
+3.2.2. Open to everyone.  A traditional museum offers
+many barriers to the disabled, and especially the visually
+disabled. Since a museum exists to “put exhibits on view,”
+it   has very little information to offer the visually disabled.
+Even  the  explanations  accompanying  exhibits  often
+consist only of written words on panels.  On the other
+hand, Japanese explanation becomes a barrier for people
+from other countries. Barriers like these that tend to create
+a distance between certain people and the exhibits in a
+museum can also be overcome by digital technologies.
+
+3.2.3. Open with respect to space and time.  The large
+museum collection would require an enormous amount of
+spaces  to  put  on  display  all  at  once,  making  this
+impossible under the present circumstances.  Special
+exhibits built around a common theme can be held for
+limited periods. Once that time is past, the exhibits are no
+longer available for viewing.  Moreover, an exhibition
+cannot be seen by people who do not come to the
+museum.  For people who cannot be in that place at the
+time, this is yet another barrier.
+
+In the Digital Museum concept, the collections can be
+seen from anywhere, at any time.  Even after a special
+
+
+exhibition has ended, the exhibited collections can still be
+seen.  Moreover, comprehensive exhibitions can be put
+combining the resources of other museums as well.  This
+is just the distributed museum concept (See Section 3.5).
+To overcome the limits of time and place is a part of the
+aims of the Digital Museum.
+
+3.3. Multimedia presentation
+
+The Digital Museum is not only for looking with the
+eyes.   Going  beyond  the  bounds  of  conventional
+museums that put items “on view,” it offers the materials
+as multimedia, for a wide range of senses including
+hearing and touching.
+
+For example, in the Digital Museum, information
+terminals  will  be  located  in  various  places,  and
+explanations will make use of multimedia, from video to
+audio.  In addition to sight and sound, equipment for
+creating replicas will be introduced to allow tactile
+exhibitions.  Visitors will be able to touch them freely
+without worrying about damaging the materials (Figure 1).
+Furthermore, sensors and microchip embedded in the
+replicas will make it possible for the exhibits themselves to
+turn a replica into a simulation of the real thing.  For
+example tapping on a plastic replica of a pottery vase will
+cause it to respond with the same sound as the original.
+
+These uses of multimedia in museum exhibits will not
+only help ordinary visitors understand the exhibits, but
+will open the door to people which various kinds of
+disabilities that up to now have prevented them from
+enjoying the benefit of museums.
+
+Figure 1: Old pottery and its replica
+
+3.4. Personalized museum
+
+Personal Museum is an example of supplementing the
+real with the virtual, in which information will be
+personalized to meet the characteristics of the visitor.
+
+In many cases  in the real world,  it is inefficient to
+respond separately to individuals.  For example, if efforts
+are made to match the expressions on museum panels to
+
+the visitors as much as possible, we need to pay attention
+to the following at the least: Differences in the level of
+contents for general adults, for experts, and for school
+children. The accessibility to people with weak eye-sight,
+color blindness and other physical conditions. Languages
+used for Japanese visitors and foreign visitors. It is clear
+that,  while  a  wide  range  of  combinations  can  be
+accommodated, museums would become places where real
+materials could be found within a forest of panels.
+
+In contrast, in the world of computers and information,
+responding separately to individuals is not a big overhead.
+If  visitors  input  information  about  their  own
+characteristics into their PDAs when they first arrive, then
+it     is possible to display text in accordance with those
+attributes. The information can be displayed in larger fonts
+if necessary, and it is possible to have the information
+read out for visually impaired visitors. Moreover, it is
+possible  to  identify  the  visitor,  and  change  the
+commentary according to the order in which they are
+viewing exhibits.  It should be possible for the museum
+exhibits to recognize the visitors, and in principle provide
+a different response for each individual.
+
+3.5. Distributed museum
+
+By connecting virtual museums , we can create  the
+ultimate museum comprising the digital archives of all
+museums throughout the world on the Internet.  This is
+the concept of a distributed museum. On the other hand,
+the POS approach of the commercial distribution network
+states  that  it  is  better  to  input  at  the  place  where
+information is generated, and a similar concept is likely to
+be introduced into the field of  museum collections. For
+example, whenever a piece of earthenware is found at an
+excavation site, it is  always recorded in a ledger.  In
+addition to this, if an input device such as a 3D scanner is
+brought  in  to  digitize  each  piece,  the  creation  of  a
+database  would  be  completed  there  and  then.
+Reconstruction work could be carried out efficiently in a
+virtual space using computers, later.
+
+4. Digital Archive Technologies
+
+Digital archive is just the core of Digital Museum,
+because it is used for both collection preservation and
+exhibition. The quality of digital archive would decide the
+quality of Digital Museum.  In constructing digital
+archives, there are many key digital technologies.  For
+example, technologies for databases, huge storages, and
+data representations are among them. In this section, we
+focus  on  data  representation  technologies,  text
+representations and semantic data format of museums.
+Compared with other technologies, this is especially
+important  because  insufficient  data  format  causes
+
+
+important information of collections to lose, and will make
+digital archives useless in the future.
+
+4.1. Data format of digital archives
+
+The basic data format of digital archives is still text.
+Museum collection includes many writings, such as books,
+leafs, and inscriptions. Also, every museum collection has
+attributes represented by texts, such as its name, creators,
+created date, and its interpretations.
+
+Our museum locates in Japan, and preserves many
+Asian collections.  In handling Asian contents on
+computers, the main feature is that the character sets used
+in  their texts are very large. For example, Japan, Korea,
+and China use a common character set called “Kanji”, and
+the total number of “Kanji” characters is said to be more
+than 100,000.  On the other hands, compared with
+European languages, “Kanji” presents two other features.
+First, the forms, and also meanings, of characters had been
+changing with time.  For example, in Japan, and also in
+China, the standard forms of “Kanji” characters were
+drastically simplified in these fifty years, so as to decrease
+hand-writing efforts. Second, the character set is open, so
+that   we can create a new “Kanji” characters. Since the
+birth of “Kanji”, many characters have newly been created
+and, conversely, many characters have almost died.
+
+Conventional character codes of current industrial
+standards and text processing mechanisms built upon the
+codes are insufficient for these features. In Japan, most
+computer systems support JIS ¹ code or its variations,
+which contains less than 10,000 characters. Als o, it can
+represent only modern forms of “Kanji” characters.
+However, museum collections require old forms of
+characters because, for example, names of materials were
+represented in the old characters originally. On account of
+these reasons, current comp utes cannot show even
+original names of collections.
+
+For this reason, ideal text processing mechanisms for
+museums should satisfy the following requirements. First,
+we  should  provide  open  and  large  character  sets.
+Seconds, because the large character set will contains
+many different forms of the same characters, so that we
+need  a  character  dictionaries  storing  the  relationship
+among the characters.  Third, we need not only “Kanji”
+text  processing,  but  also  more  general  multilingual
+processing environment.
+
+To accomplish these requirements, we have started a
+project to develop an ideal text processing mechanism
+called TRON Multilingual Processing Environment (TRON
+MPE) [11].  It is a total architecture and consists of
+character  codes  (TRON  code),  text  processing
+mechanisms,   requirements   for   underlying   OS
+
+¹ JIS is an abbreviation of Japan Industrial Standards.
+
+specifications (BTRON3 specification), and regulation
+mechanism to add/delete characters from the TRON code.
+In present, the TRON MPE supports more than 130,000
+characters of many languages all over the world, while its
+potential capacity is more than 1,000,000 characters
+(Figure 2).
+
+4.2. Museum TAD
+
+Digital data format of the Digital Museum is required to
+have diverse attribute description capability while at the
+same time being general, in a tradeoff relationship.
+
+For example, if storing an item of earthenware in the
+digital archive, related data may include 3D shape data,
+texture,  soil  composition  analysis  data,  and  written
+commentary, each of which has its own relationships.
+Furthermore,  data  indicating  the  excavation  site  from
+which the earthenware was found, and the state it was in,
+are required. For ancient documents, it might be necessary
+to add information of the pronunciation of the time. In this
+way, it becomes necessary to prepare  various types of
+diverse data formats for each of multiple genres.
+
+On the other hand, to investigate how the ceramic ware
+
+Figure 2: TRON Multilingual Processing Environment
+
+Figure 3: Top page of the Tokyo University Digital
+Museum site (http://www.um.u-tokyo.ac.jp/)
+
+
+affected those of later years, and how they affected other
+items from other areas, the data format of the digital
+archives should not be diverse for each genre, but be
+standardized. In addition, for our distributed museum
+concept, this standardization is strongly required. This
+standardization must define properly the data structure
+(syntax)  and its meaning (semantics) so that the computer
+can understand and process the data.  Without this
+feature, it is impossible to carry out an integrated search
+extending across multiple museum databases.
+
+To answer this need, we are developing an attribute
+description data format for the museum that we refer to as
+Museum TAD². The TRON code referred in Section 4.1 is
+defined in this data format framework. In the Museum
+TAD format, to accomplish the two requirements of
+diversity and generality, we have adopted an object-
+oriented  language  called  PCO (Portable Comp ound
+Object) [13]. By using the object-oriented framework, we
+can create diverse data formats efficiently by defining
+subclasses from the base class. On the other hand, we
+can accomplish generality by using its inheritance
+mechanisms.  In the future, if the Museum TAD will be
+succeeded, we can realize a distributed museum in which
+museums in the world are linked with one another.
+
+5. Digital Exhibition Technologies
+
+5.1. Museum as information provider
+
+This  section  describes  exhibition  technologies  of
+Digital Museum.  Digital Museum incorporates with not
+only virtual galleries but also real galleries. As for digital
+virtual exhibitions, we have built a virtual museum upon
+WWW system on the Internet (Figure 3).  Further, we
+have build a new type of virtual museums consisting of a
+cooperative  virtual  environment  called  as  MMMUD
+(Multi-Media  Multi-User  Dungeon).   As  for  real
+exhibitions, we have proposed several augmented-reality
+technologies to enhance real exhibitions.
+
+5.2. Virtual exhibition (MMMUD)
+
+MMMUD (Multi-Media Multi-User Dungeon) system
+aims to build virtual museums [8,9,10]. Enormous numbers
+of academic materials of museums are digitized and stored
+as digital archive, and they are exhibited in the MMMUD
+virtual museums.  The virtual environment of the
+MMMUD is managed by server systems. In order to join
+with the virtual environment, users run a MMMUD
+browser on their terminal computers and the browsers are
+connected to the server system via network. When a
+
+² TAD is an abbreviation for TRON Application Data-bus,
+and is the name of a data format standardized across
+applications of TRON - the computer framework studied
+and developed by us. 
+
+browser is connected to the server system, an agent of the
+user in the virtual environment, called an avatar, is created.
+The MMMUD browser renders images of the virtual
+environment from the view of its avatar. Users can control
+their avatars and can explore the virtual environment.
+
+Features  of  exhibitions  in  the  MMMUD  virtual
+museums are as follows. First, different from the real world,
+we can acquire as large exhibition spaces as we want to
+use. Museums collect many academic materials, however,
+we can see only a part of the materials due to the limited
+exhibition  spaces.  On the other hand, in the virtual
+museums, we can see many academic materials that cannot
+be shown in the real museums . This is because the virtual
+environment can provide almost infinite exhibition spaces.
+Another feature is that the virtual museums are used as
+not only database  browser of museum’s collections but
+also used as communication spaces for users.  Recently,
+there are many web-based virtual museums , in which we
+can see various collections of the museum, but we cannot
+talk about the exhibitions with others.  On the contrary,
+the MMMUD allows users to  communicate with each
+other. The MMMUD browsers render not only images of
+the rooms and exhibits in the virtual environment but also
+images of other avatars.  You can see motions of other
+avatars, and which exhibits other users are interested in.
+This information is important for users to decide which
+exhibit to see next.  The MMMUD system also supports
+other types of communications among visitors with real-
+time  voice  chatting  and  multi-user  tools.  With  these
+mechanisms, you can be explained about exhibits by other
+visitors, and can talk about the exhibit with them.
+
+The MMMUD virtual museum displays collections in
+the  same  way  as  real  museums.  Users  can  view
+explanations of materials in front of their avatars and
+extract various multimedia data by using the following
+tools.
+
+Explanation tool: Explanation tool is a tool for reading
+explanation texts, which will be displayed as hypertext
+documents  containing  links  to  other  texts  or  other
+collections. Moreover, this tool can read the explanation
+text   by using speech sound (Figure 5).
+
+Magnifying glass tool: Usually, digital archives contain
+much higher resolution images than the resolution of
+usual computer displays. Thus, to see image data in the
+digital archive in its full resolution, we provide a virtual
+tool to magnify the image data on our display.
+
+Rotation tool: Rotation tool is a tool to observe 3D
+geometric data created by 3D scanners. By using this tool,
+users can rotate and magnify materials represented in the
+3D geometric data (Figure 7).
+
+
+Figure 4: Walking in the M³UD virtual gallery         Figure 5: Selecting an 
+object, then applying a tool
+
+Figure 6: Explanation tool                Figure 7: Video avatar with rotation 
+tool
+
+
+Special tool to visualize the distribution of seismic
+centers: This tool is a very special tool to visualize the
+spatial, time, and scale distributions of seismic centers. For
+instance, this tool provides a command to change time
+scales.  This  can  enable  users  to  view  the  spatial
+distribution of seismic centers of earthquakes occurred
+during any period. In the same way as the rotation tool,
+this can rotate and magnify the 3D maps of seismic centers.
+
+Cooperation tool: Cooperation tool is a tool to observe
+other user's behavior using tools. When users uses the
+cooperation tool, they can see the observed users’
+screens. The observing user’s screen will change in real-
+time according to the actions of the observed users. The
+observing and observed users can talk with each other
+while they use the same tool. This mechanism supports
+users to exchange information or to discuss about
+materials.
+
+In real museums, visitors can hear explanation of
+materials by curators and participate museum guide tours.
+
+The MMMUD virtual museum can also provide this
+function, called video guide tour function. This function
+shows a special avatar in the form of human video images.
+This special avatar gives users guidance and explanation
+of museum exhibits. This special avatar, called video avatar,
+has a function to move in the virtual environment and,
+moreover, other usual users participating the video guide
+tour follow the video avatar automatically [10].
+
+5.3. Real exhibition (augmented-reality)
+
+This section shows several  augmented-reality (AR)
+museum exhibition systems [12].
+
+5.3.1.  PDMA.   PDMA  (Personal  Digital  Museum
+Assistant) is an information system in which a PDA
+screen displays explanatory information by holding the
+PDA over exhibition objects (Figure 8). In this system, an
+IrDA transmitter is set nearby an exhibit object that always
+sends the object ID. The PDA contains an IrDA receiver
+and shows information according to the received ID.
+Using PDMA, users can select information presentation
+
+
+formats according to users’ needs. For example, users can
+select normal displays, large character displays for the
+elders and the low vision, easy information especially for
+kids, and English display for foreigners.
+
+IrDA receiver
+
+IrDA transmitter
+
+5.3.3. Point-it.  Point-it is a novel museum information
+system using laser-pointing method and speech sound
+output. Seeing exhibition, visitors bring laser pointers and
+PDAs with speech output function (Figure 10). Walking in
+a gallery, they approach to a display case, and then the
+PDA firstly speak overall explanation of the exhibit
+automatically.  When they want to know more precise
+information about each object, they only have to point its
+title plate by their laser pointers. We have designed this
+system by simulating an expositor always accompanying
+beside vis itors.  When they are approaching to a new
+display corner, the expositor talks about the theme of the
+corner. They standing at the corner, visitors may ask the
+expositor by pointing their fingers, “What’s that?” Then,
+he/she gives more precise information for each object.
+
+Infrared light
+
+
+Figure8: Personal Digital Museum Assistant
+
+Laser pointer
+
+
+5.3.2. Museum AR information system.  Museum AR
+information system gives visitors exhibition information
+overlaid  upon  objects  through  a  see-through  HMD
+equipped with a small  CCD camera that captures object
+IDs. This system is a combination of the bar code method
+and the overlaid display using an HMD.  This system
+enables visitors to obtain overlaid information by only
+turning their eyes onto the objects that they are interested
+in (Figure 9).
+
+Laser beam
+
+Light Senso r
+
+PDA
+
+
+Bar code 
+
+Video 
+Camera 
+
+
+HM D
+
+Caption plate equipped
+with light sensor
+
+Figure 10: Point-it
+
+Light sensor unit
+
+
+Figure 9: Museum AR Information System
+
+5.3.4. Real-world bookmarking. In the museum, visitors
+often take memos about explanations of displayed objects.
+In case of conventional WWW browsers, this activity is
+strongly supported by the bookmarking function. Thus,
+we propose Real-World Bookmarking System that enables
+museum visitors to store pointers of exhibition objects for
+latter references through the Internet.
+
+Visitors bring an RFID card that conveys visitor’s
+information (Figure 11-(1)). An input device such as a
+switch and an RFID reader are put in front of exhibition
+objects (Figure 11-(2)).  When they want to store their
+information, they first put their RFID card on the reader to
+let   the system recognize the visitors’ IDs, then put a
+bookmarking button to record the pair data of a visitor ID
+and object ID (Figure 11-(3)).  By the operation, the
+
+
+museum bookmark server receives and stores the data for
+further queries from their homes via the Internet. In our
+current pilot implementation, a personal computer is used
+for the unit working as a bookmarking switch and an RFID
+card reader controller. The PC shows thumbnail images of
+objects displayed in the display case, and visitors can
+select which objects they record as bookmarks (Figure 11-
+(4)).
+
+(1) Visitors information card     (2) Card I/F unit
+
+(3) A visitor bookmarking     (4) Sample screen in
+
+bookmarking
+Figure        11: Real-World Bookmarking
+
+6. Conclusion
+
+This paper briefly introduces the basic concept and key
+technologies of Tokyo University Digital Museum.  The
+main goal of our activity is to propose new forms of
+museums  of  the  future  in  which  digital  technologies
+support all kinds of museum activities such as gathering,
+preserving, researching, exhibiting, and educating about
+collections. Further,  this paper has  reported our novel
+digital technologies for the digital museum such as media
+and  human  interface  technologies  for  new  exhibition
+styles  and  data  processing  technologies  for  digital
+archiving of cultural or historical materials.
+
+References
+
+[1]  K. Sakamura: “TRON and Digital Museum”, In Proc.
+13th TRON Project International Symposium, IEEE
+CS Press, pp. 2-13 (1996).
+
+[2] K. Sakamura ed., “Digital Museum”, The University
+Museum, The University Tokyo, 1996.
+
+[3] K.  Sakamura  and  H.  Suzuki  ed.,  “Virtual
+Architecture”,  The  University  Museum,  The
+University Tokyo, 1997.
+
+[4]  K.  Sakamura  ed.,  “Open  Academia:  The  120th
+Anniversary  of  the  University  of  Tokyo”,  The
+University of Tokyo, 1997.
+
+[5]  K. Sakamura ed., “Science of Life ”, The University of
+Tokyo, 1998.
+
+[6]  K. Sakamura and S. Hasumi ed., “From behind the
+Camera:  A  New  Look  at  the  World  of  Director
+Yasujiro Ozu Based on Private Materials of the Late
+Yuharu  Atsuta”,  The  University  Museum,  The
+University of Tokyo, 1998.
+
+[7]  K.  Sakamura  ed.,  “Digital  Museum  2000”,  The
+University Museum, The University of Toky o, 2000.
+
+[8]  T. Usaka, et. al., “A Multimedia MUD System for the
+Digital  Museum”,  In  Proc.  3rd  Asia  Pacific
+Computer Human Interaction, IEEE CS Press, pp. 32-
+37 (1998).
+
+[9]  S. Yura, et. al., “Design and Implementation of the
+Browser for the Multimedia Multi-User Dungeon of
+the Digital Museum”, In  Proc. 3rd Asia Pacific
+Computer Human Interaction, IEEE CS Press, pp. 44-
+49, (1998).
+
+[10] S. Yura, T. Usaka, and K. Sakamura. “Video Avatar:
+Embedded  Video  for  Collaborative  Virtual
+Environment”,  In  Proc.  IEEE  International
+Conference on Multimedia Computing and Systems
+'99,                             IEEE CS Press, (1999).
+
+[11] N. Koshizuka, et. al., “100,000 Chinese Characters Set
+‘GT Mincho’ and its Processing Environment as a
+Global  Communications  Infrastructure”,  In  Proc.
+International    Conference    of    Computer
+Communications '99, (Sept. 1999).
+
+[12] N.  Koshizuka,  et.  al.,  “HyperGallery:  A  Museum
+Information  Space  Integrating  Real  and  Virtual
+Galleries  for  Digital  Museums”,  In  Proc.  8th
+Workshop  on  Interactive  Systems  and  Software,
+Japan  So ciety for Software Science and Technology,
+2000, in Japanese, to appear.
+
+[13] K. Kuramitsu and K. Sakamura: “PCO: EC Content
+Description   Language   Supporting   Distributed
+Schemas across the Internet”, Transactions of IPSJ,
+Vol. 41, No. 1, pp. 110-122, 2000, in Japanese.
+

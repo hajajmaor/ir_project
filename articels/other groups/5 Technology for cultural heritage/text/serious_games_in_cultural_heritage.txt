@@ -1,0 +1,1726 @@
+The 10th International Symposium on Virtual Reality, Archaeology and Cultural Heritage VAST - State of the Art Reports (2009)
+M. Ashley and F. Liarokapis (Editors)
+
+Serious Games in Cultural Heritage
+Eike Falk Anderson1 , Leigh McLoughlin2 , Fotis Liarokapis1 , Christopher Peters1 , Panagiotis Petridis3 , Sara de Freitas3
+1 Interactive
+2 The
+
+Worlds Applied Research Group (iWARG), Coventry University, United Kingdom
+National Centre for Computer Animation (NCCA), Bournemouth University, United Kingdom
+3 Serious Games Institute (SGI), Coventry University, United Kingdom
+
+Abstract
+Although the widespread use of gaming for leisure purposes has been well documented, the use of games to support
+cultural heritage purposes, such as historical teaching and learning, or for enhancing museum visits, has been less
+well considered. The state-of-the-art in serious game technology is identical to that of the state-of-the-art in entertainment games technology. As a result the field of serious heritage games concerns itself with recent advances
+in computer games, real-time computer graphics, virtual and augmented reality and artificial intelligence. On the
+other hand, the main strengths of serious gaming applications may be generalised as being in the areas of communication, visual expression of information, collaboration mechanisms, interactivity and entertainment. In this
+report, we will focus on the state-of-the-art with respect to the theories, methods and technologies used in serious
+heritage games. We provide an overview of existing literature of relevance to the domain, discuss the strengths and
+weaknesses of the described methods and point out unsolved problems and challenges. In addition, several case
+studies illustrating the application of methods and technologies used in cultural heritage are presented.
+Categories and Subject Descriptors (according to ACM CCS): H.5.1 [Information Interfaces and Presentation]: Multimedia Information Systems—Artificial, augmented, and virtual realities I.2.1 [Artificial Intelligence]: Applications and Expert Systems—Games K.3.1 [Computers and Education]: Computer Uses in Education—Computerassisted instruction K.8.0 [Personal Computing]: General—Games
+
+1. Introduction
+Computer games with complex virtual worlds for entertainment are enjoying widespread use and in recent years we
+have witnessed the introduction of serious games, including
+the use of games to support cultural heritage purposes, such
+as historical teaching and learning, or for enhancing museum
+visits. At the same time, game development has been fuelled
+by dramatic advances in computer graphics hardware – in
+turn driven by the success of video games – which have led
+to a rise in the quality of real-time computer graphics and increased realism in computer games. The successes of games
+that cross over into educational gaming – or serious gaming, such as the popular Civilization (although “abstract and
+ahistorical” [App06]) and Total War series of entertainment
+games, as well as games and virtual worlds that are specifically developed for educational purposes, such as Revolution [Fra06] and the Virtual Egyptian Temple [JH05], all of
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+which exist within a cultural heritage context, reveal the potential of these technologies to engage and motivate beyond
+leisure time activities.
+The popularity of video games, especially among younger
+people, makes them an ideal medium for educational purposes [ML87]. As a result there has been a trend towards
+the development of more complex, serious games, which are
+informed by both pedagogical and game-like, fun elements.
+The term ‘serious games’ describes a relatively new concept,
+computer games that are not limited to the aim of providing
+entertainment, that allow for collaborative use of 3D spaces
+that are used for learning and educational purposes in a number of application domains. Typical examples are game engines and online virtual environments that have been used to
+design and implement games for non-leisure purposes, e.g.
+in military and health training [Mac02, Zyd05], as well as
+cultural heritage (Figure 1).
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+tural heritage serious games and illustrating challenges in
+their application.
+2. The State-of-the-Art in Serious Games
+
+Figure 1: Experiencing ‘Rome Reborn’ as a game.
+
+This report explores the wider research area of interactive games and related applications with a cultural heritage
+context and the technologies used for their creation. Modern games technologies (and related optimisations [CD09])
+allow the real-time interactive visualisation/simulation of realistic virtual heritage scenarios, such as reconstructions of
+ancient sites and monuments, while using relatively basic
+consumer machines. Our aim is to provide an overview of
+the methods and techniques used in entertainment games
+that can potentially be deployed in cultural heritage contexts,
+as demonstrated by particular games and applications, thus
+making cultural heritage much more accessible.
+Serious games can exist in the form of mobile applications, simple web-based solutions, more complex ‘mashup’
+applications (e.g. combinations of social software applications) or in the shape of ‘grown-up’ computer games, employing modern games technologies to create virtual worlds
+for interactive experiences that may include socially based
+interactions, as well as mixed reality games that combine
+real and virtual interactions, all of which can be used in
+cultural heritage applications. This state-of-the-art report focusses on the serious games technologies that can be found
+in modern computer games.
+The report is divided into two main sections:
+• The first of these is concerned with the area of cultural
+heritage and serious games, which integrate the core technologies of computer games with principled pedagogical
+methodologies. This is explored in a range of characteristic case studies, which include entertainment games that
+can be used for non-leisure purposes as well as virtual
+museums and educationally focused and designed cultural
+heritage projects.
+• The second part investigates those computer games technologies that are potentially useful for the creation of cultural heritage games, such as real-time rendering techniques, mixed reality technologies and subdomains of
+(game) artificial intelligence. This literature review includes discussions of strengths and weaknesses of the
+most prominent methods, indicating potential uses for cul-
+
+The state-of-the-art in Serious Game technology is identical
+to the state-of-the-art in Entertainment Games technology.
+Both types of computer game share the same infrastructure,
+or as Zyda notes, “applying games and simulations technology to non-entertainment domains results in serious games”
+[Zyd05]. The main strengths of serious gaming applications
+may be generalised as being in the areas of communication,
+visual expression of information, collaboration mechanisms,
+interactivity and entertainment.
+Over the past decade there have been tremendous advances in entertainment computing technology, and “today’s
+games are exponentially more powerful and sophisticated
+than those of just three or four years ago” [Saw02], which
+in turn is leading to very high consumer expectations. Realtime computer graphics can achieve near-photorealism and
+virtual game worlds are usually populated with considerable
+amounts of high quality content, creating a rich user experience. In this respect, Zyda [Zyd05] argues that while pedagogy is an implicit component of a serious game, it should
+be secondary to entertainment, meaning that a serious game
+that is not ‘fun’ to play would be useless, independent of its
+pedagogical content or value. This view is not shared by all,
+and there exist design methodologies for the development
+of games incorporating pedagogic elements, such as the four
+dimensional framework [dFO06], which outlines the centrality of four elements that can be used as design and evaluation
+criteria for the creation of serious games. In any case there is
+a need for the game developers and instructional designers
+to work together to develop engaging and motivating serious
+games for the future.
+2.1. Online Virtual Environments
+There is a great range of different online virtual world applications – at least 80 virtual world applications existed
+in 2008 with another 100 planned for 2009. The field is
+extensive, not just in terms of potential use for education
+and training but also in terms of actual usage and uptake
+by users, which is amply illustrated by the online platform
+Second Life (Linden Labs), which currently has 13 million
+registered accounts worldwide. The use of Second Life for
+supporting seminar activities, lectures and other educational
+purposes has been documented in a number of recent reports and a wide range of examples of Second Life use by
+UK universities has been documented [Kir08]. Online virtual worlds provide excellent capabilities for creating effective distance and online learning opportunities through
+the provision of unique support for distributed groups (online chat, the use of avatars, document sharing etc.). This
+benefit has so far been most exploited in business where
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+these tools have been used to support distributed or locationindependent working groups or communities [Jon05]. Online virtual worlds in this way facilitate the development of
+new collaborative models for bringing together subject matter experts and tutors from around the world, and in terms
+of learning communities are opening up opportunities for
+learning in international cohorts where students from more
+than one country or location can learn in mixed reality contexts including classroom and non-classroom based groups
+(https://lg3d-wonderland.dev.java.net). Online virtual worlds also notably offer real opportunities for training,
+rehearsing and role playing.
+2.2. Application to Cultural Heritage: Case Studies
+This section provides an overview of some of the most
+characteristic case studies in cultural heritage. In particular
+the case studies have been categorised into three types of
+computer-game-like applications including: prototypes and
+demonstrators; virtual museums; and commercial historical
+games.
+2.2.1. Prototypes and Demonstrators
+The use of visualisation and virtual reconstruction of
+ancient historical sites is not new, and a number of
+projects have used this approach to study crowd modelling
+[ADG∗ 08, MHY∗ 07]. Several projects are using virtual reconstructions in order to train and educate their users. Many
+of these systems have, however, never been released to the
+wider public, and have only been used for academic studies.
+In the following section the most significant and promising
+of these are presented.
+
+Figure 2: ‘Rome Reborn’ Serious Game.
+2.2.1.1. Rome Reborn
+The Rome Reborn project is the world’s largest digitisation project and has been running for 15 years. The main
+aims of the project are to produce a high resolution version
+of Rome at 320 AD (Figure 2), a lower resolution model
+for creating a ‘mashup’ application with ‘Google Earth’
+(http://earth.google.com/rome/), and finally the collaborative mode of the model for use with virtual world applications and aimed primarily at education [Fri08].
+
+In order to investigate the efficacy of the Rome Reborn
+Project for learning, exploration, re-enactment and research
+of cultural and architectural aspects of ancient Rome a serious game is currently under development. In particular, the
+project aims at investigating the suitability of using this technology to support the archaeological exploration of historically accurate societal aspects of Rome’s life, with an emphasis on political, religious and artistic expressions.
+To achieve these objectives, the project will integrate four
+cutting-edge virtual world technologies with the Rome Reborn model, the most detailed three-dimensional model of
+Ancient Rome available. These technologies include:
+• the Quest3D visualisation engine [God08]
+• Instinct(maker) artificial life engine (Toulouse University)
+[SBLD04]
+• ATOM Spoken Dialogue System
+(http://www.agilingua.com)
+• High resolution, motion captured characters and objects
+from the period (Red Bedlam).
+The use of the Instinct artificial life engine enables coherent crowd animation and therefore the population of the city
+of Rome with behaviour driven virtual characters. These virtual characters with different behaviours can teach the player
+about different aspects of life in Rome (living conditions,
+politics, military) [SBLD04]. Agilingua ATOM’s dialogue
+management algorithm allows determining how the system
+will react: asking questions, making suggestions, and/or confirming an answer.
+This project aims to develop a researchers’ toolkit for allowing archaeologists to test past and current hypotheses
+surrounding architecture, crowd behaviour, social interactions, topography and urban planning and development, using Virtual Rome as a test-bed for reconstructions. By using such game the researches will be able to analyse the
+impact of major events. For example, the use of this technique would allow researchers to analyse the impact of major events, such as grain distribution or the influx of people
+into the city . The experiences of residents and visitors as
+they pass through and interact with the ancient city can also
+be explored.
+2.2.1.2. Ancient Pompeii
+Pompeii was a Roman city, which was destroyed and completely buried in the first recorded eruption of the volcano
+Mount Vesuvius in 79 AD [PCSa, PCSb]. For this project
+a model of ancient Pompeii was constructed and populated
+with avatars in order to simulate life in Pompeii in real-time.
+The main goal of this project was to simulate a crowd of
+virtual Romans exhibiting realistic behaviours in a reconstructed district of Pompeii [MHY∗ 07]. The virtual entities
+can navigate freely in several buildings in the city model and
+interact with their environment [ADG∗ 08].
+2.2.1.3. Parthenon Project
+The Parthenon Project is a short computer animation that
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+“visually reunites the Parthenon and its sculptural decorations” [Deb05]. The Parthenon itself is an ancient monument, completed in 437 BC, and stands in Athens while
+many of its sculptural decorations reside in the collection of
+the British Museum, London (UK). The project goals were
+to create a virtual version of the Parthenon and its separated
+sculptural elements so that they could be reunited in a virtual
+representation.
+The project involved capturing digital representations of
+the Parthenon structure and the separate sculptures, recombining them and then rendering the results. The structure was
+scanned using a commercial laser range scanner, while the
+sculptures were scanned using a custom 3D scanning system
+that the team developed specifically for the project [Tch02].
+The project made heavy use of image-based lighting techniques, so that the structure could be relit under different
+illumination conditions within the virtual representation. A
+series of photographs were taken of the structure together
+with illumination measurements of the scene’s lighting. An
+inverse global illumination technique was then applied to
+effectively ‘remove’ the lighting. The resulting “lightingindependent model” [DTG∗ 04] could then be relit using any
+lighting scheme desired [TSE∗ 04, DTG∗ 04].
+Although the Parthenon Project was originally an offlinerendered animation, it has since been converted to work in
+real-time [SM06, IS06]. The original Parthenon geometry
+represented a large dataset consisting of 90-million polygons
+(after post-processing), which was reduced to 15-million for
+the real-time version and displayed using dynamic levelof-detail techniques. Texture data consisted of 300MB and
+had to be actively managed and compressed, while 2.1GB
+of compressed High-Dynamic-Range (HDR) sky maps were
+reduced in a pre-processing step. The reduced HDR maps
+were used for lighting and the extracted sun position was
+used to cast a shadow map.
+2.2.2. Virtual Museums
+Modern interactive virtual museums using games technologies [JC02, LV04] provide a means for the presentation of
+digital representations for cultural heritage sites [EHML∗ 06]
+that entertain and educate visitors [HCB∗ 01] in a much more
+engaging manner than was possible only a decade ago. A
+recent survey paper that examines all the technologies and
+tools used in museums was recently published [SLKP09].
+Here we present several examples of this type of cultural
+heritage serious game, including some virtual museums that
+can be visited in real-world museums.
+2.2.2.1. Virtual Egyptian Temple
+This game depicts a hypothetical Virtual Egyptian Temple
+[JH05], which has no real-world equivalent. The temple embodies all of the key features of a typical New Kingdom period Egyptian temple in a manner that an untrained audience
+can understand. It is divided into four major areas, each one
+
+of which houses an instance of the High Priest, a pedagogical agent. Each area of this virtual environment represents a
+different feature from the architecture of that era.
+The objective of the game is to explore the model and
+gather enough information to answer the questions asked
+by the priest (pedagogical agent). The game engine that this
+system is based on is the Unreal Engine 2 (Figure 3) [JL05],
+existing both as an Unreal Tournament 2004 game modification [Wal07] for use at home, as well as in the form of a
+Cave Automatic Virtual Environment (CAVE [CNSD∗ 92])
+system in a real museum.
+
+Figure 3: New Kingdom Egyptian Temple game.
+
+2.2.2.2. The Ancient Olympic Games
+The Foundation of the Hellenic World has produced a number of gaming appliucations associated with the Olympic
+Games in ancient Greece [GCP04]. For example, in the
+‘Olympic Pottery Puzzle’ exhibit the user must re-assemble
+a number of ancient vases putting together pot shards. The
+users are presented with a colour-coded skeleton of the vessels with the different colours showing the correct position
+of the pieces. They then try to select one piece at a time from
+a heap and place it in the correct position on the vase. Another game is the ‘Feidias Workshop’ which is a highly interactive virtual experience taking place at the construction
+site of the 15-meter-tall golden ivory statue of Zeus, one of
+the seven wonders of the ancient world. The visitors enter
+the two-storey-high workshop and come into sight of an accurate reconstruction of an unfinished version of the famous
+statue of Zeus and walk among the sculptor’s tools, scaffolding, benches, materials, and moulds used to construct it.
+They take the role of the sculptor’s assistants and actively
+help finish the creation of the huge statue, by using virtual
+tools to apply the necessary materials onto the statue, process the ivory and gold plates, apply them onto the wooden
+supporting core and add the finishing touches. Interaction is
+achieved using the navigation wand of the Virtual Realiyy
+(VR) system, onto which the various virtual tools are attached. Using these tools the user helps finish the work on
+the statue, learning about the procedures, materials and techniques applied for the creation of these marvellous statues.
+The last example is the ‘Walk through Ancient Olympia’,
+where the user, apart from visiting the historical site, learns
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+the game is to solve a puzzle by collecting medieval objects
+that used to be located in and around the Priory Undercroft.
+Each time a new object is found, the user is prompted to
+answer a question related to the history of the site. A typical user-interaction might take the form of: “What did St.
+George slay? – Hint: It is a mythical creature. – Answer: The
+Dragon”, meaning that the user then has to find the Dragon.
+
+Figure 4: Walk through Ancient Olympia [GCP04].
+
+about the ancient games themselves by interacting with athletes in the ancient game of pentathlon (Figure 4). The visitors can wonder around and visit the buildings and learn
+their history and their function: the Heraion, the oldest monumental building of the sanctuary dedicated to the goddess
+Hera, the temple of Zeus, a model of a Doric peripteral temple with magnificent sculpted decoration, the Gymnasium,
+which was used for the training of javelin throwers, discus throwers and runners, the Palaestra, where the wrestlers,
+jumpers and boxers trained, the Leonidaion, which was
+where the official guests stayed, the Bouleuterion, where athletes, relatives and judges took a vow that they would upheld the rules of the Games, the Treasuries of various cities,
+where valuable offerings were kept, the Philippeion, which
+was dedicated by Philip II, king of Macedonia, after his victory in the battle of Chaeronea in 338 BC and the Stadium,
+where most of the events took place. Instead of just observing the games the visitors take place in them. They can pick
+up the discus or the javelin and they try their abilities in
+throwing them towards the far end of the stadium. Excited
+about the interaction they ask when they will be able to interact with the wrestler one on one. A role-playing model of
+interaction with alternating roles was tried here with pretty
+good success as the visitors truly immersed in the environment wish they could participate in more games [GCP04].
+2.2.2.3. Virtual Priory Undercroft
+Located in the heart of Coventry, UK, the Priory Undercrofts are the remains of Coventry’s original Benedictine
+monastery, dissolved by Henry VIII. Although archaeologists revealed the architectural structure of the cathedral, the
+current site is not easily accessible for the public. Virtual Priory Undercroft offers a virtual exploration of the site in both
+online and offline configurations.
+Furthermore, a first version of a serious game (Figure 5)
+has been developed at Coventry University, using the ObjectOriented Graphics Rendering Engine (OGRE) [WM08]. The
+motivation is to raise the interest of children in the museum, as well as cultural heritage in general. The aim of
+
+Figure 5: Priory Undercroft – a Serious Game
+
+2.2.3. Commercial Historical Games
+Commercial games with a cultural heritage theme are usually of the ‘documentary game’ [Bur05b] genre that depict
+real historical events (frequently wars and battles), which the
+human player can then partake in. These are games that were
+primarily created for entertainment, but their historical accurracy allows them to be used in educational settings as
+well.
+2.2.3.1. History Line: 1914-1918
+An early representative of this type of game was History
+Line: 1914-1918 (Blue Byte, 1992), an early turn-based
+strategy game depicting the events of the First World War
+The game was realised using the technology of the more
+prominent game Battle Isle, providing players with a 2D topdown view of the game world, divided into hexagons that
+could be occupied by military units, with the gameplay very
+much resembling traditional board-games.
+The game’s historical context was introduced in a long
+(animated) introduction, depicting the geo-political situation
+of the period and the events leading up to the outbreak of
+war in 1914. In between battles the player is provided with
+additional information on concurrent events that shaped the
+course of the conflict, which is illustrated with animations
+and newspaper clippings from the period.
+2.2.3.2. Great Battles of Rome
+More recently a similar approach was used by the History Channel’s Great Battles of Rome (Slitherine Strategies,
+2007), another ‘documentary game’, which mixes interactive 3D real-time tactical simulation of actual battles with
+documentary information (Figure 6), including footage originally produced for TV documentaries, that places the battles
+in their historical context.
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+types of hardware, including older systems, especially older
+graphics cards (supporting the programmable Shader Model
+2), but the highest visual fidelity is only achieved on recent systems (Shader Model 3 graphics hardware) [Gar09].
+If the hardware allows for this, shadows for added realism
+in the virtual world are generated using Screen Space Ambient Occlusion [Mit07, BS08], making use of existing depthbuffer information in rendered frames. Furthermore the virtual world of the game is provided with realistic vegetation
+generated by the popular middleware system SpeedTree (Interactive Data Visualization, Inc.), which “features realistic tree models and proves to be able to visualise literally
+thousands of trees in real-time” [FK04]. As a result the human player is immersed in the historical setting, allowing the
+player to re-live history.
+
+Figure 6: Great Battles of Rome.
+
+2.2.3.3. Total War
+The most successful representatives of this type of historical game are the games of the Creative Assembly’s Total
+War series, which provide a gameplay combination of turnbased strategy (for global events) and real-time tactics (for
+battles). Here, a historical setting is enriched with information about important events and developments that occurred
+during the timeframe experienced by the player. While the
+free-form campaigns allow the game’s players to change the
+course of history, the games also include several independent
+battle-scenarios with historical background information that
+depict real events and allow players to partake in moments
+of historical significance.
+The use of up-to-date games technology for rendering, as
+well as the use of highly detailed game assets that are reasonably true to the historical context, enables a fairly realistic
+depiction of history. As a result, games from the Total War
+series have been used to great effect in the visualisation of
+armed conflicts in historical programmes produced for TV
+[War07].
+
+Figure 7: Reliving the battle of Brandywine Creek [McG06].
+The latest title in the series, Empire Total War (released in
+March 2009), depicting events from the start of the 18th century to the middle of the 19th century, makes use of some of
+the latest developments in computer games technology (Figure 7). The game’s renderer is scalable to support different
+
+3. The Technology of Cultural Heritage Serious Games
+Modern interactive virtual environments are usually implemented using game engines, which provide the core technology for the creation and control of the virtual world. A game
+engine is an open, extendable software system on which a
+computer game or a similar application can be built. It provides the generic infrastructure for game creation [Zyd05],
+i.e. I/O (input/output) and resource/asset management facilities. The possible components of game engines include, but
+are not limited to: rendering engine, audio engine, physics
+engine, animation engine.
+3.1. Virtual World System Infrastructure
+The shape that the infrastructure for a virtual environment
+takes is dictated by a number of components, defined by
+function rather than organisation, the exact selection of
+which determines the tasks that the underlying engine is suitable for. A game engine does not provide data or functions
+that could be associated with any game or other application
+of the game engine [ZDA03]. Furthermore, a game engine is
+not just an API (Application Programming Interface), i.e. a
+set of reusable components that can be transferred between
+different games, but also provides a glue layer that connects
+its component parts. It is this glue layer that sets a game engine apart from an API, making it more than the sum of its
+components and sub-systems.
+Modern game engines constitute complex parallel systems that compete for limited computing resources [Blo04].
+They “provide superior platforms for rendering multiple
+views and coordinating real and simulated scenes as well
+as supporting multiuser interaction” [LJ02], employing advanced graphics techniques to create virtual environments.
+Anderson et al. [AEMC08] provide a discussion of several challenges and open problems regarding game engines,
+which include the precise definition of the role of content
+creation tools in the game development process and as part
+of game engines, as well as the identification of links between game genres and game engine architecture, both of
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+which play a crucial role in the process of selecting an appropriate game engine for a given project.
+Frequently, the technology used for the development of
+virtual environments, be they games for entertainment, serious games or simulations, is limited by the development
+budget. Modern entertainment computer games frequently
+require “a multimillion-dollar budget” [Ove04] that can
+now rival the budgets of feature film productions, a significant proportion of which will be used for asset creation
+(such as 3D models and animations). Developers are usually faced with the choice of developing a proprietary infrastructure, i.e. their own game engine, or to use an existing engine for their virtual world application. Commercially developed game engines are usually expensive, and
+while there are affordable solutions, such as the Torque game
+engine which is favoured by independent developers and
+which has been successfully used in cultural heritage applications [LWH∗ 07, MSLV08], these generally provide fewer
+features, thus potentially limiting their usefulness. If one of
+the project’s requirements is the use of highly realistic graphics with a high degree of visual fidelity, this usually requires
+a recent high-end game engine, the most successful of which
+usually come at a very high licensing fee.
+There are alternatives, however, as several older commercially developed engines have been released under Open
+Source licences, such as the Quake 3 engine (id Tech 3)
+[ST08, WM08], making them easily accessible, and while
+they do not provide the features found in more recently published games, they nevertheless match the feature sets of the
+cheaper commercial engines. Furthermore, there exist open
+source game engines such as the Nebula Device [RM03], or
+engine components, such as OGRE [RM03, WM08] or ODE
+(Open Dynamics Engine) [MW03], which are either commercially developed or close to commercial quality, making
+them a viable platform for the development of virtual worlds,
+although they may lack the content creation tools that are
+frequently packaged with larger commercial engines.
+Finally, there is the possibility of taking an existing game
+and modifying it for one’s own purposes, which many recent games allow users to do [Wal07, ST08]. This has the
+benefit of small up-front costs, as the only requirement is
+the purchase of a copy of the relevant game, combined
+with access to high-spec modern game engines, as well
+as the content development tools that they contain. Examples for this are the use of the game Civilization III
+for the cultural heritage game The History Game Canada
+(http://historycanadagame.com) or the use of the Unreal Engine 2 [ST08] for the development of an affordable
+CAVE [JL05], which has been used successfully in cultural
+heritage applications [JH05].
+3.2. Virtual World User Interfaces
+There are different types of interface that allow users to interact with virtual worlds. These fall into several different
+
+categories, such as VR and augmented reality (AR), several
+of which are especially useful for cultural heritage applications, and which are presented in this section.
+3.2.1. Mixed Reality Technologies
+In 1994, Milgram [MK94] tried to depict the relationship between VR and AR. To illustrate this he introduced two new
+terms called Mixed Reality (MR), which is a type of VR but
+has a wider concept than AR, [TYK01] and Augmented Virtuality (AV). On the left hand side of the Reality-Virtuality
+continuum, there is the representation of the real world and
+on the right hand side there is the ultimate synthetic environment. MR stretches out in-between these environments
+and it can be divided into two sub-categories: AR and AV
+[MK94]. AR expands towards the real world and thus it is
+less synthetic than AV which expands towards virtual environments. To address the problem from another perspective
+a further distinction has been made. This refers to all the objects that form an AR environment: real objects and virtual
+objects. Real objects are these, which always exist no matter what the external conditions may be. On the other hand,
+a virtual object depends on external factors but mimics objects of reality. Three of the most interesting characteristics
+between virtual and real objects are illustrated here.
+The first and most obvious difference is that a virtual object has to be viewed through a display device after it has
+been generated and then simulated. On the contrary, real objects, since they exist in essence, can be viewed either directly or through a synthetic device. The second difference
+concentrates on the quality of the viewed image that is generated by using state-of-the-art technologies. More specifically, virtual information cannot be sampled directly but can
+be synthesised. Therefore, the quality of the resulting object may look real but this does not guarantee that the object
+is real. In addition, the virtual and real information can be
+distinguished depending on the luminosity of the location
+where it appears. Real images have some luminosity at the
+location at which it appears to be located while virtual images do not have any at the location at which it appears. This
+definition includes direct viewing of a real object, as well
+as the image on the display screen of a non-directly viewed
+object. Examples of virtual images include holograms and
+mirror images [MK94] .
+3.2.2. Virtual Reality
+Ivan Sutherland originally introduced the first Virtual Reality (VR) system in the 1960s [Sut65]. Nowadays VR is
+moving from the research laboratories to the working environment by replacing ergonomically limited HMD’s with
+projective displays (such as the well known CAVE and Responsive Workbench) as well as online VR communities. In
+a typical VR system the user’s natural sensory information is
+completely replaced with digital information. The user’s experience of a computer-simulated environment is called immersion. As a result, VR systems can completely immerse a
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+user inside a synthetic environment by blocking all the signals of the real world. In addition, a VR simulated world
+does not always have to obey all laws of nature. In immersive VR systems, the most common problems of VR systems
+are of emotional and psychological nature including motion
+sickness, nausea, and other symptoms, which are created by
+the high degree of immersiveness of the users.
+Moreover, internet technologies have the tremendous potential of offering virtual visitors ubiquitous access via
+the World Wide Web (WWW) to online virtual environments. Additionally, the increased efficiency of Internet connections (i.e. ADSL/broadband) makes it possible to transmit significant media files relating to the
+artefacts of virtual museum exhibitions. The most popular technology for WWW visualisation includes Web3D
+which offers tools such as the Virtual Reality Modeling
+Language (VRML – http://www.web3d.org/x3d/vrml/)
+and its successor X3D (http://www.web3d.org/x3d/),
+which can be used for the creation of an interactive virtual museum. Many cultural heritage applications based on VRML have been developed for the
+web [Gat00, PEHBP01, SM01]. Another 3D graphics format, is COLLAborative Design Activity (COLLADA –
+https://collada.org/ which defines an open standard
+XML schema (http://www.w3.org/XML/Schema) for exchanging digital assets among various graphics software applications that might otherwise store their assets in incompatible formats. One of the main advantages of COLLADA
+is that is includes more advanced physics functionality such
+as collision detection and friction (which Web3D does not
+support).
+In addition to these, there are more powerful
+technologies that have been used in museum environments, which include the OpenSceneGraph
+(OSG) high performance 3D graphics toolkit
+(http://www.openscenegraph.org/projects/osg)
+and a variety of 3D game engines. OSG is a freely available
+(open source) multi-platform toolkit, used by museums
+[CCF∗ 05, LGSB06] to generate more powerful VR applications, especially in terms of immersion and interactivity
+since it supports the integration of text, video, audio and
+3D scenes into a single 3D environment. An alternative
+to OpenSceneGraph, is OpenSG which is an open-source
+scene graph system used to create real-time VR applications
+(http://www.opensg.org/) On the other hand, 3D game
+engines are also very powerful and they provide superior
+visualisation and physics support. Both technologies (OSG
+and 3D game engines), compared to VRML and X3D,
+can provide very realistic and immersive museum environments but they have two main drawbacks. First, they
+require advanced programming skills in order to design
+and implement custom applications. Secondly, they do not
+have support for mobile devices such as PDAs and Third
+Generation mobile phones.
+
+3.2.3. Augmented Reality
+The concept of AR is the opposite of the closed world of
+virtual spaces [TYK99] since users can perceive both virtual and real information. Most AR systems use more complex software approaches compared to VR systems. The basic theoretical principle is to superimpose digital information directly into a user’s sensory perception [Fei02], rather
+than replacing it with a completely synthetic environment as
+VR systems do. An interesting point is that both technologies may process and display the same digital information
+and often they make use of the same dedicated hardware.
+Although AR systems are influenced by the same factors the
+amount of influence is much less than in VR since only a
+portion of the environment is virtual. However, there is still
+a lot of research to be done in AR [Azu97] to measure accurately its effects on humans.
+The requirements related to the development of AR applications in the cultural heritage field have been well documented [BAEB99, LSM08, SLKP09]. An interactive concept is the Meta-Museum visualised guide system based on
+AR, which tries to establish scenarios and provide a communication environment between the real world and cyberspace
+[MKN96]. Another AR system that could be used as an automated tour guide in museums is the automated tour guide,
+which superimposes audio in the world based on the location
+of the user [Bed95]. There are many ways where archaeological sources can be used to provide a mobile AR system.
+Some of the wide range of related applications includes the
+initial collection of data to the eventual dissemination of information [Rya00]. MARVINS is an AR assembly, initially
+designed for mobile applications and can provide orientation and navigation possibilities in areas, such as science
+museums, art museums and other historic or cultural sites.
+Augmented information like video, audio and text is relayed
+from a server via the transmitter-receiver to a head-mounted
+display [SCFS00].
+In addition, a number of EU projects have been undertaken in the field of virtual heritage. The SHAPE project
+[HCB∗ 01] combined AR and archaeology to enhance the
+interaction of persons in public places like galleries and museums by educating visitors about artefacts and their history.
+The 3DMURALE project [CIG∗ 01] developed 3D multimedia tools to record, reconstruct, encode and visualise archaeological ruins in virtual reality using as a test case the ancient city of Sagalassos in Turkey. The Ename 974 project
+[PCKS00] developed a non-intrusive interpretation system
+to convert archaeological sites into open-air museums, called
+TimeScope-1 based on 3D computer technology originally
+developed by IBM, called TimeFrame. ARCHEOGUIDE
+[SDS∗ 01] provides an interactive AR guide for the visualisation of archaeological sites based on mobile computing,
+networking and 3D visualisation providing the users with a
+multi-modal interaction user interface. A similar project is
+LIFEPLUS [PPM∗ 02], which explores the potential of AR
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+so that users can experience a high degree of realistic interactive immersion by allowing the rendering of realistic 3D
+simulations of virtual flora and fauna (humans, animals and
+plants) in real-time
+Moreover, AR can be applied successfully for gaming in
+cultural heritage. One of the earliest examples is the Virtual
+Showcase [BFSE01] which is an AR display device that has
+the same form factor as a real showcase traditionally used for
+museum exhibits and can be used for gaming. The potentials
+of AR interfaces in museum environments and other cultural
+heritage institutions [Lia07] as well as outdoor heritage sites
+[VIK∗ 02] have been also briefly explored for potential educational applications. A more specific gaming example is the
+MAGIC and TROC systems [RNBP04] which were based on
+a study of the tasks of archaeological fieldwork, interviews
+and observations in Alexandria. That’s a mobile game and
+the players discover archaeological objects while moving.
+Another cultural heritage AR application is the serious
+game SUA that was part of the BIDAIATZERA project
+[LCM∗ 07]. This project takes the form of a play which
+recreates the 1813 battle between the English and the French
+in San Sebastian. Researchers developed an interactive system based on AR and VR technologies for recreational and
+educational applications with tourist, cultural and socioeconomical contents, the prototype for which was presented
+at the Museo del Monte Urgull in San Sebastian.
+3.3. Advanced Rendering Techniques
+One of the most important elements of the creation of interactive virtual environments is the visual representation
+of these environments. Although serious games have design goals that are different from those of pure entertainment video games, they can still make use of the wide variety of graphical features and effects that have been developed in recent years. The state-of-the-art in this subject area
+is broad and, at times, it can be difficult to specify exactly
+where the ‘cutting edge’ of the development of an effect lies.
+A number of the techniques that are currently in use were
+originally developed for offline applications and have only
+recently become adopted for use in real-time applications
+through improvements in efficiency or hardware. Here, the
+‘state-of-the-art’ for real-time lags several years behind that
+for offline – good examples of this would be raytracing or
+global illumination, which we shall briefly examine. A number of effects, however, are developed specifically for immediate deployment on current hardware and can make use of
+specific hardware features – these are often written by hardware providers themselves to demonstrate their use or, of
+course, by game developers. Other real-time graphical features and effects can be considered to follow a development
+cycle, where initially they are proven in concept demonstrations or prototypes, but are too computationally expensive to
+implement in a full application or game. These are usually
+developed by academics or blue-sky research departments
+
+within games companies. They may then be progressively
+optimised for speed, or held back until the development of
+faster hardware.
+The primary reason for the proliferation of real-time
+graphics effects has been due to advances in low-cost graphics hardware that can be used in standard PCs or games
+consoles. Modern graphics processing units (GPUs) are
+extremely powerful parallel processors and the graphics
+pipeline is becoming increasingly flexible. Through the use
+of programmable shaders, which are small programs that define and direct part of the rendering process, a wide variety of
+graphical effects are now possible for inclusion in games and
+virtual environments, while there also exist a range of effects
+that are currently possible but still too expensive for practical
+use beyond anything but the display of simple scenes.
+The graphics pipeline used by modern graphics hardware renders geometry using rasterisation, where an object
+is drawn as triangles which undergo viewing transformations
+before they are converted directly into pixels. In contrast,
+ray-tracing generates a pixel by firing a corresponding ray
+into the scene and sampling whatever it may hit. While the
+former is generally faster, especially using the hardware acceleration on modern graphics cards, it is easier to achieve
+effects such as reflections using ray-tracing. Although the
+flexibility of modern GPUs can allow ray-tracing [PBMH02]
+in real-time [HSHH07, Shi06], as well as fast ray-tracing
+now becoming possible on processors used in games consoles [BWSF06], rasterisation is currently still the standard
+technique for computer games.
+Although the modern graphics pipeline is designed and
+optimised to rasterise polygonal geometry, it should be noted
+that other types of geometry exist. Surfaces may be defined using a mathematical representation, while volumes
+may be defined using ‘3D textures’ of voxels or, again, using a mathematical formula [EHK∗ 06]. The visualisation of
+volumetric ‘objects’, which are usually semi-opaque, is a
+common problem that includes features such as smoke, fog
+and clouds. A wide variety of options exist for rendering
+volumes [EHK∗ 06, CPCP∗ 05], although these are generally
+very computationally expensive and it is common to emulate a volumetric effect using simpler methods. This often
+involves drawing one or more rectangular polygons to which
+a four-channel texture has been applied (where the fourth, alpha, channel represents transparency) – for example a cloud
+element or wisp of smoke. These may be aligned to always
+face the viewer as billboards [AMHH08], a common game
+technique with a variety of uses [WP05], or a series of these
+may be used to slice through a full volume at regular intervals. An alternative method for rendering full volumes is
+ray-marching, where a volume is sampled at regular intervals along a viewing ray, which can now be implemented
+in a shader [CNLE09], or on processors that are now being
+used in games consoles [KJ09].
+It is sometimes required to render virtual worlds, or ob-
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+jects within worlds, that are so complex or detailed that they
+cannot fit into the graphics memory, or even the main memory, of the computer – this can be especially true when dealing with volume data. Assuming that the hardware cannot
+be further upgraded, a number of options exist for such rendering problems. If the scene consists of many complex objects at varying distances, it may be possible to adopt a levelof-detail approach [EHK∗ 08] and use less complex geometry, or even impostors [AMHH08], to approximate distant
+objects [SM06]. Alternatively, if only a small sub-section
+of the world or object is in sight at any one time, it may
+be possible to hold only these visible parts in memory and
+‘stream’ replace them as new parts come into view, which
+is usually achieved by applying some form of spatial partitioning [CNLE09]. This streaming approach can also be applied to textures that are too large to fit into graphics memory [MG08]. If too much is visible at one time for this to
+be possible, a cluster of computers may be used, where the
+entire scene is often too large for a single computer to hold
+in memory but is able to be distributed among the cluster
+with the computers’ individual renders being accumulated
+and composited together [HHN∗ 02] or each computer controlling part of a multi-screen tile display [YJSZ06].
+
+framebuffer according to its fourth colour component (alpha). The primary difficulty with this technique is that the
+results are order dependent, which requires the scene geometry to be sorted by depth before it is drawn and transparency can also present issues when using deferred shading
+[FM08]. A number of order-independent transparency techniques have been developed, however, such as depth-peeling
+[Eve01, NK03].
+
+Figure 8: Achieving a mirror effect by rendering the geometry twice [AM07].
+
+3.3.1. Post-Processing Effects
+One important category of graphical effect stems from the
+ability to render to an off-screen buffer, or even to multiple
+buffers simultaneously, which can then be used to form a
+feedback loop. A polygon may then be drawn (either to additional buffers or to the visible framebuffer) with the previously rendered texture(s) made available to the shader. This
+shader can then perform a variety of ‘post-processing’ effects.
+Modern engines frequently include a selection of such
+effects [Fei07], which can include more traditional image
+processing, such as colour transformations [Bur05a, Bjo04],
+glow [JO04], or edge-enhancement [ND03], as well as techniques that require additional scene information such as
+depth of field [Gil07, ZCP07], motion blur [Ros08] and others which will be mentioned in specific sections later.
+The extreme of this type of technique is deferred shading, where the entire lighting calculations are performed as
+a ‘post-process’. Here, the scene geometry is rendered into a
+set of intermediate buffers, collectively called the G-buffer,
+and the final shading process is performed in image-space
+using the data from those buffers [Koo08].
+3.3.2. Transparency, Reflection and Refraction
+The modern real-time graphics pipeline does not deal with
+the visual representation of transparency, reflection or refraction and their emulation must be dealt with using special cases or tricks. Traditionally, transparency has been
+emulated using alpha blending [AMHH08], a compositing
+technique where a ‘transparent pixel’ is combined with the
+
+Mirrored background reflections may be achieved using
+an environment map [BN76, WP05], which can be a simple
+but effective method of reflecting a static scene. If the scene
+is more dynamic, but relatively fast to render, reflections on
+a flat surface may be achieved by drawing the reflective surface as transparent and mirroring the entire scene geometry
+about the reflection surface, drawing the mirrored geometry behind it (Figure 8) or, for more complex scenes, using
+reduced geometry methods such as impostors [TI06]. Alternatively, six cameras can be used to produce a dynamic environment map [Bly06]. Alternative methods have also been
+developed to address the lack of parallax, i.e. apparent motion offsets due to objects at different distances, which are
+missing in a fixed environment map [YYM05].
+Perhaps surprisingly on first note, simple refraction effects can be achieved using very similar techniques to those
+used for reflection. The only differences are that the sample
+ray direction points inside the object and that it is bent due
+to the difference in refractive indices of the two materials,
+in accordance with Snell’s Law [AMHH08]. Thus, environment mapping can be used for simple refractions in a static
+scene, which may be expanded to include chromatic dispersion [FK03]. In some cases, refraction may also be achieved
+as a post-processing effect [Wym07].
+3.3.3. Surface Detail
+The simplest method of adding apparent detail to a surface, without requiring additional geometry, is texture mapping. The advent of pixel shaders means that textures can
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+now be used in more diverse ways to emulate surface detail
+[Ros06, WP05, AMHH08].
+
+point format, although it should be noted that a performance
+penalty usually occurs when using more precise formats.
+
+A variety of techniques exist for adding apparent highresolution bump detail to a low-resolution mesh. In normal
+mapping [Bli78] the texture map stores surface normals,
+which can then be used for lighting calculations. Parallax
+mapping [KTI∗ 01] uses a surface height map and the camera direction to determine an offset for texture lookups. Relief texture mapping [OBM00, WP05] is a related technique
+which performs a more robust ray-tracing of the height map
+and can provide better quality results at the cost of performance.
+
+One of the most striking visual effects associated with
+HDR lighting is bloom, where extremely bright patches appear to glow. Practically, this is usually applied as a postprocess effect in a similar way to a glow effect, where bright
+patches are drawn into a separate buffer which is blurred and
+then combined with the original image [Kaw04, Kaw03].
+This can also be applied to low-dynamic-range images, to
+make them appear HDR [Sou05].
+
+3.3.4. Lighting
+The old fixed-function graphics pipeline supported a
+per-vertex Gouraud lighting model [OSW∗ 07], but programmable shaders now allow the developer to implement their own lighting model [Ros06, Hof06]. In general,
+though, the fixed-function lighting equation is split into: a
+diffuse component, where direct lighting is assumed to be
+scattered by micro-facets on the surface; a specular component, which appears as a highlight and is dependent on
+the angle between the viewer and the light; and an ambient
+component, which is an indirect ‘background’ lighting component due to light that has bounced off other objects in the
+scene [AMHH08].
+3.3.4.1. Shadows
+Although the graphics pipeline did not originally support
+shadows, it does now provide hardware acceleration for texture samples of a basic shadow map [AMHH08, EHK∗ 08].
+However, this basic method suffers from aliasing issues, is
+typically low resolution and can only result in hard shadow
+edges. Except in certain conditions, the majority of shadows
+in the real world exhibit a soft penumbra, so there is a desire
+within computer graphics to achieve efficient soft shadows,
+for which a large number of solutions have been developed
+[HLHS03, Bav08]. Shadowing complex objects such as volumes can also present issues, many of which have also been
+addressed [LV00, HKSB06, RKH08].
+3.3.4.2. High-Dynamic-Range Lighting
+HDR Lighting is a technique that has become very popular
+in modern games [She06, EHK∗ 08]. It stems from the fact
+that real world luminance has a very high dynamic range,
+which means that bright surface patches are several orders
+of magnitude brighter than dark surface patches – for example, the sun at noon “may be 100 million times brighter than
+starlight” [RWPD06]. In general, this means that the 8-bit
+integers traditionally used in each component of the RGB
+triplet of pixels in the framebuffer, are woefully inadequate
+for representing real luminance ranges. Thankfully, modern
+hardware now allows a greater precision in data types, so that
+calculations may be performed in 16 or even 32-bit floating-
+
+Modern displays still use the traditional 8-bit per colour
+component format (with a few exceptions [SHS∗ 04]), so
+the HDR floating point results must be converted, which is
+the process of tonemapping [RWPD06]. Some tonemapping
+methods allow the specification of a brightness, or exposure
+value as taken from a physical camera analogy. In an environment where the brightness is likely to change dramatically this exposure should be automatically adjusted – much
+like a real camera does today. Various methods are available
+to achieve this, such as by downsampling the entire image to
+obtain the average brightness [Kaw04], or by asynchronous
+queries to build a basic histogram of the brightness level to
+determine the required exposure [MGM06, SH07].
+3.3.4.3. Indirect Lighting: Global Illumination
+Incident light on a surface can originate either directly from
+a light source, or indirectly from light reflected by another
+surface. Global illumination techniques account for both of
+these sources of light, although in such methods it is the indirect lighting component that is usually of most interest and
+the most difficult to achieve. The main difficulty is that in
+order to render a surface patch, the light that is reflected
+by all other surface patches in the scene must be known.
+This interdependence can be costly to compute, especially
+for dynamic scenes, and although indirect lighting accounts
+for a high proportion of real world illumination, the computational cost of simulating its effects has resulted in very
+limited use within real-time applications. [DBB03]
+The simplest inclusion of indirect lighting is through precomputed and baked texture maps, which can store anything
+from direct shadows or ambient occlusion results to those
+from radiosity or photon mapping [Mit07]. However, this
+technique is only viable for completely static objects within
+a static scene. Another simple global illumination technique,
+which is commonly associated with HDR lighting, is imagebased lighting [RWPD06]. Here, an environment map stores
+both direct and indirect illumination as a simple HDR image, which is then used to light objects in the scene. The image may be captured from a real-world location, drawn by an
+artist as an art asset or generated in a pre-processing stage by
+sampling the virtual environment. Multiple samples can then
+be used to light a dynamic character as it moves through the
+(static) environment [MMG06]. Although the results can be
+very effective, image-based lighting cannot deal with fully
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+dynamic scenes without having to recomputed the environment maps, which may be costly.
+Fully dynamic global illumination techniques generally
+work on reduced or abstracted geometry, such as using discs
+to approximate the geometry around each vertex for ambient occlusion [SA07, HJ08b]. It is also possible to perform some operations as a post-process, such as ambient occlusion [Mit07] and even approximations for single-bounce
+indirect lighting [RGS09]. The general-purpose use of the
+GPU has also allowed for radiosity at near real-time for very
+small scenes [CH05] and fast, but not yet real-time, photon
+mapping [PDC∗ 03]. The latter technique can also be used
+to simulate caustics, which are bright patches due to convergent rays from a refractive object, in real-time on the
+GPU [KBW06], although other techniques for specifically
+rendering caustics are also possible [WS03], including as an
+image-space post-process effect [Wym07].
+3.4. Artificial Intelligence
+Another important aspect of the creation of populated virtual
+environments as used in cultural heritage applications is the
+creation of intelligent behaviour for the inhabitants of the
+virtual world, which is achieved using artificial intelligence
+(AI) techniques.
+It is important to understand that when we refer to the
+AI of virtual entities in virtual environments, that which we
+refer to is not truly AI – at least not in the conventional
+sense [McC07] of the term. The techniques applied to virtual worlds, such as computer games, are usually a mixture
+of AI related methods whose main concern is the creation
+of a believable illusion of intelligence [Sco02], i.e. the behaviour of virtual entities only needs to be believable to convey the presence of intelligence and to immerse the human
+participant in the virtual world.
+The main requirement for creating the illusion of intelligence is perception management, i.e. the organisation and
+evaluation of incoming data from the AI entity’s environment. This perception management mostly takes the form
+of acting upon sensor information but also includes communication between or coordination of AI entities in environments which are inhabited by multiple entities which may
+have to act co-operatively. The tasks which need to be solved
+in most modern virtual world applications such as computer
+games and to which the intelligent actions of the AI entities
+are usually restricted to (by convention rather than technology) are [And03]:
+• decision making
+• path finding (planning)
+• steering (motion control)
+The exact range of problems that AI entities within a computer game have to solve depends on the context in which
+they exists and the virtual environment in which the game
+
+takes place. Combs and Ardoint [CA04] state that a popular method for the implementation of game AI is the use of
+an ‘environment-based programming style’, i.e. the creation
+of the virtual game world followed by the association of AI
+code with the game world and the entities that exist in it.
+This means that the AI entity intelligence is built around and
+is intrinsically linked to the virtual game environment. This
+type of entity intelligence can be created using ‘traditional’
+methods for ‘decision making’, ‘path finding’ and ‘steering’.
+Of the three common AI tasks named above, ‘decision
+making’ most strongly implies the use of intelligence. Finite
+state machines (FSMs) are the most commonly used technique for implementing decision making in games [FH04].
+They arrange the behaviour of an AI entity in logical states
+– defining one state per possible behaviour – of which only
+one, the entity’s behaviour at that point in time, is active at
+any one time. In game FSMs each state is usually associated
+with a specific behaviour and an entity’s actions are often
+implemented by linking behaviours with pre-defined animation cycles for the AI entity that allow it to enact the selected
+behaviour [Ork06]. It is relatively simple to program a very
+stable FSM that may not be very sophisticated but that “will
+get the job done”. The main drawback of FSMs is that they
+can become very complex and hard to maintain, while on the
+other hand the behaviour resulting from a too simple FSM
+can easily become predictable. To overcome this problem
+sometimes hierarchical FSMs are used that break up complex states into a set of smaller ones that can be combined,
+allowing the creation of larger and more complex FSMs.
+In recent years, there has been a move towards performing
+decision making using goal-directed techniques to enable the
+creation of nondeterministic behaviour. Dybsand describes
+this as a technique in which an AI entity “will execute a series of actions ... that attempt to accomplish a specific objective or goal” [Dyb04]. In its simplest form, goal-orientation
+can be implemented by determining a goal with an embedded action sequence for a given AI entity. This action sequence, the entity’s plan, will then be executed by the entity
+to satisfy the goal [Ork04a]. Solutions that allow for more
+diverse behaviour can improve this by selecting an appropriate plan from a pre-computed ‘plan library’ [Eva01] instead
+of using a built-in plan. More complex solutions use plans
+that are computed dynamically, i.e. ‘on the fly’, as is the
+case with Goal-Oriented Action Planning (GOAP) [Ork04a].
+In GOAP the sequence of actions that the system needs to
+perform to reach its end-state or goal is generated in realtime by using a planning heuristic on a set of known values
+which need to exist within the AI entity’s domain knowledge. To achieve this in his implementation of GOAP, Orkin
+[Ork04b] separates the actions and goals, implicitly integrating preconditions and effects that define the planner’s search
+space, placing the decision making process into the domain
+of the planner. This can be further improved through augmenting the representation of the search space by associating
+costs with actions that can satisfy goals, effectively turning
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+the AI entity’s knowledge base into a weighted graph. This
+then allows the use of path planning algorithms that find the
+shortest path within a graph as the planning algorithm for
+the entity’s high-level behaviour [Ork06]. This has the additional benefit of greater code re-use as the planning method
+for high-level decision making, as well as path planning is
+the same and can therefore be executed by the same code
+module [Ork04b] if the representations of the search space
+are kept identical. The most popular path planning algorithm
+used in modern computer games is the A* (A-Star) algorithm [Sto00, Mat02, Nar04], a generalisation of Dijkstra’s
+algorithm [Dij59]. A* is optimal, i.e. proven to find the optimal path in a weighted graph if an optimal solution exists
+[DP85], which guarantees that AI entities will find the least
+costly path if such a solution exists within the search space.
+Challenges in game AI that are relevant to serious games
+include the construction of intelligent interfaces [LC04],
+such as tutoring systems or virtual guides, and particularly
+real-time strategy game AI, part of which is concerned with
+the modelling of great numbers of virtual entities in large
+scale virtual environments. Challenges there include spatial and temoral reasoning [Bur04], which can be addressed
+through the use of potential fields [HJ08a].
+3.4.1. Crowd Simulation
+The AI techniques described in the previous section are important tools with which more complex systems can be constructed. A domain of great potential relevance to cultural
+heritage that is derived from such techniques is the simulation of crowds of humanoid characters. If one wishes to
+reconstruct and visualise places and events from the past,
+a crowd of real-time virtual characters, if appropriately attired and behaving, can add new depths of immersion and
+realism to ancient building reconstructions. These characters can feature merely as a backdrop [CUCT04] to add life
+to a reconstruction, or can assume the centre stage in more
+active roles, for example, as virtual tour guides to direct
+the spectator [DeL99]. Indeed, the type of crowd or character behaviour to be simulated varies greatly with respect
+to the type of scenario that needs to be modelled. In this
+vein, [UT02] model crowd behaviour of worshippers in a
+virtual mosque, while [MHY∗ 07] and [RFD05] focus on the
+creation of more general pedestrian crowd behaviours, the
+former for populating a virtual reconstruction of a city resembling ancient Rome.
+More general crowd synthesis and evaluation techniques
+are also directly applicable to crowd simulation in cultural
+heritage. A variety of different approaches have been taken,
+most notably the use of social force models [HM95], path
+planning [LD04], behavioural models incorporating perception and learning [ST05] sociological effects [MT97] and
+hybrid models [PAB07].
+The study of real world corpus has also been used as a basis for synthesising crowd behaviour in approaches that do
+
+not entail the definition of explicit behaviour models. Lerner
+et al. [LCD07] manually track pedestrians from an input
+video containing real world behaviour examples. They use
+this data to construct a database of pedestrian trajectories for
+different situations. At runtime, the database is queried for
+similar situations matching those of the simulated pedestrians: the closest matching example from the database is selected as the resulting trajectory for each pedestrian and the
+process is repeated.
+Lee et al. [LCHL07] simulate behaviours based on aerialview video recordings of crowds in controlled environments.
+A mixture of manual annotation and semi-automated tracking provides information from video about individuals’ trajectories. These are provided as inputs to an agent movement
+model that can create crowd behaviours of a similar nature
+to those observed in the original video.
+Human perception of the animation of crowds and characters has been increasingly recognised as an important factor in achieving more realistic simulations. Research has
+been conducted regarding the perception of animation and
+motion of individuals [RP03, MNO07], groups and crowds
+[PEMO08, EPO08]. For example, [PEMO08] examined the
+perceptual plausibility of pedestrian orientations and found
+that participants were able to consistently distinguish between those virtual scenes where the character orientations
+matched the orientations of the humans in the corresponding
+real scenes and those where the character orientations were
+artificially generated, according to a number of different rule
+types.
+A key factor of differentiation between crowd control
+methods concerns where knowledge is stored in the system.
+One approach is to endow knowledge separately to individual characters, an extreme example of which would create autonomous agents that have their own artificial perceptions, reasoning, memories, etc with respect to the environment, as in [LD04]. Another method is to place knowledge
+into the environment itself, to create a shared or partiallyshared database accessible to characters. According to this
+smart object methodology [PDMNO03], graphical objects
+are tagged with behavioural information and may inform,
+guide or even control characters. Such an approach is applicable also to crowd simulation in urban environments.
+For example, navigation aids, placed inside the environment description, may be added by the designer during
+the construction process. These have been referred to as
+annotations [DHR98]. The resulting environment description [FBT99, TD00, PO09] contains additional geometric,
+semantic and spatial partitioning information for informing
+pedestrian behaviour, thus transferring a degree of the behavioural intelligence into the environment. In [Hos02], for
+example, skeletal splines are defined that are aligned with
+walkways. These splines, called ribbons, provide explicit information for groups to use, such as the two major directions
+of travel on the walkway. In addition to environment anno-
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+tation and mark-up, interfaces for managing the definition
+of crowd scenarios have also been investigated. Crowdbrush
+[UdHCT04] provides an intuitive way for designers to add
+crowds of characters into an environment using tools analogous to those found in standard 2D painting packages. It
+allows designers to paint crowds and apply attributes and
+characteristics using a range of different tools in real-time,
+obtaining immediate feedback about the results.
+3.4.2. Annotated Entities and Environments
+A fairly recent method for enabling virtual entities to interact
+with one another as well as their surroundings is the use of
+annotated worlds. The mechanism for this, which we refer to
+using the term ‘Annotated Entities’, has been described using various names, such as ‘Smart Terrain’ [Cas02], ‘Smart
+Objects’ [PDMNO03, Ork06] and ‘Annotated Environment’
+[Doy02], all of which are generally interchangeable and
+mostly used with very similar meanings, although slight differences in their exact interpretation sometimes remain. A
+common aspect to all of the implementations that utilise this
+mechanism is the indirect approach to the creation of believable intelligent entities.
+The idea of annotated environments is a computer application of the theory of affordance (or affordance theory)
+[COST03] that was originally developed in the fields of psychology and visual perception. Affordance theory states that
+the makeup and shape of objects contains suggestions about
+their usage. Affordance itself is an abstract concept, the implementation of which is greatly simplified by annotations
+that work like labels containing instructions which provide
+an explicit interpretation of affordances. Transferred into the
+context of a virtual world, this means that objects in the environment contain all of the information that an AI controlled
+entity will need to be able to use them, effectively making
+the environment ‘smart’.
+A beneficial side effect of this use of ‘annotated’ objects
+[Doy99] is that the complexity of the entities is neutral to
+the extent of the domain knowledge that is available for their
+use, i.e. the virtual entities themselves can not only be kept
+relatively simple, but they do not need to be changed at all
+to be able to make use of additional knowledge. This allows for the rapid development of game scenarios [COST03]
+and if all annotated objects use the same interface to provide
+knowledge to the world’s entities then there is no limit to the
+scalability of the system, i.e. the abilities of AI controlled
+entities can practically be extended indefinitely [Ork02] despite a very low impact on the system’s overall performance.
+Furthermore, this method provides an efficient solution to
+the ‘anchoring problem’ [CS99] of matching sensor data to
+the symbolic representation of the virtual entity’s knowledge
+as objects in the world themselves have the knowledge as to
+how other virtual entities can interact with them.
+Annotations have been employed in several different
+types of applications in order to achieve different effects.
+
+They have proven popular for the animation of virtual actors in computer animation production, where they facilitate animation selection [LCL06], i.e. the choice of appropriate animation sequences that fit the environment. Other
+uses of annotations include the storage of tactical information in the environment for war games and military simulations [Dar07], which is implemented as sensory annotations
+to direct the virtual entities’ perception of their environment.
+Probably the most common form of annotations found in
+real-time simulated virtual environments affects behaviour
+selection, usually in combination with animation selection
+[Ork06], i.e. the virtual entity’s behaviour and its visual representation (animation) are directed by the annotated objects
+that it uses.
+Virtual entities that inhabit these annotated worlds can be
+built utilising rule-based system based on simple FSMs in
+combination with a knowledge interface based on a trigger
+system that allows the entities to ‘use’ knowledge (instructions) for handling the annotated objects. The interaction
+protocol employed to facilitate the communication between
+entity and ‘smart’ object needs to enable the object to ‘advertise’ its features to the entities and then allow them to request from the object relevant instructions (annotations) on
+its usage [Mac00]. The success of this technique is demonstrated by the best-selling computer game The Sims, where
+‘Smart Objects’ were used for behaviour selection to great
+effect. Forbus and Wright [FW01] state that in The Sims all
+game entities, objects as well as virtual characters, are implemented as scripts that are executed in their own threads
+within a multitasking virtual machine. A similar approach,
+based on a scripting language that can represent the behaviours of virtual entities, as well as the objects that the
+can interact with, has been presented more recently by Anderson [And08]. These scripting-language based approaches
+are most likely to provide solutions for the creation of large
+scale virtual environments, such as the serious game component of the Rome Reborn project. This is the automatic generation of AI content [Nar07], which in combination with
+techniques such as procedural modelling of urban environments [VAW∗ 09], will require the integration of the creation
+of complex annotations with the procedural generation of
+virtual worlds, automating the anchoring of virtual entities
+into their environment.
+
+4. Conclusions
+The success of computer games, fuelled among other factors
+by the great realism that can be attained using modern consumer hardware, and the key techniques of games technology that have resulted from this, have given way to new types
+of games, including serious games, and related application
+areas, such as virtual worlds, mixed reality, augmented reality and virtual reality. All of these types of application utilise
+core games technologies (e.g. 3D environments) as well as
+novel techniques derived from computer graphics, human
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+
+computer interaction, computer vision and artificial intelligence, such as crowd modelling. Together these technologies
+have given rise to new sets of research questions, often following technologically driven approaches to increasing levels of fidelity, usability and interactivity.
+Our aim has been to use this state-of-the-art report to
+demonstrate the potential of games technology for cultural
+heritage applications and serious games, to outline key problems and to indicate areas of technology where solutions for
+remaining challenges may be found. To illustrate that first
+we presented some characteristic case studies illustrating the
+application of methods and technologies used in cultural heritage. Next, we provided an overview of existing literature of
+relevance to the domain, discussed the strengths and weaknesses of the described methods and pointed out unsolved
+problems and challenges. It is our firm belief that we are
+only at the beginning of the evolution of games technology
+and that there will be further improvements in the quality
+and sophistication of computer games, giving rise to serious
+heritage games of greater complexity and fidelity than is now
+achievable.
+5. Acknowledgements
+The authors would like to thank the following: The Herbert
+Art Gallery & Museum (Coventry, UK), Simon Bakkevig,
+and Lukasz Bogaj. This report includes imagery generated
+using the Virtual Egyptian Temple, which is a product of
+PublicVR (http://publicvr.org).
+References
+[ADG∗ 08] A RNOLD D., DAY A., G LAUERT J., H AEGLER S.,
+J ENNINGS V., K EVELHAM B., L AYCOCK R., M AGNENATT HALMANN N., M AM J., M AUPU D., PAPAGIANNAKIS G.,
+T HALMANN D., Y ERSIN B., , RODRIGUEZ -E CHAVARRIA K.:
+Tools for populating cultural heritage environments with interactive virtual humans. In Open Digital Cultural Heritage Systems,
+EPOCH Final Event Rome (2008). 3
+[AEMC08] A NDERSON E. F., E NGEL S., M C L OUGHLIN L.,
+C OMNINOS P.: The case for research in game engine architecture. In Future Play ’08: Proceedings of the 2008 Conference on
+Future Play (2008), pp. 228–231. 6
+[AM07] A NDERSON E. F., M C L OUGHLIN L.: Critters in the
+classroom: a 3d computer-game-like tool for teaching programming to computer animation students. In SIGGRAPH ’07: ACM
+SIGGRAPH 2007 educators program (2007), p. 7. 10
+[AMHH08] A KENINE -M ÖLLER T., H AINES E., H OFFMAN N.:
+Real-Time Rendering 3rd Edition. A. K. Peters, 2008. 9, 10, 11
+[And03] A NDERSON E. F.: Playing Smart - Artificial Intelligence
+in Computer Games. In Proceedings of zfxCON03 Conference on
+Game Development (2003). 12
+[And08] A NDERSON E. F.: Scripted smarts in an intelligent virtual environment: behaviour definition using a simple entity annotation language. In Future Play ’08: Proceedings of the 2008
+Conference on Future Play (2008), pp. 185–188. 14
+[App06]
+
+A PPERLEY T. H.: Virtual unaustralia: Videogames and
+
+australiaŠs colonial history. In UNAUSTRALIA 2006: Proceedings of the Cultural Studies Association of AustralasiaŠs Annual
+Conference (2006). 1
+[Azu97] A ZUMA R.: A survey of augmented reality. Presence:
+Teleoperators and Virtual Environments 6, 4 (1997), 355–385. 8
+[BAEB99] B ROGNI B., AVIZZANO C., E VANGELISTA C.,
+B ERGAMASCO M.: Technological approach for cultural heritage: augmented reality. In RO-MAN ’99: Proceedings of the
+8th IEEE International Workshop on Robot and Human Interaction (1999), pp. 206–212. 8
+[Bav08] BAVOIL L.: Advanced soft shadow mapping techniques.
+Presentation at The Game Developers Conference 2008, 2008.
+11
+[Bed95] B EDERSON B. B.: Audio augmented reality: a prototype
+automated tour guide. In CHI ’95: Conference companion on
+Human factors in computing systems (1995), pp. 210–211. 8
+[BFSE01]
+
+B IMBER O., F RÖHLICH
+CARNAÇÃO L. M.: The virtual
+
+B., S CHMALSTIEG D., E N showcase. IEEE Computer
+Graphics and Applications 21, 6 (2001), 48–55. 9
+
+[Bjo04] B JORKE K.: Color Controls. In GPU Gems, Fernando
+R., (Ed.). Pearson Education, 2004, pp. 363–373. 10
+[Bli78] B LINN J. F.: Simulation of wrinkled surfaces. SIGGRAPH Comput. Graph. 12, 3 (1978), 286–292. 11
+[Blo04] B LOW J.: Game development harder than you think.
+ACM Queue 1, 10 (2004), 28–37. 6
+[Bly06] B LYTHE D.: The direct3d 10 system. ACM Trans. Graph.
+25, 3 (2006), 724–734. 10
+[BN76] B LINN J. F., N EWELL M. E.: Texture and reflection in
+computer generated images. Commun. ACM 19, 10 (1976), 542–
+547. 10
+[BS08] BAVOIL L., S AINZ M.: Screen space ambient occlusion.
+NVIDIA developer information: http://developers.nvidia.com,
+2008. 6
+[Bur04] B URO M.: Call for ai research in rts games. In Proceedings of the AAAI-04 Workshop on Challenges in Game AI (2004),
+pp. 139–142. 13
+[Bur05a] B URKERSRODA R.: Colour Grading. In Shader X3:
+Advanced Rendering with DirectX and OpenGL, Engel W., (Ed.).
+Charles River Media, 2005, pp. 357–362. 10
+[Bur05b] B URTON J.: News-game journalism: History, current
+use and possible futures. Australian Journal of Emerging Technologies and Society 3, 2 (2005), 87–99. 5
+[BWSF06] B ENTHIN C., WALD I., S CHERBAUM M.,
+F RIEDRICH H.: Ray tracing on the cell processor. pp. 15–23. 9
+[CA04] C OMBS N., A RDOINT J.:
+Declarative versus
+Imperative Paradigms in Games AI.
+Available from:
+http://www.red3d.com/cwr/games/, 2004. 12
+[Cas02] C ASS S.: Mind Games. IEEE Spectrum 39, 12 (2002),
+40–44. 14
+[CCF∗ 05] C ALORI L., C AMPORESI C., F ORTE M., G UIDAZ ZOLI A., P ESCARIN S.: Openheritage: Integrated approach to
+web 3d publication of virtual landscape. In Proceedings of the ISPRS Working Group V/4 Workshop 3D-ARCH 2005: Virtual Reconstruction and Visualization of Complex Architectures (2005).
+8
+[CD09] C HALMERS A., D EBATTISTA K.: Level of realism for
+serious games. In VS-Games 2009: Proceedings of the IEEE Virtual Worlds for Serious Applications First International Conference (2009), pp. 225–232. 2
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+[CH05] C OOMBE G., H ARRIS M.: Global Illumination Using
+Progressive Refinement Radiosity. In GPU Gems 2, Pharr M.,
+(Ed.). Pearson Education, 2005, pp. 635–647. 12
+[CIG∗ 01] C OSMAS J., I TEGAKI T., G REEN D., G RABCZEWSKI
+E., W EIMER F., VAN G OOL L., Z ALESNY A., VANRINTEL
+D., L EBERL F., G RABNER M., S CHINDLER K., K ARNER K.,
+G ERVAUTZ M., H YNST S., WAELKENS M., P OLLEFEYS M.,
+D E G EEST R., S ABLATNIG R., K AMPEL M.: 3d murale: a multimedia system for archaeology. In VAST ’01: Proceedings of
+the 2001 conference on Virtual reality, archeology, and cultural
+heritage (2001), pp. 297–306. 8
+[CNLE09] C RASSIN C., N EYRET F., L EFEBVRE S., E ISEMANN
+E.: Gigavoxels: ray-guided streaming for efficient and detailed
+voxel rendering. In I3D ’09: Proceedings of the 2009 symposium
+on Interactive 3D graphics and games (2009), pp. 15–22. 9, 10
+[CNSD∗ 92]
+
+C RUZ -N EIRA C., S ANDIN D. J., D E FANTI T. A.,
+K ENYON R. V., H ART J. C.: The cave: audio visual experience
+automatic virtual environment. Commun. ACM 35, 6 (1992), 64–
+72. 4
+
+[COST03] C ORNWELL J., O’B RIEN K., S ILVERMAN B., T OTH
+J.: Affordance Theory for Improving the Rapid Generation,
+Composability, and Reusability of Synthetic Agents and Objects.
+In BRIMS 2003: Proceedings of the Twelfth Conference on Behavior Representations in Modeling and Simulation (2003). 14
+[CPCP∗ 05] C EREZO E., P EREZ -C AZORLA F., P UEYO X.,
+S ERON F., S ILLION F.: A survey on participating media rendering techniques. the Visual Computer (2005). 9
+[CS99] C ORADESCHI S., S AFFIOTTI A.: Symbolic Object Descriptions to Sensor Data. Problem Statement. Linköping Electronic Articles in Computer and Information Science 4, 9 (1999).
+14
+[CUCT04] C IECHOMSKI P. D. H., U LICNY B., C ETRE R.,
+T HALMANN D.: A case study of a virtual audience in a reconstruction of an ancient roman odeon in aphrodisias. In The
+5th International Symposium on Virtual Reality, Archaeology and
+Cultural Heritage, VAST (2004) (2004). 13
+[Dar07] DARKEN C. J.: Level Annotation and Test by Autonomous Exploration. In AIIDE 2007: Proceedings of the Third
+Artificial Intelligence and Interactive Digital Entertainment Conference (2007). 14
+[DBB03] D UTRÉ P., B EKAERT P., BALA K.: Advanced Global
+Illumination. A. K. Peters, 2003. 11
+[Deb05] D EBEVEC P.: Making "The Parthenon". 6th International Symposium on Virtual Reality, Archaeology, and Cultural
+Heritage, 2005. 4
+[DeL99] D E L EON V. J.: Vrnd: Notre-dame cathedral: A globally
+accessible multi-user real time virtual reconstruction. In Proceedings of Virtual Systems and Multimedia 1999 (1999). 13
+[dFO06] DE F REITAS S., O LIVER M.: How can exploratory
+learning with games and simulations within the curriculum be
+most effectively evaluated? Computers and Education 46 (2006),
+249–264. 2
+[DHR98] D OYLE P., H AYES -ROTH B.: Agents in annotated
+worlds. In AGENTS ’98: Proceedings of the second international
+conference on Autonomous agents (1998), pp. 173–180. 13
+
+[Doy02] D OYLE P.: Believability through Context. In AAMAS
+’02: Proceedings of the First International Joint Conference on
+Autonomous Agents and Multiagent Systems (2002), pp. 342–
+349. 14
+[DP85] D ECHTER R., P EARL J.: Generalised Best-First Search
+Strategies and the Optimality of A*. Journal of the ACM 32, 3
+(1985), 505–536. 13
+[DTG∗ 04] D EBEVEC P., T CHOU C., G ARDNER A., H AWKINS
+T., P OULLIS C., S TUMPFEL J., J ONES A., Y UN N., E INARS SON P., L UNDGREN T., FAJARDO M., M ARTINEZ P.: Estimating Surface Reflectance Properties of a Complex Scene under
+Captured Natural Illumination. Tech. rep., University of Southern California, Institute for Creative Technologies, 2004. 4
+[Dyb04] DYBSAND E.: Goal-Directed Behaviour Using Composite Tasks. In AI Game Programming Wisdom 2. Charles River
+Media, 2004, pp. 237–245. 12
+[EHK∗ 06] E NGEL K., H ADWIGER M., K NISS J. M., R EZK S ALAMA C., W EISKOPF D.: Real-Time Volume Graphics. A.
+K. Peters, 2006. 9
+[EHK∗ 08] E NGEL W., H OXLEY J., KORNMANN R., S UNI N.,
+Z INK J.: Programming vertex, geometry, and pixel shaders. Online book available at: http://wiki.gamedev.net/, 2008. 10, 11
+[EHML∗ 06] E L -H AKIM S., M AC D ONALD G., L APOINTE J.-F.,
+G ONZO L., J EMTRUD M.: On the Digital Reconstruction and Interactive Presentation of Heritage Sites through Time. In International Symposium on Virtual Reality, Archaeology and Intelligent
+Cultural Heritage (2006), pp. 243–250. 4
+[EPO08] E NNIS C., P ETERS C., O’S ULLIVAN C.: Perceptual
+evaluation of position and orientation context rules for pedestrian
+formations. In APGV ’08: Proceedings of the 5th symposium on
+Applied perception in graphics and visualization (2008), pp. 75–
+82. 13
+[Eva01] E VANS R.: AI in Computer Games: The Use of
+AI Techniques in Black & White. Seminar Notes, available from: http://www.dcs.qmul.ac.uk/research/logic/seminars/
+abstract/EvansR01.html, 2001. 12
+[Eve01] E VERITT C.:
+Interactive order-independent transparency. NVIDIA Whitepaper, 2001. 10
+[FBT99] FARENC N., B OULIC R., T HALMANN D.: An informed
+environment dedicated to the simulation of virtual humans in urban context. Computer Graphics Forum 18, 3 (1999). 13
+[Fei02] F EINER S.: Augmented reality: A new way of seeing.
+Scientific American 286, 4 (2002), 48–55. 8
+[Fei07] F EIS A.: Postprocessing Effects in Design. In Shader X5:
+Advanced Rendering Techniques, Engel W., (Ed.). Charles River
+Media, 2007, pp. 463–470. 10
+[FH04] F U D., H OULETTE R.: The Ultimate Guide to FSMs in
+Games. In AI Game Programming Wisdom 2. Charles River Media, 2004, pp. 283–302. 12
+[FK03] F ERNANDO R., K ILGARD M. J.: The Cg Tutorial. Addison Wesley, 2003. 10
+[FK04] F RITSCH D., K ADA M.: Visualisation using game engines. ISPRS commission 5 (2004), 621–625. 6
+
+[Dij59] D IJKSTRA E. W.: A Note on Two Problems in Connexion
+with Graphs. Numerische Mathematik 1 (1959), 269–271. 13
+
+[FM08] F ILION D., M C NAUGHTON R.: Effects & techniques.
+In SIGGRAPH ’08: ACM SIGGRAPH 2008 classes (2008),
+pp. 133–164. 10
+
+[Doy99] D OYLE P.: Virtual Intelligence from Artificial Reality: Building Stupid Agents in Smart Environments. In AAAI
+’99 Spring Symposium on Artificial Intelligence and Computer
+Games (1999). 14
+
+[Fra06] F RANCIS R.: Revolution: Learning about history through
+situated role play in a virtual environment. In Proceedings of the
+American Educational Research Association Conference (2006).
+1
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+[Fri08] F RISCHER B.: The rome reborn project. how technology
+is helping us to study history. OpEd, November 10, University of
+Virginia, 2008. 3
+[FW01] F ORBUS K. D., W RIGHT W.: Some notes on programming objects in The SimsTM . Class Notes, available from:
+http://qrg.northwestern.edu/papers/papers.html, 2001. 14
+[Gar09] G ARDNER R.: Empire total war - graphics work
+shop.
+Available from (the official) Total War blog:
+http://blogs.sega.com/totalwar/2009/03/05/empire-total-wargraphics-work-shop/, 2009. 6
+[Gat00] G ATERMANN H.: From vrml to augmented reality via
+panorama-integration and eai-java. In SIGraDiŠ2000 - Construindo (n)o espacio digital (constructing the digital Space) (2000),
+pp. 254–256. 8
+[GCP04] G AITATZES A., C HRISTOPOULOS D., PAPAIOANNOU
+G.: The Ancient Olympic Games: Being Part of the Experience.
+In VAST 2004: The 5th International Symposium on Virtual Reality, Archaeology and Cultural Heritage (2004), pp. 19–28. 4,
+5
+[Gil07] G ILLHAM D.: Real-time Depth-of-Field Implemented
+with a Postprocessing-Only Technique. In Shader X5: Advanced
+Rendering Techniques, Engel W., (Ed.). Charles River Media,
+2007, pp. 163–175. 10
+[God08] G ODBERSEN H.: Virtual environments for anyone.
+IEEE Multimedia 15, 3 (2008), 90–95. 3
+[HCB∗ 01] H ALL T., C IOLFI L., BANNON L., F RASER M.,
+B ENFORD S., B OWERS J., G REENHALGH C., H ELLSTRÖM S.O., I ZADI S., S CHNÄDELBACH H., F LINTHAM M.: The visitor
+as virtual archaeologist: explorations in mixed reality technology
+to enhance educational and social interaction in the museum. In
+VAST ’01: Proceedings of the 2001 conference on Virtual reality,
+archeology, and cultural heritage (2001), pp. 91–96. 4, 8
+[HHN∗ 02] H UMPHREYS G., H OUSTON M., N G R., F RANK R.,
+A HERN S., K IRCHNER P. D., K LOSOWSKI J. T.: Chromium:
+a stream-processing framework for interactive rendering on clusters. ACM Trans. Graph. 21, 3 (2002), 693–702. 10
+[HJ08a] H AGELBÄCK J., J OHANSSON S. J.: The rise of potential
+fields in real time strategy bots. In AIIDE 08: Proceedings of the
+Fourth Artificial Intelligence and Interactive Digital Entertainment Conference (2008), pp. 42–47. 13
+[HJ08b] H OBEROCK J., J IA Y.: High-Quality Ambient Occlusion. In GPU Gems 3, Nguyen H., (Ed.). Pearson Education,
+2008, pp. 257–274. 12
+[HKSB06] H ADWIGER M., K RATZ A., S IGG C., B ÜHLER
+K.: Gpu-accelerated deep shadow maps for direct volume
+rendering. In GH ’06: Proceedings of the 21st ACM SIGGRAPH/EUROGRAPHICS symposium on Graphics hardware
+(2006), pp. 49–52. 11
+[HLHS03] H ASENFRATZ J.-M., L APIERRE M., H OLZSCHUCH
+N., S ILLION F.: A survey of real-time soft shadows algorithms,
+2003. 11
+[HM95] H ELBING D., M OLNAR P.: Social force model for
+pedestrian dynamics. Physical Review E 51, 5 (1995), 4282–
+4286. 13
+[Hof06]
+11
+
+H OFFMAN N.: Physically based reflectance for games.
+
+[Hos02] H OSTETLER T. R.: Controlling steering behavior for
+small groups of pedestrians in virtual urban environments. PhD
+thesis, The University of Iowa, 2002. 13
+[HSHH07]
+
+H ORN D. R., S UGERMAN J., H OUSTON M., H AN RAHAN P.: Interactive k-d tree gpu raytracing. In I3D ’07: Pro-
+
+ceedings of the 2007 symposium on Interactive 3D graphics and
+games (2007), pp. 167–174. 9
+[IS06] I SIDORO J. R., S ANDER P. V.: Animated skybox rendering and lighting techniques. In SIGGRAPH ’06: ACM SIGGRAPH 2006 Courses (2006), pp. 19–22. 4
+[JC02] J ONES G., C HRISTAL M.: The future of virtual museums:
+On-line, immersive, 3d environments. Created Realities Group,
+2002. 4
+[JH05] JACOBSON J., H OLDEN L.: The virtual egyptian temple.
+In ED-MEDIA: Proccedings of the World Conference on Educational Media, Hypermedia & Telecommunications (2005). 1, 4,
+7
+[JL05] JACOBSON J., L EWIS M.: Game engine virtual reality
+with caveut. IEEE Computer 38, 4 (2005), 79–82. 4, 7
+[JO04] JAMES G., O’RORKE J.: Real-Time Glow. In GPU Gems,
+Fernando R., (Ed.). Pearson Education, 2004, pp. 343–362. 10
+[Jon05] J ONES C.: Who are you? theorising from the experience
+of working through an avatar. E-Learning 2, 4 (2005), 414–425.
+3
+[Kaw03] K AWASE M.: Frame buffer postprocessing effects in
+double-s.t.e.a.l (wreakless). Presentation at The Game Developers Conference 2003, 2003. 11
+[Kaw04] K AWASE M.: Practical implementation of high dynamic
+range rendering. Presentation at The Game Developers Conference 2004, 2004. 11
+[KBW06] K RÜGER J., B ÜRGER K., W ESTERMANN R.: Interactive screen-space accurate photon tracing on GPUs. In Rendering Techniques (Eurographics Symposium on Rendering - EGSR)
+(June 2006), pp. 319–329. 12
+[Kir08] K IRRIEMUIR J.: Measuring the impact of second life
+for educational purposes. Eduserv Foundation, Available from:
+http://www.eduserv.org.uk/foundation/sl/uksnapshot052008,
+2008. 2
+[KJ09] K IM J., JAJA J.: Streaming model based volume ray casting implementation for cell broadband engine. Sci. Program. 17,
+1-2 (2009), 173–184. 9
+[Koo08] KOONCE R.: Deferred Shading in Tabula Rasa. In GPU
+Gems 3, Nguyen H., (Ed.). Pearson Education, 2008, pp. 429–
+457. 10
+[KTI∗ 01] K ANEKO T., TAKAHEI T., I NAMI M., K AWAKAMI N.,
+YANAGIDA Y., M AEDA T., TACHI S.: Detailed shape representation with parallax mapping. In Proceedings of ICAT 2001
+(2001), pp. 205–208. 11
+[LC04] L IVINGSTONE D., C HARLES D.: Intelligent interfaces
+for digital games. In Proceedings of the AAAI-04 Workshop on
+Challenges in Game AI (2004), pp. 6–10. 13
+[LCD07] L ERNER A., C HRYSANTHOU Y., DANI L.: Crowds by
+example. Computer Graphics Forum 26, 3 (2007), 655–664. 13
+[LCHL07] L EE K. H., C HOI M. G., H ONG Q., L EE J.:
+Group behavior from video: a data-driven approach to crowd
+simulation.
+In SCA ’07: Proceedings of the 2007 ACM
+SIGGRAPH/Eurographics symposium on Computer animation
+(2007), pp. 109–118. 13
+[LCL06] L EE K. H., C HOI M. G., L EE J.: Motion Patches:
+Building Blocks for Virtual Environments Annotated with Motion Data. In SIGGRAPH ’06: ACM SIGGRAPH 2006 Papers
+(2006), pp. 898–906. 14
+[LCM∗ 07] L INAZA M. T., C OBOS Y., M ENTXAKA J., C AMPOS
+M. K., P ENALBA M.: Interactive Augmented Experiences for
+Cultural Historical Events. In VAST07: The 8th International
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+Symposium on Virtual Reality, Archaeology and Intelligent Cultural Heritage (2007), pp. 23–30. 9
+[LD04] L AMARCHE F., D ONIKIAN S.: Crowd of virtual humans:
+a new approach for real time navigation in complex and structured environments. Computer Graphics Forum 23, 3 (2004),
+509–518. 13
+[LGSB06] L OOSER J., G RASSET R., S EICHTER H.,
+B ILLINGHURST M.: Osgart - a pragmatic approach to mr.
+In ISMAR 06: 5th IEEE and ACM International Symposium on
+Mixed and Augmented Reality (2006). 8
+[Lia07] L IAROKAPIS F.: An augmented reality interface for visualising and interacting with virtual content. Virtual Reality 11, 1
+(2007), 23–43. 9
+[LJ02] L EWIS M., JACOBSON J.: Game engines in scientific research. Communications of the ACM 45, 1 (2002), 27–31. 6
+[LSM08] L IAROKAPIS F., S YLAIOU S., M OUNTAIN D.: Personalizing virtual and augmented reality for cultural heritage indoor
+and outdoor experiences. In VAST08: The 9th International Symposium on Virtual Reality, Archaeology and Intelligent Cultural
+Heritage (2008), pp. 55–62. 8
+[LV00] L OKOVIC T., V EACH E.: Deep shadow maps. In SIGGRAPH ’00: Proceedings of the 27th annual conference on Computer graphics and interactive techniques (2000), pp. 385–392.
+11
+[LV04] L EPOURAS G., VASSILAKIS C.: Virtual museums for all:
+employing game technology for edutainment. Virtual Reality 8,
+2 (2004), 96–106. 4
+[LWH∗ 07] L EAVY B., W YELD T., H ILLS J., BARKER C.,
+G ARD S.: The ethics of indigenous storytelling: using the torque
+game engine to support australian aboriginal cultural heritage. In
+proceedings of the DiGRA 2007 Conference (2007), pp. 24–28. 7
+[Mac00] M ACEDONIA M.: Using Technology and Innovation to
+Simulate Daily Life. IEEE Computer 33, 4 (2000), 110–112. 14
+[Mac02] M ACEDONIA M.: Games Soldiers Play. IEEE Spectrum
+39, 3 (2002), 32–37. 1
+[Mat02] M ATTHEWS J.: Basic A* Pathfinding Made Simple.
+In AI Game Programming Wisdom. Charles River Media, 2002,
+pp. 105–113. 13
+[McC07] M C C ARTHY J.:
+What is Artificial Intelligence.
+Available from: http://www-formal.stanford.edu/
+jmc/whatisai/whatisai.html, 2007. 12
+[McG06] M C G UIRE T. J.: The Philadelphia Campaign: Volume
+One: Brandywine and the Fall of Philadelphia. Stackpole Books,
+2006. 6
+[MG08] M ITTRING M., G MB H C.: Advanced virtual texture topics. In SIGGRAPH ’08: ACM SIGGRAPH 2008 classes (2008),
+pp. 23–51. 10
+[MGM06] M C TAGGART G., G REEN C., M ITCHELL J.: High
+dynamic range rendering in valve’s source engine. In SIGGRAPH
+’06: ACM SIGGRAPH 2006 Courses (2006), p. 7. 11
+[MHY∗ 07] M AIM J., H AEGLER S., Y ERSIN B., M UELLER P.,
+T HALMANN D., VAN G OOL L.: Populating ancient pompeii
+with crowds of virtual romans. In VAST07: The 8th International
+Symposium on Virtual Reality, Archaeology and Intelligent Cultural Heritage (2007), pp. 109–116. 3, 13
+
+[MKN96] M ASE K., K ADOBAYASHI R., NAKATSU R.: Metamuseum: A supportive augmented-reality environment for
+knowledge sharing. In ATR Workshop on Social Agents: Humans
+and Machines (1996), pp. 107–110. 8
+[ML87] M ALONE T. W., L EPPER M. R.: Making learning fun:
+A taxonomy of intrinsic motivations for learning. In Aptitude,
+learning and instruction: III. Conative and affective process
+analyses, Snow R. E., Farr M. J., (Eds.). Erlbaum, 1987, pp. 223–
+253. 1
+[MMG06] M ITCHELL J., M C TAGGART G., G REEN C.: Shading
+in valve’s source engine. In SIGGRAPH ’06: ACM SIGGRAPH
+2006 Courses (2006), pp. 129–142. 11
+[MNO07] M C D ONNELL R., N EWELL F., O’S ULLIVAN C.:
+Smooth movers: perceptually guided human motion simulation.
+In SCA ’07: Proceedings of the 2007 ACM
+SIGGRAPH/Eurographics symposium on Computer animation
+(2007), pp. 259–269. 13
+[MSLV08] M ATEEVITSI V., S FAKIANOS M., L EPOURAS G.,
+VASSILAKIS C.: A game-engine based virtual museum authoring and presentation system. In DIMEA ’08: Proceedings of the
+3rd international conference on Digital Interactive Media in Entertainment and Arts (2008), pp. 451–457. 7
+[MT97] M USSE S. R., T HALMANN D.: A model of human
+crowd behavior: Group inter-relationship and collision detection
+analysis. In Computer Animation and Simulation ’97 (1997),
+pp. 39–52. 13
+[MW03] M ACAGON V., W ÜNSCHE B.: Efficient collision detection for skeletally animated models in interactive environments.
+In Proceedings of IVCNZ ’03 (2003), pp. 378–383. 7
+[Nar04] NAREYEK A.: Ai in computer games. ACM Queue 1, 10
+(2004), 58–65. 13
+[Nar07] NAREYEK A.: Game ai is dead. long live game ai! IEEE
+intelligent Systems 22, 1 (2007), 9–11. 14
+[ND03] N IENHAUS M., D ÖLLNER J.: Edge-enhancement - an algorithm for real-time non-photorealistic rendering. International
+Winter School of Computer Graphics, Journal of WSCG 11, 2
+(2003), 346–353. 10
+[NK03] NAGY Z., K LEIN R.: Depth-peeling for texture-based
+volume rendering. In PG ’03: Proceedings of the 11th Pacific Conference on Computer Graphics and Applications (2003),
+p. 429. 10
+[OBM00] O LIVEIRA M. M., B ISHOP G., M C A LLISTER D.: Relief texture mapping. In SIGGRAPH ’00: Proceedings of the 27th
+annual conference on Computer graphics and interactive techniques (2000), pp. 359–368. 11
+[Ork02] O RKIN J.: 12 Tips from the Trenches. In AI Game Programming Wisdom. Charles River Media, 2002, pp. 29–35. 14
+[Ork04a] O RKIN J.: Applying Goal-Oriented Action Planning to
+Games. In AI Game Programming Wisdom 2. Charles River Media, 2004, pp. 217–228. 12
+[Ork04b] O RKIN J.: Symbolic Representation of Game World
+State: Toward Real-Time Planning in Games. In Proceedings
+of the AAAI-04 Workshop on Challenges in Game AI (2004),
+pp. 26–30. 12, 13
+
+[Mit07] M ITTRING M.: Finding next gen: Cryengine 2. In SIGGRAPH ’07: ACM SIGGRAPH 2007 courses (2007), pp. 97–121.
+6, 11, 12
+
+[Ork06] O RKIN J.: Three States and a Plan: The A.I. of F.E.A.R.
+In Proceedings of the 2006 Game Developers Conference (2006).
+12, 13, 14
+
+[MK94] M ILGRAM P., K ISHINO F.: A taxonomy of mixed reality visual displays. IEICE Transactions on Information Systems
+E77-D, 12 (1994), 1321–1329. 7
+
+[OSW∗ 07] O PEN GL A RCHITECTURE R EVIEW B OARD ,
+S HREINER D., W OO M., N EIDER J., DAVIS T.: OpenGL
+Programming Guide, 6 ed. Addison-Wesley, 2007. 11
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+[Ove04] OVERMARS M.: Teaching computer science through
+game design. IEEE Computer 37, 4 (2004), 81–83. 7
+[PAB07] P ELECHANO N., A LLBECK J. M., BADLER N. I.:
+Controlling individual agents in high-density crowd simulation.
+In SCA ’07: Proceedings of the 2007 ACM
+SIGGRAPH/Eurographics symposium on Computer animation
+(2007), pp. 99–108. 13
+
+[RNBP04] R ENEVIER P., N IGAY L., B OUCHET J.,
+PASQUALETTI L.: Generic Interaction Techniques for Mobile
+Collaborative Mixed Systems. In CADUI 2004: Proceedings of
+the Fifth International Conference on Computer-Aided Design
+of User Interfaces (2004), pp. 307–320. 9
+[Ros06] ROST R. J.: OpenGL Shading Language, 2 ed. AddisonWesley, 2006. 11
+
+[PBMH02] P URCELL T. J., B UCK I., M ARK W. R., H ANRAHAN
+P.: Ray tracing on programmable graphics hardware. ACM Trans.
+Graph. 21, 3 (2002), 703–712. 9
+
+[Ros08] ROSADO G.: Motion Blur as a Post-Processing Effect.
+In GPU Gems 3, Nguyen H., (Ed.). Pearson Education, 2008,
+pp. 575–581. 10
+
+[PCKS00] P LETINCKX D., C ALLEBAUT D., K ILLEBREW A. E.,
+S ILBERMAN N. A.: Virtual-reality heritage presentation at
+ename. IEEE MultiMedia 7, 2 (2000), 45–48. 8
+
+[RP03] R EITSMA P. S. A., P OLLARD N. S.: Perceptual metrics
+for character animation: sensitivity to errors in ballistic motion.
+ACM Transactions on Graphics 22, 3 (2003), 537–542. 13
+
+[PCSa] P LINIUS
+C AECILIUS
+S ECUNDUS
+G.:
+Epistulae vi.16.
+The Latin Library:
+http://www.thelatinlibrary.com/pliny.ep6.html. 3
+
+[RWPD06] R EINHARD E., WARD G., PATTANAIK S., D EBEVEC
+P.: High Dynamic Range Imaging: Acquisition, Display and
+Image-Based Lighting. Morgan Kaufmann, 2006. 11
+
+[PCSb] P LINIUS
+C AECILIUS
+S ECUNDUS
+G.:
+Epistulae vi.20.
+The Latin Library:
+http://www.thelatinlibrary.com/pliny.ep6.html. 3
+[PDC∗ 03] P URCELL T. J., D ONNER C., C AMMARANO M.,
+J ENSEN H. W., H ANRAHAN P.: Photon mapping on programmable graphics hardware. In HWWS ’03: Proceedings of
+the ACM SIGGRAPH/EUROGRAPHICS conference on Graphics Hardware (2003), pp. 41–50. 12
+[PDMNO03] P ETERS C., D OBBYN S., M AC NAMEE B.,
+O’S ULLIVAN C.: Smart Objects for Attentive Agents. In Proceedings of the International Conference in Central Europe on
+Computer Graphics, Visualization and Computer Vision (2003).
+13, 14
+[PEHBP01] PAQUET E., E L -H AKIM S., B ERALDIN A., P ETERS
+S.: The virtual museum: Virtualisation of real historical environments and artefacts and three-dimensional shape-based searching. In VAA’01: Proceedings of the International Symposium on
+Virtual and Augmented Architecture (2001), pp. 182–193. 8
+[PEMO08] P ETERS C., E NNIS C., M C D ONNELL R.,
+O’S ULLIVAN C.: Crowds in context: Evaluating the perceptual plausibility of pedestrian orientations. In Eurographics
+2008 - Short Papers (2008), pp. 33–36. 13
+[PO09] P ETERS C., O’S ULLIVAN C.: Metroped: A tool for supporting crowds of pedestrian ai’s in urban environments. In Proceedings of the AISB 2009 Convention: AI and Games Symposium (2009), pp. 64–69. 13
+[PPM∗ 02] PAPAGIANNAKIS G., P ONDER M., M OLET T.,
+K SHIRSAGAR S., C ORDIER F., M AGNENAT-T HALMANN M.,
+T HALMANN D.: LIFEPLUS: Revival of life in ancient Pompeii.
+In Proceedings of the 8th International Conference on Virtual
+Systems and Multimedia (VSMM ’02) (2002). 8
+[RFD05] RYDER G., F LACK P., DAY A.: A framework for realtime virtual crowds in cultural heritage environments. In Vast
+2005, Short Papers Prceedings (2005), M. Mudge N. R., R S.,
+(Eds.), pp. 108–113. 13
+[RGS09] R ITSCHEL T., G ROSCH T., S EIDEL H.-P.: Approximating dynamic global illumination in image space. In I3D ’09:
+Proceedings of the 2009 symposium on Interactive 3D graphics
+and games (2009), pp. 75–82. 12
+[RKH08] ROPINSKI T., K ASTEN J., H INRICHS K. H.: Efficient shadows for gpu-based volume raycasting. In Proceedings of the 16th International Conference in Central Europe on
+Computer Graphics, Visualization and Computer Vision (WSCG
+2008) (2008), pp. 17–24. 11
+[RM03] R ÉMOND M., M ALLARD T.: Rei: An online video gaming platform. In Proceedings of the 9th International Erlang/OTP
+User Conference (2003). 7
+
+[Rya00] RYAN N.: Back to reality: augmented reality from field
+survey to tourist guide. In Virtual Archaeology between Scientific
+Research and Territorial Marketing, proceedings of the VAST EuroConference (2000). 8
+[SA07] S HANMUGAM P., A RIKAN O.: Hardware accelerated
+ambient occlusion techniques on gpus. In I3D ’07: Proceedings
+of the 2007 symposium on Interactive 3D graphics and games
+(2007), pp. 73–80. 12
+[Saw02] S AWYER B.: Serious games: Improving public policy
+through game-based learning and simulation. Whitepaper for the
+Woodrow Wilson International Center for Scholars, 2002. 2
+[SBLD04] S ANCHEZ S., BALET O., L UGA H., D UTHEN Y.:
+Vibes, bringing autonomy to virtual characters. In Proceedings of
+the Third IEEE International Symposium and School on Advance
+Distributed Systems (2004), pp. 19–30. 3
+[SCFS00] S ANWAL R., C HAKAVEH S., F OSTIRPOULOS K.,
+S ANTO H.: Marvins - mobile augmented reality visual navigational system. European Research Consortium for Informatics
+and Mathematics (ERCIM News) 40 (2000), 39–40. 8
+[Sco02] S COTT B.: The Illusion of Intelligence. In AI Game
+Programming Wisdom. Charles River Media, 2002, pp. 16–20.
+12
+[SDS∗ 01] S TRICKER D., DAEHNE P., S EIBERT F., C HRISTOU
+I., A LMEIDA L., C ARLUCCI R., I OANNIDIS N.: Design and
+Development Issues for ARCHEOGUIDE: An Augmented Reality based Cultural Heritage On-site Guide. In icav3d’01: Proceedings of the International Conference on Augmented, Virtual
+Environments and Three-Dimensional Imaging (2001), pp. 1–5.
+8
+[SH07] S CHEUERMANN T., H ENSLEY J.: Efficient histogram
+generation using scattering on gpus. In I3D ’07: Proceedings
+of the 2007 symposium on Interactive 3D graphics and games
+(2007), pp. 33–37. 11
+[She06] S HERROD A.: High dynamic range rendering using
+opengl frame buffer objects. In Game Programming Gems 6.
+Charles River Media, 2006, pp. 529–536. 11
+[Shi06] S HIRLEY P.: State of the art in interactive ray tracing. In
+ACM SIGGRAPH 2006 Courses (2006). 9
+[SHS∗ 04] S EETZEN H., H EIDRICH W., S TUERZLINGER W.,
+WARD G., W HITEHEAD L., T RENTACOSTE M., G HOSH A.,
+VOROZCOVS A.: High dynamic range display systems. vol. 23,
+pp. 760–768. 11
+[SLKP09] S YLAIOU S., L IAROKAPIS F., KOTSAKIS K., PATIAS
+P.: Virtual museums, a survey on methods and tools. Journal of
+Cultural Heritage (to appear) (2009). 4, 8
+
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+Anderson et al. / Serious Games in Cultural Heritage
+[SM01] S INCLAIR P., M ARTINEZ K.: Adaptive hypermedia in
+augmented reality. In Proceedings of the 3rd Workshop on Adaptive Hypertext and Hypermedia Systems, ACM Hypertext 2001
+Conference (2001). 8
+[SM06] S ANDER P. V., M ITCHELL J. L.: Out-of-core rendering
+of large meshes with progressive buffers. In ACM SIGGRAPH
+2006: Proceedings of the conference on SIGGRAPH 2006 course
+notes (2006), pp. 1–18. 4, 10
+
+[Wal07] WALLIS A.: Is Modding Useful? In Game Carreer
+Guide 2007. CMP Media, 2007, pp. 25–28. 4, 7
+[War07] WARING P.: Representation of Ancient Warfare in Modern Video Games. Master’s thesis, School of Arts, Histories and
+Cultures, University of Manchester, 2007. 6
+[WM08] W RIGHT T., M ADEY G.: A Survey of Collaborative Virtual Environment Technologies. Tech. Rep. 2008-11, University
+of Notre Dame, USA, 2008. 5, 7
+
+[Sou05] S OUSA T.: Adaptive Glare. In Shader X3: Advanced
+Rendering with DirectX and OpenGL, Engel W., (Ed.). Charles
+River Media, 2005, pp. 349–355. 11
+
+[WP05] WATT A., P OLICARPO F.: Advanced Game Development
+with Programmable Graphics Hardware. A. K. Peters, 2005. 9,
+10, 11
+
+[ST05] S HAO W., T ERZOPOULOS D.: Autonomous pedestrians.
+In SCA ’05: Proceedings of the 2005 ACM
+SIGGRAPH/Eurographics symposium on Computer animation
+(2005), pp. 19–28. 13
+
+[WS03] WAND M., S TRASSER W.: Real-time caustics. In
+Computer Graphics Forum (2003), Brunet P., Fellner D., (Eds.),
+vol. 22, 3. 12
+
+[ST08] S MITH S., T RENHOLME D.: Computer game engines for
+developing first-person virtual environments. Virtual Reality 12,
+3 (2008), 181–187. 7
+
+[Wym07] W YMAN C.: Interactive refractions and caustics using image-space techniques. In Shader X5: Advanced Rendering Techniques, Engel W., (Ed.). Charles River Media, 2007,
+pp. 359–371. 10, 12
+
+[Sto00] S TOUT B.: The Basics of A* for Path Planning. In Game
+Programming Gems. Charles River Media, 2000, pp. 254–263.
+13
+
+[YJSZ06] Y IN P., J IANG X., S HI J., Z HOU R.: Multi-screen tiled
+displayed, parallel rendering system for a large terrain dataset.
+IJVR 5, 4 (2006), 47–54. 10
+
+[Sut65] S UTHERLAND I. E.: The Ultimate Display. In Proceedings of the IFIP Congress (1965), vol. 2, pp. 506–508. 7
+
+[YYM05] Y U J., YANG J., M C M ILLAN L.: Real-time reflection
+mapping with parallax. In I3D ’05: Proceedings of the 2005 symposium on Interactive 3D graphics and games (2005), pp. 133–
+138. 10
+
+[Tch02] T CHOU C.: Image-based models: Geometry and reflectance acquisition systems. Master’s thesis, University of California at Berkeley, 2002. 4
+[TD00] T HOMAS G., D ONIKIAN S.: Virtual humans animation
+in informed urban environments. Computer Animation 0 (2000),
+112. 13
+[TI06] TATARCHUK N., I SIDORO J.: Artist-directable real-time
+rain rendering in city environments. In Eurographics Workshop
+on Natural Phenomena (2006). 10
+
+[ZCP07] Z HOU T., C HEN J. X., P ULLEN M.: Accurate depth of
+field simulation in real time. Computer Graphics Forum 26, 1
+(2007), 655–664. 10
+[ZDA03] Z ERBST S., D ÜVEL O., A NDERSON E.:
+Spieleprogrammierung. Markt + Technik, 2003. 6
+
+3D-
+
+[Zyd05] Z YDA M.: From visual simulation to virtual reality to
+games. IEEE Computer 38, 9 (2005), 25–32. 1, 2, 6
+
+[TSE∗ 04] T CHOU C., S TUMPFEL J., E INARSSON P., FAJARDO
+M., D EBEVEC P.: Unlighting the Parthenon. In SIGGRAPH ’04:
+ACM SIGGRAPH 2004 Sketches (2004), p. 80. 4
+[TYK99] TAMURA H., YAMAMOTO H., K ATAYAMA A.: Steps
+toward seamless mixed reality. In Mixed Reality: Merging
+Real and Virtual Worlds, Ohta Y., Tamura H., (Eds.). Ohmsha
+Ltd/Springer-Verlag, 1999, pp. 59–79. 8
+[TYK01] TAMURA H., YAMAMOTO H., K ATAYAMA A.: Mixed
+reality: Future dreams seen at the border between real and virtual
+worlds. IEEE Computer Graphics and Applications 21, 6 (2001),
+64–70. 7
+[UdHCT04] U LICNY B., DE H ERAS C IECHOMSKI P., T HAL MANN D.:
+Crowdbrush: interactive authoring of real-time
+crowd scenes. In SCA ’04: Proceedings of the 2004 ACM
+SIGGRAPH/Eurographics symposium on Computer animation
+(2004), pp. 243–252. 14
+[UT02] U LICNY B., T HALMANN D.: Crowd simulation for virtual heritage. In Proc. First International Workshop on 3D Virtual
+Heritage (2002), pp. 28–32. 13
+[VAW∗ 09] VANEGAS C. A., A LIAGA D. G., W ONKA P.,
+M ÜLLER P., WADDELL P., WATSON B.: Modeling the appearance and behavior of urban spaces. In Eurographics 2009 - State
+of the Art Reports (2009), pp. 1–16. 14
+[VIK∗ 02] V LAHAKIS V., I OANNIDIS N., K ARIGIANNIS J.,
+T SOTROS M., G OUNARIS M., S TRICKER D., G LEUE T.,
+DAEHNE P., A LMEIDA L.: Archeoguide: An augmented reality guide for archaeological sites. IEEE Computer Graphics and
+Applications 22, 5 (2002), 52–60. 9
+c 2009. This work is licensed under the creative commons attribution 3.0 Unported License. creativecommons.org
+
+

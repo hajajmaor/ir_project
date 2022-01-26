@@ -1,0 +1,370 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/273135032
+
+
+
+3D Augmented Reality Mobile Navigation System Supporting Indoor
+Positioning Function(IEEE)
+
+Data · March 2015
+
+
+
+CITATIONS                                                                                              READS
+
+0                                                                                                      91
+
+
+3 authors, including:
+
+            Ching-Sheng Wang
+            Aletheia University
+            74 PUBLICATIONS 320 CITATIONS
+
+              SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+
+             Interactive Learning Environments View project
+
+
+
+
+ All content following this page was uploaded by Ching-Sheng Wang on 06 March 2015.
+
+ The user has requested enhancement of the downloaded file.
+  3D Augmented Reality Mobile Navigation System
+      Supporting Indoor Positioning Function
+        Ching-Sheng Wang                                Ding-Jung Chiang                                         Yi-Yun Ho
+   Dept. of Computer Science and                Dept. of Digital Multimedia Design                     Dept. of Computer Science and
+     Information Engineering                     Taipei Chengshih University of                           Information Engineering
+         Aletheia University                          Science & Technology                                   Aletheia University
+           Taipei, Taiwan                                 Taipei, Taiwan                                       Taipei, Taiwan
+     cswang@email.au.edu.tw                       dingjung.chiang@gmail.com                             fm990015@email.au.edu.tw
+
+
+Abstract—“Oxford College,” well-known as “the earliest                       The National Palace Museum in Taiwan developed a
+edification institution in northern Taiwan,” was planned by Rev.         passive RFID digital navigation system [1, 2], which added an
+George Leslie Mackay. It is a typical Chinese and Western style          RFID Reader to a mobile device and affixed RFID tags to the
+architecture with rich historical and cultural content, now is a         exhibition cabinets of exhibits. The RFID Reader could sense
+Class 2 national monument. This paper took “Oxford College” as           RFID Tag to further read the number and data of exhibits.
+an example to develop a 3D augmented reality mobile navigation           Moreover, such a system enabled visitors to listen to relevant
+system that supports the function of indoor positioning. This            information via earphones. This system is the pioneer of the
+system collected the historical data to develop the 3D models            digital navigation system of museums. However, because this
+according to the ratio of actual objectives, and constructed the
+                                                                         system used old-fashioned PDA and passive RFID device,
+3D external and internal structures of Oxford College of the past
+and present. Moreover, this system combined RFID positioning
+                                                                         visitors could not read relevant data of exhibits until they
+function with the technology of markerless augmented reality to          walked to and stood in front of exhibits to detect them.
+actively detect the location of visitors and to further                  Moreover, this system could neither actively provide the
+instantaneously present 3D and multimedia navigation                     information on the location of visitors; therefore, its application
+information on mobile devices.                                           scope was limited.
+                                                                             In recent years, the improved effectiveness of smart mobile
+    Keywords-3D; Augmented Reality; mobile nvigation; indoor;
+                                                                         devices and the popularity of wireless internet have made
+positioning; RFID; Localization ; Oxford College; Mackay
+                                                                         various industries aggressively engage in the development of
+                                                                         applications (App) applicable to smart phones. In
+                       I.   INTRODUCTION                                 individualized smart navigation service, visitors can use their
+    Traditional exhibition facilities mainly display simple              personal smart phones or mobile devices to download a
+exhibition information or historical pictures for visitors.              specific App or access specific navigation webpages, via
+However, because each piece of exhibits has its own                      wireless internet, to rapidly acquire more abundant and
+background and story, visitors can neither presume the history           diversified navigation information. Smart navigation service
+of exhibits nor fully understand their historical background and         not only provides detailed illustrations and explanations of
+stories simply by observing the appearance of exhibits or their          exhibits, but also the information of audio navigation, maps of
+brief explanations. Moreover, some of exhibition facilities              exhibition facilities, schedules, etc. Diversified navigation
+provide guides or audio navigation service to increase visitors’         information is provided in such service, and the effect of
+understanding of background of exhibits. In terms of guides,             navigation is far superior to that of traditional textual or verbal
+exhibition facilities usually arrange professional guides to lead        explanations.
+visitors through exhibition sites and systemically introduce the             At present, some famous museums have commenced the
+theme and important exhibits. However, because guides can                promotion of smart navigation services [3, 4, 5, 6]. In the smart
+only introduce exhibits verbally, the navigation form is                 navigation system of the National Museum of Taiwan History,
+restricted, and because guides are usually outnumbered by                visitors can listen to navigation explanations, and look up
+visitors, such service is mainly provided for visitor groups.            information, such as maps of exhibition facilities and current
+Therefore, visiting hours are restricted and individual needs            exhibitions [3]. In addition to providing textual introductions of
+cannot be met. On the contrary, audio navigation system can              exhibits, the American Museum of Natural History App of the
+provide individualized service, which enables visitors to freely         American Museum of Natural History can also reflect the
+choose to listen to explanations according to their personal             location of visitors, via Wi-Fi positioning introduced into the
+interest, visiting speed, and length of stay. Moreover, visitors         indoor AGPS, which can provide a guide in the flow of
+can manually enter the corresponding audio navigation number             exhibition facility [4]. The Brighton Museums App, as
+of exhibits to listen to various introductions. However, as audio        promoted by the British, combines the museum information of
+navigation system can only verbally describe the historical              five museums. In addition to providing museum maps,
+background of exhibits the navigation form remains restricted.           historical pictures, and the latest information of activities and
+                                                                         museums, it also assists visitors in planning one-day trips [5].
+
+
+
+
+         978-1-4673-0890-8/12/$31.00 ©2012 IEEE                     64                                      COMNETSAT 2012
+The Street Museum App of the Museum of London collects                    to the exhibition layout of Oxford College, while the RFID Tag
+historical pictures of the museum and overlaps them with the              was placed on visitors. When visitors carried mobile devices
+current street scenery to reflect the difference between the              and an active RFID Tag and walked into the exhibition area,
+ancient times and modern time [6].                                        the Reader at the exhibition area would detect the signal of Tag
+                                                                          within the sensing area and send it to the positioning server for
+    Moreover, the Taipei International Flora Expo in Taiwan in            analysis. In the end, the mobile devices of visitors would
+2011 also developed a flora expo navigation system [7]. This              present positioning results and the information of exhibits is
+system was integrated with the technologies of GPS, NFC, and              sent back from the navigation information server system.
+RFID, which enabled visitors to use their smart phones to sense
+QR codes or Tag, and rapidly acquire the navigation                           The navigation information system stored the 3D
+information of the exhibition facilities, and obtain more                 architectural appearance of Oxford College at each major
+complete navigation services. Tatung University also                      period, its indoor 3D virtual scene and layout, and the
+developed a mobile navigation system using Longshan Temple                multimedia information of various exhibits, such as texts,
+in Taipei as the background, which was integrated with the                pictures, audio service, and 3D models. The augmented reality
+technology of augmented reality [8]. This system would                    exhibition system included the functions of image recognition
+recognize QR codes, and when visitors walked to a target                  and object mapping and imaging of markerless augmented
+scenic spot with a code or tag, and use their mobile devices to           reality. When visitors used the camera of a mobile device to
+scan the QR code, they could obtain relevant texts and pictures.          shoot exhibits, the system would instantaneously analyze,
+However, the additional QR code or Tag may affect the                     recognize, and present the augmented reality of the
+appearance of the exhibition area.                                        corresponding object to display various diversified exhibit
+                                                                          information (e.g. virtual 3D external architectural model of
+    The aforementioned systems showed that, simple                        Oxford College 100 years ago)
+texts/pictures or audio navigation service can no longer meet
+the needs of modern visitors, and only diversified navigation
+services can win the recognition of visitors. On the other hand,
+the aforementioned systems usually only use GPS outdoor
+positioning or simple Wi-Fi indoor positioning; therefore, their
+
+
+
+
+                                                                                                                          Ta
+                                                                                                                            g
+accuracy of positioning is restricted. Consequently, this paper
+
+
+
+
+                                                                                                                            id
+took the Oxford College as an example to combine active
+
+                                                                                                ibi ion
+                                                                                             exh at
+                                                                                                   ts
+                                                                                           of form
+RFID positioning with the technologies of augmented reality
+and mobile navigation to develop a 3D augmented reality                                      in
+                                                                                          MM
+
+
+mobile navigation system that supports the function of
+positioning.
+    This paper proposed a more precise active RFID
+positioning system to precisely identify the location of visitors.
+Moreover, this system could determine the exhibits and
+exhibition facility information around visitors according to
+                                                                                            Figure 1. Framework of the System
+their location. Furthermore, a markerless augmented reality
+exhibition system could effectively improve identification                    Each Tag of the RFID positioning system has a specific ID
+effects without changing the layout of the exhibition area. In            number. When visitors walked into the Oxford College, the
+addition, it could present a diversified 3D model and                     staff would guide them in downloading the required App into
+multimedia information to further improve the overall                     their mobile device and distributed the Tag specifically for use
+effectiveness of 3D mobile navigation system.                             in the RFID positioning system to them to enable the system to
+   The remainder of this paper is organized as follows. Section           acquire the information on individual visitor’s location. Once
+II describes the framework and functions of the system;                   the prerequisite procedures were completed, visitors could
+Section III explains the details of system implementation;                carry the Tag while walking through the indoor space where
+Section IV shows the result of the system; and Section V                  the Reader had been installed in advance. The Reader at each
+presents the conclusions of this paper.                                   exhibition area would receive the ID signal transmitted by Tag
+                                                                          and instantaneously sent it to the positioning server for analysis
+       II. FRAMEWORK AND FUNCTIONS OF THE SYSTEM                          and comparison to further identify the location of visitors.
+    The framework of the system is as shown in Figure 1. This                 After the information of individual visitor’s location was
+system was mainly divided into three major parts: (1) RFID                obtained, the navigation information server system would send
+indoor positioning system of the server; (2) navigation                   the navigation information at the exhibition area of visitors to
+information server system; and (3) augmented reality                      their mobile devices to enable them to acquire the exhibit
+exhibition system for visitors. The RFID indoor positioning               information of the location and specific exhibition area of their
+system was mainly used to analyze the location of visitors and            location. Moreover, this system would divide the exhibit
+provide them with guidance on location and the selection of an            information into several files according to exhibition areas in
+adequate server to convey information. The hardware devices               advance for visitors to download in batches. In addition to
+of the RFID indoor positioning system include an active RFID              reducing the burden on hardware devices, this method could
+Reader and Tag. The RFID Reader was established according                 narrow down the scope of the augmented reality image
+
+
+
+
+                                                                     65
+recognition system to significantly improve recognition                  download procedure would be initiated to download exhibit
+effectiveness and accuracy. Moreover, this system supported              information to their mobile devices. If they had downloaded it,
+the information pre-loaded mechanisms, which could predict               the pre-loaded mechanism would be initiated to download the
+the exhibition area where visitors were going to visit according         navigation information of the next exhibition area.
+to their location and navigation route. This system would use
+spare time to download the exhibit information at the                    D.     Information presentation
+exhibition areas in advance to effectively reduce the time spent             After the navigation information was downloaded,
+on waiting for information downloads.                                    multimedia exhibit information, such as texts, pictures, audio
+     The operating procedures of the system are shown in                 service, and 3D models, would be presented on mobile devices.
+Figure 2. The main procedures are in the order, as follows: (A)          Moreover, the procedures of instantaneous positioning and
+prerequisite procedures; (B) instantaneous positioning; (C)              information download would be continuously conducted.
+information download; (D) information presentation. The                  Furthermore, the augmented reality exhibition system of
+detailed descriptions of each procedure are given as follows:            visitors could also instantaneously analyze and identify the
+                                                                         exhibits that were photographed to present the augmented
+A.     Prerequisite procedures                                           reality of corresponding exhibits, as well as to present the
+    Visitors that firstly visited Oxford College had to download         overlapped virtual and actual objects.
+and install the navigation App applicable to their mobile
+devices. In their first login of the system, they had to manually                       III. SYSTEM IMPLEMENTATION
+enter the Tag ID to facilitate establishing a connection between             The procedures of implementation of the system mainly
+mobile devices and Tag. After completing the procedures                  include three parts: construction of 3D scenes, augmented
+above, they could download basic navigation inflation of the             reality, and RFID positioning. This system constructs the actual
+exhibition area from the navigation information server and               3D image of the current Oxford College and the virtual scene
+their mobile devices would present the initial navigation screen.        of external appearance and internal layout of Oxford College in
+                                                                         early days based on the historical data of the Mackay exhibits.
+B.    Instantaneous positioning                                          This system used Sketch Up to construct various 3D models of
+    With the Reader pre-installed at individual exhibition areas         the external appearance and internal layout of the building. The
+received the signal of the Tag that visitors carried, the                models proportional to real objects were constructed, and the
+positioning system would instantaneously compare the signal              images of original materials are attached to the models to
+strength value with the positioning information in the server to         render the virtual scenes more real. In terms of 3D interactive
+further analyze the location of visitors. In addition, the system        technology, this system used Unity software in support of the
+would send back the location information to visitors’ mobile             platforms of Window, iOS, and Android in order to beautify
+devices for guidance through exhibition areas.                           the scene, add special effects, and include interactive functions
+                                                                         and scene integration. For augmented reality, it used the App
+C.     Information download                                              developed by Eclipse for mobile devices and the actual pictures
+                                                                         of the scene as the bases for markerless image recognition.
+    The navigation information server system would send                  Therefore, its identification effect remained accurate, and
+specific navigation information to the exhibition area where the         without changing the layout of exhibition areas. Regarding
+visitors were located. If visitors did not download the                  indoor positioning, an active RFID positioning mechanism was
+navigation information of the exhibition area, the automatic             used to complete accurate positioning of visitors.
+
+
+
+
+                                                  Figure 2. Flow chart of navigation system
+
+
+
+
+                                                                    66
+                                                                                  with information of augmented reality, the recognition program
+A.     Construction of 3D scenes                                                  would convert it into a black-and-white image, and then detect
+    To enable visitors to fully experience the sense of reality, in               its feature points and distribution. Moreover, the program
+addition to using AutoCAD to precisely depict floor plans                         would analyze the angle and distance between image and
+proportional to actual floor plans, according to the original                     camera to reflect the 3D coordinates of the image. The
+floor plans of buildings, this paper also conducted on-site                       coordinates would be rotated and zoomed in/out to present the
+inspections to take photographs of real objects as the materials                  3D objects. In the end, the program would search for
+to design virtual images. In terms of outdoor 3D scenes, this                     corresponding virtual objects according to the distribution of
+system first input the floor plans developed by AutoCAD into                      feature points and present the virtual objects on mobile devices.
+SketchUp, and then developed the 3D building according to the
+actual appearance and ratio of the building (as shown in Figure                   C.    RFID Positioning
+3). In terms of indoor 3D scenes, this system used actual scene
+pictures as the images to be attached to the model in order to
+enhance the sense of reality. After the models of all of
+buildings were completed, they were converted into FBX files
+and integrated into Unity. In Unity, after it was certain that the
+materials of images to be attached onto the buildings were
+correctly connected; more scenes and objects would be added
+into the system. In addition, natural materials (e.g. sky, tree,
+etc.) would be timely added as well. In the end, light effects
+would be added to beautify the models and scenes (as shown in
+Figure 4). Furthermore, after the self-compiled interactive
+program was added to the models, a 3D mobile navigation
+system, with the effect of realistic scenes and interactive
+functions, was completed.
+
+
+
+
+                                                                                                Figure 6. Layout of RFID in the Oxford College
+
+                                                                                      In terms of the practical operations of RFID positioning [9],
+     Figure 3. 3D building in SketchUp Figure 4. Integrated scene in Unity        this system installed a total of 7 RFID readers in the Oxford
+                                                                                  College, located at the corner of the entrance of each exhibition
+                                                                                  hall (as shown in Figure 6), in order to avoid, as much as
+B.      Augmented Reality
+                                                                                  possible, the possibility that one Tag was read by several
+                                                                                  readers at the same time. The reader at each exhibition area
+                                                                                  would detect the signal strengthen value of the Tag and send it
+                                                                                  to the positioning server for comparison of positioning
+                                                                                  information in order to determine the location of the exhibition
+                                                                                  area of visitors. When visitors walked into a vague area,
+                                                                                  namely, the Tag was sensed by several readers at the same time,
+                                                                                  the positioning system would determine their location based on
+                                                                                  the corresponding signal strength to facilitate the subsequent
+                                                                                  information download procedure. In addition, the system
+                                                                                  would send the exhibit information of the exhibition area
+                                                                                  nearest to visitors according to their mobile devices.
+
+      Figure 5. Flow chart of processing procedures for augmented reality                                IV.   DEMONSTRATION
+                                                                                      Figures 7(a)(b)(c)(d) are the navigation interfaces of the
+    Figure 5 shows the processing procedures of the augmented                     system provided for visitors. As shown in Figure 7 (a), there
+reality system in this paper, which includes five major                           are three options on the main screen: (1) 3D model; (2) exhibit
+procedures: (1) tracking of image; (2) calculation of 3D image                    information; and (3) a MAP for visitors to choose. Moreover,
+coordinate; (3) identification of image marker distribution; (4)                  the small map in the lower left corner of the main screen could
+searching of virtual objects of corresponding images; and (5)                     reflect the location and exhibition area of visitors based on the
+presentation of virtual objects. In the practical operations of                   returned signal from the RFID positioning system. The name of
+recognition of augmented reality, this paper used real procures                   the exhibition area and the exhibit information are presented on
+at the scenes as the basis. When a camera tracked an image                        the bottom of the navigation screen. In terms of the navigation
+
+
+
+
+                                                                             67
+of 3D models, visitors could use the camera of mobile devices                                               V. CONCLUSIONS
+to scan the pictures of exhibits to browse the augmented reality                       This paper took “Oxford College,” a Class 2 national
+3D models. Moreover, they could also switch the models into a                       monument in Taiwan, as an example to combine RFID
+panoramic model (as shown in Figure (b)). The function                              positioning with the technologies of augmented reality and
+interface of the system could be hidden to facilitate visitors’                     mobile navigation to develop a 3D augmented reality mobile
+adjustment of camera angles, which enabled them to observe                          navigation system that supports the function of indoor
+the 3D models various angles. To exit the panoramic model                           positioning. The proposed active RFID position system could
+and return to the standard screen, they simply had to click the                     precisely identify the location of visitors. Moreover, the
+exit button in the upper right corner.                                              markerless augmented reality technology of this system could
+    Figure 7 (c) shows the navigation screen of exhibit                             be integrated with the positioning and pre-download
+information. After the visitors clicked the button of “exhibit                      mechanisms to effectively improve the performance of image
+information,” the screen would present the basic navigation                         recognition, and to further present more abundant and
+information in texts and images. In addition, visitors could                        diversified navigation information without changing the layout
+click the “speaker” button to listen to the corresponding audio                     of exhibition areas. This system was not only applicable to
+service to increase their understanding of exhibits. (Figure (c)                    “Oxford College,” but also various exhibition facilities. It
+shows the description of the architectural appearance of Oxford                     could improve the effectiveness of navigation and increase
+College). Moreover, when a visitor clicked the “Map” button,                        understanding and interest of visitors significantly.
+the floor plan of Oxford Collage could be presented in full
+screen mode, including the exhibition theme of each exhibition                                            ACKNOWLEDGMENT
+area and the location/exhibition area of the visitor (red box in
+Figure 10). Such information enabled visitors to plan their                           The authors would like to thank the National Science
+navigation routes. Figure 8 shows a picture of the system taken                     Council of the Republic of China, Taiwan for financially
+at Oxford College.                                                                  supporting this research under Contract No. NSC-100-2221-E-
+                                                                                    156-008 and NSC-99-2632-H-156-001-MY3. Besides, the
+                                                                                    authors would like to acknowledge Kai-Bin Wang for his
+                                                                                    assistance in making this system possible.
+
+                                                                                                               REFERENCES
+                                                                                    [1]   Y. C. Chuang, S. C. Yu, C. C. Liang, “A Study of
+                                                                                          Applying Digital Mobile Museum Guide,” Journal of
+        (a)Main screen (standard mode) (b) Panoramic navigation mode                      Library and Information Studies, vol. 1, No. 2, pp. 1–24,
+                                                                                          September 2003.
+                                                                                    [2]   National     Palace     Museum        Virtual   Museum,
+                                                                                          http://www.npm.gov.tw/vrmuseum/index.html [Accessed:
+                                                                                          April 2012].
+                                                                                    [3]   National       Museum       of       Taiwan      History,
+                                                                                          http://www.npm.gov.tw/en/home.htm [Accessed: April
+                                                                                          2012].
+          (c) Exhibit information            (d) Map of exhibition areas and        [4]   American        Museum       of       Natural    History,
+                                                 guidance on positioning                  http://www.amnh.org/apps/explorer.php [Accessed: April
+             Figure 7. Screen for operation of mobile navigation system                   2012].
+                                                                                    [5]   Brighton       Museums,        http://www.brighton-hove-
+                                                                                          rpml.org.uk/Museums/social-media/Pages/Smartphone-
+                                                                                          app.aspx [Accessed: April 2012].
+                                                                                    [6]   Museum       of     London      -      Street   Museum,
+                                                                                          http://www.museumoflondon.org.uk/Resources/app/you-
+                                                                                          are-here-app/home.html [Accessed: April 2012].
+                                                                                    [7]   Taipei        International       Flora       Exposition,
+                                                                                          http://www.2010taipeiexpo.tw/MP_3.html        [Accessed:
+                                                                                          November 2011].
+                                                                                    [8]   K. H. Wang, L. C. Chen, P. Y. Chu, and Y. M. Cheng, “A
+                                                                                          Study on the Design of Augmented Reality User
+                                                                                          Interfaces for Mobile Learning Systems in Heritage
+                                                                                          Temples,” Proceedings of the 3rd International
+                                                                                          Conference on Virtual and Mixed Reality, pp. 282-290,
+                                                                                          July 2009.
+                                                                                    [9]   C. S. Wang, “LOVINA: Location-aware Virtual
+                                                                                          Navigation System Based on Active RFID,” International
+                                                                                          Journal of Ad Hoc and Ubiquitous Computing, Vol. 8, No.
+                                                                                          4, pp. 211-218, November 2011.
+                            Figure 8. On-site testing results
+
+
+
+
+                                                                               68
+
+   View publication stats
+

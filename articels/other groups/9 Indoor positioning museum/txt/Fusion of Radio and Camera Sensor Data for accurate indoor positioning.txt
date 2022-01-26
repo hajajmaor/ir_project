@@ -1,0 +1,673 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/282311516
+
+
+
+Fusion of Radio and Camera Sensor Data for Accurate Indoor Positioning
+
+Article · February 2015
+DOI: 10.1109/MASS.2014.52
+
+
+
+
+CITATIONS                                                                                                 READS
+33                                                                                                        105
+
+
+4 authors:
+
+            Savvas Papaioannou                                                                                       Hongkai Wen
+            University of Cyprus                                                                                     University of Oxford
+            17 PUBLICATIONS 114 CITATIONS                                                                            60 PUBLICATIONS 2,405 CITATIONS
+
+                SEE PROFILE                                                                                               SEE PROFILE
+
+
+
+            Andrew Markham                                                                                           Niki Trigoni
+            University of Oxford                                                                                     University of Oxford
+            168 PUBLICATIONS 3,667 CITATIONS                                                                         203 PUBLICATIONS 5,574 CITATIONS
+
+                SEE PROFILE                                                                                               SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+              Distributed localisation for cluttered environments View project
+
+
+
+              RePWR: Wireless Power Transfer within Reinforced Concrete View project
+
+
+
+
+ All content following this page was uploaded by Savvas Papaioannou on 15 January 2020.
+
+ The user has requested enhancement of the downloaded file.
+     Fusion of Radio and Camera Sensor Data for
+             Accurate Indoor Positioning
+                     Savvas Papaioannou, Hongkai Wen, Andrew Markham and Niki Trigoni
+                     Department of Computer Science, University of Oxford, Oxford, OX1 3QD, UK
+                                          {firstname.lastname}@cs.ox.ac.uk
+
+
+
+   Abstract—Indoor positioning systems have received a lot of      are typically extensively covered with CCTV cameras for
+attention recently due to their importance for many location-      reasons of safety and security. In this paper, we propose
+based services, e.g. indoor navigation and smart buildings.        the use of existing camera infrastructure for the originally
+Lightweight solutions based on WiFi and inertial sensing have
+gained popularity, but are not fit for demanding applications,     unintended task of indoor positioning. However, although
+such as expert museum guides and industrial settings, which        camera based tracking can provide excellent position in-
+typically require sub-meter location information. In this paper,   formation in ideal conditions, the challenges provided by a
+we propose a novel positioning system, RAVEL (Radio And            real deployment are numerous. In particular, most security
+Vision Enhanced Localization), which fuses anonymous visual        cameras are installed to provide a large field of view,
+detections captured by widely available camera infrastruc-
+ture, with radio readings (e.g. WiFi radio data). Although         typically resulting in a bird’s eye view of the scene. This
+visual trackers can provide excellent positioning accuracy,        top-down perspective makes it difficult to distinguish facial
+they are plagued by issues such as occlusions and people           features and accurate identification is made even more
+entering/exiting the scene, preventing their use as a robust       challenging when the room is not well lit (e.g. in museums)
+tracking solution. By incorporating radio measurements, visu-      or when people wear similar uniforms or helmets (e.g.
+ally ambiguous or missing data can be resolved through multi-
+hypothesis tracking. We evaluate our system in a complex           in industrial plants). Furthermore maintaining tracking as
+museum environment with dim lighting and multiple people           people move behind obstacles, exit the field of view, or
+moving around in a space cluttered with exhibit stands. Our        cross paths is an exceedingly difficult task.
+experiments show that although the WiFi measurements are              Instead of trying to overcome the limitations of camera-
+not by themselves sufficiently accurate, when they are fused       based tracking through increasingly sophisticated tracking
+with camera data, they become a catalyst for pulling together
+ambiguous, fragmented, and anonymous visual tracklets into         algorithms, we exploit opportunistic and ubiquitous radio
+accurate and continuous paths, yielding typical errors below       signals (e.g. WiFi/Bluetooth Low Energy). Although, radio-
+1 meter.                                                           based tracking is limited in terms of accuracy, it can be
+                                                                   used to add context to trajectories obtained from camera
+                      I. I NTRODUCTION                             based tracking. At a coarse level, this provides an identifier,
+   In the last five years we have witnessed an unprece-            which can be used instead of advanced video processing
+dented interest in indoor positioning technologies, with a         techniques like face recognition. At a finer level, the se-
+variety of solutions developed in academic and industrial          quence of radio signal strengths, albeit noisy, can be used to
+research labs. Although the field has reached a significant        disambiguate between multiple possible trajectories, aiding
+level of maturity there is still no dominant solution. As a        to merge and split discontinuous traces.
+consequence, positioning services are still lacking in many           Motivated by the noisy nature of both visual and non-
+buildings. For a solution to be widely implemented and             visual sensor modalities, we explore whether we can effec-
+adopted it must satisfy two key requirements: low cost and         tively combine them to overcome each other’s weaknesses.
+high accuracy. Current low cost systems exploit or reuse           We present a generic vision+radio tracking framework,
+existing infrastructure (e.g. WiFi) or can even operate with-      RAVEL (RAdio and Vision Enhanced Localization) that
+out infrastructure (e.g. inertial tracking). These inexpensive,    can be used both in receiver-centric (i.e. people carrying
+ubiquitous positioning approaches however cannot provide           smartphones) and transmitter-centric (i.e. low-cost tags in
+the sub-metre accuracy that high-end, expensive solutions          warehouse, industrial or construction sites) applications.
+like UWB or ultrasound can. The dichotomy between cost                So far, there have been very few attempts at combining
+and accuracy has fragmented the technology landscape,              infrastructure cameras with radio for positioning. The most
+leading to a plethora of competing solutions that cannot           relevant work, EVLoc [1], which also fuses radio and
+satisfy both requirements simultaneously. We present a             camera sensor data, tackles a different problem, that of
+fresh approach that seeks to unify the two disparate camps,        matching N wireless devices with N visual detections,
+providing high positioning accuracy with very low cost.            rather than inferring the location of a device, using only that
+   Our fundamental observation is that many applications           device’s radio data and anonymous camera data from the
+that require high positioning accuracy are in large public         scene. Unlike our work, they assume a known, calibrated
+or commercial spaces, such as airports, shopping centres,          radio model, and have performed tests in rather ideal
+museums and industrial plants. These large public spaces           conditions. A complementary approach is to fuse inertial
+measurements with visual trajectories [2], [3], but we argue     Visual-based detector                 j
+                                                                                              Detect objects                 Generate tracklets
+that radio measurements are the fundamental primitive that                      Frames                                              T1   T2
+
+is common to many applications ranging from smartphone             User                                                                         T4
+positioning to tracking low power tags in a warehouse;                                                                         T3
+inertial data is more informative, but less ubiquitous and                                                                                 T6
+                                                                                                                                T5
+requires application specific signal processing to yield
+                                                                                                                                         All tracklets
+usable motion traces.
+   To the best of our knowledge, this is the first paper that    Radio-aided tracker
+                                                                                                          Merge tracklets
+proposes a practical solution of radio-aided visual tracking,                                                      T1                    Private radio
+and tests it in a truly complex and realistic scenario.                                                                                  measurements
+                                                                                                     T3           T4    T2
+Specifically, our contributions are:
+                                                                                                T5
+   • We provide a fresh perspective on the problem of                           Most likely                  T6
+                                                                                trajectory
+      low-cost high-accuracy positioning in large open-plan
+      indoor spaces, enabled by the fusion of anonymous
+      visual data and radio data.                                   Fig. 1: Overview of the proposed RAVEL system.
+   • We design a novel multi-hypothesis probabilistic ap-
+      proach (RAVEL) to fuse radio and camera data that is
+      robust to noisy and incomplete measurements.                                III. S YSTEM OVERVIEW
+   • We show how the radio propagation model for a
+                                                                   We are now in a position to present the proposed Radio
+      particular environment can be learnt online, requiring
+                                                                And Vision Enhanced Localization (RAVEL) system, which
+      no site-specific surveying.
+                                                                consists of two components: a visual based detector and a
+   • We evaluate the proposed approach in a museum
+                                                                radio aided tracker shown in Fig. (1). These components
+      setting, and compare it with multi-hypothesis tracking
+                                                                can run in the same device (e.g. a server collecting measure-
+      which only uses visual data.
+                                                                ments from multiple transmitters) or across different de-
+                                                                vices (e.g. smart cameras running the visual-based detector
+   The remainder of this paper is structured as follows:        and disseminating traces to mobile devices, each running
+Sec. II outlines the requirements of a system for fusing        their own radio-aided tracker to preserve user privacy). The
+visual and radio data to accurately track users in indoor       rest of the paper considers the latter, more challenging case
+environments. Sec. III presents the overview of our radio-      of distributed tracking, but the algorithms presented are
+aided visual tracking system, while Sec. IV discusses the       equally applicable to centralized tracking.
+details of the proposed algorithms. Sec. V evaluates the
+proposed system in a real-world museum scenario. Sec. VI        A. The Tracking Problem
+overviews related work and Sec. VII concludes the paper            Let us assume the indoor environment is monitored
+and discusses future work.                                      by a calibrated (known extrinsic and intrinsic parameters)
+               II. S YSTEM R EQUIREMENTS                        stationary camera (the proposed approach can be easily
+                                                                extended to multi-camera scenarios). For a given time
+   Here we lay out the key requirements and challenges for      window of size W , W ∈ Z, the camera captures a series
+a practical visual- and radio-based positioning solution.       of frames [f1 , ..., fW ] within its field of view (FOV). We
+Lightweight: The proposed solution should be lightweight        assume that each frame fi contains a number of camera
+enough to run in real-time on resource-constrained              detections of moving objects within the FOV, denoted as
+devices with minimum training effort. This excludes             Ci = {c1i , ..., cji , ...}, 1 ≤ i ≤ W , 1 ≤ j ≤ |Ci |. A
+computationally-expensive approaches, such as part-based        camera detection cji is represented as a bounding box of the
+object detectors (e.g. [4]), or face recognition techniques.    detected object, or simply as the coordinates of the center
+Accurate: We aim for sub-meter tracking accuracy for a          of the bounding box, i.e. cji = (xji , yij ).
+particular user, as required by many applications. Existing        We also assume that at each time i, the mobile device
+radio-based positioning approaches typically cannot achieve     carried by a particular user receives a set of radio mea-
+such accuracy, while visual tracking techniques tend to         surements ri = {ri1 , ..., rim , ...}, where rim is the Received
+generate anonymous and often segmented trajectories that        Signal Strength (RSS) measurement of the m-th radio
+cannot be assigned to a particular user.                        basestation at time i. The problem is is to estimate the tra-
+Robust: The proposed solution should be usable in busy          jectory of a user given the sequence of anonymous camera
+and dynamic indoor environments, and robust to noisy            detections [c1 , ..., cW ] and personal radio measurements
+visual / radio data. In practice, fixed obstacles such as       [r1 , ..., rw ].
+furniture may easily block line of sight to both the cam-
+era and the radio access points, resulting in occlusions        B. Visual-based Detector
+and attenuation respectively. Changes in illumination and         The visual-based detector processes the captured camera
+arbitrary movements of people can also have catastrophic        footage as follows. For each frame fi , a set of anonymous
+effects on approaches relying on perfect visual detections.     camera detections Ci = {c1i , ..., cji , ...} of the interesting
+                               D3                                                 IV. P ROPOSED A LGORITHM
+        D1                                                           In this section, we discuss the core algorithms of the
+                                                                  RAVEL tracking system: the tracklet generation algorithm
+                                         D5                       (Sec. IV-A ) used in the visual-based detector, and the
+      D2                  D4                                      tracklet merging algorithm (Sec. IV-B), which is the key
+                                                                  competency of our radio-aided tracker.
+                                                                  A. Tracklet Generation Algorithm
+                                                                     Given a fixed window of frames [f1 , ..., fW ], and ex-
+                                                                  tracted sets of camera detections [C1 , ...CW ], the task of
+Fig. 2: Three cases of noisy detections generated by our          the tracklet generation algorithm is to link the elements
+visual-based detector: a) multiple detections are generated       of Ci -s into unambiguous trajectory segments, referred to
+for one moving target (D1 and D2), b) a detection contains        as tracklets. The proposed algorithm leverages a realistic
+no moving targets at all (D4), and c) one detection contains      model of human motion to ascertain that a sequence of
+multiple moving targets (D5).                                     detections from consecutive frames belong to the same
+                                                                  person with high certainty, and can thus be grouped together
+                                                                  into a tracklet τ . It starts by considering detections in the
+objects (i.e. moving people) are firstly extracted. In our        first frame and proceeds in chronological order until all de-
+implementation, we use a lightweight MoG-based back-              tections are grouped into a set of tracklets T = {τ1 , ..., τN }.
+ground subtraction approach [5] to detect moving people,             More specifically, at the beginning, or when an existing
+which does not require heavy training and with some               tracklet cannot be further extended with new camera de-
+optimization it can run in real-time in embedded camera           tections, a new tracklet is initiated with the first available
+networks [6]. However, the computed set of detections Ci          (not-visited) camera detection, say ci . To extend the tracklet
+can be very noisy and unreliable. Fig. (2) shows a frame          with a second detection, we first check if there is a detection
+with three typical cases of noisy detections observed in our      ci+1 in the next frame such that kci − ci+1 k < DT
+experiments, namely multiple detections from a single per-        where DT is the maximum displacement of a target in
+son (splitting); single detections corresponding to multiple      the period between two consecutive frames. If there is
+people (merging); and null detections (empty bounding box,        no such detection, or if there are more than one such
+caused by a visual artifact such as a moving shadow). In          detections, ci becomes a singleton tracklet. Otherwise the
+this case, linking the detections into coherent trajectories is   two detections must belong to the same person, so they are
+not a trivial task. Note that the visual-based detector only      grouped together in the same tracklet.
+links detections into short trajectory segments (referred to         Once we have at least two detections in the same tracklet,
+as tracklets hereafter) when they unambiguously belong to         we can extend it with another detection taking into account
+the same target, as discussed in Sec. IV-A. The tracklets         the fact that humans normally avoid abrupt changes of
+could be broadcasted to phones in a number of ways,               direction and speed [8]. For example, consider the last
+including overloading the WiFi beacon frames (i.e. beacon         two detections in the tracklet (say, ci and ci+1 ), and the
+stuffing) [7], a technique that could also be used to preserve    potential to extend them with one of the available detections
+the user’s privacy.                                               in the next frame, say ci+2 . In order to assess its suitability,
+C. Radio-aided tracker                                            we measure changes in the direction and in the speed of
+                                                                  motion, and combine them to obtain a metric of confidence
+   The tracklets generated by the visual-based detector tend      that the three detections concern the same person:
+to be very short, and are still anonymous: we have no
+knowledge of which tracklet should belong to a given user.                     Q(ci+2 ; ci , ci+1 ) = wd Qd + ws Qs            (1)
+Therefore, the proposed system broadcasts the generated
+                                                                  where Qd is the cost of direction change while Qs is the
+tracklets (which are just streams of two dimensional coor-
+                                                                  cost of speed change, weighted by wd and ws respectively.
+dinates) to the radio-aided tracker, which runs on the mobile
+                                                                  In our case, Qd and Qs are defined as:
+devices carried by the users. With the received anonymous
+tracklets, the radio-aided tracker cross references the user’s                      (ci+1 − ci ) · (ci+2 − ci+1 )
+                                                                           Qd = 1 −
+private radio footprint, i.e. radio measurements from the                            kci+1 − ci kkci+2 − ci+1 k
+known basestations, to determine which tracklets should                               p                                        (2)
+                                                                                         kci+1 − ci kkci+2 − ci+1 k
+be selected and merged to produce the complete trajectory                  Qs = 1 − 2
+                                                                                      kci+1 − ci k + kci+2 − ci+1 k
+of this particular user. To achieve this, our tracker uses a
+multi-hypothesis tracklet merging approach. In a nutshell,           If at most one detection is found with cost Q less than a
+it builds tracklet trees that encode all hypotheses of user       predefined threshold then we include that detection in the
+paths. We are now in a position to present the details of         tracklet and continue to the next frame; otherwise we stop
+the proposed algorithms.                                          extending this particular tracklet. The above procedure is
+                                                                  repeated until all detections are grouped into tracklets.
+                                                        Camera ci
+ Camera FOV                                                                                                   S1
+                                                                                                                        pauses of the user. On the other hand, the empty detections
+                        i=25                            Synthetic si
+                   T3                        T5           Empty ei                                            T1        are introduced to account for situations where the user exits
+                                                                                                         S2        S3   and possibly reenters the camera’s FOV, and temporarily
+                                                   i=30
+             i=20                         i=45
+                                                                                                  T2
+                                                                                                                        has no known coordinates.
+                                                                                                                   T3
+                                             S5                                                                            Concretely, our algorithm completes paths with synthetic
+               ...
+
+             S3
+                                                                                       S5         S4
+                        ...       ...T2           S4   i=28   T4      i=32   E1                                         and empty detections according to the following rules: First
+            i=15
+S1     T1
+                        S2     i=21       i=25
+                                                                 ...              T5         T4                         tracklet rule: If the first tracklet of a path does not start at
+                                                          i=45   T6   i=42
+                                                                                        E1
+                                                                                                                        time 1 (of the window), we precede it with empty detections
+     i=10                                                                                          T6                   if it starts at the boundary of the scene, or with synthetic
+                                  (a)                                                                   (b)
+                                                                                                                        detections (positioned at the location of its first detection)
+                                                                                                                        if it does not start at the boundary. Gap rule: If there is a
+Fig. 3: (a) The tracklets generated by our algorithm, where                                                             gap between a parent and a child tracklet in the tree, we fill
+the gaps are filled by synthetic and empty detections. (b)                                                              the gap with synthetic detections positioned at interpolated
+The built tracklet tree with nodes containing camera (circle                                                            points between the final detection of the parent tracklet and
+nodes), synthetic (hexagon nodes), and empty (triangle                                                                  the first detection of the child tracklet. In the unusual case
+nodes) detections. Each camera node is also attached with                                                               that the parent tracklet ends at the boundary of the FOV
+a EOT node.                                                                                                             and the child tracklet begins at the boundary, we fill the gap
+                                                                                                                        with empty (instead of synthetic) detections. Last tracklet
+                                                                                                                        rule: If the last tracklet of a path does not end at the end of
+B. Tracklet Merging Algorithm                                                                                           the window, we extend it with empty detections if it ends
+   Given the generated tracklets, the tracklet merging algo-                                                            at the boundary of the scene, or with synthetic detections
+rithm, which is the core of our radio-aided tracker, attempts                                                           (positioned at the location of its last detection) if it does
+to decide which tracklets should be merged together to                                                                  not end at the boundary. We also add an end of trajectory
+produce the complete trajectory of the particular user. It                                                              (EOT) node to every node containing camera detections,
+first builds a set of tracklet trees that encode all possible                                                           indicating the user may stop there.
+trajectory hypotheses, and then searches for the trajectory                                                                After applying these rules, every path of the built tracklet
+hypothesis that is most consistent with the user’s radio data.                                                          tree represents a possible trajectory that contains W con-
+Build the tracklet trees: Let us denote the set of                                                                      secutive detections whether camera, synthetic or empty. For
+tracklets generated within a window of frames [f1 , ..., fW ]                                                           example, the highlighted path in Fig. (3b) corresponds to
+as T = {τ1 , ..., τN }. We first define Tstart as the subset                                                            the highlighted trajectory in Fig. (3a), which indicates that
+of tracklets in T that start early (before a certain time                                                               the user moves from the bottom left corner of the FOV to
+threshold) and thus could be used to start a user’s trajectory.                                                         the top middle. We refer to such a trajectory as a hypothesis,
+For each of those candidate tracklets, the algorithm initiates                                                          denoted as H = [h1 , ...hW ], where hi ∈ C ∪ S ∪ E.
+a tracklet tree. The algorithm then expands these trees as                                                              Search the trackless trees: Once we have identified
+follows: for a given tree node (parent tracklet), its children                                                          all trajectory hypotheses, we proceed to identify the most
+become all the tracklets that start soon after it finishes                                                              likely one. Specifically, the likelihood score of a hypothesis
+and for which their first detection is at close proximity to                                                            is defined as the sum of two parts:
+the parent tracklet’s final detection. This spatio-temporal                                                                          L(H, R, λ) = Lv (H) + Lr (H, R, λ)             (3)
+threshold constrains the size of the tracklet trees and can                                                                      v
+be adjusted to allow this module to run in real-time on                                                                 where L (H) is the visual-based likelihood score of the
+mobile devices.                                                                                                         hypothesis H, while Lr (H, R, λ) is the radio-based like-
+   Now the tracklets in T are topologically connected into                                                              lihood score given observed radio measurements R and
+paths, but these paths are still incomplete. For example,                                                               a radio propagation model λ. Therefore, our algorithm
+consider tracklets T1 and T3 in Fig. (3a), which form a                                                                 evaluates the likelihood score of a hypothesis in two steps:
+path in the tree shown in Fig. (3b) (ignore the nodes other                                                             1) it firstly estimates the user trajectory X = [x1 , ..., xW ]
+than T1 and T3 for now). For this path, we can see that:                                                                based on vision data in hypothesis H, and evaluates the
+a) it does not start from the beginning of time window (T1                                                              likelihood of vision data; 2) it then evaluates the likelihood
+starts at time 10); b) it ends early (T3 ends at time 25                                                                of the radio data given the estimated user trajectory X. The
+while the window size is 45); and finally c) there is a gap                                                             first step is already applied by existing multiple hypothesis
+of missing detection in between (the final detection in T1                                                              tracking approaches (e.g. [9], [10]), which neglect radio
+is at time 15, and the first detection in T3 is at 20).                                                                 data and select the hypothesis that maximizes Lv (H) only.
+   To address this, we introduce two extra types of detec-                                                              We could of course derive the overall likelihood score in
+tions, synthetic detections si ∈ S and empty detections                                                                 one step, using a Bayesian filter to jointly fuse vision and
+ei ∈ E, in addition to the camera detections ci ∈ C.                                                                    radio data. Our design choice to separate these steps stems
+The synthetic detections are used to address the problem                                                                from our desire to reuse existing implementations of vision-
+of missing camera detections when the user is actually                                                                  only trackers and extend them flexibly with a new step
+within the camera’s FOV, which are caused by occlusions or                                                              that additionally exploits radio data. Now we explain how
+                                                                                                                        Lv (H) and Lr (H, R, λ) are evaluated in detail.
+                                                                                         Access Point 1                 Access Point 2       n
+Evaluate Lv (H): For each hypothesis H, our algorithm                                                                                                  e-9
+
+
+
+
+                                                                     RSS (dBm)
+                                                                            -60                               -60
+maintains a filter, to estimate the trajectory X of the user.               -80                               -80
+This can be implemented using a variant of a Bayesian                            -0.2   0   0.2   0.4   0.6     -0.2   0   0.2   0.4   0.6
+
+filter, such as a Kalman filter [11]. Let x−    i be the estimated                       Access Point 3                 Access Point 4
+
+
+
+
+                                                                     RSS (dBm)
+position (state) of the user given the detections h1:i−1 , with             -60                               -60
+
+covariance Pi− . For a non-empty detection hi , we define its               -80                               -80
+
+incremental visual-based score as:                                               -0.2   0    0.2 0.4 0.6
+                                                                                         log-distance (m)
+                                                                                                                -0.2   0    0.2 0.4 0.6
+                                                                                                                        log-distance (m)
+            (                                                                                                 (a)                                (b)
+        v     log[pv f (hi ; x−    −
+                              i , Pi , θ)]         , hi ∈ C
+   ∆Li =                                                       (4)   Fig. 4: (a) Fitted radio model from 4 APs. (b) Learning the
+              log[(1 − pv )f (hi ; x−i , P −
+                                           i , θ)] , hi ∈ S
+                                                                     radio model parameters by searching the parameter space.
+where pv is the constant likelihood of having a camera
+detection when the user is in the FOV. f is a function that
+evaluates the likelihood of hi given the estimated x−      −
+                                                      i , Pi         we assume P0 and n are independent, and follow the raised
+and the parameters θ of the filter, i.e. it assesses how hi          cosine priors governed by known hyper-parameters. Sec. V
+agrees with the state estimated by the filter. Then Lv (H)           will show how in practice our algorithm finds the best radio
+is the normalized sum of all ∆Lvi :                                  model that is very close to the actual one.
+                                    W                                  To sum up, for each hypothesis H and possible ra-
+                                                                     dio model λ, our algorithm evaluates the likelihood
+                                    X
+                    Lv = |H|−1            ∆Lvi                (5)
+                                    i=1
+                                                                     score L(H, R, λ) as shown above, and finds the best
+                                                                     solution {H ∗ , λ∗ } which is given by: {H ∗ , λ∗ } =
+where |H| is the number of non-empty detections in the               arg maxH,λ L(H, R, λ).
+hypothesis H.
+Evaluate Lr (H, R, λ): Let us assume that radio model λ                                V. S YSTEM E VALUATION
+in the indoor environment can be described with the log-             A. Experimental Setup
+normal shadowing model with parameters {P0 , n, σ}, and
+                                                                        We have conducted a real world experiment in a three-
+the Received Signal Strength (RSS) r(a) at a point which
+                                                                     story Museum building to evaluate the performance of the
+is a meters to the known basestation is given by:
+                                                                     proposed approach. In our experiment we placed the camera
+              r(a) = P0 − 10n log10 (a) + χσ2                 (6)    (i.e. off-the-shelf webcam) 10m above the ground in the
+                                                                     third floor of the building facing down covering a 11m ×
+where P0 is the RSS measurement at a reference distance of           12m area. All people to be tracked were walking on the first
+1 meter, n is the path loss factor, and χσ2 ∼ N (0, σ 2 ) is the     floor while looking at the museum exhibits. The duration
+random shadowing variation. Let x+    i be the state estimated       of our experiment was 40 minutes with the camera taking
+with detections h1:i from the previous step, which is the            video at 2fps with a resolution of 960 × 720 px. The total
+best guess on the location of a user at time i. For a non-           number of people in the scene was varying as the museum
+empty detection hi , we define its incremental radio-based           visitors were entering and leaving the scene. The minimum
+likelihood score as:                                                 number of people in one frame was 8 and the maximum
+                M
+                X                                                    20 with 4 of them having WiFi enabled smartphones. The
+       ∆Lri =         log fN [r(dist(x+           m    2
+                                      i , Bm )); ri , σ ]     (7)    objective of the experiment is to determine the accuracy
+                m=1                                                  with which people with WiFi data can track themselves
+where dist(x+                                     +                  in a busy environment with several other people. The
+              i , Bm ) is the distance between xi and bases-
+                           +
+tation Bm , and r(dist(xi , Bm )) is the expected RSS value          WiFi measurements were taken by smartphones receiving
+at x+                            m                                   beacons from 4 APs at a default rate of 2 samples/sec.
+     i (given by Eqn. (6)). ri ∈ ri is the received RSS
+measurement of Bm on the user’s mobile device. fN is                    In order to obtain accurate ground truth trajectories from
+Gaussian probability density function. Therefore, the score          the video footage we supplied all four people carrying WiFi
+of hi is determined by how its corresponding state estimate          smartphones with hats of different colors. Then we used a
+x+                                                                   mean-shift tracker [12] to track the colored hats and label
+  i fits the measured ri . Then the score for entire hypothesis
+H and radio model λ is the normalized sum of all ∆Lri :              the ground truth trajectories of all 4 people for our entire
+                                                                     4800 frame dataset. The color features were only used
+                             W
+                             X                                       to acquire accurate ground truth; and both our approach
+               Lr = |H|−1           ∆Lri + log Lλ             (8)    and the competing approach use only gray-scale images.
+                              i=1
+                                                                     We noticed that in the absence of these distinctive hats,
+where Lλ is the likelihood of radio model λ = {P0 , n}               appearance features are not informative enough to tell apart
+given prior distributions on these two parameters. Our               one person from another, due to the dim lighting and the
+algorithm does not require perfect knowledge of λ, but               fact that with the downward-facing camera we did not get
+attempts to learn the best model by a search through the             a view of distinctive face/body features.
+parameter space. For simplicity, we assume the parameter             Algorithms: The competing approach, referred to as
+σ is known, and only vary P0 and n. In our experiments,              Vision-only tracker, only uses the smoothness of motion
+to connect visual detections into trajectories; it is a multi-   from our proposed approach as Learned model and the
+hypothesis tracking approach widely used by the vision           model derived from training data as Fitted model.
+community [9], [10]. On the other hand, our proposed ap-             Our proposed algorithm, RAVEL, assumes a non-
+proach, RAVEL (Radio And Vision Enhanced Localization)           environment specific raised cosine prior distribution on
+ravels out ambiguous visual threads by exploiting both the       the two parameters (P0 and n) of the radio propagation
+smoothness of motion and radio signal strength data.             model (see Eqn. (6)), with a generous variance for each
+Performance metrics: We distinguish between two main             parameter. The prior distributions for P0 and n are based on
+operating contexts: 1) offline case, in which the compet-        smartphone-based WiFi specs and a number of studies on
+ing/proposed algorithms are given data over a time window        typical values of n, e.g. [13]. Fig. (4a) shows the received
+of size W , and are tasked to estimate the trajectory of a       signal strength measurements (600 samples are shown) as
+target during that period; and 2) online case, in which the      we vary the log-distance from four access points and the
+task is to estimate the current location of the target given     fitted ground truth radio propagation model. The fitted
+a window of historical data of size W .                          model (P0 = −64 and n = 2.2) is obtained by averaging
+   For the offline case, we use two key metrics to evaluate      the P0 and n values derived from the training data of the
+our approach - offline location error and overlap error.         four access points.
+Offline location error is an accuracy metric that reflects           Fig. (4b) shows that the fitness of the best hypothesis
+the distance between the estimated trajectory (using the         (given by Eqn. (3)) as we vary the parameters of the radio
+competing or proposed techniques) and the ground truth           propagation model. Note that the Learned model, derived
+trajectory (derived by using distinctive visual markers). In     from the proposed RAVEL algorithm by maximizing the
+the results below, we measure it as the average Euclidean        fitness of the best hypothesis, is very close to the Fitted
+distance between the ground truth and estimated detections       model obtained from a wealth of training data (an expensive
+over time. In measuring the distance between trajectories,       survey). More importantly this Learned model only assumes
+we only use timestamps (frames) for which both the esti-         a rather broad and uninformative prior, the mode of which
+mated and ground truth trajectories report the target to be      (referred to as Prior model) is quite far from the Fitted
+within the field of view.                                        model. Hence, with very little prior knowledge of the
+   The second offline metric, referred to as overlap error,      radio propagation model, we are able to accurately infer it
+measures the overlap between the ground truth and es-            and avoid the time consuming step of environment-specific
+timated trajectories with respect to the camera’s field of       training.
+view. Let FP (false positives) be the ratio of frames in         Offline location error: The second set of experiments
+a window of size W for which the estimated trajectory            focuses on the offline case, and aims to compare the offline
+reports a detection in the FOV, whereas the ground truth         location error of RAVEL and the competing Vision-only
+trajectory suggests that the target is outside the FOV. Let      tracker. We first use default values for the window size
+FN (false negatives) be the ratio of frames in which the         (120 frames taken over 60 secs) and for the WiFi sampling
+estimated trajectory reports an empty detection (outside         rate (2 WiFi signal strength values per sec), and plot the
+the FOV), whereas the ground truth trajectory includes a         CDF of the offline location error over 160 windows (40
+detection within the FOV. The overlap error between the          windows for each of the four people carrying a smartphone
+two trajectories is defined as the sum of false positive (FP)    with WiFi). Fig. (5a) shows that RAVEL, which leverages
+and false negative (FN) ratios, and it reflects the percentage   WiFi information, achieves a median error of 0.56 m and a
+of time in which the estimated algorithm misclassifies the       90 percentile error of 1 m, significantly outperforming the
+target to be in the FOV when they are not or vice versa.         competing Vision-only tracker, which has a median error
+   For the online case, our accuracy metric is referred to as    of about 1 m and a 90 percentile error of 4.6 m. Note
+online location error, and is the Euclidean distance between     that to give a fair chance to the Vision-only tracker, we
+the last pair of detections of the estimated and ground truth    initialize it with the correct visual detection corresponding
+trajectories (those at the end of the a historical window).      to the person that we are tracking. However, even with
+                                                                 a correct start the Vision-only tracker diverges from the
+B. Results                                                       correct path due to crossing, splitting and other ambiguities.
+No a priori knowledge of the radio model: The first set          These ambiguities are typically resolved by RAVEL with
+of experiments is conducted to validate our assumption that      the help of WiFi data; illustrative examples of how this
+we do not require a priori knowledge of the parameters           happens are provided later in the evaluation.
+of the radio propagation model. Our proposed algorithm               We then proceeded to examine the impact of the win-
+allows us to learn the model from camera and WiFi data,          dow size on the offline location error. We kept the WiFi
+by considering different radio models (from a prior dis-         sampling rate to the default value of 2 samples per sec,
+tribution) and choosing the one that maximizes the fitness       and varied the window size (10-60 secs corresponding
+function described in Eqn. (3). This is in contrast to EV-Loc    to 20-120 frames). Fig. (5b) shows that the proposed
+which assumes a priori knowledge of the radio propagation        RAVEL approach improves its accuracy as the window
+model and obtains it by collecting training data from the        size increases. This is reasonable since different people
+environment (WiFi signal strength data at known distances        will most likely walk different paths over long periods
+from the access points). We refer to the radio model learnt      of time resulting in unique WiFi sequences which act as
+               1                                                                3.5                                                                              2.5
+                                                                                       Vision−only tracker                                                                                                            RAVEL
+                                                                                 3     RAVEL
+              0.8                                                                                                                                                 2
+
+
+
+
+                                                            Offline error (m)
+
+
+
+
+                                                                                                                                             Offline error (m)
+                                                                                2.5
+Probability
+
+
+
+
+              0.6                                                                2                                                                               1.5
+
+
+              0.4                                                               1.5                                                                               1
+                                                                                 1
+              0.2                                                                                                                                                0.5
+                                  RAVEL                                         0.5
+                                  Vision−only tracker
+               0                                                                 0                                                                                0
+                0   2           4           6           8                             10   20 30 40 50 60                                                               0.125             0.25   0.5    1              2
+                        Offline error (m)                                                   Frame window size (s)                                                                         WiFi samples/sec
+
+                           (a)                                                                    (b)                                                                                          (c)
+Fig. 5: (a) Cumulative distribution function of the offline location error. (b) Impact of the frame window size on the
+offline location error. (c) Impact of the WiFi sampling rate on the offline location error.
+
+                                                                                                                       1                                                                 2
+powerful discriminative signatures for each person. Thus                                                                                                                                                            RAVEL Offline
+                                                                                                                                                                                                                    RAVEL Online
+as the frame window size increases the accuracy tends to                                                              0.8
+                                                                                                                                                                                        1.5
+increase. The converse is true for the Vision-only tracker.
+
+                                                                                                        Probability
+
+
+
+
+                                                                                                                                                                            Error (m)
+                                                                                                                      0.6
+For short periods of time we can see that it can be quite                                                                                                                                1
+                                                                                                                      0.4
+accurate and can achieve similar performance with RAVEL.
+                                                                                                                                                                                        0.5
+However, for long periods of time a lot of ambiguities                                                                0.2                 RAVEL
+                                                                                                                                          Vision−only tracker
+are introduced especially in crowded environments which                                                                0                                                                 0
+                                                                                                                        0   0.2    0.4     0.6                    0.8   1                     10   20 30 40 50 60
+degrades the performance of Vision-only tracking.                                                                                 Overlap Error                                                     Frame window size (s)
+
+   The next step was to explore the impact of the WiFi RSS                                                                         (a)                                                                   (b)
+sampling rate on the offline location error of RAVEL with
+a default window size of 120 frames. As expected, Fig. (5c)                                             Fig. 6: (a) Cumulative distribution function (CDF) of the
+shows that the performance of RAVEL improves as we                                                      overlap error. (b) Online location error.
+increase the sampling rate. Note that no significant benefits
+are observed by sampling above 1 WiFi RSS per second,
+which means that radio sampling does not need to be                                                     access to a historical window of visual and WiFi detec-
+intensive (i.e. the algorithm could run on battery operated                                             tions, and we investigate the impact of the window size
+devices) to obtain accurate trajectories. This however may                                              on the online (most recent) location error. As expected,
+be also due to the fact that people walk relatively slowly                                              Fig. (6b) shows that the online location error decreases as
+in museums; it is possible that different environments may                                              we increase the window size. This behavior is similar to
+benefit from higher sampling rates.                                                                     that of the offline location error (also shown in Fig. (5b)),
+Offline overlap error: The third set of experiments aims to                                             which measures the average error across all positions of the
+compare RAVEL with Vision-only tracker in terms of their                                                window. Notice in Fig. (5b) that the online location error
+ability to correctly determine whether a target is inside or                                            is always slightly higher than the offline location error for
+outside the camera’s FOV. To do so, we use the overlap                                                  a given window size, because the last position estimate in
+error metric defined above as the percentage of frames in                                               a given window has no future detections to benefit from.
+which the estimated trajectory incorrectly places the user                                              Illustrative examples: We close our evaluation by showing
+inside or outside the FOV when compared to the ground                                                   in Fig. (7) three illustrative examples showing the perfor-
+truth. Fig. (6a) shows the CDF of the overlap error of the                                              mance of the proposed and competing algorithms: In the
+two algorithms over 160 windows (40 non-overlapping win-                                                first example (Fig. (7a)), the person stops at particular mu-
+dows times four people). Observe that up to 70% of these                                                seum exhibit, and stays there for a long period of time. Then
+windows have no overlap error for RAVEL, as opposed to                                                  she starts walking again, and performs a U turn. While the
+50% for the competing approach. The maximum overlap                                                     person is looking at the exhibit without moving, no camera
+error of RAVEL is 40% as opposed to 100% for Vision-only                                                detections are generated. Once she starts moving again
+tracker. This shows that RAVEL’s superior performance                                                   it becomes difficult to distinguish in which direction she
+in resolving ambiguities that result from people entering                                               actually moves using camera detections due to ambiguities
+and leaving the FOV and re-appearing into the FOV from                                                  with other people’s trajectories. One hypothesis is that her
+different entry points. Illustrative examples of such cases                                             path merged with a second person’s path moving north as
+will be examined below.                                                                                 illustrated in Fig. (7b); another hypothesis is that she makes
+Online location error: The last set of experiments focuses                                              a U turn as in Fig. (7c). By taking into account her radio
+on the online case, where we are interested in the most                                                 data, RAVEL can identify the correct trajectory. Another
+recent location of a target. We still assume that we have                                               interesting case where WiFi measurements are beneficial is
+                                                                                                        illustrated in Fig. (7d). In this case the person leaves the
+             (a) Ground truth                        (b) Vision-only tracker                         (c) RAVEL
+
+
+
+
+             (d) Ground truth                        (e) Vision-only tracker                         (f) RAVEL
+
+
+
+
+             (g) Ground truth                        (h) Vision-only tracker                         (i) RAVEL
+           Fig. 7: Illustrative examples showing the performance of the proposed and competing algorithms.
+
+
+camera’s FOV and after some time he re-enters. Fig. (7f)          such as inertial sensing. Our qualitative and quantitative
+shows that RAVEL can re-establish the identity of the             results though suggest that RAVEL is significantly more
+person when he re-enters the FOV and provide the correct          accurate and robust than existing Vision-only tracking sys-
+trajectory. Finally, Fig. (7g) illustrates the situation of two   tems, requiring only a negligible overhead to extend their
+targets splitting paths which is quite common in crowded          implementation.
+environments. More specifically, two people start walking
+together (i.e. one detection contains two targets) moving                             VI. R ELATED W ORK
+south when at some point they split following different              Extensive research has been done on localization tech-
+paths. In this case the Vision-only tracker has a 50% chance      niques, and a recent survey can be found in [14]. Here we
+of following the wrong path, whereas RAVEL can use radio          provide a brief survey focusing only on state of the art
+data to select the correct path. Although RAVEL allows            techniques that combine vision with other sensing modali-
+us to resolve a number of common ambiguities, it is by            ties, such as radio and inertial sensors. Mandeljc et al. [15]
+no means a perfect tracking system; we have observed              recently proposed a fusion algorithm that incorporates
+certain cases in which ambiguities are not correctly resolved     radio data into a camera-based probabilistic occupancy map
+either due to a very limited window size, or to a highly          (POM) framework. As in the original POM framework [16],
+crowded and complex scene. In addition, if there are regions      humans are represented as simple rectangles, and detections
+where either WiFi or vision are unavailable, in its current       are generated using a background subtraction technique.
+implementation no positions are returned. In the future this      The work in [17] generalizes POM to work with arbitrary
+limitation could be solved by incorporating other modalities      sensor modalities, and provides an illustrative example with
+Ubisense’s ultra-wideband radio sensors. However, unlike
+our work, radio measurements are only applied to the sub-        measurements to provide accurate tracking information.
+problem of estimating a ground plane occupancy model             Although noisy radio measurements are inadequate for
+(that gives the probability of a cell being occupied by any      positioning on their own, we demonstrated how they can
+of the humans given sensor data); they are not directly          greatly enhance the performance of visual tracking by han-
+used for identification, i.e. to estimate the probability of     dling challenging cases like occlusion, trajectory splitting
+a particular person being located in a cell given that the       and entry/exit from the camera field-of-view. The additional
+cell is occupied. The latter problem is addressed in [15],       advantage of our approach is that it automatically learns
+[16] using the color distributions of camera detections,         the radio propagation model, thus not requiring site-specific
+without the help of radio. Color distributions and other         calibration. We believe that this work has the potential to
+appearance features are of little use in our context due to      provide highly accurate positioning at low cost in challeng-
+the challenging light conditions and the downward facing         ing indoor environments.
+camera configuration. Hence, these works do not exploit the
+                                                                                     VIII. ACKNOWLEDGMENT
+full power of radio for disambiguating human trajectories.
+More recent work [17] added a second fusion stage, where            We would like to thank Laing O’Rourke for funding this
+anonymous detections are augmented with identity informa-        research and also the Pitt Rivers Museum for allowing us
+                                                                 to conduct our experiments in the museum’s space.
+tion from radio tags. The cost of mapping an anonymous
+detection to a radio-based identified detection is evaluated                                  R EFERENCES
+based on the Euclidean distance between the two, and
+the optimal assignment between two sets of detections in          [1] B. Zhang, J. Teng, J. Zhu, X. Li, D. Xuan, and Y. F. Zheng, “Ev-loc:
+                                                                      integrating electronic and visual signals for accurate localization,” in
+a frame is evaluated using the Hungarian method [18].                 Proc . MobiHoc, 2012.
+Although this approach [17] exploits radio-based detections       [2] D. Jung, T. Teixeira, and A. Savvides, “Towards cooperative local-
+for identification, it does so on a frame-by-frame basis,             ization of wearable sensors using accelerometers and cameras,” in
+                                                                      Proc. INFOCOM, 2010.
+and does not jointly address the problem of identification        [3] T. Teixeira, D. Jung, G. Dublon, and A. Savvides, “Identifying
+and tracking. More importantly, it assumes knowledge of               people in camera networks using wearable accelerometers,” in Proc.
+multiple people’s radio data (instead of one person’s in our          PETRA, 2009.
+                                                                  [4] P. F. Felzenszwalb, R. B. Girshick, D. McAllester, and D. Ramanan,
+work), and thus addresses a different problem.                        “Object detection with discriminatively trained part-based models,”
+   Other techniques [2], [3] fuse camera and inertial mea-            PAMI, vol. 32, no. 9, pp. 1627–1645, 2010.
+surements. More specifically, the authors in [2], [3] use         [5] C. Stauffer and W. E. L. Grimson, “Adaptive background mixture
+                                                                      models for real-time tracking,” in Proc. CVPR, 1999.
+cameras and accelerometers to identify people based on            [6] Y. Shen, W. Hu, J. Liu, M. Yang, B. Wei, and C. T. Chou, “Efficient
+their velocity. The correlation coefficient is being used to          background subtraction for real-time tracking in embedded camera
+calculate the similarity between the velocity of each user            networks,” in Proc. SenSys, 2012.
+estimated from camera and accelerometer measurements.             [7] R. Chandra, J. Padhye, L. Ravindranath, and A. Wolman, “Beacon-
+                                                                      stuffing: Wi-fi without associations,” in Mobile Computing Systems
+This work is orthogonal to the proposed RAVEL system,                 and Applications, 2007. HotMobile 2007. Eighth IEEE Workshop
+and the two papers could be combined in the future                    on, March 2007, pp. 53–57.
+to exploit all three sensing modalities (vision, radio and        [8] I. Sethi and R. Jain, “Finding trajectories of feature points in a
+                                                                      monocular image sequence,” PAMI, vol. 9, no. 1, pp. 56–73, 1987.
+inertial sensors).                                                [9] D. Reid, “An algorithm for tracking multiple targets,” IEEE Trans-
+   Finally the recent EV-Loc [1] system demonstrated how              actions on Automatic Control, vol. 24, no. 6, pp. 843–854, 1979.
+to perform localization by combining electronic and visual       [10] S. Blackman, “Multiple hypothesis tracking for multiple target track-
+                                                                      ing,” Aerospace and Electronic Systems Magazine, IEEE, vol. 19,
+signals. Given a number of people equipped with mobile                no. 1, pp. 5–18, Jan 2004.
+phones, the algorithm estimates the position of each person      [11] R. E. Kalman, “A new approach to linear filtering and prediction
+using both WiFi signal strength and visual tracking. Then             problems,” Transactions of the ASME–Journal of Basic Engineering,
+                                                                      vol. 82, no. D, pp. 35–45, 1960.
+an optimization problem must be solved in order to find          [12] J. Ning, L. Zhang, D. Zhang, and C. Wu, “Robust mean-shift tracking
+the best mapping between electronic and visual signals.               with corrected background-weighted histogram,” Computer Vision,
+Finally, the position of each person is calculated as the             IET, vol. 6, no. 1, pp. 62–69, January 2012.
+                                                                 [13] S. Seidel and T. Rappaport, “914 mhz path loss prediction models
+weighted average of the corresponding electronic and visual           for indoor wireless communications in multifloored buildings,” IEEE
+estimates. As we already mentioned in the previous sections           Tran. on Antennas and Propagation, vol. 40, no. 2, pp. 207–217, Feb
+EV-Loc assumes that the vision system provides clear visual           1992.
+                                                                 [14] R. Mautz, Indoor positioning technologies. Habilitation thesis, ETH
+trajectories (i.e. the data association problem is solved) and        Zurich, 2012.
+thus this system concentrates on finding the association         [15] R. Mandeljc, J. Pers, M. Kristan, and S. Kovacic, “Fusion of non-
+between WiFi traces and visual traces given a known radio             visual modalities into the probabilistic occupancy map framework
+                                                                      for person localization,” in Proc. ICDSC, 2011.
+propagation model. Similar to [17], it assumes knowledge         [16] F. Fleuret, J. Berclaz, R. Lengagne, and P. Fua, “Multi-camera people
+of multiple people’s radio data and thus addresses a slightly         tracking with a probabilistic occupancy map,” PAMI, vol. 30, no. 2,
+different problem than the one tackled by RAVEL.                      pp. 267–282, 2008.
+                                                                 [17] R. Mandeljc, S. Kovačič, M. Kristan, and J. Perš, “Tracking by
+                    VII. C ONCLUSION                                  identification using computer vision and radio,” Sensors, vol. 13,
+                                                                      no. 1, pp. 241–273, 2012.
+  We have introduced RAVEL, a new positioning sys-               [18] H. W. Kuhn, “The hungarian method for the assignment problem,”
+tem that integrates anonymous visual tracking with radio              Naval research logistics quarterly, vol. 2, no. 1-2, pp. 83–97, 1955.
+
+
+
+
+View publication stats
+

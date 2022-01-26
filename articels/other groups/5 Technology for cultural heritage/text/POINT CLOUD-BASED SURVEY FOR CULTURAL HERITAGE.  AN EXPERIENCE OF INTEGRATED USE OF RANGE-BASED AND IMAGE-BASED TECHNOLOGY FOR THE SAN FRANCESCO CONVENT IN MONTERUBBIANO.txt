@@ -1,0 +1,680 @@
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+POINT CLOUD-BASED SURVEY FOR CULTURAL HERITAGE.
+AN EXPERIENCE OF INTEGRATED USE OF RANGE-BASED AND IMAGE-BASED
+TECHNOLOGY FOR THE SAN FRANCESCO CONVENT IN MONTERUBBIANO
+Alessandra Meschini a, Enrica Petrucci a, Daniele Rossi a, Filippo Sicuranza a
+a
+
+UNICAM, School of Architecture and Design, Viale della Rimembranza, Ascoli Piceno, Italy,
+alessandra.meschini@unicam.it
+Commission V
+
+KEY WORDS: SFM, TOF laser scanning, UAV, 3D data integration,
+ABSTRACT:
+The paper aims at presenting some results of a point cloud-based survey carried out through integrated methodologies based on
+active and passive 3D acquisition techniques for processing 3D models. This experiment is part of a research project still in progress
+conducted by an interdisciplinary team from the School of Architecture and Design of Ascoli Piceno and funded by the University of
+Camerino. We describe an experimentation conducted on the convent of San Francesco located in Monterubbiano town center
+(Marche, Italy). The whole complex has undergone a number of substantial changes since the year of its foundation in 1247. The
+survey was based on an approach blending range-based 3D data acquired by a TOF laser scanner and image-based 3D acquired using
+an UAV equipped with digital camera in order to survey some external parts difficult to reach with TLS. The integration of two
+acquisition methods aimed to define a workflow suitable to process dense 3D models from which to generate high poly and low poly
+3D models useful to describe complex architectures for different purposes such as photorealistic representations, historical
+documentation, risk assessment analyses based on Finite Element Methods (FEM).
+1. INTRODUCTION
+This experiment is part of a research project that is still in
+progress (PRO-CULT: A PRObabilistic performance-based
+methodology for seismic risk assessment of CULTural
+heritage). It is being carried out by an interdisciplinary team
+from the School of Architecture and Design in Ascoli Piceno,
+and is funded by the University of Camerino. The people
+involved in this project come from different fields —
+seismology,
+probability
+theory,
+structural
+dynamics,
+architectural history, rehabilitation and survey — since risk
+assessment, which represents the main topic of this research, is
+typically an interdisciplinary topic.
+One of the main objectives of this research was the development
+of an accurate 3D model that could be used for different
+purposes, such as the photorealistic representation of the current
+state in order to historically document the convent of San
+Francesco in Moterubbiano (Marche, Italy), not only as
+documentation to conserve and enhance the cultural heritage but
+also as representations to be further developed, for example, for
+risk assessment analyses based on Finite Element Methods
+(FEM) with the aim of investigating the building structure and
+consequently assessing possible earthquake damage, especially
+in seismically active areas such as the Marche Region.
+
+performance of each sensor. (Remondino 2011) (Fiorillo et al.
+2013)
+As for the capture of 3D data pertaining to the architecturalcultural heritage the use of aerial photogrammetry is combined
+with and often completes surveying sessions based on TLS
+(Remondino 2011). For this purpose high-resolution digital
+cameras mounted on unmanned aerial vehicles (UAV) allow
+impossible points of view to be reached with TLS from adjacent
+buildings or appropriately placed light scaffolding. While
+scientific literature in the field of TLS is wide and exhaustive,
+possibilities regarding the use of UAVs equipped with cameras
+or even light TOF laser scanners have still not been fully
+verified (Colomina 2013).
+UAVs represent one of the emerging technologies in
+photogrammetry. This technology is suitable to innumerable
+applications such as TV and film recording, the maintenance of
+infrastructures. There are also many uses for surveillance and
+control vast areas, as well as surveying the topography or
+individual architectural constructions (Colomina 2013).
+2. CASE STUDY
+2.1 Historical background
+
+With this goal, once we had analysed the volumes of the
+Convent and in particular the position that it occupies at the
+downtown of Monterubbiano, separate from other adjacent
+buildings only by narrow passageways, we decided to integrate
+two reality-based capture methods in order to achieve dense 3D
+models from which we could generate high- and low-poly-3D
+models. A point-cloud-based survey carried out through
+integrated methodologies is presented in order to develop a
+hybrid workflow combining the advantages and best
+
+The case study is the small convent of San Francesco situated
+on the highest part of Monterubbiano (Province of Fermo,
+Marche, Italy). The ridge sits above the Aso River, part of the
+mountainous comb structure that reaches the Adriatic Sea after
+marking the territory.
+Many historic towns can be seen along the river valley. The
+different settlements, each with its own particularities, present
+common characteristics: a very compact urban fabric
+surrounded by walls that have been more or less conserved over
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+413
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+the centuries, traversed by paths running between the houses
+and opening in the squares in front of city buildings and
+monasteries.
+Monterubbiano is characterised by a variety of interesting
+architecture. The Franciscan complex is among the most
+representative buildings in the old city. The Church of San
+Francesco with its cloister dates from 1247, between the
+domination of Fermo and the birth of the cities. The church was
+modified in 1428 when the wooden trusses of the roof were
+demolished and substituted with the current brick vaults. At the
+beginning of the 17th century, the orientation of the church was
+inverted, with an entrance placed on the apse side and the altar
+on the old face where the signs of an upper opening (rose or
+arched window) are still visible; the date 1622 is inscribed
+above the entablature of the current entrance. The original bell
+tower, which was leaning, was demolished at the end of the
+18th century and substituted with the current one. The convent,
+on the other hand, has undergone various transformations and
+adaptations, maintaining only a few hints of the original
+construction, among which are some of the arches in the
+cloister. The complex is currently used as a museum, which
+includes an auditorium for shows and meetings. The
+Archaeological Museum is dedicated in part to the history and
+archaeology of the Aso River Valley and in part to the
+archaeological discoveries made over the course of the 19th and
+20th centuries. The museum also houses a library, which
+contains around 45,000 volumes, and the “Giano” Centre for
+Environmental Education, instituted by the Marche Region in
+2001.
+2.2 Architectural Complex Description
+Beginning in 1247, when the Complex was founded, until the
+most recent restorations following the earthquake that hit the
+area in 1997 were finished in 2007, the entire San Francesco
+complex has not only changed in its use (a minor prison starting
+in 1861, a grain storehouse during the Fascist period, a
+woodworking shop, and recently taken over by the city for
+cultural activities), but has also undergone a series of substantial
+formal modifications that have defined its current structure
+consisting of different architectural elements, all of which are
+juxtaposed and connected to form a single, complex
+architecture.
+The following external characteristics are found in the San
+Francesco complex:
+•
+it is located on a promontory (the highest point of the
+historical centre) and is accessible either from the façade of the
+church, which is located at the top of a system of stairs that
+draws attention to a considerable change in elevation with
+respect to the road in front (Figure 1), or from the right side
+(commonly used access), which can be reached via a very steep
+road;
+•
+the free access space around the Complex cannot be
+assigned to a single plane, but rather presents an elevation
+profile with notable height differences and in some particular
+points (the bell tower), also a very reduced width;
+•
+the walls are mainly in bare brick save one part of the
+southern wall of the church which shows a mixture of brick and
+square stone (probably Istrian stone);
+
+Figure 1. Front of the church with the monumental staircase
+•
+the surrounding construction follows the orography,
+which means the structures meet the ground at very different
+elevations; some are even much lower than the level of the San
+Francesco complex.
+Internally, the church and convent present the following aspects
+from the organisational and distributional points of view:
+•
+the church, choir, and bell-tower base form a single body,
+the main body of the monastic Complex;
+•
+the church, which is the main element, consists of a single
+nave covered by Gothic groin vaults resting on bare brick
+columns; there are diverse decorative elements on the side
+walls such as altars, traces of frescoes, and plaster;
+•
+the choir, covered by a groin vault with raised ribs, is
+situated at a higher level on the counter-façade (the part inside
+the entrance), therefore exhibiting a double level facing the nave
+of the church;
+•
+the tall, soaring bell tower is located to the left of the
+church entrance. At the nave level of the church, the base of the
+tower is composed of a small environment located slightly off
+the ground and covered by a barrel vault in bare brick, while the
+floor is in clay. At the level of the choir, a C-shaped scale can
+be accessed, which, in a reduced space, allows a higher
+elevation of the bell tower to be reached;
+•
+what remains of the adjacent cloister is composed of a
+sequence of groin vaults on two sides, of which only one is still
+an open portico. The court is currently marred by a tank for
+drinking water;
+•
+on the left-hand side of the church (north side) there are
+many rooms all linked together but placed at different levels,
+thus generating a complex spatial organization. The roofing
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+414
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+systems of such rooms are varied: sexpartite vaults, cloister
+vaults, buttresses, and lunettes, along with flat ceilings and
+wooden trusses;
+•
+finally, another interesting element is the underground
+cavities, galleries, and tunnels. The presence of environments
+carved out of the ground is a characteristic found in many
+historical town centres in the Marche Region. They are spaces
+that have been used over the centuries for different purposes
+such as water cisterns and wells, areas for living and conserving
+food, defensive areas, religious and burial spaces, pits to extract
+materials for construction, and factories to process agricultural
+products.
+3. DATA-CAPTURE METHODOLOGY
+This part of the article illustrates the main phases of the project
+workflow, in which the design and experimentation of an
+appropriate “survey project” obviously form the first crucial
+step. This phase serves to consider the objectives, critical
+aspects, and choices adopted considering the instruments used.
+Such a description is also directed at identifying a methodology
+that can be used in other similar cases.
+Given the area in which the survey described here was carried
+out and the skills involved (architects, structural engineers,
+historians, and restoration experts), the general objective was to
+provide careful documentation and a representation of the
+current state of the San Francesco Complex to be used for
+multiple aims, such as: i) an overall reading of the entire
+building and its arrangement; ii) understanding and analysis of
+the structural system derived from the superposition of
+historical modifications that, in the context of the project, can
+help to interpret its behaviour over time; iii) analysis aimed at
+monitoring and managing the site; and iv) research to verify the
+historical phases by integrating and comparing the survey to
+archival sources in order to identify the traces and stratifications
+that have occurred over time.
+
+Once the objectives were clarified, the level of detail of the
+models identified, the possible critical on-site aspects
+considered along with the overall characteristics of the building
+and the site described in the preceding section, a point-cloudbased surveying campaign was undertaken using an approach
+capable of integrating terrestrial range-based data acquired
+using TOF laser scanners with aerial photogrammetry using a
+UAV equipped with a remote-oriented camera.
+The methodology for data capture was also selected based on
+the case study, that is, on the particular position related to the
+geomorphological structure of the site so that each of the chosen
+technologies could provide information where another presented
+“gaps”. Essentially, while the laser scanner could control
+possible areas hidden from below, the use of photography using
+the UAV allowed zones hidden from above to be controlled and
+also to photograph considerably high parts (roofing and the bell
+tower).
+The same high-resolution photographs would be used to
+texturise the entire 3D model, in order to increase the level of
+representative realism and to improve the quality of detail
+where 3D data would not be capable of describing the exact
+geometry.
+As is obvious, because a database composed of point clouds
+was elaborated, it was also important to be able to use SFM
+tools to generate point clouds from the photographs. For this
+reason, an approach capable of integrating data from the laser
+scanner and images captured with the UAV represented the best
+solution for our goals. The combination of such instruments,
+which produce homogeneous data (point clouds), allowed them
+to be fused together, creating a redundancy of 3D information,
+which could then provide information for different uses with
+different levels of detail. (Figure 2)
+
+3.1 Planning the integrated survey
+Considering that surveying is an activity aimed at collecting
+geometrical, spatial, and material information, it is necessary to
+provide for and establish the maximum level of detail desired
+from the subsequent representations. Coordinated work between
+the skills involved therefore identified an accuracy (metric
+precision) of data capture in order to then obtain further
+modelling at more detailed levels in a scale interval from 1:50
+to 1:20 according to the dimension/object of the depiction.
+After this, an in-depth survey was made to make preliminary
+observations of the dimension and overall shape of the
+architectural structure and the morphological characteristics of
+the site, as well as the meteorological/environmental conditions
+and/or the presence of elements of physical obstruction around
+the building. This essentially dealt with a careful and, where
+possible, exhaustive evaluation of the different factors that can
+influence, sometimes profoundly, the quality of the data
+acquired in order to define: i) methodologies and instruments
+that are more adapted to surveying; and ii) correct planning of
+the data-capture phase in terms of both the quality of
+information and the time and resources used.
+
+Figure 2. Survey flow-chart
+The survey campaign, conducted in February 2014, was
+undertaken in two phases separated by about two weeks. Such a
+time lapse prevented us from using a target network placed on
+the ground and along the building perimeter, which would have
+simplified and improved the accuracy in recording the point
+clouds obtained from different types of data-capture
+instruments.
+The first surveying session dedicated to photography using the
+UAV took place in one morning; the second, dedicated to 3D
+laser scanner data acquisition, took place over four days full of
+field work.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+415
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+Figure 3. Merged point cloud from TOF scanner
+3.2 3D Laser Scanning
+The range-based survey was made using a Leica P20 TOF laser
+scanner. Laser scanner technology was used for 3D geometrical
+data acquisition both inside and outside the San Francesco
+Complex. Given the principal characteristics of the specific
+instrument and the architectural construction, the survey was
+designed to use a multi-resolution approach. Different scanning
+layouts (sampling densities) were used in relation to the level of
+detail and geometrical complexity of the parts surveyed and as a
+function of the working distances from the surfaces to be
+scanned. In particular, for the inside, with scanning station
+positions less than 10 m from the part of the wall to be
+surveyed, a resolution of 12.5 mm at 10 m was fixed. Different
+resolutions were used for the exterior:
+• 6.3 mm at 10 m (for data acquisition at distances between
+10 and 20 m from the external surfaces with a scanning time of
+1 min 49 s);
+• 12.5 mm at 10 m (in cases where the surrounding site
+conditions constrained working distances to less than 10 m from
+the surface);
+• 3.2 mm at 10 m (for scans that involved the high bell
+tower).
+For such a set of resolutions, the times used for the individual
+scans ranged from a minimum of 58 s to a maximum of 3.5 min.
+Each scan was made covering an area of 360°x270°. In defining
+the external scan position, the possibility of acquiring part of the
+morphological site was considered along with the elevation
+profile of the streets in the immediate vicinity of the object of
+study.
+The 3D digitising campaign was completed with a total of 83
+scans, of which 26 were external and 57 were related to internal
+environments (Figure 3).
+
+Figure 4. The ogival vault system inside the church
+The possibility of designing the survey to acquire wide common
+surface areas (between the different internal environments, the
+external walls, and the interior and exterior with scans
+positioned on the openings) allowed us to use the cloud-tocloud recording method, permitting the scans to be connected
+together (Figure 4). For the exterior, the distances between the
+scanning stations were different based on the conditions of the
+context, but anyway guaranteed the superposition of partial
+point clouds.
+The entire data set acquired was 421 million points. To manage
+and share this enormous amount of data with the other subjects
+involved (engineers, restorers, etc.), a platform equipped with
+the TruView visualisation plug-in was set up to share the 3D
+data both on-line and off-line. The platform included all the
+point clouds acquired with the aim of effortlessly exploring both
+the entirety of all the aligned point clouds datasets recorded
+with indications of all the scan positions and all the different
+scans made.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+416
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+3.3 UAV Data Capture
+Regarding the image-based survey, photography via UAV was
+necessary to capture not only the textures, but especially
+building geometries not reachable with the laser scanner, such
+as the roof and the bell tower, which is richly decorated with
+mouldings that were inevitably under shadow in the laser
+scanner data. This method allowed us to experiment and test
+data-capture techniques with the UAV for photogrammetry
+applications. In Italy, low-altitude flights with such aerial
+vehicles is not currently regulated with precise legislation, but
+there are some under study that will shortly limit their use based
+on different aims of the flights (recreation- or job-based).
+
+encountered during flight, so the flight paths were carefully
+studied during planning to keep the drone always in view and
+also to identify areas to facilitate take-offs and landings.
+
+Figure 6. The UAV flying around the convent
+The entire photography campaign was made using a Sony NEX5R camera with a fixed focal length of 22 mm and an APS-C
+sensor (23.4 x 15.6 mm) with a maximum resolution of 4912 x
+3264 (16,032,768 pixels), yielding a physical pixel dimension
+of 0.004763 mm (p = 23.4mm/4912).
+
+Figure 5. UAV used for surveying
+In planning the surveying operations, the choice of this
+instrument required some preliminary evaluation pertaining to
+the site conditions, both from the elevation and
+geomorphological points of view and regarding the
+meteorological aspects (the direction and speed of the wind) and
+lighting conditions.
+While not at an excessive altitude (463 m above sea level), the
+location of the San Francesco convent within the historical
+centre of Monterubbiano is at the highest point and completely
+open towards the Aso Valley, so it is very exposed to wind. As
+for the lighting conditions, the important factor is the need to
+avoid sharp shadows and marked radiometric differences within
+the sequence of images to be taken. For this reason, the weather
+forecast was studied ad hoc to find a day with low wind speed
+that possibly overcast but where the cloud cover was high
+enough that it would not rain.
+The aerial vehicle used had 6 15”-diameter rotors and was
+powered by 6-400 kV brushless electric motors, with 2-22 V 5A
+LiPo batteries connected in parallel. The control unit was
+composed of 3 gyroscopes, 3 accelerometers, a magnetometer, a
+barometer, and a GPS. It was 80 cm in diameter and 40 cm
+high, with a total weight (without camera) of 7 kg and a
+maximum carrying capacity of 2.5 kg. The duration of each
+flight with charged batteries was 8 min, and the speed ranged
+from 0 to 10 m/s (Figure 5) (Figure 6) .
+These characteristics were kept in mind while planning the
+survey since they determine the distinctive aerodynamic
+capabilities and control of the flight paths of these aerial
+vehicles. It was also considered how the current configuration
+ignored the existing physical obstacles that could be
+
+The camera had been previously calibrated with the use of a
+grid of 4 coded targets provided by the Photomodeler software.
+Knowing the camera characteristics used in relation to the
+characteristics of the object to be photographed is fundamental
+in planning the survey campaign. The focal length, for example,
+influences the ideal number of images to take and thus the
+resolution of the final point cloud. In order to assess the means
+of image-taking in advance, that is, the distribution of images
+required to cover the entire surface of the building and the
+shaded zones as much as possible, the main rules of shooting
+required by the software used in the subsequent elaboration
+(orientation) of the images (minimum overlay, convergence,
+etc.) were considered.
+Therefore, considering all of these details, four flights were
+made after identifying additional take-off/landing areas, one for
+each approachable face of the architectural Complex.
+Considering the time needed for take-off and landing, moving
+in the take-off areas identified, substituting the batteries, as well
+as the length of each flight, the entire photographic survey
+campaign lasted about an hour and a half.
+Each flight was made manually (without set automation) and at
+a low, variable speed. The flight paths were primarily linear
+(horizontal and vertical motion) except around the bell tower,
+where the motion approximated circular motion in several
+different horizontal planes. Consequently, even the height of the
+flights was necessarily varied.
+A total of 517 images were taken with a point of view that
+varied as a function of the building conditions surrounding the
+architectural Complex. The position of the camera on the
+aircraft was set to be able to take images that were inclined with
+respect to the building’s vertical surface (to view the shaded
+areas from above). The shooting frequency was one every two
+seconds, while the speed of the drone, although low, was not
+exactly constant, so the superposition between adjacent photos
+wound up ranging from 60 to 80%, which was, however,
+enough to extract coherent 3D information.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+417
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+Figure 7. Colored point cloud and marked position of all the pictures taken from the UAV
+4. DATA PROCESSING
+The UAV campaign produced 517 photographs in RAW and
+JPG format. From a first look at the lighting conditions of all of
+the photographs, we chose to use the JPG images directly
+without corrections via RAW processing. We then proceeded to
+qualitatively analyse the photographs, discarding about 310
+because they were blurry. Of the remaining images, 129 were
+selected based on the quality and coverage of the subject. The
+129 images, in which radial distortions were eliminated using
+Photomodeler, were processed with Photoscan in order to obtain
+a dense points cloud.
+The next step was to orient the photographs. Analysing the
+sparse point cloud obtained through orientation, some notable
+zones presented points that moved away from the model
+significantly in the processing phase. Using to such points, it
+was possible to identify further problematic (blurry) images.
+Such images were eliminated from the processing, reducing the
+total to 93 photographs.
+Once the 93 photos were oriented and no alignment errors were
+found, extraction of the dense point cloud was started with the
+“high” setting. Once the point cloud was obtained and cleaned
+of all outliers and points not pertaining to the subject of interest,
+a total of 39 million points (38,959,834) remained (Figure 7).
+Parallel to this, processing of the point cloud obtained from the
+laser scanner campaign was undertaken. The external stations
+(26) were united and decimated, retaining one point every
+centimetre. In order to align the point clouds from the two
+campaigns, it was necessary to scale the point cloud produced
+by processing images taken by the drone.
+We then proceeded to identify a reference length for both point
+clouds (Figure 8).
+
+Figure 8. The red line used as a references lenght to align the
+point clouds captured from UAV (a) and TLS (b)
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+418
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+Figure 10. (a) Scanner data and hole boundaries highlighted; (b)
+hole boundaries extracted; (c) hole boundaries projected on
+UAV data; (d) selection of overlapping areas on UAV data
+using projected boundaries; (e) UAV data fitting scanner data
+holes; (f) scanner data merged with UAV data.
+
+Figure 9. Deviation analysis of a detail of the complex
+The extreme points of the straight line were identified near
+corners of the building (unaligned, distant enough, and visible
+to both systems).
+Alignment was made using Geomagic Studio software. Such a
+program allows for a best-fit alignment only between one mesh
+and one point cloud. Since it was not possible to align two point
+clouds automatically, the point cloud coming from the scanner
+was tessellated using the proprietary meshing Wrap algorithm
+in Geomagic, which is better adapted to reconstructing
+architectural constructions than other meshing algorithms
+(Poisson, for example), which would have generated a model
+with corners that were too soft and smoothed.
+
+Once alignment using the best fit was made, an additional
+adjustment was made to decrease the deviation between the two
+point clouds. The average resulting deviation was 3.9 cm.
+To better establish and verify the accuracy of the alignment,
+different parts of the model were analysed using complete data
+from the two point clouds without applying any decimation
+(Figure 9).
+Once the models were aligned, the merging phase was started.
+The laser scanner data were left unchanged while all the
+superimposed parts of the drone point cloud were eliminated,
+leaving only the parts necessary to fill in the scanner point cloud
+gaps. Such a procedure allowed a complete model of the
+coverage to be obtained, which was almost completely absent in
+the laser scanner data.
+Division of the drone point cloud into parts in order to merge it
+with the scanner model and parts to be eliminated was done by
+
+Figure 11. 3D model obtained using wrap method in Geomagic
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+419
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5, 2014
+ISPRS Technical Commission V Symposium, 23 – 25 June 2014, Riva del Garda, Italy
+
+identifying the gap edges on the mesh derived from the laser
+scanner. The contours were converted into curves, which were
+then transferred to the mesh derived from the drone data.
+This allowed us to use the curves as a boundary to eliminate the
+extra parts, i.e., those overlaying the scanner data.
+Such a procedure allowed a complete model of the roof to be
+obtained, which was almost entirely absent from the laser
+scanner data (Figure 10).
+The 3D model obtained, which was free of textures, was used
+by the team of engineers dedicated to structural verifications to
+analyse the layout of the building, identify the main volumes,
+and plan the ideal level of detail to undertake structural analysis.
+4.1 Future Work
+Based on such analysis and observations, a later phase of the
+research will concentrate on a simplified 3D model composed
+of surfaces that describe the building in its main areas, but
+which is useful for processing in an FEM analysis.
+The 3D model will be texturized by projecting on it the highresolution photo obtained by the photographic equipment
+mounted on the drone.
+This phase will have different approaches and workflows
+according to the level of detail desired:
+• to texturize the complete 3D model for use in overall views
+(3D pdf, 3D on-line player, etc.), a mesh will be used with a low
+number of polygons on which the aerial photos will be
+projected and blended using orientations of the photographs
+obtained using SFM technique;
+• to generate orthographic images, which will be useful to
+restorer or historian for wall-material analysis or for the
+definition of crack patterns, portions of a non-decimated 3D
+model will be used, onto which both the aerial and terrestrial
+photographs will be projected (Figure 11).
+In this case, the projection of the photographs will be made
+using specific 3D-studio-type software tools (Autodesk 3ds
+Max). In such a software environment, the photographs oriented
+using SFM technique will be projected making use of ad hoc
+scripts aimed at automating procedures to import the
+viewpoints, material generation for photograph projection, and
+rendering. Regarding the land-based photographs, for we have
+no information on the position and orientation with respect to
+the 3D model, these will be positioned given some reference
+measurements on the three spatial axes both on the 3D model
+and the photographs through utilities such as “camera match” in
+3ds Max, which, recognising homologous points, allows the 3D
+model and photographs to be aligned.
+
+Figure 11. Orthogonal projection of 3D model with rough
+textures
+research, models textured with aerial images, with different
+levels of detail useful for different analysis by the members of
+the team of scholars involved in the experimentation (architects,
+structural engineers, restorers, historians). Such analysis will
+allow us to evaluate all the phases of our approach (data capture
+and data processing) in relation to the quality of the results
+obtained.
+REFERENCES
+Beraldin A., 2004, Integration of laser scanning and closerange photogrammetry - The last decade and beyond.
+International Society for Photogrammetry and Remote Sensing
+(ISPRS) Congress, Commission VII, Istanbul, Turkey. 2004 pp.
+972-983.
+Colomina I. and Molina P., 2013. Unmanned aerial systems for
+photogrammetry and remote sensing: A review. ISPRS Journal
+of Photogrammetry and Remote Sensing 92 pp 79–97
+El-Hakim, S. F., Beraldin, J. A., Picard, M., and Godin G.,
+2004, Detailed 3D reconstruction of large-scale heritage sites
+with integrated Techniques, IEEE Computer Graphics and
+Application, 24(3), 2004, pp. 21-29.
+Fiorillo, F., Jiménez, B., Remondino, F., Barba, S., 2012. 3D
+surveying and modeling of the archaeological area of Paestum,
+Italy. Virtual Archaeol. Rev. 4, 55–60.
+Guidi, G., Russo, M., and Beraldin J-A., Acquisizione e
+modellazione poligonale, Ed. McGraw Hill, 2010.
+
+5. CONCLUSION
+The goal of this research was to test a workflow to define a
+methodology for surveying, processing and representing the
+Convent of San Francesco in Monterubbiano (Marche, Italy),
+useful also for similar architectural complex.
+The survey was based on the integration of 3D data coming
+from a terrestrial TOF laser scanner and photographs taken by
+UAV. These images permitted us to record parts of the building
+can not be reached by terrestrial laser scanners. The aerial
+images were then processed with SFM techniques in order to
+obtain a points cloud. In a further phase this points cloud was
+aligned and merged with the points cloud captured by the TOF
+laser scanner.
+This cloud to cloud process data has allowed the construction of
+a dense 3D model from which to derive, in a future phase of the
+
+Micoli, L., Guidi, G., Angheleddu, D., Russo, M., 2013
+A multidisciplinary approach to 3D survey and reconstruction
+of historical buildings, Digital Heritage International Congress
+(DigitalHeritage) proceedings, 2013, Volume: 2, pp. 241 - 248
+Remondino, F., 2011. Heritage recording and 3D modeling
+with photogrammetry and 3D scanning. Remote Sens. 3, pp.
+1104–1138.
+Saleri, R., Cappellini V., Nony, N., De Luca, PierrotDeseillingy, M., Bardiere, E., Campi,
+M., 2013, UAV
+Photogrammetry for archaeological survey: The Theaters area
+of Pompeii Digital Heritage International Congress
+(DigitalHeritage) proceedings, 2013, Volume: 2, pp. 497 - 502
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-413-2014
+
+420
+
+

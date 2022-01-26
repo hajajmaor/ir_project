@@ -1,0 +1,2988 @@
+Sequential Monte Carlo Methods and Theoretical
+Bounds for Proximity Report Based Indoor
+Positioning
+Yuxin Zhao, Carsten Fritsche, Feng Yin, Fredrik Gunnarsson and Fredrik Gustafsson
+
+The self-archived postprint version of this journal article is available at Linköping
+University Institutional Repository (DiVA):
+http://urn.kb.se/resolve?urn=urn:nbn:se:liu:diva-147834
+N.B.: When citing this work, cite the original publication.
+
+Zhao, Y., Fritsche, C., Yin, F., Gunnarsson, F., Gustafsson, F., (2018), Sequential Monte Carlo Methods
+and Theoretical Bounds for Proximity Report Based Indoor Positioning, IEEE Transactions on
+Vehicular Technology, 67(6), 5372-5386. https://doi.org/10.1109/TVT.2018.2799174
+
+Original publication available at:
+https://doi.org/10.1109/TVT.2018.2799174
+Copyright: Institute of Electrical and Electronics Engineers (IEEE)
+http://www.ieee.org/index.html
+©2018 IEEE. Personal use of this material is permitted. However, permission to
+reprint/republish this material for advertising or promotional purposes or for
+creating new collective works for resale or redistribution to servers or lists, or to reuse
+any copyrighted component of this work in other works must be obtained from the
+IEEE.
+
+1
+
+Sequential Monte Carlo Methods and Theoretical
+Bounds for Proximity Report Based Indoor
+Positioning
+Yuxin Zhao, Student Member, IEEE, Carsten Fritsche, Member, IEEE, Feng Yin, Member, IEEE,
+Fredrik Gunnarsson, Senior Member, IEEE, Fredrik Gustafsson, Fellow, IEEE
+
+Abstract—The commercial interest in proximity services is
+increasing. Application examples include location-based information and advertisements, logistics, social networking, file sharing,
+etc. In this paper, we consider positioning of devices based on
+a time series of proximity reports from a mobile device to a
+network node. This corresponds to nonlinear measurements with
+respect to the device position in relation to the network nodes.
+Motion model will be needed together with the measurements to
+determine the position of the device. Therefore, sequential Monte
+Carlo methods, namely particle filtering and smoothing, are applicable for positioning. Positioning performance is evaluated in
+a typical office area with Bluetooth-low-energy beacons deployed
+for proximity detection and report, and is further compared
+to parametric Cramér-Rao lower bounds. Finally, the position
+accuracy is also evaluated with real experimental data.
+Index Terms—Proximity, indoor positioning, particle filtering
+and smoothing, Cramér-Rao lower bounds.
+
+I. I NTRODUCTION
+A. Background
+Particle filtering (PF) and particle smoothing (PS) are
+known as powerful numerical methods for nonlinear and nonGaussian Bayesian recursive estimation problems. The particle
+filtering and smoothing theory has enabled many applications
+in various sectors over the past two decades [2]. One salient
+example is target tracking using radio signals, such as time-ofarrival (TOA), received-signal-strength (RSS), etc. Nowadays,
+it draws more attention to combine particle filtering/smoothing
+with cutting-edge techniques, such as cloud, big-data, beaconing, and sensor fusion techniques to meet the challenges in
+dealing with (1) sensor data complexity, (2) model complexity,
+and (3) large scale systems that are commonly encountered in
+practical problems—the main aim of the ongoing (2013-2017)
+European union training programme on Tracking in Complex
+Sensor Systems (TRAX) project [3].
+For indoor positioning, there are many techniques proposed
+in literature. For instance, a complete discussion on indoor
+Copyright (c) 2015 IEEE. Personal use of this material is permitted.
+However, permission to use this material for any other purposes must be
+obtained from the IEEE by sending a request to pubs-permissions@ieee.org.
+This work is an extension of our conference paper [1].
+Y. Zhao and F. Gunnarsson are with Ericsson Research, Linköping, SE58330, Sweden. (E-mail: firstname.lastname@ericsson.com).
+C. Fritsche and F. Gustafsson are with the Department of Electrical
+Engineering, Division of Automatic Control, Linköping University, Linköping,
+SE-58183, Sweden. (E-mail: carsten, fredrik@isy.liu.se).
+F. Yin is with the Department of Science and Engineering, Chinese
+University of Hong Kong, Shenzhen, CN-518172, China. (E-mail: yinfeng@cuhk.edu.cn).
+
+positioning using RSS, channel state information (CSI), TOA
+and time-difference-of-arrival (TDOA) has been provided in
+[4]. In [5], an overview of indoor positioning techniques from
+different dimensions have been provided, for instance, from
+camera to infrastructure based indoor positioning technology.
+Each has its own advantages based on the type of applications.
+With the deployment of small cells, Wi-Fi access points and
+Bluetooth-low-energy (BLE) beacons, it is possible to utilize
+such infrastructure for positioning and thereby indoor location
+based services. A proximity measurement reveals whether or
+not a target of interest is in proximity (depending on the
+threshold) of a reference network node, for instance a radio
+base station, a BLE beacon or a Wi-Fi access point. Harness
+of proximity reports may result in new fashioned positioning
+systems with less signaling between the reporting device
+and core network, lower communication bandwidth, smaller
+database, as well as cheaper deployment and maintenance
+cost. Besides, there is a big trend nowadays in proximity
+related services and a big trend to see large scale, densely
+deployed, cooperative, hybrid BLE and WIFI networks under
+the umbrella of Internet of things (IoT), where we may easily
+measure a lot of RSS values from a big number of devices.
+Essentially, a proximity measurement is a quantized RSS with
+only two quantization levels (i.e., one bit) [6], [7]. Such kind
+of quantized data can be used in many applications. Since RSS
+measurements can be easily obtained from almost all kinds of
+devices, proximity measurements then are usually accessible.
+B. Related work and our contribution
+The proximity measurement can be seen as inherited from
+such quantized data and one of the early examples was the
+positioning systems built with infrared (IR) sensors, e.g., [8].
+The idea was also used in radio systems using mainly RSS as
+proximity indicator [9]. Furthermore, the threshold triggered
+report is also used as user equipment (UE) assisted measurement to support handover, for instance, in Wideband Code
+Division Multiple Access (WCDMA) and Long-Term Evolution (LTE) systems [10], [11]. In the literature, the positioning
+algorithms using proximity reports are called coarse grained
+algorithms or range-free algorithms. Since the publication of
+[9], a plethora of proximity report based positioning algorithms
+have been proposed, including the centroid algorithm [9],
+the approximate point in triangle (APIT) algorithm [12], the
+maximum-likelihood estimation algorithm [6], the ecolocation
+
+2
+
+algorithm [13], the iterative learning based algorithm [14], to
+mention a few. Most of them were designed for large-scale
+cooperative sensor network localization because of communication constraints, among others bandwidth and capacity
+limitations.
+All previous approaches investigate static or snapshot solutions, such as fingerprinting methods for BLE based indoor positioning in [15] and [16]. Here instead, we propose
+particle filtering and smoothing. As compared to the static
+or snapshot solutions, particle filtering and smoothing are
+beneficial since they also consider the motion model of the
+device in the estimation process. Especially in cases where
+proximity reports are considered, the information contained
+in the measurement is limited and the motion model of the
+device will be helpful. The use of smoothing can be beneficial
+in many ways. While in filtering one estimates the state of
+the current time instance using measurements received up to
+that time instance, smoothing makes estimations at a certain
+time instance given all of the measurements up to a later
+time instance. The trajectory obtained in this way is usually
+smoother than the one using filtering. Besides, it is more
+likely to obtain better performance by taking advantage of
+the future measurements. The smoothed trajectories can be
+stored in the network and may be further used for some postprocessing and analysis whenever needed. Some examples of
+utilizing smoothed trajectories will be given later in Section
+1.C. Compared with classical positioning methods such as
+Kalman filter (KF) and extended Kalman filter (EKF), particle
+filter and smoother generally have better performance when we
+have nonlinear/non-Gaussian models, which would be the case
+when proximity report is used. We also demonstrate this later
+in Section VI.
+For static position estimation based on proximity report,
+two fundamental lower bounds have been proposed in [17],
+namely, the Barankin bound and Cramér-Rao bound (CRB).
+For nonlinear filtering/smoothing problems, parametric and
+posterior Cramér-Rao bounds (CRBs) are usually considered.
+Posterior CRB for non-linear filtering problems were discussed
+in [18] and [19]. The posterior CRB for quantized measurements has been derived in [20] and [21] but with different
+measurement models. Posterior CRBs can be interpreted as
+average bounds over all possible state (and measurement)
+sequences. However, with non-linear measurement model as
+investigated in this work, Monte Carlo averages are required to
+simulate (noisy) state and measurement sequence realizations
+(or trajectories) from the state-space model. In indoor pedestrian environments, it is practically impossible to generate
+trajectories which stay inside the building and which do not
+cross any walls. In order to overcome this practical limitation
+of posterior CRBs, parametric CRBs are considered in this
+paper, which put lower bounds on specific state sequence
+realizations. In [22], the general derivations of parametric CRB
+for filtering are given. To the best of our knowledge, the
+calculation of parametric CRBs have never been derived for
+proximity report based filtering and smoothing problems.
+Our contributions of this paper are summarized as follows.
+In [1], a particle filtering algorithm has been developed for
+a proximity measurement model where the RSS threshold is
+
+selected in a more meaningful way as introduced in [23]. In
+this work, we further propose a particle smoothing algorithm
+for positioning based on the proximity reports. Evaluation
+results for static position estimation have also been included
+to motivate the advantages of using particle filtering and
+smoothing. Then, evaluations with the proposed algorithms are
+carried out with both simulated data as well as experimental
+data collected within an office area. In addition, the parametric
+CRBs for proximity report based filtering and smoothing
+are derived, which provide theoretical lower limits for the
+positioning performance under this framework.
+C. Main Motivation and Target Applications
+The main target of this work is to develop a positioning
+scheme at a low cost, with reduced signaling between the user
+and network and possibly reduced power consumption at the
+user side. We aim at meter-level accuracy, which is sufficient
+for some room-level indoor positioning applications. To be
+more specific, the proximity reports have benefits over RSS
+reports when the user needs to send the report to a network
+server. This may happen for instance, when the network side
+needs to know the position of a certain device (rather than
+the device itself wants to obtain the position information). In
+such cases, the user needs to send periodic RSS reports to the
+network server. Then, by sending proximity reports instead, the
+user does not need to send actively, and may only report when
+a proximity event is triggered. Hence, the network can make
+use of the proximity reports sent from the user to estimate
+the position. This is a typical scenario where the proposed
+proximity mechanism can be applied. Such a way of sending
+the reports could potentially save energy on the user side, and
+also reduce signaling overhead between the user and network.
+One potential usage of the proximity based positioning is
+to analyze and monitor different trajectories. It is also worth
+noting that the proposed proximity based solution fits well
+with different wireless infrastructures, especially BLE, which
+is usually densely deployed. Under dense deployment, proximity becomes more essential to reduce the communication
+resources. Considering the fluctuation of RSS in BLE systems,
+perform thresholding to obtain quantized proximity report is
+beneficial. To name a few examples, one may think of big
+shopping malls, which are equipped with BLE beacons, that
+could make use of this approach to estimate the position
+of customers with low cost. The shops then may use the
+position information to promote advertisements when there
+are customers close by. Besides, position information can
+be stored and further analyzed. Such post-processing will
+be useful to perform flow estimation during different time
+periods.
+Also, imagine that beacons can be placed at each showcase
+in a museum. By proximity detection and positioning, we
+can analyze the spatial-temporal trajectories of the visitors.
+The proximity based solution requires less communication
+resources. Hence, it is more suitable for museums such as
+British Museum, where there is a huge amount of visitors from
+globe. Trajectory analysis can be further used to understand
+how pedestrians visit the museum, which showcase attracts
+
+3
+
+most attention, and how to place the showcase such that
+it is more convenient for the visitors. Furthermore, those
+trajectories can be beneficial for the museum to monitor and
+detect abnormal behaviors, and even prevent terrorist attacks.
+We may think about another practical example, where
+an indoor visual tracking system based on wireless sensor
+network is developed to perform tracking with high precision.
+The current visual detector relies heavily on the searching
+area of the moving target. If we can further refine it to a
+smaller area, the searching complexity of the visual tracking
+system will be greatly reduced. Here in this specific example,
+only coarse positioning is needed for refining the searching
+area. Besides, since refining the searching area is an auxiliary
+function, there may be limited resources allocated for this
+function. And the proposed proximity report based indoor
+positioning method fits well with this use case.
+In the above mentioned applications, high accuracy positioning is not so essential. Especially thinking about the museum
+example, if other measurements, such as RSS, are used for
+positioning, the network server may quickly go down due to
+huge amount of data packages being transmitted. There are
+also other measurements for indoor positioning, which include
+but are not limited to TOA, CSI, and measurements from
+an inertial measurement unit (IMU). However, TOA requires
+precise synchronization, which is usually hard to achieve
+with current indoor infrastructure and also at a much higher
+cost. CSI can provide better positioning resolution. However,
+it requires perfect synchronization of timing, frequency and
+phase between the transmitter and receiver. Synchronization
+errors lead to contaminated CSI values. Besides, it is not
+always supported in all devices, while proximity can be easily
+obtained from all kinds of devices. There is also increasing
+popularity in an IMU based positioning scheme, since it can
+provide more accurate location estimates. However, this is
+realized in a more expensive way, especially when very high
+positioning accuracy is required (i.e., where lightweight IMU
+sensors with accurate measurements are needed).
+D. Paper organization and notations
+The remainder of this paper is organized as follows:
+Section II gives detailed definition of the proximity report.
+Section III defines the state-space model for the problem
+at hand. Section IV introduces the novel proximity report
+based particle filtering and smoothing algorithms. Section V
+provides detailed derivation of theoretical parametric CRBs.
+Section VI validates the new proposed proximity report based
+particle filtering and smoothing algorithms and calculates the
+parametric CRBs in various experiments. Lastly, Section VII
+concludes the paper.
+Throughout this paper, matrices are presented with uppercase letters and vectors with boldface lowercase letters. All
+the notations are defined and summarized in Table I.
+II. P ROXIMITY R EPORTS
+In this work, we consider a proximity report based method
+for indoor positioning, where model complexity appears as a
+
+TABLE I
+N OTATIONS
+Notation
+[·]T
+[·]−1
+tr(·)
+k·k
+|·|
+E(·)
+X(·)T
+ln(·)
+log10 (·)
+⊗
+∇θ = ∂/∂θ
+θ
+∆θ = ∇θ ∇T
+θ
+N (µ, σ2 )
+Cat(·)
+
+Definition
+Vector/matrix transpose
+Inverse of a non-singular square matrix
+Trace of a square matrix
+Euclidean norm of a vector
+Cardinality of a set
+Statistical expectation
+Short-hand notation for XX T
+Natural logarithm
+Logarithm to base 10
+Kronecker product
+Gradient operator
+Laplace operator
+Gaussian distribution with mean µ and variance σ2
+Categorical distribution [24, page 35]
+
+Computation Entity
+
+Ts
+
+Periodic RSS reports
+
+R
+
+R R
+
+Event triggered proximity reports
+
+R
+
+R
+
+R R
+
+R R
+
+R
+
+P
+
+R
+
+R R
+
+R R
+
+P
+
+P
+
+P
+
+R
+
+R
+
+R
+
+R R R
+
+P
+
+R
+
+R R
+
+R R
+
+P
+
+Trigger Proximity reports
+#1
+X
+
+#2
+
+[1,1,0]
+[1,0,0]
+
+X
+X
+
+[1,1,1]
+
+X
+
+[0,1,1]
+
+X
+
+[0,1,0]
+X
+
+#3
+
+Fig. 1. Illustration of event triggered proximity reports.
+
+hard-thresholding when converting an RSS measurement into
+a proximity measurement. More precisely,
+(
+0, RSS ≤ Pth
+Proximity ,
+.
+(1)
+1, RSS > Pth
+It is noted that although hard-thresholding is considered in
+this work, it is also possible to generally model the thresholding as hysteresis. A proximity measurement obtained in
+the above way reveals whether or not a target of interest is
+in proximity of a reference network node. Given a vector
+of proximity measurements from different reference network
+nodes, the position of the device can be roughly estimated.
+However, the ambiguity given by such snapshot solution is
+still too large. In order to reduce the ambiguity, filtering and
+smoothing algorithms will be applied to proximity report based
+positioning.
+Specifically, we consider centralized tracking of a mobile
+device. The mobile device measures RSS from reference
+network nodes that broadcast reference (i.e., pilot) signals
+periodically to the air. In the baseline centralized framework,
+the mobile device will upload the RSS measurements periodically to the computation entity in the core network either
+directly or via the reference nodes for position estimation. The
+computation entity is assumed to be equipped with sufficient
+computational power. Once the core network gets the postition
+information of the mobile device, it can be used for assisting
+location based applications.
+
+4
+
+In order to reduce the signaling overhead between the
+mobile device and the computation entity, and the storage
+usage at the computation entity, an alternative is to only report
+a proximity measurement to the computation entity only when
+there is a change in the proximity measurement as shown in
+Fig. 1 (i.e., when a triggering condition such as equation (1) is
+met). The report generated in this way is defined as a proximity
+report. It needs to be emphasized that here we distinguish
+between a proximity measurement and a proximity report.
+The proximity measurement is generated each time when there
+is an RSS measurement. However, a proximity report (which
+contains the proximity measurement vector) is only triggered
+to be sent to the computation entity when there is a change in
+the proximity measurement (i.e., the mobile crosses a border
+when the RSS passes the threshold as shown by the cross
+marker in Fig. 1).
+An illustrative example is also provided in Fig. 1. For
+instance, the proximity report containing the vector, e.g.,
+[1, 0, 0], indicates that the UE is in the coverage area of the
+first reference node, while outside of the coverage area of the
+second and third reference nodes. The UE needs to upload the
+proximity report only if there is status change, for instance
+from [1, 0, 0] to [1, 1, 0], when the UE moved from left (i.e.,
+in the coverage area of the first reference node) to the right
+into the coverage area of both first and second reference nodes.
+In addition, instead of sending periodic RSS measurements,
+the device may send an RSS measurement vector of all
+observed reference network nodes (i.e., not only the node that
+triggered the proximity measurement) only on triggering of
+such event. However, in this paper, we only study and compare
+the positioning performance of the periodic RSS and eventtriggered proximity reports. Positioning performance of such
+event-triggered RSS measurements have been studied in [25].
+III. S YSTEM M ODEL
+We consider an indoor sensor network which comprises NB
+reference network nodes with a priori known positions, pj ,
+j = 1, 2, . . . , NB , a central computation entity and a mobile
+device, whose state xk is to be estimated at each time step k
+from a set of available measurements. To that end, the mobile
+device collects RSS measurements, converts them to proximity
+measurements, and further reports them to the computation
+entity, when it is triggered for position estimation.
+The mobile device estimation problem is cast into a statespace model formulation, which, in its most general form, is
+given by:
+xk+1 = fk (xk , wk ),
+
+(2a)
+
+yk = hk (xk , ek ),
+
+(2b)
+
+where yk denotes the measurement vector, wk is the process
+noise, ek is the measurement noise, and fk (·), hk (·) are
+arbitrary linear/nonlinear mappings of appropriate size. Here,
+the process model (2a) accounts for modeling the motion of
+pedestrians in indoor environments.
+In the literature, several motion models have been suggested
+for indoor pedestrian movements, for instance, random walk
+[26], constant velocity [27] or nearly constant velocity [28].
+
+These models give different transitions from the previous state
+to the current state and different process noise covariances. In
+this work, considering the relative static indoor environment
+and low walking speed, we use the white noise nearly constant
+velocity model as given in [29, Chapter 6]. The corresponding
+process model is given by
+xk+1 = F xk + wk ,
+
+(3)
+T
+
+with state vector xk = [px,k , vx,k , py,k , vy,k ] , and where p̄k =
+[px,k , py,k ] and [vx,k , vy,k ] denote the 2-D position and velocity,
+respectively. The transition matrix F is given by
+
+
+1 Ts
+F = I2 ⊗
+,
+(4)
+0 1
+where I2 is the identity matrix of size 2, and Ts is the sampling
+time. The vector wk is assumed to be a zero-mean Gaussian
+distributed with covariance matrix
+" 3
+#
+2
+Σw = I2 ⊗
+
+Ts
+3
+Ts2
+2
+
+Ts
+2
+
+Ts
+
+2
+σw
+,
+
+(5)
+
+2
+where σw
+denotes the noise power spectral density.
+The measurement model aims at relating the measurements
+to the unknown state, which is to be estimated. In the sequel,
+we review the conventional RSS model and introduce the
+proximity measurement model. Here it is usually assumed
+that the mean values of RSS stay almost unaltered with
+time, which is generally true when the indoor propagation
+environment is not changing significantly, for instance, there
+is no significant change in the layout, such as removing
+or adding walls, changing furniture placement, and so on.
+To support this assumption, some experimental results are
+included in Section 1 of a supplementary report [30]. However,
+it should be noted that when the radio propagation condition
+(environment) is changing significantly with time, the model
+can be easily updated accordingly. The magnitude of RSS
+measurements usually decays logarithmically with distance
+(between a reference node and the mobile device) [31]. This
+is conventionally modeled using a log-distance model, which
+is given by
+
+
+dk,j
++ ek,j ,
+(6)
+rk,j = Aj + 10Bj log10
+d0
+|
+{z
+}
+µk,j
+
+where rk,j is the RSS measurement (in dBm) from the jth
+reference network node at time step k and Aj denotes the
+received power (in dBm) measured at a reference distance
+d0 . Bj (in dB) is the (negative) path loss exponent, and
+dk,j , ||pj − p̄k ||. The measurement noise ek,j (in dB)
+accounts for unmodeled errors and is usually assumed to be
+zero-mean Gaussian distributed with variance σj2 .
+The propagation model parameters Aj , Bj , and σj2 are
+generally unknown, but can be calibrated in an offline phase
+given a batch of RSS measurements collected from all reference nodes [32]. In the present work we assume that these
+parameters are known. In indoor environments, the path loss
+exponent Bj is typically ranging from −3.5 dB to −1.6
+dB [33, Chapter 2]. In the following, we assume that the
+
+5
+
+RSS measurements collected for different reference nodes are
+mutually independent. This yields
+yR,k = h(xk ) + ek ,
+
+(7)
+
+=
+where yR,k
+=
+[rk,1 , . . . , rk,NB ]T and h(xk )
+T
+[µk,1 , . . . , µk,NB ] . The model for the proximity
+measurements is obtained by hard-thresholding each RSS
+measurement, according to (1), yielding
+yP,k = g(yR,k )
+
+(8)
+
+where yP,k = [yk,1 , . . . , yk,NB ]T is the vector of proximity
+measurements, g(yR,k ) = [g(µk,1 + ek,1 ), . . . , g(µk,NB +
+ek,NB )]T and g(x) is a non-linear function which performs
+hard-thresholding of an input, x, as follows:
+(
+0, x ≤ Pth ,
+g(x) =
+(9)
+1, x > Pth .
+Here, it is worth recalling that proximity measurements are
+not reported to the computational entity at every time step, but
+only triggered when there is a change in the proximity measurement. In terms of notation, we assume that the sequence of
+periodically transmitted RSS measurements and the sequence
+of proximity reports from time step 1 up to time ℓ is defined as
+y1:ℓ = [y1T , . . . , yℓT ]T , i.e. both sequences underlie the same
+(constant) sampling period Ts . In case proximity reports have
+not been received at a specific time step m, the corresponding
+vector ym is empty. However, this empty vector still contains
+information. It can be inferred that the proximity measurement
+does not change since the previous report.
+IV. BAYESIAN F ILTERING
+
+AND
+
+S MOOTHING
+
+In Bayesian filtering, we are interested in estimating the
+state xk at each time step, given the history of measurements
+y1:k up to time step k. In probabilistic terms, this amounts to
+extract information from the posterior density p(xk |y1:k ), such
+as the (posterior) mean. Conceptually, the posterior density
+p(xk |y1:k ) can be updated recursively, yielding the so-called
+Bayesian filtering equations, see e.g. in [34, Chapter 1].
+Closed-form solutions to this recursion are available only in a
+few special cases, e.g. in case the state-space model is linear,
+additive Gaussian, the recursion is given by the celebrated
+Kalman filter [35].
+In Bayesian smoothing, we are interested in estimating the
+state xk of each time step, given that we have received a
+set of measurements y1:T , where T > k. The corresponding
+posterior density p(xk |y1:T ) again can be conceptually computed recursively, using e.g. the forward-backward (or simply
+Bayesian) smoothing equations, with closed-form solutions,
+also known as the Kalman smoother, in the case of linear,
+additive Gaussian state-space models [36]. The state-space
+model proposed in Section III, however, does not admit
+the application of the Kalman filter or smoother, since the
+measurements are highly nonlinear, and we therefore have to
+resort to approximations.
+In case of nonlinear state-space models, a plethora of
+algorithms have been proposed in the literature to approximate
+
+the Bayesian filtering and smoothing equations [34]. In the following, we apply sequential Monte Carlo methods, concretely
+particle filtering and smoothing, to numerically approximate
+the posterior densities of interest.
+A. Particle Filtering
+Particle filtering aims at numerically approximating the
+posterior density p(xk |y1:k ) by a finite set of N weighted
+samples (also called particles) that evolve dynamically on a
+probabilistic grid of the state-space. It is based on sequential
+importance sampling, and became practically useful after
+adding a resampling step [37]. Since its development in the
+early 1990s, various particle filter variants have appeared in the
+literature [38]. In this paper, we focus on the bootstrap particle
+filter, with importance density chosen to be the transitional
+prior p(xk |xk−1 ) = N (xk ; F xk−1 , Σw ), because it is simple
+and provided satisfactory performance for our application. The
+bootstrap particle filter, tailored to our estimation problem is
+summarized in Algorithm 1.
+Algorithm 1 Bootstrap Particle Filter
+(i)
+
+1) Initialization: Draw N samples x0 ∼ p(x0 ), and set
+(i)
+w0 = 1/N , for all i = 1, ..., N .
+2) For k = 1, ..., T , do:
+(i)
+(i)
+a) Draw N samples xk ∼ p(xk |xk−1 ), for i =
+1, ..., N .
+b) Update weights according to
+(i)
+
+(i)
+
+(i)
+
+w
+ek ∝ wk−1 p(yk |xk ),
+
+for i = 1, ..., N , where
+(i)
+(i)
+• Proximity: p(yk |xk ) = p(yP,k |xk ) as defined
+in (10).
+(i)
+(i)
+• RSS: p(yk |xk ) = p(yR,k |xk ) as defined in
+(13).
+c) For i = 1, ..., N , normalize the weights to sum to
+unity,
+(i)
+w
+ek
+(i)
+.
+wk = PN
+(i)
+ek
+i=1 w
+
+d) An approximation to the posterior filtering expectation is given by
+∆
+
+x̂PF,k (y1:k ) =
+
+N
+X
+i=1
+
+(i)
+
+(i)
+
+wk xk ≈ E{xk |y1:k }.
+
+P
+(i) 2
+e) Resampling: If Neff = 1/ N
+i=1 (wk ) < Nth , then
+perform multinomial resampling [39].
+Note that at each time step, the weights will be updated,
+see step 2-b in Algorithm 1. In case there is a proximity
+report available, the weights will be computed based on the
+available proximity report. When there is no proximity report
+received at the computation entity (i.e., the corresponding
+vector is empty), it indicates the proximity measurement stays
+unchanged since the last time when a proximity report was
+received. In such cases, the weights will still be updated using
+
+6
+
+the most recently received proximity report. The likelihood
+function is evaluated as follows:
+p(yP,k |xk ) =
+=
+
+NB
+Y
+
+j=1
+
+p(yk,j |xk )
+
+NB X
+Y
+
+j=1 l∈{0,1}
+
+δ(yk,j − l)p(yk,j = l|xk ),
+
+(10)
+
+where δ(·) denotes the Dirac delta function. It is easy to prove
+further that
+
+
+Pth − µk,j
+p(yk,j = 0|xk ) = Φ
+,
+(11a)
+σj
+p(yk,j = 1|xk ) = 1 − p(yk,j = 0|xk ),
+(11b)
+where
+Φ
+
+
+
+t−µ
+σ
+
+
+
+
+
+t
+(x − µ)2
+1
+√
+exp −
+=
+dx.
+2σ 2
+2πσ −∞
+Z
+
+p(yR,k |xk ) =
+=
+
+j=1
+NB
+Y
+
+j=1
+
+p(rk,j |xk )
+√
+
+"
+
+#
+
+1
+(rk,j − µk,j )2
+exp −
+.
+2σj2
+2πσj
+
+BS
+2) At time T , sample
+independently {Id(m)}M
+m=1 ∼
+
+(Id(m))
+(m)
+(i) N
+e T = xT
+, for m =
+Cat {wT }i=1 and set x
+1, ..., MBS .
+3) For each ℓ = T − 1, ..., 1, do the following:
+a) For m = 1, ..., MBS , do the following:
+i) Calculate new weights according to
+
+(i,m)
+
+w
+eℓ|T
+
+(i)
+
+(m)
+
+(i)
+
+∝ wℓ p(e
+xℓ+1 |xℓ ), i = 1, ..., N.
+
+ii) Normalize the weights to sum to unity, i.e.,
+(i,m)
+
+(i,m)
+wℓ|T
+
+(12)
+
+Correspondingly, the likelihood function for RSS measurements is calculated as
+NB
+Y
+
+Algorithm 2 FFBSi Smoother
+1) Run bootstrap particle filter according to Algorithm
+1.
+n Store all particlesoand corresponding weights as
+(i)
+(i) N
+for k = 1, ..., T .
+{wk }N
+i=1 , {xk }i=1
+
+w
+eℓ|T
+
+= PN
+
+i=1
+
+(i,m)
+
+w
+eℓ|T
+
+.
+
+
+
+(i,m)
+iii) Draw Id(m) ∼ Cat {wℓ|T }N
+i=1 .
+(m)
+
+eℓ
+iv) Set
+x
+=o
+n
+(m)
+(m)
+eℓ , x
+eℓ+1:T .
+x
+
+(Id(m))
+
+xℓ
+
+(m)
+
+eℓ:T
+, and x
+
+=
+
+b) An approximation to the posterior smoothing expectation is given by
+(13)
+
+B. Particle Smoothing
+In particle smoothing, we aim at approximating the posterior p(xk |y1:T ) by a set of weighted particles. Compared
+to the particle filter, which is an online method as it processes measurements up to the current time y1:k , the particle
+smoother performs state inference (offline) on the entire set of
+measurements y1:T collected during the experiment. In the
+literature, various particle smoothing algorithms have been
+proposed [36], [40], [41]. In this work, we have implemented
+the Forward Filtering Backward Simulation (FFBSi) smoother
+[36] due to its simplicity and satisfactory performance. The
+FFBSi smoother is a forward-backward filter, where in the
+forward pass an ordinary particle filter is used, and in the
+backward pass individual state trajectories are sampled to
+obtain a satisfactory representation of the smoothing posterior
+density. The FFBSi smoother is summarized in Algorithm 2.
+V. PARAMETRIC C RAM ÉR -R AO L OWER B OUNDS
+Assessing the fundamental performance limitations in
+Bayesian filtering and smoothing is usually carried out using
+the posterior (or Bayesian) Cramér-Rao bound (CRB). In
+Bayesian filtering, the posterior CRB Bfilt puts a lower bound
+on mean square error (MSE) matrix of any estimator xˆk (y1:k ),
+i.e.
+
+∆
+M(x̂k (y1:k )) = E (x̂k (y1:k ) − xk )(·)T  Bfilt , (14)
+where the inequality means that the difference M(x̂k (y1:k ))−
+Bfilt  0 is positive semi-definite. Similarly, for the posterior
+CRB of Bayesian smoothing Bsmooth , we have for any estimator x̂k (y1:T ) the relation M(x̂k (y1:T ))  Bsmooth . Posterior
+
+∆
+
+x̂PS,ℓ (y1:T ) =
+
+MBS
+1 X
+(m)
+e
+x
+≈ E{xℓ |y1:T }.
+MBS m=1 ℓ
+
+CRBs can be interpreted as average bounds over all possible
+state (and measurement) sequences. In case of linear, additive
+Gaussian state-space models, the posterior CRBs reduce to the
+(closed-form) covariance recursions of the Kalman filter and
+smoother, and hence are simple to compute. The estimation
+problem investigated in this paper, however, is nonlinear and
+requires to compute expectations w.r.t. state and measurement
+sequences that are not available in closed-form, see [42] for
+details. Hence, for computing the bounds it is required to
+form Monte Carlo averages by simulating (noisy) state and
+measurement sequence realizations (or trajectories) from the
+state-space model. While this seems mathematically appealing,
+it results in that bounds are computed for state trajectories that
+not necessarily reflect indoor pedestrian motion. In particular,
+with the simple model defined in (3), it is practically impossible to generate trajectories which stay inside the building and
+which do not cross any walls.
+In order to overcome this practical limitation of posterior
+CRBs, parametric CRBs for Bayesian filtering and smoothing
+have been recently introduced. Parametric CRBs aim at bounding from below the MSE matrix conditioned on a specific state
+sequence realization x∗0:k or x∗0:T . Due to the conditioning,
+there is no need to generate state trajectories from the process
+model, and one can use instead any state trajectory of interest.
+A. Parametric CRB for Filtering
+The parametric CRB for filtering Pk|k (x∗0:k ) puts a lower
+bound on the conditional MSE matrix for any unbiased esti-
+
+7
+
+mator x̂k (y1:k ) as follows
+M(x̂k (y1:k ) | x∗0:k ) = E{(x̂k (y1:k ) − x∗k )(·)T | x∗0:k }
+ Pk|k (x∗0:k ),
+(15)
+where Pk|k (x∗0:k ) is the inverse of an auxiliary Fisher information matrix (FIM) [22]. The auxiliary FIM can be computed
+recursively, and, similarly to the posterior CRB, for the case
+of linear, additive Gaussian state-space models, it is related
+to the covariance recursions of the Kalman filter, but where
+the process noise covariance matrix is set to zero [22]. The
+computation of the parametric filtering CRB adapted to our
+proximity report (and RSS) based estimation problem is given
+in Algorithm 3.
+It is worth noting that the contribution of the proximity
+Algorithm 3 Parametric Filtering CRB
+−1
+, in case the
+1) Initialize the FIM with J0|0 (x∗0 ) = Σx
+0
+∗
+∗
+prior is Gaussian p(x0 ) = N (x0 ; µx0 , Σx0 ). Compute
+−1
+the parametric filtering CRB as P0|0 (x∗0 ) = J0|0
+(x∗0 ).
+2) For k = 1, . . . , T , do:
+• Compute the filtering FIM from
+h
+i−1
+−1
+Jk|k = F Jk−1|k−1
+FT
++ HkT (x∗k )Rk−1 Hk (x∗k ),
+
+•
+
+where Jk|k is a short-hand notation for Jk|k (x∗0:k ),
+and where HkT (x∗k )Rk−1 Hk (x∗k ) is given by
+– Proximity: (29),
+– RSS: (27).
+Compute the parametric filtering CRB as
+−1
+Pk|k (x∗0:k ) = Jk|k
+(x∗0:k ).
+
+measurement, i.e. HkT (x∗k )Rk−1 Hk (x∗k ), is updated at each
+time step even when there is no proximity report received at
+the computation entity (i.e., the corresponding measurement
+vector is empty). This is done because no triggering of
+proximity report still contains information that the proximity
+measurement stays unchanged since the last time a proximity
+report was received. Detailed derivations of the parametric
+filtering CRB can be found in [22]. The adaptions performed
+to the bound to hold for proximity and RSS measurements are
+detailed in the Appendix.
+B. Parametric CRB for Smoothing
+The parametric CRB for smoothing Pk|T (x∗0:T ) provides a
+lower bound on the MSE matrix of any unbiased estimator
+x̂k (y1:T ) and can be stated as follows
+M(x̂k (y1:T ) | x∗0:T )  Pk|T (x∗0:T ).
+
+(16)
+
+The inverse of Pk|T (x∗0:T ) is related to the FIM of the
+smoothing problem and can be computed recursively using
+a forward-backward procedure as is shown in [43]. Again,
+in the case of a linear, additive Gaussian state-space model,
+the parametric CRB for smoothing is related to the covariance
+recursions of the Kalman smoother, but with zero process noise
+covariance matrix. The computation of the parametric CRB for
+smoothing is summarized in Algorithm 4.
+
+Algorithm 4 Parametric Smoothing CRB
+1) For k = 1, . . . , T , calculate the filtering FIM Jk|k as
+given in Algorithm 3.
+2) For ℓ = T − 1, . . . , 1, do:
+• Compute the smoothing FIM from
+
+i−1 
+h
+−1 T
+T
+F.
+Jℓ|T = Jℓ|ℓ + F Jℓ+1|T − F Jℓ|ℓ F
+•
+
+where Jℓ|T is a short-hand notation for Jℓ|T (x∗0:T ).
+Compute the parametric smoothing CRB as
+−1
+Pℓ|T (x∗0:T ) = Jℓ|T
+(x∗0:T ).
+
+VI. R ESULTS
+A. Experimental Setup
+The proposed proximity based indoor positioning algorithm
+is evaluated under different layouts, for instance, an office
+layout and an open area. Due to space limitation, results for the
+office layout is provided here. For evaluations conducted in an
+open area, please consult to Section 3.2 in the supplementary
+report [30]. We consider a typical office environment at
+Ericsson, Linköping, Sweden. In total NB = 10 BLE beacons
+are placed rather uniformly in the area such that a generally
+good geometry is obtained. For instance, as mentioned in
+[44], if the geometric dilution of precision (GDOP) value is
+within a certain range, the positioning accuracy will not differ
+too much from the case with optimal placement. The GDOP
+for this deployment is computed and plotted in Section 2
+of the supplementary report [30]. The GDOP value for this
+deployment is below 1 for most positions, and below 3 for all
+positions, which indicates an overall good geometry [45].
+The floor plan as well as the known beacon positions
+are shown in two-dimensional (2-D) space in Section 3.1
+of the supplementary report [30], where, a local coordinate
+system is used. It should be emphasized that in this paper, the
+study of optimal beacon placement and the effect of beacon
+density is not investigated. However, it would be an interesting
+direction of our future research work. The BLE beacons
+serve as transmitters and broadcast information regularly. A
+moderate scale measurement campaign was conducted during
+normal work hours. Throughout the measurement campaign,
+the mobile device (equipped with BLE chipset) monitor the
+BLE advertisement channel and measures RSS. A total of
+M = 12 144 RSS measurements were collected offline along
+52 predefined tracks, from which a set of propagation paramB
+eters {Aj , Bj , σj2 }N
+j=1 were estimated for each BLE beacon
+using standard (batch) linear least squares (LLS) regression
+method [46]. If there is any significant change in the indoor
+environment, a new set of training data needs to be collected
+and all propagation parameters need to be updated. This is a
+classical way of training propagation parameters which can be
+found for instance in [33, Section 2.8] and [47].
+After this offline training phase, the propagation parameters
+are used together with the RSS propagation model to calculate
+the optimal RSS threshold Pth according to [23]. One example
+of the impacts of selecting different thresholds on positioning
+accuracy will be given in later sections. For further details
+
+8
+
+about the setup, training phase experiments, and selection of
+the threshold, consult to [23].
+After the propagation parameters as well as the threshold are
+obtained, the evaluation of the proposed particle filtering and
+smoothing algorithms are performed. In this work, two scenarios are considered. In the first scenario, we simulate RSS and
+proximity report measurements along selected state trajectories
+using the measurement models introduced in Section III, with
+propagation parameters and optimal RSS threshold estimates
+obtained from the offline training phase. The achieved positioning performance of the particle filter and smoother is then
+compared to the corresponding theoretical performance limits
+via the parametric CRB. The second scenario investigates
+the performance of the proposed algorithms using real RSS
+measurements provided by the mobile device, as well as
+proximity reports which are obtained in a post-processing step
+by comparing RSS with the optimal threshold.
+
+where bk|τ = [bx,k|τ , by,k|τ ]T . Lastly, in order to get an overall
+positioning accuracy in the whole office area, we define the
+RCMSE across various state trajectories. It is given by
+RCMSEk|τ ≈
+
+(22)
+
+P t (t)
+(t)
+where γk|τ is the bound for t-th trajectory and N1t N
+t=1 γk|τ
+computes the average bound for different state trajectories of
+the same length. Finally, we define the average RCMSE as
+T
+1 X
+RCMSEk|τ .
+T
+
+(23)
+
+k=1
+
+(m)
+
+Ek|τ,m = ||p̂k|τ − p̄∗k ||,
+
+(17)
+
+(m)
+
+where p̂k|τ = [p̂x,k|τ , p̂y,k|τ ]T are the position estimates of the
+(m)
+
+estimator x̂k (y1:τ ) obtained from the m-th Monte Carlo run
+(filtering: τ = k, smoothing: τ = T ), and p̄∗k = [p∗x,k , p∗y,k ]T
+denote the ground truth. Here, the term conditional is re(m)
+ferred to the fact that each measurement sequence y1:τ ,
+m = 1, . . . , M has been simulated using the same state vector
+realization x∗0:τ . Given M Monte Carlo runs, the position root
+conditional MSE (RCMSE) can be approximated by
+v
+u
+M
+u 1 X
+2
+Ek|τ,m .
+(18)
+RCMSEk|τ ≈ t
+M m=1
+
+The position RCMSE will be compared to the parametric
+CRB. In case the estimator x̂k (y1:τ ) is conditionally unbiased,
+the following relation holds
+q
+1,1
+3,3
+RCMSEk|τ ≥ Pk|τ
++ Pk|τ
+, γk|τ ,
+(19)
+
+i,j
+where Pk|τ
+denotes the element at row i column j of the
+parametric CRB matrix Pk|τ (x∗0:k ). The parametric CRB presented in this work requires that the estimator is conditionally
+unbiased, a condition that is rarely met in practice by any
+Bayesian estimator. It is therefore instructive to assess the
+estimator’s conditional bias to correctly interpret the achieved
+results. The conditional position bias vector can be approximated as follows:
+
+bk|τ ≈
+
+N
+1 Xt (t)
+γ ,
+Nt t=1 k|τ
+
+RCMSEk|τ ≥
+
+RCMSE ,
+
+In order to compare the positioning accuracy of the proposed filtering and smoothing algorithms in indoor environments, the following performance metrics are introduced. The
+conditional position estimation error at time k is calculated as
+follows:
+
+(m)
+
+(21)
+
+where Nt is the number of evaluated state trajectories and
+(t)
+RCMSEk|τ is the RCMSE obtained for the t-th state trajectory.
+Correspondingly, the following relation holds for conditionally
+unbiased estimators
+
+B. Performance Metrics
+
+(m)
+
+Nt
+1 X
+(t)
+RCMSEk|τ ,
+Nt t=1
+
+M
+i
+1 X h (m)
+p̂k|τ − p̄∗k ,
+M m=1
+
+(20)
+
+TABLE II
+E VALUATION PARAMETERS .
+Parameter
+σw
+Ts
+Pth
+N
+NB
+µx0
+Σx0
+Nth
+MBS
+
+Value
+1
+0.1 sec
+−82 dBm
+2000
+10
+[15.5, 1.5, 19.5, 1.5]T
+diag([1, 2, 1, 2])
+2/3 N
+10
+
+Description
+Noise power spectral density
+Sampling interval
+Predefined RSS threshold
+Number of particles
+Number of deployed reference nodes
+Mean of x0
+Covariance of x0
+Threshold for resampling
+Number of FFBSi backward trajectories
+
+C. Simulated Data
+In this section, the proposed algorithms are evaluated with
+simulated data. With propagation parameters estimated from
+the real data as described in Section VI-A and Pth preselected,
+RSS and proximity reports are simulated along selected state
+trajectories using the measurement models given in Section III.
+With simulated data, the measurement vector contains values
+from all beacons, which may not be the case in practice. Then,
+combining the motion model and simulated measurements,
+particle filtering and smoothing have been applied to obtain
+position estimates. The parameters specified for particle filtering and smoothing are listed in Table II. The sampling interval
+Ts is set to 0.1 second, which corresponds to the advertisement
+interval of BLE beacon used in this study. It should be noted
+that since the measurements are simulated, it is the ideal
+case that we can assume RSS is measured regularly at fixed
+sampling interval Ts . In the motion model, σw is a tuning
+parameter. Various values have been tested and σw = 1 yields
+good results. The number of particles is set to N = 2000,
+since no significant difference is observed with N ≥ 1000.
+For FFBSi smoothing, the number of backward trajectories
+simulated is selected as MBS = 10, considering both the
+computation complexity and no significant improvement for
+MBS > 10.
+
+4
+
+35
+Beacon positions
+Ground truth
+Static MLE: Proximity
+
+30
+25
+
+2
+
+1
+
+20
+15
+
+6
+
+4
+
+3
+
+9
+
+5
+
+10
+5
+0
+
+0
+
+8
+20
+
+10
+
+10
+30
+
+7
+40
+
+50
+
+x-position, in meter
+
+60
+
+3
+2.5
+2
+1.5
+
+(a)
+y-position, in meter
+
+Parametric filtering CRB: RSS
+Parametric filtering CRB: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+
+3.5
+
+RCMSEk|k , in meter
+
+y-position, in meter
+
+9
+
+1
+0.5
+
+35
+
+Beacon positions
+Ground truth
+PF: RSS
+PF: Proximity
+
+30
+25
+2
+
+1
+
+20
+15
+
+4
+
+3
+
+0
+0
+
+100
+
+200
+
+300
+
+9
+
+5
+
+400
+
+500
+
+600
+
+700
+
+800
+
+Time step k
+
+6
+
+Fig. 3. RCMSEk|k and parametric filtering CRB.
+
+10
+5
+0
+
+10
+
+8
+0
+
+10
+
+20
+
+7
+
+30
+
+40
+
+50
+
+x-position, in meter
+
+60
+
+Beacon positions
+Ground truth
+FFBSi: RSS
+FFBSi: Proximity
+
+30
+25
+1
+
+20
+
+2
+
+15
+
+6
+
+4
+
+3
+
+0
+-1
+-2
+0
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+600
+
+700
+
+800
+
+2
+
+5
+0
+
+10
+
+8
+
+10
+
+20
+
+30
+
+7
+40
+
+x-position, in meter
+
+50
+
+60
+
+(c)
+
+1
+0
+-1
+-2
+0
+
+y-position, in meter
+
+100
+
+9
+
+10
+
+0
+
+RSS
+Proximity
+
+1
+
+Time step k
+
+5
+
+by,k|k , in meter
+
+y-position, in meter
+
+35
+
+bx,k|k , in meter
+
+2
+
+(b)
+
+35
+
+Beacon positions
+Ground truth
+EKF: RSS
+
+30
+25
+
+100
+
+200
+
+300
+
+400
+
+500
+
+Time step k
+
+Fig. 4. Bias in position estimates for filtering.
+
+20
+15
+10
+5
+0
+
+0
+
+10
+
+20
+
+30
+
+x-position, in meter
+
+40
+
+50
+
+60
+
+(d)
+Fig. 2. Illustration of position estimates and ground truth with simulated data:
+2(a) static MLE, 2(b) PF, 2(c) FFBSi, 2(d) EKF.
+
+To motivate the advantages of applying particle filtering
+and smoothing, an illustration of the static position estimates
+using maximum likelihood estimator (MLE) in [17] is shown
+in Fig. 2(a) with one specific state trajectory. This trajectory
+is selected from one of the 52 predefined tracks. It starts from
+the left side of the map (i.e. coffee room) to the right side (i.e.
+corridor next to the restroom) and consists of a number of 90
+degrees turns.
+In order to find the optimal position estimate which maximizes the likelihood function, a 2-D grid search method with
+resolution of 0.1 meter has been applied. From the results
+we can see that the estimated position in this static case is
+not satisfactory, which motivates the need for particle filtering
+and smoothing approaches. The positioning ambiguity is very
+large in static case, since the location information provided by
+
+proximity reports is very limited. This also infers that when
+the information from the measurement is little, such as in this
+case with binary proximity reports, the motion model is of
+great importance to get better positioning accuracy, which will
+be demonstrated later in this section.
+Positioning results with particle filtering and smoothing
+are plotted on Fig. 2(b) and 2(c), respectively. Compared
+with the static position estimates, significant improvements are
+observed. In addition, the algorithm based on proximity report
+exhibits similar performance as compared to algorithm based
+on RSS measurements. The first couple of estimated positions
+are a bit out of the track. This is probably due to the fact
+that in this area, there are fewer number of beacons which
+are within the communication range. Also, at the end of the
+trajectory, the positioning performance is degrading as it goes
+out of the proximity of all the beacons.
+Extended Kalman filter (EKF) is always considered as
+an alternative method to solve nonlinear filtering problems.
+For RSS measurements with EKF implementation, relevant
+research work can be found, for instance, in [48], [49] and
+[50]. Here in this paper, we also compare the proposed particle
+filtering algorithm with EKF. The tuning parameter for the
+process noise is set to σw = 0.3, which yields relatively
+
+10
+
+Parametric smoothing CRB: RSS
+Parametric smoothing CRB: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+
+1.5
+
+1
+
+0.5
+
+0
+0
+
+100
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+RCMSEk|T , in meter
+
+Time step k
+
+Fig. 5. RCMSEk|T and parametric smoothing CRB.
+
+1
+
+bx,k|T , in meter
+
+performance of the selected trajectory in Fig. 2. This is due to
+the fact that the office is mainly characterized by two corridors
+and a shape of a narrow rectangle. Therefore, the selected
+trajectory captures most of the characteristics of the office.
+The overall CDF of position errors of those different state
+
+RSS
+Proximity
+
+0.5
+
+RCMSEk|k , in meter
+
+RCMSEk|T , in meter
+
+2
+
+4
+
+Parametric filtering CRB: RSS
+Parametric filtering CRB: Proximity
+PF: RSS
+PF: Proximity
+
+3
+2
+1
+0
+0
+
+4
+
+50
+
+100
+
+150
+
+200
+
+250
+
+300
+
+Parametric smoothing CRB: RSS
+Parametric smoothing CRB: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+
+3
+2
+1
+0
+0
+
+0
+
+50
+
+100
+
+150
+
+200
+
+250
+
+300
+
+Time step k
+
+-0.5
+
+Fig. 7. Average positioning accuracy.
+-1
+0
+
+100
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+Time step k
+
+0.5
+
+1
+
+0
+
+0.9
+
+-0.5
+
+0.8
+
+-1
+
+Static MLE: Proximity
+PF: RSS
+PF: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+EKF: RSS
+
+0.7
+
+0
+
+100
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+Time step k
+
+Fig. 6. Bias in position estimates for smoothing.
+
+0.6
+
+CDF
+
+by,k|T , in meter
+
+1
+
+0.5
+0.4
+0.3
+
+better performance. From results in Fig. 2(d) and Fig. 8, it
+is clear that PF outperforms EKF for RSS measurements. To
+the best of the author’s knowledge, a proximity-based EKF
+has not been proposed in the literature and is subject to future
+research.
+To evaluate the theoretical limits of the positioning performance, the RCMSE is compared with the parametric CRBs
+calculated in Section V. The number of Monte Carlo runs is set
+to M = 10000. The parametric CRB for particle filtering and
+smoothing of the state trajectory in Fig. 2 is plotted in Fig. 3
+and Fig. 5. It is observed that the position error appears above
+the parametric bound, showing the positioning performance
+varies spatially over the office floor and in relation to the
+beacon deployment. Bias in the positioning estimates are
+observed and plotted in Fig. 4 and Fig. 6. It is noticed that
+the RCMSE goes further away from the parametric CRB at
+the end of the trajectory, this may be due to the larger bias
+accumulated after k = 400.
+In order to get an overall positioning accuracy in the
+office area, we compute the average parametric CRBs in (21)
+for Nt = 5 state trajectories across the deployment area
+of the same length. The average CRBs are compared with
+RCMSEk|τ in (22) in Fig. 7. It can be seen that the average
+position performance of the office is similar to the positioning
+
+0.2
+0.1
+0
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+Ek , in meter
+
+Fig. 8. CDF of position errors with simulated data.
+
+TABLE III
+P OSITION ERRORS ( IN UNIT OF METER ) AT DIFFERENT PERCENTILES .
+Percentile
+Simulated
+
+Experimental
+
+Static MLE(Proximity)
+PF(RSS/Proximity)
+FFBSi(RSS/Proximity)
+Static MLE(Proximity)
+PF(RSS/Proximity)
+FFBSi(RSS/Proximity)
+
+50-th
+5
+1.2/1.7
+0.4/0.5
+6.2
+2.5/3.5
+2.3/3
+
+67-th
+7
+1.6/2.2
+0.5/0.6
+7.8
+3.2/4.6
+3.1/4.2
+
+95-th
+12.5
+3/3.7
+1.1/1.3
+12.2
+5.5/8.1
+4.8/6.6
+
+trajectories have been plotted in Fig. 8. The 50-th, 67-th and
+95-th percentile of the position error are listed in Table III.
+It is noted that for PF based on proximity report, there is
+approximately 0.6 meter degradation as compared with PF
+based on RSS. However, by applying FFBSi smoothing, the
+performance difference between proximity report and RSS
+based methods are negligible.
+
+Beacon positions
+Ground truth
+Static MLE: Proximity
+
+30
+25
+1
+
+6
+
+4
+
+20
+
+2
+5
+
+15
+
+3
+
+9
+
+10
+5
+0
+
+0
+
+10
+30
+
+8
+20
+
+10
+
+7
+
+x-position, in meter
+
+40
+
+50
+
+60
+
+y-position, in meter
+
+(a)
+35
+
+Beacon positions
+Ground truth
+PF: RSS
+PF: Proximity
+6
+
+30
+25
+1
+
+4
+
+2
+
+20
+5
+
+15
+3
+
+10
+
+9
+
+5
+0
+
+10
+
+7
+
+10
+
+8
+0
+
+20
+
+30
+
+x-position, in meter
+
+40
+
+50
+
+60
+
+(b)
+y-position, in meter
+
+In the above simulations, it is assumed that RSS measurements from all beacons in the deployment area are available
+to the mobile device. However, in practical environments, it is
+not realistic since the device may only measure RSS from
+3 or 4 beacons at one position. In what follows, in order
+to show performance of the proposed algorithms in practical
+circumstances, evaluations based on real RSS measurements
+carried out in the office area are provided. All parameters for
+particle filtering and smoothing are listed in Table II. In real
+circumstances, the BLE advertisement interval is 100 ms plus
+or minus 0 − 10 ms. Hence, the RSS may not be measured
+with the exactly fixed interval. In the first case studied here,
+a regular sampling interval of 100 ms is assumed to ease the
+implementation. With sampling interval set to 100 ms, the
+instanuous RSS measurement is used without any averaging,
+since only one sample can be obtained during this interval.
+In the second case, we will also evaluate the positioning
+performance using a different sampling interval such that RSS
+averaging is possible. It needs to be mentioned that the number
+of particles for experimental data is also set to N = 2000,
+since no significant improvement can be observed for a larger
+number. The ground truth positions are obtained from an appbased positioning algorithm developed by Senion.
+The static position estimates obtained from MLE are
+depicted in Fig. 9(a). The position estimates in static case
+are not satisfactory and filtering and smoothing are needed.
+Fig. 9(b) and 9(c) show positioning performance with particle
+filtering and smoothing, respectively. Similar performance is
+still achieved for proximity report and RSS based positioning.
+The particle filtering and smoothing algorithms work well
+in distinguishing if the device is in the upper or lower
+corridor area. By applying FFBSi smoothing, the positioning
+accuracy is improved for both RSS and proximity reports. The
+performance with EKF for RSS is plotted in Fig. 9(d). The
+tuning parameter σw in process model is also set to 0.3 for
+experimental data. Obviously, EKF performs worse than PF.
+To compare the signaling for periodic RSS and event-triggered
+proximity reports, we checked the total number of reports
+generated in both cases. There are 800 periodic RSS reports,
+while the number is significantly reduced to 74 for eventtriggered proximity reports. Even though not shown here, the
+effective sample size was on average 1513 for RSS and 1518
+for proximity based particle filtering.
+It is also noted from the figures that in real circumstances,
+due to the complex indoor propagation conditions, the estimation of positions may be difficult. E.g. near the lower
+corridor on the figure, the user may also hear strong signals
+from beacon 8 and 10, so that the user may be “fooled” that
+it is close to beacon 8 and 10. This may explain why the
+estimated positions for those points are very close to beacon
+8 and 10. Considering all those factors that may impact the
+RSS propagation model, such as concrete walls penetration,
+reflections, multi-paths, shadowing effects, etc, the simple
+propagation model used here may not be sufficient to achieve
+similar performance as the case with simulated measurements.
+More advanced modeling is studied in our work [25].
+
+35
+
+35
+
+Beacon positions
+Ground truth
+FFBSi: RSS
+FFBSi: Proximity
+6
+
+30
+25
+1
+
+2
+
+4
+
+20
+5
+
+15
+3
+
+10
+
+9
+
+5
+0
+
+10
+
+8
+0
+
+10
+
+20
+
+7
+
+30
+
+x-position, in meter
+
+40
+
+50
+
+60
+
+(c)
+y-position, in meter
+
+D. Experimental Data
+
+y-position, in meter
+
+11
+
+35
+Beacon positions
+Ground truth
+EKF: RSS
+
+30
+25
+20
+15
+10
+5
+0
+
+0
+
+10
+
+20
+
+30
+
+x-position, in meter
+
+40
+
+50
+
+60
+
+(d)
+Fig. 9. Illustration of position estimates and ground truth with experimental
+data: 9(a) static MLE, 9(b) PF, 9(c) FFBSi, 9(d) EKF.
+
+The overall CDF of the position errors for the same set
+of state trajectories in Fig. 8 are depicted in Fig. 10. The
+estimation errors at the 50-th, 67-th, and 95-th percentiles are
+listed in Table III. With experimental data, approximately 1
+meter degradation in the positioning accuracy is observed for
+PF based on proximity report as compared to RSS at the 50th percentile. By applying FFBSi smoothing, the positioning
+performance for proximity report is improved. The effects of
+different RSS thresholds are studied for experimental data and
+results are shown in Fig. 11. Lower RCMSE is achieved at
+Pth = −82 dBm. This is reasonable since with a high threshold
+(e.g. −70 dBm), the receiver may not be within any beacon’s
+proximity, while a low threshold may lead to the case that the
+receiver is within all beacon’s proximity. In both cases, little
+
+12
+
+1
+Static MLE: Proximity
+PF: RSS
+PF: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+EKF: RSS
+
+0.9
+0.8
+0.7
+
+CDF
+
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+0
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+Ek , in meter
+
+Fig. 10. CDF of position errors with experimental data.
+
+information can be obtained, and the positioning accuracy may
+degrade due to the loss of information.
+10
+
+every 20ms) is designated. In such case, it is possible to
+average up to 50 samples within an interval of Ts = 1 second.
+With this specification, a shorter sampling interval can be
+selected (for instance, 0.5 second). It should also be noted that
+Ts cannot be too large, otherwise the position change within
+this interval would be too significant. Besides, with Ts larger
+than 1 second, the performance of particle smoother degrades
+greatly.
+Due to space limitation, the position estimates for two
+representative trajectories are illustrated in Fig. 12. Similar
+performance are observed for other trajectories. The estimated
+trajectories are still satisfactory as the sampling interval is
+increased. The CDF of position errors for all tested trajectories
+are plotted in Fig. 13. From the CDF, the overall positioning
+accuracy across various trajectories is extracted in Table IV,
+which is similar to the previous case where a specific trajectory
+in Fig. 9 is used with shorter sampling interval. Besides,
+as we increase the sampling interval, the particle smoother
+performs worse than the particle filter. But the difference is
+not significant. However, by using particle smoother, smoothed
+trajectories can be obtained as can be seen from Fig. 12, which
+are usually preferred for post-processing and analyzing.
+
+RCMSE, in meter
+
+9
+
+TABLE IV
+P OSITION ERRORS ( IN UNIT OF METER ) AT DIFFERENT PERCENTILES FOR
+VARIOUS TRAJECTORIES .
+
+8
+7
+
+Percentile
+Experimental
+
+6
+
+PF(RSS/Proximity)
+FFBSi(RSS/Proximity)
+
+50-th
+2.8/3.5
+3.1/3.8
+
+67-th
+3.8/4.5
+4.1/4.9
+
+95-th
+6.7/7.1
+6.7/8.1
+
+5
+4
+3
+-95
+
+VII. C ONCLUSIONS
+-90
+
+-85
+
+-80
+
+-75
+
+-70
+
+Pth , in dBm
+
+Fig. 11. RCMSE versus different thresholds Pth with experimental data.
+
+In what follows, we further evaluate the proposed method
+with different trajectories in the same building and a different
+sampling interval Ts . All the tested trajectories can be found in
+Section 3.1 of the supplementary report [30]. In the following
+experiments, we use the same particle filtering and smoothing
+parameters as listed in Table II, except that the sampling
+interval is set to Ts = 1 second. With an advertisement
+interval of around 100 ms, up to 10 samples can be measured
+within this interval. Then the averaged value of all these
+measurements are used to approximate the mean RSS value
+during this time interval. The averaging can be easily done
+either on the mobile device or at the computation entity by
+applying a low-pass filter within a time window of Ts second.
+It is worth mentioning that the selection of sampling time
+Ts and how many samples can be averaged may depend on
+the advertisement interval of BLE beacons. For instance, the
+sampling interval is set to Ts = 1 second and up to 10 samples
+are averaged regarding that the BLE specification under this
+setup limits the shortest advertisement interval to 100 ms.
+However, considering the most recent BLE specification (i.e.,
+Blue-tooth version 5.0), shorter advertisement interval (i.e.,
+
+In this paper, we have proposed particle filtering and
+smoothing algorithms which are applicable for indoor positioning based on time series proximity reports. Such a proximity report based positioning algorithm is beneficial in different
+aspects, among which the signaling overhead can be significantly reduced via sending binary proximity measurements
+(i.e. 1 bit) approximately 10 times less frequently, in stead of
+e.g., periodic RSS values. The positioning performance based
+on proximity report is comparable with the performance based
+on periodic RSS reports. By applying particle smoothing,
+the positioning accuracy is improved for both simulated and
+experimental data. Furthermore, the positioning accuracy is
+close to the parametric CRBs. With experimental data, it can
+be concluded that 3 to 4 meter accuracy is achievable for most
+cases in this indoor scenario.
+The work in this paper also motivates new research directions. For instance, the BLE locations are assumed to
+be known and static in this work. However, it would be
+interesting to see how much variations we can get for the
+same reference network node but at various locations. The
+training of propagation parameters can also be improved by
+introducing some on-line estimation methods, such as on-line
+expectation-maximization (EM) algorithm in [51] and [52].
+Also, in order to improve the positioning accuracy, more
+complex propagation model may be explored in the near
+future. Besides, there are some other factors that can further
+
+35
+
+25
+1
+
+4
+
+2
+
+1
+
+Beacon positions
+Ground truth
+PF: RSS
+PF: Proximity
+6
+
+30
+
+0.9
+
+20
+5
+
+15
+
+0.7
+
+3
+
+10
+
+9
+
+5
+0
+
+10
+
+7
+
+10
+
+8
+0
+
+20
+
+30
+
+40
+
+50
+
+60
+
+0.6
+0.5
+0.4
+
+x-position, in meter
+
+(a)
+y-position, in meter
+
+PF: RSS
+PF: Proximity
+FFBSi: RSS
+FFBSi: Proximity
+
+0.8
+
+CDF
+
+y-position, in meter
+
+13
+
+0.3
+0.2
+
+35
+
+Beacon positions
+Ground truth
+FFBSi: RSS
+FFBSi: Proximity
+6
+
+30
+25
+1
+
+2
+
+4
+
+0.1
+0
+0
+
+20
+
+5
+
+10
+
+15
+3
+
+10
+
+15
+
+Ek , in meter
+
+5
+9
+
+Fig. 13. CDF of position errors for all trajectories.
+
+5
+0
+
+10
+
+8
+0
+
+10
+
+20
+
+7
+
+30
+
+40
+
+50
+
+60
+
+x-position, in meter
+
+proximity and RSS measurements. According to [22], we can
+generally write
+
+y-position, in meter
+
+(b)
+35
+30
+25
+
+
+= E [∇xk ln p(yk |xk )][·]T
+
+20
+15
+10
+5
+0
+
+0
+
+10
+
+20
+
+30
+
+40
+
+50
+
+60
+
+x-position, in meter
+
+(c)
+y-position, in meter
+
+Hk (x∗k )T Rk−1 Hk (x∗k )
+
+k
+= E −∆x
+xk ln p(yk |xk )
+
+Beacon positions
+Ground truth
+PF: RSS
+PF:Proximity
+
+35
+
+25
+
+= Hk (x∗k )T Rk−1 Hk (x∗k ),
+
+Hk (x∗k ) = ∇xk hT (xk )
+
+10
+
+Rk =
+
+5
+10
+
+20
+
+30
+
+(25)
+
+40
+
+50
+
+60
+
+x-position, in meter
+
+(d)
+Fig. 12. Illustration of position estimates and ground truth with experimental
+data: 12(a) Trajectory 1, PF, 12(b) Trajectory 1, FFBSi, 12(c) Trajectory 2,
+PF, 12(d) Trajectory 2, FFBSi.
+
+assist positioning, which includes but not limits to, the floor
+plan, inertial measurement unit (IMU) sensor measurements
+and so on. It would also be interesting to look into the effects
+of beacon placement and density.
+We are currently working on Gaussian processes with multiple linear kernel based fundamental filtering and smoothing
+bounds, primarily based on the most recent results given in
+[53]–[56].
+
+For computing the parametric CRB of filtering and smoothing, it is required to further specify Hk (x∗k )T Rk−1 Hk (x∗k ) for
+
+,
+
+(27a)
+
+xk =x∗
+k
+2
+2
+]).
+diag([σ1 , . . . , σN
+B
+
+(27b)
+
+The expressions for proximity measurements are a bit more
+∗
+involved. We introduce yP,k
+which is a realization of the
+proximity measurement vector yP,k and define the set S as
+all possible proximity measurements combinations 2NB . Thus,
+we can write
+Hk (x∗k )T Rk−1 Hk (x∗k )
+
+= E [∇xk ln p(yP,k |xk )][·]T
+xk =x∗
+k
+X
+∗
+T
+∗
+=
+[∇xk ln p(yP,k |xk )][·] p(yP,k |xk )
+∗ ∈S
+yP,k
+
+xk =x∗
+k
+
+(28)
+
+Further, due to the independence assumption, cf. (10), we can
+finally write
+Hk (x∗k )T Rk−1 Hk (x∗k )
+=
+
+A PPENDIX
+
+(26)
+
+with
+
+15
+
+0
+
+.
+
+In case of having RSS measurements, it is easy to verify that
+the corresponding expression simplifies to
+
+k
+E −∆x
+xk ln p(yR,k |xk )
+∗
+
+20
+
+0
+
+xk =x∗
+k
+
+xk =xk
+
+Beacon positions
+Ground truth
+FFBSi: RSS
+FFBSi: Proximity
+
+30
+
+(24)
+
+xk =x∗
+k
+
+X
+
+∗ ∈{0,1}
+yk,1
+
+X
+
+...
+
+∗
+yk,N
+∈{0,1}
+B
+
+×
+
+NB
+Y
+
+j=1
+
+
+" #
+T
+NB
+∗
+X
+∇xk p(yk,j
+|xk )
+
+ ·
+∗ |x )
+p(yk,j
+k
+j=1
+
+∗
+p(yk,j
+|xk )
+
+,
+xk =x∗
+k
+
+(29)
+
+14
+
+∗
+where p(yk,j
+|xk ) is given in (11), and
+∗
+∇xk p(yk,j
+
+
+
+
+
+=
+
+
+
+= 0|xk )
+
+i
+h
+
+(P −µ )2 (p̄x,k −px,j )
+10Bj
+exp − th 2σ2k,j
+− ln 10√2πσ
+2
+dk,j
+j
+j
+
+
+0
+,
+h
+i
+10Bj
+(Pth −µk,j )2 (p̄y,k −py,j ) 
+− ln 10√2πσ exp −
+
+2
+2
+2σ
+d
+j
+j
+k,j
+0
+(30a)
+
+∗
+∗
+∇xk p(yk,j
+= 1|xk ) = −∇xk p(yk,j
+= 0|xk ).
+
+(30b)
+
+ACKNOWLEDGMENT
+This work is funded by European Union FP7 Marie Curie
+training programme on Tracking in Complex Sensor Systems (TRAX) with grant number 607400. Furthermore, we
+acknowledge the support from Senion, who provide BLE
+beacons as well as associated positioned RSS measurement
+data.
+Author Feng Yin is funded by the NSFC with the
+grant number 61701426 and the Shenzhen Science and
+Technology Innovation Council with the grant number
+JCYJ20170307155957688 and JCYJ20170411102101881.
+R EFERENCES
+[1] Y. Zhao, F. Yin, F. Gunnarsson, M. Amirijoo, E. Özkan, and F. Gustafsson, “Partile filtering for positioning based on proximity report,” in Proc.
+Int. Conf. on Information Fusion, Washington D.C., USA, July 2015,
+pp. 1046–1052.
+[2] F. Gustafsson, Statistical Sensor Fusion, 2nd ed.
+Lund, Sweden:
+Studentlitteratur, 2012.
+[3] “European Union FP7 Tracking in Complex Sensor Systems (TRAX)
+project,” https://www.trax.utwente.nl/.
+[4] Z. Yang, Z. Zhou, and Y. Liu, “From RSSI to CSI: Indoor localization
+via channel response.” ACM Comput. Surv., vol. 46, no. 2, p. 25, 2013.
+[5] L. Mainetti, L. Patrono, and I. Sergi, “A survey on indoor positioning
+systems,” in Proc. 22nd International Conference on Software, Telecommunications and Computer Networks (SoftCOM), Sept 2014, pp. 111–
+120.
+[6] N. Patwari and A. O. Hero, III, “Using proximity and quantized RSS for
+sensor localization in wireless networks,” in Proc. ACM International
+Conference on Wireless Sensor Networks and Applications. New York,
+NY, USA: ACM, 2003, pp. 20–29.
+[7] R. Karlsson and F. Gustafsson, “Filtering and estimation for quantized
+sensor information,” in Proc. 13th European Signal Processing Conference (EUSIPCO), Antalya, Turkey, Sept. 2005.
+[8] R. Want, A. Hopper, V. Falcão, and J. Gibbons, “The active badge
+location system,” ACM Trans. Inf. Syst., vol. 10, no. 1, pp. 91–102,
+Jan. 1992.
+[9] N. Bulusu, J. Heidemann, and D. Estrin, “GPS-less low-cost outdoor
+localization for very small devices,” IEEE Personal Communications,
+vol. 7, no. 5, pp. 28–34, Oct. 2000.
+[10] 3GPP, “Radio Resource Control (RRC); Protocol specification,” 3rd
+Generation Partnership Project (3GPP), TS 25.331.
+[11] 3GPP, “Evolved Universal Terrestrial Radio Access (E-UTRA); Radio
+Resource Control (RRC); Protocol specification,” 3rd Generation Partnership Project (3GPP), TS 36.331.
+[12] T. He, C. Huang, B. M. Blum, J. A. Stankovic, and T. Abdelzaher,
+“Range-free localization schemes for large scale sensor networks,”
+in Proc. Annual International Conference on Mobile Computing and
+Networking. New York, NY, USA: ACM, 2003, pp. 81–95.
+[13] K. Yedavalli, B. Krishnamachari, S. Ravula, and B. Srinivasan, “Ecolocation: a sequence based technique for RF localization in wireless sensor
+networks,” in Proc. Information Processing in Sensor Networks (IPSN),
+Los Angeles, California, USA, April 2005, pp. 285–292.
+[14] N. A. M. Maung and M. Kawai, “Performance improvement of
+connectivity-based localization using iterative learning,” in Proc. Int.
+Conf. Localization and GNSS (ICL-GNSS), Helsinki, Finland, June 2014,
+pp. 1–6.
+
+[15] R. Faragher and R. Harle, “An analysis of the accuracy of Bluetooth low
+energy for indoor positioning applications,” in Proceedings of the 27th
+International Technical Meeting of The Satellite Division of the Institute
+of Navigation, Tampa, Florida, USA, September 2014, pp. 201–210.
+[16] J. Pelant, Z. Tlamsa, V. Benes, L. Polak, O. Kaller, L. Bolecek, J. Kufa,
+J. Sebesta, and T. Kratochvil, “BLE device indoor localization based on
+RSS fingerprinting mapped by propagation modes,” in 27th International
+Conference Radioelektronika (RADIOELEKTRONIKA), April 2017, pp.
+1–5.
+[17] F. Yin, Y. Zhao, and F. Gunnarsson, “Fundamental bounds on position
+estimation using proximity reports,” in Proc. IEEE 83rd Vehicular
+Technology Conference: VTC2016-Spring, Nanjing, China, 2016, pp. 1–
+5.
+[18] N. Bergman, “Recursive Bayesian estimation navigation and tracking
+applications,” Ph.D. dissertation, Linköping University, 1999.
+[19] P. Tichavsky, C. H. Muravchik, and A. Nehorai, “Posterior CramerRao bounds for discrete-time nonlinear filtering,” IEEE Transactions on
+Signal Processing, vol. 46, no. 5, pp. 1386–1396, May 1998.
+[20] Z. Duan, V. P. Jilkov, and X. R. Li, “State estimation with quantized
+measurements: Approximate MMSE approach,” in Proc. 11th International Conference on Information Fusion, June 2008, pp. 1–6.
+[21] L. Zuo, R. Niu, and P. K. Varshney, “A sensor selection approach for
+target tracking in sensor networks with quantized measurements,” in
+Proc. IEEE International Conference on Acoustics, Speech and Signal
+Processing, March 2008, pp. 2521–2524.
+[22] C. Fritsche, U. Orguner, and F. Gustafsson, “On parametric lower bounds
+for discrete-time filtering,” in Proc. IEEE International Conference on
+Acoustics, Speech, and Signal Processing (ICASSP), 2016, pp. 4338–
+4342.
+[23] F. Yin, Y. Zhao, and F. Gunnarsson, “Proximity report triggering
+threshold optimization for network-based indoor positioning,” in Proc.
+Int. Conf. on Information Fusion, Washington D.C., USA, July 2015,
+pp. 1061–1069.
+[24] K. P. Murphy, Machine Learning: A Probabilistic Perspective. The
+MIT Press, 2012.
+[25] Y. Zhao, F. Yin, F. Gunnarsson, M. Amirijoo, and G. Hendeby, “Gaussian processes for propagation modeling and proximity based indoor
+positioning,” in Proc. IEEE 83rd Vehicular Technology Conference:
+VTC2016-Spring, Nanjing, China, May 2016, pp. 1–5.
+[26] T. Camp, J. Boleng, and V. Davies, “A survey of mobility models for ad
+hoc network research,” Wireless Communications & Mobile Computing
+(WCMC): Special Issue on Mobile Ad Hoc Networking: Research,
+Trends and Applications, vol. 2, pp. 483–502, 2002.
+[27] N. Salman, N. Alsindi, L. Mihaylova, and A. H. Kemp, “Super resolution
+WiFi indoor localization and tracking,” in Proc. Sensor Data Fusion:
+Trends, Solutions, Applications (SDF), Oct 2014, pp. 1–5.
+[28] L. Bruno, M. Khider, and P. Robertson, “On-line training of the path-loss
+model in Bayesian WLAN indoor positioning,” in Proc. International
+Conference on Indoor Positioning and Indoor Navigation, Oct 2013, pp.
+1–9.
+[29] Y. Bar-Shalom, T. Kirubarajan, and X.-R. Li, Estimation with Applications to Tracking and Navigation. New York, NY, USA: John Wiley
+& Sons, Inc., 2002.
+[30] Y. Zhao, C. Fritsche, F. Yin, F. Gunnarsson, and F. Gustafsson,
+“Supplementary material for “Sequential Monte Carlo methods and
+theoretical bounds for proximity report based indoor positioning”,”
+Linköping University, Department of Electrical Engineering, Linköping,
+Sweden, Tech. Rep. LiTH-ISY-R, 3101, 2017. [Online]. Available:
+http://www.control.isy.liu.se/publications/
+[31] M. Hata, “Empirical formula for propagation loss in land mobile radio
+services,” IEEE Transactions on Vehicular Technology, vol. 29, no. 3,
+pp. 317–325, Aug 1980.
+[32] A. Mousa, Y. Dama, M. Najjar, and B. Alsayeh, “Optimizing outdoor
+propagation model based on measurements for multiple RF cell,” International Journal of Computer Applications, vol. 60, no. 5, pp. 5–10,
+December 2012.
+[33] A. Goldsmith, Wireless Communications.
+New York, NY, USA:
+Cambridge University Press, 2006.
+[34] S. Särkkä, Bayesian Filtering and Smoothing. Cambridge University
+Press., 2013.
+[35] R. E. Kalman, “A new approach to linear filtering and prediction
+problems,” ASME Journal of Basic Engineering, 1960.
+[36] H. E. Rauch, C. T. Striebel, and F. Tung, “Maximum likelihood estimates
+of linear dynamic systems,” AIAA Journal, vol. 3, pp. 1445–1450, Aug.
+1965.
+
+15
+
+[37] N. J. Gordon, D. J. Salmond, and A. F. M. Smith, “Novel approach to
+nonlinear/non-Gaussian Bayesian state estimation,” IEE Proceedings F Radar and Signal Processing, vol. 140, no. 2, pp. 107–113, April 1993.
+[38] A. Doucet and A. M. Johansen, “A tutorial on particle filtering and
+smoothing: Fifteen years later,” in Nonlinear Filtering Handbook,
+D. Crisan and B. Rozovsky, Eds. Oxford University Press, 2011, pp.
+656–704.
+[39] J. D. Hol, T. B. Schön, and F. Gustafsson, “On resampling algorithms for
+particle filters,” in Proc. IEEE Nonlinear Statistical Signal Processing
+Workshop, Sept. 2006, pp. 79–82.
+[40] M. Briers, A. Doucet, and S. Maskell, “Smoothing algorithms for state–
+space models,” Annals of the Institute of Statistical Mathematics, vol. 62,
+no. 1, p. 61, 2009.
+[41] F. Lindsten, P. Bunch, S. Särkkä, T. B. Schön, and S. J. Godsill,
+“Rao-Blackwellized particle smoothers for conditionally linear Gaussian
+models,” IEEE Journal of Selected Topics in Signal Processing, vol. 10,
+no. 2, pp. 353–365, March 2016.
+[42] C.-B. Chang and K.-P. Dunn, Applied State Estimation and Association.
+MIT press, 2016.
+[43] C. Fritsche and U. Orguner, “On parametric smoothing Cramér-Rao
+bounds,” Linköping University, Department of Electrical Engineering,
+Linköping, Sweden, Tech. Rep. LiTH-ISY-R, 3097, 2017.
+[44] F. Yin, C. Fritsche, F. Gustafsson, and A. M. Zoubir, “TOA-based robust
+wireless geolocation and Cramér-Rao lower bound analysis in harsh
+LOS/NLOS environments,” IEEE Transactions on Signal Processing,
+vol. 61, no. 9, pp. 2243–2255, May 2013.
+[45] I. Guvenc and C. C. Chong, “A survey on TOA based wireless localization and NLOS mitigation techniques,” IEEE Communications Surveys
+Tutorials, vol. 11, no. 3, pp. 107–124, 2009.
+[46] G. Casella and R. L. Berger, Statistical inference, ser. Duxbury advanced
+series. Pacific Grove (Calif.): B. Cole, 2002.
+[47] E. S. Lohan, J. Talvitie, P. F. e Silva, H. Nurminen, S. Ali-Löytty,
+and R. Piché, “Received signal strength models for WLAN and BLEbased indoor positioning in multi-floor buildings,” in Proc. International
+Conference on Location and GNSS (ICL-GNSS), June 2015, pp. 1–6.
+[48] R. Khan, F. Sottile, and M. Spirito, “Hybrid positioning through extended Kalman filter with inertial data fusion,” International Journal of
+Information and Electronics Engineering, Jan 2013.
+[49] J. Lategahn, M. Muller, and C. Rohrig, “TDoA and RSS based extended
+Kalman filter for indoor person localization,” in Proc. IEEE 78th
+Vehicular Technology Conference (VTC Fall), Sept 2013, pp. 1–5.
+[50] X. Shi, Y. H. Chew, C. Yuen, and Z. Yang, “A RSS-EKF localization
+method using HMM-based LOS/NLOS channel identification,” in Proc.
+IEEE International Conference on Communications (ICC), June 2014,
+pp. 160–165.
+[51] C. Andrieu, A. Doucet, and V. Tadic, “On-line parameter estimation
+in general state-space models,” in Proc. IEEE Conf. on Decision and
+Control, Jan 2006.
+[52] Y. Li, X. Chen, M. Coates, and B. Yang, “Sequential Monte Carlo
+radio-frequency tomographic tracking,” in 2011 IEEE International
+Conference on Acoustics, Speech and Signal Processing (ICASSP), May
+2011, pp. 3976–3979.
+[53] T. Chen, “Continuous-time DC kernel a stable generalized first-order
+spline kernel,” IEEE Transactions on Automatic Control, under review,
+2017.
+[54] B. Mu and T. Chen, “On input design for regularized LTI system
+identification: Power-constrained inputs,” Automatica, under review,
+2017.
+[55] T. Chen, “On kernel design for regularized LTI system identification,”
+Automatica, to appear, 2017.
+[56] B. Mu, T. Chen, and L. Ljung, “On asymptotic properties of hyperparameter estimators for kernel-based regularization methods,” Automatica,
+under review, 2017.
+
+

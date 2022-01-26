@@ -1,0 +1,528 @@
+Mobile Vision and Cultural Heritage: the
+AGAMEMNON Project.
+Massimo Ancona1, Marco Cappello2, Marco Casamassima1, Walter Cazzola3,
+Davide Conte1 , Massimiliano Pittore2,
+Gianluca Quercini1, Naomi Scagliola1, and Matteo Villa4
+1
+
+Dipartimento di Informatica e Scienze dell’Informazione (DISI),
+University of Genova, 16126 Genova, Italy
+ancona@disi.unige.it, marco301078@fastwebnet.it,
+davide.conte@gmail.com, {quercini, scagliola}@disi.unige.it
+http://www.disi.unige.it
+2 E-Magine IT Srl
+16152, Genova, Italy
+{cappello, pittore}@e-magine-it.it
+http://www.e-magine-it.it
+3 Dipartimento di Informatica e Comunicazione (DICo),
+University of Milano, 20135 Milano, Italy
+cazzola@dico.unimi.it
+http://www.dico.unimi.it
+4 Txt e-solutions,
+20126 Milano, Italy
+matteo.villa@txt.it
+http://www.txt.it
+
+Abstract. The great success that mobile devices like PDAs and cellular phones
+have been experiencing since the last few years pushes for the development of
+new tools in the field of Cultural Heritage that exploits such technologies.
+AGAMEMNON, a project co-funded under the IST 6th Framework Program of
+the European Commission, is an example of such application. It exploits mobile
+phones equipped with embedded cameras for enhancing visits of both archeological sites and museums. Thanks to AGAMEMNON, tourists are equipped
+with a customized and detailed multimedia tourist guide directly on their own
+phone. Many features make AGAMEMNON something more than a simple
+guide and its use is advantageous for both tourists and site personnel.
+
+1 Introduction
+The tourism market is in a so rapid growth that, according to UNESCO, is becoming
+the largest industry in the world, far ahead of automobiles and chemicals [9]. At the
+same time, the market of cellular phones, and more in general of mobile devices, is
+showing continuous expansion, and cultural heritage is likely to become one of the
+most promising fields of application for this kind of devices. This is particularly interesting in Italy, where there is one of the largest concentrations of monuments and finds
+
+(probably the largest in the word), and of cellular phones and relative networks (at the
+moment of writing third in Europe). The AGAMEMNON project fits very well in this
+context [10]. Its primary purpose is to organize historical and cultural information
+about archaeological sites in an intuitive and innovative way, and to use third-generation mobile phones, equipped with a digital camera and supporting multimedia contents, to provide the users with a dynamic e-guide presenting to them their preferred
+topics respecting the time scheduled for the visit.
+The project has been co-funded under the IST Framework Program of the European
+Commission, and started in January 2004. Its duration is 30 months (finishing in June
+2006), and it involves six international organizations, among which important archeological site foundations as Paestum (Italy) and Mycenae (Greece). One of the most innovative ideas adopted in AGAMEMNON is to automatically recognize monuments
+from pictures taken by visitors with the camera of their phones for providing personalized information about the photographed (and recognized) object. Moreover, all the
+received images will be collected by the conservation subsystem, that the guardians
+use to monitor the state of the monuments to preserve them from vandalism and time
+injuries. At the same time, AGAMEMNON will optimize the visit path to respect the
+time scheduled by the visitor at the beginning of the visit.
+In this paper, after a brief overview of the state of the art, we first describe the main
+features and the architecture of AGAMEMNON, focusing our attention particularly
+on the imaging engine. Then the client application, which is used by tourists on their
+own phones, will be analyzed, showing some alternative interfaces which could be
+used instead of the AGAMEMNON one, even if with a loss of efficiency. Finally we
+show some possible improvements of the system and future directions. In particular
+we concentrate on our efforts to make AGAMEMNON a tourist guide not only in
+archeological sites, but also in different contexts, like towns.
+1.1 State of the Art
+In the light of what we have said up to now, it is not surprising that we can find a great
+number of applications of mobile vision to cultural heritage and tourism. These applications are very different from each other, but share the same objective: to revitalize
+the interest of the public towards culture, by making visit through archeological sites
+and museums more attractive and enjoyable. Most of them are tourist guides like
+AGAMEMNON, but with remarkable differences with respect to it.
+The PAST project is surely the closest to AGAMEMNON and can be considered an
+ancestor of it [1,8]. In fact, its goal is to assists tourists during the visit of an archeological site by means of an application that runs on PDAs. Visits are personalized on
+the basis of users’ interests, but, differently from AGAMEMNON, it is not possible to
+shoot a photograph of a monument and to ask the system to recognize it. Moreover, it
+uses a device (a PDA) that is not so popular as cellular phones and rarely the tourist
+will have its own. As a consequence, to use PAST, an archeological site must supply
+the PDA to the visitor when he/she enters the site with the consequent costs for maintaining these devices.
+
+Another remarkable project in the field of the mobile vision applied to cultural heritage is ARCHEOGUIDE (Augmented Reality-based Cultural Heritage On-site
+GUIDE)[19,20]. It is an IST project, funded by the EU, aiming at providing a customized electronic guide to cultural site visitors. It is composed of two components: a
+site information server and a set of mobile units that include a head mounted display, a
+camera, a microphone, an earphone and a portable computer and are rented to the user
+when entering the site. As the user moves around in the site, the mobile units communicate through a wireless local network with the site information server to download
+information relevant to the new area of the site the user has entered. One of the most
+interesting feature of this system is the possibility of visualizing 3D reconstructions of
+the findings directly on the head mounted displays.
+Finally we mention mobiDENK which runs on PDAs with an integrated global positioning system receiver[12]. By locating the user and showing position and path on an
+interactive map, mobiDENK offers visual navigation support. As the user enters an
+area, mobiDENK provides location-based multimedial information about points of interest along the way, such as monuments and significant historical sites.
+Not all the projects and applications for the cultural heritage are tourist guides. As an
+example we cite a system that allows users to annotate digital photos at the time of
+shooting [21]. The system uses camera phones with a lightweight client application
+and a server to store the images and the corresponding metadata and to assist the user
+in annotating the pictures guessing their content. Other interesting applications and
+surveys can be found in [3,4,6,13].
+
+2 The AGAMEMNON system: main features
+The AGAMEMNON system exhibits a number of characteristics that make it far superior than a conventional paper guide.
+First of all, the multimedia capabilities offered by third generation cellular phones are
+exploited to make monument descriptions richer, easier to grasp and, in the overall,
+more enjoyable. Information provided to users are composed of static textual descriptions and images, video and audio clips, when appropriate. The amount of textual information is minimized for two reasons. First of all cellular phones have generally
+small displays, that makes difficult, boring and tiring to read long texts especially under particular light conditions. Secondly, while users are looking at the monuments
+they can not be distracted to read information on their phones. To overcome these
+drawbacks, AGAMEMNON uses audio descriptions generated on the fly through high
+quality, multilingual, text-to-speech voice synthesis technology. This way, site foundations do not need to pay professional speakers to record the text. This is particularly
+efficient both in terms of costs and storage, since the combination of monuments, topics, languages and different levels of detail would make the amount of voice material
+to be recorded quite large.
+Monument descriptions are personalized according to a visitor profile preliminarily
+filled by the user, possibly via Internet from his/her home computer: for instance a visitor may be highly interested in historical details, while another may like to have only
+
+shallow descriptions of historical aspects and detailed descriptions of architectural
+ones.
+Moreover, the system drives the user during the visit, personalizing the proposed path
+according to the user’s interests and the available overall visit time. Overcrowding of
+monuments can also be avoided by the system, when large numbers of visit paths are
+simultaneously planned. The user is anyway free to discard the proposed path and to
+direct himself/herself towards a monument of his/her choice.
+The visitor can force the system to follow his/her routing by shooting at a close monument, sending the picture to the system, then the system will recognize the monument
+from the image and provide back a description of it. This is a new, image-guided way
+of implementing into the system a mechanism of attention-awareness, as described in
+section 3.
+All these features confirm that AGAMEMNON is much more than a simple paper
+tourist guide. Not only. AGAMEMNON is more than an electronic tourist guide in
+general. In particular we remark two interesting points of this system: the involved
+devices (cellular phones) and the imaging engine. Some of the systems described in
+the previous section, like PAST and ARCHEOGUIDE, make use of devices that in
+general are not expected to be owned by everyone. As a result an archaeological site
+must have a renting policy of costly devices to its visitors. With AGAMEMNON only
+a support in installing the application on the phone is required (a WiFi network is not
+required where UMTS is available even if fourth generation mobile phone will be able
+to access any kind of WLAN). As far as the imaging engine is concerned, we would
+like to remark that it is an original idea in this field and can be also used to design alternative architectures of the AGAMEMNON system.
+2.1 AGAMEMNON system architecture
+The following part of the article is intended to give some information on structural aspects of the AGAMEMNON system. We are going to describe in a simple way components that made up the entire project avoiding strictly technical details.
+Basically, AGAMEMNON is intended to run on third generation mobile phones: each
+visitor, intended as end user of the system, has to install the application on his/her
+device. Since some of the AGAMEMNON functionalities can not directly computed
+on the cellular phones because of the lack of computational power of third generation
+phones, all the computational "hard work" is demanded to one (or more) server called
+"the AGAMEMNON Server" through the UMTS network. As seen in the previous
+section, to maintain functionality regarding security and privacy aspects, the server
+will be accessible through the Internet by security personnel, so they can interact with
+a simple (and common) interface.
+Talking about Internet aspects, we plan to offer the visitor a way to "configure" his
+profile just from home to offer time-optimized visits and provide early information.
+
+Fig. 1 - AGAMEMNON system architecture
+
+Figure 1 shows the components of the whole system, in particular the hardware part:
+•
+
+•
+
+•
+
+Visitor Device Interface (VDI): is represented by the visitor mobile phone: it
+shows to the user all the information and data provided by the server. It is implemented as the AGAMEMNON client application: it is made up by an interface
+with navigation menus to access to pictures, texts, video and audio clips and interacting with phone devices (camera and microphone).
+AGAMEMNON server: is the fixed machine contacted by the VDI and include
+the Visit Optimizer, the Visitor Profiler, the Cultural Mediation System, the Preservation Monitoring System and the Imaging subsystem. It should be noted that,
+in order to improve the overall system performances due to the intensive computational requirement of the imaging subsystem, it could be necessary to install it
+on a second server machine. This will not introduce any logical difference in the
+system architecture, since the physical location of the component will be transparent to the system software.
+Database server system: it is the "warehouse" of all the information gained from
+the site. It contains all the multimedia contents used by the system and the information needed by other modules, like the user profiler as seen at the beginning of
+the section. From the logical viewpoint these are different databases that could be
+stored into the same database in order to optimize performances. The database
+storing the images used by the Imaging subsystem (called “Reference Images
+DB”) will be maintained separate.
+
+3 AGAMEMNON: the Attention-focus-awareness concept
+Location and context awareness are two important concepts in mobile computing
+which often are confused because of the similarity of their meanings. Location-awareness means determining the user position expressed as a set of spatial coordinates on a
+given reference frame, while context-awareness concerns detecting what the user is focusing its attention on [14]. In our case the concept of context-awareness is enforced
+by detecting user-attention’s focus by means of image capture and recognition.
+Many efforts have been made in this direction, and most of the solutions found until
+now are technologically feasible, but of little practical usefulness. For instance, employing complex human-machine interfaces like palmtop computers, headsets and
+multimedia helmets raises a serious concern about the rental and management of such
+expensive and delicate equipment [6,4].
+AGAMEMNON overcomes these problems introducing a new way of making use of
+third generation phones, freeing the site manager from the burden of renting such devices to the visitors. AGAMEMNON determines visitor's attention just by recognizing
+one or more pictures taken with the digital camera embedded on most of the latest cellular phone. By recognizing what the user is looking at, the AGAMEMNON System
+can infer information both about the visitor geographical context and cultural interests,
+and react by sending back to the user a tailored multimedia content.
+3.1 The Image Engine
+The main purpose of the AGAMEMNON’s imaging engine is to analyze images coming from the cellular phone and recognize the object (or the place) that is depicted.
+From now on we will use the word object or target to indicate a place or monument of
+interest.
+This module will work under the following assumptions:
+•
+•
+•
+
+the input image contains only one object in the foreground.
+the system has been previously trained to recognize the depicted object.
+the input image is neither overexposed nor underexposed or strongly shaded.
+
+The imaging system will then output an ID code of the recognized object, that contains information about the recognized object and also, if present, information about
+recognized sub-objects (i.e. details). Since no recognition system can recognize correctly all images, it is possible that something goes wrong during the recognition process. In this case an error code is returned.
+The imaging system is based on two main technologies, basically:
+•
+•
+
+multi-feature description
+statistical pattern recognition
+
+In the first approach each image is described by a suitable set of low-level and highlevel features, each of which quantifies a single property of the input image. The
+choice of a suitable feature set must be made carefully, because feature-based description has to be both smaller (to save space for storing and reduce processing time) than
+the original image and still carry along enough information.
+We can roughly divide the most useful features in the following categories:
+•Geometrical: Edges, lines, corners, ellipses. These are useful for finding particular
+
+shapes into the picture, or to infer perspective information.
+•Color: standard (RGB or HSL) or perceptive (CIELUV) color spaces distributions,
+multi-modal color density functions [2,16]. If the camera sensor’s quality is reliable,
+color distributions help in segmenting the background from the foreground in the picture, by filtering out non-significant elements like trees, sky, grass.
+•Texture: Gabor-like filter banks, textons, [5,7] etc. The texture features characterize
+the material appearance at a higher level with respect to color. For example, bricks in
+a wall or stones from a mosaic.
+•Pre-learn features: Interior-exterior, human being presence-absence, etc. The prelearn features are basically simple answers (just one bit) to difficult questions, such as
+“there is people in this picture?”. To calculate these features, the system has to be previously trained with different picture sets. These features can be very useful, and can
+be used to discriminate among critical scenarios.
+The image description therefore will be a set of different features, that will be computed by the system once an input image is received. In this scenario it is logical to couple a low-level feature description of the images with some kind of statistical knowledge inference. This is a critical point because a feature-based description makes
+sense if we can collect a (statistically significant) number of examples describing each
+target object. From now on we will refer to each collection of examples describing a
+target object as a class, and the set of all the images (or their correlated descriptions)
+will be referred to as the training set.
+Therefore we can think to each example as a point in a n-dimensional space, and by
+learning we mean finding a suitable points clustering (feature-space partitioning)
+such that each new point (i.e. the feature representation of the image of an unknown
+object) will map in the space partition related to a specific class.
+There are many different approaches to statistical learning, from neural networks to
+fuzzy logic. Given the nature of the problem to be solved and the expected training set
+characteristics, we decided to use multi-class Support Vector Machines (SVM), in the
+very stable and efficient implementation by T.Joachims [11,17].
+SVM's theory has been developed in the early '90 by U.S. Scientist V.Vapnik, [18]
+and is well suited in dealing with training sets characterized by high dimensionality
+(>10'000) and reduced size (i.e. a few examples for each class).
+Application of statistical pattern recognition techniques is divided in two separated
+phases:
+1.Training phase.
+2.Testing phase.
+
+In the training phase, user has to provide the system with a consistent number of image examples of each object (training set), under different light conditions and from
+different points of view.
+In our case each class will contain images of a single target object (for instance the
+temple shown in figure 2).
+
+Fig. 2 - Paestum temple sample image
+
+Once the training is complete, the system can be used for on-line, real-time recognition of images coming from the AGAMEMNON users during their visit of an archaeological site.
+3.2 Test Results
+A first prototype of the image-based context awareness engine has been designed and
+realized.
+We collected a number of images from two archaeological sites: Paestum (Italy) and
+Mycenae (Greece). For each target images have been taken from different point of
+view and different distance. From the two sites four target objects have been chosen,
+and a training and test set has been collected by random selection from the complete
+image set. Figures 2 shows one sample from the selected target objects.
+The images have been shot using a camera phone, at maximum resolution and keeping
+fixed the focal of the camera (no zoom). Each image has been captured with no particular care, but respecting the following basic rules:
+•
+the monument had to be in the image foreground, with as less background clutter
+as possible,
+•
+no underexposed or overexposed images,
+•
+where possible avoiding occlusions (people, trees, etc).
+The targets has been chosen in order to test the recognition system in a realistic framework. In particular, two of the targets are actually temples, showing very similar geo-
+
+metric features, and one of the targets is quite unstructured, thus showing a common
+problem to images taken in an archaeological site.
+As a prototype implementation, we just used a small set of features, namely:
+•
+•
+•
+
+Image gaussian sub-sampling: the image is sampled to a fixed (small) size and
+used as a raw feature’s vector.
+Image gradient intensity distribution: a non-maxima suppression edge detection
+is used to detect edges. An histogram is computed over a fixed number of bins
+and used as a feature’s vector.
+Distribution of Image edge’s distances from edges centroid: given the edge detection output already computed, distances of each edge with respect to the edge
+centroid are computed and normalized with respect to the overall image size. An
+histogram (over a fixed number of bins) describes the resulting edge distance distribution and is used as a feature’s vector.
+
+The above features have been chosen taking into account a very general approach, but
+also taking into account the expected working framework. For instance, no colour-involving feature has been selected because both very little information comes from
+colour in the considered archaeological sites and camera sensors generally perform
+strong colour correction due to automatic exposition and image compression.
+Each feature-based image description is a vector of float values, of fixed length. The
+vector length represents the dimension of the specific feature space.
+Each particular feature description is used to train a multi-class Support vector machine, hence providing a particular feature space partitioning.
+In the testing and real-time operation phase, each incoming image is pre-processed using all the available feature, thus providing different representation. Each representation is matched in its feature space using the previously trained Support Vector Machine. Each SVM will output a recognition result, that is one among the class the
+SVM has been trained with.
+The final recognition is obtained by comparing all the feature-generated SVM results:
+if a certain percentage of SVM (for instance more than 50%) agree on a particular
+class, than that class will be the official output. Otherwise a warning message is raised
+and the list of output is output to the main system, for a proper management.
+A preliminary test has been performed with a small training (115 images) and test
+(113 images) set. The results are summarized in Table 1. As we can see, results are
+very good, but we have to remark one important aspect. Tests on this first prototype
+have been performed on training sets in ideal conditions, where the input images are
+neither overexposed nor underexposed or strongly shaded. In the practical case, in
+particular light conditions, the percentage of well-recognized images decreases remarkably. However we have to take into account of another important factor: when
+user sends an image to the system, the recognition is performed on the whole image
+database, which can be much large. To overcome this drawback, we will use GPS coordinates as an additional feature of the image. In practice images sent to the system
+must include the GPS coordinates of the point from which have been taken, so that the
+system can perform the recognition on a restricted number of monuments. This ap-
+
+proach requires that the user owns a cellular phone equipped with a GPS receiver, or a
+GPS receiver able to communicate with the phone via bluetooth.
+
+Table 1 - Test Results of the image recognition system
+
+Feature
+1
+2
+3
+1+2+3
+
+Number of correctly recog- % of recognition
+nized images
+success
+110/113
+97.3
+100/113
+88.5
+106/113
+93.8
+107/113
+94.6
+
+4 The Client Application
+Up to now we have described the server side of the AGAMEMNON system. Let us
+give an overview of the client application which runs on a third generation mobile
+phone. This application has been tested on Symbian OS 6, which is the most
+widespread operating system in the 3G cellular phone market.
+Before starting the visit, the users have to register to the system, providing to it some
+personal information about their preferences. The Visitor Profiler is the part of the
+system devoted to this task. It is available over Internet (http://services.txt.it/agamemnonprofile), so the visitor simply requires a computer and internet connection to interact with the system. In the registration form some personal information are requested.
+All of them are useful to the system in building a user profile that will be used during
+the visit for suggesting the best itinerary through the site. As instance, visits can be organized depending on the age, interests or available time of the user. Moreover,
+AGAMEMNON will be able to observe how a visitor is behaving and let such static
+profile to evolve to reflect visitor’s current interests (we call this capability a dynamic
+profile).
+The main services provided by AGAMEMNON are offered during the site visit and
+are built around a customized visit path, depending on user preferences, his current
+feelings and the monument crowding (less crowded areas have the precedence on
+more crowded areas). Personalized multimedia information administration during the
+visit (pictures of the monuments as they were, guides, maps, etc…) is performed dynamically on the basis of a context-aware mechanism based on:
+•
+•
+
+The capability to recognize a specific monument (or even one of its details), from
+tourist’s shoots
+Vocal commands recognition and text-to-speech data submission.
+
+The main steps that constitute a typical visit are:
+
+1.
+
+2.
+3.
+
+4.
+
+to check if the visitor has already supplied profiling information, and in affirmative case
+• to drive him to the next scheduled place by providing indications on how
+to reach it (an image or a map, written instructions and so on)
+• to recognize the object he desires to see: this can be done either by
+shooting at a monument or by confirming on a menu the one suggested
+by the system
+to provide multimedia data on the selected object and organized on the basis of
+the visitor’s profile, the visitor may ask for supplementary data.
+if the visitor is interested into specific details (e.g., the capital of a column), he
+can take a picture of it and send it to the imaging subsystem for recognition and to
+obtain additional information
+to check if there are further monuments to visit and suggest the next one, update
+profiling information.
+
+Many tests have been performed in order to evaluate the responsiveness of the application. The results obtained are strictly related to the UMTS network coverage in the
+archaeological sites. Up to now the maximum rate available in Italy is about 384
+Kbps, with a theoretical maximum bound of 3 Mbps and it is easy to foresee that in a
+forthcoming future this limits will be overcome. As a result, applications like
+AGAMEMNON will benefit from that.
+4.2 AGAMEMNON for site security
+AGAMEMNON aims at contributing to the Preservation of cultural heritage thanks to
+the Preservation Monitoring Module: it uses images collected through interaction with
+the visitors to offer site managers a set of tools for monitoring, at a low cost, the status
+of conservation of the site (e.g. monitoring erosion and deterioration of artifacts; detect damages; etc.). It allows an automated and constant monitoring activity on the
+whole archaeological area without requiring the intervention of specialized and dedicated personnel, and producing a more timely reaction in case of significant changes
+in the monument’s preservation state.
+In this area, the main targets of AGAMEMNON are:
+• to maintain a comprehensive repository of photographs acquired during normal
+system usage, without requiring any special personnel involvement or extra
+equipment.
+• to automatically classify the photographs by using the imaging subsystem’s capability to recognize a monument or artifact depicted in each photograph
+• to support personnel in annotating photographs with specific comments or notes
+about the object current state and mark photographs as “suspected” when showing
+deterioration symptoms.
+• to display collected images in a simple and intuitive way, thus supporting investigation about possible damages in the monuments (e.g., viewing pictures of a specific monument for a user-defined interval of time, to check the monument state
+variation over time).
+
+The involvement of the visitor in the site preservation activity represents a sort of psychological barrier which helps to reduce the number of intentional damages.
+The Preservation Monitoring module will be used by site personnel on fixed workstations and will take full advantage of a standard web browser.
+4.3 HCI for the Client Application
+The user interface on the phone is the most critical part of the system. From its degree
+of usability depends the success or the failure of the whole project. We devised at
+least three alternative methodologies for the HCI development [15]:
+•
+•
+•
+
+the implementation of an ad hoc HCI application program running on the user
+phone, called the heavy-client approach. This is the approach used in AGAMEMNON.
+a WEB-based interface, based on a tiny browser available on the phone;
+a minimal HCI based on the standard multimedia tools available on the phone:
+MMS, SMS, Video- and Audio-clips and voice interface (including automated
+phone calls), called the light-client approach.
+
+In our approach an ad-hoc HCI client has been developed specifically for a camera
+phone, in order to maximize performances and to improve system's friendliness in interacting with a generic user. This approach, off course implies dealing with a specific
+set of software APIs released by the phone manufacturers in order to control both
+camera phone and data communications, therefore maximizing the performances of
+the client despite the poor portability.
+The web based HCI requires a small browser running on the phone. The kind and feature of available browsers are almost independent from the telephone
+hardware/firmware and OS.
+Moreover, the browsers for smartphones are tiny versions of standard browsers implementing almost all the basic features: we tested Opera for mobile and NetFront, but
+several other browsers are available. A web based HCI offers well known advantages:
+an open and standardized architecture, device independence, implicit support of distribution with a client-server architecture centered on the thin-client approach. From the
+above reasons it appears that this HCI is highly reusable. However, the web based
+HCI is difficult to manage on a small screen, especially in the open air due to visibility
+problems. Moreover the communication bandwidth of third generation networks may
+not be sufficient for large and often overcrowded sites, while web navigation tends to
+increase client-server communications. The next 4G technology is likely to resolve all
+bandwidth problems, while the other technological problems require new solutions.
+In our opinion, the web-based approach has intrinsic limits in mobile and open-air applications. In fact, Web browsing is based on continued user-machine interaction, in
+complete abstraction from the surrounding real world. In outdoors applications the
+user needs to switch his attention from the real to the virtual world in rapidly alternating sequences, performing short all-or-nothing interactions with the browser for dedicating most of his time for observing (and interacting with) the real environment.
+
+Moreover, the browser should be phone-aware, i.e. able to implement a direct support
+of the peripheral devices available on the phone (e.g. the micro-camera, the microphone etc.) and to manage short messages (MMS and SMS). without demanding them
+to the underlying “phone” interface. In other words, the user should have the capability of taking pictures and send them to the server directly from the browser menu, and
+read and send MSM and MMS messages without freezing the browser application and
+recalling the phone interface.
+In the last approach no specific software is installed on the phone: the AGAMEMNON system implemented on the server interoperates with the user, via his phone,
+with a modality similar to that the visitor uses to communicate with any other smartphone owner. With respect to the implementation of an ad-hoc application, this approach has a limited interaction with the system. For instance, the user can take a photograph of a monument and send it to the system via MMS, waiting for information
+about the monument depicted [15]. If the system can not recognize a monument or
+recognizes two possible monuments in the image, what is the answer of the system?
+With respect to the ad hoc HCI application, the advantage of the two solutions described in this section is that they can be implemented in a wider range of mobile
+phones, since they do not require a particular operating system to be run. They only
+need a phone with MMS and browser capabilities. But all the disadvantages related to
+them (and deeply described in this section) make the adopted solution the most suitable.
+
+5 Conclusion and Future Works
+In this paper, we have described the main features and functionalities of AGAMEMNON, dwelling particularly on that we consider the most innovative idea behind this
+project: the imaging engine. As shown in section 3.2, performances of the imaging
+module system are good and can be further improved. A strong effort will be put in
+finding new features in order to improve the information content of the feature based
+image representation and thus improve the recognition performance.
+For a training set as little as a few hundreds images, training process takes several
+minutes of CPU time (using a standard, middle level PC). The training phase of an extended set, made by thousands of images, could be quite a time-consuming task.
+Therefore, in the first release, Agamemnon's training is performed off-line under an
+operator's supervision. In the final release, Agamemnon system is expected to re-train
+itself from time to time by adding new images to the training set and performing training as a low-priority batch process.
+In the first release Agamemnon system dealt with a reduced set of monuments to recognize. Off course in an archaeological site we expect much more targets to be recognized (up to 40 different monuments for the sole Paestum site). For this purpose, the
+use of some mechanism of user location tracking (e.g. GPS) could help. In fact we
+have to take into account that image recognition is extremely difficult in archeological
+sites because monuments are often very similar each other. At the moment only few
+cellular phones are equipped with a GPS receiver and only a small subset of visitors is
+
+expected to own a GP receiver able to communicate with the phone via Bluetooth. For
+that reason we are experimenting some LBS (Location Based Service) to locate radio
+devices (especially phones) in the spaces. We know that is possible to determine the
+rough position of a phone just having information of which microcell is connected to.
+Now, GSM cells are located in a radius of about 300 – 1000 m, (there are more of
+these in the city less in rural zones) whereas the UMTS cells in the city to provide all
+multimedia services are forced to be about 100m far each other and the maximum radius in open spaces is about 500m. This would say that in places where we need maximum precision (where there are monuments and findings) we have 100m to discriminate the position of the user only knowing the cell ID (an information that every microcell has and that can be simply retrieved with small software installed on the mobile devices). Although in cities there is a lot of electromagnetic noise we think that is
+possible to use the intensity of the signal to further reduce the range of recognition:
+the UMTS signal attenuation is about 20Log((4*π*distance_from_cell)/λ) where λ is
+the signal wavelenght; this part however is under investigation. Another thing we have
+experimented is the localization of devices equipped with bluetooth: due to the short
+radius of work (about 20m) we can simply locate devices only knowing what base station we detect if we opportunely locate gluetooth "base stations" in the space.
+Our research and interest on location tracking methods is also due to the fact that we
+would like to test AGAMEMNON performances even in contexts different from archaeological sites and in particular in towns. In general towns are bigger than archaeological sites and monuments can be numerous and sparsely located. So the use of
+some user location mechanism is indispensable to obtain a high image recognition
+rate.
+
+References
+1.Ancona, M. , Dodero, G., Gianuzzi, V., Bocchini, O., Vezzoso, A. : “Exploiting wireless networks for Virtual Archaeology: Past Project”. Proc. VAST 2000, Arezzo, Italy, 24-25 Nov.
+2000.
+2.Bimbo, A.D., Pala, P.: Visual Querying by Color perceptive regions, Pattern Recognition,
+31(9): 1241-1253, 1998.
+3.Cabri, G., Leonardi, L., Zambonelli, F.: Web-Assisted Visits to Cultural Heritage, Workshop
+on Enabling Technologies: Infrastructure for Collaborative Enterprises, 2001
+4.Carswell , J.D., Eustace, A., Gardiner K., Kilfeather, E., Neumann, M. : An Environment for
+Mobile Context-Based Hypermedia Retrieval, Proc. Of the 13 th International Workshop on
+Database and Expert Systems Applications, pp. 532-536
+5.Gabor, D., Theory of Communication, Journal of the Institute of Electrical Engineers,
+93:429-549, 1946.
+6.Gardiner, K., Carswell, J.D.: Viewer-Based Directional Querying for Mobile Applications,
+3th International Workshop on Web and Wireless Geographical Information Systems, 2003
+7.Guo, C., Zhu, S., Wu, Y.: Visual Learning by Integrating Descriptive and Generative Methods, Proc. Of 8th International Conference on Computer Vision, Vancouver, 2001
+8.http://www.beta80.it/past
+9.http://portal.unesco.org/culture : To Create a Discerning Type of Tourism that Takes in Account of Other’s People Cultures
+
+10.http://services.txt.it/AGAMEMNON
+11.Joachims, T., Scholkopf, B., Burges, C., Smola, A. : Making Large-Scale SVM Learning
+Practical, Advances in Kernel Methods – Support Vector Learning, MIT Press, 1999
+12.Krosche, J., Baldzer, B., Boll, S. : MobiDENK – Mobile Multimedia in Monument Conservation, IEEE Multimedia, Vol.11, No. 2, pp. 72-77
+13.Maurino, A., Modafferi, S.: Challenges in the Designing of Cooperative Mobile Information
+Systems for the Risk Map of Italian Cultural Heritage, 1 st Workshop on Multichannel and Mobile Information Systems, 2003, Roma
+14.Pittore, M., Cappello, M., Scagliola, N., Ancona, M.: Role of the Image Recognition in Defining the User’s Focus of Attentino in 3G Phone Applications: the AGAMEMNON Experience, International Conference on Image Processing, 2005
+15.Scagliola, N.: Uso di smartphone per il supporto culturale durante la visita di siti archeologici, in riferimento al progetto CE AGAMEMNON, M.Sc. thesis, University of Genoa
+16.Swain, M.J., Ballard, D.H.: Color Indexing, International Journal of Computer Vision, 7(1),
+pp. 11-32, 1991
+17.Tsochantaridis, T., Hofmann, T., Joachims, T., Altun, Y.: Support Vector Learning for Interdependent and Structured Output Spaces, ICML, 2004
+18.Vapnik, V.N.: The Nature of Statistical Learning Theory, Springer, 1995
+19.Vlahakis, V., Karigiannis, J., Ioannidis, N., Tsotros, M., Gounaris, M., Stricker, D., Almeida, L., Gleue, T., Christou, I.T., Carlucci, R.: Archeoguide: First Results of an Augmented
+Reality, Mobile Computing System in Cultural Heritage Sites, Proc. Of the 2001 Conference
+on Virtual Reality, Archeologym and Cultural Heritage, pp. 131-140
+20.Vlahakis, V., Karigiannis, J., Ioannidis, N., Tsotros, M., Gounaris, M., Stricker, D., Daehne,
+P., Almeida, L. : 3D Interactive, On-Site Visualization of Ancient Olympia, First International
+Symposium on 3D Data Processing Visualization and Transmission (3DPVT’02), p. 337
+21.Wilhelm, A., Takhteyev, Y., Sarvas, R., Van House, N., Davis, M.: Photo Annotation on a
+Camera Phone, Conference on Human Factors in Computing Systems, pp. 1403-1406
+
+

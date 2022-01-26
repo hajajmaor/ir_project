@@ -1,0 +1,5799 @@
+Topographic Change Detection at Select
+Archeological Sites in Grand Canyon
+National Park, Arizona, 2007–2010
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Scientific Investigations Report 2012–5133
+
+U.S. Department of the Interior
+U.S. Geological Survey
+
+COVER
+Photograph of one of the archeological sites in Grand Canyon National Park where topographic change was investigated. This site (AZ:B:10:0225) has both
+sand dunes and (in foreground) gully erosion. Inset is the resultant 5-cm gridded output map of topographic change for this site, showing erosion
+(warm colors) and deposition (cool colors).
+
+Topographic Change Detection at Select
+Archeological Sites in Grand Canyon
+National Park, Arizona, 2007–2010
+Brian D. Collins, Skye C. Corbett, Helen C. Fairley, Diane Minasian, Robert Kayen,
+Timothy P. Dealy, and David R. Bedford
+
+Scientific Investigations Report 2012–5133
+
+U.S. Department of the Interior
+U.S. Geological Survey
+
+U.S. Department of the Interior
+KEN SALAZAR, Secretary
+U.S. Geological Survey
+Marcia K. McNutt, Director
+U.S. Geological Survey, Reston, Virginia: 2012
+
+This report and any updates to it are available online at:
+http://pubs.usgs.gov/sir/2012/5133/
+
+For more information on the USGS—the Federal source for science about the Earth,
+its natural and living resources, natural hazards, and the environment—visit
+http://www.usgs.gov or call 1–888–ASK–USGS
+
+For an overview of USGS information products, including maps, imagery, and publications,
+visit http://www.usgs.gov/pubprod
+
+To order this and other USGS information products, visit http://store.usgs.gov
+
+Suggested citation:
+Collins, B.D., Corbett, S.C., Fairley, H.C., Minasian, D., Kayen, R., Dealy, T.P., and Bedford, D.R., 2012, Topographic
+change detection at select archeological sites in Grand Canyon National Park, Arizona, 2007–2010: U.S. Geological
+Survey Scientific Investigations Report 2012–5133, 77 p.
+
+Any use of trade, product, or firm names is for descriptive purposes only and does not imply
+endorsement by the U.S. Government.
+
+Although this report is in the public domain, permission must be secured from the individual
+copyright owners to reproduce any copyrighted material contained within this report.
+
+iii
+
+Contents
+Abstract............................................................................................................................................................1
+Introduction.....................................................................................................................................................1
+Methods...........................................................................................................................................................3
+Field Logistics.........................................................................................................................................3
+Lidar Data Collection.............................................................................................................................4
+Data Processing.....................................................................................................................................6
+Surface Model Comparison.................................................................................................................7
+Error Analysis.........................................................................................................................................8
+Deterministic Error Analysis.......................................................................................................9
+Empirical Error Analysis............................................................................................................10
+Final Hybrid Error Analysis........................................................................................................13
+Results ............................................................................................................................................................13
+Site AZ:C:05:0031..................................................................................................................................14
+Site AZ:C:13:0006..................................................................................................................................19
+Site AZ:C:13:0336..................................................................................................................................25
+Site AZ:C:13:0099..................................................................................................................................31
+AZ:C:13:0099 Playa Area.....................................................................................................................37
+Site AZ:C:13:0321..................................................................................................................................42
+Sites AZ:C:13:0346 and AZ:C:13:0348.................................................................................................46
+Site AZ:B:10:0225..................................................................................................................................50
+Site AZ:G:03:0072 US...........................................................................................................................55
+Site AZ:G:03:0072 DS...........................................................................................................................59
+Analysis and Optimization of Other Metrics of Archeological Site Stability......................................61
+Monitoring Archeological Structure Stability.................................................................................61
+Monitoring Artifact Movement..........................................................................................................64
+Detection and Mapping of Cryptobiotic Soil Crust.........................................................................65
+Gully Thalweg Determination from Combined Lidar-Photography..............................................68
+Effect of Survey Location on Lidar Point Density...........................................................................71
+Discussion......................................................................................................................................................72
+Archeological Site Change Detection..............................................................................................72
+Lidar Change Detection Monitoring.................................................................................................73
+Conclusions...................................................................................................................................................73
+Acknowledgments........................................................................................................................................75
+References.....................................................................................................................................................75
+
+Figures
+1.
+2.
+3.
+4.
+
+Site map of Grand Canyon National Park............................................................................................3
+Gullying at an archeological site in Grand Canyon National Park..................................................4
+Excavation of an archeological site in Grand Canyon National Park.............................................4
+Terrestrial lidar data collection in Grand Canyon National Park.....................................................7
+
+iv
+
+5. Schematic flow chart processing steps for point density masking and
+surface comparison..........................................................................................................................9
+6. Example of empirical error analysis using fixed objects................................................................11
+7. Site AZ:C:05:0031 survey map..............................................................................................................16
+8. Site AZ:C:05:0031 survey area photo..................................................................................................17
+9. Site AZ:C:05:0031: 5-cm gridded output from April 2010 to September 2010................................18
+10. Site AZ:C:13:0006 survey map..............................................................................................................21
+11. Site AZ:C:13:0006 survey area photo..................................................................................................22
+12. Site AZ:C:13:0006: 5-cm gridded output from September 2007 to April 2010................................23
+13. Site AZ:C:13:0006: 5-cm gridded output from April 2010 to September 2010................................24
+14. Site AZ:C:13:0336 survey map..............................................................................................................27
+15. Site AZ:C:13:0336 survey area photo..................................................................................................28
+16. Site AZ:C:13:0336: 5-cm gridded output from September 2007 to April 2010................................29
+17. Site AZ:C:13:0336: 5-cm gridded output from April 2010 to September 2010................................30
+18. Site AZ:C:13:0099 survey map..............................................................................................................33
+19. Site AZ:C:13:0099 survey area photo..................................................................................................34
+20. Site AZ:C:13:0099: 5-cm gridded output from September 2007 to April 2010................................35
+21. Site AZ:C:13:0099: 5-cm gridded output from April 2010 to September 2010................................36
+22. AZ:C:13:0099 playa area survey map..................................................................................................38
+23. AZ:C:13:0099 playa survey area photo................................................................................................39
+24. AZ:C:13:0099 playa area: 5-cm gridded output from September 2007 to April 2010....................40
+25. AZ:C:13:0099 playa area: 5-cm gridded output from April 2010 to September 2010....................41
+26. Site AZ:C:13:0321 survey map..............................................................................................................43
+27. Site AZ:C:13:0321 survey area photo..................................................................................................44
+28. Site AZ:C:13:0321: 5-cm gridded output from April 2010 to September 2010................................45
+29. Site AZ:C:13:0346 and AZ:C:13:0348 survey map...............................................................................48
+30. Sites AZ:C:13:0346 and AZ:C:13:0348 survey area photo.................................................................49
+31. AZ:C:13:0346 and AZ:C:13:0348: 5-cm gridded output from September 2007
+to September 2010...........................................................................................................................49
+32. Site AZ:B:10:0225 survey map..............................................................................................................52
+33. Site AZ:B:10:0225 survey area photo..................................................................................................53
+34. Site AZ:B:10:0225: 5-cm gridded output from September 2007 to September 2010....................54
+35. Site AZ:G:03:0072 survey map..............................................................................................................57
+36. Site AZ:G:03:0072 US survey area photo............................................................................................58
+37. Site AZ:G:03:0072 US survey area: 5-cm gridded output from September 2007
+to September 2010...........................................................................................................................58
+38. Site AZ:G:03:0072 DS survey area photo............................................................................................59
+39. Site AZ:G:03:0072 DS survey area: 5-cm gridded output September 2007
+to September 2010...........................................................................................................................60
+40. Site AZ:C:13:0009 survey map..............................................................................................................62
+41. Site AZ:C:13:0009 survey area photo..................................................................................................63
+42. Change detection of rock habitation structure R4 at Site AZ:C:13:0009.......................................63
+43. Artifact concentration at site AZ:C:13:0334.......................................................................................65
+44. Overview photos of cryptobiotic crust and uncrusted dune sand areas at
+site AZ:C:05:0031..............................................................................................................................67
+
+v
+
+45. Laser-strength amplitude-filtered point cloud for cryptobiotic crust and uncrusted
+dune sand area at site AZ:C:05:0031............................................................................................68
+46. Oblique image overview of AZ:C:13:0099 playa area for thalweg long profile analysis.............70
+47. Section of the AZ:C:13:0099 playa area channel for thalweg analysis.........................................70
+48. Long profile view of channel thalweg comparison at AZ:C:13:0099 playa area..........................71
+49. Comparison of far-field and near-field data at AZ:C:13:0099 playa area......................................72
+
+Tables
+1. Dates of lidar data collection at archeological sites in the Colorado River corridor of Grand
+Canyon National Park.......................................................................................................................5
+2. Empirical error analysis results for September 2007 to April 2010 change detection..............12
+3. Empirical error analysis results for April 2010 to September 2010 change detection..............12
+4. Summary of 2010 data collection and surface modeling at each survey area..........................14
+5. Summary of topographic change at Site AZ:C:05:0031...................................................................15
+6. Summary of topographic change at Site AZ:C:13:0006...................................................................20
+7. Summary of topographic change at Site AZ:C:13:0336...................................................................26
+8. Summary of topographic change at Site AZ:C:13:0099...................................................................32
+9. Summary of topographic change at AZ:C:13:0099 playa area.......................................................37
+10. Summary of topographic change at Site AZ:C:13:0321...................................................................42
+11. Summary of topographic change at Sites AZ:C:13:0346 and AZ:C:13:0348..................................47
+12. Summary of topographic change at Site AZ:B:10:0225...................................................................51
+13. Summary of topographic change at Site AZ:G:03:0072 US.............................................................56
+14. Change detection analysis for rock habitation structures at Site AZ:C:13:0009.........................64
+15. Laser amplitude analysis of areas of cryptobiotic crust vs. uncrusted dune sand at Site
+AZ:C:05:0031.....................................................................................................................................67
+16. Summary of net topographic change between September 2007, April 2010,
+and September 2010.......................................................................................................................74
+
+Datum Information
+Horizontal coordinate information was collected referenced to the North American Datum of
+1983 (NAD83) and projected to Arizona Central Zone 0202 State Plane coordinates expressed in
+meters. For the purpose of protecting the sensitive nature of the archeological sites, all coordinates have been translated to a fictitious origin, still expressed in meters.
+Vertical coordinate information is referenced to the North American Datum of 1983 (NAD83)
+ellipsoid height, expressed in meters.
+Elevation, as used in this report, refers to distance above the vertical datum.
+
+This page intentionally left blank.
+
+Topographic Change Detection at Select Archeological
+Sites in Grand Canyon National Park, Arizona, 2007–2010
+By Brian D. Collins, Skye C. Corbett, Helen C. Fairley, Diane Minasian, Robert Kayen, Timothy P. Dealy, and
+David R. Bedford
+
+Abstract
+Human occupation in Grand Canyon, Arizona, dates
+from at least 11,000 years before present to the modern era.
+For most of this period, the only evidence of human occupation in this iconic landscape is provided by archeological
+sites. Because of the dynamic nature of this environment,
+many archeological sites are subject to relatively rapid
+topographic change. Quantifying the extent, magnitude,
+and cause of such change is important for monitoring and
+managing these archeological sites. Such quantification is
+necessary to help inform the continuing debate on whether
+and how controlled releases from Glen Canyon Dam, located
+immediately upstream of Grand Canyon National Park, are
+affecting site erosion rates, artifact transport, and archeological resource preservation along the Colorado River in
+Grand Canyon. Although long-term topographic change
+resulting from a variety of natural processes is inherent in
+the Grand Canyon region, continued erosion of archeological sites threatens both the archeological resources and our
+future ability to study evidence of past cultural habitation.
+Thus, this subject is of considerable interest to National Park
+Service managers and other stakeholders in the Glen Canyon
+Dam Adaptive Management Program.
+Understanding the causes and effects of archeological site erosion requires a knowledge of several factors,
+including the location, timing, and magnitude of the changes
+occurring in relation to archeological resources, the rates
+of change, and the relative contribution of potential causes.
+These potential causes include sediment depletion associated
+with managed flows from Glen Canyon Dam, site-specific
+weather and overland flow patterns, visitor impacts, and
+long-term regional climate change. To obtain this information, highly accurate, spatially specific data are needed from
+sites undergoing change. Using terrestrial lidar techniques,
+and building upon three previous surveys of archeological sites performed in 2006 and 2007, we collected two
+new datasets in April and September 2010 and processed
+and improved upon existing methods to generate highaccuracy (3 to 5 cm vertical change threshold) topographic
+change-detection maps for 10 survey areas encompassing 9
+
+archeological sites along the Colorado River corridor. We
+also used terrestrial lidar techniques to investigate several
+other metrics for studying archeological site stability, including monitoring cultural structures and artifacts and remotely
+measuring cryptobiotic soil crust areas.
+Our topographic change results indicate that 9 of 10
+survey areas showed signs of either erosion, deposition,
+or both during the 2007–2010 time interval and that these
+changes can be linked to a variety of geomorphic processes,
+primarily overland flow gullying and aeolian sand transport.
+In several cases, large (>50 cm) vertical change occurred,
+and in one case, more than 100 m3 of sediment was eroded.
+Further, for all sites monitored throughout the river corridor during this time period, the overall signal was related
+to erosion rather than deposition. These results highlight
+the potential for rapid archeological site change in Grand
+Canyon. Whereas the topographic change results presented
+herein provide the highest level of change detection yet
+performed on entire archeological sites in Grand Canyon,
+additional work in combining these results with site-specific
+weather, hydrology, and geomorphology data is needed to
+provide a more thorough understanding of the causes of the
+documented topographic changes. Linking lidar-derived
+measurements of topographic changes with these other data
+sources should provide land managers with a scientific basis
+for making management decisions regarding archeological resources in Grand Canyon National Park and assist
+in answering open questions regarding the influence that
+sediment-depleted flows from Glen Canyon Dam have on
+archeological site stability.
+
+Introduction
+Human occupation in Grand Canyon, Arizona, dates
+from at least 11,000 years before present to the modern era
+(Fairley, 2005). For most of this period, the only evidence
+of human occupation in this iconic landscape is provided
+by archeological sites. Because these sites contain valuable
+information about the past and serve as tangible evidence of
+Native Americans’ prehistoric use of this area, topographic
+
+2
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+change and potential degradation of archeological sites
+within the Colorado River corridor of Grand Canyon
+National Park (GCNP) (fig. 1), located below Glen Canyon Dam, is a subject of considerable interest and concern
+to park managers, Native Americans, scientists, and other
+members of the American public who value these historic
+places. In 1997, the United States Secretary of the Interior
+established the Glen Canyon Dam Adaptive Management
+Program (GCDAMP) to research and mitigate potential negative impacts of Glen Canyon Dam on downstream resources,
+including archeological sites, fish, wildlife, recreational values, and power-generation interests (see, for example, Gloss
+and others, 2005). One aspect of this management program
+aims to determine whether controlled releases from Glen
+Canyon Dam are affecting rates of archeological site erosion
+and the preservation of archeological resources (for example,
+Yeatts, 1996). Many archeological sites are located within or
+adjacent to the historical river flood zone. Because the dam
+prevents sediment from moving downstream and only 15 percent of the pre-dam sediment supply is contributed by tributaries below Glen Canyon Dam, and additionally because
+the dam severely restricts the magnitude and duration of
+flood flows (Topping and others 2003), pre-dam flood zones
+are no longer scoured or replenished by sediment-enriched
+floods. This has resulted in a reduction in the size, volume,
+and distributions of sand bars that might contribute sand to
+nearby archeological sites through aeolian transport. It has
+been hypothesized that a reduction in open sand area in river
+sand bars has resulted in a reduction in aeolian sand cover at
+archeological sites and that this has resulted in an increase
+in surface runoff and a consequent increase in the rate of
+site erosion via precipitation-induced surface water gullying
+(Hereford and others, 1991, 1993; Thompson and Potochnik, 2000; Draut and Rubin, 2008; fig. 2). Although longterm topographic change resulting from a variety of natural
+processes is typical in high-relief, semiarid landscapes such
+as the Grand Canyon region, continued erosion of archeological sites threatens both the archeological resources and
+our future ability to study evidence of past human habitation
+(fig. 3). Thus, determining the rates of topographic change and
+the potential causes contributing to site degradation continues
+to be a priority for the GCDAMP and the National Park Service
+(Leap and others, 1996, 1997, 2000).
+The monitoring of topographic change at archeological
+sites in Grand Canyon has undergone considerable advances
+during the past 20 years. Beginning with qualitative repeat
+oblique photography and quantitative total station surveys
+(Leap and others, 2000) and through to modern use of digital
+photogrammetry (Pederson and others, 2006) and lidar techniques (Collins and others, 2008, 2009), topographic surveys
+have become more accurate and applicable to larger areas.
+Currently, terrestrial lidar techniques are at the forefront of
+high-accuracy surveys, and their applicability and utility
+have been clearly demonstrated by previous survey efforts
+in Grand Canyon (for example, Collins and others, 2009), as
+
+well as encouraged by an independent review panel (Kintigh
+and others, 2007). High-resolution, highly accurate (centimeter-level) surveys have been found to be necessary to
+track small-scale topographic changes that can act as indicators of future response because these are often the scales
+at which existing geomorphological processes occur (for
+example, aeolian sand transport, overland flow, and gullying). Further, the ability to collect data over a wide area (as
+opposed to more focused surveys such as total station thalweg surveys) makes it possible to put overall processes into
+context and ensures that important changes are not missed
+during data collection. For example, previous results (Collins
+and others, 2008, 2009) have shown that, whereas focused
+thalweg surveys can correctly identify the approximate
+magnitude of change, they cannot always confirm the overall
+cause of the change, which might, for example, be from
+areas outside the thalweg line where lidar surveys also collect data. As a result of these studies and clear contributions
+to understanding archeological site change, the Sociocultural
+Program of the U.S. Geological Survey’s Grand Canyon
+Monitoring and Research Center (GCMRC) has pursued
+evaluating the applicability of terrestrial lidar for monitoring entire archeological site areas for topographic change in
+order to address the stated concerns of the GCDAMP (see,
+for example, Fairley and others, 2007). A series of reports
+have been published, detailing first the applicability of
+using terrestrial lidar in GCNP for monitoring a variety of
+resources (Collins and Kayen, 2006) and then specifically
+using terrestrial lidar for archeological site monitoring (Collins and others, 2008, 2009).
+In Collins and others (2009), results using what was
+then a state-of-the-art terrestrial-lidar laser scanning device
+were presented. Since then, new advances in technology have resulted in laser scanning devices with much
+greater accuracy and more sophisticated software, with an
+improved potential to measure small-scale (centimeterlevel) topographic change. This report presents the results
+of topographic surveys performed in GCNP between 2007
+and 2010, using first a combination of the “old” and “new”
+technology, followed by surveys using only the newest
+technology. It follows much the same format as an earlier
+report (Collins and others, 2009) and builds upon the results
+reported therein.
+In all cases, the focus of this report is on change detection, with the goal of detecting topographic and archeological
+site change at the highest resolution possible. In addition to
+monitoring the sites described in previous reports, we include
+four new sites, each with a different topographic and archeological signature (for example, a site with artifacts scattered
+over an active dune slope and a habitation site with masonry
+walls). We also present several analyses aimed at pushing the
+latest technology forward so that its use for monitoring both
+archeology and geomorphology can reach its highest potential. These include using terrestrial lidar for monitoring change
+to cultural structures, for delineating cryptobiotic crust areas,
+
+Methods
+and for establishing point density guidelines for various forms
+of change detection (that is, overall topographic site change
+versus smaller scale geomorphologic change).
+As with the previously referenced reports (Collins and others, 2008, 2009), we present a detailed description of terrestrial
+lidar methods and associated error analyses, because the technology is still somewhat new and few error analyses for terrestrial
+lidar exist in the literature. We also provide detailed descriptions
+of each of the survey areas for which data are presented. Finally,
+whereas high-resolution data and geomorphologic signatures are
+presented for a variety of sites that show both erosion and deposition during the monitoring period (2007–2010), in this report
+we do not attempt to link these changes to operations of Glen
+Canyon Dam. Instead, as in previous reports, we present highquality topographic change detection data, with the intention that
+these data will be used for future dam- and river-process related
+and predictive modeling studies.
+
+0
+
+25
+
+3
+
+Methods
+Field Logistics
+Building upon three existing datasets (Collins and others, 2009) covering the topographic change detected between
+2006 and 2007 at a total of 9 archeological sites (10 separate
+survey areas; table 1, fig. 1), we conducted two additional data
+collection efforts in Grand Canyon National Park in 2010. The
+current research effort uses the last 2007 survey (September
+2007) as the initial baseline survey, which is compared to the
+two datasets collected in 2010 (April 2010 and September
+2010). For simplicity, we refer to the efforts whose results
+are presented herein as the September 2007, April 2010, and
+September 2010 surveys. In April 2010, only sites in the upper
+half of Grand Canyon (above Phantom Ranch) were surveyed,
+
+50
+
+75
+
+100 KILOMETERS
+
+Figure 1. Site map of Grand Canyon National Park showing general location of sites referenced in this investigation and identified by
+archeological site number. Results for sites in parentheses are included in Collins and others (2009) and are not presented here. Exact
+locations are not shown to protect the archeological resources.
+
+4
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 2. Gullying at an archeological site in Grand Canyon
+National Park. This area contains cultural artifacts buried by
+aeolian sediments and subject to precipitation-induced erosion.
+
+Figure 3. Excavation of an archeological site in Grand Canyon
+National Park. This site was previously buried by aeolian and
+alluvial sediments and emerged as precipitation runoff and wind
+deflation exposed habitation features.
+
+whereas in September 2010 sites both above and below Phantom Ranch were surveyed. The 2010 field efforts included
+data collection at 8 of the 10 areas previously surveyed in
+2006–2007, including one site previously surveyed in 2007
+but with no previous change detection analysis performed. In
+addition, we collected data at three new sites not previously
+surveyed (table 1). Two sites originally surveyed in 2006 and
+2007 (AZ:G:03:0041 and AZ:G:03:0002) were not surveyed in
+2010 because of logistical constraints on the surveying effort.
+The sites selected for surveying encompassed a variety of
+archeological site types. These include some where erosion has
+been previously identified as having an impact on site resources
+and others where relatively little previous erosion has been
+documented. To protect the sensitive nature of the sites, specific site location information is omitted from this report, and
+the GCNP archeological site identification number is used for
+reference (table 1). At each site, data collection was focused on
+the terrain surrounding one or more gully systems; these gully
+systems are referred to in this report as G1, G2, and so on, and
+numbered sequentially moving from upstream to downstream
+along the river corridor or the adjacent side drainage.
+Each survey effort was supported by two GCMRC
+motor rafts carrying all personnel and equipment for trips
+
+lasting from 10 to 18 days. Equipment consisted of camping gear and food supplies, a battery charging system for all
+electronics, and survey equipment, including a terrestrial
+lidar laser scanner, a total station unit, a pair of survey-grade
+differential GPS receivers, and associated control point
+reflectors and tripods. Personnel consisted of researchers
+from the U.S. Geological Survey (USGS) in Menlo Park,
+California, and researchers and staff from the GCMRC
+in Flagstaff, Arizona. In April 2010, a contract surveyor
+(Brian Fisher of Geodetic Analysis, LLC, Phoenix, Arizona)
+accompanied the trip to perform survey coordinate data
+collection. Raft pilots (boatmen) contracted through Humphrey Summit Support Inc., supervised the travel and camp
+logistics for each trip.
+
+Lidar Data Collection
+High-resolution topographic data from each archeological site were collected using the newest generation of terrestrial (ground-based) lidar surveying laser scanners. Terrestrial lidar sends and receives laser pulses along exactly
+known trajectories to build a point file of three-dimensional
+
+Methods
+
+5
+
+Table 1. Dates of lidar data collection at archeological sites in the Colorado River corridor of Grand Canyon National Park.
+[Survey area codes are National Park Service archeological site identifiers; n/a, no data collection]
+
+Survey area
+AZ:C:05:0031
+
+May
+2006
+
+May
+2007
+
+September
+2007
+
+April
+2010
+
+September
+2010
+
+n/a
+
+n/a
+
+n/a
+
+4/11/2010
+
+9/16/2010
+
+AZ:C:13:0006
+
+5/6/2006
+
+4/28/2007
+
+9/15/2007
+
+4/13/2010
+
+9/17/2010
+
+AZ:C:13:0336
+
+5/7/2006
+
+4/29/2007
+
+9/16/2007
+
+4/14/2010
+
+9/19/2010
+
+AZ:C:13:0099
+
+5/8/2006
+
+4/29/2007
+
+9/16/2007
+
+4/15/2010
+
+9/20/2010
+
+AZ:C:13:0099 playa area
+
+5/7/2006
+
+4/29/2007
+
+9/16/2007
+
+4/14/2010
+
+9/19/2010
+
+AZ:C:13:0321
+
+n/a
+
+n/a
+
+n/a
+
+4/15/2010
+
+9/21/2010
+
+AZ:C:13:0009
+
+n/a
+
+n/a
+
+n/a
+
+4/16/2010
+
+9/21/2010
+
+4/30/2007
+
+9/17/2007
+
+n/a
+
+9/22/2010
+
+n/a
+
+9/20/2007
+
+n/a
+
+9/27/2010
+
+AZ:C:13:0346 and AZ:C:13:0348
+
+5/8/2006
+
+AZ:B:10:0225
+
+n/a
+
+AZ:G:03:0041
+
+5/14/2006
+
+5/7/2007
+
+9/24/2007
+
+n/a
+
+n/a
+
+AZ:G:03:0002
+
+5/15/2006
+
+5/8/2007
+
+9/25/2007
+
+n/a
+
+n/a
+
+AZ:G:03:0072 US (upstream area)
+
+5/17/2006
+
+5/9/2007
+
+9/26/2007
+
+n/a
+
+10/1/2010
+
+AZ:G:03:0072 DS (downstream area)
+
+5/16/2006
+
+5/10/2007
+
+9/26/2007
+
+n/a
+
+9/30/2010
+
+(3-D) coordinates of virtually any reflecting surface. The
+points are then viewed in 3-D software so that data filtering,
+surface building, and change detection can be performed.
+The technology is relatively new (10+ years) and continues
+to evolve rapidly. Whereas a Riegl Z210 laser scanner was
+used in previous studies (Collins and others, 2009), including for the change detection analysis of the 2007 dataset
+presented herein, the present study (2010 datasets) used
+a Riegl Z420i laser scanner as a tripod-mounted survey
+instrument (fig. 4). We present detailed error analyses in a
+later section of this report to account for differences in the
+hardware and software used between these surveys. The
+Riegl Z420i uses a Class 1 (eye safe under normal operating conditions), near-infrared, pulsed laser diode with a
+beam divergence of 0.014° (approximately 25 mm at 100-m
+range). Typical maximum range for natural targets with 10
+percent and 80 percent reflectivity is 350 m and 1,000 m,
+respectively, with 10-mm accuracy at 50-m range. Using
+12-volt, sealed, gel-cell, lead-acid batteries, the laser system
+consumes relatively low power (typically 78 W).
+Most laser scanners operate using some combination of
+precisely aligned rotating polygonal mirrors and extremely
+small stepping motors to guide the laser paths over the area
+of interest. With the Riegl Z420i, laser pulses are reflected
+
+from a triangular mirror rotating around the horizontal axis
+(with minimum angle step width of 0.004°), while the entire
+head of the scanner pans around the vertical axis of the
+laser diode origin (also with minimum angle step width of
+0.004°). The technology, specifically developed for rapid
+topographic surveys, allows data to be collected at rates of
+thousands of points per second, generating a “point cloud”
+of 3-D coordinates. Acquisition of sufficiently dense point
+clouds (that is, point-to-point spacing on the order of 5 cm
+or less) can, in most cases, fully describe site topography.
+The point files from data collection are transformed into 3-D
+surfaces for cross-section and volumetric analyses.
+We followed an essentially identical set of surveying protocols as in previous field efforts. At each survey
+location, we used an elevated tripod (up to 2.6 m tall) to
+position the laser above each site to capture a wide range
+and more direct line of sight to the area topography (fig. 4).
+We collected multiple scans from different locations during
+each survey to fill in “shadow zones” of areas not directly
+in the line of sight of the laser and to expand the range and
+density of the point data. Data with the Riegl Z420i were
+collected at a rate of 8,000 points per second using a single,
+last return for each point. Each scan typically collected data
+over a 360° range in the horizontal direction (aimed at the
+
+6
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+region of interest) and over a range of ±40° (measured from
+the horizontal) in the vertical direction. This provided approximately 4,000,000 to 8,000,000 points for each scan, although
+only a portion (about 50 percent) of those were located within
+the site area of interest. One additional survey protocol implemented in 2010 was the attempt to locate the laser instrument
+outside of the archeological site boundaries as much as possible.
+This was done to minimize additional site disturbance, but also
+resulted in lower point density in some cases, in particular for
+narrow gullies located at oblique angles to the laser instrument
+locations. When this occurred and affected the development of
+a robust surface model, it is further discussed within the context
+of each site’s results.
+Combining point-cloud data from multiple scan locations
+into a single georeferenced model continues to be the most challenging and error-producing component of terrestrial lidar scanning. Although many methods exist, the most accurate methods
+rely on the collection of georeferenced survey points on either
+the laser itself, a network of visible reflectors within the scans,
+or both. At each site, we collected high-accuracy survey control
+on all scanner origins and a network of six control targets visible to the laser during data collection using either or both of a
+Topcon total station survey device and a pair of survey-grade,
+real-time kinematic differential Topcon Hiper+ GPS receivers. Coordinates were determined by locating the instrument
+over known survey benchmarks or by collecting total station
+or Global Positioning System (GPS) positions on the laser and
+target locations. Nearly all laser and control point locations represent transient locations between temporally consecutive datasets. Permanent monuments for each of these points (with the
+exception of total station and GPS base station locations) could
+not be constructed because of the sensitive and wilderness environment of these sites, and instead we rely on the high-accuracy
+survey data for georeferencing the point clouds. Processed coordinates were provided by survey personnel following each trip
+and their quality assessed within the scan-alignment registration
+procedures outlined in the following sections. Overall accuracy,
+measured relative to fixed benchmarks at each site and averaged
+for both survey techniques, was 1.2 cm horizontal and 2.5 cm
+vertical at the 95-percent confidence level (see the “Error Analysis” section for additional details). We note that the root mean
+square (RMS) survey control error represents a relative level of
+horizontal and vertical control in georeferenced space, because
+the control-point benchmarks used in the survey are only known
+to a three-dimensional accuracy of 5 cm to 8 cm (Grand Canyon
+Monitoring and Research Center, 2008). However, because
+identical benchmarks were used throughout the study (that is,
+total station and GPS base stations were always set up on the
+identical fixed points during repeat surveys), this component of
+error is not included in the subsequently outlined error analysis.
+
+Data Processing
+We processed the lidar data through an integrated
+suite of registration, georeferencing, filtering, and
+
+surface-model-generation techniques specific to terrestrial
+lidar data. Our methodology follows much the same framework as previously reported in Collins and others (2009),
+but it has been updated to reflect advances in data collection,
+processing, and change detection analysis. These advances
+include more rigorous and accurate registration techniques
+using Riegl RiScan Pro v.1.4.3 software (http://www.riegl.
+com/products/software-packages/riscan-pro/), surface modeling based on point-density proxies in I-SiTE Studio v. 3.4
+software (http://www.maptek.com/products/i-site/i-site_studio.html), and more accurate change detection thresholding
+using ArcGIS v. 9 (http://www.esri.com/software/arcgis/).
+The processing methodology for data collected in 2010
+consists of an integrated workflow that ensures data quality
+and accuracy, particularly with respect to change detection.
+This workflow is described here with the appropriate software package shown in brackets. Note that the workflow for
+processing the September 2007 datasets as outlined in Collins
+and others (2009) is slightly different but is not repeated here.
+
+1.
+
+Raw Data Archiving—The data are archived in raw field
+format to preserve a backup copy. [Riegl RiScan Pro]
+
+2.
+
+Survey Data Processing—The survey data provided by
+total station or GPS are processed to determine accurate
+coordinates for the scanner and reflector center heights
+and to eliminate common field errors such as miscalculated tripod or antenna heights.
+
+3.
+
+Registration—Data from individual scan locations are
+combined together within a local coordinate system based
+on the best-fit alignment of control points scanned in the
+field. This is preliminarily performed in the field and then
+recalculated in the office to ensure data consistency and
+accuracy. [Riegl RiScan Pro]
+
+4.
+
+Georeferencing—Local coordinate locations of control
+points and laser setup locations are aligned with their
+respective geographic coordinates from Step 2 using a
+best-fit error minimization algorithm. The target accuracy
+is typically better than 1.5 cm. [Riegl RiScan Pro]
+
+5.
+
+Quality Control Check—Registered, georeferenced point
+clouds are first visually checked for data misfits within
+each site’s point clouds and then checked for overall
+close alignment with previous datasets using histogram
+cumulative frequency analysis. [I-SiTE Studio]
+
+6.
+
+Preliminary Scan Filtering—Extraneous points that
+define such items as people, equipment, dust, or birds
+are removed from the raw scan files using both manual
+filtering and maximum point separation distances (that
+is, all points more than 50 cm from all other points are
+removed). Distant points outside the overall study area
+are also removed using a polygon filter. [I-SiTE Studio]
+
+Methods
+
+7
+
+Figure 4. Terrestrial lidar data collection in Grand Canyon National Park. The extendable tripod
+allows a larger area of data collection and less oblique laser returns from areas of flat topography.
+Total station prism (shown) or differential global positioning system (GPS) unit with fixed radiolinked base station are used to georeference the instrument location, along with temporary reflector
+control points shown in mid-ground.
+
+7.
+
+8.
+
+Topographic Filtering—Points representing anything
+other than the ground surface are removed from each scan
+using a sequence of topographic filtering steps. Following a rough, manual removal of tall vegetation points, the
+lowest point within each 50-cm-square grid cell is identified and a surface (triangulated irregular network, TIN) is
+constructed from these points. All points vertically within
+10 cm of this surface are then identified. Finally, the lowest point within each 5-cm-square grid cell of these 10-cm
+surface proximity points is selected. These steps generally
+achieve a well-refined, high-resolution ground point data
+file, although additional manual manipulation of the data
+is always required for particularly small and large vegetation. [I-SiTE Studio]
+TIN Surface Model Generation—The final surface model
+is created using a new TIN created from the point set that
+results from Step 7. Minor filtering of the TIN is sometimes needed to remove obvious remaining extraneous
+high points from tall vegetation. In some cases, difficulties in the manual filtering of larger vegetation may
+lead to inconsistencies in the final surface models—for
+example, when a large boulder is mistaken as a similarsized bush or tree. [I-SiTE Studio]
+
+9.
+
+Grid Digital Elevation Model Generation—Although
+TINs are generally preferred for high-resolution surface
+modeling of complex topography and especially for areas
+with steep or overhanging geometry, digital elevation
+model (DEM) raster grids offer several advantages with
+respect to change detection analysis and plotting. Therefore our processing includes grid creation with a 5-cm
+cell size, using the natural neighbor TIN to raster method.
+[ArcGIS]
+
+Surface Model Comparison
+For each site, three surface models were created where
+applicable—one each for the September 2007, April 2010, and
+September 2010 field efforts. We methodically analyzed the
+surface models by comparing temporally sequential datasets
+with one another (for example, September 2007 to April 2010,
+April 2010 to September 2010, and so forth), thereby allowing site changes to be compared over time. Given the relatively long period of time for some comparisons (as much as
+three years, from September 2007 to September 2010, in the
+case of sites AZ:B:10:0225 and AZ:G:03:0072), it is possible
+that cycles of erosion and deposition may have occurred that
+
+8
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+cannot be identified from the data. Regardless, the comparisons still provide definitive results for the time period in which
+monitoring occurred.
+Two types of surface change maps were used to detect
+vertical change—a three-dimensional TIN surface change
+map and a two-dimensional grid of the surface change. The
+three-dimensional surface change map was constructed by
+differencing the more recent surface with the previous TIN
+surface, thereby producing an elevation change map. In the
+results, we report the number of points used in the construction of each TIN surface as an indication of the relative
+model point density—the actual number of points collected
+is typically an order of magnitude greater and indicates that
+the majority of the points are generally removed during vegetation filtering and surface creation, as previously described.
+We used these results only as a preliminary map for detecting
+change because the TIN-generation process typically fills in
+areas where little to no data existed (connecting areas of low
+point density with large facets than cannot adequately model
+the fine-scale site topography). Thus, these results can only
+be used accurately where change can be positively identified
+on the basis of sufficient point density.
+To perform surface-model change detection using a
+uniform point density representative of the true topographic
+surface, we applied a point-density-based masking algorithm to each surface model DEM. The ArcGIS-based suite
+of algorithms (fig. 5) applied a filtering mask to the point
+data such that grid cells with insufficient point density for
+performing realistic change detection (here, selected as less
+than 6 points per 25 cm by 25 cm grid cell or equivalent to
+96 points per m2) were removed from the surface. Vertical
+change on the remaining grid cells was then analyzed and the
+resulting change detection DEM was displayed with warm
+colors (reds, oranges, yellows) representing surface lowering (erosion) and cool colors (blues, greens) representing
+surface heightening (deposition). Vertical change detection
+thresholds used to create the color maps were based on error
+analyses performed on each dataset and are described in
+subsequent sections of this report (see “Error Analysis”). For
+each survey area, we use the resulting colored grid maps as
+the representation of the change that occurred during each
+monitoring period.
+For presentation purposes, the change maps are overlaid
+on a DEM hillshade map (colored with shades of gray—see
+“Results” section) constructed of the initial bare-ground model
+for each site. In some cases, these maps may include areas
+where no change detection was performed because of insufficient point density (that is, less than 96 points per m2). These
+areas are generally small (<1 m2) and represent isolated pockets
+of vegetation and shadows behind objects such as shrubs or
+boulders. In some cases, these areas can be identified in the
+hillshade DEMs by “smooth” areas of the DEM, but they
+should not be confused with areas outside the survey boundaries where the point density was much too low (< 10 points per
+m2) to attempt detailed topographic surface construction.
+
+When change was detected, we performed quantitative
+geometric and qualitative process assessments to determine
+the extent and likely causes of the change. If no change was
+detected, no additional analysis was performed. To describe
+detected changes, we use the generalized terms “erosion”
+and “deposition” to indicate surface lowering and surface
+rising, respectively. Thus, these may, at times, capture
+processes, such as visitor-induced surface compaction, that
+are technically neither erosional nor depositional processes.
+When a more specific geomorphic process could potentially
+be related, such as soil creep, we identified this within the
+results for each site. We used a combination of DEM color
+change maps, TIN surfaces, cross-sections, and photographs
+to derive the two-dimensional areal extent of the change, the
+overall change statistics (means, standard deviations, and
+maximums), and the volumes of sediment mobilized either
+into or out of the site. In all cases, we verified changes using
+either prechange and postchange photographs or additional
+detailed analysis of the point cloud alignment; when change
+could not be verified using either or both of these methods,
+the change was not reported.
+
+Error Analysis
+Terrestrial lidar data, similarly to any other survey data,
+are subject to errors originating from both the data collection and postprocessing methodologies. We include a detailed
+analysis of the errors associated with the data to allow the
+objective presentation of limitations in detecting topographic
+change. Because the datasets presented here (April 2010 and
+September 2010) were collected differently from those used
+for comparing and calculating change detection results (September 2007), we present a summary of error analyses for both
+datasets, as well as the resulting change detection analysis
+error for comparisons between the datasets.
+Two types of analysis are presented: deterministic and
+empirical. These are then combined into a hybrid error analysis used to define the error bounds of the results. Deterministic error analysis was performed for all datasets previously
+presented (May 2006, May 2007, September 2007; Collins
+and other, 2009) and is generally more conservative (that
+is, overestimates actual errors). It is calculated by assuming
+that the average or maximum possible errors occurred (for
+example, that the average or maximum laser instrument error
+is inherent in every data point) and that each component of
+error is independent from all others (that is, errors are only
+additive). Empirical error analysis is not generally conservative, but it is typically more accurate. Here, empirical errors
+are determined by comparison of selected subsections of data
+with their known locations. The errors determined from this
+comparison are then assumed to represent the error inherent
+in the entire dataset. As long as a spatially valid subset of
+data is used in the empirical determination, the resulting error
+analysis is generally valid throughout the dataset. Although
+either of the error analysis methods can be used depending
+
+Figure 5. Schematic flow chart showing digital elevation model (DEM) processing steps for point density masking and
+DEM comparison. Point datasets are initially converted to triangulated irregular networks (TINs) and then DEMs through
+filtering and surface building routines. Subroutines check that minimum point density thresholds are met and the final
+change detection DEM is performed on only those areas that meet the minimum point density specification.
+
+on the desired degree of conservatism, we adopt a hybrid
+approach that uses the results of both analyses, coupled with
+the inclusion of a surface-building-and-gridding error term
+that provides a final indication of the confidence in the change
+detected and reported in the results.
+
+Deterministic Error Analysis
+Because the 2007 and 2010 datasets used different laser
+instruments and consequently different registration procedures, two descriptions of deterministic error analysis are
+presented. The September 2007 deterministic error analysis
+follows that presented in Collins and others (2009) and is
+summarized here. Errors for this dataset originated from three
+sources: (1) positioning and georeferencing the laser scanner
+and control points (Esurvey), (2) the laser instrument (Elaser), and
+(3) the local coordinate registration process (Ereg). Because
+two registration procedures were used to constrain all six
+degrees of freedom (DOF) for these datasets (three translation
+DOFs constrained by fixed scanner locations which do not
+require registration, a single registration for two rotation DOFs
+constrained by simultaneous rotation between two scan positions, and the final registration by an additional rotation DOF
+constrained by simultaneous rotation of a third scan position
+with the previous two—see Collins and others, 2009), Ereg was
+included twice in the overall error analysis. The resulting four
+error terms are assumed to be independent of one another such
+that the total error (Etotal) is:
+
+Etotal
+
+2
+
+( 2007 )
+
+2
+
+2
+
+= E survey + Elaser + E reg1 + E reg 2
+
+2
+
+(1)
+
+Note that each of these error terms is presented only
+for the vertical component, consistent with how topographic
+change detection maps are typically presented. The result of
+equation 1 for the September 2007 data was determined to be
+41.8 mm, or approximately 4 cm (Collins and others, 2009).
+We note that no absolute georeferencing error relative to
+real-world coordinates is included in this or any other error
+estimate because the same, identical survey reference benchmarks were used for all surveys (including those performed
+in 2010). Therefore, in calculating differences between the
+datasets, any additional benchmark-related error (typically
+between 5 cm and 8 cm positional accuracy; Grand Canyon
+Monitoring and Research Center, 2008) can be ignored as
+long as maximum benchmark stability and minimal differential tectonic movement between benchmarks and site areas
+can be assumed. Similarly to previous research (Collins and
+others, 2009), we judge that these are both valid for shortduration surveys in Grand Canyon.
+Following a similar methodology as equation 1, we
+computed the vertical error from the 2010 datasets. We determined the mean georeferencing error (Esurvey) by averaging
+the 95-percent confidence level error bound for 113 vertical
+measurements in which we recorded duplicate (redundant) survey coordinates (that is, completely independent total station
+and (or) GPS measurements). These included laser instrument
+locations, control point locations, and survey benchmarks at
+each site. The result was a mean vertical georeferencing error
+(Esurvey) of 24.7 mm. We judge this to be a conservative estimate
+because two standard deviations (2σ = 95-percent confidence
+interval assuming normally distributed data) make up the error
+
+10
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+bounds and multiple technologies (GPS and total station) were
+sometimes used to obtain redundant observations.
+For calculating the vertical component of error in the
+laser beam for the instrument used in this study (Riegl Z420i),
+we use the average results of an absolute accuracy calculation
+(11.2 mm) calculated at 50-m range by Lichti and Jamtsho
+(2006), which accounts for both laser beam divergence and
+angular resolution, and a fixed object calibration test (1.7 mm)
+conducted at between 15-m and 60-m range on precisely translated objects by Boehler and others (2003). The average result
+for Elaser is 6.5 mm.
+We calculated registration errors by averaging the control
+point and laser location RMS error for each site in April 2010
+and September 2010. The algorithm determines the best threedimensional orientation of the datasets based on a comparison
+of finely scanned control points visible in adjacent scans.
+Approximately 10 surveyed points were collected at each of
+the 11 sites, yielding a total of 186 surveyed points and resulting in an overall average three-dimensional error (3–D error)
+of 13 mm for each site. Calculating the vertical component
+of registration error requires an assumption that the error is
+evenly distributed between the x, y, and z directions (that is,
+the 3–D error/√3; a valid assumption for this dataset), such
+that the average vertical registration error (Ereg) is 7.5 mm.
+Following the methodology presented for the 2007
+dataset in equation 1, and noting that only one measure of
+registration error is needed for the 2010 data because of the
+different registration procedure (control point registration
+versus multiple scan rotation registration—see “Data
+Processing” section and Collins and others, 2009), the
+resulting equation is:
+
+Etotal
+
+2
+
+( 2010 )
+
+2
+
+= E survey + Elaser + E reg
+
+2
+
+(2)
+
+Using the presented values for the data collected in 2010
+yields a total vertical error of 26.6 mm, or approximately
+3 cm. Assuming that errors generated by either the 2007 or
+2010 datasets are independent of one another (a conservative
+assumption because some errors such as those from the laser
+are likely not independent between datasets), the absolute
+errors between surface data can be computed by summing
+each component (whether from 2007 or 2010). Thus, for
+comparison of September 2007 data to either April 2010 or
+September 2010 data, the absolute vertical error is 7 cm (4 cm
+from 2007 and 3 cm from 2010). Similarly, for comparison of
+April 2010 data to September 2010 data, the absolute vertical
+error is 6 cm (3 cm each from each of the two 2010 datasets).
+
+Empirical Error Analysis
+Our empirical error analysis uses direct point-to-point
+comparisons of objects at each survey area that are “fixed”
+(that is, immobile) and visible within the point cloud data. We
+
+compare their absolute positions between temporally consecutive scan datasets using all point clouds from each dataset.
+Rocks between 25 cm and 2 m in diameter (for example, R1
+through R10—see fig. 6) were the primary objects judged
+to be immobile for the purposes of this analysis, although
+large tree-trunks were used in some cases where rocks were
+not plentiful. Analysis consisted of isolating the points that
+describe a particular rock feature from each temporally different dataset and computing two sets of distance metrics to
+compare the relative errors between the point objects. The
+first distance metric compares the three-dimensional closest
+vectors between all points for each dataset (that is, each vector
+describing the distance between two points—one in each temporally different dataset). The second metric uses an iterative
+closest point (ICP) algorithm to solve for the preregistration
+and postregistration best fit of the points between datasets and
+again calculates the vector difference between the two sets of
+points. Using this algorithm, the preregistration solution provides an indication of the relative distances between the points
+with respect to the initial configuration of the points (but only
+uses the “best” fitting points rather than all points, as the first
+distance metric describes). Here, the postregistration results
+are not used because they are not representative of the registration process between the full datasets.
+The calculated error statistics (tables 2 and 3) could
+technically be deconvoluted from a three-dimensional value
+to x, y, and z directions as previously shown and performed.
+However, because the objects and points selected (that is,
+the upper surfaces of rocks in most cases) are predominantly
+aligned with the z (up) direction, we use the statistics as direct
+estimates of the error associated with the vertical direction of
+change. We chose to compare only a single metric for determination of the change detection error thresholds and used
+the mean vector distance between points (first metric) rather
+than the mean pre-ICP point metric (second metric). This is
+a slightly conservative, but also more representative metric
+because it computes distances between all points in each
+analysis.
+The results indicate that the mean error and standard
+deviation were 2.2 cm and 1.2 cm, respectively, for the comparison of the September 2007 and April 2010 datasets and 1.5
+cm and 0.6 cm, respectively, for the comparison of the April
+2010 and September 2010 datasets (tables 2 and 3). Assuming normally distributed errors (a valid assumption for these
+data—see fig. 6 with errors centered about the mean difference), the maximum empirical errors at two standard deviations (95-percent confidence interval) are 4.6 cm and 2.7 cm
+for the September 2007-April 2010 and April 2010-September
+2010 datasets, respectively. Note that these error thresholds
+represent the vertical error between datasets directly, such that
+doubling the errors is not necessary for obtaining a change
+detection threshold estimate. The results are somewhat less
+than the deterministic and more conservative error analysis,
+which is expected. They represent the best analytical estimate
+of errors between consecutively scanned datasets.
+
+Figure 6. Empirical error analysis using fixed objects to determine mean point cloud registration differences. A, Oblique map
+view. B, Photo. C, Point cloud. The point cloud in C is colored according to the adjacent histogram which shows the distribution
+of differences between point clouds collected in April 2010 and September 2010 for one rock (R2) of the 10 shown in A. In most
+cases, only the upper surface of the objects could be described and compared, thereby providing a direct estimate of the
+vertical error.
+
+12
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Table 2.
+
+Empirical error analysis results for September 2007 to April 2010 change detection.
+
+[Survey area codes are National Park Service archeological site identifiers; ICP refers to the iterative closest point algorithm; std.dev., standard deviation]
+
+Survey Area
+
+Number of
+independent
+objects
+
+Mean vector
+distance between
+points
+(cm)
+
+Std. dev. of vector
+distance between
+points
+(cm)
+
+Mean pre-ICP
+best-fit-based
+distance
+(cm)
+
+Std. dev. of pre-ICP
+best-fit-based
+distance
+(cm)
+
+AZ:C:13:0006
+
+5
+
+3.0
+
+1.5
+
+2.0
+
+0.7
+
+AZ:C:13:0336
+
+3
+
+2.3
+
+1.3
+
+1.8
+
+0.7
+
+AZ:C:13:0099
+
+4
+
+2.0
+
+0.9
+
+1.6
+
+0.6
+
+10
+
+2.3
+
+1.5
+
+1.4
+
+0.5
+
+AZ:C:13:0346 and
+AZ:C:13:0348
+
+3
+
+2.6
+
+1.6
+
+1.8
+
+0.6
+
+AZ:B:10:0225
+
+8
+
+1.5
+
+0.7
+
+1.2
+
+0.4
+
+AZ:G:03:0072 US
+
+3
+
+1.9
+
+1.0
+
+1.5
+
+0.6
+
+AZ:G:03:0072 DS
+
+3
+
+1.9
+
+1.2
+
+1.4
+
+0.5
+
+39
+
+2.2
+
+1.2
+
+1.6
+
+0.6
+
+AZ:C:13:0099 playa
+
+Total no. or average dist.
+
+Table 3. Empirical error analysis results for April 2010 to September 2010 change detection.
+[Survey area codes are National Park Service archeological site identifiers; ICP refers to the iterative closest point algorithm; std.dev., standard deviation]
+
+Number of independent objects
+
+Mean vector
+distance between
+points
+(cm)
+
+Std. dev. of vector
+distance between
+points
+(cm)
+
+Mean pre-ICP bestfit-based distance
+(cm)
+
+Std. dev. of preICP best-fit-based
+distance
+(cm)
+
+AZ:C:05:0031
+
+10
+
+1.7
+
+0.2
+
+1.6
+
+0.2
+
+AZ:C:13:0006
+
+5
+
+1.8
+
+0.9
+
+1.3
+
+0.5
+
+AZ:C:13:0336
+
+3
+
+1.1
+
+0.5
+
+1.0
+
+0.4
+
+AZ:C:13:0099
+
+4
+
+1.6
+
+0.7
+
+1.3
+
+0.5
+
+10
+
+1.2
+
+0.5
+
+1.1
+
+0.4
+
+3
+
+1.3
+
+0.9
+
+0.9
+
+0.3
+
+35
+
+1.5
+
+0.6
+
+1.2
+
+0.4
+
+Survey Area
+
+AZ:C:13:0099 playa
+AZ:C:13:0321
+Total no. or average. dist.
+
+Results
+
+Final Hybrid Error Analysis
+Although both error analyses (deterministic and empirical)
+can be used to bracket the degree of change detection possible
+for the datasets, a final error analysis was performed by integrating the two analyses and coupling these with an additional
+error term to take into account the error associated with model
+building and grid calculation. Calculation of surface models
+can technically introduce additional error through interpolation
+of the point cloud to build the continuous surface required for
+performing large-scale change detection. This error is primarily
+dependent on the data density (point spacing) used in surface
+generation and the relative change in slope (actual surface
+roughness) between data points. In addition, it can be influenced
+by artifacts in the point cloud data (for example, small-scale
+vegetation such as grasses) that may not have been removed
+during filtering. The effect of these features is an abnormally
+rough surface that is not necessarily representative of the true
+ground conditions, such that the small-scale surface features
+dominate the apparent change. To account for these errors, we
+used the empirical error analyses previously described and
+visually adjusted them in the direction of the deterministic
+analysis results until the selected error threshold included the
+majority of the small-scale perturbations (that is, all small-scale
+perturbations could be positively identified with vegetation or
+TIN surface roughness rather than actual change, as determined
+by close comparison between point clouds, TIN models, and
+site photos). Essentially, this hybrid approach provides a more
+tractable change detection analysis result when comparing time
+series surfaces from the datasets.
+Whereas the hybrid error analysis results varied between
+survey areas depending on the modeled surface perturbations
+(for example, resulting from variations in low-level vegetation at
+each survey area), for the sake of simplicity we adopted a single
+conservative change detection error threshold for each temporal
+set of datasets. The final hybrid error change detection thresholds
+were determined to be 5 cm and 3 cm for comparisons between
+September 2007 and April 2010, and April 2010 and September
+2010 datasets, respectively. The surface perturbations discussed
+
+13
+
+previously are therefore below this threshold. These thresholds
+are nearly identical to the 95-percent confidence level results
+using the empirical error analysis results and are used for all
+survey area change detection results presented in this report.
+They indicate what portion of the data realistically changed with
+respect to all known and potential errors—changes smaller than
+these limits are assumed to be unreliable with respect to determining topographic change. Whereas real topographic changes
+below these thresholds may have occurred, they are below the
+level of error detection and are therefore not reported.
+
+Results
+The results for 10 of the 11 survey areas are presented
+here. The additional site (AZ:C:13:0009) was monitored
+only for changes to structural walls rather than topography;
+results are reported in the “Monitoring Archeological
+Structure Stability” section. In the following subsections,
+brief descriptions of the topography, geomorphology,
+hydrology, archeology, and general vegetation ecology for
+each of the 10 topographically monitored areas are provided.
+Pederson and others (2003), Draut and others (2005), and
+Collins and others (2009) provide additional details about
+some of these areas. Base maps for site presentation were
+developed from the USGS GCMRC Internet Map Server
+(U.S. Geological Survey, 2008). However, to protect the
+sites, the maps do not contain georeferenced identifiable
+features. Change detection results highlight areas of
+significant erosion and deposition measured between
+the three surface models of the 2007–2010 datasets. As
+a reference, table 4 provides a summary of the number
+of scan locations and measured areas where data were
+collected, along with the area and number of points used in
+the creation of each surface model for the presented results.
+The collected and modeled surface areas are different in size
+because of the lack of overlap between some of the datasets
+and the difficulty with accurately analyzing change at the
+boundaries of the site area or in areas of dense vegetation.
+
+14
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Table 4. Summary of 2010 data collection and surface modeling at each survey area.
+[Survey area codes are National Park Service archeological site identifiers]
+
+Survey area
+
+Number
+of scan
+locations
+
+Approximate surface
+area of data collection
+(m2)
+
+Approximate number
+of points used in each
+surface model
+
+Approximate surface
+area modeled for
+change detection
+(m2)
+
+AZ:C:05:0031
+
+6
+
+8,530
+
+1,230,000
+
+2,510
+
+AZ:C:13:0006
+
+7
+
+7,150
+
+330,000
+
+1,280
+
+AZ:C:13:0336
+
+4
+
+3,940
+
+390,000
+
+1,440
+
+AZ:C:13:0099
+
+2
+
+860
+
+200,000
+
+640
+
+AZ:C:13:0099 playa
+
+6
+
+10,300
+
+1,000,000
+
+3,400
+
+AZ:C:13:0321
+
+2
+
+1,200
+
+50,000
+
+140
+
+AZ:C:13:00091
+
+4
+
+6,600
+
+10,000
+
+20
+
+AZ:C:13:0346 and AZ:C:13:0348
+
+8
+
+6,910
+
+670,000
+
+3,040
+
+AZ:B:10:0225
+
+4
+
+1,680
+
+370,000
+
+1,170
+
+AZ:G:03:0072 US
+
+9
+
+2,280
+
+567,000
+
+1,210
+
+AZ:G:03:0072 DS
+
+7
+
+2,000
+
+170,000
+
+590
+
+1
+
+This site was monitored only for changes to structural walls within the site; results are reported in a separate section.
+
+Site AZ:C:05:0031
+Site AZ:C:05:0031 was not investigated by previous
+lidar surveys; the current surveys (April and September
+2010) present the first opportunity for detailed change
+detection analysis. The site is archeologically important as
+an ancestral Puebloan camp site dating to the 11th or early
+12th century and contains evidence of roasting features,
+pottery sherds, stone tool-making debris, and low stackedstone walls (Fairley and others, 1994). The site is located
+immediately below a steep outcrop of Redwall Limestone.
+Aeolian dune sands ramp from the Colorado River up to the
+base of the outcrop, and the site itself is primarily located
+on these dune sands. A prominent gully (G1) bounds the
+site and the majority of the dune field to the south. The site
+is covered mostly by sand, but large (1 to 2 m diameter)
+boulders and isolated vegetation cover portions of the site.
+Vegetation includes clusters of prickly pear cactus (Opuntia
+sp. including beavertail cactus, Opuntia basilaris), ephedra
+(Ephedra sp.), dropseed grass (Sporobolus sp.), Indian rice
+
+grass (Achnatherum hymenoides), asters (Asteraceae family), dicoria (Dicoria canescens), and nonnative Russian
+thistle (Salsola tragus) (Draut, 2011). O’Brien and Pederson (2009a) identified gullying, aeolian transport, piping,
+and creep as the geomorphic processes affecting this site
+and noted that whereas aeolian transport and recent revegetation efforts have stabilized some parts of the site, some
+archeological resources continue to be affected by creep
+processes. Additional site details are included in O’Brien
+and Pederson (2009a).
+We performed change detection in the area of the archeological site below the Redwall outcrop and in six areas of dune
+sand located between the outcrop and the Colorado River (figs.
+7 and 8). The purpose of the dune-sand change detection was
+to identify areas potentially subject to aeolian aggradation in
+response to the building of a sand bar immediately upwind of
+the dune area during a March 2008 high flow experiment (Hazel
+and others, 2010). This is important to study because it has been
+suggested that the creation of new sand bars during sedimentenriched high flows could potentially increase the amount of
+
+Results
+Table 5.
+
+15
+
+Summary of detailed topographic change at Site AZ:C:05:0031.
+
+Area number
+
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:05:0031 – ER1
+
+4/2010-9/2010
+
+4.7
+
+4
+
+-0.20
+
+AZ:C:05:0031 – ER2
+
+4/2010-9/2010
+
+5.5
+
+4
+
+-0.24
+
+AZ:C:05:0031 – ER3
+
+4/2010-9/2010
+
+15.7
+
+5
+
+-0.70
+
+AZ:C:05:0031 – ER4
+
+4/2010-9/2010
+
+21.9
+
+4
+
+-0.92
+
+AZ:C:05:0031 – ER5
+
+4/2010-9/2010
+
+36.8
+
+4
+
+-1.57
+
+AZ:C:05:0031 – ER6
+
+4/2010-9/2010
+
+2.1
+
+3
+
+-0.07
+
+AZ:C:05:0031 – ER7
+
+4/2010-9/2010
+
+2.1
+
+3
+
+-0.08
+
+AZ:C:05:0031 – ER8
+
+4/2010-9/2010
+
+46.1
+
+4
+
+-1.91
+
+aeolian sand transported towards archeological sites, thereby
+helping to protect the archeological sites from further degradation (Draut and others, 2010a).
+Surface comparison between the April 2010 and
+September 2010 datasets indicates that four areas (ER1
+through ER4) underwent erosion within or near the archeological site and four areas (ER5 through ER8) underwent
+erosion in the adjacent dune-sand areas during this time
+
+period (fig. 9, table 5). Aeolian processes were the likely
+primary cause for these changes, as evidenced by the sand
+ripples observed at the site and the generally small depths
+and widespread areas in which change occurred. No areas
+of deposition were identified, suggesting that the sand was
+transported out of the general vicinity of the archeological
+site, most likely either towards the river or northward to
+another area of active dunes.
+
+16
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+Figure 7.
+
+30
+
+Site AZ:C:05:0031 survey map. Change detection was only analyzed in the focused areas noted.
+
+60 METERS
+
+Results
+
+Figure 8.
+
+Site AZ:C:05:0031 survey area photo showing gully location (G1). View is to the southwest.
+
+17
+
+18
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+10
+
+20
+
+30
+
+40 METERS
+
+Figure 9.
+Site AZ:C:05:0031: 5-cm gridded output showing erosion (warm colors, negative) from April 2010 to September 2010. Change
+detection was only analyzed in focused areas noted. No deposition was detected during this time. Identified change is outlined by
+polygons, and labels (ER = erosion) are cross-referenced with table 5.
+
+Results
+
+Site AZ:C:13:0006
+Site AZ:C:13:0006 has been monitored by terrestrial
+lidar five times since 2006. The site is an area of Puebloan
+II (about A.D. 900 to 1100) habitation (Fairley and
+others, 1994), and although there are no visible habitation
+structures, the types and varieties of artifacts visible on
+the site surface suggest that structures may be buried
+beneath the dune sands in this area. A debris fan covered
+by alluvium, colluvium, and aeolian dune sands forms the
+majority of the site area and is bordered on one side by
+Bright Angel Shale outcrops and on the other by the trunk
+of a small (~5 m wide) tributary channel that drains directly
+to the Colorado River (figs. 10 and 11). Three gullies (G1,
+G2, G3) drain the relatively flat upper site and connect to
+either the tributary channel (G1, G2) or a lower alluvial
+terrace that borders the river’s edge (G3). Brush and rock
+check dams were installed in each of these gullies in May
+2006 (O’Brien and Pederson, 2009b). Vegetation consists
+of a mix of bunch grasses and small cacti, chiefly prickly
+pear (for example, Opuntia polyacantha var. erinacea),
+with a few larger mesquite trees (Prosopis glandulosa var.
+torreyana) located near the boundaries of the site. O’Brien
+and Pederson (2009a) identified creep, aeolian transport,
+overland flow, and rainsplash as the geomorphic processes
+affecting this site and noted that some of these processes
+are currently eroding artifacts. Additional site details are
+included in O’Brien and Pederson (2009a,b).
+Change detection analysis results for the first three
+surveys spanning 2006–2007 are provided by Collins and
+others (2009). Previously, wide-scale topographic changes
+consisting of gully erosion and aeolian sand deposition and
+subsequent erosion were detected here, and a net deposition
+of sand between May 2006 and September 2007 near gully
+G2 appeared to smooth the topographic profile at this
+location (Collins and others, 2009). Overall aggradation
+within the lower section of this gully was confirmed by
+total station measurements made by O’Brien and Pederson
+(2009b). Here, we provide change detection results between
+September 2007 and the two 2010 datasets.
+Surface comparison between September 2007 and
+April 2010 indicates that change occurred in two areas of
+the site—one located in a convex area of the lower slope
+east of gully G2, and the other located in a similar setting
+east of gully G1 (fig. 12). In neither case can the changes
+be directly related to processes occurring within the
+existing gullies at the site. Rather, the first (ER1 through
+ER4) appears to be related to aeolian transport with minor
+overland flow in an area previously identified as an active
+
+19
+
+dune slope, whereas the second (ER5 through ER11 and
+DEP1 through DEP3) appears to be the result of overland
+flow and soil creep processes in the steepest, convex part
+of the site. The first erosion area coincides with a section
+of the site that has undergone both aeolian deposition and
+subsequent erosion linked to transport of sand from an
+adjacent sand bar/dune area (Collins and others, 2009).
+Although visual evidence of overland flow deposits located
+in the tributary channel below this area constrains the end
+location for some of the volume eroded, the whereabouts of
+the aeolian sand removed from the site was not identified.
+However, in April 2010, we observed very strong (40–50
+km/h) wind move sand tens of meters into the air and
+transport at least some sand to a dune slope on the opposite
+(south) side of the tributary channel that demarcates the
+south boundary of the site, suggesting that areas ER1
+through ER4 may be losing sand to that location.
+It is unclear why the second set of areas (ER5 through
+ER11) was particularly subject to change—one possibility
+is that the cryptobiotic crust was destabilized through slope
+creep and (or) rainsplash processes. Tressler (2011) and
+Tressler and Pederson (2010) identified creep as an active
+process at a different area of this site, suggesting that creep
+may have a significant role in erosion along the steep, convex
+portions of the site. In addition, there is some visual evidence
+for new, subtle, channelized flow in parts of this area, but not
+within a well-formed gully. Whereas the depositional areas
+can more than likely be linked to their erosion sources located
+immediately adjacent to them, volumetric comparison of
+erosion and deposition volumes indicates that a majority of
+sediment was deposited in the tributary channel immediately
+below these areas. The large magnitude (more than 10 cm)
+of erosion (table 6) for some areas is thought to be due to
+collapse in an oversteepened part of the slope and thus not
+indicative of more typical erosion previously documented at
+the site (Collins and others, 2009).
+The only change detected between April 2010 and
+September 2010 was in the active aeolian erosion areas
+previously identified (ER1 through ER4; fig 13). Here,
+slope-smoothing processes (most likely from continued
+aeolian transport) caused subtle erosion to the topography.
+When this minor amount of erosion is added to that
+previously measured, and then compared to the volume of
+sediment deposited in this location between May 2006 and
+May 2007 (Collins and others, 2009), the overall erosion
+volume between May 2007 and September 2010 (1.0
+m3, table 6) is still considerably less than the amount of
+deposition, so there has been a net depositional gain in this
+area of the site between May 2006 and September 2010.
+
+20
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+Table 6.
+
+Summary of topographic change at Site AZ:C:13:0006.
+
+Area number
+
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0006 – ER1
+
+9/2007-4/2010
+
+2.0
+
+14
+
+-0.29
+
+AZ:C:13:0006 – ER2
+
+9/2007-4/2010
+
+1.3
+
+17
+
+-0.21
+
+AZ:C:13:0006 – ER3
+
+9/2007-4/2010
+
+1.0
+
+16
+
+-0.16
+
+AZ:C:13:0006 – ER4
+
+9/2007-4/2010
+
+1.6
+
+14
+
+-0.22
+
+AZ:C:13:0006 – ER5
+
+9/2007-4/2010
+
+1.3
+
+9
+
+-0.12
+
+AZ:C:13:0006 – ER6
+
+9/2007-4/2010
+
+7.3
+
+13
+
+-0.97
+
+AZ:C:13:0006 – ER7
+
+9/2007-4/2010
+
+1.2
+
+11
+
+-0.12
+
+AZ:C:13:0006 – ER8
+
+9/2007-4/2010
+
+2.6
+
+14
+
+-0.35
+
+AZ:C:13:0006 – ER9
+
+9/2007-4/2010
+
+2.1
+
+10
+
+-0.20
+
+AZ:C:13:0006 – ER10
+
+9/2007-4/2010
+
+0.8
+
+11
+
+-0.09
+
+AZ:C:13:0006 – ER11
+
+9/2007-4/2010
+
+5.8
+
+10
+
+-0.59
+
+AZ:C:13:0006 – DEP1
+
+9/2007-4/2010
+
+2.7
+
+9
+
+0.25
+
+AZ:C:13:0006 – DEP2
+
+9/2007-4/2010
+
+4.2
+
+11
+
+0.43
+
+AZ:C:13:0006 – DEP3
+
+9/2007-4/2010
+
+1.9
+
+8
+
+0.16
+
+AZ:C:13:0006 – ER1
+
+4/2010-9/2010
+
+1.0
+
+10
+
+-0.08
+
+AZ:C:13:0006 – ER2
+
+4/2010-9/2010
+
+0.4
+
+4
+
+-0.01
+
+AZ:C:13:0006 – ER3
+
+4/2010-9/2010
+
+0.4
+
+5
+
+-0.02
+
+AZ:C:13:0006 – ER4
+
+4/2010-9/2010
+
+0.4
+
+5
+
+-0.03
+
+Results
+
+0
+
+Figure 10. Site AZ:C:13:0006 survey map.
+
+15
+
+30 METERS
+
+21
+
+22
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 11. Site AZ:C:13:0006 survey area photo showing gully locations (G1 to G3). View is to the northwest.
+
+Results
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 12. Site AZ:C:13:0006: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors, positive)
+from September 2007 to April 2010. Identified change is outlined by polygons, and labels (ER = erosion, DEP=deposition) are crossreferenced with table 6.
+
+23
+
+24
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 13. Site AZ:C:13:0006: 5-cm gridded output showing erosion (warm colors, negative) from April 2010 to September 2010. No
+deposition was detected during this time. Identified change is outlined by polygons, and labels (ER = erosion) are cross-referenced
+with table 6.
+
+Results
+
+Site AZ:C:13:0336
+Site AZ:C:13:0336 is located in the Palisades region of
+Grand Canyon and has been monitored by terrestrial lidar
+five times since 2006. The site consists of sparse artifacts
+and fire-cracked rocks eroding from the face of a low-angle
+terrace scarp (Fairley and others, 1994). A relatively flat area
+of flood-deposited sediment immediately to the east of the
+site is drained by several shallow gullies that spill over the
+terrace scarp onto a lower fluvial terrace mantled by aeolian
+sand (figs. 14 and 15). Check dams of brush and rock were
+installed within the main gully (gully G2) at the site in 2007
+to prevent ongoing erosion (O’Brien and Pederson, 2009a,b)
+Vegetation consists of irregularly spaced grasses, shrubs, and
+prickly pear cacti (for example, Opuntia polyacantha var.
+erinacea) in the flatter upper portion of the site and mesquite
+trees (Prosopis glandulosa var. torreyana) several meters in
+height located at the edges of the site. These trees are a major
+control on stabilization of coppice dunes that border the site.
+O’Brien and Pederson (2009a) identified gullying, rilling,
+creep, overland flow, and aeolian transport as the geomorphic
+processes affecting this site and noted that creep processes
+were incrementally eroding artifacts here. Additional site
+details are included in O’Brien and Pederson (2009a,b).
+Change detection analysis results for the first three
+surveys spanning 2006–2007 for this site are provided by
+Collins and others (2009). Previously, one area of deposition
+was identified behind a small brush check dam within a shallow gully (G2—figs. 14 and 15) that bisects the site. This was
+confirmed by total station measurements made by O’Brien
+and Pederson (2009b), who measured overall thalweg
+aggradation during the same period (May 2006 to September
+2007). Here, we provide change detection results between
+September 2007 and the two 2010 datasets.
+Surface comparison between September 2007 and April
+2010 indicates that 10 areas underwent erosion and 1 area
+underwent deposition during this period (fig. 16, table 7). In
+addition, deposition over an area of 2.2 m2 (labeled “DEP2?”
+in fig. 16) was identified in the same area as that in which
+previous deposition occurred during the 2006–2007 surveys
+(Collins and others, 2009). However, as a result of the laser
+instrument being located at an oblique angle to this area,
+the data-point density for this small area was insufficient to
+conclude that this deposition signal was real. It is therefore
+not included in table 7, but it is highlighted in figure 16 with
+the label “DEP2?” because of its importance with regard to
+existing check dams located in this area.
+The 10 identified erosion areas (fig. 16) are located
+throughout the site and consist of a mix of unvegetated, opensand areas likely reworked by aeolian processes (for example,
+ER1, ER2, ER3, ER8, ER10) and by channelized gully
+processes (for example, ER6, ER7, ER9). Two areas (ER4,
+ER5) could not be positively linked to a particular geomorphic process because of their close proximity to both aeolian
+
+25
+
+sand deposits and a channel thalweg terminus (near where
+gully G1 and gully G2 meet). The areas likely associated
+with channelized overland flow are particularly interesting,
+especially ER9. Here, a new gully (G3), not very well formed
+during the time of previous surveys (that is, 2006–2007;
+Collins and others, 2009), now appears well developed and
+actively eroding. Because the erosion is confined to the channel, the change mechanism is most likely channelized flow.
+However, this area, along with ER10, is in close proximity to
+informal hiking trails used by visitors, so an anthropogenic
+contribution cannot be ruled out. The ER7 area within gully
+G2 shows evidence that gully downcutting and channel wall
+widening have occurred. This area is located above a series
+of rock check dams (rcd, see fig. 15), suggesting that the
+channel protection has either reached its capacity or is no
+longer functioning properly (that is, flow may be circumventing the check dam). Site observations indicate that at least
+some degree of infilling has occurred, but it is below the error
+threshold for the presented lidar surveys during this time
+period (5 cm). Finally, we observe that because no significant
+volumes of sediment deposition were identified at any of the
+gully termini within a larger area of alluvial sediments (well
+landward of the river), the sediment contributed by gully
+erosion must have been transported out of the surveyed site
+boundaries, with the exception of the potential deposition
+outlined by “DEP2?” in figure 16.
+The one deposition area (DEP1) is located immediately
+adjacent to the ER10 area that underwent aeolian erosion. Our
+observations indicate that this area is also a product of aeolian
+processes and, in fact, is composed of an almost identical
+volume of sediment as was removed from ER10. This suggests that the ER10 and DEP1 areas are geomorphologically
+linked through aeolian sand transport, although it is possible
+that these features are linked to other areas of erosion and
+deposition.
+Between April 2010 and September 2010, we identified
+10 areas of erosion and 1 area of deposition (fig. 17, table 7).
+Many of these were located in areas of previous activity identified in the September 2007 to April 2010 comparison and
+are likely linked to aeolian activity on unvegetated patches
+of sand. Most pronounced was the erosion that occurred at
+the September 2007 to April 2010 ER9 area, which continued
+between April 2010 and September 2010 with an additional
+4 cm of downcutting (ER7, table 7). Whereas overland flow
+related transport out of the gully system likely occurred,
+evidence of aeolian activity is also clearly evident from photo
+comparison analysis. However, similarly to our previous conclusions for this site, an anthropogenic cause (that is, surface
+disturbance by hikers) cannot be ruled out. The one deposition area (DEP1) furthers the case for active, ongoing aeolian
+transport at this site; deposition on the order of 3 cm occurred
+along an area bordering gully G3 and is most likely linked to
+the aeolian erosion areas (ER6, ER8) immediately upgully to
+the south and east.
+
+26
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+Table 7. Summary of detailed topographic change at Site AZ:C:13:0336.
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0336 – ER1
+
+9/2007-4/2010
+
+7.1
+
+7
+
+-0.60
+
+AZ:C:13:0336 – ER2
+
+9/2007-4/2010
+
+3.5
+
+6
+
+-0.26
+
+AZ:C:13:0336 – ER3
+
+9/2007-4/2010
+
+0.6
+
+8
+
+-0.04
+
+AZ:C:13:0336 – ER4
+
+9/2007-4/2010
+
+1.0
+
+7
+
+-0.06
+
+AZ:C:13:0336 – ER5
+
+9/2007-4/2010
+
+1.3
+
+7
+
+-0.09
+
+AZ:C:13:0336 – ER6
+
+9/2007-4/2010
+
+1.6
+
+6
+
+-0.11
+
+AZ:C:13:0336 – ER7
+
+9/2007-4/2010
+
+4.6
+
+7
+
+-0.37
+
+AZ:C:13:0336 – ER8
+
+9/2007-4/2010
+
+0.7
+
+8
+
+-0.06
+
+AZ:C:13:0336 – ER9
+
+9/2007-4/2010
+
+17.0
+
+6
+
+-1.84
+
+AZ:C:13:0336 – ER10
+
+9/2007-4/2010
+
+1.7
+
+7
+
+-0.14
+
+AZ:C:13:0336 – DEP1
+
+9/2007-4/2010
+
+2.2
+
+7
+
+0.16
+
+AZ:C:13:0336 – ER1
+
+4/2010-9/2010
+
+0.6
+
+3
+
+-0.02
+
+AZ:C:13:0336 – ER2
+
+4/2010-9/2010
+
+0.4
+
+3
+
+-0.01
+
+AZ:C:13:0336 – ER3
+
+4/2010-9/2010
+
+0.2
+
+3
+
+-0.01
+
+AZ:C:13:0336 – ER4
+
+4/2010-9/2010
+
+0.6
+
+3
+
+-0.02
+
+AZ:C:13:0336 – ER5
+
+4/2010-9/2010
+
+0.4
+
+3
+
+-0.01
+
+AZ:C:13:0336 – ER6
+
+4/2010-9/2010
+
+1.3
+
+4
+
+-0.05
+
+AZ:C:13:0336 – ER7
+
+4/2010-9/2010
+
+8.3
+
+4
+
+-0.32
+
+AZ:C:13:0336 – ER8
+
+4/2010-9/2010
+
+3.7
+
+4
+
+-0.16
+
+AZ:C:13:0336 – ER9
+
+4/2010-9/2010
+
+0.9
+
+4
+
+-0.03
+
+AZ:C:13:0336 – ER10
+
+4/2010-9/2010
+
+0.1
+
+3
+
+-0.01
+
+AZ:C:13:0336 – DEP1
+
+4/2010-9/2010
+
+1.5
+
+3
+
+0.05
+
+Area number
+
+Results
+
+0
+
+Figure 14. Site AZ:C:13:0336 survey map.
+
+15
+
+30 METERS
+
+27
+
+28
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 15. Site AZ:C:13:0336 survey area photo showing gully locations (G1 to G3), and brush (bcd) and
+rock check dams (rcd). View is to the southeast.
+
+Results
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 16. Site AZ:C:13:0336: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors, positive)
+from September 2007 to April 2010. Identified change is outlined by polygons, and labels (ER = erosion, DEP=deposition) are crossreferenced with table 7. Area outlined by DEP2? indicates probable deposition in the gully channel, but depth and volume cannot be
+verified because of low lidar point density in the channel.
+
+29
+
+30
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+0
+
+5
+
+10
+
+15
+
+2 METERS
+
+20 METERS
+
+Figure 17. Site AZ:C:13:0336: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors, positive)
+from April 2010 to September 2010. Identified change is outlined by polygons, and labels (ER = erosion, DEP=deposition) are crossreferenced with table 7.
+
+Results
+
+Site AZ:C:13:0099
+Site AZ:C:13:0099 in the Palisades region has been
+monitored by terrestrial lidar five times since 2006. The site
+is archeologically important because of the high density of
+early-middle Pueblo II artifacts and habitation structures
+found here, with evidence of a pre-Puebloan occupation
+as well (Fairley and others, 1994). In addition, buried
+structures and a variety of artifacts have been exposed by
+gully sidewall erosion in recent years. The site is located
+north of Site AZ:C:13:0336, in and around a deeply (>1 m)
+incised gully system (figs. 18 and 19) that drains much of
+this area and begins as a series of smaller shallow tributary
+drainages to the east at the base of a steep talus slope. Rock
+check dams have been used in the past to mitigate ongoing
+erosion at several locations within this site. Vegetation
+occurs throughout the site, including large (several meters
+in canopy diameter) mesquite trees (Prosopis glandulosa
+var. torreyana) and smaller shrubs and grasses. O’Brien and
+Pederson (2009a) identified gullying, aeolian transport, and
+piping as the geomorphic processes affecting this site and
+noted that archeological resources were being destroyed by
+gullying here. Additional site details are included in O’Brien
+and Pederson (2009a)
+Change detection analysis results for the first three
+surveys spanning 2006–2007 for this site are provided
+by Collins and others (2009). Previous surveys detected
+deposition and erosion at this site related to aeolian and
+gullying processes.
+Because of the presence of ancestral Puebloan
+structures and artifacts buried in the vicinity and the
+imminent destruction of parts of the site by gullying erosion,
+the site was excavated by the National Park Service and
+Museum of Northern Arizona in spring 2008 to record and
+document the archeological history of the site (Anderson
+and Neff, 2011). Following these activities, the excavations
+were backfilled and the site topography was restored as
+close as possible to preexcavation site contours. Thus,
+lidar-derived change detection at this site provides a means
+
+31
+
+to discriminate the preexcavation and postexcavation
+topography and to determine if any other nonanthropogenic
+changes occurred at the site during the April 2010 to
+September 2010 time interval.
+We identified at least 13 areas of erosion and 5 areas
+of deposition between September 2007 and April 2010 (fig.
+20, table 8). Most of these areas (for example, ER1, ER11,
+DEP4) are known to have been modified by excavation
+activities (Anderson and Neff, 2011); most areas of
+erosion coincide with locations of excavation, and areas
+of deposition are where backdirt from the excavation units
+was piled and screened. Whereas some areas of change may
+have been caused by natural agents, given the magnitude
+of the excavation activities and the amount of hiker traffic
+that occurs in this area, anthropogenic causes for all of the
+detected change cannot be ruled out. No further attempt
+has been made at understanding the causal geomorphologic
+factors affecting the site during this time frame (September
+2007 to April 2010).
+Between April 2010 and September 2010, we identified
+one area of erosion and four areas of deposition (fig. 21).
+The erosion area is located on the bank of the main gully,
+in an area of aeolian sediments, and coincides with the
+ER3 area from the September 2007 to April 2010 interval
+that also underwent erosion during that time period. The
+four identified areas of deposition between April 2010 and
+September 2010 are all located within, and at the bottom
+of, the gully channels. Photo comparison between April
+2010 and September 2010 indicate that aeolian transport is
+potentially responsible for at least some of the deposition.
+However, careful review of photos indicates that some
+bank erosion located in difficult-to-model (and therefore
+unquantified) overhanging channel walls occurred during this
+time period. This suggests that channelized flow led to bank
+collapses, and these collapses may be responsible for the
+additional in-channel deposition. In general, although both
+the erosion and deposition areas are relatively small, they
+indicate that geomorphic processes continue to be active at
+this site, even over short time intervals (5 months).
+
+32
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+Table 8.
+
+Summary of detailed topographic change at Site AZ:C:13:0099.
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0099 – ER1
+
+9/2007-4/2010
+
+41.6
+
+25
+
+-10.39
+
+AZ:C:13:0099 – ER2
+
+9/2007-4/2010
+
+3.3
+
+21
+
+-0.49
+
+AZ:C:13:0099 – ER3
+
+9/2007-4/2010
+
+2.0
+
+10
+
+-0.19
+
+AZ:C:13:0099 – ER4
+
+9/2007-4/2010
+
+9.7
+
+7
+
+-0.96
+
+AZ:C:13:0099 – ER5
+
+9/2007-4/2010
+
+4.3
+
+8
+
+-0.42
+
+AZ:C:13:0099 – ER6
+
+9/2007-4/2010
+
+2.0
+
+8
+
+-0.15
+
+AZ:C:13:0099 – ER7
+
+9/2007-4/2010
+
+2.0
+
+7
+
+-0.18
+
+AZ:C:13:0099 – ER8
+
+9/2007-4/2010
+
+6.6
+
+14
+
+-1.02
+
+AZ:C:13:0099 – ER9
+
+9/2007-4/2010
+
+2.7
+
+8
+
+-0.22
+
+AZ:C:13:0099 – ER10
+
+9/2007-4/2010
+
+0.8
+
+7
+
+-0.05
+
+AZ:C:13:0099 – ER11
+
+9/2007-4/2010
+
+18.5
+
+14
+
+-1.97
+
+AZ:C:13:0099 – ER12
+
+9/2007-4/2010
+
+5.5
+
+15
+
+-0.88
+
+AZ:C:13:0099 – ER13
+
+9/2007-4/2010
+
+4.0
+
+11
+
+-0.37
+
+AZ:C:13:0099 – DEP1
+
+9/2007-4/2010
+
+4.8
+
+8
+
+0.39
+
+AZ:C:13:0099 – DEP2
+
+9/2007-4/2010
+
+2.6
+
+8
+
+0.25
+
+AZ:C:13:0099 – DEP3
+
+9/2007-4/2010
+
+3.0
+
+15
+
+0.44
+
+AZ:C:13:0099 – DEP4
+
+9/2007-4/2010
+
+3.2
+
+20
+
+0.70
+
+AZ:C:13:0099 – DEP5
+
+9/2007-4/2010
+
+8.9
+
+11
+
+1.00
+
+AZ:C:13:0099 – ER1
+
+4/2010-9/2010
+
+0.4
+
+4
+
+-0.02
+
+AZ:C:13:0099 – DEP1
+
+4/2010-9/2010
+
+0.2
+
+4
+
+0.01
+
+AZ:C:13:0099 – DEP2
+
+4/2010-9/2010
+
+0.6
+
+5
+
+0.02
+
+AZ:C:13:0099 – DEP3
+
+4/2010-9/2010
+
+0.4
+
+6
+
+0.01
+
+AZ:C:13:0099 – DEP4
+
+4/2010-9/2010
+
+0.4
+
+6
+
+0.01
+
+Area number
+
+Results
+
+0
+
+10
+
+20 METERS
+
+Figure 18. Site AZ:C:13:0099 survey map.
+
+33
+
+34
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 19. Site AZ:C:13:0099 survey area photo showing gully locations (G1 and G2). View is to the east.
+
+Results
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 20. Site AZ:C:13:0099: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors, positive)
+from September 2007 to April 2010. Identified change is outlined by polygons, and labels (ER = erosion, DEP=deposition) are crossreferenced with table 8.
+
+35
+
+36
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+5
+
+10
+
+15 METERS
+
+Figure 21. Site AZ:C:13:0099: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors, positive)
+from April 2010 to September 2010. Identified change is outlined by polygons, and labels (ER = erosion, DEP=deposition) are crossreferenced with table 8. Areas of large-magnitude (>10 cm) deposition within the boundaries of DEP3 and DEP4 are approximately
+100 cm2 in size and are too small to show clearly.
+
+Results
+
+AZ:C:13:0099 Playa Area
+Upstream of the AZ:C:13:0099 gully system is a
+formerly ponded area, now infilled by wind-blown sand
+and water-deposited silts and clays, colloquially called a
+“playa.” The area is a former backwater channel of the
+Colorado River and is a relatively flat surface in which
+water has ponded and evaporated (figs. 22 and 23). A
+hard-pan, evaporite-rich, fine grained crust covers most
+of the site, potentially providing at least some protection
+to rapid gullying from overland flow. The playa area has
+been monitored by terrestrial lidar five times since 2006.
+Although not an archeological site in itself, several such
+sites border the playa, and evidence of ongoing channelized
+flow erosion indicates that this area could be an indicator
+for potential change at these other archeological sites.
+Overland flow on the playa surface has created several
+shallow channels that drain to a single major channel that
+runs through the playa (fig. 22) and into the AZ:C13:0099
+site (gully G2, fig. 18). Isolated rockfall deposits, consisting
+of large boulders several meters in maximum dimension, are
+located throughout the area and generally redirect the paths
+of smaller drainages that converge at the north end of the
+playa. Whereas the playa itself is devoid of any vegetation,
+mature mesquite trees (Prosopis glandulosa var. torreyana)
+border it in many locations. We identified overland flow as
+the primary geomorphic process affecting this site.
+Change detection analysis results for the first three
+surveys spanning 2006–2007 for this area are provided
+by Collins and others (2009). Previous surveys detected
+only one minor area of erosion related to channel widening
+between May 2006 and May 2007. Here, we provide
+
+change detection results between September 2007 and the
+two 2010 datasets.
+Surface comparison between September 2007 and April
+2010 datasets identify six small areas of erosion and one area of
+deposition (fig. 24, table 9). The six erosion areas are all centrally
+located and formed in the largest of the shallow channels that
+traverse the playa. The depth of erosion (between 6 and 8 cm) is
+roughly coincident with the existing channel depth, suggesting
+that erosion took place through channel widening rather than
+channel deepening during channelized flow events. The one area
+of deposition is also located in the central channel on an inside
+bend, directly across from an erosion area. It is very likely that
+some of the sediment eroded from ER1, ER2, and (or) ER3 was
+redeposited here, whereas the remainder and that from erosion
+areas ER4, ER5, and ER6 was carried further downstream, out
+of the playa area, as evidenced by the lack of other depositional
+areas within the study region. These observations and
+measurements suggest that whereas channelized flow processes
+are actively shaping the playa area, the hardened evaporative
+crust has thus far successfully prevented additional downcutting.
+Therefore, channel widening from surface water runoff during
+storm events appears to be the current major geomorphic process
+affecting this area.
+Between April 2010 and September 2010, we identified
+only one minor area of erosion (fig. 25, table 9). The erosion
+was located in the same vicinity of the September 2007 to
+April 2010 ER1 area (see above discussion) and consisted of
+approximately 5 cm of channel sidewall widening. Like the
+erosion areas identified between September 2007 and April
+2010, the location of this erosion, in an outside bend near
+the first instance of significant channel incision, reflects the
+continued role of channelized flow in shaping the playa surface.
+
+Table 9. Summary of detailed topographic change at AZ:C:13:0099 playa survey area.
+Area number
+
+Time period
+(m/yyyy)
+
+37
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0099 Playa – ER1
+
+9/2007-4/2010
+
+0.3
+
+6
+
+-0.02
+
+AZ:C:13:0099 Playa – ER2
+
+9/2007-4/2010
+
+1.2
+
+6
+
+-0.08
+
+AZ:C:13:0099 Playa – ER3
+
+9/2007-4/2010
+
+0.1
+
+6
+
+-0.01
+
+AZ:C:13:0099 Playa – ER4
+
+9/2007-4/2010
+
+0.8
+
+8
+
+-0.05
+
+AZ:C:13:0099 Playa – ER5
+
+9/2007-4/2010
+
+0.5
+
+6
+
+-0.03
+
+AZ:C:13:0099 Playa – ER6
+
+9/2007-4/2010
+
+0.7
+
+8
+
+-0.05
+
+AZ:C:13:0099 Playa – DEP1
+
+9/2007-4/2010
+
+0.4
+
+6
+
+0.02
+
+AZ:C:13:0099 Playa – ER1
+
+4/2010-9/2010
+
+0.02
+
+5
+
+-0.001
+
+38
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+15
+
+30 METERS
+
+Figure 22. AZ:C:13:0099 playa area survey map. Laser scan locations used for additional lidar point density analysis (NF and
+FF) are shown for reference.
+
+Results
+
+Figure 23. AZ:C:13:0099 playa survey area photo showing location of main channel (blue line). View is to the south.
+
+39
+
+40
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+0
+
+10
+
+20
+
+30
+
+4 METERS
+
+40 METERS
+
+Figure 24. AZ:C:13:0099 playa area: 5-cm gridded output showing erosion (warm colors, negative) and
+deposition (cool colors, positive) from September 2007 to April 2010. Identified change is outlined by
+polygons, and labels (ER = erosion, DEP=deposition) are cross-referenced with table 9. Faint “circles”
+apparent in this and other DEMs included in the results are artifacts of the surface-building algorithms;
+because they are below the error threshold they are not of consequence.
+
+Results
+
+0
+
+0
+
+10
+
+20
+
+30
+
+0.5
+
+1 METERS
+
+40 METERS
+
+Figure 25. AZ:C:13:0099 playa area: 5-cm gridded output showing erosion (warm colors, negative) from
+April 2010 to September 2010. No deposition was detected during this time. Identified change is outlined by
+polygon, and label (ER = erosion) is cross-referenced with table 9.
+
+41
+
+42
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Site AZ:C:13:0321
+Site AZ:C:13:0321 was not investigated by previous lidar
+surveys, and therefore the April and September 2010 surveys
+presented the first opportunity for detailed change detection
+analysis. The site is located very close (~ 60 m) to the Colorado River within an active dune area that receives sediment
+from a neighboring river sand bar (figs. 26 and 27). An archeologically important slab-lined roasting feature, which contains
+fire-cracked rocks, ash, and wood charcoal, is located within
+the sand dunes and just above the lowest part of a channelshaped hollow formed between the dunes (Fairley and others,
+1994). The feature is intermittently buried by aeolian sand,
+and thus its protection is tied directly to the geomorphology
+of the nearby sand bar. The hollow between the dunes slopes
+towards the river’s edge, but no indications of overland flow
+are readily evident (O’Brien and Pederson, 2009a). This hollow is often used as a hiking path by river runners accessing
+terrain inland from a popular camping beach. Whereas the site
+is predominantly located within dune sands, several areas of
+gravel-pebble slope wash are also located in the hollow bottom. Western honey mesquite trees (Prosopis glandulosa) with
+a full spectrum of maturity (that is, some dying, others with
+healthy vigor) surround the site. Within the site, a wide variety
+of isolated vegetation is established within the dune sands and
+gravel substrate, including globemallow (Sphaeralcea sp.),
+arrow weed (Pluchea sericea), four-wing saltbush (Atriplex
+sp.), sand verbena (Abronia elliptica), and nonnative Russian
+
+thistle (Salsola tragus) (Draut, 2011). O’Brien and Pederson
+(2009a) identified aeolian transport as the primary geomorphic process affecting this site. They also noted that aeolian
+removal of sand can sometimes expose archeological artifacts,
+making them vulnerable to anthropogenic trailing. Additional
+site details are included in O’Brien and Pederson (2009a).
+We performed change detection throughout the immediate area of the hollow bottom, focusing on areas in and around
+one of the archeological features (fig. 26). This area has been
+the subject of additional investigation focusing on the development of sandbars that result from high flow experiments
+and on the effect that aeolian processes may have in moving
+sediment from river sand bars to archeological sites (Draut and
+others, 2010a,b).
+Surface comparison between the April 2010 and September 2010 datasets identified two areas of erosion within
+the analyzed site boundary (fig. 28, table 10), consisting of an
+area (ER1) along the upper length of the hollow, directly adjacent to the slab-lined roasting feature, and several smaller disconnected areas (ER2) towards the river to the south. Because
+of the long length (~ 8 m) over which erosion occurred and
+recent (2010) observed aeolian activity immediately downhollow (towards the river), we suggest that aeolian processes
+were the most likely agent for this erosion. However, because
+the majority of the erosion area also coincides with a path
+used by hikers traversing the site, anthropogenic effects such
+as surface compaction from foot traffic cannot be ruled out as
+a contributing factor.
+
+Table 10. Summary of topographic change at Site AZ:C:13:0321.
+Area number
+
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average
+depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0321 – ER1
+
+4/2010-9/2010
+
+9.7
+
+4
+
+-0.36
+
+AZ:C:13:0321 – ER2
+
+4/2010-9/2010
+
+4.2
+
+4
+
+-0.24
+
+Results
+
+0
+
+15
+
+Figure 26. Site AZ:C:13:0321 survey map. Change detection was only analyzed in focused area noted.
+
+30 METERS
+
+43
+
+44
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 27. Site AZ:C:13:0321 survey area photo. View is to the north.
+
+Results
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 28. Site AZ:C:13:0321: 5-cm gridded output showing erosion (warm colors, negative) from April 2010 to
+September 2010. Change detection was only analyzed in focused area noted. No deposition was detected during
+this time. Identified change is outlined by polygons, and labels (ER = erosion) are cross-referenced with table 10.
+ER2 polygons encompass all areas of erosion outside of the ER1 polygon.
+
+45
+
+46
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Sites AZ:C:13:0346 and AZ:C:13:0348
+Sites AZ:C:13:0346 and AZ:C:13:0348 (both of which
+are referred to collectively as AZ:C:13:0348 when reporting
+change detection analysis results) are two adjoining sites that
+have been monitored by terrestrial lidar four times since 2006.
+The sites are archeologically important as an area of Puebloan
+II habitation and contain remains of jacal-type structures,
+built by planting wood posts in the ground, weaving sticks
+between the posts, and plastering the wooden framework with
+mud (Fairley and others, 1994). The area also contains dense
+deposits of surface artifacts, including pottery sherds and stone
+tools. The combined site areas include the terminus of a broad
+alluvial fan of slope-wash deposits that grades into an alluvial
+terrace scarp adjoining a former flood plain of the Colorado
+River (figs. 29 and 30). Three small gullies (G1, G2, and G3)
+traverse the sites and terminate on the alluvial terrace, which
+in turn grades into an area of sand dunes that cap the terrace
+along the river’s edge. Brush and rock check dams have been
+used in gullies G1 and G3 in the past to mitigate ongoing
+erosion at several locations within this site (O’Brien and
+Pederson, 2009b). Vegetation consists of irregularly spaced,
+small desert seepweed bushes (Suaeda moquinii) and larger
+mesquite trees (Prosopis glandulosa var. torreyana), which in
+some cases are sufficiently dense to partially obscure gullies
+from overhead observations. O’Brien and Pederson (2009a)
+identified gullying, aeolian transport, and overland flow as the
+geomorphic processes affecting these sites but also observed
+that visitor-induced trailing was also causing erosion. They
+also noted that whereas the majority of the site appeared stable
+with respect to erosion of archeological resources, additional
+gullying could lead to negative site impacts. Additional site
+details are included in O’Brien and Pederson (2009a,b).
+Change detection analysis results for the first three
+surveys spanning 2006–2007 are provided by Collins and
+others (2009). Previously, two potential areas of erosion
+had been identified in gully G1 and G2 between May 2007
+and September 2007. Total station measurements of gully
+
+thalwegs by O’Brien and Pederson (2009b) confirmed an
+overall erosion signal in gully G1 during this time and also
+noted overall, but difficult to quantify, aggradation in gully
+G3 between May 2006 and September 2007. Here, we
+provide change detection results between September 2007 and
+September 2010.
+Surface comparison between September 2007 and
+September 2010 identified 13 areas of erosion and 3 areas of
+deposition (fig. 31, table 11). In general, the changed areas are
+located throughout the sites but in close proximity to existing
+pockets of either loose dune sands or immature cryptobiotic
+crust areas. Noting that the change detection threshold for
+these sites is 5 cm, it is possible that some of these pockets of
+change are larger in area and linked to one another through
+areas with change of less than 5 cm. Most areas (for example,
+ER5, ER6, ER8, ER9, ER11) show visual evidence that
+suggests aeolian erosion as the dominant geomorphic process
+(table 11). Three areas (ER7, DEP2, DEP3) are likely linked
+to alluvial fan processes—here outwash sediments appear to
+have been transported by overland flow. Overall, these results
+identify that both geomorphic agents continue to reshape the
+topography of these sites.
+We note that additional change areas may also have
+occurred at these sites. During the September 2010 survey, the
+laser instrument was positioned at slightly different locations
+compared to previous survey efforts (Collins and others,
+2009). This had the effect of reducing the point density of
+some areas of the sites, including the majority of the gullies
+that traverse the central slope, and resulted in low confidence
+change-detection determination in several areas. In addition,
+extremely windy conditions in advance of a storm front in
+September 2010 resulted in collection of some data with poor
+precision, thereby preventing identification of all potential
+areas of change. However, these areas were estimated to
+be minor in size compared to the areas where change was
+positively detected. Thus, the results presented here should
+be taken as reliable, but also as the minimum change that
+occurred during this time period.
+
+Results
+Table 11. Summary of topographic change at Sites AZ:C:13:0346 and AZ:C:13:0348.
+Area number1
+
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:C:13:0348 – ER1
+
+9/2007-9/2010
+
+4.3
+
+7
+
+-0.29
+
+AZ:C:13:0348 – ER2
+
+9/2007-9/2010
+
+3.7
+
+8
+
+-0.28
+
+AZ:C:13:0348 – ER3
+
+9/2007-9/2010
+
+8.1
+
+10
+
+-0.79
+
+AZ:C:13:0348 – ER4
+
+9/2007-9/2010
+
+3.3
+
+8
+
+-0.27
+
+AZ:C:13:0348 – ER5
+
+9/2007-9/2010
+
+10.5
+
+9
+
+-0.94
+
+AZ:C:13:0348 – ER6
+
+9/2007-9/2010
+
+12.9
+
+10
+
+-1.24
+
+AZ:C:13:0348 – ER7
+
+9/2007-9/2010
+
+16.7
+
+16
+
+-2.62
+
+AZ:C:13:0348 – ER8
+
+9/2007-9/2010
+
+3.1
+
+8
+
+-0.25
+
+AZ:C:13:0348 – ER9
+
+9/2007-9/2010
+
+5.2
+
+13
+
+-0.65
+
+AZ:C:13:0348 – ER10
+
+9/2007-9/2010
+
+3.7
+
+9
+
+-0.33
+
+AZ:C:13:0348 – ER11
+
+9/2007-9/2010
+
+8.5
+
+6
+
+-0.53
+
+AZ:C:13:0348 – ER12
+
+9/2007-9/2010
+
+2.3
+
+9
+
+-0.20
+
+AZ:C:13:0348 – ER13
+
+9/2007-9/2010
+
+3.0
+
+8
+
+-0.24
+
+AZ:C:13:0348 – DEP1
+
+9/2007-9/2010
+
+3.6
+
+6
+
+0.24
+
+AZ:C:13:0348 – DEP 2
+
+9/2007-9/2010
+
+1.4
+
+8
+
+0.12
+
+AZ:C:13:0348 – DEP 3
+
+9/2007-9/2010
+
+16.2
+
+6
+
+0.95
+
+1
+
+Area number prefix (i.e., AZ:C:13:0348) refers to areas located in both AZ:C:13:0346 and AZ:C:13:0348.
+
+47
+
+48
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+Figure 29. Site AZ:C:13:0346 and AZ:C:13:0348 survey map.
+
+15
+
+30 METERS
+
+Results
+
+Figure 30. Sites AZ:C:13:0346 and AZ:C:13:0348 survey area photo showing gully locations (G1 to G3). View is to the south.
+
+0
+
+10
+
+20
+
+30
+
+40 METERS
+
+Figure 31. Site AZ:C:13:0346 and AZ:C:13:0348: 5-cm gridded output showing erosion (warm colors, negative) and deposition
+(cool colors, positive) from September 2007 to September 2010. Identified change is outlined by polygons, and labels (ER = erosion,
+DEP=deposition) are cross-referenced with table 11.
+
+49
+
+50
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Site AZ:B:10:0225
+Site AZ:B:10:0225 was previously surveyed only
+once, in September 2007. Thus, the most recent September
+2010 survey data presented the first opportunity to conduct
+detailed change detection analysis at this site. The site is
+very close (~ 30 m) to the Colorado River and is located
+on a sand ramp that is backed by steep and sometimes
+overhanging Tapeats Sandstone ledges (figs. 32 and 33).
+The ledges formed shelters for the prehistoric people that
+formerly inhabited the area, and the slope below these
+shelters is littered with pottery sherds, lithic debitage,
+fire-cracked rocks, and other artifacts (Fairley and others,
+1994). Two large gullies (G1 and G2) traverse the edges of
+the site and fall steeply over sandstone ledges, terminating
+near the river’s edge in a deposit of large (~20 cm to 1 m
+diameter) boulders. The gullies are infilled with aeolian
+sand transported from nearby dunes and potentially from a
+large river sand bar located directly across the river from
+the site. Area vegetation includes isolated catclaw acacia
+(Acacia greggii), prickly pear (Opuntia sp.), goldenbush
+(Isocoma acradenia), ephedra (Ephedra sp.), brittlebush
+(Encelia sp.), trixis (Trixis californica), and perennial bunch
+grasses such as Indian rice grass (Achnatherum hymenoides).
+Tamarisk (Tamarix ramosissima) and arrowweed (Pluchea
+sericea) border the site near the river’s edge and lower dune
+areas. O’Brien and Pederson (2009a) identified gullying,
+overland flow, aeolian transport, and creep as the geomorphic
+processes affecting this site and noted that both gullying and
+creep were incrementally eroding artifacts here. Additional
+site details are included in O’Brien and Pederson (2009a).
+Although no pre-September 2007 datasets are available
+for analysis, on-site observations of a large storm event
+immediately prior to the September 2007 survey bracket
+the time frame in which formation of the existing gullied
+topography at this site, and particular in gully G2, must have
+occurred. Surface comparison between September 2007 and
+September 2010 indicates that additional major changes
+
+occurred to this site during this 3-year period, consisting of
+11 areas of erosion and 7 areas of deposition (fig. 34, table
+12). On the sideslope of G1, erosion of as much as 50 cm
+and deposition of as much as 32 cm occurred, most likely
+from aeolian processes. Net sediment volume removed was
+approximately 1.6 m3, consisting of five areas of erosion
+(ER1 through ER5) and four areas of deposition (DEP1
+through DEP4). Whereas gully G1 was already eroded to
+bedrock (Tapeats Sandstone ledges or slope wash boulders)
+throughout the majority of the gully bottom in September
+2007, gully G2 was founded on slope wash boulders only
+in the upper section of the gully. In the lower section of
+gully G2, weakly lithified dune sands formed sharp, vertical
+sidewalls as much as 1 m deep in September 2007 (see
+cover image). By September 2010, massive gully erosion
+and sidewall slumping had occurred, removing 114.8 m3 of
+sediment (areas ER 8 and ER9), with average and maximum
+depths of erosion of 52 cm and 160 cm, respectively. Side
+slopes in September 2010 were smoothed to the sand’s
+angle of repose, and infilling had begun to reshape the gully
+bottom (DEP5). Net volumetric erosion in G2 (that is, ER8 +
+ER9 - DEP5) was 105.6 m3. The geomorphic processes that
+occurred at G2 are gully erosion (ER8 and ER9) followed by
+aeolian sand infilling (DEP5) and topographic smoothing.
+Additional minor erosion and deposition also occurred
+within the central slope area, located between gullies G1
+and G2 (DEP6, DEP7, ER10), that forms the bulk of the
+archeological site area. The likely geomorphic agent for
+these changes is aeolian sand transport. The minor area
+of erosion located between the gullies (ER11) could have
+been caused by soil creep processes; O’Brien and Pederson
+(2009a) identified creep as one of the dominant processes
+at this site. It is possible that minor additional change also
+occurred throughout this area; however, regularly spaced
+low-lying grasses and shrubs growing on the dune slope
+prevented additional detailed analysis of this area. If changes
+did occur, they are judged to have been relatively minor (that
+is, smaller in area and volume than ER11).
+
+Results
+Table 12. Summary of detailed topographic change at Site AZ:B:10:0225.
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+Volume
+(m3)
+
+AZ:B:10:0225 – ER1
+
+9/2007-9/2010
+
+0.2
+
+9
+
+-0.02
+
+AZ:B:10:0225 – ER2
+
+9/2007-9/2010
+
+3.1
+
+12
+
+-0.41
+
+AZ:B:10:0225 – ER3
+
+9/2007-9/2010
+
+8.9
+
+14
+
+-1.38
+
+AZ:B:10:0225 – ER4
+
+9/2007-9/2010
+
+2.1
+
+22
+
+-0.43
+
+AZ:B:10:0225 – ER5
+
+9/2007-9/2010
+
+1.3
+
+30
+
+-0.35
+
+AZ:B:10:0225 – ER6
+
+9/2007-9/2010
+
+14.3
+
+16
+
+-2.22
+
+AZ:B:10:0225 – ER7
+
+9/2007-9/2010
+
+2.2
+
+22
+
+-0.49
+
+AZ:B:10:0225 – ER8
+
+9/2007-9/2010
+
+101.5
+
+52
+
+-53.03
+
+AZ:B:10:0225 – ER9
+
+9/2007-9/2010
+
+117.5
+
+52
+
+-61.74
+
+AZ:B:10:0225 – ER10
+
+9/2007-9/2010
+
+2.7
+
+7
+
+-0.19
+
+AZ:B:10:0225 – ER11
+
+9/2007-9/2010
+
+0.4
+
+7
+
+-0.03
+
+AZ:B:10:0225 – DEP1
+
+9/2007-9/2010
+
+3.2
+
+15
+
+0.45
+
+AZ:B:10:0225 – DEP2
+
+9/2007-9/2010
+
+2.7
+
+13
+
+0.33
+
+AZ:B:10:0225 – DEP3
+
+9/2007-9/2010
+
+0.7
+
+15
+
+0.10
+
+AZ:B:10:0225 – DEP4
+
+9/2007-9/2010
+
+0.6
+
+17
+
+0.09
+
+AZ:B:10:0225 – DEP5
+
+9/2007-9/2010
+
+55.0
+
+16
+
+9.22
+
+AZ:B:10:0225 – DEP6
+
+9/2007-9/2010
+
+2.6
+
+9
+
+0.22
+
+AZ:B:10:0225 – DEP7
+
+9/2007-9/2010
+
+16.5
+
+6
+
+0.82
+
+Area number
+
+51
+
+52
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+15
+
+Figure 32. Site AZ:B:10:0225 survey map.
+
+30 METERS
+
+Results
+
+Figure 33.
+
+Site AZ:B:10:0225 survey area photo showing gully locations (G1 and G2). View is to the southwest.
+
+53
+
+54
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Figure 34. Site AZ:B:10:0225: 5-cm gridded output showing erosion (warm colors, negative) and deposition (cool colors,
+positive) from September 2007 to September 2010. Identified change is outlined by polygons, and labels (ER = erosion,
+DEP=deposition) are cross-referenced with table 12.
+
+Results
+
+Site AZ:G:03:0072 US
+Site AZ:G:03:0072 US (upstream) and site
+AZ:G:03:0072 DS (downstream) form a single archeological
+site but were divided into two survey areas because of their
+large spatial extent. The entire site has been monitored
+by terrestrial lidar four times since 2006. This site is a
+prehistoric and protohistoric habitation area containing
+sparse surface artifacts and numerous agave roasting pits
+(Fairley and others, 1994). The upstream survey area
+(AZ:G:03:0072 US) consists of a convex hillslope that
+bounds an alluvial terrace that slopes down to the Colorado
+River, and it is further bounded on one side by a boulderchoked channel and on the other by steep slopes and
+outcrops of basalt cliffs (figs. 35 and 36). Three gullies
+traverse this part of the site; two (G1 and G2) are founded
+on alluvial fill cobbles and boulders, whereas the other (G3)
+cuts through an active sand dune. The sand dune extends
+from gully G2 to the western edge of the site near the
+boulder-choked channel. Brush check dams were installed
+in gully G2 in May 2006 (O’Brien and Pederson, 2009b).
+Vegetation consists of clumps of grasses, smaller bushes,
+and prickly pear cactus (Opuntia basilaris), along with
+taller groups of ocotillo (Fouquieria splendens), cholla
+(Cylindropuntia acanthocarpa), and larger creosote (Larrea
+tridentata var. tridentata) and catclaw acacia (Acacia
+greggii) several meters in height. O’Brien and Pederson
+(2009a) identified gullying, creep, aeolian transport, and
+overland flow as the geomorphic processes affecting this
+site and noted that archeological features were actively
+being eroded by these processes. Additional site details are
+included in O’Brien and Pederson (2009a,b).
+
+55
+
+Change detection analysis results for the first three
+surveys spanning 2006–2007 are provided by Collins and
+others (2009). Previously, substantial erosion was detected
+distributed throughout all three gullies in addition to the dune
+slope between G2 and G3. O’Brien and Pederson (2009b)
+also measured significant erosion in gully G2 and minimal
+erosion in G1 between May 2006 and September 2007. Here,
+we provide change detection results between September
+2007 and September 2010.
+Surface comparison between September 2007 and
+September 2010 indicate that major changes continued to occur
+at this site, consisting of erosion in two of the three gullies and
+throughout the mid-area sand dune field (fig. 37, table 13).
+In total, 14 areas of erosion and 6 areas of deposition were
+identified. Whereas average erosion and deposition depths were
+11 and 16 cm, respectively, maximum values reached between
+50 and 60 cm. The vast majority of the erosion and deposition
+within the mid-area dune field and in the gully G3 vicinity more
+than likely occurred as a result of aeolian processes. In general,
+the spatial pattern of aeolian erosion and deposition indicates
+a southwest to northeast transport vector (for example, from
+ER5 to DEP1 and from ER14 to DEP5). Significant erosion and
+deposition also occurred within gully G3 (ER8, ER10, ER11,
+DEP2, DEP3, DEP4, DEP6), and our observations indicate that
+both overland flow and aeolian processes were active in this
+area. Massive bank failure (ER11, fig. 37) and smoothing of the
+upper gully surface (DEP2 and DEP3) are indicated by the data
+and site observations. The only change detected in the gully
+G1 and G2 areas was a small bank collapse in gully G2 (ER1,
+fig. 37). This is consistent with the generalized characteristics
+within this area (grassy vegetated and cryptobiotic soil crusts),
+indicating a more stable site condition here.
+
+56
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+Table 13. Summary of detailed topographic change at Site AZ:G:03:0072 US.
+Time period
+(m/yyyy)
+
+Area
+(m2)
+
+Average depth
+(cm)
+
+AZ:G:03:0072 US – ER1
+
+9/2007-9/2010
+
+0.4
+
+8
+
+-0.04
+
+AZ:G:03:0072 US – ER2
+
+9/2007-9/2010
+
+3.1
+
+11
+
+-0.36
+
+AZ:G:03:0072 US – ER3
+
+9/2007-9/2010
+
+10.6
+
+8
+
+-0.93
+
+AZ:G:03:0072 US – ER4
+
+9/2007-9/2010
+
+0.5
+
+8
+
+-0.04
+
+AZ:G:03:0072 US – ER5
+
+9/2007-9/2010
+
+47.4
+
+16
+
+-7.74
+
+AZ:G:03:0072 US – ER6
+
+9/2007-9/2010
+
+1.8
+
+10
+
+-0.17
+
+AZ:G:03:0072 US – ER7
+
+9/2007-9/2010
+
+0.8
+
+10
+
+-0.06
+
+AZ:G:03:0072 US – ER8
+
+9/2007-9/2010
+
+0.2
+
+6
+
+-0.01
+
+AZ:G:03:0072 US – ER9
+
+9/2007-9/2010
+
+3.5
+
+8
+
+-0.28
+
+AZ:G:03:0072 US – ER10
+
+9/2007-9/2010
+
+2.2
+
+22
+
+-0.46
+
+AZ:G:03:0072 US – ER11
+
+9/2007-9/2010
+
+12.4
+
+20
+
+-2.66
+
+AZ:G:03:0072 US – ER12
+
+9/2007-9/2010
+
+1.6
+
+9
+
+-0.13
+
+AZ:G:03:0072 US – ER13
+
+9/2007-9/2010
+
+4.0
+
+11
+
+-0.45
+
+AZ:G:03:0072 US – ER14
+
+9/2007-9/2010
+
+3.6
+
+13
+
+-0.48
+
+AZ:G:03:0072 US – DEP1
+
+9/2007-9/2010
+
+34.2
+
+12
+
+3.87
+
+AZ:G:03:0072 US – DEP2
+
+9/2007-9/2010
+
+4.7
+
+16
+
+0.70
+
+AZ:G:03:0072 US – DEP3
+
+9/2007-9/2010
+
+1.9
+
+10
+
+0.19
+
+AZ:G:03:0072 US – DEP4
+
+9/2007-9/2010
+
+3.2
+
+25
+
+0.78
+
+AZ:G:03:0072 US – DEP5
+
+9/2007-9/2010
+
+4.9
+
+11
+
+0.47
+
+AZ:G:03:0072 US – DEP6
+
+9/2007-9/2010
+
+1.9
+
+22
+
+0.39
+
+Area number
+
+Volume
+(m3)
+
+Results
+
+0
+
+30
+
+Figure 35. Site AZ:G:03:0072 survey map for upstream (US) and downstream (DS) areas.
+
+60 METERS
+
+57
+
+58
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 36. Site AZ:G:03:0072 US survey area photo showing gully locations (G1 to G3). View is to the west.
+
+Figure 37. Site AZ:G:03:0072 US survey area: 5-cm
+gridded output showing erosion (warm colors,
+negative) and deposition (cool colors, positive)
+from September 2007 to September 2010. Identified
+change is outlined by polygons, and labels (ER =
+erosion, DEP=deposition) are cross-referenced with
+table 13.
+
+0
+
+5
+
+10
+
+15
+
+20 METERS
+
+Results
+
+Site AZ:G:03:0072 DS
+The downstream area of site AZ:G:03:0072
+(AZ:G:03:0072 DS) has been monitored by terrestrial lidar
+four times since 2006. Identically to the upstream area, this
+part of the site contains abundant evidence of prehistoric
+and protohistoric habitation (Fairley and others, 1994). The
+area consists of a convex hillslope bounded by two larger,
+boulder-filled channels (figs. 35 and 38). The upper part of
+the slope is relatively flat, and three small gullies traverse
+this area, steepening as they join the bordering channels
+below. Rock check dams exist in the steepest sections of
+some of these gullies. Vegetation includes a broad mix of
+cacti, including prickly pear (Opuntia basilaris) and ocotillo
+(Fouquieria splendens), as well as several larger mesquite
+(Prosopis glandulosa var. torreyana) and catclaw acacia
+(Acacia greggii) trees. In the gullies, large vegetation is
+generally absent, but soils appear to be stabilized by both
+grasses and cryptobiotic crust. O’Brien and Pederson (2009a)
+
+Figure 38.
+
+59
+
+identified gullying, creep, aeolian transport, and overland
+flow as the geomorphic processes affecting this site and
+noted that archeological features were actively being eroded
+by these processes. Additional site details are included in
+O’Brien and Pederson (2009a,b).
+Change detection analysis results for the first three
+surveys spanning 2006–2007 are provided by Collins and
+others (2009). Previously, no significant change was detected
+at this site. Here, we provide change detection results between
+September 2007 and the two 2010 datasets.
+Surface comparison between September 2007 and
+September 2010 indicate that no significant changes
+occurred during this time (fig. 39). In general, this area of
+site AZ:G:03:0072 appears stable with regard to existing
+gullies—most channel substrates are either bedrock-controlled
+or protected by dense grasses, thereby preventing substantial
+erosion. In addition, no recent aeolian sand deposits are
+present here—most areas are stabilized by cryptobiotic crust
+or are covered by grasses and larger vegetation.
+
+Site AZ:G:03:0072 DS survey area photo showing gully locations (G1 to G3). View is to the north.
+
+60
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+2.5
+
+5
+
+7.5
+
+10 METERS
+
+Figure 39. Site AZ:G:03:0072 DS survey area: 5-cm gridded output showing no significant change from September 2007 to September 2010.
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+
+Analysis and Optimization of Other
+Metrics of Archeological Site Stability
+Whereas the bulk of this research is aimed at
+increasing the accuracy of topographic change detection on
+archeological sites along the Colorado River corridor, we
+also undertook several studies to investigate and optimize
+additional applications of lidar surveying for monitoring other
+types of changes at archeological sites. These studies are
+more than simply new directions to push this technology—
+they address existing science questions that have eluded
+answers because of the difficulty in collecting the highaccuracy data needed to shed light on processes affecting site
+stability. These questions include:
+• Are archeological structures stable or actively
+deteriorating, and if deteriorating, where and by how
+much?
+• Are surface artifacts moving position, and if so, by
+how much?
+• Are cryptobiotic soil crusts changing (expanding or
+shrinking), and if so, by how much?
+They also address several technique-specific questions such
+as:
+• Can lidar-linked photography be used to model gully
+thalwegs as an indicator of site change, above and
+beyond existing, traditional survey methods?
+• How can lidar scan positioning be optimized with
+respect to point density to model archeological site
+change most efficiently and with the least amount of
+site disturbance?
+We address each of these questions separately here.
+
+Monitoring Archeological Structure Stability
+With the increased accuracy of the latest generation of laser
+scanners, monitoring even subtle changes in topography is now
+achievable. This provides an important avenue for change detection studies, including monitoring the stability of structures and the
+movement of individual structural elements (for example, many
+habitation sites in Grand Canyon have above-ground structures
+with walls formed from stacked rocks). At some sites, stacked rock
+walls have been built abutting steep slopes that may be subject
+to soil creep as a dominant process (see, for example, Tressler,
+2011; Tressler and Pederson, 2010); this suggests that monitoring
+this process using high-accuracy surveys can lead to increased
+awareness of potential site instability. Whereas some lasers (that
+is, those with a phase-based laser mechanism) can collect data at
+the submillimeter scale, performing change detection on objects,
+especially those in a natural setting, remains challenging because
+of inaccuracies in global coordinate positioning. In most cases, at
+best, reoccupying laser scan and control point locations is generally only achievable at the centimeter scale.
+
+61
+
+To test the application of terrestrial lidar change detection
+on habitation structures, we performed consecutive temporal lidar
+surveys of several rock walls that formed habitation structures
+used by prehistoric farmers in the 11th and 12th centuries (Fairley
+and others, 1994) at site AZ:C:13:0009 (figs. 40 and 41). The site
+is located on an alluvial terrace bounded on one side by a side
+canyon arroyo and on the other by dunes adjacent to the Colorado
+River. Dune sands mantle parts of the site, along with slope wash
+boulders and scattered clumps of vegetation. Vegetation includes
+brittlebush (Encelia farinosa), western honey mesquite (Prosopis
+glandulosa), prickly pear cactus (Opuntia sp.), and a variety of
+perennial bunch grasses. O’Brien and Pederson (2009a) identified
+gullying, creep, and aeolian transport as the primary geomorphic
+processes affecting this site and noted that these processes are currently destroying archeological resources at the site. Additional site
+details are included in O’Brien and Pederson (2009a).
+We collected four scans of the area both in April 2010 and
+again in September 2010, focusing specifically on capturing the
+detailed topography of seven areas where the remains of habitation structures are visible on the surface. Data were processed
+identically as described previously for the other 2010 datasets.
+Following processing, specific rocks or groups of rocks that
+represent the remains of habitation structures were identified
+and isolated for analysis. We analyzed the three-dimensional
+change at each area by two methods. First, we calculated the
+distance between each set (April 2010 and September 2010) by
+computing the mean distance between each group of points that
+represent the same set of rocks (fig. 42). Second, we constrained
+the mean distance comparison to only those data that represent
+the best fit between the two sets of data. This represents a slight
+improvement in relative fit, in that unmatched points are not
+used in the data comparison (that is, the numbers of points used
+for comparison are less than the first method—see table 14). We
+note that the two algorithms are essentially the same, with the
+first analysis using all the points and the second using only those
+points that represent the best fit.
+The results (table 14) show that the three-dimensional distances (that is, the changes in position) between sets of rocks are
+all on the order of 1 to 3 cm. Standard deviations were less than
+1 cm in most cases. Because these distances are also on the order
+of the previously established empirical error thresholds (that is, 3
+cm for change detection between the April 2010 and September
+2010 datasets), we conclude that either (1) the rocks representing the remains of the habitation structures did not move during
+the monitoring time period, or (2) if the rocks did move, it was
+on a magnitude less than the error threshold of 3 cm. With either
+selection, the main conclusion is that monitoring of habitation
+structures using the methods presented herein (that is, using
+repeat, temporally distinct survey and control point locations)
+is not capable of determining change detection at the 1 to 2 cm
+scale. As previously mentioned, phase-based scanners might be
+used in the future as an improvement if subcentimeter change
+detection were required, but with the majority of the errors
+linked to georeferencing and registration, the use of permanently
+fixed, repeatedly occupied, monuments for setting up survey and
+control point locations would likely be required.
+
+62
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+0
+
+30
+
+60 METERS
+
+Figure 40. Site AZ:C:13:0009 survey map showing locations of rock habitation structures (R1 to R7) monitored for movement.
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+
+63
+
+Figure 41. Site AZ:C:13:0009 survey area photo showing rock habitation structures R1 to R7. View is to the east. See figure 40 for scale.
+
+Figure 42. Change detection of rock habitation structure R4 at Site AZ:C:13:0009. A, Photo of rock habitation
+structure walls (view is to the northeast). B, Rocks (purple) identified in point cloud data from April 2010.
+
+64
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Table 14.
+
+Change detection analysis for rock habitation structures at Site AZ:C:13:0009.
+
+Survey area and rock
+structure number
+
+Time period
+(m/yyyy)
+
+Number of points
+used in all point
+analysis
+
+Number of points
+used in best-fit
+analysis
+
+Mean distance
+between all points
+(cm)
+
+Mean distance
+between best-fit
+points
+(cm)
+
+AZ:C:13:0009 – R1
+
+4/2010-9/2010
+
+2,637
+
+2,497
+
+1.5
+
+1.4
+
+AZ:C:13:0009 – R2
+
+4/2010-9/2010
+
+2,921
+
+2,033
+
+2.0
+
+1.8
+
+AZ:C:13:0009 – R3
+
+4/2010-9/2010
+
+2,724
+
+2,004
+
+3.0
+
+2.5
+
+AZ:C:13:0009 – R4
+
+4/2010-9/2010
+
+6,781
+
+3,502
+
+1.8
+
+1.6
+
+AZ:C:13:0009 – R5
+
+4/2010-9/2010
+
+2,304
+
+1,796
+
+2.0
+
+1.6
+
+AZ:C:13:0009 – R6
+
+4/2010-9/2010
+
+1,143
+
+1,095
+
+2.2
+
+2.1
+
+AZ:C:13:0009 – R7
+
+4/2010-9/2010
+
+3,904
+
+3,343
+
+2.8
+
+2.6
+
+3,202
+
+2,324
+
+2.2
+
+1.9
+
+Average
+
+Monitoring Artifact Movement
+For archeological sites with surface artifacts (for example, pieces of pottery or piles of fire-cracked rock) quantitative
+tracking of changes in artifact position could provide a useful
+metric related to archeological site stability. Tressler (2011)
+and Tressler and Pederson (2010) showed that tracking small
+rocks at a fine scale could be used as a proxy for measuring
+soil creep, which might govern some aspects of site stability. Tracking changes on this scale (subcentimeter) requires
+that: (1) artifacts be recognizable both in photos and in lidar
+point clouds and (2) the point density be sufficient to clearly
+delineate artifacts of interest. Although the lidar survey data
+analyzed in this report were not purposefully collected at sufficiently high density to perform this level of change detection, we performed directed analyses for a simple case where
+artifacts were within range of a nearby scan position from a
+neighboring site. Here, we present analysis results for a small
+subset of data from site AZ:C:13:0334 (fig. 43A), located in
+the Palisades region. The site has essentially the same characteristics as that previously described for the AZ:C:13:0099
+playa area, with the addition that aeolian transport is also an
+active process here. Additional site details are included in
+O’Brien and Pederson (2009a).
+The lidar data for our analyses consist of a single scan
+collected from each of the April and September 2010 surveys at
+an approximate range of between 21 m and 24 m and focused
+on an area containing a sizable concentration of individual
+rock fragments; each fragment measured approximately 1 to 4
+cm in longest dimension. These georeferenced data, cropped
+to an area of approximately 4,250 m2, are accurate to a mean
+point-to-point matching error of 8 mm, with 6 mm standard
+
+deviation. Thus, the data are only sufficiently accurate to perform change detection at a scale of 1 to 2 cm, at best. Despite
+this limitation, we performed lidar-directed change detection
+analysis for the two datasets in hope that artifacts could be at
+least visible in the point cloud data. Unfortunately, despite the
+generally close range between artifacts and scanner location,
+we determined that the point density (0.05 to 0.11 points/cm2 or
+approximately 3 to 5 cm spacing) was insufficient to delineate
+individual objects (fig. 43B).
+Increased point density was not specifically collected at
+this site because of our focus on whole-site (large-area) data
+collection. However, other studies (for example, Tressler and
+Pederson, 2010) using data from our previous surveys (Collins and others, 2009) have shown that sufficient point density
+(4 points/cm2) can be collected using short-range (~4 m)
+instrument locations and used to track centimeter-scale rock
+clast movement. Thus, the obvious conclusion is that point
+density must be maximized to at least the 2-points/cm2 range
+(subcentimeter point spacing) to detect artifacts of this type at
+this range, and a metric relating an artifact of any size to the
+required point density can easily be calculated for a specific
+area of interest. Whereas this might be within the range of
+some topographically directed terrestrial lidar instruments, it
+might also exceed the instruments’ accuracy specifications.
+Our recommendations, therefore, are to use either phasebased laser scanning instruments with both improved (millimeter-scale) accuracy and resolution or close-range (<10 m)
+digital photogrammetry. However, georeferencing errors may
+still be the greatest limitation when using lidar methods and
+would require a local (that is, site-scale) network of permanent control points to be established and repeatedly occupied
+for all initial and subsequent surveys.
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+
+65
+
+Figure 43. An artifact concentration at site AZ:C:13:0334. A, Image. B, Point cloud. The point density (~0.1 point/cm2) is insufficient to
+track potential movement of individual artifacts or single rocks, precluding detailed change detection.
+
+Detection and Mapping of Cryptobiotic Soil Crust
+Biological soil crusts (herein referred to interchangeably
+as cryptobiotic soil crusts or cryptobiotic crusts) are important
+components of desert ecosystems (Belnap and others, 2001),
+including those found at many archeological sites in Grand
+Canyon. Cryptobiotic crusts form at the soil surface and are
+composed of living bacteria, algae, fungi, lichens, and mosses
+(Belnap and others, 2001). They are generally resilient in
+some respects (for example, they can withstand drying and
+wetting) but are susceptible to damage from compaction
+(for example, by footsteps), which can destroy the crustforming organisms, thereby disrupting growth. The presence
+or absence of cryptobiotic crust at an archeological site can
+be indicative of site stability and the degree to which surficial
+erosion processes are active at a site, because crusts keep wind
+from transporting sediment out of sites, prevent rainsplashand runoff-induced erosion, and are often precursors to the
+establishment of vegetation that may then further inhibit both
+aeolian and overland flow erosion. Knowing and tracking the
+areal extent of cryptobiotic crust in and near archeological
+sites is therefore a potentially important component of
+archeological site stability monitoring.
+Existing methods of mapping cryptobiotic crusts are
+generally implemented by visual techniques—soils are
+inspected in the field and several classes of development
+are distinguished from one another according to established
+protocols (for example, Tongway and Smith, 1989; Belnap
+and others, 2001). The areal extent of cryptobiotic crust at
+a particular site can be mapped directly on a photographic
+base map, such as a low-altitude orthophotograph, or can
+be mapped by survey boundary methods, such as GPS
+or total station. Whereas these techniques are likely the
+most conclusive ways to determine what is and what is
+
+not a cryptobiotic crust, they may cause disturbance to the
+archeological and/or biologic properties of a site through
+human impacts (for example, from footprints and survey rod
+imprints). Mapping techniques using airborne and satellite
+remote sensing techniques already exist (for example, Karnieli
+and others, 2001; Chen and others, 2005), but these are
+generally more suited for large-scale (that is, hundreds of
+square kilometers) investigations. Use of smaller scale remote
+sensing methods, such as terrestrial lidar, may therefore offer
+a means of minimizing potential impacts during cryptobiotic
+crust surveys at the scale of an individual archeological
+site. Already, the use of combined photomapping with
+terrestrial lidar has been applied to geologic outcrop mapping
+(for example, Bellian and others, 2005), and close-range
+hyperspectral imaging has been combined with terrestrial
+lidar mapping (for example, Kurz and others, 2011). This
+technology is therefore moving rapidly forward.
+We examine the use of terrestrial lidar for mapping
+cryptobiotic soils through an example taken from Site
+AZ:C:05:0031 using the April 2010 data. Here, both uncrusted,
+loose dune sands and cryptobiotic-crusted sands are located in
+discrete locations within the general area of the archeological
+site. In addition to positional (x, y, z) and color channel (red,
+green, blue) data, our laser system also collected laser signal
+amplitude data. Laser signal amplitude is a measure of signal
+return strength and is dependent on target material type, range
+between target and laser, and laser incident angle. The use
+of laser signal amplitude for determining the areal extent of
+a particular substrate, such as cryptobiotic crust, is therefore
+not ideal because remote sensing campaigns should be rangeindependent. That is, they should only be based on the material
+type—an attribute that could potentially be more appropriately
+extracted if the laser reflective intensity were measured. When
+collected, the data can very often be discretized and range
+
+66
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+normalized (see, for example, Kaasalainen and others, 2011).
+Unfortunately, most existing time-of-flight terrestrial lidar
+systems (including the type used in our study) are not capable
+of measuring reflective intensity and therefore cannot be used
+for this purpose. Currently, some aerial lidar sensors, phasebased terrestrial scanners, and only the newest generation of
+time-of-flight terrestrial lidar units offer this capability (so-called
+“full waveform” measurements). Despite this equipment-based
+limitation, we explored the use of terrestrial lidar for cryptobiotic
+crust mapping by examining the laser strength amplitude for
+a narrow range of point cloud data from the archeological
+site. This resulted in normalizing the effect of laser range over
+the investigated area (that is, comparable at this range only),
+but it was then not applicable to the entire archeological site
+considered as a whole. Our methodology consisted of:
+1.
+
+Visually identifying areas of both highly developed
+(that is, level of development > 4; Belnap and others,
+2008) cryptobiotic crusted and uncrusted dune sands
+at a similar laser range (approximately 35 m) both
+through high-resolution digital images (figs. 44 A,B)
+and through on-site mapping (Amy Draut, written
+commun., August 2011). Areas with minimal to no
+vegetation were purposely selected. An approximately similar area (roughly 6 to 8m2) was used for
+each substrate by integrating three smaller dune sand
+areas to be of approximate equivalent areal extent as
+the one cryptobiotic crust area (table 15).
+
+2.
+
+Digitally outlining the identified cryptobiotic crust
+and uncrusted dune sand areas in the point cloud
+data from a single vantage point and single point
+cloud to minimize laser incidence effects (fig. 44C ).
+
+3.
+
+Filtering the point clouds to contain only those
+points within the cryptobiotic crust and uncrusted
+dune sand boundaries.
+
+4.
+
+Querying the segregated point cloud statistics (for
+example, mean, standard deviation) for laser return
+amplitude, as a measure of signal strength for each
+substrate (table 15).
+
+5.
+
+Filtering the entire point cloud by the mean plus one
+standard deviation for each substrate (cryptobiotic
+crust or sand) to see if there is a quantitative distinction
+for areas covered with cryptobiotic crust (fig. 45).
+
+The results indicate that there is a clear laser signal
+amplitude distinction (measured on a relative scale from
+0, low, to 65,535, high) between the cryptobiotic crust and
+uncrusted dune sand areas (table 15). The mean value for
+cryptobiotic crust is approximately 450 amplitude units
+above that for the uncrusted sand areas, and at one standard
+deviation there is almost no overlap between pixels with
+identical signal strengths. Mapping of the point cloud using
+a mean +/- one standard deviation (that is, ± 1σ) threshold
+shows that the different amplitudes effectively segregate the
+cryptobiotic crust areas from the uncrusted dune sand areas
+(fig. 45). Thus, this exercise shows that a clear distinction
+in identifying cryptobiotic soil crust from uncrusted dune
+sands based on laser amplitude was achievable for at least
+a small patch of data at a single range. These results are
+substantiated by previous work on this subject using slightly
+different techniques (for example, identifying different rock
+lithology with combined photo-lidar methods, see Bellian
+and others, 2005). However, as previously discussed, a
+thorough comparison of the entire site (that is, at different
+ranges) is not possible because of the effects of range on
+signal amplitude and because vegetation and other substrates
+(for example, rocks, see fig. 45) impair a clear evaluation
+of the amplitude signal over a larger region. The use of a
+full waveform laser that collects reflective intensity data,
+especially if collected from an airborne platform, would
+likely alleviate these issues.
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+Table 15.
+
+Laser amplitude analysis of areas of cryptobiotic crust vs. uncrusted dune sand at Site AZ:C:05:0031.
+
+Area
+(see fig. 44)
+
+Number of
+points in
+crypto or sand
+area
+
+Mean range
+from laser
+origin (m)
+
+Mean signal
+amplitude1
+
+Standard
+deviation of signal
+amplitude
+
+Minimum
+signal
+amplitude
+
+Maximum
+signal
+amplitude
+
+Crypto area A
+
+4,346
+
+36
+
+9,947
+
+209
+
+7,938
+
+11,011
+
+Sand area avg.
+
+4,869
+
+33
+
+9,494
+
+258
+
+7,170
+
+10,498
+
+1
+
+67
+
+Signal amplitude units are measured on a relative basis between 0 and 65,535.
+
+Figure 44. Overview photos of (A) cryptobiotic crust area (view is to the south – see fig. 7) and (B) uncrusted dune sand areas (view is
+to the southwest – see fig. 7) at site AZ:C:05:0031 from April 2010. C, Point cloud data of same areas showing proximity and scale (WXST
+= weather station).
+
+68
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 45. Laser-strength amplitude-filtered point cloud for cryptobiotic crust area (orange, with amplitude range of 9,738–10,156 units)
+and uncrusted dune sand area (blue, with amplitude range of 9,236–9,752 units) effectively segregates the mapped areas from one
+another. Other areas with vegetation or boulders (for example, identified with single-headed arrows), are not effectively segregated by
+this classification.
+
+Gully Thalweg Determination From Combined
+Lidar-Photography
+One of the most visible signs of archeological site change
+in the Colorado River corridor is the ongoing erosion of
+gully channels that traverse through these sites. Researchers
+(for example, Hereford and others, 1991; Fairley and others,
+1994; Leap and others, 1997; Pederson and others, 2006) have
+documented the incision and formation of gullies, and some
+of these gullies are now effectively removing artifacts from
+their original locations and transporting them into the Colorado
+River to be lost downstream. Although the debate on the cause
+and the long-term rate of incision of these gullies is a broader
+topic reflecting the relative influences of natural verses anthropogenic sources for the erosion, knowledge of their location
+and change over time is needed for an informed analysis of this
+subject. Whereas existing survey methods (for example, conventional total station surveys) exist for obtaining these data
+(for example, Hazel and others, 2008; O’Brien and Pederson,
+2009b), the accuracy and relatively high impact of these methods (that is, requiring a person to stand in, and traverse through,
+an archeological site) prompted a reevaluation of remotely
+sensed methods by the USGS to obtain this type of data.
+In 2006, Collins and others (2008) performed a study
+to compare the use of terrestrial lidar methods verses total
+station methods in generating high-resolution, accurate
+
+long profiles of gully thalwegs at archeological sites in the
+Colorado River corridor. In general, the study showed that
+lidar can be used as an effective tool, but that the method,
+as applied in 2006, had limitations regarding the ability to
+track such fine-scale detail as gully kickpoints in areas of
+complex topography. Further, the water-drop pathway algorithm utilized (involving automated computational methods
+to interrogate a surface model and determine the channel
+flow path) had limitations when the topography was shallow
+in slope. In these instances, the algorithm did not always
+determine the lowest, most efficient flow line, thereby creating unrealistically complex and tortuous channel flow paths.
+Whereas the overall results (mean difference errors of less
+than 5 cm between total station and lidar) closely mimicked
+the total vertical analytical error of the lidar and total station
+instruments used (4.3 cm and 1.3 cm, respectively), standard deviations of the same difference errors (between 5 and
+19 cm) highlighted the variability of the data comparison.
+Collins and others (2008) therefore concluded that feature
+identification and thalweg mapping using the methods used
+at that time were not reliable to the degree needed to implement them on a wider, more regular basis for monitoring
+gully erosion at archeological sites.
+With the rapid advancement of lidar technology since
+the 2006 study (Collins and others, 2008), new instruments
+(including that used in the present study) have become
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+available that are more accurate and that offer the ability to
+perform photo-based mapping on lidar point cloud data. This
+new technology thereby has the potential to better tackle the
+thalweg mapping question by use of a remotely sensed methodology. Therefore, as part of the present study, we collected
+channel thalweg data at approximately 2.5-m intervals (judged
+as an efficient spacing and of sufficient resolution at this site)
+using a total station at the AZ:C:13:0099 playa area site (fig.
+46; see also figs. 22 and 23) so that a direct comparison of this
+data to a lidar-extracted thalweg could be made. Because the
+channel at this site is not technically a gully (not steep walled),
+it provides a somewhat more robust evaluation (that is, topographic subtleties in its lower overall profile are more difficult
+to discern). The methodology involved “coloring” the point
+cloud data using the calibrated high-resolution photographs
+collected through a Nikon D200 digital SLR camera mounted
+to the top of the laser (fig. 4). The colored point clouds were
+then utilized in two ways:
+1.
+
+A surface model (TIN) was created, colored, and
+textured using the photos in order to try to determine
+the thalweg using the now photo-draped model.
+
+2.
+
+The colored point cloud was used to virtually map
+the thalweg at approximately 0.75-m intervals
+(again, judged efficient and of sufficient resolution
+for this site) by optical-manual recognition using the
+combined colored topography.
+
+The first method was unsuccessful in accurately depicting
+a suitable surface model for channel thalweg extraction. Limitations included the need to filter the dataset to at least some minimum threshold in order to generate a surface model for color
+and texture modeling. The filtering effectively limited the resolution of the model, such that the thalweg was then “blurred”
+and difficult to identify. Although photo-draping algorithms are
+
+69
+
+rapidly becoming more sophisticated, we did not find the methods efficient or accurate during the present evaluation.
+The second method of direct thalweg mapping on the
+colored point cloud was much more successful. Here, approximately 100 m of the thalweg was mapped using 136 points
+(compared to 37 using total station) on a combined colored
+point cloud consisting of data from five separate scan locations. Horizontal plane accuracy was good (fig. 47), with
+maximum differences on the order of 20 cm. In general, these
+were due to the coarser resolution of the total station data.
+Profile view accuracy was also exceptional (fig. 48), with
+mean difference errors between the long profiles generated by
+lidar and total station of only 0.2 cm and 84 percent of the data
+within a 2-cm vertical error bound. This is therefore a vast
+improvement over the results obtained by Collins and others
+(2008), especially so because the thalweg investigated here is
+relatively flat—such situations had earlier been highlighted as
+a limitation of lidar methods.
+Because the lidar-generated thalweg was based on an
+order-of-magnitude larger number of points, the long profile
+is evidently longer and more variable. However, in only two
+locations (at approximately the 33-m and 65-m distance marks—
+see fig. 48) were the lidar data significantly different from the
+total station data. Here, we determined that the differences
+were due to a lack of point density in the total station data—the
+differences were located in two low-lying areas of the thalweg
+where “pools” developed (a result of filling and subsequent
+drying of the channel), such that the total station likely missed
+locating these lower visibility features. In summary, the use
+of photo-colored point clouds for mapping channel thalwegs
+proved to be a vast improvement over previous attempts to
+identify subtle topographic features such as these. This method
+thus shows much promise for mapping geomorphic change in
+gully systems, as long as the limitations discussed by Collins and
+others (2008) are avoided (namely, surveying in highly vegetated
+areas that obscure any view of the gully thalweg).
+
+70
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+Figure 46. Oblique image overview of AZ:C:13:0099 playa area showing length of main channel thalweg (blue line) for long profile
+analysis. View is to the west (see fig. 22).
+
+Figure 47. A section of the AZ:C:13:0099 playa area channel as it winds around a large rock. A, Oblique image (view is to the north
+– see fig. 22). B, Point cloud data. Pink, coarser resolution line is thalweg derived from total station data. Blue, finer resolution line is
+thalweg derived from lidar data.
+
+Analysis and Optimization of Other Metrics of Archeological Site Stability
+
+71
+
+σ
+
+Figure 48. Long profile view of channel thalweg comparison using terrestrial lidar and total station data at AZ:C:13:0099 playa area
+during April 2010. Mean and standard deviation of differences between lidar and total station data identified by µ and σ, respectively.
+
+Effect of Survey Location on Lidar Point Density
+Lidar point density is affected by a suite of factors,
+including laser specifications, range to target, and obliquity
+of laser incident angle. In most cases, point density can
+be optimized by selecting appropriate, overlapping laser
+scanner survey setup locations with good laser-to-target
+incident angles. Olsen and others (2009) showed how this
+can be determined for near-vertical coastal bluffs scanned
+from evenly spaced beach locations fronting the bluffs.
+When scanning flatter topography, such as that found in
+many archeological sites in Grand Canyon, optimizing point
+density can be difficult because of the lack of suitable scan
+locations that offer near-perpendicular trajectories to the
+target. This problem is typically resolved by collecting data
+from additional scan locations, resulting in more time on site
+and possibly more site impacts. When surrounding topography
+offers an overview of a survey area (fig. 49A), the best results
+are often achieved. However, the final point density can
+decrease if the scan location is positioned beyond a laserdefined distance threshold (that is, as defined by the angular
+step increment of the laser at far range). Here, we provide
+results from a study conducted at the AZ:C:13:0099 playa area
+
+that verified this effect. The study was conducted to show that
+whereas far-field (>100 m) scanning from a high vantage point
+can effectively resolve geomorphic-scale topographic features,
+near-field (<30 m) scanning is still needed for resolving small,
+archeological-scale features.
+Following existing archeological site lidar monitoring
+protocols, five near-field scans were collected at the
+AZ:C:13:0099 playa area. In addition, one far-field scan
+was collected from the approximate mid-height of a steep
+talus slope adjacent to the site (fig. 22). The near-field scans
+collected data at a horizontal and vertical angular resolution of
+0.05°, whereas the far-field scan was set to collect data at an
+angular resolution of 0.02° (the maximum allowed by the laser
+scanner instrument at this field of view). In general, minimum
+laser scan incident angles (as measured from the horizontal
+to the maximum trajectory covering the data collection area)
+ranged from 8° to 11° for the near-field data and from 16°
+to 21° for the far-field data. Thus, the far-field setup leads to
+approximately double the incident angle, thereby improving
+the quantity of potentially usable laser returns. However, the
+point density results show that the near-field data far exceeds
+the far-field data, as expected. For an area 10 m by 10 m
+within the southern end of the playa (representing a typical
+
+72
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+area of interest; fig. 49A), the point density from the far-field
+(from one scan position, see “FF” in fig. 22) is 180 points/m2
+(fig. 49B), whereas the point density from the near-field (also
+from one scan position, see “NF” in fig. 22) is 13,130 points/
+m2 (fig. 49C), an increase in two orders of magnitude. With
+the near-field data, geomorphic subtleties such as channel
+fingering are captured, whereas with the far-field data, only the
+overarching topography is captured. The tradeoff here is the
+relative area in which data collection occurs. In this example,
+the single far-field scan captures the entire area of interest
+(~10,300 m2; table 4), whereas the near-field data require
+five independent scan locations and twice the amount of time
+(also potentially increasing site impacts) to capture the same
+area. Further, it is technically possible that a higher degree of
+accuracy could be obtained using only a single far-field scan
+because registration errors between multiple scans might be
+avoided. However, whereas far-field setups are more efficient
+at data collection, near-field setups are required to monitor
+and understand geomorphic change at scales of importance for
+monitoring archeological site stability.
+
+under new configurations (that is, change occurred at either a
+different magnitude or location than previously documented).
+For example, at site AZ:C:13:0336, erosion occurred in a gully
+that had previously eroded, and also at a new gully location.
+These results highlight the dynamic geomorphology of the
+Colorado River corridor and the need to monitor sites regularly and repeatedly to understand the geomorphologic effects
+on site condition. Overall, and ignoring the results from Site
+AZ:C:13:0099 between September 2007 and April 2010,
+which were clearly influenced by an unusual anthropogenic
+cause (the excavation of the site in 2008), total measured erosion was greater both in area and volume (669 m2 and 157 m3,
+respectively) compared to total measured deposition (169 m2
+
+Discussion
+This continuing investigation provides new information
+about the amount and types of topographic changes affecting
+Colorado River corridor archeological sites in Grand
+Canyon National Park. In addition, the results present newly
+refined techniques for collecting and evaluating topographic
+and other types of change data for use in monitoring
+overall archeological site stability. These new findings are
+summarized below.
+
+A
+
+Archeological Site Change Detection
+We detected statistically significant change (greater than
+either ±3 cm or ±5 cm, depending on survey dates) at 9 of
+10 survey areas, including all 9 archeological sites investigated in the current study (table 16). The only survey area
+not showing signs of change was the downstream part of
+site AZ:G:03:0072. For the remainder of the surveyed areas,
+changes tended to be of larger magnitude between September
+2007 and April 2010 than between April 2010 and September 2010, consistent with expectations regarding the length
+of time in which changes could have occurred (that is, over
+longer time intervals, multiple events could be responsible for
+the measured changes). Detected changes range from areas
+with large-scale aeolian sand erosion and deposition (for
+example, the upstream part of site AZ:G:03:0072) to those
+with massive gully erosion generated by overland flow (site
+AZ:B:10:0225). Investigation and comparison of specific areas
+of change detected between 2006–2007 (Collins and others,
+2009) and detected between 2007–2010 (this report) indicate
+that some sites changed consistently (that is, with the same
+general location and magnitude), whereas other sites changed
+
+B
+
+C
+Figure 49. Comparison of far-field and near-field data for a 10 m
+by 10 m area of the AZ:C:13:0099 playa. A, Photo (view is to the
+west—see fig. 22). Arrow indicates look angle for B and C. B, Farfield (FF) lidar point density. C, Near-field (NF) lidar point density.
+
+Conclusions
+and 20 m3, respectively) during the September 2007 to September 2010 time period. It should be noted that not all areas
+within the investigated archeological sites were monitored for
+change. However, although these conclusions are only technically applicable to the specific areas monitored, they more
+than likely correctly capture the overall trend—that of archeological site erosion throughout the Colorado River corridor.
+In general, we documented the causes of detected changes
+as being related to two primary processes: aeolian transport and
+overland/channelized flow. In at least one case (AZ:C:13:0099
+between September 2007 and April 2010), anthropogenic
+actions influenced the erosion and deposition patterns. From
+the magnitude of changes surmised to be due to both overland
+flow erosion and aeolian sand erosion and deposition processes,
+back-analysis of the meteorological events that caused these
+changes should be possible where records of rainfall and wind
+direction and speed are available for the time frame in which
+the changes occurred (for example, Draut and others, 2009a,b;
+2010b). For example, examination of local rainfall and wind
+records may identify particularly significant events that could
+have caused the magnitude of changes observed and detected
+from the data (that is, large-scale gullying or aeolian sand
+transport). Whereas this type of analysis is beyond the scope of
+this report, if undertaken in the future it would serve to bracket
+potential empirical thresholds for the magnitudes of processes
+that cause these types of site changes. Unfortunately, comparison of these results with expected and modeled results from the
+2008 High Flow Experiment (HFE) (Melis, 2011), which may
+have affected the archeological sites monitored here, is not possible because of the 2½-year gap between the dates on which
+our data were collected. That is, whereas the September 2007
+and April 2010 dates bracket the 2008 HFE in March of that
+year, they do not bracket the experiment closely enough to be
+able to link changes specifically to effects of the HFE.
+
+Lidar Change Detection Monitoring
+Several components of the lidar surveying method used
+in this study warrant discussion. First, we note that the accuracy thresholds used for all change detection analyses are a
+significant improvement from previous efforts and currently
+represent the best achievable limits at this scale. Performing repeat topographic change detection at below a 3-cm
+threshold in a remote setting without the use of permanently
+installed reoccupiable control points, which generally necessitate at least some archeological site disturbance, will require
+significant improvements in both laser and GPS/total station
+accuracy. Whereas lidar technology continues to evolve, more
+accurately surveying control point locations would require
+significant technological advancements that have thus far not
+been introduced in rugged field instrumentation.
+Second, this study investigated several additional metrics
+for evaluating archeological site change that could prove to be
+useful with additional advances in technology (for example,
+monitoring structural walls, tracking artifact movement,
+monitoring cryptobiotic soil crust cover). Here, we introduced
+
+73
+
+available methods of analysis, but also discovered significant
+limitations (for example, overall inaccuracy of time-of-flight
+lasers for these monitoring purposes, lack of full wave-form
+analysis with most current available laser scanners). However, we also suggest that different and newer instrumentation
+already available may be able to address these limitations in
+some cases. Thus, although this study showed that tracking
+some of these site metrics was not possible using the instruments available at the time of data collection, we also posit
+that the limitations may be overcome with new technology.
+Finally, we show that technological advances have
+already been helpful in addressing some previous limitations.
+Namely, we conclusively identified a gully thalweg running
+through relatively flat topography to a degree of accuracy better than established in previous studies. The use of photo-colored point clouds is certainly a step in the right direction for
+this type of analysis, and we expect that additional advances
+will make such analyses still more accurate in the future.
+
+Conclusions
+Archeological sites within the Colorado River corridor of
+Grand Canyon National Park offer a window into the lives of
+the people who occupied this region long ago. Given that many
+archeological sites are located in areas subject to rapid geomorphologic change, such as alluvial terraces subject to gullying
+processes and active aeolian dune fields, understanding the
+magnitude and causes of these changes is important for monitoring and managing both short-term and long-term archeological site stability. High-resolution topographic change detection
+using terrestrial lidar techniques, coupled with site-specific
+geomorphologic analysis of archeological sites, provides much
+of the necessary detailed information needed to understand
+rates of change and to guide management decisions. Further,
+high-resolution, highly accurate data at the scale presented in
+this report are required in order to track fine site changes that
+might be precursors to larger scale, destructive erosion events.
+This information can assist in addressing open questions
+regarding what role, if any, sediment-depleted flows from Glen
+Canyon Dam have on site stability and what effects visitor use
+might have on site deterioration.
+In this study, we build upon existing data to generate new
+topographic change maps and infer related geomorphologic
+causes of archeological site change at 10 survey areas covering 9 archeological sites throughout the length of the Colorado
+River corridor over a 3-year period from September 2007 to
+September 2010. Eight areas were monitored for change at a
+5-cm detection threshold between September 2007 and either
+April or September 2010, and six areas (including some of the
+eight previously studied) were monitored for change at a 3-cm
+detection threshold between April and September 2010. Our
+results indicate that 9 of the 10 survey areas exhibited statistically significant topographic change by erosion, deposition,
+or both during this time interval and that those changes could
+likely be linked to a variety of causes, including overland flow
+
+74
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+Table 16. Summary of net topographic change between September 2007, April 2010, and September 2010.
+[Survey area codes are National Park Service archeological site identifiers]
+
+Total
+site area
+modeled
+with
+change
+(percent)
+
+Average
+(max.)
+height of
+dep.
+(cm)
+
+Approx.
+volume of
+erosion (–)
+(m3)
+
+Approx.
+volume of
+dep. (+)
+(m3)
+
+4 (30)
+
+0 (0)
+
+-5.7
+
+0
+
+2.8
+
+15 (33)
+
+9 (22)
+
+-3.3
+
++0.8
+
+0
+
+0.2
+
+6 (16)
+
+0 (0)
+
+-0.1
+
+0
+
+39.1
+
+2.2
+
+2.9
+
+7 (27)
+
+7 (15)
+
+-3.6
+
++0.2
+
+AZ:C:13:0336
+(April 2010- Sept. 2010)
+
+16.5
+
+1.5
+
+1.3
+
+3 (9)
+
+3 (5)
+
+-0.6
+
++0.1
+
+AZ:C:13:0099
+(Sept. 2007-April 2010)
+
+103.0
+
+22.5
+
+19.6
+
+12 (63)
+
+12 (59)
+
+-17.3
+
++2.8
+
+AZ:C:13:0099
+(April 2010- Sept. 2010)
+
+0.4
+
+2.3
+
+0.4
+
+4 (6)
+
+5 (9)
+
+-0.02
+
++0.1
+
+AZ:C:13:0099 playa
+(Sept. 2007-April 2010)
+
+3.6
+
+0.4
+
+0.1
+
+7 (13)
+
+6 (7)
+
+-0.2
+
++0.02
+
+AZ:C:13:0099 playa
+(April 2010- Sept. 2010)
+
+0.02
+
+0
+
+0.001
+
+5 (6)
+
+0 (0)
+
+-0.001
+
+0
+
+Survey area
+(monitoring period)
+
+Area of
+erosion
+(m2)
+
+Area of
+deposition
+(m2)
+
+AZ:C:05:0031
+(April 2010-Sept. 2010)
+
+134.9
+
+0
+
+5.4
+
+AZ:C:13:0006
+(Sept. 2007-April 2010)
+
+27.0
+
+8.8
+
+AZ:C:13:0006
+(April 2010- Sept. 2010)
+
+2.2
+
+AZ:C:13:0336
+(Sept. 2007-April 2010)
+
+Average
+(max.)
+height of
+erosion
+(cm)
+
+AZ:C:13:0321
+(April 2010-Sept. 2010)
+
+13.9
+
+0
+
+10.0
+
+4 (14)
+
+0 (0)
+
+-0.6
+
+0
+
+AZ:C:13:0348 and
+AZ:C:13:0346
+(Sept. 2007-Sept. 2010)
+
+85.3
+
+21.2
+
+3.5
+
+9 (28)
+
+7 (13)
+
+-8.6
+
++1.3
+
+AZ:B:10:0225
+(Sept. 2007-Sept. 2010)
+
+254.2
+
+81.3
+
+28.7
+
+22 (160)
+
+13 (55)
+
+-120.3
+
++11.2
+
+AZ:G:03:0072 US
+(Sept. 2007-Sept. 2010)
+
+92.1
+
+50.8
+
+11.8
+
+11 (52)
+
+16 (60)
+
+-13.8
+
++6.4
+
+AZ:G:03:0072 DS
+(Sept. 2007-Sept. 2010)
+
+0
+
+0
+
+0
+
+0 (0)
+
+0 (0)
+
+0
+
+0
+
+gullying and aeolian sand transport. Further, taken as a whole
+for all sites monitored throughout the river corridor during this
+time period, the overall signal was related to erosion rather
+than deposition. These results reflect both the active geomorphologic environment in Grand Canyon and the potential for
+rapid archeological site change.
+We also performed additional studies to test new lidarbased methods of tracking other indicators of archeological
+site change, such as structural element and artifact movement,
+change in cryptobiotic soil crust extent, and shifts in gully
+thalweg position. These results indicate that whereas most
+current terrestrial lidar instruments have some limitations with
+
+regard to measuring these site characteristics at subcentimeter
+accuracy and with laser amplitudes, newer technology may
+already be useful for addressing these limitations. The results
+lay out monitoring protocols using current instrumentation
+that can be adapted to other instrument platforms and in some
+cases, such as monitoring gully thalweg position, achieve a
+high degree of accuracy and usefulness for archeological site
+stability studies.
+Whereas the topographic change results presented herein
+provide the highest level of change detection yet performed on
+entire archeological sites in Grand Canyon, additional work in
+combining these results with site-specific data on weather (for
+
+References
+
+75
+
+example, Draut and others, 2009a,b; 2010b), geomorphology
+(for example, O’Brien and Pederson, 2009a,b), and hydrology
+and sandbar response (for example, Hazel and others, 2008,
+2010) will provide a more thorough understanding of the
+causes of the documented topographic changes on these time
+scales. This information should provide land managers with an
+improved basis for making management decisions regarding
+archeological resources in Grand Canyon National Park.
+
+Chen, J., Zhang, M.Y., Wang, L., Shimazaki, H., and Tamura,
+M., 2005, A new index for mapping lichen-dominated
+biological soil crusts in desert areas: Remote Sensing of
+Environment, v. 96, p. 165–175.
+
+Acknowledgments
+
+Collins, B.D., Brown, K.B., and Fairley, H.C., 2008, Evaluation of terrestrial LIDAR for monitoring geomorphic
+change at archeological sites in Grand Canyon National
+Park, Arizona: U.S. Geological Survey Open-File Report
+2008–1384, 60 p., available at http://pubs.usgs.gov/
+of/2008/1384/.
+
+Funding for this research was provided by the U.S.
+Geological Survey (USGS) Grand Canyon Monitoring and
+Research Center, in cooperation with the U.S. Bureau of
+Reclamation. Kristin Brown (USGS), Brian Fisher (Geodetic
+Analysis, LLC), and Keith Kohl (USGS) with Aaron Borling
+(USGS) provided field survey support for the September
+2007, April 2010, and September 2010 data collection efforts,
+respectively, and their assistance is gratefully acknowledged.
+We thank Toby Minear (USGS) and Gary O’Brien (Utah State
+University) for providing detailed reviews that improved the
+quality of this report.
+
+References
+Anderson, K.C., and Neff, T., 2011, The influence of paleofloods on archaeological settlement patterns during A.D.
+1050–1170 along the Colorado River in the Grand Canyon,
+Arizona, USA: Catena, v. 85, p. 168-186
+Bellian, J.A., Kerans, C., and Jennette, D.C., 2005, Digital
+outcrop models—Applications of terrestrial scanning lidar
+technology in stratigraphic modeling: Journal of Sedimentary Research, v. 75, no. 2, p. 166–176.
+Belnap, J., Kaltenecker, J.H., Rosentreter, R., Williams, J.,
+Leonard, S., and Eldridge, D., 2001, Biological Soil Crusts:
+Ecology and Management, U.S. Dept. of Interior, Tech.
+Ref. 1730-2, 110 p., accessed September 30, 2011, at http://
+www.blm.gov/nstc/library/pdf/CrustManual.pdf.
+Belnap, J., Phillips, S.L., Witwicki, D.L., and Miller, M.E.,
+2008, Visually assessing the level of development and soil
+surface stability of cyanobacterially dominated biological
+soil crusts: Journal of Arid Environments, v. 72, no.7, p.
+1257–1264.
+Boehler, W., Vicent, M.B., and Marbs, A., 2003, Investigating
+laser scanner accuracy: Presented at the XIX International
+Committee for Documentation of Cultural Heritage (CIPA)
+Symposium, Antalya, Turkey, 2003, 9 p., updated version
+(October 2003) accessed September 30, 2011, at, http://
+www.i3mainz.fh-mainz.de/publicat/cipa2003/laserscanner_
+accuracy.pdf.
+
+Collins, B.D., and Kayen, R., 2006, Applicability of terrestrial
+LIDAR scanning for scientific studies in Grand Canyon
+National Park, Arizona: U.S. Geological Survey Open-File
+Report 2006–1198, 27 p., available at http://pubs.usgs.gov/
+of/2006/1198/.
+
+Collins, B.D., Minasian, D., and Kayen, R., 2009, Topographic
+change detection at select archeological sites in Grand Canyon National Park, Arizona, 2006–2007: U.S. Geological
+Survey Scientific Investigations Report 2009–5116, 58 p.,
+available at http://pubs.usgs.gov/sir/2009/5116/.
+Draut, A.E., 2011, Vegetation and substrate properties of
+aeolian dune fields in the Colorado River corridor, Grand
+Canyon, Arizona: U.S. Geological Survey Open-File
+Report 2011–1195, 16 p., available at http://pubs.usgs.gov/
+of/2011/1195/.
+Draut, A.E., and Rubin, D.M., 2008, The role of aeolian
+sediment in the preservation of archeological sites along
+the Colorado River corridor Grand Canyon National Park,
+Arizona: U.S. Geological Survey Professional Paper 1756,
+71 p., available at http://pubs.usgs.gov/pp/1756.
+Draut, A.E., Rubin, D.M., Dierker, J.L., Fairley, H.C.,
+Griffiths, R.E., Hazel, J.E., Jr., Hunter, R.E., Kohl, K.,
+Leap, L.M., Nials, F.L., Topping, D.J., and Yeatts, M., 2005,
+Sedimentology and stratigraphy of the Palisades, Lower
+Comanche, and Arroyo Grande areas of the Colorado River
+corridor, Grand Canyon, Arizona: U.S. Geological Survey
+Scientific Investigations Report 2005–5072, 68 p., available
+at http://pubs.usgs.gov/sir/2005/5072/.
+Draut, A.E., Andrews, T., Fairley, H.C., and Brown, C.R.,
+2009a, 2007 weather and aeolian sand-transport data from
+the Colorado River corridor, Grand Canyon, Arizona: U.S.
+Geological Survey Open-File Report 2009–1098, 110 p.,
+available at http://pubs.usgs.gov/of/2009/1098/.
+Draut, A.E., Sondossi, H.A., Hazel, J.E., Jr., Andrews, T., Fairley, H.C., Brown, C.R., and Vanaman, K.M., 2009b, 2008
+weather and aeolian sand-transport data from the Colorado
+River corridor, Grand Canyon, Arizona: U.S. Geological
+Survey Open-File Report 2009–1190, 98 p., available at
+http://pubs.usgs.gov/of/2009/1190/.
+Draut, A.E., Hazel, J.E., Fairley, H.C., and Brown, C.R.,
+2010a, Aeolian reworking of sandbars from the March
+
+76
+
+Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010
+
+2008 Glen Canyon Dam High-Flow Experiment in Grand
+Canyon, in Melis, T.S., Hamill, J.F., Bennett, G.E., Coggins, L.G., Jr., Grams, P.E., Kennedy, T.A., Kubly, D.M.,
+and Ralston, B.E., eds., Proceedings of the Colorado River
+Basin Science and Resource Management Symposium,
+November 18–20, 2008, Scottsdale, Arizona: U.S. Geological Survey Scientific Investigations Report 2010–5135, p.
+325–331, available at http://pubs.usgs.gov/sir/2010/5135/.
+Draut, A.E., Sondossi, H.A., Dealy, T.P., Hazel, J.E., Jr., Fairley, H.C., and Brown, C.R., 2010b, 2009 weather and aeolian sand-transport data from the Colorado River corridor,
+Grand Canyon, Arizona: U.S. Geological Survey Open-File
+Report 2010–1166, 98 p., available at http://pubs.usgs.gov/
+of/2010/1166/.
+Fairley, H.C., 2005, Cultural resources in the Colorado River
+corridor, in Gloss, S.P., Lovich, J.E., and Melis, T., eds., The
+state of the Colorado River ecosystem in Grand Canyon:
+U.S. Geological Survey Circular 1282, p. 177–192., available at http://pubs.usgs.gov/circ/1282/.
+Fairley, H.C., Bungart, P.W., Coder, C.M., Huffman, J.,
+Samples, T.L., and Balsom, J.R., 1994, The Grand Canyon
+river corridor survey project; archeological survey along the
+Colorado River between Glen Canyon Dam and Separation Canyon: Cooperative Agreement No. 9AA–40–07920,
+Grand Canyon National Park, Prepared in cooperation with
+the Bureau of Reclamation, Glen Canyon Environmental
+Studies, Flagstaff, Ariz.
+Fairley, H.C., Collins, B.D., Draut A., Leap, L., and O’Brien,
+G., 2007, FY07–FY11 archeological site monitoring and
+research development project: Research proposal dated February 28, 2007, submitted to Grand Canyon National Park
+and National Park Service Research Permit Application
+System, March 5, 2007, copy on file at the U.S. Geological
+Survey, Grand Canyon Monitoring and Research Center,
+Flagstaff, Ariz., 49 p.
+Gloss, S.P., Lovich, J.E., and Melis, T.S., eds., 2005, The state
+of the Colorado River ecosystem in Grand Canyon: U.S.
+Geological Survey Circular 1282, 220 p., available at http://
+pubs.usgs.gov/circ/1282/.
+Grand Canyon Monitoring and Research Center, 2008, Survey
+control operations for the Colorado River Ecosystem: U.S.
+Geological Survey Grand Canyon Monitoring and Research
+Center, accessed August 11, 2008. at http://www.gcmrc.gov/
+about/programs/isp/dasa/survey/operations.aspx.
+Hazel, J.E., Jr., Kaplinski, M, Parnell, R.A., and Fairley,
+H.C., 2008, Aggradation and degradation of the Palisades gully network, 1996 to 2005, with emphasis on the
+November 2004 high-flow experiment, Grand Canyon
+National Park, Arizona: U.S. Geological Survey Open-File
+Report, 2008–1264, 22 p., available at http://pubs.usgs.gov/
+ofr/2008/1264/.
+
+Hazel, J.E., Jr., Grams, P.E., Schmidt, J.C., and Kaplinski,
+M., 2010, Sandbar response in Marble and Grand Canyons,
+Arizona, following the 2008 high-flow experiment on the
+Colorado River: U.S. Geological Survey Scientific Investigations Report 2010–5015, 52 p., available at http://pubs.
+usgs.gov/sir/2010/5015/.
+Hereford, R., Fairley, H.C., Thompson, K.S., and Balsom,
+J.R., 1991, The effect of regulated flows on erosion of
+archaeological sites at four areas in eastern Grand Canyon National Park, Arizona—a preliminary analysis: U.S.
+Bureau of Reclamation, Glen Canyon Environmental Studies, Flagstaff, Ariz.
+Hereford, R., Fairley, H.C., Thompson, K.S., and Balsom,
+J.R., 1993, Surficial geology, geomorphology and erosion
+of archaeological sites along the Colorado River, Eastern
+Grand Canyon, Grand Canyon National Park, Arizona: U.S.
+Geological Survey Open-File Report 93–517, 46 p.
+Kaasalainen, S., Jaakkola, A., Kaasalainen, M., Krooks, A.,
+and Kukko, A., 2011, Analysis of incidence angle and distance effects on terrestrial laser scanner intensity; search for
+correction methods: Remote Sensing, v. 3, p. 2207–2221.
+Karnieli, A., Kokaly, R., West, N.E., and Clark, R.N., 2001,
+Remote sensing of biological soil crusts, in Belnap, J., and
+Lange, O.L., eds., Biological soil crusts; structure, function,
+and management: Berlin, Springer-Verlag, p. 431–455.
+Kintigh, K., Altschul, J., Lipe, W., and Urquhart, N.S., 2007,
+Legacy monitoring data review panel report to the Grand
+Canyon Monitoring and Research Center: Report on file at
+the U.S. Geological Survey Grand Canyon Monitoring and
+Research Center, Flagstaff, Ariz., 63 p.
+Kurz, T.H., Buckley, S.J., Howell, J.A., and Schneider, D.,
+2011, Integration of panoramic hyperspectral imaging with
+terrestrial lidar: The Photogrammetric Record, v. 26, no.
+134, p. 212–228.
+Leap, L.M., Andrews, N.B., and Kunde, J.L., 1996, 1996
+summary report—monitoring of archeological sites along
+the Colorado River Corridor in Grand Canyon National
+Park: River Corridor Monitoring Project Report No. 37, 117
+p., accessed August 1, 2008, at http://www.nps.gov/grca/
+historyculture/upload/FY1996.pdf.
+Leap, L.M., Andrews, N.B., Hubbard, D.C., and Kunde, J.L.,
+1997, 1997 summary report— archeological site monitoring and management along the Colorado River Corridor in
+Grand Canyon National Park: River Corridor Monitoring
+Project Report No. 50, 103 p., accessed August 1, 2008, at
+http://www.nps.gov/grca/historyculture/upload/FY1997.pdf.
+Leap, L.M., Kunde, J.L., Hubbard, D.C., Andrews, N.B.,
+Downum, C.E., Miller, A.R., and Balsom, J.R., 2000, Grand
+Canyon monitoring project 1992–1999—synthesis and
+annual report for FY99: Grand Canyon National Park River
+Corridor Monitoring Project Report No. 66, Submitted to
+
+References
+Bureau of Reclamation, Upper Colorado Region, Salt Lake
+City, Utah, acquisition No. 99-AA-40-2340, 14 p., accessed
+August 1, 2008, at http://www.nps.gov/grca/historyculture/
+upload/FY1999.pdf.
+Lichti, D.D., and Jamtsho, S., 2006, Angular resolution of terrestrial laser scanners: The Photogrammetric Record, v. 21,
+no. 114, p. 141–160.
+Melis, T.S., ed., 2011, Effects of three high-flow experiments
+on the Colorado River ecosystem downstream from Glen
+Canyon Dam, Arizona: U.S. Geological Survey Circular
+1366, 147 p., available at http://pubs.usgs.gov/circ/1366/.
+O’Brien, G., and Pederson, J., 2009a, Geomorphic attributes
+of 232 cultural sites along the Colorado River in Grand
+Canyon National Park, Arizona: Report on file with the
+USGS Grand Canyon Monitoring and Research Center
+under cooperative agreement 04HQAG0122 with Utah State
+University, Utah, 201 p.
+O’Brien, G. and Pederson, J., 2009b, Gully erosion processes
+and parameters at six cultural sites along the Colorado River
+in Grand Canyon National Park, Arizona: Report on file
+with the USGS Grand Canyon Monitoring and Research
+Center under cooperative agreement 04HQAG0122 with
+Utah State University, Utah, 140 p.
+Olsen, M.J., Johnstone, E., Driscoll, N., Ashford, S.A., and
+Kuester, F., 2009, Terrestrial laser scanning of extended cliff
+sections in dynamic environments; parameter analysis: ASCE
+Journal of Surveying Engineering, v. 135, no. 4, p. 161–169.
+Pederson, J.L., Petersen, P.A., MacFarlane, W.W., Gonzales,
+M.F., and Kohl, K., 2003, Mitigation, monitoring, and
+geomorphology related to gully erosion of cultural sites in
+Grand Canyon; Cooperative Agreement No. 01 WRAG0074
+between Utah State University and U.S. Geological Survey,
+Grand Canyon: Grand Canyon Monitoring and Research
+Center, Flagstaff, Ariz., 250 p., accessed August 1, 2008, at
+http://www.gcmrc.gov/library/reports/cultural/Archaeology/
+Pederson2003.pdf.
+Pederson, J.L., Petersen, P.A., and Dierker, J.L., 2006, Gullying and erosion control at archeological sites in Grand
+Canyon, Arizona: Earth Surface Processes and Landforms,
+v. 31, no. 4, p. 507-525.
+
+77
+
+Thompson, K.S., and Potochnik, A.R., 2000, Development of
+a geomorphic model to predict erosion of pre-dam Colorado
+River terraces containing archeological resources: SWCA
+Environmental Consultants Cultural Resources Report
+99–257, US Geological Survey, Grand Canyon Monitoring
+and Research Center, Flagstaff, Ariz.
+Tongway, D.J., and Smith, E.L., 1989, Soil surface features as
+indicators of rangeland site productivity: Australian Rangeland Journal, v. 11, no. 1, p. 15–20.
+Topping, D.J., Schmidt, J.C., and Vierra, L.E., Jr., 2003, Computation and analysis of the instantaneous-discharge record
+for the Colorado River at Lees Ferry, Arizona—May 8,
+1921, through September 30, 2000: U.S. Geological Survey
+Professional Paper 1677, 118 p., available at http://pubs.
+usgs.gov/pp/pp1677/.
+Tressler, C., 2011, From hillslopes to canyons; studies of erosion at differing time and spatial scales within the Colorado River drainage: Logan, Utah, Utah State University,
+All Graduate Theses and Dissertations, Paper 1109, 99 p.,
+accessed May 9, 2012, at http://digitalcommons.usu.edu/
+etd/1109.
+Tressler, C., and Pederson, J.L., 2010, Testing terrestrial lidar
+for tracking surface-particle creep at a cultural site in Grand
+Canyon National Park, Arizona: Utah State University internal report to USGS Grand Canyon Monitoring and Research
+Center, Cooperative Agreement 04HQAG0122, 29 p.
+U.S. Geological Survey, 2008, Grand Canyon Monitoring and
+Research Center: Internet map server, accessed July 26,
+2012, at http://www.gcmrc.gov/gis/silvermap1.aspx/.
+Yeatts, M., 1996, High elevation sand deposition and retention from the 1996 spike flow; an assessment for cultural
+resources stabilization, in Balsom, J.R., and Larralde,
+S., eds., Mitigation and monitoring of cultural resources
+in response to the experimental habitat building flow in
+Glen and Grand Canyons, Spring 1996: Final report dated
+December 31, 1996, submitted to Grand Canyon Monitoring and Research Center, copy on file at the U.S. Geological
+Survey, Grand Canyon Monitoring and Research Center,
+Flagstaff, Ariz., 335 p.
+
+Produced in the Menlo Park Publishing Service Center, California
+Manuscript approved for publication July 20, 2012
+Text edited by Peter H. Stauffer
+Layout and design by Judy Weathers
+
+Collins and others—Topographic Change Detection at Select Archeological Sites in Grand Canyon National Park, Arizona, 2007–2010—Scientific Investigations Report 2012–5133
+
+

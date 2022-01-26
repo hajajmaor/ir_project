@@ -1,0 +1,1671 @@
+User Model User-Adap Inter (2012) 22:73–99
+DOI 10.1007/s11257-011-9104-x
+ORIGINAL PAPER
+
+Personalization in cultural heritage: the road travelled
+and the one ahead
+Liliana Ardissono · Tsvi Kuflik · Daniela Petrelli
+
+Received: 23 July 2010 / Accepted in revised form: 26 December 2010 /
+Published online: 18 October 2011
+© Springer Science+Business Media B.V. 2011
+
+Abstract Over the last 20 years, cultural heritage has been a favored domain for personalization research. For years, researchers have experimented with the cutting edge
+technology of the day; now, with the convergence of internet and wireless technology,
+and the increasing adoption of the Web as a platform for the publication of information, the visitor is able to exploit cultural heritage material before, during and after
+the visit, having different goals and requirements in each phase. However, cultural
+heritage sites have a huge amount of information to present, which must be filtered
+and personalized in order to enable the individual user to easily access it. Personalization of cultural heritage information requires a system that is able to model the user
+(e.g., interest, knowledge and other personal characteristics), as well as contextual
+aspects, select the most appropriate content, and deliver it in the most suitable way.
+It should be noted that achieving this result is extremely challenging in the case of
+first-time users, such as tourists who visit a cultural heritage site for the first time
+(and maybe the only time in their life). In addition, as tourism is a social activity,
+adapting to the individual is not enough because groups and communities have to be
+modeled and supported as well, taking into account their mutual interests, previous
+
+L. Ardissono (B)
+Università di Torino, Turin, Italy
+e-mail: liliana@di.unito.it
+T. Kuflik
+The University of Haifa, Haifa, Israel
+e-mail: tsvikak@is.haifa.ac.il
+URL: http://mis.hevra.haifa.ac.il/∼tsvikak/Home.htm
+D. Petrelli
+Sheffield Hallam University, Sheffield, England
+e-mail: d.petrelli@shu.ac.uk
+URL: http://dagda.shef.ac.uk/daniela/Daniela_Petrelli/Welcome.html
+
+123
+
+74
+
+L. Ardissono et al.
+
+mutual experience, and requirements. How to model and represent the user(s) and the
+context of the visit and how to reason with regard to the information that is available
+are the challenges faced by researchers in personalization of cultural heritage. Notwithstanding the effort invested so far, a definite solution is far from being reached,
+mainly because new technology and new aspects of personalization are constantly
+being introduced. This article surveys the research in this area. Starting from the earlier systems, which presented cultural heritage information in kiosks, it summarizes
+the evolution of personalization techniques in museum web sites, virtual collections
+and mobile guides, until recent extension of cultural heritage toward the semantic and
+social web. The paper concludes with current challenges and points out areas where
+future research is needed.
+Keywords Personalized access to cultural heritage · Personalization ·
+Cultural heritage
+
+1 Introduction
+The extensive amount of existing cultural heritage material, which far exceeds the
+space available in museums, and the increasing interest in making collections accessible to a large public have motivated cultural heritage institutions to adopt web-based
+and mobile information tools as a means for presenting their collections. Most institutions are developing web sites in order to achieve a low-cost web presence, and many
+are offering mobile guides to assist visitors on site.
+The convergence of internet and wireless technology has made the exploration
+of cultural heritage a continuous process, starting before the visit and ideally never
+ending, as the user is able to plan the visit online, visit the site, and then “revisit”
+places of interest online again. However, any novel technology introduces new challenges: firstly, large web-based collections are difficult to browse and entail the risk of
+overloading users with information; secondly, visitors are highly heterogeneous and
+require different types of information, at different levels of detail; finally, the target
+users of cultural heritage sites (and tourists in general) are often first- and short-time
+visitors to an unknown place. This means that, on the one hand, they are in constant
+need of help in finding relevant information, while on the other hand, providing them
+with appropriate information is challenging because, initially, their interests and needs
+are unknown.
+Cultural heritage has been a privileged application domain for personalization for
+many years and recent museum research also acknowledges the need for personalized,
+individual support. Specifically, Falk (2009) points out that museum visitors differ and
+their visit experience is composed of the physical, the personal, and the socio-cultural
+context, and identity-related aspects. Hence they may benefit from individualized
+support that takes into account contextual and personal attributes. Moreover, visitors’
+behavior may not remain consistent during the visit and this may require ongoing
+adaptation.
+While technology-oriented research in personalization of cultural heritage information started in the early ’90s, when pioneer projects developed techniques aimed at
+
+123
+
+Personalization in cultural heritage
+
+75
+
+adapting suggestions and presentation of information to the individual user, museum
+research studies started to explore the idea of personalized services only recently. The
+evolution of these two research areas occurred asynchronously in the exact/technological sciences (as technology evolved) and in Humanities (with the evolution of
+museums visitors’ studies).
+This article surveys the evolution of technology-based personalization in cultural
+heritage and points out the current challenges. As the systems developed over the
+years differ in several aspects, a comparative table has been used to facilitate the analysis; the criteria for comparison and the reviewed systems are reported in Sect. 2. The
+article then uses an historical perspective and, starting from the first systems, which
+presented cultural heritage information in kiosks, it summarizes the evolution of personalization techniques in museum web sites, virtual collections, and mobile guides
+(Sect. 3); it then discusses methods and techniques for personalization (Sect. 4), and
+concludes by pointing to current challenges and future research directions (Sect. 5).
+A short summary concludes the paper (Sect. 6).
+2 A comparative analysis
+During the past 20 years, the research on technology-based personalization of cultural heritage experimented with different settings and proposed various solutions.
+These were developed following the evolution of information and communication
+technologies (ICT), specifically concerning: communication networks (from wired to
+broadband wireless connections), end-user devices (from desktop computers to mobile
+smart phones) and User Interfaces (from textual to multimodal ones and virtual reality).
+Table 1 below provides a comparison of many of the adaptive systems developed so far.
+A number of different dimensions have been used as analytical tools; each dimension
+is further specified to highlight particular aspects, as discussed in the following:
+Setting captures the situation where the interaction occurs. Indoor and outdoor both
+indicate physical presence at the site, while virtual shows the visitor is using a virtual gallery or collection, most likely remotely from the site itself, and sometimes
+in virtual reality 3D.
+Device different devices afford different interactions and therefore we distinguish
+desktop, mobile, and wearable/tangible. Specifically, the “mobile” column describes
+the type of end-user device for which the User Interface of the reviewed systems is
+developed: tablet (T), laptop (L), PDA (P), and smart phone (S).
+Presentation style (Pres. style) captures the form of delivery and the medium of the
+presentation, often suggested by the setting or the device. We distinguish between:
+map-based when the metaphor used is that of a map on which the points of interest
+are displayed; web pages when the display follows a traditional Web layout; character when the content is delivered by an agent (generally a cartoon); and audio–video
+when the presentation is different from the text and includes delivery modes that
+are exclusively audio, or audio and video (could be animations or clips).
+Adaptation type (Adapt.) is used to distinguish which features are taken into account during the adaptation process: context-aware is used when features such as
+opening times or proximity are taken into account; individual denotes personaliza-
+
+123
+
+76
+
+L. Ardissono et al.
+
+tion to a single person; and group indicates that the adaptation is targeted to a group
+of people.
+UM representation (UM rep.) is used to classify systems according to how they represent the user model. Different representations are considered, such as describing
+the user’s interest in the concepts of the domain (Overlay), specifying particular user
+features (Feature-based), a “bag of words” (Content-based), or the list of preferred
+items (List of Items). See Sect. 4.2.1 for details.
+UM initialization (UM init.) differentiates systems according to the way in which
+the user model is initialized. Some systems do not initialize the user model at all,
+or they start with a general model, the same for every user (None); others question the user about her/his Preferences, or they employ a Stereotype based on some
+user information. Yet other systems exploit the Keywords associated with the items
+selected by the user, or the information retrieved from other systems (Mediation) to
+initialize the user model. Finally, some systems initialize the user models by means
+of a case-based approach. See Sect. 4.2.2 for details.
+UM updating captures the different dynamics in the evolution of the user model
+during the interaction with the user. Feedback type is used to represent the intentionality of the interaction: E stands for explicit interaction (e.g., clicking on a link), I
+for implicit interaction (e.g., walking toward an exhibit), and B for both. The other
+facets of this dimension denote the particular inference techniques applied to update
+the user model (Heuristic inference, Activation/Inhibition networks, Collaborative
+filtering, Content-based, Semantic reasoning). See Sect. 4.2.3.
+Matching user and content (Matching) is aimed at selecting the most appropriate
+content to be presented for a given user or users group. Several techniques have
+been developed for this purpose: earlier proposals used condition-action rules (C/A
+rules), or activation/inhibition networks (Act/inhib network) for the selection of the
+most relevant content to be presented. Recently, users have been enabled to annotate
+items with rates, tags and comments (Social), and such information is employed to
+browse content on the basis of folksonomies, and to select content by Ranking it.
+Items can be ranked by applying various techniques, such as Content Based filtering,
+Collaborative filtering, Vector Space, possibly enriched with Semantic reasoning
+techniques. See Sect. 4.3.
+The next two sections present cultural heritage systems according to these dimensions
+and aspects. As space limits prevent us from describing each system in depth, Table 1
+reports every feature of every system, helping the reader get a sense of the whole
+research area at a glance. For each system reported in the table, but not reviewed in
+this paper, a footnote shows a relevant bibliography reference. Appendix A provides
+a larger font version of the table.
+3 Historical overview
+Personalization was first introduced on desktop systems but was quickly applied to
+mobile technology to exploit its potential in delivering context-aware and personalized
+information “on the go”. This section retraces the main milestones in the management
+of the user interaction, which has focused on the following issues:
+
+123
+
+Personalization in cultural heritage
+
+77
+
+Table 1 An analytical comparison of personalized CH systems
+Setting
+
+Name
+AlFresco
+ILEX
+Hyperaudio
+AVANTI
+Marble
+Museum
+HIPPIE
+
+•
+•
+•
+• •
+•
+•
+•
+
+HIPS
+GUIDE
+
+CRUMPET •
+Active
+WebMuseum
+M-PIRO
+Tiddler
+AgentSalon
+Archeoguideb
+
+•
+
+ARCHIE
+
+MUSE
+
+UM rep.
+
+UM init.
+
+•
+
+P
+• P
+
+3D •
+
+•
+•
+•
+•
+
+• PS
+• •
+•
+P
+P
+
+•
+•
+
+• •
+•
+
+•
+• •
+
+•
+•
+
+UM updating
+
+•
+
+Matching
+
+•
+•
+
+•
+
+•
+
+• • •
+
+•
+
+• •
+
+•
+• •
+•
+• •
+
+• •
+
+• •
+•
+•
+•
+•
+• •
+• •
+
+• •
+• •
+•
+
+•
+•
+
+•
+
+•
+
+•
+
+• •
+•
+
+• • •
+• •
+
+•
+
+•
+
+•
+
+•
+
+• •
+
+• •
+•
+
+•
+•
+
+•
+
+I •
+
+•
+
+I
+
+• •
+•
+•
+•
+
+•
+I •
+
+•
+
+B •
+
+•
+•
+•
+•
+
+• •
+
+•
+
+•
+•
+•
+
+•
+
+•
+
+I
+• •
+B
+•
+B
+• • •
+B
+• •
+B •
+• •
+E
+• •
+E
+• • •
+• E
+•
+
+•
+
+•
+•
+•
+• •
+
+• •
+• •
+•
+*
+
+•
+•
+
+•
+E •
+
+•
+
+•
+
+• •
+
+•
+
+•
+
+•
+
+•
+
+I •
+•
+
+•
+
+•
+
+•
+
+I •
+B
+
+•
+• • • •
+
+•
+•
+
+B
+I
+B
+B
+
+• •
+
+•
+
+•
+
+•
+•
+•
+• • •
+• • •
+•
+•
+• •
+•
+•
+•
+• •
+•
+•
+•
+•
+•
+•
+• *
+•
+•
+•
+•
+•
+•
+•
+
+• •
+
+•
+
+B
+E •
+
+•
+
+•
+
+• • •
+
+•
+
+E
+
+• •
+•
+•
+•
+•
+•
+•
+
+• •
+
+• •
+
+•
+
+•
+
+•
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+•
+
+•
+
+• •
+
+•
+
+•
+•
+
+• •
+
+•
+
+• •
+•
+•
+
+•
+
+PL
+S
+• P
+P
+
+•
+
+•
+•
+•
+•
+
+•
+
+PS
+•
+
+• •
+
+•
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+•
+
+•
+•
+
+•
+
+•
+
+Tate Online
+• •
+Edinburgh
+3D •
+Ad. Gallery
+Smartmuseum • •
+• PS
+Kurioe
+•
+DeepMap
+
+•
+• •
+•
+•
+
+•
+• •
+•
+
+• •
+• S
+• •
+•
+LT
+•
+P
+
+•
+
+iCITY
+
+PIL
+
+•
+
+• •
+
+PeVEP
+
+CHIP
+
+• •
+
+•
+
+UbiquiTO
+UbiCicerod
+
+•
+•
+• • •
+•
+
+•
+P
+P
+T
+P
+
+•
+
+c
+
+E(c)ho
+
+CHAT
+
+Adapt.
+
+•
+
+P
+•
+
+•
+
+LISTEN
+
+Kubadji
+
+•
+•
+
+• •
+
+The Museum
+•
+Wearable
+Gulliver’s
+•
+Genie
+INTRIGUE
+•
+
+PEACH
+
+Pres. style
+
+•
+•
+
+•
+•
+•
+
+AmbieSensea
+
+COMPASS
+
+Device
+
+Indoors
+Outdoors
+Virtual
+Desktop
+Mobile
+Wearable/tangible
+Map-based
+Web pages
+Character
+Audio-Video
+Context-Aware
+Individual
+Group
+Overlay
+Feature-based
+Content-based
+List of items
+Preferences
+Stereotypes
+None
+Mediation
+Keywords selection
+Case Based
+Feedback type
+Heuristic inference
+Act/inhib network
+Collaborative filtering
+Content Based
+Semantic reasoning
+Social
+C/A Rules
+Ranking
+Semantic reasoning
+Act/inhib network
+Collaborative Filtering
+Content-Based filtering
+Vector Space
+
+System
+
+E
+I •
+
+•
+•
+
+•
+
+•
+
+• •
+
+•
+
+• •
+
+•
+•
+
+•
+
+a Göker et al. (2008); b Vlahakis et al. (2002); c van Setten (2004); d Ghiani et al. (2009);
+e Wakkary et al. (2009)
+
+– Improving the selection of the information to be presented, given the users interests, attitudes and surrounding context, including the social context in which the
+user is immersed.
+– Improving the modality adopted for delivering information to the user, in a desktop setting and/or “on the go”, and the organization of the presentations, for better
+comprehension and navigation of large amounts of information.
+– Enriching the media used to interact with the user, from text only to audio and
+video content, as well as enhanced reality.
+
+123
+
+78
+
+L. Ardissono et al.
+
+We distinguish between two scenarios—desktop and mobile—due to the fundamental
+differences between them that still exist, even though the personalization technologies
+used in the two settings are converging.
+3.1 On the desktop: from hypertext to the web and virtual reality
+The personalization of cultural heritage can be traced back to the early ’90s, when
+some of the adaptive hypermedia systems looked at museum content (AlFresco, Stock
+et al. 1993; ILEX, Oberlander et al. 1998) and tourism (AVANTI, Fink et al. 1998)
+as possible application domains. AlFresco provided personalized content as part of
+a human-machine dialogue on Italian art and combined natural language processing
+with a hypermedia system connected to a videodisc. Personalized content was also the
+goal of ILEX, which automatically generated hypertext pages with text and images
+taken from material harvested from existing catalogues and transcriptions of conversations with the curator. Natural language generation techniques maintained a coherent
+narrative throughout the pages that were generated. A contemporary of the AlFresco
+system, AVANTI was a desktop application running on kiosks and the first to explore
+the creation of personalized Web pages of tours in cities, taking into account the user’s
+interest, knowledge, and physical abilities.
+With the advent of the web, museums started creating information-rich web sites,
+and personalization was considered a good way to support users in finding information in unfamiliar collections. The online Marble Museum of Carrara (Paternò and
+Mancini 1999) offered three choices to users: (1) a static stereotype of either ‘tourist’,
+‘student’, or ‘expert’ which gave predefined views on the information; (2) a user profile
+that should be set manually (e.g., selecting which information should be displayed);
+and (3) an adaptive virtual guide that took into account what had been seen and suggested additional relevant information in a separate window. The Active WebMuseum
+(Kohrs and Merialdo 2001) used the metaphor of ‘corridors’, represented as lists of
+artworks, to organize sets of related paintings dynamically, e.g., same artist, same art
+movement, same time frame. The artworks were selected on the basis of collaborative filtering techniques (Konstan and Riedl 2012) and the users could move along
+corridors and change path at any time, exploring the content at their leisure.
+Quite naturally, when web technology started to be available on WAP phones,1
+cultural heritage applications followed. The new opportunity was explored by INTRIGUE (Ardissono et al. 2003), which supported browsing cultural heritage information and planning tours that met the requirements of heterogeneous user groups,
+such as families with elderly members and children. The content (text and images)
+was dynamically selected, arranged and displayed on web pages tailored for either a
+desktop browser or a WAP mini-browser.
+The idea of adapting content from the PC to different devices was promoted by
+MUSE (Garzotto et al. 2003), which used multichannel Web application technology
+to provide visitors with information both on- and off-site: standard web pages could
+be accessed on a PC at home or via a hand-held device on site. The device controlled
+1 WAP phones were the ancestors of current smart phones. They supported the access to Web sites and
+
+Web-based applications using the Wireless Application Protocol.
+
+123
+
+Personalization in cultural heritage
+
+79
+
+large displays for multimedia information (e.g., 3D models or video clips) that could
+not be presented by the mobile technology of that time. During the visit, the user could
+bookmark interesting items or content and this personal collection was put on a CD
+as a memento to be revisited at home.
+The Adaptive Hypermedia and Virtual Reality threads evolved in parallel. As far as
+the former is concerned, the iCITY tourist guide (Carmagnola et al. 2008) provided
+recommendations about cultural events and resources to visitors of the city of Torino,
+either in textual format or over a city map. The system offered multi-device adaptation using XML-based standards for the development of User Interfaces. At about the
+same time, CHIP (Wang et al. 2008) experimented with semantic web technologies
+to enrich the presentation of the Rijskmuseum collection with information retrieved
+from public ontologies.
+Experiments with virtual reality started with M-PIRO (Calder et al. 2005), a follow-up of ILEX and of the HIPS multimedia tourist guide (Petrelli and Not 2005),2
+which used simple virtual objects as exhibits. Natural language generation was used to
+create labels in multiple languages and, in the next evolution, to provide the speech of a
+robot-guide introduced in the Virtual Adaptive Gallery of the University of Edinburgh
+(Oberlander et al. 2008). The robot displayed personalized textual descriptions that
+took into account what the user had seen to avoid repetition or to provide background
+information when introducing new concepts. Even though the Adaptive Gallery was
+developed within the Second Life social virtual space, it created an isolated experience where the visitor was separated from the group. Conversely PeVEP (Bonis et al.
+2009), a platform for creating 3D virtual museums with personalized content, supported both a personalized experience and the social context. The visitors could enter
+non-personalized thematic rooms, but had a personalized one that contained objects
+selected on the basis of their individual interests and behavior. Users could also see
+other visitors and chat with them, enter the rooms of others with similar interests, rate
+objects, and leave comments or read those that others had left.
+3.2 On the go: tablet, PDA and phones, wearable and tangible
+As soon as mobile technology appeared, it was adopted for delivering context-aware
+cultural heritage information both indoors and outdoors. Generally speaking, indoors
+there is a limited space, which is extremely rich in content but offers few services over
+and above information delivery. In contrast, outdoor mobile guides covered relatively
+large areas—a city or part of it—offering a wide range of integrated services, such as
+those providing hotel and travel information. A few projects tried to cover both cases,
+e.g., MUSE and Smartmuseum (Ruotsalo et al. 2009), but most were specialized in
+one or the other.
+Supporting users “on the go” requires knowing the user’s location. Therefore, context awareness became dominant in mobile guides, using different location-aware
+services for outdoors (GPS based) and indoors (where no prevailing positioning technology yet exists).
+2 HIPS is described in Sect. 3.2.
+
+123
+
+80
+
+L. Ardissono et al.
+
+The accurate determination of the visitor’s position indoors led to the idea of interaction through physical movement. This type of interaction was first introduced by
+Hyperaudio (Petrelli and Not 2005): standing for a long time in front of an exhibit indicated interest while leaving before the audio presentation was over was considered as
+displaying the opposite attitude. Hyperaudio also pioneered mobile guides in the late
+’90s, using the leading technology of the time: an Apple Newton modified to detect
+infrared signals. The system monitored the visitors’ movement and dynamically composed audio snippets on the basis of their current position, the chosen perspective (e.g.,
+entertaining vs. informative) and the interaction history (exhibits seen; for how long;
+content listened to). Outdoor personalization was pioneered by GUIDE (Cheverst et al.
+2000), which used a Tablet PC to deliver information on points of interest in the city of
+Lancaster, UK, using cellular WiFi technology for positioning. The proximity of the
+user to points of interest and the opening times of attractions were used to select suitable information for the current user’s context and profile.3 Information was displayed
+as images and text in web pages; additional services allowed members of the same
+group to receive and send messages to each other, and to leave and read comments.
+Smaller than a tablet, but with a larger screen and with more colors than phones, the
+appearance of the PDA paved the way for a large number of prototypes, both indoor
+and outdoor. The idea of “interacting with the space”, first introduced by Hyperaudio,
+was extended in HIPS, which classified visitors on the basis of their visiting pattern
+behavior (Bianchi and Zancanaro 1999): the position, captured on the PDA, was sent
+for processing and a dynamically composed presentation was sent back for the visitor
+to play. HIPPIE, a spin-off of the HIPS project, experimented with a different approach,
+using a dynamic user model based on the user’s inferred interest and knowledge for
+personalization purposes (Oppermann and Specht 2000). While the main delivery
+medium for HIPS was audio, HIPPIE produced dynamic text and image hypertext.
+Both systems explored Infra Red (IR) technology for indoor positioning. CRUMPET
+(Schmidt-Belz et al. 2003) used PDAs for providing dynamic and interactive maps
+that showed the current position, recommendations, information about attractions, and
+visiting tips. In this system, positioning was based on GPS data.
+As mobile and communication technology evolved, so did mobile guides: PEACH
+(Stock et al. 2007) dynamically created animation-based video clips taking into
+account the user’s focus of attention. A virtual character migrated to the PDA from
+a large screen at the beginning of the visit and accompanied the visitor, presenting
+information, throughout the visit. At exit time, a personalized summary was generated,
+hinting at what seemed to be most interesting content for the visitor and suggesting
+future activities. A more affective interaction, though not personalized, was sought by
+Damiano et al. (2008), where “Carletto” (a spider character) dramatized the presentations for visitors, moving away from the idea of ‘guiding’ toward a more engaging
+‘storytelling’ approach.
+A different kind of service was provided by the iCITY tour guide, which offered personalized notification of events to visitors using their mobile phones. The interaction
+with space introduced by HyperAudio was further explored in LISTEN (Zimmermann
+3 The profile used in GUIDE included the list of preferred attractions, user’s interest, the current position,
+and the visited places.
+
+123
+
+Personalization in cultural heritage
+
+81
+
+and Lorenz 2008): the user wore a pair of motion-tracked wireless head-phones and
+walked around the exhibition space enjoying dynamically composed 3D audio presentations. “Speech, music and sound effects were arranged to form an individualized
+and location-aware soundscape offering information related to visual objects as well
+as creating context-specific atmospheres”. This type of interaction was further investigated in mobile guides for visually impaired visitors, triggered by RFID and tilt-based
+sensors, available in PDAs (Ghiani et al. 2008).
+The ec(h)o project (Hatala and Wakkary 2005) took an entirely different approach,
+experimenting with tangible and embodied interaction, applying vision-based localization and combining it with RFID technology: a wooden cube enriched with orientation
+sensors was used to interact with the system, and headphones were used to receive
+audio content. The interaction metaphor was that of a two-way conversation, with the
+user rotating the cube in different directions to select one of the options proposed by
+the system.
+Localization of visitors in the space was also used to experiment with wearable
+computers. In the Museum Wearable project, video clips relevant to the object in view
+were played on a single lens goggle (Sparacino 2002).
+After several years of experiments that focused on exploring how the technology
+can support the visitor, the experience of mobile personalized cultural heritage was
+very rich, though not complete. The social experience of a group visit was hampered by the individualistic approach. In this direction, addressing this shortcoming,
+AgentSalon (Sumi and Mase 2001) used virtual characters that accompanied visitors
+in public places to foster face-to-face interaction between people. When the visitors
+approached large screens, the virtual characters migrated from their mobile device
+to the screen (together with their user’s profile) and started interacting in order to
+trigger face-to-face communication among the humans on issues of mutual interest.
+Opening up to the social context for indoor visits was also the focus of PIL (Kuflik
+et al. 2011): the group members were modeled individually, but an effort was made
+to pull them together in sharing interesting exhibits (e.g., by messaging each other
+or by suggesting different objects to see), fostering follow-up discussions after the
+visit. Another step forward was taken by Stock and Callaway (2009) who introduced
+adaptive, dramatized information presentations into a museum visitors’ guide running
+on smart phones. Visitors were provided with different dramatic presentations of the
+exhibit, in order to encourage discussion about the individual experience later on.
+4 Methods and techniques for personalization in cultural heritage
+Digitization of cultural heritage items is not sufficient to support their retrieval in
+very large collections, a fact which challenges the user when navigating through them
+(Schmitz and Black 2008). Concerning this issue, personalization techniques can be
+employed to steer the selection of information on the basis of the user / group interests
+and context, thus protecting them from data overload. Moreover, personalization can
+be used to adapt the presentation of information to the user’s device, thus facilitating
+its exploration.
+However, for these purposes, cultural heritage information has to be represented in a
+machine-readable format which can be matched with the interests/preferences/context
+
+123
+
+82
+
+L. Ardissono et al.
+
+of the recipient(s). This section reviews the approaches adopted in cultural heritage
+personalization for representing information about items (4.1) and users (4.2), and to
+perform the informed matching between them (4.3).
+4.1 Information representation
+Some early systems (e.g., AVANTI, INTRIGUE, ILEX, AlFresco) stored the information about cultural heritage items in structured knowledge bases that provided
+rich details about item properties and features but were particularly hard to develop
+and maintain. In order to overcome such limitations, some systems employed natural
+language generation techniques to create the presentations directly from the archival descriptions of items; see, e.g., Tiddler (Paris et al. 2001). Conversely, in other
+projects, lightweight representations and techniques were explored to minimize the
+amount of information about items used by the systems, or to feed system repositories
+with information automatically retrieved from existing archives. Explored solutions
+include:
+– A simple list of objects representing the exhibition as “visit paths” (Kubadji,
+Bohnert et al. 2008);
+– Text descriptions and “bag of words” representations of the exhibits on display4
+(Kubadji and PIL);
+– “Bag of concepts” representations generated by natural language processing techniques to support a concept-based item classification (CHAT, de Gemmis et al.
+2008);
+– Collection-specific ontologies for the multi-classification of artworks, such as location and culture, and multi-faceted search (Delphi toolkit, Schmitz and Black 2008).
+Alternative approaches looked at improving the quality and the amount of information available in metadata descriptors by integrating them with additional semantic
+information. Astudillo et al. (2008) used ontologies to describe the “circumstances” of
+artifacts (e.g., historical, geographical, contexts); CHIP mapped metadata to concepts
+defined in different vocabularies in order to enrich the information repository with
+geographical, temporal and art history information.
+Currently, user-generated content is seen as a useful source of information to complement or extend metadata. Ahiara et al. (2008) enrich metadata with descriptions
+taken from blogs and Wikis; iCITY employs user tags and annotations about cultural
+events to extend the cultural heritage repository with new knowledge and firsthand
+experience of items.
+4.2 Modeling the user
+Personalization implies the modeling of the user. This is an important distinctive feature, as systems such as Cyberguide (Abowd et al. 1997), mobiDENK (Krösche et al.
+4 The “bag of words” is obtained by counting the frequency of words in texts as a representation of the
+
+descriptions (Hanani et al. 2001).
+
+123
+
+Personalization in cultural heritage
+
+83
+
+2004) and Cicero (Ciavarella and Paternò 2004), which select content on the exclusive base of the context (e.g., current position or time), are unable to adapt it to the
+user’s features. In the following, we briefly describe how user models are represented,
+initialized and dynamically updated in personalized cultural heritage systems.
+4.2.1 User model representation
+Needless to say, the user models are closely related to the representation of the domain
+information, as outlined below:
+– Overlay, widely adopted in systems such as PEACH and e(c)ho, describes user
+interests, knowledge, and other aspects in terms of the concepts represented in the
+domain ontology. This approach was taken also by CHIP, which overlaid a user
+model on art ontology, and PeVEP, where a semantic graph composed by domain
+items modeled the user.
+– Feature-based, used in AVANTI, GUIDE, HyperAudio, Hippie, Gulliver’s
+Genie (O’Hare and O’Grady 2003), LISTEN, UbiquiTO (Cena et al. 2006) and
+INTRIGUE. This approach represents user characteristics (including personal,
+socio-demographical, and interests/ preferences) as a list of feature-value pairs.
+In iCITY, the feature-based user model is multidimensional (describing the user’s
+interests for each category of cultural heritage information), to support content
+selection on multiple criteria, e.g., proximity of an event or recentness.
+– Content-based, where user interests are represented as sets of words occurring in
+the textual descriptions of items relevant for the user.5 This approach was taken
+by PIL and Kubadji. CHAT goes a step further, by applying a layer of semantic analysis over the simple “bag of words”, achieving a better representation of
+documents and their semantic similarity, than in other methods (e.g., Feature-based
+and Overlay).
+– List of items: in some systems, such as Kubadji, user models only store the user’s
+ratings of items (“Collaborative Filtering” approach). Moreover, in other systems,
+the user model stored “cases”, which are also lists of items selected by the users.
+4.2.2 Initialization
+In many systems (e.g., AVANTI, HIPPIE, UbiquiTO, Gulliver’s Genie, the Marble
+Museum and GUIDE), visitors were asked to fill in questionnaires in order to determine
+their background, interests and preferences and to set up the user model. However, it
+was soon clear that many of the features in the questionnaires did not affect the visiting
+style (Petrelli et al. 1999) and that form-filling was not what visitors wanted to do first
+(Filippini Fantoni 2003). This fostered different approaches: setting up a few simple
+features (four in HyperAudio), using stereotypes as a quick means to infer information about the user (AVANTI, PEACH, Marble Museum, PeVEP and INTRIGUE),
+specifying interesting keywords (AgentSalon), or rating artifacts (CHAT), sometimes
+in combination with a few questions (CHIP).
+5 This is the typical user model representation adopted in content-based filtering recommenders based on
+
+unstructured information about items (Billsus and Pazzani 2007).
+
+123
+
+84
+
+L. Ardissono et al.
+
+If a system offers both online and onsite services, as do MUSE and CHIP, then core
+information about the user, collected during an online interaction, can be used later to
+bootstrap the onsite guide (e.g., INTRIGUE, UbiquiTO). Conversely, the DeepMap
+mobile tourist guide (Fink and Kobsa 2002) explored the idea of user modeling servers
+as a source for personal information. PIL explored the use of mediation (Berkovsky
+et al. 2008), incorporating user modeling information available from other systems to
+(a) retrieve attractions selected by the user at tour preparation time from external systems, and (b) combine such case-based information into a content-based user model
+steering the presentation of items in the museum guide. On the other hand, iCITY
+exploited a common user identity across services in order to reuse the user information collected by each of them (by applying mediation techniques in order to address
+data interoperability issues).
+4.2.3 Dynamic user modeling
+A dynamic user model is the core functionality of an adaptive system (Opperman
+1994). The model can be updated on the basis of two possible types of users’ actions:
+explicit, triggered by direct user interaction, such as rating the information delivered
+(e.g., in PIL) and, implicit, such as walking speed or stop (e.g., in LISTEN, HIPS), or
+navigation and annotation behavior (iCITY). Implicit input is less accurate, but also
+less intrusive than explicit feedback. The two approaches have also been used together
+(as in HyperAudio, UbiquiTO and PEACH).
+Various techniques have been used to adapt the user model dynamically, including:
+– Heuristic inference, based on weighting mechanisms that combine the evidence
+about user behavior to infer the user’s features. For instance, UbiquiTO and iCITY
+increment/decrement the user’s interest level depending on the number and type of
+actions performed by the user (e.g., clicking on an item, saving it, rating it, etc.).
+In other systems, probabilistic methods are applied for this purpose (e.g., Museum
+Wearable and AVANTI).
+– Activation/inhibition networks, where a user model is overlaid on a domain knowledge base; the user feedback is interpreted as direct interest in domain concepts
+and propagated over the links to related concepts (AlFresco, PEACH);
+– Collaborative filtering, where the user model is updated with the items selected
+by the user (Kubadji);
+– Content-based filtering, where the user model evolves on the basis of features of
+the selected items: e.g., PIL adapted the “bag of words” representation of the user
+model applying the Rocchio algorithm (Rocchio 1971);
+– Semantic reasoning, based on an ontological representation of the domain, which
+is used to reason about the user’s features, interests, etc., by traversing semantic
+relations among concepts (CHIP).
+In many systems, a user model is initialized and then continuously updated, based on
+visitors’ feedback (e.g., AVANTI, GUIDE, Hippie, Gulliver’s Genie, PIL, CHIP). In
+PeVEP and PEACH, the stereotype associated with an avatar, selected when entering
+the museum, is updated on the basis of the viewing time, the manipulation of objects,
+and the rating and comments provided by the user.
+
+123
+
+Personalization in cultural heritage
+
+85
+
+In a few cases, such as HIPS and LISTEN, there is no initialization phase and the
+user model is exclusively dynamic. In particular, HIPS’s user model was based only
+on the visitors’ walking pace and stops that were classified according to Véron and
+Levasseur (1983) four animal types. Differently, LISTEN started from a generic user
+model and used implicit feedback, movements and time spent in front of artworks
+for inferring the visitors’ level of interest in concepts, combined with a stereotypical
+representation of motion styles describing different ways of looking at exhibits (e.g.,
+Sauntering and Goal-driven).
+4.3 Matching users and content
+Personalization occurs dynamically during user interaction. Researchers have experimented with different techniques to match the current user profile with the right content
+at the right time.
+– Early systems, such as AVANTI and ILEX, used Condition-Action rules to map
+user features with content and presentation style (more or less technical, verbose,
+etc.), as well as user interface layouts (e.g., font style).
+– Ranking has also been explored. The user model is used to rate/rank content to be
+considered for selection. For example, INTRIGUE, PIL and iCITY ranked items
+with respect to the user’s interests.
+– Recently, semantic reasoning has been exploited in combination with ranking in
+order to broaden the system’s suggestions. For instance, CHIP integrates the user’s
+interest ratings with ontological reasoning (by traversing relations), e.g., to suggest artworks not only by the same artists, but also by related ones, such as their
+students and teachers (Wang et al. 2009).
+– The systems that employed Activation/Inhibition networks for learning the user
+model also applied them for selecting the content to be presented, given the
+user’s interest levels concerning the concepts of the knowledge base (AlFresco
+and PEACH).
+– Collaborative filtering was applied in Kubadji to select the next object to visit,
+based on the cumulative visitors’ history: (i) using past visitors’ paths to select, out
+of a set of known paths, the one to be assigned to the current visitor(s); (ii) using
+the interest of a visitor in an object (represented by the time spent on it), compared
+to other visitor’s interest, in order to predict the next exhibit of interest; and (iii) a
+combination of the two.
+– Content-based filtering has been used to select the most suitable items to recommend, given the user’s ratings. While in Kubadji this approach is applied to the
+“bag of words” representation of the items selected by the visitor, in CHAT it is
+applied to the “bag of concepts” representation of items, identified by lexically
+analyzing their descriptions.
+– Social recommendation techniques, based on user-generated content (e.g., tags and
+comments) and folksonomies, are being integrated to enrich further the systems’
+capabilities in selecting the most appropriate content for the user. For instance,
+iCITY and CHAT exploit user tagging behavior for recommendation purposes;
+see Sect. 5.3.
+
+123
+
+86
+
+L. Ardissono et al.
+
+– PIL used the Vector Space model to calculate the cosine similarity between a
+vector representing the user’s interest and a vector representing the content to be
+presented. The similarity between the user model and the content was used to rank
+the presentations for the individual visitor.
+– Hybrid approaches: many systems employ more than one basic technique to improve their own matching capabilities. For instance, CRUMPET combined collaborative filtering and content-based filtering for recommendation purposes. PEACH
+applied several modeling approaches: in one, it inferred the relevancy of content,
+based on the visitor’s level of interest in these concepts (the same domain knowledge base was applied for both user modeling and natural language generation of
+presentation). In another case, potential new interests were implicitly identified by
+propagating the user’s interest, based on feedback, over an activation/inhibition network of presentations (pre-defined presentations were linked with semantic links).
+5 Discussion, trends and challenges
+Historically, personalization of cultural heritage information has stemmed from natural language generation research on the one hand and adaptive hypermedia on the
+other. Earlier linguistic techniques were replaced with “light weight” techniques, due
+to their complexity and computational demand, in favor of less knowledge-intensive
+solutions supporting the adaptation to the user’s context, and of the adoption of lightweight natural language generation techniques based on templates, canned text, and
+other similar solutions.
+The web soon became an experimental setting for personalization technology.
+The Web 2.0, the semantic and social web, and more powerful hardware and network
+infrastructures made online and onsite services converge into a set of integrated services to be used before, during and after the visit.
+Despite this progress and interesting results, the cultural heritage industry has yet
+to adopt personalization in the sense discussed so far. While mobile guides are now a
+common sight in cultural heritage settings and social web technology is spreading fast,
+personalized services are not. Recently, the cultural heritage sector has recognized the
+value of delivering different content and presentation style to different types of people
+(Falk 2009). Moreover, some institutions already differentiate their offer; e.g., the Tate
+Gallery offers customized services respectively tailored to the needs and preferences
+of kids, parents and teachers (Jackson and Adamson 2009). All in all, cultural heritage institutions now seem willing and ready to adopt personalization and not only
+to support explorations and experiments. However, to meet the needs of the cultural
+heritage industry, personalization has to address a number of challenges, described in
+the following.
+5.1 Standards to reach critical mass
+Over the years, much effort has been devoted in the cultural heritage domain to create
+and conform to standards that would facilitate the storage and exchange of information, assuring its evolution, extension and preservation for the future. For instance, the
+
+123
+
+Personalization in cultural heritage
+
+87
+
+Europeana project6 is aimed at standardizing access to European online cultural heritage resources. Wikis and blogs are entering the picture, providing content that can be
+constantly revised without requiring technical skills (Dicker 2010; Stein and Bachta
+2010). This has so far been an untapped resource which, if properly exploited, could
+facilitate the adoption of personalization by cultural heritage institutions, in order to
+help the visitor navigate through large amounts of unstructured, dynamic content.
+However, some work is needed before these repositories can become the resource
+for personalization services, e.g., pre-processing via language technology to create a
+coherent representation to be used by mechanisms that generate presentations. One
+possibility is for personalization to become a “pathfinder”, e.g., providing personal
+views or defining individual navigation paths in the collections, and a “tour provider”
+tuning the presentation to the user’s context.
+Standardization should extend from content representation to system architectures
+and personalization techniques. Up till now, most projects had their own research
+agenda, created their own data and developed complete systems that were later abandoned. A common standard of infrastructure, data structure and user model modules
+would ease the implementation and evaluation of novel ideas and allow researchers
+to focus on specific research questions while evaluating them in a common environment. As for architecture, user models should be separated from the applications, thus
+enabling external, standard user modeling components to use and re-use personal data
+(Kobsa 2001) or using standard ontologies such as GUMO (Heckmann et al. 2005) and
+communicating in standard protocols such as UserML (Heckmann and Krüger 2003).
+Moreover, standard architectures (such as the multi-agents architecture suggested in
+PEACH) may allow cultural heritage application developers to focus on developing
+their specific application while re-using existing infrastructure. This would facilitate
+the development of more effective and robust infrastructures that could ease the adoption of personalization by cultural institutions.
+5.2 Before, during and after the visit—towards a lifelong experience
+The cultural heritage experience is being viewed as an ongoing lifelong experience:
+curators and museum researchers are continuously looking at how visitors can be
+captured and retained over time, both online and onsite (Lord 2007; Wilkening and
+Chung 2009; Falk 2009). As an interaction continuum, personalization can play a
+major role by reasoning on past experience and other daily and contextual characteristics of the visitor, making the current cultural heritage experience a link in a lifelong
+chain. This creates a series of challenges that accompany lifelong user modeling in
+general: collecting evidence, remembering and forgetting (as user’s characteristics
+change), privacy and user control—what to disclose and what to keep private (Kuflik
+et al. 2010; Toch et al. 2012).
+Furthermore, a persistent user model re-introduces the well known issues of trust
+and transparency that have to be seriously addressed and not just merely acknowledged. While some projects have investigated different aspects of this issue (e.g.,
+6 Europeana—the cultural collections of Europe http://www.europeana.eu/portal/index.html.
+
+123
+
+88
+
+L. Ardissono et al.
+
+explanation in INTRIGUE and CHIP (Cramer et al. 2008), scrutability of user models, as suggested by Kay et al. (2005) and implemented in iCITY), much work has to
+be carried out in order to reach satisfactory results.
+5.3 Not me but us: social aspects
+As reported in many museum research studies, visiting a museum is a social experience.
+Individual user models cannot be directly applied to groups because group members
+have different interests, constraints and capabilities (including physical ones). Therefore, the group visiting experience has to be adapted to facilitate user interaction
+and socialization during the visit, as well as to satisfy heterogeneous requirements
+that might affect suggestions of the artworks to see and the overall tour organization.
+However, in only a few cases has the social aspect of cultural heritage been considered
+(e.g., INTRIGUE, PIL, Plua and Jameson 2002) and it seems that an extensive amount
+of work is needed to achieve satisfactory results.
+It should be noted that, in other research areas, such as Computer Supported Cooperative Work and collaboration support, group modeling has been studied extensively,
+in order to understand how user and group interests evolve along time, whether users
+are more or less involved in activities, and the like. For instance, see (Jameson and
+Smyth 2007; Vassileva and Sun 2007; Masthoff 2004; Masthoff and Gatt 2006; Ardissono et al. 2011). While group modeling has substantially different meanings in the
+management of synchronous activities, such as the museum visit, or asynchronous
+ones, such as the participation in a virtual community, an intersection between these
+two research fields can be found as far as modeling group interests and knowledge is
+concerned. In fact, such information can be useful to tailor the selection of content in
+a cultural heritage site.
+On a different perspective, museums and cultural heritage institutions are actively supporting the sharing of experience among visitors and the publication of
+user-generated material in order to enhance their web presence and establish longterm relationships with people. For instance, the Brooklyn Museum (Bernstein 2008)
+uses Web 2.0 applications, such as Facebook and Twitter, to support the clustering
+of user communities; Steve.museum (Trant 2006) employs folksonomies and social
+tagging to support the navigation of vast collections from a user perspective (instead of
+the one held by the curator); the New York Public Library extracts tags from metadata
+to integrate a traditional search with folksonomies (Dalton 2010). However, user-generated content can cause an explosion of the amount of available information, so that
+users lose the “awareness” of what is happening and of the most interesting contributions to inspect.
+Indeed, the increasing presence of institutions on the Web represents both a challenge and an opportunity for personalization research. Specifically, the active participation of the general public and user-generated content could be solicited, as discussed
+in Vassileva (2012), and effectively used. Information garnered as a result of inviting
+visitors to cultural heritage web sites to become curators of the content, to compose
+and upload their own virtual galleries (e.g., Tate Kids Collection in Tate Online),
+and to share their collection, thoughts and views (e.g., “remixing exhibits”, in Fisher
+et al. 2007) can be used by personalization systems as a source of reliable data. In
+
+123
+
+Personalization in cultural heritage
+
+89
+
+turn, personalization can dramatically improve such systems, e.g., by supporting more
+effective community formation via personalized match-making and by enhancing the
+search facilities offered by virtual collections; e.g., see Paliouras (2012) for a discussion about community-based personalization. CHAT has made a first step in this
+direction by integrating metadata information with user tags in order to improve the
+personalized suggestion of items (Lops et al. 2009) but there is more space for experimenting with existing and future personalization techniques.
+5.4 Beyond hypermedia and multimedia
+With a few exceptions (e.g., PeVEP, PEACH, “Carletto” the spider, e(c)ho, LISTEN), the delivery mode has been based on the metaphor of hypermedia with content
+organized in pages and links, followed by multimedia presentations on mobile devices.
+As technology evolves, new possibilities emerge. Augmented reality could improve
+the visitors’ sense of being present in the museum and their enjoyment during the
+visit (Sylaiou et al. 2010), and body interaction can control the display or non display
+of artworks (Vom Lehn et al. 2007). These new interaction paradigms have not been
+personalized so far and open new avenues for research.
+Following the same line of argument, some degree of affective computing has been
+employed in cultural heritage applications, for example to engage visitors in cooperative learning games (Tate Online, ARCHIE, Van Loon et al. 2007; Yatani et al. 2004).
+Affective computing and personalization techniques could be combined to tailor the
+environments to the user’s visiting style, mood, and goals, thus creating a unique and
+engaging experience.
+5.5 Evaluation: a serious issue
+Evaluation of adaptive systems has received much attention in recent years and a
+number of issues that could affect the results of the evaluation have been pointed out,
+e.g.: lack of objectivity (compare the adaptive system with its static counterpart not
+optimized for normal interaction); lack of distinction between usability and adaptivity
+issues; incorrect sampling of participants are among others discussed in Weibelzahl
+(2005), as well as in Chin and Crosby (2002).
+Evaluation of adaptive systems in cultural heritage has followed the same path,
+and the results reported in the literature, although providing valuable insights, suffer
+from the same drawbacks. For example, the results of the evaluation of the Marble
+Museum of Carrara do not distinguish between usability problems (unclear labels for
+the stereotypes) and adaptivity. Interestingly, participants did not like the stereotypic
+representation and were confused by the need to define a personal profile manually, all
+usability issues; however, participants liked the dynamic personalization as it behaved
+like a human guide. This fact indicates that hiding features that are difficult to grasp
+(e.g., personalization) could be a winning choice. Similarly, PIL user studies showed
+that users liked the technology, but the personalization went unnoticed (Kuflik et al.
+2011). As pointed out by Weibelzahl (2005), this should be the desired effect, as a
+good personalization should go unnoticed by the user who becomes aware of it only
+
+123
+
+90
+
+L. Ardissono et al.
+
+when something goes wrong. This seems to contrast with the results of the evaluation
+of CHIP that extensively investigated transparency and trust by presenting or omitting
+certainty values in the interface. Results showed how transparency is appreciated by
+users who can understand better what the system is doing for them and are willing
+to change their behavior (providing more feedback) to improve the quality of the
+recommendations (Cramer et al. 2008).
+These evaluations focused on user interaction and perception, neglecting an essential part, i.e., that of testing and evaluating the underlying technology independently from the user. A clear inspection of every individual component is essential
+(Weibelzahl 2002). A multi-layer evaluation framework (Karagiannidis and Sampos
+2000) that clearly separates different phases, from low-level monitoring of the user
+behavior (e.g., keystroke input), through the adaptation decision, to high-level assessment (e.g., the student has not understood the concept) has been proposed and successfully validated. However, the evaluation of personalization in cultural heritage
+presents a further level of complexity if the system is to be used in a changing context, such as visiting a museum or a city. Petrelli and Not (2005) discussed this issue
+and proposed developing an environment that allows extensive testing of the system
+before it is taken out of the lab for a field trial with real visitors in a real museum. One
+of the core functions of the suggested development environment is the possibility of
+simulating the different components, e.g., the user model or the user’s movements.
+This two-step evaluation, first in the lab and then in the field, was adopted in HIPS and
+allowed separating the evaluation of the system’s effectiveness and efficiency from
+the quality of the user experience (Marti and Lanzi 2001).
+In line with this approach, some projects evaluated aspects of the technology without involving the user, i.e., user behavior was simulated. PEACH (Zancanaro et al.
+2007), Kubadji, and the Museum Wearable projects all used recorded visiting behavior
+to evaluate the quality of the result of the adaptive algorithm. For the same purpose,
+PIL simulated the user via synthetic models. UbiquiTO is another example of evaluation without the user, where the impact of personalization was evaluated by comparing
+predefined user interests with system recommendations.
+As for all other aspects of personalization research, the system and user evaluation would benefit from a common effort and the creation of a shared understanding
+of which new systems should be evaluated, and how (Weibelzahl 2002; Paramythis
+et al. 2010). A shared, structured evaluation framework, as common in other specialized areas of computer science such as information retrieval and speech recognition,
+would support the comparison of different solutions, the emergence of best practices
+and the reuse of components, and it would lead to faster progress in the field.
+6 Conclusions
+In the early days of personalization in cultural heritage, 20 years ago, novel technologies were explored. Research focused on information delivery to an individual visitor,
+during a single visit online or onsite. Even then, the availability of content was recognized as a major and unresolved challenge. Recently, the focus has shifted from
+individuals engaged in a single visit to: (i) supporting a more realistic scenario which
+complies with the fact that most people visit physical museums in small groups, such as
+
+123
+
+Personalization in cultural heritage
+
+91
+
+families and classes of schoolmates; (ii) managing a long lasting interaction between
+the visitor(s) and the cultural heritage site by allowing multiple online and onsite
+visits; (iii) enabling group collaboration in both physical and online cultural heritage
+sites, in order to support the formation of virtual communities. This shift happened
+with the introduction of Web 2.0, the social and semantic web, and the recognition of
+personalization as a tool for lifelong modeling of museum visitors.
+The evolution and convergence of technologies, together with the needs expressed
+by recent museum research, open new opportunities for personalization research,
+which has the potential to improve the presentation of information, the exploration of
+content interesting for the specific user/group, the collaboration among users having
+similar interests, as well as the adaptation to heterogeneous user contexts and devices.
+However, such evolution presents new challenges. For instance, the dramatic increase
+in available information and material, the growing interest in supporting socialization
+and collaboration in small and large-size communities and the interest in user-generated content, coupled with a need to guarantee high-quality information standards at
+low costs, pose somehow conflicting requirements, which can be hardly met now but
+could be addressed in further interdisciplinary research. Concerning personalization,
+while there is room for continuing experimentation with new ideas and new technology,
+the real issue is to support realistic scenarios—real visitors and users, as individuals
+and groups in daily interactions with cultural heritage. It is time to collaborate more
+closely with cultural heritage researchers and institutions, putting personalization research results to work in practice while basing them on and combining them with
+recent museum studies. This can be achieved, in part, by applying personalization in
+cultural heritage sites, based on the results of museum studies, by approaching the
+cultural heritage community at relevant conferences (e.g., Museums and the Web), as
+well as by starting mutual projects with realistic practical goals and long-term trials.
+Appendix A
+The table below describes the systems reviewed for this paper and some additional
+ones (a relevant publication describing the latter is reported in a footnote). It provides
+a description of their characteristics, which are not mutually exclusive. It describes
+the setting: indoor/outdoor/virtual (where virtual denotes virtual reality systems and
+virtual galleries/collections), the device: desktop/mobile/wearable, the way information is presented: over an aerial map, as a web page, using a virtual character and
+or in audio video, the adaptation type: individual/group/context aware, the way the
+user model is represented: Overlay/Feature based/Content based/ List of items, the
+way the user model is initialized: explicit list of preferences/using stereotypes/by
+mediation/keyword selection or no initialization, how the user model is updated:
+the type of feedback—implicit/explicit or both (B), based on heuristic inferences,
+activation/inhibition networks, content-based, case-based, collaborative or semantic
+reasoning and how content is selected: based on social recommendation, rule-based
+(Condition/Action rules—C/A), ranking of objects, semantic reasoning, collaborative
+filtering (Collab. Filtering), content-based filtering (Content-Based F.) or by means of
+the vector space approach.
+
+123
+
+Appendix A Personalization in Cultural Heritage
+
+92
+L. Ardissono et al.
+
+123
+
+93
+
+Appendix A continued
+
+Personalization in cultural heritage
+
+123
+
+123
+
+a Göker et al. (2008); b Vlahakis et al. (2002); c van Setten (2004); d Ghiani et al. (2009); e Wakkary et al. (2009)
+
+Appendix A continued
+
+94
+L. Ardissono et al.
+
+Personalization in cultural heritage
+
+95
+
+References
+Abowd, G., Atkeson, C.G., Hong, J., Long, S., Kooper, R., Pinkerton, M.: Cyber-guide: a context-aware
+tour guide. Wirel. Netw. 3(5), 421–433 (1997)
+Ahiara, K., Yamada, T., Kando, N., Fujisawa, S., Uehara, Y., Baba, T., Nagata, S., Tojo, T., Adachi, J.:
+Supporting creation and sharing of contents of cultural heritage objects for educational purposes. In:
+Aroyo, L., Kuflik, T., Stock, O., Zancanaro, M. (eds.) Proceedings of AH2008 Workshop on Personalized Access to Cultural Heritage, pp. 15–24. Hannover, Germany (2008)
+Ardissono, L., Goy, A., Petrone, G., Segnan, M., Torasso, P.: INTRIGUE: personalized recommendation
+of tourist attractions for desktop and handset devices. Appl. Artif. Intell. 17(8–9), 687–714 (2003)
+Ardissono, L., Bosio, G., Goy, A., Petrone, G., Segnan, M., Torretta, F.: Collaboration support for activity
+management in a personal cloud. Int. J. Distrib. Syst. 2(4), 30–43 (2011)
+Astudillo, H., Inostroza, P., Lopez, C.: Context/SR: a multi-institutional semantic integration platform. In:
+J. Trant, D. Bearman (eds.) Proceedings of the International Conference for Culture and Heritage
+Online 2008 on Museums and the Web. Montreal, Quebec, Canada. Consulted July 20, 2010. http://
+www.archimuse.com/mw2008/papers/astudillo/astudillo.html (2008).
+Berkovsky, S., Kuflik, T., Ricci, F.: Mediation of user models for enhanced personalization in recommender
+systems. User Model. User Adapt. Interact. 18(3), 245–286 (2008)
+Bernstein, S.: Where do we go from here? Continuing with Web 2.0 at the Brooklyn Museum. In: J. Trant, D.
+Bearman (eds.) Proceedings of the International Conference for Culture and Heritage Online 2008 on
+Museums and the Web. Montreal, Quebec, Canada, Consulted July 20, 2010. http://www.archimuse.
+com/mw2008/papers/bernstein/bernstein.html (2008)
+Bianchi, A., Zancanaro, M.: Tracking users’ movements in an artistic physical space. In: Caenepeel, M.,
+Benyon, D., Smoth, D. (eds.) Proceedings of the 13 Annual Conference on Community of the Future,
+pp. 103–106. Siena, Italy (1999)
+Billsus, D., Pazzani, M.: Content-based recommendation systems: In: Brusilovsky, P., Kobsa, A., Nejdl,
+W. (eds.) The Adaptive Web. Methods and Strategies of Web Personalization, pp. 325–341. Springer,
+Berlin (2007)
+Bohnert, F., Zukerman, I., Berkovsky, S., Baldwin, T., Sonenberg, L.: Using interest and transition models
+to predict visitor locations in museums. AI Commun. 21(2–3), 195–202 (2008)
+Bonis, B., Stamos, J., Vosinakis, S., Andreou, I., Panayiotopoulos, T.: A platform for virtual museums with
+personalized content. Multimed. Tools Appl. 42(2), 139–159 (2009)
+Calder, J., Melengoglou, A.C., Callaway, C., Not, E., Pianesi, F., Androutsopoulos, I., Spyropoulos, C.D., Xydas, G., Kouroupetroglou, G., Roussou, M. : Multilingual personalized information
+objects. In: Stock, O., Zancanaro, M. (eds.) Multimodal Intelligent Information Presentation, pp. 177–
+201. Springer, Netherlands (2005)
+Carmagnola, F., Cena, F., Console, L., Cortassa, O., Gena, C., Goy, A., Torre, I., Toso, A., Vernero,
+F.: Tag-based user modeling for social multi-device adaptive guides. User Model. User Adapt. Interact. 18(5), 497–538 (2008)
+Cena, F., Console, L., Gena, C., Goy, A., Levi, G., Modeo, S., Torre, I.: Integrating heterogeneous adaptation
+techniques to build a flexible and usable mobile tourist guide. AI Commun. 19(4), 369–384 (2006)
+Cheverst, K., Davies, N., Mitchell, K., Smith, P.: Providing tailored (context-aware) information to city
+visitors. In: Brusilovsky, P., Stock, O., Strapparava, C. (eds.) Proceedings of the International Conference, AH 2000 on Adaptive Hypermedia and Adaptive Web-based Systems, pp. 73–85. Trento, Italy
+(2000)
+Chin, D., Crosby, M.E.: Special issue on empirical evaluation of user models and user modeling systems.
+User Model. User Adapt. Interact. 12(2–3) (2002)
+Ciavarella, C., Paternò, F.: The design of a handheld, location-aware guide for indoor environments. Pers.
+Ubiquitous Comput. 8(2), 82–91 (2004)
+Cramer, H., Evers, V., Ramlal, S., van Someren, M., Rutledge, L., Stash, N., Aroyo, L., Wielinga, B.: The
+effects of transparency on trust in and acceptance of a content-based art recommender. User Model.
+User Adapt. Interact. 18(5), 455–496 (2008)
+Dalton, J.B.: Can structured metadata play nice with tagging systems? Parsing new meanings from classification-based descriptions on Flickr Commons. In: Trant, J., Bearman, D. (eds.) Proceedings of the
+International Conference for Culture and Heritage Online 2010 on Museums and the Web. Denver,
+CO, USA, Consulted June 27, 2010. http://www.archimuse.com/mw2010/papers/dalton/dalton.html
+(2010)
+
+123
+
+96
+
+L. Ardissono et al.
+
+Damiano, R., Gena, C., Lombardo, V., Nunnari, F., Pizzo, A.: A stroll with Carletto: adaptation in dramabased tours with virtual characters. User Model. User Adapt. Interact. 18(5), 417–453 (2008)
+de Gemmis, M., Lops, P., Semeraro, G., Basile, P.: Integrating tags in a semantic content-based recommender.
+In: Pu, P., Bridge, D., Mobasher, B., Ricci, F. (eds.) Proceedings of the 2008 ACM Conference on
+Recommender Systems, pp. 163–170. Lausanne, Switzerland (2008)
+Dicker, E.: The impact of blogs and other social media in the life of a curator. In: Trant, J., Bearman, D. (eds.)
+Proceedings of the International Conference for Culture and Heritage Online 2010 on Museums and
+the Web. Denver, CO, USA, Consulted June 27, 2010. http://www.archimuse.com/mw2010/papers/
+dicker/dicker.html (2010)
+Falk, J.: Identity and the Museum Visit Experience. Left Coast Press, Walnut Creek (2009)
+Filippini Fantoni, S.: Personalization through IT in Museums. Does it really work? The case of the Marble
+Museum website. In: Proceedings of ICHIM03 on Cultural Institutions and Digital Technology, Paris.
+Consulted June 27, 2010. http://www.archimuse.com/publishing/ichim03/070C.pdf (2003)
+Fink, J., Kobsa, A., Nill, A.: Adaptable and adaptive information provision for all users, including disabled
+and elderly people. New Rev. Hypermed. Multimed. 4, 163–188 (1998)
+Fink, J., Kobsa, A.: User modeling for personalized city tours. Artif. Intell. Rev. 18, 33–74 (2002)
+Fisher, M., Kitchen Interactive, N., Twiss-Garrity, B.A.: Remixing exhibits: constructing participatory narratives with on-line tools to augment museum experiences. In: Trant, J., Bearman, D. (eds.) Proceedings
+of the International Conference for Culture and Heritage Online 2007 on Museums and the Web. San
+Francisco, CA. Consulted June 27, 2010. http://www.archimuse.com/mw2007/papers/fisher/fisher.
+html (2007)
+Garzotto, F., Cinotti T., Pigozzi, M.: Designing multi-channel web frameworks for cultural tourism applications: the MUSE case study. In: Trant, J., Bearman, D. (eds.) Proceedings of the International
+Conference for Culture and Heritage Online 2003 on Museums and the Web. Charlotte, NC, USA.
+Consulted June 27, 2010. http://www.archimuse.com/mw2003/papers/garzotto/garzotto.html (2003)
+Ghiani, G., Leporino, B., Paternò, F., Santoro, S.: Exploiting RFIDs and tilt-based interaction for mobile
+museum guides accessible to vision-impaired users. In: Miesenberger, K., Klaus, J., Zagler, W., Karshmer, A. (eds.) Computers Helping People with Special Needs: Eleventh International Conference,
+ICCHP 2008, pp. 1070–1077. Linz, Austria (2008)
+Ghiani, G., Paternò, F., Santoro, C., Spano, L.D. UbiCicero: a location-aware, multi-device museum guide.
+Interact. Comput. 21(4), 288–303 (2009)
+Göker, A., Mirhaug, H.: Evaluation of a mobile system in context. Inf. Process. Manag. 44, 39–65 (2008)
+Hanani, U., Shapira, B., Shoval, P.: Information filtering: overview of issues, research and systems. User
+Model. User Adapt. Interact. 11(3), 203–259 (2001)
+Hatala, M., Wakkary, R.: Ontology-based user modeling in an augmented audio reality system for museums. User Model. User Adapt. Interact. 15(3–4), 339–380 (2005)
+Heckmann, D., Krüger, A.: A user modeling markup language (UserML) for ubiquitous computing. In:
+Brusilovsky, P., Corbett, A., de Rosis, F. (eds.) Proceedings of the Ninth International Conference on
+User Modeling, pp. 393–397. Johnstown, PA, USA (2003)
+Heckmann, D., Schwartz, T., Brandherm, B., Schmitz, M., von Wilamowitz-Moellendorff, M.: GUMO—the
+general user model ontology. In: Proceedings of the 10th International Conference on User Modeling
+(UM’2005), pp. 428–432. Edinburgh, UK (2005)
+Jackson, S., Adamson, R.: Doing it for the kids: Tate online on engaging, entertaining and (stealthily)
+educating six to 12-year-olds. In: Trant, J., Bearman, D. (eds.) Proceedings of the International Conference for Culture and Heritage Online 2009 on Museums and the Web 2009. Indianapolis, IA, USA.
+Consulted June 27, 2010. http://www.archimuse.com/mw2009/papers/jackson/jackson.html (2009)
+Jameson, A., Smyth, B.: Recommendation to groups. In: Brusilovsky, P., Kobsa, A., Nejdl , W. (eds.) The
+Adaptive Web, Methods and Strategies of Web Personalization, pp. 596–627. Springer, Berlin (2007)
+Karagiannidis C., Sampos D.: Layered evaluation of adaptive applications and services. In: Brusilovsky,
+P., Stock, O., Strapparava, C. (eds.) Proceedings of Adaptive Hypertext—AH 2000. Springer LNCS,
+vol. 1892, pp. 343–346. Springer, Heidelberg (2000)
+Kay, J., Lum, A., Niu, W.: A scrutable museum tour guide system. In: Butz, A., Kray, C., Krüger, A. (eds.)
+Proceedings of the 2nd Workshop on Multi-User and Ubiquitous User Interfaces, Jan. 9, 2005, pp.
+19–20. San Diego, USA (2005)
+Kobsa, A.: Generic user modeling systems. User Model. User Adapt. 11(1), 49–63 (2001)
+Kohrs, A., Merialdo, B.: Creating user-adapted Websites by the use of collaborative filtering. Interact.
+Comput. 13, 695–716 (2001)
+
+123
+
+Personalization in cultural heritage
+
+97
+
+Konstan, J.A., Riedl, J.: Recommender systems: from algorithms to user experience. User Model. User
+Adapt. Interact. 22 (this issue) (2012)
+Krösche, J., Baldzer, J., Boll, S.: MobiDENK—mobile multimedia in monument conservation. IEEE Multimed. 11(2), 72–77 (2004)
+Kuflik, T., Kay J., Kummerfeld, B.: Lifelong personalized museum experiences. In: Berkovsky, S., Bohnert,
+F., Carmagnola, F., Cheng, D., Heckmann, D., Kuflik, T., Nurmi, P., Partridge, K. (eds.) Proceedings
+of Workshop on Pervasive User Modeling and Personalization (PUMP’10), June 2010, Big Island
+Hawaii, pp. 9–16 (2010)
+Kuflik, T., Stock, O., Zancanaro, M., Gorfinkel, A., Jbara, S., Sheidin, J., Kashtan, N.: A visitor’s guide
+in an “Active museum”: presentations, communications, and reflection. ACM J. Comput. Cult. Herit.
+3(3) (2011)
+Lops, P., de Gemmis, M., Semeraro, G., Musto, C., Narducci, F., Bux, M.: A Semantic content-based recommender system integrating folksonomies for personalized access. In: Castellano, G., Jain, L.C., Fanelli, A.M. (eds.) Web Personalization in Intelligent Environments, vol. SCI 229, pp. 27–47: Springer,
+Heidelberg (2009)
+Lord, B.: The Manual of Museum Learning. AltaMira Press, Lanham (2007)
+Marti, P., Lanzi, P. : I enjoyed that this much! Techniques for measuring usability in leisure-oriented
+applications. In: Bawa, J., Dorazio, P., Trenner, L. (eds.) The Usability Business: Making the Web
+Work, pp. 49–59. Springer, London (2001)
+Masthoff, J.: Group modeling: selecting a sequence of television items to suit a group of viewers. User
+Model. User Adapt. Interact. 14(1), 37–85 (2004)
+Masthoff, J., Gatt, A.: In pursuit of satisfaction and the prevention of embarrassment: affective state in
+group recommender systems. User Model. User Adapt. Interact. 16(3–4), 281–319 (2006)
+Oberlander, J., O’Donnell, M., Mellish, C., Knott, A.: Conversation in the museum: experiments in dynamic
+hypermedia with the intelligent labeling explorer. New Rev. Multimed. Hypermed. 4, 11–32 (1998)
+Oberlander, J., Karakatsiotis, G., Isard, A., Androusotpoulos, I.: Building an adaptive museum gallery in
+Second Life. In: Trant, J., Bearman, D. (eds.) Proceedings of the International Conference for Culture
+and Heritage Online 2008 on Museums and the Web. Montreal, Quebec, Canada. Consulted June 27,
+2010. http://www.archimuse.com/mw2008/papers/oberlander/oberlander.html (2008)
+O’Hare, G.M.P., O’Grady, M.J.: Gulliver’s Genie: a multi-agent system for ubiquitous and intelligent content delivery. Comput. Commun. 26(11), 1177–1187 (2003)
+Opperman, R.: Adaptive user support—Ergonomic design of manually and automatically adaptable software. Lawrence Erlbaum Associates, Hillsdale (1994)
+Oppermann, R., Specht, M.: A context-sensitive nomadic exhibition guide. In: Thomas, P.J., Gellersen,
+H. (eds.) Proceedings of the 2nd International Symposium on Handheld and Ubiquitous Computing, pp. 127–142. Lecture Notes in Computer Science, Bristol, UK (2000)
+Paliouras, G.: Discovery of Web user communities and their role in personalization. User Model. User
+Adapt. Interact. 22 (this issue) (2012)
+Paramythis, A., Weibelzahl, S., Masthoff, J.: Layered evaluation of interactive adaptive systems: framework
+and formative methods. User Model. User Adapt. Interact. 20(5), 383–453 (2010)
+Paris, C., Wan, S., Wilkinson, R., Wu, M.: Generating personal travel guides—and who wants them? In:
+Bauer, M., Gmytrasiewicz, P.J., Vassileva, J. (eds.) Proceedings of the Eight Conference on User
+Modeling, pp. 251–253. Sonthofen, Germany (2001)
+Paternò, F., Mancini, C.: Designing web user interfaces adaptable to different types of use. In: Trant, J.,
+Bearman, D. (eds.) Proceedings of the International Conference for Culture and Heritage Online 1999
+on Museums and the Web 1999, Pittsburgh, USA. Consulted June 27, 2010. http://www.archimuse.
+com/mw99/papers/paterno/paterno.html (1999)
+Petrelli, D., De Angeli, A., Convertino, G.: A User-centered approach to user modeling. In: Kay, J. (ed.)
+Proceedings of the 7th International Conference UM’99 on User Modeling, pp. 255–264 (1999)
+Petrelli, D., Not, E.: User-centred design of flexible hypermedia for a mobile guide: reflections on the
+hyperaudio experience. User Model. User Adapt. Interact. 15(3–4), 303–338 (2005)
+Plua, C., Jameson, A.: Collaborative preference elicitation in a group travel recommender system In: Ricci,
+F., Smyth, B. (eds.) Proceedings of AH 2002 Workshop on Recommendation and Personalization in
+eCommerce, pp. 148–154. Malaga, Spain (2002)
+Rocchio, J.J.: Performance indices for document retrieval. In: Salton, G. (ed.): The SMART Retrieval
+System—Experiments in Automatic Documents Processing, pp. 57–67. Englewood, NJ (1971)
+
+123
+
+98
+
+L. Ardissono et al.
+
+Ruotsalo, T., Mälekä, E., Kauppinen, T., Hyvönen, E., Haav, K., Rantale, V., Frosterus, M., Dokoohaki,
+N., Matskin, M.: Smartmuseum: personalized context-aware access to digital cultural heritage. In:
+Third International Conference Proceedings of International Conference on Digital Libraries and the
+Semantic Web 2009 (ICSD2009) on Advances in Semantic Processing, Trento, Italy (2009)
+Schmidt-Belz, B., Laamanen, H., Poslad, S., Zipf, A.: Location-based mobile tourist services—first user
+experiences. In: Frew, A.J., Hitz, M. , O’Connor P. (eds.) Proceedings of the tenth International Conference on Information Technology and Travel & Tourism, pp. 115–123. Helsinki, Finland (2003)
+Schmitz, P.L., Black, M.T.: The Delphi toolkit: enabling semantic search for museum collections. In: Trant,
+J., Bearman, D. (eds.) Proceedings of the International Conference for Culture and Heritage Online
+2008 on Museums and the Web 2008. Montreal, Quebec, Canada, Consulted June 27, 2010. http://
+www.archimuse.com/mw2008/papers/schmitz/schmitz.html (2008)
+Sparacino, F.: The museum wearable: real-time sensor-driven understanding of visitors’ interests for personalized visually-augmented museum experiences. In: Trant, J., Bearman, D. (eds.) Proceedings of the
+International Conference for Culture and Heritage Online 2002 on Museums and the Web 2002, Boston, MA. Consulted June 27, 2010. http://www.archimuse.com/mw2002/papers/sparacino/sparacino.
+html (2002)
+Stein, R., Bachta, E.: Breaking the bottleneck: using pseudo-wikis to enable rich web authoring for nontechnical staff members. In: Trant, J., Bearman, D. (eds.) Proceedings of the International Conference
+for Culture and Heritage Online 2010 on Museums and the Web 2010. Denver, Colorado. Consulted
+June 27, 2010. http://www.archimuse.com/mw2010/papers/stein-bachta/stein-bachta.html (2010)
+Stock, O., Carenini, G., Cecconi, F., Franconi, E., Lavelli, A., Magnini, B., Pianesi, F., Ponzi, M., SamekLodovici, V., Strapparava, C.: Alfresco: enjoying the combination of NLP and hypermedia for information exploration. In: Maybury, M.T. (ed.) Intelligent Multimedia Interfaces, pp. 197–224. AAAI
+Press, Menlo Park (1993)
+Stock, O., Zancanaro, M., Busetta, P., Callaway, C., Krüger, A., Kruppa, M., Kuflik, T., Not, E., Rocchi,
+C.: Adaptive, intelligent presentation of information for the museum visitor in PEACH. User Model.
+User Adapt. Interact. 17(3), 257–304 (2007)
+Stock, O., Callaway, C.: Multiple coordinated mobile narratives as a catalyst for face-to-face group conversation. In: Iurgel, I.A., Zagalo, N., Petta, P. (eds.) Proceedings of the 2nd Joint International Conference
+on Interactive Digital Storytelling. Guimarães, Portugal, pp. 209–220 (2009)
+Sumi, Y., Mase, K.: AgentSalon: facilitating face-to-face knowledge exchange through conversations among
+personal agents. In: André, E., Sen, S., Frasson, C., Müller, J. (eds.) Proceedings of the Fifth International Conference on Autonomous Agents. Montreal, Quebec, Canada, pp. 393–400 (2001)
+Sylaiou, S., Mania, K., Karoulis, A., White, M.: Exploring the relationship between presence and enjoyment
+in a virtual museum. Int. J. Hum. Comput. Stud. 68, 243–253 (2010)
+Toch, E., Wang, Y., Cranor, L.F.: Personalization and privacy: a survey of privacy risks and remedies in
+personalization-based systems. User Model. User Adapt. Interact. 22 (this issue) (2012)
+Trant, J.: Exploring the potential for social tagging and folksonomy in art museums: proof of concept. New
+Rev. Hypermed. Multimed. 12(1), 83–105 (2006)
+Van Loon, H., Gabriels, K., Luyten, K., Teunkens, D., Roberto, K., Coninx, K., Manshoven, E.: Supporting
+social interaction: a collaborative trading game on PDA. In: Trant, J., Bearman, D. (eds.) Proceedings
+of the International Conference for Culture and Heritage Online 2007 on Museums and the Web 2007.
+San Francisco, CA, Consulted June 27, 2010. http://www.archimuse.com/mw2007/papers/vanLoon/
+vanLoon.html (2007)
+van Setten, M., Pokraev, S., Koolwaaij J.: Context-aware recommendations in the mobile tourist application
+COMPASS. In: Nejdl, W., De Bra, P. (eds.). Proceedings of the Third International Conference on
+Adaptive Hypermedia, pp. 235–244. Eindhoven, the Netherlands (2004)
+Vassileva, J.: Motivating participation in social computing applications: a user modeling perspective. User
+Model. User Adapt. Interact. 22 (this issue) (2012)
+Vassileva, J., Sun, L.: Using community visualization to stimulate participation in online communities.
+e-Service J. 6(1), 3–39 (2007)
+Véron, E., Levasseur, M.: Ethnographie de l’exposition: l’espace, le corps, le sens, Paris, Bibliothèque
+publique d’Information, Centre Georges Pompidou, Paris, France (1983)
+Vlahakis, V., Ioannidis, N., Karigiannis, J.: ARCHEOGUIDE: Challenges and Solutions of a Personalised
+Augmented Reality Guide for Archaeological sites. Computer Graphics in Art, History and Archaeology. IEEE Comput. Graph. Appl. 22(5), 52–60 (2002)
+
+123
+
+Personalization in cultural heritage
+
+99
+
+Vom Lehn, D., Hindmarsh, J., Luff, P., Heath, C.: Proceedings of CHI 2007 on Engaging Constable: Revealing Art with New Technology, pp. 1485–1494. San Jose, California, USA (2007)
+Wakkary, R., Hatala, M., Muise, K., Tanenbaum, K., Budd J.: 2009, Kurio: a museum guide for families. In: Villar, N., Izadi, S., Fraser, M., Benford, S., Kern, D., Sahami, A. (eds.) Proceedings of 3rd
+International Conference on Tangible and Embedded Interaction. Cambridge, UK, pp. 215–222
+Wang, Y., Stash, N., Aroyo, L., Gorgels, P., Rutledge, L., Schreiber, G.: Recommendations based on semantically enriched museum collections. J. Web Semant. 6(4), 283–290 (2008)
+Wang, Y., Stash, N., Aroyo, L., Hollink, L., Schreiber, G.: Semantic relations in content-based recommender systems. In: Gil Y. , Fridman Noy, N. (eds.) Proceedings of the Fifth International Conference
+on Knowledge Capture. Redondo Beach, CA, pp. 209–210 (2009)
+Weibelzahl, S.: Evaluation of Adaptive Systems, Ph.D Thesis, University of Freiburg, Germany (2002)
+Weibelzahl, S. : Problems and pitfalls in evaluating adaptive systems. In: Chen, S.Y., Magoulas,
+G.D. (eds.) Adaptable and Adaptive Hypermedia Systems, pp. 285–299. IRM Press, Hershey (2005)
+Wilkening, S., Chung, J.: Life Stages of the Museum Visitor: Building Engagement Over a Lifetime. American Association of Museums Press, Washington, DC (2009)
+Yatani, K., Onuma, M., Sugimoto, M., Kusunoki, F.: Musex: a system for supporting children’s collaborative
+learning in a museum with PDAs. Syst. Comput. Jpn. 35(14), 54–63 (2004)
+Zancanaro, M., Kuflik, T., Boger, Z., Goren-Bar, D., Goldwasser, D.: Analyzing museum visitors’ behavior
+patterns. In: Conati, C., McCoy, K.F., Paliouras, G. (eds.) User Modeling. Lecture Notes in Computer
+Science, vol. 451, pp. 238–246. Springer, Heidelberg (2007)
+Zimmermann, A., Lorenz, A.: LISTEN: a user-adaptive audio-augmented museum guide. User Model. User
+Adapt. Interact. 18(5), 389–416 (2008)
+
+Author Biographies
+Liliana Ardissono is an Associate Professor at the Dipartimento di Informatica of the Università di Torino,
+where she obtained her university degree and her Ph.D. in Computer Science. Her research interests
+include User Modeling, Adaptive Hypermedia and Cloud Computing. She has investigated the development
+and exploitation of personalization techniques for various domains, such as recommendation, awareness
+support and presentation of Cultural Heritage information. She is the Secretary of the Board of Directors
+of User Modeling Inc. and she is a member of the Editorial Board of User Modeling and User-Adapted
+Interaction—The Journal of Personalization Research.
+Tsvi Kuflik is a senior lecturer of Information Systems at the University of Haifa, where he leads a group
+that focuses on research on Ubiquitous User Modeling and on personalization and Intelligent User Interface
+for Cultural Heritage. Tsvi received his B.Sc. and M.Sc. in Computer Science and Ph.D. in Information
+Systems from Ben-Gurion University of the Negev. He has worked on personalization and intelligent user
+interfaces for cultural heritage over the past 10 years. During this period he spent a year in FBK/irst in Trento
+and half a year at the University of Sydney working on these areas. In addition he worked on Information
+Filtering and Decision Support Systems applications for Agriculture and Occupational Therapy. He has
+authored over a hundred technical papers and has edited several books.
+Daniela Petrelli is a Reader in Interaction Design at the Art & Design Research Centre at Sheffield Hallam
+University in the UK. She has a multidisciplinary background in computer science, social research and
+fine art. Her research interests include intelligent interfaces, multimodal and multilingual interfaces, and
+tangible interaction. Daniela started working in personalization for cultural heritage in 1997 and maintained
+an interest in this area ever since. She is a member of the editorial board of the International Journal of
+Human-Computer Studies and has published about eighty peer-reviewed papers at international conferences
+and international journals.
+
+123
+
+

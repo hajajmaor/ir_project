@@ -1,0 +1,1198 @@
+Building Virtual and Augmented Reality Museum Exhibitions
+
+Rafaá Wojciechowski*, Krzysztof Walczak*, Martin White†, Wojciech Cellary*
+
+* Department of Information Technology, The Poznan University of Economics, 
+Poland
+
+† Department of Informatics, University of Sussex, UK
+
+
+Abstract
+
+A system that allows museums to build and manage Virtual and
+Augmented Reality exhibitions based on 3D models of artifacts is
+presented. Dynamic content creation based on pre-designed
+visualization templates allows content designers to create virtual
+exhibitions very efficiently. Virtual Reality exhibitions can be
+presented both inside museums, e.g. on touch-screen displays
+installed inside galleries and, at the same time, on the Internet.
+Additionally, the presentation based on Augmented Reality
+technologies allows museum visitors to interact with the content
+in an intuitive and exciting manner.
+
+CR Categories: I.3.7 [Computer Graphics]: Three-Dimensional
+Graphics and Realism – Virtual reality; K.3.1 [Computers and
+Education]: Computer Uses in Education - Collaborative learning,
+Distance  learning;  H.5.1  [Information  Interfaces  and
+Presentation]: Multimedia Information Systems – Artificial,
+augmented, and virtual realities; H.5.2 [Information Interfaces and
+Presentation]: User Interfaces – Graphical user interfaces (GUI),
+Input devices and strategies, Interaction styles
+
+Keywords: Virtual Reality, Augmented Reality, VRML, Cultural
+Heritage
+
+1 Introduction
+
+Virtual Reality (VR) technology has already reached the level of
+maturity allowing it to be introduced into real life applications
+such as medicine, education and cultural heritage. Recently,
+significant research effort has been also made in the area of
+Augmented Reality (AR). AR extends VR systems with the
+support for blending real and virtual elements into seamless
+composite scenes. By combining Virtual Reality with video
+processing and computer vision techniques, AR systems offer a
+natural view of real scenes enriched with virtual objects.
+
+Virtual and Augmented Reality are promising technologies that
+can have wide impact on many domains also those not commonly
+associated with computer technologies. One of such domains is
+cultural heritage. Most museums do not have the space and
+resources required to exhibit their whole collections. In addition,
+
+* e-mail: [wojciechowski, walczak, cellary]@kti.ae.poznan.pl
+
+† e-mail: m.white@sussex.ac.uk
+
+Copyright © 2004 by the Association for Computing Machinery, Inc.
+
+Permission to make digital or hard copies of part or all of this work for 
+personal or
+classroom use is granted without fee provided that copies are not made or 
+distributed
+for commercial advantage and that copies bear this notice and the full citation 
+on the
+first page. Copyrights for components of this work owned by others than ACM 
+must be
+honored. Abstracting with credit is permitted. To copy otherwise, to republish, 
+to post on
+servers, or to redistribute to lists, requires prior specific permission and/or 
+a fee.
+Request permissions from Permissions Dept, ACM Inc., fax +1 (212) 869-0481 or 
+e-mail
+permissions@acm.org.
+
+© 2004 ACM 1-58113-845-8/04/0004 $5.00
+
+the nature and fragility of some objects prevent museum curators
+from making them available to the public. Also, the interaction of
+museum visitors with the exhibited artifacts is very restricted, e.g.
+they cannot look at the artifacts from all angles, compare the
+artifacts, or study them in different contexts. In this respect,
+Virtual and Augmented Reality can offer a great help. These
+technologies                        provide solutions enabling visualization of 
+3D digital
+models of museum artifacts in both virtual and real environments.
+They also allow visitors to interact with the models in a variety of
+ways.
+
+Museums are keen on presenting their collections in a more
+appealing and exciting manner to attract visitors. Some recent
+surveys in Europe show that about 35% of museums have already
+started (June 2003) developments with some form of 3D
+presentation of objects [Tsapatori 2003]. In many cases, these are
+only projects at some initial stage, but the number is rapidly
+growing and it is evident, that museums start to recognize the
+potential offered by these technologies.
+
+Two main difficulties that museums encounter while trying to
+widely adopt the Virtual and Augmented Reality technologies in
+their standard way of operation are efficient creation of 3D
+models of artifacts and building virtual exhibitions based on these
+models. Significant research investment has been recently made in
+the area of 3D model creation. The technology becomes better,
+quicker and more affordable. It is expected that in a few years
+museums will be able to easily buy high-quality 3D scanners.
+
+The availability of 3D models is a prerequisite but it is only the
+first step. For wide adoption of the technology, museums need
+efficient, cost effective and simple methods of creating virtual and
+augmented reality exhibitions based on their collection of 3D
+models. The work on setting up an exhibition should be
+performed by museum staff (e.g., curators), which cannot be
+expected to be IT experts.
+
+At the same time, the system must provide museum visitors with
+an intuitive human-computer interface based on well-known
+metaphors. The users should be able to interact with digital
+contents easily and naturally like they can interact with objects in
+a real world. Everything that does not meet these criteria will not
+be                       understood and, therefore, will not be generally 
+accepted.
+
+In this paper, we describe a system, which may help museums to
+create Virtual and Augmented Reality exhibitions in a quick and
+intuitive way. The system comprises a simple to use authoring
+application, which allows content designers to set up virtual
+exhibitions in just a few minutes. The exhibitions can be
+presented both inside museums, e.g. on touch-screen displays
+installed inside galleries and at the same time on the Internet. The
+presentation  is  based  on  Virtual  and  Augmented  Reality
+technologies and allows visitors to interact with the contents in an
+intuitive and exciting manner.
+
+
+The presented system has been developed as a part of the
+European Union Fifth Framework Programme IST project ARCO
+
+– Augmented Representation of Cultural Objects (IST-2000-
+28336)                         [ARCO 2003].
+
+The remainder of this paper is organized as follows. In Section 2,
+related projects dealing with Virtual and Augmented Reality are
+presented. Section 3 provides a short overview of the ARCO
+project. Section 4 explains the concept of dynamic creation of
+virtual  exhibitions. Section 5 gives a short overview of
+implemented user interfaces. More detailed description of the
+Virtual and Augmented Reality exhibitions can be found in
+Sections 6 and 7, respectively. Also in Section 7, an application of
+the system in the educational domain is presented. Section 8
+concludes the paper and indicates future work.
+
+2 Related Work
+
+There are numerous examples of research on using Virtual and
+Augmented Reality. However, few projects use these technologies
+in the cultural heritage sector, and only some of them focus on
+real exploitation of the results. Before we describe our approach
+we briefly survey related projects that utilize VR or AR for
+cultural heritage applications.
+
+The SCULPTEUR project – Semantic and content-based
+multimedia exploitation for European benefit – is developing a
+solution for museums to create and manipulate digital
+representations of museum objects. SCULPTEUR utilizes multi-
+stereo  and silhouette techniques to create 3D museum object
+reconstructions stored in a database together with other
+multimedia data. The project is also aimed at developing a
+semantic layer providing a variety of search and content analysis
+opportunities. Moreover, the system gives users seamless access
+to   the distributed databases of cultural data by offering a set of
+tools encompassing educational software products [SCULPTEUR
+2003].
+
+Another example of an outdoor solution is the Ename 974 project
+aimed at virtual reconstruction of an extensive archaeological site
+located at Ename, Belgium [Ename 974 2003]. Visitors are
+offered with virtual reconstruction of early-medieval buildings in
+stationary AR kiosks. Users can see visualizations of virtual
+models overlaid on video data captured by a camera. Using touch
+screen displays they can control the camera and the displayed
+data.
+
+Another group of systems exploiting AR techniques to visualize
+cultural heritage encompasses indoor applications. An example of
+such a system is the Virtual Dig Experience installed in the Seattle
+Art Museum [Virtual Dig 2003]. Using VR and AR techniques
+visitors,  particularly  children,  can  discover  artifacts for
+themselves. Users are presented not only with the artifacts but
+also with their archaeological context. Real objects such as
+brushes and small shovels are used for user interaction. The
+Virtual Dig has been developed based on the HI-SPACE [HI-
+SPACE                         2003] and ARToolKit [ARToolKit 2003] packages.
+
+The Virtual Showcase project [Bimber et al. 2003; Virtual
+Showcases 2003] is intended to eliminate the necessity of using
+unusual methods of presenting cultural objects, which is one of
+the weaknesses of most VR and AR systems. The project aims at
+integrating the AR technology into a traditional museum
+showcase format. Virtual images can be projected on the sides of
+a specially designed showcase allowing users to explore both the
+real objects and their virtual representations.
+
+3 ARCO System Overview
+
+The ARCO project – Augmented Representation of Cultural
+Objects – aims at developing the whole chain of technologies to
+help museums to create, manipulate, manage and present digitized
+cultural objects in virtual exhibitions accessible both inside and
+outside museums. The overall architecture of the ARCO system is
+presented                          in Figure 1.
+
+
+The 3D Murale project – 3D Measurement and Virtual
+Reconstruction of Ancient Lost Worlds of Europe – is aimed at
+developing a system capable of recording archaeology excavation
+phases using Virtual Reality techniques. In addition to the artifacts
+also stratigraphical layers can be modeled. This requires utilizing
+diverse 3D capture techniques. Furthermore, the project offers the
+reconstruction of excavated remains of pottery, sculptures and
+buildings as well as their visualization in a way as they possibly
+looked like throughout ages [3D Murale 2003].
+
+In recent research on exploitation of modern technologies in
+cultural heritage, an increasing role of Augmented Reality can be
+observed. A notable example is the ARCHEOGUIDE project
+intended to develop a wearable AR tour guide at cultural heritage
+sites [ARCHEOGUIDE 2003]. ARCHEOGUIDE allows visitors
+
+Content
+Production
+
+Acquisition
+
+Modeling
+
+Refinement
+
+Content
+Management
+
+Designing
+Virtual
+Exhibitions
+
+Database
+
+Content
+Visualization
+
+Web + VR
+Presentation
+
+Web + AR
+Presentation
+
+
+to see virtual reconstructions of ancient buildings. A user is
+equipped with a see-through Head-Mounted Display (HMD) and
+wearable computing equipment. The equipment is responsible for
+visualization of appropriate information on the HMD depending
+on the visitor’s position and orientation in the site. Similar to
+ARCHEOGUIDE  in  terms  of  applied  technology  is  the
+LIFEPLUS project. A fundamental difference is the presented
+contents that in case of LIFEPLUS additionally encompass real-
+time 3D simulations of ancient fauna and flora [LIFEPLUS 2003].
+
+Figure 1. The overall architecture of the ARCO system
+
+The ARCO system consists of three main architectural
+components: content production, content management, and
+visualization.
+
+The content production includes all tools and techniques used to
+create digital representations of museum artifacts. The method of
+modeling depends on features of the objects. Objects with simple
+geometry can be modeled with a state-of-the-art modeling
+
+
+package such as 3ds max equipped with a set of additional plug-
+ins developed in the ARCO project. The plug-ins simplify the
+process of creating virtual models of cultural objects by providing
+a user with functionality tailored to perform particular modeling
+tasks. Objects with complex geometry are modeled with a stereo
+digital camera system also developed within the project. This
+system is capable of automatic generation of textured 3D models
+from stereoscopic images [Patel et al. 2003]. 3D models obtained
+from the object modeling tools may require further content
+refinement such as reconstruction of missing parts or repair of
+polygon meshes. Repair operations such as merging meshes,
+eliminating overlapping polygons, welding and capping holes are
+carried out.
+
+Digital representations are stored in the ARCO database and
+managed  with  ARCO  Content  Management  Application
+(ACMA). Each digitized cultural object is represented as a set of
+media objects and associated metadata [Mourkoussis et al. 2003].
+Examples of media objects are images, 3D models, descriptions,
+movies and sounds. Virtual exhibitions are designed by the use
+the Presentation Manager, which is one of the tools available in
+ACMA. A designer can easily create virtual exhibitions by
+creating exhibition spaces and assigning cultural objects and
+visualization templates to the spaces. The cultural objects can be
+then visually arranged in the exhibition spaces by the use of a
+simple VR authoring interface.
+
+The visualization of the digital representations of museum
+artifacts is performed by Virtual and Augmented Reality
+interfaces.  The  interfaces  combine  Web-based  form  of
+presentation with either VR or AR virtual exhibitions. The Web-
+based form of presentation allows users to search and browse the
+database contents by the use of a well-known interface, whereas
+the VR and AR exhibitions let them examine virtual
+reconstructions of selected objects in 3D environments. The
+virtual exhibitions displayed in the end-user interfaces are
+dynamically generated based on parameterized visualization
+templates and the database contents. The use of different
+visualization templates and template parameterization allows
+different visualization of the same content. The virtual exhibitions
+can be also customized for a particular user or created in response
+to                           a user query.
+
+4 Dynamic Virtual Exhibitions
+
+The ARCO system uses X-VRML visualization templates to
+dynamically create virtual exhibitions presented in the end-user
+interfaces. X-VRML is a high-level XML-based procedural
+language that adds dynamic modeling capabilities to virtual scene
+description standards such as VRML and X3D. The dynamic
+modeling  technique  enables  the  development  of  dynamic
+database-driven  virtual  reality  applications  by  building
+parameterized models (templates) of virtual scenes that constitute
+the application, and dynamic generation of instances of virtual
+scenes based on the models, data retrieved from a database,
+current values of model parameters, query provided by a user, and
+user privileges or preferences [Walczak and Cellary 2002;
+Walczak and Cellary 2003; X-VRML].
+
+The X-VRML language enables parameterization of the virtual
+scene generation process, enables selection of the scene contents
+and provides powerful methods of accessing data stored in
+databases. The data retrieved from a database can influence the
+
+process of creation of the final virtual scene resulting in
+modification of its structure, contents, and appearance.
+
+Although X-VRML provides a generic framework for building
+dynamic content templates, its design reflects specific
+requirements of database-driven VR applications. Thus, it offers
+important advantages over other Web technologies for dynamic
+content creation, such as Web page generators or the XSLT.
+Applications can use X-VRML processing on both the server and
+the client sides. High-level VR-specific elements such as classes
+or event handlers make the application code significantly shorter
+and more readable. Direct access to databases supports both data
+visualization and persistency. The language is by design
+extensible allowing creation of advanced domain-specific
+modules that simplify the process of designing advanced virtual
+exhibitions. The fact that X-VRML is based on XML ensures
+smooth integration with new VR and other Web standards.
+
+The X-VRML templates are used in ARCO to generate both the
+2D HTML and 3D VRML or X3D contents. By using different
+templates the same contents can be displayed in different ways.
+Also,  since  the  templates  are  parameterized,  different
+visualizations can be generated from a single template when
+supplied with different parameter values. The parameter values
+are  either  preset  by  an  exhibition  designer  or  provided
+dynamically by an end-user.
+
+The use of X-VRML visualization templates enables separation of
+the process of designing complex virtual scenes from the process
+of creating actual virtual exhibitions, allowing the latter to be
+easily performed by museum staff without extensive knowledge in
+computer science and 3D technologies. All the visualization rules
+necessary to build virtual exhibitions and most of the graphical
+properties of the exhibitions are encoded in the visualization
+templates. A content designer can create a virtual exhibition by
+simply collecting the cultural object models, setting their
+visualization properties and creating an instance of a visualization
+template, i.e. a template together with values of template
+parameters. The process of designing a virtual exhibition can be
+performed by the use of a simple 2D application connected to the
+ARCO database.
+
+The structure of the virtual exhibitions is determined by the
+structure of special exhibition spaces stored in the database. Each
+exhibition space may represent an entire exhibition, a part of the
+exhibition related to a particular subject, a museum room, etc.
+Subspaces may be used to divide exhibitions into smaller parts,
+e.g., focused on particular topics. The exhibition spaces are
+represented by folders, which may contain two types of elements:
+
+ξ  cultural objects and
+
+ξ  X-VRML template instances.
+
+When an end-user enters an exhibition space, all cultural objects
+that are assigned to this particular exhibition folder are displayed
+by the use of an X-VRML template instance that is assigned to
+this folder. A template instance is an X-VRML template supplied
+with actual values for some of its formal parameters. The template
+parameter values are provided by a content designer by the use of
+the Presentation Manager tool.
+
+Depending on the set of parameters that are set in the template
+instance, the end-user may be required (or not) to provide
+parameters for displaying the exhibition contents. The following
+cases                           are possible:
+
+
+ξ  Some of the required template parameters are not set – the
+end-user must first provide values for these parameters (e.g.,
+search criteria) and then the exhibition space may be
+visualized,
+
+ξ  All required parameters are set but there are optional
+parameters                             that are not set – the exhibition space 
+is visualized
+immediately, but the end-user may change some of the
+presentation parameters (e.g. the default historical period),
+
+ξ  All template parameters are set – the exhibition space is
+displayed immediately and the end-user may not change its
+parameters.
+
+This flexible assignment of parameter values for X-VRML
+templates makes it possible to easily combine search interfaces,
+customizable  browse  interfaces,  as  well  as  fixed  virtual
+exhibitions.
+
+Due to the X-VRML template parameterization, different
+visualizations can be achieved by the creation of template
+instances derived from the same template but supplied with
+different sets of parameter values. For example, a difference
+between two instances of the same template used in two spaces
+may be the value of a parameter defining the wall texture.
+
+In order to speed-up the process of designing ARCO virtual
+exhibitions and to ensure consistency of presentation in exhibition
+spaces, the concept of inheritance of template instances was
+introduced. In this approach, if a specific exhibition folder does
+not contain its own template instance, the instance contained in its
+parent folder is used by default (recursively). This solution
+enables using one template instance for the whole tree of folders
+in the exhibition, saving the preparation time and ensuring visual
+consistency of presentations.
+
+In the ARCO system, the same exhibition may be displayed
+differently in different environments by the use of different
+visualization templates. To achieve maximum flexibility with
+respect  to different visualization methods, the concept of
+presentation domains was introduced. A presentation domain is
+the environment in which the presentation interface is used.
+
+The current ARCO prototype addresses two Web domains and
+one AR domain. The Web domains are: WEB_LOCAL for use on
+local  displays  installed  inside  museum  galleries  and
+WEB_REMOTE for use on the Internet. The contents for local
+displays  are optimized for full-screen use on fixed resolution
+touch-screen displays. The contents must contain all navigation
+elements and the size of the elements must be appropriate for
+touch-screen operation. Since both the hardware and the network
+configuration are controlled by the museum, high-quality graphics
+can   be employed within the local presentation domain. On the
+contrary, the WEB_REMOTE domain provides contents for
+typical Web presentations on computers – with different hardware
+and software configuration – connecting over the Internet. The
+third domain: WEB_AR corresponds to Augmented Reality
+presentations used inside the museum. The list of presentation
+domains is extensible allowing museums to further differentiate
+the method of visualization in different contexts when necessary.
+
+Each X-VRML template is associated with a list of allowed
+presentation domains, but each template instance corresponds to a
+single domain. In an exhibition space, multiple instances of
+templates for different domains may be created, but at most one
+instance for each domain. While accessing a presentation, a user
+
+browser specifies which domain should be used. Then, the
+appropriate instance of the template is used to dynamically
+produce the contents. This permits the creation of different
+visualizations  of  the  same  contents  for  use  in  different
+environments, e.g. local Web, remote Web, Augmented Reality.
+
+An example exhibition space hierarchy displayed in the
+Presentation Manager tool is shown in Figure 2.
+
+Figure 2. Example exhibition hierarchy displayed
+in               the Presentation Manager
+
+There are three independent exhibitions set up in this example:
+MACE, Sussex Past and Victoria & Albert Museum. The MACE
+exhibition uses three template instances for visualization of the
+contents in different domains. The AR 4.0 is used for the WEB_AR
+domain, Start Page for the WEB_LOCAL domain, and Web
+Remote 2.0 for the WEB_REMOTE domain. There are four sub-
+spaces in the MACE exhibition space. By default, the template
+instances used in the main exhibition space are inherited by the
+sub-spaces. However, in the Kitchen Utensils sub-space only one
+template instance is inherited (AR 4.0) and two new template
+instances are created. Web Local 4.0 is an instance of another
+template used for visualization in the WEB_LOCAL domain,
+while Web Remote 2.0 is another instance of the same template as
+used in the main space, but created with different parameter
+values. In the Tudor Times sub-space, two of these template
+instances are inherited, while one new instance is used for the
+WEB_LOCAL presentation domain. The panel on the right shows
+values                              of template parameters set in the template 
+instance.
+
+5 User Interfaces
+
+The ARCO system provides two main kinds of user interfaces for
+browsing cultural heritage exhibitions: Web-based interfaces
+displayed in a Web Browser and Augmented Reality interfaces
+displayed in a special AR Application. The system employs a
+three-tier architecture as shown in Figure 3.
+
+The  X-VRML  Server  dynamically  generates  contents  for
+visualization of exhibition spaces in different presentation
+domains based on appropriate template instances. Different
+collections of templates are used for the Web-based interface and
+for the Augmented Reality interface.
+
+
+ARCO Database
+
+X-VRML
+
+Server
+
+Web
+Browser
+
+The AR Application retrieves the contents generated by the server
+and visualizes it in a standard 2D/3D form in the Web browser
+component and in an AR form in the AR browser component. For
+
+
+Cultural
+Objects
+
+Web
+Templates
+
+Exhibition
+Spaces
+
+AR
+
+Templates
+
+X-VRML
+
+Module
+
+ADAM
+
+Module
+
+AR
+
+Application
+
+the AR visualization, a camera and a set of physical markers
+placed in a real environment are used. Video captured by the
+camera is passed on to the AR browser, which overlays virtual
+representations of cultural objects on the video using the markers
+for                          object positioning.
+
+A camera and a screen for visualizing cultural objects can be built
+
+
+Figure 3. Architecture of ARCO visualization subsystem
+
+The X-VRML Server consists of the X-VRML Module and the
+ADAM  (ARCO  Data  Access  Module)  subcomponents
+communicating with the ARCO Database. Both components are
+implemented as servlets connected to a standard HTTP server.
+The X-VRML Module processes visualization templates and
+generates output in either VRML, X3D or HTML. Templates and
+template instances are retrieved from the database by an X-VRML
+program stored outside the database. The ADAM module is
+responsible for delivering multimedia objects retrieved from the
+
+into a kiosk placed in a museum environment. Also, there should
+be an operating space available to users for the marker
+manipulation. Based on such an environment several scenarios
+can   be implemented. For example, the application can be operated
+with a touch-screen display where a user can easily navigate
+virtual exhibitions using the Web browser component and display
+selected cultural objects in the AR environment. In another
+scenario, the AR application can be run on a standard display in a
+full-screen mode with virtual models pre-assigned to markers. In
+this                         case, users do not have access to the Web 
+interface.
+
+database to the client applications.                   As the Web browser 
+component a typical Internet browser
+window with a VRML plug-in is used, whereas the AR browser is
+
+
+In the Web-based interface, a user can browse information
+
+presented in a form of 3D VRML virtual galleries or 2D Web
+pages with embedded multimedia objects. The Web-based
+interface requires a standard Web browser such as Internet
+Explorer with a VRML plug-in (e.g., ParallelGraphics Cortona).
+This kind of user interface can be used both on local displays
+inside a museum (WEB_LOCAL presentation domain) and
+remotely on the Internet (WEB_REMOTE presentation domain).
+
+To enable visualization of selected objects in an Augmented
+Reality environment a special application, called AR Application,
+has been developed. The AR application is used instead of a
+typical Web browser used in the Web-based interfaces. The AR
+Application apart from displaying standard Web contents is able
+to visualize virtual scenes in an Augmented Reality environment
+(WEB_AR presentation domain).
+
+The architecture of the AR Application is presented in Figure 4.
+The application is implemented as a MFC (Microsoft Foundation
+Classes) application integrating a Web browser and an AR
+browser  components.  The  application  is  responsible  for
+synchronization between the components while a user is browsing
+virtual exhibitions in the Web browser. The application keeps
+track of the currently displayed objects and provides necessary
+information to the AR browser [Wojciechowski et al. 2003].
+
+implemented as a window capable of displaying a video backdrop
+with superimposed virtual objects. The AR application utilizes the
+DirectShow library for capturing input frames from a camera, the
+ARToolKit library [ARToolKit 2003] for analyzing the frames
+and calculating marker positions and orientations relative to the
+camera, and the OpenVRML [OpenVRML 2003] library for
+rendering virtual objects superimposed on the captured video
+frames.
+
+6 Virtual Reality Exhibitions
+
+6.1  Visualization Interfaces
+
+Museum objects can be visualized in a Web browser (e.g. Internet
+Explorer) in a form of 2D Web pages with embedded 3D VRML
+models as shown in Figure 5.
+
+
+AR Application
+
+HTML/VRML
+
+Viewer
+OpenVRML
+ARToolKit
+DirectShow
+
+Web
+Browser
+
+AR
+
+Browser
+
+
+AR
+
+Installation
+
+Figure 4. Visualization components
+
+Figure 5. Web-based visualization of cultural objects
+
+Users can browse a hierarchy of cultural objects represented as a
+tree on the left and display the media objects and associated
+metadata available for the selected cultural object by clicking on
+different icons at the top of the page. This particular form of
+visualization has been designed for remote use over the Internet.
+
+
+Cultural objects presented in a Web browser can be also
+visualized in a form of 3D virtual galleries. Examples of such
+galleries are depicted in Figure 6 and Figure 7.
+
+interface, the objects will be located exactly as arranged by the
+designer.
+
+
+Figure 6. Example 3D virtual gallery (see also color plate)
+
+The first picture (Figure 6) presents a generic 3D gallery designed
+for presenting cultural objects in a virtual room. In this
+visualization, users can browse objects simply by walking along
+the gallery and can retrieve more detailed information using
+interaction elements integrated into object stands. The second
+example (Figure 7) illustrates a virtual exhibition presenting
+museum artifacts in a 3D room being a reconstruction of a real
+gallery – an exhibition corridor in the Victoria and Albert
+Museum                          in London.
+
+Figure 8. 3D visual authoring interface
+
+The authoring interface is based on a client-side X-VRML
+processor and an X-VRML model of the gallery extended with
+implementation of persistency. As opposed to server-side
+processing, which is performed only once and a fixed VRML
+model  is produced, in the client-side processor, interpretation is
+performed                             on the client side during the whole 
+lifetime of the
+virtual scene. This allows exploiting the full potential of the
+X-VRML language – in particular implementation of persistency
+[WALCZAK, K. AND CELLARY, W. 2002].
+
+7 Augmented Reality Exhibitions
+
+7.1  Visualization of Cultural Objects
+
+The Augmented Reality exhibitions require the use of the
+specially designed AR Application. To make the navigation
+intuitive to the users the AR Application can display standard
+Web contents as presented in the previous section. It also provides
+a user with a toolbar for accessing standard navigation functions.
+Users are able to browse objects in the same way as in a standard
+Web browser. If the current exhibition space contains cultural
+objects, they are listed on a Web page or presented spatially in a
+3D virtual room. An example Web interface displayed in the AR
+application is shown in Figure 9.
+
+Figure 7. Example 3D reconstruction of a real gallery
+(see              also color plate)
+
+6.2  Authoring Interfaces
+
+In addition to presenting the virtual galleries to end-users, the
+Web-based VR interfaces can be also used for authoring virtual
+exhibitions. An example authoring interface is presented in Figure
+
+8. Using this interface, a designer can refine a virtual exhibition
+created in the Presentation Manager by arranging objects in the
+exhibition area. The objects can be positioned by simply moving
+them the virtual scene. The changes are automatically recorded in
+the database. When a visitor enters the exhibition by the end-user
+
+Figure 9. The AR application displaying standard Web contents
+
+
+This example, generated based on a 2D visualization template,
+represents an entrance to a virtual museum, where a user can
+choose one of the four exhibitions available on the right.
+
+In addition to the Web contents, users can examine selected
+cultural objects in the AR browser. The AR browser overlays
+virtual objects upon video frames captured by a camera giving
+users an impression that the virtual objects actually exist in the
+real environment and enabling comparison of virtual and real
+objects. The AR visualization engenders a sense of real
+measurements                           of the virtual reconstructions that is 
+difficult to
+achieve with pure VR techniques.
+
+The users can indicate where the virtual objects should appear in a
+real scene using special physical markers. In ARCO, the markers
+have a form of square cardboard pieces with letters and special
+signs printed on their surfaces, similarly as in [Kato 2000]. In
+Figure 10, an example marker is presented on the left, and a
+virtual object projected on the marker is shown on the right.
+
+The AR browser can visualize a wide range of virtual scenes from
+visualizations of single media objects to scenes presenting a
+number of media or cultural objects. The selection of media
+objects and metadata to be visualized and the form of their
+presentation are determined by X-VRML visualization templates.
+
+In Figure 12, an example virtual exhibition in the AR environment
+is presented. The exhibition contains visualizations of three
+cultural objects. Each cultural object is visualized in the form of a
+scene comprising two media objects: a 3D model and an image.
+The 3D model is rotating so a user can see it from each side. In
+addition to media objects, there is also some metadata visualized.
+The cultural object name is displayed on the stand, while selected
+metadata elements are presented in front of it. Furthermore, there
+are also some additional 3D objects such as a stand and a picture
+frame that are integral parts of the applied visualization template.
+The template parameterization allows a content designer to easily
+alter the cultural object visualization. In our example, each
+cultural object has been visualized with a different stand height
+provided                          as a value of a template parameter.
+
+Figure 10. Virtual object superimposed on a marker
+
+Users can interact with the displayed objects using both the
+markers and standard input devices. In the first method, a user can
+manipulate a marker in front of a camera as it is presented in
+Figure 11 and look at an overlaid object from different angles and
+distances. This is a natural and intuitive method of interaction
+with virtual contents.
+
+
+In some cases, however, the presented above interaction is not
+sufficient. To allow a user to examine virtual objects from each
+side (including bottom) and moving objects relatively to the
+markers (possibly static), the virtual objects can be also
+manipulated using a keyboard or another input device such as the
+SpaceMouse® [SpaceMouse 2003]. The latter kind of interaction
+can be particularly important in a museum environment, where
+visitors should be restricted in respect of access to standard input
+devices.
+
+Figure 12. Simple exhibition built in an AR environment
+(see              also color plate)
+
+7.2  Controlling Scene Contents
+
+Users are able to control which objects are present in the scene
+using a toolbar with buttons corresponding to the predefined
+markers (see top of the application window in Figure 12). If a
+marker is associated with a cultural object then a thumbnail of the
+cultural object is displayed on the toolbar button instead of the
+marker                            icon.
+
+Users are provided with a flexible mechanism of assigning virtual
+objects to markers. They can assign a selected object either
+explicitly to one of the markers or to the first unassigned marker
+registered by a camera. In the latter case, if there is more than one
+object waiting for assignment they are queued (see Figure 13). To
+register an object displayed in the Web interface for visualization
+in AR, a user has to push one of the toolbar buttons corresponding
+either to a specific marker or to the object queue.
+
+Figure 11. Real scene augmented with superimposed
+virtual models (see also color plate)
+
+
+Marker detection
+
+/fishbo/fishbo.htm] and “Anne of Cleves House – the history of
+cooking in Tudor times” [http://www.sussexpast.co.uk/aoc/
+aoc.htm].
+
+
+If “free” marker
+detected and
+queue not empty
+
+Object
+assignment
+
+The Fishbourne Roman Palace presentation implements an
+interactive quiz based on 3D models of excavated remains of
+materials used in the palace construction. At the beginning of the
+quiz, a user is provided with a welcome Web page, where a brief
+story about the palace can be found. Also, the user can read a
+short introduction to the quiz including its rules and goals (see
+Figure 16).
+
+Figure 13. Object assignment to a marker
+
+A user can remove a virtual object from the AR environment in
+two ways. They can uncheck the toolbar button corresponding to
+the marker associated with the object or they can use a special
+marker designed for removing objects from a scene. Each marker
+for displaying virtual objects can be associated with another
+marker dedicated to removing assigned virtual objects. The
+markers for removing virtual objects are printed on the other side
+of the markers for displaying virtual objects. In Figure 14, an
+example of a displaying marker and a corresponding removing
+marker are presented. The removing markers have distinctive
+black borders that allow users to easily distinguish them from the
+markers used for object visualization.
+
+
+Figure 14. Markers for displaying and removing virtual objects
+
+Once a camera captures a removing marker, the virtual object
+associated with the corresponding displaying marker is removed
+from the AR environment. Thereby, the displaying marker
+becomes free so other objects can be assigned to it. Figure 15
+illustrates the use of a removing marker.
+
+Figure 16. Learning scenario – welcome Web page
+
+A user can start the quiz by clicking on the ARCO icon. Then, the
+application is automatically switched to the AR view. An example
+scene presented to the user is depicted in Figure 17.
+
+Figure 15. The use of a removing marker
+
+
+7.3  Building Learning Scenarios
+
+One of the most important goals of the ARCO system is enabling
+presentation of museum artifacts in an attractive manner that
+would provide people, especially children, with an incentive to
+learn more about cultural heritage. To achieve this goal, ARCO
+provides interactive scenarios, where in addition to passive
+information browsing, users can also be involved in exercises,
+quizzes, games, etc.
+
+The ARCO system enables museum staff to build interactive
+learning presentations involving diverse forms of data
+presentation such as HTML pages, VRML models, and interactive
+AR scenes. Two examples of such presentations are: “Fishbourne
+Roman Palace – the construction” [http://www.sussexpast.co.uk
+
+Figure 17. Learning scenario – example question visualization
+(see                also color plate)
+
+The 3D model of a construction element and a question are
+displayed on one of the markers, while three possible answers are
+displayed on three other markers (see the bottom of Figure 17).
+The model is being automatically rotated, so a user can see it from
+different angles. The model can be also manipulated by moving
+the marker. The user can answer the question by turning over one
+of the answer markers. Depending on whether the answer is
+correct or not, an appropriate virtual model appears expressing
+approval or disapproval as depicted in Figure 18. Also, an
+accompanying sound can be heard.
+
+
+Figure 18. Wrong and correct answers
+
+
+A number of points for each correct answer can be scored.
+However, in case of a wrong answer, the number of points to
+score is decreased. For each model presented, several questions
+can be asked. When all questions are answered the application
+automatically switches to the Web browser, where more detailed
+information can be displayed including embedded images, movies
+and VRML scenes. Then, the user can continue the quiz and learn
+more about following objects.
+
+When all objects from the currently selected exhibition space have
+been                            presented, the final result is presented on a 
+Web page. Due to
+X-VRML template parameterization, the content on the Web page
+can be different depending on the achieved results. An example
+result page is presented in Figure 19. The Web page contains a
+short summary of the quiz. A 3D reconstruction the palace can be
+also presented as a prize if the scored number of points is
+sufficient.
+
+Figure 20. 3D learning scenario – virtual kitchen
+(see            also color plate)
+
+The learning scenarios can be created by the use of the ACMA
+Presentation Manager similarly as in case of simple virtual
+exhibitions. Additionally, in case of the learning scenarios, for
+each object the content designer can define how the object should
+be presented within the scenario. This can be accomplished by
+associating with the object an XML description containing the
+presentation information. An example of such a description is
+presented in Figure 21.
+
+
+Figure 19. Example quiz result page
+
+The next scenario is based on a 3D reconstruction of the Anne of
+Cleves House kitchen with 3D models of the kitchen utensils as
+used in the Tudor times. Users can navigate in the virtual room
+and can examine the presented models (see Figure 20).
+
+A user can learn more about particular objects simply by clicking
+on them. Then a series of questions is being asked in a similar
+way as in the previous scenario. Moreover, a user can hear sound
+effects associated with the displayed objects or a story read by a
+museum                        curator.
+
+<?xml version="1.0"?>
+
+<quiz>
+
+<tasks>
+
+<task question="What is it?" value="1">
+
+<answer correct="true">A roof tile</answer>
+
+<answer correct="false">Piece of gutter</answer>
+
+<answer correct="false">Part of leg armour</answer>
+
+</task>
+
+<task question="What is it made from?" value="2">
+
+<answer correct="true">Clay</answer>
+
+<answer correct="false">Metal</answer>
+
+<answer correct="false">Stone</answer>
+
+</task>
+
+<task question="How was it shaped?" value="3">
+
+<answer correct="false">Carved with a chisel</answer>
+
+<answer correct="true">Moulded</answer>
+
+<answer correct="false">Cast or smelted</answer>
+
+</task>
+
+</tasks>
+
+<summary>
+
+The imbrex roof tile is made of clay which has bed
+shaped by hand./The curved shape was formed around
+a mould.
+
+</summary>
+
+</quiz>
+
+Figure 21. Example XML description of a cultural object within a
+learning scenario
+
+The object description contains a list of questions to be asked with
+possible answers. At the end, a short summary is contained. In a
+similar way, the designer can set the logic for each exhibition
+space to determine what actions should be taken during the
+interactive scenario (e.g., switch between the sub-components,
+play sounds, load contents into the browsers, etc.).
+
+
+8 Conclusions and Future Work
+
+The presented solution for building virtual exhibitions of cultural
+objects enables museums to display their digitized collections
+using different forms of data presentation such as Web pages and
+Virtual and Augmented Reality techniques. The ARCO system
+provides a complete solution where museums can decide which
+objects, how and where should be published. The choice of the
+most suitable presentation techniques depends on a particular
+application                         and the target group of users.
+
+The use of X-VRML templates makes the process of building
+virtual exhibitions in the museum context efficient by separating
+the tasks of designing the visualization and preparation of the
+contents. These tasks are performed by staff with different
+competence. New virtual exhibitions can be easily created and
+existing exhibitions can be modified by the use of a simple 2D
+application                       without required expertise in 3D graphics.
+
+All virtual exhibitions in the end-user interfaces are generated
+dynamically making it possible to differentiate the contents and
+the  way of presentation depending on the parameters provided by
+end-users. The use of the presentation domain concept allows
+different visualization of the same collections of cultural objects
+depending                            on the target environment.
+
+Using the ARCO system, museums can build interactive learning
+scenarios, which can transform visitors from passive viewers and
+readers into active actors and players. In the latter case, the
+learning process is much more effective. Museum curators can
+easily prepare customized scenarios suitable for children of
+different age groups. Moreover, such presentations can be used
+not only within a museum, but also in a school class.
+
+From the end-user perspective, the ARCO system offers a novel
+approach for exploring cultural object collections. In addition to
+exploring a well-known Web interface, users can interact with
+selected objects in Virtual and Augmented Reality environments.
+Users can examine and learn about the objects in a tabletop mixed
+environment by manipulating digital reconstructions of the
+artifacts                              in the context of real objects.
+
+The  feedback  provided  by  museum  users  after  initial
+demonstrations of the system proves that the relatively new
+Augmented Reality technique is a very good supplement to much
+more mature presentation methods such as Web and Virtual
+Reality. The solution based on computer vision techniques for AR
+makes it possible to avoid using expensive hardware that could be
+a  serious  obstacle  from  most  museums’  point  of  view.
+Consequently, even museums with limited financial resources can
+afford the system and take advantage of the achievements of
+Virtual and Augmented Reality.
+
+Future works in the ARCO project include the design of advanced
+visualization templates for presenting cultural objects in a more
+attractive and appealing way. Also, new learning scenarios based
+on the implemented technology will be implemented. The
+possibility of using haptic devices and projection hardware in
+respect of usability in real applications will be also investigated.
+Finally, the components of the AR installation will be integrated
+into a more compact form, which could be easier installed in a
+real                       museum environment.
+
+Acknowledgements
+
+This research was funded in part by the EU IST Framework V
+Programme, Key Action III-Multimedia Content and Tools,
+ARCO project IST-2000-28336, and by the EU Marie Curie Host
+Fellowship Programme HPMT-CT-2001-00326.
+
+References
+
+3D MURALE. http://www.brunel.ac.uk/project/murale/home.html
+
+ARCHEOGUIDE. Augmented Reality-based Cultural Heritage
+On-site                       Guide. http://archeoguide.intranet.gr/
+
+ARCO. Augmented Representation of Cultural Objects.
+http://www.arco-web.org/
+
+ARTOOLKIT. http://www.hitl.washington.edu/people
+
+/poup/research/ar.htm#artoolkit
+
+BIMBER, O., FRÖHLICH, B., SCHMALSTIEG, D. AND ENCARNAÇÃO,
+
+L. M. 2001. The Virtual Showcase. IEEE Computer Graphics and
+Applications, 21(6), 48-55.
+
+ENAME 974. http://www.ename974.org/
+HI-SPACE.
+
+http://www.hitl.washington.edu/people/rmay/hispace.html
+
+KATO, H., BILLINGHURST, M., POUPYREV, I., IMAMOTO, K. AND
+
+TACHIBANA, K. 2000. Virtual object manipulation on a table-top
+AR                      environments. Proceedings of International Symposium on
+Augmented Reality (ISAR’00), 111-119.
+
+LIFEPLUS. Innovative revival of life in ancient frescoes and
+creation                            of immersive narrative spaces, featuring 
+real scenes with
+behaviored virtual fauna and flora.
+http://www.miralab.unige.ch/subpages/lifeplus/HTML/home.htm
+
+MOURKOUSSIS, N., WHITE, M., PATEL, M., CHMIELEWSKI, J. AND
+
+WALCZAK, K. 2003. AMS – Metadata for Cultural Exhibitions
+using                        Virtual Reality. Proceedings of Dublin Core 
+Conference
+(DC2003), Seattle, Washington, USA.
+
+OPENVRML. http://www.openvrml.org/
+
+PATEL, M., WHITE, M., WALCZAK, K., SAYD, P. 2003. Digitisation
+
+to Presentation - Building Virtual Museum Exhibitions,
+Proceedings                             of International Conference on Vision, 
+Video and
+Graphics, Bath, UK; Editor: Peter Hall and Phil Willis; July 2003
+
+SCULPTEUR. http://www.sculpteurweb.org/
+SPACEMOUSE PLUSXT.
+
+http://www.logicad3d.com/products/PlusXT.htm
+
+TSAPATORI, M. ET AL. 2003. ORION Research Roadmap for the
+European archaeological museums’ sector (Final Edition). June
+2003. http://www.orion-net.org/
+
+VIRTUAL DIG EXPERIENCE.
+
+http://www.hitl.washington.edu/people/rmay/SAM/SAM.html
+
+VIRTUAL SHOWCASES. http://www.virtualshowcases.com/
+
+WALCZAK, K. AND CELLARY, W. 2002. Building Database
+Applications                          of Virtual Reality with X-VRML. 
+Proceedings of
+Web3D 2002 Symposium 7th International Conference on 3D
+Web Technology, Tempe, Arizona, USA, 111-120.
+
+WALCZAK, K. AND CELLARY, W. 2003. X-VRML for Advanced
+
+Virtual Reality Applications. IEEE Computer, 36(3), 89-92.
+
+WOJCIECHOWSKI, R., WALCZAK, K., WHITE, M. 2003. Augmented
+
+Reality Interface for Museum Artifact Visualization. Proc. of
+IASTED                             VIIP Conference 2003, Benalmadena, Spain; 
+998-1004
+
+X-VRML. X-VRML website, http://xvrml.kti.ae.poznan.pl/
+
+
+Building Virtual and Augmented Reality Museum Exhibitions: Wojciechowski, 
+Walczak,
+White,                           Cellary
+
+Figure 6: Example 3D virtual gallery              Figure 7: Example 3D 
+reconstruction of a real gallery
+
+
+Figure 11: Real scene augmented with superimposed
+virtual         models
+
+Figure 12: Simple exhibition built in an AR environment
+
+Figure 17: Learning scenario – example question visualization         Figure 
+20: 3D learning scenario – virtual kitchen
+

@@ -1,0 +1,584 @@
+THE RESEARCH AND APPLICATION OF SPATIAL INFORMATION TECHNOLOGY
+IN CULTURAL HERITAGE CONSERVATION
+— CASE STUDY ON GRAND CANAL OF CHINA
+Feng Mao, Ze Liu*, Wensheng Zhou, Jianxi Huang, Qiang Li
+
+School of Architecture, Tsinghua University, - liuze06@mails.tsinghua.edu.cn
+KEY WORDS: Spatial Information Sciences, Cultural Heritage, Grand Canal of China, Research, Application
+
+ABSTRACT:
+This work is part of a multidisciplinary research project, within the National Key Technology R&D Program, “The Research and
+Application of Spatial Information Technology for conservation of large-scale heritage sites”, developed in collaboration with
+archaeologists and researchers from the field of geoinfomatics and hydrology, which aims at the application of spatial information
+technology for cultural heritage conservation, especially the large-scale heritage sits, a case study on Grand Canal of China is carried
+out. This paper presents the principal achievements we have gotten and puts forward some challenging issuers accordingly. At first,
+the related definitions are discussed; and some successful cases are reviewed. After the review, an integrated framework for the
+application of spatial information technology in conserving cultural heritage is conceived, based upon analysis of whole conserving
+process, information transferring flow, and domain model. Then the content and framework of this research project are studied by
+the logic and technical structure. Some key methods involved are discussed subsequently; also the main results and new findings are
+investigated in details. Finally combing with the opinions from experts of cultural heritage conservation, this paper concludes the
+project’s established results objectively, and present the research plan in the future. The involved contents of this study could be
+found on http://geospatial.arch.tsinghua.edu.cn, a website developed for this project especially.
+
+some issues of intangible cultural heritages along Grand Canal
+of China (GCC).
+
+1. INTRODUCTION
+There are many successful examples indicating that spatial
+information technology (SIT) is very useful and necessary to
+conserve historical cultural heritages, including the serial
+processes of prospecting, investigating, extracting, preservation
+planning, documenting and monitoring. Especially Geography
+Information System (GIS) and Remote Sensing (RS) have been
+widely used to carry out related activities.
+
+1.1.2 Cultural Heritage Conservation
+Following the hints of above dissertations, it can be discerned
+an integral process of cultural heritage conservation should at
+least include 1) prospecting for cultural heritage and
+investigating correspondingly; 2) evaluation of cultural heritage,
+including its values, preservation status, potential hazards and
+so on; 3) establishing and carrying out reasonable preservation
+planning; 4) effective monitoring on cultural heritage and
+feedback in time. In the section 2, a flow chart of applying SIT
+in each aspects of cultural heritage conservation will be brought
+out and discussed detailedly.
+
+1.1 Cultural Heritage and Cultural Heritage Conservation
+A concise discussion and perhaps definition of “cultural
+heritage” and “cultural heritage conservation” is conducted here
+in order to confine the scope of this study, and ensure the
+common understanding of the terms mentioned in this paper.
+
+1.2 SIT Applied to Cultural Heritages Conservation
+
+1.1.1 Cultural Heritage
+Cultural can be represented by material objects like buildings,
+paintings and monuments, but also non-material manifestations
+like language, dance, song, cuisine, custom, religion, landscape,
+literature, art, philosophy and, even television programs
+(Ogleby, 1995). In 1954 the General Conference of UNESCO
+adopted the term, cultural heritage, as an international
+convention on the Protection of Cultural Property in the Event
+of Armed Conflict (known as Hague Convention), which refers
+cultural property as tangible and physical objects. The similar
+meaning can be found from the famous Convention Concerning
+the Protection of the World Cultural and Natural Heritage in
+1972, also by General Conference of UNESCO. For the sake of
+this study the above meaning will suffice as it is generally
+accepted. Much of this paper will concentrate on SIT
+applications to material cultural heritage, but it will also address
+
+1.2.1 Digital Recording and Analysis Based upon GIS
+Last decades witnessed the rapid increase of applying GIS to
+preserve cultural heritage. GIS is mainly used for cultural
+resource inventory applications, protections planning, impact
+assessment studies, facilities management and archaeological
+research applications. In 1990s UNESCO utilized GIS to
+integrate data efficiently from the field of archaeology,
+geography, hydrology, weather, environment and demographic
+data in the Angkor Zoning and Environment Management Plan,
+Cambodia. Then the usefulness of GIS was demonstrated in
+other UNESCO pilot sites at Hue, Viet Nam and Vat Phou, Lao
+PDR and other sites in Europe, Australia and North America
+(Paul Box, 1990).
+GIS, especially spatial analysis plays a significant role in
+archaeological research, etc, landscape archaeology, predictive
+
+* Corresponding author
+999
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+location modelling. Based upon a filed archaeology geography
+information syetem, archaeologist can predict the potential
+archaeological sites location, discover the pattern of
+prehistorical settlements, and realize relationship between
+settlements and topography through viewed analysis. In line
+with former studies on predictive modelling, Espa presented a
+GIS based method to produce probability maps of
+archaeological site locations automatically (Espa et al., 2006).
+Using serration analysis, corresponding analysis and other
+spatial analysis methods, archaeologists study the occurrence of
+157 bead types at 98 European Aurigacian sites to get the
+knowledge of the first anatomically modern populations
+colonising the European territory of their degrees of biological,
+linguistic, and cultural diversity at different settlements
+(Vanhaeren et al., 2006 ).
+While other archaeologists
+conducted a case study at Bronze Age cairns of North Mull,
+Scotland applied rigorous statistical analysis and viewed
+analysis to studying the visible area (Fisher et al., 1997).
+1.2.2 Remote Sensing for Archaeology
+Surface features caused by historic sites can be recorded by
+remotely sensed aerial and satellite imagery, including
+multispectral, hyper-spectral, and synthetic aperture radar
+imagery. With the capacity of detecting, cataloguing,
+differentiating and classifying surface and near surface
+underground historical relic features, remote sensing can get
+better realization of the features, their patterns, textures, size,
+association, and so on, and plays an important role in the
+investigation, prospection, and management of various cultural
+heritages.
+Information extracted from radar imagery, multispectral
+imagery, hyperspectral imagery, thermal infrared imagery,
+panchromatic and colour infrared imagery, combined with field
+surveying, had been used to look back in time and trace clues of
+ancient civilization, showing the value of modern technology to
+help us find the history recorded on Earth’s surface (Fisher et
+al., 1999; Trelogan et al., 1999; Blom et al., 2000; Tan et al.,
+2006). In particular, Air photos, ETM+, and TM images were
+utilized as major tools in archaeological investigation to
+indentify the boundaries of the historical sites of Persepolis
+(Behnaz Aminazadeh et al., 2006). In addition, Kucukkaya
+reported a series of topics at session Q2 of the Fifth World
+Archaeological Congress (WAC5) which aiming to address the
+problem of the management of cultural heritage and
+archaeological areas with remote sensing (Kucukkya, 2004).
+
+1.2.3 Visual
+Methods
+for
+Cultural
+Heritages
+Conservation
+Recently the methods necessary for utilizing threedimensional(3D) visualization and virtual reality in modelling,
+simulating, digital preserving, auxiliary restoring of historical
+cultural resources and environment have been studied carefully.
+During the restoration process of an ancient bronze statue, the
+Minerva of Arezzo, located at Museo Archeologico in Florence,
+complete 3D digital models of the Minerva were produced to
+keep track of the variations that occurred during the restoration
+process, up to the final acquisition of the form of the restored
+artwork (Fontana et al., 2002). Especially virtual reality (VR)
+was applied to develop 3D visualization tools and support
+virtual archaeology activities (Allen et al., 2003; Vote et al.,
+2002). Furthermore Winterbotom used geographic information
+systems (GIS) based analyses and VR reconstructions, to
+explore landscape context for two types of Neolithic
+monuments: cup and ring rock art and a stone circle, then
+
+suggested that VR would be useful to explore visually rich
+representations of past environments for site interpretation,
+present uncertainty and test different scenarios for landscape
+archaeology context (Winterbottom et al., 2006).
+1.2.4 Other Useful Methods: The development of
+alternative techniques and methods for the cultural heritage
+conservation has been identified as an important aspect in the
+last years. A remarkable case is that Global Position System
+(GPS) is wildly applied to archaeological prospection, spatial
+data acquisition, 3D geometric modelling and other potential
+use. Additionally 3D laser scanning addresses problem of
+modelling, detecting the minor transformation of statue and
+valuable construction quickly.
+Based on high-resolution micro-topographical data generated
+by GPS surveys, Chapman brought forward a new
+archaeological prospection technique for wetlands, and
+conducted a subsequent programme of ground truthing to
+demonstrate the value (Chapman et al., 2001). In 2007, Losier
+presented a procedure developed to generate 3D models from
+GPS positions taken at the top and the bottom of the excavation
+units boundaries on the archaeological site of Tell Acharneh,
+Syria; the results showed that comparing with the usual
+procedure, with a theodolite or a total station, the work in the
+field with a GPS RTK allowed archaeologists to collect more
+points of an excavation unit within the same time period, and
+build a 3D geometrical modelling of extraction units easily
+(Losier et al., 2007).
+
+2. METHODS AND PROCEDURE
+2.1 The Study Area
+The Grand Canal of China, a masterpiece by ancient Chinese
+similar to the Great Wall, stretching from Hangzhou in the
+south to Beijing in the North, is the world’s longest and oldest
+man-made waterway (Figure 1; Figure 2). It is about 1,794
+kilometres long, and connects five major water systems,
+including the Yangtze and the Yellow River. As a whole, The
+Canal was built, section by section, in different areas and under
+different dynasties, started form 5th century B.C. and complete
+by the year 1327. The Grand Canal of China, as the main
+transportation linking the nation’s capital city in the fertile
+northern region to its most affluent territory in the southern
+region, promoting economic and cultural exchanges and
+strengthening the unification of the country, played a significant
+role in the history of China. Needham estimated(Needham,
+Joseph, 1971), “Nothing remotely approaching the Chinese
+canal systems existed in Europe until the four great
+seventeenth-century canals in France,……even by 1893 the
+total mileage of French canals had only reached three times the
+length of China’s Grand Canal alone in 1300.”
+With a profound history more than 2400 years, a unique culture
+and folk customers associated with the canal’s evolution,
+formed. Along the canal, there are countless magnificent
+cultural relics, and the canal has been hailed as “a long corridor
+of ancient culture”, and “a show room of folk customs”. In the
+year of 2006, State Administration of Cultural Heritage added
+the Grand Canal of China on the list of heritages to apply for
+World Cultural Heritage to UNESCO. Several research projects
+are carried out to strengthen the preservation of the canal. This
+study is one of the research projects, and plans to employ
+spatial information technology to backup the preservation
+
+1000
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+because of the canal’s unique spatial-temporal characters, help
+general peoples, professionals and governments enhancing their
+realization, research and management of the canal, especially to
+support the proposing for world cultural heritage with detailed
+cultural heritage document and excellent spatial information
+management.
+
+planning supporting system based upon GIS and VR has
+achieved great success (Geertman et al., 2003). Finally RS is
+applied for regular checking and monitoring of cultural heritage,
+especially large-scale cultural site in order to acquire effective
+feed back.
+On the basis of above application flow chart, the content of this
+research project is mainly organized into four proportions. The
+first one is to study and set up necessary standards for the
+application of spatial information technology in the field of
+cultural heritage conservation. The second part is the research
+of key technologies involved, including cultural relics
+investigating with remote sensing, reconstruction and 3D
+modelling of the canal and spatial analysis utilized in field
+archaeology. The third one is research and development of
+spatial data base, geography information system, conservation
+planning support system of the canal, and spatial data collecting
+system based upon GPS and PDA. Finally based upon the rich
+content of spatial database and established functions of above
+information systems, some thematic studies are carried out, in
+cooperation with professionals from hydraulic history and
+cultural heritage conservation, including evolutionary process
+of GCC, LUCC studies on certain sites, and the distribution of
+cultural heritages along GCC.
+
+Figure 1. Grand Canal during the Yuan Dynasty, 1280-1367 BC
+Adapted from Leonard (1996)
+2.2 The Framework of SIT Applied to Conservation GCC
+Based upon the analysis of current practice of cultural heritage
+conservation in China, a comprehensive framework showing the
+application of SIT is proposed (Figure 3). At first, the whole
+process is divided into several parts, investigating and
+prospecting cultural heritage, assessing heritage’s value,
+determining conservation grade, establishing and implementing
+preservation plan, monitoring and feedback timely. During each
+single part, there are many methods of applying SIT to carry
+out the corresponding protecting activities as discussed in part 1
+of this paper.
+For protecting and investigation, GIS, RS and GPS technologies
+are integrated to indentify the cultural resources from their
+environments, and would keep a digital document completely.
+For assessing of heritages, there are value evaluation, health
+evaluation, and assessing of management condition, which
+would take use of the supporting ability of spatial information
+technology. After the step of evaluation, SIT can be used to fix
+grades of cultural resources into world heritage, national
+heritage, provincial heritage and county-heritage, taking
+account of laws, historical background, and local customs.
+Then the conservation plan would be issued and carried out to
+safeguard cultural property from grave-robbers, protect cultural
+sites from environment degradation, mostly related to
+unchecked urban development. SIT would be found necessary
+in this process as showed in the field of urban planning, where
+1001
+
+Figure 2. The Grand Canal of China on remote sensing
+imagery
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+PDA with GPS module. The first two systems are discussed
+particularly as follows.
+3.2.1 GIS for GCC: A GIS system with two versions is
+developed for GCC conservation, which could be managed on
+desktop
+or
+visited
+via
+Internet
+(http://geospatial.arch.tsinghua.edu.cn ) respectively, including
+spatial database, fundamental module as functions of general
+GIS system, and extended module for professional user(Figure
+5).
+Implementing with the tools of ArcSDE and Oracle 10g, the
+spatial data is organized into three levels with different scales
+(macro, meso and micro). At the macro-level, ETM (14 scenes)
+is used, together with the DLG at the scale of 1:250,000(14
+pages). At the meso-level, there are SPOT 5 (42 scenes) and
+DLG with the scale of 1:50,000 (105 pages). All the spatial data
+at the above two levels respectively covers the extension of the
+canal. At the micro-level, QuickBird imagery is used for seven
+important historical sites or cities along the canal, Beijing (214
+km2), Tianjin (836 km2), Cangzhou (410 km2), Jining (215 km2),
+Liaocheng (315km2), Pizhou (925km2), Hangzhou (321 km2),
+together with DLGs at the scale of 1:10,000(392 pages) which
+also cover the canal with a given buffer. Except for data at the
+three levels, there are many precious old panchromatic air photo
+taken by American air force during the period of World War 2.
+Facing the huge amount of images and datasets, some methods
+are employed to improve the efficiency of the spatial data base
+(Shekhar et al., 2003.).
+
+Figure 3. the flow chart for application of SIT
+in cultural heritage conservation
+
+3. MAIN RESULTS FROM ESTABLISED STUDIES
+3.1 Standards for applying SIT to cultural heritage
+conservation
+Types of cultural resource along GCC are so diversiform that
+almost all known types of cultural heritages in other places of
+China could be found there, they may be hydraulic facility,
+historical architecture, statue, mausoleum, and so on. It appears
+necessary to set some standards to guide the attempt of get the
+information from remote sensing imagery, surveying results of
+GPS, and make sure the field investigations data, which holds
+the form of tables, graphics and archaeological reports, could be
+imported to the data base correctly. A series of standards are
+designed by experts of information technology, together with
+researchers of cultural resource conservation and professionals
+from field archaeology, including regulations of dada collecting
+with a custom PDA, standards for classifying and coding of
+cultural resources, rules for data types and data structures in
+spatial data base.
+3.2 Information Systems for GCC conservation
+On the basis of studies on key technologies, four information
+systems have been developed to support the conservation of
+GCC, including GIS system of GCC, 3D landscape simulation
+system, conservation planning supporting system, and data
+collecting system for field investigation based on customized
+
+Figure 4. The GIS system for GCC conservation
+The GIS system has shown its value in an archaeological
+extraction approved by government, at Nanwang, Shandong
+province. With the help of local archaeologists, we utilize the
+satellite imagery to detect disappearing channels. Moreover the
+GIS system is used to manage the documents and surveying
+datasets, visualize the extraction site, and predict potential
+archaeological site locations.
+3.2.2 3D Simulation System of GCC
+A 3D simulation system is build to modelling the landscape
+along GCC, using the data of DEM and SPOT 5, following the
+methods we have introduced for simulating Jinjiang Basin with
+special corrections (Huang et al., 2006; Pollefeys et al., 2000).
+Regarding to the massive data of this project, Oracle 10g is
+chosen to manage the spatial data and feature attribute, instead
+of the Microsoft Access. There are two attractive characters of
+this system. The first one is the multi-scale simulation and
+
+1002
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+modelling, from the large landscape of GCC to a historical site
+along it; moreover it can be visited from Internet by the same
+address mentioned above.
+
+development of the canal cities. Figure 7 indicates the case
+study we have conducted at Yangzhou city, Jiangsu province.
+Based on imagery in 1954, 1998, and 2002, the study used
+extraction after classified method to monitor land use changes
+from 1954 to 2002; while classifying, the object-oriented
+method was used to extract features in different temporal
+imagery. The result has been accepted by proceeding
+Geoinfomatics2008 at Guangzhou city, China, and will be
+securable soon.
+
+Figure 5. Visualization of a historical building in the 3D
+simulation system
+Figure 5 shows a historical building, Shanxi & Shaanxi
+Proinvincial Guildhall at Liaocheng city，Shandong pronince,
+build in 1743,Qing dynasty, which has been restricted in the 3D
+simulation system. Visitors can fly through in that virtual senses
+freely and enjoy the gorgeous and elaborate building through
+Internet.
+3.3 Related Thematic Researches
+3.3.1 Spatial-Temporal evolution of GCC’s channels
+Combined with historical documents and Chinese traditional
+atlas on GCC, we endeavour to reveal the spatial-temporal
+evolutions of GCC with SIT from the time of its building.
+
+Figure 7. LUCC of Yangzhou, a southern city along GCC
+3.3.3 Investigation of cultural resources along GCC
+With the support of data collecting system based upon handheld PDA, professionals of cultural heritage conservation from
+Beijing city, Tianjin city, Hebei province, Shandong province,
+Jiangsu province and Zhejiang province carried out field
+investigations along the GCC. Related data is recorded
+following the established standards, and then pre-processed data
+is storied in spatial database and presented with geography
+information system with designed symbols. Figure 8 shows
+cultural resources of GCC at Beiwu Lanke districts near Jining
+city, Shandong province.
+
+Figure 6. The variation detection of GCC’s channels at Qingkou,
+Figure 6 shows the evolution of GCC at a crucial node,
+Qingkou, Huaian city, Jiangsu province, where eight rivers
+meet and cause obvious changes, including abandoned yellow
+river and GCC. The lines on the left graphic are channels
+extracted from air photo in 1954, the base map is TM imagery
+of 1989 with the resolution of 30m, while the lines on the right
+graphic are channels in 2000 gained from documents, and the
+base map is merged SPOT5 imagery of 2006 with the resolution
+of 2.5m.The result has been accepted by the Journal of
+Tsinghua University (Science and Technology) and will be
+published soon.
+3.3.2 Land use and land cover changes of important canal
+cities and some special canal sites
+The study of LUCC on GCC regions would reflect close
+connections between GCC and its surroundings; driving factors
+of its evolutions from natural perspective as well as socioeconomical, and to what level GCC had influenced the
+
+Figure 8. Cultural resources of GCC at Beiwu Lake district
+near Jining city
+
+4. CONCLUSIONS AND DISCUSSIONS
+We have utilized common SIT in the GCC study of
+investigation and conservation, including GIS, RS, GPS and the
+visual method, VR. The results indicate that
+
+1003
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+(1) A framework is brought out for applying SIT to conserve
+historical cultural heritage in China, which plays as the
+guideline of our research activities.
+(2) Combined with satellite image of high resolution, early
+panchromatic aerial photography are useful to detect the spatial
+morphological anomalies of GCC caused by modern
+construction activities.
+(3) Multi-scale, multi-source and multi-temporal data are
+necessary to investigate and conserve large-scale historical sites
+with the ability of detect the long evolution trends
+comprehensively.
+(4) This work has explored the evolutional process of GCC at
+Qingkou district, Huaian city, Shandong province in recent
+sixty years, which shows the great potential of SIT in the
+archaeological prospecting.
+(5) The satellite image was utilized to probe the LUCC of cities
+near GCC, aiming to found the connections between cities and
+GCC, especially in terms of spatial characters. Researchers
+from the field of archaeology and urban study have argued
+about the complex relationship between GCC and the cities near
+by. The ancient status could be only acquired from historical
+literature, while the current changing process can be obtained
+from remote imagery.
+(6) Handheld PDA with the GPS module was used to assist
+conservator investigating GCC in several regions, including
+Beijing city, Tianjin city, Shandong province, Hebei province,
+Jiansu province, Zhejiang province. From Sep. 2007, those
+equipments also have been utilized to facilitate 3rd National
+Cultural Resources Investigation in above regions.
+(7) On the basis of this activity further studies have been
+planned to improve the accuracy of the acquired knowledge to
+extend it to all known cultural heritages along GCC, and to
+validate the framework at the new depth, which will then
+become the reference for conserving large-scale historical sites.
+
+ACKNOWLEDGEMENTS
+This study was carried out with the support from National Key
+Technology R&D Program contract research (NO.:
+2006bak30b01). We are grateful to experts from China National
+Institute of Cultural Property and conservation professionals
+from Beijing city, Tianjin city, Shandong province, Hebei
+province, Jiangsu Province and Zhejiang province for their
+professional advices and prominent investigation works.
+Authors also appreciate Prof. Nie from Institute of remote
+sensing applications, CAS, Prof. Tan from China Institute of
+Water Resource and Hydropower Research, and teams under
+their instruction respectively for our wonderful cooperation.
+
+REFERENCES
+Allen P; Troccoli A; Smith S et al, 2003. New methods for
+digital modelling of historic sites. IEEE Computer Graphics and
+Applications, 23(6).pp.32-41.
+Blom, R.G.; Chapman, B., Podest, E., Murowchick, R., 2000.
+Applications of remote sensing to archaeological studies of
+early Shang civilization in northern China. In: Proceeding of the
+
+2000 IEEE International Geoscience and Remote Sensing
+Symposium, Honolulu,HI, Germany. pp. 2483-2485.
+Behnaz Aminzadeh; Firuzeh Samani, 2006. Identifying the
+boundaries of the historical site of Persepolis using remote
+sensing. Remote Sensing of Environment, 102. pp. 52-62.
+Chapman, H. P.; Van, N. R., 2001. High-Resolution Wetland
+Prospection, using GPS and GIS: Landscape Studies at Sutton
+Common (South Yorkshire), and Meare Village East (Somerset).
+Journal of Archaeological Science, 28(4). pp. 365-375.
+Clark, C.D.; Garrod, S.M.; Parker, M., 1998. Landscape
+archaeology and remote sensing in southern Madagascar.
+International Journal of Remote Sensing, 19. pp. 1461-1477.
+Espa, G; Benedetti, R; De, Meo A; Ricci, U; Espa, S, 2006. GIS
+based models and estimation methods for the probability of
+archaeological site location. Journal of Cultural Heritage, 7(3),
+pp. 147-155.
+Fisher, J.; Fisher, B., 1999. The Use of KidSat images in the
+further pursuit of the frankincense roads to Ubar. IEEE
+transactions on Geoscience and Remote Sensing, 37(4), pp.
+1841-1847.
+Fisher, P.; Farrelly, C. et al, 1997. Spatial analysis of visible
+areas from the Bronze Age Cairns of Mull. Journal of
+Archaeological Science, 24(7), pp. 581-592.
+Fontana, R.; Greco, M.; Materazzi, M.; 2002. Threedimensional modelling of statues: the Minerva of Arezzo.
+Journal of Cultural Heritage, 2002, 3(4), pp.325-331.
+Geertman S., Stillwell J. 2003, Planning Support System in
+Practice. Springer, Berlin, pp.3.
+Huang J.X.; Mao F.; Xu W.B.; Li J.; Lei T.Z.; 2006.
+Implementation of Large Area Valley Simulation System Based
+on VegaPrime. Journal of System Simulation, 2006, 18(10), pp.
+2820-2831. (in Chinese with English abstract)
+Kucukkya A.G., 2004. Photogrammetry and remote sensing in
+archaeology. Journal of Quantitative Spectroscopy&
+Radioactive Transfer, 88.pp. 83-88.
+Losier, L.; Pouliot, J.; Fortin, M., 2007. 3D geometrical
+modeling of excavation units at the archaeological site of Tell
+Acharneh (Syria). Journal of Archaeological Science, 34(2),
+pp.272-288.
+Needham, Joseph, 1971. Science and Civilisation in China. Vol.
+4: Physics and Physical Technology, Patr III: Civil Engineering
+and Nautics. Cambridge University Press, Cambridge.
+Ogleby C.L., 1995. Advances in the digital recording of cultural
+monuments. ISPRS Journal of Photogrammetric and Remote
+Sensing, 50(3), pp.8-19.
+Paul Fox, 1999, GIS and cultural resource management: a
+manual for heritage managers. UNESCO, pp. 6-7.
+Pollefeys M.; Koch R.; Vergauwen, M.L.; Van Gool, 2000.
+Automated reconstruction of 3D scenes from sequences of
+images. ISPRS Journal of Photogrammetry&Remote Sensing,
+55, pp. 251-267.
+
+1004
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+Shekhar S.; Chawla S., 2003. Spatial Database: A Tour.
+Prentice Hall, Columbus, pp. 154-158.
+Tan K.; Wang Y.; Zhou X.; Song D.; Duan Q.; 2006. The
+application of remote sensing technology in the archaeological
+study of the Mausoleum of Emperor Qinshihuang. International
+Journal of Remote Sensing, 27(16), pp. 3347-3363.
+Trelogan, J.; Crawford, M.; Teng, L.; Kwon, O.; Carter, J.;
+1999. Mapping of the chora of chersonesos via remote sensing
+data. In: Proceeding of the 1999 IEEE International Geoscience
+and Remote Sensing Symposium, Hamburg, Germany. pp.
+2569-2571.
+
+Vanhaeren, Marian; d, Errico Francesco, 2006. Aurignacian
+ethno-linguistic geography of Europe revealed by personal
+ornaments. Journal of Archaeological Science, 33(8), pp.11051128.
+Vote, E; Feliz, D.A.; Laidlaw, D. H.; Joukowsky, M.S., 2002.
+Discovering Petra: archaeological analysis in VR. IEEE
+Computer Graphics and Applications, 22(5), pp. 38-50.
+Winterbottom, S.J.; Long, D., 2006. From abstract digital
+models to rich virtual environments: landscape contexts in
+Kilmartin Glen, Scotland. Journal of Archaeological Science,
+33(10),pp.1356-1367.
+
+1005
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Vol. XXXVII. Part B5. Beijing 2008
+
+1006
+
+

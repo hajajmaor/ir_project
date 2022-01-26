@@ -1,0 +1,1000 @@
+POINT OF INTEREST AWARENESS USING INDOOR
+POSITIONING WITH A MOBILE PHONE
+Paulo Pombinho, Ana Paula Afonso and Maria Beatriz Carmo
+Faculdade de Ciências da Universidade de Lisboa, Lisbon, Portugal
+
+Keywords:
+
+Mobile Devices, Point of Interest, Mixed Environments, Indoor Positioning, Step Detection Algorithm.
+
+Abstract:
+
+Although location based applications have been gaining popularity, most positioning devices do not work
+when in an indoor environment, hindering the development of both mixed and indoor location based
+applications. In this paper we present a point of interest aware application that shows information to the user
+that is dependent on his indoor location. To be able to detect the user’s position, we propose a technique,
+based on the detection of footsteps, and the direction in which they were taken, to be able to calculate the
+position of the user inside a building. To improve the accuracy of the system, we use information about the
+buildings floor plan to create a graph that can be used to correct invalid movements.
+
+1
+
+INTRODUCTION
+
+Global positioning devices (GPS) are becoming
+progressively more common in new mobile devices
+and, for this reason, the real time information about
+the location of users has become widely used in an
+extensive range of location based applications, as
+diverse as car navigation, city guides or geocaching
+applications.
+Indoor location based services can be used to
+show relevant information about the users’ location
+and help them navigate in an unknown building, or
+track users with special needs, children, or inmates
+inside a prison compound. The indoor location could
+also be used to allow emergency services to explore
+unknown areas in an easier and more efficient way
+(Pahlavan, Li and Mäkelä, 2002; Jensen, Kruse and
+Wendholt, 2009).
+Despite being reliable and precise while in the
+open, GPS devices need to be able to view a large
+portion of the sky to be able to correctly calculate
+the device’s position. This limitation has the
+consequence of rendering the GPS useless while
+indoors. Furthermore, alternative positioning
+systems like the ones that use GSM or mobile phone
+tracking do not have high enough accuracy to be
+able to correctly identify a position inside a building.
+Consequently, these restrictions hinder the
+development of location based applications that also
+focus on indoor use (Beauregard and Haas, 2006).
+
+Our research is mainly focused on location based
+services in mixed environments and the study of
+visual adaptations to different contexts. We have
+previously explored outdoor location based
+applications, namely a point of interest visualization
+application (Carmo, Afonso, Pombinho and Vaz,
+2008) where information is presented over a map of
+the region the user is currently at, and a location and
+orientation based application that shows information
+about points of interest that lie in the direction the
+user is aiming the device at (Pombinho, Carmo,
+Afonso and Aguiar). Hereafter, to allow the
+exploration of indoor locations and enable us to
+proceed our research in mixed environments, we
+need to be able to obtain the position of the user
+while inside a building.
+Our goal is to develop an application that
+enables the exploration of buildings unknown to the
+user and also allow him to obtain information about
+the different points of interest that may exist, inside
+the building, near the position the user is currently
+at. To achieve this, we first have to be able to
+correctly estimate the user’s indoor position. To
+avoid the limitations of positioning systems like the
+GPS that, as referred, do not work indoors, or the
+use of expensive and complex physical
+infrastructures installed in each building, we present
+an algorithm that allows the position of users inside
+a building to be inferred from the movement done by
+the user. To achieve this goal we use a mobile
+device with an integrated accelerometer to detect
+
+Pombinho P., Afonso A. and Carmo M..
+POINT OF INTEREST AWARENESS USING INDOOR POSITIONING WITH A MOBILE PHONE.
+DOI: 10.5220/0003351700050014
+In Proceedings of the 1st International Conference on Pervasive and Embedded Computing and Communication Systems (PECCS-2011), pages 5-14
+ISBN: 978-989-8425-48-5
+Copyright c 2011 SCITEPRESS (Science and Technology Publications, Lda.)
+
+5
+
+PECCS 2011 - International Conference on Pervasive and Embedded Computing and Communication Systems
+
+when the users takes a footstep, and a digital
+compass to determine the direction of each footstep.
+Using this information and the knowledge of the
+buildings floor plan we can calculate with an
+acceptable accuracy the indoor location of the user.
+In the next section we will describe the current
+indoor positioning technologies and techniques. In
+section 3 our proposed positioning algorithms and
+techniques are explained. In section 4, we present
+the developed point of interest location aware
+application prototype. In section 5, we present the
+user experiments that were carried out. Finally, in
+section 6 we conclude and point out future work.
+
+2
+
+INDOOR POSITIONING
+TECHNOLOGIES
+
+There are already some works that explore indoor
+positioning mechanisms. Most of these works can be
+divided in three main categories: techniques that use
+physical infrastructures installed on the buildings,
+explicitly for indoor positioning; techniques that use
+existing Wi-Fi networks; and the techniques that use
+sensors installed in the mobile device or the user
+himself.
+
+2.1
+
+Infrastructures Installed for Indoor
+Positioning
+
+There are several diverse approaches that use
+transmitters of some kind, installed on the buildings,
+and corresponding receivers, carried by the user.
+Hiyama et al. (2005) propose a museum guiding
+systems using infrared (IR) transmitters installed at
+each 1 meter interval on the ceiling of the Japanese
+National Science Museum in Tokyo, and an IR
+receiver embedded in a monaural headphone
+connected to a museum guiding device. The infrared
+transmitters cover overlapping areas, allowing the
+receiver to recognize that the user is standing
+between two specific transmitters.
+Lim and Zhang (2006) propose a similar indoor
+positioning method but, instead of IR transmitters,
+use Radio Frequency Identification (RFID) tags
+distributed around an area, enabling a user carrying
+an RFID reader to get, at one time, more than one
+RFID, and estimate his physical location. From the
+experiments made, the authors conclude that this
+approach is capable of an estimation error of only 1
+meter.
+Ghiani, Paternó, Santoro and Spano (2009)
+implemented a mobile guide in the Carrara Marble
+
+6
+
+Museum and in the Calci Museum of Natural
+History, where active RFID Beacon tags are placed
+near the museum exhibits. The RFID reader carried
+by the user allows the application to identify which
+beacons are visible and, by analyzing their RSSI
+(Received Signal Strength Indication) calculate
+which of these the nearest one is.
+Xu et al. (2009) propose a two step tracking
+procedure. In the first step, a beacon-correlation
+algorithm uses RSSI information from all the
+detected beacon nodes to identify a wider area where
+the user is. In the next step, a shadowing-grid
+localization algorithm, using only the RSSI
+information from the beacons present in the
+identified area, is used to identify the accurate
+location of the user.
+Ikeda et al. (2008) propose the use of a wireless
+sensor network using low power VHF radio to
+provide indoor positioning services. This system was
+implemented on the Yokohama Landmark Plaza in
+Japan and uses a Smartphone that integrates a node
+that receives beacon signals and processes them to
+detect the user’s position and trajectories.
+The PhoneGuide system (Bruns, Brombach,
+Zeidler and Bimber, 2007) is a museum guidance
+system that uses Bluetooth emitters in each exhibit,
+which are identified by the user’s receiver. This does
+not allow sufficient accuracy to differentiate
+individual objects located within the signal range.
+However it does allow the system to know which
+exhibits are currently visible and, with this
+information, to use the pictures captured by the
+camera and compare them to the stored pictures of
+the currently visible objects, to be able to recognize
+to which one the user is looking at.
+Rainer Mautz (2009) studied some recent indoor
+positioning systems that are capable of achieving
+cm-level accuracy. In his paper, he explores: the
+iGPS system (Krautschneider, 2006) that uses a
+transmitter of rotating fan-shaped infrared laser
+planes that is capable of a mm-level accuracy; the
+Locata System (Barnes, Rizos, Kanli and Pahwa,
+2005) which is a positioning system that uses radio
+signals transmitted in the 2.4 GHz band, to be able
+to penetrate the inside of buildings, by transceivers
+placed within a range of several hundred meters up
+to several kilometres and with a sub cm precision;
+and the Cricket (Priyantha, 2006), Active Bat (Hazas
+and Hopper, 2006), and Dolphin system (Fukuju,
+Minami, Morikawa and Aoyama, 2003), which are
+ultrasonic positioning systems that have beacons
+emitting both ultrasonic pulses and radio frequency
+messages, and receivers that can use the difference
+in the arrival of both the signals to calculate de
+
+POINT OF INTEREST AWARENESS USING INDOOR POSITIONING WITH A MOBILE PHONE
+
+distance from each beacon and triangulate their
+position.
+Kalkusch et al. (2002) present a mobile
+augmented reality application where the user has a
+helmet with a mounted camera that detects and
+tracks well known markers, previously scattered
+around the environment. This tracking allows the
+system to identify the position and orientation of the
+user.
+
+2.2
+
+Indoor Positioning using Existing
+Wi-Fi Networks
+
+Several systems have explored the use of Wi-Fi
+wireless network access points.
+Bahl and Padmanabhan (2000) developed the
+RADAR system, which operates by identifying and
+processing the signal strength information of
+multiple base stations that are positioned in a way to
+provide overlapping coverage, and triangulate the
+position of the user with an accuracy of a few
+meters.
+Kitasuka, Nakanishi and Fukuda (2003) propose
+the WiPS system. This system is similar to the
+previous one, however, instead of only using
+information from the wireless LAN access points,
+the WiPS system also communicates with the
+neighbouring WiPS terminals and uses information
+obtained from them to be able to increase its
+accuracy.
+There are also commercial systems that explore
+Wi-Fi Networks to provide indoor positioning. The
+Ekahau Real Time Location System (RLTS)
+(Ekahau, 2010) uses the existing Wi-Fi Networks to
+provide sub room, room, floor or building level
+accuracy, depending on the number of access points
+available. Nokia are also currently developing an
+experimental indoor positioning service at the
+Kamppi Shopping Center in Helsinki, Finland, that
+uses Wireless LAN (Nokia, 2009).
+
+2.3
+
+Infrastructure Free Indoor
+Positioning
+
+Kourogi et al. (2009) use an approach where sensors
+are placed on the user’s waist, to detect walking
+stance and velocity. This approach is then enhanced
+by the use of surveillance cameras to estimate the
+walking parameters.
+Stéphane Beauregard (2008) focuses on the
+indoor positioning of emergency first responders.
+Shoe mounted sensors are used and a foot-inertial
+pedestrian dead reckoning approach is proposed to
+detect the displacement made by the foot in each
+
+footstep and consequently the total displacement
+made by the user. The placement of the sensor on
+the shoes instead of other body areas allows better
+results to be achieved when in the presence of
+irregular walking patterns or sharp turns typical of
+rescue missions.
+Jiménez, Seco, Prieto and Guevara (2010) also
+use shoe mounted sensors and developed the
+INS-EKF-ZUPT framework to detect the position
+and attitude of a person while walking. They also
+employ a stance detection algorithm and several
+methods for heading drift reduction.
+Commercially, the Nike + iPod Pedometer
+System (Nike, 2010) that has sensors placed in the
+user’s shoes allows him to hear useful information
+through his iPod about the exercise he is currently
+doing.
+Glanzer, Bernoulli, Wiessflecker and Walder
+(2009) present an inertial pedestrian navigation
+system that uses a low-cost micro-electromechanical-system
+(MEMS)
+based
+Inertial
+Measurement Unit consisting of a three-axis
+accelerometer, a three-axis gyroscope, a three-axis
+magnetometer, a temperature sensor, an A/D
+converter and a microcontroller. From the data
+obtained from these sensors, an integration of the
+acceleration values is done to obtain changes in
+position and attitude, and calculate the final position
+of the user.
+Köhler et al. (2007) have developed a prototype
+for indoor positioning in small rooms, that uses a
+compass, camera and grid projector. The system
+projects a grid pattern into the environment to try
+and determine the location of the planes
+(corresponding to the walls) and intersections
+(corresponding to the corners). If the system can
+detect three orthogonal planes, for example two
+walls and a ceiling, it can find its position and
+orientation relative to that particular corner and, by
+using a compass, find which particular corner it is
+and consequently the relative position inside the
+building.
+Randell, Djiallis and Muller (2003) compare
+different pedestrian dead reckoning techniques and
+the use of different sensors that can be used to get
+accurate measurements. They explored four different
+case studies and were able to obtain accuracies of
+the same order as a basic GPS receiver.
+Ladstätter, Luley, Almer and Paletta (2010) use a
+sensor placed in the pocket of the user to detect
+shifts in acceleration and use the Weinberg
+Expression to adjust the thresholds dynamically.
+They have determined that the accuracy of the
+technique is reliable for walking speed higher than 1
+m/s, but has too many false positives when used at
+
+7
+
+PECCS 2011 - International Conference on Pervasive and Embedded Computing and Communication Systems
+
+slow speeds.
+Very recently, some preliminary works have
+started to appear that focus only on the use of
+sensors integrated in the mobile devices. Serra,
+Carboni and Marotto (2010) present the early
+developments of an indoor navigation system that
+uses the device’s accelerometer, compass, camera
+and internet connectivity. Despite using only the
+sensor of the device, the proposed application uses
+datamatrix drawn in maps scattered in the buildings
+to obtain the buildings map and the starting position.
+Some experiments have also been made recently,
+to do an early evaluation of the accuracy of these
+types of techniques. Dekel and Schiller (2010)
+present an ongoing series of tests that explore indoor
+navigation with un-augmented smart phones. They
+were able to obtain an accuracy of more than 90%
+on the detection of the distance travelled.
+
+3
+
+INDOOR POSITIONING
+
+Despite providing some solutions for the indoor
+positioning problem, the works presented in the
+previous section are all either based on the existence
+of a physical infrastructure in each building, or the
+need of external sensors that are placed, for
+example, on the user’s shoes or waist. These sensors
+are a potential limitation to the natural movement of
+the user or the practicability of the system.
+Furthermore, some of the presented systems require
+very expensive equipments and others, although
+using relatively cheap beacons, require the
+installation of a large number of them to be able to
+obtain good accuracy.
+Since our aim is to develop mixed environment
+(indoor and outdoor) adaptive visualization
+applications, our goal is to develop an approach that
+does not need external sensors, beyond those
+integrated in the mobile device, and that can be used
+in buildings with no physical infrastructure installed.
+Furthermore, since the user is holding the mobile
+device in his hand, we want an approach that does
+not hinder the users hand movements, allowing him
+to retain some of the freedom of movement they
+usually have when using a mobile device.
+In the next subsections we will describe our
+proposed approach. It comprises step detection and
+the identification of the user’s position in a floor
+plane graph.
+
+3.1
+
+Step Detection Algorithm
+
+We use a 3-axis accelerometer integrated in the
+
+8
+
+mobile phone to capture, in real time, the
+accelerations that the device is being subjected to.
+When in a standing / resting stance, the only
+acceleration that is present in the mobile device is
+gravity. If we consider the mobile device to be
+perpendicular to the floor plane, the X and Z axis
+would be measuring no acceleration, and the vertical
+Y-axis would be measuring the gravity, with a value
+of approximately -9.8 m.s-2. Since the users can
+freely tilt and rotate the mobile device, we have no
+prior knowledge of which accelerometer axis is, at a
+given point, measuring the vertical acceleration. For
+this reason, despite potentially adding some noise,
+we have chosen to analyze the resulting acceleration
+vector norm, instead of analyzing each axis
+separately.
+
+Figure 1: Shifts in acceleration vector norm while
+walking, represented in a blue thin line. The red thicker
+line shows a single step pattern.
+
+When walking, the user will, not only, apply a
+forward acceleration but also, with a greater
+magnitude, alternatively apply a vertical upward
+acceleration followed by a vertical downward one.
+Figure 1 shows an example of the acceleration
+changes due to the user walking three steps.
+We have defined four parameters that are used to
+detect a footstep:
+ a peak amplitude λp that represents the
+minimum positive shift in acceleration caused
+by a footstep,
+ a trough amplitude λt that represents the
+minimum negative shift in acceleration caused
+by a footstep,
+ a minimum time interval Δtmin that needs to
+go by before completing the footstep pattern,
+ a maximum time interval Δtmax that cannot
+be exceeded for the footstep pattern to be
+detected.
+All of these parameters can be changed inside
+the application in real time. The description of the
+step detection algorithm is as follows:
+
+POINT OF INTEREST AWARENESS USING INDOOR POSITIONING WITH A MOBILE PHONE
+
+Step 1: calculate acceleration norm: a
+Step 2: if(a > λp)
+start timer t
+start pattern detection
+Step 3: while(t < Δtmin)
+if(pattern detected)
+discard footstep
+stop pattern detection
+Step 4: while(t > Δtmin AND t < Δtmax)
+if(pattern detected AND a < λt)
+footstep detected
+
+Stoffel, Schoder and Ohlbach (2008) and Yuan and
+Schneider (2010), in which the geometry of the
+buildings floor plan is used to define a graph of the
+possible paths a user can take.
+We have opted to divide the floor plan in
+rectangular areas of different sizes, where transition
+areas (for example, doors) have the smallest size,
+and areas with no transitions (for example, long
+corridors with no doors) have the bigger areas. Each
+of these areas corresponds to a node in the graph.
+Figure 2 shows, on the left, an original floor plan
+with the considered areas in red, and in the right the
+graph that was defined, with a node for each area.
+
+Step 5: if(t > Δtmax)
+discard footstep
+
+The step detection algorithm works by constantly
+checking if the current acceleration is greater than
+λp. When that happens, the application starts to
+check if the footstep pattern is occurring. If a sudden
+shift in acceleration occurs in less that Δtmin, we
+assume that it was caused by another movement and
+the step is discarded. If the pattern occurs in more
+time than Δtmin but less than Δtmax, and it reaches λt
+creating a pattern similar to the one shown
+previously, a step is recorded along with the current
+orientation, which is obtained from the digital
+compass. If after Δtmax we still have not detected the
+footstep pattern, the step is discarded.
+To be able to identify the location of the user
+inside a building, we use the last known latitude and
+longitude obtained from the GPS as the initial
+location of the algorithm. Afterwards, as each step is
+detected, we use the orientation obtained from the
+device’s digital compass and the defined average
+step length to calculate the displacement made. By
+adding all the displacements we can calculate the
+trajectory taken by the user inside the building and
+also his current location.
+
+3.2
+
+Floor Plan Graph and Position
+Correction
+
+Although the algorithm described in the previous
+section can give an accurate positioning when used
+for short periods of time, it can accumulate a
+significant amount of error when used for longer
+periods of time. To minimize errors caused by steps
+that are not detected (false negatives), steps
+incorrectly detected (false positives), or errors in the
+step size, we make corrections to the position of the
+user using information about the building’s floor
+plan.
+We have chosen to represent the floor plan by
+the use of graphs, inspired by the works done by
+
+Figure 2: Definition of the floor plan graph.
+
+The use of the graph allows calculating, with
+each step taken, the position of the user inside a
+certain node area. If at any time, the calculated
+position is outside the current node area, the system
+will verify if there is a valid transition from the
+current node to another node in the specified
+direction. If there is a valid transition, the system
+places the user on the next node and calculates his
+location in the new node area. If there is no valid
+transition in the recorded orientation (i.e. there is no
+direct path from the current node to the new one),
+the system searches for the nearest position where
+the detected movement would be valid and corrects
+the user position.
+
+4
+
+APPLICATION PROTOTYPE
+
+Our goal is to develop a point of interest aware
+application that can enable a user to roam inside an
+unknown building (for example, a shopping mall or
+a university campus) and quickly obtain useful
+information. The application should aid the user in
+finding specific places and also to easily explore the
+building while obtaining information about the
+points of interest he is near to.
+To test and evaluate our approach, we have
+developed a simple application prototype for a HTC
+Smartphone. We use the Smartphone’s integrated
+accelerometer to obtain, in real time, the acceleration
+
+9
+
+PECCS 2011 - International Conference on Pervasive and Embedded Computing and Communication Systems
+
+the device is being subjected to, and the digital
+compass, to obtain the orientation of the device.
+To obtain information about the points of
+interest, we use a SQL Server database that contains
+data about the name, location and attributes of each
+point of interest. However, to illustrate the proposed
+concept, we have defined a simple floor plan
+composed of only nine different points of interest.
+
+Figure 4: Prototype showing the path the user has taken.
+
+5
+Figure 3: Prototype showing the desired destination.
+
+The developed application has two main display
+modes. In the first mode, used to support a search
+task, if the user wants to search for a specific point
+of interest, he can select the “Select PoI” button
+from the “Options” menu and then search for the
+specific point of interest he wants to find (for
+example a certain store). When the user selects a
+point of interest, it will be highlighted in the
+building plan. Additionally, the available
+information about that point of interest will also be
+shown in the upper part of the interface (Figure 3).
+The second mode is used to support an
+exploratory task. If the user does not select any point
+of interest, the application detects what areas the
+user is near to, and shows information about them in
+the upper part of the interface (Figure 4).
+In our prototype, the main visualization area, in
+the bottom part of the interface, shows the path the
+users have taken drawn over the building plan and
+their current location marked by a blue circle
+(Figure 3). An example of path detection is shown in
+Figure 4. The position of the user and the path he
+has already taken is drawn in blue over the floor
+plan. If the user position is automatically corrected
+by the application, due to an invalid detected
+movement, the interface displays a thick red line to
+highlight the correction made.
+
+10
+
+USER EXPERIMENTS
+
+To accurately calculate the position of the user
+inside a building, it is essential that we use adequate
+step detection parameters and also consider an
+accurate step size. To be able to obtain these values,
+we performed a set of experiments to allow us to
+understand the differences between the walking
+patterns and step size of a diverse set of users.
+
+5.1
+
+Procedure
+
+At the start of the experiment, we asked each user
+their name, weight and height. Seven users
+performed our experiments, four were male and
+three female. They had diverse heights and weights,
+ranging from 160 cm to 180 cm and 65 kg to 81kg,
+respectively.
+Afterwards, each user was asked to hold the
+mobile device in their hand and follow the
+instructions that were presented on the device’s
+screen. For each experiment, the user’s were given
+indications on the speed at which they were
+supposed to walk, and instructed to press a start
+button, walk ten steps and press the stop button.
+The users were also instructed to stay on the spot
+where they stopped, to allow us to measure the
+distance they had travelled.
+Each user was asked to carry out six tasks, three
+of them outdoors and the remaining three inside a
+shopping mall.
+The users were first asked to walk in their
+
+POINT OF INTEREST AWARENESS USING INDOOR POSITIONING WITH A MOBILE PHONE
+
+normal walking speed when outdoors, then they
+were asked to walk slowly while observing the
+surrounding environment and, finally, they were
+asked to walk as if they were in a hurry to get
+somewhere. These tasks were then repeated while
+indoors, where the users were asked to walk in a
+normal speed, slowly while watching the shop
+windows, and quickly as if they were late.
+Finally, we also conducted some experiments
+with the device secured on the user’s waist to be
+able to obtain a control set with the device placed in
+a more stable position.
+
+5.2
+
+and the relatively high standard deviation (99 ms)
+suggest that a similar approach can also be used to
+define the Δtmin as the subtraction of the standard
+deviation from the average and Δtmax as the sum.
+
+Results
+
+After having concluded the experiments, the
+accelerometer logs, recorded by the mobile device,
+allowed us to create charts displaying the variation
+of the acceleration vector norm over time for each of
+the tasks conducted by each user.
+Using these charts we were able to analyse the
+walking pattern of each user and determine, for each
+step, what the optimal detection patterns would be.
+Regarding the λp and λt parameters, we wanted
+to understand if the minimum λp value and the
+maximum λt value were sufficiently different that
+they could be used as default values to detect all the
+steps. However, as can be seen in Figure 5, the
+values obtained are in fact very similar, and as
+consequence are not adequate for the algorithm.
+
+Figure 6: Time spent taking a step.
+
+The values obtained allow us to detect the
+majority of the steps taken by the users, however, as
+can be seen by the standard deviation in the previous
+charts, there are significant differences in the way
+each user walks. For this reason, instead of using
+fixed parameter values, it would be better for an
+application to acquire information when the user is
+outside (where his movement can be detected by the
+GPS) to automatically calibrate the parameters.
+
+Figure 7: λp, λt and Δt indoor / outdoor ratios.
+
+Figure 5: λp and λt acceleration parameters.
+
+As an alternative, to obtain a set of values that
+can detect the majority of the steps, we can use the
+average and standard deviation for each parameter.
+As a result, the value of λp can be calculated by
+using the average (12.95) and subtracting the
+standard deviation (1.71). Similarly, the value of λt
+can be obtained by adding the standard deviation
+(1.11) to the average (7.53).
+Regarding the time interval of the steps
+(Figure 6), the average time spent on a step (245 ms)
+
+However, since the users do not move exactly
+the same when indoors as they do while on the
+outside, we also need to identify the ratio between
+the two types of movements. To achieve this, we
+calculated the ratio, for each user, between the
+indoor and outdoor experiments at the same speed.
+The average ratios are shown in Figure 7.
+As important as detecting each step correctly, we
+also have to choose the right step size since, in the
+long run, it can originate a high amount of error. The
+average step size obtained from our experiments is
+65 cm. However, there are significant variations
+depending on the speed of the movement and also if
+it is indoors or outdoors (Figure 8).
+
+11
+
+PECCS 2011 - International Conference on Pervasive and Embedded Computing and Communication Systems
+
+outdoors, it is possible to calculate with a low error
+the average step length for each particular user.
+
+5.3
+
+Figure 8: Average step size.
+
+Despite the very diverse step lengths, when we
+consider the ratio between each pair of indoor /
+outdoor experiments, we obtain a ratio value that is
+fairly constant (0.9) and that is directly proportional
+to the speed of the user (Figure 9).
+
+To understand if the proposed approach was valid,
+we conducted a small evaluation phase. This phase
+had the goal of determining the accuracy of the step
+detection algorithm.
+Using
+information
+from
+the
+previous
+experiments we calculated, for each user, their
+optimal step detection parameters. After calibrating
+the application, we asked the users to walk 50 steps
+holding the mobile device in their hand and when
+they stopped recorded how many steps the
+application had detected. Each user conducted this
+evaluation three times.
+On average, the algorithm detected 47 steps of
+the 50 (standard deviation = 2.5). Although the
+number of steps detected can, in the long run, be
+responsible for a high error, we believe that it can be
+minimized through the use of the floor plan graph
+position correction.
+
+6
+
+Figure 9: Step size indoor / outdoor ratio.
+
+We also wanted to find the relation between the
+weight, height and step size of the user. To obtain
+the ratio, we calculated the (Height / Weight) / (Step
+Size). The average ratio calculated is 0.039 and is
+inversely proportional to the speed of the user
+(Figure 10).
+
+Figure 10: Height, weight and step size ratio.
+
+Through the use of both the previous ratios and
+information obtained from the GPS, when the user is
+
+12
+
+Evaluation
+
+CONCLUSIONS AND FUTURE
+WORK
+
+In this paper, we have presented a point of interest
+aware application that uses the information about the
+user’s indoor location to display information about
+the points of interest that exist in the vicinity of the
+user. To be able to correctly identify the position of
+the user, we have proposed an indoor positioning
+method that does not need previously installed
+physical infrastructures in a building. Furthermore,
+this approach does not need external sensors,
+avoiding the restriction of the user’s natural
+movements when using a mobile device and walking
+indoors.
+We have performed some user experiments that
+allowed us obtain valuable data about the differences
+in the step patterns originated from a diverse set of
+users. This knowledge can give us the insight on
+what the best default step detection parameter values
+are, and also help us in implementing an automatic
+calibration of these values. A particularly important
+parameter, which can cause a high accumulated
+error, and should thus be automatically adjusted, is
+the step size, since it varies not only between
+different users, but also depends on the speed and
+way the user is moving. Since our aim is to use this
+algorithm in mixed environment visualization
+
+POINT OF INTEREST AWARENESS USING INDOOR POSITIONING WITH A MOBILE PHONE
+
+applications, one solution is to use information from
+the GPS when the user is outdoors.
+Although there is still work to be done to be able
+to use this techniques, in a way they can be accurate
+with a diverse group of users, and in complex
+environments, the tests that we have done so far
+indicate that it is a valid approach.
+We intend, in the future, to more precisely
+evaluate the precision of the algorithm, taking into
+account the position correction using the floor plan
+graph. We also intend to test more complex
+buildings floor plans, and consequently the detection
+of footsteps when going up and down a set of stairs,
+and the use of escalators and elevators.
+
+ACKNOWLEDGEMENTS
+The work presented here is based on research funded
+by the FCT - Fundação para a Ciência e Tecnologia
+(Portuguese Science and Technology Foundation)
+through the SFRH/BD/46546/2008 scholarship.
+
+REFERENCES
+Pahlavan, K., Li, X., and Mäkelä, J-P., 2002. Indoor
+Geolocation Science and Technology. In IEEE
+Communications Magazine (February 2002), 112-118.
+Jensen, B., Kruse, R., and Wendholt, B., 2009.
+Application of Indoor Navigation Technologies under
+Practical Conditions. In Proceedings of the 6th
+Workshop
+on
+Positioning,
+Navigation
+and
+Communication (WPNC’09). 267-273.
+Beauregard, S., and Haas, H., 2006. Pedestrian Dead
+Reckoning: A Basis for Personal Positioning. In
+Proceedings of the 3rd Workshop on Positioning,
+Navigation and Communication (WPNC’06). 27-36.
+Carmo, M. B., Afonso, A. P., Pombinho, P., and Vaz, A.,
+2008. MoViSys – A Visualization System for Mobile
+Devices. In Proceedings of the Visual 2008 – 10th
+International Conference on Visual Information
+Systems. 167-178.
+Pombinho, P., Carmo, M. B., Afonso, A. P., and Aguiar,
+H., 2010. Location and Orientation Based Queries on
+Mobile Environments. Proceedings of the Computer
+Graphics, Visualization, Computer Vision and Image
+Processing 2010 International Conference.
+Hiyama, A., Yamashita, J., Kuzuoka, H., Hirota, K., and
+Hirose, M., 2005. Position Tracking Using Infra-Red
+Signals for Museum Guiding System. In Proceedings
+of the Ubiquitous Computing Systems, 2nd
+International Symposium. 49-61.
+Lim, A., and Zhang, K., 2006. A Robust RFID-Based
+Method for Precise Indoor Positioning. In M. Ali and
+R. Dapoigny (Eds.): LNAI 4031, Springer-Verlag.
+
+1189-1199.
+Ghiani, G., Paternó, F., Santoro, C., and Spano, L. D.,
+2009. A Location-Aware Guide Based on Active
+RFID’s in Multi-Device Environments. In ComputerAided Design of User Interfaces VI, Springer London.
+59-70.
+Xu, H., Huang, L., Xu, T., Huo, Y., and Wang, Y., 2009.
+Practical Indoor Tracking using Wireless Sensor
+Networks. In Proceedings of the 6th Workshop on
+Positioning,
+Navigation
+and
+Communication
+(WPNC’09). 209-215.
+Ikeda, T., Inoue, Y., Sashima, A., Yamamoto, K.,
+Yamashita, T., and Kurumatani, K., 2008. ComPass
+System: An Low Power Wireless Sensor Network
+System and its Application to Indoor Positioning. In
+Proceedings of the CSTST 2008. 656-662.
+Bruns, E., Brombach, B., Zeidler, T., and Bimber, O.,
+2007. Enabling Mobile Phones to Support Large-Scale
+Museum Guidance. In IEEE Multimedia (April 2007),
+Vol. 14 (2). 16-25.
+Mautz, R., The Challenges of Indoor Environments and
+Specification on Some Alternative Positioning
+Systems. 2009. In Proceedings of the 6th Workshop on
+Positioning,
+Navigation
+and
+Communication
+(WPNC’09). 29-36.
+Krautschneider,
+R.,
+2006.
+Untersuchungen
+zur
+Leistungsfähigkeit des Messystems Indoor GPS.
+Diploma Thesis at the University of Applied Sciences
+of Karlshure.
+Barnes, J., Rizos, C., Kanli, M., and Pahwa, A., 2005. A
+High Accuracy Positioning using Locata’s Next
+Generation Technology. In Proceedings of the 18th
+International Technology Meeting of the Satellite
+Division of the U.S. Institute of Navigation. 20492056.
+Priyantha, N. B., 2006. The Cricket Indoor Location
+System. PhD Thesis, Massachusetts Institute of
+Technology.
+Hazas, M., and Hopper, A., 2006. A Novel Broadband
+Ultrasonic Location System for Improved Indoor
+Positioning. In IEEE Transactions on Mobile
+Computing, (May 2006), Vol. 5 (5).
+Fukuju, Y., Minami, M., Morikawa, H., and Aoyama. T.,
+2003. DOLPHIN: An Autonomous Indoor Positioning
+System in Ubiquitous Computing Environment. In
+Proceedings of the IEEE Workshop on Software
+Technologies for Future Embedded Systems.
+Kalkusch, M., Lidy, T., Knapp, M., Reitmayr, G.,
+Kaufmann, H., and Schmalstieg, D., 2002. Structured
+Visual Markers for Indoor Pathfinding. In Proceedings
+of the 1st IEEE International Augmented Reality
+Toolkit Workshop.
+Bahl, P., and Padmanabhan, V. N., 2000. RADAR: An InBuilding RF-Based User Location and Tracking
+System. In Proceedings of the IEEE Infocom 2000,
+Vol. 2. 775-784.
+Kitasuka, T., Nakanishi, T., and Fukuda, A., 2003.
+Wireless LAN Based Indoor Positioning System WiPS
+and its Simulation. In Proceedings of the IEEE
+PACRIM’03. 272-275.
+
+13
+
+PECCS 2011 - International Conference on Pervasive and Embedded Computing and Communication Systems
+
+Ekahau Wi-Fi Tracking Systems. http://www.ekahau.com
+Nokia
+Kamppi
+Trial
+–
+Beta
+Labs.
+http://betalabs.nokia.com/apps/nokia-kamppi-trial
+Kourogi, M., Ishikawa, T., Kameda, Y., Ishikawa, J.,
+Aoki, K., and Kurata, T., 2009. Pedestrian Dead
+Reckoning and its Applications. In Proceedings of the
+“Let’s Go Out” Workshop in Conjunction with
+ISMAR’09.
+Beauregard, S., 2008. Omnidirectional Pedestrian
+Navigation for First Responders. In Proceedings of the
+Workshop
+on
+Position,
+Navigation
+and
+Communication (WPNC’08).
+Jiménez, A. R., Seco, F., Prieto, J. C., and Guevara, J.,
+2010. Indoor Pedestrian Navigation using and
+INS/EKF Framework for Yaw Drift Reduction and a
+Foot-Mounted IMU. In Proceedings of the 7th
+Workshop
+on
+Positioning,
+Navigation
+and
+Communication (WPNC’10).
+Nike + iPod – Meet Your New Personal Trainer.
+http://www.apple.com/ipod/nike/
+Glanzer, G., Bernoulli, T., Wiessflecker, T., and Walder,
+U., 2009. Semi-autonomous Indoor Positioning using
+MEMS-based Inertial Measurement Units and
+Building Information. In Proceedings of the 6th
+Workshop
+on
+Positioning,
+Navigation
+and
+Communication (WPNC’09).
+Köhler, M., Patel, S. N., Summet, J. W., Stuntebeck, E. P.,
+and Abowd, G. D., 2007. Tracksense_ Infrastructure
+Free Precise Indoor Positioning Using Projected
+Patterns. In A. LaMarca et al. (Eds.): Pervasive 2007,
+LNCS 4480, Springer-Verlag. 334-350.
+Randell, C., Djiallis, C., and Muller, H., 2003. Personal
+Position Measurement using Dead Reckoning. In
+Proceedings of the 7th International Symposium on
+Wearable Computers.
+Serra, A., Carboni, D., and Marotto, V., 2010. Indoor
+Pedestrian Navigation System Using a Modern
+Smartphone. In Proceedings of the MobileHCI 2010.
+Dekel, A., and Schiller, E., 2010. DRec: Exploring Indoor
+Navigation with an Un-Augmented Smart Phone. In
+Proceedings of the MobileHCI 2010.
+Ladstätter, S., Luley, P., Almer, A., and Paletta, L., 2010.
+Multisensor Data Fusion for High Accuracy
+Positioning on Mobile Phones. In Proceedings of the
+MobileHCI 2010.
+Stoffel, E-P., Schoder, K., and Ohlbach, H. J., 2008.
+Applying Hierarchical Graphs to Pedestrian Indoor
+Navigation. In Proceedings of the ACM GIS’08.
+Yuan, W., and Schneider, M., 2010. iNav: An Indoor
+Navigation Model Supporting Legth-Dependent
+Optimal Routing. In Proceedings of the AGILE 2010.
+
+14
+
+

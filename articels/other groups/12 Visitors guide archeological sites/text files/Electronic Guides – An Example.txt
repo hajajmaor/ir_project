@@ -1,0 +1,531 @@
+Electronic Guides – An Example
+of Application of Information Technologies
+in Representation of National Heritage
+Stanković, Radomir S; Tatić, Dušan; and Ognjanović, Zoran
+
+Abstract: The impressively fast advent of
+information technologies in last decade brought
+deep and important changes and improvements in
+many areas. Among them, the ways of presenting
+information with impact to spreading knowledge
+and learning are essentially important for future
+development of society and humanity. A part of that
+are attempts to improve learning of lectures from
+history for its better understanding which should
+serve as a foundation for a better tracing and
+determination of future developments. For this
+purpose information technologies should help in
+representation of historical, cultural, natural,
+scientific, and technical heritage. In this paper, we
+present electronic guides for mobile devices, in
+particular tablet PCs and smart phones under
+Android and iOS operating systems, as a possible
+tool for achieving these goals.
+Index Terms: Electronic guides, mobile devices,
+Android and iOS operating systems, historical
+heritage
+
+INTRODUCTION
+Information technologies have brought drastic
+changes in the way of representing the information
+and related data as well as in their presentation to
+the users. To that goal, instead of the written and
+printed text, a highly predominant way of
+presenting the data and information is enriched by
+moving pictures, colors, animations, and sound.
+These changes unavoidably affect the way of
+noticing, observation, proper understanding, and
+registering information. Consequently, the way of
+learning is also changed, hopefully improved and
+facilitated.
+These changes in representation of information
+and bringing data to their users affect strongly
+arrangement and organization of exhibitions in
+museums, galleries, archeological sites, or
+_______________________
+Manuscript received December 4, 2019. This work was supported
+in part by the Project III 44006 of Mathematical Institute of SASA.
+Radomir S. Stanković is with Mathematical Institute of SASA,
+Belgrade, Serbia (Radomir.Stankovic@gmail.com) contact person.
+Dušan Tatić is with Faculty of Electronic Enginering, Niš, Serbia
+(dule_tatic@yahoo.com)
+Zoran Ognjanović is with Mathematical Insitute of SASA,
+Belgrade, Serbia, (zorano@mi.sanu.ac.rs)
+
+architectural complexes, and historical places.
+Another
+related
+issue
+is
+omnipresent
+commercialization of all aspects of the social life.
+Due to this, museums are forced to convert from
+being state or local community budget supported
+institutions into independent, self-financing, and
+rather profitable entities.
+Thereby, in the fight for increasing the number
+of visitors, museums turn towards information
+technologies as a tool for preparing attractive,
+more complete, visually and additively highly
+compelling exhibitions [15].
+Another important challenge museums and
+similar institutions are facing with is the manner of
+attracting young population that is typically more
+oriented towards the presence and the future, and
+convincing youth to look into past in searching for
+proper milestones along the roads to the future.
+Very reach and versatile historical heritage on
+the territory of Serbia, from prehistory to the recent
+past and presence, including certainly the history
+of Serbs, imposes necessity of application of
+information technologies in preservation and
+presentation of this natural, historical, cultural, and
+technical richness [7], [8].
+In a country in transition, like Serbia, the
+economic situation demands that the way of the
+usage of information technologies in these areas
+should be inexpensive to make them affordable
+even for small museums and other related
+institutions typically financed by regional or local
+communities most of them staying in permanent
+financial shortage [4].
+As contemporaries of strong attempts towards
+revision of history, especially the relatively recent
+history of the last century, nullification of
+contributions of certain countries, devaluation of
+numerous sacrifices of particular nations or ethnic
+groups in the fight for liberty and equality,
+especially in antiracist and antinazi combat, we
+should use information technologies to preserve
+and present the historical truth and related data
+undistorted.
+
+We can conclude that application of information
+technologies in preservation and presentation of
+national heritage of Serbia is a very important, but
+a challenging multi-dimensional task.
+Electronic guides presented in this paper are an
+example of software products that satisfy most of
+the above mentioned criteria and, therefore, could
+be possibly recommended for application in
+presentation of national historical, natural, cultural,
+scientific, and technical heritage. Several
+applications that are already in application by few
+museums in Serbia confirm their effectiveness.
+From the creativity induction methods point of view
+summarized in [2], the presented solution includes
+elements of several of them, but it might be stated
+that transdisciplinary is certainly prevalent. The
+presentation in this paper is organized by following
+as much as it was possible the template for writing
+articles of this kind specified in [3].
+ELECTRONIC GUIDE
+Electronic guide is an application for mobile
+devices as tablet PCs and smart phones. They
+can be used to navigate a user through either indoor exhibitions in museums, galleries, fair halls,
+or across open sky museums, archaeological
+sites, ethnographic parks, and old town centers as
+a place of architectural and historical heritage.
+Electronic guide presented in this paper has
+been developed as a part of research work within
+a project in digitalization in culture conducted by
+the Mathematical Institute of SASA in Belgrade,
+Serbia [8], [9], [10], [11], [12], [13], [14].
+This electronic guide (eGuide) can be viewed as
+an advanced and upgraded version of classical
+audio guides commonly used in many museums.
+The advancement consists in increasing the
+functionality.
+An eGuide consists of the following modules
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+Geographical map,
+Gallery of photographs,
+Textual information,
+Audio records,
+Video records,
+Interactive 3D models,
+Augmented Reality (AR) module.
+
+An important feature of eGudies is that they
+ensure independence of the user of a professional
+visitor guide which usually offers a standard
+amount of information about certain selected
+artefacts or other objects of interest offered within
+an exhibition or along a touristic route. This
+information is adapted to an average visitor in the
+
+sense of age of visitors, their education, previous
+knowledge on the subject, level of interest, etc.
+Compared to the typical speech a professional
+guide usually deliver to the visitors, an eGuide
+offers a considerably enlarged amount of
+information and the user is free to select topics of
+his particular interest to be better informed about.
+It is even more important that the visitor becomes
+an active creator of the exhibition devoted
+exclusively to himself by selecting the topics about
+which he wants to be better informed depending
+on his particular interest. In this way, the visitor
+takes an active role, instead of being a passive
+observer of artefact and listener of a standardized
+talk. Further, the information a visitor can get
+through the eGuide is certainly more complete,
+presented in an attractive way, more compelling
+and easier to accept, learn, and remember. This
+probably especially applies to 3D reconstructions,
+where the visitor is able to see the missing parts
+or complete digital computer generated
+reconstructions of various objects, either small
+like, for example, jewelry to grandiose
+architectural objects.
+1.
+
+Module Map
+
+This module is intended to navigate the visitor
+to the places of his personal interest. It is
+implemented as a standard plug-in establishing
+connection to the Google Map and providing all
+related information as this service. The user is
+navigated to the points of interest marked at the
+map from either its current position, center of the
+town, central bus or railway station, or possibly the
+nearest airport.
+2.
+
+Gallery of Photographs
+
+This module contains a set of selected
+photographs with enabled both pitch and
+incremental zoom. To each photo a caption and
+the order number is assigned. A compromise
+should be made between the total size of the
+application and the number of photographs and
+their resolution. If many photographs should be
+presented, some of them can be included in the
+application while the other are download from a
+server.
+3.
+
+Text
+
+Text is the simplest way to convey the
+information and therefore it is provided. This is
+certainly necessary for users with reduced
+auditory abilities. Attempts are made to provide
+concise texts, however, scrolling across the text is
+provided, or alternatively the option Read more.
+
+4.
+
+Audio Module
+
+Many visitors do not like to read while standing
+at the front of artefacts in exploring a museum,
+gallery or an archaeological site. They prefer to get
+information through an audio record.
+5.
+
+figure, AR-module is used to project mosaics
+hidden under the sand for conservation reasons
+and, therefore, invisible for visitors. In this case, a
+purposely generated pattern is used as a marker
+for recognition by the AR-module.
+
+Video Module
+
+This module enables projecting various video
+records on the screen of the mobile device that are
+intended to provide additional visual information
+about the subject of interest. Depending on the
+profile of the museum, and especially for the open
+sky museums or archaeological sites, eGuides
+include video recorded by a drone and panoramic
+views. Since video files are usually large, in most
+of the applications this video material is not a part
+of the applications, and it is rather streamed from
+the server. Alternatively, a corresponding link to
+the YouTube is provided. See Figure 4, and
+related description bellow for an example.
+Upon request by the museum authorities, a
+video with text interpreted in Sign language for
+users with disabilities can be attached and
+projected [1]. An example is the eGuide entitled
+Old Knjaževac in the list of applications by the
+ARhiMedia group.
+6.
+
+Interactive 3D Models
+
+In some cases, and in particular for
+representation of historical and architectural
+heritage, 3D models offer a very informative and
+also attractive way of informing the user. In the
+presented eGuide, it is usually provided a gallery
+of interactive 3D models, in the sense that they
+can be pitch or incrementally scaled and rotated.
+This is often used for 3D reconstructions of
+objects, buildings, and similar artefacts.
+These 3D models are further used in many
+cases and whenever appropriate as a basis for
+virtual walks.
+7.
+
+Figure 1. Recognition of a computer generated marker to
+project the photo of a mosaic covered by sand for conservation
+purposes at the Archaeological Park Mediana, near Niš,
+Serbia.
+
+Another example from the same application is
+shown in Fig. 2, where a 3D model of a fountain is
+projected on the place where supposedly it was
+located in the audience hall of the Roman emperor
+Konstantin the Great. Recall that Mediana was a
+summer palace of this Roman emperor who was
+born in Niš. In this case, a part of the mosaic is
+used as a marker for the AR-module. Idea is to not
+affect integrity of a monument, in this case a
+mosaic, by inserting an artificially created object
+as a marker.
+
+AR-Module
+
+This module is intended to provide additional
+information through various audio-visual effects
+obtained by inserting computer generated objects
+into the image captured by the camera of a mobile
+device.
+Augmented objects could be text, audio
+records, images, 3D models, or video records.
+Fig. 1 illustrates an application of the ARmodule from the eGuide for the archaeological site
+Mediana, near the city of Niš in Serbia. In this
+
+Figure 2. A part of the mosaic as a marker for projection of a
+3D model of a fountain.
+
+Figure 3. Facade of a building as a marker for AR-module in
+eGuide.
+
+Figure 3, illustrates the case from the eGuide
+Industrial Heritage of Paraćin [6], a city in Serbia.
+In this case, the marker for recognition is the
+facade of a building.
+Figure 4 shows another illustrative example of the
+application of AR-module in eGuides. In this
+example, again facade is used as a marker, and
+links to two YouTube items are provided. This
+historical building, presently a hotel, served in the
+Second World War as the head quarter of the
+German Army where the plan for the airborn
+assault known as the Raid on the city of Drvar in
+Bosnia was elaborated to arrest or kill the partisan
+leader Tito, who later become the president of
+former Socialistic Federal Republic of Yugoslavia.
+A mosaic in this building the photo of which is
+included into the Gallery of photographs,
+motivated the name of this war operation
+Rösselsprung [5].
+
+Figure 4. Facade as a marker and links to YouTube videos
+related to the subject.
+
+Scenes are defined by the parameters embedded
+into an XML configuration file which enables
+dynamic content creation. Dynamic content
+concerns text, images, video, audio and 3D
+models.
+For instance, module map is defined with the
+parameters for location (longitude and latitude) of
+important places. Also, route creation is generated
+using these parameters. Gallery of photographs
+and video player module embeds the multimedia
+material using the XML file. The AR-module is
+based on the application of Easy AR engine which
+fully supports the Unity 3D engine.
+In addition, a variety of other software is used
+for image, audio and video processing, and
+editing, compression, and other manners of
+adaptation of the contents for efficient projecting
+on mobile devices.
+INSTALLATION OF EGUIDES
+
+IMPLEMENTATION TECHNOLOGIES
+The ARhiMedia group realizes eGuides by
+using the Unity 3D engine since it is a crossplatform game engine allowing exporting the
+application for mobile devices working under
+either Android or iOS operating systems. Each
+module is a separate Scene in the Unity project.
+
+Since eGuides are developed as a result of the
+research work on a project supported by the
+Ministry
+of
+Science
+and
+technological
+development of Serbia, they are freely accessible
+on Google Play for Android and APP Store for iOS
+based mobile devices, respectively.
+A concrete application can be accessed
+searching by its name on these repositories, or
+directly from a link provided by the cultural
+
+institution or given to the user by somebody. A
+typical way is that a poster with a QR-code
+assigned to the application is posted at some
+appropriate place near the entrance. The visitor
+gets the application by reading the QR-code.
+
+INSTEAD OF CONCLUSION
+Fig. 5 shows an example of a poster to
+download the eGuide for the Museum in Orašac,
+a chapter of the Museum in Arandjelovac, Serbia.
+The reader of this article is welcome to read the
+QR-code to get the application, and then start the
+AR-module and use the pictures at the poster as
+markers. The exhibition presents speeches in the
+year 1804 of leaders of Serbian rebels against the
+five centuries long occupation by the Ottoman
+Empire.
+
+Figure 5. Example of a poster with QR-code to download the eGuide for the Muzeum in Orašac.
+
+REFERENCES
+1.
+
+2.
+
+3.
+4.
+
+5.
+
+6.
+7.
+
+8.
+
+Baker, E.J., Bakar, J.A.A, Zulkifli, A.N., “Mobile
+augmented reality elements for museum hearing
+impaired visitors’ engagement”, Journal of
+Telecommunication, Electronic and Computer
+Engineering (JTEC), Vol. 9, No. 2-12, 2017, 171178.
+Blagojević,V.,et al,"A systematic approach to
+generation of new ideas for PhD research in
+computing", Advances in Computers, Elsevier,Vol.
+104, 2016, 1-19.
+Banković, M., et al,"Teaching graduate students
+how to review research papers", Advances in
+Computers, Elsevier,Vol 120, 2020, 1-17.
+Djukić, A., Antonić, B., Stanković, R.S., Tatić, D.,
+„Digital Mini-museum as an Innovative and
+Affordable Presentation of Local Heritage for
+Tourists: Example from Serbia“, Proc. of the 3rd
+International Conference on Tourism and Business
+2019, Mahidol University International College,
+Thailand, August 2019., 1-11
+Eyre, W. D., Operation Rösselsprung and the
+elimination of Tito, May 25, 1944 – a failure in
+planning and intelligence support, The Journal of
+Slavic Military Studies, Vol. 19, No. 2, 2006, 343376.
+Hristina, M., Radonjić Živkov, E., Privreda Paraćina
+od mlina do savremene industrije, Zavičajni muzej
+Paraćin, 2018. ISBN: 978-86-920553-1-7
+Stanković, R. S., Tatić, D., Tatić, D., Jovanović, N.,
+„Digitalni muzej u Niškoj tvrđavi - Primer primene
+informacionih
+tehnologija
+u
+predstavljanju
+nacionalne baštine“, Četrnaesta nacionalna
+konferencija
+sa
+međunarodnim
+učešćem
+Digitalizacija nacionalne baštine, starih zapisa iz
+prirodnih i društvenih nauka i digitalna humanistika,
+Beograd, 29 September 2016., 16, ISBN: 978-867589-111-6
+Tatić, D., Stanković, R.S., Stojanović, J., Jovanović,
+M., „Application of Information Technologies in
+Presentation of Historical Heritage of Niš“,
+Proceedings of Conference Digitalization of
+Cultural Heritage in Niš Region, May 2019, Niš,
+Serbia, 47-52,
+
+9.
+
+10.
+
+11.
+
+12.
+
+13.
+
+14.
+
+15.
+
+Tatić, D., Stanković, R., Stojanović, J., Jovanović,
+M., „Universal Electronic Guide for Museum
+Exhibitions“,
+Proceedings
+of
+Conference
+Digitalization of Cultural Heritage in Niš Region,
+Niš, Serbia, 54-62.
+Tatić, D., Stanković, R. S., Vitanović, N., Živković,
+N., Jovanović N., Stojanović, J., „Softversko rešenje
+za multimedijalne prezentacije arhitektonske
+nacionalne baštine (MMPAB)“, Tehničko rešenje,
+Sednica Naučnog veća Matematičkog instituta
+SANU, Beograd, 25. februara 2019.…
+Tatić, D., Stanković, R. S., Jovanović, N.,
+Stojanović,
+J.,
+„Softversko
+rešenje
+za
+multimedijalnu podršku prezentacije arheoloških
+lokaliteta (MMPAL)“, Tehničko rešenje, Sednica
+Naučnog veća Matematičkog instituta SANU,
+Beograd, 25. februara 2019.
+Tatić, D., Stanković, R. S., Jovanović, N.,
+Stojanović,
+J.,
+„Softversko
+rešenje
+za
+multimedijalno predstavljanje istorijske nacionalne
+baštine (MMPIB)“, Tehničko rešenje, Sednica
+Naučnog veća Matematičkog instituta SANU,
+Beograd, 25. februara 2019.
+Tatić, D., Jovanović, N., Tatić, D., Stanković, R.,
+Ognjanović, Z., „A case study of the usage of
+information technologies and mobile devices by
+visitors in museum environments“, The Fifteenth
+National Conference Digitization of Cultural
+Heritage, Old Records from the Natural and Social
+Sciences and Digital Humanities, Faculty of
+Mathematics, University of Belgrade, Beograd, str.
+23, 2017., ISBN: 978-86-7589-121-5, M64.
+Tatić, D., Vitanović, N., Stevanović, K., Živković, N.,
+Jovanović, N., Stanković, R. S., Ognjanović, Z.,
+“Universal electronic guide developed in Unity
+environment”, The Fifteenth National Conference
+Digitization of Cultural Heritage, Old Records from
+the Natural and Social Sciences and Digital
+Humanities, Faculty of Mathematics, University of
+Belgrade, Beograd, str. 24 , 2017., ISBN: 978-867589-121-5
+Tsai, H. and Sung, K., 2012, “Mobile applications
+and museum visitation”, Computer, Vol. 45, No. 4,
+95-98.
+
+

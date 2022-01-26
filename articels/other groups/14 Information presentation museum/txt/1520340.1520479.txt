@@ -1,0 +1,390 @@
+A Personalized Walk through
+
+the Museum: The CHIP Interactive
+Tour Guide
+
+
+Ivo Roes
+
+Eindhoven University of Technology
+Eindhoven, The Netherlands
+i.roes@student.tue.nl
+
+Natalia Stash
+
+Eindhoven University of Technology
+Eindhoven, The Netherlands
+n.stash@tue.nl
+
+Yiwen Wang
+
+Eindhoven University of Technology
+Eindhoven, The Netherlands
+y.wang@tue.nl
+
+Lora Aroyo
+
+VU University Amsterdam
+Amsterdam, The Netherlands
+l.m.aroyo@cs.vu.nl
+
+Abstract
+
+More and more museums aim at enhancing their
+visitors' museum experiences in a personalized,
+intensive  and engaging way inside the museum. The
+CHIP¹ (Cultural Heritage Information Personalization)
+project offers various online and mobile tools to the
+users  to be their own curators, e.g. browsing the online
+collections, planning personalized museum tours,
+getting recommendations about interesting artworks to
+see, and quickly finding their ways in the museum. In
+this paper we present the new version of the
+personalized museum guide² offered on a mobile device
+in    the physical museum space. We maintain a dynamic
+user model to ensure high relevance of recommended
+artworks and museum tours and in this way (1) support
+personalized interaction both online and in the museum
+and   (2) provide an intuitive bridge between the online
+and on-site experiences. We apply semantic Web
+technologies to enrich the museum collection and
+guarantee serendipity, novelty and relevance of the
+recommendations.
+
+Copyright is held by the author/owner(s).
+
+CHI 2009, April 4 – 9, 2009, Boston, Massachusetts, USA    
+
+
+ACM 978-1-60558-247-4/09/04.
+
+¹ http://chip-project.org
+
+² http://www.chip-project.org/demo/mobileguide/
+
+
+
+Keywords
+
+Interactive museum tours, mobile museum guide,
+semantic web, recommender systems, user modeling
+
+ACM Classification Keywords
+
+H5.m. Information interfaces and presentation
+
+Introduction
+
+The CHIP (Cultural heritage Information Presentation)
+project is a cross-disciplinary research project,
+combining aspects from cultural heritage and
+information technologies. The team has been working
+at    the Rijksmuseum Amsterdam since early 2005, as
+part of the CATCH (Continuous Access to Cultural
+Heritage) program. We explore interactive and
+engaging  ways to (i) acquire visitors' interests of the
+museum collection, (ii) to personalized museum
+services   on the Web site and in the real museum space,
+as well as (iii) to link visitors' experiences online and in
+the museum. In this context, we follow a user-centered
+approach to develop a set of technical solutions for
+semantically enriching the Rijksmuseum digital
+collection    and for interactive distributed user modeling
+used  for content-based recommendation techniques.
+
+We have performed a series of empirical user studies
+[1,2,3] to derive requirements for building the tools
+and  to access the quality of the personalization
+provided by them. In this paper, we focus on describing
+the design and development of a mobile museum guide
+providing a personalized navigation to museum visitors.
+For description of the other CHIP tools see [4].
+
+Personalized Museum Guides
+
+We have identified four types of museum tours: (i)
+human-guided tours, (ii) audio tours, (iii) online/virtual
+tours, and (iv) multimedia tours [5]. In recent years,
+
+mobile technology provides various opportunities for
+multimedia tours to help visitors to enhance the
+museum experiences [6]. Personalization in museum
+guides could enable visitors to achieve more enjoyment
+as well as greater knowledge and excitement during the
+tour [7], e.g. for example the MIT Media Lab audio and
+visual narration adapting to the user's interest acquired
+from the physical path in the museum and length of the
+user stops [8]; or the PEACH PDA-based location-aware
+museum tour [9] adapting the museum content to the
+visitor's interests and location. Further, the INTRIGUE
+guide recommends sightseeing destinations by taking
+into account the preferences of heterogeneous tourist
+groups [10]. In CHIP we personalize the selection of
+artworks for the museum visitor based on (1) their
+underlying semantic relations, e.g. related styles,
+artists, themes, or locations and (2) the strength of the
+user interest in those semantically enriched properties.
+We identify a number of recommendation patterns,
+which prove to deliver most relevant and serendipitous
+suggestions for artworks to the users.
+
+Linking the visitor's experiences online and on-site into
+one cycle supports a continuous learning experience,
+helps retaining memories over time, enables to pursue
+individual interests, and allows the visitor to focus on
+experimentation, discovery and the aesthetic
+experience during a museum visit. Several museums,
+
+e.g. Tate Modern, Science Museum Boston, already
+explored the potential of bridging the Web and the
+physical museum spaces. However, the bottleneck
+appears  to be in the actual combining of the user data
+from both spaces. All CHIP tools use a common
+distributed user model, which is continuously updated
+with  the ongoing user interactions both on the Web and
+the mobile platforms.
+
+
+
+Usage Scenario
+
+Imagine the following usage scenario: Before a
+museum visit, based on the recommendations provided
+by  the CHIP Artwork Recommender, our user creates
+online a tour of Rijksmuseum artworks that match her
+art interests and are currently available in the museum.
+In the museum, with the help of the CHIP mobile guide,
+our user can follow the same tour she created online.
+
+During the visit, the tour is dynamically adapted with
+related artworks to the explicit interests and
+preferences  the user indicates. The navigation path, the
+length  of the tour and the number of offered artworks
+are also adapted accordingly. During the visit, the
+mobile guide interactions are dynamically synchronized
+with the user profiles maintained on the CHIP website.
+
+CHIP Personalization Tools
+
+To support this usage scenario we have developed
+three tools: Online Art Recommender, Online Tour
+Wizard (online demo at: http://chip-project.org/demo)
+and Mobile Museum Guide (demo: http://chip-
+project.org/demo/mobileguide).
+
+•  The online Art Recommender (fig. 1) helps
+users to discover their art interests in the
+museum collection and to store them in a
+corresponding user profile.
+
+•  The online Tour Wizard generates online
+museum tours (presented on a museum map
+in   fig. 2 and in a historical timeline in fig. 3)
+containing recommended artworks according to
+the user's interests.
+
+figure 1. CHIP online Art Recommender. The interface
+contains                           four main interaction parts: (top left) 
+artworks
+sequence, (top right) rated topics, (bottom left) recommended
+artworks, and (bottom right) recommended topics (http://chip-
+project.org/demo/).
+
+figure 2. CHIP online Tour Wizard (map). The interface
+contains two main interaction parts: (left) two floors of the
+museum                        map, (right) list of tours for the user 
+(including all
+artworks in each tour). Indicating an artwork in the tour list
+locates its position on the floor maps and the other way
+
+
+
+around, indicating a thumbnail of an artwork on the map
+highlights in the list of tours (http://chip-project.org/demo/).
+
+•  The mobile Museum Guide offers the tours
+created online, provides extensive description
+of each artwork, as well as a set of related
+artworks to the ones included in the tour or
+any  given one in the museum. The users can
+dynamically adapt their tours by expressing in
+terms  of ratings preferences in some seen
+artworks, or by indicating a desired tour length
+or number of artworks to be included in the
+tour.
+
+CHIP Architecture
+
+Figure 5 depicts the client-server architecture with Java
+Servlets running on the CHIP server, described
+elsewhere in details [15, 16]. The collection data refers
+to the enriched museum collections, currently the
+Rijksmuseum ARIA database, maintained in a Sesame
+Open RDF memory store and queried with SeRQL. The
+user data contains OWL user models and tour data. The
+Web-based demo components are realized as Java
+Servlets and JSP pages with CSS and JavaScript. The
+mobile guide is implemented as a Web application
+running via a Web browser on different mobile devices
+(e.g. smart phones, iPhone, iPod)
+
+
+figure 3. CHIP online Tour Wizard (timeline). The interface
+contains two main interaction parts: (left) timeline with
+thumbnails                           of the artworks in the tour, (right) list 
+of tours for
+the user (including all artworks in each tour). Indicating an
+artwork in the tour list locates its position on the timeline and
+the other way around, indicating a thumbnail of an artwork on
+the timeline highlights in the list of tours (http://chip-
+project.org/demo/).
+
+figure 4. CHIP mobile Museum Guide, (from left to right): (a)
+tour selection and configuration screen; (b) tour sequence; (c)
+related artworks. An online demo is available at:
+http://www.chip-project.org/demo/mobileguide/
+
+Mobile Museum Guide
+
+An important aspect of the mobile museum guide is the
+various types of adaptation we can provide to cater
+different context and user aspects (e.g. location,
+
+
+
+temporal preferences, art interests). Typically we
+perform three main actions for realizing these adaptive
+steps: (1) filter out from the tour artworks that do not
+satisfy the current constraints; (2) add artworks to the
+tour that qualify according to contextual and user
+criteria; (3) re-order artworks in an optimal navigation
+sequence (e.g. to fit the room configuration and user
+position). The contextual and user constraints we
+collect   both implicitly (e.g. monitoring user position and
+time spent per artwork) and explicitly (e.g. user
+ratings, indicate the maximum number of artworks the
+user wants to see in a tour or the maximum amount of
+time the user wants to spend in the museum). We
+identify two levels of adaptation when following a tour
+and when configuring a tour.
+
+At a tour configuration level we can: (1) adapt the
+number of artworks to see in a tour based on the
+maximum length of the tour (in minutes) explicitly
+given   by the user. Similarly, we also can (2) adapt the
+time to be spent in a tour based on the maximum
+number of paintings the user is interested to see in one
+tour. The user can change those adaptation parameters
+at any point during the usage of the mobile guide (e.g.
+before starting a tour, while following a tour).
+
+Additionally, at this level, any predefined Rijksmuseum
+tour could be adapted to the art interests stored in the
+individual user profiles. This adaptation could also be
+applied on tours shared with friends. For example, one
+user can adapt to the own interests a tour that a friend
+has shared with him; or a tour shared between two
+friends can be adapted to match their both profiles
+together. In other words, this means either (1)
+including   in the tour only artworks that are liked by
+both users (above a certain threshold), or (2) making
+detours of the tour for each user and include meeting
+
+points. This would allow them to follow the same tour
+together in a museum and still see items, which fit their
+individual differences.
+
+figure 5. CHIP Architecture.
+
+At the level of following the tour adaptation is possible
+when the user indicates interest in a given artwork. In
+this case, a set of related artworks are offered, and
+potentially included in the tour. This would result in
+adding  the selected artworks to the tour, re-ordering
+the current tour to fit the new spatial constraints and
+filtering out artworks in order to meet temporal or
+
+
+
+number restrictions given by the user at a configuration
+level. The artworks in each tour are ranked according
+to their level of interest to the user. To find related
+artworks we use semantic relations between them, e.g.
+semantic relations between their properties. For
+examples, related artworks to a self-portrait of
+Rembrandt would be other portraits and self-portraits
+and  male portraits by Rembrandt, male portraits by
+students of Rembrandt, male portraits or self-portraits
+by other artists in the same style.
+
+Discussion and Future Work
+
+Following a user-centered design method, we have
+performed a number of user studies [1,2] to test the
+effectiveness of the recommendations and the overall
+usability  of the Art Recommender. The results proved
+that the system helps users, especially novice users, to
+quickly elicit their art interests in the museum
+collection  and it recommends artworks suiting different
+user’s preferences. Based on these initial results as a
+next step, we plan to test the usability and efficiency of
+the Tour Wizard and Mobile Museum Guide with real
+visitors in a constructed museum scenario.
+
+Acknowledgements
+
+The work on the CHIP project is funded by the Dutch
+Science Foundation CATCH program and is in
+collaboration with the Rijksmuseum Amsterdam.
+
+References
+
+[1] Wang, Y., L. Aroyo, N. Stash, and L. Rutledge.
+2007. Interactive User Modeling for Personalized Access
+to Museum Collections: The Rijksmuseum Case
+
+Study. Proc. of the User Modeling conference (UM'07).
+
+[2] Wang, Y., N. Stash, L. Aroyo, P. Gorgels, L.
+Rutledge, and G. Schreiber. 2008. Recommendations
+
+Based on Semantically-enriched Museum Collections.
+JWS: Semantic Web Challenge 6 (4): 43-50.
+
+[3] H. Cramer, V. Evers, S. Ramlal, M. van Someren, L.
+Rutledge, N. Stash, L. Aroyo and B. Wielinga: The
+Effects of Transparency on Trust in and Acceptance of a
+Content-based Art Recommender. UMUAI 18:5, 2008.
+
+[4] Aroyo, L., N. Stash, Y. Wang, Gorgels P., and L.
+Rutledge. 2007. CHIP Demonstrator: Semantics driven
+Recommendations and Museum Tour Generation. Proc.
+of the Int. Semantic Web Conference (ISWC'07).
+
+[5] Wang, Y., R. van Sambeek, Y. Schuurmans, L.
+Aroyo, N. Stash, L. Rutledge, and P. Gorgels. 2008. Be
+Your Own Curator with the CHIP Tour Wizard. Proc. of
+Museums and the Web (MW'08).
+
+[6] Anderson, Paul, and Adam Blackwood. 2004. Mobile
+and PDA technologies and their future use in education.
+Proc. of JISC Technology and Standards Watch.
+
+[7] Bowen, J. P., and S. Filippini-Fantoni. 2004.
+Personalization and the web from a museum
+perspective.    Proc. of Museums and the Web conference
+
+[8] Sparacino, Flavia. 2002. The Museum Wearable.
+Proc. of Museums and the Web (MW'02).
+
+[9] Rocchi, C., O. Stock, M. Zancanaro, M. Kruppa, and
+
+A. Kruger. 2004. The Museum Visit: Generating
+Seamless Personalized Presentations on Multiple
+Devices. Proc. of IUI’04
+
+[10] Ardissono, Goy, Petrone, Segnan, Torasso. 2003.
+INTRIGUE: Personalized recommendation of tourist
+attractions for desktop and handset devices. Journal of
+Applied Artificial Intelligence 17 (8): 687-714.
+

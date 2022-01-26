@@ -1,0 +1,389 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224901969
+
+
+
+WLAN Indoor Positioning based on Euclidian Distance and Interpolation
+(Isobars)
+
+Conference Paper · September 2006
+
+
+
+CITATIONS                                                                                              READS
+
+18                                                                                                     188
+
+
+5 authors, including:
+
+            Uwe Grossmann                                                                                         Christof Roehrig
+            University of Applied Science and Arts Dortmund                                                       University of Applied Science and Arts Dortmund
+            50 PUBLICATIONS 366 CITATIONS                                                                         120 PUBLICATIONS 1,046 CITATIONS
+
+              SEE PROFILE                                                                                            SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+
+                      Smart Service Power View project
+
+
+                      Smart Service Power - Intelligente Daten-Aggregation und -Nutzung für innovative Funktionen beim altersgerechten technikgestützten Wohnen im Quartier View
+                      project
+
+
+
+
+ All content following this page was uploaded by Christof Roehrig on 27 May 2014.
+
+ The user has requested enhancement of the downloaded file.
+WLAN indoor positioning based on Euclidian distance and interpolation
+(isobars)
+
+
+Prof. Dr. Uwe Großmann, Fachhochschule Dortmund, Fachbereich Wirtschaft
+
+Prof. Dr. Christof Röhrig, Fachhochschule Dortmund, Fachbereich Informatik
+
+Dipl.-Inf. Syuzanna Hakobyan, Fachhochschule Dortmund, Fachbereich Wirtschaft
+
+Dipl.-Inf. Thomas Domin, Fachhochschule Dortmund, Fachbereich Informatik
+
+cand. Inf. Matthias Dalhaus, Fachhochschule Dortmund, Fachbereich Informatik
+
+
+1.   Introduction
+
+Navigation is an important feature of mobile information systems and a key ability of
+autonomous mobile robots. The task of navigation can be divided into positioning and
+path planning. The aim of positioning is estimating the position of a mobile robot or a
+user with a mobile handheld computer in its environment, given a map of the
+environment and local sensorial data.
+
+Nowadays mobile robots and increasingly mobile devices like mobile phones or
+mobile handhelds often are equipped with IEEE 802.11 WLAN adapters, in order to
+communicate with computers or other mobile devices. Furthermore, many buildings
+are already equipped with an IEEE 802.11 WLAN infrastructure, as a popular and
+inexpensive technology. Most WLAN adapters are able to measure the signal
+strengths of received packets as part of their standard operation. The signal
+strengths of received packets vary noticeably by changing the position [1]. If a
+reliable positioning system could be developed using this technology, position
+estimation of mobile devices can be improved by cheap technology. Many mobile
+applications would benefit from being able to use WLAN for communication as well
+as positioning. In some mobile applications, WLAN positioning can be combined with
+other sensors to improve the robustness of position estimation.
+
+
+2.   State of the art
+
+Different techniques exist for estimating the position of a mobile device in a wireless
+network. Generally, the main techniques can be described as follows ([5], [6]):
+
+• Cell-of-Origin:
+  This technique is easy to realize and determines the access point (AP) to which
+  the mobile device is currently connected. Due to the known position of the AP and
+     its range a relatively exact position can be determined. Since all mobile devices
+     know the MAC hardware address of the AP which they are connected to, this
+     technique can be used in every WLAN infrastructure.
+
+• Received Signal Strengths:
+  This technique allows the estimation of the position of a mobile device using the
+  received signal strength values from several APs in its range. Several different
+  methods for calculating the mobile devices position exist. Most techniques use
+  fingerprinting methods, i.e. comparing a measured set of signal strength values
+  with a previously within a calibration phase measured set of signal strength values
+  at known positions. The problem is finding a suitable similarity measure for
+  comparing these signal strength value tuples.
+
+• Time-based:
+  These techniques are more accurate than techniques based on received signal
+  strengths or cell-of-origin. The position is determined according to the time of
+  arrival of received signals from several access points. A disadvantage is the need
+  for a precise clock for synchronization within the mobile device. These techniques
+  require a more expensive wireless network infrastructure usually not present in
+  existing installations.
+
+
+3.     Methodology
+
+
+3.1. Fingerprinting and Euclidian distance
+
+One approach for localizing the mobile device is based on the use of received signal
+strengths values of several WLAN access points.
+
+       Oci = (SSci1, SSci2, SSci3, ..., SScin-2, SScin-3, SScin ); i = 1, ... k       (1)
+
+       Om = (SSm1, SSm2, SSm3, ..., SSmn-2, SSmn-3, SSmn )                            (2)
+
+       d = ((SSci1 - SSm1)2+ (SSci2 - SSm2)2 + ... + (SScin - SSmn)2)1/2              (3)
+
+       Oci : Observation within calibration phase at point i.
+       SScij : Signal strength value received from access point j at point i within
+       calibration phase
+       Om : Observation within positioning phase
+       SSmj : Signal strength value received from access point j within positioning
+       phase
+       n : number of access points
+       k : number of calibration points
+The proposed method is divided in two phases. During an initial calibration phase a
+radio map of received signal strengths values of several access points is developed.
+Measurements are carried out at a number of points with known coordinates. One
+observation consists of received signal strength values of several access points (1).
+
+During the second phase, the positioning phase, again received signal strength
+values of several access points are recorded (2). Afterwards these observations are
+compared with those values stored previously in the calibration phase.
+
+There has to be a measure allowing the comparison of observations of the calibration
+and the positioning phase (comparing fingerprints). One measure of similarity which
+may be used is the Euclidian distance (3).
+
+After calculating d for all calibration points there will at least one point with minimal d.
+Then one approach is declaring this point to be the estimated position. The accuracy
+of this method depends beside other factors on the resolution of the underlying grid
+of calibration points.
+
+
+3.2. Fingerprinting and lines of constant signal strength (isobars)
+
+Again, this method is based on previously recorded signal strength values (see 3.1
+Fingerprinting and Euclidian distance). A network of triangles using Delaunay-
+Triangulation is developed. The nodes are represented by the calibration points.
+
+Given a measured signal strength value of one access point we can select triangles
+whose nodes show signal strength values higher and lower than the measured value.
+Linear interpolation between node values within the triangle delivers a more detailed
+radio map consisting of a surface of interpolated signal strength values over the
+triangle. Moreover, it is possible to calculate an interpolated line of constant signal
+strength (isobar) within the triangle and in the whole area of triangulation (figure 1).
+Given two signal strength values of different access points we are now able to select
+triangles whose interpolation surfaces include the according isobar. If there is an
+intersection of both isobars, we can calculate the intersection point within the triangle.
+
+Triangulations with coarse grids
+
+Depending on the size of the triangles a differentiated approach is recommended. In
+the case of triangles of larger size we use weighted means of points of intersection
+(see formula (4)). The weighted mean represents the estimated position p .
+
+         ∑ wp
+             n
+
+      p=     i =1
+                                           pi ∈ R 2
+                        i       i
+                                    with                                             (4)
+         ∑ w
+                n
+                 i =1       i
+         Figure 1: Merged radio map for access point 1 and 2
+
+Measurements have shown that measuring positions closer to access points are
+more reliable than those in larger distance. Hence, the weights wi are formed
+according to difference of the signal strength values of two isobars which have a
+point of intersection and a minimum signal strength value smin.
+
+      wi = ( s1 − s min ) 2 + ( s 2 − s min ) 2   with   s min = −100dBm            (5)
+
+Triangulations with fine grids
+
+With smaller sized triangles the balance point of the triangle itself is used as an
+estimated position. The according approach is as follows. We select triangles
+including as much isobars of measured single strength values of access points as
+possible. Within this list of selected triangles we establish a ranking based on the
+number of intersection points of two isobars at a time. The balance point of the "best"
+triangle, i.e. the triangle with a largest number of intersection points, is considered to
+be the estimated point.
+4.   Measurements
+
+Two different series of measurements have been carried out within two different
+environments :
+
+• Measurements with a notebook on a floor within an office building of
+  Fachhochschule Dortmund (see figure 2) and
+
+• Measurements with a personal digital assistant (pda) within a museum (RWE-
+  Museum 'Strom und Leben', Herne) (figure 3).
+
+One observation of single strength values per second was received and recorded.
+Recorded single strength values vary with time within a certain range. Over ten
+seconds values were received and the median value was taken as representative for
+the whole time period. Since the distribution of received signal strength values over
+time is not Gaussian [3], we choose the median and not the mean value.
+
+
+
+
+       Figure 2: Test bed 'office building floor' with triangulation
+4.1. Test bed 'office building floor'
+
+At Fachhochschule Dortmund we tested our algorithm during measurements on an
+office floor of the building of the Computing/Business departments.
+
+This test bed is characterized by a coarse grid consisting of triangles of larger size.
+We used the existing WLAN-infrastructure (see figure 2). Triangles are set up by a
+Delaunay triangulation using calibration points as nodes of the triangles ([4], [2]).
+
+Figure 2 shows some unsuitable triangles, e.g. triangles covering an area outside of
+the building. Thereby triangles and points of intersection had to be eliminated from
+the calculation of the estimated position.
+
+The elimination of points of intersection was performed using an acceptance circle.
+As centre of this circle the balance point of a most 'suitable' triangle was assumed.
+For each triangle we calculated s, the sum of the Euclidian distance of the signal
+strength values of the triangles three nodes. The triangle with minimal s was
+assumed to be the 'best' triangle. The largest edge of this triangle was taken as
+radius of the circle. All intersection points outside of the acceptance circle were
+excluded from the weighted mean calculation.
+
+
+4.2. Test bed 'museum'
+
+As test environment was chosen the museum of 'Strom und Leben' in Herne. Figure
+3 illustrates the area of measurement within the museum. This area consists of one
+large exhibition hall of size 30m x 10m.
+
+
+
+
+        Figure 3: Exhibition hall of museum with calibration points
+
+Within the room we find several points of interest, i.e. large objects like a tram, a gas
+turbine of a locomobile. This test bed is characterized by a finer grid of triangles of
+smaller size and leg length of 1m. The WLAN system is set up within in the exhibition
+hall. The system consists of 4 access points which are placed at the corners beneath
+the ceiling (see figure 7).
+
+The area where people are able to move was covered with a 1m x 1m grid of
+calibration points (see figure 3). For each calibration point signal strength values of 4
+access points were recorded. One observation consists of a quadruple of 4 signal
+strength values.
+
+In order to calculate isobars of the recorded observations we have to set up a set of
+triangles, which are not overlapping each other and with grid nodes representing
+nodes of the triangles. Such a set of triangles we can achieve by using Delaunay
+triangulation ([4], [2]).
+
+
+
+
+        Figure 4: Set of triangles achieved by Delaunay triangulation
+
+Similar to the case of 4.1 some triangles are not acceptable, because they cover
+areas with large exhibition objects or areas people are not able to enter. Such
+triangles would contain invalid interpolation data, so they have to be removed from
+the triangulation.
+
+
+
+
+        Figure 5: Radio map with lines of constant signal strength (isobars)
+
+Figure 5 shows the interpolated radio map (signal strength values) of one access
+point (circle below/left) over the reduced triangulation. Moreover we show the isobar
+of one measured signal strength value (positioning phase) within the radio map
+(calibration phase).
+
+
+5.   Results
+
+
+5.1. Test bed ' office building floor '
+
+Within figure 6 filled circles represent calibration points. Lines with numbers show
+signal strength isobars with according signal strength values.
+
+
+
+
+        Figure 6: 'Best' triangle and acceptance circle
+
+Using the methods described in 3.2 and 4.1 we were able to find a 'best' triangle (see
+figure 6) on the office floor. The circumscribed acceptance circle is shown covering
+the 'best' triangle. The small grey circle close to the right node of the 'best' triangle
+represents the measuring position.
+
+Measurements achieved a deviation of calculated position from measuring position in
+a range from 1 to 5 m.
+
+
+5.2. Test bed 'museum'
+
+Calculation of deviations between measuring point and estimated point using the
+method of Euclidian distance showed results in the range between 3 and 5 m.
+
+Figure 7 shows the results of one online measurement using the method of
+interpolated isobars. The isobars of one observation, i.e. signal strength values of 4
+access points, are drawn in the figure.
+       Figure 7: Radio map and ranking of triangles
+
+Triangles were selected which include 4 isobars (SL). In this case we found 6
+triangles ranked according to the number of included intersections of isobars (SP).
+The 'best' triangle shows 6 intersections. The arrows show the corresponding
+triangles within the triangulation. The black circle in figure 7 shows the point of
+measurement, the grey circle the mean value of the balance points of the selected 6
+triangles.
+
+
+
+
+       Figure 8 : Distribution of calculated deviations
+
+Figure 8 shows an absolute frequency distribution of all calculated deviations from
+different points of measurement. Most calculated deviations are lying in the range of
+1.5 and 2.5 m. Nevertheless, some values even increase to 4.5 m.
+                    6.    Discussion and outlook
+
+                    The results show, that in both test beds under good circumstances we can achieve a
+                    deviation between measuring position and estimated position of 1.5 m. But still we
+                    have to take into account deviations up to 5 m. For general use in a mobile
+                    application both methods, Euclidian distance and method of isobars, do not seem to
+                    be accurate enough. The calculations of test bed 'office building floor' show that
+                    reducing the acceptance area and eliminating unacceptable points of intersection
+                    increases the accuracy.
+
+                    One main problem seems to be the non-Gaussian distribution of received signal
+                    strength values over time. Using the median leaves a lot of fingerprinting information
+                    unused. Statistical methods using the whole distribution of measured signal strength
+                    values will potentially offer better measures of similarity between observations of the
+                    calibration phase and positioning phase [3].
+
+
+                    7.    Acknowledgement
+
+                    The authors would like to thank Mr. Hanswalter Dobbelmann, head of museum
+                    'Strom und Leben' (Herne), for his support of this project, his cooperativeness and
+                    permission to perform the measurements.
+
+
+                    8.    References
+
+                    [1]   Heberling, D.: Indoor positioning using WLAN, In: Conf. Proc. Wireless
+                          Congress 2005: Systems & Applications, München, 2005
+
+                    [2]   Klein, R; Algorithmische Geometrie, Addison-Wesley, Bonn, 1997.
+
+                    [3]   Ladd, A. M.; Bekris, K. E.; Rudys, A.; Kavraki, L. E.; Wallach, D. S.: Robotics-
+                          based location sensing using wireless Ethernet, Wireless Networks, vol 11, no 1
+                          - 2, pp. 189 - 204, 2005
+
+                    [4]   Midtbo, T.: Spatial modeling by Delaunay networks of two and three
+                          dimensions, PhD-Thesis, Department of Surveying and Mapping, Norwegian
+                          Institute of Technology, University of Trondheim, 1993.
+
+                    [5]   Rerrer, U.; Kao, O.: Suitability of Positioning Techniques for Location-based Ser
+                          vices in wireless LANs, In Proceedings of the 2nd Workshop On Positioning,
+                          Navigation And Communication (WPNC05), pp. 51-56, 2004
+
+                    [6]   Roth, J; Mobile Computing, dpunkt, Heidelberg, 2002.
+
+
+
+
+View publication stats
+

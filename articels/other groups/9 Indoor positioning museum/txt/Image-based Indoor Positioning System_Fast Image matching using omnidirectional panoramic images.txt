@@ -1,0 +1,326 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/229013511
+
+
+
+Image-based indoor positioning system: Fast image matching using
+omnidirectional panoramic images
+
+Article · January 2010
+DOI: 10.1145/1878039.1878041
+
+
+
+
+CITATIONS                                                                                                 READS
+34                                                                                                        4,078
+
+
+4 authors, including:
+
+            Toshihiko Yamasaki                                                                                       Kiyoharu Aizawa
+            The University of Tokyo                                                                                  The University of Tokyo
+            320 PUBLICATIONS 3,403 CITATIONS                                                                         676 PUBLICATIONS 7,514 CITATIONS
+
+               SEE PROFILE                                                                                                SEE PROFILE
+
+
+
+
+Some of the authors of this publication are also working on these related projects:
+
+
+              DeepSperm View project
+
+
+
+              Video Understanding View project
+
+
+
+
+ All content following this page was uploaded by Kiyoharu Aizawa on 16 May 2014.
+
+ The user has requested enhancement of the downloaded file.
+        Image-based Indoor Positioning System: Fast Image
+         Matching using Omnidirectional Panoramic Images
+                  Hisato Kawaji† , Koki Hatada† , Toshihiko Yamasaki† , Kiyoharu Aizawa‡ ,†
+        †Graduate School of Information Science and Technology, ‡Interfaculty Initiative in Information Studies
+                                                      The University of Tokyo, Tokyo, Japan
+                                   {kawaji, hatada, yamasaki, aizawa}@hal.t.u-tokyo.ac.jp
+
+ABSTRACT                                                                                     Table 1 Existing technologies performance [13]
+In this paper, we developed an image-based indoor localization
+system using omnidirectional panoramic images to which location                                            Positioning     Equipment        User
+                                                                                         Technology
+information is added. By the combination of the robust image                                                accuracy          cost         burden
+matching by PCA-SIFT and fast nearest neighbor search algo-                             Infrared light        5-10m           High         Middle
+rithm based on Locality Sensitive Hashing (LSH), our system can
+estimate users’ positions with high accuracy and in a short time.                         Ultrasonic         1-10cm           High         Middle
+To improve the precision, we introduced the “confidence” of the                             RFID             5cm-5m           High         Middle
+image matching results. We conducted experiments at the Rail-
+                                                                                            Wi-Fi            2-100m           High          High
+way Museum and we obtained 426 omnidirectional panoramic
+reference images and 1067 supplemental images for image match-                          Audible sound         5-10m          Middle          Low
+ing. Experimental results using 126 test images demonstrated that                      Mobile camera          1-5m            Low          Middle
+the location detection accuracy is above 90% with about 2.2s of
+processing time.                                                                       Monitor camera        1cm-1m           High           Low
+
+                                                                                    In this point of view, some indoor positioning systems have been
+Categories and Subject Descriptors                                                  proposed using infrared light [6], ultrasonic [7], Wi-Fi [8],
+H.5.1 [Multimedia Information Systems]; H.4.0 [Information                          Active-RFID [9] and image processing [10], and so forth. We can
+Systems Applications]                                                               also find some iPhone-based smart museum guidance systems
+                                                                                    using Wi-Fi [11,12]. As can be seen in the references, indoor
+General Terms                                                                       localization in museums is highly demanded. If the users’
+Algorithms                                                                          locations can be obtained, more interactive guidance (such as
+                                                                                    personalized explanation of display, route recommendation, and
+                                                                                    sharing viewers’ experiences in museum) and more accurate user
+Keywords                                                                            behavior analysis to improve the display configuration would
+Indoor localization, omnidirecitonal camera, tag, locality sensitive                become possible. For this purpose, we need to meet some
+hashing (LSH), PCA-SIFT                                                             requirements: (1) environmentally-sound development, (2) as low
+                                                                                    user burden as possible, (3) fast and high precision localization
+1. INTRODUCTION                                                                     adapting to wide area and handling multiuser. In terms of (1), it is
+In recent years, location-aware services [1,2] such as restaurant                   very hard to implant devices such as sensors in museums because
+recommendation and track-log-based processing [3,4] such as                         of preserving the museums’ appearance. Furthermore, when we
+summarization and retrieval, travel route recommendation, and so                    implement equipments, we must consider their costs, operations,
+on have been drawing a lot of attention because of the advantages                   and maintenance. In (2), the viewers should enjoy traveling in
+of semiconductor devices. For instance, GPS receivers are already                   museums without the wearable devices get in the way of viewing.
+contained in most of the cell phones and PDAs. Although outdoor                     Table 1 [13] shows the comparison of existing indoor positioning
+positioning systems are easy to implement by using GPS, Wi-Fi                       technologies about positioning accuracy, equipment costs, and
+[5], and radiowave strength from base stations, that for indoor                     user burden. Considering these requirements, image processing is
+environment is still a difficult problem because GPS signals                        suitable for indoor positioning in museums. Therefore, in this
+cannot be received and multipath fading occurs severely limiting                    paper, we employ an image-based approach using digital cameras
+the precition of the location estimation.                                           or cell phone cameras to meet the requirements.
+                                                                                    The image-based positioning system was firstly proposed by Aoki
+ Permission to make digital or hard copies of all or part of this work for          et al. [10]. They used a wearable camera and a laptop computer
+ personal or classroom use is granted without fee provided that copies are          for capturing images and hue histgram for image features. Then,
+ not made or distributed for profit or commercial advantage and that                SURF and SIFT based image matching system was developed
+ copies bear this notice and the full citation on the first page. To copy           [14,15] for more accurate location estimation However, these
+ otherwise, or republish, to post on servers or to redistribute to lists, re-       method took a lot of time (several hundred seconds for each
+ quires prior specific permission and/or a fee.                                     image) and were not feasible for real-time applications. The
+ MPVA’10, October 29, 2010, Firenze, Italy.
+                                                                                    contribution of this paper is two-fold. First, an entire system for
+ Copyright 2010 ACM 978-1-4503-0167-1/10/10…$10.00.
+                                                                                    indoor positioning system has been developed: quick database
+
+
+
+
+                                                                                1
+         Omnidirectionl   Supplemental
+           images            images
+
+                                               Query
+
+
+           Feature extracting
+
+              Feature filtering           Feature extracting
+        Hash calculating of LSH           LSH hash searching
+
+                                             Error filtering
+                   Image map
+                      DB                 Calculate “Confidence”
+
+                pre-established           Location estimation
+
+                     Figure 1 Our system overview                                           Figure 3 Annotation interface
+                                                                           The location information is attached to all the images by using our
+                                                                           interface demonstrated in Figure 3. The annotation data include
+                                                                           the (x,y,z) coordinates of the images on the map, exhibition name,
+                                               Omnidirectional
+                                               camera                      room name, the floor, and showcase name for supplemental image.
+
+                                               Tripod stand                2.3 Image matching
+                                                                           Our system uses PCA-SIFT features [18] and fast nearest neigh-
+                                                                           bor search based on LSH [16] for image matching. After that, our
+                                               Laptop                      system removes the error in the correspondent points by RAN-
+                                                                           SAC [19]. Since there are many reference images, it is necessary
+                                               Battery
+                                                                           to search correspondent point of the images with high speed.
+                                               Wheeled platform
+                                                                           2.3.1 PCA-SIFT
+       Figure 2 Omnidirectional-image capturing system
+                                                                           PCA-SIFT is a SIFT-improved local feature. After 128
+                                                                           dimensional feature vectors based on image gradients are
+construction using an omnidirectional camera, image matching
+                                                                           extracted by SIFT, they are compressed to 36 dimensions by
+system, and visualization interface. Second, the image matching
+                                                                           principal component analysis (PCA) and canculated features.
+has been made fast by using Locality Sensitive Hashing (LSH)
+                                                                           Same as SIFT, PCA-SIFT features have a robustness to affine
+[16] and more accurate by introducing a “confidence” parameter
+                                                                           transformation even with scaling and rotation. By compressing
+in the matching. we obtained 426 omnidirectional panoramic
+                                                                           dimensions, noises in gradient and correlation are reduced.
+images and 1067 supplmental images in the Railway Museum. In
+                                                                           Therefore, PCA-SIFT is known as high-descriptive feature.
+addition, we conducted image matching experiment using above-
+described images as references and improved the precision of               2.3.2 Locality Sensitive Hashing (LSH)
+image matching from        86% to 91% with low additional                  Because the number of images in the database is quite large and at
+computation costs.                                                         the same time quick response is critical in same applicatons,
+                                                                           efficient nearest-neighbor image search is very important. There
+2. OUR PROPOSED SYSTEM                                                     are some fast nearest neighbor search algorithms such as LSH and
+                                                                           ANN [17].
+2.1 Flow chart
+The flow chart of our proposed system is shown in Figure 1. The            LSH is a probabilistic nearest neighbor search method using hash
+omnidirectional images and supplemental images are taken and               functions. In case of 20 or more dimensional vectors, it is reported
+features are extracted in the server in advance. In addition, we add       that LSH is faster than the other algorithms. In particular, E2LSH
+annotation such as location and orientation of the image. Then,            [16] is employed in our system because we want to calculate
+we construct an “image map” database. When a user takes a pic-             Euclidean distance based similarity. After searching the
+ture, it is sent to the server and feature extraction and image            correspondent points by LSH, the outliers (erroneous
+matching with the database are conducted. For the image match-             correspondent points) owe removed by RANSAC [19].
+ing, PCA-SIFT in conjunction with LSH-based similarity measure
+is used as explained in 2.3.                                               2.3.3 The confidence measure
+                                                                           In order to improve the image matching performance, we
+2.2 Image map                                                              developed a confidence measure under the assumption that users
+The image map is the dataset of images, image features, and an-            tend to take their focus of attention closer to the center of the
+notations. The omnidirectional images of the museum are taken              image. Namely, we calculate the confidence measure considering
+using the system shown in Figure 2. The omnidirectional camera             the location of the correspondent point in the image:
+is set on a tripod stand on a wheeled platform and the images are                                                                     K
+captured with the laptop computer under the stand. The system is                                                                 , C = ∑Wk
+                                                                                                             2
+                                                                                                                 + yk 2 ) 2σ 2
+                                                                                              Wk = e −( xk
+portable and it is easy to cover a wide area. The supplemental                                                                       k =1
+images are those cannot be captured by the omnidirectional cam-
+era such as inside the showcases and they are taken by digital
+cameras.
+
+
+
+                                                                       2
+           (a)                        (c)
+                                                                             Table 2 Precision and processing time of image matching
+                                                                                               using each feature
+                                                                                          Feature
+                                                                                                       Correspondent
+                                                                            Feature       extrac-                       Total      Precision
+                                                                                                        point search
+                                                                                           tion
+                                                                             SIFT          1.51s            1.60s       3.11s        91.9%
+                                                                          PCA-SIFT         1.63s            0.56s       2.19s        90.8%
+                                                                            SURF           0.22s            1.54s       1.77s        88.2%
+
+
+                                                                                                    Table 3 Precision rate
+                                                                                              Without confidence         With confidence
+                                                                                                   measure                  measure
+                                                                              Precision               86.1%                     91.1%
+
+
+                                (b)
+                                                                                                Table 4 Processing time
+           Figure 4 Our interface visualizing the results
+                                155.2m                                                             Without confidence        With confidence
+                                                                                                        measure                 measure
+                                                                            Processing time              4.43s                    4.52s
+       47.6m
+
+
+
+
+                 Figure 5 Map of the Railway Museum
+where K is a number of the correspondent points in the query
+image. And (xk, yk) is the correspondent point’s relative coordi-
+nate from the center of the query image. σ is a constant.
+
+2.4 Visualization interface                                                           (a) Correspondent points: 36 Confidence: 2.22
+The location estimation results are visualized as demonstrated in
+Figure 4. The images users took are uploaded in (a). Once the
+images are uploaded to the server, the positions are estimated and
+the results are plotted on the map in (b). When the users click the
+images in (a) or the points in (b), the correspondent omnidirec-
+tional or supplemental image are shown in (c). In addition, since
+the image map database has both images and the location data, it
+is also possible to virtually travel inside the museum as Google
+street view. The control buttons are also shown in (c).                               (b) Correspondent points: 14 Confidence: 0.62
+
+3. EXPERIMENTAL RESULTS
+The experiments were conducted in the Railway Museum, Japan.
+The exhibition area is 155.2 m x 47.6 m as shown Figure 5. We
+took the omnidirectional images (3500x950) at 2 m intervals (426
+images) and took 1067 supplemental images (800x600). It took
+three days to cover the whole area using a single capturing system.
+The image matching was conducted using a Windows computer
+                                                                                      (c) Correspondent points: 11 Confidence: 2.35
+(2.66 GHz Core 2 Duo CPU, 4 GB Memory, Visual C++). We
+defined σ=100 in the confidence measure.                                       Figure 6 Indoor position estimation results using image
+                                                                                                       matching
+In Table 2, the comparison between feature extraction algorithms
+is shown in terms of processing time and the precision rate using a       others. From this table, PCA-SIFT is better considering the trade-
+subset of our database. The SIFT algorithm yields the best results        off between the processing cost and precision.
+but takes longer time. Since the dimension of the vector is less in       Table 3 demonstrates the performance improvement by our confi-
+PCA-SIFT, the correspondent point search is quicker than the              dence measure. It is shown that the precision rate is improved
+                                                                          from 86% to 91 % whereas the processing cost is almost un-
+
+
+
+                                                                      3
+  changed as demonstrated in Table 4. In Figure 6, some examples           [8] P. Bahl, and V. N. Padmanabhan, “RADAR: an in-building
+  showing the effect of the confidence measure is demonstrated.                RF-based user location and tracking system”, in Proceedings
+  Figure 6(a) is the successful case where both the number of corre-           of IEEE INFOCOM, Vol. 2, pp. 775-784 (2000)
+  spondent points and the confidence score are large. If the number        [9] L. M. Ni, Y. Liu, Y. C. Lau, and A. P. Patil, “LANDMARC:
+  of correspondent points is 10~20, it was difficult to tell whether           indoor location sensing using active RFID”, in Wireless
+  the image matching was successful or not in the conventional                 Networks, Vol.10, pp. 701-710 (2004)
+  approach. In our method, however, Figures 6(b) and (c) are re-
+  jected and accepted respectively properly by the confidence meas-        [10] H. Aoki, B. Schiele, and A. Pentland, “Realtime personal
+  ure.                                                                          positioning system for a wearable computer”, The Third In-
+                                                                                ternational Symposium on Wearable Computers, pp. 37-43
+                                                                                (1999)
+  4. CONCLUSION
+  We developed an image-baesd indoor localization system using             [11] Koozyt, http://www.koozyt.com/solutions/amp/?lang=en
+  omnidirectional panoramic images as references. In our system,           [12] Cité des Sciences,
+  we used PCA-SIFT in the phase of feature extraction, and LSH                  http://www.citesciences.fr/francais/ala_cite/expositions/ma-
+  when searching correspondent points between reference images                  terre-premiere
+  and uploaded images. Also, we implemented the entire system for
+  the indoor positioning system and applied it to the Railway              [13] K. Muthukrishnan, M. Lijding, and P. Havinga, “Towards
+  Museum. The experimental results have shown that the position is              smart surroundings: enabling techniques and technologies for
+  estimated within 2.2s with over 90% of accuracy.                              localization”, First International Workshop on Location- and
+                                                                                Context-Awareness, LNCS3479, pp. 350-362 (2005)
+
+  5. REFERENCES                                                            [14] H. Bay, T. Tuytelaars, and L. V. Gool, “SURF: speed-up
+                                                                                robust features”, 9th European Conference on Computer Vi-
+  [1] M. Sugimoto, P. Ravasio, and H. Enjoji, ”Sketchmap: a sys-
+                                                                                sion, pp. 404-417 (2006)
+      tem for supporting outdoor collaborative learning by enhanc-
+      ing and sharing learners’ experiences”, In Proceedings of            [15] R. Boris, K. Effrosyni, and D. Marcin, “Mobile museum
+      ICCE Workshop on Design and Experiments of Mobile and                     guide based on fast SIFT recognition”, 6th International
+      Ubiquitous Learning Environments, pp. 1-8, (2006)                         Workshop on Adaptive Multimedia Retrieval, pp. 26-27
+                                                                                (2008)
+  [2] Y. Takeuchi, and M. Sugimoto, “Cityvoyager: an outdoor
+      recommendation system based on user location history”, In            [16] M. Datar, N. Immorlica, P. Indyk, and V. S. Mirrokni “Lo-
+      Proceedings of UIC2006, pp. 625-636, (2006)                               cality-sensitive hashing scheme based on p-stable distribu-
+                                                                                tions”, in Proceedings of the 20th Annual Symosium on
+  [3] G.C.De Silva, T. Yamasaki, and K. Aiazawa, “Sketch based
+                                                                                Computational Geometry, pp. 253-262 (2004)
+      spatial queries for retrieval of human locomotion patterns
+      from continuously archived GPS data”, IEEE Trans. Multi-             [17] S. Arya, D. M. Mount, N. S. Netanyahu, R. Silverman, and
+      media, Vol. 11, No.7, pp. 1240-1253, (2009)                               A. Y. Wu, “An optimal algorithm for approximate nearest
+                                                                                neighbor searching fixed dimensions”, Journal of the ACM,
+  [4] T. Horozov, N. Narasimhan, and V. Vasudevan, “Using loca-
+                                                                                Vol. 45, No. 6, pp. 891-923 (1998)
+      tion for personalized POI recommendations in mobile envi-
+      ronments”, in Proc. Int. Symp. on Applications and the In-           [18] Y. Ke and R. Sukthankar, “PCA-SIFT: a more distinctive
+      ternet (SAINT), pp. 124–129, (2006)                                       representation for local image descriptors,” in Proceedings of
+                                                                                IEEE Conference on Computer Vision and Pattern Recogni-
+  [5] PlaceEngine, http://www.placeengine.com/en
+                                                                                tion, Vol. 1, pp. 511-517 (2004)
+  [6] R. Want, A. Hopper, V. Falcao, and J. Gibbons, “The active
+                                                                           [19] M. A. Fischler, and R. C. Bolles, “Random sample consen-
+      badge location system”, ACM Transactions on Information
+                                                                                sus: a paradigm for model fitting with applications to image
+      Systems, Vol. 10, pp. 91-102 (1992)
+                                                                                analysis and automated cartography”, Communications of
+  [7] T. Sato, M. Sugimoto, and H. Hashizume, “An extension                     the ACM, Vol. 24, pp. 381-395 (1981)
+      method of phase accordance method for accurate ultrasonic
+      localization of moving node”, IEICE Transactions on Fun-
+      damentals of Electronics, Communications and Computer
+      Sciences, Vol. J92-A, No.12, pp. 953-963 (in Japanese)
+
+
+
+
+                                                                       4
+
+View publication stats
+

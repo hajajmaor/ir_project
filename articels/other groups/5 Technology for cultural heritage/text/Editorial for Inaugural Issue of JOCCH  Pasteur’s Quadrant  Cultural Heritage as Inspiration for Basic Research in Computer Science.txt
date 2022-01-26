@@ -1,0 +1,651 @@
+1
+
+Editorial for Inaugural Issue of JOCCH:
+Pasteur’s Quadrant: Cultural Heritage as Inspiration
+for Basic Research in Computer Science
+Categories and Subject Descriptors: I.3.7 [Computer Graphics]: Three-dimensional Graphics and Realism; I.3.8 [Computer
+Graphics]: Applications; J.5 [Arts and Humanities] ; K.4.1 [Computers and Society]: Public Policy Issues
+General Terms: Algorithms, Documentation, Economics, Experimentation, Human Factors
+Additional Key Words and Phrases: Cultural informatics, archaeology, museums, cultural heritage, Pasteur’s Quadrant, userinspired basic research
+ACM Reference Format:
+Arnold, D. 2008. Editorial for inaugural issue of JOCCH: Pasteur’s Quadrant: Cultural heritage as inspiration for basic research
+in computer science. ACM J. Comput. Cultur. Heritage 1, 1, Article 1 (June 2008), 13 pages. DOI = 10.1145/1367080.1367081
+http://doi.acm.org/10.1145/1367080.1367081
+
+1.
+
+INTRODUCTION
+
+It’s not often that you get the chance to write the editorial to introduce a new Journal; in fact, for me this
+is a once-in-a-lifetime occasion. This issue of the ACM Journal on Computing and Cultural Heritage
+(JOCCH) is the culmination of about 5 years worth of aspiration, thought, and effort. The key to the
+journal’s mission is the intent to address interdisciplinary issues with innovative computing science
+and a solid perspective of the needs of cultural heritage professionals. In some cases these “needs”
+may not be appreciated by the vast majority of practicing heritage professionals since the potential
+applications they address may be beyond the immediate time horizons for adoption of technologies by
+the sector.
+This first issue of JOCCH is a special issue on Research Agendas which was called to allow those
+working at the interface of technology and Cultural Heritage to help formulate the range of topics that
+would set interesting challenges for high-quality research within the scope of the journal. The issue
+(and some articles that are expected to follow in future issues) are intended to help authors understand
+what is expected—the aspects of their research which would ideally fit the intended readership.
+I am regularly asked “how can there be any real computer science research in the applications of
+technology to heritage”? This extended editorial is intended to address the question and to analyze the
+nature of the research that I expect will demonstrate essential results for those working at this interface.
+In fact, the question is a wider one than just addressing the field of Cultural Heritage; the issues arise
+in any research field where basic research is undertaken which is known a priori will, if successful,
+impact on and be applied to another field. It is as much a question for the chemist undertaking basic
+research which is intended to find application in the field of drug design or the materials scientist who
+has specific engineering applications in mind when researching for materials with specific properties.
+This editorial is a synthesis drawn from two recent sources which it has been my privilege to author
+or co-author. The first is the paper presented at the Cultural Heritage stream of the Eurographics
+Conference in September 2007 [Arnold, 2007]. The second is the EPOCH Research Agenda for the
+Applications of ICTs to Cultural Heritage, which was completed in its 2nd edition in March 2008
+
+c 2008 ACM 1556-4673/2008/06-ART1 $5.00 DOI 10.1145/1367080.1367081 http://doi.acm.org/10.1145/1367080.1367081
+
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+D. Arnold
+
+Research Centres
+
+Product development
+ar m
+ark
+et”
+
+“Ne
+
+De
+mo
+n
+tria strati
+o
+l, p
+ilot n,
+
+Exp
+
+e r im
+ent
+al
+
+Research prototypes
+
+E-r
+e
+Tot adine
+a
+s
+Req l cost s of C
+cha uired of own H orgs
+nge org
+ani ership ?
+?
+sat
+ion ?
+al
+
+Use
+-ins
+p ir e
+db
+asic
+R&
+D
+R&
+Do
+nd
+om
+ain
+app
+lic a
+tion
+s
+Chasm 1
+
+ICT Companies and CH service organisations
+Com
+CH petiti
+sec ve a
+tor
+d
+(ris vanta
+k ta
+g
+Cle
+ker e in
+s)?
+ar b
+usi
+nes
+s ca
+se?
+Chasm 2
+
+•
+
+Ma
+rke
+sys t-read
+t em y
+s
+
+1:2
+
+Sector standard
+Robust “whole product”, inc. additional
+features and anciliary services
+Diagram: Salzburg Research, 2007
+
+Fig. 1. Phases and chasms in the technology maturity life-cycle model (After Arnold and Geser [2008]).
+
+[Arnold and Geser 2008]. The scope of this journal was set to encourage two, quite distinct, categories
+of submission: use-inspired basic research and applied research.
+Contributions under the use-inspired basic research category describe results which push
+forward the bounds of knowledge in computing science and are grounded on evidence-based
+need from the cultural heritage sector.
+Applied research contributions take state-of-the-art results from general computing science
+and apply them to real data from the cultural heritage sector—evidencing their effectiveness
+with reference to feedback from intended beneficiaries.
+These categories of research will tend to address two different stages in the process of adoption of
+technologies into the sector. The next section will describe that process of adoption and is based on
+Section 10 of the revised EPOCH research agenda.
+2.
+
+TECHNOLOGY MATURITY LIFE-CYCLE MODEL
+
+The model of technology maturity used in the EPOCH research agenda builds on the standard model
+of the diffusion of innovations [Rogers 1962, 1995] but includes phases that are often not considered.
+In Figure 1, these phases of R&D are included, in which new technological methods and prototypes are
+created, and the early phases of product development.
+In the standard model, the technology diffusion process starts once a functioning and tested (prototype) application becomes available and is adopted by one or more innovative companies in search of a
+competitive edge. Then, industry solutions appear, which usually target larger organizations, and find
+some early adopters based on a more stable and scalable solution. Next, competing industry solutions
+appear which may also target smaller organizations and are adopted by a much broader group of organizations, the so-called early majority. Then, the mature and well-serviced technical solution will find a
+large, perhaps industry-wide late majority. Finally, even the most confirmed sceptics will decide to use it.
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:3
+
+This model has been questioned and improved by Geoffrey Moore specifically with respect to hightech products [Moore 1991]. Moore identified a chasm between the first users (innovators and early
+adopters) of such products, which may still to some degree be immature, and, later customers who will
+only adopt a mature product.
+In the diagram, this is labeled as chasm 2 because, in the EPOCH research agenda, we observed
+that there is another earlier chasm regarding the transfer of a research prototype into the product
+development phase. The research prototype is typically the result of developing from underpinning basic
+research via an experimental demonstrator to a near-market solution, but a market-ready solution for
+use by and with cultural heritage professionals would require much further development. Hence, we
+identify two chasms in the diffusion of research results.
+—Chasm 1. This chasm concerns the transfer of near-market ICT prototypes to innovators and other
+early adopters in the Cultural Heritage (CH) sector. However, the effectiveness of deploying the research results in the sector are far from established and, in general, there will be other research challenges as the full breadth of cultural heritage situations and data types are addressed. The challenges
+include the design of effective business processes to incorporate new tools into operational situations.
+—Chasm 2. This chasm concerns the adoption at a later stage by many institutions in the CH sector of a more mature application, a whole product with additional features and ancillary services.
+The main problem here is that most CH sector institutions are small organizations that lack technical staff and support and are not able to cover the total cost of ownership for ICT applications
+from their operational budget. For them to adopt the results of the CS research embedded in an
+application requires the application to have considered the operational needs of CH professionals extremely thoroughly, including the embedding of the technologies into the business processes of the CH
+organization.
+The two types of research that this journal are intended to target correspond (roughly) to the research
+needed to deliver the results at the left bank of each of the two chasms in Figure 1. In other words, in
+the first category, basic CS research will be described which, inspired by its potential to underpin future
+applications, is undertaken to deliver prototype solutions that demonstrate principles. In the second
+category, new near-operational tools will be presented which take into account deployment feedback
+from professionals in relevant fields and will draw upon novel computing science either from inspiration
+in the cultural heritage field or by drawing on results inspired by different fields.
+The next section considers the taxonomy of different research types and is drawn from Arnold [2007]
+by kind permission of the Eurographics Association.
+3.
+
+PASTEUR’S QUADRANT AND A USE-INSPIRED BASIC RESEARCH AGENDA
+
+Stokes [1997] argued that, for 50 years from the end of the second world war to the end of the 20th
+century, there was an unhealthy taxonomy of research types which was formulated on a linear scale
+from pure to applied. The argument goes that the best research is only possible in environments which
+are free from contemplation of the potential uses to which results might be applied. Stokes argues that
+this view has underpinned much of the political agenda and priorities for publicly funded research since
+the Second World War.
+Research in interdisciplinary fields such as ICTs for cultural heritage can be viewed from a variety
+of perspectives. It is true that at some level for all research undertaken for the applications of ICT
+to cultural heritage, basic, new computing science results must be developed specifically to address
+challenges which are unique to cultural heritage. In some areas the best of generic computing-science
+research must be applied to cultural heritage situations, potentially creating novel working methods for
+cultural heritage professionals. This may constitute basic research from the perspective of the cultural
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+1:4
+
+•
+
+D. Arnold
+
+Research inspired
+
+Considerations of Use?
+
+by:
+
+Quest for
+
+No
+
+Yes
+
+Pure Basic
+
+Use-inspired basic
+
+Research (Bohr)
+
+research (Pasteur)
+
+Yes
+
+fundamental
+understanding
+
+Pure Applied
+No
+Research (Edison)
+
+Fig. 2. Stokes’ Quadrant Model of scientific research (based on Stokes [1997, p. 73]).
+
+heritage professional, enabling new ways of undertaking their own research. Similarly, basic computing
+science first developed in the context of solving cultural heritage problems may later be discovered to
+have applications in other fields of endeavour. Such a range of situations can be understood neither as
+purely basic research in ICTs nor as purely applied research in cultural heritage informatics.
+The EPOCH project promoted a high degree of interdisciplinary use-inspired basic research. Such
+research increases the understanding of basic research issues in ICT and, at the same time, allows for
+the development of improved technology for purposes that are specific to cultural heritage.
+In recent years, however, use-inspired basic research has been promoted as a means of ensuring that
+publicly funded research is firmly based on providing solutions that have exploitation potential, and
+yet it remains tainted in the way that national and international organizations assess the worth of
+scientific advances.
+Donald Stokes’s book, Pasteur’s Quadrant: Basic Science and Technological Innovation [Stokes, 1997],
+provides a framework to set the different types of research in context. Stokes analyzes the relationships
+between differently motivated types of research, and his evaluation merits more detailed discussion
+from the viewpoint of cultural heritage ICT research.
+According to Stokes, in the United States the notion of basic research, whose purity was guaranteed
+by a separation from conceivable applications, was stressed by the extremely influential federal report
+Sciences, the Endless Frontier which was released in July 1945 by Vannevar Bush in his role as President
+Franklin Roosevelt’s Director of the Office of Scientific Research and Development. Applied research
+was considered to be at the other end of the spectrum and somehow inevitably close to market and
+inevitably distorted by the need to address market forces. Of course the perceived proximity to market
+also meant that public funds were inappropriate to fund research that should be funded by the direct
+beneficiaries of the resulting products’ inevitable profits. The argument went that basic research should
+receive the lion’s share of public funding because it may not be able to ensure adequate levels of funding
+in the marketplace.
+Funding schemes are now often predicated on a degree of end-user engagement as one component
+required to achieve funding. The two-chasms model also highlights the difficulty of building end-user
+perspectives directly into a research agenda—you need users with long term perspectives, lots of altruistic patience, and very broad understanding of the research process.
+Stokes argued that scientific research should not be conceptualized as a linear progress, but rather
+that “considerations of use” and “degree of fundamental understanding sought” represented different
+measures against which any proposed research project could be rated. As a result of this analysis,
+Stokes introduced four quadrants of research (Figure 2).
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:5
+
+—In a first quadrant, he placed pure basic research which is understood to be inspired by the quest for
+knowledge but not by potential use. A paradigmatic example for this type of research is the physicist
+Niels Bohr who worked on a model of the atom.
+—In contrast, a second quadrant is reserved for pure applied research which is conducted to develop
+practical solutions and marketable products. Stokes example for this type of research is Thomas
+Edison and his work on electric lighting, sound recording, and many other marketable, practical
+innovations.
+—A third quadrant contains scientific work that is neither overtly theoretical nor directed at products. This work concentrates on the exploration of particular phenomena or the development of a
+taxonomy or other classification work. Rather than advancing scientific knowledge or developing
+market-orientated solutions, the focus is more on already well understood research problems or formalizing existing knowledge or academic practices (e.g., handbooks or guidelines). We will return to
+consideration of this quadrant later.
+—The fourth quadrant is reserved for use-inspired basic science. This is understood to have potential
+practical utility, but researchers who conduct such research do not lose sight of the goal of advancing scientific understanding. The paradigmatic example here is the work of Louis Pasteur. Stokes
+suggested that Pasteur’s quadrant should receive most of the interest in national research policies
+and public funding, providing a combination of advancing knowledge and potential exploitation and
+return on investment.
+The notion of use-inspired research has significant implications for how scholars conceive of research
+and may face some tensions with current academic research cultures. In fact, if researchers concentrate
+on basic research, they will usually do so within the confines of specific pure scientific disciplines that
+have their list of research priorities and established review and reward mechanisms. These priorities
+and rewards are not defined, in general, to address explicitly the practical, societal and policy-related
+considerations.
+Typically research which can be located in Bohr’s quadrant has received the highest prestige in peer
+assessment of the quality of research. This might be considered an odd result given that exercises in
+assessing quality often purport to be based on assessment of novelty, rigor, and impact, and results
+with demonstrable application and equal novelty and rigor might be expected to be more highly rated.
+There is little doubt, however, that attitudes which value purely basic research have a material impact
+on communal research priorities and hence on the behavior and careers of professional researchers.
+In this context, attempts to become more use-inspired may be considered to be misguided despite the
+obvious link between research in Pasteur’s Quadrant and some degree of intended usefulness of the
+results.
+For example, in EPOCH’s State of the Union survey [EPOCH, SOTU 2006, pp. 153–160], one researcher addressed the relationship between research in ICTs for cultural heritage and the UK’s university research assessment exercise (which set out to measure and compare the quality of research in
+each discipline and in each university in the UK). He reported that “it would be hard to place ‘intelligent
+heritage’ in the Research Assessment Exercise (RAE) and hard to persuade practitioners that they ought
+to be associated with it. . . . In simple terms, anyone caught doing ‘intelligent heritage’, heritage policy or
+applied computing is likely to be sidelined or dismissed in order to enhance an institutional response to
+RAE.” (William Kilbride, Archaeology Data Service). Hence, there is a need to consider more thoroughly
+the values that prevent CH ICT them becoming a more important interdisciplinary field of research.
+At the same time, there is no doubt that both national and international policies on the public funding
+of research have moved strongly in the direction of support for use-inspired basic research. Managed
+programs of research, which in the UK computing science community certainly stretch back to at least
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+1:6
+
+•
+
+D. Arnold
+
+the Alvey program in the 1980’s, have become the normal means by which the vast majority of public
+funds allocated through the EU framework programs are distributed. It is also significant that the
+illustration used in the frontispiece of the UK Government’s policy framework (Science and Innovation
+Investment Framework: 2004–2014 [HM Treasury 2004]) was a representation of Stokes’s vision of
+Pasteur’s quadrant.
+In some ways this thinking is beginning to permeate the computing science research community. In
+both the UK and North America, there has been a slow but significant development of the notion of
+grand challenges, usually expressed as some vision that cannot be addressed with current technologies
+or systems and requires some significant results in basic computing science before the tools that can
+meet the challenge can be developed. At present, nine grand challenges have been identified within the
+UK scheme (see [UKCRC; Arnold et al. 2006]. In North America, the Grand Challenges program has
+been formulated around a series of workshops on specific research themes [CRA].
+Although the notion of grand challenges appears to encourage a view that use-inspired basic research will find a more central place in the research community, in practice very few of the challenges formulated so far are in fact grounded in specific application domains. In addition, many of
+the managed programs of research struggle to encompass interdisciplinary viewpoints, and the motivations for eventual applications can lead to unrealistic expectation of the timescales for exploitation. The norm in European Union Framework programs has been for a report on Dissemination and
+Exploitation Plans to be a deliverable within the first six months of the funded period. This report
+is written when the basic research of a project remains to be completed. Since the whole project
+is required to be precompetitive, there will still be additional development to be undertaken after
+the project is completed but before competitive products generating revenues can be marketed. This
+tension is in part grounded in the need to secure political support which is often gained on the basis of predictions of direct economic benefit. However, it also represents a failure to understand either the time to adoption of novel technology or the need to explicitly address each of the chasms in
+Figure 1.
+A further example is the UK e-science program which conceived of grid technologies to facilitate
+large-scale scientific experimentation with distributed resources, but produced a strong reaction in
+some computing science researchers who viewed the program as a diversion of funds away from basic
+real computing science to make the subject a mere servant of the natural sciences, etc.
+In fact in any grand challenge—and the longer agenda for e-science is undoubtedly one—there are
+serious computational aspects that current computing science cannot deliver. These cover engineering
+solutions, both hardware and software, and computational methods (data structure, algorithms, underpinning mathematical formulations, etc). There also are inevitably complex issues of deployment
+in terms of the impact on business processes of other professionals, usability of tools, long-term sustainability, etc., which are normally underestimated in terms of speed of adoption of technologies and
+ultimately the acceptability and success in getting results adopted.
+In the sections that follow, we will review the elements of the EPOCH research agenda for ICTs in
+support of cultural heritage applications and discuss how different topics map into Stokes’ four-quadrant
+model.
+4.
+
+EXAMPLE: ANALYSIS OF THE EPOCH RESEARCH AGENDA
+
+The EPOCH research agenda [Arnold and Geser 2008] is the result of extensive consultation between
+technology professionals and cultural heritage professionals. It considers the varied user requirements
+in the cultural heritage sector and some anticipation by technology professionals of the natural extrapolation of the direction of travel foreseen by cultural heritage professionals. Adoption of results
+will be heavily dependent on additional business process adaptation, which can be compared to the
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:7
+
+20–30 years it took from the early conceptualization of CAAD systems to reach the point where architects expect to adopt ICT-based tools to solve architectural design challenges. The EPOCH research
+agenda is confined to the challenges facing professionals working with the tangible cultural heritage
+embodied in monuments, sites, and museums.
+After considering five scenarios for future cultural heritage activity, the resulting requirements to
+address ICT research challenges required in order to make the scenarios possible were grouped into
+the following subareas.
+Novel data capture in many formats under a variety of conditions. Under this heading are the very
+wide range of artifacts and environments that have heritage significance, which are magnified by
+considerations of accuracy, volumes of data, variety of capture conditions, and particular considerations
+of material types (e.g., see Muller et al. [2005] or Mudge et al. [2005]).
+The article in this issue by Cignoni and Scopigno elaborates on the challenges for “Sampled 3D Models
+for CH Applications”, while de Jong, Oard, Heeren, and Ordelman consider challenges in “Access to
+Recorded Interviews”, more inspired by intangible heritage and spanning both concerns in this category
+and the next.
+Apart from materials issues, there are unsolved problems due to environmental challenges. For
+example, the digitization of masonry fragments on an archaeological site would require measurement
+techniques operating in situ (i.e., without lifting fragments). Figure 3 shows some digitization challenges
+of this type.
+Semantically-based representation, search, and research, and the enabling technologies and information structures to support the processing. This area includes the need to access multilingual sources,
+including languages which are no longer spoken and challenges to identify coreferences (the referencing of the same heritage items (e.g., events or people) from multiple sources and often on the basis of
+incomplete and/or information based on alternate identification (e.g., synonyms or alternate spellings)).
+Knowledge discovery in these circumstances might be more traditionally undertaken by experts digging around in archives manually and the challenge is to investigate how far excavation in the digital
+domain is possible and useful. Also in this area, specific techniques are needed for the representation
+of cultural information with very specific and somewhat idiosyncratic characteristics. These include,
+for example, the semantics of pictograms and of shape, or as storytelling, carved in stone (Figure 4).
+Given that the dominant themes of much surviving tangible heritage involve either commemoration
+of war or the celebration of religious beliefs, it is unsurprising that the same artifact or environment
+can convey completely different meanings to different people. Different societal groups look for different features within a reconstructed heritage environment and draw different meanings from them,
+potentially embodying fundamental differences and contradictions.
+Two articles in this issue examine challenges of semantic content in two areas. The first by Lampe,
+Riede, and Doerr, “Research Between Natural and Cultural History Information”, considers interaction
+between the challenges in natural and cultural heritage, while the second, by Doerr and Iorizzo, “The
+Dream of a Global Knowledge Network”, examines the challenges of integrating our knowledge across
+many sources for a different application area.
+Visualization and Communication. In this area, there are other application domains with similar
+requirements and few of the challenges can be realistically described as unique to cultural heritage.
+An example of challenges which apply to many domains is authoring tools which generate engaging
+multimodal experiences tailored for particular groups of users.
+However, there are specific needs which arise from both the sector itself and the nature of the data to
+be presented, most obviously describing the analysis and uncertainty underpinning hypotheses and the
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+1:8
+
+•
+
+D. Arnold
+
+Fig. 3. Digitization challenges on archaeological sites. (a) The sheer scale of the Temples at Karnak and (b) the overgrown
+temple (used in the film Laura Croft: Tomb Raider) which is in Cambodia (Angkor Wat).
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:9
+
+Fig. 4. Semantics in stone. (a) Carved Wall with the appearance of a spreadsheet at the temples at Karnak, Egypt and (b) in a
+bas-relief from Angkor Wat, Cambodia.
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+1:10
+
+•
+
+D. Arnold
+
+multiple perspectives on significance presented previously. These challenges are exacerbated when the
+audience has unknown background, interests, beliefs and motivations, for example, as Internet users,
+in common with many applications over the Internet, but probably of particular significance in cultural
+heritage.
+In this issue, the article by Bonardi and Bartelemy, “The Presentation, Emulation, Migration, and
+Virtualization of Live Electronics for Performing Aris”, describes challenges which arise in the area
+of recording and recreation of live performance, a direct interest from the more intangible heritage
+area.
+From the perspective of the computer graphics community, one area which may be surprising to
+consider as part of visualization and communication subarea in the EPOCH research agenda is reconstruction, which in graphics might often be considered part of data capture (i.e., modeling to create
+digital artifacts). For most cultural heritage professionals, visualization is the creation of interpretations from the primary evidence and hence an analysis and output process. Part of visualization is in
+fact to test a hypothesis to see whether the evidence that exists can be put together in ways which fit
+both the hypothesis and the constraints inherent in the evidence.
+This difference of perspective highlights another concern firmly based in the application domain, that
+is, the concern that, since anything can be modeled and visualized, the technology actually enhances
+presentations that are pure fantasy or, worse still, based on scant evidence, and produces believable
+but unsupported conjecture. For these reasons, an important part of creating reconstructions and other
+derived forms is to record the provenance, including cross-reference to the evidence base and reconstruction methods used, to document the background of a reconstruction. The London Charter [London
+2006], which describes this type of documentation as paradata, is an attempt at guidance in this area
+and appears to be attracting interest and support. Part of this challenge includes a desire to be able to
+display reconstructions in ways which reflect the degree of uncertainty inherent in the resulting model.
+As yet there are no generally accepted paradigms for this but the use of nonphotorealistic rendering
+techniques appears an attractive option.
+Identification and provenance history also needs to be maintained during repeated manipulations
+in the creation of derived and collected works. This must work across the typical image processing, graphics, and CAD manipulations with data structures involving hierarchy, instancing, etc., and
+data manipulations (mesh decimation, stitching, surface extraction, compression, feature extraction,
+etc.).
+At the interfacing level, the domain shares all the challenges of other interactive applications plus
+additional, and as yet unsolved, issues in the area of multicultural as well as multilingual interfaces.
+These issues include design of interactive systems which engage and entertain the public (e.g., games)
+and how to measure their effectiveness in engagement in ways which support/enable the design of
+better interfaces. Finally, the design of interfaces to tools that support research methods is an area in
+common with other areas of the humanities.
+The EPOCH research agenda concludes with two other areas where the research issues are not particularly reliant on the specific application area of cultural heritage.
+—Mobile, distributed and networked systems, and
+—Long-term availability (preservation, data migration etc., including standards for data, business
+processes and legal frameworks, DRM, IPR, collected and derived works etc.)
+There are aspects of the EPOCH research agenda that lie in each of the four quadrants of Stokes’
+diagram. In ICT, research undertaken with a view to generating fundamental understanding could be
+targeted at underlying theory or indeed, in Stokes’s classifications, research where the understanding of
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:11
+
+representation and computational process can be applied to solutions which are independent of specific
+applications. Generic technologies, which are mentioned in various places here, could fit this definition
+of research in Bohr’s Quadrant.
+However the axis of application consideration is not a binary choice; any subset of computational
+methods will address classes of problems, and these classes may be clustered in particular application domains. For example, in the graphics area, any computational method addressing geometric data
+must be addressing applications where shape or spatial organization is fundamental. The more specific the shape considerations are, the more application-specific the research might be. Many basic ICT
+research topics might therefore fit in Pasteur’s Quadrant through the use of test situations, based on
+applications areas. These topics include any research targeted at intelligent tools since the intelligence
+must be about something. The argument in favour of the value of conducting research in this quadrant is that different basic research is undertaken where there are specific application domains in
+mind.
+There are also serious motivations for research in Edison’s Quadrant. Often this may be targeted at
+applying pure basic research results (Bohr’s Quadrant) or indeed more generic research from Pasteur’s
+Quadrant at applications in cultural heritage. Of particular significance is the need to prove that the
+generic results work effectively with the actual rather than cleaned data arising in significant practical
+situations, which would typically exhibit special cases and data volumes and often may not have been
+tested in the original basic research. In the same way that the degree of application consideration is not a
+binary division, neither is the fundamental understanding axis, which in some ways is used as an inverse
+of closeness to market. However the amount of additional research that may need to be undertaken
+to convert fundamental understanding, even if application-specific, into deployable products is often
+considerable and frequently underestimated. This is further complicated because other disciplines with
+a direct interest in the application will be engaged in interdisciplinary research which relies on having
+the application in mind, but are also likely to add more value as the results come closer to deployment.
+If basic research is genuinely use-inspired and takes account of full interdisciplinary understanding,
+then the gap between basic results and effective deployment should be minimized.
+Stokes states that the fourth quadrant should not be thought of as empty just because it is not labeled,
+but in his view it includes research that “systematically explores particular phenomena without having
+in view either general explanatory objectives or any applied use to which the result may be put”. Stokes
+particularly mentions research into taxonomies, which fits into the background work on the semantics
+of cultural heritage. There are other areas where systematic classification and analysis are needed to
+convert prototypes into fully functioning tools.
+For example, historically, there has been research into grammar-based procedural modeling of architectural forms and design styles [Yessios 1975; Stiny 1976, 1977]. Recently, research taking similar
+approaches has demonstrated the potential for highly efficient representation incorporating dynamic
+constraints and using grammar representations [Mueller et al. 2006]. However, the demonstrations to
+date have been limited in terms of the historic period, architectural styles, and range of buildings modeled. Similar procedural models of architectural styles have been developed using GML [Gerth et al.
+2005; Havemann and Fellner 2004], but further widespread application implies thorough coverage of
+other architectural styles.
+A systematic analysis of design styles is therefore required as background to support the widespread
+adoption of grammar-based or other procedural modeling. These may not extend the basic computational
+principles (except in as much as additional new cases are encountered), but they turn a prototype
+application (grounded in basic research, use-inspired or not) into a viable tool and certainly extend the
+understanding of architectural form and the possibly of the semantics of shape. In many ways research
+to achieve coverage of an applications domain from a computational perspective can be considered as
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+1:12
+
+•
+
+D. Arnold
+
+falling within the fourth Quadrant. Addressing the commonalities of different requirements in order
+to define best practice and standards also fits into this quadrant as standards are intended to be useful
+in many different applications contexts.
+5.
+
+CONCLUSION
+
+In this editorial, I have sought to draw attention to the range of fundamental computing science challenges with origins very specifically embedded in the requirements of cultural heritage in order to dispel
+some of the prejudices that have dogged the perception of the worth of use-inspired basic research. There
+is no doubt that such potential applications present significant, fundamental research challenges in
+computing science. It is hoped that this discussion will help those working in these areas and those
+who assess their work to differentiate between the quality of the underpinning work, the suitability
+for funding decisions, and the determination of the relationship between underpinning concepts and
+application content.
+In the meantime, there are currently many sources of inspiration for those seeking interesting challenges on which to base their future research projects. Some of these are highlighted in the five articles
+included in this inaugural issue of the Journal of Computing and Cultural Heritage. I look forward to
+seeing many contributions to JOCCH over the years to come which address these challenges and take
+our research agendas forward.
+ACKNOWLEDGMENTS
+
+I would like to take this opportunity to thank the ACM, including the Publications Board and the
+Staff in Publications at ACM HQ, for their support through the process of getting the journal to this
+launch. In particular, I’d like to thank Mark Mandelbaum and Jono Hardjowirogo and also Holly Rushmeier (Vice Chair of the Publications Board with specific professional interests in the topics covered
+by JOCCH). I’d also like to thank the Eurographics Association, not only for their permission to use
+material from my 2007 presentation to the Annual Conference in Prague, but for their ongoing support of the interdisciplinary area through the Working Group on Graphics and Cultural Heritage and
+the VAST series of symposia. I’d specifically like to mention the invaluable support of Dieter Fellner
+and Alan Chalmers in this respect and of Franco Niccolucci as the founder of the VAST symposia.
+The EPOCH project was supported by the European Commission under FP6 (Project No. 507382),
+and the work of creating the EPOCH research agenda would not have been possible without this
+support. Thanks to Guntram Geser of Salzberg Research for his tireless collaboration in making the
+EPOCH research agenda a reality and to the many, many professionals in the field who contributed
+their time and experiences through contributions in research agenda workshops and commenting on
+drafts.
+My thanks also to all the authors for their contribution, hard work, and patience over the long period
+of gestation for JOCCH and to the reviewers for their diligence and wisdom. Finally, a special thank
+you to my colleague, Karina Rodriguez-Echavarria, for all the support as JOCCH information officer to
+get us to this stage.
+REFERENCES
+ARNOLD, D. AND GESER, G. 2007. Research Agenda for the Applications of ICT to Cultural Heritage, 1st ed. EPOCH Publication.
+(2nd Ed. to appear. www.epoch.edu).
+ARNOLD, D. 2007. Cultural heritage as a vehicle for basic research in computing science: Pasteur’s quadrant and a use-inspired
+basic research agenda. In Proceedings of EUROGRAPHICS’07 (Cultural Heritage Stream). Eurographics Association, 1–8 and
+p. 57.
+ARNOLD, D., CHALMERS, A., DAY, A., DUCE, D., AND WILLIS, P. 2006. Bringing the past to life for the citizen, grand challenge 9.
+http://www.bcs.org/server.php?show=ConWebDoc.4724 or http://www.cmis.brighton.ac.uk/gc9/.
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+Editorial for Inaugural Issue of JOCCH
+
+•
+
+1:13
+
+COMPUTING RESEARCH ASSOCIATION. http://www.cra.org/grand.challenges/.
+EPOCH 2006. Digital Applications for Tangible Cultural Heritage: Report on the State of the Union: Policies, Practices and
+Developments in Europe. F. Niccolucci, G. Geser, with Teresa Varricchio. Eds. pp. 168.
+GERTH, B., BERNDT, R., HAVEMANN, S., AND FELLNER, D. 2005. 3D modelling for the non-expert users with the castle construction
+kit v0.5. In Proceedings of 6th International Symposium on Virtual Reality, Archaeology and Intelligent Cultural Heritage.
+(VAST’05). M. Mudge, N. Ryan, and R. Scopigno, Eds. Eurographics, 49–58, 155.
+HAVEMANN, S. AND FELLNER, D. 2004. Generatives parametric design of gothic window tracer. In Proceedings of the 5th International Symposium on Virtual Reality, Archeology and Intelligent Cultural Heritage (VAST’04). Y. Chrysanthou, K. Cain, N.
+Silbermann, and F. Niccolucci, Eds. Eurographics, 193–202, 287.
+TREASURY H. M. 2004. Department for Trade and Industry and Department for Education and Skills. Science and innovation investment framework 2004–2014. http://www.hm-treasury.gov.uk/spending review/spend sr04/associated documents/
+spending sr04 science.cfm
+THE LONDON CHARTER. 2006. 1st Draft. http://www.londoncharter.org.
+MOORE, G. 1991. Crossing the Chasm. Marketing and Selling High-Tech Products to Mainstream Customers. Harper Business
+Books, New York, NY.
+MUDGE, M., VOUTAZ, J. P., SCHROER, C., AND LUM, M. 2005. Reflection transformation imaging and virtual representations of
+coins from the hospice of the Grand St. Bernard. In Proceedings of 6th International Symposium on Virtual Reality, Archaeology
+and Intelligent Cultural Heritage (VAST’05), M. Mudge, N. Ryan, and R. Scopigno, Eds. Eurographics, 29–41.
+MUELLER, P., WONKA, P., HAEGLER, S., ULMER, A., AND VAN GOOL, L. 2006. Procedural modeling of buildings. In Proceedings of
+ACM SIGGRAPH.
+MULLER, G., BENDELS, G. H., AND KLEIN, R. 2005. Rapid synchronous acquisition of geometry and appearance of cultural heritage
+artefacts. In Proceedings of 6th International Symposium on Virtual Reality, Archaeology and Intelligent Cultural Heritage
+(VAST’05), M. Mudge, N. Ryan, and R. Scopigno Eds. Eurographics, 13–20, 155.
+ROGERS, E. M. 1962. Diffusion of Innovations. The Free Press, New York, NY.
+ROGERS, E. M. 1995. Diffusion of Innovations 4th Ed. The Free Press, NewYork, NY.
+STINY 1976. Two exercises in formal composition. Environ. Plan. B, 3, 2, 187–210.
+STINY. 1977. Ice Ray: A note on the generation of chinese lattice patterns. Environ. Plan. B 4, 1.
+STOKES, D. E. 1997. Pasteur’s Quadrant: Basic Science and Technological Innovation. The Brookings Institution, Washington,
+DC, 180.
+GRAND CHALLENGES IN COMPUTING RESEARCH. U.K. Computing Reasearch Committee. http://www.ukcrc.org.uk/grand challenges/
+index.cfm.
+YESSIOS, C. I. 1975. Formal languages for site planning. In Spatial Synthesis in Computer-Aided Building Design, C. Eastman,
+Ed. John Wiley, New York, NY.
+
+DAVID ARNOLD
+University of Brighton, UK
+Editor-in-Chief
+
+ACM Journal on Computing and Cultural Heritage, Vol. 1, No. 1, Article 1, Publication date: June 2008.
+
+

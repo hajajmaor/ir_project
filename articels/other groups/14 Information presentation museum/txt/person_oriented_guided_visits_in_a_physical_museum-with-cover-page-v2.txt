@@ -1,0 +1,376 @@
+Accelerating the world's research.
+
+Adaptive Support for a Mobile
+Museum Guide
+
+marcus specht
+
+
+Related papers
+
+Download a PDF Pack of the best related papers 
+
+Adaptive Information for Nomadic Activities. A process oriented approach
+Marcus Specht
+
+Adaptive mobile museum guide for information and learning on demand
+Marcus Specht
+
+i3 Annual Conference COVER SHEET for Submissions
+Marcus Specht
+
+
+Adaptive Support for a Mobile Museum Guide
+
+Reinhard Oppermann and Marcus Specht
+
+GMD - German National Research Center for Information Technology
+Institute for Applied Information Technology (FIT-MMK)
+
+D-53754 Sankt Augustin
+
+email: {marcus.specht, reinhard.oppermann}@gmd.de
+
+
+Keywords:
+
+Nomadic Activities, Mobile Computing, Contextu-
+alisation, Adaptive System, Museum Information
+System
+
+Abstract:
+
+The paper aims at supporting human activities with
+mobile information technology. Supporting activi-
+ties over time, space and different social settings
+requires information technology to give seamless
+network access in different environments and to
+model the user’s implicit and explicit interaction
+history to adapt to the current situation. As a pro
+totype for a system meeting these requirements a
+mobile museum guide is introduced.
+
+1 Introduction
+
+The paper describes a mobile information sys-
+tem under development in the HIPS¹ project that
+supports nomadic activities adapted to the individ-
+ual visitor of a museum. Nomadic activities are a
+widespread class of human activities. In contrast to
+print media till now electronic information and
+communication media did not support nomadic ac-
+tivities.  The worldwide Web, wired and wireless
+connectivity to networks, and small mobile devices
+now allow for supporting nomadic activities by in-
+formation and communication technology to an
+extensive degree. The paper describes support for
+art excursions as an attractive class of nomadic ac-
+tivities. For the fit of user’s interests and needs ad-
+aptation facilities are described. These adaptations
+reflect the current user’s local environment (con-
+textualisation) and interaction history (individuali-
+sation).
+
+¹  The project Hyperinteraction within Physical spaces
+(HIPS) is an EU-supported LTR project in ESPRIT
+I3. The partners of the consortium are University of
+Siena (co-ordinating partner), University of Edin-
+burgh, University College Dublin, ITC, SINTEF and
+GMD, CB&J, and Alcatel.
+
+A challenging feature of current IT development
+is mobile information technology [1]. Mobile in-
+formation technology may be a chance to support
+ongoing activities from the beginning to the end.
+
+Traditional media like files, literature, memo-books
+are limited in their availability. On tour, for exam-
+ple, the user can only read those office files or pri-
+vate books that he or she has put into the suitcase
+before leaving for a journey. Many activities are
+distributed over time, over space and between ac-
+tors. Nomadic media allow for accessing informa-
+tion that are needed in any period of the activity at
+any place and together with any partner involved.
+The actor is not released to plan his/her activity but
+he or she is not required to plan the access to all in-
+formation and all co-actors needed in several
+phases beforehand.
+
+Another challenging feature of current research
+is the adaptation of the selection and presentation of
+information according to the user needs [2] [3]. The
+user uses different devices with specific character-
+istics and restrictions both for information access
+(bandwidth) and information presentation (size and
+resolution). For mobile information technology the
+particular challenge for adaptivity is the support of
+users at different locations of the user’s interaction
+with the system. Accordingly, nomadic adaptive
+systems require both a user model where the infor-
+mation according to user needs, knowledge, and
+preferences is evaluated and a usage model where
+the information about the user’s environment and
+client hardware and software is held up-to-date. To
+achieve this, mobile information technology can be
+combined with technologies to identify the users’
+working environment and his or her position in the
+physical space [4]. Infrared or General Positioning
+System (GPS) allow for contextualising the device
+of the user. The position and the movement in the
+physical space can be observed and evaluated for
+required information [5]. The navigation in the
+physical and the navigation in the information
+space are used as indicators for the user’s interests,
+preferences, and the knowledge acquired so far.
+
+In this paper we want to illustrate the applica-
+tion of a mobile adaptive information system for art
+
+
+
+excursions including the preparation, the execution,
+and the evaluation of a museum visit.
+
+2 Activity processes distributed in time,
+space and social setting
+
+Most human activities are not fixed to a par-
+ticular point in time and space. Many activities
+evolve and by their nature they are distributed in
+time and space. They may be executed at different
+places and the execution may be interrupted by
+other activities. Activities often involve several
+people. Activities are planned by and for several in-
+dividuals or groups. They are more than individual
+short term acts at one place. Extension of activities
+can thus be described in three dimensions: exten-
+sion in time, extension in space, and extension in
+communities. For analytical reasons the process of
+activities can be divided into phases like prepara-
+tion, execution and evaluation. New technologies
+allow for a more comprehensive support of activi-
+ties no matter where, when and by whom each (part
+of an) activity is accomplished. For an information
+and communication system to support human ac-
+tivities it is central to consider an integration of the
+requirements of the described features. For an ap-
+propriate support it is not enough to provide any in-
+formation at any places in any time for anybody.
+
+The specific tasks and goals of an individual and
+his or her communicators, co-operators or com-
+petitors at specific points of time and space have to
+be taken into account. The adaptation has to con-
+sider the demands from the phase of the activity.
+
+3 Adaptivity for navigation in the physical
+space
+
+Mobile adaptive information systems should
+support human activities considering time, location
+and social constellation in the physical space and
+the user’s navigation in the information space. No-
+madic activities–by its definition–take place at dif-
+ferent places. Different devices support access to
+information technology at different places. In the
+office  the user typically uses a well-equipped mul-
+timedia PC. At home the user has possibly low
+connection to the Internet via modem. During a
+journey  the user is equipped with a laptop or a
+palmtop with low connectivity and display size.
+
+The system can be adapted to the specific condi-
+tions of the given place. It can prepare the connec-
+tion to the Internet, adapt the composition of tex-
+tual, graphical and video elements and adjust the
+presentation to the environmental conditions.
+
+Activities at different places allow for different
+interaction with an information system. In the office
+or   at home the information system is the central fo-
+cus of the user’s attention. He or she is sitting in
+
+front of the system, selecting, reading and writing
+information presented on the screen. Outdoor the
+user interacts with objects within a physical space
+and the attention is directed towards the physical
+and social environment. The presentation of infor-
+mation by an information system should reflect the
+absorbed (mostly visual) sense of the user. Instead
+of visually displaying information audio output via
+headphones may be more suitable for a user while
+additional visual cues may be designed to comple-
+ment the understanding of or the navigation through
+the audio information.
+
+Audio presentations allow for viewing the
+physical environment supported synchronously by
+complementary information. Different modalities of
+perception have advantages and disadvantages for
+the recipient. Audio presentation is weak in pro-
+viding control for the user. Control only allows for
+start, pause, move back or forward, and stop. Se-
+lection of parts of information and information
+about the kind and the length of the information are
+not supported. Compared to visual information
+audio output has to be received by the user sequen-
+tially.
+
+4 Adaptivity for navigation in the informa-
+tion space
+
+For the selection and presentation of informa-
+tion during nomadic activities additional indicators
+for the user’s needs can be obtained from the con-
+text of use during the nomadic activity. Preparing
+an activity needs information different from the
+execution of the activity and the evaluation of an
+excursion needs yet another set of information or
+editing demands of information. During the execu-
+tion of an activity the physical environment pro-
+vides objects the user can refer to. During the
+preparation or evaluation phase of the activity the
+physical objects probably need to be visualised by a
+graphical representation. Following the user’s ac-
+tivity process the user model of the system can
+evaluate the history of navigation both in the physi-
+cal space and in the information space. The model
+can describe the information used by the user and
+the places visited by the user.
+
+The adaptation of the selection and presentation
+of the information to the user supports the combi-
+nation of new and familiar information for the user.
+For information behaviour in general and for
+learning behaviour in particular it is preferable in
+terms of effectiveness, efficiency and satisfaction
+for the person to learn new elements embedded into
+a familiar frame. The connection between already
+learned and still to be learned elements is essential
+for the learning success. Repetition is a reinforcing
+factor for learning. Combining new and familiar
+
+
+
+items can augment not only learning results. Also
+the enjoyment of attraction environments can be in-
+creased when the person gets new aspects of an al-
+ready known topic.The navigation of the user in the
+physical space is performed by movements of the
+user with his or her feet. The information selection
+and presentation follows this movement. The user
+can also move with his or her hands, navigating in
+the information space. Both kinds of control have to
+be combined and to be communicated to the user to
+avoid confusion or to limit information access.
+
+5 Information system for art excursions: A
+scenario
+
+A visitor is assumed to prepare the excursion to
+a museum at home by consulting the system via
+internet reading descriptions and recommendations,
+viewing representations of paintings and so on. The
+user’s information selection is the initial basis for
+the user model developed for the adaptive behav-
+iour of the system. On site the visitor enters the mu-
+seum and gets a mobile device connected by wire-
+less LAN to a server and location aware by infrared
+emitters at the exhibits. The user can select an indi-
+vidual guided tour by the system based on an infer-
+ence of interest and knowledge developed by the
+user model. The visitor can also walk through the
+exhibition following own ideas while the system
+supports the exploration by contextualised (adapted
+to the current position) and individualised (adapted
+to the interest and knowledge) descriptions and
+comments. Before, during, and after the visit in a
+museum the user can enter and exchange own
+notes, comments, and communications about his or
+her impressions for own or others’ benefit. The
+evaluation of the selected objects and the selected
+information about the objects allow the system to
+update  the user model continuously.
+
+The art domain is attractive for mobile informa-
+tion technology first because art excursions require
+nomadic activities from visitors. Second, art can
+best  be enjoyed when the art recipient can combine
+the impression of an art exhibition or an art event
+with meta-information synchronically explaining
+aspects of the art not being presented by the art-
+work itself.
+
+During the journey the system should offer
+seamless access to the previously collected infor-
+mation, for example, on a palmtop via a wireless
+local network. The presentation can take into ac-
+count the already provided information and the cur-
+rent position of the user identified by infrared (in-
+door) or GPS (outdoors). In front of an artwork a
+high-resolution representation of the work is dis-
+pensable.   If at all the user needs a silhouette of a
+
+painting and opportunities to address areas of the
+painting he or she wants to ask questions about.
+
+For a system that users can use at several places
+the input and output of the system have to support
+immersive interaction. The user can concentrate on
+his  or her activity in the physical and social space
+and is supported by an additional information layer
+of a virtual space with complementary information.
+For the viewer of a painting, for example, several
+options of verbal comments about the artist, the art
+period, the art style, the art technique etc., are pro-
+vided to increase the intellectual benefit of the
+viewer without reducing his or her visual gusto.
+
+Roughly on site, in more detail before or after the
+visit the user can explore the painting style by
+overlaying the painting with typical outlines spe-
+cific  for the given or for a contrastive style. Virtual
+copies of a painting allow for exploring and ma-
+nipulating its composition and presentation charac-
+teristics including explanatory support by remote
+experts via the net to increase the benefit of the
+viewer.
+
+The ideas described in this abstract will be im-
+plemented and evaluated empirically (A prototype
+has been prepared for a “castle day” of GMD at the
+end of September 1998.) Massive prototyping in
+the consortium will allow to follow different ap-
+proaches in the design of the system and to evaluate
+the alternatives at different levels.
+
+6 References:
+
+[1] L. Kleinrock: Nomadicity: Anytime, Anywhere
+In: A Disconnected World, Invited paper, Mo-
+bile Networks and Applications, Vol. 1, No. 4,
+January 1997, pp. 351-357.
+
+[2] A. Kobsa, A. Nill, J. Fink: Hypertext and Hy-
+permedia Clients of the User Modeling System
+BGP-MS. In: M. Maybury, ed.: Intelligent
+Multimedia Information Retrieval. Boston,
+MA, 1997: MIT Press, 339 – 356.
+
+[3] A. Kobsa, W. Pohl: The User Modeling Shell
+System BGP-MS. User Modeling and User-
+Adaptive Interaction 4 (1995), 2, 59-106.
+
+[4] G. D. Abowd et al.: Context-awareness in
+wearable and ubiquitous computing. 1st Inter-
+national Symposium on Wearable Computers,
+1997. Proceedings of ISWC'97, October 13-14,
+1997 in Cambridge, MA, USA.
+(http://www.cc.gatech.edu/fce/pubs/iswc97/we
+ar-poster.html)
+
+[5] E. Not et al.: Person-oriented guided visits in a
+physical museum. ICHIM’97, Paris, September
+1997.
+

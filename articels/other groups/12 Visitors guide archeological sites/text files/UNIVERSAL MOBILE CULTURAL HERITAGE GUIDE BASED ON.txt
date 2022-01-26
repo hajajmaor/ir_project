@@ -1,0 +1,389 @@
+Преглед НЦД 27 (2015), 43–51
+
+Dušan Tatić, Miloš Stošić,
+Đorđe Manoilov, Radomir Stanković
+Faculty of Electronic Engineering, University of Niš
+
+UNIVERSAL MOBILE CULTURAL HERITAGE GUIDE BASED ON
+ANDROID TECHNOLOGY
+Abstract. This paper presents a universal mobile cultural heritage guide based on Android technology
+that can help visitors of various exhibitions to browse multimedia information content with mobile
+devices. The system consists of several independent programming modules that can be combined in
+different ways to create various mobile applications for presenting cultural heritage. In this way, we
+ensure universality of the guide and its applicability to different exhibition scenarios. A special module
+for augmented reality technology is implemented to provide a possibility for presentation of 3D computer
+generated reconstructions of objects at historical sites using either the location based or vision based
+techniques. The system is verified on the example of an application for the Archaeological park Mediana
+in Niš, Serbia.
+Keywords. Handheld system, multimedia, augmented reality, tourist guide, cultural heritage
+
+1. Introduction
+Rapid growth of information technology and wide usage of mobile devices increase
+expectations of visitors of museums, archaeological sites, and places organizing and
+hosting other similar exhibitions. Visitors expect to have due to the advent of
+technology a possibility to get more information about objects at the exhibition
+according to their own interest. Printed schemas and textual panels or booklets cannot
+keep up anymore with the demands of contemporary museum visitors. Therefore,
+cultural institutions have to advance their exhibitions from a passive viewing of
+predefined, selected, and necessarily limited amount of information to various dynamic
+forms by using digital multimedia technologies and mobile platforms.
+Therefore, there is a need to create attractive systems and innovative
+applications in order to attract visitors and enlarge the audiences. Creating a direct
+interaction between a visitor and the exhibited objects of his particular interest becomes
+an imperative task to make exhibitions more attractive and appealing to visit. This can
+be done by using technologies of augmented reality (AR) allowing to combine the
+picture of the real world captured by a camera, usually the camera of a mobile device,
+with the virtual computer generated content [1].
+Recently, mobile devices like smartphones and tablets become the standard
+information interface for ordinary customers. These interaction devices are good
+platforms to create applications for the presentation of cultural heritage. Such
+applications can help visitors to walk through museums and inform themselves about
+the selected items of cultural heritage according to their personal interests. Embedded
+multimedia content in the form of audio and video records, 3D computer generated
+objects, photos and text can be used to offer interesting and interactive scenarios in
+order to display their digital collections.
+In this paper, we present a cultural heritage mobile system based on the Android
+technology. The system is created as a universal platform meaning that it can be adapted
+
+44
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+to exhibitions of different kind in various cultural institutions. For the direct interaction
+with the exhibition space, the system provides a special module based on augmented
+reality technologies.
+1.1 Related work. There have been many approaches about virtual heritage projects
+using mobile augmented reality. In this section, we briefly present three of them to
+illustrate former, recent, and present approaches to mobile AR implementations
+primarily intended for representing cultural heritage and enhancement of museum
+exhibitions.
+Archeoguide was among the first mobile systems of this kind [2]. In this system,
+a rather robust equipment (Head-mounted display (HMD) and a computer in a
+backpack) was used to communicate with central server and to present multimedia
+content. This project was tested in Olympia with the purpose to show virtual
+reconstructions of scenes of life in ancient Greece.
+Recently, Ultra Mobile Personal Computer (UMPC) devices became more
+popular for realizations of AR systems. For example, the AR-museum guide presented in
+[3] uses these devices to guide visitors and inform them about the objects in the Louvre
+museum. The AR technologies are used to navigate visitors along a specific route. Also,
+the authors of the project created a Presentation room where visitors can get, by
+scanning the object, additional information about artwork in their surroundings.
+Nowadays, the Natural History Museum in London created the Augmented
+reality arena to explore the complex theory of evolution [4]. They have combined
+classical film projection technology with custom made handheld augmented reality
+system to show new interactive experience. Handheld devices are used to track led
+diodes at the center of the arena so that visitor can see extinct creatures moving at that
+place.
+The system presented in this paper takes into account that exhibition at an
+archaeological site usually consists of an in-door and an out-door part. Typically, there
+is an exhibition room to show various size artefacts, ranging from relatively large, such
+as parts of statues, arms, pottery, etc., to small as for example jewelry, coins, and picks
+of arrows, and similar objects. Ruins, remaining of buildings, fortifications, temples,
+etc., make the out-door part of the exhibition to visit. Therefore, the system for
+applications at archaeological site has to provide a good flexibility to meet different
+demands for in-door and out-door exhibitions at the same time.
+2. Functionality of the proposed system
+Functionality of the system is determined by the intended applications and can be split
+into three parts:
+1. Navigation,
+2. Information Provider,
+3. Storytelling.
+In the Navigation part, due to the link with Google Maps, the system enables to
+locate the museum or the archaeological site, and determines the route to it in the
+standard Google Maps manner. Typically, the system is configured such that the route
+can be determined from the current position of the visitor, from the bus station, train
+station, airport, or the harbor.
+Information provider is intended to show the basic information about the
+museum, such as, for example, working hours, exhibitions, prices, souvenir and book
+shops catalog, other facilities, etc. These two functional units make the system suitable
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+45
+
+as the general purpose touristic guide enabling a visitor to navigate across a city,
+touristic resort, or an exhibition hall of a fair.
+The Storytelling part, due to the connection with the purposely design
+repository, is intended to provide detailed information about the objects and various
+artifacts in the museum or similar other venues. The repository might contain textual,
+audio, and video records, as well as photos and 3D models of objects and other artifacts.
+An especially designed module offers the features of the augmented reality systems by
+allowing inserting computer generated contents into the real scene captured by the video
+camera of the underlined mobile device. The options of location-based tracking and
+marker- or image-based tracking are provided. This feature is especially convenient for
+archaeological sites, since allows augmenting the real scene with missing parts or whole
+objects. It is also convenient in situations where, due to the conservation reasons, the
+objects, such as mosaics, reliefs, or paintings, are not directly observable. In this case,
+the system project the corresponding photos, paintings or drawings, videos, or 3D
+reconstructions, enriched with underlying sound, speech or music, and textual data and
+explanations.
+3. System description and architecture
+The architecture of the proposed system is organized in three subsystems: Design,
+Logic, and Multimedia content. In this way, we follow the good practice similar to
+Model View Controller (MVC) concept although this is not a property strongly featured
+in Android programming environment. This organization into subsystems provides
+flexibility and adaptability of the application to various scenarios as will be explained
+below. Figure 1 shows the architecture of the system.
+The subsystem Design is intended to provide necessary layout for the visitor
+with an intuitively clear interface and the application determined navigation commands.
+The layout is determined by the museum (or other customer) and it is a characteristic
+trademark of a particular customer that can be distinguished from that of other
+customers. Thus, it can be easily customer tailored, changed or modified without
+interfering with other subsystems.
+Logic is the core part of the system and ensures its functionality through several
+modules that will be discussed in more details in the next section of the paper. This is
+the invariant subsystem of the application independent of the customer.
+Multimedia content is the subsystem that consists of a custom specific repository
+with textual, audio and video records, photos, 2D and 3D objects. This content is
+designed for each application separately according to the interest of the customer. The
+data are provided in a large set of various contemporary used formats so that the base
+can be filled in without much troubles whatever the formats provided by the customer
+are. The system ensures a great flexibility in terms of formats and screen resolutions,
+orientation (portrait or landscape) and sizes of screens of mobile devices.
+Modules in the subsystem Logic. The subsystem Logic consists of several modules:
+Map, List, Info and Augmented Reality.
+Module Map is created to show the area of an archeological site or museum. It is
+implemented with Google maps Application Programming Interface (API) and uses
+orientation and directions functions from this API. These functions help to locate the
+current position of the museum or a part of the archeological site on the map. This
+enables to calculate and show the routes between points of interests and the current
+position of the visitor, bus, or train station. The point of interest is also interactive and
+provides more information about the selected place by calling the module Info. All
+
+46
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+directions and media information are defined with Extensible Markup Language (XML)
+for a faster content embedding.
+
+Figure 1. Description of the system
+
+Module Info is constructed to show more information about every object defined
+in other modules. The module consists of five multimedia components:
+1) Photo gallery - displays all images about the object,
+2) Text area – show textual explanation for the object,
+3) Audio player - read written text from text area,
+4) Video player - plays video records if provided,
+5) 3D model viewer – enable interaction (scale, rotation) with 3D models of objects.
+Module List is generated to show the list of object and findings selected by
+following some specific criteria unique for each particular museum or archaeological
+park. Basic text and relevant photos are shown in the list of items which is defined as an
+XML file that stores all relevant data. Interaction with this content enables to get more
+multimedia information.
+In the module Augmented reality, we use the augmented reality (AR) technology
+that combine images of the real world and virtual computer generated images and 3D
+models on the used mobile device display [5]. In this way, the virtual content looks as a
+part of the real world. The other basic characteristics of augmented reality are that it
+runs interactively and in real time and precisely aligns real and virtual objects with each
+other [6]. This should help a visitor to easier imagine and visualize the missing parts or
+whole objects. We use this technology to widen the visitor’s perception of the cultural
+heritage sites augmented by the additional information. We decided to use Metaio
+mobile SDK [7] for the implementation of AR, because it supports various types of
+augmented reality tracking, both vision and location based.
+The vision based technology uses the camera of mobile device to recognize parts
+of the real world. The object of identification could be either marked places or parts of
+real objects. Using the features of the recognized object, virtual content is registered in
+the 3D space. We use two types of markers or natural features for tracking. Natural
+feature tracking (NFT) is good for artifacts or their parts. The demands are that objects
+need to have characteristic suitable for a reliable tracking. For more details about those
+characteristics we refer to [8]. If objects do not have characteristics sufficiently good for
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+47
+
+tracking, we use artificial markers for the recognition [9]. This kind of tracking is faster
+and it can recognize more object than NFT. The bottleneck of the usage of artificial
+markers is that the mystical effect characteristic for augmentation is reduced compared
+to that usually produced by NFT.
+Location based tracking deals with sensors like GPS, gyroscope, and
+accelerometer. The virtual content is positioned based on data obtained from sensors
+mixed with picture of visitors surrounding gained from the camera of the mobile device.
+We use this type of augmented reality, except orientation in space, to project distant
+objects or these on locations hardly accessible for the visitors. The interaction with
+points of interest is implemented and connected with the module Info. These points of
+interest could be in the form of 2D or 3D data.
+In this module, we also implemented an application for recognition of QR codes.
+This is useful since allows visitors to get more information about objects in the
+exhibition. Recognition of QR code transfers us directly to the Info module.
+Multimedia content. Multimedia content require a special preparation for mobile
+devices. Because of that, generated 3D models have a low number of polygons (about
+1000 to 4000 polygons) in fbx or obj format. For creation of 3D content, we used
+specialized software tools for modeling, such as Autodesk 3ds Max, ZBrush, Cinema
+4D, etc. Also, low cost 3D scanning was included (123d Catch, Kinect fusion, and
+David Laserscanner) to make models for our system.
+Audio materials are prepared in mp3 with 44.1 kHz bitrate 64 kbps because only
+narrative voice was recorded. Video is done in mp4 with the h264 codec in the format
+720 × 480 pixels and bitrate 768 kbps. We did the video editing with different software
+tools like Adobe Aftereffects. All multimedia content is connected with an application
+using XML. Simple changes of design and content trough XML files make system easy
+to adjust application to different museums or archaeological sites which ensure its
+universal applicability.
+Design. The application is designed with a large flexibility and extensive possibilities
+for adaptation to different cultural institutions. Defined trough the Android, the XML
+layouts are prepared for different screens (Smartphone or tablet PC) resolution. Also,
+design created in this way enable us to make applications tailored either for the end
+users (visitors) or experts in the field working in the museums (as a tourist guide,
+custos, etc.).
+4. System implementation
+The system is designed so that can be easily adapted to requirements by any museum or
+archeological site by using the integrated modules. The modules could be enabled or
+disabled depending on the requests for each concrete museum application. Visual
+interface is easy to change for every application without affecting the logic of the
+system. We created several applications for the museums and historical monuments in
+the city of Niš (Mediana, Ćele-kula, Čegar, Niška tvrđava) by using the proposed
+system. We will describe the implementation of the system on the example of the
+application developed for the archaeological site Mediana. In this application all
+modules and options of the proposed system are integrated.
+Application is designed according to the requirements specified by experts for
+the archeological site Mediana. It offers to a visitor possibilities to choose, depending
+on his affinities and available time, information about the objects at the places where
+they once existed and at exact locations. Viewing the information about objects or other
+
+48
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+archaeological artifacts is done on the mobile device by using multimedia technologies.
+In this way, it is possible to upgrade objects at the archaeological site that are protected
+and cannot be seen or do not presently exist and whose physical reconstruction is
+complex or impossible.
+Main screen shows the links of four main categories info, map, objects, findings,
+and augmented reality (Figure 2). The created application is multilingual and visitors
+can choose one of languages (Serbian or English).
+
+Figure 2. Main screen of the AR Mediana application
+
+Category map shows the areal map of Mediana (Figure 3). It is created with the
+module Map. This module has interactive pins (hotspots) which show important points
+at the archeological site. Each interactive pin gives us ability to get more information
+about the place. Also, the implemented route option gives to a visitor the opportunity to
+see the road to the archeological site from the current location, city center, bus or train
+stations.
+
+Figure 3. Area of the archeological site Mediana (left) and
+the road from the current location (right)
+
+All data are defined in the XML where we store the information. More
+information about hotspots is accessible through the category more info in the form of a
+text and image gallery (Figure 4). Video and audio can be displayed about object of
+interest. Also, the interaction with 3D models is possible as an option. All this is
+implemented by using the module Info.
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+49
+
+Figure 4. Information about an object, gallery, text, audio (left) and 3D model (right)
+
+In categories findings and objects we used the module list (Figure 5). The
+category Objects shows the list of all buildings and civil engineering constructions on
+the archeological site (summer palace, horreum, military barracks, etc.). Movable
+materials are shown in the category Findings (bronze gait, coins, statues, etc.). This is
+organized as items that have small pictures and text information. If desired, more
+information about items can be obtained through a further interaction with the device.
+More detailed description of items in findings and objects can be obtained from the
+category more info.
+
+Figure 5. Lists of findings (left) and objects (right)
+
+Category augmented reality, divided in subcategories (Reconstruction,
+Orientation, and QR Scan), is created with the AR module. Subcategory Reconstruction
+is used to recognize the parts of the archeological site and perform their reconstruction
+with AR technologies. First problem we had to solve was to show mosaics which are
+protected and hidden under the sand for the conservation reasons. We place the markers
+at the corresponding places located across the archeological site. When a visitor directs
+the camera of the mobile device towards a marker, he gets the real world image
+augmented with the virtual image of the mosaics (Figure 6). The second problem was to
+do the reconstruction of missing objects. Along the accessible paths of the archeological
+site, there are archaeological ruins of few buildings. Placing the markers near the ruins,
+
+50
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+the visitors can see through their devices the reconstruction of the buildings inserted in
+the image of the current surrounding. The interaction with the computer generated
+content is enabled and provides more information. The information we get through the
+links with the Info category, in the form of audio, video, text, images etc.
+
+Figure 6. Augmented Reality marker (left) and location based (right) tracking
+
+The Orientation subcategory is used to show objects in the visitors surrounding
+with location based augmented reality methods (Figure 6). Because Mediana is a large
+site (40ha) we are able to show to visitors far away points of interest in the form of
+floating balloons which show the image, name, and direction of the object based on
+GPS data. These points of interest provide more information when visitor interact with
+them. Information is linked with the category Info and provides all options for the
+selected object.
+Category QR Scan is used for the objects marked with the QR code inside
+museums. Recognized QR code is liked with the more info category where visitors can
+find more information.
+5. Conclusion
+Contemporary information technologies offer a lot of opportunities for various
+applications in digitalization and presentation of different forms of national heritage.
+This however imposes many challenges in determining how these opportunities can be
+used in the most appropriate way with respect to the rigorous demands on preserving
+and proper presenting items of national heritage, and at the same time to provide the
+most informative and attractive exhibitions. The related applications have to be
+inexpensive and it this way accessible for many visitors of exhibitions. Taking these
+observations as a motivation, in this paper, we present a universal mobile guide based
+on Android technology.
+The term universal refers to two features of this system. First, it can be run on
+different mobile platforms such as tablets and smart phones, which make it easily
+affordable for many ordinary visitors of exhibitions of national heritage. Second, after
+certain modifications, that are simple and easy to make, the same device can be adapted
+to different kind of exhibitions, ranging from touristic guides across cities, through outdoor exhibitions at archaeological parks, to closed space museum exhibitions and fairs.
+The architecture of the guide is organized into functional subsystems which
+makes it adaptable to different application scenarios. In all applications, the core part of
+the guide, the logic of the system, remain unchanged. The required modifications are
+
+D. Tatić, M. Stošić, Đ. Manoilov, R. Stanković
+
+51
+
+done on the layout and data repository as specified by the customer. All functionalities
+usually provided by the Android technology based devices are implemented. Due to this
+the visitor can display various types of multimedia files.
+The application is further enriched with an especially designed module that
+enables the augmented reality option, which allows displaying virtual reconstruction of
+different objects embedded in the real environment. The proposed solution was tested
+and verified by a concrete application developed for the Archeological park Mediana in
+the City of Niš, Serbia.
+Acknowledgements
+The authors are grateful to the reviewers who provided constructive comments for
+improving the presentation in this paper.
+The work presented in this paper was supported by the Serbian Ministry of
+Education and Science (project III 044006).
+References
+[1] Sparacino, Flavia, The Museum Wearable: Real-Time Sensor-Driven Understanding of
+Visitors' Interests for Personalized Visually-Augmented Museum Experiences, Proceedings of
+Museums and the Web, 2002.
+[2] Vlahakis, Vassilios, M. Ioannidis, John Karigiannis, Manolis Tsotros, Michael Gounaris,
+Didier Stricker, Tim Gleue, Patrick Daehne, and Luís Almeida, Archeoguide: An augmented
+reality guide for archaeological sites, Computer Graphics and Applications, IEEE 22, 5 (2002),
+52–60.
+[3] Miyashita, Tsutomu, P. Meier, Tomoya Tachikawa, Stephanie Orlic, Tobias Eble, Volker
+Scholz, Andreas Gapel, Oliver Gerl, Stanimir Arnaudov, and Sebastian Lieberknecht, An
+augmented reality museum guide, Proc. 7th IEEE/ACM Int. Symp. on Mixed and Augmented
+Reality, IEEE Computer Society, 2008, 103–106
+[4] Barry, Ailsa, Graham Thomas, Paul Debenham, and Jonathan Trout, Augmented reality in a
+public space: The Natural History Museum, London, Computer 45: 7(2012), 42–47.
+[5] Carmigniani, Julie, Borko Furht, Marco Anisetti, Paolo Ceravolo, Ernesto Damiani, and
+Misa Ivkovic, Augmented reality technologies, systems and applications, Multimedia Tools and
+Applications, 51:1(2011), 341–377.
+[6] Azuma, Ronald T., A survey of augmented reality, Presence Teleoperators and Virtual
+Environments, 6:4(1997), 355–385.
+[7] Metaio Mobile SDK, http://www.metaio.com/products/sdk/, January 2014.
+[8] Herling, Jan, and Wolfgang Broll, Markerless Tracking for Augmented Reality, Handbook of
+Augmented Reality, Springer New York, 2011, 255–272
+[9] Kato, Hirokazu, and Mark Billinghurst, Marker tracking and hmd calibration for a videobased augmented reality conferencing system, Proc.2nd IEEE and ACM International
+Workshop on Augmented Reality (IWAR'99), 1999, 85–94.
+
+dule_tatic@yahoo.com
+milosstosic88@gmail.com
+manoilov88@gmail.com
+radomir.stankovic@gmail.com
+
+

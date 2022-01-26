@@ -1,0 +1,211 @@
+                          Visualizing Museum Visitors’ Behavior
+                       Joel Lanir, Tsvi Kuflik, Nisan Yavin, Kate Leiderman, Michael Segal
+                                           University of Haifa, Mt. Carmel, Haifa, 31905, Israel
+    ylanir@haifa.ac.il, tsvikak@haifa.ac.il, nisan.yavin@gmail.com, kateleiderman@gmail.com,
+                                  msegal14@campus.haifa.ac.il
+
+
+
+ABSTRACT                                                                such a system. Based on these interviews, we designed a system
+Museum curators are interested in understanding what is                 that visualizes museum visitors’ behavior patterns. Initial
+happening in their museum: what exhibitions and exhibits do             feedback suggests that this can be a valuable tool that can provide
+visitors attend to, what exhibits visitors spend most time at, what     much insight and understanding for museum personnel.
+hours of the day are most busy at certain areas in the museum and
+more. We use automatic tracking of visitors’ position and
+                                                                        2. RELATED WORK
+movements at the museum to log visitor information. Using this          Many museum researchers analyse museum visitors’ behaviour to
+information, we provide an interface that visualizes both               help museum practitioners to improve their exhibits, provide
+                                                                        better interpretations, and better understand the way the audience
+individual and small group movement patterns, as well as
+aggregated information of overall visitor engagement.                   is experiencing the exhibits and content provided to them [2].
+                                                                        These works often use ethnographic observations to examine
+CCS Concepts                                                            issues such as visitors’ circulation [1], use of signage and labels
+• Human Centered Computing               Visualization                  [McManus], interaction with exhibits [13] and social interaction
+ Visualization application domain Information Visualization             [10]. Using manual tracking and timing of visitors’ behavior using
+• Human Centered Computing         Ubiquitous and mobile                unobtrusive observations, museum researchers have measured
+computing systems and tools                                             variables such as: the total time in an area, total number of stops,
+                                                                        proportion of visitors who stop at a specific exhibit, visitors’ path,
+Keywords                                                                time of non-exhibit-related behavior and level of engagement with
+Museum behavior; Museum mobile guide; Visualization;                    the exhibit [5, 13]. Summarizing these variables while focusing on
+                                                                        visitors’ interaction with exhibits, two measures are often used in
+1. INTRODUCTION                                                         museum studies [2, 12]. Together these variables effectively
+It is very important for museum curators and museum personnel           capture how thoroughly visitors were engaged with an exhibit:
+to understand and be able to analyze the activity and behavior of
+                                                                        •      Attraction power indicates the relative amount of people who
+visitors in their museum. The behavior of visitors can provide
+                                                                               have stopped in front of an exhibit during their visit. It is
+curators with feedback on what is happening at the museum –
+                                                                               calculated by dividing the number of people who stop, by the
+which exhibits are successful, where do people go, and in general,
+                                                                               total number of people who have visited the museum. This
+how people interact with the content and exhibits that they have
+                                                                               measure provides us with an initial idea of the power of
+designed.
+                                                                               attraction of the exhibit.
+In order to understand visitors’ behavior, museum researchers rely      •      Holding power measures the average time spent in front of
+today either on self-reported questionnaires or on manual tracking             an exhibit. It is calculated by summing up the time a visitor
+of individual visitors using unobtrusive observation, measuring                spent in front of a specific exhibit. This measure provides us
+variables such as total time in an exhibit, number of stops,                   with an initial idea of the power of an exhibit to hold the
+proportion of visitors who stop at a specific exhibit and more [5,             interest of a visitor.
+13]. However, with the advent of technology, systems exist that
+track and record visitors’ movements and paths during their visit       Lately, automatic tracking and positioning technologies make it
+at the museum. This creates the opportunity to provide much more        easier to gather large quantities of data on the way visitors behave
+detailed and accurate information to the museum curators that           and interact. Zancanaro et al. [14] used automatically generated
+relies on data of hundreds and thousands of visitors.                   logs of visitor positioning to categorize visitors’ behavior. Lanir et
+                                                                        al. [8] found differences between the behavior of visitors who
+In this work, we present a prototype system that visualizes
+visitors’ behavior at the museum. We use information of visitors’
+movements gained from an indoor positioning system situated in
+the museum. We first conducted several interviews with museum
+curators and personnel in order to understand the requirements of
+
+
+
+
+Copyright © 2016 for this paper by its authors. Copying permitted for
+private and academic purposes.
+
+
+
+
+                                                                            Figure 1. Positioning system equipment and usage scenario
+used a mobile guide in their visit with those who did not. Kanda et    visitors (194 females) using the mobile guide during their visit.
+al., [14] used spatial clustering to show visiting patterns and        Average age of visitors was 43.2 years (SD = 18.4). We cleaned
+estimate visitor trajectories. While these studies examined specific   and imported these logs into a database, for the use of the system.
+aspects of the visit behavior, there is no research that we are        The system was built as a web client able to access the database
+aware of that used automatic tracking for an open-ended visual         from anywhere. D3 was used to produce the visualizations.
+analysis of museum visitor behaviour. In our previous work, we
+designed static visualizations to enable analysis of visitor
+behaviour based on a novel glyph design [9]. However, feedback         4. SYSTEM DESCRIPTION
+from curators revealed that they require a simpler, more               The system is divided into three main modules. Individual visitor
+interactive system. In this work, we take a different approach,        analysis, group analysis and general information.
+designing a full interactive system built on top of a visitor
+database to enable a more generalizable system with easy access        The individual visitor view allows seeing an individual user’s path
+and understanding of visitor behaviour.                                during his or her visit at the museum. The path is shown on top of
+                                                                       the museum map. The view enables “playing” the path of the
+3. INFRASTRUCTURE                                                      visitor, which uses a footstep icon that moves on the map and
+The PIL research project focuses on exploring the possibility to       emulates the visitor’s path. The user can fast forward the view to
+use novel technologies to enhance the museum visit experience          the end where the entire path is seen (Figure 2). In addition, a list
+[7]. In the framework of the project, the Hecht1 museum, a small       of exhibits, times spent at each exhibit, time between exhibits, and
+to medium sized museum containing both archeological and art           a list of presentations seen by that visitor on the mobile museum
+exhibits located on the campus of the University of Haifa, was         guide is available.
+equipped with a radio frequency (RF)-based positioning system          The group analysis view enables seeing the behaviour of a small
+based on a wireless sensor network (WSN) (see [6] for details].        group of visitors arriving together. Many visitors arrive in small
+Figure 1 shows the details of the positioning system. Beacons          groups of family and friends, and it is important for curators to be
+were statically located at entrances and exits, as well as near        able to also understand group behaviour. The first view plots the
+                                                                       path of each member of the group on the map, similar to Figure 2,
+                                                                       with each member of the group having a different color. However,
+                                                                       this does not show the temporal aspect of the visit and even
+                                                                       though two lines are overlapping, this does not mean that visitors
+                                                                       were at the same exhibit at the same time. To understand the
+                                                                       temporal aspect of the group visit, we provide a timeline view of a
+                                                                       small group visit (Figure 3). This view is also available for a
+                                                                       single visitor’s visit. The view charts the time (starting from the
+                                                                       start time of the visit) on the x-axis, and each exhibition room on
+                                                                       the y-axis. Each visitor is depicted by a color, and time spent at
+                                                                       each exhibit within each exhibition room is shown. For example,
+                                                                       it is easy to see that visitors started visiting the museum together
+                                                                       and spent time at the same exhibition. At about minute 12:52, they
+                                                                       parted with the “red” visitor following the “blue” visitor. At the
+      Figure 2. Individual visitor’s path through the museum           end of the visit, the visitors joined back in the first exhibition
+                                                                       room.
+relevant locations of interest in the museum, while visitors carry     The aggregated view shows overall visitor information per exhibit
+small matchbox-size sensors called Blinds. When a Blind is in          (Figure 4). It shows the information in a spatial view on top of the
+proximity of a Beacon (determining location) that Blind reports
+this information to the server, determining that the visitor was in
+proximity to that known location. While providing a reasonable
+indoor positioning solution, the system’s major weakness is that it
+only knows when a person is in proximity to a Beacon, not being
+able to detect positioning in transition from one Beacon to
+another. Thus, the system provides sporadic rather than
+continuous movement data. A research prototype of a location-
+aware mobile museum guide was developed and then converted
+into a working museum visitors’ guide. The guide was handed off
+to regular museum visitors visiting the museum over a period of
+10 months. Log data was gathered for analysis. A total of 423
+
+
+
+
+                                                                           Figure 5. Aggregate view showing heatmap of attraction
+                                                                                           power at the museum.
+1
+    http://mushecht.haifa.ac.il/Default_eng.aspx
+
+
+
+     Figure 3. Temporal view of small group visiting times in
+                        each exhibition.
+   Figure 4. Aggregated view. Blue circles show number of visits at a location (attraction power), gray opaque circles show
+                  amount of time in each location (holding power). In addition, several filters are available.
+
+museum map. The blue circles show the percentage of visitors              moderate holding power. Exhibits 5 and 6, show two points in the
+visiting that location from all visitors at the museum (attracting        main attraction of the museum – a 2400-year old ship extracted
+power). The grey opaque circle, shows the average time spent at           from the sea. Thus the high holding power of point 6, is not
+that location (holding power). In addition, it is possible to filter      surprising. Finally, location 7 shows the second floor. It can be
+the data according to age range, sex or language used in the              seen that very few visitors visit the second floor – a point for
+mobile guide (the mobile guide supports 3 different languages –           concern for the museum staff. Figure 5 shows the same view,
+Hebrew, Arabic and English). The image can show various                   using a heatmap on the attraction power. In addition to the map
+patterns of different behaviors at different exhibits. For example,       view, the system shows the exact numbers for the average time
+the location annotated with “1” is the entrance to the museum.            spent and the percentage of visitors attending (holding and
+Because explanations and initial use of the mobile guide was              attracting power) of each exhibit using a simple bar chart (graph
+performed there, the both attraction power (every visitor starts          not shown here).
+there) and holding power there are high. Locations 2 and 3 are at         Finally, for providing overall information, the system shows the
+eh corridor in which visitors go through to enter the museum. This        distribution of visitors at the museum according to visitor hours
+explains both the high attraction and holding power. Location 4 is        using a stream graph [3]. Figure 6 shows for the distribution of
+the main decision point of the museum where visitors decide               visitors per hour of day at the museum. Each line color shows the
+whether to go to the left exhibit, straight ahead, or up the stairs (to   average number of visitors at a different exhibition room.
+the right). That explains the high attraction power and relative          Hovering over the line provides the name of the room and the
+                                                                          number of visitors at that hour. The overall width of the graph
+                                                                          shows the overall number of visitors at that time at the museum.
+                                                                          At the Hecht museum, opening hours are 10:00 to 16:00 (with
+                                                                          Tuesdays open till 18:00). Looking at the graph, we can see that
+                                                                          by far, 14:00 is the busiest time at the museum, with most visitors
+                                                                          vising between 13:00 and 15:00.
+
+                                                                          5. CONCLUSIONS
+                                                                          We presented a system that visualizes various visitors’ behaviors
+                                                                          at the museum. A curator can use the system to investigate what
+                                                                          happens at the museum by looking at the paths of individual
+                                                                          visitors, small groups of visitors, or general aggregated
+                                                                          information. We intend to evaluate the system by presenting it to
+                                                                          museum curators and museum personnel and conducting semi-
+   Figure 6. Distribution of visitors per hour at the different           structured interviews. By receiving qualitative feedback, we hope
+                        exhibition rooms                                  to gain insight regarding the useful features and the general
+usability and usefulness of the system. After receiving feedback,         visit phases. Information Technology & Tourism, 15(1),
+we plan to deploy the system at the Hecht museum for the actual           pp.17-47.
+use of the staff.                                                    [8] Lanir, J., Kuflik, T., Dim, E., Wecker, A.J. and Stock, O.,
+                                                                         2013. The influence of a location-aware mobile guide on
+6. REFERENCES                                                            museum visitors' behavior. Interacting with Computers,
+[1] Bitgood, S., 2006. An analysis of visitor circulation:
+                                                                         p.iwt002.
+    Movement patterns and the general value principle. Curator:
+    The Museum Journal, 49(4), pp.463-475.                           [9] Lanir, J., Bak, P. and Kuflik, T., 2014. Visualizing
+                                                                         Proximity-Based Spatiotemporal Behavior of Museum
+[2] Bollo, A. and Dal Pozzolo, L., 2005, July. Analysis of visitor
+                                                                         Visitors using Tangram Diagrams. Computer Graphics
+    behaviour inside the museum: An empirical study.
+                                                                         Forum. 33(3), pp. 261-270.
+    In Proceedings of the 8th International Conference on Arts
+    and Cultural Management, Montreal (Vol. 2).                      [10] Leinhardt, G. and Knutson, K., 2004. Listening in on
+                                                                          museum conversations. Rowman Altamira.
+[3] Havre, S., Hetzler, E., Whitney, P. and Nowell, L., 2002.
+    Themeriver: Visualizing thematic changes in large document       [11] McManus, P.M., 1989. Oh, yes, they do: How museum
+    collections. Visualization and Computer Graphics, IEEE                visitors read labels and interact with exhibit texts. Curator:
+    Transactions on, 8(1), pp.9-20.                                       The Museum Journal, 32(3), pp.174-189.
+[4] Kanda, T., Shiomi, M., Perrin, L., Nomura, T., Ishiguro, H.      [12] Serrell, B., 1997. Paying attention: The duration and
+    and Hagita, N., 2007, April. Analysis of people trajectories          allocation of visitors' time in museum exhibitions. Curator:
+    with ubiquitous sensors in a science museum. In Robotics              The museum journal, 40(2), pp.108-125.
+    and Automation, 2007 IEEE International Conference               [13] Yalowitz, S.S. and Bronnenkant, K., 2009. Timing and
+    on (pp. 4846-4853). IEEE.                                             tracking: Unlocking visitor behavior. Visitor Studies, 12(1),
+[5] Klein, H.J., 1993. Tracking visitor circulation in museum             pp.47-64.
+    settings. Environment and Behavior, 25(6), pp.782-800.           [14] Zancanaro, M., Kuflik, T., Boger, Z., Goren-Bar, D. and
+[6] Kuflik, T., Lanir, J., Dim, E., Wecker, A., Corra, M.,                Goldwasser, D., 2007. Analyzing museum visitors’ behavior
+    Zancanaro, M. and Stock, O., 2011. Indoor positioning:                patterns. In User Modeling 2007 (pp. 238-246). Springer
+    challenges and solutions for indoor cultural heritage sites.          Berlin Heidelberg.
+    In Proceedings of the 16th international conference on
+    Intelligent user interfaces (pp. 375-378). ACM.
+[7] Kuflik, T., Wecker, A.J., Lanir, J. and Stock, O., 2015. An
+    integrative framework for extending the boundaries of the
+    museum visit experience: linking the pre, during and post
+

@@ -1,0 +1,1066 @@
+9
+
+Museum Mobile Guide Preferences of Different Visitor Personas
+
+MONEERAH ALMESHARI, Imam Abdulrahman Bin Faisal University
+
+JOHN DOWELL and JULIANNE NYHAN, University College London
+
+Personalising museum mobile guides is widely acknowledged as being important 
+for enhancing the visitor experience. Due
+to the lack of information about an individual visitor and the relatively 
+limited time of his or her visit, adapting the user
+interface based on a museum visitor’s type is a promising approach to 
+personalisation. This approach first requires a mecha-
+nism to identify the visitor type (‘persona’) and, second, knowledge of the 
+preferences and needs of different types to apply
+personalisation. In this article, we report a face-to-face questionnaire study 
+carried out with 105 visitors to Scitech, a sci-
+ence   and technology visitor centre. The study aims to investigate the main 
+facts required to identify a visitor persona and
+to explore the preferences of different visitor personas for particular mobile 
+guide features. We limited our concern to the
+user interface features of the guide (e.g., whether it provides recommendations 
+for related items to view) rather than what
+content and services the guide provides (e.g., what related items are 
+recommended). We found that we can reliably identify
+the visitor persona using two multiple choice questions about visit motivation 
+and perceived success criteria. In addition,
+we found that visitors have significant preferences for particular features 
+such as presentation media, venue navigation tool,
+object suggestions, details level, accessing external links, exhibit 
+information retrieval method and social interaction features
+such as voice communication, instant messaging, group games and challenges. 
+Some features were found to be preferred dif-
+ferently by different personas such as the challenges feature, some were found 
+to be preferred by personas differently to the
+overall preference such as in presentation media, and some were found to be 
+preferred by some personas with no particular
+preference for others such as a venue navigation tool. Instant messaging was 
+found to be significantly not preferred by all
+personas. The results provide a basis for personalisation of museum guides and 
+services using a personas approach, which is
+a solution where data about individual users may be limited and where the 
+individual configuration of a user interface may
+not be practical or warranted.
+
+CCS Concepts: • Human-centered computing → Human computer interaction (HCI); 
+HCI design and evaluation
+methods; User models;
+
+Additional Key Words and Phrases: Personalisation, persona, museum mobile guide
+
+ACM Reference format:
+
+Moneerah Almeshari, John Dowell, and Julianne Nyhan. 2020. Museum Mobile Guide 
+Preferences of Different Visitor Per-
+sonas. J. Comput. Cult. Herit. 14, 1, Article 9 (December 2020), 13 pages.
+
+https://doi.org/10.1145/3423186
+
+Authors’ addresses: M. Almeshari (corresponding author), Computer Science 
+Department, Community College, Imam Abdulrahman Bin
+Faisal University; email: mmalmeshari@iau.edu.sa; J. Dowell, Computer Science, 
+University College London; email: j.dowell@ucl.ac.uk;
+
+J. Nyhan, Information Studies, University College London; email: 
+j.nyhan@ucl.ac.uk.
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial advantage and that 
+copies bear this notice and the full citation on the first
+page. Copyrights for components of this work owned by others than ACM must be 
+honored. Abstracting with credit is permitted. To copy
+otherwise, or republish, to post on servers or to redistribute to lists, 
+requires prior specific permission and/or a fee. Request permissions
+from permissions@acm.org.
+
+© 2020 Association for Computing Machinery.
+1556-4673/2020/12-ART9 $15.00
+
+https://doi.org/10.1145/3423186
+
+
+1 INTRODUCTION
+
+The use of technologies such as mobile guides (MGs) in museums presents large 
+opportunities to enrich visitors’
+experiences. However, such technologies can disorient visitors if not correctly 
+designed for their needs [Ghiani
+et    al. 2009]. This is an acknowledged challenge in museums because of the 
+huge amount of information that
+museums offer and the wide differences that exist among visitors, such as in 
+their interests, knowledge, age,
+personality, motivation and different ways of learning and acquiring new 
+knowledge [Stock et al. 2007]. To
+improve the visitor experience, museums and cultural heritage venues wish to 
+offer personalised MGs [Roes
+et  al. 2009]. MGs are portable devices that assist users in navigating and/or 
+exploring a place, such as a museum,
+city or shopping centre [Emmanouilidis et al. 2013]. They can be handheld 
+devices such as tablets, PDAs and
+smart phones, or wearables such as smart glasses and smart watches 
+[Emmanouilidis et al. 2013].
+
+Personalisation can significantly increase an MG’s usability, enhance visitors’ 
+engagement with exhibits and
+improve their experience [Emmanouilidis et al. 2013]. MGs can adapt based on 
+different factors like time, location
+and crowding, yet user preferences and characteristics are considered to be the 
+most significant in providing ef-
+ficient MG adaptation of content and services [Emmanouilidis et al. 2013]. We 
+describe a system as personalised
+when it adapts based on a user model that may contain the user’s 
+characteristics, knowledge and preferences
+[Ardissono et al. 2012]. Personalised systems anticipate users’ needs and 
+interests and alter the interface accord-
+ingly, usually with little or no effort required from the user.
+
+Whether personalisation significantly improves on ‘one-size-fits-all’ design in 
+relation to usability, user per-
+formance and satisfaction has been the subject of a long-standing discussion 
+[Shneiderman 1997, 2002]. Rich
+[1983] stated that although a system can be designed to be good for a majority 
+of users, it will likely not be the
+best for any of them in particular. Features that make the use of a system easy 
+for one type of person can make
+it more difficult for another [Cooper et al. 2014; Rich 1989]. People are 
+diverse, their requirements may often
+conflict and no system can accommodate all differences using a one-for-all 
+interface [Rich 1983]. However, Fla-
+herty and Moran [2019] state that although personalisation minimises ‘noise’ by 
+offering only information that
+is expected to interest the user, it limits the user experience. Individuals 
+change over time, and putting them in a
+niche increases the probability of boredom and a loss of opportunities 
+[Flaherty and Moran 2019; Kabassi 2013].
+Personalisation success lies in studying users’ requirements, determining how a 
+system can recognise a user
+with specific requirements and when to apply the adaptation; otherwise, the 
+user experience might be worse
+than using a one-for-all interface. There is now a wide agreement that the 
+benefits of personalisation greatly
+outweigh its disadvantages, and it is today commonly applied in different 
+applications.
+
+Systems can be personalised by building user models for individuals or by using 
+pre-set classes where each
+class represents a type of user [Rich 1983]. These classes are used to infer 
+facts about individual users who
+are recognised to be a member of a specific group based on an established 
+classification such as age, skill and
+knowledge level [Korsgaard et al. 2020; Rich 1983, 1989]. Using this 
+‘stereotypes’ approach, the interface adapts
+in   the same way for users belonging to the same category. The approach 
+assumes that the characteristics a
+group has in common significantly outweigh those it does not [Kabassi 2013]. 
+This contrasts with the indi-
+vidual personalisation of an interface which assumes the availability of 
+considerable individual information to
+inform personalisation [Kabassi 2013] which may not be the case, particularly 
+in pick-up-and-use systems such
+as museum MGs. Using the stereotypes approach, the system can use a little 
+information to infer other details
+about the user. Thus, we can say that individual personalisation is best if 
+adequate information about the user
+is available, whereas personalisation using the stereotypes approach is 
+sufficient and suitable where individual
+personalisation is hard to achieve.
+
+The most important factor in using the stereotypes approach is in first 
+recognising the dominant classification
+characteristic that most affects users’ needs and preferences, then in 
+identifying the main facts needed to cate-
+gorise users and identify the preferences of different groups. Thus, the system 
+collects minimal information to
+identify the user category and infer the user’s preferences. As mentioned 
+before, this approach is very suitable
+in settings like museums where visitors are mostly first-time users of the 
+venue’s guide and use it for a relatively
+
+
+short time. In this research, we refer to such a group as a persona and 
+visitors are categorised by their visit mo-
+tivation and goals. We have shown previously that we could reliably identify 
+the visitor persona according to an
+established taxonomy by Falk [2016] determining two features of individuals 
+using multiple choice questions.
+Falk [2016] studied museum visitors and categorised them based on their 
+motivation into six personas: Explorers,
+Socializer Facilitators, Parental Facilitators, Experience Seekers, Rechargers 
+and Professional/Hobbyists.
+
+Although traditional MGs provide only audio commentaries on exhibits [Fevgas et 
+al. 2011], new-generation
+MGs exploit the capability of smartphone and tablet platforms to provide highly 
+interactive multimedia infor-
+mation services for the visitor including, for example, self-navigated tours 
+with map-based location finding and
+directions [Emmanouilidis et al. 2013; Wacker et al. 2016]. Commentaries on 
+objects by experts may be provided
+in multiple media forms in addition to audio [Emmanouilidis et al. 2013]. 
+Commentaries are cued manually by the
+visitor, such as by using object or location identifiers, and potentially could 
+be cued directly by location-specific
+sensing [Lanir et al. 2011].
+
+MGs can provide a range of features to enhance the visitor experience. Based on 
+museum visitors’ needs, Hsi
+[2002] listed a number of MG features, such as offering information about 
+exhibits in the form of text, audio and
+video; enabling the user to document objects for future reference, such as by 
+bookmarking; allowing users to
+reflect, write notes, read and communicate with other people; and 
+recommendations and guidance about activ-
+ities. Venue navigation support, object recommender and object identification 
+tools are found in museum MGs
+like the British Museum multimedia MG (The British Museum n.d.) and the 
+National Gallery MG in the United
+Kingdom (The National Gallery n.d.). Games and challenges are implemented in a 
+number of museum mobile
+applications, such as Treasure Hunters and InfoAge+ from the Science Museum in 
+London (Science Museum
+n.d.) and Museum of Solomos and Eminent Zakynthians in Greece [Yiannoutsou et 
+al. 2009].
+
+In this article, we report the results of a questionnaire-based study carried 
+out at a major science and tech-
+nology visitor centre (Scitech, located in the gulf states). The study 
+investigates MG personalisation using the
+stereotype approach, and specifically the method for categorising museum 
+visitors according to their persona,
+and  the preferences of different personas for the kinds of features widely 
+found in MGs in museums. A wide range
+of features have been investigated, including information presentation media, 
+indoor navigation, accessing ex-
+ternal web resources, exhibit recommendations, social interactions and cueing 
+the display of supplementary
+exhibit information.
+
+2 RELATED WORK
+
+An example of an ordinary MG is the use of a PDA or a smartphone to get indoor 
+and/or outdoor navigation
+support [Emmanouilidis et al. 2013]. However, MGs today are supported with 
+varied advanced functionalities
+such as location-aware navigation services, contextual information delivered 
+using different media, access to
+additional services such as email, bookmarking and communication channels 
+[Emmanouilidis et al. 2013]. Games
+and challenges related to museum content are features offered in some MGs to 
+increase visitors’ enjoyment and
+motivate them to learn more [Ghiani et al. 2009].
+
+Some museum MG functionalities found in the literature include enabling the 
+user to plan the visit in advance
+and to give post-visit summaries using tracking functionalities such as the 
+Cultural Heritage Information
+Personalization project [Roes et al. 2009]. The increased availability of 
+internet connectivity opened the door
+for enhancing MGs and provided visitors with extra resources to enrich their 
+experience and knowledge
+[Emmanouilidis et al. 2013]. MGs offer users an enhanced visitor experience 
+through interaction with their
+environment and by creating opportunities to learn more about objects 
+[Emmanouilidis et al. 2013].
+
+Since MGs make extensive services available to users, adaptation is needed to 
+reduce distraction and enhance
+complementarity with experiencing exhibits and settings [Emmanouilidis et al. 
+2013]. Researchers are investi-
+gating how to make these guides aware of the user’s physical and social context 
+[Emmanouilidis et al. 2013].
+Developing efficient, context-aware MGs may have massive improvements on the 
+practicality of MGs and their
+
+
+use in different applications [Emmanouilidis et al. 2013]. MGs should be 
+personalisable through the tailoring
+of interface elements, services, content and recommendations to individual 
+users based on their context and/or
+user profile [Emmanouilidis et al. 2013]. Personalisation assists in providing 
+or presenting the right service or
+information in the most suitable way, in the right place, at the right time to 
+the right person [Emmanouilidis
+et   al. 2013]. A number of projects worked on personalising museum MGs, 
+including HyperAudio [Bardram et al.
+2004], Hippie [Oppermann and Specht 2000], Cultural Heritage Information 
+Personalization [Roes et al. 2009],
+PEACH [Kuflik et al. 2011], LISTEN [Zimmermann and Lorenz 2008] and UbiCicero 
+[Ghiani et al. 2009].
+
+The cold start problem is one of the challenges for personalisation in settings 
+like museums where systems
+usually do not have prior information about the user [Frias-Martinez et al. 
+2006]. This issue can be solved by
+using initial information to assign the user to a group and infer the user’s 
+preferences accordingly. To follow
+this approach, users need to be categorised based on certain parameters and 
+mutual preferences between each
+category members need to be identified. Several MGs assigned visitors to a 
+particular category or stereotype to
+provide personalised services based on their interest, knowledge, age group 
+and/or physical abilities, such as
+UbiCicero [Ghiani et al. 2009], Avanti [Fink et al. 1998; Stephanidis et al. 
+1998], Intrigue [Ardissono et al. 2003]
+and ARCHIE [Luyten et al. 2006]. These models were used to personalise a range 
+of MG features such as content,
+recommendations, presentation media and interaction approach.
+
+Numerous techniques are applied in interactive product design, including user 
+roles, user profiles and personas
+[Cooper et al. 2014]. These three techniques rely on describing different 
+users’ requirements in relation to a
+product [Cooper et al. 2014]. However, they differ in the way they are designed 
+and applied. User role classifies
+users based on their mutual problems, needs and expectations, neglecting goals 
+and motivation. A focus on user
+roles such as nurse or salesman can oversimplify important differences between 
+users—for example, a car buyer
+role in designing a car company website is useless as different users perform 
+the task differently [Cooper et al.
+2014]. User profile constitutes a ‘brief biographical sketch’ consisting of 
+demographic information, name, picture
+and information about users that is mostly irrelevant to the product design, 
+such as where they live and how
+many children they may have [Cooper et al. 2014]. However, personas focus on 
+goals and motivations. Although
+personas sometimes provide similar information like name and family members, 
+these are of minor significance
+because they are used just to make personas come to life in the mind of the 
+design team [Cooper et al. 2014].
+
+In this research project, we focus on modeling users and personalising MGs 
+based on the visitor’s persona.
+Persona is defined as “an aggregate of target users who share common 
+behavioural characteristics” [Miaskiewicz
+and Kozar 2011, p. 418]. Personas are claimed to be one of the most significant 
+tools used in designing systems
+and interfaces [Cooper et al. 2014]. A persona represents a group of users who 
+have common motivations and
+goals [Cooper et al. 2014]. It concentrates on what the groups want to 
+accomplish and how they think and behave,
+and primarily it recognises how their different motivations and goals affect 
+their interaction behaviour [Cooper
+et al. 2014]. As mentioned before, personas can be presented as fictional 
+characters with details such as name,
+age and even photos [Cooper et al. 2014]. Nevertheless, Cooper et al. [2014] 
+convincingly claim that motivations
+and goals are the most fundamental characteristics to define a persona rather 
+than demographics.
+
+Identifying personas starts by conducting qualitative research where users are 
+interviewed and their behaviour
+is observed [Cooper et al. 2014]. This can lead to the identification of a 
+number of personas with different re-
+quirements [Cooper et al. 2014]. To start using these personas in UI design, 
+the team needs to specify the target
+audience to focus on [Cooper et al. 2014]. This avoids conflicts of 
+requirements issues. Attempting to satisfy the
+needs of three or four personas can be problematic [Cooper et al. 2014]. The 
+design team should prioritise and
+choose one persona to be the primary target [Cooper et al. 2014]. The primary 
+persona is the persona where its
+requirements can be satisfied without compromising the requirements of other 
+personas [Cooper et al. 2014].
+This process is called designating persona types [Cooper et al. 2014]. A 
+primary persona will not be happy about a
+UI designed for other personas, but other personas will not be dissatisfied 
+about the UI designed for the primary
+persona [Cooper et al. 2014]. Each UI can have one primary persona only, yet it 
+is possible to design multiple UIs
+for different personas if more than one primary persona exists [Cooper et al. 
+2014]. There might be two reasons
+
+
+for not being able to identify the primary persona [Cooper et al. 2014]. First, 
+the system scope may be very broad
+if it tries to offer many functionalities [Cooper et al. 2014]. Second, 
+multiple UIs might be needed for a different
+primary persona [Cooper et al. 2014] which can be accomplished by 
+personalisation.
+
+The importance of personalising MGs based on visitors’ motivations and goals is 
+emphasised, but these were
+mostly abandoned in previous research [Emmanouilidis et al. 2013]. Vavoula et 
+al. [2019] found that museum
+visitors with a social orientation differed from those with a learning 
+orientation in their perceptions of the MG
+and confirmed the need to consider the various users’ motivations in designing 
+MGs. In this work, we focus on
+the most important factors that determine a persona: motivations and goals. 
+Personas will be labelled using Falk’s
+taxonomy, which has been constructed based on identity-related visit 
+motivations [Falk 2016]. Their motivation
+for the museum visit forms visitors’ expectations and affects their experience 
+[Falk 2016]. Falk [2016] states that
+multiple factors impact the museum visit experience, such as the visitors’ 
+behaviour in exploring the museum,
+their existing experiences, knowledge and memories in addition to their 
+motivation of the visit. To investigate
+the relationships between these aspects, Falk [2016] conducted a study of 200 
+visitors at the California Science
+Centre, looking to answer three questions: why do people come to a science 
+centre, what do they do inside the
+centre, and how they made meaning of that experience? They received diverse 
+responses regarding the purpose
+of the visit, of which the most popular were “It’s a great place for kids,” 
+“I’ve heard it’s really fun,” and “I’m
+interested in science and thought I’d drop by to see what’s here” [Falk 2016]. 
+Less frequent answers were “I’m
+a science teacher and I’m always looking for neat new ideas” and “I find places 
+like this really cool, it helps me
+get my head straight.”
+
+Falk [2016] clustered people visiting science centres into five main personas 
+based on their reasons for vis-
+iting: first, for their interest in technology and science; second, for an 
+educational environment where families
+and friends can enjoy and learn things; third, for an important attraction in 
+the city; fourth, to fulfil intellec-
+tual needs in the area of science and technology; and fifth, to escape from the 
+everyday routine and recharge
+intellectual and spiritual powers. Falk mentioned that museum visitors play one 
+or more of the following roles
+inside the museum, based on their motivations: Explorer, Facilitator, 
+Experience Seeker, Professional/Hobbyist
+and Recharger. Explorers visit to satisfy their curiosity and their general 
+interest in the museum; most museum
+visitors are Explorers [Falk 2016]. Facilitators visit to support other people 
+they care about such as children or
+companions, and the experience of their loved ones affects a Facilitators’ 
+experience directly. Facilitators can be
+Parental if their companions are children or Socializers if their companions 
+are adults. Experience Seekers aim
+to ‘live the experience’ rather than to learn, such as visiting a must-see city 
+attraction [Falk 2016]. Professional/
+Hobbyists visit a museum because of its content, they come for a desire to know 
+more about a specific subject,
+and they plan before going and have clear objectives of the visit [Falk 2016]. 
+Rechargers visit a museum seeking
+a contemplative, spiritual and restorative experience that will enable them to 
+relax and recharge their powers
+[Falk 2016].
+
+These primary motivations are found to be the most common among visitors of 
+most museum types, although
+more motivations may exist [Falk 2013]. Smith [2013] states that further 
+motivations and experiences can be
+found with museums that focus on history, politics and cultural 
+representations, such as “reinforcing or con-
+firming the identities of gender, class, race, or nation,” and these might be 
+less found in zoos and science-based
+museums [Smith 2013, p. 478]. Similarly, Falk [2013, p. 114] states that 
+“nationality, religion, gender or political
+affiliation did not seem to be the primary motivations behind most people’s 
+visits to art museums, children’s
+museums, zoos or science centres.” In this study, we focused on the primary 
+motivations that can be found with
+most museum types, which does not assume that motivations to visit museums are 
+limited to these six. Our
+approach is flexible and capable of extension to additional personas based on 
+the museum context as Falk also
+confirmed. The reason for creating this taxonomy is to better understand 
+different personas and by meeting their
+differing needs, ultimately to improve their visit experience [Falk 2013].
+
+Previous work confirmed the importance of personalising MGs and the stereotypes 
+approach has been recog-
+nised as particularly suited to the museum setting. In addition, personas are 
+found to be one of the most important
+
+
+factors affecting user requirements. The study we report investigated forms of 
+evidence needed to reliably model
+museum visitors as belonging to particular persona types based on Falk’s 
+classification. In addition, it investi-
+gated differences between visitor persona and preferences for particular MG 
+features and services. The features
+investigated are the media used to present exhibit information; the form of 
+venue navigation support; commen-
+tary cueing; access to related web sources for additional information; 
+recommendations for other exhibits to
+view; and social interaction services, directly and indirectly. The study was 
+conducted as a questionnaire-based
+survey of visitors to the Scitech science and technology centre.
+
+3 METHOD
+
+Visitors to Scitech were surveyed using a questionnaire deployed face-to-face 
+over 4 weeks in 2018. The ques-
+tionnaire, in the Arabic and English languages, had previously been reviewed by 
+four museum curators in the
+United Kingdom and gulf states. Two Arab specialists in the English language 
+evaluated the questionnaire for
+translation correctness. A pilot study was conducted with five visitors before 
+gathering the main data. Consent
+was obtained from all participants prior to data collection.
+
+Individual visitors were asked to complete the questionnaire at the end of 
+their visit. The questionnaire is
+divided into three sections. The first asks respondents about their 
+demographics, including gender and age group.
+The second section probes respondents about their visit and includes a set of 
+multiple choice questions based on
+the five factors that characterise visitor personas in Falk’s description. The 
+five factors are visit motivation, visit
+success criteria, social aspects, knowledge of museum content and number of 
+visits. Respondents were also asked
+to identify themselves with reference to one of five short descriptions of the 
+personas to be used in determining
+the accuracy of the questionnaire in identifying the visitor persona.
+
+The third section of the questionnaire collected information about preferences 
+for UI features for a prospective
+MG at Scitech (which currently does not provide any form of digital visitor 
+guide). Features were identified based
+on a review of MGs in use at major museums around the world. The questionnaire 
+uses multi-choice questions
+to ask respondents about their preferences for the following UI features:
+
+i. Information media, which is the media used to present commentaries about 
+exhibits including speech,
+visual text and video. Commentaries are supposed to provide additional 
+information about the labels
+included in the real-world exhibit rather than repeating what is already there.
+
+ii. Detailed text presentation, which is the method used for presenting 
+detailed information, including a sum-
+mary or bullet points with details on demand and detailed information.
+
+iii. Venue navigation support, which is the form of navigation support within 
+the venue, including interactive
+map, audio directions and step-by-step directions using text with pictures.
+
+iv. Commentary cueing, which is the way in which information about an exhibit 
+is cued when the user ap-
+proaches the exhibit, such as by manually selecting from a list, scanning the 
+object using the camera or
+automatic display upon approaching the exhibit.
+
+v. Links to web resources to know more about an object.
+
+vi. Recommendations for other exhibits to view.
+
+vii. Social interaction through the MG with the group members (companions, 
+accompanying family, etc.) and
+with other visitors. Preferences for social interactions were voice 
+communication, texting, group games
+and challenges.
+
+In the study, 105 visitors participated, of whom 66 were female, 65 were 
+adults, 34 were teenagers, 3 were
+seniors and 3 were children. It was the first visit to Scitech for 45 
+participants, 39 participants had visited two to
+four times previously and 21 had visited five times or more.
+
+SPSS was used to analyse the data, which, being entirely categorical, required 
+chi square tests.
+
+
+Fig. 1. The relation of the visitor persona with the visit motivation and the 
+perceived success criteria [Almeshari et al. 2019].
+
+4 RESULTS
+
+4.1 Persona Identification
+
+Visitors’ answers for visit motivation, visit success criteria, social aspects, 
+knowledge of museum content and
+the frequency of visits with the self-assessed persona were examined using the 
+chi square test and clustering
+methods. The most distinguishing aspects of different personas found were visit 
+motivation and perceived suc-
+cess criteria. The combination of responses to the two questions resulted in 
+six clusters representing different
+persona groups that also correspond with visitors’ self-assessed persona 
+(Figure 1). This result indicates that
+we can reliably identify visitor persona using two multiple choice questions 
+about visit motivation and success
+criteria [Almeshari et al. 2019].
+
+4.2 MG Feature Preferences
+
+Statistically significant preferences for visitors overall have been found for 
+presentation media, a venue navi-
+gation tool, external links, recommendations for other exhibits, level of 
+detail and exhibit information retrieval
+method (Table 1). For presentation media used in the MG, participants 
+significantly preferred watching videos
+(37%) and reading text with pictures (33%) over simply listening to audio (12%) 
+or just reading an exhibits’ labels
+and panels without using an MG (17%).
+
+An interactive map was the most preferred venue navigation tool (31% of 
+participants), followed by step-by-
+step directions using text with pictures (23%) and using all tools together 
+(23%); some (14%) indicated that they
+do not like to follow directions, and the least preferred option was audio 
+directions (9%).
+
+Of the visitors, 76% did not wish to access external web sources for additional 
+information about exhibits.
+In addition, 77% of visitors did not want to receive recommendations about 
+other exhibits that might interest
+them. For detailed text presentation, reading a summary of exhibit information 
+with more details on demand was
+significantly preferred by participants (62%) over bullet points with more 
+details on demand (22%) and detailed
+information (16%). Furthermore, automatic cueing using location identification 
+services was the most preferred
+method for retrieving exhibit information (50%), followed by choosing from a 
+list (22%), scanning an object with
+
+
+Table 1. Chi Square Results for Presentation Media, Venue Navigation Tool, 
+External Links, Recommendations, Details
+Level and Object Information Retrieval Method
+
+a camera with (14%) and choosing from an interactive map (9%). The least 
+preferred method was entering the
+object number (5%).
+
+The results also revealed that particular personas had significant preferences 
+for particular features (Table 1).
+For presentation media, a statistically significant number of Experience 
+Seekers (53%) had a preference for read-
+ing text with pictures about exhibits, whereas no significant preference was 
+found for other personas. In contrast
+to the overall preferred media (watching videos), watching videos was found to 
+be the second preferred media
+for Experience Seekers (18%) followed by listening to an audio (6%).
+
+Regarding navigation tool preferences, the only persona with a statistically 
+significant preference was Social-
+izer Facilitators, of whom 48% preferred using an interactive map to navigate 
+the venue over other options. Their
+least preferred option was audio directions (5%), which is consistent with the 
+overall preference. Significant pref-
+erences were also found for the exhibit information retrieval method among 
+Explorers, Parental Facilitators, and
+Experience Seekers and marginally significant for Socializer Facilitators 
+(Table 1). Like the overall preference,
+the largest proportion of users would prefer the exhibit information to be cued 
+automatically when they stand in
+front of the exhibit, with percentages ranging from 43% for Socializer 
+Facilitators to 59% for Experience Seekers.
+The least preferred method was ‘entering object number’ for all except 
+Experience Seekers, who least preferred
+both entering an object number and choosing from an interactive map (6%).
+
+For the details level feature, Rechargers, Explorers and Parental Facilitators 
+significantly preferred having a
+summary with more information on demand with 82%, 71%, and 59% of visitors, 
+respectively. Their least preferred
+option was having detailed information with 9%, 10% and 14% of visitors, 
+respectively; no significant preference
+was evident for other personas. In addition, not accessing external links was 
+significantly preferred by Explorers
+(79%), Socializer Facilitators (59%), Rechargers (80%) and 
+Professional/Hobbyists (80%), whereas no preference
+was found for other personas. Moreover, all personas except Rechargers and 
+Professional/Hobbyists (who did not
+have a specific preference), preferred not receiving recommendations for other 
+exhibits to visit, with percentages
+ranging from 77% for Experience Seekers to 84% for Socializer Facilitators.
+
+
+Table 2. Chi Square Results for Social Interaction Features
+
+4.2.1  Social Interactions. Two of the questionnaire elements aimed to identify 
+visitors’ preferences for fea-
+tures that support social interaction with members of their group inside 
+Scitech. Visitors were asked whether
+they would like to interact with their group members using the MG and, if so, 
+whether they prefer voice com-
+munication, text chat using instant messaging, group games and/or challenges.
+
+Overall, a significant preference to communicate with other visitors was found 
+(Table 2). A large majority (89%)
+of participants indicated that they would like to interact with their group 
+members using the guide. They did
+not significantly prefer direct contact, which is represented here by voice 
+communication and instant messaging
+features (79% and 82%, respectively). No significant general preference was 
+found for group games and challenges.
+Social interaction preferences for different personas were analysed and 
+statistically significant results are
+found in Table 2. All personas except Rechargers preferred to communicate with 
+other visitors, with percent-
+ages ranging from 77% for Professional/Hobbyists to 86% for Facilitators. A 
+strong preference was found for not
+having direct communication with group members using instant messaging, with 
+percentages ranging from 74%
+of Parental Facilitators to 100% of Rechargers. In addition, all personas 
+significantly did not want a voice commu-
+nication feature, with the exception of Socializer Facilitators, where no 
+significant difference was found. Percent-
+ages ranged from 74% of Parental Facilitators to 100% for Rechargers and 
+Professional/Hobbyists. Interestingly,
+a significantly different preference for challenges was found among three 
+personas. Challenges were strongly
+preferred by Rechargers (100%) and Professional/Hobbyists (80%) but not by 
+Socializer Facilitators (83%). How-
+ever, a significant preference for not having group games was found for 
+Professional/Hobbyists (82%), whereas
+
+no significant preference was found for other personas.
+
+5 DISCUSSION
+
+The cold start problem in the context of personalising interaction with museums 
+is an acknowledged challenge
+because of the lack of prior information about the visitor and the short period 
+of his or her visit. One of the
+
+
+known solutions is to use limited information about the visitor to infer other 
+facts about the visitor using the
+stereotypes approach. In this study, we found that we can reliably categorise 
+museum visitors based on their
+persona using the two features of visit motivation and perceived success 
+criteria, elicited by multiple choice
+questions. In addition, the results indicated that different personas have 
+particular preferences for most of the
+MG features investigated, which is evidence of the need for personalisation. 
+Differences of feature preferences
+varied as follows: first, significant preference for some personas and no 
+preference for others (venue navigation
+tool, details level, exhibit information retrieval method, external links, 
+recommendations, voice communica-
+tion and group games); second, significant preferences that varied with the 
+overall preference, specifically with
+presentation media preferences; third, significantly different preferences for 
+different personas which occurred
+in the challenges feature; and fourth, significant preference common to all 
+personas for an instant messaging
+feature.
+
+Experience Seekers preferred reading text with pictures to be informed about an 
+exhibit which is different from
+the overall preference (watching videos). Interestingly, more Experience 
+Seekers preferred to just read exhibits’
+panels (not using the MG) than those who preferred to learn about exhibits by 
+watching videos or listening to
+an audio. This might be because Experience Seekers normally visit museums to 
+live the experience more than to
+learn, so text with pictures allows them to skim and scan the content for the 
+information they are interested to
+know about which is hard to be done in videos. For external links preference, 
+four personas (Explorers, Socializer
+Facilitators, Rechargers and Professional/Hobbyists) strongly preferred not to 
+access external links despite the
+fact  that a number of respondents commented on their wish to have more details 
+about objects, whereas no
+difference was found for others. This implies that at least for these 
+respondents, more information should be
+presented by the MG rather than being made available via links to external 
+resources.
+
+Significant preferences were found for most UI features investigated among all 
+participants regardless of their
+persona; this assists in designing the baseline MG. Notably, audio on its own 
+was the least popular media overall
+for presentation of commentaries and navigation assistance, which indicates the 
+popularity for interactive MGs
+over old-generation audio guides. Overall, most respondents preferred watching 
+a video, which is consistent
+with previous findings on museum visitors’ preferences. Hsi [2002] found that 
+people did not only like the
+demonstrations but also the human touch of the video when museum specialists 
+deliver information in a video
+form. Nonverbal skills presented in video clips including facial expressions 
+and body gestures were found to
+greatly increase comprehension and recall compared to audio [Batty 2015; 
+Sueyoshi & Hardison 2005]. In the
+learning context, Mayer [2003] found that learners who received the information 
+using verbal methods only
+had difficulties in remembering key ideas. In contrast, multimedia learning 
+where pictures and/or illustrations
+are used beside words (spoken or text) were found to promote learners’ 
+cognitive processing and deep learning
+[Mayer 2003].
+
+For the feature of detailed text presentation, most respondents would prefer a 
+summary with more detailed
+information available on demand. Recommendations for other exhibits to view 
+were not preferred by the majority
+(66%) of respondents. This is a useful result given the common assumption that 
+recommendations would be
+welcome by MG users. Regarding venue navigation, most respondents would prefer 
+an interactive map as a
+navigation tool, and this indicates its suitability as a default option in the 
+baseline version.
+
+Significant preferences of different personas in relation to social interaction 
+also indicate a personalisation
+focus. The majority of participants preferred to communicate with their group 
+members using the MG. How-
+ever, we found that most respondents would not wish to have direct interaction 
+using voice communication or
+instant messaging. However, personas were divided in their preference for 
+challenges. Challenges are associ-
+ated with active learning as explained by Sfard [1998], who identified two 
+general metaphors of learning: the
+acquisition metaphor views learning as gaining knowledge, whereas the 
+participation metaphor views learning
+as communicating, participating and reflecting. Sfard [1988] argues for 
+combining these two metaphors, and it
+follows that museum visitors should acquire knowledge and participate in 
+activities to gain the best learning
+experience. Additionally, it points to the social constructivist theory of 
+learning where individuals learn from
+
+
+interacting with others [Sivan 1986]. Challenges are found to be preferred by 
+personas that are likely to value
+information seeking (Professional/Hobbyists) and pleasure (Rechargers) rather 
+than those who value the visit as
+primarily a social event (Socializer Facilitators), as their role typically 
+involves direct communication with their
+companions which the interactive feature might compete with.
+
+These findings about the differential preferences of personas for features of 
+museum MGs support the ap-
+plication of the stereotypes approach. Further comment on that approach must 
+also be made, specifically to
+acknowledge that stereotyping can result in the imposition, and perpetuation, 
+of bias, discrimination and dis-
+advantage. The field of social cognition has argued that stereotyping arises 
+from the ‘perceptual differentiation’
+between groups of individuals, and the subsequent association of perceived 
+characteristics and attitudes with
+that group, so that “any process that contributes to the differentiation 
+between groups constitutes a potential
+basis for the formation of stereotypes” [Hamilton and Sherman 2014, p. 4]. The 
+categories used in this research
+(e.g., Explorer and Facilitator) do not have deeply articulated stereotypes 
+associated with them, yet it is never-
+theless important to reflect on the ontological status of the concept of the 
+stereotype in this research. As stated,
+the technological justification for this approach is the cold start issue, 
+which occurs when there is a paucity of
+information about the user of an MG in a cultural heritage setting, and so it 
+is possible to place them in a general
+category only. In placing users in a general category, the system collects 
+information about their motivations
+and goals; it does not collect personally identifiable information like 
+demographics or protected characteristics
+that may be implicated in wider mechanisms of algorithmic bias and inequality 
+(e.g., see Noble [2018] and O’Neil
+[2016]). This is an important point regarding the definition of ‘stereotype’ in 
+this research, which does not seek
+to associate external perceptions with a social group. The stereotyping in play 
+in this research does not engage
+in, or respond to, questions of perceived individual or group identity; rather, 
+it seeks to identify the goals and
+motivations of an individual’s visit to a museum. We distinguish explicitly 
+between the person as a user of the
+guide and as a visitor experiencing the museum/cultural heritage setting and 
+acknowledge the humanities view
+that the visitor interacting with the setting is always unique and individual, 
+that users construct their own ex-
+perience of what they are being presented with in the setting. However, our 
+article is dealing with modelling the
+motivations and goals of the user of the guide to manage the mechanics of the 
+interaction with the guide. The
+aim is to provide an at least provisional categorization of the user and 
+provide a variant user interface for the
+user that is better than the one-size-fits-all baseline interface.
+
+In summary, this study provides an indication of personalisation priorities 
+based on the visitor’s persona. This
+work will continue with examining opinions to prototypes created from the 
+results of this study.
+
+ACKNOWLEDGMENT
+
+We would like to thank Scitech, Saudi Arabia, for their collaboration and 
+support during data collection.
+
+REFERENCES
+
+M. Almeshari, J. Dowell, and J. Nyhan. 2019. Using personas to model museum 
+visitors. In Adjunct Publication of the 27th Conference on User
+Modeling, Adaptation, and Personalization. 401–405.
+
+L. Ardissono, A. Goy, G. Petrone, M. Segnan, and P. Torasso. 2003. Intrigue: 
+Personalized recommendation of tourist attractions for desktop
+and hand held devices. Applied Artificial Intelligence 17, 8–9 (2003), 687–714.
+
+L. Ardissono, T. Kuflik, and D. Petrelli. 2012. Personalization in cultural 
+heritage: The road travelled and the one ahead. User Modeling and
+
+User-Adapted Interaction 22, 1–2 (2012), 73–99.
+
+J. Bardram, H. Christensen, and A. Olsen. 2004. Hypernavigation in the Physical 
+Space: Adapting Presentations to the User and to the Situational
+Context. Technical Report. Centre for Pervasive Computing.
+
+A. O. Batty. 2015. A comparison of video-and audio-mediated listening tests 
+with many-facet Rasch modeling and differential distractor
+functioning. Language Testing 32, 1 (2015), 3–20.
+
+A. Cooper, R. Reimann, D. Cronin, and C. Noessel. 2014. About Face: The 
+Essentials of Interaction Design. John Wiley & Sons.
+
+C. Emmanouilidis, R.-A. Koutsiamanis, and A. Tasidou. 2013. Mobile guides: 
+Taxonomy of architectures, context awareness, technologies
+and applications. Journal of Network and Computer Applications 36, 1 (2013), 
+103–125.
+
+
+J. H. Falk. 2013. Understanding museum visitors’ motivations and learning. In 
+AAVV, Museums Social Learning and Knowledge Producing
+Processes. Danish Agency for Culture, Copenhagen, 106–127.
+
+J. H. Falk. 2016. Identity and the Museum Visitor Experience. Routledge.
+
+A. Fevgas, P. Tsompanopoulou, and P. Bozanis. 2011. iMuse mobile tour: A 
+personalized multimedia museum guide opens to groups. In
+
+Proceedings of the 2011 IEEE Symposium on Computers and Communications 
+(ISCC’11).
+
+J. Fink, A. Kobsa, and A. Nill. 1998. Adaptable and adaptive information 
+provision for all users, including disabled and elderly people. New
+Review of Hypermedia and Multimedia 4, 1 (1998), 163–188.
+
+K. Flaherty and K. Moran. 2019. The Dangers of Overpersonalization. Retrieved 
+October 29, 2020 from https://www.nngroup.com/articles/
+overpersonalization/.
+
+E. Frias-Martinez, G. Magoulas, S. Chen, and R. Macredie. 2006. Automated user 
+modeling for personalized digital libraries. International
+Journal of Information Management 26, 3 (2006), 234–248.
+
+G. Ghiani, F. Paternò, C. Santoro, and L. D. Spano. 2009. UbiCicero: A 
+location-aware, multi-device museum guide. Interacting with Computers
+
+21, 4 (2009), 288–303.
+
+D. L. Hamilton and J. W. Sherman. 2014. Stereotypes. In Handbook of Social 
+Cognition. Psychology Press, 17–84.
+
+S. Hsi. 2002. The electronic guidebook: A study of user experiences using 
+mobile web content in a museum setting. In Proceedings of the 2002
+IEEE International Workshop on Wireless and Mobile Technologies in Education.
+
+K. Kabassi. 2013. Personalisation systems for cultural tourism. In Multimedia 
+Services in Intelligent Environments. Springer, 101–111.
+
+D. Korsgaard, T. Bjørner, P. K. Sørensen, and P. Burelli. 2020. Creating user 
+stereotypes for persona development from qualitative data through
+semi-automatic subspace clustering. User Modeling and User-Adapted Interaction 
+30, 1 (2020), 81–125. DOI:10.1007/s11257-019-09252-5
+
+T. Kuflik, O. Stock, M. Zancanaro, A. Gorfinkel, S. Jbara, S. Kats, and N. 
+Kashtan. 2011. A visitor’s guide in an active museum: Presentations,
+communications, and reflection. Journal on Computing and Cultural Heritage 3, 3 
+(2011), 11.
+
+J. Lanir, T. Kuflik, A. J. Wecker, O. Stock, and M. Zancanaro. 2011. Examining 
+proactiveness and choice in a location-aware mobile museum
+guide. Interacting with Computers 23, 5 (2011), 513–524.
+
+K. Luyten, H. Van Loon, D. Teunkens, K. Gabriëls, K. Coninx, and E. Manshoven. 
+2006. ARCHIE: Disclosing a museum by a socially-aware
+mobile guide. In Proceedings of the 7th International Symposium on Virtual 
+Reality, Archaeology, and Cultural Heritage.
+
+R. E. Mayer. 2003. The promise of multimedia learning: Using the same 
+instructional design methods across different media. Learning and
+Instruction 13, 2 (2003), 125–139.
+
+T. Miaskiewicz and K. A. Kozar. 2011. Personas and user-centered design: How 
+can personas benefit product design processes? Design Studies
+
+32, 5 (2011), 417–430.
+
+S. U. Noble. 2018. Algorithms of Oppression: How Search Engines Reinforce 
+Racism. NYU Press.
+
+C. O’Neil. 2016. Weapons of Math Destruction: How Big Data Increases Inequality 
+and Threatens Democracy. Penguin Random House LLC,
+New York, NY.
+
+R. Oppermann and M. Specht. 2000. A context-sensitive nomadic exhibition guide. 
+In Proceedings of the International Symposium on Handheld
+and Ubiquitous Computing.
+
+E. Rich. 1983. Users are individuals: Individualizing user models. 
+International Journal of Man-Machine Studies 18, 3 (1983), 199–214.
+
+E. Rich. 1989. Stereotypes and user modeling. In User Models in Dialog Systems. 
+Springer, 35–51.
+
+I. Roes, N. Stash, Y. Wang, and L. Aroyo. 2009. A personalized walk through the 
+museum: The CHIP interactive tour guide. In Proceedings of
+CHI’09 Extended Abstracts on Human Factors in Computing Systems.
+
+Science Museum. n.d. Games and Apps. Retrieved October 29, 2020 from 
+https://www.sciencemuseum.org.uk/games-and-apps.
+
+A. Sfard. 1998. On two metaphors for learning and the dangers of choosing just 
+one. Educational Researcher 27, 2 (1998), 4–13.
+
+B. Shneiderman. 1997. Direct manipulation for comprehensible, predictable and 
+controllable user interfaces. In Proceedings of the 2nd Inter-
+national Conference on Intelligent User Interfaces.
+
+B. Shneiderman. 2002. Promoting universal usability with multi-layer interface 
+design. ACM SIGCAPH Computers and the Physically Handi-
+capped 73–74 (2002), 1–8.
+
+E. Sivan. 1986. Motivation in social constructivist theory. Educational 
+Psychologist 21, 3 (1986), 209–233.
+
+L. Smith. 2013. Theorizing museum and heritage visiting. In The International 
+Handbooks of Museum Studies. John Wiley & Sons, 459–484.
+
+C. Stephanidis, A. Paramythis, M. Sfyrakis, A. Stergiou, N. Maou, A. Leventis, 
+and C. Karagiannidis. 1998. Adaptable and adaptive user
+interfaces for disabled users in the AVANTI project. In Proceedings of the 
+International Conference on Intelligence in Services and Networks.
+
+O. Stock, M. Zancanaro, P. Busetta, C. Callaway, A. Krüger, M. Kruppa, and C. 
+Rocchi. 2007. Adaptive, intelligent presentation of information
+for the museum visitor in PEACH. User Modeling and User-Adapted Interaction 17, 
+3 (2007), 257–304.
+
+A. Sueyoshi and D. M. Hardison. 2005. The role of gestures and facial cues in 
+second language listening comprehension. Language Learning
+
+55, 4 (2005), 661–699.
+
+The British Museum. n.d. Audio Guides. Retrieved October 29, 2020 from 
+https://www.britishmuseum.org/visiting/planning_your_visit/
+audio_guides.aspx.
+
+The National Gallery. n.d. Smartify App. Retrieved October 29, 2020 from 
+https://www.nationalgallery.org.uk/visiting/apps.
+
+
+G. Vavoula, M.-A. Tseliou, and Z. Tsiviltidou. 2019. Bluetooth Low Energy 
+beacon-based positioning for multimedia guides in heritage
+buildings: A case study. In Proceedings of the World Conference on Mobile and 
+Contextual Learning.
+
+P. Wacker, K. Kreutz, F. Heller, and J. Borchers. 2016. Maps and location: 
+Acceptance of modern interaction techniques for audio guides. In
+
+Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems.
+
+N. Yiannoutsou, I. Papadimitriou, V. Komis, and N. Avouris. 2009. Playing with 
+museum exhibits: Designing educational games mediated by
+mobile technology. In Proceedings of the 8th International Conference on 
+Interaction Design and Children.
+
+A. Zimmermann and A. Lorenz. 2008. LISTEN: A user-adaptive audio-augmented 
+museum guide. User Modeling and User-Adapted Interaction
+
+18, 5 (2008), 389–416.
+
+Received May 2020; revised August 2020; accepted September 2020
+

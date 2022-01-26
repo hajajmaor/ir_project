@@ -1,0 +1,499 @@
+THE STANDARD OF MANAGEMENT AND APPLICATION OF
+CULTURAL HERITAGE DOCUMENTATION
+YEN YA NING1, WENG KUO HUA2, CHENG HUNG MING3, HSU WEI SHAN4
+China University of Technology, 1Faculty of Architecture, 2,3Faculty of Interior Design, 4Graduate
+Student of Architecture
+No.56, Sec. 3, Singlong Rd., Wunshan District, Taipei City 116, Taiwan (R.O.C.)
+alexyen@cute.edu.tw
+Keywords: cultural property, database, data interpretation, digitizing, official integration data
+system
+Abstract: Using digital technology for cultural heritage documentation is a global trend in the 21 st century. Many
+important techniques are currently under development, including 3D digital imaging, reverse engineering, GIS
+(Geographic Information Systems) etc. However, no system for overall management or data integration is yet
+available. Therefore, we urgently need such a system to efficiently manage and interpret data for the preservation of
+cultural heritages. This paper presents a digitizing process developed in Taiwan by the authors. To govern and
+manage cultural property, three phases of property conservation, registration, restoration and management, has been
+set up along a timeline. In accordance with the laws of cultural property, a structural system has been built for project
+management, including data classification and data interpretation with self-documenting characteristics. Through
+repository information and metadata, a system catalogue (also called data dictionary) (Figure 1) was created. The
+primary objective of the study is to create an integrated technology for an efficient management of databases. Several
+benefits could be obtained from this structural standard: (1) cultural heritage management documentation can be
+centralized to minimize the possibility of data re-entry resulting inconsistency, and also to facilitate simultaneous
+updating of data; (2) since multiple data can be simultaneously retrieved and saved in real time, the incidence of
+errors can be reduced; (3) this system could be easily tailored to meet the administrative requirements for the
+standardization of documentation exchanged between cultural properties institutions and various county and city
+governments.
+
+Interpretation and Presentation
+
+User Interface Design
+
+Management
+Needs
+Data
+Normalization
+
+Cultural Heritage
+Diversity
+
+Phase I
+Registration
+
+Database
+
+Phase III
+Management
+
+Phase II
+Restoration
+
+Document
+
+Sound
+
+Video
+
+Others
+
+Data Mining
+
+Main Purpose
+
+Administrative
+Management
+
+Digital
+Archives
+
+Digital
+Monitor
+
+Knowledge
+Management
+
+Added-Value
+
+Figure 1: An integrative structure of data dictionary for Cultural Heritage
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+354
+
+1. BACKGROUND
+Using digital technology for cultural heritage documentation is a global trend in the 21 st century. Many important
+techniques are currently under development, including 3D digital imaging, reverse engineering, GIS (Geographic
+Information Systems) etc. However, no system for overall management or data integration is yet available. Therefore,
+we urgently need such a system to efficiently manage and interpret data for the preservation of cultural heritages.
+Government as a key role of information management must be concerned and aware of the information provided to the
+public based on legal requirement. From the perspective of knowledge management, 4 phases are included: production,
+processing, dissemination and application. Concerning the diversity of heritage, the understanding and value assessment
+will give a help for the conservation interpretation and presentation.
+
+1.1 Goals
+This paper discusses standards of digitizing process to govern and manage cultural property in Taiwan. There are two
+main goals:
+To propose the standard for the production of information based on the requirement of diversity and management.
+To propose a DBMS (Database Management System) based on the KM (Knowledge Management) concept and
+providing an integrated service.
+
+1.2 Methods
+Two main methods were used in this study. Document method is analyzing and finding the characteristics of cultural
+heritages. The other is rapid prototype method which is integrated with information technology.
+
+1.2.1 Document Method
+1. To clarify the characters and value of cultural heritage by reviewing the international conventions, charters,
+documents.
+2. To analyze the trend of digitizing technology for heritage documentation by reviewing the research papers.
+3. To explore the requirement of cultural heritage management in Taiwan by reviewing legal documents and case
+studies.
+4. To explore frameworks established with knowledge in cultural heritage by reviewing KM papers.
+
+1.2.2 Rapid prototype Method
+This paper uses the rapid prototype method to set up an integrated management system, evaluating its feasibility and
+convenience in future expansion by practice.
+
+2. THE CHARACTERISTIC AND VALUE OF CULTURAL HERITAGE
+It has been nearly 50 years since the inception of The Venice Charter in 1964 declaring the importance of conservation.
+Many significant concepts and practices have been promoted through various literatures after that.
+
+2.1 Value
+
+The Venice Charter points out that “……Its aim is to preserve and reveal the aesthetic and historic value of the
+monument and is based on respect for original materials and authentic documents. ……”. Under the efforts of
+UNESCO, the 1972 Convention Concerning the Protection of the World Cultural and Natural Heritage developed a new
+era for the world heritage. An idea of OUV (Outstanding Universal Value) has been pointed out as the most important
+issue in the evaluation and preservation process of world heritage.
+
+2.2 Authenticity and Integrity
+
+The 2008 Operational Guidelines for Implementation of the World Heritage Convention declared that “To be deemed of
+outstanding universal value, a property must also meet the conditions of integrity and/or authenticity…”. There are
+many international documents concerning these 2 issues. Such as:
+
+1.The Washington Charter, 1987
+2. The Nara document on Authenticity, 1994
+3. Convention for the safeguarding of the intangible Cultural Heritage, 2003
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+355
+
+4. Charter on Cultural Routes, 2008
+
+2.3 Cultural diversity
+Many national or international documents are concerned with cultural diversity. Such as:
+
+1. The Burra Charter, 1979
+2. Universal Declaration on Cultural Diversity, 2001
+3. Convention on the Protection and Promotion of the Diversity of Cultural Expressions, 2005
+
+2.4 Management and education
+
+In 2008, the 16th general assembly of ICOMOS approved The Quebec Declaration on the preservation of the spirit of
+place. This declaration points out the importance of re-thinking, identifying the threats, safeguarding and transmitting
+the spirit of cultural heritage sites. The assembly also approved the Charter for the Interpretation and Presentation of
+Cultural Heritage Sites. The charter concludes the significance of “value” and proposes 7 principles as means of
+enhancing public appreciation and understanding of cultural heritage sites.
+
+2.5 Summary
+2.5.1 The trend
+The ideas of cultural properties preservation in the early stage put great emphasis on physical preservation and
+supplemented with texts and images. In 1964, Article XVI of Venice Charter pointed out the importance of
+documentation and files. During the last 2 decades, concept of conservation had changed enormously with knowledge
+available and information easily obtained to all. The changes are reflected in following areas:
+
+1. The expansion of heritage areas
+(1) Expanded from tangible to intangible, promoting the preservation of intangible heritage.
+(2) Expanded from the point to line to a plain, opening the path of cultural landscapes and cultural route as new
+research issue.
+(3) Expanded from physical conservation to overall thinking of lifestyle.
+2. Respecting for ordinary people
+(1) Highlight diversity and cultural diversity.
+(2) Highlight preservation of non-artistic (such as tools, materials, construction methods, technology, etc.).
+(3) Highlight the rights and necessity of public knowledge and participation.
+3. The development of active management
+(1) To take notice of the basic file and its method of application and other issues.
+(2) To take notice of management and related issues such as industry and community interaction.
+(3) To take notice of management derived from economic, legal and other issues.
+These changes touch on the content of knowledge and data as well as the process of dissemination and reception. In the
+21st century of digital era, how to use the highly popular system with effective management and delivery,
+communication and preservation of information, has become an unavoidable issue.
+
+2.5.2 The role of digital technology
+Computer and Internet have changed the way of knowledge dissemination through digital archives. Development of
+digital technology not only speeds up data collection, it also helps data management, dissemination and application.
+Preservation of cultural properties passes on human knowledge. Digital technology allows effective preservation of
+cultural properties and analysis and has become a trend all over the world. In 2008, the 17th session of the General
+Assembly of International Council on Monuments and Sites (ICOMOS) adopted the Declaration of Quebec (Quebec
+Declaration) pointed out that:
+“..in the protection and promotion of world heritage monuments and sites. It also calls upon a
+multidisciplinary approach and diversified sources of information in order to better understand, manage
+and conserve context…Considering that modern digital technologies (digital databases, websites) can be
+used efficiently and effectively at a low cost to develop multimedia inventories that integrate tangible and
+intangible elements of heritage, we strongly recommend their widespread use in order to better preserve,
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+356
+
+disseminate and promote heritage places and their spirit. These technologies facilitate the diversity and
+constant renewal of the documentation on the spirit of place.”
+Cultural heritage interpretation and presentation of the Charter (The ICOMOS Charter for the Interpretation and
+Presentation of Cultural Heritage Sites) also pointed out that:
+“Develop technical and professional guidelines for heritage interpretation and presentation, including
+technologies, research, and training. Such guidelines must be appropriate and sustainable in their social
+contexts”
+These above-mentioned articles reiterate the importance of conserving, processing and presenting cultural heritage
+with digital technology. “Integrated technology”, the invention from computation, has become an important digital
+technology since the 1980s. The business uses a lot of integrated systems such as Enterprise Resource Planning
+(Enterprise Resources Planning, ERP), with its aim to link all departments of the work flow (Operation Procedure), in
+order to achieve real-time communication and produce accurate information. Preservation of cultural properties
+includes knowledge of multiple fields such as architecture, sociology, history, surveying, structure, geography, art, etc.
+Working with various fields of experts and academics to co-research and investigate is important. Integrated digital
+technology has become an inevitable trend to be effectively applied to cultural properties conservation.
+
+3. THE TREND OF DIGITALIZATION RESEARCH OF CULTURAL PROPERTIES
+3.1 The international trend of information digitalization
+Information production and dissemination of the development had a breakthrough in the late 20th century, thanks to the
+rapid development of computers and the impact of network technology. Government and non-governmental
+organizations around the world have conducted quite a few digital cultural heritages related projects and actions and
+made it an international issue of common concern, including:
+1.
+
+Memory of the world program and E-Heritage driven by UNESCO since 1992.
+
+2.
+
+American Memory driven by America since 1990.
+
+3.
+
+Visual Museum of Canada, VMC.
+
+4.
+
+The number of library projects in Australia since 1996.
+
+5.
+
+Europeane driven by European Union.
+
+6.
+
+World Digital Library.
+
+7.
+
+The Wikipedia.
+
+8.
+
+Taiwan Digital Archives driven by Taiwan, ROC.
+
+The above programs have the same characters in cultural theme, diverse participation, digital technology and longterm devotion.
+
+3.2 The key of digital technology
+Digital technology has two key issues which are knowledge management and implementation of the technology.
+
+3.2.1 Knowledge Management
+1. Principle
+Knowledge management is an emerging field of research and the key points being how to deal with a large number of
+complex data and make it useful through effective management. The basic process of knowledge management can be
+divided into a four-cycled procedure including data production, information management, knowledge dissemination and
+application (Figure 2).
+2. The professional gap and the necessity for integration
+Digitization can quickly reduce the data access time. Interactive web tools such as WEB 2.0 provide better
+dissemination of information publishing platform. However, whether the data has been handled by standards of
+knowledge management and digitalization prior to its release or not isn‟t taken seriously. Neither are its management
+and application after. In recent years, the so-called “database” has turned into “data graveyard” which amply explains
+the crisis of lacking in standard. Cultural heritage and digital technology originally belong to two different fields of
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+357
+
+expertise. With the demand for digitization and knowledge management framework, integration of the two professional
+fields is necessary.
+
+Figure 2: Four-cycled knowledge management procedure
+
+3.2.2 Digital implementation technology
+Digitization of cultural properties is a new technology. Many research results have been presented and shared at
+important international seminars. The topics include:
+1. Data acquisition and analysis: laser scanning (ground, from air), photogrammetry, remote sensing, etc.
+2. Data Standard: Standard, pointer, intellectual property, etc.
+3. Data transmission: transmission technology, Web, GIS, etc.
+4. Data applications: environmental monitoring, disaster prevention, education, enterprise, etc.
+During the past decade, several issues about cultural heritage were discussed repeatedly. They not only explained the
+digital technologies that were still progressing, but also reflected the diverse digital technologies and the diverse
+characteristics.
+
+3.3 Management Purpose
+The purpose of preservation of cultural heritage is to sustain cultural properties through public understanding. In order
+to provide convenient and accurate information, a well-constructed and integrated management system is needed for
+handling vast and diverse data. There are two points of views about data management in the past. One is on demandoriented administration (Policy-orientated), the other is public-oriented (Public-orientated). Government played an
+important role in preservation of cultural properties heritage. Combined with public opinions, the study promotes a
+digitalized standard for management of cultural heritages. From the perspective of knowledge management, this study
+provides a research management framework shown in Figure 3.
+1. The diversity of cultural heritage properties should be taken into account on the level of management, interpretation
+and presentation and other needs.
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+358
+
+2. Considering life cycle of administrative procedures for cultural heritage preservation, data for the integrative
+management system should be divided into registry, repair and management in three dimensions.
+3. The database established should meet the demands of the public and the government for its application and
+dissemination.
+4. The integrative management system should take into account the future possibility of expansion and added value.
+
+Interpretation and Presentation
+
+User Interface Design
+
+Management
+Needs
+Data
+Normalization
+
+Cultural Heritage
+Diversity
+
+Phase I
+Registration
+
+Database
+
+Phase III
+Management
+
+Phase II
+Restoration
+
+Document
+
+Sound
+
+Video
+
+Others
+
+Data Mining
+
+Main Purpose
+
+Administrative
+Management
+
+Digital
+Archives
+
+Digital
+Monitor
+
+Knowledge
+Management
+
+Added-Value
+
+Figure 3: An integrative structure of data dictionary for Cultural Heritage
+
+4. A TENTATIVE MANAGEMENT SYSTEM FOR TAIWAN
+4.1 Background
+Taiwan has had its Cultural Heritage Preservation Act (CHP. ACT.) since 1982. In accordance with the influence of
+international movement, the act has been amended and promulgated for 7 times. In 2005, a new act with articles was
+taken effect, an information system and data tables were set together with this new act, and a new era of digital
+management for cultural heritage began. However, this system mainly focused on the first phase of conservation.
+Almost all the tables dealt with basic information and registration process of monuments while lacking in information
+of restoration and management (Figure 4). Based on this system, an official database for the monument was established
+in 2008. As the former planning was in want of an integrative concept, its database was inefficient and is under
+rearranging at the moment.
+
+Figure 4: The idea of an integrative DBMS in Taiwan
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+359
+
+4.2 Requirement analysis
+4.2.1 Action
+According to the CHP Act, 2005 the basic information for the management can be shown as Figure 5.Three issues can
+be described in advance from Figure 5.
+1. Act and accompanying rules provide a clear procedure which needed to identify the process of preservation. It can be
+taken as basic information for the database.
+2. The required information in 3 different phases are necessary to help the management with their importance.
+3. With database management system (DBMS), an efficient convenient platform for the management of cultural
+properties can be provided.
+
+* Under the CHP Act 2005, there are enforcement rules and other rules prescribed by the government to
+describe the operational process and required information of preservation.
+Figure 5: The flowchart (intangible and tangible) of 3 phases of information managements
+
+4.3 The principles of data structure
+4.3.1 Information and data interpretation
+Considering the life cycle of data and different types of data usage, data must be stored at different servers according to
+different data types to provide appropriate services. The study uses metadata to provide communication channels
+between different types of data servers. Metadata were generated automatically by DBMS and stored in public
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+360
+
+dictionary that other DBMS can access and query these metadata. For some specific usage, metadata can be added some
+fields in demand to facilitate follow-up data query purposes.
+
+4.3.2 Normalization
+Analysis of information obtained by the previous stage can be divided into categories, text, images, sounds, images and
+other types. In order to take into account the contents of the database consistency and accuracy, every field data that
+were inputted by user must be normalized in order to improve efficiency and avoid unnecessary storage space and waste
+of bandwidth in transmission of data and future consumption. With database management system construction, different
+tables can be related through a unique code. This study was set up with Microsoft SQL 2008 system and database
+related model (Figure 6).
+
+Figure 6: Database Related Model
+
+Figure 7: Integrative Management System
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+361
+
+4.4 System Sample
+This study uses rapid prototype method to establish an integrated database management system. System demo screen.
+(Fig.7)
+
+5. DISCUSSION
+5.1 Result
+Several benefits could be obtained from this structural standard: (1) cultural heritage management documentation can be
+centralized to minimize the possibility of data re-entry and resulting inconsistency, it also can facilitate simultaneous
+updating of data; (2) since multiple data can be simultaneously retrieved and saved in real time, the incidence of errors
+can be reduced; (3) this system could be easily tailored to meet the administrative requirements for the standardization
+of documentation exchanged between cultural properties institutions and various county and city governments.
+
+5.2 The goal of this system
+
+The 17th ICOMOS general assembly (2011) will take “Heritage: Driver of Development” as a main issue. This concept
+identifies that the preservation and reuse of cultural heritage should play an active role and extends their sight toward an
+integrative field for the creation of tomorrow‟s world. For the convenience of recording, documentation and application,
+the development of digital techniques has become most important in support of this goal. Corresponding techniques
+such as GIS, 3D Laser scan, Photogrammetry, Remote Sensing, DBMS etc., have been applied in the field of
+conservation. On the other hand, the main content of heritage and applications with added value is another important
+issue. For the documentation and application information, building an integrative frame work is needed. Besides
+meeting the basic recording and management requirements, how to open to public, how to apply with added value and
+what new business model might evolve should be thought through while setting standards.
+
+5.3 The contributor and user
+Conservation of cultural heritage is a work of highly integration. For accuracy, efficiency and safety, it would be better
+for the government to take the main responsibility for the establishment and management of Centralized DBMS. Private
+sectors and NGO should play an active role in such process. As to open this DB to the public, the accuracy, timeliness,
+information security, intelligent property right, etc., should take into consideration.
+
+5.4 Main issues of the standardization
+5.4.1 The content of information
+Each monument holds vast and various data. It‟s essential to collect and sort out data efficiently according to needs then
+come up with an appropriate interpretation and presentation. Regarding the diversity of cultural heritage together with
+requirement of management and added value this research points out that holding the content of monument is the key
+issue for the DBMS.
+
+5.4.2 The integration of different format
+Audio and visual are two main types of digital information that are developed into various formats. These formats were
+modified by different software and mostly controlled by commercial companies. To build a convenient platform for the
+exchange, information of different formats is an important work. Besides that, a cloud technique developed for the
+management of vast digitized information is another key issue, in this field.
+
+5.5 The extension map
+Using digital techniques as a powerful tool for managing, reusing, and extending value of Cultural Heritage has become
+an inevitable trend in the 21st century. Besides the stakeholder, the participation team should have a wide range of
+experts. From digitization point of view, an extension map for the integration technique was proposed for the next step
+(Figure 8) .
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+362
+
+Figure 8: The diagram of digitizing technique
+
+5. ACKNOWLEDGEMENT
+This research was supported by NSC 99-2632-H-163-001-MY2
+
+6. REFERENCES
+[1] UNESCO World Heritage Center (2008), Operational Guidelines for Implementation of the World Heritage
+Convention.
+[2] Jukka Jokilehto(1999). A History of Architectural Conservation. pp.290.
+[3] Prepared by the National Library of Australia (2003), GUIDELINES FOR THE PRESERVATION OF DIGITAL
+HERITAGE
+
+________________________________________________________________________________
+Geoinformatics CTU FCE 2011
+
+363
+
+

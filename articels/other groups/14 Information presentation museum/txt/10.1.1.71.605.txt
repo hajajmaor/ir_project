@@ -1,0 +1,288 @@
+Adaptive Mobile Museum Guide for Information
+and Learning on Demand
+
+Reinhard Oppermann and Marcus Specht
+
+GMD - German National Research Center for Information Technology
+Institute                             for Applied Information Technology 
+(FIT-MMK)
+
+1 Goal
+
+The paper describes a nomadic information system under development by GMD in
+the HIPS¹ project that supports nomadic activities adapted to the individual 
+visitor
+of a museum. The world-wide Web, wired and wireless connectivity to networks,
+and small mobile devices allow for supporting nomadic activities by information
+and communication technology to an extensive degree. Mobile information technol-
+ogy is a chance to support the process of activities from the beginning to the 
+end,
+distributed over time, across space and between actors.
+
+The paper describes a nomadic information system designed to support adaptive 
+in-
+formation and adaptive learning of visitors during art excursions. An 
+information
+system is said to be nomadic when the user has access to his or her personal 
+infor-
+mation space from all places independent from specific devices. The art domain 
+is
+attractive for a nomadic information system because art excursions require 
+nomadic
+activities from visitors and art can best be enjoyed when the recipient has 
+access to
+information about an art object when he or she is in front of the art object. 
+In front
+
+1  The project Hyperinteraction within Physical spaces (HIPS) is an 
+EU-supported LTR
+project in ESPRIT I3. The partners of the consortium are University of Siena 
+(co-
+ordinating partner), University  of  Edinburgh,  University  College  Dublin,  
+ITC,
+SINTEF and GMD, CB&J, and Alcatel.
+
+
+of an art object the motivation to learn more about the object can be assumed 
+to be
+higher than without the authentic impression of an art exhibition. We want to 
+use
+the effect of situated learning known in task contexts in order to support 
+situated
+learning in an interest context.
+
+2 The system
+
+The system described in this paper was implemented for the art collection in 
+the cas-
+tle of Birlinghoven, the headquarter of the GMD in Sankt Augustin near Bonn – 
+see
+http://hippie.gmd.de:8080/ (A second exhibition domain, the CeBIT 99 with 20
+exhibits at the GMD-booth, has been used to show the generality of the 
+prototype.)
+
+In the museum the system supports a mini-laptop with infrared for location 
+identifi-
+cation and wireless LAN for data transmission to and from the server and touch
+screen and headphones for user input/out. For the shortcomings of user control 
+of
+audio presentation auxiliary visual presentations are designed to complement the
+understanding of or the navigation through the audio information. Besides a 
+stan-
+dard  audio player lists of exhibition items with several sort options are 
+presented in
+a content overview and buttons for attributes of the exhibits allow for 
+directly re-
+questing specific information.
+
+The information selection and presentation follows the user’s movement in the
+physical space. The user can also move through the information space. Both kinds
+of control are combined and to be communicated to the user to avoid confusion or
+to limit information access. The system tries to combine the movement in the
+physical and the information space by presenting visual and audio cues when the
+visitor passes exhibits identified by the user model to be relevant for him or 
+her. A
+sound icon and a blinking visual icon indicate a new exhibit without 
+interrupting a
+current presentation. The user is free to select a new presentation whenever he 
+or she
+wants but is not patronised by automated presentations. The same is true for 
+adap-
+tive suggestions. The system evaluates the seen exhibits and suggests a tour 
+with
+exhibits of the same group of exhibits the visitor seems to like, i.e., a 
+particular
+type of an artwork (like painting), a particular period (like renaissance), a 
+particular
+genre (like mythology). The system also evaluates the attributes of exhibits 
+the visi-
+tor selects (like historical background or the composition and form design of a
+painting) and adapts the default sequence of attributes to the visitor’s 
+interests.
+
+
+3 Needs of nomadic users
+
+Nomadic information systems need particular presentation, interaction and 
+adapta-
+tion. Presentation modalities reflect the specific conditions of the nomadic 
+scenario.
+The user’s visual attention is directed toward the physical environment and can 
+be
+complemented by audio presentation of the information system via headphones. A
+mobile device of a museum visitor does not allow for extensive command input
+with classical input techniques but needs simple input by primarily deictic com-
+mands (clicking on a touchscreen) or speech input (cf. Oppermann and Specht
+1999).
+
+Adaptations have to reflect the current user’s local environment 
+(contextualisation)
+and interaction history (individualisation). Activities at different places 
+need differ-
+ent interaction with an information system. At home when preparing an excursion
+the information system is the central focus of the user’s attention. He or she 
+is sit-
+ting in front of the system, selecting, reading and writing information 
+presented on
+the screen. Outdoor the user interacts with objects within a physical space and 
+the
+attention is directed towards the physical and social environment. A nomadic 
+infor-
+mation system should adapt to the different phases and places of activities.
+
+Nomadic adaptive systems require both a user model where the information accord-
+ing to user interests, knowledge, and preferences is evaluated and a usage model
+where the information about the user’s environment and client hardware and 
+software
+is held up-to-date. To achieve this, mobile information technology can be 
+combined
+with technologies to identify the users’ environment and his or her position in 
+the
+physical space (Abowd et al. 1997). Infrared or the General Positioning 
+Satellite
+system (GPS) allows for localising the device of the user. The position and the
+movement                                         in the physical space can be 
+observed and evaluated for required informa-
+tion. The navigation in the physical and in the information space can be used 
+as in-
+dicators for the user’s interests, preferences, and the knowledge acquired so 
+far.
+
+For information in general and for learning in particular it is preferable in 
+terms of
+effectiveness, efficiency and satisfaction for the person to learn new elements 
+em-
+bedded into a familiar frame. Repetition is a reinforcing factor for learning. 
+Combin-
+ing new and familiar items can augment not only learning results. Also the 
+enjoy-
+ment of attraction environments can be increased when the person gets new 
+aspects
+of an already known topic. The system evaluates the knowledge of the user in 
+terms
+of seen-entities and presents information about the exhibit in question by its 
+name
+and a thumbnail representation with additional information that fits the 
+inferred visi-
+tor’s interests but has not been presented earlier.
+
+
+4 Situated learning with a nomadic system
+
+Studies show that learning embedded in the task context is more effective and 
+effi-
+cient than separate learning organised before task accomplishment (Norman and
+Spohrer 1996, 26). Situated action (Suchman 1987) and contextualised learning
+(Lave and Wenger 1991; Vosniadou 1994) are keywords to describe a situation as 
+an
+important motivational and cognitive factor for successful learning. The idea 
+of situ-
+ated learning in the task context goes back to the constructivistic assumption 
+that
+learning is not a passive reception or a transfer of knowledge from one subject
+(teacher) to another subject (student) but learning is an active 
+(re-)construction of
+knowledge by the student. The teacher can be seen as an organiser of the 
+knowledge
+construction process by providing learning material and learning methods. 
+Situated
+learning helps people to acquire the knowledge necessary to solve a problem or 
+to
+understand a situation without switching mentally to a separate learning 
+activity.
+
+Learning with a nomadic information system allows for exploring art exhibits 
+more
+extensively in front of the artwork than classical media (and more individually 
+than
+a human guide). Not only descriptive data like artist, dateline, style, or 
+motive but
+also formal art analysis like composition or form and colour design can be sup-
+ported. The visitor has the chance to consult the system to understand the back-
+ground of a painting and understand how the painting is designed. He or she can
+apply the interpretation to the perception of the current painting on the wall. 
+The
+visitor can progressively learn to understand paintings more and more 
+competently.
+
+Situated learning is process oriented learning (Mandl, Gruber and Renkl 1995). 
+In
+case of unsolved problems or incompletely understood situations later learning 
+sup-
+port has to take into account previous efforts of the learner. A nomadic system 
+con-
+nects several sessions of the learner by providing access to questions and 
+notes the
+visitor stores for subsequent phases of excursions. At home, for example, the 
+user
+can enter questions for the museum to view details of form or colour design. In 
+the
+museum when information provided by the system is insufficient for a historical 
+in-
+terest of the individual the visitor can enter a question to be analysed later 
+at home
+with                                           more extensive access to 
+external information bases.
+
+5 Evaluation
+
+Evaluations of the system have been started with domain experts, i.e., artists, 
+art
+educators, and museum curators during a one-day demonstration and feedback work-
+shop.
+
+
+The experts confirmed the added value of the nomadic information system both for
+the process support of preparing, conducting, and evaluating a museum visit and 
+for
+the understanding of the artworks with respect to the wide spectrum of 
+information
+provided by the system. The participants pointed out that the user-system 
+interac-
+tion of a mobile guide has to be designed for specific requirements of the 
+exhibition
+domain. On the one hand, in technical exhibitions a mix of automatic offers and 
+ac-
+tive requests of information might have a stimulating effect. On the other 
+hand, in
+art exhibitions, perceiving art might be limited by a conflict between 
+promenading
+and searching information. The permanent offer of structured information might 
+ob-
+struct the visitor to get involved in a silent conversation with an artwork and 
+to de-
+velop an individual understanding. Providing personalized views and individual
+tours was appreciated. Especially personalized information for visitor 
+interests and
+knowledge was considered important. Adaptive information selection reduces 
+redun-
+dancy and information overload. The overall feedback was very positive expecting
+that new media guides increases the attraction of museums.
+
+6 References:
+
+Abowd, G. D., Dey, A. K., Abowd, G., Orr, R., Brotherton, J. (1997). Context-
+awareness in wearable and ubiquitous computing. 1st International Symposium on
+Wearable Computers, 1997. Proceedings of ISWC'97, October 13-14, 1997 .
+
+Kleinrock, L. (1997). Nomadicity: Anytime, Anywhere. In: A Disconnected World,
+Invited paper, Mobile Networks and Applications, 1 (1997), 4, pp. 351-357.
+
+Lave, J. and Wenger. E. (1991). Situated Learning: Legitimate peripheral 
+participa-
+tion. Cambridge: Cambridge University Press.
+
+Mandl, H., Gruber, H., Renkl, A. (1995). Situiertes Lernen in multimedialen
+Lernumgebungen. Forschungsbericht  Nr.  50  (Ludwig-Maximilians-Universität
+München Institut für Pädagogische Psychologie und Empirische Pädagogik).
+
+Norman, D. A, and Spohrer, J. C. (1996). Learner-Centered Education. Introduc-
+tion. Communications of the ACM 39 (1996), 4, 26 - 27.
+
+Vosniadou, S. (1994). From cognitive theory to educational technology. In: S.
+Vosniadou, E. De Corte and H. Mandl eds.: Technology-based learning environ-
+ments. Psychological and educational foundations. Berlin: Springer, pp. 11-18.
+
+Suchman, L.A. (1987). Plans and Situated Actions. Cambridge: Cambridge Univer-
+sity Press, UK.
+

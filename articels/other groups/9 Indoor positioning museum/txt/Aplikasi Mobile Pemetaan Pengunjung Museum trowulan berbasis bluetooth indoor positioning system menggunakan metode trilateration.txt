@@ -1,0 +1,426 @@
+                 Aplikasi Mobile Pemetaan Pengunjung Museum
+                 Trowulan Berbasis Bluetooth Indoor Positioning
+                    System Menggunakan Metode Trilateration
+                             Jonathan Kurnia Anggita, Andreas Handojo, Resmana Lim
+                  Program Studi Teknik Informatika, Fakultas Teknologi Industri Universitas Kristen Petra
+                                      Jl. Siwalankerto 121 – 131 Surabaya 60236
+                                     Telp. (031) – 2983455, Fax. (031) – 8417658
+             E-Mail: jonathandot13@gmail.com, handojo@petra.ac.id, resmana@petra.ac.id
+
+                                                                     The test results show that the beacon’s position and time used for
+ABSTRAK                                                              kalman filter affects the end result of calculation. The smaller the
+Indoor Positioning System (IPS) merupakan metode alternatif
+                                                                     zone created by using 3 beacon, the smaller the error distance of
+dari Global Positioning System (GPS) dalam navigasi dan
+                                                                     the calculation. The calculation result could be seen through the
+pelacakan pengguna ketika di dalam gedung atau tempat tertutup.
+                                                                     web application in the form of heatmap and volume chart which
+Dengan IPS dapat tercipta aplikasi yang berfungsi sebagai tour
+                                                                     is categorized by gender and age. This research could be
+guide untuk “Museum Trowulan”, dimana pengunjung museum
+                                                                     improved by using noise measurement for kalman filter to
+selaku pengguna mampu diberi informasi multimedia dari objek
+                                                                     improve the accuracy of calculation.
+terdekat. Metode kalkulasi yang digunakan adalah dengan
+menggunakan trilateration serta menggunakan kalman filter            Keywords: Indoor Positioning System, Trilateration, Kalman
+untuk smoothing sinyal. Dengan penelitian ini diharapkan             Filter, Bluetooth Low Energy Beacon.
+peningkatan pengalaman berkunjung museum yang lebih
+interaktif.
+                                                                     1. PENDAHULUAN
+Untuk mewujudkan IPS pada museum digunakan Bluetooth Low                  Indoor Positioning System (IPS) merupakan metode
+Energy (BLE) Beacon untuk memancarkan sinyal yang dapat              alternatif dari Global Positioning System (GPS) dalam navigasi
+diterima pengguna museum lewat smartphone. Dari sinyal yang          dan pelacakan pengguna ketika di dalam gedung atau tempat
+diterima dapat dikalkulasi posisi pengguna, yang kemudian            tertutup. Hal ini dikarenakan sinyal GPS yang masuk kedalam
+sistem dapat menunjukan barang terdekat dengan menurutkan            gedung tergolong lemah, sehingga menurunkan tingkat akurasi
+jarak dari posisi pengguna dengan tiap barang. Setelah itu data      dari pelacakan lokasi pengguna. Fungsi dari IPS untuk
+posisi pengguna dapat di analisa oleh pengelola museum.              mendeteksi posisi pengguna dalam suatu jarak tertentu mampu
+Hasil pengujian menunjukan peletakan beacon dan waktu untuk          memberi manfaat untuk memandu orang tunanetra dengan
+kalman filter mempengaruhi kekuatan hasil kalkulasi. Semakin         menggunakan BLE beacon yang akan memberikan informasi
+kecil zona yang tercipta dengan menggunakan 3 beacon dapat           objek terdekat ketika berada pada lokasi beacon [6]. Selain
+tercipta kalkulasi dengan jarak error yang makin rendah. Hasil       memberikan informasi yang ditetapkan pada beacon, IPS juga
+dari kalkulasi beacon juga dapat dilihat pada aplikasi web dalam     dapat digunakan untuk mengetahui lokasi pengguna pada
+bentuk heatmap dan grafik volume yang dikategorikan dalam            ruangan, sama halnya dengan GPS [1]. Terdapat pula penelitian
+jenis kelamin dan usia. Penelitian ini dapat dikembangkan dengan     IPS        untuk mengetahui lokasi pengguna yang juga
+peningkatan akurasi kalman filter dengan pengukuran noise.           menggabungkan teknik dead reckoning untuk memprediksi arah
+                                                                     jalan pengguna [5]. Terdapat pula studi lain dengan menggunakan
+Kata Kunci:         Indoor Positioning System, Trilateration,        wi-fi fingerprinting untuk mengenali sinyal tiap access point pada
+Kalman Filter, Bluetooth Low Energy Beacon.                          suatu titik [3]. IPS membuka kemungkinan untuk pengembangan
+                                                                     fitur-fitur yang memerlukan lokasi pengguna didalam ruangan
+                                                                     dengan menggunakan alat pemancar sinyal yang disediakan.
+ABSTRACT
+Indoor Positioning System (IPS) is an alternative method of              Manfaat IPS yang telah dijabarkan mampu bermanfaat untuk
+Global Positioning System (GPS) for navigation and user tracing      museum. Contohnya dengan IPS dapat tercipta aplikasi yang
+while inside a building or a closed space. With IPS it’s possible    berfungsi sebagai tour guide untuk pengunjung museum yang
+to create a tour guide application for visitors of “Museum           mampu memberi informasi apa yang berada didekat pengguna
+Trowulan”, in which the application could give a multimedia          dan mampu memberi daftar apa saja objek atau wilayah didekat
+information of an item close to the visitor as a user. The           pengguna. Sebelumnya telah terdapat penelitian tentang museum,
+calculation method used is trilateration method combined with        contohnya dengan memunculkan informasi dari suatu objek
+kalman filter for signal smoothing. Hopefully with this research,    namun masih sepenuhnya menggunakan smartphone dan tidak
+there could be a more interactive museum experience.                 ada peta atau unsur IPS [2]. Terdapat pula aplikasi serupa, namun
+                                                                     dengan menangkap sinyal dari bluetooth low energy beacon,
+Bluetooth Low Energy (BLE) Beacon is used for IPS to broadcast       hanya saja informasi yang diberikan masih berupa informasi
+a signal which could be received by the user via smartphone.         objek saja, dan tidak ada peta atau unsur IPS [4]. Selain pada
+User’s position could be calculated from the received signal, and    museum, terdapat pula penelitian pada perpustakaan untuk
+then the nearest item could be shown from calculating each item’s    menemukan buku penelitian ini sudah juga menyediakan buku
+position from user’s position. After calculation the data could be   populer di sekitar pengguna, serta menunjukan lokasi buku pada
+analyzed by museum’s admin.
+peta, terdapat unsur IPS walau hanya untuk menunjukan didekat
+BLE beacon mana pengguna berada [6]. Penelitian-penelitian ini
+berhenti pada tahap memberikan informasi satu arah saja,
+sehingga data IPS yang didapat masih berupa data mentah, dan
+tidak dapat memberi informasi apapun.
+Nantinya IPS akan dapat digunakan selain untuk melacak lokasi,
+juga berfungsi sebagai tour guide yang mampu memberi
+informasi apa yang berada didekat pengguna dan mampu
+memberi daftar apa saja objek atau wilayah didekat pengguna.
+Selain itu juga dapat mengolah data dimana pengguna berada,
+durasi pengguna pada suatu daerah objek yang menarik bagi
+pengunjung, dan demografi pengguna seperti usia dan jenis
+kelamin.
+
+2. DASAR TEORI
+2.1 Tools Indoor Positioning System                                         Gambar 1. Bluetooth Low Energy Beacon
+Terdapat beberapa pilihan alat untuk mewujudkan IPS seperti
+bluetooth low energy beacon, membentuk wide area network
+dengan router, atau alat pemancar gelombang ultrasonik.
+                                                                  2.2 Metode Trilateration
+                                                                  Metode yang digunakan dalam IPS digunakan metode
+Berdasarkan perbandingan dari penelitian yang ada [4] dapat
+                                                                  trilateration, yaitu metode geometri untuk untuk menentukan
+disimpulkan beberapa alternatif sebagai berikut:
+                                                                  posisi suatu titik lewat pengukuran jarak menggunakan konsep
+1.   Bluetooth low energy beacon: Memiliki jangkauan sinyal       geometri seperti lingkaran, bidang bulat, dan segitiga [1]. Konsep
+     hingga 10 meter, konsumsi energi rendah, hardware yang       lebih jelas metode ini dapat dilihat pada Gambar 2. Metode
+     murah dan berukuran kecil, serta dapat diberi universally    trilateration merupakan metode yang memiliki aplikasi praktis
+     unique identifier (UUID) sebagai pembeda sehingga lebih      untuk mensurvei dan navigasi. Contoh pengaplikasiannya adalah
+     simpel.                                                      pada global positioning system (GPS). Selain trilateration
+2.   Router untuk membentuk wide area network: Memiliki           metode lain yang digunakan untuk GPS adalah triangulation yang
+     jangkauan sinyal yang luas, konsumsi energi sedang, perlu    memiliki metode yang mirip namun juga menggunakan sudut
+     algoritma kompleks untuk pemrosesan.                         sebagai parameter pengukuran. Dalam kasus smartphone, sudut
+3.   Pemancar gelombang ultrasonik: Memiliki jangkauan            menjadi masalah dalam pengukuran dikarenakan sudut
+     sinyal yang rendah, konsumsi energi antara sedang ke         pemegangan smartphone tidak pernah stabil dan justru membuat
+     rendah, sangat tergantung oleh peletakan alat.               perhitungan menjadi rancu.
+Berdasarkan beberapa pertimbangan dari penelitian yang telah
+ada [5] bluetooth low energy beacon atau BLE beacon dipilih
+sebagai alat untuk IPS seperti pada Gambar 1. Berikut beberapa
+pertimbangan yaitu:
+1.   Tidak terlalu terpengaruh oleh lingkungan karena memiliki
+     kekuatan transmisi yang rendah, serta memiliki mekanisme
+     paket yang bersifat hopping sehingga meminimalisir
+     collision saat pengiriman data. Serta memiliki sample yang
+     banyak sehingga lebih mudah mendeteksi outlier.
+2.   BLE beacon sesuai untuk ditaruh pada tiap-tiap objek
+     museum atau ruangan yang masing-masing memerlukan
+     UUID yang unik, hal ini tidak dapat dicapai dengan router
+     untuk membentuk wide area network karena tidak dapat
+     diberi ID untuk jumlah banyak.
+3.   BLE beacon memiliki proses inisialisasi yang tergolong
+     mudah, yaitu hanya dengan menetapkan UUID saja,
+     sehingga ketika teknisi tidak ada ditempat, BLE beacon
+     yang baru atau lama dapat di setting dengan mudah.
+4.   Konsumsi energi yang rendah untuk BLE beacon
+     memungkinkan maintenance yang minim karena baterai                          Gambar 2. Konsep Trilateration
+     mampu bertahan hingga lebih dari 1 tahun.                    Dalam bidang 2 dimensi titik dapat ditemukan pada perpotongan
+5.   Bentuk yang kecil sekitar 13 cm x 5 cm x 13 cm, membuat      2 lingkaran, sedangkan dalam bidang 3 dimensi titik dapat
+     BLE beacon mudah untuk proses pemasangan dan                 ditemukan pada perpotongan 3 bidang bulat. Dengan
+     pemindahan. Sehingga sesuai untuk museum yang                menggunakan persamaan garis dari 3 lingkaran. Berdasarkan
+     membutuhkan banyak BLE beacon karena memiliki banyak         konsep diatas, terdapat terlalu banyak variabel yang ditentukan,
+     objek.                                                       dimana untuk sistem yang dibuat, hanya perlu menemukan x dan
+                                                                  y, sehingga z tidak diperlukan [5]. Hal ini menyebabkan solusi
+                                                                  diatas bersifat over-determined sehingga tidak memiliki satu
+solusi yang unik. Solusi untuk mengatasi permasalahan ini adalah      Tahap Update:
+dengan menggunakan least squared (LSQ) method yaitu metode
+regresi data untuk meminimalisir jumlah residu yang diakar.
+Karena node yang terdeteksi mampu lebih dari 2, maka dapat
+diaplikasikan pula metode multilateration untuk meningkatkan
+akurasi sehingga bobot kesalahan oleh satu node akan berkurang.
+Metode multilateration mirip dengan trilateration, namun
+menggunakan 2 titik yaitu x dan y, serta mampu menampung
+hingga n persamaan. Sistem yang baru dapat dilinearisasikan
+menjadi Ax = b sesuai dengan Persamaan 1.                                                                                           (4)
+
+                                                                      Pada tahap update, dilakukan pencarian Kt, yaitu kalman gain
+                                                                      yaitu bobot relatif state yang berlangsung, bersifat sebagai
+                                                                      koefisien pengali hasil estimasi setelahnya, terdapat variabel R
+                                                                      yaitu kovarian noise obervasi, sama dengan Q, nilai dari variabel
+                                                                      R ditetapkan dari awal dan didapat lewat eksperimen. Kemudian
+                                                                      mengupdate estimasi nilai selanjutnya berdasarkan oleh Zt, yaitu
+                                                                      nilai yang baru masuk. Setelah update estimasi, dilakukan update
+                                                                      untuk kovarian error dari nilai estimasi yang baru. Nilai Xt dan Pt
+                                                                      yang baru akan digunakan untuk tahap prediksi pada t yang baru.
+
+                                                                      3. DESAIN SISTEM
+                                                                      3.1 Desain Sistem
+                                                              (1)
+
+Dengan metode LSQ yang disebutkan, sistem dapat terselesaikan
+sebagai Persamaan 2:
+
+                                                              (2)
+
+
+2.3 Metode Kalman Filter
+Meski metode IPS telah dirancang untuk meminimalisir tingkat
+kesalahan, namun permasalahan sinyal juga perlu diperhatikan.                            Gambar 3. Desain Sistem
+Permasalahan setiap alat IPS adalah sinyal yang tidak stabil, oleh
+                                                                      Konsep kerja sistem secara umum yang digunakan sesuai dengan
+karena itu diperlukannya kalman filter. Algoritma kalman filter
+                                                                      Gambar 3 memiliki 5 operasi, yaitu:
+berfungsi untuk melakukan estimasi dari suatu pengukuran dalam
+suatu jangka waktu. Kalman filter menemukan faktor pembagi            1.   Beacon melakukan broadcast UUID tiap 5 detik. Operasi
+paling optimum untuk setiap state, namun juga mengingat sedikit            dijalankan ketika pengguna menangkap sinyal yang di
+dari state yang lama, dikarenakan algoritma kalman filter bersifat         broadcast beacon. Sinyal dari beacon akan di filter
+rekursif.                                                                  menggunakan metode kalman filter terlebih dahulu agar
+                                                                           mengurangi noise.
+Dalam penelitian ini digunakan Kalman filter dengan satu
+                                                                      2.   Dari smartphone pengguna akan dilakukan pengecekan ke
+dimensi [5]. Terdapat beberapa variabel yang harus ditetapkan
+                                                                           server apakah UUID yang diterima terdaftar pada sistem
+dahulu dari awal dengan mempertimbangkan sifat perubahan
+                                                                           atau tidak. Jika tidak maka server menganggap beacon
+sinyal yang acak dan tidak ada input eksternal maka, algoritma
+                                                                           bukan milik museum.
+kalman filter dapat di simpulkan menjadi Persamaan 3.
+                                                                      3.   Jika UUID beacon terdaftar pada server maka beacon
+Tahap Prediksi:                                                            merupakan milik museum. Server akan mengirim informasi
+                                                                           beacon tersebut, baik itu informasi barang atau ruangan
+                                                                           museum. Informasi ini juga termasuk koordinat beacon
+                                                                           tersebut pada peta. Nantiya koordinat ini akan digunakan
+                                                                           untuk kalkulasi koordinat pengguna.
+                                                              (3)     4.   Setelah menerima informasi koordinat beacon dari server
+                                                                           dilakukan kalkulasi pengguna. Sebelum dilakukan kalkulasi
+Pada tahap prediksi pertama akan dicari Xt, yaitu hasil estimasi           pada smartphone pengguna telah tersimpan jarak dari
+nilai selanjutnya berdasarkan nilai t (waktu) yang lama, atau hasil        beacon dengan menggunakan kekuatan sinyal atau RSSI
+dari tahap update yang sebelumnya. Kemudian mengkalkulasi Pt,              sebagai parameter.
+yaitu hasil kovarian error nilai estimasi yang juga didapat dari      5.   Setelah kalkulasi koordinat, user akan mengirimkan kembali
+tahap update yang sebelumnya ditambah dengan variabel Q, yaitu             informasi koordinat user ke server sekaligus informasi user
+kovarian noise proses, yang ditetapkan dari awal dan didapat               yang didapat saat user login menggunakan akunnya.
+lewat eksperimen sesuai dengan Persamaan 4.
+Desain flowchart kalkulasi IPS sesuai dengan Gambar 4, proses
+kalman filter merupakan perhitungan kalman filter, sedangkan
+“Calculate User Position” merupakan proses untuk trilateration.
+
+
+
+
+                                                                        Gambar 5. Physical Entity Relationship Diagram
+
+                                                                  4. IMPLEMENTASI SISTEM
+                                                                  Implementasi sistem akan dibagi menjadi 3 bagian, yaitu
+                                                                  implementasi sistem pada BLE beacon, implementasi sistem
+                                                                  pada aplikasi web, implementasi sistem pada aplikasi
+                                                                  smartphone.
+                                                                  Untuk dapat menggunakan beacon terlebih dahulu perlu
+                                                                  dilakukan setting pada beacon dengan menggunakan Arduino
+                                                                  IDE. Pada Arduino IDE perlu diatur terlebih dahulu library board
+                                                                  yang digunakan, library ini didapat dari github resmi board yang
+                                                                  digunakan, contohnya ESP32. Selain board juga perlu mengatur
+                                                                  COM port tempat beacon terhubung ke komputer. Pada bagian
+                                                                  ini dapat diatur berapa lama frekuensi beacon mengirimkan
+                                                                  sinyal, dan UUID serta nilai major dan minor dari beacon.
+                                                                  Aplikasi web berjalan secara native dengan menggunakan DBMS
+                                                                  (Database Management System) MySQL. Untuk dapat
+                                                                  mengakses aplikasi web perlu dijalankan service untuk http dan
+                                                                  https pada port 80 dan 443, serta service untuk MySQL pada port
+                                                                  3306. Bahasa pemrograman pada aplikasi web yang digunakan
+                                                                  adalah HTML5, PHP, dan JavaScript.
+                                                                  Aplikasi smartphone merupakan aplikasi dimana pengguna
+                                                                  menerima sinyal dari beacon dan melakukan kalkulasi. Aplikasi
+                                                                  smartphone dibuat menggunakan Android Studio dengan bahasa
+            Gambar 4. Flowchart Kalkulasi IPS                     Java. Untuk menjalankan aplikasi perlu dilakukan pengaturan
+                                                                  AndroidManifest.xml yang merupakan file yang berisi informasi-
+Terdapat pula physical ERD sistem sesuai dengan Gambar 5.         informasi utama aplikasi seperti package, activity, permission,
+                                                                  sdk version, dll. Selain itu terdapat pula file build gradle untuk
+                                                                  melakukan build, pada build.gradle ini terdapat dependency
+                                                                  berupa library yang dapat dimasukan secara otomatis ketika
+                                                                  melakukan sinkronisasi. Fungsi koneksi ke database dilakukan
+secara asynchronous dengan membuat kelas yang extends
+AsyncTask, kelas ini akan meminta data dari link file php dalam
+server yang akan melakukan query ke database dan
+mengembalikan json yang ter-encode. Link ke server dinyatakan
+secara hardcoded.
+
+5. ANALISA DAN PENGUJIAN
+5.1 Tempat dan Spesifikasi Pengujian
+Pengujian sistem dilakukan pada 3 lokasi yang terletak di dalam
+Museum Trowulan. Dimana 2 ruangan tertutup (dikelilingi
+tembok), dan 1 ruangan terbuka (beratap namun tidak dikelilingi
+tembok). Berikut informasi lokasi pengujian:
+Ruangan Terakota:
+1. Dimensi: 16.75 x 11.75 meter.
+2. Ruang: Tertutup
+3. Jumlah barang: 37
+4. Jumlah beacon yang digunakan: 10
+
+5.2 Pengujian Hasil Aplikasi Mobile                                      Gambar 7. Halaman Peta Lantai dan Ruangan
+Setelah masuk halaman informasi museum, akan muncul
+                                                                  Saat posisi pengguna telah dikalkulasi, pengguna akan
+informasi museum berupa gambar museum, deskripsi museum,
+                                                                  mendapatkan notifikasi salah satu item terdekat dari pengguna.
+video dan audio museum, jam buka, nomor telpon, alamat, dan
+                                                                  Pada Gambar 8 dimana sisi kiri adalah gambar notifikasi dan
+kota museum sesuai dengan Gambar 6. Selain itu terdapat pula 3
+                                                                  gambar kanan adalah gambar daftar item terdekat dari pengguna
+tombol yang dari kiri ke kanan adalah tombol scan barcode item,
+                                                                  untuk membuktikan bahwa notifikasi memang benar menunjukan
+floor map, dan museum location yang ditampilkan lewat google
+                                                                  item terdekat.
+maps API. Sesuai dengan
+
+
+
+
+                                                                   Gambar 8. Pengujian Notifikasi dan Daftar Item Terdekat
+          Gambar 6. Halaman Informasi Museum
+                                                                  Jika notifikasi ditekan, maka yang muncul adalah informasi dari
+Pada halaman informasi museum terdapat 3 tombol pada bagian
+                                                                  notifikasi seperti pada Gambar 9. Gambar kiri adalah informasi
+bawah layar. Tombol pada posisi tengah dapat menunjukan peta
+                                                                  item notifikasi. Pada informasi item akan terdapat informasi
+lantai museum. Pada peta lantai ini ketika zona berwarna biru
+                                                                  berupa teks, gambar, video, dan audio. Sedangkan gambar kanan
+ditekan maka akan muncul peta ruangan yang diinginkan.
+                                                                  adalah peta yang menandakan informasi notifikasi ketika ditekan,
+Ketika zona peta ruangan pada peta lantai ditekan akan muncul     dimana warna merah menandakan lokasi item yang dimaksud.
+gambar dari peta ruanngan yang dimaksud, pada peta lantai
+                                                                  Dengan fitur ini akan terbentuk pengalaman berkunjung yang
+terdapat zona-zona untuk informasi item dan titik merah yang
+                                                                  interaktif karena beacon akan memberi informasi ke pengguna,
+menunjukan lokasi pengguna sesuai dengan Gambar 7. Terdapat
+                                                                  sehingga komuunikasi tidak hanya di inisiasi oleh pengguna.
+2 tipe zona pada peta ruangan, ketika peta ruangan diakses dari
+                                                                  Namun juga oleh pihak museum. Fitur ini juga mendukung tour
+halaman informasi item, peta ruangan akan secara otomatis
+                                                                  guide dengan melakukan promosi barang.
+memberi tanda lokasi item tersebut dengan warna merah, dan item
+lain akan diberi warna biru. Jika halaman peta ruangan diakses
+dari peta lantai, semua zona akan berwarna biru.
+                                                                                  Tabel 2. Jarak Antar Titik Per 13 Detik
+                                                                        Data      Xt-1         Yt-1      Xt     Yt     Jarak Titik (cm)
+                                                                          1        615         341       592    264          80.36
+                                                                          2        592         264       533    303          70.72
+                                                                          3        533         303       568    303          35.00
+                                                                          4        568         303       574    299          7.21
+                                                                          5        574         299       570    282          17.46
+                                                                          6        570         282       597    428         148.48
+                                                                          7        597         428       572    398          39.05
+                                                                          8        572         398       622    352          67.94
+                                                                          9        622         352       573    289          79.81
+                                                                         10        573         289       561    257          34.18
+                                                                                         Rata-rata                           58.02
+            Gambar 9. Lokasi Item Pada Notifikasi
+                                                                       Berdasarkan Tabel 3 diambil jarak antar titik per 18 detik. Dari
+5.3 Pengujian Hasil Kalkulasi                                          data yang didapat rata-rata jarak antar titik adalah 82.38 cm.
+Sebelum melakukan kalkulasi perlu ditentukan berapa lama
+waktu untuk melakukan kalman filter. Waktu diambil                                 Tabel 3. Jarak Antar Titik Per 18 detik
+berdasarkan rata-rata waktu yang diperlukan untuk menstabilkan
+                                                                        Data      Xt-1         Yt-1      Xt     Yt     Jarak Titik (cm)
+sinyal sebelum nantinya siap diproses, waktu tidak boleh terlalu
+lama karena semakin lama perubahan sinyal akan semakin landai             1        480         684       396    613         109.99
+dan mengurangi akurasi kalkulasi, namun juga tidak boleh terlalu
+cepat karena akan mengakibatkan sinyal yang masih belum cukup             2        396         613       404    623          12.81
+stabil. Berdasarkan hasil pengambilan RSSI (kekuatan sinyal)              3        404         623       389    681          59.91
+selama 20 detik. Berdasarkan hasil yang didapat, ditemukan
+beberapa 3 titik stabil untuk diuji jarak antar titik yang bergerak,      4        389         681       424    663          39.36
+yaitu tiap 8, 13, dan 18 detik.
+                                                                          5        424         663       397    614          55.95
+Berdasarkan hasil pengambilan RSSI (kekuatan sinyal) dapat
+diuji jarak antar titik per 8 detik. Berdasarkan Tabel 1, didapatkan      6        397         614       482    687         112.04
+rata-rata jarak antar titik adalah 33.76 cm.                              7        482         687       325    641         163.60
+            Tabel 1. Jarak Antar Titik Per 8 Detik                        8        325         641       396    614          75.96
+ Data       Xt-1        Yt-1      Xt      Yt     Jarak Titik (cm)         9        396         614       480    482         156.46
+   1        541         746       557    759          20.62              10        480         482       500    450          37.74
+   2        557         759       565    770          13.60                              Rata-rata                           82.38
+   3        565         770       528    707          73.06            Berdasarkan data pengambilan jarak antar titik, pengambilan data
+   4        528         707       535    750          43.57            tiap 8 detik lebih baik untuk jarak antar titik. Hal ini karena
+                                                                       semakin sedikit jarak antar waktu data yang didapat akan lebih
+   5        535         750       529    741          10.82            rapat, sehingga pergerakan antar titik akan semakin mulus. Selain
+                                                                       pengambilan data per 3 detik, pengambilan data per 13 detik juga
+   6        529         741       544    763          26.63
+                                                                       masih dapat digunakan karena rata-rata jarak antar titik masih
+   7        544         763       496    801          61.22            sekitar 58 cm. Namun pada 18 detik jarak rata-rata antar titik
+                                                                       sudah terlalu jauh untuk digunakan selain itu terlalu lama.
+   8        496         801       517    761          45.18
+                                                                       Dari hasil kalkulasi pengguna dapat ditemukan lokasi pengguna
+   9        517         761       543    767          26.68            untuk tiap ruangan. Untuk pengujian diambil beberapa sampel
+                                                                       titik dari tiap ruangan. Pada Gambar 10 terdapat hasil dari
+  10        543         767       531    756          16.28
+                                                                       pengujian kalkulasi untuk “Ruang Terakota”. Pada Tabel 4
+                   Rata-rata                          33.76            terdapat hasil kalkulasi dari Gambar 10 beserta dengan
+                                                                       pengukuran RSSI atau kekuatan 3 beacon terkuat. Pada kolom
+Berdasarkan Tabel 2 diambil jarak antar titik per 13 detik. Dari       terakhir terdapat hasil jarak error dari tiap titik dalam satuan cm,
+data yang didapat rata-rata jarak antar titik adalah 58.02 cm.         dan pada baris terakhir terdapat hasil rata-rata jarak error.
+                                                                    1.   Untuk mengetahui peletakan posisi beacon diperlukan
+                                                                         survei lapangan untuk bentuk dan besar ruangan. Ketika
+                                                                         beacon berada pada jarak pandang pengguna (tidak
+                                                                         terhalang tembok atau benda) dan tinggi 2 m beacon dapat
+                                                                         memberikan sinyal dengan optimal.
+                                                                    2.   Pada ruang tertutup, besar dan bentuk ruangan
+                                                                         mempengaruhi kuat sinyal beacon. Semakin cepat sinyal
+                                                                         beacon memantul pada tembok maka sinyal akan semakin
+                                                                         kuat, oleh karena itu ruangan yang lebih kecil akan memberi
+                                                                         sinyal yang lebih kuat ketimbang ruang yang lebih besar.
+                                                                    3.   Pada kalkulasi posisi pengguna hasil kalkulasi cenderung
+                                                                         tertarik pada titik tengah seluruh beacon yang digunakan.
+                                                                         Hal ini dikarenakan sinyal dari beacon yang diterima
+                                                                         cenderung terlalu kuat atau sama kuat antar beacon, oleh
+                                                                         karena itu untuk meningkatkan akurasi digunakan jumlah
+                                                                         beacon minimal yaitu 3 untuk membuat zona-zona kecil
+                                                                         sehingga jarak error yang dihasilkan dapat seminimal
+                                                                         mungkin.
+                                                                    4.   Penggunaan kalman filter tidak boleh digunakan terlalu lama
+                                                                         karena semakin landai perubahan sinyal pengguna dapat
+                                                                         membuat posisi pengguna justru makin tidak akurat karena
+                                                                         perubahan kalkulasi sinyal yang lebih lambat dari kecepatan
+                                                                         gerak pengguna. Penggunaan kalman filter cukup dilakukan
+                                                                         hingga sinyal cukup stabil untuk diproses yaitu sekitar 8-13
+                                                                         detik.
+
+                                                                    7. DAFTAR PUSTAKA
+                                                                    [1] Abdul Wahid, J. C. 2015. Mobile Indoor Localization based
+                                                                        on RSSI using Kalman Filter and Trilateration Technique.
+                                                                        International Conference on Machine Vision. Spain: ICMV.
+                                                                    [2] Burcu TURAN, H. K. 2014. Museum Guide Mobile App:
+      Gambar 10. Pengujian Kalkulasi Posisi Pengunjung                  The Case Of The Near East University Classical Car. 3rd
+                                                                        World Conference on Educational Technology Researches
+       Tabel 4. Pengujian Kalkulasi Posisi Pengunjung                   (pp. 278 – 285). New York: Elsevier.
+            Posisi                             Posisi      Jarak    [3] Chan, S. H.-H. 2016. Wi-Fi Fingerprint-Based Indoor
+ N                          RSSI Beacon
+            Nyata                             Kalkulasi    Error        Positioning: Recent Advances and Comparisons. IEEE
+ o.
+        X        Y      1       2         3   X      Y     (cm)         COMMUNICATIONS SURVEYS & TUTORIALS, 466-490.
+                        -        -      -                           [4] Faheem Zafari, A. G. 2018. [1709.01015] A Survey of
+       226      146                           400   134
+ 1                     95.8    100.   100.                 213.12       Indoor Localization Systems and Technologies. Retrieved
+       .67      6.67                          .00   2.67
+                        7       00     48                               from arXiv: https://arxiv.org/abs/1709.01015v2
+                        -       -      -                            [5] Jenny Röbesaat, P. Z. 2017. An Improved BLE Indoor
+       106      586.                          182   738.
+ 2                     84.2    84.5   91.5                 169.94       Localization with Kalman-Based Fusion: An Experimental
+       .67       67                           .67    67
+                        3       3      9                                Study. Sensors, 17(5), 951.
+                        -       -      -
+       114      133.                          101   242.            [6] Manuel Castillo-Cara, E. H.-J.-R. 2016. Ray: Smart
+ 3                     84.0    89.0   89.0                 110.14
+       .67       33                           .33    67                 indoor/outdoor routes for the blind using Bluetooth 4.0. The
+                        0       7      9
+                                                                        7th International Conference on Ambient Systems, Networks
+                        -       -      -                                and Technologies (pp. 690-694). New York: Elsevier.
+       333      146.                          338   352.
+ 4                     69.0    82.2   92.0                 205.40
+       .33       67                           .67    00
+                        7       3      0
+                         -       -      -
+       666      920.                          805   704.
+ 5                     100.    103.   106.                 256.68
+       .67       00                           .33    00
+                        31      88     40
+                         Rata-rata                         191.05
+
+Pada ruangan yang tertutup dan cukup luas dengan dimensi 16.75
+x 11.75 meter, hasil rata-rata jarak error adalah 191.05 cm.
+
+6. KESIMPULAN
+Berdasarkan hasil pengujian, dapat disimpulkan beberapa hal
+sebagai berikut:
+

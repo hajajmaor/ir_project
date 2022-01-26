@@ -1,0 +1,427 @@
+Personal Reporting of a Museum Visit as an Entrypoint
+to Future Cultural Experience
+
+Charles Callaway, Tsvi Kuflik, Elena Not, Alessandra Novello, Oliviero Stock,
+Massimo Zancanaro
+
+ITC-irst,
+
+Via Sommarive 18,
+
+38050 Povo, Italy
+
++39 0461 314521
+
+{callaway, kuflik, not, novello, stock, zancana}@itc.it
+
+
+ABSTRACT
+
+Museum visitors can continue interacting with museum exhibits
+even after they have left the museum. We can help them do this
+by creating a report that includes a basic, personalized narration
+of their visit, the items and relationships they found most
+interesting, pointers to additional related online information, and
+suggestions for future visits to the current and other museums. In
+this work we describe the automatic generation of personalized
+natural language reports to help create one episode in an ongoing
+coherent                      sequence of cultural activities.
+
+Categories and Subject Descriptors
+
+H.5.1 Multimedia Information Systems.
+
+General Terms
+
+Human Factors.
+
+Keywords
+
+Personalized  Information  Presentation,  Natural  Language
+Generation,                           Continous Interaction.
+
+1. INTRODUCTION
+
+Museum visitors can learn additional information about museum
+exhibits through either written text or spoken audio presentations
+that correspond to the artworks they see before them. These
+presentations have traditionally been constructed using Natural
+Language Generation (NLG), and typically describe historical,
+functional, and physical data about objects in museum collections
+[1,2,3]. However, extended explanations of museum exhibits are
+not the only possible application of NLG technology in cultural
+settings.  The introduction of mobile computing devices with
+localization and orientation information allows for a new range of
+dynamic interactions involving NLG applications.
+
+The report generation project within the PEACH1 project has the
+goal of allowing visitors to continue interacting with exhibits even
+after they have left the museum by creating a written report in
+English or Italian that includes a basic narration of their visit, the
+items and relationships they found most interesting with images
+
+Copyright is held by the author/owner(s).
+
+IUI’05, January 9–12, 2005, San Diego, California, USA.
+ACM 1-58113-894-6/05/0001.
+
+placed near the text to let them recall the artworks, and links to
+additional information on the internet as a natural followup for a
+specific visitor’s interests. Unlike the STOP [3] report generation
+system, our system works in multiple languages and does not
+require any explicit information from the user. This extended
+interaction allows visitors to learn more about topics of interest
+and even plan future visits in this and other museums where they
+can get relevant information they initially did not see due to
+various constraints such as limited visit time. Thus the current
+visit becomes an episode in an ongoing coherent sequence.
+
+2. ELEMENTS OF MUSEUM VISIT
+SUMMARIES
+
+Ideally, such a report should consider:
+
+a) Factual aspects of the visit, such as exhibits visited, the visit
+sequence  and  time  spent  at  different  locations,  the
+presentations shown to the user, and user actions.
+
+b) Appearance of the report, combining text, images and
+possibly additional forms of media, in a personalized manner
+either on paper or in an electronic form.
+
+c) Cognitive aspects related to the exhibitions, such as interest
+for                         themes, pleasure, boredom etc.
+
+d) Extra  subject-centered  aspects,  such  as  persons  met,
+discussions held and additional events that occurred.
+
+e) Attention-grabbing elements and hints for subsequent reading
+and                        visiting (in this and other museums).
+
+3. WHAT MAKES A GOOD REPORT?
+
+The quality of the report is essential: it should be a memory aid
+for later consultation, something one can share with others, and an
+entry point for getting deeper into a subject. It should be short but
+readable and concrete. Details often are important, but only when
+relevant                            to the specific visitor.
+
+Important aspects of the report are: its organization – it could be
+Sequential following the particular sequence of visited exhibits,
+preserving  the  visiting  path  and  recording  events  in  a
+chronological order; it can be Thematic, by depicting the essential
+themes the user was interested in, or it can combine both of these.
+The content of the report should include details related to the
+
+¹ http://peach.itc.it. The PEACH project is funded by the
+Autonomous Province of Trento.
+
+
+visitor’s requests for information, interesting connections between
+seemingly unrelated exhibits, comparisons between the exhibits
+the visitor found interesting, and descriptions of related exhibits
+they would probably have been interested in but didn’t have a
+chance to see. It also should allow some flexibility and variation,
+so that two users visiting together and walking on the same path
+
+concepts beyond those that were associated with the presentation
+seen by the visitor (for example, specific concepts are augmented
+by following links such as "generalization", "instance of",
+"appears                           in" and more).
+
+Report Generator
+
+
+may get different reports.
+
+The report should make the visitor want to continue to study the
+
+User Modeling
+
+Component
+
+Queries
+
+Concepts
+
+Knowledge
+Base
+
+
+topics depicted by the exhibits and make this study easy by
+suggesting relevant links to follow up at a later date, additional
+items to visit (either now or on a future visit) and possible
+additional exhibits in nearby museums. Because museum visitors
+typically come from all over the globe, it is desirable to provide
+them with the report in their native language. The final report can
+
+Movies
+
+Events /
+Requests
+
+Dynamic
+Multimedia
+
+User
+Data
+
+Kadjadjjfdal
+akjdjaskkdd
+
+User
+Data
+
+Deep
+
+Concepts
+Requests
+
+Queries
+
+
+be produced either as printed hardcopy and handed to the visitor
+as they leave, emailed with hyperlinks generated inline within the
+
+Generator
+
+djakkdjldkla
+
+dlflsjdjsijsa
+
+NLG
+
+Plans
+
+Text
+
+Planner
+
+
+text, or as a complete multimedia show at a museum kiosk that
+combines their interests into a dynamically produced film.
+
+4. REPORT GENERATION IN PEACH
+
+In the PEACH scenario, a museumgoer's visit to a museum is
+augmented by a hand-held location-aware PDA that serves as a
+museum visitor’s guide, and which is logged and then used to
+determine that visitor's individual interests. A custom report is
+printed and given at the end of the visit to the Torre Aquila (the
+“Eagle Tower”, containing unique frescos depicting year-round
+life in the Middle Ages at Trento area). It includes an overview of
+the frescos and themes seen, additional information about specific
+topics they appeared to have been interested in, non-obvious
+relationships to other similar topics they didn't have time to see,
+and follow-up web links to sites of local Trentino art to continue
+exploring these topics at home.
+
+4.1 Main Components
+
+The PEACH report generator is composed of an NLG system and
+a user modeling component, both based on a multilingual domain
+knowledge base (KB). Figure 1 shows the top-level system
+architecture.
+
+The Multilingual Domain Knowledge Base (KB) contains
+detailed representations of most of the eleven frescos in the Torre
+Aquila. It has a domain ontology, facts about each fresco as a
+whole and the visual elements they contain, generic concepts
+which are not visually represented but may be used to explain
+them (like “aristocracy” or “winter”), and links between facts to
+allow for inference (such as comparisons, and complementary
+information).
+
+The Dynamic User Modeler (UM) logs information about the
+visitors during their visit, based on their behavior. There is no
+initial information about the visitor when starting each visit, since
+user modeling must be “non-intrusive”. As a result, the model is
+built solely by observing the visitor’s behavior.
+
+Every presentation has a set of KB associated with it, providing a
+description of its content. The UM contains inferred information
+about the level of interest the visitor has in the concepts
+associated with the presentations she saw. Using an inference
+mechanism that follows ontological links in the KB, the specific
+concepts associated with the presentations are augmented by
+additional, related concepts that extend interest to categories of
+
+Figure 1: PEACH System Architecture
+
+Explicit user feedback in the form of pressing a “WOW” button
+(for positive reaction) or an “ENOUGH” button (for negative
+reaction) and implicit feedback in the form of “no objection” to
+the presentation are used to infer user interest in the various topics
+presented by the presentations that the visitor sees. Explicit
+feedback has a higher priority than implicit feedback in the sense
+that explicit feedback drives the immediate change in level of
+interest while implicit feedback requires accumulation of
+evidence before changing a visitor’s interest level in a given
+concept. Interest values are assigned to the specific concepts,
+based on user feedback. The values decay as we follow links from
+the original concept to other concepts them as a function of the
+semantic distance. This information is used during the visit to
+help prepare the presentation for the visitor based on her visit
+history and according to the inferred level of interest in the
+various topics. Finally, the accumulated UM is preserved for a
+visit summary report, generated at the end of the visit.
+
+The Text Planner (TP) determines the most relevant information
+to put into the description and its coherent organization. In the
+case of report generation, coherence refers to correct selection of
+topics and details and their placement in sentences to achieve
+recognizable sequential and thematic structures. Information
+(content) about the artworks seen is extracted from the KB (e.g.,
+objects like castles or wild animals in a fresco, their positions, and
+what activities they are performing) and given either important
+roles such as the main topic of a paragraph or else that of
+supporting                        detail.
+
+For adaptive generation that is highly personalized for a particular
+museumgoer’s visit, it is important to ensure a high amount of
+variation in the resulting text. To achieve such variability, the text
+planner queries the user model to get the log of the user
+interactions. For instance, to sequentially describe what the visitor
+saw, the text planner extracts from the log contained in the UM
+the list of visited frescoes and accesses the KB to get a shallow
+description of the main contents of each artwork (e.g., objects like
+castles or wild animals in a fresco, their positions, and what
+activities they are performing) to be included in the summary as a
+reminder of what was seen. Alternatively, the TP can retrieve a
+list of ranked topics from the inferred interest model. Thus the
+corresponding thematic report may consist of a series of
+paragraphs describing the top items in the interest model.  To
+
+
+prevent repetition, we also cluster items in the interest model that
+are semantically related. Which details from the KB to include
+and how they are ordered are determined by text planning rules
+which                          query the UM.
+
+Writing the Actual Report Text The text of the report is created
+using the language-independent StoryBook deep NLG system [2].
+While the TP takes care of high level communicative goals and
+varies the report to make sure it is individualized, the generation
+component focuses on low-level issues, such as adding pronouns,
+making sure sentences have subjects and verbs, adding
+morphology to word stems, etc. Deep NLG has advantages that
+make  it useful in generating extended reports in a museum
+context: the text can be in multiple languages, produced in high-
+quality prose, provide for automatic variation at the lexical level,
+and contain integrated markup (such as HTML, or prosody for
+TTS). Formatting is particularly useful for report generation, as it
+allows for the creation of the report as a webpage, with hyperlinks
+and images of artworks for each paragraph, allowing the visitor to
+mentally associate them with the text as they are reading about
+their experience with it. The final report can be printed or emailed
+in either English or Italian.
+
+5. AN EXAMPLE
+
+Figure 2 presents two paragraphs taken from an adaptive thematic
+summary report for a museum visit. The first half summarizes the
+most interesting topics as inferred by the system after the visit and
+clustered into abstract elements such as “winter leisure activities”.
+The description corresponds to a visitor who started at the January
+fresco that includes scenes of a castle, a snowball fight, and
+hunters in the snow. She requested a follow up presentation
+describing the snowball fight, followed by more detailed
+presentations of its participants and later about the hunting scene
+and  one of the hunters. Later, she moved to the February fresco
+where she saw an overview about a tournament with knights and a
+blacksmith in his shop. She requested more detailed presentations,
+one about a specific knight taking part in the tournament, another
+about the blacksmith and a third about the servants helping the
+knights put on armor. Finally, she returned to the January fresco
+and learned more about the hunting scene, including the hunters,
+their                         dogs, and a fox.
+
+As a result of this scenario, the UM builds an interest model
+representing the visitor’s interest in the hunting scene and its
+details and also in the snowball fight (both aristocratic activities),
+hence she is interested in aristocratic life in Trento in the middle
+ages.
+
+The TP clusters the interests to produce abstract topics such as
+“aristocratic  activities”  rather  than  “knights”  and  “ladies”
+individually. If well-defined clusters can be created, the TP then
+chooses a thematic report centered on the top clusters in the list.
+Otherwise, the system chooses a sequential report that describes
+what the visitor saw in order, pulling details from the interest
+model. In either case, variation in the report text is ensured at the
+organizational level, depending on the visitor’s path through the
+museum and their requests for further details. The TP has a
+number of rules which can be used to add new details to the text
+of the report, such as the following:
+
+General-Interest-In (Activity) ⮳
+
+Focused-Interest (Activity) + Contrastive-Interest (Activity)
+
++ EventDetail (Contrasting Activity)
+
+This rule means that when there is an activity going on in a scene
+that seemed to be interesting to the visitor (for example the
+tournament). The system searches for information about the
+activity the visitor was focused on. Then it looks for a contrastive
+activity which was also interesting for the user and gets its details
+for adding a short description of it to the report.
+
+…
+
+It seems that you were mainly interested in the winter
+leisure activities such as hunting, the tournament, and
+the snowball fight, where groups of nobleman are
+throwing snowballs at each other, since you spent most
+of  the time in front of the January and February frescos
+representing winter aristocratic leisure activities.
+
+…
+
+Based on your preferences you showed during your
+visit, you should probably go visit Castel Ivano, where
+there are also many other frescos with depictions of
+winter.
+
+...
+
+Figure 2: Selected report extracts
+
+6. CONCLUSIONS
+
+This work demonstrates a use of NLG for automatic personalized
+museum visit reporting. We believe personal report generation
+will become an increasingly important application for many
+activities. In this cultural visit domain the report is an interactive
+artifact and is the basis for getting deeper into the themes that
+seemed of higher interest in this visit. The report integrates
+images to help remembering and hot spots to suggest additional
+attractive material for the specific visitor, with the spirit that a
+cultural experience is successful if it induces the visitor to
+cultivate                           the interest further.
+
+7. REFERENCES
+
+[1] I. Androutsopoulos, J. Calder, E. Not, F. Pianesi and
+
+M. Roussou. MPIRO: Coherence, Relevance and
+Appropriateness in Information Presentation. In the
+Proceedings of the 2002 CLASS Workshop. Verona,
+Italy, 2002.
+
+[2] C. Callaway and J. Lester. Narrative Prose Generation.
+Artificial Intelligence 139(2):213—252, 2002.
+
+[3] E Reiter, R Robertson, and L Osman. Lessons from a
+Failure:  Generating  Tailored  Smoking  Cessation
+Letters. Artificial Intelligence 144:41-58.
+
+[4] C. Rocchi, O. Stock, M. Zancanaro, M. Kruppa, A.
+Krueger. ‘The Museum Visit: Generating Seamless
+Personalized  Presentations  on  Multiple  Devices’
+Proceedings of IUI-2004, Madeira, 2004.
+
+[5] O. Stock.  Language-Based Interfaces and Their
+Application for Cultural Tourism. AI Magazine,
+22(1):85-97.
+

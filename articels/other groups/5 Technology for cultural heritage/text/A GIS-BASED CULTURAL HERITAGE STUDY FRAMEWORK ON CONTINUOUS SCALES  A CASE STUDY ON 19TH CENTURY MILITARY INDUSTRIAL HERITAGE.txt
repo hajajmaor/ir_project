@@ -1,0 +1,979 @@
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+A GIS-BASED CULTURAL HERITAGE STUDY FRAMEWORK ON CONTINUOUS
+SCALES: A CASE STUDY ON 19TH CENTURY MILITARY INDUSTRIAL HERITAGE
+J. Hea, c, J. Liub, c, S. Xub, c , C. Wub, c, J. Zhangb, c
+a Institute of Digital Design, Tianjin University, Tianjin, China - janushe@tju.edu.cn
+b International Research Center for Chinese Cultural Heritage Conservation, Tianjin University, Tianjin, China liujing1002@gmail.com, 1421750993@qq.com, wu.cong@hotmail.com, 825209141@qq.com
+c School of Architecture, Tianjin University, Tianjin, China
+Commission XX
+
+KEY WORDS: Cultural Heritage, GIS, BIM, Historical Context, Continuous Scales
+
+ABSTRACT:
+This paper presents a framework of introducing GIS technology to record and analyse cultural heritages in continuous spatial scales.
+The research team is developing a systematic approach to support heritage conservation research and practice on historical buildings,
+courtyards, historical towns, and archaeological sites ad landscapes. These studies are conducted not only from the property or site
+scales, but also investigated from their contexts in setting as well as regional scales. From these continues scales, authenticity and
+integrity of a heritage can be interpreted from a broader spatial and temporal context, in which GIS would contribute through
+database, spatial analysis, and visualization. The case study is the construction of a information indexing framework of Dagu Dock
+industrial heritage to integrate physical buildings, courtyards, natural settings as well as their intangible characteristics which are
+affiliated to the physical heritage properties and presented through historical, social and culture semantics. The paper illustrates
+methodology and content of recording physical and social/cultural semantics of culture heritages on different scales as well as
+connection between different levels of database.
+
+phenomena which traditional methods are difficult to find, and
+enhances our understanding of heritage's authenticity to support
+heritage conservation planning, design and management.
+
+1. INTRODUCTION
+1.1 Background
+Geographical information system (GIS) has been introduced in
+cultural heritage conservation from early 1990s, and been
+blooming in recent year in both practical projects and
+contextual historical and archaeological studies. Although many
+progress had been made in this field, but as discussed in the
+following literature review, most of these GIS systems have
+either difficulty for supporting contextual interpretation through
+limited physical recordings, or unable to deal with specific
+heritage problem because of the large scales of their database
+system. In order to investigate cultural heritages from a broader
+spatial as well as in-depth historical context, innovative
+approaches based on GIS technology are necessary.
+This paper presents a framework of introducing GIS technology
+to record and analyse cultural heritages in continuous spatial
+scales. From the perspective of “historical GIS (H-GIS)”, the
+research team is developing a systematic approach to support
+heritage conservation research and practice on historical
+buildings, courtyards, historical towns, and archaeological sites
+ad landscapes. These studies are conducted not only from the
+property or site scales, but also investigated from their contexts
+in setting as well as regional scales. From these continues scales,
+authenticity and integrity of a heritage can be interpreted from
+broader spatial and temporal contexts, in which GIS would
+contribute through database, spatial analysis, and visualization.
+Through a case study on industrial heritage, the paper illustrates
+the methodology and content of recording physical and
+social/cultural semantics of culture heritages on different scales
+as well as connection between different levels of database. The
+proposed approach is helpful to reveals new historical spatial
+
+1.2 Industrial Heritages
+Industrial heritages consist of the remains of industrial culture
+which are of historical, technological, social, architectural or
+scientific values. It includes buildings, machinery, workshops,
+mills, factories, mines and sites for processing and refining,
+warehouses, stores, facilities where energy is generated,
+transmitted and used, transport and all its infrastructure, as well
+as places used for social activities related to industry such as
+residence, worship and education (TICCIH, 2003). In recent
+years, industrial heritage conservation has attracted more and
+more attention in China. By 2014, there are more than 300
+industrial heritages have been inscribed as National Key
+Cultural Relics Protection Units. In this circumstance,
+information collection and management of this kind of heritages
+has become an important issue for Chinese heritage
+conservation and related research. However, lack of basic
+information, incomplete documentation and insufficient of
+awareness of information management and utilization have
+restricted systematic and scientific protection of industrial
+heritages.
+1.3 The Case Study
+The research team select the Tianjin Dagu Dock which
+belonged to Beiyang Navy of Qing Dynasty of China as a case
+study. According to general industrial heritage conservation
+requirements and the specific characteristics of the case study,
+the research team constructs information indexing framework of
+Dagu Dock industrial heritage through a combination of GIS
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+215
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+and building information modelling (BIM), to integrate physical
+buildings, courtyards, natural settings, urban contexts as well as
+their intangible characteristics which are affiliated to the
+physical heritage properties and presented through historical,
+social and culture semantics. The paper illustrates the
+methodology and content of recording physical and
+social/cultural semantics of culture heritages on different scales
+as well as connection between different levels of database.
+
+2. LITERATURE REVIEW
+2.1 GIS as Heritage Conservation Support
+As a “spatial toolbox” (Wheatley and Gillings 2002) for
+archaeological, historical, cultural and social investigation, GIS
+has become an important technology for cultural heritage
+conservation in the past two decades. In the discipline of
+heritage conservation, GIS technology was firstly adopted in
+UNESCO World Heritage Site (WHS) management in 1992 to
+establish the Angkor Zoning and Environment Management
+Plan (ZEMP) (Wager 1995; Fletcher, et al., 2007). Based on
+UNESCO’s technical experience, a GIS-based heritage
+management manual published in 1999 demonstrated the
+knowledge on and broad level of interest in GIS technological
+and methodological developments among the most cutting-edge
+groups working on heritage conservation (Box, 1999).
+This manual was translated into Chinese and published in 2001.
+Introduction of GIS in heritage conservation in China also
+started at the same period. An earlier typical application is the
+historical town conservation of Xijindu, Zhejiang Province
+done by Southeast University in 2000 (Hu, et al., 2002). In
+2006, Ministry of Science and Technology of China put
+tremendous resources on a key project named “Spatial
+Information Technology Application in Great Site
+Conservation”. This project investigated potential of spatial
+information technologies, which including GIS, remote sensing
+(RS), global position system (GPS), and virtual reality (VR), in
+cultural heritage conservation, and identified adapted
+methodology and suitable technologies in the context of
+practices in China. Grand Canal, a WHS was chosen as the
+demonstration case study to show the technical supports on
+conservation and development (Zhou et al., 2011). Research
+groups of Tsinghua University has also explored GIS
+application in different kind of projects in the same period. GIS
+documentation and visualization was applied to show the
+current situation of the building group of Houtu Temple of
+Jiexiu, Shanxi Province in its conservation planning (Zhang,
+2008). A more detailed database was built on ArcGIS platform
+to record and analyze the multi-resource data of the East Hall of
+Fougang Temple of Wutai Mountain of Shanxi Province,
+including 3D laser scanning, detailed manual measuring and
+surveying, materials, broken and lost, and so on. This database
+called Culture Heritage Information System (CHIS) was
+designed for monitoring the healthy of the specific heritage
+property (Zhang et al., 2010). The earliest GIS application in
+industrial heritage in China is the database of Hangzhou
+Industrial Heritage Database. However, because of insufficient
+understanding on industrial heritage characteristics, there were
+shortcomings in data collection and database architecture in this
+case.
+As shown in the ZEMP case, preference for GIS may due to the
+fact that the main task of the digital heritage conservation
+database at present is focus on documentation and delimitation,
+
+in which GIS is mostly effective (He, 2008). Furthermore, this
+application requirement and practical focuses on recording and
+management also caused that the GIS database take most of the
+efforts on heritages’ physical phenomena. This kind of heritage
+GIS system always integrates comprehensive and very detailed
+documentation data on physical characteristics of heritage
+properties and settings through text descriptions, drawings,
+photographs (for example, Riveiro, et al., 2011), and 3D
+scanned or virtual models (Tsirliganis, et al., 2004; Styliadis, et
+al., 2009; Remondino, 2011; Rojas-Sola, et al., 2011). Most of
+these systems have a common problem that only use GIS for
+recording properties’ position without further data integration
+through geo-referencing approach. Therefore, although within a
+same geospatial context, the abundant heritage information of
+individual property is always isolated and not able to be
+analysed through spatial approaches.
+2.2 BIM for Cultural Heritage
+BIM modeling which records construction details in 3D and
+semantics becomes a new topic in heritage conservation support
+recently (Pauwels, et al., 2008; San José-Alonso, et al., 2009;
+Oreni, et al., 2012), especially because of the current
+development of 3D surveying, modeling and visualization
+capability. The authors’ research team is one of the pioneers of
+introducing BIM into this field by a heritage conservation
+project of Angkor (Wu, et al., 2011). Wu and his colleagues are
+continuously working on a cultural heritage information system
+for architectural property and the whole site management and
+conservation base on GIS and BIM integration in various
+Chinese heritages and WHSs, including Ta Keo Temple of
+Angkor, Dehe Garden of Summer Palace and Beihai in Beijing
+(Wu, 2012). More pure BIM test has been applied on industrial
+heritage by the same team (Du, 2013). Recent academic
+exploration concentrates on collection and modelling of
+historical information which include semantics base on the
+study of Yellow Sea Research Society of Chemical Industry
+(Shi, et al., 2014). Relevant systems are from a perspective of
+professional requirement of information access and query on
+both large-scale site and small-scale building levels. They can
+be considered as the prior generations of what discussed in this
+research paper.
+San José-Alonso and colleagues (2009) noticed that BIM
+integrated with 3D GIS had great potential for cultural heritage
+modeling and integrating intangible information records. In
+their system, 3D metadata of both was considered as the key in
+the system and data accessing and inquiry are principal
+functions. Since semantic elements are crucial in cultural
+heritage management, and 3D and hierarchy are almost equality
+significant for industrial heritages, City Geography Markup
+Language (CityGML) metadata is a good option. CityGML has
+been broadly introduced in most of the 3D cultural heritage and
+historical development studies in urban or large-scaled contexts
+(Alamouri and Kolbe, 2009; San José-Alonso et al., 2009; Limp,
+et al., 2010; Manferdini and Remondino, 2010).
+2.3 Shortcomings and Perspectives
+In general, although GIS system for cultural heritage do have
+the shortcomings on semantics and analytical application
+described in session 2.1, it is more mature than BIM
+applications from the database perspective as well as in
+academic research. However, required by conservation
+engineering and management, detailed documentation and
+visualization of building properties and their structure
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+216
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+components or construction objects are not able to conducted
+solely through GIS system because of their complexity. Neither
+could any longitude monitoring on structure deformation be
+done in pure GIS. In that case, BIM technology can be a
+valuable supplement for the constrain of GIS database once
+reaching the scale of construction objects (Wu, 2012; Liu,
+2013). Information management system in continuous scales
+which can record, illustrate and analyse a comprehensive
+cultural heritage site, which include spatial scales on setting,
+building group, single properties, construction components, and
+their temporal changes, are essential in conservation practises.
+Integration of GIS and BIM technologies is the key approach to
+reach this goal.
+3.
+
+and constructions are organized in either CityGML or BIM data.
+Semantic information of physical properties, like raster data,
+historical records, background documents and social/cultural
+descriptions are all draped as attributes of the 3D spatial
+elements.
+Other than documentation, the database also serves as the
+analytical base of in-depth and multidisciplinary studies on the
+cultural heritage. In a broader scale, historical interpretation and
+spatial phenomena are investigated base on the spatial and
+semantic data, while studies on architecture and construction
+levels depends on the BIM data (Figure 1).
+
+METHODOLOGY
+
+3.1 The Continuous Scales
+The research team proposed a continuous scale composed by
+regional, site, and building scales as a framework to organize
+information, technologies and methodologies in GIS-based
+cultural heritage conservation studies.
+1.
+Regional scale. In the regional scale, historical
+geographical paradigm leads spatial analytical model
+making. The historical performance of the heritage site
+on politics, economy, cultural and social development are
+revealed though GIS spatial analysis, especially historical
+phenomena related to large-scale movement, such as
+cultural routes.
+2.
+Site scale. In the site scale, we study ecological and
+environmental constraints and impacts, logics of site
+selection, subjective or phenomenological meaning of the
+landscapes can also be interpreted through GIS-based
+spatial analysis. Historical contexts of sites, towns, or
+landscapes reconstructed in GIS-based model are key
+concerns of the historical interpretation meteorology of
+the proposed framework.
+3.
+Building scale. From a contextual perspective,
+heritage properties or asserts can be understood though
+inherited historical spatial phenomenon on its landscape
+and site scales. Finer-scale analysis on how a single
+building cooperate with its setting can be illustrated
+though GIS investigation by following the finding
+revealed from the upper-level scale. Another important
+approach in this scale is interface between GIS and BIM.
+This integration is able to create a continuous-scale
+database on different LODs.
+
+Figure 1. Structure of the proposed database (He,2012)
+3.3 The Case Study
+The research team chose Dagu Dock of Beiyang Navyas a case
+study. Dagu dock of Beiyang Navy is located in the lower
+reaches of the Haihe River in Binhai New Area of Tianjin
+(Figure 2). It was built in 1880 by Mr. Li Hongzhang, an exgovernor of Zhili Province of Qing Dynasty. Dagu dock of
+Beiyang Navy is the third modern shipyard established in China
+after following Fujian Ship-building Bureau and Jiangnan
+Manufacturing Bureau, and one of the most important military
+base in the late Qing Dynasty It was named the National Key
+Cultural Relics Protection Units in 2013, and planned to be
+nominated as a candidate for the World Heritage List together
+with other two earlier modern shipyards.
+
+3.2 The System for Industrial Heritage
+Information collection and recording of industrial heritage is
+experience, cognition and understanding, exploration, and
+evaluation of a heritage in various aspects of history, science,
+technology, humanities and arts. It contains not only the
+cognition of the entity and the space, but also the understanding
+of the spiritual meaning of the heritage, with value judgment
+and information selection. Information collection of industrial
+heritage is a series of life-cycle records and management,
+involving historical archives, documentation, conservation
+planning, construction, monitoring, maintenance, presentation
+use and so on. It will build a complete integrated heritage
+information service system (Di et al.,2012).
+The proposed system uses spatial indices to record all heritage
+information in 3D format, including physical properties and
+semantic intangible attributes. For the physical parts, landscapes
+
+Figure 2. Location and proposed protection boundary (within
+the pink boundary) of the Dagu Dock of Beiyang Navy
+(International Research Center for Chinese Cultural Heritage
+Conservation of Tianjin University, 2014)
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+217
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+3.4 Data Acquisition
+Urban planning
+
+In order to prepare the WHS application in the future, the local
+government and International Research Center for Chinese
+Cultural Heritage Conservation, e.g. the authors’ research team,
+has launched a multi-year research program including site
+surveys, historic, social and architectural analyses, conservation
+planning, and heritage management. Since heritage site of the
+cultural heritage is large and composed by multiple kinds of
+properties, detailed site surveying and data acquisition have
+been planned during the next few years. Data planned to be
+collected includes historical records, maps, physical
+architectural recording, and social surveying shown in Table 1.
+Classification
+Project file
+
+Historical
+documents
+
+Name
+official document
+or remarks,
+Project Task
+Standing Order
+Local
+Chronicles,
+Inscriptions on a
+tablet
+
+Source
+
+Format
+
+City government
+bureaus
+
+Digital
+
+Governmental
+archives
+
+None
+(to be digitized
+and rectified)
+Digital and
+Traditional
+paper
+documents
+(Photo ,Book)
+
+Historical
+documents
+
+Historical
+materials,
+Contract
+
+Archives
+
+Historical
+documents
+
+Image, Old
+photos
+
+Internet ,digitized
+
+Historical
+documents
+
+Historical
+maintenance
+record
+
+Factory
+
+Historical
+documents
+
+Related paper、
+book and
+Research Report
+
+Internet, Library,
+Archives
+
+Information and
+drawing
+
+Aerial and
+satellite photos
+
+Information and
+drawing
+
+Digital Line
+Graphic(DLG)
+Photo ,slide,
+video, rubbings,
+etc.
+
+Information and
+drawing
+Basic
+information
+
+Basic
+information
+Basic
+information
+
+Related building
+materials of the
+factory
+Related
+equipment
+materials of the
+factory
+Climate,
+pollution,
+erosion, etc.
+
+City government
+and Surveying
+Bureau, overseas
+archives,
+commercial satellite
+image distribution
+services, etc.
+City government
+bureaus
+Internet, digitized
+
+Digital
+Digital and
+Traditional
+paper
+documents
+Digital and
+Traditional
+paper
+documents
+
+Factory
+
+New installation on
+site
+
+Nearby residents
+
+Field survey
+
+Master plan
+
+City government
+bureaus
+
+Digital
+
+3D laser point
+cloud
+
+Data
+acquisition(2013)
+
+Digital and
+geo-referenced
+
+Data
+acquisition(2013)
+
+Digital
+
+City government
+bureaus
+
+Digital(word.sl
+ide,etc.)
+
+City government
+bureaus
+City government
+bureaus
+
+Digital(word.sl
+ide,etc.)
+Digital(word.sl
+ide,etc.)
+
+Urban planning
+
+Industrial heritage integrates physical buildings, courtyards,
+natural settings as well as their attached intangible
+characteristics which are affiliated to the physical heritage
+properties and presents through historical, social and culture
+semantics. These often contain multiple scales, such as from 啊
+machine to a building, a factory, or an industrial district even to
+an industrial town.
+By reference to urban planning, industrial heritage conservation
+planning and architectural design drawings, etc., the research
+team divides the spatial scale of industrial heritage into seven
+detailed scales shown in Figure 3 in order to organize heritage
+information. Different technologies are introduced to
+correspond to different levels of scale base on the research or
+practical questions, as well as data characteristics. Except the
+regional scale data (Figure 4), the CityGML database combine
+the level from the urban level and use 3D objects in lower levels
+of detail (LOD) in GIS system as basic unit. Higher LOD
+models are imported from BIM data. Organization of physical
+heritage properties and LOD levels can be found in more detail
+in section 4.1.
+
+Figure 3. Spatial scale of an industrial heritage and
+corresponding technologies applied
+
+Digital and
+Traditional
+paper
+documents
+Digital and
+Traditional
+paper
+documents
+
+Environment
+around
+
+Urban planning
+
+3.5 Database Architecture for Continuous Scales
+
+Digital and
+geo-referenced
+
+City government
+bureaus
+
+Urban planning
+
+Table 1. Heritage data collected for documentation
+
+Digital(jpg,ppt,
+rmvb, etc.)
+
+Archives of
+Cultural heritage
+protection unit
+
+3D laser
+scanning record
+table
+Master plan,
+regulatory plan,
+tourism plan.etc.
+Environmental
+protection plan
+Tourism statistics
+and related
+
+Digital(word.sl
+ide,etc.)
+
+Digital(dwg,jp
+g,tif,etc.)
+
+Basic
+information
+
+Environment
+around
+Surveying and
+Mapping
+Archives
+Surveying and
+Mapping
+Archives
+
+City government
+bureaus
+
+geo-referenced
+
+Digital and
+Traditional
+paper
+documents
+Digital and
+Traditional
+paper
+documents
+
+Factory
+
+materials
+The protection
+planning of the
+north navy’s taku
+dockyard
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+218
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+4.
+
+suggested 2/2 meters in the CityGML standard (OGC,
+2007).
+LOD3 and LOD4. More detailed elements, such as
+structural elements, changing process (see Figure 6),
+damaged condition of important buildings (see Figure 7),
+special structure or facility of the industrial heritage, like
+crane beam, are managed in BIM and transferred into
+LOD3 and LOD4 levels.
+
+Figure 4. Spatial distribution and industry types of the industrial
+heritages in Tianjin
+4.
+
+DATABASE OF DAGU DOCK
+
+4.1 Structure of physical property data organization
+Main content of the proposed database integrates GIS and BIM
+to organized 3D buildings, urban and landscapes with attributed
+social and cultural phenomena in order to record the industrial
+heritage comprehensively and profoundly for heritage
+management and further application. As mentioned in previous
+section, physical properties including courtyards, buildings,
+manufactural facilities, environmental settings and other
+relevant urban features are depicted through 3D objects. While
+intangible social/cultural phenomena are recorded as semantics
+of the 3D spatial elements. According to the LOD format of
+CityGML models, objects standing for heritage properties are
+organized hierarchically to reflect different levels of scale, and
+then modelled in different LOD.
+1.
+
+2.
+3.
+
+LOD0. Besides traditional LOD0 features like the
+natural landscape, environmental setting, etc., heritage
+property unit defined by an enclosed spatial boundary,
+including factory, dock, dyke, or group of buildings,
+facilities, contaminated areas, as well as the factory,
+construction and dock in the historical period are
+depicted through BREP in this level. Format of these
+units are polygons draped on the DEM and extruded into
+3D.
+LOD1. Individual building are the only component in
+this level and expressed as simple blocks (see Figure 5).
+LOD2. A few significant buildings, all trees and
+environment features, and other landscape architecture
+elements are depicted in LOD2 since they need to be
+recorded and illustrated in detail. Special styles and
+shapes of buildings, and textures of landscapes features
+are recorded in LOD2 models. Accuracy of details of
+LOD2 models may even finer than the typically
+
+Figure 5．LOD1 heritage records of Dagu Dock of Beiyang
+Navy (International Research Center for Chinese Cultural
+Heritage Conservation of Tianjin University, 2014)
+
+Figure 6．Post-earthquake machinery engineering workshop,
+Dagu Dock of Beiyang Navy (International Research Center for
+Chinese Cultural Heritage Conservation of Tianjin University,
+2014)
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+219
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+which is marked as the yellow rectangle in figure 8. Its was
+originated from the Chinese architectural tradition that the
+significant building usually locates in the center and in
+consequence the Temple plays an important role in the spatial
+distribution. People worshiped the Dragon King (the god
+manage the sea) before shipbuilding, ship repair, and the launch
+of a new ship and going out to sea (Jiang, 2005). This confirms
+the combination of early modern industrial civilization and
+Chinese traditional sacrifice culture.
+
+Figure 7．The wall damage documentation and partial inner
+wall changes of machinery engineering workshop, Dagu Dock
+of Beiyang Navy (International Research Center for Chinese
+Cultural Heritage Conservation of Tianjin University, 2014)
+4.2 Attribute Data of Intangible Phenomena
+History and social/cultural phenomena, as mentioned in the
+above sections, are recorded as semantics and indexed to the
+heritage properties. The major semantics the properties’
+physical existences are functionality categories, text
+descriptions, temporal changes, industrial behaviours,
+continuity and sustainability, multimedia records and so on.
+Table 2 shows what kind of attribute information are required to
+record important properties of the factory, buildings /structures
+and machineries:
+Heritage property
+Factory
+
+Building/structur
+e
+Machine
+
+Categories of attribute data
+Name, industry category, construction time,
+protection level, major products, present situation
+description, main technology, important historical
+moments/figures and events, document information,
+etc.
+Name, construction time, critical historical
+moment/figures and events, document information,
+present situation description, protection level, etc.
+Name,
+manufacture
+date,
+model,
+product
+specifications, manufacturer, trade mark, function,
+present situation description, document information,
+etc.
+
+Table 2. Attribute data documented for different categories of
+heritage property
+4.3 Database Application
+The proposed database directly serves as the analytical base of
+in-depth and multidisciplinary studies. Investigation on building
+and structure levels depends on the BIM data, while the
+historical interpretation and spatial phenomena are explored
+base on the spatial and semantic data. According to historical
+records and literature data (Chi, 1930; Culture & History
+Committee, Tanggu CPPCC, 2005; Zhou, 1907), the research
+team analyses the history of Dagu dock from 1695, the year
+when Emperor Kangxi of the Qing Dynasty ordered to rebuild
+The Sea God Temple, to 1942 (Figure 8). Spatial construction
+of the Dagu Dock is basically around the Sea God Temple
+
+Figure 8. Historial development map of Dagu dock (1695-1942
+A.D.)
+5. CONCLUSION AND DISCUSSION
+This paper illustrates the idea of continuous scales through a
+specific case study. Since our regional-scale study of industrial
+heritage of China was just started from the initiation of this
+comprehensive GIS-based approach, it is still in its primary
+stage comparing the more mature database of site and buildings.
+In addition, spatial and temporal social and cultural distribution
+demonstrated by industrial heritage and their mechanism cannot
+be interpreted clearly due to lack of theory and methodology.
+Therefore this part is not discussed in the limited content of this
+paper. On the other hand, although there are other cases which
+may explain the continuous scales in larger scales properly, but
+not suitable from the BIM aspect. Paradigm shift in these scales
+usually happens within a building. The case study proposed in
+this paper still can demonstrate the most typical component of
+this framework.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+220
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+ACKNOWLEDGEMENTS
+This paper and presented researches are supported by the
+following research funds: Key Project of National Social
+Science Foundation of China (project No. 12&ZD230);
+National Major Science and Technology Development Project
+of China (project No. 2014BAK09B02); Programme of
+Introducing Talents of Discipline to Universities of Ministry of
+Education of China (project No. B13011); and Natural Science
+Foundation of China (Project No. 51178293). The authors
+appreciate Dr. Zhu Lei’s contribution at the earlier stage of this
+academic idea as well as the prototype of GIS-BIM integration
+system.
+REFERENCES
+Al Amouri, A. and Kolbe, T. 2009. Quality assessment of
+historical Baalbek's 3D city model. In: Digital heritage:
+Proceedings of the third international Conference, Lund,
+EuroMed, pp. 121–125.
+Box, P. (eds.), 1999. Geographic Information Systems and
+Cultural Resource Management: A Manual for Heritage Site
+Managers. Bangkok: UNESCO Principal Regional Office for
+Asia and the Pacific.
+Du, X., 2013. BIM-based industrial architectural heritage
+mapping. Tianjin: Master's thesis of Tianjin University.
+Chi, Z. Y.(池仲佑),1930. 海军实记.中国国家图书馆古籍善本
+影印本, National Library of China, Beijing.
+Culture & History Committee, Tanggu CPPCC, 2005. 北洋水
+师大沽船坞. China Culture and History Press, Beijing.
+Fletcher, R., Johnson, I., Bruce, E. and Khun-Neay, K., 2007.
+Living with heritage: site monitoring and heritage values in
+Greater Angkor and the Angkor World Heritage Site. World
+Archaeology, 39(3), pp.385-405.
+He, J., 2008. GIS-based Cultural Route Heritage Authenticity
+Analysis and Conservation Support in Cost-surface and
+Visibility Study Approaches. Hong Kong: PhD thesis of The
+Chinese University of Hong Kong.
+Hu, M. X. and Dong, W., 2002. GIS-based information
+systems of Xijindu historical town of Zhenjiang protection and
+management. PLANNERS.(3) pp.71-73.
+Gröger, G. and Plümer, L., 2012. CityGML – interoperable
+semantic 3D city models. ISPRS Journal of Photogrammetry
+and Remote Sensing, 71, pp.12-33.
+Isikdag, U. and Zlatanova, S., 2009. Towards defining a
+framework for automatic generation of buildings in CityGML
+using building information models. In Lee, J., Zlatanova, S.,
+Cartwright, W., Gartner, G., Meng, L. and Peterson, M. P.(eds.),
+3D Geo-Information Sciences. Springer , Berlin and Heidelberg,
+pp.79-96.
+
+S., König.,G,, Nagel, C., Cartwright, W., Gartner, G., Meng, L.
+and Peterson, M. P.(eds), Advances in 3D Geo-Information
+Sciences. Springer , Berlin and Heidelberg, pp.211-225.
+Limp, W. F., Payne, A., Winters, S., Barnes, A. and Cothren, J.
+2010. Approaching 3D digital heritage data from a multitechnology, lifecycle perspective. In: Proceedings of The 38th
+Conference on Computer Applications and Quantitative
+Methods
+in
+Archaeology
+[C/OL].
+http://www.cast.uark.edu/assets/files/PDF/CAA_2010_proceedi
+ngs_Limp_et_al.pdf (31.Dec.2012)
+Manferdini, A. M., and Remondino, F., 2010. Reality-based 3D
+modeling, segmentation and web-based visualization. In:
+Digital heritage ： Proceedings of the third international
+Conference, Lemessos, EuroMed, pp. 110–124.
+Open Geospatial Consortium, Inc. (OGC). 2007. Candidate
+OpenGIS® CityGML Implementation Specification. [R/OL]
+Open
+Geospatial
+Consortium
+Inc..
+OGC
+07062,http://portal.opengeospatial.org/files/?artifact_id=22120&p
+asscode=hfbq2pa6eprrnh9jbyzp (1 Jan. 2013)
+Oreni, D., Cuca, B. and Brumana, R., 2012. Three-dimensional
+virtual models for better comprehension of architectural
+heritage construction techniques and its maintenance over time.
+In Ioannides, M., Fritsch, D., Leissner, J., Davies, R.,
+Remondino, F. and Caffo, R. (eds), Progress in Cultural
+Heritage Preservation. Berlin Heidelberg, Springer, pp. 533–
+542.
+Pauwels, P., Verstraeten, R., De Meyer, R. and Van
+Campenhout, J.,2008. Architectural information modelling for
+virtual heritage application. In: Digital Heritage -- Proceedings
+of the 14th International Conference on Virtual Systems and
+Multimedia, Limassol, pp.18–23.
+Rojas-Sola, J.I., Castro-Garcia, M. and del Pilar CarranzaCanadas, M., 2011. Content management system incorporated
+in a virtual museum hosting. Journal of Cultural Heritage,
+12(1), pp. 74–81.
+iveiro, ., Arias, P., Armesto, J. and Ord ez, C., 20 . A
+methodology for the inventory of historical infrastructures:
+documentation, current state, and influencing factors.
+International Journal of Architectural Heritage, 5(6), pp.629–
+646.
+Remondino F. 2011. Heritage recording and 3D modeling with
+photogrammetry and 3D scanning. Remote Sensing, 3(6),
+pp.1104–1138
+San José-Alonso, J. I., Finat, J., Pérez-Moneo, J. D., FernándezMartín, J. J., and Martínez-Rubio J., 2009. Information and
+knowledge systems for integrated models in cultural heritage
+[C/OL]. In: Proceedings of 3D-ARCH 2009: 3D Virtual
+Reconstruction and Visualization of Complex Architectures.
+http://www.isprs.org/proceedings/XXXVIII/5W1/pdf/sanjosealonso_etal.pdf (7 Dec. 2012)
+
+Liu, H. Y., 2013. formationalizing the Architectures in Hexi
+Corridor based on CGB Technique. Tianjin: Master's thesis of
+Tianjin University
+
+Styliadis, A. D., Akbaylar, I. I., Papadopoulou, D. A.,
+Hasanagas, N. D., Roussa, S. A. and Sexidis, L. A., 2009.
+Metadata-based heritage sites modeling with e-learning
+functionality. Journal of Cultural Heritage, 10(2), pp.296-312.
+
+Laat, R. and Berlo, L., 2011. Integration of BIM and GIS: the
+development of the CityGML GeoBIM extension. In Kolbe, T.
+
+Tsirliganis N, Pavlidis G, Koutsoudis A, Papadopoulou D,
+Tsompanopoulos A, Stavroglou K, Loukou Z and Chamzas C.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+221
+
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XL-5/W7, 2015
+25th International CIPA Symposium 2015, 31 August – 04 September 2015, Taipei, Taiwan
+
+2004. Archiving cultural objects in the 21st Century. Journal of
+Cultural Heritage, 5(4): 379–384
+International Research Center for Chinese Cultural Heritage
+Conservation, the general plan for the protection of Dagu Dock
+of Beiyang Navy（2015-2030）. Tianjin :Tianjin University
+TICCIH, 2003. The Nizhny Tagil Charter for the Industrial
+Heritage, http://ticcih.org/about/charter/ (15 July. 2015)
+Wu, C., Wu, S., Liu, F., He, X. and Gu, J., 2011. Application of
+BIM on Angkor Monuments: a case study on documentation
+and research of the South Outer Gopura in Ta Keo Temple,
+Angkor Monuments. Proceedings of East Asian Architectural
+Culture International Conference (EAAC 2011). Singapore:
+National University of Singapore.
+Wheatley, D. and Gillings, M., 2002. Spatial Technology and
+Archaeology: The Archaeological Applications of GIS. Taylor
+& Francis, London and New York.
+Wager, J., 1995. Environmental planning for a world heritage
+site: Case study of Angkor. Journal of Environmental Planning
+and Management, 38(3), pp.419-434.
+Wu, L. L., 2012. Study on the Lifecycle Management System of
+Architectural Heritage Information based on ArcGIS. Tianjin:
+Master's thesis of Tianjin University.
+Wu, C., Wu, S., Liu, F., He, X. and Gu, J., 2011. Application of
+BIM on Angkor Monuments: a case study on documentation
+and research of the South Outer Gopura in Ta Keo Temple,
+Angkor Monuments. In: Proceedings of East Asian
+Architectural Culture International Conference (EAAC 2011).
+Singapore: National University of Singapore
+Zhang, R., 2008. The research in protection of the historical
+environment in conservation planning of the of cultural relics :
+a case study of Jiexiu Temple. The Journal of Architecture,
+(03)pp. 88-93
+Zhang, R., 2010. survey and research of the East Hall of
+Fougang Temple. Journal of ancient garden technology, (03)pp.
+29-39.
+Zhou, E. R.( 周 尔 润 ) ， 1907. 直 隶 工 艺 志 初 编 ， Beiyang
+Official Newspaper Bureau，1907
+Zhou, W. S., Huang, J. X., 2011. Application of spatial
+information technology in the Beijing-Hangzhou Grand Canal
+cultural heritage protection. Science Publishing, Beijing.
+
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-5-W7-215-2015
+
+222
+
+

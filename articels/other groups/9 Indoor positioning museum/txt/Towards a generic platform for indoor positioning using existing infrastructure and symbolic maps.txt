@@ -1,0 +1,2610 @@
+Proceedings of the International Workshop on
+
+Architectures and Building
+Blocks of Web-Based
+User-Adaptive Systems
+(WABBWUAS)
+co-located with
+International Conference on User Modeling, Adaptation and
+Personalization (UMAP) 2010, Hawaii, USA
+
+Editors: Fabian Abel1 , Eelco Herder1 , Geert-Jan Houben2 , Mykola
+Pechenizkiy3 , Michael Yudelson4
+1
+
+IVS – Semantic Web Group & L3S Research Center, Leibniz University Hannover,
+Germany
+{abel,herder}@L3S.de
+2
+Web Information Systems, TU Delft, The Netherlands
+{g.j.p.m.houben}@tudelft.nl
+3
+Information Systems Group, Eindhoven University of Technology, The Netherlands
+{m.pechenizkiy}@tue.nl
+4
+School of Information Sciences, University of Pittsburgh, USA {mvy3}@pitt.edu
+
+Table of Contents
+Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+i
+
+Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+iii
+
+Student modeling services for hybrid web applications
+
+1
+
+Generic Adaptation Process . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+13
+
+Building Blocks for User Modeling with data from
+the Social Web . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+
+Towards a Generic Platform for Indoor Positioning
+using Existing Infrastructure and Symbolic Maps . . .
+
+31
+
+Ontology-Driven Adaptive Accessible Interfaces in
+the INREDIS project . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+37
+
+PERSEUS – Personalization Services Engine . . . . . . . . . . .
+
+40
+
+Fabian Abel, Eelco Herder, Geert-Jan Houben, Mykola Pechenizkiy,
+Michael Yudelson
+
+Iván Cruces, Mónica Trella, Ricardo Conejo, Jaime Gálvez
+Evgeny Knutov, Paul De Bra, Mykola Pechenizkiy
+
+Fabian Abel, Nicola Henze, Eelco Herder, Geert-Jan Houben, Daniel
+Krause, Erwin Leonardi
+
+Kurt Gubi, Rainer Wasinger, Michael Fry, Judy Kay, Tsvi Kuflik,
+Bob Kummerfeld
+
+Raul Miñón, Amaia Aizpurua, Idoia Cearreta, Nestor Garay, Julio
+Abascal
+Michael Yudelson
+
+i
+
+Preface
+User-adaptive systems have evolved from small-scale stand-alone applications
+to interactive Web-based applications that are often deployed on a larger scale.
+Consequently, the need has arisen to move from prototypical systems to scalable,
+deployable solutions. At the same time, a shift can be seen from rule-based, mentalistic user modeling approaches to ’Web 2.0’ approaches that involve machine
+learning, data mining, and collaborative techniques.
+Past research provided a large body of methods for adaptation/personalization, and techniques for user modeling, usage mining, and collaborative filtering.
+Conceptual frameworks splitting the adaptation process into various layers provide guidance for implementing user-adaptive systems. Based on these building
+blocks, various groups have created their own frameworks, among others AHA!,
+APELS, and Personal Reader. Framework design provides an opportunity to
+reuse components or even whole layers of the adaptation process. Reuse of components such as user behavior observation and logging tools, user model storage
+promotes faster development, better feature selection, and more robust systems.
+Although, system fragmentation enables component reuse and speeds up the
+development of the new systems, there are several issues. First, decomposition
+of a monolithic system should result in a good abstraction of the data and process model to provide a convenient basis for reuse. Second, the data traffic between the separated system components may intensify. As the number of system
+users increases issues related to scalability might arise. This is especially true
+for user-adaptive and cognitive systems where the modeling and personalization
+components are traditionally computationally and data intensive.
+Existing work on the Web-based user-adaptive and cognitive systems, including work on frameworks, shown that there exists a strong overlap between
+conceptual models of the decomposed adaptation process and the practical implications of its design. In this situation, a logical step is to compare already
+working systems with emerging approaches and models. In this workshop we
+seek to identify current practices and experiences with concrete implementations of user-adaptive and cognitive systems or specific components - varying
+from experimental, small-scale prototypes to systems that are deployed on a
+larger scale.
+The topics of this workshop include but are not limited to:
+– user behavior observation and user data collection: embedded into the adaptive system or available as standalone components or add-ons,
+– user data management: data storage platforms and formats, the use of open
+standards, querying techniques or APIs, interoperability issues,
+– reusing reasoning and adaptation techniques,
+– scalability and performance issues of user modeling and adaptation,
+– generalizable techniques for adaptation, personalization and recommendation,
+– translations of conceptual designs into concrete implementation,
+– deployment issues and lessons learned (case studies and evaluation).
+
+ii
+
+In summary, research papers presented at this workshop focus on Architectures and Building Blocks of Web-Based User-Adaptive Systems.
+We would like to thank the members of the Program Committee of WABBWUAS 2010 for their support and reviews. Further, we are grateful to all authors
+who submitted articles to WABBWUAS and contributed with their works to the
+WABBWUAS workshop.
+
+Fabian Abel
+Eelco Herder
+Geert-Jan Houben
+Mykola Pechenizkiy
+Michael Yudelson
+WABBWUAS Organizing Committee, June 2010
+
+iii
+
+Organization
+WABBWUAS 2010 is co-located with the International Conference on User Modeling, Adaptation and Personalization (UMAP) 2010, Hawaii, USA.
+Organizing Committee
+Fabian Abel
+Eelco Herder
+Geert-Jan Houben
+Mykola Pechenizkiy
+Michael Yudelson
+
+Program Committee
+Paul De Bra (Technical University of Eindhoven, the Netherlands)
+Peter Brusilovsky, Peter (University of Pittsburgh, USA)
+Evgeny Knutov (Technical University of Eindhoven, the Netherlands)
+Kevin Koidl (Trinity College Dublin, Ireland)
+Daniel Krause (University of Hannover, Germany)
+Ian O’Keeffe (Trinity College Dublin, Ireland)
+
+!"#$%&"'()$%*+&,'-%./+0%-'1).'234.+$'5%4'677*+06"+)&-''
+!"#$%&'()*+,-%./$0)1%2'*331,-%40)1'56%&6$*76,-%8109*%:#3"*;,%
+%
+%<=>6?%@*$A(17*+%B%&0*$)01+%5*%31%&69=(>1)0/$?%
+C$0"*'+0515%5*%.#31A1%DEFG,%H%.#31A1%IJ=10$K%
+L0)'()*+-%>'*331-%)6$*76-%7A13"*;MN3))?(91?*+%
+
+,
+
+84-".60"9% 2O0+% =1=*'% 0$>'65()*+% 1% +*>% 6P% '*+6(')*+% >O1>% ='6"05*% Q*R% 3*1'$0$A%
+*$"0'6$9*$>+% Q0>O% +>(5*$>% 965*30$A% +*'"0)*+?% JS.CT@% 0+% 1% (+*'% 965*30$A%
++*'"*'% P6'% '*A0+>*'0$A-% (=51>0$A% 1$5% 910$>10$0$A% +>(5*$>% U$6Q3*5A*% 51>1% P'69%
+50PP*'*$>% +6(')*+% >O1>% (+*% >O*0'% 6Q$% 6$>636A0*+?% !$% 6'5*'% >6% 91U*% 0$P*'*$)*+%
+1R6(>% +>(5*$>% U$6Q3*5A*-% 0>% R*)69*+% $*)*++1'B% >6% *+>1R30+O% *V(0"13*$)*+%
+R*>Q**$% )6$)*=>+% 6P% 50PP*'*$>% 56910$+?% W6'% >O0+% =('=6+*% Q*% O1"*% 5*"*36=*5%
+JXY!S-% 1% >663% >6% *50>% 1$5% 0$>*A'1>*% 965*3+% QO0)O% 1336Q+% +*90H1(>691>0)%
+6$>636AB% 91==0$A?% 2O*% +*>% 6P% '*+6(')*+% 0+% )69=3*>*5% Q0>O% !Y:4!<-% 1$%
+0$5*=*$5*$>% A*$*'0)% 6=*$% 3*1'$*'% 965*3% P6'% 0$>*'1)>0$A% Q0>O% *Z>*'$13% +>(5*$>%
+965*3+?%%
+:%35).$-;' [*R% !$>*330A*$>% @*1'$0$A% T$"0'6$9*$>-% J>(5*$>% .65*30$A% J*'"*'-%
+X=*$%@*1'$*'%.65*3%
+
+<'''=&".)$#0"+)&'
+!$%>O*%31+>%5*)15*-%+*"*'13%151=>0"*%1$5%0$>*330A*$>%Q*RHR1+*5%3*1'$0$A%*$"0'6$9*$>+%
+I[!@TK%O1"*%R**$%5*"*36=*5?%.6+>%6P%>O*+*%+B+>*9+%1'*%>O*%'*+(3>%6P%'*+*1')O%*PP6'>+%
+P6)(+*5% 6$% 1% =1'>0)(31'% =*51A6A0)13% >1+U-% 3*1'$0$A% 56910$% 6'% >*1)O0$A% +>'1>*AB-% 30U*%
+P6'%*Z19=3*%T@.HS42%\,]%6'%S3A*^'10$%2(>6'%\D]%QO0)O%5*13%Q0>O%@!J_%1$5%S3A*R'1%
+56910$+% '*+=*)>0"*3B?% S3>O6(AO% 3*++% )6996$-% >O*'*% 1'*% 13+6% *5()1>06$13% Q*RHR1+*5%
+>663+%P6'%A*$*'0)%56910$+%+()O%1+%J!T22T%\`]%6'%<&:%\a]?%:0"*$%>O*%1"1031R030>B%6P%
+133%>O*+*%>663+-%*5()1>6'+%1$5%)6('+*%5*+0A$*'+%91B%R*%0$>*'*+>*5%0$%0$>*A'1>0$A%+69*%
+6P%>O*9%0$%>O*0'%6Q$%)6('+*+?%J0$)*%>O*+*%1$5%6>O*'%+B+>*9+%1'*%O0AOHV(130>B%+6P>Q1'*%
+R1+*5% 6$% +6305% >O*6'*>0)13% P6($51>06$+-% >O*B% 91B% R*% 6P% A'*1>% "13(*% P6'% >O*%
+5*"*36=9*$>% 6P% 6>O*'% *5()1>06$13% +B+>*9+?% b6Q*"*'-% 965(31'0>B% 0+% 3090>*5% 0$% 96+>%
+)1+*+-% QO0)O% 91U*+% '*(+1R030>B% 1396+>% 09=6++0R3*% ($3*++% >O*% +B+>*9% 0+% (+*5% 1+% 1%
+QO63*?%%
+[O*$% >O0$U0$A% 1R6(>% 5*"*36=0$A% >663+% >O1>% 1336Q% '*(+1R030>B% 6P% *Z0+>0$A%
+)69=6$*$>+-%5*+0'1R3*%P*1>('*+%P6'%+()O%>663+%1'*c%56910$H0$5*=*$5*$)*%I>663+%)1$%R*%
+(+*5% P6'%1$B%+(R7*)>%56910$Kd%*Z>*$+0R030>B%I0$%>O*%+*$+*%>O1>%1$B%)69=6$*$>%)1$%R*%
+0$>*A'1>*5K-% 1$5% )69=6$*$>% 0$>*'6=*'1R030>B% I)69=6$*$>+% )1$% )699($0)1>*% 1$5%
+0$>*'6=*'1>*% 5*+=0>*% 50PP*'*$)*+% 6P% 09=3*9*$>1>06$% 31$A(1A*-% *Z*)(>06$% *$"0'6$9*$>%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+,%2O0+%Q6'U%O1+%R**$%=1'>0133B%+(==6'>*5%RB%>O*%S42T.!JS%='67*)>%$(9R*'%2!Y%FGHeGf,f%6P%
+
+>O*%.!Y!J2T4!X%<T%&!TY&!S%T%!YYXgS&!hY-%J=10$?%
+%
+
+1
+
+6'%965*3%1R+>'1)>06$K?%!$>*'6=*'1R030>B%)1$%R*%1=='61)O*5%P'69%>Q6%50PP*'*$>%1$A3*+c%
+1+%1%50+>'0R(>*5%+6P>Q1'*%='6R3*9-%1$5%1+%1%+*91$>0)%)6$)*=>(13%0++(*?%
+Y6Q151B+-% Q*RHR1+*5% 3*1'$0$A% *$"0'6$9*$>+% 1'*% *"63"0$A% RB% 151=>0$A% >O*0'%
+1')O0>*)>('*+% >6% $*Q% [*R% D?F% >*)O$636A0*+?% 2O*% $*Q% 1=='61)O*+% '*3B% 6$% >O*%
+5*"*36=9*$>% 6P% 50+>'0R(>*5% 1')O0>*)>('*+% R1+*5% 6$% >O*% 0$>*A'1>06$% 1$5% '*(+*% 6P%
+3*1'$0$A%1)>0"0>0*+?%&6$+*V(*$>3B%[!@T+%R*)69*%OBR'05%Q*R%1==30)1>06$+%I91+O(=K?%%
+W('>O*'96'*-% >O*% Q*R% >*1)O0$Ai3*1'$0$A% 965*3% *"63"*+% >6Q1'5+% 1$% 1(>6H3*1'$0$A%
++)*$1'06%0$%QO0)O%+>(5*$>+%)69=3*>*%>O*0'%>'10$0$A%(+0$A%'*+6(')*+%36)1>*5%133%6"*'%>O*%
+Q*R?% !$% 1$B% )1+*-% Q*% 5*13% Q0>O% +>(5*$>+% QO6% 1'*% (+0$A% 50PP*'*$>% +B+>*9+?% !P% >O*+*%
++B+>*9+%1'*%0$>*330A*$>%I0?%*?%91$1A*%>O*0'%6Q$%+>(5*$>%965*3K-%*1)O%6$*%6P%>O*9%+>6'*+%
+=1'>% 6P% >O*% 0$P6'91>06$% 1R6(>% >O*% !"#$%&"'!% U$6Q3*5A*-% >O1>% 0+-% >O*% +>(5*$>% 965*3% 0+%
+50+>'0R(>*5% 6"*'% >O*% $*>Q6'U?% !$% >O0+% )6$>*Z>-% 0>% Q6(35% R*% (+*P(3% >O1>% () !*!"%+) ,(!-+%
+!.+%.&%)/.0)0%/%0%&1%!2)34%&)5")4(!)".)3.0-)35"4)()&%3)!"#$%&"6)5&).0$%0)".)70.85$%)
+151=>*5%0$+>'()>06$?%%
+This problem can be approached by using user modeling servers (UMS) \fdedG].
+According to Kobsa [8], the purpose of user modelling servers is to separate user
+modelling functionality from user-adaptive application systems. They are not a part of
+an application system but rather independent from it . In this way, an UMS is part of a
+distributed learning environment which provides teachers and users with educational
+services. ADAPT2 [9] is an example of a framework for distributed education that
+integrates an UMS as part of its architecture. It stores students' activity and infers
+student's knowledge. When a student interacts with systems that have their own UMS,
+ADAPT2 facilitates user models integration by means of Ontology Servers. It allows
+the knowledge of the same student to be modeled by multiple systems along different
+ontologies and stored on different ontology servers. However, once several adaptive
+systems decide to collaborate in sharing and exchanging student models, they have to
+select one specific ontology ;then the server used for user model exchange will be the
+one that hosts the selected ontology.
+Our research group have been working during the last years in MEDEA [10], a
+distributed P'19*Q6'U%P6'%>O*%0$>*A'1>06$%6P%Q*RHR1+*5%*5()1>06$13%+B+>*9+?%.T<TS%
+='6"05*+%1(>O6'+%Q0>O%>O*%)6'*%)69=6$*$>+%P6'%1$%0$>*330A*$>%3*1'$0$A%+B+>*9c%56910$-%
++>(5*$>% 1$5% 0$+>'()>06$13% 965(3*+?% .T<TS% ='6"05*+% +>(5*$>+% Q0>O% >O*% $*)*++1'B%
+A(051$)*% 5('0$A% >O*% 3*1'$0$A% ='6)*++?% !>% 5*)05*+% 1>% *1)O% 969*$>% >O*% 96+>% 15*V(1>*%
+>1+U%>6%R*%=*'P6'9*5%RB%>O*%+>(5*$>? These tasks are performed by external learning
+resources (LR). T1'3B% "*'+06$% 6P% MEDEA uses a central ontology and allows to
+manually map the domain model of LR into it. So, the user information received from
+LR could be translated into the concepts of !"#"$%& ontology in order to update the
+user model. One of the main Q*1U$*++*+%6P%>O0+%"*'+06$%0+%>O1>%@4+%%)1$$6>%+O1'*%51>1%
+196$A%>O*9?%2O*B%%)1$%6$3B%(=51>*%>O*%)*$>'13%(+*'%965*3%R(>%$6$*%6>O*'%+B+>*9%)1$%
+>1U*% 15"1$>1A*% 6P% 0>?% J*)6$5-% +*91$>0)% 0$>*A'1>06$% 6P% *Z>*'$13% 151=>0"*% +B+>*9+%
+5*=*$5+%6$%1% 91$(13% 91==0$A%% QO0)O%0+%1%)6+>3B% >1+U%>O1>%$**5+%>O*%0$>*'"*$>06$%6P%
+>*1)O*'+% 1$5% 56910$% *Z=*'>+?% !$% 6'5*'% >6% 155'*++% >O*+*% 0++(*+-% .T<TS% O1+% *"63"*5%
+>6Q1'5% 1% 96'*% 5*)*$>'130;*5% 1')O0>*)>('*?% S% +*>% 6P% '*+6(')*+% >O1>% ='6"05*+% Q*R%
+3*1'$0$A% *$"0'6$9*$>+% Q0>O% +>(5*$>+% 965*30$A% +*'"0)*+% O1+% R**$% 5*"*36=*5% 1$5% 0+%
+='*+*$>*5%0$%>O0+%=1=*'?%%
+%
+%
+
+2
+
+JS.CT@% IJ=1$0+O% 1)'6$B9% P6'% C+*'% .65*30$A% S))(9(31>0"*% J*'"*'% P6'% TH
+@*1'$0$AK-% % 0+% 1% C+*'% .65*3% QO0)O% 1336Q+% +>6'0$A% +>(5*$>% U$6Q3*5A*% *"05*$)*+%
+6R>10$*5% P'69% 50PP*'*$>% 3*1'$0$A% '*+6(')*+?% JS.CT@% 0+% 1$% 0$5*=*$5*$>% )69=6$*$>%
+>O1>%)1$%R*%'*V(*+>*5%%RB%1$B%Q*R%@4%>O1>%$**5+%>6%6R>10$%51>1%1R6(>%1%)*'>10$%+>(5*$>?%%
+JS.CT@%+>6'*+%O*>*'6A*$*6(+%0$P6'91>06$%P'69%50PP*'*$>%+B+>*9+%>O1>%5*13%Q0>O%
+50PP*'*$>%56910$%6$>636A0*+?%!$%6'5*'%>6%=*'P6'9%*"05*$)*%0$>*A'1>06$%0>%0+% $*)*++1'B%
+>O1>%+B+>*9+%1A'**%6$%>O*%+*91$>0)%6P%>O*%56910$%>*'9+-%+6%>O*B%)1$%*Z)O1$A*%51>1%P6'%
+>O*%*V(0"13*$>%56910$%)6$)*=>+%>6%(=51>*%>O*0'%6Q$%965*3+?%%
+J69*% 1>>*9=>+% )1$% R*% P6($5% 0$% >O*% 30>*'1>('*% P6'% (+*'% 965*3% 0$>*A'1>06$?% !$% \,,]%
+1(>O6'+% ='6=6+*% 1% )6$"*'+1>06$13% 965*3% P6'% '*1)O0$A% 1$% 1A'**9*$>% 6"*'% $6>% +O1'*5%
+)6$)*=>+?%S$%6$>636ABHR1+*5%1=='61)O%0+%(+*5%0$%\,D]%>6%05*$>0PB%+09031'%)6$)*=>+%0$%
+>O*% 6$>636A0*+% 6P% '*31>*5% 56910$+% 1$5% 130A$% >O*% 56910$% 965*3+% 6P% >Q6% 151=>0"*%
+*5()1>06$13% +B+>*9+?% !$% >O0+% =1=*'% Q*% ='*+*$>% 1$% 0$0>013% ='6=6+13% R1+*5% 6$% 6$>636AB%
+91==0$A% >*)O$0V(*+% \,`]?% W6'% >O0+% =('=6+*% JXY!S% IJ=1$0+O% 1)'6$B9% P6'% !$>*330A*$>%
+X$>636AB%J*'"*'%P6'%TH@*1'$0$AK%O1+%R**$%5*"*36=*5?%2O0+%>663%1336Q+%56910$%965*3%
+*50>06$%1$5%+*90H1(>691>0)% 6$>636AB% 91==0$A?%JXY!S%+>6'*+%>O*%56910$%6$>636A0*+%
+6P% *Z>*'$13% @4?% 94%&) () !"#$%&"'!) +(0-) 5&) () $.+(5&) 1.$)*=>% 0+% '*V(*+>*5% P'69%
+J19(*3-%JXY!S%='6"05*+%1%30+>%6P%*V(0"13*$>%56910$%>*'9+?%2O*$%*"05*$)*%0$>*A'1>06$%
+O*('0+>0)+%1'*%1==30*5%>6%133%>O*%)6$)*=>+%%0$)3(5*5%0$%>O*%30+>?%
+2O*%+*>%6P%+>(5*$>%965*30$A%+*'"0)*+%0+%)69=3*>*5%Q0>O%!Y:4!<%IJ=1$0+O%1)'6$B9%
+P6'% <6910$% !$5*=*$5*$>% :'1=O0)% !$>*'P1)*K?% 2O0+% +B+>*9% 1336Q+% +>(5*$>+% >6% )6$+(3>%
+I"01%[*RK%(+*'%965*3+%6P%'*+6(')*+%Q0>O%QO0)O%>O*B%Q6'U%1$5%0$>*'1)>?%
+!$% >O*% $*Z>% +*)>06$% 1% 5*+)'0=>06$% 6P% 50PP*'*$>% (+1A*% +)*$1'06+% 6P% .T<TS% 0+%
+50+)(++*5?% !$% >O*% '*+>% 6P% >O*% =1=*'-% *1)O% >663% 0+% 5*+)'0R*5% 0$% 5*>103c% JS.CT@% I(+*'%
+965*30$A% +*'"*'K% 0$% +*)>06$% `d% JXY!S% I6$>636AB% 91==0$A% >663K% 0$% +*)>06$% a-% 1$5%
+!Y:4!<% IX=*$% @*1'$*'% .65*3K%0$%+*)>06$% f?%W0$133B% +69*%)6$)3(+06$+%6P%>O0+% Q6'U%
+1'*%='*+*$>*5?%
+
+>
+
+?@A@8'-0%&6.+)-'
+
+!$% >O0+% +*)>06$% Q*% 5*+)'0R*% $*Q% .T<TS% 1')O0>*)>('*% >O'6(AO% 50PP*'*$>% (+1A*%
++)*$1'06+?%%
+.T<TS%='6"05*+%133%>O*% )69=6$*$>+% $**5*5%>6%)'*1>*%1$5%*Z*)(>*%1$%!$>*330A*$>%
+@*1'$0$A% T$"0'6$9*$>c% +(==6'>% P6'% <6910$% .65*3% 5*P0$0>06$-% C+*'% .65*3% I51>1%
++>6'1A*% 1$5% 501A$6+0+% ='6)*++*+K-% !$+>'()>06$13% _31$$*'% 1$5% C+*'% !$>*'P1)*?% S33% 6P%
+>O*9% )1$% R*% (+*5% >6A*>O*'% >6% 1)>% 1+% 1% [!@T% QO03*% +69*% 6P% >O*9% )1$% R*% (+*5%
+0$5*=*$5*$>3B%RB%1$B%T5()1>06$13%J6P>Q1'*?%%
+2O*% P0A('*% ,% +O6Q+% >O*% +)*$1'06% ,-% QO*'*% 133% .T<TS% )69=6$*$>+% 1'*% (+*5%
+I.T<TS% =31$$*'% 0+$j>% 0$>'65()*5% 0$% >O0+% =1=*'K?%2*1)O*'+% )'*1>*% >O*% 56910$% 965*3%
+1$5%5*)05*%QO0)O%3*1'$0$A%'*+6(')*+%1'*%15*V(1>*%>6%*1)O%)6$)*=>%I56>>*5%30$*K?%2O*$%
+1%+>(5*$>%0$>*'1)>+%Q0>O%>O*%[!@T%>O'6(AO%1%Q*R%R'6Q+*'%1+%5*+)'0R*5%R*36Q?%
+
+3
+
+,%
+
+_@SYYT4%
+
+D%
+
+D%
+
+JS.CT@%
+
+`%
+[*R%
+R'6Q+*'%
+
+D%
+
+JXY!S%
+f%
+
+f%
+
+!Y:4!<%
+
+2*1)O*'%
+
+a%
+TZ>*'$13%@*1'$0$A%
+4*+6(')*+%
+
+<6910$%.65*3%
+
+f%
+J>(5*$>%
+
+%
+%
+B+,9'<9'.T<TS%1')O0>*)>('*%H%J)*$1'06%,'
+%
+'
+'
+!0%&6.+)'<'
+,? J>(5*$>%1+U+%.T<TS%=31$$*'%P6'%15"0)*?%
+D? .T<TS%=31$$*'%)6$+(3>+%56910$%965*3%1$5%+>(5*$>%965*3%IJS.CT@K?%
+JS.CT@%(+*+%JXY!S%>6%6R>10$%133%>O*%51>1%'*31>*5%>6%.T<TS%56910$%
+965*3%)6$)*=>+?%T1)O%56910$%>6=0)%0+%'*31>*5%>6%6$*%6'%96'*%*Z>*'$13%@4%
+>O1>% )1$% R*% (+*5% >6% 3*1'$% 0>?% .T<TS% =31$$*'% +(AA*+>+% $*Z>% >6=0)% >6% R*%
+3*1'$>%1$5%+69*%>1+U+%I@4K%>6%R*%56$*%RB%>O*%+>(5*$>??%
+`? J>(5*$>%Q6'U+%Q0>O%1%@4?%
+a? @4%(=51>*+%+>(5*$>%965*3%0$"6U0$A%JS.CT@%Q*R%+*'"0)*+?%%
+f? 2*1)O*'+% 1$5i6'% +>(5*$>+% )1$% )6$+(3>% >O*% +>(5*$>% 965*3% (+0$A% !Y:4!<%
+I:'1=O0)%!$>*'P1)*K?%
+%
+^*+05*+% R*0$A% (+*5% >6A*>O*'-% *1)O% '*+6(')*% )1$% )6$+>0>(>*% 1$% 0$5*=*$5*$>%
+)69=6$*$>% QO0)O% 91B% R*% (+*5% 0$% )69R0$1>06$% Q0>O% 1$% @4?% .T<TS% O1+% >O*'*P6'*%
+*"63"*5% 0$>6% 1% 91+O(=?% 2O*% P0A('*% D% +O6Q+% 1$6>O*'% =6++0R3*% +)*$1'06% QO*'*% +69*%
+.T<TS%)69=6$*$>+%1'*%(+*5%RB%*Z>*'$13%'*+6(')*+?%
+%
+`%
+_@SYYT4%
+
+JS.CT@%
+
+@*1'$0$A%
+4*+6(')*%
+
+D%
+J.%
+<6910$%.65*3%
+
+JXY!S%
+,%
+!Y:4!<%
+
+%
+B+,9'>9'.T<TS%1')O0>*)>('*%:%J)*$1'06%D'
+
+4
+
+!0%&6.+)'>'
+,? J>(5*$>+%Q6'U+%0$5*=*$5*$>3B%Q0>O%1%@4%?%
+D? 2O*%@4%1+U+%JS.CT@%P6'%0$P6'91>06$%1R6(>%"45!)!"#$%&"'!)-&.3;%$<%)6P%
+1%)6$)'*>*%>6=0)?%JS.CT@-%(+0$A%JXY!S-%)69=03*+%133%>O*%1"1031R3*%51>1%
+1$5%+*$5+%0>%>6%>O*%@4?%
+`? [O*$%>O*%+>(5*$>%P0$0+O*+-%>O*%@4%(=51>*+%0>+%6Q$%+>(5*$>%965*3%1$5%)1$%
+(=51>*%JS.CT@%>66?%
+%
+2O*%P0A('*%`%5*+)'0R*+%O6Q%!Y:4!<%)1$%R*%(+*5%RB%1%@4%>O1>%O1+%$6%Q1B%>6%+O6Q%
+A'1=O0)133B%0>+%+>(5*$>%51>1?%
+%
+_@SYYT4%
+
+@*1'$0$A%
+4*+6(')*%
+
+JS.CT@%
+
+J.%
+
+JXY!S%
+<6910$%.65*3%
+
+,%
+!Y:4!<%
+J>(5*$>%
+,%
+
+%%%%%%%%
+
+%
+B+,9'C9'.T<TS%1')O0>*)>('*%H%J)*$1'06%`'
+'
+'
+!0%&6.+)'C'
+,? S$%*Z>*'$13%@4%(+*+%!Y:4!<%1+%1%50+=31B%P6'%0>+%965*3?%
+%
+
+C
+
+2*1)O*'%
+,%
+
+%
+
+D-%.'()$%*'-%./%.'1).'%E*%6.&+&,'
+
+JS.CT@% 0+% 1% (+*'% 965*30$A% +*'"*'% >O1>% 1336Q+% +>6'0$A% 6P% +>(5*$>% U$6Q3*5A*%
+*"05*$)*+%1R6(>%50PP*'*$>%56910$%)6$)*=>+%6R>10$*5%P'69%50PP*'*$>%3*1'$0$A%'*+6(')*+%
+IW0A('*% aK?% T1)O% @4% )1$% 91$1A*% 0>+% 6Q$% 56910$% 965*3-% +6% *1)O% >6=0)% I56910$%
+)6$)*=>K% 91'U%0+%+>6'*5%0$5*=*$5*$>3B%>6A*>O*'% Q0>O%>O*%+>(5*$>% !<-%>O*%56910$%1$5%
+>O*% +6(')*% @4% 2O*'*P6'*% 0>% 0+% $*)*++1'B-% 0$% 6'5*'% >6% 91U*% 0$P*'*$)*+% 1R6(>% +>(5*$>%
+U$6Q3*5A*-% >6% *+>1R30+O% *V(0"13*$)*+% R*>Q**$% )6$)*=>+% 6P% >O*% +19*% 56910$% >O1>%
+R*36$A% % >6% 1% 50PP*'*$>% 6$>636AB?% W6'% >O0+% =('=6+*% Q*% O1"*% 5*"*36=*5% 1$% !$>*330A*$>%
+X$>636AB%J*'"*'%P6'%TH@*1'$0$A%I+**%$*Z>%+*)>06$K?%
+%
+
+5
+
+!"#$%&'($#'!)*+)*,
+Student 1 L R 1 Domain1 Topic 1 Mark
+
+SONIA
+(Ontology Server)
+
+Student 1 L R 2 Domain1 Topic 1 Mark
+!
+Student i L R j Domain k Topic l Mark
+
+8.,'()"#4'(5#*4(./(9:(
+-*4.%/()*(./*);"#
+
+!"#$%&"'()*(
+! +,-.)"(./-(#")#%"$"(
++'"#(0/*12"-3"(
+"$%-"/&"'
+! 4.0"(%/5"#"/&"'(
+.6*+)(')+-"/)(
+0/*12"-3"
+
+-).'!)*+/0)1
+
+LR
+7*4.%/(%
+
+LR
+
+'
+
+LR
+
+-).'&)2*3)*'4)156*0)1
+
+758/0'9
+758/0'; 758/0':
+
+'
+B+,9'F9'JS.CT@%1')O0>*)>('*'
+%
+W6'%*Z19=3*-%0P%Q*%)6$+05*'%>Q6%[!@T+%QO0)O%O1"*%1%56910$%%'*31>*5%>6%%*)6$690)+-%
+Q*%)6(35%91=%>O*%>*'9+%1+%0$%21R3*%,?%
+G64*%'<9%T)6$690)%56910$%6$>636AB?%
+
+[!@T%,%
+26=0)%,c%T)6$690)%)6$)*=>+%
+26=0)%Dc%k0$5+%6P%91'U*>+%
+[!@T%D%
+26=0)%,c%!$>'65()>06$%
+26=0)%Dc%W0$1$)013%+B+>*9%
+26=0)%`c%.1'U*>+%
+=%
+.1=+%>*'9+%
+%
+I[!@T%,K%26=0)%,c%T)6$690)%)6$)*=>+%%l%H%m%I[!@T%DK%26=0)%,c%!$>'65()>06$%
+I[!@T%,K%26=0)%Dc%k0$5+%6P%91'U*>+%%%%%%l%H%m%I[!@T%DK%26=0)%`c%.1'U*>+%
+=%
+%
+!P%1%+>(5*$>%=*'P6'9+%1%>1+U%Q0>O%[!@T%,%1R6(>%!"#$%&'(&)*+,-.%%>6=0)%1$5%1%>1+U%
+Q0>O% [!@T% D% 1R6(>% /*+,-.%% >6=0)-% R6>O-% [!@T% ,% 1$5% [!@T% D-% Q033% '*A0+>*'% >O*%
+*"05*$)*+% 0$% JS.CT@?% J6-% 0P% [!@T% ,% '*V(*+>+% >O*% 91'U% 6P% +>(5*$>% 0$% !"#$%& '(&
+)*+,-.%& >6=0)-% JS.CT@% Q033% 0$P*'% 0>% Q0>O% !"#$%& '(& )*+,-.%& *"05*$)*+% 1$5% /*+,-.%%
+*"05*$)*+-%>O'6(AO%>O*%91==0$A%>*'9+?%
+S>%='*+*$>%JS.CT@%6PP*'+%1%+*>%6P%Q*R%+*'"0)*+%09=3*9*$>*5%Q0>O%8SnH[J%S_!-%
+QO0)O% 1336Q+% Q*R% 3*1'$0$A% '*+6(')*+% >6% '*A0+>*'% *"05*$)*+% 1$5% >6% 6R>10$% 51>1% 1R6(>%
+
+6
+
+6>O*'%(+*'%1)>0"0>0*+?%^*+05*+%1%)6$)*=>%91'U-%*1)O%'*)6'5%)6$>10$+%0$P6'91>06$%1R6(>%
+>O*% 3*1'$0$A% 1)>0"0>B% >O1>% ='6"05*+% >O*% 0$P6'91>06$?% 2O*% +*'"0)*+% O1"*% >O'**% 910$%
+=1'19*>*'+c% >O*% +*>% 6P% *"05*$)*+% (+*5% >6% *+>091>*% >O*% +>(5*$>'!% U$6Q3*5A*-% >O*%
+*"05*$)*%+6(')*+%1$5%>O*%9*>O65%(+*5%>6%6R>10$%>O*%*+>091>06$?%
+G64*%'>9%_1'19*>*'%"13(*+%6P%JS.CT@%+*'"0)*+?%
+
+HI'%/+$%&0%-'
+!)#.0%'
+@-"+(6"+)&'
+@1+>%*"05*$)*%
+J=*)0P0)%+6(')*%
+S"*'1A*%91'U%
+@1+>%$%*"05*$)*+%
+S%+*>%6P%+6(')*+%
+[*0AO>*5%91'U%
+T"05*$)*+%0$%1%51>*%'1$A*%
+%
+%
+%
+S))6'50$A%>6%>O*% "13(*+%+O6Q*5%0$%21R3*%D-%JS.CT@%)1$%R*%1+U*5%>6%'*>('$%>O*%
+0*%.&#&*"05*$)*+%)6$)*'$0$A%1%)6$)*=>%6'%>O6+*%)633*)>*5%0$%1%=*'065%6P%>09*?%!$%R6>O%
+)1+*+-% )30*$>+% )1$% '*>'0*"*% 1"*'1A*% 1$5% Q*0AO>*5% 91'U+% P6'% 1$B% )6$)*=>?% 2O*+*% 51>1%
+)1$%R*%'*P*''*5%>6%6$*%6'%96'*%3*1'$0$A%'*+6(')*+?%2O*%O*('0+>0)+%(+*5%>6%)13)(31>*%>O*%
+Q*0AO>*5%91'U+%1'*%'*='*+*$>*5%RB%*V(1>06$%<?%
+%
+(+*!" )* !*
+%
+!"#$%&' !
+%
+(+*!" )*
+I<K%
+%
+!$% 12"$-#3-%& "#& *& $*.-& +*#4-% )1+*% >O*% #% "13(*% 0$% *V(1>06$% <% '*='*+*$>+% >O*% >6>13%
+$(9R*'%6P%51B+%0$%>O*%51>*%'1$A*%1$5%>O*%)"&"13(*%0+%>O*%1"*'1A*%91'U%6P%51B%0?%!$%5*%.&
+#&-2"$-#3-%&)1+*%>O*%#&"13(*%'*='*+*$>+%>O*%$%=1'19*>*'%1$5%>O*%)"&"13(*%0+%>O*%91'U%6P%
+>O*% "6.7% 31+>% *"05*$)*% '*A0+>*'*5?% 2O*% 8"% "13(*+% 1'*% >O*% 91'U% Q*0AO>+?% X$*% *Z19=3*%
+)6(35%R*%8"9:;"-&QO*'*&96'*%Q*0AO>%0+%A0"*$%>6%>O*%96+>%'*)*$>%*"05*$)*+%+0$)*%>O*B%
+'*='*+*$>%96'*%1))('1>*3*)"4%)!"#$%&"'!)1#00%&")-&.3;%$<%?%
+
+F
+
+!JH=8'
+
+S+% 0>% O1+% 13'*15B% R**$% 50+)(++*5-% 0$% 6'5*'% >6% 91U*% 0$P*'*$)*+% 1R6(>% +>(5*$>%
+U$6Q3*5A*% (+0$A% 51>1% )633*)>*5% P'69% 50PP*'*$>% 3*1'$0$A% '*+6(')*+-% 0>% R*)69*+%
+$*)*++1'B%>6%*+>1R30+O%*V(0"13*$)*+%R*>Q**$%)6$)*=>+%6P%50PP*'*$>%56910$+?%[*%O1"*%
+1=='61)O*5% >O0+% ='6R3*9% Q0>O% >O*% 5*"*36=9*$>% 6P% 1% Q*R% 6$>636AB% +*'"*'% )133*5%
+JXY!S?% !>% 0+% 1$% S8Sn% 1==30)1>06$% >O1>% 1336Q+% *50>0$A% )6$)*=>% +*91$>0)% $*>Q6'U+%
+IP0'+>% 3*"*3% 6$>636A0*+K% 1$5% *+>1R30+O0$A% '*31>06$+% 196$A% >O*9% +*90H1(>691>0)133B%
+IW0A('*%eK?%%
+<.-))"#4&*04'+".7)%%IP6'%T$A30+O%1$5%J=1$0+O%31$A(1A*+K%1'*%1==30*5%>6%6$>636AB%
+>*'9+% 1$5% >O*$% 1% +*>% 6P% %.+"#4& %")"0*+".=& )-.+"3%% Ib1990$A% 50+>1$)*-% YHA'19-%
+@*"*$+O>*0$% 50+>1$)*% 1$5% .1Z09(9% )6996$% +(R+>'0$AK% 1'*% (+*5% >6% )13)(31>*% >O*%
+='6R1R030>B% 6P% >Q6% >*'9+% P'69% 50PP*'*$>% 6$>636A0*+% '*P*''0$A% >O*% +19*% )6$)*=>?% !$%
+1550>06$%>6%>O*+*%9*>'0)+-%1%+B$6$B9+%50)>06$1'B%O1+%R**$%155*5?%
+
+7
+
+2O*%W0A('*%f%+O6Q+%1$%*Z19=3*%QO*'*%>*'9+%6P%>Q6%6$>636A0*+%1'*%)69=1'*5?%T1)O%
+(00.3'!)1.;.0)0%70%!%&"!)()$5//%0%&")+%"051>)2O*%$(9R*'%1R6"*%>O*%1''6Q%0$50)1>*+%>O*%
++09031'0>B%5*A'**%R*>Q**$%>O*%>*'9+?%2O*+*%)6''*+=6$5*$)*+%)1$%R*%(=51>*5%I0$+*'>*5%
+1$5i6'%5*3*>*5K%91$(133B?%
+2O*+*%91==0$A+%1'*%+>6'*5%1$5-%QO*$%JS.CT@%0+%'*V(*+>*5%0$P6'91>06$%1R6(>%1%
+)6$)*=>%IW0A('*%aK-%0>%+*1')O*+%P6'%133%>O*%>*'9+%'*31>*5%0$%6'5*'%>6%)633*)>%51>1%QO0)O%
+'*P*'%>6%>O*%+19*%)6$)*=>%1$5%O1"*%R**$%='6"05*5%RB%50PP*'*$>%[!@T+?%
+
+%
+B+,9'K9'X$>636AB%91==0$A%0$%JXY!S?'
+'
+
+8
+
+%
+B+,9'L9'JXY!S%0$>*'P1)*?''
+
+K
+
+A)(6+&'+&$%7%&$%&"',.672+0'+&"%.160%'1).'-"#$%&"'()$%*-'
+
+X=*$% 3*1'$*'% 965*3+% IX@.K% 1'*% 1))*++0R3*% 1$5% 6=*$% 965*3+% >O1>% *Z>*$5% >O*%
+>'150>06$13%[!@T%965*3+%>6%>('$%>O*9%0$>6%1%"0+0R3*%1$5%0$>*'1)>0"*%=1'>%6P%>O*%+B+>*9%
+\,a]?%X@.%1336Q+%1%+>(5*$>%>6%0$+=*)>%O0+%965*3%1$5%0$>*'1)>%I*50>%6'%$*A6>01>*K%Q0>O%
+0>?%2O0+%U0$5%6P%+B+>*9%+>09(31>*+%>O*%!"#$%&"'!)1$13B>0)13%>O0$U0$A%1$5%O*3=+%O09iO*'%
+>6%=31$%1$5%96$0>6'%O0+iO*'%3*1'$0$A%\,f]?%X@.+%1'*%$6>%7(+>%"13(1R3*%P6'%+>(5*$>+%R(>%
+13+6%P6'%>*1)O*'+?%!$%P1)>-%1%A'1=O0)13%'*='*+*$>1>06$%6P%>O*%965*3%)1$%O*3=%>*1)O*'+%>6%
+)1''B% 6(>% 1% )6('+*% P6'91>0"*% *"13(1>06$% 1$5% >6% 5*>*'90$*% >O*% +>(5*$>+'% 3*1'$0$A%
+='6R3*9+?% .6'*6"*'-% >O*% 965*3% 1))('1)B% )1$% R*% 09='6"*5% 0P% >O*% +B+>*9% 1336Q+%
++>(5*$>+% 1$5% >*1)O*'+% >6% )6331R6'1>*% 0$% >O*% 965*30$A% ='6)*++?% ^'6153B% +=*1U0$A-% >O*%
++>(5*$>% 965*3% O1+% *"63"*5% P'69% R*0$A% 1% U$6Q3*5A*% +6(')*% P6'% 3*1'$0$A% '*+6(')*+%
+I)36+*5% +B+>*9K% >6% R*)69*% 1$% 09=6'>1$>% 3*1'$0$A% '*+6(')*% P6'% >O*% +>(5*$>% I6=*$%
++B+>*9+K?%
+2O*'*% 1'*% >Q6% >B=*+% 6P% X@.c% >O6+*% 0$>*A'1>*5% 0$% 1% >(>6'% +B+>*9% 1$5% >O*%
+0$5*=*$5*$>%6$*+%I!X@.K-%QO6+*%=('=6+*%0+%>6%O*3=%+>(5*$>+%>6%05*$>0PB%1$5%>6%+63"*%
+3*1'$0$A% ='6R3*9+% RB% >O*9+*3"*+-% Q0>O6(>% >(>6'% +B+>*9% O*3=-% >O1>% 0+-% >6% *$)6('1A*%
+9*>1)6A$0>0"*%+U033+?%
+J>033%0$%>O*% P0*35%6P%'*+6(')*%0$>*A'1>06$-% Q*% O1"*%5*"*36=*5%!Y:4!<%\,e]-%1% Q*R%
+!X@.% QO0)O% 1336Q+% +>(5*$>+% >6% )6$+(3>% >O*% (+*'% 965*3+% 6P% >O*% 50PP*'*$>% 3*1'$0$A%
+
+9
+
+'*+6(')*+%Q0>O%QO0)O%>O*B%Q6'U%1$5%0$>*'1)>?%!Y:4!<%='6"05*+%>Q6%"0*Q+%6P%+>(5*$>%
++)6'*-%R6>O%R1+*5%6$%>O*%'*31>06$+O0=%>6=0)%i%+(RH>6=0)%P'69%>O*%56910$%)6$)*=>+?%2O*%
+P0'+>%0+%1%O0*'1')O0)13%+>'()>('*%IW0A('*%GK%'*='*+*$>0$A%>O*%0++(*+%RB%1%A'1=O-%1$5%>O*%
++*)6$5%0+%1% >1R3*%6P%>6=0)+%1$5% 91'U+?%2O*%O0*'1')O0)13%"0*Q%6P%>O*% A'1=O%'*='*+*$>+%
+>O*%$65*+%Q0>O%1%)636'%)65*%0$50)1>0$A%>O*%+>(5*$>o+%3*"*3%6P%U$6Q3*5A*%0$%>O0+%)6$)*=>%
+1))6'50$A% >6% 1% =1'>0)(31'% +6(')*% IJ!T22T% +B+>*9-% P6'% *Z19=3*K?% 2O*% >1R3*% 6P% >6=0)+%
++O6Q+%R1'+%>O1>%'*='*+*$>%>O*%91'U+%6$%1%+)13*%P'69%6$*%>6%>*$?%.6'*6"*'-%*1)O%>6=0)%
+)1$%O1"*%+*"*'13%1)>06$+%1++6)01>*5%>6%0>%>6%*50>%>O*%(+*'%965*3%I*?A?%J!T22T%>*+>+K?%
+2O*%+>'*$A>O+%6P%>O*%+B+>*9%1'*%>O1>%0>%0+%A*$*'0)%1$5%0>%)1$%'*='*+*$>%51>1%P'69%1$B%
+[!@T?% W6'%>O0+%=('=6+*-%!Y:4!<% O1+%1%8J_% QO0)O%'*)*0"*+%1+%0$=(>%IZ93%P6'91>K% 1%
+30+>% 6P% )6$)*=>+% 1$5% >O*% 91'U+% 6R>10$*5% RB% >O*% +>(5*$>+-% 1+% Q*33% 1+% >O*% +*91$>0)%
+$*>Q6'U% 6P% >O*% 56910$% 965*3% I)6$)*=>+% 1$5% '*31>06$+O0=+K% 1$5% 0+% )1=1R3*% 6P%
+'*='*+*$>0$A% 0>?% J6% P1'% 0>% O1+% R**$% +())*++P(33B% >*+>*5% Q0>O% J!T22T% 1$5% (+*'% 965*3%
++*'"*'%JS.CT@?%^6>O%>663+%(+*%0>%1+%1%=3(AH0$%>6%A'1=O%>O*%51>1%P'69%>O*0'%+>(5*$>+?%
+%
+%
+
+%
+B+,9'M9'b0*'1')O0)13%"0*Q%0$%!Y:4!<?'
+
+L
+
+N)&0*#-+)&-'
+
+2O*% A*$*'13% 6R7*)>0"*% 6P% 6('% '*+*1')O% Q6'U% 0+% >O*% 5*"*36=9*$>% 6P% 50PP*'*$>% 56910$%
+0$5*=*$5*$>% 1$5% 0$>*'6=*'1R3*% )69=6$*$>+% >O1>% )1$% R*% (+*5% 0$% >O*% )6$+>'()>06$% 6P% 1%
+Q*R%R1+*5%0$>*330A*$>%3*1'$0$A%91$1A*9*$>%+B+>*9+?%%
+2O*% (+*'% 0$>*'1)>06$% Q0>O% 50PP*'*$>% 3*1'$0$A% '*+6(')*+% )1$% ='6"05*% "13(1R3*%
+0$P6'91>06$% >O1>% O*3=+% 6>O*'% +B+>*9+% >6% ='6"05*% >O*% +>(5*$>% Q0>O% 1% 96'*% 1))('1>*%
+0$+>'()>06$?%!$%>O0+%+*$+*%Q*%Q6'U%0$%>O*%0$>*A'1>06$%6P%O*>*'6A*$*6(+%+6(')*+%6P%(+*'%
+0$P6'91>06$?% !$% 6'5*'% >6% 1)O0*"*% >O0+-% 6('% A'6(=% 0+% Q6'U0$A% 6$% >O*% 5*"*36=9*$>% 6P%
+0$5*=*$5*$>% 1$5% A*$*'0)% >663+% >O1>% ='6"05*% +>(5*$>% 965*30$A% +*'"0)*+?% S% P($)>06$13%
+
+10
+
+1=='61)O%O1+%R**$%='*+*$>*5%0$%>O0+%=1=*'?%!>%0$)3(5*+%1%+*>%6P%>663+%>O1>%)1$%R*%(+*5%0$%
+1$B%3*1'$0$A%*$"0'6$9*$>%>6%+O1'*%(+*'%51>1?%%
+!$% >O0+% P0'+>% +>1A*% 6P% >O*% Q6'U-% 133% >O*% >663+% $**5*5% >6% ='6"05*% (+*'% 965*30$A%
++*'"0)*+% O1"*% R**$% 09=3*9*$>*5% 1$5% 133% 6P% >O*9% 1'*% Q6'U0$A% +())*++P(33B% 0$% 1% '*13%
+*$"0'6$9*$>?% S+% =1'>% 6P% 1% P6'91>0"*% *"13(1>06$% ='6)*++-% >O*+*% >663+% O1"*% R**$%
+0$>*A'1>*5% Q0>O%>O*% >*+>% +B+>*9%J!T22T%\,G]?%S>%='*+*$>-% Q*%1'*% A1>O*'0$A% (+*'%51>1%
+P'69%J!T22T-%1$5%Q*%1'*%=31$$0$A%>6%(+*%$*Q%3*1'$0$A%'*+6(')*+%1+%51>1%+6(')*+%0$%
+>O*%$*1'%P(>('*?%%2O*%'*+(3>+%6R>10$*5%P'69%>O0+%*"13(1>06$%O1"*%6=*$*5%(=%=6++0R030>0*+%
+P6'%P(>('*%'*+*1')O?%
+W0'+>-% Q*% 1'*% 1Q1'*% 6P% >O*% 09=6'>1$)*% 6P% >O*% +*91$>0)% 0++(*% 0$% [!@T%
+0$>*'6=*'1R030>B?%!>%0+%1%R6>>3*$*)U%0$%0$>*330A*$>%3*1'$0$A%'*+6(')*+%0$>*A'1>06$?%S%P0'+>%
+1=='61)O% >6% >O0+% ='6R3*9% 0+% JXY!S?% J6% P1'-% % Q*% O1"*% 1==30*5% 6$>636AB% 91==0$A%
+>*)O$0V(*+%R1+*5%6$%3*Z0)13%)69=6$*$>+?%2O*%$*Z>%+>*=%0+%>6%(+*%>*)O$0V(*+%R1+*5%6$%
+6$>636AB% +>'()>('*% 1+% A'1=O% 91>)O0$A% 1$5% +>(5B0$A% '*31>06$+% +*91$>0)?% !$% >O*% $*Z>%
++>1A*% 6P% >O0+% Q6'U% Q*% =31$% >6% )6$5()>% '*+*1')O% 0$>6% >O*% 1==30)1>06$% 6P% 91)O0$*%
+3*1'$0$A%6'%+>1>0+>0)13%>*)O$0V(*+%P6'%6$>636AB%91==0$A?%%
+W('>O*'96'*-%Q*%O1"*%09=3*9*$>*5%1%+*>%6P%+*'"0)*+%>6%1))(9(31>*%(+*'%*"05*$)*+?%
+[*% =31$% >6% 155% $*Q% +*'"0)*+% QO0)O% 1==3B% P6'913% 501A$6+0+% 9*>O65+% >6% 91U*%
+0$P*'*$)*+%1R6(>%+>(5*$>?%%
+W0$133B-%Q*%>O0$U%>O1>%>*1)O*'+%1$5%+>(5*$>+%1'*%1$%09=6'>1$>%+6(')*%6P%*"05*$)*+-%
+>O*'*P6'*%Q*%Q033%$6>%6$3B%1336Q%!Y:4!<%>6%)6$+(3>%>O*%+*'"*'%51>1%R(>%13+6%>6%(=51>*%
+"4%+))"(-5&<)5&".)(11.#&")"%(14%0!)(&$)!"#$%&"!')1.&"05?#"5.&!>)%
+
+O%1%.%&0%-'
+,?
+
+D?
+`?
+a?
+f?
+e?
+
+G?
+
+[*R*'-% :?% 1$5% ^'(+036"+UB-% _?c% T@.HS42c% S$% 151=>0"*% "*'+1>03*% +B+>*9% P6'%
+[*RHR1+*5% 0$+>'()>06$?% J=*)013% !++(*% 6$% S51=>0"*% 1$5% !$>*330A*$>% [*RHR1+*5%
+T5()1>06$13% JB+>*9+?% !$>*'$1>06$13% 86('$13% 6P% S'>0P0)013% !$>*330A*$)*% 0$% T5()1>06$-%
+"63?',D-%==?%`f,HE`pa'IDFF,K%%
+S3=*'>-%J?%4?-%J0$A3*B-%.?%k?-%1$5%W10'Q*1>O*'-%_?%:?c%<*=36B0$A%!$>*330A*$>%2(>6'+%6$%
+>O*% [*Rc% S$% S')O0>*)>('*% 1$5% 1% TZ19=3*?% !$>*'$1>06$13% 86('$13% 6P% S'>0P0)013%
+!$>*330A*$)*%0$%T5()1>06$%-%"63?%,F-%%==?%,p`HH,EG%I,EEEK%
+&6$*76-%4?-%:(;9#$-%T?-%.033#$-%T?-%_q'*;H5*H31H&'(;-%8?%@?-%1$5%2'*331-%.?c%%J!T22Tc%
+S% [*RH^1+*5% 2663% P6'% S51=>0"*% 2*+>0$A?% !$>*'$1>06$13% 86('$13% 6P% S'>0P0)013%
+!$>*330A*$)*%0$%T5()1>06$-%"63?%,a-%==?%DEHHeD%IDFFaK%
+g1++03*"1-%8?%1$5%<*>*'+-%4?c%<B$190)%)6('+*Q1'*%A*$*'1>06$%6$%>O*%[[[?%^'0>0+O%
+86('$13%6P%T5()1>06$13%2*)O$636AB-%"63?%DE-%%==?%fHH,a%I,EEpK%
+k1B-% 8?-% k(99*'P*35-% ^?-% 1$5% @1(5*'-% _?c% _*'+6$0+c% S% +*'"*'% P6'% (+*'% 965*30$A?%
+_'6)**50$A+% 6P% J*)6$5% !$>*'$1>06$13% &6$P*'*$)*% 6$% S51=>0"*% bB=*'9*501% 1$5%
+S51=>0"*%[*RH^1+*5%JB+>*9+%ISboDFFDK-%DF,HHD,D?%.#31A1-%J=10$%IDFFDK%
+^'(+036"+UB-%_?-%J6+$6"+UB-%J?-%1$5%JO)O*'R0$0$1-%X?c%C+*'%.65*30$A%0$%1%<0+>'0R(>*5%%%%%%%%
+TH@*1'$0$A% S')O0>*)>('*?% !$c% @?% S'50++6$6-% _?% ^'$1% 1$5% S?% .0>'6"0)% I*5+?K%
+_'6)**50$A+% 6P% ,F>O% !$>*'$1>06$13% C+*'% .65*30$A% &6$P*'*$)*% IT50$R('AO-% Ck-% 8(3B%
+DaHDE-% DFFfK?% @*)>('*% Y6>*+% 0$% S'>0P0)013% !$>*330A*$)*-% "63?% `f`p-% ==?% `pGHH`E,?%
+J='0$A*'Hg*'31A-%b*05*3R*'A%IDFFfK%
+k6R+1-% S?-% r% W0$U-% 8?% IDFFeK?% S$% @<S_HR1+*5% C+*'% .65*30$A% J*'"*'% 1$5% 0>+%
+T"13(1>06$?%C+*'%.65*30$A%1$5%C+*'HS51=>*5%!$>*'1)>06$%,eIDK-%,DEH,eE?%
+
+11
+
+p?
+E?
+
+,F?
+
+,,?
+,D?
+
+,`?
+,a?
+
+,f?
+,e?
+,G?
+,p?
+
+k6R+1-% S?c% :*$*'0)% C+*'% .65*30$A% JB+>*9+-% 0$% 2O*% S51=>0"*% [*R?% % @Y&J-% "63?%
+a`D,-%==?%,`eHH,fa?%J='0$A*'Hg*'31A-%b*05*3R*'A%IDFFGK?%
+^'(+036"+UB-%_?-%J6+$6"+UB-%J?-%1$5%s(5*3+6$-%.?%IDFFfK%X$>636ABHR1+*5%P'19*Q6'U%
+P6'%(+*'%965*3%0$>*'6=*'1R030>B%0$%50+>'0R(>*5%3*1'$0$A%*$"0'6$9*$>+?%!$c%:?%40)O1'5+%
+I*5?K% _'6)**50$A+% 6P% [6'35% &6$P*'*$)*% 6$% TH@*1'$0$A-% TH@*1'$% DFFf-% g1$)6("*'-%
+&1$151-%X)>6R*'%DaHDp-%DFFf-%SS&T-%==?%Dpf,HDpff?%
+2'*331-%.?-%&6$*76-%4?-%:(;9#$-%T?%B%^(*$6-%<?%IDFF`Kc%S$%T5()1>06$13%&69=6$*$>%
+^1+*5% W'19*Q6'U% P6'% [*R% !2J% 5*"*36=9*$>?% [*R% T$A0$**'0$A?% !$>*'$1>06$13%
+&6$P*'*$)*-% !&[T% DFF`?% @Y&J-% "63?% DGDD-%==?% ,`aHH,a`?% J='0$A*'Hg*'31A-%
+b*05*3R*'A%%
+&*$1-% W?-% W('$1'0-% 4?% IDFFpKc% S% +61HR1+*5% P'19*Q6'U% >6% +(==6'>% (+*'% 965*3%
+0$>*'6=*'1R030>B?%!$c%Y*753-%[?-%k1B-%8?-%_(-%_?-%b*'5*'-%T?%I*5+?K%Sb%DFFp?%@Y&J-%"63?%
+f,aE-%==?%Dpa:DpG?%J='0$A*'-%b*05*3R*'A%
+J6+$6"+UB-% J?-% <636A-% _?-% b*$;*-% Y?-% ^'(+036"+UB-% _?-% r% Y*753-% [?% IDFFGK?%
+2'1$+31>06$% 6P% 6"*'31B% 965*3+% 6P% +>(5*$>% U$6Q3*5A*% P6'% '*31>0"*% 56910$+% R1+*5% 6$%
+56910$% 6$>636AB% 91==0$A?% !$c% 4?% @()U0$-% k?% 4?% k6*50$A*'-% r% 8?% :'**'% I*5+?K%
+>+'3--$"#4%& '(& .7-& :?.7& @#.-+#*."'#*0& A'#(-+-#3-& '#& B+."("3"*0& @#.-00"4-#3-& "#&
+1$C3*."'#&DB@1EFGHHIJK&/*+"#*&E-0&L*=K&ABK&M<BK&NC0=&O6:?K&GHHI-%DpEHDEe?%
+s?%k13P6A36(-%.?%J)O6'3*99*'%IDFF`K?%X$>636AB%.1==0$Ac%2O*%J>1>*%6P%>O*%S'>?%
+2O*% k$6Q3*5A*% T$A0$**'0$A% 4*"0*Q% ,p% I,Kc,H`,-% DFF`?^(33-% J?-% k1B-% 8?% IDFFGKc%
+J>(5*$>% .65*3+% >O1>% !$"0>*% >O*% @*1'$*'% !$c% 2O*% J.!@!cIK% X=*$% @*1'$*'% .65*330$A%
+W'19*Q6'U?%!$>*'$1>06$13%86('$13%6P%S'>0P0)013%!$>*330A*$)*%0$%T5()1>06$-%"63?%,G-%==?%
+pEHH,DF%%
+.0>'6"0)-%S?-%.1'>0$-%^?%IDFFDKc%T"13(1>0$A%>O*%TPP*)>+%6P%X=*$% J>(5*$>%.65*3+%6$%
+@*1'$0$A?%%@Y&J-%"63?%D`aG-%==?%DEeHH`Ff?%J='0$A*'Hg*'31A-%b*05*3R*'A%%
+!Y:4!<-%O>>=cii91'>*?3))?(91?*+i0$A'05i0$5*Z?7+=r5*96t,%
+J!T22T-%O>>=ciiQQQ?+0*>>*?6'A%
+.T<TS-%O>>=cii91'>*?3))?(91?*+i9*5*1%
+
+%
+
+12
+
+Generic Adaptation Process
+Evgeny Knutov, Paul De Bra, and Mykola Pechenizkiy
+Department of Computer Science, Eindhoven University of Technology
+e.knutov@tue.nl, debra@win.tue.nl, m.pechenizkiy@tue.nl
+P.O. Box 513, 5600 MB, Eindhoven, the Netherlands
+
+Abstract. Adaptive Hypermedia Systems (AHS) have long been mainly
+represented by domain- or application-specific systems. Few reference
+models exist and they provide only a brief overview of how to describe
+and organize the ‘adaptation process’ in a generic way. In this paper we
+consider the process aspects of AHS from the very first classical ‘user
+modelling-adaptation’ loop to a generic detailed flowchart of the adaptation in AHS. We introduce a Generic Adaptation Process and by aligning
+it with a layered (data-oriented) AHS architecture we show that it can
+serve as the process part of a new reference model for AHS.
+
+1
+
+Introduction and Background
+
+Throughout the development of the Hypermedia and later Adaptive Hypermedia
+(AH) research field people have been trying to create ‘reference’ models of these
+categories of systems. Major reference models have been favouring a layered
+architecture, starting with the Dexter Hypertext Model [7], and later the Tower
+Model [5] (introduced as the Extensible Data Model for Hyperdocuments) and
+this was continued in adaptive hypermedia with the most referenced AHAM [6]
+model, followed by other systems/models, such as LAOS [11] (elaborating layered
+approach), APeLS [4], the Munich model [10], etc. However, these developments
+were mostly concerned with the structure and/or the data model, but not as
+much with the process underlying the adaptation.
+In the paper we examine the issue of aligning the adaptation process, based
+on an extensive list of AH methods and techniques [9], with a layered structure
+of AHS. We show that to some extent the process influences and defines the
+composition and the sequence of such a layered structure in such a way that
+it partially arranges the order of the layers, defines couplings and determines
+the major transitions in the system. We show that the process driven approach
+gives more insight in AH development methods and the composition of the AH
+system.
+1.1
+
+Adaptation Process Modelling
+
+Hereafter by Generic Adaptation Process we mean the interaction in AHS which
+starts with the goal statement, exploits features of the user and domain models in
+
+13
+
+different contexts and adapts various aspects of the information and presentation
+to the user. Figure 1 shows this user modeling / adaptation loop as originally
+presented in [3].
+
+'($()(*+,$),#%2+11%3$#
+
+.#%-)
+/+0%11567
+
+4-+3%##%#
+!"#$%&
+
+.#%-)/+0%1
+4-+3%##%#
+80(9$($5+6
+80(9$($5+6)%::%3$
+
+Fig. 1. Classic loop user modelling - adaptation
+
+Considering a generic adaptive system one may think not only about defining
+a framework or reference (data) model but also about what the adaptation process within the system looks like, beyond what Fig. 1 shows. Fig. 2 shows some
+extensions of the classical loop, taking into account that selection of user information or reasoning about the user model to obtain answers about the user is an
+essential part of the adaptation process (Fig. 2a) and that either the user or an
+administrator (or both) need the ability to scrutinize the user model (Fig. 2b).
+
+'($()(*+,$),#%2+11%3$#
+4-+3%##%#
+
+.#%-)/+0%1
+!"#$%
+&'(#$#')#
+
+4-+3%##%#
+
+80(9$($5+6
+
+86#;%-#)(*+,$).#%4-+3%##%#
+
+2$05/+#"
+
+2#$"0',3/4,./0'
+80(9$($5+6)%::%3$
+
+(a) User model inference - adaptation loop
+
+6+/."
+.#%-)/+0%1
+
+.#%-
+
+<6:%-#
+
+6+/."
+2$05/+#"
+
+>80&565#$-($+-?
+
+4-+=50%#
+
+!"#$%&
+
+*+,-.,./0'%
+)01-0'#'.
+
+!"#$%&
+
+.#%-)
+/+0%11567
+
+4-+3%##%#
+
+899153($5+6
+
+'($()(*+,$),#%-
+
+2+11%3$#
+
+80(9$($5+6)%::%3$
+
+(b) Collaborative user model editing
+(User and Administrator involved)
+
+Fig. 2. User modelling - adaptation loops
+
+These updated ‘user-modelling - adaptation’ loops give a more extensive
+overview of some aspects of the adaptation, however in [9] we integrated the
+entire classification of AH methods and techniques (see Sect. 2) with the adaptation process cycle to give a first insight into the generic adaptation process
+flow, see Fig. 3.
+
+14
+
+5)1!"/-%
+4-,+*5,&'6+,-
+
+!"#*%
+7()',8'
+
+3)4%
+
+!"/-%
+
+0,'1(.-'
+()*+#,-./010#2#0
+
+2(3&$)*0(.,#
+
+!"#$#%
+
+!"&%
+
+!""#$%&'$()*&+,&-
+
+!.&"'&'$()*/(&#-
+
+9:/,-82#1
+5#+"*8<.#;1
++0/;;8=8+/-8)*
+9:/,-/-8)*1
+,$)+#;;
+
+3)4%
+9,%1)$:6,-'1
+67,0#7#*-/-8)*10#2#0
+
+-;-',3
+
+Fig. 3. Classification of AH methods and techniques; adaptation process highlights [9]
+
+Although coupling the AH methods classification with the ‘adaptation process’ had a different purpose from what is shown in the classical (and later)
+loops of ‘user modelling - adaptation’ - our goal is to show the diversity of the
+adaptation process representation and the possibility of aligning not only the
+‘user-adaptation’ loop into the adaptation process but the adaptation methods
+and techniques as well.
+1.2
+
+Goals
+
+In this paper we describe the reference adaptation process, aligning it with the
+traditional ‘adaptation questions’ (Sect. 2) and formalizing it in a single generic
+manner. In particular, we:
+– provide a flowchart diagram of a generic AHS (based on the summarization
+from [9]);
+– put the notion of the adaptation process in a context of a generic layered
+adaptation system;
+– align the layers of AHS in a sequence chart and present the reference adaptation process.
+
+2
+
+Questions of Adaptation and Adaptation Sequence
+
+Adaptation can be defined by posing and answering six major questions:
+– Why do we need adaptation? (Why? )
+– What can we adapt? (What? )
+– What can we adapt to? (To What? )
+– When can we apply adaptation? (When? )
+– Where can we apply adaptation? (Where? )
+– How do we adapt? (How? )
+
+15
+
+This type of classification has been initially introduced in [3]. Here we not just
+revisit these questions, but address the issue of aligning them (also aligning the
+corresponding methods, techniques and respective modules (layers) of AHS) in a
+generic adaptation process which can serve as a process guideline and framework
+for defining the way AHS functions.
+Fig. 3 considers the order in which the adaptation questions should be asked
+(and answered), thus leading to a first informal definition of the adaptation process. The classification of AH methods and techniques is outlined by the solid
+lines representing the typical dimensions for the analysis of adaptive systems [12];
+at the same time we join the same classification blocks considering the adaptation process perspective which is depicted by dotted line. This process is usually
+initiated by the user stating the adaptation goal and thus answering the ‘Why
+adaptation is needed?’ question. Then in the process we consider the ‘What?’
+and ‘To What?’ questions, which emphasize Domain Model (DM) and UM descriptions. ‘When?’ and ‘Where?’ go next providing context and application area
+definitions. Lastly, the ‘How?’ question describes methods and techniques on a
+conceptual and implementation level and finally all together result in AHS description.
+Taking into account user needs and system components (anticipating both
+core and optionally available components) we would like to present the process
+which explains the transitions, states, sequences and flows in a generic AHS. First
+we revisit a few such systems. Then, based on the research and summarization
+done in [9], we present the flowcharts of an adaptive system and finally come
+up with the conceptual sequence chart of a layer-structured Generic Adaptation
+Framework (GAF).
+Considering the adaptation process in other systems we mention a few examples of how the authors tried to catch an idea of defining the adaptation
+processes (both implicitly or explicitly) in their systems and matching processes
+with the layered structure of their systems.
+
+!""#$%&'$()
+
+*+,)'$)',./&%,
+
+412:
+8,&2()$)6
+4.(+$5$)67&'&
+
+01,2'$()3)',./&%,
+
+41##
+8,&2()$)6
+8,91$.$)67&'&
+
+!""#$%&'$()
+#&=,.
+
+3)',./&%,
+#&=,.
+
+3)',6.&'$()
+#&=,.
+
+8,&2()$)6
+#&=,.
+
+;2,.-<(5,#
+7(<&$)
+<(5,#2
+81#,2
+
+>'(.&6,
+#&=,.
+
+Fig. 4. Overview of the General Ontological Model for Adaptive Web Environments
+(GOMAWE)
+
+In the GOMAWE system [1] (Fig. 4)the authors tried to fit the adaptation
+process in the general ontological model of the system they designed. Though
+there is still much to be considered in terms of the real inter-layer transitions,
+
+16
+
+we can already observe a few basic transitions such as the Event Interface which
+either triggers the Push Reasoning or provides the data for the Pull Reasoning
+interfaces of the Reasoning layer. Here ‘Push’ is responsible for transforming user
+events into UM updates which happens when users interact with the system, and
+‘Pull’ retrieves the UM state. Moreover these connections tie different layers of
+the designed system together.
+
+3"#$8*,)#$(.)*'*)6
+
+(1(7)()*+,
+.+47:#)#1
+
+3"#$8(.)*+,8;
+)*4#<+3)
+
+/$#"#,)()*+,
+
+0123")4#,)"
+
+,+,<(1(7)*'#
+$#(.)*+,
+
+56")#4
+01(7)()*+,
+
+-,)#$(.)*+,
+
+!"#$89+1#:
+!71()#
+
++&"#$'()*+,
+.+47:#)#1
+
+!"#$
+%&"#$'()*+,
+
+(1(7)*'#8
+$#(.)*+,
+
+Fig. 5. Lifecycle Model of Adaptation (Munich Model)
+
+The Munich model defined by Koch in [10] (Fig. 5) presented the lifecycle
+model of adaptation in the UML formalized notion. It defines the following ’layers’ or components or states to be tied by these process loops: presentation,
+interaction, user observation, and adjustments of the systems (which include
+Adaptation itself and UM updates). These cycles start with an initial presentation and a default UM. Stereotypes are usually used to provide the information
+for the initial UM. Then the following steps of adaptation cycle follow [10]:
+– System Interaction - which describes how to react to certain user action(s),
+resulting in the termination of this cycle and adaptive continuation.
+– User observation - in which the evaluation of the information got from UM
+is being done.
+– Adjustments - comprising the two sub-states: User model update - in which
+UM attributes are updated; System adaptation - in which the adaptation is
+performed (adaptation of presentation, content or navigation) utilizing the
+state of UM.
+– Presentation - when the system presents the adaptable elements taking into
+account the information system knows about the user and remains in this
+state until the user starts interacting with system over again.
+To some extent most of the adaptation ‘loops’ fall under this classification. Most
+of these interactions are continuous and recursive when the user continues using
+the system and explores the knowledge base in depth. We should also mention
+that here we don’t consider any concurrent loops that may happen and influence
+each other in every aspect.
+
+17
+
+3
+
+Adaptation Process Flowcharts
+
+In the following section we summarise the procedural knowledge of the data/control
+and other flows in AHS and come up with the generic representation of AHS
+processes.
+Hereafter we present the adaptation process flowcharts, which generalize the
+functionality of the AHS. In fact these flowcharts follow the system properties
+summarization presented in [9], (Tables 1, 2). Based on the summarised (and
+generalized) functionality we devise these generic adaptation process flowcharts.
+The abstract representation of the process is shown in Fig. 6 which is elaborated
+further.
+We distinguish the following flowcharts:
+–
+–
+–
+–
+
+abstract adaptive process flowchart (Fig. 6);
+goal acquisition and adaptation (Fig. 7);
+adaptation functionality (Fig. 8);
+test-feedback functionality.
+
+!"#$%
+
+=$#>)?
+
+=$#>)@
+
+&'"()#*+,)+-.&$'$/$*%
+0&'"()1"2$%"13*()'4'/"5)
+*22"("16)
+
++1+:/$;")2&%-/$*%+,$/4
+0$5:,"5"%/$%#)+1+:/$;")
+/"-<%$.&"')+%1)5"/<*1'6
+
+1+/+)+!*&/)&'"(
+0'"")-,+''$-+,)+1+:/+/$*%),**:6
++1+:/+/$*%)+%1)&'"()5*1",,$%#),**:
++1+:/+/$*%)"22"-/)
+
+"7"-&/$%#)/"'/82""1!+-9),**:
+
+"%1
+
+Fig. 6. Generic Adaptation Flowchart (to be considered as the aggregation of Figs. 7-8)
+
+Each flowchart represents a certain aspect of the adaptation process, annotated to give more insight in the description of some blocks. On the right side
+of each chart we link parts of the process to the layers of the GAF model. The
+communication between the layers is illustrated in Fig. 9. We also mark with
+numbers the exact correspondence of Fig. 9 calls and transitions with the outlined blocks on the flowcharts (Figs. 7-8) in order to show the conformity of the
+sequence and flowchart approaches.
+In the ‘Goal acquisition and adaptation flowchart’ (Fig. 7) we start with the
+group analysis, thus assigning the user to a group or acquiring group properties
+in order to take them into account while choosing the adaptation goals. Here
+we also make assumptions that the user can belong to only one group and may
+not switch to another group within a session. The user may have his/her own
+
+18
+
+goal or be advised by the system to (also) use the group goal. In any case goal
+suitability is checked to determine whether the user can follow it. All suitable
+goals are elaborated in a sequence of concepts or the most appropriate ‘project’
+(defined set of concepts to study) is chosen.
+The ‘Adaptation functionality flowchart’ (Fig. 8) presents the main Adaptation Engine (AE) functionality in a sequence of concept-content adaptation
+steps for a particular user. In general we analyse conditions for a particular step
+and execute adaptation rules which apply adaptation techniques and perform
+presentation, content and navigation adaptation. After that UM attributes are
+updated accordingly and the user proceeds with the next concept either on a
+‘one-per-click’ or project-organized basis. This figure looks very similar to what
+was done the in IMMPS model [2], presenting a reference architecture for intelligent multimedia presentation systems where the knowledge server was separated
+from the main flowchart in order to separate and retain the knowledge base from
+other system functionality. For the same reasons to separate AE functionality
+we have the distinguished ‘concept-content adaptation interaction’ block.
+‘Test-feedback functionality’ goes in the end. Here if such a feedback is required the user continues either with the external evaluation or internal assessment which could be the part of a project or a separate questionary or test
+instance. If this test is failed, user goals might be refined and he/she could be
+requested start all over again.
+
+4
+
+‘Rotating’ the Layers of AHS: Adaptation Process and
+the Layered Model
+
+The conceptual structure of GAF [8] aligns the order of the layers in the system
+according to the classification of AH methods and techniques (Fig. 3). Though
+this order represents the basic understanding of the adaptation questions, every
+particular system may vary or even omit some of these, thus leading to a different
+composition of the system layers determined by the different adaptation process.
+Now, considering the generalized adaptation process flow- charts presented
+in (Figs. 7-8) and the layered nature of AHS [9] we would like to present the
+generic adaptation process. We believe that in order to couple, align, sort and
+arrange the layers of such a system (both generic model or some particular
+domain focused implementation) one should keep in mind an adaptation process
+sequence that will partially determine the layers arrangement and to some extent
+will define the mandatory and optional elements and drive the system design.
+Thus we decided to rotate the anticipated layered structure representation by
+90 degrees counter-clockwise and match it with the adaptation process flowchart.
+Fig. 9 shows such an abstraction of a generic adaptation process in terms of the
+system layers. (It has been rotated once more to fit on the page and be readable.)
+We have marked the communication arrows with numbers to set up a correspondence with the flowcharts, where respective blocks are outlined and marked
+with the same numbers. This is done to show the coherence of the sequence and
+flowcharts. We should also note that not every connection in the adaptation pro-
+
+19
+
+,#(-.
+!"#$%"6'6#%-"%'.'*5"#1=%CD%$#6$-#?#1=%
+3!$$#.6%!"#$%>.)8*#1(#%#@6$'36#1
+'.1%!"#$%1)4'-.%-.1#0:%0$)0#$6-#"%
+';;#36-.(%()'*%3&)-3#
+
+7H9
+
+C"#$%
+4)1#*
+
+7I9
+5#"
+-.%3'"#%!"#$%
+1)#".F6%&'?#%'.5%
+()'*%'.1%,#*).("%
+6)%'%3#$6'-.%($)!0=%
+()'*%3'.%,#%
+$#"6$-36#1%6)%'%
+3&)-3#%);%($)!0%
+()'*"%;$)4%'%
+0$)0)"#1%"#6
+
+1)#"%!"#$%,#*).(%
+6)%'%($)!0+
+
+'""-(.%!"#$%6)%'%"#*#36#1%
+($)!0%;)$%6&-"%'1'06'6-).%
+0$)3#""%"#B!#.3#%2%)$%
+3$#'6#%'%.#8%($)!0%
+3)."-"6-.(%);%6&-"%!"#$
+
+.)
+
+0$)3##1%8-6&%'%"-.(*#%!"#$
+
+G$)!0%
+4)1#*
+
+!"#%($)!0%()'*+
+5#"
+.)
+.)
+7'**%'?'-*',*#%()'*"%
+'$#%0$)0)"#19
+
+()'*%0$)0)"'*%
+3'.%,#%1).#%-.%
+6&#%;)**)8-.(%
+8'5"A%#-6&#$%*#6%
+!"#$%6)%3&))"#%
+'%()'*%'.1%6&#.%%
+(#.#$'6#%0'6&%
+6)%'3&-#?#%-6%)$%
+'.'*5"#%CD%
+,#&'?-)!$%;-$"6%
+'.1%$#"6$-36%
+.!4,#$%);%()'*%
+3&)-3#"
+
+.'$$)8-.(%()'*%
+0$)0)"'*"
+
+7H9
+
+!"#$%&'"%'%()'*+
+
+/ ()'*%-"%0$)0)"#12
+$#3)44#.1#1%
+,5%6&#%"5"6#42($)!0%
+7'**2.'$$)8#19
+/ '*-(.%8-6&%0#$":%0$#;:%
+7-;%'.59
+
+'%3&)-3#%);%"5"6#4%0$#1#;-.#1%
+()'*"E%'%"#6%);%'?'-*',*#%
+3).3#06"%-"%.'$$)8#1%
+'33)$1-.(%6)%!"#$%"!-6',-*-65%
+;!.36-).
+7'.1%0'""#1%6)%()'*%
+0$)0)"-6-).%4)1!*#9
+
+5#"
+
+3&))"#21#;-.#%()'*
+7()'*20$)<#36%$#0)"-6)$5=%
+*-.>"%$#0$#"#.6#1%).%'%
+3!$$#.6%0'(#=%#63:9
+
+.)6%"!-6',*#
+
+()'*%"!-6',-*-65+
+
+"!-6',*#
+
+!"#$%-"%.)6-;-#1%6&'6%
+&-"%()'*%'33)$1-.(%6)%
+6&#%3!$$#.6%
+>.)8*#1(#%"6'6#%-"%
+.)6%$#'3&',*#%)$%4'5%
+4-"*#'1=%")%!"#$%-"%
+0$)0)"#1%6)%;)**)8%
+6&#%"5"6#4%
+(#.#$'6#1%)$%).#%);%
+6&#%0$#1#;-.#1%()'*"
+
+C"#$%
+4)1#*
+
+"!-6',-*-65A%3'*3!*'6-.(%!"#$%
+;-6.#""21-"6'.3#%7'33)$1-.(%6)%
+'%3&)"#.%3).3#06%()'*9
+
+"-.(*#%
+3).3#06
+()'*
+
+()'*%"#*#36-).+
+
+G)'*%
+4)1#*
+1#0#.1-.(%).%!"#$%
+()'*%"!-6',-*-65=%!"#$%
+4'5%,#%0$)0)"#1%
+,5%'.)6&#$%()'*=%)$%
+")4#%0$#*-4-.'$5%
+()'*%6)%(#6%0$-)$%
+>.)8*#1(#
+4!*6-0*#%
+3).3#06%
+()'*
+
+7J9
+
+"#*#36-.(%"!-6',*#%0$)<#362
+"#6%);%3).3#06"%;$)4%
+$#0)"-6)$5
+
+.#@6%3).3#06%
+7*-.>9
+6)%;)**)8
+
+(#.#$'6#%"#B!#.6-'*%6$'-*2
+0'6&=%#63:
+
+#.1
+
+Fig. 7. Goal acquisition and adaptation flowchart
+
+20
+
+,#(-.
+
+7J9 ()'*%-"%-.6#$0$#6#1%-.6)%"5"6#4%
+-.6#$.'*%()'*
+
+7L9
+7O9
+
+"'?-.(%()'*%6)%;)**)8%-.%CD
+
+0$#0'$-.(%-."6'.3#%);%CD%6)%
+8)$>%8-6&%'.1%3!$$#.6%()'*%
+7'3B!-$-.(%;!**%!"#$%0$);-*#9
+
+7Q9
+
+()'*%-"%-.6#$0$#6#1%-.6)%"5"6#4%
+-.6#$.'*%6#$4"%*->#%'%.#8%3).3#06%
+)$%'%"#6%);%3).3#06"%6)%*#'$.=%'%
+3).3#06%6$'-*%6)%;)**)8%'.1%#63:
+3!$$#.6%!"#$%()'*%-"%0$#/"6)$#1%
+-.%CD
+011).2-,.'+%
+/'(#)
+
+3).3#06/3).6#.6/'1'06'6-).%-.6#$'36-).
+
+'3B!-$-.(%.#@6%3).3#06
+7?)-1%-.%3'"#%).#/'6/'/"6#0%
+'1'06'6-).9
+K%'"")3-'6#1%#?#.6"
+
+'1'06'6-).%3).1-6-).
+6$!#
+
+;'*"#
+
+6$-((#$-.(%'%$!*#
+7;$)4%$!*#%$#0)"-6)$59
+
+'3B!-$-.(%3)$$#"0).1-.(%
+3).6#.62;$'4#2-.;)%!.-6
+
+'3B!-$-.(%3)$$#"0).1-.(%
+3).6#.6%7-.;)%!.-6"9
+
+0$)3#""-.(%-.;)$4'6-).%!.-6%
+73).6#.62*-.>"%;$)4%;$'4#"2
+0'(#"2%#63:9
+
+7N9
+
+!"#$%
+&'(#)
+
+7P9
+0(-1,-,.'+%
+/'(#)
+
+'00*5-.(%'1'06'6-).%
+6#3&.-B!#"
+
+7M9
+
+0$#"#.6'6-).%(#.#$'6-).
+
+"&)8-.(%-.;)23).6#.6%6)%6&#%
+!"#$
+
+*$#"#+,-,.'+%
+/'(#)
+
+.'?-('6-).%'1'06'6-).
+
+:::
+3).6#.6%'1'06'6-).
+
+7O9
+
+!01'6#%!"#$%>.)8*#1(#2
+0$)0#$6-#"
+
+"6)$#%-.6#$4#1-'6#%!"#$%
+0$)($#""
+
+0$)3##1%6)%6&#%
+.#@6%"6#0
+
+!"#$%
+&'(#)
+!01'6-.(%!"#$%()'*%0$)($#""
+
+.)
+
+()-.(%6&$)!(&%'**%6&#%
+3).3#06"%$#B!-$#1%6)%
+;!*;-*%0$)<#362
+"#B!#.3#=%)6&#$%
+4!*6-0*#%()'*"%-;%'.5
+
+7Q9
+
+'$#%'**%3).3#06"%-.%'%"#B!#.3#2
+0$)<#36%0'""#1+
+011).2-,.'+%
+/'(#)
+
+5#"
+0$)3##1%8-6&%3).3#0623).3#06%
+"#6%70$)<#369%3)40*#6-).
+#.1
+
+Fig. 8. Adaptation functionality flowchart
+
+21
+
+cess sequence exists in the above-mentioned flowcharts due to the more extensive
+description of the GAF process sequence chart. The marked connections are:
+1. User goals are defined. In case the user doesn’t define any goal it can be
+proposed by the system or a group goal is used;
+2. User goals are aligned with DM, considering the conceptual structure of the
+domain. According to the selected goal a suitable set of concepts to follow
+is chosen;
+3. Adaptation is initiated and control is passed to the Application Model (AM);
+4. Operations of UM properties such as acquisition and update are performed
+here (corresponds to a few places on the flowchart);
+5. Operations mainly concerned working with the concepts from DM;
+6. Appropriate adaptation methods and techniques are invoked;
+7. Retrieved content is passed to the Presentation model to be rendered/generated
+and presented to the user;
+8. Corresponding content (for concerned concepts) is retrieved from the Resource model and handed over back to AM;
+9. Group related operations (assigning users, retrieving group properties, defining new groups, etc.).
+
+5
+
+Conclusions and Future Work
+
+In this paper we defined and elaborated various aspects of the Generic Adaptation Process, introduced its model, flowchart and sequence chart. To comply
+with the layered model we anticipate that the aforementioned process structure
+will influence the layered composition of the AHS in such a way that the process
+defined by the system engineer will partially drive the order of the layers of such
+AHS and define important inter-layer transitions. At the same time we anticipate
+that the defined processes together with the reference model (e.g. emerging GAF
+or well known AHAM) may serve as a foundation for the system design, defining
+not only the system components but the system ‘functionality flow’ as well, or
+even deviate into a separate branch of so-called ‘process-driven’ architectures
+in the AH field. Moreover the formalized process driven approach gives more
+insight on AH development methods and unifies this development approach and
+system organization as it was first mentioned in [10].
+We have started elaboration of the generic layered structure of AHS in [9] and
+then gave the first look at this kind of layered generic structure in [8]. This led
+to a process-oriented view of a generic layered AHS which was presented in this
+paper. Based on the research done in [9] we managed to devise a generic flowchart
+that fits most popular AHS. And finally considering the layered (de)composition
+of an adaptive system we present a conceptual view of a generic adaptation
+process (Fig. 9).
+In the future we plan to extend the adaptation process sequence with more details, elaborate the process description, particularly inter-layer interaction, sustaining the generic approach, at the same time emphasizing the interoperability
+
+22
+
+M;AN
+
+23
+E,1(/#51+",%
+/(>4+/(.%/(7$A
+
+)"*#+,%&"'($
+65>4+/+,:%
+/(."4/5(.%
+C5",1(,1D%="/%
+1;(%5",5(71
+CUD
+
+-&?)&%
+"@(/$#A%
+.4.1#+,#B+$+1A
+
+3(1/+(@+,:%5",5(71%
+5"//(.7",'+,:%'"*#+,% CSD
++,="/*#1+",%C;+(/#/5;AI%
+/(."4/5(.I%*(1#%'#1#I%(15JD
+
+)(=+,+,:%%%
+4.#:(%5",1(21
+
+65>4+/+,:%4.(/%
+5",1(21
+
+3(1/+(@+,:F47'#1+,:%
+CTD
+-&%.1#1(
+
+!/"47%
+CVD
+="/*#1+",
+
+O"%M;#1N
+
+0",1(21%&"'($
+
+8#..+,:%'#1#F
+5",1/"$%1"%"1;(/%
+.4B?.A.1(*
+
+K(:(,'L
+
+E,+1+#1+,:%#'#71#1+", CRD
+
+6$+:,+,:%:"#$%G+1;%
+CQD
+)"*#+,%&"'($
+
+)(=+,+,:%4.(/%
+CPD
+:"#$
+
+M;#1N
+
+0",.+'(/+,:%
+4.#:(%5",1(21
+
+M;(/(N
+
+M;(,N
+
+6'#71#1+",%&"'($
+
+-.(/%&"'($
+
+3(."4/5(%&"'($
+
+!"#$%&"'($
+
+Fig. 9. Conceptual Generic Adaptation Process sequence chart
+
+&#+,1#+,+,:%
+#,'%
+65>4+/+,:
+6'#71+@(%/4$(.%
+"=%;+:;(/%"/'(/
+
+CXD
+
+8#..+,:%
+5",1(,1%1"%B(%
+/(,'(/('%#,'%
+7/(.(,1('
+
+&#+,1#+,+,:%#,'%
+47'#1+,:%9<6%G+1;%
+.A.1(*%4.#:(%'#1#
+
+CWD
+
+E,@"H+,:%
+#'#71#1+",%
+*(1;"'.%#,'%
+1(5;,+>4(.
+
+9"GN
+
+!"#$$%&%'#(%)*+)&+,-+
+./(0)1$+#*1+
+2/'0*%34/$5+
+#1#6(#(%)*+67)'/$$+
+0%80"%80($
+
+8/(.(,1#1+",%&"'($
+9+:;(/%</'(/%6'#71#1+",
+
+677$+5#1+",%&"'($
+
+-.#:(%0",1(21
+
+-.(/%0",1(21
+
+!/"47%&"'($
+
+of a new AH developments (Ontologies, Open Corpus, Higher-Order Adaptation
+etc.) and the conventional AH approaches. This may lead to describing interoperable and alternative interaction in the system thus representing a generic
+view of an AH framework which includes all possible variations of adaptation
+functionality and techniques.
+Acknowledgements This work has been supported by the NWO project GAF:
+Generic Adaptation Framework.
+
+References
+1. M. Balı́k and I. Jelı́nek. Towards semantic web-based adaptive hypermedia model.
+2007.
+2. M. Bordegoni, G. Faconti, S. Feiner, M. T. Maybury, T. Rist, S. Ruggieri, P. Trahanias, and M. Wilson. A standard reference model for intelligent multimedia
+presentation systems. Comput. Stand. Interfaces, 18(6-7):477–496, 1997.
+3. P. Brusilovsky. Methods and Techniques of Adaptive Hypermedia. User Modeling
+and User Adapted Interaction, 6(1-2):87–129, 1996.
+4. O. Conlan and V. P. Wade. Evaluation of APeLS - an adaptive elearning service
+based on the multi-model, metadata-driven approach. In AH, volume 3137 of
+Lecture Notes in Computer Science, pages 291–295. Springer, 2004.
+5. P. De Bra, G.-J. Houben, and Y. Kornatzky. An Extensible Data Model for Hyperdocuments. In ECHT 92, Proc. of the 4th ACM Conference on Hypertext, pages
+222–231. ACM, 1992.
+6. P. De Bra, G.-J. Houben, and H. Wu. AHAM: a Dexter-based reference model for
+adaptive hypermedia. In Hypertext ’99: Proceedings of the tenth ACM Conference
+on Hypertext and Hypermedia : returning to our diverse roots, pages 147–156, New
+York, NY, USA, 1999. ACM.
+7. F. Halasz and M. Schwartz. The Dexter Hypertext Reference Model. Commun.
+ACM, 37(2):30–39, 1994.
+8. E. Knutov. GAF: Generic Adaptation Framework. Hypertext 2009 SRC poster,
+2009.
+9. E. Knutov, P. De Bra, and M. Pechenizkiy. AH 12 years later: a comprehensive
+survey of adaptive hypermedia methods and techniques. New Rev. Hypermedia
+Multimedia, 15(1):5–38, 2009.
+10. N. Koch. Software engineering for adaptive hypermedia systems. PhD thesis,
+Ludwig-Maximilians University of Munich, Munich, Germany, 2001.
+11. M. Saksena and A. Cristea. Towards more efficient generic semantic authoring for
+adaptive hypermedia. In APS ’06: Proceedings of the joint international workshop
+on Adaptivity, personalization & the semantic web, pages 11–20, New York, NY,
+USA, 2006. ACM.
+12. M. Schneider-Hufschmidt, T. Ktihme, and M. U., editors. State of the Art in Adaptive User Interfaces, pages 13–48. North Holland, Amsterdam, the Netherlands,
+1993.
+
+24
+
+Building Blocks for User Modeling with data
+from the Social Web
+Fabian Abel1 , Nicola Henze1 , Eelco Herder1 , Geert-Jan Houben2 , Daniel
+Krause1 , Erwin Leonardi2
+1
+
+L3S Research Center, Leibniz University Hannover, Germany
+{abel,henze,herder,krause}@L3S.de
+2
+Web Information Systems, TU Delft, The Netherlands
+{g.j.p.m.houben,e.leonardi}@tudelft.nl
+
+Abstract. In this paper we present the so-called Grapple User Modeling Framework (GUMF) which provides user modeling functionality
+via the Web to applications that would like to offer personalization and
+adaptation features to their customers. GUMF introduces the notion
+dataspaces which create a logical view on (possibly distributed) user data
+and provide advanced contextualization and reasoning mechanisms. We
+showcase the Mypes service that exploits GUMF dataspaces to connect,
+aggregate, align and enrich user profile information form the Social Web.
+
+1
+
+Introduction
+
+Adaptive systems require information about their users to adapt their functionality [1]. Today, users leave a plethora of traces on the Web that could possibly
+serve as input for these systems: people provide profile information in social networking services such as Facebook or LinkedIn, annotate their pictures and bookmarks at Flickr or Delicious, and write about their interests in their (micro)blogs.
+Thereby a lot of useful profile information becomes publicly available [2] . Further, the aggregation of such distributed user data is supported by initiatives
+such as the Linked Data initiative [3], standardization of APIs (e.g. OpenSocial1 )
+and authentication and authorization protocols (e.g. OpenID, OAuth), as well
+as by (Semantic) Web standards such as RDF, RSS and specific vocabularies
+such as FOAF2 , SIOC3 , or GUMO [4]. Generic user modeling servers such as
+CUMULATE [5] or PersonIs [6] facilitate handling of aggregated user data. The
+Grapple User Modeling Framework (GUMF) [7] follows these approaches and
+offers means to deliver customized user modeling functionality to its clients.
+In this paper we discuss so-called GUMF dataspaces that embody and enforce the actual user modeling intelligence of GUMF. We present the Mypes
+service4 which exploits dataspaces to connect, aggregate, align and enrich user
+1
+2
+3
+4
+
+http://code.google.com/apis/opensocial/
+http://xmlns.com/foaf/0.1/
+http://rdfs.org/sioc/spec/
+http://mypes.groupme.org/
+
+25
+
+Client
+API
+
+REST
+SOAP
+GUI
+
+ask (query):
+SPARQL, SeRQL,
+Grapple Query
+tell (store):
+RDF, Grapple
+statements, XML
+
+GUMF Controller
+
+Repository
+Repository
+
+Store Module
+Dataspace
+Logic
+Query Engine
+
+Web
+GUMF
+Admin
+Interface
+
+Authentication
+Access Control
+
+Plug-ins
+
+Configuring
+plug-ins,
+dataspaces,
+reasoning
+rules
+
+Plug-ins & Rule
+Repository
+
+Administrator
+
+Reasoning Logic
+Core
+
+GUMF
+Client
+(Application)
+
+Repository
+
+query/store
+
+Grappple User Modeling Framework
+
+Reasoner
+
+Fig. 1. Architecture of the Grapple User Modeling Framework (GUMF).
+
+profile information form social networking services (Facebook, LinkedIn), social
+media services (Flickr, Delicious, StumbleUpon, Twitter, Blogspot) and others
+(Google). Mypes enables users to overview their distributed profiles and via
+GUMF it allows application developers to integrate aggregated, semantically
+enriched profile data in RDF or vCard format via a lightweight REST interface
+into their applications to provide personalization and adaptation functionalities.
+
+2
+
+Grapple User Modeling Framework
+
+Figure 1 shows the architecture of GUMF. The elements at the top provide the
+essential, generic functionality of the framework; elements part at the bottom
+right provide generic as well as domain-specific reasoning logic. Client applications can access GUMF either via a RESTful or SOAP-based API. Further, there
+is a Java Client API that facilitates development of GUMF client applications5 .
+Client applications mainly approach GUMF to store user information (handled
+by the Store Module) or to query for information (handled by Query Engine).
+User profile information is modeled by Grapple statements [7], which are basically reified RDF statements about a user, enriched with provenance metadata.
+GUMF currently supports SPARQL and SeRQL queries as well as Grapple query,
+a pattern-based query language that exploits the Grapple statement structure to
+specify what kind of statements should be returned by GUMF. Authorized client
+requests are answered by GUMF’s Dataspace Logic. Dataspaces concentrate the
+actual user modeling capabilities of GUMF. They are equipped with data storage repositories that either reside at the GUMF server or are distributed across
+the Web (possibly maintained by the client application itself), and with (reasoning) plug-ins that further enrich the data that is available in the repositories or
+transform user data into a structure/format that is appropriate for the GUMF
+client applications that request user data.
+The Administrator of a GUMF client application can configure dataspaces
+and plug-ins via the GUMF Admin Interface. Activating or deactivating plug5
+
+cf. GUMF help pages: http://pcwin530.win.tue.nl:8080/grapple-umf/help/
+
+26
+
+SocialGraph API
+Profile URI
+Aggregated,
+enriched profile
+
+1. get other accounts
+of user
+
+Blog posts:
+
+Bookmarks:
+
+(e.g., in RDF or vCard)
+
+Account
+Mapping
+
+2. aggregate
+public profile
+data
+
+Mypes
+dataspace
+
+Social Web
+Aggregator
+
+Profile
+Alignment
+
+Other media:
+3. Map profiles to
+target user model
+
+Cache
+
+Semantic
+Enhancement
+
+GUMF
+
+4. enrich data with
+semantics
+
+Social networking profiles:
+FOAF
+
+WordNet®
+vCard
+
+Fig. 2. Aggregation and enrichment of profile data with Mypes.
+
+ins directly influences the behavior of dataspaces. Further, administrators can
+adjust the plug-ins and reasoning rules to their needs. In the next section we
+will highlight GUMF dataspaces and describe plug-ins we implemented that
+support aggregation of user data from the Social Web. These plug-ins and the
+corresponding dataspace enable Mypes to visualize the distributed user data
+traces. Moreover, as GUMF dataspaces can be shared across different client
+applications, we also enable other client applications to benefit from the profile
+aggregation.
+
+3
+
+Mypes: Enriching User Profiles via GUMF
+
+To illustrate the functionality of GUMF dataspaces we present the Mypes service which is a GUMF client application that particularly highlights GUMF’s
+ability to support the task of gathering information about users for user adaptive
+systems [1]. In this section we first present the GUMF components we implemented to allow for profile aggregation and enrichment before we describe Mypes
+features in more detail.
+3.1
+
+Linkage, Aggregation, Alignment and Enrichment of User Data
+
+The Grapple User Modeling Framework aims to provide a uniform interface to
+user data that might be distributed on the Web. To feature access to distributed
+user data and to align and enhance the data, GUMF and the corresponding
+GUMF components depicted in Figure 2 respectively perform the following steps.
+1. Account Mapping Given a user’s URI of an online account, the account
+mapping plug-in gathers other online accounts of the same user by exploiting
+the Google Social Graph API6 , which provides such mappings for all users
+who linked their accounts via their Google profile, for example:
+6
+
+http://code.google.com/apis/socialgraph/
+
+27
+
+traditional
+profile
+Facebook LinkedIn Twitter Blogspot Flickr Delicious Stumble Last.fm Google
+attributes
+Upon
+nickname
+x
+x
+x
+x
+x
+x
+x
+x
+x
+first name
+x
+x
+last name
+x
+x
+full name
+x
+x
+x
+x
+x
+profile photo
+x
+x
+x
+x
+about
+x
+x
+email (hash)
+x
+x
+homepage
+x
+x
+x
+x
+blog/feed
+x
+x
+x
+x
+x
+x
+location
+x
+x
+x
+x
+locale settings
+x
+interests
+x
+education
+x
+affiliations
+x
+x
+industry
+x
+tag-based
+profile
+posts
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+Table 1. Profile data for which Mypes provides crawling capabilities: (i) traditional
+profile attributes, (ii) tag-based profiles (= tagging activities performed by the user),
+and (iii) blog, photo, and bookmark posts respectively.
+"http://www.google.com/profiles/fabian.abel": "claimed_nodes": [
+"http://delicious.com/fabianabel",
+"http://fabianabel.stumbleupon.com",
+"http://www.last.fm/user/fabianabel/", ...]
+
+For those users where no mappings can be obtained via API, it is possible to
+provide appropriate mappings by hand. The account mapping module finally
+provides a list of online accounts that are associated to a particular user.
+2. Social Web Aggregator For the URIs associated to the user, the aggregator module gathers profile data from the corresponding services. In particular, traditional profile information (e.g., name, homepage, location, etc.),
+tag-based profiles (tagging activities), and posts (e..g, bookmark postings,
+blog posts, picture uploads) are harvested from nine different services as
+depicted in Table 1.
+3. Profile Alignment The profiles gathered from the different services are
+aligned with GUMF’s uniform user model by means of hand-crafted rules,
+i.e. the user data is modeled by means of Grapple statements [7] using FOAF
+or vCard as domain-specific vocabulary for the actual user attributes (e.g.,
+name, homepage, etc.). For example, given the full name of a user’s Google
+or Flickr profile, GUMF creates a statement as follows.
+@prefix gc: <http://grapple-project.org/grapple-core/> .
+<http://grapple-project.org/gumf/statement-2010-05-19-bob-name>
+rdf:type
+gc:Statement;
+gc:user
+<http://bob.myopenid.com>;
+gc:predicate <http://xmlns.com/foaf/0.1/name>;
+gc:object
+"Bob Mayer";
+gc:created
+"2010-05-19T16:23:04.243+01:00" .
+
+4. Semantic Enrichment Tag-based profiles are further enriched and clustered by means of WordNet7 categories so that GUMF client applications
+can, for example, access particular parts of a tag-based profile such as facets
+related to locations or people.
+The four plug-ins can be plugged into dataspaces. We applied them to the
+Mypes dataspace which forms the basis for the Mypes service.
+7
+
+http://wordnet.princeton.edu/
+
+28
+
+(b) filtering tag-based profile
+
+(a) traditional profile
+
+Fig. 3. Aggregation of traditional and tag-based profiles.
+
+3.2
+
+Mypes Service
+
+Mypes exploits GUMF to provide an interface that is valuable for casual users,
+who would like to overview their distributed profile data. Further, it makes
+the enriched public profile data that is available via the Mypes dataspace (see
+Figure 2) also available via a lightweight RESTful interface (in FOAF and vCard
+format). Hence, thanks to GUMF and the plug-ins presented above, Mypes just
+has to focus on representing the public profile data – either for end-users or for
+systems that require additional information about their users.
+Given the Google profile URI of a user, Mypes queries GUMF and the Mypes
+dataspace particularly to obtain the corresponding aggregated, enriched profile
+data. It then enables users to overview their public profiles, for example, users
+can inspect particular profile values, analyze the completes of their profiles on
+a bar chart and understand to what kind of information about themselves is
+publicly available. Mypes thus raises the users’ awareness of their profile data
+distributed across different services on the Web.
+Figure 3(a) shows an example of an aggregated Mypes profile, namely the traditional profile attributes gathered from the diverse services (see Table 1). When
+accessing http://mypes.groupme.org/mypes/user/116033/rdf the FOAF profile in RDF/XML syntax is returned. Mypes exports all available values for a
+profile attribute, e.g., if a user specifies her name differently at the different
+services then all these different values are provided.
+GUMF also connects the tagging activities users perform in the different
+tagging systems. As the semantic enrichment plug-in (see Fig. 2) extends tag
+assignments with meta-information that states to which WordNet category the
+corresponding tag belongs to, it is possible to filter the aggregated tag cloud
+of a user according to WordNet categories. For example, Figure 3(b) shows the
+aggregated tag cloud filtered so that only tags related to locations are displayed.
+For this kind of tag cloud, Mypes provides an alternative visualization: tags
+related to locations are mapped to country codes (using the GeoNames Web
+
+29
+
+service8 ), which are sent to Google’s visualization API to draw a geographical
+intensity map that highlights those countries that are frequently (possibly indirectly) referenced by tags in the profile (see bottom in Figure 3(b)). Mypes also
+features RDF export for these (specific facets of) tag-based profiles using the
+Tag Ontology9 and SCOT10 vocabulary.
+
+4
+
+Conclusion
+
+In this paper we described how the Grapple User Modeling Framework (GUMF)
+enables to enrich user profiles with user data gathered from the Social Web.
+We presented the Mypes service that exploits this functionality to enable casual
+users to overview their distributed profiles and allows adaptive applications to
+re-use the aggregated and enhanced profile information for their own purposes.
+In our future work we plan to evaluate the actual benefit for end-users of adaptive
+applications which make their adaptation decisions based on the enriched profiles
+produced by GUMF and Mypes respectively.
+Acknowledgments This work is partially sponsored by the EU FP7 project
+GRAPPLE (http://www.grapple-project.org/).
+
+References
+1. Jameson, A.: Adaptive interfaces and agents. The HCI handbook: fundamentals,
+evolving technologies and emerging applications (2003) 305–330
+2. Abel, F., Henze, N., Herder, E., Krause, D.: Interweaving public user profiles on
+the web. In Kobsa, A., Bra, P.D., eds.: International Conference on User Modeling,
+Adaptation and Personalization (UMAP), Hawaii, USA, Springer (June 2010)
+3. Bizer, C., Heath, T., Berners-Lee, T.: Linked data - the story so far. International
+Journal on Semantic Web and Information Systems (IJSWIS) 5(3) (2009) 1–22
+4. Heckmann, D., Schwartz, T., Brandherm, B., Schmitz, M., von WilamowitzMoellendorff, M.: Gumo - the general user model ontology. In Ardissono, L., Brna,
+P., Mitrovic, A., eds.: User Modeling. Volume 3538 of Lecture Notes in Computer
+Science., Springer (2005) 428–432
+5. Yudelson, M., Brusilovsky, P., Zadorozhny, V.: A user modeling server for contemporary adaptive hypermedia: An evaluation of the push approach to evidence
+propagation. In Conati, C., McCoy, K.F., Paliouras, G., eds.: User Modeling. Volume 4511 of Lecture Notes in Computer Science., Springer (2007) 27–36
+6. Assad, M., Carmichael, D., Kay, J., Kummerfeld, B.: PersonisAD: Distributed,
+active, scrutable model framework for context-aware services. In LaMarca, A.,
+Langheinrich, M., Truong, K.N., eds.: Pervasive Computing. Volume 4480 of Lecture
+Notes in Computer Science., Springer (2007) 55–72
+7. Abel, F., Heckmann, D., Herder, E., Hidders, J., Houben, G.J., Krause, D., Leonardi,
+E., van der Slujis, K.: A framework for flexible user profile mashups. In Dattolo,
+A., Tasso, C., Farzan, R., Kleanthous, S., Vallejo, D.B., Vassileva, J., eds.: Int.
+Workshop on Adaptation and Personalization for Web 2.0 at UMAP ’09, CEUR
+Workshop Proceedings (2009) 1–10
+8
+9
+10
+
+http://www.geonames.org/
+http://www.holygoat.co.uk/projects/tags/
+http://scot-project.org/scot/
+
+30
+
+!"#$%&'($()*+*%,-(./$01"%2(1"%(3+&""%(."',0,"+,+4(
+5',+4(67,'0,+4(3+1%$'0%5-05%*($+&(892:"/,-(;$<'(
+!"#$%&"'()*%+,(-.#%/,0(-1.#)*%2(34,.5%6#7)*%8"97%!,7)*%:0;(%!"<5(=>*%?@'%
+!"AA.#<.59)%
+%
+%BCDE%&#@"F*%G34@@5%@<%E:*%G79-.7%H-(;.#0($7*%>IIJ*%KG/*%D"0$#,5(,%
+="#$L($M"079M.9"M,"*%N#,(-.#MO,0(-1.#*%A(34,.5M<#7*%P"97M=,7*%
+'@'M="AA.#<.59QL079-.7M.9"M,"%
+>%
+H-(;.#0($7%@<%C,(<,*%C,(<,*%E0#,.5%%
+$0;(=,=L(0M4,(<,M,3M(5%
+
+)
+
+=:'0%$-0>% R-.% @<% $4.% (AF@#$,-$% 34,55.-1.0% <@#% F.#0@-,5(0.9*% 3@-$.S$T,O,#.%
+(-<@#A,$(@-%9.5(;.#7%O($4(-%'"(59(-10%(0%$@%'.%,'5.%$@%04@O%$4.%"0.#%,%A,F%O($4%
+$4.(#% @O-% 5@3,$(@-% ,0% O.55% ,0% $4.% 5@3,$(@-0% @<% F@(-$0% @<% (-$.#.0$% <@#% $4.AM% R-.%
+;.#7% 9.0(#,'5.% F#@F.#$7% @<% ,% F.#0@-,5(0.9*% 3@-$.S$T,O,#.% A@'(5.% ,FF5(3,$(@-% (0%
+$4,$%($%3,-%@F.#,$.%,$%$4.%0,A.%$(A.%,0%F#.0!"#$%&'()!'*+!",+'-"$#./01'23'./)$!#!'
+$4(0*% O.% -..9% $@% 9@% @-T9.;(3.% F@0($(@-(-1% ,-9% F.#0@-,5(0,$(@-M% :4(0% F,F.#%
+F#.0.-$0% $4.% 9.0(1-% @<% ,% F5,$<@#A*% ,-9% ($0% (AF5.A.-$,$(@-% <@#% $4.% #.$#(.;,5% @<%
+F"'5(357%,;,(5,'5.%'"(59(-1%9,$,%U07A'@5(3%A,F0%,-9%,00@3(,$.9%#,9(@T<#.V".-37%
+(-<#,0$#"3$"#.% F@(-$% 5@3,$(@-0W% <@#% $4.% F"#F@0.% @<% 3@,#0.T1#,(-.9% (-9@@#%
+F@0($(@-(-1% @-% A@'(5.% 9.;(3.0M% E-% 3@AF,#(0@-% $@% @$4.#% (-9@@#% F@0($(@-(-1%
+070$.A0*% $4(0% O@#=% <@3"0.0% @-% $4.% A.34,-(0A% $4#@"14% O4(34% '"(59(-1% 9,$,% (0%
+A,9.% ,;,(5,'5.% $@% A@'(5.% 9.;(3.0*% ,0% $@@% $4.% A@$(;,$(@-% (-% F#@;(9(-1% 1.-.#(3%
+3@,#0.T1#,(-.9% (-9@@#% F@0($(@-(-1% ',0.9% @-% $4.% "0.% @<% .S(0$(-1% (-<#,0$#"3$"#.%
+,-9%'"(59(-1%9,$,M%
+?*9#"%&'@(E-9@@#%F@0($(@-(-1X%07A'@5(3%A,F0X%0.A(T"-F#.F,#.9%.-;(#@-A.-$0X%
+35(.-$T0(9.%F.#0@-,5(0,$(@-%
+
+A(((3+0%"&5-0,"+($+&(;"0,B$0,"+(
+Y@3,$(@-T,O,#.%0.#;(3.0%,#.%'.3@A(-1%(-3#.,0(-157%3@AA@-M%D%=.7%#.,0@-%<@#%$4(0%(0%
+$4.%1#@O(-1%-"A'.#%@<%A@'(5.%9.;(3.0%$4,$%3,-%-@O%9.$.#A(-.%$4.(#%5@3,$(@-%,-9%4,;.%
+$4.% 3@AF"$,$(@-,5% ,-9% 3@AA"-(3,$(@-% F@O.#% $@% 9.5(;.#% 0@F4(0$(3,$.9% 0.#;(3.0M%
+ZS,AF5.0%@<%0"34%9.;(3.0%,#.%0A,#$F4@-.0*%.+.,9.#0*%A@'(5.%1,A(-1%3@-0@5.0*%(-T3,#%
+3@-0@5.0*% ,-9% -.$'@@=0M% 2@0$% @<% $4.0.% 9.;(3.0% -@O% 3@A.% O($4% ,% ;,#(.$7% @<% (-'"(5$%
+$.34-@5@1(.0% ,0% 0$,-9,#9[% <@#% 5@3,$(@-% 0.-0(-1*% .M1M% ,33.5.#@A.$.#*% A,1-.$(3% <(.59*%
+@#(.-$,$(@-% 0.-0@#0*% &\GX% <@#% F@0($(@-(-1% ,-9% 3@AA"-(3,$(@-*% .M1M% #,9(@T<#.V".-37%
+U+6W% $.34-@5@1(.0% 5(=.% ]&*% /YDK*% ,-9% ?5".$@@$4X% ,-9% ,50@% <@#% ER*% .M1M% (-'"(5$%
+3,A.#,0%$4,$%3,-%'.%"0.9%<@#%;(0(@-%0.-0(-1*%F,#$(3"5,#57%(-%3@A'(-,$(@-%O($4%D+%,-9%
+^+%$,10M%C(14TF#@<(5.%(-;.0$A.-$0*%0"34%,0%$4.%Z"#@F.,-%&,5(5.@%0,$.55($.%070$.A%$4,$%
+
+31
+
+(0%3"##.-$57%'.(-1%'"(5$*%,#.%,-%(-9(3,$(@-%@<%$4.%;,5".%$4,$%(0%F5,3.9%@-%5@3,$(@-T,O,#.%
+0.#;(3.0M%
+2@9.#-% F@0($(@-(-1% U,-9% -,;(1,$(@-W% 070$.A0% -@O% 3,$.#% <@#% ,% O(9.% #,-1.% @<%
+03.-,#(@0% #,-1(-1% <#@A% (-T3,#*% $@% @-T<@@$*% ,-9% '@$4% @"$0(9.% ,-9% (-0(9.% @<% '"(59(-10%
+U.M1M% % _)`WM% E-% 3@AF,#(0@-% $@% @"$9@@#% F@0($(@-(-1% ;(,% &\G*% (-9@@#% F@0($(@-(-1% (0% <,#%
+5.00%O(9.0F#.,9*%,-9%$4.#.%,#.%,%-"A'.#%@<%#.,0@-0%<@#%$4(0M%R-.%#.,0@-%(0%$4.%5,3=%@<%
+,;,(5,'(5($7% @<% 0"($,'5.% A,F0M% E$% (0% (AF@#$,-$% $@% ,FF#.3(,$.% $4,$% $4.% 3#.,$(@-% ,-9%
+A,(-$.-,-3.%@<%(-9@@#%A,F0%(0%(-4.#.-$57%9(<<.#.-$%$4,-%(0%$4.%3,0.%<@#%@"$9@@#%A,F0M%
+6@#% .S,AF5.*% ,33.00% $@% T% ,0% O.55% ,0% 0"($,'(5($7% ,-9% F#(;,37% @<% T% '"(59(-1% '5".F#(-$0%
+F#@;(9.0%,%',##(.#%$@%.-$#7*%A.,-(-1%$4,$%3@;.#,1.%@<%(-9@@#%0F,3.0*%.M1M%@-%$4.%03,5.%
+@<%,%O4@5.%3($7*%(0%<,#%5.00%,33@AF5(04.9%$4,-%(0%$4.%3,0.%<@#%@"$9@@#%A,F%5@3,$(@-0M%
+:4(0%A.,-0%$4,$%O.%-..9%$@%.SF5@#.%,%9(<<.#.-$%<@#A%@<%A,FF(-1%,FF#@,34%<@#%(-9@@#%
+F@0($(@-(-1*% ,-9% $4(0% A"0$% '.% ,'5.% $@% @F.#,$.% O($4% $4.% $7F.% @<% (-9@@#% A,F0% $4,$% ,#.%
+O(9.57% ,;,(5,'5.X% -@$,'57*% O.% '.5(.;.% ($% A"0$% A,=.% "0.% @<% 07A'@5(3% A,F0% $4,$% ,#.%
+@<$.-% ,5#.,97% ,;,(5,'5.% <@#% '"(59(-10*% 9.0F($.% $4.0.% @<$.-% -@$% '.(-1% F,#$(3"5,#57%
+,33"#,$.% (-% $.#A0% @<% 03,5.% ,-9% $4.0.% @<$.-% '.(-1% 4(1457% 0.5.3$(;.% (-% $4.% (-<@#A,$(@-%
+04@O-%@-%$4.%A,FM%
+D-@$4.#% =.7% 34,55.-1.% @<% (-9@@#% F@0($(@-(-1% <@55@O0% <#@A% $4.% 5(A($,$(@-0% @<% $4.%
+$.34-@5@1(.0% ,;,(5,'5.M% /4(5.% $4.#.% ,#.% 0.;.#,5% .S(0$(-1% ,-9% .A.#1(-1% $.34-@5@1(.0%
+$4,$% 4,;.% '..-% "0.9% (-% (-9@@#% F@0($(@-(-1% F#@$@$7F.0% U.M1M% ',0.9% @-% +6*% ;(0",5%
+$.34-@5@17*%9.,9T#.3=@-(-1%$.34-(V".0W*%.,34%@<%$4.0.%4,0%($0%@O-%A.#($0%,-9%F($<,550M%
+K@-.%@<%$4.A*%$,=.-%(-9.F.-9.-$57*%4,;.%$4.%0,A.%F5,-.$,#7T03,5.%,FF5(3,'(5($7*%-@#%
+$4.% 3@-0(0$.-$% ,33"#,37% $4,$% &\G% F#@;(9.0% <@#% @"$9@@#% F@0($(@-(-1M% :4(0% A.,-0% $4,$%
+$4.#.%(0%0$(55%(AF@#$,-$%#.0.,#34%$@%'.%9@-.%$@%3#.,$.%070$.A0%$4,$%3,-%A,=.%"0.%@<%,%
+3@A'(-,$(@-% @<% $4.% ,;,(5,'5.% 5@3,$(@-% $.34-@5@1(.0% $@% ,34(.;.% .<<.3$(;.% (-9@@#%
+F@0($(@-(-1%@<%,%F.#0@-%,0%$4.7%A@;.%,#@"-9%,%'"(59(-1M%6(-,557*%0F.3(,5$7T'"(5$%(-9@@#%
+F@0($(@-(-1%0@5"$(@-0%@<$.-%#.V"(#.%(-<#,0$#"3$"#,5%U,-9%0@<$O,#.W%@"$5,70%$4,$%,#.%-@$%
+,5O,70%<.,0('5.M%
+E-%$4(0%F,F.#*%O.%9.03#('.%@"#%9.0(1-%<@#%,%F5,$<@#A%$4,$%,99#.00.0%$4.0.%F#@'5.A0%
+,-9%4!+/"$5!'$(+'$6-7!6!%(.($3%'83"'()!'"!("$!#.7'38'9-*57$/70:'.#.$7.57!''"(59(-1%9,$,%
+(-% $4.% <@#A% @<% 07A'@5(3% A,F0% ,-9% A,#="F% @<% ,00@3(,$.9% +6% (-<#,0$#"3$"#.% F@(-$%
+5@3,$(@-0%U$4@"14%-@$%5(A($.9%$@%P"0$%+6W%5(=.%/YDK%,-9%?5".$@@$4M%
+E$%3,-%'.%-@$.9%$4,$%0"34%,%F5,$<@#A%,-9%($0%,00@3(,$.9%D\E0%O(55%'.%,-%(-9(0F.-0('5.%
+'"(59(-1% '5@3=% <@#% O.'T',0.9% "0.#T,9,F$(;.% 070$.A0% $4,$% 3@-$,(-% ,-7% $7F.% @<% (-9@@#%
+F@0($(@-(-1%3@AF@-.-$M%
+E-% G.3$(@-% >*% O.% 9.03#('.% $4.% '.-.<($0% <@#% '@$4% F#@;(9.#0% ,-9% "0.#0% @<% 0"34% ,%
+F5,$<@#AM% G.3$(@-% ]% F#@;(9.0% ,-% @;.#;(.O% @<% $4.% F5,$<@#A% ,-9% 9.$,(50% @<% $4.%
+(AF5.A.-$.9% F#@@<T@<T3@-3.F$% 35(.-$% ,FF5(3,$(@-% <@#% D-9#@(9% 0A,#$F4@-.0M% :4(0% (0%
+<@55@O.9% (-% G.3$(@-% a% O($4% ,% 0"AA,#7% @<% #.5,$.9% O@#=% (-% $4.% <(.590% @<% F@0($(@-(-1%
+F5,$<@#A0*% ,-9% 07A'@5(3% A,F0% ,-9% 9,$,% A@9.55(-1M% :4.% F,F.#% 3@-35"9.0% O($4% ,%
+9.03#(F$(@-%@<%<"$"#.%O@#=%(-%G.3$(@-%bM%
+
+32
+
+C(((3+&""%(<"',0,"+,+4(,+(8*2,D5+<%*<$%*&(E5,/&,+4(6+B,%"+2*+0'(
+?"(59(-10% ,#.% $7F(3,557% 3@-0$#"3$.9% ',0.9% @-% 4(1457% ,33"#,$.% 1.@A.$#(3% '5".F#(-$0*%
+O4(34% ,5$4@"14% "0.<"5% <@#% ,#34($.3$0% ,-9% '"(59.#0*% ,#.% #,#.57% ,33.00('5.% ,-9% #,#.57%
+#.5.;,-$% UO($4% #.1,#90% $@% $4.% 9.$,(5% $4.7% 04@OW% $@% 1.-.#,5% ;(0($@#0% @<% $4.% '"(59(-1M%
+2,-7%;F"'5(3,%'"(59(-10%U(M.M%'"(59(-10%$4,$%$4.%1.-.#,5%F"'5(3%4,;.%,33.00%$@*%.($4.#%
+O($4%@#%O($4@"$%.-$#,-3.%3@0$0%,$$,34.9W%9@%4@O.;.#%4,;.%A,F0%,;,(5,'5.%$@%$4.%F"'5(3%
+U.M1M% 3@-0(9.#% A"0."A0*% 5('#,#(.0*% $4.,$#.0*% 4@0F($,50*% ,-9% 0@% @-WM% :4.0.% A,F0% ,#.%
+07A'@5(3%(-%-,$"#.*%A.,-(-1%$4,$%$4.7%-..9%-@$%,5(1-%$@%,-7%1.@A.$#(3%A@9.5%@#%5(-.,#%
+03,5.*% '"$% (-0$.,9% ,#.% 0F.3(<(3,557% 9.0(1-.9% $@% 4(145(14$% ,0F.3$0% 9..A.9% $@% '.% A@0$%
+#.5.;,-$%$@%$4.%"0.#M%
+G(A(5,#57*% A,-7% '"(59(-10% ,#.% -@O,9,70% <($$.9% O($4% ,% #,-1.% @<% +6T',0.9%
+3@AA"-(3,$(@-% $.34-@5@1(.0% 5(=.% ?5".$@@$4% ,-9% /YDK*% ,-9% ,5$4@"14% '"(59(-1%
+,9A(-(0$#,$@#0% A,7% '.% #.5"3$,-$% $@% ,99% ,99($(@-,5% (-<#,0$#"3$"#.% 0F.3(<(3,557% <@#% $4.%
+F"#F@0.%@<%(-9@@#%F@0($(@-(-1*%$4.%A@9.55(-1%@<%,5#.,97%.S(0$(-1%(-<#,0$#"3$"#.%A,7%'.%
+,-%,33.F$,'5.%3@AF#@A(0.M%/.%3,55%0"34%.-;(#@-A.-$0%90.A(T"-F#.F,#.9:%(-%$4,$%-@%
+,99($(@-,5% $.34-@5@1(.0% -..9% '.% (-$.1#,$.9*% '"$% $4.% A@9.55(-1% @<% .S(0$(-1%
+0.-0@#c'.,3@-%F@(-$0%(0%0$(55%#.V"(#.9M%
+B@-0(9.#%$4.%<@55@O(-1%03.-,#(@M%:@A*%,%$@"#(0$*%(0%=..-%$@%;(0($%,%O.55%=-@O-%5@3,5%
+A"0."AM% HF@-% ,##(;(-1% ,$% $4.% A"0."A*% 4.% 5@,90% "F% $4.% +@"142,F0% ,FF5(3,$(@-% @-%
+4(0% 0A,#$F4@-.% ,-9% (0% F#.0.-$.9% O($4% ,% -"A'.#% @<% (3@-0% @-% 4(0% 03#..-% #.F#.0.-$(-1%
+-.,#'7% F"'5(3% '"(59(-10% U.M1M% A"0."A0*% 5('#,#(.0*% 04@FF(-1% A,550WM% D<$.#% :@A% 4,0%
+0.5.3$.9% $4.% F,#$(3"5,#% A"0."A% @<% (-$.#.0$*% +@"142,F0% 9@O-5@,90% $4.% #.5.;,-$%
+A,FF(-1% 9,$,% <#@A% $4.% O.'T0.#;(3.% ;(,% ,% 4$$F% #.V".0$*% ,-9% F#.0.-$0% :@A% O($4% ,%
+-"A'.#% @<% 07A'@5(3% A,F0*% .,34% @-.% $7F(3,557% 04@O(-1% @-.% 5.;.5% (-% $4.% A"0."AM%
+/4(5.%:@A%3@-0(9.#0%$4.0.%A,F0%,%"0.<"5%<.,$"#.*%4.%(0%"-0"#.%@<%O4.#.%4.%(0%(-%$4.%
+'"(59(-1*%0@%4.%F#.00.0%$4.%96(-9%2.:'6!%*'$(!6<',-9%$4.%070$.A%F@0($(@-0%4(A%@-%$4.%
+#.5.;,-$% 0"'TA,FM% C.% (0% ,50@% ,'5.% $@% $,=.% ,% F4@$@% @<% ,-7% @<% $4.% ^+% 3@9.0% 03,$$.#.9%
+,#@"-9%$4.%A"0."A%$@%4,;.%4(0%F@0($(@-%"F9,$.9%@-%$4.%A,FM%D0%4.%O,5=0%,#@"-9*%4(0%
+F@0($(@-% (0% "F9,$.9% @-% $4.% A,F% $4#@"14% $4.% "0.% @<% ,% 9.,9T#.3=@-(-1% ,FF#@,34% $4,$%
+3@A'(-.0% #.,9(-10% <#@A% $4.% 9(1($,5% 3@AF,00% ,-9% ,33.5.#@A.$.#% 0.-0@#% U(M.M% ,%
+9(#.3$(@-,5%F.9@A.$.#W%3@-$,(-.9%O($4(-%4(0%K.S"0%R-.%0A,#$F4@-.M%
+:4(0% 03.-,#(@% 9.03#('.0% 4@O% ,% A@'(5.% 35(.-$T9.;(3.% ,33.00.0% U$4#@"14% ,% O.'%
+0.#;(3.%,-9%($0%,00@3(,$.9%0.$%@<%D\E0W%F"'5(3%(-9@@#%A,F%9,$,*%$@%F#@;(9.%,-%.-9T"0.#%
+O($4%07A'@5(3%(-9@@#%A,F0%,-9%(-9@@#%F@0($(@-(-1%(-<@#A,$(@-M%G"34%,%0.#;(3.%O@"59%
+.-,'5.%9(<<.#.-$%A@'(5.%9.;(3.%$7F.0%U(-35"9(-1%$4.%A7#(,9%@<%0A,#$F4@-.0W%$@%F#@;(9.%
+F.#0@-,5(0.9% 3@-$.S$T,O,#.% (-<@#A,$(@-%#.5,$(-1% $@% (-9(;(9",5% '"(59(-1%0F,3.0M% G@A.%
+@<% $4.% (-9@@#T',0.9% 3@-$.S$T,O,#.% ,FF5(3,$(@-0% $4,$% 0"34% ,% 0.#;(3.% O@"59% .-,'5.%
+(-35"9.[%F.#0@-,5(0.9% $@"#%1"(9.0*% #.3@AA.-9,$(@-0%<@#%F,$40% $@% <@55@O% ,-9% \RE0% $@%
+0..%U.M1M%',0.9%@-%3#@O9T0@"#3.9%9,$,W*%9.$,(5.9%(-<@#A,$(@-%F@FT"F0%@-%-.,#'7%,-9%
+#.5.;,-$%\RE0*%,-9%.9"3,$(@-,5%$#.,0"#.T4"-$%1,A.0%<@#%.SF5@#(-1%(-9@@#%0F,3.0M%
+
+33
+
+F(((8*%B*%D',&*(./$01"%2($+&(G/,*+0D',&*(H*2"+'0%$0"%(
+:4(0%0.3$(@-%9.03#('.0%$4.%F5,$<@#A%$4#@"14%O4(34%'"(59(-1%9,$,%(0%A,9.%,;,(5,'5.%$@%
+A@'(5.%35(.-$0%,-9%$4.%F#@@<T@<T3@-3.F$%35(.-$%,FF5(3,$(@-%<@#%D-9#@(9%0A,#$F4@-.0M%
+:4.#.%,#.%$O@%A,(-%3@AF@-.-$0%9.03#('.9%(-%$4.%,'@;.%03.-,#(@*%-,A.57[%,%O.'T
+0.#;(3.% $4,$% ,55@O0% <@#% $4.% ;-*57$+)(-1,' @<% 07A'@5(3% A,F% 9,$,% ,-9% ,00@3(,$.9% 0.-0@#%
+5@3,$(@-% F@(-$0X% ,-9% ,-% D\Ec35(.-$T(-$.#<,3.% $4,$% ,55@O0% <@#% 0"34% A,F% 9,$,% $@% '.%
+9@O-5@,9.9%,-9%(-$.#F#.$.9%'7%A@'(5.%,FF5(3,$(@-0%U,-9%<@#.0..,'57%,50@%O.'%35(.-$0%
+(-% $4.% <"$"#.WM% :4.0.% 3@AF@-.-$0% ,#.% 04@O-% (-% 6(1"#.% )DM% 6(1"#.% )?% 04@O0% $4.%
+(-$.#<,3.%(-%O4(34%'"(59(-1%9,$,%(-%$4.%<@#A%@<%<5@@#%F5,-0%,-9%0.-0@#c'.,3@-T5@3,$(@-%
+A,#="F%3,-%'.%F"'5(04.9%$@%$4.%0.#;.#*%O4(5.%6(1"#.,+%)B%,-9%)d%04@O%4@O%0"34%A,F%
+9,$,%(0%0.5.3$.9%,-9%9@O-5@,9.9%'7%$4.%"0.#%<#@A%,%35(.-$%9.;(3.M%E$%04@"59%'.%-@$.9%
+$4,$%3.#$,(-%3@AF5.S($(.0%4,;.%'..-%5.<$%@"$%@<%$4.%35(.-$T0(9.%(AF5.A.-$,$(@-%$4"0%<,#X%
+(-% F,#$(3"5,#*% $4.% 35(.-$T0(9.% ,FF5(3,$(@-% @-57% "0.0% ^+% 3@9.0% ,-9% 9.,9T#.3=@-(-1% $@%
+F#@;(9.% (-9@@#% F@0($(@-(-1% (-<@#A,$(@-% ',3=% $@% $4.% "0.#M% :4(0% (AF5.A.-$,$(@-% (0%
+4@O.;.#%35.,#57%.S$.-0('5.%$@%$4.%0.-0(-1%@<%,99($(@-,5%'.,3@-0%0"34%,0%$4@0.%',0.9%@-%
++6% $.34-@5@17*% ,-9% $4.% @;.#,#34(-1% A.34,-(0A0% (-% O4(34% @$4.#% ,FF5(3,$(@-0% ,-9%
+O.'T0.#;(3.0%,#.%,'5.%$@%,33.00%$4.%07A'@5(3% A,F%9,$,%,#.%,50@%5.<$%"-,<<.3$.9%<#@A%
+35(.-$T0(9.%(AF5.A.-$,$(@-0M%
+
+I,4>( A>% B5(.-$T0.#;.#% ,#34($.3$"#.% UDW*% $4.% O.'T(-$.#<,3.% ,55@O(-1% '"(59(-1% ,9A(-(0$#,$@#0% $@%
+F"'5(04%'"(59(-1%9,$,%U?W*%,-9%A,F%9,$,%'.(-1%0.5.3$.9%,-9%9@O-5@,9.9%'7%$4.%.-9%"0.#%UB*%dWM%
+
+:4.% 1.-.#(3% (-9@@#% F@0($(@-(-1% 3@AF@-.-$% 9.03#('.9% (-% $4.% 03.-,#(@% ,'@;.% (0%
+#.5.;,-$%$@%,%'#@,9%#,-1.%@<%A@'(5.%070$.A0M%6@#%.S,AF5.*%(-%_>`*%,%0"'0.$%@<%A@'(5.%
+070$.A0%,#.%9.03#('.9*%-,A.57%,9,F$(;.%A@'(5.%1"(9.0*%,-9%($%3,-%'.%-@$.9%$4,$%,55%@<%
+$4.% 070$.A0% 9.03#('.9% (-% $4,$% O@#=*% #,-1(-1% <#@A% A"0."A% 1"(9.0% ,-9% -,;(1,$(@-%
+070$.A0%$@%04@FF(-1%,00(0$,-$0*%"0.%5@3,$(@-%,0%F,#$%@<%$4.(#%,FF5(3,$(@-%3@-$.S$M%
+
+34
+
+J(((K*/$0*&(L"%M(
+:4(0% O@#=% A@0$% 35@0.57% #.5,$.0% $@% $4.% (-$.#0.3$(-1% <(.590% @<% (-9@@#% F@0($(@-(-1%
+F5,$<@#A0*%07A'@5(3%A,F%"0.*%,-9%9,$,%A@9.55(-1%$.34-(V".0%<@#%(-9@@#%0F,3.0M%
+(
+3+&""%(."',0,"+,+4(./$01"%2'[%D%-"A'.#%@<%(-9@@#%F@0($(@-(-1%F5,$<@#A0%4,;.%'..-%
+3#.,$.9% @;.#% $4.% F,0$% $O@% 9.3,9.0M% :4.% D3$(;.% ?,91.% 070$.A% U)ee>W% _]=<' >?2,+'
+B#(3=.$%070$.A%U>IIIW%_a`*%?5".G$,#%U>IIaW%_b`*%,-9%$4.%\.#0@-,5%K,;(1,$@#%U>IIaW%_J`%
+,#.%(AF@#$,-$%.S,AF5.0%@<%0"34%070$.A0M%
+:4.%D3$(;.%?,91.%070$.A%#.F#.0.-$0%,%35,00%@<%(-9@@#%F@0($(@-(-1%070$.A%(-%O4(34%
+.-9T"0.#0% ,#.% #.V"(#.9% $@% O.,#% $,10% $4,$% '#@,93,0$% $4.(#% 5@3,$(@-% $@% ,% 3.-$#,5(f.9%
+0.#;(3.%$4#@"14%,%-.$O@#=%@<%0.-0@#0M%:4.%B#(3=.$%070$.A*%(-%3@-$#,0$*%#.F#.0.-$0%$4.%
+35,00%@<%(-9@@#%F@0($(@-(-1%070$.A0%$4,$%,#.%',0.9%@-%,%9.3.-$#,5(f.9%,FF#@,34*%O4(34%
+4,0%$4.%F,#$(3"5,#57%(AF@#$,-$%F#@F.#$7%@<%'.(-1%F#(;,37%F#.0.#;(-1M%E-%$4(0%3,0.*%$4.%
+"0.#% 3,##(.0% ,% 0F.3(,557T9.0(1-.9% 5(0$.-(-1% 9.;(3.*% O4(34% .0$(A,$.0% ($0% 9(0$,-3.% <#@A%
+-.,#'7% F@0($(@-(-1% '.,3@-0M% :4.% ?5".G$,#% ,-9% \.#0@-,5% K,;(1,$@#% 070$.A0% $,=.% $4(0%
+',0(3%(9.,%<"#$4.#%'7%,55@O(-1%$4.%35(.-$T+$4!';73/.($3%T+%$88$%&,'4!#$/!'(3'5!'.%'388T
+$4.T04.5<% 3@AA@9($7% F4@-.% ,-9c@#% \dDM% &(;.-% $4.% (AF@#$,-3.% @<% 5@3,$(@-% F#(;,37*%
+O.% 4,;.% $,=.-% ,% 0(A(5,#% 5@3,$(@-T0-(<<(-1% ,FF#@,34% $@% ?5".G$,#% ,-9% \.#0@-,5%
+K,;(1,$@#M% /.% A@;.% '.7@-9% $4.% F#.;(@"0% O@#=% (-% $4,$% O.% A,=.% "0.% @<% ,% #,-1.% @<%
+<,3(5($(.0%$4,$%,#.%,;,(5.57!'3%'()!'*+!",+'+6."(-)3%!<'@$()'#."$3*+'AB?+'(3'.773@'83"'
+1.-.#(3%(AF5.A.-$,$(@-%'7%,-7%-"A'.#%@<%]#9TF,#$7%,FF5(3,$(@-0%9.0(1-.9%<@#%A@'(5.%
+35(.-$%9.;(3.0%U,-9%<@#.0..,'57%,50@%A@'(5.%O.'%0.#;(3.0WM%
+(
+892:"/,-(;$<(N'*($+&(H$0$(;"&*//,+4(!*-O+,P5*'(1"%(3+&""%(8<$-*'[%+.0.,#34%
+(-$@% 4"A,-% 3@1-($(@-% 4,0% (9.-$(<(.9% $4.% "0.% @<% 5,-9A,#=0% <@#% F@0($(@-(-1% ,-9%
+-,;(1,$(@-%,0%(AA.-0.57%"0.<"5M%E-%_g`*%,%-"A'.#%@<%F,F.#0%,#.%0"#;.7.9%(-%O4(34%$4.%
+(AF@#$,-3.% @<% 4"A,-% 3@-3.F$(@-% @<% 0F,3.% ,0% ,% 3@55.3$(@-% @<% <,A(5(,#% 5,-9A,#=0% 4,0%
+'..-%04@O-%'@$4%'.4,;(@"#,557%U.M1M%<@#%-.O3@A.#0%$@%,%3($7W%,-9%3@1-($(;.57M%E-9..9%
+(-%_h`*%($%(0%9.03#('.9%4@O%4"A,-%3@1-($(;.%A,F0%T%'7%$4.(#%;.#7%-,$"#.%@<%-..9(-1%$@%
+<(-9% ,% ',5,-3.% '.$O..-% 0$@#(-1% ,0% A"34% "0.<"5% (-<@#A,$(@-% ,0% F@00('5.% ,1,(-0$% $4.%
+-..9% $@% =..F% $4.% ,A@"-$% @<% (-<@#A,$(@-% ,$% ,% A,-,1.,'5.% 5.;.5% T% .AF4,0(0.% 0@A.%
+(-<@#A,$(@-%,$%$4.%.SF.-0.%@<%@$4.#%9,$,M%
+:@"#(0$% A,F0*% <@#% .S,AF5.*% ,#.% V"($.% @<$.-% 07A'@5(3% (-% -,$"#.*% ,-9% $4(0% (0% @<$.-%
+9@-.%$@%(-3#.,0.%$4.%0,5(.-3.%@<%A,F%<.,$"#.0%$4,$%,#.%9..A.9%#.5.;,-$%$@%$4.%;(.O.#*%
+,$% $4.% 3@0$% @<% 9.3#.,0(-1% $4.% 0,5(.-3.% @<% $4.% #.A,(-(-1% A,F% <.,$"#.0c9.$,(5M% E$% (0% $4(0%
+<@#A% @<% 1#,F4(3,5% 07A'@5(3% A,F*% O4(34% V"($.% @<$.-% '.,#0% 5($$5.% #.0.A'5,-3.% $@% $4.%
+1.@A.$#(3%'5".F#(-$0%@<%$4.%'"(59(-10%$4.7%#.F#.0.-$*%$4,$%O.%F5,3.%,$%$4.%4.,#$%@<%$4(0%
+O@#=%,-9%($0%,00@3(,$.9%0.#;.#T0(9.%F5,$<@#A%,-9%35(.-$T0(9.%9.A@-0$#,$@#M%
+:4.%i,A,A@$@%A,F%A@9.55(-1%$@@5=($%_e`%(0%@-.%0@5"$(@-%$4,$%3,-%'.%"0.9%<@#%$4.%
+A@9.55(-1%@<%(-9@@#%0F,3.0M%i,A,A@$@%F#@;(9.0%0"FF@#$%<@#%$4.%1.@A.$#(3%A@9.55(-1%
+@<% ,#34($.3$"#,5% 1#@"-9% F5,-0% $4#@"14% F@571@-% A.04.0M% E$% (0% ,% 9.0=$@F% ,FF5(3,$(@-%
+O#($$.-%(-%Bj%<@#%$4.%MKZ:%<#,A.O@#=%,-9%4,0%A,-7%<.,$"#.0%$4,$%O@"59%A,=.%($%,-%
+(9.,5%$@@5%$@%"0.*%$4@"14%9@.0%-@$%3"##.-$57%@<<.#%($0%<"-3$(@-,5($7%(-%$4.%<@#A%@<%,%O.'%
+0.#;(3.*% ,-9% O@"59% $4"0% #.V"(#.% "0.#0%O(04(-1% $@%"F5@,9% A,F% 9,$,% $@% <(#0$% 9@O-5@,9%
+,-9%(-0$,55%$4.%$@@5=($M%i,A,A@$@%,50@%9@.0%-@$%<@3"0%0F.3(<(3,557%@-%$4.%A@9.55(-1%@<%
+
+35
+
+07A'@5(3%A,F0%$4,$%A,7%'.,#%5($$5.%#.0.A'5,-3.%$@%$4.(#%,00@3(,$.9%1.@A.$#(3%'"(59(-1%
+'5".F#(-$0M%
+
+Q(((G"+-/5',"+'($+&(I505%*(L"%M(
+:4(0%F,F.#%F#@;(9.0%,%-"A'.#%@<%@"$3@A.0M%6(#0$57*%($%9.03#('.0%,%F5,$<@#A%$4,$%,55@O0%
+<@#%0(-15.TF@(-$%@<%,33.00%<@#%9@O-5@,9(-1%F"'5(3,557%,;,(5,'5.%(-9@@#%A,FF(-1%9,$,M%
+G.3@-957*%($%F#@;(9.0%$4.%A.34,-(0A%(-%O4(34%0.-0@#c'.,3@-%5@3,$(@-%(-<@#A,$(@-%3,-%
+'.%"$(5(0.9%<@#%3@,#0.T1#,(-.9%(-9@@#%F@0($(@-(-1M%:4(#957*%($%A,=.0%"0.%@<%,%9.;.5@F.9%
+D\E%,-9%,%0,AF5.%35(.-$T0(9.%D-9#@(9%(AF5.A.-$,$(@-%@<%$4@0.%D\E0%$@%9.A@-0$#,$.*%
+,0%F#@@<T@<T3@-3.F$*%4@O%$@%"0.%$4.%F5,$<@#AM%
+6"$"#.%O@#=%O(55%<@3"0%@-%3@-$(-".9%(AF5.A.-$,$(@-%@<%$4.%A,#="F%-@$,$(@-%"0.9%
+$@% A@9.5% (-<#,0$#"3$"#.% F@(-$0X% 0"#;.70% (-$@% $4.% 5.;.5% @<% (-<#,0$#"3$"#.% $4,$% 9(<<.#.-$%
+$7F.0% @<% F"'5(3% '"(59(-10% 3"##.-$57% 3@-$,(-X% ,-9% "0,'(5($7% 0$"9(.0% (-$@% O4,$% A(-(A,5%
+5.;.5% @<% ,33"#,37% (0% #.V"(#.9% <@#% (-9@@#% F@0($(@-(-1% $@% '.% 3@-0(9.#.9% "0.<"5% '7% .-9%
+"0.#0M%
+:4(0% O@#=% (0% <"-9.9% '7% $4.% GA,#$% G.#;(3.0% B+B*% ,0% F,#$% @<% $4.% 2"5$(T34,--.5%
+B@-$.-$% d.5(;.#7% ,-9% 2@'(5.% \.#0@-,5(0,$(@-% \#@P.3$M% /.% O@"59% ,50@% 5(=.% $@%
+,3=-@O5.91.%$4.%D"0$#,5(,-%2"0."A%O4@0.%<5@@#%F5,-0%,#.%04@O-%(-%$4(0%F,F.#M%
+
+K*1*%*+-*'(
+)M%!#k1.#*%DM*%?"$f*%DM*%2k55.#*%BM*%G$,45*%BM*%/,0(-1.#*%+M*%G$.(-'.#1*%!TZM*%d(#0345*%DM*%:4.%
+B@--.3$.9%H0.#%E-$.#<,3.[%+.,5(f(-1%,%\.#0@-,5%G($",$.9%K,;(1,$(@-%G.#;(3.M%E-[%\#@3M%@<%$4.%
+e$4%E-$.#-,$(@-,5%B@-<.#.-3.%@-%E-$.55(1.-$%H0.#%E-$.#<,3.0*%FFM%)J)%C%)Jh%U>IIaW%
+>M% !#k1.#*% DM*% ?,"0*% 8M*% C.3=A,--*% dM*% !#"FF,*% 2M*% /,0(-1.#*% +M*% D9,F$(;.% 2@'(5.% &"(9.0M%
+B4,F$.#%(-[%?#"0(5@;0=7*%\M*%!@'0,*%DM*%K.P95*%/M%U.90MW[%:4.%D9,F$(;.%/.'[%2.$4@90%,-9%
+G$#,$.1(.0%@<%/.'%\.#0@-,5(f,$(@-*%FFM%b>)%C%bae*%GF#(-1.#%U>IIgW%
+]M% /,-$*% +M*% C@FF.#*% DM*% 6,53l@*% mM*% &(''@-0*% 8M*% :4.% D3$(;.% ?,91.% 5@3,$(@-% 070$.AM% DB2%
+:#,-0,3$(@-0%@-%E-<@#A,$(@-%G70$.A0*%)I%U)W*%FFM%e)%C%)I>%U)ee>W%
+aM%\#(7,-$4,*%KM*%B4,=#,'@#$47*%DM*%?,5,=#(04-,-*%CM*%:4.%B#(3=.$%Y@3,$(@-TG"FF@#$%G70$.A*%E-[%
+\#@3M% R<% $4.% E-$.#-,$(@-,5% B@-<.#.-3.% @-% 2@'(5.% B@AF"$(-1% ,-9% K.$O@#=(-1*% FFM% ]>Ta]%
+U>IIIWM%
+bM%^"(15.7*%DM*%/,#9*%?M*%R$$#.7*%BM*%B"$$(-1*%dM*%!"AA.#<.59*%+M*%?5".G$,#*%,%F#(;,37%3.-$#(3%
+5@3,$(@-% ,O,#.% 070$.AM% E-[% EZZZ% \@0($(@-*% Y@3,$(@-% ,-9% K,;(1,$(@-% G7AF@0("A*% ;@5M% )%
+U>IIaW%
+JM%/,0(-1.#*%+M*%!#k1.#*%DM*%2"5$(TA@9,5%E-$.#,3$(@-%O($4%2@'(5.%K,;(1,$(@-%G70$.A0M%E-[%/M%
+/,450$.#% U.9MW[% GF.3(,5% 8@"#-,5% E00".% nB@-;.#0,$(@-,5% H0.#% E-$.#<,3.0n*% ($% T% E-<@#A,$(@-%
+:.34-@5@17*%;@5%aJ*%-"A'.#%J*%FFM%]>>%C%]])*%R59.-'@"#1%U>IIaW%
+gM% ?(9O.55*% KM% 8M*% Y".1*% BM% \M*% B#.,$(-1% ,% 6#,A.O@#=% <@#% G($",$.9% /,7T6(-9(-1% +.0.,#34M% E-%
+D\BCE*%FFM%aI%C%ae%U>IIaW%
+hM%&@55.91.*%+M%&M*%/,7<(-9(-1%'.4,;(@#[%3@1-($(;.%A,FF(-1%,-9%@$4.#%0F,$(,5%F#@3.00.0*%:4.%
+8@4-0%C@F=(-0%H-(;.#0($7%\#.00%U)eeeW%
+eM%G$,45*%BM*%C,"F.#$*%8M*%:,=(-1%Y@3,$(@-%2@9.55(-1%$@%-.O%Y.;.50[%D%2,F%2@9.55(-1%:@@5=($%
+<@#% E-$.55(1.-$% Z-;(#@-A.-$0M% E-[% >-9% E-$.#-,$(@-,5% /@#=04@F% @-% Y@3,$(@-T% ,-9% B@-$.S$T
+DO,#.-.00M%E-[%2M%C,f,0*%8M%!#"AA*%,-9%:M%G$#,-1%UZ90MW*%FFM%ga%C%hb*%GF#(-1.#%U>IIJW%
+
+36
+
+Ontology-Driven Adaptive Accessible Interfaces in the
+INREDIS project
+Raul Miñón, Amaia Aizpurua, Idoia Cearreta, Nestor Garay, Julio Abascal
+Laboratory of HCI for Special Needs
+University of the Basque Country (UPV/EHU)
+Informatika Fakultatea. Manuel Lardizabal 1, 20018 Donostia, Spain
+{raul.minon, amaia.aizpurua, idoia.cearreta, nestor.garay, julio.abascal}@ehu.es
+
+Abstract. This paper presents and architecture that is being developed to
+generate adaptive accessible interfaces taking into consideration the features of
+users with disabilities, the characteristics of the devices that they use to access
+remote services, and other context features. In order to perform the modelling
+of the diverse parameters under consideration an ontological approach has been
+chosen. This research is part of the INREDIS project that has the purpose of
+creating a universally accessible, interoperable and ubiquitous environment to
+allow people with disabilities to control service machines and /or different
+targets.
+Keywords: adaptive interfaces, accessibility, ontologies, user modelling.
+
+1 Introduction
+Services that are accessible through the Internet should be accessible, ubiquitous, and
+interoperable. Unfortunately, this is not the current situation since most interfaces do
+no
+t take into account the needs of the users nor the context in which the interaction is
+performed. The specific characteristics of the device used to request the service are
+also frequently ignored, which has a negative impact on the accessibility, usability,
+ubiquity and interoperability of the service. Adaptation is very helpful to overcome
+accessibility barriers. It is based on user modelling that allows tailored interactions
+based on relevant user features such as skills, preferences, interests, etc. In addition, a
+number of other context features are taken into account to optimize the adaptation
+process, such as the task and the objective that the user wants to achieve.
+The research work presented in this paper is carried out in the framework of the
+INREDIS project [1], which aims to provide universal accessibility, interoperability
+and ubiquity in order to allow people with disabilities to control service machines,
+vending machines, home appliances, etc. In this paper we aim to depict the
+architecture of the Interface Generator module that is used to produce adaptive
+interfaces taking into account the relevant characteristics of users with disabilities and
+context features, including the characteristics of the devices used to access these
+services. Ontologies are used in order to perform the modelling of the diverse
+parameters taken into consideration because they allow reusability, besides they allow
+extracting new information through inferences.
+
+37
+
+In relation to the method for storing and processing data for modelling, some
+approaches propose mark-up languages to model the user (e.g. HumanML [2]) while
+others propose the use of ontologies (such as GUMO [3]). In addition to the user
+characteristics, other projects (such as CAP [4]), also consider specific issues related
+to context. Most of these approaches are predominantly focused on user modelling.
+Though, adaptive interfaces devoted to the support of people with disabilities have to
+consider several other issues included in the interaction context, such as accessibility
+[5] [6] or affective resources [7]. Taking into account the principal advantages offered
+by these researches, our approach is focused on modelling not only the user but also
+the technological context and non-technological context.
+
+3 The INREDIS Approach
+In order to create adaptive accessible interfaces for people with disabilities within the
+INREDIS project, a module called the “Interface Generator” has been designed. Its
+aim is to provide universal access for anyone, including people with disabilities,
+regardless the device used or the service that is accessed. To achieve this objective, it
+is necessary to model the different aspects of the domain where the user is interacting.
+Several approaches have been studied to model these features and eventually an
+ontological model was chosen, since ontologies offer automated reasoning, dynamic
+classification and consistence checking giving the opportunity of extracting other
+relevant features without interfere the user.
+In order to take into account all relevant aspects of the user and his context, three
+different ontologies have been designed and some others are still in the
+conceptualization phase. Subsequently, all the ontologies designed have been
+integrated through a global ontology that is modular enough to encompass future
+ontologies, if they are needed. User ontology has been designed to model the skills
+and characteristics of the users. User Device Ontology aims to gather all the
+information about the device used by the user to interact with the system. Target
+Ontology has the objective of modelling the characteristics of the possible targets or
+services that can be integrated, such as ATMs, vending machines, and so on.
+In addition to these ontologies, there are others in the conceptualization phase that
+will be built when they are required. These are Interface Ontology to guide the
+process of deciding interface mark-up language and components; Adaptations
+Ontology to model the best adaptations for each user stereotype; and Assistive
+Technologies Ontology to model the diverse assistive technologies accessible trough
+the INREDIS framework. More information can be obtained in [8].
+
+4 Proposed architecture and component modules
+The architecture designed to generate adaptive accessible interfaces is composed of
+diverse modules, each one provided with specific functionalities to perform specific
+tasks. It is highly flexible to enable the incorporation of new modules providing new
+functionalities in the future. IG Manager Module is an orchestrator that manages the
+
+38
+
+whole process and the functionalities of the Interface Generator. Constructor Module
+is responsible for creating a default interface in an abstract language. Resources
+Manager Module analyses the resources provided by the target to determine whether
+these resources are compatible with the user and the user’s device. Selector Module
+has to decide which adaptations must be performed to obtain an accessible interface.
+Adapter Module applies the adaptations selected by the selector module to the default
+interface, obtaining an adaptive accessible interface, supported by the user and his/her
+device and which is able to control target functionalities. Data Injector Module
+checks whether there is an interface previously generated for the current type of user,
+device and target. More information about these modules can be obtained in [8].
+
+5 Conclusion
+A prototype has been developed to verify the adequacy of the architecture proposed.
+Although the interaction with the ontologies was only simulated, this prototype
+showed the functionality and validity of each module and detected its inconsistencies
+and deficiencies. We are currently developing a more complete version of the
+Interface Generator that extends its features to allow adaptation to all the stereotypes
+provided by the general ontology, regardless the device and the target.
+Acknowledgements. The involved work has received financial support from the
+Department of Education, Universities and Research of the Basque Government.
+
+6 References
+1.
+2.
+3.
+4.
+5.
+
+6.
+7.
+
+8.
+
+INREDIS project: http://www.inredis.es/Default.aspx. Last accessed: 18 May, 2010.
+Oasis. http://www.oasis-open.org/committees/download.php/60/HM.Primary-Base-Spec1.0.html. Last accessed: 18 May, 2010.
+Heckmann, D., et al. GUMO - the General User Model Ontology. Procs. of the 10th Int.
+Conf. on User Modeling. LNAI 3538, Springer-Verlag. Berlin, 2005. Pp. 428-432.
+Fourney, D. Using a common accessibility profile to improve accessibility. PhD Thesis,
+University of Saskatchewan.
+Vigo, M., Aizpurua, A., Arrue, M. and Abascal, J. Automatic Creation of User Profiles
+for Achieving Personal Web Accessibility. Procs. of the Int. Conf. on Computers Helping
+People with Special Needs 2008. LNCS 5105, 354-361. Springer, 2008.
+Stephanidis, C. (Ed.). The Universal Access Handbook. CRC Taylor & Francis Group.
+2009.
+Cearreta, I. et al. Models to facilitate the development of affective resources. Procs. of
+Eur. Conf. on Cognitive Ergonomics 2008. Funchal (Portugal), 2008. Pp. 69-70.
+
+Miñón R. et al. An Architecture for Ontology-Driven Adaptive Accessible
+Interfaces.
+Internal
+Research
+Report
+No.
+EHU-KAT-IK-07-10.
+http://www.kat.ehu.es/s0139-lipcnec/es/contenidos/informacion/gi0163_publicaciones/
+es_ 00163_pu/00163_publicaciones.html
+
+39
+
+PERSEUS – Personalization Services Engine
+Michael Yudelson1
+1
+
+University of Pittsburgh, School of Information Sciences,
+135 North Bellefield Ave. Pittsburgh, PA 15260, USA
+mvy3@pitt.edu
+
+Abstract. PERSEUS is a standalone personalization service provider. It follows
+the idea of separating the adaptation logic from the AHS and offering it as an
+on-demand service. PERSEUS provides full abstraction from the adaptation
+models and methods. Since its first deployment, PERSEUS has seen intensive
+use and has been the primary source of personalization in about 20 coursesemesters. It offers a set of adaptive guidance and recommendation services.
+The target of this demo is to demonstrate PERSEUS’s potential of providing
+personalized access to the interactive educational resources.
+Keywords: service-based personalization, adaptation, adaptive hypermedia
+
+1 Introduction
+Modularization and component reuse is one of the major and most promising trends in
+the field of adaptive educational hypermedia. This process has started even before
+adaptive hypermedia systems came to existence. Early user modeling shells separated
+from the user-adaptive systems in the 1980s. In the late 1990s, open-corpus
+hypermedia allowed content to be added at the run-time rather than at the design time.
+Today we are witnessing the emerging split of the adaptation models and methods
+themselves form the adaptive hypermedia system (AHS) that changes from all-in-one
+tool to the open integrator of the interactive technology
+In this demo we are presenting PERSEUS, a personalization server that offers an
+abstraction of the adaptation methods to the AHS developers. With PERSEUS
+adaptation can be consumed rather than built-in and can be reused in many contexts
+and easily replaced without changing the structure of the content. PERSEUS reduces
+the problem of adaptation provision to the problem of configuration. A recently added
+innovative feature of PERSEUS – an embedlet – allows adaptation to be built even
+into static HTML page.
+
+2 PERSEUS – Personalization Services Engine
+The conceptual idea of how PERSEUS works is shown in Fig.1. A content
+management system (here Knowledge Tree portal) provides access to a pre-
+
+40
+
+constructed hyperspace. To render a personalized view of a particular page, the portal
+consults the personalization service engine. To do that, the portal sends the structure
+of the currently viewed page (as an RSS1.0/RDF feed) and context information
+(user/group id, personalization algorithm code, etc.). PERSEUS queries user
+modeling server(s) (and/or other data sources known to it) and performs the
+adaptation that was requested. The returned result is an original RSS1.0/RDF page
+feed with personalizing updates. The new feed may have original links reordered or
+removed, new links inserted, annotations added to links. The portal parses the feed
+and renders a personalized page for the user.
+
+Fig. 1. Example of PERSEUS’s topic-based adaptive navigation for Knowledge Tree [1] portal.
+Adaptive annotations (targets with darts) produced by PERSEUS are enclosed in a square. Here
+CUMULATE [2] is utilized as the user modeling server.
+
+The compliance threshold for the portal to be able to use PERSEUS is minimal.
+Every personalization method implemented in PERSEUS is exposed as a RESTful
+web service. The portal has to be able to package its pages’ link structures as a simple
+RSS1.0/RDF document and send it as one of the parameters to the selected service
+URL. PERSEUSE’s response – modifications to the link structure, including
+annotations with descriptive JavaScript tooltips – should be parsed again.
+
+3 PERSEUS Embedlets – Adaptation Made Easy
+A recent extension to the PERSEUS called embedlet allows adaptive hypermedia
+authors to skip data exchange protocol in its entirety and paste snippets of adaptively
+annotated lists of resources as plain HTML code. An embedlet is a stationary
+configured call to one of the PERSEUS’s adaptation techniques. It is comprised of an
+RSS1.0/RDF document, containing a flat link list representing a large portion of the
+
+41
+
+hyperspace and a pointer to the desired personalization service. Each embedlet is
+exposed as quasi personalization service.
+To invoke an embedlet one should insert an object HTML tag into the web page
+with data attribute pointing to the embedlet’s URL. To only show part of the links
+from the embedlet’s exhaustive list one must use an additional parameter and specify
+an enumeration of links numbers in the bound list. User and/or group identity need to
+be present in the embedlet as well. However, in the case of group-based navigation
+(cf. Fig.2), no individual users are distinguished, and group identity could also be
+statically bound, which allows adaptive navigation embedlets to be successfully used
+in static HTML pages.
+Embedlets are equivalent to regular PERSEUS services in terms of adaptation
+functionality offered. However, in terms of authoring they are significantly easier to
+aggregate into existing content.
+
+Fig. 2. PERSEUS’s group-based social navigation support as an embedlet.
+
+References
+1. Brusilovsky, P., Sosnovsky, S. A., Yudelson, M., Lee, D. H., Zadorozhny, V., and Zhou, X.
+(2010). Learning SQL Programming with Interactive Tools: From Integration to
+Personalization. ACM Transactions on Computing Education, 9(4), 1-15.
+2. Brusilovsky, P., Sosnovsky, S. A., and Shcherbinina, O. (2005). User Modeling in a
+Distributed E-Learning Architecture. In L. Ardissono, P. Brna, and A. Mitrovic (Eds.), 10th
+International Conference on User Modeling (UM 2005), (pp. 387-391).
+
+42
+
+

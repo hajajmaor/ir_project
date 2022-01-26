@@ -1,0 +1,491 @@
+iMuse Mobile Tour: a personalized multimedia museum guide opens to groups
+
+Athanasios Fevgas, Panagiota Tsompanopoulou, and Panayiotis Bozanis
+
+
+Centre for Research and Technology - Thessaly
+(CE.RE.TE.TH)
+
+Technology Park of Thessaly, 1st Industrial Area,
+385 00 Volos, Greece
+
+e-mails: {fevgas, yota, pbozanis}@inf.uth.gr
+
+Department of Computer and Communication
+Engineering
+
+University of Thessaly
+Glavani 37, 382 21 Volos, Greece
+
+
+Abstract— In the recent years, there is a growing interest in
+exploiting the advances of mobile and pervasive computing to
+museum environments. A mobile museum guide, named iMuse
+Mobile Tour is presented in this paper. The guide utilizes UHF
+RFID technology to provide context aware information
+services. It comprises predefined and self-defined tours as well
+as interactive games to stimulate learning. A group support
+service is introduced, which enables group visitors to exploit
+guidance services on their private mobile phones. The service
+provides access to information retrieved by museum’s RFID
+enabled devices.
+
+Museum mobile guides, group support services, mobile
+applications
+
+I.  INTRODUCTION
+
+Handheld devices with voice instructions are common in
+museums for quite some time. Mobile computers are
+becoming popular and many museums are already utilizing
+them to provide tour services. A location aware, multi-device
+museum guide which utilizes mobile guides and shared
+screens is presented in [1]. The system monitors visitor’s
+behavior, including time spent in each exhibit, to personalize
+user interface. It introduces single and multi user games to
+improve visitors’ learning experience and social interaction.
+Many mobile guides provide visitors with the option to
+design routes according to their personal interests. A
+dynamic routing system is introduced in [2]. The system is
+able to adapt routes designed by the visitors considering
+already visited exhibits, changes in interest and user’s
+current location. It is implemented as a web application and
+is available on visitors’ personal devices.
+
+According to [3] people usually visit museums in small
+groups, e.g., families or friends. Thus, [4] aims to support
+group of visitors by providing a context-aware messaging
+service. The service enables visitors to exchange context
+aware messages about exhibits. Messages are sent to an
+individual or a group, and can be delivered immediately (as
+SMS) or when certain conditions are satisfied (virtual “post-
+it”).
+
+Most mobile museum guides use specialized hardware or
+require software installation on visitors’ personal devices. A
+museum tour guide system on visitors’ mobile phones is
+presented in [5]. The proposed system runs using AJAX on
+
+web browsers and does not require any other software
+installation. More specifically, it uses reverse AJAX and
+Bluetooth to provide context aware push services. Bluetooth
+replenished devices named Media Spots, are placed on
+selected exhibits in order to inform a server for new detected
+visitors near-by. The server responses by automatically
+updating exhibit information in visitor’s web browser.
+
+Mobile museum guides, like [6], use LF RFIDs to
+provide location aware services, but the short reading range
+of this technology forces user to stand very close to the
+exhibits.  This  is  not  always  feasible  in  museum
+environments and certainly is inconvenient for the visitors.
+To overcome this issue, some research projects, e.g., [1]
+adopted active RFID technology. However, there is a
+difficulty to distinguish between closely placed active tags,
+due to long reading range. In [1] tags represent data for more
+than one exhibit, restricting the granularity of information
+that can be provided directly. The usage of UHF RFID
+passive tag technology in museum tours was investigated in
+our previous work [7] and an initial experiment was realized
+in Archeological Museum of Volos, Greece. The proposed
+system, entitled iMuse Mobile Tour, uses UHF RFID tags
+attached to museum’s showcases to link exhibits to
+multimedia information. It supports multilingual and multi-
+audience content for free-style and pre-designed tours. The
+system was implemented on a mobile reader (UHF GUN) by
+iDtronic¹.
+
+iMuse Mobile Tour is enhanced to support self-defined
+tours and interactive educational games. A context-aware
+group support service that enables the delivery of exhibit
+information to the members of a group is also developed.
+The service aims to group of visitors equipped with a mobile
+guide device and pushes the accessed information to each
+visitor’s private smart phone. The system is fully deployed to
+the Archeological Museum of Volos and the first visitor
+experiences are presented in this paper.
+
+The features of iMuse Mobile Guide are discussed in
+Section II. Section III describes the group support service
+and Section IV presents system’s architecture. Visitors’
+experiences are presented in Section V and lastly section VI
+concludes the paper.
+
+¹ http://www.id-tronic.de/
+
+
+
+II.  THE MOBILE TOUR
+
+Figure 1. iMuse Mobile guide screenshots
+
+provides simple descriptions made for kids, while expert’s
+one provides access to more detailed information (e.g.,
+bibliographic references related to the exhibits, etc.).
+
+
+The proposed system was deployed in seven lounges of
+the Archeological Museum of Volos; tags were installed in
+about 120 showcases. The tags were placed in non visible
+positions, inside the showcases or behind informative signs,
+in order to insure museum’s aesthetics. The tags were
+
+Figure 2. Visitor using iMuse Mobile Tour
+
+marked with a neat sign. The operation of the iMuse Mobile
+Guide is based on the handheld’s integrated pistol grip. The
+visitor should level at the RFID tag and pull handheld’s
+trigger to acquire exhibit information (cf Fig. 2).
+
+Initially, a welcome screen is appeared when the visitor
+gets the mobile device by Museum’s information desk. A
+short video presentation illustrates the handheld’s usage.
+Prior to using of the Guide, the visitor should set up his
+profile by choosing his language and audience type.
+Currently, the information is available for adults, children
+and experts, in Greek, English and French. Children’s profile
+
+During free style tours, visitors are able to explore the
+museum in their pace and retrieve information about any
+exhibit attracting their interest. A photo and a short
+description are directly displayed on the guide’s screen when
+the visitor requests information for a showcase (cf Fig. 1(a)).
+The description comes also as vocal message activated by a
+button on the top of the display. The other two buttons on the
+top of the screen provide access to videos and a photo gallery
+related to the showcase. The videos are usually recorded in
+excavation sites. The photo gallery provides photos from
+excavations, specific artifacts in the showcase as well as
+related artifacts in museums store. Most of the photo gallery
+items are linked to additional more detailed information.
+
+Pre-defined tours are composed by the archeologists and
+specialize to a specific thematic entity of the museum.
+Visitors have also the option to create their own tours using
+certain criteria according to their profile. The criteria include
+available time, class of the artifact (e.g., pottery, tools, coins,
+etc.), era, while experts can also select excavation site (cf
+Fig. 1(b)). In both tour types, the route is drawn with a red
+line and the exhibits of interest are marked as green points
+while user’s position is marked as a blue point (cf Fig. 1(c)).
+Selecting a green spot, an image tooltip box is activated that
+presents information for the proposed showcase. Zoom
+functionality is also available, via a button on the top of the
+screen, to help visitors with Museum’s arrangement. Exhibit
+information is accessed like in free-style tours, by pulling the
+pistol trigger.
+
+Lastly, young visitors may select, from a list, an
+interactive game to play. Games describe activities that users
+should accomplish by locating the relative showcase and
+scan it with the RFID reader (cf Fig. 1(d)). These activities
+composed by an archaeologist that specializes to educational
+programs.
+
+
+Figure 3 iMuse Mobile Tour architecture
+
+
+Games and predefined tours deal with the same subjects, and
+are used as alternatives education methods.
+
+III. GROUP SUPPORT
+
+As has been identified by previous works, people tend to
+visit museums in small or bigger groups. Thus, many
+research projects (check Section I) aim to support learning
+for group members. Some of them propose multi-user games
+and shared media, while others suggest context-aware
+communications.
+
+The members of a group may have different needs and
+expectations from a museum tour (adults, children). It is not
+even unusual to speak different languages (e.g., cruise ships
+tourists). Thus, most of the modern mobile guides support
+multilingual and multi-audience content. One could claim
+that museums should be able to provide a mobile guide to
+each visitor. But, purchasing and maintaining, a significant
+number of mobile devices, is not always affordable. On the
+other hand, smart-phones and lightweight internet tablets
+with great features, as, high definition multi-touch screens,
+Wi-Fi network and g-sensors are becoming very popular.
+
+We propose a context-aware service that utilizes iMuse
+Mobile Tour and visitors’ personal smartphones to support
+learning in groups. The service pushes exhibit information
+that is accessed by an iMuse Mobile Tour device on group’s
+private devices without any prior software installation. A
+typical usage scenario is as following. The leader of a group
+receives iMuse Mobile handheld by the information desk and
+enables group support service. He enters a nick name for the
+group and optionally a pin number. As soon as, group
+members join their smart-phones to museum’s wireless
+network and open the web browser, a page with all available
+services is automatically loaded. Then, they can subscribe to
+group’s service by selecting the nickname and providing the
+pin (if has been set). The iMuse Mobile Tour device acts as
+group controller, exhibit information retrieved by it, is
+
+automatically loaded to the subscribers’ browsers. Each
+subscriber is able to personalize information presentation by
+changing his profile (language and audience type).
+
+IV. SYSTEM ARCHITECTURE
+
+Visitors have to locate and scan the RFID tags, using
+Museum’s handheld, in order to access exhibit information.
+Thus, iMuse Mobile tour comes within ‘scanner metaphor’
+as expressed by [8]. In the other hand, the group support
+service can be recognized as a ‘remote control metaphor’.
+
+Figure 3 depicts the architecture of iMuse Mobile Tour.
+The system follows client-server architecture. The client
+resides on the RFID reader and is developed in C#. The
+mobile application consists of three modules, the RFID Tag
+Identification module, the Request Information module and
+the  User Interaction Control module. The RFID Tag
+Identification module uses a .NET library provided by the
+handheld’s manufacturer to configure and interrogate the
+RFID reader. This introduces a level of abstraction of the
+underling hardware to the upper layers of the application.
+The Request Information module utilizes the retrieved RFID
+data and service information (e.g., server address and
+services’ names) to format data requests for the server. Data
+requests are structured as physical hyperlinks and responses
+are received in html or xml. Specifically, exhibit information
+is structured in html, while metadata (e.g., types of
+multimedia available for an exhibit) are formatted in xml.
+The metadata are used to adapt user interface to the available
+information. User Interaction module is the core of iMuse
+Mobile client and is wrapped around a .NET web browser
+control. It implements application logic and handles user
+interface.
+
+The server side application is developed using PHP and
+runs on an Apache web server. It is composed by a request
+handling service and four tour aware services. Each one of
+the core services is comprised by two modules: the Control
+
+
+and the View module. The Control module implements the
+data access and business logic, while the View module deals
+with data representation. This approach isolates business
+rules from the visual appearance of the application, enabling
+the modification of the user interface, without affecting the
+underlying business logic and vice versa.
+
+The Request Control service (RCS) receives requests
+from the mobile devices and dispatches them to the
+appropriate service providing a single entry point to the
+server application.
+
+The Profile Control service (PCS) handles the user’s
+profile (i.e., language, audience type, etc). It processes data
+fed by the visitor to set up his profile and line it to the other
+services.
+
+The Exhibit Information service (EIS) provides data and
+metadata on the exhibits. Data may include text, images,
+audio and video, while metadata specify the types of
+multimedia that are available to a particular artifact.
+
+Tour Coordination service (TCS) implements all required
+processes in order to maintain the guided tours. TCS displays
+a  list with all available pre-defined tours that suit to visitor’s
+profile, as well as provides him a tool to configure his own
+tours. In both cases, a free path finding algorithm is used to
+determine the tour path in the museum’s halls. The algorithm
+(cf Fig. 4) receives as input set A, the current visitor location
+s and a set of points of interest P, in no particular order, i.e.,
+A = {s,P}. Then, it constructs a fully connected undirected
+weighted graph G=(A,E,w), using as vertex set the input set
+A,  as edge set every pair of vertices (u,v) in A, and as weight
+function w the minimum distances between every pair of
+vertices (u,v) in A. The distances are calculated with the
+provision of avoiding physical obstacles like walls and
+showcases. Next, in O(|A|²log|A|) time, a 2-approximate
+minimum cost tour t on G is constructed, based on a Euler
+traversal of a Minimum Spanning Tree T of G [9]. The free
+path p is extracted by simply traversing t, using s as the
+starting vertex. Finally, the starting point s, the path p and the
+points of interest P are drawn over museum’s map image.
+
+FreePath(A)
+
+Input: The visitor position s and his/her points
+
+of interest P
+
+Output: An approximate minimum cost free path p
+
+1. G = fully connected weighted graph on A, using
+the minimum distances between every pair of
+vertices in A;
+
+2. Calculate a MST T of G;
+
+3. Run an Euler traversal of T, eliminating
+multiple visited vertices;
+
+4. Let t be the resulting tour;
+
+5. Then p is just a rotation of t, with s being
+the first vertex of the sequence;
+
+Figure 4. Free path algorithm
+
+The Game service (GS) exposes a list of all the available
+games matching to user profile and dispatches the scenario
+of a selected game to the client. The game scenario, i.e.,
+activities, relative showcases, and score, is wrapped in xml.
+
+The Group Support service (GSS) differs in the aspect
+that all the others services support iMuse Mobile tour client.
+
+The GSS uses RFID data scanned by an RFID reader to push
+exhibit information to visitors’ personal mobile devices
+following reverse AJAX design pattern. Only an AJAX
+enabled web browser is required on the visitor’s mobile to
+access the service. As soon as a mobile joins to the service,
+its web browser makes an asynchronous request to the
+server. The server holds the request while waiting for a new
+RFID tag read. Once new data is available, it sends the
+response back to the client. The response is encoded in JSON
+format and contains the scanned id and user profile
+parameters. On the client side, the browser receives the
+response, calls a processing routine and initiates another
+request to the server, for new data. The response processing
+routine creates an AJAX request to Exhibit Information
+service using the gained exhibit id and profile parameters to
+access exhibit information. GSS communication is depicted
+in Fig. 5.
+
+Figure 5 Group service, messages exchange
+
+V. EVALUATION
+
+We evaluated our system in Archeological Museum of
+Volos. 95 visitors participated to the evaluation; most of
+them were secondary and high school students and their
+teachers. They were asked to fill out questionnaires using a
+scale from 1 to 5. The average age of the participants was 21
+years old. 22 visitors had a university degree while the rest of
+them had secondary school or high school degree. 57 of them
+were considered as very familiar with the usage of electronic
+mobile devices, while 38 as just familiar. All the users
+attended a short introduction on the system and its main
+features. Visitors were encouraged to use as many features as
+they were felt comfortable.
+
+The participants reported that iMuse Mobile Tour
+stimulated their interest on the exhibits (MD=4.2, SD=0.81).
+Moreover, they are planning to recommend the usage of the
+system to their family/friends (MD=4.18, SD=0.83).
+
+The archaeologists’ pre-defined routes were found to
+help the deeper understanding of the discussed particular
+subjects (MD=4.26, SD=0.71), while the games were
+characterized as amusing (MD=4.18, SD=0.77).
+
+Most of the visitors stated that the usage of the mobile
+guide is easy (MD=4.47, SD=0.57) and the system responses
+
+
+fast  (MD=4.26,  SD=0.77).  The  organization  of  the
+information in the user interface and the aesthetics is
+satisfied (MD=4.13, SD=0.7).
+
+Four small groups of visitors were interested to the group
+support service. The response of the system was rated with
+(MD=4.33, SD=0.7). The visitors appreciated the service and
+they intended to recommend it to others (MD=4.78,
+SD=0.44).
+
+VI. CONCLUSION
+
+iMuse Mobile Tour is an already presented tour guide
+system which utilizes UHF RFID technology to enrich
+museum visiting experience. Here, it is expanded to support
+self-defined  tours  and  interactive  games.  The  main
+contribution of this paper is a group support service which
+enables group members to exploit their own mobiles for
+accessing exhibit information. The service pushes exhibit
+information, accessed by an iMuse mobile tour device, on
+group’s private devices without requiring any software
+installation. The system has been deployed in Archeological
+Museum of Volos and the first evaluation results show that it
+stimulated  visitors’  interest  and  enhanced  their
+understanding. The wide acceptance of the Group Support
+service indicates that visitors are willing to use their own
+devices to access exhibit information. This is beneficial for
+the museums too, since they are not obligated to obtain and
+maintain special devices.
+
+Future  work  includes  exploration of  advances  in
+ubiquitous computing to provide scalable, efficient and cost
+effective mobile tour guide services on visitors’ personal
+devices.  Sensing  technologies,  like  Near  Field
+Communications (NFC), are promising and will become
+popular in the near future. Next steps also involve data
+processing from a large set of visitors to identify their
+interests and expectations and adapt the provided (or develop
+new) services accordingly.
+
+ACKNOWLEDGMENT
+
+This work was supported by Iceland, Lichtenstein and
+Norway through the EEA Financial mechanism under Grant
+EL0043 and by the Greek State.
+
+REFERENCES
+
+[1]  G. Ghiani, F. Paterno, C. Santoro and L. D. Spano, “UbiCicero: A
+location-aware, multi-device museum guide,” Interacting with
+Computers, vol. 21, issue 4, Aug. 2009, pp. 288-303, 0953-5438,
+doi:10.1016/j.intcom.2009.06.001.
+
+[2] W. R. van Hage, N. Stash, Y. Wang and L.M. Aroyo, “Finding your
+way through the Rijksmuseum with an adaptive mobile museum
+guide,” Proc. 7th Extended Semantic Web Conference (ESWC),
+Springer Berlin, Jun. 2010, pp. 46-59, 10.1007/978-3-642-13486-9-4.
+
+[3]  A. Woodruff, P. M. Aoki, A. Hurst and M. H. Szymanski, “The
+guidebook, the friend and the room: visitor experience in a historic
+house,” Extended Abstracts, ACM Conference on Human Factors in
+Computing Systems (CHI 2001), ACM, Mar. 2001, pp. 273-274,
+doi:10.1145/634067.634229.
+
+[4] T. Kuflik, J. Sheidin, S. Jbara, D. Goren-Bar, P. Soffer, O. Stock, and
+
+M. Zancanaro2, “Supporting small groups in the museum by context-
+aware communication services,” Proc. Int. Conference on Intelligent
+User  Interfaces  (IUI  '07),  ACM,  2007,  pp.  305-308,
+doi:10.1145/1216295.1216353.
+
+[5] B. A. Takrouri, K. Detken, C. Martinez, M. K. Oja, S. Stein, L. Zhu,
+and A. Schrader, “Mobile HolstenTour: contextualized multimedia
+museum guide,” Proc. 6th Inter. Conference on Advances in Mobile
+Computing and Multimedia (MoMM '08), ACM, 2008, pp. 460-463,
+doi:10.1145/1497185.1497283.
+
+[6]  J. Mantyjarvi, F. Paterno, Z. Salvador and C. Santoro, “Scan and tilt:
+towards natural interaction for mobile museum guides,” Proc. 8th
+Conference on Human-computer Interaction with Mobile Devices and
+Services  (MobileHCI  '06),  ACM,  2006,  pp.  191-194,
+doi:10.1145/1152215.1152256.
+
+[7]  A. Fevgas, P. Tsompanopoulou, A. Tsiovoulos, G. Drasidis and P.
+Bozanis, “Utilizing UHF RFIDs to Enhance Museum Visiting
+Experience,” Proc 14th Panhellenic Conference on Informatics (PCI
+2010), IEEE Computer Society, Sep. 2010, pp. 16 – 20,
+doi:10.1109/PCI.2010.19.
+
+[8]  D. Raptis, N. Tselios and N. Avouris, “Context-based design of
+mobile applications for museums: a survey of existing practices,”
+Proc. 7th Inter Conference on Human Computer Interaction with
+Mobile Devices and Services (MobileHCI '05), ACM, Sep. 2005, pp.
+153-160, doi:10.1145/1085777.1085803.
+
+[9] V.V. Vazirani, “Approximation Algorithms,” Springer-Verlag, Berlin,
+Heidelberg, 2001.
+

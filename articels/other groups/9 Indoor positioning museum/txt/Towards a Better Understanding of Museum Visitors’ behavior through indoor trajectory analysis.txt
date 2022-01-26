@@ -1,0 +1,483 @@
+Towards a Better Understanding of Museum Visitors’
+Behavior through Indoor Trajectory Analysis
+Alexandros Kontarinis, Claudia Marinica, Dan Vodislav, Karine Zeitouni,
+Anne Krebs, Dimitris Kotzinos
+
+To cite this version:
+Alexandros Kontarinis, Claudia Marinica, Dan Vodislav, Karine Zeitouni, Anne Krebs, et al.. Towards
+a Better Understanding of Museum Visitors’ Behavior through Indoor Trajectory Analysis. Seventh
+International Conference on Digital Presentation and Preservation of Cultural and Scientific Heritage
+(DiPP2017), Sep 2017, Burgas, Bulgaria. pp.19-30. �hal-01700609�
+
+HAL Id: hal-01700609
+https://hal.archives-ouvertes.fr/hal-01700609
+Submitted on 5 Feb 2018
+
+HAL is a multi-disciplinary open access
+archive for the deposit and dissemination of scientific research documents, whether they are published or not. The documents may come from
+teaching and research institutions in France or
+abroad, or from public or private research centers.
+
+L’archive ouverte pluridisciplinaire HAL, est
+destinée au dépôt et à la diffusion de documents
+scientifiques de niveau recherche, publiés ou non,
+émanant des établissements d’enseignement et de
+recherche français ou étrangers, des laboratoires
+publics ou privés.
+
+Towards a Better Understanding of Museum Visitors’
+Behavior through Indoor Trajectory Analysis
+Alexandros Kontarinis1, 2, Claudia Marinica1, Dan Vodislav1, Karine Zeitouni2,
+Anne Krebs3, Dimitris Kotzinos1
+ETIS UMR 8051, Université Paris Seine, Université de Cergy-Pontoise, ENSEA, CNRS,
+F-95000, Cergy, France
+2 DAVID, Université Paris-Saclay, Université de Versailles Saint-Quentin-en-Yvelines,
+F-78035, Versailles, France
+3 Centre Dominique-Vivant Denon, Direction de la recherche et des collections,
+Musée du Louvre, F-75058, Paris, France
+alexandros.kontarinis@ensea.fr
+{claudia.marinica,dan.vodislav,dimitrios.kotzinos}@u-cergy.fr
+anne.krebs@louvre.fr, karine.zeitouni@uvsq.fr
+1
+
+Abstract. Nowadays, electronic museum guides have evolved to a point that can
+act as navigational and informational devices in the museum context; thus they
+also enable the collection of large volumes of spatiotemporal visitor movement
+data, from which individual visitor trajectories can be extracted and analyzed.
+These trajectories have individual characteristics expressed through unique semantics in each museum context (based on the museum, its exhibits and its visitors) and they are restricted in an indoor environment that provides additional
+constraints. This work presents the benefits, the challenges, and a direction for
+studying museum visitor movements through context-aware indoor trajectory
+modeling, mining and analysis.
+Keywords: Indoor Trajectories, Trajectory Mining, Movement Patterns, Mobility Patterns, Museum Experience.
+
+1
+
+Introduction
+
+Museums typically collect, store, preserve and exhibit natural and man-made objects
+(Thompson, 2015). Due to new digital information resources and technologies, they
+now have to emphasize the visitor experience as well (Falk & Dierking, 2016), because
+the expectations of the museum-visitor interaction have changed for both sides (Marty
+& Jones, 2008). At the same time, the recent advent of diverse wireless indoor positioning technologies has contributed in Location-Based Services (LBS) becoming a
+central museum multimedia guide functionality (e.g. way-finding, contextualized content delivery). LBS have given museums access to an unprecedented wealth of visitor
+movement data, which despite privacy restrictions can reveal many aspects of the visitors’ behavior and experience. However, even for museums that already amass such
+
+Digital Presentation and Preservation of Cultural and Scientific Heritage. Conference Proceedings. Vol. 7,
+Sofia, Bulgaria: Institute of Mathematics and Informatics – BAS, 2017. ISSN: 1314-4006, eISSN: 2535-0366
+
+spatiotemporal records, it is highly questionable whether they undertake interdisciplinary approaches to fully take advantage of them.
+In the data analysis domain, movements consist of spatiotemporal records out of
+which individual trajectories can be formed. When the moving objects are people, they
+are usually represented as moving points, and a trajectory essentially becomes a sequence of timestamped locations or areas. A considerable amount of research work has
+dealt with modeling and analyzing people’s trajectories. However, given that Geographic Information Science (GIS) has traditionally supported outdoor spatial information, research works have for the most part focused on outdoor trajectories, whereas
+indoor spaces (such as museums) considerably differ from outdoor ones due to the existence of architectural components that constrain the way people move and from the
+technical point of view, positioning technologies like GPS (Global Positioning System)
+and its variations are not available indoors. Specifically regarding the process of turning
+raw museum visitors’ trajectories into actionable insight for the museum management,
+it has so far only been attempted through visualization means and descriptive statistics.
+More advanced approaches based on trajectory mining would have to account not only
+for the museum’s indoor space restrictions, but also for context information (i.e. coming
+from external sources such as museum domain knowledge or from the visitor’s environment). Finally, understanding human mobility behavior through indoor trajectory
+analysis is also of great interest to sectors such as healthcare, universities, retail and
+airports.
+The rest of this work is divided as follows: Section 2 introduces potential benefits
+for museums and points to a research direction for solving the corresponding analytical
+tasks through trajectory modeling and analysis. Section 3 introduces a real-world case
+study concerning the Louvre Museum in Paris and briefly mentions the main difficulties in analyzing the movements of the world’s largest museum’s visitors. Section 4 is
+a discussion of related work and Section 5 provides a conclusion.
+
+2
+
+Challenges and Directions for Modeling and Analyzing
+Museum Visitor Movements
+
+Museums constantly seek ways to improve their visitors’ experience, among other ways
+by studying their movements in the exhibition space. To this end, they have traditionally relied on observations, questionnaires and interviews. As computational methods
+of movement analysis are starting to become prevalent, the goals of such studies should
+be reconsidered.
+2.1
+
+Museum Goals in Visitor Movement Analysis
+
+In Table 1 we introduce a set of goals that are achievable by data-centric visitor movement analyses. It is not exhaustive but nonetheless applies to most museums. Goals are
+grouped according to the type of improvement envisaged:
+
+─ – “Visitor Experience”: goals concerned with improving the quality of the time spent
+by the visitors in the museum, as determined by factors such as visitor learning/education, visitor navigation, social experience, etc.
+─ – “Managerial Decision Making”: goals concerned with improving the process of
+how the museum organization identifies alternative actions or courses of action,
+evaluates and compares them, and then applies the seemingly best action, as well as
+how it evaluates the results of actions already taken.
+─ – “Crowd Management”: goals concerned with ensuring a safe and comfortable environment for large crowds, taking into account building characteristics, crowd
+flows, methods of entrance, communications, queueing, etc. This includes crowd
+control, fire hazards control, evacuation planning, etc.
+These goals are often interdependent, even across different target areas. For example, if available in real-time, museum professionals could use new metrics quantifying
+visitor behavior (G7) in a dynamic update process of the itinerary proposed via the
+electronic guide (G10). For instance, if a visitor is predicted to be moving too slowly
+to complete the current tour, a shortened version of the tour could replace the original.
+At the same time, the layout of the permanent collections would have to be reconsidered
+as well (G4) to maximize the effectiveness of this new guide functionality.
+Table 1. Museum goals and corresponding use cases of museum visitor analysis.
+Area of Improvement
+
+Goal
+
+G1: Personalizing the
+visitor Experience
+
+Visitor Experience
+
+G2: Promoting accessibility by meeting the
+needs of individual or
+atypical visitors
+G3: Proposing dynamic
+museum tours
+
+Managerial
+Decision
+Making
+
+G4: Studying intragroup
+visitor dynamics
+
+Beneficiary
+
+Use Case Example
+
+Adapting the delivery of
+multimedia content based
+on the visitor’s current location.
+Designing itineraries for
+visitors with social anxiIndividual
+ety disorders based on
+Visitor
+avoiding identified overcrowded museum areas.
+Proposing interactive itineraries updated in realtime according to the current location of all the
+other visitors.
+Identifying groups of visitors and then profiling
+them according to how
+Museum Orclosely they tend to stay
+ganization
+to each other or how far
+they are likely to split
+during group visits.
+
+Comparing different indoor positioning technologies to be embedded in
+the museum’s electronic
+guide.
+Identifying new visitor
+profiles based on how
+they move and comparing
+G6: Enhancing Visitor
+them to existing profiles
+Profiling
+obtained through conventional studies (e.g. observations, questionnaires,
+interviews).
+Measuring visitor resting
+G7: Quantifying visitor
+time behavior as a perbehavior with new metcentage of total visit durics
+ration.
+Deriving improved evacuation routes based on
+G8: Optimizing the effiVisitor
+mobility patterns from
+ciency of emergency reCrowd
+past emergency occasponse planning.
+sions.
+G9: Assisting in the deIdentifying suitable itinVisitor
+sign of visitor games ineraries for a “treasureCrowd, Indivolving movement
+hunt” game avoiding arvidual Visithrough the museum’s
+eas most likely to become
+tor
+premises.
+overcrowded.
+Optimizing the placement
+G10: Optimizing the spa- Visitor
+of “you-are-here” maps
+tial organization/arrange- Crowd, Mubased on identified frement of the exhibition
+seum Organquent visitor destinations
+space.
+ization
+and key decision points.
+G5: Evaluating the accuracy and efficiency of location-based services offered to the visitors
+
+Crowd Management
+Crowd Management and
+Visitor Experience
+Crowd Management and
+Managerial
+Decision
+Making
+2.2
+
+Conventional Approaches in Trajectory Modeling and Analysis
+
+The database research community is using the term “trajectories” to refer to a geometric
+notion of spatiotemporal paths of moving objects. For example, a trajectory can be defined as a complex spatial event consisting of a sequence of elementary spatial events
+(t, s), where spatial events are objects having particular positions in space (s) and time
+(t) (Andrienko et al., 2011). The importance of associating semantics to trajectories was
+identified in Spaccapietra et al. (2008), where it was claimed that trajectories should
+correspond to semantically meaningful travels and thus better reflect the goal-oriented
+nature of movement, (i.e. why the object is moving). For example, trajectories may be
+semantically segmented into application-specific sub-intervals of “moves” and “stops”.
+Further engaging in this idea of meaningful trajectory subdivisions, Yan et al. (2011)
+
+define a semantic trajectory as a sequence of spatiotemporal points (x, y, t) complemented with annotations A containing semantic values (of places, activities, transportation modes, etc.). These “rich” trajectories have only recently transcended the conceptual level and started to be implemented, like in Güting, Valds, and Damiani (2015),
+thereby initiating (among others) a research trend towards more expressive and efficient
+queries on trajectories. By offering a way to understand moving objects and locations,
+trajectories are also promoting a broad range of applications and raising an increasing
+interest in trajectory data mining and analysis (Zheng, 2015), but for the most part,
+works in this research theme have not yet supported semantic trajectory data mining
+(Fileto et al., 2015) as they apply exclusively on the spatiotemporal dimensions of trajectories. Conventional algorithms and methods mostly relate to clustering, classification, and specific mobility pattern recognition (e.g. flocks, swarms). Besides these approaches which are based on historical data, only few recent works have tried to process
+trajectory data streams, e.g. in Silva, Zeitouni, Macedo, Casanova (2016).
+
+2.3
+
+Limitations and Open Challenges
+
+Having seen the analysis of visitors’ trajectories from the museum perspective, in this
+section we point out some of the most important challenges in building a visitor trajectory analytics system.
+Trajectory modeling challenges. A major issue in analyzing museum visitor movements relates to the design of a formal trajectory data model that can account for the
+specific complexities introduced by the indoor environment and by the quality of the
+data. Interior architectural elements greatly affect movement; for instance, indoor distances can no longer be calculated in the typical euclidean fashion, but should account
+for the complex topology of the indoor space (e.g. walls). Also, the presence of floors
+and stairs leads to vertical movement playing a much more important role in comparison to outdoors. The trajectory model has to take all of these characteristics into account, especially in the museum setting, where the physical context is considered to be
+one of the key factors that makes up the experience of visiting (Falk & Dierking, 2016).
+Moreover, unlike outdoor trajectories where positioning is mostly based on GPS, indoor trajectories are characterized by a wide variety of positioning technologies and
+techniques (Mautz, 2012), which leads to a range of location perceptions, each having
+different precision and quality. Therefore, indoor spaces are frequently described by
+graph-based or set-based models consisting of symbolic locations (human-readable
+identifiers of rooms, etc.). Unfortunately, there is still no clear consensus on how the
+trajectory model can best capture the intricacies of the indoor space or how to best
+account for the variations in positioning accuracy, partly due to the fact that existing
+indoor navigation-oriented modeling standards have seen limited application so far
+(Kang & Li, 2017).
+
+Trajectory enrichment challenges. Directly affecting the modeling of trajectories is
+also the problem of how to associate them with application data that help understand
+the nature of the movement, or in the words of Fileto et al., (2015), with data having
+well-defined semantics that help to describe what is going on. Given that the notion of
+semantic trajectories is relatively new, this problem remains largely unresolved for both
+indoor and outdoor trajectories. In general, context information (predefined Points of
+Interest (POIs), user activities, goals, etc.) allows for the semantic enrichment of trajectories, and the enrichment process itself can either be automatic or semiautomatic or
+even manual. There is also a general tendency to assign semantics to specific sequences
+of positions or areas, instead of whole trajectories or single points in time (Fileto et al.,
+2014; Bogorny et al., 2014). However, even within a given domain (e.g. museums),
+both the types of available context data and the ways to semantically interpret trajectory
+data, can vary significantly between application cases. For example, museums might
+collect different kinds of data along the trajectories, e.g. one museum might collect
+visitor demographic information while another might not or one might collect user activities anf the other not. Most semantic enrichment approaches studied today opt to
+remain domain-agnostic dealing with general concepts of human mobility behavior.
+Thus, more application-specific approaches are needed to study direct ways in which
+trajectories can be enriched with domain-specific knowledge.
+Trajectory mining challenges. Most existing trajectory mining methods perform on
+basic/raw outdoor trajectories (with some exceptions (Jin et al., 2015; Lu, Guo, Yang
+& Jensen, 2016)). Similarly, only few works on network constrained movement consider the context of the trajectories, e.g. (Kharrat, Popa, Zeitouni & Faiz, 2008). Given
+that network-constrained movement so far applies exclusively to outdoor settings and
+that museums often structure specific movement paths, like in Tzortzi (2014), which
+impose movement restrictions similar to those of transportation networks, an open
+question is how to adapt network-constrained outdoor trajectory mining methods to
+indoor ones. Moreover, trajectory mining is relevant both for semantic enrichment of
+raw trajectories and for pattern mining from semantic trajectories. With respect to the
+former, it remains uncertain what is the best automated way to immediately use trajectory mining results in order to expand the domain knowledge. With respect to the latter,
+ascertaining the accuracy of trajectory mining methods is currently a challenging task
+due to the lack of ground truth data. Next, defining new ways of measuring trajectory
+similarity is of paramount importance, because it affects the accuracy of the whole mining process. So far, trajectory similarity relies almost exclusively in the analysis of features that are extractable from raw trajectories alone (e.g. direction, speed).
+Towards modeling and analyzing museum visitor movements. Based on the abovementioned challenges, we argue that there is a gap between the current state of the art
+and a principled and holistic approach of indoor trajectory data analysis in the museum
+context, and depict our vision on how to try and fill it.
+
+The trajectory model. In our framework, we envision a separation between the abstract perception of a trajectory and its physical encoding. Precisely, an abstract trajectory can be viewed as a continuous mapping function from a moving object (here a
+visitor) and time to a position in an indoor space. The main difference with traditional
+(outdoor) trajectories is the reference to indoor space. Therefore, the model should account for the constraints of the indoor space, as expressed by the building plan and
+various obstacles or mobility rules, as well as its representation. As for the physical
+model of indoor trajectories, it can be described by a sequence of discrete predefined
+spatial cells (in the spirit of the space representation of the IndoorGML standard (Kang
+& Li, 2017)) and temporal intervals, along with movement attributes such as speed,
+acceleration (which also captures the stops and moves).
+The trajectory enrichment task. In the case of museums in particular, context-awareness is tightly linked to the realization of the analysis goals in Table 1. To this end, the
+multimedia guide constitutes a particular source of context information: user interface
+actions (e.g. playback of content, buying of electronic tickets) that can potentially be
+collected to help add meaning to the visitors’ trajectories. Also, other kinds of dynamic
+(e.g. the real-time position of other visitors) or static (e.g. an ontology of museum artworks) context can be useful. Currently there exist few algorithms and data structures
+to support the semantic enrichment of movement data (and even less so specifically for
+indoor trajectories), therefore expressiveness and consistency issues are largely unexplored and merit further investigation. We believe that semantic analysis at an arbitrary
+number of different levels of detail is achievable (e.g. stops at different collections of a
+big museum each consisting of stops - and moves in-between at different rooms and in
+turn at different exhibits) by exploring enrichment processes based on the hierarchic
+subdivisions of movement (such as in Fileto et al. (2015). In the meantime, efforts to
+create realistic semantic trajectory simulators (such as in Pelekis, Sideridis, Tampakis
+and Theodoridis, 2016) would help circumvent the lack of real-world semantic trajectory datasets.
+Trajectory mining challenges. In relation to the existing trajectory mining approaches,
+we identify two directions forward: one is to extend the existing methods and pattern
+definitions to the indoor space, which raises new challenges due to the difference of
+trajectory representation and comparison; the second is to investigate new patterns by
+considering the context as well. This knowledge can be used to annotate or categorize
+trajectories or sub-trajectories. By proposing new features of typical context-aware indoor trajectories, the analysis will be able to capture the visitor behavior and intention,
+at least partially but certainly to a greater degree than before. Regarding our work, we
+aim at developing methods both for off-line (i.e. historical traces) and on-line application, however for the particular case study described in the next section we can only
+consider off-line approaches due to limitations in data availability.
+
+3
+
+The Louvre Museum Case Study
+
+With 38 000 objects exhibited in a gallery space which extends over 70 000 m2 and
+three wings, the Louvre is the world’s largest museum. Combined with huge annual
+numbers of visitors 1, this makes it a compelling case for visitor movement analysis
+research.
+3.1
+
+Infrastructure and Data Sources
+
+The museum provides two types of location-based visiting guides: (i) a smartphone
+application “My Visit to the Louvre” / “Louvre: Ma Visite”, since July 2016, and (ii) a
+Nintendo 3DS-based audio guide system, since April 2012. The localization system for
+the smartphone application consists of about 1800 Bluetooth Low Energy (BLE) beacons deployed in the museum’s premises. This large-scale infrastructure allows the visitor’s device running the application to detect Received Signal Strength Indicator
+(RSSI) signals broadcast from all of the “visible” beacons, and to locally process and
+combine them in order to estimate its position. The system stores visitor movement data
+in JSON documents, but also application usage data (e.g. playback of an exhibit’s description, online ticket buy) through the Yahoo Flurry Analytics platform 2. The existing
+Nintendo 3DS-based audio guide system, serving approximately half a million visits
+each year, is supported by a separate smaller infrastructure of Wi-Fi beacons and stores
+similar data in a MySQL database.
+3.2
+
+Particular Challenges
+
+Tracking hundreds of thousands of visitors generates huge amounts of data, and places
+the trajectory analysis problem in the field of big data analytics. More importantly, the
+museum’s architecture was not designed for housing art collections and is far from being optimal for visitor navigation and way-finding. The complexity of the indoor space
+allows a large variety of visitor motion patterns and complicates modeling efforts. It
+also favors errors in position detection. Other difficulties arise from the limitations of
+the current guide applications and infrastructures. For instance, the visitor trails recorded use a coarser spatial granularity than the one used by the guides for real-time
+orientation purposes, potentially producing “gaps” at the needed level of detail in the
+trajectories to be analyzed. More specifically, the granularity of the records originating
+from the smartphone application corresponds to the presence within one of the almost
+50 zones into which the museum was partitioned. Therefore, room-level precision is
+unobtainable. Finally, positions are recorded in daily batches, thus not yet allowing
+real-time analytics to be performed.
+One additional concern is also the representativeness of the sample that uses the
+aforementioned applications inside the museum. If there is a lack of sociodemographic
+1
+2
+
+http://presse.louvre.fr/7-3-million-visitors-to-the-louvre-in-2016/
+https://developer.yahoo.com/flurry/
+
+data, this is difficult to assess and thus difficult to conclude on the wider applicability
+of whatever conclusions we draw.
+
+4
+
+Related Work
+
+The different indoor spatial models found in the literature can be categorized as proposed by (Afyouni, Ray & Claramunt, 2012) according to the different dimensions of
+context that they account for. The main classes of indoor models identified are symbolic
+(qualitative view of space), geometric (quantitative view of space), and hybrid (integrated geometrical and topological representations). Recently, IndoorGML (Kang &
+Li, 2017) was introduced as the Open Geospatial Consortium (OGC) standard for modeling indoor spaces focused on indoor navigation services. It is based upon a cellular
+representation of indoor space: S = {c1, c2, ..., cn} which includes semantic, geometric,
+and topological information. It features a multi-layered network space representation
+wherein different interpretations of space (e.g. building construction, WiFi coverages)
+correspond to different space decompositions into cells. IndoorLocationGML is a similar standard (Zhu et al, 2016), based upon a multi-dimensional location model and
+exchange data format, aimed at indoor positioning and navigation. Both standards are
+defined as application schemas of GML, but IndoorLocationGML explicitly supports
+relative indoor reference systems and aims to complement IndoorGML with more precise location information, but it is not an accepted official standard as IndoorGML.
+Recent efforts aim to develop methods for enriching trajectories with ontologies,
+knowledge bases, and other types of semantic information (Fileto et al., 2015). For example, Fileto et al., (2015) propose general hierarchies of progressively refined semantic movement segments and an organization of the descriptive data in analysis facets,
+which are collections of concepts, concept instances, and semantic relationships between them (relating to a theme such as transportation means). These constructs promote the use of ontologies and Linked Open Data (LOD) to semantically describe and
+analyze movement data. Similarly, Ruback et al. (2016) proposes a conceptual framework for the semantic enrichment process, using Linked Data principles for representing trajectories and the Web of Data as the main source of contextual information. With
+respect to trajectory mining and analysis, the conceptual framework of Andrienko et al.
+(2011) addresses the types of information that can be sought in movement datasets and
+the respective generic types of analytical tasks. It also offers a taxonomy of the analytical approaches with the main groups being “visualization and interaction” and “computational analysis methods”. Jin et al. (2015) and Lu, Guo, Yang and Jensen, 2016 aim
+at enabling the extraction of frequently visited POIs or “hotspots” from symbolic trajectories, in the case of airports and shopping malls respectively. They both do so by
+proposing new types of queries, the former based on density-based methods and indoor
+specific flow counting, while the latter based on the users interests in indoor locations.
+Lastly, the work of Furtado et al. (2016) is one of the few researching semantic trajectory similarity.
+Several works have focused on the specific case of the Louvre museum. A synthesis
+of the results of a 2013 study on the usage of the Nintendo guide (GfK, 2014) identifies
+
+three main usage types and six classes of visitors. The study comprised of a survey of
+40 visitors who rented the console, 8 interviews with museum staff and 1 full day of
+observation. Other studies, like Yoshimura et al (2014) and Yoshimura, Krebs and Ratti
+(2017), aim at understanding visitor behavior in the Louvre Museum through analyzing
+raw data gathered in 2010 from Bluetooth proximity sensors deployed in the Denon
+and Sully wings. They use various subsets of recorded data and target different metrics
+such as the duration of stay at each area and the visitor distribution rates between areas.
+
+5
+
+Conclusions
+
+Museums are starting to consider the use of computational data analytics to study the
+moving patterns of their visitors. In this work, we identify the most important challenges to be answered, in order to enable an advanced type of museum visitor movement analytics, wherein the model of visitor trajectories and that of indoor space will
+be intertwined and their interaction adequately captured. This will help museums reach
+their goals and will upgrade the role of computational analytics in visitor movement
+studies. Helped by the cooperation with the Louvre Museum, we aim at complementing
+spatiotemporal data processing and analysis research with knowledge derived from traditional museum studies.
+
+Acknowledgments.
+This work is supported by the research project TRAJECTOIRES funded by PATRIMA
+LabEx 3 and by the research project BigGeoQUP funded by the French CNRS DEFI
+MASTODONS program.
+
+References
+Afyouni, I., Ray, C., Claramunt, C. (2012). Spatial models for context-aware indoor navigation
+systems: A survey. J. Spatial Information Science 4(1), 85–123.
+Andrienko, G., Andrienko, N., Bak, P., Keim, D., Kisilevich, S., Wrobel, S. (2011). A conceptual
+framework and taxonomy of techniques for analyzing movement. Journal of Visual
+Languages & Computing 22(3), 213–232 .
+Bogorny, V., Renso, C., de Aquino, A.R., de Lucca Siqueira, F., Alvares, L.O. (2014). CONSTAnT A Conceptual Data Model for Semantic Trajectories of Moving Objects.
+Transactions in GIS 18(1), 66–88.
+Falk, J., Dierking, L. (2016). The Museum Experience Revisited. Taylor & Francis.
+Fileto, R., Raffaet, A., Roncato, A., Sacenti, J.A., May, C., Klein, D. (2014). A Semantic Model
+for Movement Data Warehouses. In: Proceedings of the 17th International Workshop
+on Data Warehousing and OLAP. pp. 47–56. DOLAP ’14, ACM.
+
+3
+
+http://www.sciences-patrimoine.org/
+
+Fileto, R., Bogorny, V., May, C., Klein, D. (2015). Semantic Enrichment and Analysis of Movement Data: Probably It is Just Starting! SIGSPATIAL Special 7(1), 11–18.
+Furtado, A.S., Kopanaki, D., Alvares, L.O., Bogorny, V. (2016). Multidimensional Similarity
+Measuring for Semantic Trajectories. Transactions in GIS 20(2), 280–298.
+GfK, (2014). Publics, usages et réception de laudioguide sur console nintendo 3ds du musée du
+louvre: Study results synthesis. Tech. Rep.
+Güting, R.H., Valds, F., Damiani, M.L. (2015). Symbolic Trajectories. ACM Trans. Spatial Algorithms Syst. 1(2), 7:1–7:51.
+Jin, P., Du, J., Huang, C., Wan, S., Yue, L. (2015). Detecting Hotspots from Trajectory Data in
+Indoor Spaces. In: Database Systems for Advanced Applications. pp. 209–225.
+Springer.
+Kang, H.K., Li, K.J. (2017). A Standard Indoor Spatial Data Model OGC IndoorGML and Implementation Approaches. ISPRS International Journal of Geo-Information 6(4), 116.
+Kharrat, A., Popa, I.S., Zeitouni, K., Faiz, S. (2008). Clustering Algorithm for Network Constraint Trajectories. In: Headway in Spatial Data Handling, pp. 631–647. Lecture Notes
+in Geoinformation and Cartography, Springer.
+Lu, H., Guo, C., Yang, B., Jensen, C.S. (2016). Finding frequently visited indoor pois using symbolic indoor tracking data. In: Proceedings of the 19th International Conference on
+Extending Database Technology. pp. 449–460.
+Marty, P.F., Jones, K.B. (2008). Museum Informatics: People, Information, and Technology in
+Museums. Taylor & Francis.
+Mautz, R. (2012). Indoor Positioning Technologies. Ph.D. thesis, ETH Zurich.
+Pelekis, N., Sideridis, S., Tampakis, P., Theodoridis, Y. (2016). Simulating Our Life Steps by
+Example. ACM Trans. Spatial Algorithms Syst. 2(3), 11:1–11:39.
+Ruback, L., Casanova, M.A., Raffaet, A., Renso, C., Vidal, V. (2016). Enriching Mobility Data
+with Linked Open Data. In: Proceedings of the 20th International Database Engineering & Applications Symposium. pp. 173–182. ACM.
+Silva, T.C.d., Zeitouni, K., Macedo, J., Casanova, M. (2016). On-Line Mobility Pattern Discovering using Trajectory Data. In: ResearchGate.
+Spaccapietra, S., Parent, C., Damiani, M.L., de Macedo, J.A., Porto, F., Vangenot, C. (2008). A
+Conceptual View on Trajectories. Data Knowl. Eng. 65(1), 126–146.
+Thompson, J.M.A. (2015). Manual of Curatorship: A Guide to Museum Practice. Routledge.
+Tzortzi, K. (2014). Movement in museums: mediating between museum intent and visitor experience. Museum Management and Curatorship 29(4), 327–348.
+Yan, Z., Chakraborty, D., Parent, C., Spaccapietra, S., Aberer, K. (2011). SeMiTri: A Framework
+for Semantic Annotation of Heterogeneous Trajectories. In: Proceedings of the 14th
+International Conference on Extending Database Technology. pp. 259–270.
+EDBT/ICDT ’11, ACM, New York, NY, USA.
+Yoshimura, Y., Sobolevsky, S., Ratti, C., Girardin, F., Carrascal, J.P., Blat, J., Sinatra, R. (2014).
+An analysis of visitors’ behavior in the louvre museum: A study using bluetooth data.
+Environment and Planning B: Planning and Design 41(6), 1113–1131.
+Yoshimura, Y., Krebs, A., Ratti, C. (2017). Noninvasive Bluetooth Monitoring of Visitors’
+Length of Stay at the Louvre. IEEE Pervasive Computing 16(2), 26–34.
+Zheng, Y., (2015). Trajectory Data Mining: An Overview. ACM Trans. Intell. Syst. Technol. 6(3),
+29:1–29:41.
+
+Zhu, Q., Li, Y., Xiong, Q., Zlatanova, S., Ding, Y., Zhang, Y., Zhou, Y. (2016). Indoor MultiDimensional Location GML and Its Application for Ubiquitous Indoor Location Services. ISPRS International Journal of Geo-Information 5(12).
+
+Received: July 13, 2017
+Reviewed: July 27, 2017
+Final Accepted: August 02, 2017
+
+

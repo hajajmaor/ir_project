@@ -1,0 +1,779 @@
+Getting Engaged and Getting Tired:
+What Is in a Museum Experience
+
+Daniela Petrelli, Elena Not and Massimo Zancanaro
+
+IRST - Cognitive and Communication Technology Division
+38050 Povo - Trento - Italy
+
+phone: +39-0461-314444
+
+{ petrelli | not | zancana}@irst.itc.it
+url: http://ecate.itc.it:1024/
+
+There is no right or wrong way to visit a museum. The most important rule
+you should keep in mind as you go through the front door is to follow your own
+instincts. Be prepared to find what excite you, to enjoy what delights your 
+heart
+and mind, perhaps to have aesthetic experiences you will never forget.
+
+David Finn
+
+How to Visit a Museum
+
+1. Introduction
+
+The physical experience of visiting a museum includes emotion and intellect. 
+After the
+visit, each person retains not only a cognitive gain, but also the personal 
+impressions of an
+emotional and psycho-motor experience. The way a person feels during an 
+experience becomes
+an integral part of that memory. Evoking the feeling or mood at a later time 
+may trigger details
+of a memory associated with it. The architecture of the building, how the 
+exhibition is
+organised, the presence of places where to sit and rest possibly while admiring 
+a masterpiece,
+crowding, long distances to cover or architectural barriers, are all elements 
+that can affect the
+comfort/discomfort of the visitors, improving or hampering their enjoyment of 
+the visit. To
+emphasise this «sensitive memory», music, noise and even smell are currently 
+added as
+background to convey the feeling of immersion (see [1] for an overview on this 
+topic). The
+influence that each of these aspects has on the overall judgement of the 
+experience partly
+depends also on the visitor's profile. For example, the frequent visitor’s 
+pathway through the
+museum is substantially different from the first-time visitor’s. It is far more 
+efficient. For non-
+frequent visitors, who are less experts on how to move in a museum, instead, 
+the physical
+fatigue may considerably affect the degree of satisfaction, since the 
+appreciation of the art
+objects sometimes is not sufficient to compensate for the effort. 
+Disorientation might also be a
+big problem. The novelty of the museum setting, though for certain aspects 
+stimulating and
+exciting, might also frighten the new visitor. Maps may help visitors navigate 
+through the
+exhibition areas to find the items or services that meet their own interest or 
+need. But often poor
+design and/or inability to translate a two-dimensional display into 
+three-dimensional reality
+might render the task quite difficult.
+
+Besides the personal experience of moving in a physical space, when visiting a 
+museum
+
+
+there is also the cognitive aspect of moving in a cultural space. Thus in a 
+museum environment
+it is essential that personal discovering is appropriately supported providing 
+visitors with the
+suitable amount of information they need, at the right time and place, and in 
+the form that
+makes it the most acceptable and enjoyable. The quality of the received 
+presentation is liable to
+subjective judgement. Personal taste typically overcomes objective 
+effectiveness and can
+prejudice the pleasure of the visit. For example, preliminary testing with 
+museum visitors
+showed that when information about art was presented to visitors as an audio 
+message in form
+of  a dialogue, they learnt more, but they retained a bad feeling about the 
+audio guide [2]. The
+same study showed also that when people feel comfortable with the presentation 
+they have a
+better judgement of the (same) physical space.
+
+When designing new personal electronic guide to support museum visit, designers 
+have
+to bear in mind all the known effects and be aware of others unexpected side 
+effects. Moreover
+the system should monitor visitor’s reactions in order to infer the 
+effectiveness of the choices
+done and, if necessary, to rearrange the presentation style. This paper 
+presents the work that is
+going to be done in the HIPS project [3] to cope with the 
+feedback-rearrangement process when
+emotion and involvement are directed to museum visitors. HIPS, 
+Hyper-Interaction within the
+Physical Space, is an Esprit long-term research project founded by the European 
+Community
+and  it is part of the i3 initiative (i3 is Intelligent Interactive 
+Interfaces).
+
+2. Integrating the Visit Experience
+
+When projecting a new support for museum or open-air visits, designers have to 
+bear in
+mind the peculiarities of this scenario. They must always remind that often the 
+environment is
+variable (especially in museums or temporal exhibitions); any learning that 
+takes place is
+informal; and any use of exhibit elements is casual and often cursory [4]. 
+Therefore, it is
+essential to propose technological solutions that provide the visitor with a 
+system that
+harmonise with these peculiarities. The successful proposal should overcome the 
+limits of the
+current tools (audio guides and interactive computers) integrating relevant 
+ideas with new
+technical opportunities. In HIPS we combine the benefits of location-aware 
+systems with the
+advances made in parallel in the field of adaptive and dynamic hypermedia, 
+gaining more
+effectiveness in the mobile delivery of information. The system does not simply 
+react to the
+signals coming from the environment: detecting a movement in the physical space 
+is only half
+of the work necessary toward an intelligent adaptive location-aware system. 
+Visitor's
+movements represent a form of implicit input to the system that have to be 
+properly interpreted.
+Interpreting physical movements as implicit selections, HIPS creates a new way 
+of
+browsing the information space associated to a museum. Physical hypernavigation 
+(that is,
+physical movement combined with context-aware browsing in a hypermedia space) 
+is very
+different from browsing an electronic book or a traditional (even adaptive) 
+hypermedia running
+on a stationary console. The visitor is experiencing a "real'' situation: 
+moving in a real
+environment, seeking concrete objects to observe, and receiving perceptual 
+orientation
+feedback. The system should take into account the prominence of the situational 
+context,
+integrating the perceptual experience with helpful information, without 
+competing with the
+
+original exhibit items for the visitor's attention:
+
+• The system should provide information to help direct the visitor’s 
+attention to and
+stimulate interest in the objects [5] [6]. This means that messages offered to 
+the user should
+directly refer to what the visitor  is seeing (also exploiting appropriate 
+linguistic forms, e.g.
+deictic references as «this object» or «the object on your left»)  and should 
+help the user to
+identify the object described (and its importance) among the others displayed.
+
+• The information should be preferably conveyed via audio messages, allowing 
+the user
+to freely concentrate on the concrete objects.
+
+• The system should not overwhelm users with information [7], though 
+providing
+opportunities for the interested visitor to easily find new and more detailed 
+information on a
+subject [8]. Although this issue is relevant for  presentation systems in 
+general, it becomes
+crucial when the visitor is physically moving through museum rooms and standing 
+in front of
+exhibits. In fact, physical tiredness might appreciably affect  visitor’s 
+attitude toward long
+
+
+commentaries, as well as their satisfaction and learning.
+
+A system effectively supporting physical hypernavigation should integrate the 
+individual,
+dynamic modeling of the user (their knowledge, interests, goals, integrated 
+with abilities,
+attitudes and preferences) with a general model of the environment, the 
+visitor’s movements
+and social context. HIPS aims at coping with all of these requirements. At the 
+time of writing
+(April 1999) the project is in half its way and, even if a lot of work has been 
+done to set up the
+first prototype (demonstrated to the European reviewers in March 1999), many 
+research issues
+are still open.
+
+3. HIPS, Emotions and the Physical Dimension
+
+HIPS aims at developing a new support for visiting cultural heritages. The 
+visitor carries
+a PDA and freely moves in the physical space approaching exhibits that catch 
+their attention.
+The system traces their movements and, when it is appropriate, proposes an 
+information
+presentation dynamically composed taking into account the physical position of 
+the visitor, the
+story  of interaction (movement in the space and clicking on the PDA screen), 
+and the user
+model. The presentation mainly consists of an audio message and some relevant 
+hyperlinks
+displayed on the palmtop screen (figure 1) [9]1. The audio message is a 
+concatenation of pre-
+recorded audio files.
+
+Figure 1: HIPS user interface
+
+The main idea behind this approach [10] is that each chunk of information can be
+presented in many different ways depending on the context. For example, a 
+possible
+introduction to the portrait of Santa Caterina is «This is the portrait of 
+Saint Caterina» used
+when the visitor is in front of the fresco and close to it, while «In front of 
+you there is the
+portrait of Saint Caterina» is used when the visitor is looking at the fresco 
+but they are distant.
+This approach allows also to experiment different reading styles (e.g. 
+masculine vs. feminine,
+emphatic vs. weak) as well as different linguistic forms. An example is the use 
+of the first
+
+1 Credits for the current HIPS user interface to CB&J.
+
+
+person, as in «I am Caterina, the protector of Siena», vs. the impersonal, as 
+in «This is Saint
+Caterina, the protector of Siena». It is worth noting that all these examples 
+carry the same
+content, a «welcome message» to the portrait of Santa Caterina, but they differ 
+in the way the
+content is expressed: they use different forms of deixis («This» vs. «In front 
+of you») and direct
+or indirect speech («I am» vs. «This is»). Each one affects in a different way 
+the visitor. In the
+first example «This is...» has the purpose to strength the visitor attention 
+using a direct reference
+to the space, since they are already in front of the fresco observing it. A 
+direct reference to the
+space is used also in the second example, «In front of you...», but the purpose 
+is to focus the
+attention of the visitor to the artwork, since the visitor is oriented towards 
+the fresco but they
+are far and might be distracted. Direct or indirect speech, instead, can be 
+used to support
+different type of content. For example the use of the first person is good when 
+describing the
+life of the portrayed character. In this way the visitor is moved to empathise 
+with the character.
+Instead, the use of the third person has to be preferred when a description of 
+the painting (the
+style, the use of the colour, etc.) is given.
+
+The physical space plays a central role in HIPS. Visitors are immersed in a 
+real, physical
+space and receive hints and suggestions from it. HIPS aims at reinforcing the 
+sense of space and
+comfort by providing navigation proffers supported by properly oriented maps 
+(figure 2) and by
+using holographic sound to give visitors help in orientation making the sound 
+source correspond
+to the exhibit location [11]. This would be particularly effective when coupled 
+with the use of
+different voices or with the use of direct speech. Indeed orientation clues are 
+given by the
+perceived position of the sound source and by the change of the voice.
+
+Figure 2: A map as used in HIPS.
+
+However, the physical dimension brings also drawbacks: the physical fatigue 
+inherent in
+the movement may considerably affect the degree of satisfaction. As mentioned 
+above, this very
+much depends on the visitor’s profile because frequent visitor’s pathway 
+through the museum is
+far more efficient than first-time visitor’s behaviour is (of course, age and 
+physical or mental
+handicaps also have to be carefully taken into account). Anyway, for both 
+first-time and
+frequent visitor, the bleary-eyed phenomenon arrives. It might be after half an 
+hour or two
+hours, but it is inevitable. To be effective in tailoring its adaptive 
+presentations, HIPS should
+therefore take into account all these dimensions:
+
+
+• the physical, that include the exhibition layout, the attractiveness 
+of the exhibits, and
+the physical fatigue of moving;
+
+• the visitor, to say the intellectual attention and engagement, but 
+also the emotive
+involvement;
+
+• the visiting path, the rapid or slow moving, the close going to or 
+the far staying from
+exhibits, the sequence and the frequency of stops.
+
+4. An Overview of the HIPS User Model
+
+The main goal of the user model in HIPS is to adapt the information 
+presentation and the
+interaction to the modeled user features. To do so the system handles the 
+history of the user
+movements and interaction with the tool, the interests explicitly declared or 
+inferred, the time
+spent, and refine the current model with respect to the physical space. Based 
+on a model of
+user’s knowledge the HIPS system tries to reduce redundancy of presentations, 
+whereas an
+interest model enables the system to adapt information selection and object 
+presentations to the
+visitor’s general interests and their special interests in certain object types 
+or attributes [12].
+
+An important objective of HIPS is to bridge the gap between the physical space 
+and the
+information space. This means that visitor’s movements have to be interpreted 
+by the system to
+better adapt information. An adaptive system should support the interaction 
+with the
+environment in a natural and non-intrusive way since the main objective of 
+visitors remains the
+fruition of art.
+
+Visitors’ behaviour has been widely studied in museum literature. In particular 
+Veron
+and Levasseur [13] conducted an ethnographic study on people behaviour in 
+artistic exhibitions.
+On the bases of paths and movements, time spent in front of a single artwork 
+and total visit
+span, the study identifies four categories of visitors:
+
+• ant visitors are those who follow the path proposed by the curator, 
+spending quite a
+long time observing all (or almost all) artworks. Ant visitors usually go close 
+to the artworks.
+
+•fish visitors move preferably in the centre of the room, cruising the 
+exhibition. Fish
+visitors do not look at details of artwork but prefer a more holistic 
+observation.
+
+• butterfly visitors are used to frequently change direction, without 
+following the
+proposed path. The butterfly sees almost all the artworks, stopping frequently. 
+The visit is
+leaded by the affordance of the physical space and therefore it is linked to 
+the exhibition layout.
+
+• grasshopper visitors see only artworks they are interested in. Their 
+visit is leaded by
+personal interests and pre-existing knowledge about the contents of the 
+exhibition. The
+grasshopper crosses empty spaces, stops rarely, and the times spent to observe 
+single selected
+artworks is long.
+
+Veron and Levasseur categories are being adopted in HIPS for defining a dynamic 
+user
+visiting style model based on the analysis of the physical movement. The 
+visiting style model
+
+[14] is useful either (i) to determine the correct amount of information to be 
+presented, and (ii)
+to determine the level of detail a presentation should contain.
+
+5. Monitoring Visitor’s Behaviour to Detect Emotions
+
+The aspects of the user model currently considered in HIPS are mainly related 
+to the
+cognitive aspects. In fact, profile, knowledge and interest do model the 
+rational part of the visit.
+Even if they are of great value when coping with free form learning 
+environments as museums
+are, they fail in giving an estimation of the emotive involvement. As mentioned 
+in the previous
+chapters, three are the dimensions that affect visitors’ feeling: the personal 
+attitude, the
+environment, and the visit.
+
+Especially when art is the focus, personality is a relevant aspect. As David 
+Finn points
+
+
+out [7], «Discrimination is a necessary component of appreciation. [...] Tastes 
+vary from
+individual to individual and change constantly with the passage of time. And 
+inevitably this
+affects our enjoyment of and response to particular works of art.»
+
+Another important factor highlighted by museum studies is the «personal 
+agenda», to say
+the set of hopes and expectations that visitors get when entering the museum 
+[15]. Expectations
+determine a personal projection of what the visiting experience will be, based 
+on previous
+experiences and common sense. The personal agenda derives from a variety of 
+sources and
+deeply affects the memory of the visit. For example, visitors that have heard 
+they must see a
+certain painting will feel the visit somehow be incomplete if they miss it, no 
+matter how
+wonderful was the rest of the visit.
+
+The agenda and the attitude to the museum deeply affect the behaviour (i.e. the 
+visiting
+style). At the beginning, most visitors do not appear to allow personal 
+interest or the
+attractiveness of the exhibit to play significant roles (they are ants), but as 
+visit goes on they
+change their behaviour depending on their personality and agenda. For example 
+who has as
+important point to see all the museum (mainly occasional or first-time 
+visitors) may start
+
+«cruising» the exhibition (becoming a fish), while who is more used to museums 
+will
+concentrate on the objects that attract them (becoming a butterfly).
+
+Despite the personal dimension, physical exhibition layout and artwork display 
+deeply
+influence visitor’s reaction. Physical characteristics of both space and 
+artworks are used by
+museum curators to dramatise. Museum studies codified the effectiveness of a 
+display
+measuring the behaviour of visitors. In particular the attractive and holding 
+power of each
+exhibit are calculated on the mean of the visitors who stop in front of it and 
+on the mean of the
+stop span [16]. This measure is very useful to infer emotional involvement by 
+movements since
+artworks that have a high attracting power are likely to induce emotions. To 
+make attracting and
+holding power more effective it can be coupled with a marker of the type of 
+suggestion the
+artwork is supposed to evoke. For example Guernica by Picasso is a strongly 
+dramatic painting,
+while Waterlilies by Monet would suggest fresh and bucolic sensations.
+
+When talking about the physical dimension, it is worth noting that the artwork 
+size and
+position are important factors when trying to figure out the visitor’s 
+sensations. Indeed if the
+painting is huge, an emotional involvement is more likely to happen when the 
+visitor is not
+close to it thus perceiving the whole, while a closer position would show 
+interest in the details.
+HIPS has a Physical Organization Knowledge Base that maintain a description of 
+the exhibition
+space and can reason on the visitor’s position (e.g. giving an estimation of 
+the closeness or the
+orientation).
+
+The third element that has to be taken into account is the visit. Museum 
+studies showed
+that visitors’ attention and visitors’ tiredness change during the visit. The 
+high attention level
+characterising the beginning of the visit, generally drops after thirty 
+minutes, while museum
+fatigue  is a recognised parameter that arises after a certain period (around 
+one hour for most
+visitors) [15]. Visitor’s tiredness is clearly shown by visitor’s behaviour 
+since it corresponds to
+the decline in both the number of exhibits visitors look at and in the length 
+of time visitors view
+each exhibit as their time in museum passes.
+
+Attention and tiredness affect deeply visit enjoyment: «There is a distinct, 
+almost
+measurable response curve in visiting a museum, with those objects you see at 
+the outset
+making a greater impact than those you see later on. The rate of diminishing 
+response varies
+from individual to individual and may also vary from museum to museum. The 
+climax of your
+visit could come at any point along the way, but the bleary-eyed phenomenon is 
+inevitable, and
+you definitely will be able to absorb less of what you see as times goes on.» 
+[7] This means that
+the time in a visit when an artwork is seen can affect the emotion. At the 
+opposite, the time
+spent in front of it do not necessary show a stronger emotion: «[...] the depth 
+of appreciation is
+not a function of time. It is possible to look at an object for five seconds 
+and be overcome by its
+beauty. Or one may spend many minutes discovering details in an object that are 
+not apparent at
+first sight.» This last comment by Finn let us hypothesise that what museum 
+curators call
+visitors’ engagement shows more an intellectual interest than an emotional one. 
+Indeed,
+visitors’ engagement is revealed when a visitor pays attention to an exhibit by 
+looking at it,
+
+
+reading accompanying labels, touching or manipulating the object, or discussing 
+the exhibit
+with another person [1]. This definition seems very far from what a system 
+(lacking of
+sophisticated image processing) can do to measure engagement. Nevertheless, 
+some simple but
+effective approximations can be attempted: in HIPS terms, engagement is assumed 
+when the
+visitor stops in front of an object (i.e. at least three seconds in the active 
+zone close to the
+object), listens to the presentation (i.e. neither stopping it nor exiting the 
+zone), and asks for
+more information. This conscious acts (looking at the PDA or selecting a link) 
+show a polarity
+on the «cognitive engagement» of the visitors as opposed to their «emotional 
+involvement». It
+is important to underline that the two status are not mutually exclusive: it is 
+possible to feel
+emotionally involved at first and then develop a more cognitive interest in the 
+same artwork
+while carefully observing it.
+
+It is clear now that in a scenario of museum visit, the range of possible hints 
+the system
+can look for to guess visitor’s emotion is wide. Nevertheless all these clues 
+are indirect
+measures since they are not directly taken from the visitor (i.e. looking at 
+their facial expression
+or measuring their sweat). This means that they have to be carefully blended to 
+get applicable
+and effective rules.
+
+HIPS would use many source of information to infer the visitor current status. 
+From the
+description of the environment it will take exhibit layout characteristics 
+(e.g. its size) and
+current visitor position, preferred positions for a better view, emotional 
+attributes (e.g. dramatic
+vs. bucolic), attractive and holding power. Also the presence of places where 
+to rest plays an
+important role. It is not uncommon to enjoy masterpiece while set.
+
+As attribute of the personal attitude it is important to consider if the 
+visitor listens to the
+whole presentation or interrupts it and asks for more information or ignore the 
+proposed
+hyperlinks (i.e. visitor engagement). Some guesses on personal test can be done 
+on the bases of
+the reaction (i.e. ask more or stop) to the current presentation. Detecting the 
+personal test can be
+done otherwise only through explicit request.
+
+Finally the time of visit has to be taken into account. In fact, in absence of 
+strict time
+constraints, when entering a museum, visitors normally have a feeling of how 
+much time they
+will(wish to) spend looking at the exhibition. The expected duration is 
+normally a function of
+how much accustomed the user is to museum visits, of his cultural level, of his 
+interest to the
+specific exhibition topics. These attitudes will be reflected by their visiting 
+style. The initial
+visitor's expectation can also change during the visit according to their 
+enjoyment of the
+exhibition: typical signals for this change are an increase in interest for the 
+items displayed and
+a slow down in moving speed (i.e. changing visit style from fish to butterfly). 
+As the visit
+proceeds the attention decreases. When tiredness starts to affect the visit, a 
+careful visitor would
+speed up the visit and start cruising the museum paying less attention to the 
+artworks (i.e. from
+ant to fish).
+
+Combining all these measures the system should be able to give an estimation of 
+the
+visitor feeling (cognitive vs. emotional) at a certain time and for a certain 
+artwork. Moreover it
+would provide the Presentation Planner (see next chapter) valuable information, 
+like tiredness
+and engagement, that will affect the type of presentation.
+
+6. Generating Tailored Presentations
+
+Inferring engagement, attention/tiredness, and cognitive or emotional 
+involvement is not
+an easy task, but still it is just the first step. All this information have to 
+be properly considered
+when planning the next presentation to be offered to the visitor. In this 
+section, we will briefly
+introduce the core architecture of the HIPS engine (figure 3) and we will show 
+how this
+architecture can be exploited for better supporting visitors (the complete 
+architecture is reported
+in  [17]).
+
+
+Figure 3: simplified HIPS architecture
+
+As discussed above, HIPS presentations are composed by concatenating 
+pre-recorded
+audio files. Audio files are organised in groups called macronodes that roughly 
+correspond to
+paragraphs. Each macronode have been annotated with rhetorical links, that tell 
+how the
+content of a macronode supports the content in another macronode (for example, 
+evidence,
+elaboration, background etc. see [18]). See figure 4 for a sample sketch of the 
+macronode
+network.
+
+Figure 4: Sample portion of macronode network
+
+When the Presentation Planner is requested to build a presentation for a given 
+concept, it
+selects a relevant macronode for that concept and then traverses the graph of 
+the rhetorical links
+to collect other relevant macronodes to add to the presentation. The decision 
+rules take into
+consideration the visitor’s physical position, the history of the previous 
+presentations and the
+user model2.
+
+2 As mentioned the User Model includes, besides the user involvement model 
+discussed in this
+paper, the profile, knowledge and interest model (developed by GMD) and the 
+visiting style model
+(developed by the University of Siena).
+
+
+Another relevant module in the HIPS architecture is the Intelligent Input 
+Analyser, it
+detects the visitor gestures on the interface (i.e. stopping of a 
+presentations, selecting a follow
+up suggestion, etc.) and the visitor’s movements, and decides, on the basis of 
+the User Model
+and the current situation, whether to request the Presentation Planner a new 
+presentation.
+
+If the User Involvement Model properly infers engagement, attention, tiredness 
+and
+emotive status, this information can be exploited as new rules for both the 
+Intelligent Input
+Analyser and the Presentation Planner, for example,
+
+•  if the tiredness is high, the Input Analyser can request the 
+Presentation Planner to
+build general presentations instead of specific ones, carefully taking into 
+account
+distances and physical obstacles (e.g., stairs) when proposing how the tour 
+should
+proceed;
+
+•  if attention is low, the Presentation Planner can avoid to add elaboration 
+links to the
+current presentation;
+
+•  if engagement with a specific object is low, the Input Analyser can 
+entirely skip a
+presentation on that object;
+
+•  if attention and engagement on a specific object are high, the 
+Input Analyser decides
+the generation of additional related information (and if the user showed a 
+positive
+attitude towards movement, the Presentation Planner possibly suggests other
+interesting objects nearby);
+
+•  if emotional involvement is high the Presentation Planner can 
+propose an appropriate
+piece of music instead of a description. Emotion can be strength proposing a 
+poem or
+the author comment too;
+
+•  if attention is low but the interest on a certain object is high 
+the Input Analyzer can
+decide to push a suggestive presentation (for example using a first person
+presentation) in order to catch the visitor’s attention.
+
+In general, if the user model will properly give a picture of who the visitor 
+is, the
+Presentation Planner will be able to apply some of the suggestions given by 
+museum experts to
+cope with the mental fatigue of visiting, such as increasing the variety of 
+presentations in terms
+of both different contents and different reading styles. This hopefully will 
+bring HIPS to be not
+only a valuable guide when the visitor wants information about a particular 
+artist or a group of
+works, but also a tool to support personal discovery and enjoyment.
+
+Acknowledgements
+
+Authors are grateful to the HIPS partners for the valuable discussions and 
+work. The
+HIPS consortium includes: University of Siena (Italy)(co-ordinator), CB&J-Paris 
+(France),
+GMD (Germany), ITC-IRST (Italy), SINTEF (Norway), University College Dublin 
+(Ireland),
+and University of Edinburgh (Scotland).
+
+Bibliography
+
+[1] LOZOWSKI BOISVERT, D. and JOCHUMS SLEZ B., The relationship between exhibit
+characteristics and learning-associated behaviours in a science museum 
+discovery space.
+Science Education, vol. 79, n. 5, 1995.
+
+[2] CONVERTINO, G., Uno studio esplorativo sui sistemi multimediali in uso nei 
+musei.
+Master thesis (unpublished), March 1997.
+
+[3] HIPS project, WWW home page: http://www.ltt.dii.unisi.it/progetti/HIPS
+
+
+[4] SERRELL, B. and B. RAPHLING. Computers on the Exhibit Floor. Curator, 
+35(3), 1992.
+
+[5] BITGOOD, S.C. and PATTERSON, D.D., The effects of gallery changes on 
+visitor reading
+and object viewing time. Environment and Behaviour, 25(6), November 1993. 
+Special Issue on
+Environmental Design and Evaluation in Museums.
+
+[6] LOZOWSKI BOISVERT, D. and JOCHUMS SLEZ, B., The relationship between visitor
+characteristics and learning-associated behaviours in a science museum 
+discovery space.
+Science Education, 78(2):137-148, 1994.
+
+[7] FINN, D., How to Visit a Museum. H.N. Abram, Inc. Publisher, 1985.
+
+[8] SERRELL, B., Exhibit Labels. An Interpretative Approach. AltaMira Press, 
+1996.
+
+[9] BROADBENT, J., Handheld Location-aware User Interfaces. presented at i3 
+Annual
+Conference, October 1999, forthcoming.
+
+[10] NOT, E. and ZANCANARO, M., Content Adaptation for Audio-based Hypertexts in
+Physical Environments. In Proceedings of the Second Workshop on Adaptive 
+Hypertext and
+Hypermedia, held in conjunction with HYPERTEXT ‘98. Pittsburgh, June 20-24, 
+1998
+
+[11] BROADBENT, J., MARTI, P., An experiential modality of exploring physical 
+and virtual
+spaces. presented at i3 Annual Conference, Nyborg, June 1998.
+
+[12] HIPS WP1, Adapting presentations to the User and to the Situational 
+Context in
+Hypernavigating the Physical Space, n. RR 1.5, December 1998
+
+[13] VERON, E., LEVASSEUR, M., Ethnographie de l’exposition, Paris, Bibliothèque
+publique d'Information, Centre Georges Pompidou., 1983.
+
+[14] MARTI, P., RIZZO, A., PETRONI, L., TOZZI, G., and DILIGENTI, M., Adapting 
+the
+Museum: A Non-Intrusive User Modeling Approach. proc. of UM99, in press, 1999.
+
+[15] FALK, J. H. and DIERKING, L.D., The Museum Experience, Whalesback Books, 
+1992.
+
+[16] SERRELL, B., Paying Attention: The Duration and Allocation of Visitors’ 
+Time in
+Museum Exhibitions, Curator, vol. 40, n. 2, June 1997.
+
+[17] HIPS WP2, Report on Architectural Design, n. PR2.1, to appear in July 
+1999.
+
+[18] MANN, W., Thompson, S, Rhetorical Structure Theory: A Theory of Text 
+Organization.
+In: L.Polanyi (ed.) The Structure of Discourse, Ablex Publishing Corporation, 
+1987.
+

@@ -1,0 +1,365 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/286441805
+
+AR Turn-by-turn navigation in small urban areas and information browsing
+Conference Paper · October 2014
+
+CITATIONS
+
+READS
+
+4
+
+104
+
+3 authors, including:
+Gianmarco Cherchi
+
+Fabio Sorrentino
+
+Università degli studi di Cagliari
+
+Università degli studi di Cagliari
+
+12 PUBLICATIONS 51 CITATIONS
+
+15 PUBLICATIONS 51 CITATIONS
+
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+VIRTUOSO View project
+
+Cage Generation View project
+
+All content following this page was uploaded by Gianmarco Cherchi on 01 June 2016.
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+STAG: Smart Tools & Apps for Graphics (2014)
+Andrea Giachetti (Editor)
+
+Short papers
+
+AR Turn-by-turn navigation in small urban areas and
+information browsing
+Gianmarco Cherchi, Fabio Sorrentino, Riccardo Scateni
+Department of Mathematics and Computer Science, University of Cagliari - Italy
+
+Abstract
+Navigation systems allow to discover cities and their urban areas easily and quickly, finding the shortest path to
+reach them and giving directions to users saving their time and energy. At present time, these systems are based
+over streets maps offered by the major mapping services like Tele Atlas, Navteq or OpenStreetMap.
+In recent years, thanks to the Google StreetView service it has been possible to discover main cities locations both
+indoor and outdoor. What is missing in this frame is the possibility to map small urban areas of small and medium
+sized cities, due to their lack of relevance for the big players. In this cities there could be very interesting areas
+for tourists. Example locations could be botanical gardens, archeological sites, protected natural areas among
+others.
+In this work we tried to set up a navigation system for limited extensions inside urban areas which permits to
+wander around and gives access to related information using augmented reality techniques. Due to the possible
+poor wireless coverage in these locations we designed an application that stores all required data on the user’s
+device, splitting the information in packages according to the chosen language.
+A key issue was to achieve good results combining all these features in a single device with a small display,
+overwhelming the constraints due to the mobile environment.
+Categories and Subject Descriptors (according to ACM CCS): H.5.1 [Information Interfaces and Presentation]:
+Multimedia Information Systems—Artificial, augmented, and virtual realities
+
+1. Introduction
+Navigation systems allow to discover cities and their urban
+areas easily and quickly, finding the shortest path to reach
+them and giving directions to users saving their time and
+energy. These systems are usually based over streets maps
+offered by the major mapping services like Tele Atlas [Atl],
+Navteq [Nav] or OpenStreetMap [Ope]. Google StreetView
+has added the possibility to enter inside the map and to discover lots of cities locations both indoor and outdoor. Private
+areas, and all the areas not accessible to the Google crew are
+still not available, and this is true for most of the urban areas of this type in small and medium sized cities, due to their
+minor relevance. But in these cities there could be very interesting areas of this kind for tourists like botanical gardens,
+pedestrian only accessible archaeological or historical sites,
+natural areas and such.
+Often, in this sites, visitors are supplied with flyers and
+guide books that possibly include a map with the major
+c The Eurographics Association 2014.
+
+points of interest (POIs). At the same time, several city eguides are available to tourists for their mobile devices, and
+sometimes these guides are just PDF files often combined in
+native apps developed for mobile systems like iOS, Android
+and WP. The aim of our work was to develop a system for
+the guided exploration of small, not Streetview-accessible,
+urban areas giving access to the most relevant information
+using augmented reality techniques. Since we cannot always
+rely on wireless coverage we designed an application that
+stores all the required data on the user’s device, splitting the
+information in language-based packages. We than packed all
+the features in a single app for mobile systems taking in account the size of the display and the features of the device
+available on the mobile platform.
+2. Related work
+We have analyzed several works looking for applications
+having in common the same technology (augmented real-
+
+G. Cherchi, F. Sorrentino, and R. Scateni / AR Turn-by-turn navigation in small urban areas and information browsing
+
+ity), the same device targets (smartphones and tablets) and
+the same focus (tourism services). Both commercial applications and scientific prototypes are usually general purpose
+AR broswers used to show different points of interest, giving
+their geo-located position and related information. In these
+works, the augmentation of the reality regards the overlaying of digital contents, based on the POI’s GPS location, like
+label or placeholder.
+
+known techniques used in navigation systems we created a
+very simple interface easy to use, allowing to choose a destination point and showing how to reach it in a fashion similar
+to the one of car navigation systems. Our main problem was
+to achieve results similar to those of car navigation offers but
+with the constraints that streets are smaller, points of interest
+are really close each other and, in some cases, the GPS error
+could be very high.
+
+In [MGS∗ 12] Mulloni and colleagues say that the road toward such kind of applications is not easy due to a lack of
+precision of navigation systems. Nowadays, this drawback
+is less penalizing thanks to new mobile devices sensors that
+are faster and more accurate. This works demonstrates how
+users, that have access to the information provided on a 2D
+map or via AR, prefer in most cases the use of the 2D map
+because it gives greater precision and reliability compared
+to the use of the augmented reality one. In order to have better results, and better usability of the AR applications while
+increasing the accuracy, additional techniques are required.
+These techniques are the same used in indoor navigation systems. These systems consist in specialized navigation applications for indoor environments that use both orientations
+sensors and phone camera to guide the user inside a building without the GPS usage. They were developed in order
+to create guides for museums or large buildings. An example of such a kind of indoor navigation system can be found
+in [SDC∗ 10].
+
+We then combined several principles taken both from indoor and outdoor navigation, trying to mix them offering a
+turn-by-turn reliable system for visitors devices.
+
+Talking about museum exploration another interesting
+work using augmented reality is [CCH14]. Here the prototype uses a camera that recognize hands movements above a
+marker and a corresponding action is performed. Using this
+approach it is possible to observe and manipulate 3D digital
+replicas of artifacts in real-time using hand-gestures instead
+of the traditional keyboard and mouse setting. It is a type of
+AR based exclusively on markers placed on various points of
+interest in the museum. It provides information on the POI
+but the user is not guided inside the museum.
+
+3.1. Small urban area definition
+As said before, in this work we focused on small urban areas, meaning those city areas as botanical gardens, parks or
+whatever part that usually have these common characteristics:
+•
+•
+•
+•
+•
+
+Dedicated to pedestrians and/or cyclists;
+Can be mapped on a 2D map;
+Smaller (even much smaller) than 20 square kilometres;
+Interesting spot for tourists;
+Located outdoors.
+
+3.2. User Interface
+From the initial screen is possible to access all the application features. Choosing among them through a menu bar the
+user is redirected to the relative feature view.
+
+In our work augmented reality is used to enrich the navigation task and not just for giving more information at the
+point of interest location.
+
+3. Application design
+As a proof of concept we created a first prototype, that
+we called AR-Garden, considering a botanical garden as
+case study. We wanted to support visiting scenarios where
+tourists decide to visit the garden autonomously without the
+aim of a tour guide. After an initial configuration, the ARGarden application allows users to navigate in the botanical
+garden sectors autonomously, providing garden information
+like sectors, plants species, points of interest and giving directions to reach them. Its main goal is to simplify the user’s
+visit through a system of geolocated garden areas and points
+of interest keeping track of user’s position. Following well
+
+Figure 1: Main screen for navigation.
+The navigation feature, the most important, allows the
+navigation turn-by-turn. In the lower part of the screen a 2D
+map is shown; on the map the user’s location is over-layered
+and there are the destination point and the path to follow to
+c The Eurographics Association 2014.
+
+G. Cherchi, F. Sorrentino, and R. Scateni / AR Turn-by-turn navigation in small urban areas and information browsing
+
+reach it. In the upper part of the screen, the phone’s camera preview is used, combined with augmented reality signals giving direction to reach the destination point. A 3D
+arrow points to the current destination point (see Fig. 1). Using both views users can easily reach their selected points
+of interest, saving time and energy. The user is also able
+to change these two views in different ways depending on
+his/her preferences (see Fig. 2).
+
+Figure 2: The three layouts for navigation: combined (left),
+only AR (center), and only map (right).
+
+As we said before augmented reality techniques play an
+important role in the AR-Garden prototype. The surrounding
+environment, captured through the device camera, is augmented with additional information regarding the nearby and
+geo-located points of interest layered over the stream of images. This means that the information about the position and
+the direction to follow are shown when the user is in a particular location. Using system calls it is possible to retrieve all
+sensors values such the current location (using latitude and
+longitude), the azimuth, the direction to follow (pointed using an arrow icon), the destination sector and the estimated
+distance to cover to reaching it. Other tabs allow to open
+the sectors view and the related information (in this case the
+plants and trees). The sectors area tab shows a list of all garden zones where a list of all plants is shown (see Fig. 3).
+
+For each plant there are more information available like
+the scientific name, a picture and detailed data such as the
+family, the habitat, flowering period and more.
+3.3. Map
+The map is managed as a 2D image with an overall resolution of 2000×4205 pixels, allowing a good visualization on
+devices with different screens sizes. In the system memory
+we store only a part of the map (the currently visible one)
+that is a subimage obtained cropping the original one. This
+technique leads to an efficient use of system resources and
+consequently to a more fluid application usage. We developed our application prototype on Android 2.3.3. This Android version is installed on phones and tablets with a single core where loading the entire map in the memory is too
+heavy. The trick used to improve the map loading allows the
+application to be used also on middle range devices. On the
+map we also implemented the classic manipulation events
+such as Drag and Pinch to Zoom to improve the navigation
+functionality.
+3.4. Augmented reality
+With the word augmented we mean a process of enrichment
+the reality perceived through the five senses, adding digital
+information using a computer or a mobile device. In tourism
+related application, this technology is often used to show information related to a city or a monument that one is just
+visiting. There are basically two types of augmented reality:
+• The first one is the geo-localized AR, usually used in mobile devices equipped with a positioning system and with
+a set of motion sensors; through the screen device the surrounding environment is enriched with more information
+on several layers based on geo-localized POI’s;
+• The second one is based on ARTags, used both on mobile
+devices and desktop computers through the detection and
+recognition of specific markers (usually drawn with black
+and white geometric shapes); recognizing these markers it
+is possible to show digital media like photos, videos, 3D
+models combined with audio file adding interactivity to
+the experience.
+In our case study we used geo-localized AR. In order to
+do it we use the device built-in sensors like the GPS or the
+compass. The GPS sensor provides information on the user’s
+location using longitude and latitude and the compass sensor
+provides the azimuth measure.
+3.5. Shortest path
+
+Figure 3: The information on a single sector (left) and on a
+single plant (right).
+
+c The Eurographics Association 2014.
+
+To find the “best” path between two points we have to store
+first a set of nodes and a set of existing paths, storing these
+information in a graph. In this structure, each node represents an area of the map or a cross between two paths, while
+the arcs between the nodes represent the possible connection
+
+G. Cherchi, F. Sorrentino, and R. Scateni / AR Turn-by-turn navigation in small urban areas and information browsing
+
+between the various sectors. The “shortest path” Dijkstra’s
+algorithm implementation made possible to search for the
+best routes between sectors/nodes.
+3.6. Navigation
+Using the obtained information by the device sensors, and
+using appropriate geometric operations, the user’s position
+can be plotted over the map. In our implementation we use
+the map as a Cartesian plane, transforming the previous (A
+point) and the current (B point) GPS position in XY coordinates on the plane. After every position’s update the distance between A and B and the angle between the straight
+line passing through the two points and the X-axis are computed. To find the new position we calculate ∆x and ∆y and
+we add or subtract them appropriately to the current position.
+In particular ∆x = dist × cos α and ∆y = dist × sin α, where
+dist is the distance between the two geographical positions
+appropriately transformed into pixels, and α is the angle between the straight line passing through the two points and
+the X-axis calculated using the following formula (where
+Lat=latitude, Lon=longitude):
+dy = Lat(B) − Lat(A)
+  π
+
+
+dx = cos
+× Lat(A) × Lon(B) − Lon(A)
+180
+180
+α = arctan(dy, dx) ×
+π
+
+The following step consists in recomputing the direction
+of the arrow (that indicates the way the user should follow to
+reach his/her destination) based on the last position update.
+This is done by considering the current position, the target
+position and the user’s orientation based on the destination.
+We calculate the angular coefficient m of the straight line
+passing through the points A and B where A represents the
+current position and B is the point to be reached.
+∆x = xA − xB
+∆y = yA − yB
+∆x
+m=
+∆y
+∆x or ∆y equal to 0 mean that the user is moving along one
+of the Cartesian axes otherwise we find the angle of rotation
+of the arrow calculating arctan(m).
+4. Conclusion and future work
+Brochures paper and bulky signals often used in small areas
+such as a botanical garden can be replaced using digital tools
+such as AR-Garden. The user interface, for this reason, was
+created simple and intuitive, without too complex features or
+annoying graphics elements that can distract users. Overall
+
+we are satisfied with the achieved results, and we envision
+that using other sensors and techiques used in indoor navigation system our application can be improved.
+The AR-Garden application has been tested in two steps:
+the first one emulating the user position and the second one
+directly on-site. To emulate the GPS signals we used an Android emulator using a gpx file. Through a connection between the terminal system and the emulator it is possible
+to simulate the GPS coordinates evaluating the application
+behavior in a controlled environment, avoiding GPS signal
+precision issues. The provided directions, using augmented
+reality (based on user’s position and destination point), are
+correctly displayed as expected. Thanks to these results we
+can affirm that the used navigation algorithm is enough accurate for our purposes.
+Once we decided to try the application on site we have
+obtained different and not so good results. The well known
+GPS signal error is really significant and caused bad results during our testing. The main problem was due to signal
+strength, since the signal acquisition is difficult in covered,
+or partially covered, areas (i.e., during a cloudly day in a park
+with trees). This leads to high errors in the device positioning during the environment discovering. In our case of study,
+the Botanical Garden of Cagliari, we have encountered this
+problem because it is almost totally covered by trees forming
+a barrier between satellites and user’s device. This leaded to
+a low GPS signal or a distorted pair of coordinates, and we
+have estimated that this error was even 20 meters in the worst
+cases. This implies that the navigation based on GPS coordinates is not enough to offer a good turn-by-turn navigation
+in these kind of areas. We are working on a new application version that uses inertial indoor navigation systems to
+achieve better and reliable results.
+Our future plans include the development of a complete
+framework able to let developers create a turn-by-turn navigation system just changing the application contents.
+References
+[Atl]
+
+ATLAS T.: mapinsight.teleatlas.com. 1
+
+[CCH14] C HEN C.-Y., C HANG B. R., H UANG P.-S.: Multimedia augmented reality information system for museum guidance.
+Personal and ubiquitous computing 18, 2 (2014), 315–322. 2
+[MGS∗ 12]
+
+M ULLONI A., G RUBERT J., S EICHTER H., L AN T., G RASSET R., R EITMAYR G., S CHMALSTIEG D.:
+Experiences with the impact of tracking technology in mobile
+augmented reality evaluations. In MobileHCI 2012 Workshop
+MobiVis (2012). 2
+GLOTZ
+
+[Nav]
+
+NAVTEQ: www.navteq.com. 1
+
+[Ope]
+
+O PEN S TREET M AP: www.openstreetmap.org. 1
+
+[SDC∗ 10] S ERRA A., D ESSÌ T., C ARBONI D., P OPESCU V.,
+ATZORI L.: Inertial navigation systems for user-centric indoor applications. Networked and Electronic Media Summit,
+Barcelona (2010). 2
+
+c The Eurographics Association 2014.
+
+View publication stats
+
+

@@ -1,0 +1,581 @@
+The digital museum: Challenges and solution
+
+Author
+
+Li, YC, Liew, AWC, Su, WP
+
+Published
+
+2012
+
+Conference Title
+
+Proceedings - ICIDT 2012, 8th International Conference on Information Science 
+and Digital
+Content Technology
+
+Copyright Statement
+
+© 2012 IEEE. Personal use of this material is permitted. Permission from IEEE 
+must be
+obtained                                                for all other uses, in 
+any current or future media, including reprinting/republishing this
+material for advertising or promotional purposes, creating new collective 
+works, for resale or
+redistribution to servers or lists, or reuse of any copyrighted component of 
+this work in other
+works.
+
+Downloaded from
+
+http://hdl.handle.net/10072/49660
+
+Link to published version
+
+http://ieeexplore.ieee.org/document/6269353
+
+Griffith Research Online
+
+https://research-repository.griffith.edu.au
+
+
+THE DIGITAL MUSEUM: CHALLENGES AND
+SOLUTION
+
+Yu-Chang Li¹, Alan Wee-Chung Liew², and Wen-Poh Su³
+
+School of Information and Communication Technology
+Griffith University
+
+Queensland, Australia
+
+¹liyuchang@gmail.com
+²a.liew@griffith.edu.au
+³veronica.su2011@gmail.com
+
+
+Abstract—This article discusses the development of digital
+curation in cultural expression applications, such as museum and
+art gallery, focusing on the user experience perspective. The use
+of digital technology has improved the production process in
+conventional museum and art gallery and has greatly facilitated
+the interaction between viewers and collections. Although the
+concept of digital museum has attracted a lot of attention in the
+past decade, there remain many challenges to be addressed. In
+this paper, we discuss current progress in the development of
+digital museum and identify important factors that affect its
+successful deployment.
+
+Keywords: digital museum, digital curation, semantic web,
+argumented reality, user experience
+
+I.  INTRODUCTION
+
+From time immemorial, the way traditional museum
+exhibits are only limited to leading the audience into
+showrooms to view the original artworks, however, due to the
+limitations of factors such as exhibition space, venues, and
+schedules, the total numbers of direct contacts with exhibits are
+in  the minority. For instance, the National Palace Museum
+(NPM) of Taiwan, which contains more than 650,000 domestic
+and foreign antiquities, has continuously increased its
+collections by purchasing or accepting donations of artifacts.
+The entire collections will take over 30 years to exhibit if each
+exposition is run for three months at a time [1]. A museum
+would seem like an antiquity warehouse, which is
+inapproachable and distant. Moreover, since the antiquities
+belong  to all citizens, the traditional museum has a predicament
+where owners cannot freely acquire information about their
+properties.
+
+According to the statutes of International Council of
+Museum (ICOM), a museum “is a non-profit, permanent
+institution in the service of society and its development, open
+to  the  public,  which  acquires,  conserves,  research,
+communicates and exhibits the tangible and intangible heritage
+of humanity and its environment for the purposes of education,
+study and enjoyment” [2]. Hence, an important role of a
+museum is to make its heritages become a part of our life,
+much like the functions of a library. Based on this aspiration,
+the digital curation of a museum has become a common pursue
+in both the academic and public sectors.
+
+Technology and societal impact play a complementary role
+to each other in museum digitization. The value and function of
+
+cultural heritage are realized through knowledge sharing and
+exchange of idea. Hence, the focus of the digital museum
+should be on the visitor’s experience rather than the technology
+itself. However, without the aids of advanced technology, such
+goal cannot be materialized effectively. Therefore, the
+challenges involved in the creation of digital museums can be
+divided into two dimensions: the use of technologies and the
+enhancing the user experiences.
+
+In the past, the technical dimension has been the primary
+focus. Issues ranging from the imaging and digitization of
+artifacts to data management have been extensively researched
+[3–6]. It is true that a successful digital museum requires a
+good technology; it is also true that the success cannot come
+without considering the cultural heritage sharing aspect. There
+are, however, very few studies on the later, particularly on the
+area of user experience.
+
+In this article, we focus on the aspect of user experience and
+describe strategies that help to enhance a visitor’s on-site
+experience in a museum through digital technology. We
+discuss how the use of technology can improve the production
+process and increase the communication and interaction
+between viewers and collections in museums and art galleries.
+
+II.  THE CHALLENGES OF DIGITAL CURATION IN THE
+MUSEUM
+
+Virtual Museum versus Physical Museum
+
+The museum digitization movement has been ongoing for
+over a decade since the beginning of the 21st century. The term
+“digital curation” first emerged in an academic seminar
+convened by the Digital Preservation Coalition and the British
+National Space Centre in London on 2001 to discuss the
+improvement of the Open Archival Information System
+Reference Model (OAIS) standard and the knowledge sharing
+of digital curation in various fields [7]. However, the huge
+advancement of information technology has turned the
+digitization  process  to  become  more  progressive  and
+diversified. Accordingly, the virtual museum has become a
+platform where museum connect with their clients outside the
+museum  building.  Many  well-known  museums  have
+committed to create their virtual environment by either putting
+the digitized information onto their web pages or pre-recording
+their tour guide through portable devices, such as the
+Collection Database (Compass) of The British Museum [8]; the
+virtual museum of The Louvre on the iPhone [9]; and The
+
+
+Metropolitan Museum of Art’s Timeline of Art History [10].
+The common feature of these efforts is that the information can
+be received by the visitors quicker and easier without time and
+space limitation.
+
+Although the development of museum seems to benefit
+from the application of digital technology, digitization of the
+museum has also brought with it some disadvantages. For
+example, the physical museum is becoming more isolated and
+functionless without visitors participation; meanwhile, the
+audiences are also losing the opportunities for sharing and
+communicating their viewpoint with others. From the user’s
+point   of view, the digital museum is not to replace the
+traditional museum; conversely, the digital information should
+complement the physical museum. Carol has found from her
+interview survey that the traditional value of museum has been
+unintentionally eroded in the process of museum digitization
+[11].   She argued that the physical museum has an irreplaceable
+status in people's minds. Hence, the aim of museum digitization
+should be focus on filling the gap of the physical museum.
+
+According to Coulter-Smith, the constitutions of social
+communication and art collections have been hampered by the
+operating patterns of galleries for a long time [12]. Cultural
+institutions should function as a learning environment [13]. As
+museum experience should be done on physical place with
+genuine objects, the enhancement of user experience in the
+physical museum, such as how to improve the communication
+by considering the interactive factors has attracted much effort.
+
+The Development of Museum User Experience
+
+User experience has been considered as an indispensable
+factor by academic researchers and curators in museum
+digitization in recent years. According to Beer, museum
+visitors spend less than one minute on each collection in on-site
+[14]. Thus, how to captivate visitors by extending the time of
+art appreciation and enhancing their knowledge by adopting
+various machineries has become a new branch of research in
+digital curation. As Gurian pointed out, the physical museum
+will be blended with technological element in the near future
+[15]. Some research results have suggested that, the museum
+experience can be boosted by an interactive and immersive
+environment [16]. Consequently, it can be expected that the
+traditional method of masterworks’ description will be replaced
+by other methods that enhance the sensory impact and the real
+experience of the visitors. Based on this concept, the discussion
+of  user experience can be divided to several aspects, the facets
+of visualization, personalization, interaction with education,
+and repacking. These key elements may offer visitors with a
+valuable experience and help improving communication
+between viewers, curators, and museums.
+
+III. CURRENT STRATEGIES
+
+Analyze the challenge and limitation of digitization for
+providing the best viewing experience is a crucial step in the
+development of digital curation. In the implementation of
+digital  museum,  the  relationship  between  people  and
+collections is more important than the compilation itself.
+Therefore, in relation to the aim of digitization of collections
+and the problems being faced, this section will discuss the
+current development of the user experience in the museum
+
+setting and offer the possible strategies for the future
+achievement.
+
+Visualization (Casual information visualization)
+
+The characteristic of visualization is the keystone of user
+experience in the field of the digital museum. Previously,
+visualization systems were mostly exploited in the professional
+field as an overview provider through complex technology-
+based interface and interaction [17]. For example, The Solid
+Software Xplorer (SolidSX), which is a Windows tool of
+creating the high-resolution image structures for users to
+understand and examine the applications that are designed by
+any type of .NET languages; and Crime mapping, which is a
+map adopting by law enforcement agencies (LEA) for showing
+and analyzing different crime models.
+
+However, the situation has been changing over the last few
+years. The concept of Casual Information Visualization (Casual
+InfoVis) has been noticed by the digital curation community.
+Casual InfoVis is designed for audiences who do not have
+special qualifications or only visit museums casually [18]. The
+view of this insight comes from the edification of other
+information systems, social visualization and artists’ visual
+works. The difference between Casual InfoVis system and
+traditional InfoVis can be due to differences in user population,
+usage pattern, data type as well as goals. The information can
+be illustrated by using computer-mediated applications [17].
+
+Casual InfoVis can be described as a rudiment of utopia in
+the cultural organization. However, the implementation and
+outcome of this concept still relied on the integrating of
+different components such as interactive interface, database and
+personalized framework. With the progress of digital museum
+development, the developers and curators should keep this
+notion in mine in order to assess the visitors’ behavior
+effectively for providing the best solution.
+
+Personalization
+
+The function of personalization is one of the fundamental
+components for the achievement of digital museums. Proper
+use  of this concept could not only provide curators with better
+opportunities to understand the needs of visitors, but also
+cultivate their potential devotion. As Riecken pointed out,
+personalized attention is a way of “building customer loyalty
+by establishing a one-to-one relation” [19]. In addition,
+personalization may also reduce the financial pressure in the
+operation of museum management. Many studies have found
+that the budget of a museum has become less rely on
+government support. How to use the limited resources to
+connect with audiences has become the major concern [20].
+For instance, museums could optimize the tour paths to attract
+visitors by using personalized technologies; or choose the most
+popular collections for exhibition via repackaging.
+
+In order to accomplish this objective, there are a number of
+projects in museum personalization. CHIP (Cultural Heritage
+Information  Presentation),  which  is  an  interdisciplinary
+research project between information technology and museum
+masterpieces created by CATCH (Continuous Access to
+Cultural Heritage) program of NWO (The Netherlands
+Organization for Scientific Research) in Netherlands [16]. It
+creates a pre-visit experience for allowing visitors to build a
+
+
+personal tour path by rating collections online, as well as
+offering a chance to review the collections which are of interest
+to them after they finished the on-site visit. The Piggy Bank
+Project, a sub-work of Simile project directed by the MIT
+Libraries and MIT CSAIL, is presented as a Firefox extension
+for user to collect digital contents from separate websites, then
+combine them together for further references [21]. In spite of
+each project providing diverse features, the most noteworthy
+feature of these projects is their integration of the Semantic
+Web.
+
+The personalization of item can be implemented by using
+highly semantic module. According to Tim Berners Lee, the
+Semantic Web is an extension of the web based on the fact that
+machines can better comprehend the metadata by giving a well-
+defined meaning to information. In the context of digital
+museum, the Semantic Web is evolving from being museum
+dominance towards user centered collaborative filtering. The
+materialization of which could be involved in several modules,
+including Resource Description Framework (RDF), a data
+model that is used to carry a variety of metadata between
+resources [22]; Web Ontology Language (OWL), a language
+that  is clearly expressed in terms of proper nouns and the
+relationship between these terms [23]; Friend of a friend
+(FOAF), a way of self-discretion adopted by XML and RDF
+that could make the connection between each individual in the
+Web [24]; Simple Knowledge Organization System (SKOS), a
+language that is designed by RDF Schema for sharing and
+demonstrating controlled vocabularies [25], as well as Cidoc
+CRM, which is announced by Comité International Pour La
+Documentation (CIDOC) that particularly focus on the
+museum  of cultural heritage [26].
+
+Although the Semantic Web seems to be a beacon for the
+museum personalization, it still has some potential drawbacks
+need to be overcome, such as the issues of privacy, data
+security and immature ontologies. It is due to the fact that the
+role of Semantic Web in the museum context is to provide a
+way of analyzing and understanding human behavior while
+separating irrelevant personal details of the users. The
+questions of how to maintain information as a personal
+resource without privacy and security concerns, and how to
+define the ontology have become important issues for the
+future.
+
+Interaction and Education
+
+Formerly, museum exhibitions tend to comprise of actual
+objects with limit explanations, which are always written by
+curators or reviewers on the panels beside the objects or pre-
+record in the audio hand-held device as a personal tutor during
+the visit. However, such styles of presentation has many
+negative aspects, such as creating distance between visitors and
+the objects, not educational, as well as make people feeling
+more isolated as they do not have the opportunity to
+communicate with each other about the objects that they are
+interested in. Spasojevic and Kindberg pointed out that the
+expectation of museum exhibitions should be blended with
+extendable visiting experience, and appropriate interaction with
+real objects [27]. Coulter-Smith also reinforced the importance
+of interactive activities, which can lead arts into our lives by
+building a bridge between visitors and artworks [12]. Therefore,
+
+the capacity of the museum should be like a "multi-dimensional
+educational institution," where a visitor can retrieve the
+information for references, and approach the additional
+resources of the artworks like in a tutorial. In relation to these
+aims, some techniques have been proposed to enrich the
+constituent of an interactive museum, such as the Web-based
+construction, Virtual Reality (VR) or Augmented Reality (AR).
+
+Augmented reality (AR) is an extension of VR system that
+could intermingle actual with virtual environment for real-time
+interaction [28]. The implementation of AR may work towards
+filling the gap of traditional museums which do not offer
+enough interactive stage for visitors and artifacts. Some studies
+have been aimed at the application of AR to museum
+interaction. For instance, the project of Flypad developed by
+The  Mixed  Reality  Lab  (MXR)  in  the  University  of
+Nottingham for a controversial arts center called The Public in
+England. This project endeavored to enhance the condition of
+interactivity by using the technique of AR, which allows users
+to control their avatar by operating different control panels, and
+to further improve the user experience [29]. Another example is
+the undertaking of the virtual showcase, which is a translucent
+display system using AR. It was first introduced at Vienna
+University of Technology in Austria, followed by the advance
+pattern, which was announced at Laval Virtual 2011 by the
+ESIEA engineering school in France [30]. The ambition of this
+system is to lay emphasis on the interaction between visitors
+and physical artifacts and break the barrier between virtual and
+actual museums by integrating the AR technology into a
+traditional museum showcase format.
+
+In summary, the technique of AR might be a strategy to
+reach the goals of interaction and education in the physical
+museum. Unfortunately, on the embodiment of personalization,
+the pre-experience and after-experience of the visit are not
+contemplated in these systems. Thus, in order to strengthen the
+entire journey of the museum visitors, the association of the
+personalized feature should be taken into account in the
+development of the interactivity process in the future.
+
+Repackaging
+
+According to the statistic of Museums and Art Galleries
+Market Report from HighBeam Business in American, most of
+the cultural funding is decreasing across the United States in
+the twenty-first century. During this period of economic
+depression, the Smithsonian, the world's largest museum and
+research complex in USA, has reported that 29 percent of
+visitors vanished in just seven months [31]. In this period of
+budget tightening, the capabilities of information interchange
+and data repackaging are important consideration for museum
+digitization. The ability of data repackaging should be
+considered at the early design phase in the digitization process.
+Re-combinative collection may bring additional revenues to a
+museum   in various ways. For example, flexible resources could
+increase the opportunity of art commoditization to bring
+additional revenue for cultural organizations, as well as to
+achieve the goal of marketing to attract visitor. As the social
+anthropologist Mary Douglas and Baron Isherwood mentioned,
+the significance of goods is the ability to become
+representatives of social status, symbol or glory [32]. With the
+change   of economic situation, more and more artwork will be
+
+
+converted into goods in the future. The interchangeable data
+can reduce the production costs by reusing existing
+components.
+
+The solutions of repackaging involve a number of
+techniques,  which  have  been  suggested  over  different
+discussions. One important consideration is migration, which
+allows data to move freely between different platforms for
+cross-platform sharing. Next, the ability of transformation is
+another important feature. The digital information should
+facilitate easy format change for it to be recombined and reused
+with other items. An example is FBX, which is a file format
+used by the majority of 3D software such as MAYA and 3DS
+MAX for transferring their projects to other applications.
+
+Repackaging has raised the issue of quality control. Giaretta
+suggested that the result of multiple file conversion should be
+paid more attention before the information is transformed [33].
+Thus, how to make sure that the converted information is
+identical to the original and whether the health status of the file
+is available for long-term preservation will be a critical topic of
+deliberation in the future.
+
+IV. CONCLUSION
+
+Successfully addressing the challenges in digital museum
+development could not only promote its growth in this high-
+tech era but also boost the societal value of cultural heritage.
+This article provides some insight to the development of digital
+museum  from  the  user  experience  viewpoint.  A  clear
+understanding of the different factors affecting user experience
+can provide guidelines to assist curators and scholars in
+structuring a viable framework. Although much effort has been
+devoted to the digital museum development, there is still much
+work to be done. For example, a personalized system will need
+to confront the issues of privacy and the usage efficiency in the
+physical museum; then interactive mechanism might disregard
+the influence of personalization; and a flexible data format will
+need to deal with the issue of quality control in different
+platforms. Hence, how to address these issues will be a crucial
+task in this emerging area.
+
+REFERENCES
+
+[1]  K. Chou, National Palace Museum 2010 Annual Report. Taipei:
+National Palace Museum, 2010.
+
+[2]  International Council of Museum, “ICOM Statutes,” 2007. [Online].
+Available: http://icom.museum/who-we-are/the-organisation/icom-
+statutes.html#2.
+
+[3]  C. Wei, “STREAMING OF HIGH-RESOLUTION PROGRESSIVE
+MESHES OVER THE INTERNET,” ACM, 2010.
+
+[4]  M. Carrozzino, C. Evangelista, A. Scucces, F. Tecchia, G. Tennirelli,
+and M. Bergamasco, “The virtual museum of sculpture,” Proceedings
+of the 3rd international conference on Digital Interactive Media in
+Entertainment and Arts - DIMEA ’08, p. 100, 2008.
+
+[5]  M. Kellogg Smith, “Viewer tagging in art museums: comparisons to
+concepts and vocabularies of art museum visitors,” Advances in
+classification research, vol. 17, pp. 1-19, 2006.
+
+[6]  F. Cameron, “Digital Futures I: Museum Collections, Digital
+Technologies, and the Cultural Construction of Knowledge,” Curator:
+The Museum Journal, pp. 325-340, 2010.
+
+[7]  P. Constantopoulos and C. Dallas, “Aspects of a digital curation agenda
+for cultural heritage,” in 2008 IEEE International Conference on
+Distributed Human-Machine Systems. Athens, Greece: IEEE, 2008, pp.
+1-6.
+
+[8]  R. K. Loverance, “COMPASS: A New Direction for the British
+Museum,” COMPUTERS AND THE HISTORY OF ART, vol. 8, pp. 5–
+12, 1998.
+
+[9]  B. LeVitus, “Musée du Louvre,” in Incredible iPhone Apps For
+Dummies, Canade: Wiley Publishing, Inc., 2010, pp. 36-37.
+
+[10] “The Metropolitan Museum of Art annual report for the Year 2010-
+2011,” New York, USA, 2011.
+
+[11] C. Scott, “Advocating the value of museums,” Proc. of
+INTERCOM/ICOM, Austria, Vienna, no. August, pp. 1-11, 2007.
+
+[12] G. Coulter-Smith, Deconstructing Installation Art: Fine Art and Media
+Art, 1986-2006. Southampton: CASIAD, 2006.
+
+[13]  J. H. Falk and L. D. Dierking, Learning from museums: Visitor
+experiences and the making of meaning. Altamira Pr, 2000.
+
+[14] V. Beer, “Great expectations: do museums know what visitors are
+doing?,” Curator: The Museum Journal, vol. 30, no. 3, pp. 206–215,
+1987.
+
+[15] E. H. Gurian, “A Blurring of the Boundaries,” Curator: The Museum
+Journal, vol. 38, no. 1, pp. 31-37, Mar. 1995.
+
+[16] Y. Wang, N. Stash, and R. Sambeek, “Cultivating personalized
+museum tours online and on-site,” Interdisciplinary, vol. 2, no. 3, pp.
+139–153, 2009.
+
+[17] Z. Pousman, J. Stasko, and M. Mateas, “Casual information
+visualization: depictions of data in everyday life.,” IEEE transactions
+on visualization and computer graphics, vol. 13, no. 6, pp. 1145-52,
+2007.
+
+[18] U. Hinrichs, H. Schmidt, and S. Carpendale, “EMDialog: bringing
+information visualization into the museum.,” IEEE Transactions on
+Visualization and Computer Graphics, vol. 14, no. 6, pp. 1181-1188,
+2008.
+
+[19] D. Riecken and others, “Personalized views of personalization,”
+
+Communications of the ACM, vol. 43, no. 8, pp. 27–28, 2000.
+
+[20] S. F. Fantoni, “Visiting with a personal touch: a guide to
+personalization in museums,” Maastricht McLuhan Institute, 2002.
+
+[21] D. Huynh, S. Mazzocchi, and D. Karger, “Piggy Bank: Experience the
+Semantic Web inside your web browser,” Web Semantics: Science,
+Services and Agents on the World Wide Web, vol. 5, no. 1, pp. 16-27,
+Mar. 2007.
+
+[22] O. Lassila, “Resource description framework (RDF) model and syntax
+specification. W3C Recommendation, 1999,” Available on-line at www.
+w3.  org, 1999. [Online]. Available: http://www.w3.org/TR/PR-rdf-
+syntax/. [Accessed: 29-Nov-2011].
+
+[23] W3C, “OWL 2 Web Ontology Language: Document Overview,” W3C
+Recommendation, Oct, 2009. [Online]. Available:
+http://www.w3.org/TR/owl2-overview/. [Accessed: 29-Nov-2011].
+
+[24] “The Friend of a Friend (FOAF) project | FOAF project.” [Online].
+Available: http://www.foaf-project.org/. [Accessed: 29-Nov-2011].
+
+[25] A. Miles and S. Bechhofer, “SKOS Simple Knowledge Organization
+System Reference,” W3C Recommendation, 2008. [Online]. Available:
+http://www.w3.org/TR/skos-reference/.
+
+[26] M. Doerr, “Electronic Communication on Diverse Data-The Role of the
+oo CIDOC Rference Model,” Communication, 1998.
+
+[27]  M. Spasojevic and T. Kindberg, “A study of an augmented museum
+experience,” Hewlett Packard internal technical report, 2001.
+
+[28] R. T. Azuma, “A survey of augmented reality,” Presence-Teleoperators
+and Virtual Environments, vol. 6, no. 4, pp. 355–385, 1997.
+
+[29] M. Flintham et al., “Flypad: Designing Trajectories in a Large-Scale
+Permanent Augmented Reality Installation,” in ECSCW 2011:
+Proceedings  of the 12th European Conference on Computer Supported
+Cooperative Work, 2011, pp. 233-252.
+
+[30] O. Bimber, L. M. Encarnação, and D. Schmalstieg, The virtual
+showcase as a new platform for augmented reality digital storytelling.
+New York, New York, USA: ACM Press, 2003, pp. 87-95.
+
+[31] HighBeam Business, “Museums and Art Galleries market report,” 2012.
+[Online]. Available: http://business.highbeam.com/industry-
+reports/business/museums-art-galleries. [Accessed: 10-Jan-2012].
+
+[32] M. Douglas and B. C. Isherwood, The World of Goods, Toward an
+Anthropology of Consumption. New York, USA: Routledge, 1979.
+
+[33] D. Giaretta, “Preservation workflows, strategies and infrastructure,”
+
+Proceedings of DigCCurr, pp. 177–184, 2009.
+

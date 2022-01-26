@@ -1,0 +1,209 @@
+Advanced Science and Technology Letters
+Vol.112 (Architecture and Civil Engineering 2015), pp.46-49
+http://dx.doi.org/10.14257/astl.2015.112.09
+
+A Review of Indoor Positioning Techniques
+Jaegeol Yim1,1
+1
+
+Department of Computer Engineering, Dongguk University at Gyeongju,
+Gyeongbuk, Korea
+yim@dongguk.ac.kr
+
+Abstract. Location-based services (LBS) provide useful information to users
+based on the current user location or a given location. Therefore, one of the key
+techniques for LBS development is positioning, or identifying the coordinate of
+the spot where the user is currently located. For outdoor LBS, the GPS (Global
+Positioning System) provides a general solution for positioning. However,
+discovering a general solution for indoor positioning is still a hot research topic.
+This paper reviews recently published indoor positioning techniques.
+Keywords: Indoor Positioning, Location based Services, Global Positioning
+System, Wi-Fi.
+
+1
+
+Introduction
+
+Location-based services (LBS) provide useful information to users based on the
+current user location or a given location. LBS include services of identifying locations
+of persons or objects such as discovering the nearest subway station or the
+whereabouts of friends or valuables. Vehicle navigation systems, logistic systems,
+location-based target advertisement systems and coupon systems, and cabs
+management systems are a few examples of practical LBS [1].
+LBS cannot be realized unless a general solution for positioning, or identifying the
+coordinate of the spot where the user is currently located, is available. For outdoor
+LBS, the GPS (Global Positioning System) provides a general solution for positioning.
+However, the indoor positioning problem is still open.
+As manmade structures such as buildings and underground facilities are getting
+larger and larger, a demand for indoor LBS is getting stronger and stronger. Campus
+guides, museum guides, shopping helpers for department stores, and employee
+management systems are under development in the indoor LBS field [2]. Therefore,
+this paper reviews recently published indoor positioning techniques. In the early stage
+of indoor LBS, they relied upon special devices for indoor positioning. Since the time
+when the Internet was available everywhere, Wi-Fi based positioning methods have
+1
+
+This work was supported by the Basic Science Research Program through the National
+Research Foundation of Korea (NRF) funded by the Ministry of Education (NRF-20110006942) and by the Dongguk University Research Fund of 2015.
+
+ISSN: 2287-1233 ASTL
+Copyright © 2015 SERSC
+
+Advanced Science and Technology Letters
+Vol.112 (Architecture and Civil Engineering 2015)
+
+been hot research topics. Nowadays, many smartphone based indoor positioning
+techniques can be found in the current literature.
+
+2
+
+Related Works
+
+Villarrubia et al. [3] summarized existing indoor location technologies as follows:
+- Infrared: The characteristics of infrared include "its short range" and "requiring a
+line of sight." Therefore, indoor location with only infrared cannot be a general
+solution of indoor positioning.
+- Wi-Max: Wi-Max has the range of 50 km. This is too large scope for indoor
+positioning.
+- Bluetooth: The procedure of Bluetooth based positioning systems detects
+Bluetooth devices, obtains received signal strength indications (RSSI), estimates
+distances between the moving object and other Bluetooth devices, and estimates the
+location of the moving object by applying a triangulation algorithm. The
+disadvantages of Bluetooth based positioning include it requires many Bluetooth
+devices and RSSI fluctuates too much.
+- Ultra Wideband: This is accurate and reliable. However, its use is not guaranteed
+by the law. That is, this cannot be used in some places.
+- ZigBee: This is considered to be the most adequate technology for indoor
+positioning. However, it has a very small bandwidth and cannot offer other services
+such as streaming and Internet.
+Villarrubia et al. [3] also summarized indoor localization algorithms.
+- Direction of Arrival: With the angles of the line from at least three reference
+points to the moving object, this algorithm estimates the position of the moving object
+as deoicted in Figure 1.
+r2
+n2
+
+r1
+n1
+
+m
+
+n3
+r3
+
+Fig. 1. A diagram to illustrate the direction
+of arrival method
+
+Fig. 2. A diagram to illustrate trilateration
+
+Trilateration: If we measure N ranges, r1 , r2 , ..., r N from N base stations, to a
+mobile terminal as shown in Figure 2, then we can estimate the coordinates of the
+moving object by using trilateration. In the figure, m represents the moving object
+while n represents a reference node.
+
+Copyright © 2015 SERSC
+
+47
+
+Advanced Science and Technology Letters
+Vol.112 (Architecture and Civil Engineering 2015)
+
+- Fingerprinting: This method records fingerprints of every interested points in the
+domain. Given a fingerprint, it identifies the interested point that matches the
+fingerprint. We use a set of sensor values collected at an interested point as the
+fingerprint of the point.
+- Multilateration: This method estimates distances between the moving object and
+at least three reference points whose coordinates are known. With the distances and
+the coordinates of the reference points, it determines the location of the moving object.
+The purpose of [3] is developing a museum guide app. This app recognizes the
+monumental work that the user is watching and plays a video content that is closely
+related to it on the user's smartphone. The process of recognizing the monumental
+work is follows: 1) It identifies the room where the user is located with Wi-Fi
+technology. 2) The user takes a picture of the monumental work. 3) It performs the
+image process to recognize the monumental work.
+Poosamani and Rhee [4] pointed out the disadvantages of existing methods as
+follows:
+Most practical indoor location-based services use specialized devices and RF
+signals or beacons.
+Wi-Fi signal fingerprinting methods requires extensive calibration and deployment
+overhead.
+Indoor positioning using smartphone sensors consume too much battery energy of
+the smartphones.
+Indoor positioning using averaged received signal strength (RSS) of 2G cellular
+signals is too rough because RSS is determined by too many factors.
+Developing practical indoor positioning methods with already existing available
+resources such as Wi-Fi and smartphone sensors is the main concern in the field of
+indoor positioning. Poosamani and Rhee [4] proposed an indoor positioning system
+that logically estimates user location referring to signal received quality (RSRQ) and
+reference signal received power (RSRP) and other physical (PHY) layer information
+from 4G cellular network signals. Their method is a kind of fingerprinting method.
+However, their method does not require deployment overhead because they build
+fingerprints in near real-time.
+Rida et al. [5] designed and implemented a trilateration algorithm based on RSSI
+of the Bluetooth low energy 4.0 (BLE) to determine user indoor location. Chen and
+Lin [6] proposed a neural network for indoor positioning. They trained the neural
+network with ZigBee link quality indicator.
+Li et al. [7] reviewed techniques for RFID (radio frequency identification) based
+indoor positioning. Near field communication (NFC) tag is Android version of RFID.
+Android app developers can read NDEF (NFC data exchange format) data from NFC
+tag using the tag dispatch system.
+Lee and Yim [8] described a few Wi-Fi based indoor positioning systems. Two of
+them built by the fingerprinting method: one used the K-nearest neighbor method and
+the other used the decision tree method. They also described a Wi-Fi based indoor
+positioning system built by the trilateration method. Then, they described the
+extended Kalman filter process for Wi-Fi based indoor positioning.
+Yim [9] introduced indoor positioning method that determines the user's current
+position with the smart phone's sensor values. Referring to the accelerometer values,
+this method counts steps. An example collection of Z axis accelerometer is shown in
+
+48
+
+Copyright © 2015 SERSC
+
+Advanced Science and Technology Letters
+Vol.112 (Architecture and Civil Engineering 2015)
+
+Figure 3. With the orientation values, this method estimates the direction. With the
+step count and the direction, this method determines the current location of the user.
+
+Fig. 3. An example collection of Z axis accelerometer [9]
+
+3
+
+Conclusion
+
+As the demand for indoor LBS is increasing, indoor positioning, one of the key
+techniques for indoor LBS development has been hot research topic. However, a
+general solution for indoor positioning has not been discovered, yet. This paper
+reviewed recently published indoor positioning techniques. Discussed techniques will
+helpful to indoor LBS developers.
+
+References
+1. https://en.wikipedia.org/wiki/LBS
+2. Shim, K., Yim, J., Jeon, J.: Development of an Indoor-Outdoor Positioning Android App for
+Anapji Tourist Guides. In: International Journal of Software Engineering and Its
+Applications. Vol. 9, No. 3, pp. 195-208, (2015)
+3. Villarrubia, G., De Paz, J.F., De La Prieta, F., Bajo, J.: Hybrid indoor location system for
+museum tourist routes in augmented reality. In: 17th International Conference on
+Information Fusion (FUSION), pp.1-8, (2014)
+4. Poosamani, N., Rhee, I.: Towards a practical indoor location matching system using 4G
+LTE PHY layer information. In: IEEE International Conference on Pervasive Computing
+and Communication Workshops, pp.284-287, (2015)
+5. Rida, M.E., Liu, F., Jadi, Y., Algawhari, A., Askourih, A.: Indoor Location Position Based
+on Bluetooth Signal Strength. In: 2nd International Conference on Information Science and
+Control Engineering, pp. 769-773, (2015)
+6. Chen, R., Lin, Y.: Using ZeeBee Sensor Network with artifical neural network for indoor
+location. In: Eighth International Conference on Natural Computation, pp. 290-294, (2012)
+7. Li, Z., Zhou, Z., He, C., Huang, X.: Advances in RFID-ILA: The past, present and future of
+RFID-based indoor location algorithms. In: 24th Chinese Control and Decision Conference,
+pp. 3830-3835, (2012)
+8. Lee, G., Yim, J.: A Review of the Techniques for Indoor Location based Service. In: IJGDC
+Vol. 5, No. 1, pp. 1-22 (2012)
+9. Yim, J,: A Smartphone Indoor Positioning Method. In: International Journal of Smart Home,
+Vol.7, No.5, pp.9-18 (2013)
+
+Copyright © 2015 SERSC
+
+49
+
+
