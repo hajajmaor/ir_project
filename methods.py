@@ -14,9 +14,13 @@ from nltk.stem.porter import PorterStemmer
 # from position_index_class import PositionalIndex
 INDEX_DIR = "./indexes/"
 ARTICLES_DIR = "./articels"
-
-with open("stop_words_english.txt", "r") as file:
-    stop_words = file.read().split("\n")
+try:
+    with open("stop_words_english.txt", "r") as file:
+        stop_words = file.read().split("\n")
+except FileNotFoundError:
+    with open("../stop_words_english.txt", "r") as file:
+        stop_words = file.read().split("\n")
+    
 
 
 def do_case_folding(text: str) -> str:
