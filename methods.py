@@ -13,7 +13,7 @@ from nltk.stem.porter import PorterStemmer
 # from nltk.tokenize import word_tokenize
 # from position_index_class import PositionalIndex
 INDEX_DIR = "./indexes/"
-ARTICLES_DIR = "./articels"
+ARTICLES_DIR = ".././articels"
 try:
     with open("stop_words_english.txt", "r") as file:
         stop_words = file.read().split("\n")
